@@ -1,0 +1,21 @@
+namespace: WyriHaximus\Github\Resource
+class: User
+properties:
+  id: int
+  login: string
+  avatar_url: string
+  type: string
+  site_admin: bool
+  name: string
+  company: string
+  blog: string
+  location: string
+  email: string
+  hireable: bool
+  bio: string
+  public_repos: string
+  public_gists: string
+  followers: string
+  following: string
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface

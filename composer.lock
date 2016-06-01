@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e2be8fb0ae45517aff6135204efab794",
-    "content-hash": "119281f68d83ffdc36f8656d052940e1",
+    "hash": "cb851cc9220c65d880c54e7744706a3a",
+    "content-hash": "0a9eda27d7b15c5dc55a533a43381f3c",
     "packages": [
         {
             "name": "clue/block-react",
@@ -2555,16 +2555,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b"
+                "reference": "fb72ed32f8418db5e7770be1653e62e0d6f5dd3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1bcdf03b068a530ac1962ce671dead356eeba43b",
-                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/fb72ed32f8418db5e7770be1653e62e0d6f5dd3d",
+                "reference": "fb72ed32f8418db5e7770be1653e62e0d6f5dd3d",
                 "shasum": ""
             },
             "require": {
@@ -2629,7 +2629,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-04-03 22:58:34"
+            "time": "2016-05-30 22:24:32"
         },
         {
             "name": "symfony/yaml",
@@ -2781,12 +2781,60 @@
                 }
             ],
             "time": "2016-05-26 15:27:11"
+        },
+        {
+            "name": "wyrihaximus/travis-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-travis-client.git",
+                "reference": "b423787abf203fd53c5526ecb27112462f487549"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-travis-client/zipball/b423787abf203fd53c5526ecb27112462f487549",
+                "reference": "b423787abf203fd53c5526ecb27112462f487549",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "wyrihaximus/api-client": "dev-master"
+            },
+            "require-dev": {
+                "phake/phake": "^2.3",
+                "phpunit/phpunit": "^5.2.3",
+                "squizlabs/php_codesniffer": "^2.6",
+                "vectorface/dunit": "~2.0",
+                "wyrihaximus/api-client-resource-generator": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Travis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                },
+                {
+                    "name": "Andreas Möller",
+                    "email": "am@localheinz.com"
+                }
+            ],
+            "time": "2016-05-31 06:08:50"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "wyrihaximus/api-client": 20,
+        "wyrihaximus/travis-client": 20,
         "wyrihaximus/api-client-resource-generator": 20
     },
     "prefer-stable": false,
