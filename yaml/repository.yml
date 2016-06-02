@@ -1,0 +1,25 @@
+namespace: WyriHaximus\Github\Resource
+class: Repository
+properties:
+  id: int
+  name: string
+  full_name: string
+  description: string
+  private: bool
+  fork: bool
+  homepage: string
+  language: string
+  forks_count: int
+  stargazers_count: int
+  watchers_count: int
+  size: int
+  default_branch: string
+  open_issues_count: int
+  has_issues: bool
+  has_wiki: bool
+  has_pages: bool
+  has_downloads: bool
+  pushed_at: DateTimeInterface
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface
+  permissions: array
