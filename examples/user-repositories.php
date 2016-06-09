@@ -4,7 +4,7 @@ use WyriHaximus\Github\Client;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
-$client = new Client($loop);
+$client = new Client();
 
 $repositories = $client->user($argv[1] ?? 'WyriHaximus')->repositories();
 
