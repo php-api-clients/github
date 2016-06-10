@@ -73,6 +73,11 @@ trait PagingTrait
 
     private function handleResponseContents(ResponseInterface $response, ObserverInterface $observer)
     {
-        $observer->onNext(json_decode($response->getBody()->getContents(), true));
+        $this->getTransport()->
+            jsonDecode($response->getBody()->getContents())->
+            then(function ($json) use ($observer) {
+                $observer->onNext($json);
+            })
+        ;
     }
 }
