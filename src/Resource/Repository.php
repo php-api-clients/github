@@ -238,4 +238,9 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->updated_at;
     }
+    
+    public function refresh()
+    {
+        // TODO
+    }
 }

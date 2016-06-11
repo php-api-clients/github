@@ -206,4 +206,9 @@ abstract class User implements UserInterface
     {
         return $this->updated_at;
     }
+    
+    public function refresh()
+    {
+        // TODO
+    }
 }
