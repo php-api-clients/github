@@ -1,7 +1,7 @@
 <?php
 
-use React\EventLoop\Factory;
 use ApiClients\Github\Client;
+use function ApiClients\Foundation\resource_pretty_print;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
@@ -19,5 +19,5 @@ if (count($argv) > 1) {
 }
 
 foreach ($users as $user) {
-    var_export($client->user($user));
+    resource_pretty_print($client->user($user));
 }

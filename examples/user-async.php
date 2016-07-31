@@ -3,6 +3,7 @@
 use React\EventLoop\Factory;
 use ApiClients\Github\AsyncClient;
 use ApiClients\Github\Resource\UserInterface;
+use function ApiClients\Foundation\resource_pretty_print;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
@@ -22,7 +23,7 @@ if (count($argv) > 1) {
 
 foreach ($users as $user) {
     $client->user($user)->then(function (UserInterface $user) {
-        var_export($user);
+        resource_pretty_print($user);
     });
 }
 
