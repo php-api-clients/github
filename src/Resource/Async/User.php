@@ -1,11 +1,11 @@
 <?php
 
-namespace WyriHaximus\Github\Resource\Async;
+namespace ApiClients\Github\Resource\Async;
 
 use Rx\Observable;
 use Rx\ObservableInterface;
-use WyriHaximus\Github\Resource\PagingTrait;
-use WyriHaximus\Github\Resource\User as BaseUser;
+use ApiClients\Github\Resource\PagingTrait;
+use ApiClients\Github\Resource\User as BaseUser;
 
 class User extends BaseUser
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace WyriHaximus\Github\Resource;
+namespace ApiClients\Github\Resource;
 
 use DateTimeInterface;
-use WyriHaximus\ApiClient\Resource\TransportAwareTrait;
+use ApiClients\Foundation\Resource\TransportAwareTrait;
 
 abstract class User implements UserInterface
 {

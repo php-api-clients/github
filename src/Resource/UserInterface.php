@@ -1,9 +1,9 @@
 <?php
 
-namespace WyriHaximus\Github\Resource;
+namespace ApiClients\Github\Resource;
 
 use DateTimeInterface;
-use WyriHaximus\ApiClient\Resource\ResourceInterface;
+use ApiClients\Foundation\Resource\ResourceInterface;
 
 interface UserInterface extends ResourceInterface
 {

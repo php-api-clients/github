@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace WyriHaximus\Github;
+namespace ApiClients\Github;
 
 use React\EventLoop\Factory as LoopFactory;
-use WyriHaximus\Github\Resource\UserInterface;
-use WyriHaximus\ApiClient\Transport\Client as Transport;
-use WyriHaximus\ApiClient\Transport\Factory;
+use ApiClients\Github\Resource\UserInterface;
+use ApiClients\Foundation\Transport\Client as Transport;
+use ApiClients\Foundation\Transport\Factory;
 use function Clue\React\Block\await;
 use function React\Promise\resolve;
 

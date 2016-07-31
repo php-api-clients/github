@@ -1,5 +1,5 @@
 {
-    "name": "wyrihaximus/github-client",
+    "name": "api-clients/github",
     "license": "MIT",
     "authors": [
         {
@@ -9,6 +9,7 @@
     ],
     "require": {
         "php": "^7.0",
+        "api-clients/foundation": "dev-master",
         "wyrihaximus/api-client": "dev-master"
     },
     "require-dev": {
@@ -16,23 +17,23 @@
         "phpunit/phpunit": "^5.2.3",
         "squizlabs/php_codesniffer": "^2.6",
         "vectorface/dunit": "~2.0",
-        "wyrihaximus/api-client-resource-generator": "dev-master",
+        "api-clients/resource-generator": "dev-master",
         "phake/phake": "^2.3"
     },
     "autoload": {
         "psr-4": {
-            "WyriHaximus\\Github\\": "src/"
+            "ApiClients\\Github\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WyriHaximus\\Tests\\Github\\": "tests/"
+            "ApiClients\\Tests\\Github\\": "tests/"
         }
     },
     "suggest": {
-        "wyrihaximus/appveyor-client": "Easy access to AppVeyor client",
-        "wyrihaximus/scrutinizer-client": "Easy access to Scrutinizer client",
-        "wyrihaximus/styleci-client": "Easy access to StyleCI client",
-        "wyrihaximus/travis-client": "Easy access to Travis client"
+        "api-clients/appveyor": "Easy access to AppVeyor client",
+        "api-clients/scrutinizer": "Easy access to Scrutinizer client",
+        "api-clients/styleci": "Easy access to StyleCI client",
+        "api-clients/travis": "Easy access to Travis client"
     }
 }

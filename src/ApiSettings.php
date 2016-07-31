@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace WyriHaximus\Github;
+namespace ApiClients\Github;
 
 class ApiSettings
 {
     const TRANSPORT_OPTIONS = [
         'host' => 'api.github.com',
-        'namespace' => 'WyriHaximus\\Github\\Resource',
+        'namespace' => 'ApiClients\\Github\\Resource',
         'headers' => [
             //
         ],

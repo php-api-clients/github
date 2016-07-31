@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace WyriHaximus\Github;
+namespace ApiClients\Github;
 
 use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
-use WyriHaximus\ApiClient\Transport\Client as Transport;
-use WyriHaximus\ApiClient\Transport\Factory;
+use ApiClients\Foundation\Transport\Client as Transport;
+use ApiClients\Foundation\Transport\Factory;
 use function React\Promise\resolve;
 
 class AsyncClient

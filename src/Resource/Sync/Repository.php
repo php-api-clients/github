@@ -1,8 +1,8 @@
 <?php
 
-namespace WyriHaximus\Github\Resource\Sync;
+namespace ApiClients\Github\Resource\Sync;
 
-use WyriHaximus\Github\Resource\Repository as BaseRepository;
+use ApiClients\Github\Resource\Repository as BaseRepository;
 class Repository extends BaseRepository
 {
     public function refresh() : Repository

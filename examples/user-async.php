@@ -1,8 +1,8 @@
 <?php
 
 use React\EventLoop\Factory;
-use WyriHaximus\Github\AsyncClient;
-use WyriHaximus\Github\Resource\UserInterface;
+use ApiClients\Github\AsyncClient;
+use ApiClients\Github\Resource\UserInterface;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 

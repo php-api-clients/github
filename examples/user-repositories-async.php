@@ -2,9 +2,9 @@
 
 use React\EventLoop\Factory;
 use Rx\Observer\CallbackObserver;
-use WyriHaximus\Github\Resource\RepositoryInterface;
-use WyriHaximus\Github\AsyncClient;
-use WyriHaximus\Github\Resource\UserInterface;
+use ApiClients\Github\Resource\RepositoryInterface;
+use ApiClients\Github\AsyncClient;
+use ApiClients\Github\Resource\UserInterface;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 

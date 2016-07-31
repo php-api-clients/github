@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace WyriHaximus\Github\Resource;
+namespace ApiClients\Github\Resource;
 
 use Psr\Http\Message\ResponseInterface;
 use Rx\Observable;
 use Rx\ObserverInterface;
 use Rx\SchedulerInterface;
-use WyriHaximus\ApiClient\Transport\Client;
+use ApiClients\Foundation\Transport\Client;
 
 trait PagingTrait
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace WyriHaximus\Github\Resource\Sync;
+namespace ApiClients\Github\Resource\Sync;
 
-use WyriHaximus\ApiClient\Resource\CallAsyncTrait;
-use WyriHaximus\Github\Resource\User as BaseUser;
+use ApiClients\Foundation\Resource\CallAsyncTrait;
+use ApiClients\Github\Resource\User as BaseUser;
 
 class User extends BaseUser
 {

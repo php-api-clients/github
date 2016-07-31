@@ -1,6 +1,6 @@
 <?php
 
-use WyriHaximus\Github\Client;
+use ApiClients\Github\Client;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
