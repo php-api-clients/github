@@ -1,9 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace ApiClients\Github\Resource;
 
 use DateTimeInterface;
 use ApiClients\Foundation\Resource\ResourceInterface;
+
 interface RepositoryInterface extends ResourceInterface
 {
     /**
