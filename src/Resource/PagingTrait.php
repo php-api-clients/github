@@ -20,7 +20,7 @@ trait PagingTrait
         ) use ($path) {
             $this->getTransport()->
                 requestRaw($path)->
-                then(function($response) use ($observer) {
+                then(function ($response) use ($observer) {
                     $this->handleResponse($response, $observer);
                 })
             ;
@@ -62,7 +62,7 @@ trait PagingTrait
 
         $this->getTransport()->
             requestRaw($path)->
-            then(function($response) use ($observer) {
+            then(function ($response) use ($observer) {
                 $this->handleResponse($response, $observer);
             })
         ;
