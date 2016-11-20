@@ -1,6 +1,8 @@
 {
     "name": "api-clients/github",
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Cees-Jan Kiewiet",
@@ -9,25 +11,34 @@
     ],
     "require": {
         "php": "^7.0",
-        "api-clients/foundation": "dev-master",
-        "wyrihaximus/api-client": "dev-master"
+        "api-clients/foundation": "dev-master"
     },
     "require-dev": {
-        "wyrihaximus/travis-client": "dev-master",
-        "phpunit/phpunit": "^5.2.3",
-        "squizlabs/php_codesniffer": "^2.6",
-        "vectorface/dunit": "~2.0",
+        "api-clients/appveyor": "dev-master",
         "api-clients/resource-generator": "dev-master",
-        "phake/phake": "^2.3"
+        "api-clients/resource-test-utilities": "dev-master",
+        "api-clients/test-utilities": "dev-master",
+        "wyrihaximus/react-cache-filesystem": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "ApiClients\\Github\\": "src/"
+            "ApiClients\\Client\\Github\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ApiClients\\Tests\\Github\\": "tests/"
+            "ApiClients\\Tests\\Client\\Github\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "api-clients": {
+            "command-bus": {
+                "path": "src/CommandBus",
+                "namespace": "ApiClients\\Github\\CommandBus"
+            }
         }
     },
     "suggest": {
