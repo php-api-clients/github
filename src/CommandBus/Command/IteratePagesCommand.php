@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Github\CommandBus\Command;
+namespace ApiClients\Client\Github\CommandBus\Command;
 
 use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
 
 /**
- * @Handler("ApiClients\Github\CommandBus\Handler\IteratePagesHandler")
+ * @Handler("ApiClients\Client\Github\CommandBus\Handler\IteratePagesHandler")
  */
 final class IteratePagesCommand
 {
