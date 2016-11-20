@@ -1,0 +1,8 @@
+yaml_location: yaml
+api_settings: ApiClients\Client\Github\ApiSettings
+src:
+  path: src/Resource
+  namespace: ApiClients\Client\Github\Resource
+tests:
+  path: tests/Resource
+  namespace: ApiClients\Tests\Client\Github\Resource
