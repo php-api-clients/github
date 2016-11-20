@@ -37,14 +37,13 @@
         "api-clients": {
             "command-bus": {
                 "path": "src/CommandBus",
-                "namespace": "ApiClients\\Github\\CommandBus"
+                "namespace": "ApiClients\\Client\\Github\\CommandBus"
             }
         }
     },
     "suggest": {
         "api-clients/appveyor": "Easy access to AppVeyor client",
         "api-clients/scrutinizer": "Easy access to Scrutinizer client",
-        "api-clients/styleci": "Easy access to StyleCI client",
         "api-clients/travis": "Easy access to Travis client"
     }
 }
