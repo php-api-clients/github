@@ -1,31 +1,47 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Github;
+namespace ApiClients\Client\Github;
 
+use ApiClients\Foundation\Client;
+use ApiClients\Foundation\Events\CommandLocatorEvent;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\HydrateCommand;
+use ApiClients\Foundation\Transport\CommandBus\Command\JsonDecodeCommand;
+use ApiClients\Foundation\Transport\CommandBus\Command\SimpleRequestCommand;
+use ApiClients\Foundation\Transport\Response;
+use League\Event\EmitterInterface;
+use League\Tactician\CommandBus;
+use Psr\Http\Message\ResponseInterface;
 use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
-use ApiClients\Foundation\Transport\Client as Transport;
-use ApiClients\Foundation\Transport\Factory;
+use ApiClients\Foundation\Factory;
 use function React\Promise\resolve;
 
-class AsyncClient
+final class AsyncClient
 {
-    protected $transport;
+    /**
+     * @var Client
+     */
+    protected $client;
 
-    public function __construct(LoopInterface $loop, Transport $transport = null)
+    /**
+     * @var CommandBus
+     */
+    protected $commandBus;
+
+    public function __construct(LoopInterface $loop, array $options = [], Client $transport = null)
     {
-        if (!($transport instanceof Transport)) {
-            $transport = Factory::create($loop, [
-                'resource_namespace' => 'Async',
-            ] + ApiSettings::TRANSPORT_OPTIONS);
-        }
-        $this->transport = $transport;
+        $options = ApiSettings::getOptions($options, 'Async');
+        $this->client = Factory::create($loop, $options);
     }
 
     public function user(string $user): PromiseInterface
     {
-        return $this->transport->request('users/' . $user)->then(function ($json) {
-            return resolve($this->transport->getHydrator()->hydrate('User', $json));
+        return $this->client->handle(
+            new SimpleRequestCommand('users/' . $user)
+        )->then(function (ResponseInterface $response) {
+            return resolve($this->client->handle(
+                new HydrateCommand('User', $response->getBody()->getJSON())
+            ));
         });
     }
 }
