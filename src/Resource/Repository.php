@@ -1,97 +1,126 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Github\Resource;
+namespace ApiClients\Client\Github\Resource;
 
+use ApiClients\Foundation\Hydrator\Annotations\EmptyResource;
+use ApiClients\Foundation\Resource\AbstractResource;
 use DateTimeInterface;
-use ApiClients\Foundation\Resource\TransportAwareTrait;
 
-abstract class Repository implements RepositoryInterface
+/**
+ * @EmptyResource("EmptyRepository")
+ */
+abstract class Repository extends AbstractResource implements RepositoryInterface
 {
-    use TransportAwareTrait;
     /**
      * @var int
      */
     protected $id;
+
     /**
      * @var string
      */
     protected $name;
+
     /**
      * @var string
      */
     protected $full_name;
+
     /**
      * @var string
      */
     protected $description;
+
     /**
      * @var bool
      */
     protected $private;
+
     /**
      * @var bool
      */
     protected $fork;
+
     /**
      * @var string
      */
     protected $homepage;
+
     /**
      * @var string
      */
     protected $language;
+
     /**
      * @var int
      */
     protected $forks_count;
+
     /**
      * @var int
      */
     protected $stargazers_count;
+
     /**
      * @var int
      */
     protected $watchers_count;
+
     /**
      * @var int
      */
     protected $size;
+
     /**
      * @var string
      */
     protected $default_branch;
+
     /**
      * @var int
      */
     protected $open_issues_count;
+
     /**
      * @var bool
      */
     protected $has_issues;
+
     /**
      * @var bool
      */
     protected $has_wiki;
+
     /**
      * @var bool
      */
     protected $has_pages;
+
     /**
      * @var bool
      */
     protected $has_downloads;
+
     /**
      * @var DateTimeInterface
      */
     protected $pushed_at;
+
     /**
      * @var DateTimeInterface
      */
     protected $created_at;
+
     /**
      * @var DateTimeInterface
      */
     protected $updated_at;
+
+    /**
+     * @var array
+     */
+    //protected $permissions;
+
     /**
      * @return int
      */
@@ -99,6 +128,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->id;
     }
+
     /**
      * @return string
      */
@@ -106,6 +136,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->name;
     }
+
     /**
      * @return string
      */
@@ -113,6 +144,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->full_name;
     }
+
     /**
      * @return string
      */
@@ -120,6 +152,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->description;
     }
+
     /**
      * @return bool
      */
@@ -127,6 +160,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->private;
     }
+
     /**
      * @return bool
      */
@@ -134,6 +168,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->fork;
     }
+
     /**
      * @return string
      */
@@ -141,6 +176,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->homepage;
     }
+
     /**
      * @return string
      */
@@ -148,6 +184,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->language;
     }
+
     /**
      * @return int
      */
@@ -155,6 +192,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->forks_count;
     }
+
     /**
      * @return int
      */
@@ -162,6 +200,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->stargazers_count;
     }
+
     /**
      * @return int
      */
@@ -169,6 +208,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->watchers_count;
     }
+
     /**
      * @return int
      */
@@ -176,6 +216,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->size;
     }
+
     /**
      * @return string
      */
@@ -183,6 +224,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->default_branch;
     }
+
     /**
      * @return int
      */
@@ -190,6 +232,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->open_issues_count;
     }
+
     /**
      * @return bool
      */
@@ -197,6 +240,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->has_issues;
     }
+
     /**
      * @return bool
      */
@@ -204,6 +248,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->has_wiki;
     }
+
     /**
      * @return bool
      */
@@ -211,6 +256,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->has_pages;
     }
+
     /**
      * @return bool
      */
@@ -218,6 +264,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->has_downloads;
     }
+
     /**
      * @return DateTimeInterface
      */
@@ -225,6 +272,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->pushed_at;
     }
+
     /**
      * @return DateTimeInterface
      */
@@ -232,6 +280,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->created_at;
     }
+
     /**
      * @return DateTimeInterface
      */
@@ -239,9 +288,20 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->updated_at;
     }
-    
-    public function refresh()
+
+    /**
+     * @return array
+     */
+    public function permissions() : array
     {
-        // TODO
+        return $this->permissions;
+    }
+
+    /**
+     * @return array
+     */
+    public function labels() : array
+    {
+        return $this->permissions;
     }
 }

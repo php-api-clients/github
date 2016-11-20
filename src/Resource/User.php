@@ -1,85 +1,106 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Github\Resource;
+namespace ApiClients\Client\Github\Resource;
 
+use ApiClients\Foundation\Hydrator\Annotations\EmptyResource;
+use ApiClients\Foundation\Resource\AbstractResource;
 use DateTimeInterface;
-use ApiClients\Foundation\Resource\TransportAwareTrait;
 
-abstract class User implements UserInterface
+/**
+ * @EmptyResource("EmptyUser")
+ */
+abstract class User extends AbstractResource implements UserInterface
 {
-    use TransportAwareTrait;
     /**
      * @var int
      */
     protected $id;
+
     /**
      * @var string
      */
     protected $login;
+
     /**
      * @var string
      */
     protected $avatar_url;
+
     /**
      * @var string
      */
     protected $type;
+
     /**
      * @var bool
      */
     protected $site_admin;
+
     /**
      * @var string
      */
     protected $name;
+
     /**
      * @var string
      */
     protected $company;
+
     /**
      * @var string
      */
     protected $blog;
+
     /**
      * @var string
      */
     protected $location;
+
     /**
      * @var string
      */
     protected $email;
+
     /**
      * @var bool
      */
     protected $hireable;
+
     /**
      * @var string
      */
     protected $bio;
+
     /**
      * @var string
      */
     protected $public_repos;
+
     /**
      * @var string
      */
     protected $public_gists;
+
     /**
      * @var string
      */
     protected $followers;
+
     /**
      * @var string
      */
     protected $following;
+
     /**
      * @var DateTimeInterface
      */
     protected $created_at;
+
     /**
      * @var DateTimeInterface
      */
     protected $updated_at;
+
     /**
      * @return int
      */
@@ -87,6 +108,7 @@ abstract class User implements UserInterface
     {
         return $this->id;
     }
+
     /**
      * @return string
      */
@@ -94,13 +116,15 @@ abstract class User implements UserInterface
     {
         return $this->login;
     }
+
     /**
      * @return string
      */
-    public function avatar() : string
+    public function avatarUrl() : string
     {
         return $this->avatar_url;
     }
+
     /**
      * @return string
      */
@@ -108,13 +132,15 @@ abstract class User implements UserInterface
     {
         return $this->type;
     }
+
     /**
      * @return bool
      */
-    public function isSiteAdmin() : bool
+    public function siteAdmin() : bool
     {
         return $this->site_admin;
     }
+
     /**
      * @return string
      */
@@ -122,6 +148,7 @@ abstract class User implements UserInterface
     {
         return $this->name;
     }
+
     /**
      * @return string
      */
@@ -129,6 +156,7 @@ abstract class User implements UserInterface
     {
         return $this->company;
     }
+
     /**
      * @return string
      */
@@ -136,6 +164,7 @@ abstract class User implements UserInterface
     {
         return $this->blog;
     }
+
     /**
      * @return string
      */
@@ -143,6 +172,7 @@ abstract class User implements UserInterface
     {
         return $this->location;
     }
+
     /**
      * @return string
      */
@@ -150,13 +180,15 @@ abstract class User implements UserInterface
     {
         return $this->email;
     }
+
     /**
      * @return bool
      */
-    public function isHireable() : bool
+    public function hireable() : bool
     {
         return $this->hireable;
     }
+
     /**
      * @return string
      */
@@ -164,6 +196,7 @@ abstract class User implements UserInterface
     {
         return $this->bio;
     }
+
     /**
      * @return string
      */
@@ -171,6 +204,7 @@ abstract class User implements UserInterface
     {
         return $this->public_repos;
     }
+
     /**
      * @return string
      */
@@ -178,6 +212,7 @@ abstract class User implements UserInterface
     {
         return $this->public_gists;
     }
+
     /**
      * @return string
      */
@@ -185,6 +220,7 @@ abstract class User implements UserInterface
     {
         return $this->followers;
     }
+
     /**
      * @return string
      */
@@ -192,6 +228,7 @@ abstract class User implements UserInterface
     {
         return $this->following;
     }
+
     /**
      * @return DateTimeInterface
      */
@@ -199,16 +236,12 @@ abstract class User implements UserInterface
     {
         return $this->created_at;
     }
+
     /**
      * @return DateTimeInterface
      */
     public function updatedAt() : DateTimeInterface
     {
         return $this->updated_at;
-    }
-    
-    public function refresh()
-    {
-        // TODO
     }
 }
