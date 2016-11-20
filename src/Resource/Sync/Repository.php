@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Github\Resource\Sync;
+namespace ApiClients\Client\Github\Resource\Sync;
 
-use ApiClients\Github\Resource\Repository as BaseRepository;
+use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 
 class Repository extends BaseRepository
 {
