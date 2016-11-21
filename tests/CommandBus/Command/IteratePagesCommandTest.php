@@ -2,7 +2,7 @@
 
 namespace ApiClients\Tests\Github\CommandBus\Command;
 
-use ApiClients\Github\CommandBus\Command\IteratePagesCommand;
+use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
 use ApiClients\Tools\TestUtilities\TestCase;
 
 class IteratePagesCommandTest extends TestCase
