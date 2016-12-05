@@ -17,7 +17,7 @@
         "api-clients/appveyor": "dev-master",
         "api-clients/resource-generator": "dev-master",
         "api-clients/resource-test-utilities": "dev-master",
-        "api-clients/test-utilities": "dev-master"
+        "api-clients/test-utilities": "^1.0"
     },
     "autoload": {
         "psr-4": {
