@@ -1,11 +1,11 @@
-# TravisCI API Client for PHP 7
+# Github API Client for PHP 7
 
-[![Build Status](https://travis-ci.org/WyriHaximus/php-github-client.svg?branch=master)](https://travis-ci.org/WyriHaximus/php-github-client)
-[![Latest Stable Version](https://poser.pugx.org/WyriHaximus/github-client/v/stable.png)](https://packagist.org/packages/WyriHaximus/github-client)
-[![Total Downloads](https://poser.pugx.org/WyriHaximus/github-client/downloads.png)](https://packagist.org/packages/WyriHaximus/github-client)
-[![Code Coverage](https://scrutinizer-ci.com/g/WyriHaximus/php-github-client/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WyriHaximus/php-github-client/?branch=master)
-[![License](https://poser.pugx.org/WyriHaximus/github-client/license.png)](https://packagist.org/packages/wyrihaximus/github-client)
-[![PHP 7 ready](http://php7ready.timesplinter.ch/WyriHaximus/php-github-client/badge.svg)](https://travis-ci.org/WyriHaximus/php-github-client)
+[![Build Status](https://travis-ci.org/php-api-clients/github.svg?branch=master)](https://travis-ci.org/php-api-clients/github)
+[![Latest Stable Version](https://poser.pugx.org/api-clients/github/v/stable.png)](https://packagist.org/packages/api-clients/github)
+[![Total Downloads](https://poser.pugx.org/api-clients/github/downloads.png)](https://packagist.org/packages/api-clients/github)
+[![Code Coverage](https://scrutinizer-ci.com/g/php-api-clients/github/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-api-clients/github/?branch=master)
+[![License](https://poser.pugx.org/api-clients/github/license.png)](https://packagist.org/packages/api-clients/github)
+[![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/github/badge.svg)](https://travis-ci.org/php-api-clients/github)
 
 
 # Goals
