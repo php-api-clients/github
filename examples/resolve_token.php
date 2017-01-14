@@ -1,5 +1,7 @@
 <?php
 
+use ApiClients\Client\Github\Authentication\Token;
+
 $keyFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'token.php';
 
 if (!file_exists($keyFile)) {
@@ -7,4 +9,4 @@ if (!file_exists($keyFile)) {
     exit(1);
 }
 
-return require $keyFile;
+return new Token(require $keyFile);

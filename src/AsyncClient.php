@@ -28,9 +28,9 @@ final class AsyncClient
      */
     protected $commandBus;
 
-    public function __construct(LoopInterface $loop, array $options = [], Client $transport = null)
+    public function __construct(LoopInterface $loop, AuthenticationInterface $auth, array $options = [], Client $transport = null)
     {
-        $options = ApiSettings::getOptions($options, 'Async');
+        $options = ApiSettings::getOptions($auth, $options, 'Async');
         $this->client = Factory::create($loop, $options);
     }
 
@@ -38,6 +38,17 @@ final class AsyncClient
     {
         return $this->client->handle(
             new SimpleRequestCommand('users/' . $user)
+        )->then(function (ResponseInterface $response) {
+            return resolve($this->client->handle(
+                new HydrateCommand('User', $response->getBody()->getJSON())
+            ));
+        });
+    }
+
+    public function whoami(): PromiseInterface
+    {
+        return $this->client->handle(
+            new SimpleRequestCommand('user')
         )->then(function (ResponseInterface $response) {
             return resolve($this->client->handle(
                 new HydrateCommand('User', $response->getBody()->getJSON())

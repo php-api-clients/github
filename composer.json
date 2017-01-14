@@ -11,7 +11,8 @@
     ],
     "require": {
         "php": "^7.0",
-        "api-clients/foundation": "dev-master"
+        "api-clients/foundation": "dev-master",
+        "api-clients/middleware-token-authorization": "dev-master"
     },
     "require-dev": {
         "api-clients/appveyor": "dev-master",
