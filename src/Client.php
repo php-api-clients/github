@@ -19,10 +19,10 @@ final class Client
      */
     private $client;
 
-    public function __construct()
+    public function __construct(AuthenticationInterface $auth)
     {
         $this->loop = Factory::create();
-        $this->client = new AsyncClient($this->loop);
+        $this->client = new AsyncClient($this->loop, $auth);
     }
 
     public function user(string $user): UserInterface
