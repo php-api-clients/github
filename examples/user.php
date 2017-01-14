@@ -6,7 +6,7 @@ use ApiClients\Tools\ResourceTestUtilities\Types;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
-$client = new Client();
+$client = new Client(require 'resolve_token.php');
 
 $users = [
     'WyriHaximus',

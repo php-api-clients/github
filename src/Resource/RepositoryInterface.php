@@ -7,6 +7,8 @@ use DateTimeInterface;
 
 interface RepositoryInterface extends ResourceInterface
 {
+    const HYDRATE_CLASS = 'Repository';
+
     /**
      * @return int
      */
@@ -116,9 +118,4 @@ interface RepositoryInterface extends ResourceInterface
      * @return array
      */
     public function permissions() : array;
-
-    /**
-     * @return array
-     */
-    public function labels();
 }

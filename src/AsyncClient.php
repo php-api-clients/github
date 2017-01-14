@@ -15,6 +15,7 @@ use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
 use ApiClients\Foundation\Factory;
 use function React\Promise\resolve;
+use ApiClients\Client\Github\CommandBus\Command;
 
 final class AsyncClient
 {
@@ -36,23 +37,11 @@ final class AsyncClient
 
     public function user(string $user): PromiseInterface
     {
-        return $this->client->handle(
-            new SimpleRequestCommand('users/' . $user)
-        )->then(function (ResponseInterface $response) {
-            return resolve($this->client->handle(
-                new HydrateCommand('User', $response->getBody()->getJSON())
-            ));
-        });
+        return $this->client->handle(new Command\UserCommand($user));
     }
 
     public function whoami(): PromiseInterface
     {
-        return $this->client->handle(
-            new SimpleRequestCommand('user')
-        )->then(function (ResponseInterface $response) {
-            return resolve($this->client->handle(
-                new HydrateCommand('User', $response->getBody()->getJSON())
-            ));
-        });
+        return $this->client->handle(new Command\UserCommand());
     }
 }

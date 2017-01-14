@@ -297,11 +297,8 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
         return $this->permissions;
     }
 
-    /**
-     * @return array
-     */
-    public function labels() : array
+    public function labels()
     {
-        return $this->permissions;
+        return $this->labels;
     }
 }

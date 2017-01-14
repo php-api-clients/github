@@ -19,4 +19,35 @@ class Repository extends BaseRepository
     {
         return $this->wait($this->callAsync('refresh'));
     }
+
+    public function labels(): ObservableInterface
+    {
+        return $this->getCommandBus()->handle(
+            new IteratePagesCommand('repos/' . $this->fullName() . '/labels')
+        )->flatMap(function ($response) {
+            return Observable::fromArray($response);
+        })->map(function ($label) {
+            return $this->getCommandBus()->handle(new HydrateCommand('Label', $label));
+        });
+    }
+
+    public function addLabel(string $name, string $colour): PromiseInterface
+    {
+        return $this->getCommandBus()->handle(
+            new JsonEncodeCommand([])
+        )->then(function (string $json) {
+            return $this->getCommandBus()->handle(
+                new RequestCommand(
+                    new Request(
+                        'POST',
+                        'repos/' . $this->fullName() . '/labels',
+                        [],
+                        $json
+                    )
+                )
+            );
+        })->then(function (Response $response) {
+            var_export($response->getBody());
+        });
+    }
 }

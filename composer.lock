@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9798a1ec20cf321f1146ee26a526dfa8",
+    "content-hash": "667a82d7ae07d92668ddedafb5ca6a5a",
     "packages": [
+        {
+            "name": "api-clients/client-services",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/client-services.git",
+                "reference": "d15175524cb218e4a4f4b68e1c2aa6639d037feb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/client-services/zipball/d15175524cb218e4a4f4b68e1c2aa6639d037feb",
+                "reference": "d15175524cb218e4a4f4b68e1c2aa6639d037feb",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/hydrator": "dev-master",
+                "api-clients/rx": "dev-master",
+                "api-clients/service": "dev-master",
+                "api-clients/transport": "dev-master",
+                "igorw/get-in": "^1.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Tools\\Services\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Generic client services",
+            "time": "2016-12-25 18:20:13"
+        },
         {
             "name": "api-clients/command-bus",
             "version": "2.0.0",
@@ -4633,8 +4677,10 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "api-clients/client-services": 20,
         "api-clients/foundation": 20,
         "api-clients/middleware-token-authorization": 20,
+        "api-clients/service": 20,
         "api-clients/appveyor": 20,
         "api-clients/resource-generator": 20,
         "api-clients/resource-test-utilities": 20

@@ -10,4 +10,9 @@ class Repository extends BaseRepository
     {
         return $this->wait($this->callAsync('refresh'));
     }
+
+    public function labels() : array
+    {
+        return [];//$this->wait($this->$this->callAsync('labels'));
+    }
 }
