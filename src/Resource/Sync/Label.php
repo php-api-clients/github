@@ -10,8 +10,12 @@ class Label extends BaseLabel
 {
     public function refresh() : Label
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (LabelInterface $label) {
-            return $label->refresh();
-        }));
+        return $this->wait(
+            $this->handleCommand(
+                new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+            )->then(function (LabelInterface $label) {
+                return $label->refresh();
+            })
+        );
     }
 }

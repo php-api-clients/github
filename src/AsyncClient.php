@@ -2,37 +2,42 @@
 
 namespace ApiClients\Client\Github;
 
-use ApiClients\Foundation\Client;
-use ApiClients\Foundation\Events\CommandLocatorEvent;
-use ApiClients\Foundation\Hydrator\CommandBus\Command\HydrateCommand;
-use ApiClients\Foundation\Transport\CommandBus\Command\JsonDecodeCommand;
-use ApiClients\Foundation\Transport\CommandBus\Command\SimpleRequestCommand;
-use ApiClients\Foundation\Transport\Response;
-use League\Event\EmitterInterface;
-use League\Tactician\CommandBus;
-use Psr\Http\Message\ResponseInterface;
+use ApiClients\Client\Github\CommandBus\Command;
+use ApiClients\Foundation\ClientInterface;
+use ApiClients\Foundation\Factory;
 use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
-use ApiClients\Foundation\Factory;
 use function React\Promise\resolve;
-use ApiClients\Client\Github\CommandBus\Command;
 
 final class AsyncClient
 {
     /**
-     * @var Client
+     * @var ClientInterface
      */
-    protected $client;
+    private $client;
 
     /**
-     * @var CommandBus
+     * @param LoopInterface $loop
+     * @param AuthenticationInterface $auth
+     * @param array $options
+     * @return AsyncClient
      */
-    protected $commandBus;
-
-    public function __construct(LoopInterface $loop, AuthenticationInterface $auth, array $options = [], Client $transport = null)
-    {
+    public static function create(
+        LoopInterface $loop,
+        AuthenticationInterface $auth,
+        array $options = []
+    ): self {
         $options = ApiSettings::getOptions($auth, $options, 'Async');
-        $this->client = Factory::create($loop, $options);
+        $client = Factory::create($loop, $options);
+        return new self($client);
+    }
+
+    /**
+     * @param ClientInterface $client
+     */
+    private function __construct(ClientInterface $client)
+    {
+        $this->client = $client;
     }
 
     public function user(string $user): PromiseInterface
