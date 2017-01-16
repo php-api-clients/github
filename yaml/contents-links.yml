@@ -1,0 +1,5 @@
+class: Contents\Links
+properties:
+  git: string
+  self: string
+  html: string

@@ -1,0 +1,16 @@
+class: Contents\Directory
+properties:
+  type: string
+  encoding: string
+  size: int
+  name: string
+  path: string
+  sha: string
+  url: string
+  git_url: string
+  html_url: string
+  download_url: string
+  _links:
+    type: Contents\Links
+    annotations:
+      nested: Contents\Links

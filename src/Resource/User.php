@@ -244,4 +244,9 @@ abstract class User extends AbstractResource implements UserInterface
     {
         return $this->updated_at;
     }
+
+    public function repository(string $repository)
+    {
+
+    }
 }

@@ -98,4 +98,6 @@ interface UserInterface extends ResourceInterface
      * @return DateTimeInterface
      */
     public function updatedAt() : DateTimeInterface;
+
+    public function repository(string $repository);
 }
