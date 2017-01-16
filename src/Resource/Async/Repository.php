@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
+use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
 use ApiClients\Client\Github\Resource\Contents\DirectoryInterface;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
@@ -21,9 +22,11 @@ use function React\Promise\resolve;
 
 class Repository extends BaseRepository
 {
-    public function refresh() : Repository
+    public function refresh(): PromiseInterface
     {
-        return $this->wait($this->callAsync('refresh'));
+        return $this->handleCommand(
+            new RepositoryCommand(...(explode('/', $this->fullName())))
+        );
     }
 
     public function labels(): ObservableInterface

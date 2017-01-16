@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\RepositoriesCommand;
+use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
 use ApiClients\Client\Github\Resource\User as BaseUser;
 use ApiClients\Foundation\Hydrator\CommandBus\Command\HydrateCommand;
 use ApiClients\Foundation\Transport\CommandBus\Command\SimpleRequestCommand;
@@ -22,10 +23,8 @@ class User extends BaseUser
     public function repository(string $repository): PromiseInterface
     {
         return $this->handleCommand(
-            new SimpleRequestCommand('repos/' . $this->login() . '/' . $repository)
-        )->then(function (ResponseInterface $response) {
-            return $this->handleCommand(new HydrateCommand('Repository', $response->getBody()->getJson()));
-        });
+            new RepositoryCommand($this->login(), $repository)
+        );
     }
 
     public function repositories(): ObservableInterface
