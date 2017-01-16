@@ -87,9 +87,9 @@ abstract class EmptyDirectory implements DirectoryInterface, EmptyResourceInterf
     }
 
     /**
-     * @return Contents\Links
+     * @return Links
      */
-    public function links() : Contents\Links
+    public function links() : Links
     {
         return null;
     }

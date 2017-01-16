@@ -165,9 +165,9 @@ abstract class File extends AbstractResource implements FileInterface
     }
 
     /**
-     * @return Contents\Links
+     * @return Links
      */
-    public function links() : Contents\Links
+    public function links() : Links
     {
         return $this->_links;
     }

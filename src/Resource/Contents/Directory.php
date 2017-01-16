@@ -152,9 +152,9 @@ abstract class Directory extends AbstractResource implements DirectoryInterface
     }
 
     /**
-     * @return Contents\Links
+     * @return Links
      */
-    public function links() : Contents\Links
+    public function links() : Links
     {
         return $this->_links;
     }
