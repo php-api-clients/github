@@ -28,10 +28,6 @@ matrix:
     - php: nightly
       env: dependencies=highest
 
-## Update composer and configure authentication token
-before_install:
-  - composer self-update
-
 ## Install or update dependencies
 install:
   - if [ -z "$dependencies" ]; then composer install --prefer-dist; fi;
