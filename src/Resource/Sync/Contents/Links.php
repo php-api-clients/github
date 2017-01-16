@@ -10,7 +10,9 @@ class Links extends BaseLinks
 {
     public function refresh() : Links
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (LinksInterface $links) {
+        return $this->wait($this->handleCommand(
+            new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+        )->then(function (LinksInterface $links) {
             return $links->refresh();
         }));
     }

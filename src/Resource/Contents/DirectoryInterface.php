@@ -59,7 +59,7 @@ interface DirectoryInterface extends ResourceInterface
     public function downloadUrl() : string;
 
     /**
-     * @return Contents\Links
+     * @return Links
      */
-    public function links() : Contents\Links;
+    public function links() : Links;
 }

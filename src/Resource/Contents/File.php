@@ -70,9 +70,11 @@ abstract class File extends AbstractResource implements FileInterface
     protected $download_url;
 
     /**
-     * @var Contents\Links
+     * @var Links
      */
+    // @codingStandardsIgnoreStart
     protected $_links;
+    // @codingStandardsIgnoreEnd
 
     /**
      * @return string

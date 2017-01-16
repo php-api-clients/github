@@ -247,6 +247,5 @@ abstract class User extends AbstractResource implements UserInterface
 
     public function repository(string $repository)
     {
-
     }
 }

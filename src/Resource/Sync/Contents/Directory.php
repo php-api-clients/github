@@ -10,7 +10,9 @@ class Directory extends BaseDirectory
 {
     public function refresh() : Directory
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (DirectoryInterface $directory) {
+        return $this->wait($this->handleCommand(
+            new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+        )->then(function (DirectoryInterface $directory) {
             return $directory->refresh();
         }));
     }
