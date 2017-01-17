@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
 use ApiClients\Client\Github\Resource\Contents\DirectoryInterface;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
@@ -62,20 +63,10 @@ class Repository extends BaseRepository
 
     public function contents(): Observable
     {
-        return Promise::toObservable($this->handleCommand(
-            new SimpleRequestCommand('repos/' . $this->fullName() . '/contents/')
-        ))->flatMap(function ($contents) {
-            return Observable::fromArray($contents->getBody()->getJson());
-        })->flatMap(function ($content) {
-            if ($content['type'] === 'file') {
-                return Promise::toObservable($this->handleCommand(
-                    new HydrateCommand(FileInterface::HYDRATE_CLASS, $content)
-                ));
-            }
-
-            return Promise::toObservable($this->handleCommand(
-                new HydrateCommand(DirectoryInterface::HYDRATE_CLASS, $content)
-            ));
-        });
+        return unwrapObservableFromPromise(
+            $this->handleCommand(
+                new ContentsCommand($this->fullName())
+            )
+        );
     }
 }
