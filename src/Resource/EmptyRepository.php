@@ -182,4 +182,11 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     {
         return null;
     }
+    /**
+     * @return string
+     */
+    public function htmlUrl() : string
+    {
+        return null;
+    }
 }

@@ -117,6 +117,11 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     protected $updated_at;
 
     /**
+     * @var string
+     */
+    protected $html_url;
+
+    /**
      * @var array
      */
     //protected $permissions;
@@ -300,5 +305,13 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     public function labels()
     {
         return $this->labels;
+    }
+
+    /**
+     * @return string
+     */
+    public function htmlUrl() : string
+    {
+        return $this->html_url;
     }
 }

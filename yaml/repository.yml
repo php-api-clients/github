@@ -22,3 +22,4 @@ properties:
   created_at: DateTimeInterface
   updated_at: DateTimeInterface
   permissions: array
+  html_url: string

@@ -118,4 +118,10 @@ interface RepositoryInterface extends ResourceInterface
      * @return array
      */
     public function permissions() : array;
+
+    /**
+     * @return string
+     */
+    public function htmlUrl() : string;
+
 }
