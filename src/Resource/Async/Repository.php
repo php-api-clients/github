@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
 use ApiClients\Client\Github\Resource\Contents\DirectoryInterface;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
@@ -32,13 +33,9 @@ class Repository extends BaseRepository
 
     public function labels(): ObservableInterface
     {
-        return $this->getCommandBus()->handle(
-            new IteratePagesCommand('repos/' . $this->fullName() . '/labels')
-        )->flatMap(function ($response) {
-            return Observable::fromArray($response);
-        })->map(function ($label) {
-            return $this->getCommandBus()->handle(new HydrateCommand('Label', $label));
-        });
+        return unwrapObservableFromPromise($this->handleCommand(
+            new LabelsCommand($this->fullName())
+        ));
     }
 
     public function addLabel(string $name, string $colour): PromiseInterface
