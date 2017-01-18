@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
@@ -34,22 +35,9 @@ class Repository extends BaseRepository
 
     public function addLabel(string $name, string $colour): PromiseInterface
     {
-        return $this->getCommandBus()->handle(
-            new JsonEncodeCommand([])
-        )->then(function (string $json) {
-            return $this->getCommandBus()->handle(
-                new RequestCommand(
-                    new Request(
-                        'POST',
-                        'repos/' . $this->fullName() . '/labels',
-                        [],
-                        $json
-                    )
-                )
-            );
-        })->then(function (Response $response) {
-            var_export($response->getBody());
-        });
+        return $this->handleCommand(
+            new AddLabelCommand($this->fullName(), $name, $colour)
+        );
     }
 
     public function contents(): Observable
