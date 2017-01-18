@@ -2,24 +2,17 @@
 
 namespace ApiClients\Client\Github\Resource\Async;
 
-use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
-use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
-use ApiClients\Client\Github\Resource\Contents\DirectoryInterface;
-use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
-use ApiClients\Foundation\Hydrator\CommandBus\Command\HydrateCommand;
 use ApiClients\Foundation\Transport\CommandBus\Command\JsonEncodeCommand;
 use ApiClients\Foundation\Transport\CommandBus\Command\RequestCommand;
-use ApiClients\Foundation\Transport\CommandBus\Command\SimpleRequestCommand;
 use ApiClients\Foundation\Transport\Response;
 use GuzzleHttp\Psr7\Request;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
 use Rx\ObservableInterface;
-use Rx\React\Promise;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use function React\Promise\resolve;
 
