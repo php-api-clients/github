@@ -2,6 +2,7 @@
 
 namespace ApiClients\Client\Github\Resource\Async;
 
+use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\RepositoriesCommand;
 use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
 use ApiClients\Client\Github\Resource\User as BaseUser;
@@ -15,9 +16,11 @@ use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 class User extends BaseUser
 {
-    public function refresh() : User
+    public function refresh() : PromiseInterface
     {
-        return $this->wait($this->callAsync('refresh'));
+        return $this->handleCommand(
+            new RefreshCommand($this)
+        );
     }
 
     public function repository(string $repository): PromiseInterface
