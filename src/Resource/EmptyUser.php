@@ -28,7 +28,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
      */
     public function url() : string
     {
-        return $this->url;
+        return null;
     }
 
     /**
