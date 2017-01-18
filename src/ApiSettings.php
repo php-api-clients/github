@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github;
 use ApiClients\Foundation\Options as FoundationOptions;
 use ApiClients\Foundation\Hydrator\Options as HydratorOptions;
 use ApiClients\Foundation\Transport\Middleware\JsonDecodeMiddleware;
+use ApiClients\Foundation\Transport\Middleware\JsonEncodeMiddleware;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
 use ApiClients\Foundation\Transport\UserAgentStrategies;
 use function ApiClients\Foundation\options_merge;
@@ -22,6 +23,7 @@ final class ApiSettings
             TransportOptions::HOST => 'api.github.com',
             TransportOptions::MIDDLEWARE => [
                 JsonDecodeMiddleware::class,
+                JsonEncodeMiddleware::class,
             ],
             TransportOptions::USER_AGENT_STRATEGY => UserAgentStrategies::PACKAGE_VERSION,
             TransportOptions::PACKAGE => 'api-clients/github',
