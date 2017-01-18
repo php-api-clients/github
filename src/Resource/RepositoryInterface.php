@@ -27,6 +27,11 @@ interface RepositoryInterface extends ResourceInterface
     /**
      * @return string
      */
+    public function url() : string;
+
+    /**
+     * @return string
+     */
     public function description() : string;
 
     /**

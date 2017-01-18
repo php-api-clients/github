@@ -2,6 +2,7 @@ class: User
 properties:
   id: int
   login: string
+  url: string
   avatar_url: string
   type: string
   site_admin: bool

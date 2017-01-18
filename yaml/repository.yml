@@ -3,6 +3,7 @@ properties:
   id: int
   name: string
   full_name: string
+  url: string
   description: string
   private: bool
   fork: bool

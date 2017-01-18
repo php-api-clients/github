@@ -24,6 +24,11 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @var string
      */
+    protected $url;
+
+    /**
+     * @var string
+     */
     protected $avatar_url;
 
     /**
@@ -115,6 +120,14 @@ abstract class User extends AbstractResource implements UserInterface
     public function login() : string
     {
         return $this->login;
+    }
+
+    /**
+     * @return string
+     */
+    public function url() : string
+    {
+        return $this->url;
     }
 
     /**

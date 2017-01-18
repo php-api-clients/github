@@ -22,6 +22,11 @@ interface UserInterface extends ResourceInterface
     /**
      * @return string
      */
+    public function url() : string;
+
+    /**
+     * @return string
+     */
     public function avatarUrl() : string;
 
     /**

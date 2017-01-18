@@ -29,6 +29,11 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @var string
      */
+    protected $url;
+
+    /**
+     * @var string
+     */
     protected $description;
 
     /**
@@ -148,6 +153,14 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     public function fullName() : string
     {
         return $this->full_name;
+    }
+
+    /**
+     * @return string
+     */
+    public function url() : string
+    {
+        return $this->url;
     }
 
     /**

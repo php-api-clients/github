@@ -34,6 +34,14 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
+    public function url() : string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return string
+     */
     public function description() : string
     {
         return null;
