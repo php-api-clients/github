@@ -128,5 +128,4 @@ interface RepositoryInterface extends ResourceInterface
      * @return string
      */
     public function htmlUrl() : string;
-
 }
