@@ -18,8 +18,12 @@ $client->user($argv[1] ?? 'WyriHaximus')->then(function (UserInterface $user) us
 })->then(function (Repository $repository) use ($argv) {
     resource_pretty_print($repository);
     return $repository->addLabel((string)($argv[3] ?? 'test-' . time()), (string)($argv[4] ?? random_int(100000, 9999999)));
-})->done(function ($label) {
+})->then(function (Label $label) use ($argv) {
     resource_pretty_print($label);
+    return $label->withColor((string)($argv[5] ?? random_int(100000, 9999999)))->save();
+})->done(function (Label $label) {
+    resource_pretty_print($label);
+    echo 'Done!', PHP_EOL;
 }, function ($e) {
     echo (string)$e;
 });

@@ -48,4 +48,26 @@ abstract class Label extends AbstractResource implements LabelInterface
     {
         return $this->color;
     }
+
+    /**
+     * @param string $name
+     * @return Label
+     */
+    public function withName(string $name): self
+    {
+        $clone = clone $this;
+        $clone->name = $name;
+        return $clone;
+    }
+
+    /**
+     * @param string $colour
+     * @return Label
+     */
+    public function withColor(string $colour): self
+    {
+        $clone = clone $this;
+        $clone->color = $colour;
+        return $clone;
+    }
 }
