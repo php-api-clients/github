@@ -7,6 +7,8 @@ use ApiClients\Foundation\ClientInterface;
 use ApiClients\Foundation\Factory;
 use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
+use Rx\Observable;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use function React\Promise\resolve;
 
 final class AsyncClient
@@ -48,5 +50,10 @@ final class AsyncClient
     public function whoami(): PromiseInterface
     {
         return $this->client->handle(new Command\UserCommand());
+    }
+
+    public function myOrganizations(): Observable
+    {
+        return unwrapObservableFromPromise($this->client->handle(new Command\MyOrganizationsCommand()));
     }
 }
