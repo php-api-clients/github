@@ -2,9 +2,9 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Async\Contents;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Contents\File;
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class FileTest extends AbstractResourceTest
 {

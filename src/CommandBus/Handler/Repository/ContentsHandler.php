@@ -3,18 +3,14 @@
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
-use ApiClients\Client\Github\CommandBus\Command\UserCommand;
 use ApiClients\Client\Github\Resource\Contents\DirectoryInterface;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
-use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Transport\Service\RequestService;
-use ApiClients\Tools\Services\Client\FetchAndHydrateService;
-use React\Promise\PromiseInterface;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use Rx\Observable;
 use Rx\React\Promise;
+use function React\Promise\resolve;
 use function WyriHaximus\React\futureFunctionPromise;
 
 final class ContentsHandler

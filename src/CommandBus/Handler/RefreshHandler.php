@@ -3,8 +3,6 @@
 namespace ApiClients\Client\Github\CommandBus\Handler;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
-use ApiClients\Client\Github\CommandBus\Command\UserCommand;
-use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use React\Promise\PromiseInterface;
 use function React\Promise\resolve;

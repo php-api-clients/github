@@ -2,9 +2,9 @@
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
-use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 use ApiClients\Client\Github\Resource\Label as BaseLabel;
 use ApiClients\Client\Github\Resource\LabelInterface;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Label extends BaseLabel
 {

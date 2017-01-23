@@ -2,9 +2,9 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Sync\Contents;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Contents\Directory;
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class DirectoryTest extends AbstractResourceTest
 {

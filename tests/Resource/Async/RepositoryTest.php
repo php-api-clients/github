@@ -2,9 +2,9 @@
 
 namespace ApiClients\Tests\Github\Resource\Async;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Repository;
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class RepositoryTest extends AbstractResourceTest
 {

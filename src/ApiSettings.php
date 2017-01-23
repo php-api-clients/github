@@ -2,8 +2,8 @@
 
 namespace ApiClients\Client\Github;
 
-use ApiClients\Foundation\Options as FoundationOptions;
 use ApiClients\Foundation\Hydrator\Options as HydratorOptions;
+use ApiClients\Foundation\Options as FoundationOptions;
 use ApiClients\Foundation\Transport\Middleware\JsonDecodeMiddleware;
 use ApiClients\Foundation\Transport\Middleware\JsonEncodeMiddleware;
 use ApiClients\Foundation\Transport\Options as TransportOptions;

@@ -2,8 +2,8 @@
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
-use ApiClients\Client\Github\Resource\User as BaseUser;
 use ApiClients\Client\Github\Resource\Async\User as AsyncUser;
+use ApiClients\Client\Github\Resource\User as BaseUser;
 use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class User extends BaseUser

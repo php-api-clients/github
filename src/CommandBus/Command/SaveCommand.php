@@ -2,7 +2,6 @@
 
 namespace ApiClients\Client\Github\CommandBus\Command;
 
-use ApiClients\Foundation\Resource\ResourceInterface;
 use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
 
 /**

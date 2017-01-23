@@ -2,9 +2,9 @@
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
-use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 use ApiClients\Client\Github\Resource\Organization as BaseOrganization;
 use ApiClients\Client\Github\Resource\OrganizationInterface;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Organization extends BaseOrganization
 {

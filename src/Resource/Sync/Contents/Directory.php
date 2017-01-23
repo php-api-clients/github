@@ -2,9 +2,9 @@
 
 namespace ApiClients\Client\Github\Resource\Sync\Contents;
 
-use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 use ApiClients\Client\Github\Resource\Contents\Directory as BaseDirectory;
 use ApiClients\Client\Github\Resource\Contents\DirectoryInterface;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Directory extends BaseDirectory
 {

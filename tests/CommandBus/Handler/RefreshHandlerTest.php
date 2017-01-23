@@ -2,7 +2,6 @@
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
-use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Handler\RefreshHandler;
 use ApiClients\Foundation\Resource\ResourceInterface;

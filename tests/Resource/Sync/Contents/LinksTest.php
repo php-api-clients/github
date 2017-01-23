@@ -2,9 +2,9 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Sync\Contents;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Contents\Links;
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class LinksTest extends AbstractResourceTest
 {

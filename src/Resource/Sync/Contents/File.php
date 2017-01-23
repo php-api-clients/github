@@ -2,9 +2,9 @@
 
 namespace ApiClients\Client\Github\Resource\Sync\Contents;
 
-use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 use ApiClients\Client\Github\Resource\Contents\File as BaseFile;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class File extends BaseFile
 {

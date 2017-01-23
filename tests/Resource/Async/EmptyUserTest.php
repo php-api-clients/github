@@ -2,8 +2,8 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Async;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 use ApiClients\Client\Github\Resource\Async\EmptyUser;
+use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
 final class EmptyUserTest extends AbstractEmptyResourceTest
 {

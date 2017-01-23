@@ -3,9 +3,9 @@
 namespace ApiClients\Client\Github;
 
 use ApiClients\Client\Github\Resource\UserInterface;
-use function Clue\React\Block\await;
 use React\EventLoop\Factory;
 use React\EventLoop\LoopInterface;
+use function Clue\React\Block\await;
 
 final class Client
 {
