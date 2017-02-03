@@ -7,7 +7,6 @@
 [![License](https://poser.pugx.org/api-clients/github/license.png)](https://packagist.org/packages/api-clients/github)
 [![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/github/badge.svg)](https://travis-ci.org/php-api-clients/github)
 
-
 # Goals
 
 * 100% Github [API](https://developer.github.com/v3/) support
