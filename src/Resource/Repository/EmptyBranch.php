@@ -2,6 +2,7 @@
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
+use ApiClients\Client\Github\Resource\TreeInterface;
 use ApiClients\Foundation\Resource\EmptyResourceInterface;
 
 abstract class EmptyBranch implements BranchInterface, EmptyResourceInterface
@@ -15,9 +16,9 @@ abstract class EmptyBranch implements BranchInterface, EmptyResourceInterface
     }
 
     /**
-     * @return Repository\Tree
+     * @return TreeInterface
      */
-    public function commit() : Repository\Tree
+    public function commit() : TreeInterface
     {
         return null;
     }
