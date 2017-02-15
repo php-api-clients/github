@@ -1,0 +1,9 @@
+class: Repository\Branch
+properties:
+  name: string
+  commit:
+    type: Tree
+    annotations:
+      nested: Tree
+  protected: bool
+  protection_url: string

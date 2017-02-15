@@ -1,0 +1,4 @@
+class: Tree
+properties:
+  url: string
+  sha: string

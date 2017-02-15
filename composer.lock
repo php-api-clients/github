@@ -1644,23 +1644,23 @@
         },
         {
             "name": "react/dns",
-            "version": "v0.4.3",
+            "version": "v0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/dns.git",
-                "reference": "751b3129556e04944f164e3556a20ca6e201e459"
+                "reference": "e3064994379cb4d1e0ee3f5b850b6e8748efae3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/dns/zipball/751b3129556e04944f164e3556a20ca6e201e459",
-                "reference": "751b3129556e04944f164e3556a20ca6e201e459",
+                "url": "https://api.github.com/repos/reactphp/dns/zipball/e3064994379cb4d1e0ee3f5b850b6e8748efae3b",
+                "reference": "e3064994379cb4d1e0ee3f5b850b6e8748efae3b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "react/cache": "~0.4.0|~0.3.0",
                 "react/promise": "~2.1|~1.2",
-                "react/socket": "~0.4.0|~0.3.0"
+                "react/socket": "^0.5 || ^0.4.4"
             },
             "type": "library",
             "autoload": {
@@ -1677,7 +1677,7 @@
                 "dns",
                 "dns-resolver"
             ],
-            "time": "2016-08-01T10:09:07+00:00"
+            "time": "2017-02-13T09:58:13+00:00"
         },
         {
             "name": "react/event-loop",
@@ -2409,12 +2409,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/resource-test-utilities.git",
-                "reference": "5fc10ac6a20b6fa4017f32f534a3fc2c9cbe19a0"
+                "reference": "4d143157bbc78ad6cd8fa127eaa9ce4b763b8fca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/resource-test-utilities/zipball/5fc10ac6a20b6fa4017f32f534a3fc2c9cbe19a0",
-                "reference": "5fc10ac6a20b6fa4017f32f534a3fc2c9cbe19a0",
+                "url": "https://api.github.com/repos/php-api-clients/resource-test-utilities/zipball/4d143157bbc78ad6cd8fa127eaa9ce4b763b8fca",
+                "reference": "4d143157bbc78ad6cd8fa127eaa9ce4b763b8fca",
                 "shasum": ""
             },
             "require": {
@@ -2448,7 +2448,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-01-14 19:15:57"
+            "time": "2017-02-13T21:39:49+00:00"
         },
         {
             "name": "api-clients/test-utilities",
