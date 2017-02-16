@@ -1,4 +1,5 @@
 all: cs unit
+all-coverage: cs unit-coverage
 travis: cs travis-unit
 contrib: cs unit
 
@@ -9,6 +10,9 @@ cs: init
 	./vendor/bin/phpcs --standard=PSR2 src/
 
 unit: init
+	./vendor/bin/phpunit
+
+unit-coverage: init
 	./vendor/bin/phpunit --coverage-text --coverage-html covHtml
 
 travis-unit: init
