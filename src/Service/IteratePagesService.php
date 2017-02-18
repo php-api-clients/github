@@ -15,7 +15,7 @@ use Rx\SchedulerInterface;
 use function React\Promise\all;
 use function React\Promise\resolve;
 
-final class IteratePagesService implements ServiceInterface
+class IteratePagesService implements ServiceInterface
 {
     /**
      * @var RequestService
