@@ -7,7 +7,7 @@ use React\EventLoop\Factory;
 use React\EventLoop\LoopInterface;
 use function Clue\React\Block\await;
 
-final class Client
+final class Client implements ClientInterface
 {
     /**
      * @var LoopInterface
