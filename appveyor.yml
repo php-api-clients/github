@@ -8,16 +8,10 @@ environment:
   matrix:
   - dependencies: lowest
     php_ver_target: 7.0
-  - dependencies: lowest
-    php_ver_target: 7.1
   - dependencies: current
     php_ver_target: 7.0
-  - dependencies: current
-    php_ver_target: 7.1
   - dependencies: highest
     php_ver_target: 7.0
-  - dependencies: highest
-    php_ver_target: 7.1
 
 ## Cache composer bits
 cache:
