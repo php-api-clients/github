@@ -1,8 +1,8 @@
 <?php
 
-use React\EventLoop\Factory;
 use ApiClients\Client\Github\AsyncClient;
-use ApiClients\Client\Github\Resource\UserInterface;
+use ApiClients\Client\Github\Resource\Async\User;
+use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
@@ -22,7 +22,10 @@ if (count($argv) > 1) {
 }
 
 foreach ($users as $user) {
-    $client->user($user)->then(function (UserInterface $user) {
+    $client->user($user)->then(function (User $user) {
+        resource_pretty_print($user);
+        return $user->refresh();
+    })->done(function (User $user) {
         resource_pretty_print($user);
     });
 }
