@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Authentication;
+namespace ApiClients\Tests\Client\Github\Authentication;
 
+use ApiClients\Client\Github\Authentication\Token;
 use ApiClients\Client\Github\AuthenticationInterface;
 use ApiClients\Tests\Client\Github\AbstractAuthenticationTest;
 
