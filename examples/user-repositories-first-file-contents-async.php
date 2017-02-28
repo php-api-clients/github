@@ -17,7 +17,7 @@ $client = AsyncClient::create($loop, require 'resolve_token.php');
 $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($argv) {
     resource_pretty_print($user);
     return $user->repository($argv[2] ?? 'github');
-})->done(function (Repository $repository) {
+})->then(function (Repository $repository) {
     $repository->contents()->filter(function ($resource) {
         return $resource instanceof FileInterface;
     })->take(1)->subscribeCallback(function ($content) {
@@ -32,6 +32,6 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     }, function ($error) {
         echo (string)$error;
     });
-});
+})->done();
 
 $loop->run();

@@ -10,7 +10,7 @@ require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');
 
-$client->whoami()->then(function (UserInterface $user) {
+$client->whoami()->done(function (UserInterface $user) {
     resource_pretty_print($user);
 });
 

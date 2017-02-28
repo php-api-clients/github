@@ -24,8 +24,6 @@ $client->user($argv[1] ?? 'WyriHaximus')->then(function (UserInterface $user) us
 })->done(function (Label $label) {
     resource_pretty_print($label);
     echo 'Done!', PHP_EOL;
-}, function ($e) {
-    echo (string)$e;
 });
 
 $loop->run();

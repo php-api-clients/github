@@ -15,13 +15,13 @@ $client = AsyncClient::create($loop, require 'resolve_token.php');
 $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($argv) {
     resource_pretty_print($user);
     return $user->repository($argv[2] ?? 'github');
-})->done(function (Repository $repository) {
+})->then(function (Repository $repository) {
     resource_pretty_print($repository, 1, true);
     $repository->branches()->subscribeCallback(function ($labels) {
         resource_pretty_print($labels, 2, true);
     }, function ($error) {
         echo (string)$error;
     });
-});
+})->done();
 
 $loop->run();
