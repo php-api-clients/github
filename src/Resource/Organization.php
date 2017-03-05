@@ -150,6 +150,6 @@ abstract class Organization extends AbstractResource implements OrganizationInte
      */
     public function description() : string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 }
