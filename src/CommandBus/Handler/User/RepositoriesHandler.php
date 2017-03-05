@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\CommandBus\Handler;
+namespace ApiClients\Client\Github\CommandBus\Handler\User;
 
-use ApiClients\Client\Github\CommandBus\Command\RepositoriesCommand;
+use ApiClients\Client\Github\CommandBus\Command\User\RepositoriesCommand;
 use ApiClients\Client\Github\Resource\RepositoryInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;

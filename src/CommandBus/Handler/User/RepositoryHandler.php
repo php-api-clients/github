@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\CommandBus\Handler;
+namespace ApiClients\Client\Github\CommandBus\Handler\User;
 
-use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
+use ApiClients\Client\Github\CommandBus\Command\User\RepositoryCommand;
 use ApiClients\Client\Github\Resource\RepositoryInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use React\Promise\PromiseInterface;

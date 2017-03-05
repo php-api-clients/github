@@ -3,8 +3,8 @@
 namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
-use ApiClients\Client\Github\CommandBus\Command\RepositoriesCommand;
-use ApiClients\Client\Github\CommandBus\Command\RepositoryCommand;
+use ApiClients\Client\Github\CommandBus\Command\User\RepositoriesCommand;
+use ApiClients\Client\Github\CommandBus\Command\User\RepositoryCommand;
 use ApiClients\Client\Github\CommandBus\Command\User\OrganizationsCommand;
 use ApiClients\Client\Github\Resource\User as BaseUser;
 use React\Promise\PromiseInterface;
