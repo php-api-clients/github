@@ -12,6 +12,6 @@ $client = AsyncClient::create($loop, require 'resolve_token.php');
 
 $client->whoami()->done(function (UserInterface $user) {
     resource_pretty_print($user);
-});
+}, 'display_throwable');
 
 $loop->run();

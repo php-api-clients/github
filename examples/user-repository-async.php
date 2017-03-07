@@ -20,6 +20,6 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     return $repository->refresh();
 })->done(function (Repository $repository) {
     resource_pretty_print($repository, 1, true);
-});
+}, 'display_throwable');
 
 $loop->run();

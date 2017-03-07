@@ -22,6 +22,6 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     }, function ($error) {
         echo (string)$error;
     });
-})->done();
+})->done(null, 'display_throwable');
 
 $loop->run();

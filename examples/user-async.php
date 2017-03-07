@@ -27,7 +27,7 @@ foreach ($users as $user) {
         return $user->refresh();
     })->done(function (User $user) {
         resource_pretty_print($user);
-    });
+    }, 'display_throwable');
 }
 
 $loop->run();

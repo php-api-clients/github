@@ -18,6 +18,6 @@ $client->user($argv[1] ?? 'WyriHaximus')->then(function (User $user) {
     }, function ($error) {
         echo (string)$error;
     });
-})->done();
+})->done(null, 'display_throwable');
 
 $loop->run();

@@ -12,6 +12,6 @@ $client = AsyncClient::create($loop, require 'resolve_token.php');
 
 $client->myOrganizations()->subscribeCallback(function (OrganizationInterface $organization) {
     resource_pretty_print($organization);
-});
+}, 'display_throwable');
 
 $loop->run();
