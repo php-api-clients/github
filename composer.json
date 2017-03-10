@@ -12,11 +12,12 @@
     "require": {
         "php": "^7.0",
         "api-clients/client-services": "dev-master",
-        "api-clients/transport": "dev-feature-error-handling-middlware as dev-master",
         "api-clients/foundation": "dev-master",
-        "api-clients/middleware-http-exceptions": "dev-master",
+        "api-clients/middleware-http-exceptions": "^1.0",
         "api-clients/middleware-token-authorization": "^2.0",
-        "api-clients/service": "dev-master"
+        "api-clients/middleware-user-agent": "^1.0",
+        "api-clients/service": "dev-master",
+        "api-clients/transport": "dev-feature-error-handling-middlware as dev-master"
     },
     "require-dev": {
         "api-clients/appveyor": "dev-master",

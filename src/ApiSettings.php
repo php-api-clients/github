@@ -7,9 +7,11 @@ use ApiClients\Foundation\Options as FoundationOptions;
 use ApiClients\Foundation\Transport\Middleware\JsonDecodeMiddleware;
 use ApiClients\Foundation\Transport\Middleware\JsonEncodeMiddleware;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
-use ApiClients\Foundation\Transport\UserAgentStrategies;
-use function ApiClients\Foundation\options_merge;
 use ApiClients\Middleware\HttpExceptions\HttpExceptionsMiddleware;
+use ApiClients\Middleware\UserAgent\Options as UserAgentMiddlewareOptions;
+use ApiClients\Middleware\UserAgent\UserAgentMiddleware;
+use ApiClients\Middleware\UserAgent\UserAgentStrategies;
+use function ApiClients\Foundation\options_merge;
 
 final class ApiSettings
 {
@@ -26,9 +28,14 @@ final class ApiSettings
                 JsonDecodeMiddleware::class,
                 JsonEncodeMiddleware::class,
                 HttpExceptionsMiddleware::class,
+                UserAgentMiddleware::class,
             ],
-            TransportOptions::USER_AGENT_STRATEGY => UserAgentStrategies::PACKAGE_VERSION,
-            TransportOptions::PACKAGE => 'api-clients/github',
+            TransportOptions::DEFAULT_REQUEST_OPTIONS => [
+                UserAgentMiddleware::class => [
+                    UserAgentMiddlewareOptions::STRATEGY => UserAgentStrategies::PACKAGE_VERSION,
+                    UserAgentMiddlewareOptions::PACKAGE => 'api-clients/github',
+                ],
+            ],
         ],
     ];
 
