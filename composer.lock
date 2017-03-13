@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce353cfefa8dff21fbb9e02564d3e0f5",
+    "content-hash": "dc77dd7e01b6c020997c1df8a9d91813",
     "packages": [
         {
             "name": "api-clients/client-services",
@@ -104,12 +104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/foundation.git",
-                "reference": "010c8b71eebcde9d701bb1b98e07d1db39d8214b"
+                "reference": "38eeac1353ed3213e0f9187575bb2a5a2dfc6c7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/foundation/zipball/010c8b71eebcde9d701bb1b98e07d1db39d8214b",
-                "reference": "010c8b71eebcde9d701bb1b98e07d1db39d8214b",
+                "url": "https://api.github.com/repos/php-api-clients/foundation/zipball/38eeac1353ed3213e0f9187575bb2a5a2dfc6c7f",
+                "reference": "38eeac1353ed3213e0f9187575bb2a5a2dfc6c7f",
                 "shasum": ""
             },
             "require": {
@@ -117,7 +117,7 @@
                 "api-clients/hydrator": "dev-master",
                 "api-clients/middleware": "^2.0||^1.1",
                 "api-clients/service": "dev-master",
-                "api-clients/transport": "dev-feature-error-handling-middlware as dev-master",
+                "api-clients/transport": "dev-master",
                 "league/event": "^2.1",
                 "php": "^7.0",
                 "php-di/php-di": "^5.4"
@@ -149,7 +149,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-03-07 06:55:53"
+            "time": "2017-03-11 00:12:39"
         },
         {
             "name": "api-clients/hydrator",
@@ -563,16 +563,16 @@
         },
         {
             "name": "api-clients/transport",
-            "version": "dev-feature-error-handling-middlware",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/transport.git",
-                "reference": "8f318a837186fa2cf5725a3d95509dae0e6f0e1a"
+                "reference": "8cad202e27aaff6ba777938d11bc8f778716b34e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/transport/zipball/8f318a837186fa2cf5725a3d95509dae0e6f0e1a",
-                "reference": "8f318a837186fa2cf5725a3d95509dae0e6f0e1a",
+                "url": "https://api.github.com/repos/php-api-clients/transport/zipball/8cad202e27aaff6ba777938d11bc8f778716b34e",
+                "reference": "8cad202e27aaff6ba777938d11bc8f778716b34e",
                 "shasum": ""
             },
             "require": {
@@ -623,7 +623,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-03-10 19:55:47"
+            "time": "2017-03-11 00:03:30"
         },
         {
             "name": "clue/block-react",
@@ -1830,16 +1830,16 @@
         },
         {
             "name": "react/dns",
-            "version": "v0.4.5",
+            "version": "v0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/dns.git",
-                "reference": "a029bdd95b285deca3211944e9d0ffe3476f1945"
+                "reference": "a4c32f0021c742a1781c445270cb29a2d4b76fed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/dns/zipball/a029bdd95b285deca3211944e9d0ffe3476f1945",
-                "reference": "a029bdd95b285deca3211944e9d0ffe3476f1945",
+                "url": "https://api.github.com/repos/reactphp/dns/zipball/a4c32f0021c742a1781c445270cb29a2d4b76fed",
+                "reference": "a4c32f0021c742a1781c445270cb29a2d4b76fed",
                 "shasum": ""
             },
             "require": {
@@ -1847,7 +1847,11 @@
                 "react/cache": "~0.4.0|~0.3.0",
                 "react/promise": "~2.1|~1.2",
                 "react/promise-timer": "~1.1",
-                "react/socket": "^0.5 || ^0.4.4"
+                "react/socket": "^0.5 || ^0.4.4",
+                "react/stream": "^0.6 || ^0.5 || ^0.4.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0 || ^4.8.10"
             },
             "type": "library",
             "autoload": {
@@ -1864,7 +1868,7 @@
                 "dns",
                 "dns-resolver"
             ],
-            "time": "2017-03-02T20:03:08+00:00"
+            "time": "2017-03-11T13:46:09+00:00"
         },
         {
             "name": "react/event-loop",
@@ -4869,14 +4873,7 @@
             "time": "2016-11-23T20:04:58+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "dev-master",
-            "alias_normalized": "9999999-dev",
-            "version": "dev-feature-error-handling-middlware",
-            "package": "api-clients/transport"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "api-clients/client-services": 20,
