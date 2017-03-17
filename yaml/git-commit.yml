@@ -1,0 +1,18 @@
+class: Git\Commit
+properties:
+  url: string
+  author:
+    type: User
+    annotations:
+      nested: User
+  comitter:
+    type: User
+    annotations:
+      nested: User
+  message: string
+  tree:
+    type: Tree
+    annotations:
+      nested: Tree
+  comment_count: int
+  protection_url: string

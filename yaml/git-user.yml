@@ -1,0 +1,5 @@
+class: Git\User
+properties:
+  name: string
+  email: string
+  date: DateTimeInterface

@@ -1,0 +1,21 @@
+class: Repository\Commit
+properties:
+  url: string
+  sha: string
+  html_url: string
+  commit:
+    type: Git\Commit
+    annotations:
+      nested: Git\Commit
+  author:
+    type: User
+    annotations:
+      nested: User
+  comitter:
+    type: User
+    annotations:
+      nested: User
+  parents:
+    type: Tree
+    annotations:
+      collection: Tree
