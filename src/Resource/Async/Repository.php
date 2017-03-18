@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\Resource\Async;
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
@@ -28,6 +29,13 @@ class Repository extends BaseRepository
     {
         return unwrapObservableFromPromise($this->handleCommand(
             new BranchesCommand($this->fullName())
+        ));
+    }
+
+    public function commits(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new CommitsCommand($this->fullName())
         ));
     }
 

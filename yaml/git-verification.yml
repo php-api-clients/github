@@ -1,0 +1,6 @@
+class: Git\Verification
+properties:
+  verified: bool
+  reason: string
+  signature: string
+  payload: string
