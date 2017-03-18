@@ -6,8 +6,10 @@ use ApiClients\Client\Github\Resource\Repository\Commit as BaseCommit;
 
 class Commit extends BaseCommit
 {
-    public function refresh() : Commit
+    public function refresh() : PromiseInterface
     {
-        throw new \Exception('TODO: create refresh method!');
+        return $this->handleCommand(
+            new RefreshCommand($this)
+        );
     }
 }
