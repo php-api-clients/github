@@ -1,25 +1,32 @@
-all: cs unit
-all-coverage: cs unit-coverage
-travis: cs travis-unit
-contrib: cs unit
+all:
+	composer run-script qa-all --timeout=0
+
+all-coverage:
+	composer run-script qa-all-coverage --timeout=0
+
+ci:
+	composer run-script qa-ci --timeout=0
+
+ci-with-coverage:
+	composer run-script qa-ci-coverage --timeout=0
+
+contrib:
+	composer run-script qa-contrib --timeout=0
 
 init:
-	if [ ! -d vendor ]; then composer install; fi;
+	composer ensure-installed
 
-cs: init
-	./vendor/bin/phpcs --standard=PSR2 src/
+cs:
+	composer cs
 
-unit: init
-	./vendor/bin/phpunit
+unit:
+	composer run-script unit --timeout=0
 
-unit-coverage: init
-	./vendor/bin/phpunit --coverage-text --coverage-html covHtml
+unit-coverage:
+	composer run-script unit-coverage --timeout=0
 
-travis-unit: init
-	./vendor/bin/phpunit --coverage-text --coverage-clover ./build/logs/clover.xml
-
-travis-coverage: init
-	if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi
+ci-coverage: init
+	composer ci-coverage
 
 generate-resources: init
 	./vendor/bin/api-client-resource-generator ./resources.yml
