@@ -1,0 +1,14 @@
+class: Repository\Commit\Status
+properties:
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface
+  state: string
+  target_url: string
+  description: string
+  id: int
+  url: string
+  context: string
+  creator:
+    type: User
+    annotations:
+      nested: User
