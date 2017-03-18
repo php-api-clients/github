@@ -50,5 +50,54 @@
         "api-clients/appveyor": "Easy access to AppVeyor client",
         "api-clients/scrutinizer": "Easy access to Scrutinizer client",
         "api-clients/travis": "Easy access to Travis client"
+    },
+    "scripts": {
+        "ensure-installed": "composer install --ansi -n -q",
+        "cs": [
+            "@ensure-installed",
+            "phpcs --standard=PSR2 src/"
+        ],
+        "unit": [
+            "@ensure-installed",
+            "phpunit --colors=always -c phpunit.xml.dist"
+        ],
+        "unit-coverage": [
+            "@ensure-installed",
+            "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
+        ],
+        "lint-php": [
+            "@ensure-installed",
+            "parallel-lint --exclude vendor ."
+        ],
+        "qa-all": [
+            "@lint-php",
+            "@cs",
+            "@unit"
+        ],
+        "qa-all-coverage": [
+            "@lint-php",
+            "@cs",
+            "@unit-coverage"
+        ],
+        "qa-windows": [
+            "@lint-php",
+            "@cs",
+            "@unit"
+        ],
+        "qa-ci": [
+            "@qa-all"
+        ],
+        "qa-ci-coverage": [
+            "@qa-all-coverage"
+        ],
+        "qa-ci-windows": [
+            "@qa-windows"
+        ],
+        "qa-contrib": [
+            "@qa-all"
+        ],
+        "ci-coverage": [
+            "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
+        ]
     }
 }
