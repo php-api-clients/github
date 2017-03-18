@@ -38,9 +38,14 @@ class IteratePagesService implements ServiceInterface
         ) use ($path) {
             $promise = $this->requestService->
                 handle(new Request('GET', $path))->
-                done(function ($response) use ($observer) {
-                    return $this->handleResponse($response, $observer);
-                })
+                then(
+                    function ($response) use ($observer) {
+                        return $this->handleResponse($response, $observer);
+                    },
+                    function ($error) use ($observer) {
+                        $observer->onError($error);
+                    }
+                )
             ;
 
             return new CallbackDisposable(function () use ($promise) {
@@ -92,6 +97,9 @@ class IteratePagesService implements ServiceInterface
     ): CancellablePromiseInterface {
         return $this->handleResponseContents($response, $observer)->then(function () use ($observer) {
             $observer->onCompleted();
+            return new FulfilledPromise();
+        }, function ($error) use ($observer) {
+            $observer->onError($error);
             return new FulfilledPromise();
         });
     }
