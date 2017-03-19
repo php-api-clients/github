@@ -24,3 +24,7 @@ properties:
   updated_at: DateTimeInterface
   permissions: array
   html_url: string
+  owner:
+    type: User
+    annotations:
+      nested: User
