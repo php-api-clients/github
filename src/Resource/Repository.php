@@ -3,10 +3,14 @@
 namespace ApiClients\Client\Github\Resource;
 
 use ApiClients\Foundation\Hydrator\Annotations\EmptyResource;
+use ApiClients\Foundation\Hydrator\Annotations\Nested;
 use ApiClients\Foundation\Resource\AbstractResource;
 use DateTimeInterface;
 
 /**
+ * @Nested(
+ *     owner="User"
+ * )
  * @EmptyResource("EmptyRepository")
  */
 abstract class Repository extends AbstractResource implements RepositoryInterface
@@ -122,14 +126,19 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     protected $updated_at;
 
     /**
+     * @var array
+     */
+    protected $permissions;
+
+    /**
      * @var string
      */
     protected $html_url;
 
     /**
-     * @var array
+     * @var User
      */
-    //protected $permissions;
+    protected $owner;
 
     /**
      * @return int
@@ -315,16 +324,19 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
         return $this->permissions;
     }
 
-    public function labels()
-    {
-        return $this->labels;
-    }
-
     /**
      * @return string
      */
     public function htmlUrl() : string
     {
         return $this->html_url;
+    }
+
+    /**
+     * @return User
+     */
+    public function owner() : User
+    {
+        return $this->owner;
     }
 }

@@ -128,4 +128,9 @@ interface RepositoryInterface extends ResourceInterface
      * @return string
      */
     public function htmlUrl() : string;
+
+    /**
+     * @return User
+     */
+    public function owner() : User;
 }

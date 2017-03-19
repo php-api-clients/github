@@ -197,4 +197,12 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     {
         return null;
     }
+
+    /**
+     * @return User
+     */
+    public function owner() : User
+    {
+        return null;
+    }
 }
