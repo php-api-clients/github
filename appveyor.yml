@@ -8,14 +8,24 @@ environment:
   matrix:
   - dependencies: lowest
     php_ver_target: 7.0
+  - dependencies: lowest
+    php_ver_target: 7.1
   - dependencies: current
     php_ver_target: 7.0
+  - dependencies: current
+    php_ver_target: 7.1
   - dependencies: highest
     php_ver_target: 7.0
+  - dependencies: highest
+    php_ver_target: 7.1
 
-## Cache composer bits
+## Cache composer, chocolatey and php bits
 cache:
     - '%LOCALAPPDATA%\Composer\files -> composer.lock'
+    - composer.phar
+    - C:\ProgramData\chocolatey\bin -> .appveyor.yml
+    - C:\ProgramData\chocolatey\lib -> .appveyor.yml
+    - c:\tools\php -> .appveyor.yml
 
 ## Set up environment varriables
 init:
@@ -27,7 +37,7 @@ init:
 ## Install PHP and composer, and run the appropriate composer command
 install:
     - IF EXIST c:\tools\php (SET PHP=0)
-    - ps: appveyor-retry cinst -y php --ignore-checksums --version ((choco search php --exact --all-versions -r | select-string -pattern $Env:php_ver_target | Select-Object -first 1) -replace '[php|]','')
+    - ps: appveyor-retry cinst --params '""/InstallDir:C:\tools\php""' --ignore-checksums -y php --version ((choco search php --exact --all-versions -r | select-string -pattern $env:php_ver_target | sort { [version]($_ -split '\|' | select -last 1) } -Descending | Select-Object -first 1) -replace '[php|]','')
     - cd c:\tools\php
     - IF %PHP%==1 copy php.ini-production php.ini /Y
     - IF %PHP%==1 echo date.timezone="UTC" >> php.ini
