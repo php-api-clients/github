@@ -31,6 +31,6 @@ final class RefreshHandler
     {
         $resource = $command->getResource();
 
-        return $this->service->handle($resource->url(), '', $resource::HYDRATE_CLASS);
+        return $this->service->fetch($resource->url(), '', $resource::HYDRATE_CLASS);
     }
 }

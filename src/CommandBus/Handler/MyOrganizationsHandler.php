@@ -40,12 +40,12 @@ final class MyOrganizationsHandler
      */
     public function handle(MyOrganizationsCommand $command): PromiseInterface
     {
-        return resolve(unwrapObservableFromPromise(
-            $this->service->handle('user/orgs')
+        return resolve(
+            $this->service->iterate('user/orgs')
         )->flatMap(function ($organizations) {
             return Observable::fromArray($organizations);
         })->map(function ($organization) {
             return $this->hydrator->hydrate(OrganizationInterface::HYDRATE_CLASS, $organization);
-        }));
+        });
     }
 }

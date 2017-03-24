@@ -24,7 +24,7 @@ final class RefreshHandlerTest extends TestCase
         $command = new RefreshCommand($resource);
 
         $service = $this->prophesize(FetchAndHydrateService::class);
-        $service->handle('https://example.com/', '', 'foo.bar')->shouldBeCalled()->willReturn(resolve(true));
+        $service->fetch('https://example.com/', '', 'foo.bar')->shouldBeCalled()->willReturn(resolve(true));
 
         $handler = new RefreshHandler($service->reveal());
 

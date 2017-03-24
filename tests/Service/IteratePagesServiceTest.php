@@ -62,7 +62,7 @@ final class IteratePagesServiceTest extends TestCase
 
         $items = [];
         $completed = false;
-        $stream = unwrapObservableFromPromise($iteratePagesService->handle($path))->subscribeCallback(
+        $stream = $iteratePagesService->iterate($path)->subscribe(
             function ($item) use (&$items, &$stream) {
                 $items[] = $item;
 
@@ -136,7 +136,7 @@ final class IteratePagesServiceTest extends TestCase
 
         $items = [];
         $completed = false;
-        unwrapObservableFromPromise($iteratePagesService->handle($path))->take(2)->subscribeCallback(
+        $iteratePagesService->iterate($path)->take(2)->subscribe(
             function ($item) use (&$items, &$stream) {
                 $items[] = $item;
             },

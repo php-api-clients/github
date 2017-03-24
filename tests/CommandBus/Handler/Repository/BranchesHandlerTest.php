@@ -25,7 +25,7 @@ final class BranchesHandlerTest extends TestCase
         $command = new BranchesCommand('api-clients/github');
 
         $iteratePagesService = $this->prophesize(IteratePagesService::class);
-        $iteratePagesService->handle('repos/api-clients/github/branches')->shouldBeCalled()->willReturn(resolve(Observable::fromArray([[$branchArray]])));
+        $iteratePagesService->iterate('repos/api-clients/github/branches')->shouldBeCalled()->willReturn(Observable::fromArray([[$branchArray]]));
 
         $hydrator = $this->prophesize(Hydrator::class);
         $hydrator->hydrate(BranchInterface::HYDRATE_CLASS, $branchArray)->shouldBeCalled()->wilLReturn($branch);

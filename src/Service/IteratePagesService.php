@@ -2,7 +2,6 @@
 
 namespace ApiClients\Client\Github\Service;
 
-use ApiClients\Foundation\Service\ServiceInterface;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
@@ -15,7 +14,7 @@ use Rx\Subject\Subject;
 use function React\Promise\all;
 use function React\Promise\resolve;
 
-class IteratePagesService implements ServiceInterface
+class IteratePagesService
 {
     /**
      * @var RequestService
@@ -30,19 +29,16 @@ class IteratePagesService implements ServiceInterface
         $this->requestService = $requestService;
     }
 
-    public function handle(string $path = null): CancellablePromiseInterface
+    public function iterate(string $path): Observable
     {
-        return resolve(Observable::create(function (
-            ObserverInterface $observer,
-            SchedulerInterface $scheduler
+        return Observable::create(function (
+            ObserverInterface $observer
         ) use ($path) {
-
             $subject = new Subject();
-            $subject->asObservable()->subscribeCallback(
+            $subject->asObservable()->subscribe(
                 [$observer, 'onNext'],
                 [$observer, 'onError'],
-                [$observer, 'onCompleted'],
-                $scheduler
+                [$observer, 'onCompleted']
             );
 
             $this->sendRequest($path, $subject);
@@ -50,7 +46,7 @@ class IteratePagesService implements ServiceInterface
             return new CallbackDisposable(function () use ($subject) {
                 $subject->dispose();
             });
-        }));
+        });
     }
 
     private function sendRequest(string $path, Subject $subject)

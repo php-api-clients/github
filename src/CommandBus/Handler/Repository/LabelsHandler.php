@@ -40,12 +40,13 @@ final class LabelsHandler
      */
     public function handle(LabelsCommand $command): PromiseInterface
     {
-        return resolve(unwrapObservableFromPromise(
-            $this->iteratePagesService->handle('repos/' . $command->getFullName() . '/labels')
-        )->flatMap(function ($labels) {
-            return Observable::fromArray($labels);
-        })->map(function ($label) {
-            return $this->hydrator->hydrate(LabelInterface::HYDRATE_CLASS, $label);
-        }));
+        return resolve(
+            $this->iteratePagesService->iterate('repos/' . $command->getFullName() . '/labels')
+                ->flatMap(function ($labels) {
+                    return Observable::fromArray($labels);
+                })->map(function ($label) {
+                    return $this->hydrator->hydrate(LabelInterface::HYDRATE_CLASS, $label);
+                })
+        );
     }
 }

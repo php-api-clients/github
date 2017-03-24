@@ -25,7 +25,7 @@ final class CommitsHandlerTest extends TestCase
         $command = new CommitsCommand('api-clients/github');
 
         $iteratePagesService = $this->prophesize(IteratePagesService::class);
-        $iteratePagesService->handle('repos/api-clients/github/commits')->shouldBeCalled()->willReturn(resolve(Observable::fromArray([[$branchArray]])));
+        $iteratePagesService->iterate('repos/api-clients/github/commits')->shouldBeCalled()->willReturn(Observable::fromArray([[$branchArray]]));
 
         $hydrator = $this->prophesize(Hydrator::class);
         $hydrator->hydrate(CommitInterface::HYDRATE_CLASS, $branchArray)->shouldBeCalled()->wilLReturn($branch);
