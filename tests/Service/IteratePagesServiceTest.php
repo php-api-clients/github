@@ -10,6 +10,7 @@ use Prophecy\Argument;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
 use function React\Promise\resolve;
+use Rx\Testing\TestScheduler;
 
 final class IteratePagesServiceTest extends TestCase
 {
@@ -54,10 +55,12 @@ final class IteratePagesServiceTest extends TestCase
         $client->request($thirdRequest, Argument::type('array'))->shouldNotBeCalled();
 
         $requestService = new RequestService($client->reveal());
-        $iteratePagesService = new IteratePagesService($requestService);
+        $testScheduler = new TestScheduler();
+        $iteratePagesService = new IteratePagesService($requestService, $testScheduler);
 
         $items = [];
         $completed = false;
+
         $stream = $iteratePagesService->iterate($path)->take(2)->subscribe(
             function ($item) use (&$items, &$stream) {
                 $items[] = $item;
@@ -69,6 +72,8 @@ final class IteratePagesServiceTest extends TestCase
                 $completed = true;
             }
         );
+
+        $testScheduler->start();
 
         self::assertTrue($completed);
         self::assertSame([$firstBody, $secondBody], $items);
