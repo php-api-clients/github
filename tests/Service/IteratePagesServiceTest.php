@@ -83,7 +83,7 @@ final class IteratePagesServiceTest extends TestCase
         self::assertSame([$firstBody, $secondBody], $items);
     }
 
-    public function testHandleContinueEvenThoughNoOneIsListeningDontDoThisHopingRxPHPChangesSomeThingsAfterIveOpenedAnIssueButOnlyIfItIsValid()
+    public function testHandleTakingTwoWillStillMakeThirdRequest()
     {
         $path = '/foo.bar';
 
