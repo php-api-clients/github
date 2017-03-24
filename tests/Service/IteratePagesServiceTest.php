@@ -9,10 +9,6 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
-use Rx\Observable;
-use Rx\Scheduler\ImmediateScheduler;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
-use function React\Promise\all;
 use function React\Promise\resolve;
 
 final class IteratePagesServiceTest extends TestCase
@@ -75,8 +71,7 @@ final class IteratePagesServiceTest extends TestCase
             },
             function () use (&$completed) {
                 $completed = true;
-            },
-            new ImmediateScheduler()
+            }
         );
 
         self::assertFalse($completed);
@@ -145,8 +140,7 @@ final class IteratePagesServiceTest extends TestCase
             },
             function () use (&$completed) {
                 $completed = true;
-            },
-            new ImmediateScheduler()
+            }
         );
 
         self::assertTrue($completed);
