@@ -40,12 +40,13 @@ final class CommitsHandler
      */
     public function handle(CommitsCommand $command): PromiseInterface
     {
-        return resolve(unwrapObservableFromPromise(
-            $this->iteratePagesService->handle('repos/' . $command->getFullName() . '/commits')
-        )->flatMap(function ($commits) {
-            return Observable::fromArray($commits);
-        })->map(function ($commit) {
-            return $this->hydrator->hydrate(CommitInterface::HYDRATE_CLASS, $commit);
-        }));
+        return resolve(
+            $this->iteratePagesService->iterate('repos/' . $command->getFullName() . '/commits')
+                ->flatMap(function ($commits) {
+                    return Observable::fromArray($commits);
+                })->map(function ($commit) {
+                    return $this->hydrator->hydrate(CommitInterface::HYDRATE_CLASS, $commit);
+                })
+        );
     }
 }

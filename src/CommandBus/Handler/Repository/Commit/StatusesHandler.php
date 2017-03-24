@@ -40,12 +40,13 @@ final class StatusesHandler
      */
     public function handle(StatusesCommand $command): PromiseInterface
     {
-        return resolve(unwrapObservableFromPromise(
-            $this->iteratePagesService->handle($command->getCommit()->url() . '/statuses')
-        )->flatMap(function ($statuses) {
-            return Observable::fromArray($statuses);
-        })->map(function ($status) {
-            return $this->hydrator->hydrate(StatusInterface::HYDRATE_CLASS, $status);
-        }));
+        return resolve(
+            $this->iteratePagesService->iterate($command->getCommit()->url() . '/statuses')
+                ->flatMap(function ($statuses) {
+                    return Observable::fromArray($statuses);
+                })->map(function ($status) {
+                    return $this->hydrator->hydrate(StatusInterface::HYDRATE_CLASS, $status);
+                })
+        );
     }
 }

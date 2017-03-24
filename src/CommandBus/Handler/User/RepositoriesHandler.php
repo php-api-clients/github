@@ -42,12 +42,12 @@ final class RepositoriesHandler
      */
     public function handle(RepositoriesCommand $command): PromiseInterface
     {
-        return resolve(unwrapObservableFromPromise(
-            $this->iteratePagesService->handle('users/' . $command->getLogin() . '/repos')
+        return resolve(
+            $this->iteratePagesService->iterate('users/' . $command->getLogin() . '/repos')
         )->flatMap(function ($repositories) {
             return Observable::fromArray($repositories);
         })->map(function ($repository) {
             return $this->hydrator->hydrate(RepositoryInterface::HYDRATE_CLASS, $repository);
-        }));
+        });
     }
 }

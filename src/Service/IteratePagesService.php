@@ -2,20 +2,19 @@
 
 namespace ApiClients\Client\Github\Service;
 
-use ApiClients\Foundation\Service\ServiceInterface;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
-use React\Promise\FulfilledPromise;
 use RingCentral\Psr7\Request;
 use Rx\Disposable\CallbackDisposable;
 use Rx\Observable;
 use Rx\ObserverInterface;
 use Rx\SchedulerInterface;
+use Rx\Subject\Subject;
 use function React\Promise\all;
 use function React\Promise\resolve;
 
-class IteratePagesService implements ServiceInterface
+class IteratePagesService
 {
     /**
      * @var RequestService
@@ -30,36 +29,55 @@ class IteratePagesService implements ServiceInterface
         $this->requestService = $requestService;
     }
 
-    public function handle(string $path = null): CancellablePromiseInterface
+    public function iterate(string $path): Observable
     {
-        return resolve(Observable::create(function (
-            ObserverInterface $observer,
-            SchedulerInterface $scheduler
+        return Observable::create(function (
+            ObserverInterface $observer
         ) use ($path) {
-            $promise = $this->requestService->
-                handle(new Request('GET', $path))->
-                then(
-                    function ($response) use ($observer) {
-                        return $this->handleResponse($response, $observer);
-                    },
-                    function ($error) use ($observer) {
-                        $observer->onError($error);
-                    }
-                )
-            ;
+            $subject = new Subject();
+            $subject->asObservable()->subscribe(
+                [$observer, 'onNext'],
+                [$observer, 'onError'],
+                [$observer, 'onCompleted']
+            );
 
-            return new CallbackDisposable(function () use ($promise) {
-                //$promise->cancel();
+            $this->sendRequest($path, $subject);
+
+            return new CallbackDisposable(function () use ($subject) {
+                $subject->dispose();
             });
-        }));
+        });
+    }
+
+    private function sendRequest(string $path, Subject $subject)
+    {
+        $this->requestService->
+            handle(new Request('GET', $path))->
+            then(
+                function ($response) use ($subject) {
+                    $this->handleResponse($response, $subject);
+                },
+                function ($error) use ($subject) {
+                    $subject->onError($error);
+                }
+            )
+        ;
     }
 
     private function handleResponse(
         ResponseInterface $response,
-        ObserverInterface $observer
-    ): CancellablePromiseInterface {
+        Subject $subject
+    ) {
+        $subject->onNext($response->getBody()->getJson());
+
+        if ($subject->isDisposed() || !$subject->hasObservers()) {
+            $subject->onCompleted();
+            return;
+        }
+
         if (!$response->hasHeader('link')) {
-            return $this->handleResponseContentsComplete($response, $observer);
+            $subject->onCompleted();
+            return;
         }
 
         $links = [
@@ -74,41 +92,10 @@ class IteratePagesService implements ServiceInterface
         }
 
         if ($links['next'] === false || $links['last'] === false) {
-            return $this->handleResponseContentsComplete($response, $observer);
+            $subject->onCompleted();
+            return;
         }
 
-        $promises = [];
-
-        $promises[] = $this->requestService->
-            handle(new Request('GET', $links['next']))->
-            then(function (ResponseInterface $response) use ($observer) {
-                return $this->handleResponse($response, $observer);
-            })
-        ;
-
-        $promises[] = $this->handleResponseContents($response, $observer);
-
-        return all($promises);
-    }
-
-    private function handleResponseContentsComplete(
-        ResponseInterface $response,
-        ObserverInterface $observer
-    ): CancellablePromiseInterface {
-        return $this->handleResponseContents($response, $observer)->then(function () use ($observer) {
-            $observer->onCompleted();
-            return new FulfilledPromise();
-        }, function ($error) use ($observer) {
-            $observer->onError($error);
-            return new FulfilledPromise();
-        });
-    }
-
-    private function handleResponseContents(
-        ResponseInterface $response,
-        ObserverInterface $observer
-    ): CancellablePromiseInterface {
-        $observer->onNext($response->getBody()->getJson());
-        return new FulfilledPromise();
+        $this->sendRequest($links['next'], $subject);
     }
 }

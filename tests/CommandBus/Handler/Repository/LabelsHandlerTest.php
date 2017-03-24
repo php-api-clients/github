@@ -24,7 +24,7 @@ final class LabelsHandlerTest extends TestCase
         $command = new LabelsCommand('api-clients/github');
 
         $iteratePagesService = $this->prophesize(IteratePagesService::class);
-        $iteratePagesService->handle('repos/api-clients/github/labels')->shouldBeCalled()->willReturn(resolve(Observable::fromArray([[$labelArray]])));
+        $iteratePagesService->iterate('repos/api-clients/github/labels')->shouldBeCalled()->willReturn(Observable::fromArray([[$labelArray]]));
 
         $hydrator = $this->prophesize(Hydrator::class);
         $hydrator->hydrate(LabelInterface::HYDRATE_CLASS, $labelArray)->shouldBeCalled()->wilLReturn($label);

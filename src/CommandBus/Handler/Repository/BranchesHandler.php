@@ -40,12 +40,13 @@ final class BranchesHandler
      */
     public function handle(BranchesCommand $command): PromiseInterface
     {
-        return resolve(unwrapObservableFromPromise(
-            $this->iteratePagesService->handle('repos/' . $command->getFullName() . '/branches')
-        )->flatMap(function ($labels) {
-            return Observable::fromArray($labels);
-        })->map(function ($label) {
-            return $this->hydrator->hydrate(BranchInterface::HYDRATE_CLASS, $label);
-        }));
+        return resolve(
+            $this->iteratePagesService->iterate('repos/' . $command->getFullName() . '/branches')
+                ->flatMap(function ($labels) {
+                    return Observable::fromArray($labels);
+                })->map(function ($label) {
+                    return $this->hydrator->hydrate(BranchInterface::HYDRATE_CLASS, $label);
+                })
+        );
     }
 }

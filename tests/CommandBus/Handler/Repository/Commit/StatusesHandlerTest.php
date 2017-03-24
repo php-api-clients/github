@@ -29,7 +29,7 @@ final class StatusesHandlerTest extends TestCase
         $command = new StatusesCommand($commit->reveal());
 
         $iteratePagesService = $this->prophesize(IteratePagesService::class);
-        $iteratePagesService->handle('repos/api-clients/github/commits/123/statuses')->shouldBeCalled()->willReturn(resolve(Observable::fromArray([[$branchArray]])));
+        $iteratePagesService->iterate('repos/api-clients/github/commits/123/statuses')->shouldBeCalled()->willReturn(Observable::fromArray([[$branchArray]]));
 
         $hydrator = $this->prophesize(Hydrator::class);
         $hydrator->hydrate(StatusInterface::HYDRATE_CLASS, $branchArray)->shouldBeCalled()->wilLReturn($branch);

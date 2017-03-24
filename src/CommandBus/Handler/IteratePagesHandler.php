@@ -26,6 +26,6 @@ final class IteratePagesHandler
 
     public function handle(IteratePagesCommand $command): CancellablePromiseInterface
     {
-        return $this->service->handle($command->getPath());
+        return resolve($this->service->iterate($command->getPath()));
     }
 }
