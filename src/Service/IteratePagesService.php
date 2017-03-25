@@ -6,9 +6,11 @@ use ApiClients\Foundation\Transport\Service\RequestService;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
 use RingCentral\Psr7\Request;
+use Rx\AsyncSchedulerInterface;
 use Rx\Disposable\CallbackDisposable;
 use Rx\Observable;
 use Rx\ObserverInterface;
+use Rx\Scheduler;
 use Rx\SchedulerInterface;
 use Rx\Subject\Subject;
 use function React\Promise\all;
@@ -22,31 +24,56 @@ class IteratePagesService
     private $requestService;
 
     /**
-     * @param RequestService $requestService
+     * @var AsyncSchedulerInterface
      */
-    public function __construct(RequestService $requestService)
+    private $scheduler;
+
+    /**
+     * @param RequestService $requestService
+     * @param AsyncSchedulerInterface $scheduler
+     */
+    public function __construct(RequestService $requestService, AsyncSchedulerInterface $scheduler = null)
     {
+        $this->scheduler      = $scheduler ?: Scheduler::getAsync();
         $this->requestService = $requestService;
     }
 
     public function iterate(string $path): Observable
     {
-        return Observable::create(function (
-            ObserverInterface $observer
-        ) use ($path) {
-            $subject = new Subject();
-            $subject->asObservable()->subscribe(
-                [$observer, 'onNext'],
-                [$observer, 'onError'],
-                [$observer, 'onCompleted']
-            );
+        $paths = new Subject();
 
-            $this->sendRequest($path, $subject);
+        return Observable::of($path, $this->scheduler)
+            ->merge($paths)
+            ->flatMap(function ($path) {
+                return Observable::fromPromise($this->requestService->handle(new Request('GET', $path)));
+            })
+            ->do(function (ResponseInterface $response) use ($paths) {
+                if (!$response->hasHeader('link')) {
+                    return;
+                }
 
-            return new CallbackDisposable(function () use ($subject) {
-                $subject->dispose();
+                $links = [
+                    'next' => false,
+                    'last' => false,
+                ];
+                foreach (explode(', ', $response->getHeader('link')[0]) as $link) {
+                    list($url, $rel) = explode('>; rel="', ltrim(rtrim($link, '"'), '<'));
+                    if (isset($links[$rel])) {
+                        $links[$rel] = $url;
+                    }
+                }
+
+                if ($links['next'] === false || $links['last'] === false) {
+                    return;
+                }
+
+                $this->scheduler->schedule(function () use ($paths, $links) {
+                    $paths->onNext($links['next']);
+                });
+            })
+            ->map(function (ResponseInterface $response) {
+                return $response->getBody()->getJson();
             });
-        });
     }
 
     private function sendRequest(string $path, Subject $subject)
