@@ -1,0 +1,13 @@
+class: Repository\Commit\CombinedStatus
+properties:
+  state: string
+  sha: string
+  total_count: int
+  statuses:
+    type: Repository\Commit\Status
+    annotations:
+      collection: Repository\Commit\Status
+  repository:
+    type: Repository
+    annotations:
+      nested: Repository

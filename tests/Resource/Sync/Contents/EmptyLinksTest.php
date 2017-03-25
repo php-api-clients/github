@@ -2,8 +2,8 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Sync\Contents;
 
-use ApiClients\Client\Github\Resource\Sync\Contents\EmptyLinks;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
+use ApiClients\Client\Github\Resource\Sync\Contents\EmptyLinks;
 
 final class EmptyLinksTest extends AbstractEmptyResourceTest
 {

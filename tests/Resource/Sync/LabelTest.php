@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Tests\Github\Resource\Sync;
+namespace ApiClients\Tests\Client\Github\Resource\Sync;
 
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Label;
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class LabelTest extends AbstractResourceTest
 {

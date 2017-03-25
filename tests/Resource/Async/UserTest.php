@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Tests\Github\Resource\Async;
+namespace ApiClients\Tests\Client\Github\Resource\Async;
 
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\User;
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class UserTest extends AbstractResourceTest
 {
