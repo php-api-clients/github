@@ -35,9 +35,9 @@ final class UserHandler
         $user = $command->getUser();
 
         if (strlen($user) > 0) {
-            return $this->service->handle('users/' . $user, '', UserInterface::HYDRATE_CLASS);
+            return $this->service->fetch('users/' . $user, '', UserInterface::HYDRATE_CLASS);
         }
 
-        return $this->service->handle('user', '', UserInterface::HYDRATE_CLASS);
+        return $this->service->fetch('user', '', UserInterface::HYDRATE_CLASS);
     }
 }
