@@ -15,3 +15,5 @@ $client->whoami()->done(function (UserInterface $user) {
 }, 'display_throwable');
 
 $loop->run();
+
+displayState($client->getRateLimitState());

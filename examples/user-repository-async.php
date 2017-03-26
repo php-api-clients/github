@@ -23,3 +23,5 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
 }, 'display_throwable');
 
 $loop->run();
+
+displayState($client->getRateLimitState());
