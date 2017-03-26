@@ -133,4 +133,14 @@ interface RepositoryInterface extends ResourceInterface
      * @return User
      */
     public function owner() : User;
+
+    /**
+     * @return License
+     */
+    public function license() : License;
+
+    /**
+     * @return array
+     */
+    public function topics() : array;
 }

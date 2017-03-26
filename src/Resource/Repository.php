@@ -9,7 +9,8 @@ use DateTimeInterface;
 
 /**
  * @Nested(
- *     owner="User"
+ *     owner="User",
+ *     license="License"
  * )
  * @EmptyResource("EmptyRepository")
  */
@@ -141,6 +142,16 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     protected $owner;
 
     /**
+     * @var License
+     */
+    protected $license;
+
+    /**
+     * @var array
+     */
+    protected $topics;
+
+    /**
      * @return int
      */
     public function id() : int
@@ -177,7 +188,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
      */
     public function description() : string
     {
-        return (string)$this->description;
+        return $this->description;
     }
 
     /**
@@ -338,5 +349,21 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     public function owner() : User
     {
         return $this->owner;
+    }
+
+    /**
+     * @return License
+     */
+    public function license() : License
+    {
+        return $this->license;
+    }
+
+    /**
+     * @return array
+     */
+    public function topics() : array
+    {
+        return $this->topics;
     }
 }
