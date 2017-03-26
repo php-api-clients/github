@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github;
 use ApiClients\Client\Github\CommandBus\Command;
 use ApiClients\Foundation\ClientInterface;
 use ApiClients\Foundation\Factory;
+use ApiClients\Foundation\Options;
 use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
@@ -20,6 +21,11 @@ final class AsyncClient implements AsyncClientInterface
     private $client;
 
     /**
+     * @var RateLimitState
+     */
+    private $rateLimitState;
+
+    /**
      * @param LoopInterface $loop
      * @param AuthenticationInterface $auth
      * @param array $options
@@ -31,6 +37,8 @@ final class AsyncClient implements AsyncClientInterface
         array $options = []
     ): self {
         $options = ApiSettings::getOptions($auth, $options, 'Async');
+        $rateLimitState = new RateLimitState();
+        $options[Options::CONTAINER_DEFINITIONS][RateLimitState::class] = $rateLimitState;
         $client = Factory::create($loop, $options);
 
         try {
@@ -40,15 +48,17 @@ final class AsyncClient implements AsyncClientInterface
         } catch (\Throwable $t) {
         }
 
-        return new self($client);
+        return new self($client, $rateLimitState);
     }
 
     /**
      * @param ClientInterface $client
+     * @param RateLimitState $rateLimitState
      */
-    private function __construct(ClientInterface $client)
+    private function __construct(ClientInterface $client, RateLimitState $rateLimitState)
     {
         $this->client = $client;
+        $this->rateLimitState = $rateLimitState;
     }
 
     public function user(string $user): PromiseInterface
@@ -69,5 +79,14 @@ final class AsyncClient implements AsyncClientInterface
     public function licenses(): Observable
     {
         return unwrapObservableFromPromise($this->client->handle(new Command\LicensesCommand()));
+    }
+
+    /**
+     * @return RateLimitState
+     */
+    public function getRateLimitState(): RateLimitState
+    {
+        return clone $this->rateLimitState;
+
     }
 }

@@ -14,3 +14,5 @@ foreach ($repositories as $repository) {
     echo "\t\t" . 'name: ' . $repository->name(), PHP_EOL;
     echo "\t\t" . 'fork: ' . (int)$repository->fork(), PHP_EOL;
 }
+
+displayState($client->getRateLimitState());

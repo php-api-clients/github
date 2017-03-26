@@ -18,4 +18,6 @@ interface AsyncClientInterface
     public function myOrganizations(): Observable;
 
     public function licenses(): Observable;
+
+    public function getRateLimitState(): RateLimitState;
 }
