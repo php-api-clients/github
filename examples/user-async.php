@@ -31,3 +31,5 @@ foreach ($users as $user) {
 }
 
 $loop->run();
+
+displayState($client->getRateLimitState());

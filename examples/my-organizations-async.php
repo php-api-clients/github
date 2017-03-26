@@ -15,3 +15,5 @@ $client->myOrganizations()->subscribeCallback(function (OrganizationInterface $o
 }, 'display_throwable');
 
 $loop->run();
+
+displayState($client->getRateLimitState());
