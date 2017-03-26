@@ -190,6 +190,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     {
         return null;
     }
+
     /**
      * @return string
      */
@@ -202,6 +203,22 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
      * @return User
      */
     public function owner() : User
+    {
+        return null;
+    }
+
+    /**
+     * @return License
+     */
+    public function license() : License
+    {
+        return null;
+    }
+
+    /**
+     * @return array
+     */
+    public function topics() : array
     {
         return null;
     }
