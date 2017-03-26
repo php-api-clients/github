@@ -1,0 +1,6 @@
+class: License
+properties:
+  key: string
+  name: string
+  spdx_id: string
+  url: string
