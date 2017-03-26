@@ -87,6 +87,5 @@ final class AsyncClient implements AsyncClientInterface
     public function getRateLimitState(): RateLimitState
     {
         return clone $this->rateLimitState;
-
     }
 }
