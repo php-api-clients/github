@@ -10,7 +10,9 @@ class Files extends BaseFiles
 {
     public function refresh() : Files
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (FilesInterface $files) {
+        return $this->wait($this->handleCommand(
+            new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+        )->then(function (FilesInterface $files) {
             return $files->refresh();
         }));
     }

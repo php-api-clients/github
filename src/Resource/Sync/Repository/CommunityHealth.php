@@ -10,7 +10,9 @@ class CommunityHealth extends BaseCommunityHealth
 {
     public function refresh() : CommunityHealth
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (CommunityHealthInterface $communityHealth) {
+        return $this->wait($this->handleCommand(
+            new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+        )->then(function (CommunityHealthInterface $communityHealth) {
             return $communityHealth->refresh();
         }));
     }

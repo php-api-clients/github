@@ -10,7 +10,9 @@ class CodeOfCondyct extends BaseCodeOfCondyct
 {
     public function refresh() : CodeOfCondyct
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (CodeOfCondyctInterface $codeOfCondyct) {
+        return $this->wait($this->handleCommand(
+            new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+        )->then(function (CodeOfCondyctInterface $codeOfCondyct) {
             return $codeOfCondyct->refresh();
         }));
     }

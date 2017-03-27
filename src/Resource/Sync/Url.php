@@ -10,7 +10,9 @@ class Url extends BaseUrl
 {
     public function refresh() : Url
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (UrlInterface $url) {
+        return $this->wait($this->handleCommand(
+            new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+        )->then(function (UrlInterface $url) {
             return $url->refresh();
         }));
     }
