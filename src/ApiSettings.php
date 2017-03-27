@@ -24,6 +24,9 @@ final class ApiSettings
         // Topics on repository object: https://developer.github.com/v3/repos/#repositories
         'application/vnd.github.mercy-preview+json',
 
+        // Community Health: https://developer.github.com/v3/repos/community/#community-health
+        'application/vnd.github.black-panther-preview+json',
+
         // Default header: https://developer.github.com/v3/#current-version
         'application/vnd.github.v3+json',
     ];
