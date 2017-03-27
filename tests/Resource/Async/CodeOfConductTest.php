@@ -4,9 +4,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Async;
 
 use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
-use ApiClients\Client\Github\Resource\CodeOfCondyct;
+use ApiClients\Client\Github\Resource\CodeOfConduct;
 
-class CodeOfCondyctTest extends AbstractResourceTest
+class CodeOfConductTest extends AbstractResourceTest
 {
     public function getSyncAsync() : string
     {
@@ -14,7 +14,7 @@ class CodeOfCondyctTest extends AbstractResourceTest
     }
     public function getClass() : string
     {
-        return CodeOfCondyct::class;
+        return CodeOfConduct::class;
     }
     public function getNamespace() : string
     {

@@ -4,7 +4,7 @@ namespace ApiClients\Client\Github\Resource;
 
 use ApiClients\Foundation\Resource\EmptyResourceInterface;
 
-abstract class EmptyCodeOfCondyct implements CodeOfCondyctInterface, EmptyResourceInterface
+abstract class EmptyCodeOfConduct implements CodeOfConductInterface, EmptyResourceInterface
 {
     /**
      * @return string

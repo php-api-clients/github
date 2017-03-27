@@ -4,9 +4,9 @@ namespace ApiClients\Client\Github\Resource;
 
 use ApiClients\Foundation\Resource\ResourceInterface;
 
-interface CodeOfCondyctInterface extends ResourceInterface
+interface CodeOfConductInterface extends ResourceInterface
 {
-    const HYDRATE_CLASS = 'CodeOfCondyct';
+    const HYDRATE_CLASS = 'CodeOfConduct';
 
     /**
      * @return string

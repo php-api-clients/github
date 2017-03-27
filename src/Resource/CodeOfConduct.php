@@ -6,9 +6,9 @@ use ApiClients\Foundation\Hydrator\Annotations\EmptyResource;
 use ApiClients\Foundation\Resource\AbstractResource;
 
 /**
- * @EmptyResource("EmptyCodeOfCondyct")
+ * @EmptyResource("EmptyCodeOfConduct")
  */
-abstract class CodeOfCondyct extends AbstractResource implements CodeOfCondyctInterface
+abstract class CodeOfConduct extends AbstractResource implements CodeOfConductInterface
 {
     /**
      * @var string

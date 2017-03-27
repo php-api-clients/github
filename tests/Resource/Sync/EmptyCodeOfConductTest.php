@@ -3,9 +3,9 @@
 namespace ApiClients\Tests\Client\Github\Resource\Sync;
 
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
-use ApiClients\Client\Github\Resource\Sync\EmptyCodeOfCondyct;
+use ApiClients\Client\Github\Resource\Sync\EmptyCodeOfConduct;
 
-final class EmptyCodeOfCondyctTest extends AbstractEmptyResourceTest
+final class EmptyCodeOfConductTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync() : string
     {
@@ -13,6 +13,6 @@ final class EmptyCodeOfCondyctTest extends AbstractEmptyResourceTest
     }
     public function getClass() : string
     {
-        return EmptyCodeOfCondyct::class;
+        return EmptyCodeOfConduct::class;
     }
 }
