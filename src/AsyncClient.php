@@ -76,6 +76,11 @@ final class AsyncClient implements AsyncClientInterface
         return unwrapObservableFromPromise($this->client->handle(new Command\MyOrganizationsCommand()));
     }
 
+    public function licenses(): Observable
+    {
+        return unwrapObservableFromPromise($this->client->handle(new Command\LicensesCommand()));
+    }
+
     /**
      * @return RateLimitState
      */
