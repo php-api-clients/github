@@ -1,0 +1,6 @@
+class: CodeOfConduct
+properties:
+  key: string
+  name: string
+  spdx_id: string
+  url: string

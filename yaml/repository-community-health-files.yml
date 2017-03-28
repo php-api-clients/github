@@ -1,0 +1,18 @@
+class: Repository\CommunityHealth\Files
+properties:
+  code_of_conduct:
+    type: CodeOfConduct
+    annotations:
+      nested: CodeOfConduct
+  contributing:
+    type: Url
+    annotations:
+      nested: Url
+  license:
+    type: License
+    annotations:
+      nested: License
+  readme:
+    type: Url
+    annotations:
+      nested: Url
