@@ -11,6 +11,8 @@ use function React\Promise\resolve;
 
 interface AsyncClientInterface
 {
+    public function meta(): PromiseInterface;
+
     public function user(string $user): PromiseInterface;
 
     public function whoami(): PromiseInterface;

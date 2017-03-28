@@ -61,6 +61,11 @@ final class AsyncClient implements AsyncClientInterface
         $this->rateLimitState = $rateLimitState;
     }
 
+    public function meta(): PromiseInterface
+    {
+        return $this->client->handle(new Command\MetaCommand());
+    }
+
     public function user(string $user): PromiseInterface
     {
         return $this->client->handle(new Command\UserCommand($user));
