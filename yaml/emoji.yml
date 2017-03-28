@@ -1,0 +1,4 @@
+class: Emoji
+properties:
+  name: string
+  image: string

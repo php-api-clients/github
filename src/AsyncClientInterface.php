@@ -15,6 +15,8 @@ interface AsyncClientInterface
 
     public function whoami(): PromiseInterface;
 
+    public function emojis(): Observable;
+
     public function myOrganizations(): Observable;
 
     public function licenses(): Observable;

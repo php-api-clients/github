@@ -71,6 +71,11 @@ final class AsyncClient implements AsyncClientInterface
         return $this->client->handle(new Command\UserCommand());
     }
 
+    public function emojis(): Observable
+    {
+        return unwrapObservableFromPromise($this->client->handle(new Command\EmojisCommand()));
+    }
+
     public function myOrganizations(): Observable
     {
         return unwrapObservableFromPromise($this->client->handle(new Command\MyOrganizationsCommand()));
