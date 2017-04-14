@@ -4,7 +4,7 @@ use ApiClients\Client\Github\Client;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
-$client = new Client(require 'resolve_token.php');
+$client = Client::create(require 'resolve_token.php');
 
 $repositories = $client->user($argv[1] ?? 'WyriHaximus')->repositories();
 

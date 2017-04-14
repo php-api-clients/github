@@ -8,9 +8,8 @@ use ApiClients\Foundation\Factory;
 use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
-use function React\Promise\resolve;
 use Rx\Scheduler;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 final class AsyncClient implements AsyncClientInterface
 {
@@ -44,6 +43,16 @@ final class AsyncClient implements AsyncClientInterface
     }
 
     /**
+     * @internal
+     * @param ClientInterface $client
+     * @return AsyncClient
+     */
+    public static function createFromClient(ClientInterface $client): self
+    {
+        return new self($client);
+    }
+
+    /**
      * @param ClientInterface $client
      */
     private function __construct(ClientInterface $client)
@@ -51,16 +60,26 @@ final class AsyncClient implements AsyncClientInterface
         $this->client = $client;
     }
 
+    /**
+     * @param string $user
+     * @return PromiseInterface
+     */
     public function user(string $user): PromiseInterface
     {
         return $this->client->handle(new Command\UserCommand($user));
     }
 
+    /**
+     * @return PromiseInterface
+     */
     public function whoami(): PromiseInterface
     {
         return $this->client->handle(new Command\UserCommand());
     }
 
+    /**
+     * @return Observable
+     */
     public function myOrganizations(): Observable
     {
         return unwrapObservableFromPromise($this->client->handle(new Command\MyOrganizationsCommand()));
