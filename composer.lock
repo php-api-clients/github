@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "30ac447c9df31f1dcc32e5cd03d6c526",
+    "content-hash": "02d3d13cee98b943d7a4b8f1a7ff33de",
     "packages": [
         {
             "name": "api-clients/client-services",
@@ -607,12 +607,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/transport.git",
-                "reference": "3437675937df0110d515be6c8099e6b7ca281964"
+                "reference": "a92f0a094d2439ff0f9799565d453889797975a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/transport/zipball/3437675937df0110d515be6c8099e6b7ca281964",
-                "reference": "3437675937df0110d515be6c8099e6b7ca281964",
+                "url": "https://api.github.com/repos/php-api-clients/transport/zipball/a92f0a094d2439ff0f9799565d453889797975a0",
+                "reference": "a92f0a094d2439ff0f9799565d453889797975a0",
                 "shasum": ""
             },
             "require": {
@@ -663,7 +663,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-03-23 16:48:30"
+            "time": "2017-03-27 19:54:19"
         },
         {
             "name": "clue/block-react",

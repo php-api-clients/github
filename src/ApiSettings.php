@@ -2,6 +2,7 @@
 
 namespace ApiClients\Client\Github;
 
+use ApiClients\Client\Github\Middleware\RateLimitStateMiddleware;
 use ApiClients\Foundation\Hydrator\Options as HydratorOptions;
 use ApiClients\Foundation\Options as FoundationOptions;
 use ApiClients\Foundation\Transport\Middleware\JsonDecodeMiddleware;
@@ -29,6 +30,7 @@ final class ApiSettings
                 JsonEncodeMiddleware::class,
                 HttpExceptionsMiddleware::class,
                 UserAgentMiddleware::class,
+                RateLimitStateMiddleware::class,
             ],
             TransportOptions::DEFAULT_REQUEST_OPTIONS => [
                 UserAgentMiddleware::class => [
@@ -47,6 +49,10 @@ final class ApiSettings
         $options = options_merge(self::TRANSPORT_OPTIONS, $auth->getOptions());
         $options = options_merge($options, $suppliedOptions);
         $options[FoundationOptions::HYDRATOR_OPTIONS][HydratorOptions::NAMESPACE_SUFFIX] = $suffix;
+
+        $acceptHeader = AcceptHeader::getHeader(AcceptHeader::PRESET_DEFAULT);
+        $options[FoundationOptions::TRANSPORT_OPTIONS][TransportOptions::HEADERS]['Accept'] = $acceptHeader;
+
         return $options;
     }
 }

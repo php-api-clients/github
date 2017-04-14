@@ -6,6 +6,7 @@ use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
@@ -59,6 +60,13 @@ class Repository extends BaseRepository
             $this->handleCommand(
                 new ContentsCommand($this->fullName())
             )
+        );
+    }
+
+    public function communityHealth(): PromiseInterface
+    {
+        return $this->handleCommand(
+            new CommunityHealthCommand($this->fullName())
         );
     }
 }

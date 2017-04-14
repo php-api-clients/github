@@ -1,0 +1,9 @@
+class: Repository\CommunityHealth
+properties:
+  health_percentage: int
+  files:
+    type: Repository\CommunityHealth\Files
+    annotations:
+      nested: Repository\CommunityHealth\Files
+  protected: bool
+  updated_at: DateTimeInterface

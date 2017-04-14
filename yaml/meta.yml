@@ -1,0 +1,8 @@
+class: Meta
+properties:
+  verifiable_password_authentication: bool
+  github_services_sha: string
+  hooks: array
+  git: array
+  pages: array
+  importer: array

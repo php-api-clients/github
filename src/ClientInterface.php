@@ -10,4 +10,6 @@ use function Clue\React\Block\await;
 interface ClientInterface
 {
     public function user(string $user): UserInterface;
+
+    public function getRateLimitState(): RateLimitState;
 }

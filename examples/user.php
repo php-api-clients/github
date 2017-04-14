@@ -21,3 +21,5 @@ if (count($argv) > 1) {
 foreach ($users as $user) {
     resource_pretty_print($client->user($user));
 }
+
+displayState($client->getRateLimitState());

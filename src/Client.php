@@ -67,4 +67,9 @@ final class Client implements ClientInterface
             $this->loop
         );
     }
+
+    public function getRateLimitState(): RateLimitState
+    {
+        return $this->client->getRateLimitState();
+    }
 }

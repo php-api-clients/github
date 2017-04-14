@@ -21,3 +21,5 @@ $client->user($argv[1] ?? 'WyriHaximus')->then(function (User $user) {
 })->done(null, 'display_throwable');
 
 $loop->run();
+
+displayState($client->getRateLimitState());
