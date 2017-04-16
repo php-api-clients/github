@@ -9,7 +9,7 @@ final class ClientTest extends TestCase
 {
     public function testGetRateLimitState()
     {
-        $client = new Client(new Anonymous());
+        $client = Client::create(new Anonymous());
         self::assertInstanceOf(RateLimitState::class, $client->getRateLimitState());
     }
 }

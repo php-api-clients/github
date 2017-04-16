@@ -53,11 +53,12 @@ final class AsyncClient implements AsyncClientInterface
     /**
      * @internal
      * @param ClientInterface $client
+     * @param RateLimitState $rateLimitState
      * @return AsyncClient
      */
-    public static function createFromClient(ClientInterface $client): self
+    public static function createFromClient(ClientInterface $client, RateLimitState $rateLimitState): self
     {
-        return new self($client);
+        return new self($client, $rateLimitState);
     }
 
     /**

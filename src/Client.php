@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github;
 
 use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Foundation\Factory as FoundationClientFactory;
+use ApiClients\Foundation\Options;
 use React\EventLoop\Factory;
 use React\EventLoop\LoopInterface;
 use function Clue\React\Block\await;
@@ -32,6 +33,8 @@ final class Client implements ClientInterface
     ): self {
         $loop = Factory::create();
         $options = ApiSettings::getOptions($auth, $options, 'Sync');
+        $rateLimitState = new RateLimitState();
+        $options[Options::CONTAINER_DEFINITIONS][RateLimitState::class] = $rateLimitState;
         $client = FoundationClientFactory::create($loop, $options);
 
         try {
@@ -41,7 +44,7 @@ final class Client implements ClientInterface
         } catch (\Throwable $t) {
         }
 
-        $asyncClient = AsyncClient::createFromClient($client);
+        $asyncClient = AsyncClient::createFromClient($client, $rateLimitState);
 
         return new self($loop, $asyncClient);
     }
