@@ -692,12 +692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/transport.git",
-                "reference": "01c988ff5715ed4eba474150797de325300168c4"
+                "reference": "de28b3d57c062bff71cf7410cc0cfdd9fe1b1b6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/transport/zipball/01c988ff5715ed4eba474150797de325300168c4",
-                "reference": "01c988ff5715ed4eba474150797de325300168c4",
+                "url": "https://api.github.com/repos/php-api-clients/transport/zipball/de28b3d57c062bff71cf7410cc0cfdd9fe1b1b6a",
+                "reference": "de28b3d57c062bff71cf7410cc0cfdd9fe1b1b6a",
                 "shasum": ""
             },
             "require": {
@@ -706,7 +706,6 @@
                 "api-clients/rx": "^2.0",
                 "clue/block-react": "^1.1",
                 "clue/buzz-react": "^1.1",
-                "daverandom/exceptional-json": "^1.0.1",
                 "doctrine/annotations": "^1.2",
                 "php": "^7.0",
                 "psr/container": "^1.0",
@@ -747,7 +746,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-04-11 20:51:15"
+            "time": "2017-04-17 10:13:07"
         },
         {
             "name": "clue/block-react",
@@ -2724,7 +2723,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2016-10-02T22:28:30+00:00"
+            "time": "2016-10-02 22:28:30"
         },
         {
             "name": "api-clients/resource-generator",
@@ -2777,7 +2776,7 @@
                 }
             ],
             "description": "Resource from YAML generation tool",
-            "time": "2017-04-10T17:37:24+00:00"
+            "time": "2017-04-10 17:37:24"
         },
         {
             "name": "api-clients/resource-test-utilities",
@@ -2824,7 +2823,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-02-14T16:42:57+00:00"
+            "time": "2017-02-14 16:42:57"
         },
         {
             "name": "api-clients/test-utilities",
