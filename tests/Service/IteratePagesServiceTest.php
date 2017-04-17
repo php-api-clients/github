@@ -3,8 +3,8 @@
 namespace ApiClients\Client\Github\Service;
 
 use ApiClients\Foundation\Transport\ClientInterface;
-use ApiClients\Foundation\Transport\JsonStream;
 use ApiClients\Foundation\Transport\Service\RequestService;
+use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use RingCentral\Psr7\Request;

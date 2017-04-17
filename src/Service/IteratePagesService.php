@@ -45,7 +45,7 @@ class IteratePagesService
         return Observable::of($path, $this->scheduler)
             ->merge($paths)
             ->flatMap(function ($path) {
-                return Observable::fromPromise($this->requestService->handle(new Request('GET', $path)));
+                return Observable::fromPromise($this->requestService->request(new Request('GET', $path)));
             })
             ->do(function (ResponseInterface $response) use ($paths) {
                 if (!$response->hasHeader('link')) {
@@ -79,7 +79,7 @@ class IteratePagesService
     private function sendRequest(string $path, Subject $subject)
     {
         $this->requestService->
-            handle(new Request('GET', $path))->
+            request(new Request('GET', $path))->
             then(
                 function ($response) use ($subject) {
                     $this->handleResponse($response, $subject);
