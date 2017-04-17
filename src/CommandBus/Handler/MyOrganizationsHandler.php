@@ -42,10 +42,11 @@ final class MyOrganizationsHandler
     {
         return resolve(
             $this->service->iterate('user/orgs')
-        )->flatMap(function ($organizations) {
-            return Observable::fromArray($organizations);
-        })->map(function ($organization) {
-            return $this->hydrator->hydrate(OrganizationInterface::HYDRATE_CLASS, $organization);
-        });
+                ->flatMap(function ($organizations) {
+                    return Observable::fromArray($organizations);
+                })->map(function ($organization) {
+                    return $this->hydrator->hydrate(OrganizationInterface::HYDRATE_CLASS, $organization);
+                })
+        );
     }
 }
