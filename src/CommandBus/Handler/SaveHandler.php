@@ -4,12 +4,10 @@ namespace ApiClients\Client\Github\CommandBus\Handler;
 
 use ApiClients\Client\Github\CommandBus\Command\SaveCommand;
 use ApiClients\Foundation\Hydrator\Hydrator;
-use ApiClients\Foundation\Transport\JsonStream;
 use ApiClients\Foundation\Transport\Service\RequestService;
+use ApiClients\Middleware\Json\JsonStream;
 use React\Promise\PromiseInterface;
 use RingCentral\Psr7\Request;
-use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class SaveHandler
 {
@@ -35,7 +33,7 @@ final class SaveHandler
 
     public function handle(SaveCommand $command): PromiseInterface
     {
-        return $this->requestService->handle(
+        return $this->requestService->request(
             new Request(
                 'PATCH',
                 $command->getUrl(),
