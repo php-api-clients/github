@@ -11,7 +11,6 @@ use RingCentral\Psr7\Request;
 use Rx\Observable;
 use Rx\React\Promise;
 use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class ContentsHandler
 {
@@ -38,22 +37,26 @@ final class ContentsHandler
 
     public function handle(ContentsCommand $command)
     {
-        return resolve(Promise::toObservable($this->requestService->handle(
-            new Request('GET', 'repos/' . $command->getFullname() . '/contents/')
-        ))->flatMap(function ($contents) {
-            return Observable::fromArray($contents->getBody()->getJson());
-        })->map(function ($content) {
-            if ($content['type'] === 'file') {
+        return resolve(
+            Promise::toObservable(
+                $this->requestService->request(
+                    new Request('GET', 'repos/' . $command->getFullname() . '/contents/')
+                )
+            )->flatMap(function ($contents) {
+                return Observable::fromArray($contents->getBody()->getJson());
+            })->map(function ($content) {
+                if ($content['type'] === 'file') {
+                    return $this->hydrator->hydrate(
+                        FileInterface::HYDRATE_CLASS,
+                        $content
+                    );
+                }
+
                 return $this->hydrator->hydrate(
-                    FileInterface::HYDRATE_CLASS,
+                    DirectoryInterface::HYDRATE_CLASS,
                     $content
                 );
-            }
-
-            return $this->hydrator->hydrate(
-                DirectoryInterface::HYDRATE_CLASS,
-                $content
-            );
-        }));
+            })
+        );
     }
 }
