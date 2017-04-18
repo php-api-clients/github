@@ -44,10 +44,11 @@ final class RepositoriesHandler
     {
         return resolve(
             $this->iteratePagesService->iterate('users/' . $command->getLogin() . '/repos')
-        )->flatMap(function ($repositories) {
-            return Observable::fromArray($repositories);
-        })->map(function ($repository) {
-            return $this->hydrator->hydrate(RepositoryInterface::HYDRATE_CLASS, $repository);
-        });
+                ->flatMap(function ($repositories) {
+                    return Observable::fromArray($repositories);
+                })->map(function ($repository) {
+                    return $this->hydrator->hydrate(RepositoryInterface::HYDRATE_CLASS, $repository);
+                })
+        );
     }
 }
