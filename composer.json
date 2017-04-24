@@ -19,8 +19,7 @@
         "api-clients/middleware-token-authorization": "^2.0",
         "api-clients/middleware-user-agent": "^1.0",
         "api-clients/rx": "^2.0",
-        "api-clients/rx-operators": "^2.0",
-        "api-clients/transport": "dev-master"
+        "api-clients/rx-operators": "^2.0"
     },
     "require-dev": {
         "api-clients/appveyor": "dev-master",
