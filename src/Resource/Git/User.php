@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\Resource\Git;
 
-use ApiClients\Foundation\Hydrator\Annotations\EmptyResource;
+use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
 use ApiClients\Foundation\Resource\AbstractResource;
 use DateTimeInterface;
 

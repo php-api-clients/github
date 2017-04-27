@@ -2,9 +2,9 @@
 
 namespace ApiClients\Client\Github\Resource\Repository\Commit;
 
-use ApiClients\Foundation\Hydrator\Annotations\Collection;
-use ApiClients\Foundation\Hydrator\Annotations\EmptyResource;
-use ApiClients\Foundation\Hydrator\Annotations\Nested;
+use ApiClients\Foundation\Hydrator\Annotation\Collection;
+use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
+use ApiClients\Foundation\Hydrator\Annotation\Nested;
 use ApiClients\Foundation\Resource\AbstractResource;
 
 /**

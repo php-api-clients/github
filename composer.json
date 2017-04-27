@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^7.0",
-        "api-clients/client-services": "dev-master",
+        "api-clients/client-services": "^1.0",
         "api-clients/foundation": "dev-master",
         "api-clients/middleware": "^2.0",
         "api-clients/middleware-http-exceptions": "^1.0",
