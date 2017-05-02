@@ -10,7 +10,7 @@ require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');
 
-$client->myOrganizations()->subscribeCallback(function (OrganizationInterface $organization) {
+$client->myOrganizations()->subscribe(function (OrganizationInterface $organization) {
     resource_pretty_print($organization);
 }, 'display_throwable');
 

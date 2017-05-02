@@ -11,7 +11,7 @@ require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');
 
-$client->licenses()->subscribeCallback(function (LicenseInterface $license) {
+$client->licenses()->subscribe(function (LicenseInterface $license) {
     resource_pretty_print($license);
 }, 'display_throwable');
 

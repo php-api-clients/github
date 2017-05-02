@@ -20,7 +20,7 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
 })->then(function (Repository $repository) {
     $repository->contents()->filter(function ($resource) {
         return $resource instanceof FileInterface;
-    })->take(1)->subscribeCallback(function ($content) {
+    })->take(1)->subscribe(function ($content) {
         $content->refresh()->done(function (File $content) {
             resource_pretty_print($content, 1, true);
             if ($content->encoding() === 'base64') {

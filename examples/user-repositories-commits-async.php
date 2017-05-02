@@ -17,7 +17,7 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     return $user->repository($argv[2] ?? 'github');
 })->then(function (Repository $repository) {
     resource_pretty_print($repository, 1, true);
-    $repository->commits()->subscribeCallback(function ($commit) {
+    $repository->commits()->subscribe(function ($commit) {
         resource_pretty_print($commit, 2, true);
     }, 'display_throwable');
 })->done(null, 'display_throwable');

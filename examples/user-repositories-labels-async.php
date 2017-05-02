@@ -17,7 +17,7 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     return $user->repository($argv[2] ?? 'github');
 })->then(function (Repository $repository) {
     resource_pretty_print($repository, 1, true);
-    $repository->labels()->subscribeCallback(function ($labels) {
+    $repository->labels()->subscribe(function ($labels) {
         resource_pretty_print($labels, 2, true);
     }, function ($error) {
         echo (string)$error;

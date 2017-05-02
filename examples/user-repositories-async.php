@@ -13,7 +13,7 @@ $client = AsyncClient::create($loop, require 'resolve_token.php');
 
 $client->user($argv[1] ?? 'WyriHaximus')->then(function (User $user) {
     resource_pretty_print($user);
-    $user->repositories()->subscribeCallback(function ($repository) {
+    $user->repositories()->subscribe(function ($repository) {
         resource_pretty_print($repository, 1, true);
     }, function ($error) {
         echo (string)$error;
