@@ -4,14 +4,10 @@ namespace ApiClients\Client\Github\Service;
 
 use ApiClients\Foundation\Transport\Service\RequestService;
 use Psr\Http\Message\ResponseInterface;
-use React\Promise\CancellablePromiseInterface;
 use RingCentral\Psr7\Request;
 use Rx\AsyncSchedulerInterface;
-use Rx\Disposable\CallbackDisposable;
 use Rx\Observable;
-use Rx\ObserverInterface;
 use Rx\Scheduler;
-use Rx\SchedulerInterface;
 use Rx\Subject\Subject;
 use function React\Promise\all;
 use function React\Promise\resolve;
