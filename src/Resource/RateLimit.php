@@ -8,7 +8,7 @@ use ApiClients\Foundation\Resource\AbstractResource;
 
 /**
  * @Nested(
- *     resources="RateLimit\Resource",
+ *     resources="RateLimit\Resources",
  *     rate="Rate"
  * )
  * @EmptyResource("EmptyRateLimit")
