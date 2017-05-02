@@ -70,6 +70,11 @@ abstract class File extends AbstractResource implements FileInterface
     protected $download_url;
 
     /**
+     * @var string
+     */
+    protected $repository_fullname;
+
+    /**
      * @var Links
      */
     // @codingStandardsIgnoreStart
@@ -162,6 +167,14 @@ abstract class File extends AbstractResource implements FileInterface
     public function downloadUrl() : string
     {
         return $this->download_url;
+    }
+
+    /**
+     * @return string
+     */
+    public function repositoryFullname(): string
+    {
+        return $this->repository_fullname;
     }
 
     /**

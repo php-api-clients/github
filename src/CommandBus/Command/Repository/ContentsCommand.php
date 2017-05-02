@@ -15,11 +15,19 @@ final class ContentsCommand
     private $fullname;
 
     /**
-     * @param string $fullname
+     * @var string
      */
-    public function __construct(string $fullname)
+    private $path;
+
+    /**
+     * ContentsCommand constructor.
+     * @param string $fullname
+     * @param string $path
+     */
+    public function __construct($fullname, $path)
     {
         $this->fullname = $fullname;
+        $this->path = $path;
     }
 
     /**
@@ -28,5 +36,13 @@ final class ContentsCommand
     public function getFullname(): string
     {
         return $this->fullname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPath(): string
+    {
+        return $this->path;
     }
 }

@@ -54,11 +54,11 @@ class Repository extends BaseRepository
         );
     }
 
-    public function contents(): Observable
+    public function contents(string $path = '/'): Observable
     {
         return unwrapObservableFromPromise(
             $this->handleCommand(
-                new ContentsCommand($this->fullName())
+                new ContentsCommand($this->fullName(), $path)
             )
         );
     }

@@ -10,6 +10,7 @@ properties:
   git_url: string
   html_url: string
   download_url: string
+  repository_fullname: string
   _links:
     type: Contents\Links
     annotations:

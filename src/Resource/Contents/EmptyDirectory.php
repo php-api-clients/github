@@ -87,6 +87,14 @@ abstract class EmptyDirectory implements DirectoryInterface, EmptyResourceInterf
     }
 
     /**
+     * @return string
+     */
+    public function repositoryFullname(): string
+    {
+        return null;
+    }
+
+    /**
      * @return Links
      */
     public function links() : Links

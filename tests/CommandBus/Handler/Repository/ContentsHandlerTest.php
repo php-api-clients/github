@@ -18,14 +18,28 @@ use function React\Promise\resolve;
 
 final class ContentsHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function pathsProvider()
+    {
+        yield ['', '/contents/'];
+        yield ['/', '/contents/'];
+        yield ['/README.md', '/contents/README.md'];
+    }
+
+    /**
+     * @param string $path
+     * @param string $uriPath
+     * @dataProvider pathsProvider
+     */
+    public function testCommand(string $path, string $uriPath)
     {
         $repositoryFullName = 'php-api-clients/github';
         $file = [
             'type' => 'file',
+            'repository_fullname' => $repositoryFullName,
         ];
         $directory = [
             'type' => 'directory',
+            'repository_fullname' => $repositoryFullName,
         ];
         $contents = [
             $directory,
@@ -34,7 +48,7 @@ final class ContentsHandlerTest extends TestCase
 
         $request = new Request(
             'GET',
-            'repos/' . $repositoryFullName . '/contents/'
+            'repos/' . $repositoryFullName . $uriPath
         );
         $response = new Response(
             200,
@@ -50,6 +64,6 @@ final class ContentsHandlerTest extends TestCase
         $hydrator->hydrate(FileInterface::HYDRATE_CLASS, $file)->shouldBeCalled()->willReturn($this->prophesize(FileInterface::class)->reveal());
 
         $handler = new ContentsHandler($service->reveal(), $hydrator->reveal());
-        Promise::fromObservable(unwrapObservableFromPromise($handler->handle(new ContentsCommand($repositoryFullName))));
+        Promise::fromObservable(unwrapObservableFromPromise($handler->handle(new ContentsCommand($repositoryFullName, $path))));
     }
 }

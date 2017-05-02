@@ -37,14 +37,17 @@ final class ContentsHandler
 
     public function handle(ContentsCommand $command)
     {
+        $path = ltrim($command->getPath(), '/');
+        $uri = 'repos/' . $command->getFullname() . '/contents/' . $path;
         return resolve(
             Promise::toObservable(
                 $this->requestService->request(
-                    new Request('GET', 'repos/' . $command->getFullname() . '/contents/')
+                    new Request('GET', $uri)
                 )
             )->flatMap(function ($contents) {
                 return Observable::fromArray($contents->getBody()->getJson());
-            })->map(function ($content) {
+            })->map(function ($content) use ($command) {
+                $content['repository_fullname'] = $command->getFullname();
                 if ($content['type'] === 'file') {
                     return $this->hydrator->hydrate(
                         FileInterface::HYDRATE_CLASS,

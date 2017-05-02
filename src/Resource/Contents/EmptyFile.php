@@ -95,6 +95,14 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     }
 
     /**
+     * @return string
+     */
+    public function repositoryFullname(): string
+    {
+        return null;
+    }
+
+    /**
      * @return Links
      */
     public function links() : Links

@@ -62,4 +62,9 @@ interface DirectoryInterface extends ResourceInterface
      * @return Links
      */
     public function links() : Links;
+
+    /**
+     * @return string
+     */
+    public function repositoryFullname(): string;
 }
