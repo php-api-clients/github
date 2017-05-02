@@ -10,8 +10,12 @@ class Rate extends BaseRate
 {
     public function refresh() : Rate
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (RateInterface $rate) {
-            return $rate->refresh();
-        }));
+        return $this->wait(
+            $this->handleCommand(
+                new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+            )->then(function (RateInterface $rate) {
+                return $rate->refresh();
+            })
+        );
     }
 }
