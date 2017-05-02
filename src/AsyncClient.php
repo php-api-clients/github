@@ -118,4 +118,9 @@ final class AsyncClient implements AsyncClientInterface
     {
         return clone $this->rateLimitState;
     }
+
+    public function rateLimit(): PromiseInterface
+    {
+        return $this->client->handle(new Command\RateLimitCommand());
+    }
 }
