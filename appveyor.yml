@@ -22,10 +22,6 @@ environment:
 ## Cache composer, chocolatey and php bits
 cache:
     - '%LOCALAPPDATA%\Composer\files -> composer.lock'
-    - composer.phar
-    - C:\ProgramData\chocolatey\bin -> .appveyor.yml
-    - C:\ProgramData\chocolatey\lib -> .appveyor.yml
-    - c:\tools\php -> .appveyor.yml
 
 ## Set up environment varriables
 init:

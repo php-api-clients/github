@@ -24,4 +24,6 @@ interface AsyncClientInterface
     public function licenses(): Observable;
 
     public function getRateLimitState(): RateLimitState;
+
+    public function rateLimit(): PromiseInterface;
 }

@@ -1,0 +1,10 @@
+class: RateLimit\Resources
+properties:
+  core:
+    type: Rate
+    annotations:
+      nested: Rate
+  search:
+    type: Rate
+    annotations:
+      nested: Rate
