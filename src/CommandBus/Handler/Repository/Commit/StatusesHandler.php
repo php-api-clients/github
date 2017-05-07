@@ -7,10 +7,8 @@ use ApiClients\Client\Github\Resource\Repository\Commit\StatusInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use React\Promise\PromiseInterface;
-use Rx\Observable;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class StatusesHandler
 {
@@ -43,7 +41,7 @@ final class StatusesHandler
         return resolve(
             $this->iteratePagesService->iterate($command->getCommit()->url() . '/statuses')
                 ->flatMap(function ($statuses) {
-                    return Observable::fromArray($statuses);
+                    return observableFromArray($statuses);
                 })->map(function ($status) {
                     return $this->hydrator->hydrate(StatusInterface::HYDRATE_CLASS, $status);
                 })

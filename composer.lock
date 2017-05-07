@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b15682d851e5a1deabc999181262c423",
+    "content-hash": "7967a9b50a534ee37976c6243a894db9",
     "packages": [
         {
             "name": "api-clients/client-services",
@@ -558,16 +558,16 @@
         },
         {
             "name": "api-clients/rx",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/rx.git",
-                "reference": "baadcfcc2f088423bce8ee66f1d46cdeac1192b6"
+                "reference": "e5fc4181a1050e0a6ff14ba0875647ac88e71d33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/rx/zipball/baadcfcc2f088423bce8ee66f1d46cdeac1192b6",
-                "reference": "baadcfcc2f088423bce8ee66f1d46cdeac1192b6",
+                "url": "https://api.github.com/repos/php-api-clients/rx/zipball/e5fc4181a1050e0a6ff14ba0875647ac88e71d33",
+                "reference": "e5fc4181a1050e0a6ff14ba0875647ac88e71d33",
                 "shasum": ""
             },
             "require": {
@@ -598,7 +598,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-03-22T20:37:41+00:00"
+            "time": "2017-05-07T16:23:52+00:00"
         },
         {
             "name": "api-clients/rx-operators",
@@ -2721,7 +2721,7 @@
                 }
             ],
             "description": "Resource from YAML generation tool",
-            "time": "2017-05-02T15:49:33+00:00"
+            "time": "2017-05-02 15:49:33"
         },
         {
             "name": "api-clients/resource-test-utilities",

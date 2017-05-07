@@ -8,8 +8,8 @@ use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use RingCentral\Psr7\Request;
-use Rx\Observable;
 use Rx\React\Promise;
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
 
 final class ContentsHandler
@@ -45,7 +45,7 @@ final class ContentsHandler
                     new Request('GET', $uri)
                 )
             )->flatMap(function ($contents) {
-                return Observable::fromArray($contents->getBody()->getJson());
+                return observableFromArray($contents->getBody()->getJson());
             })->map(function ($content) use ($command) {
                 $content['repository_fullname'] = $command->getFullname();
                 if ($content['type'] === 'file') {

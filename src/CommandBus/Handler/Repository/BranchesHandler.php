@@ -7,10 +7,8 @@ use ApiClients\Client\Github\Resource\Repository\BranchInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use React\Promise\PromiseInterface;
-use Rx\Observable;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class BranchesHandler
 {
@@ -43,7 +41,7 @@ final class BranchesHandler
         return resolve(
             $this->iteratePagesService->iterate('repos/' . $command->getFullName() . '/branches')
                 ->flatMap(function ($labels) {
-                    return Observable::fromArray($labels);
+                    return observableFromArray($labels);
                 })->map(function ($label) {
                     return $this->hydrator->hydrate(BranchInterface::HYDRATE_CLASS, $label);
                 })

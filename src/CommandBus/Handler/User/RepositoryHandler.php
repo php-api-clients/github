@@ -6,8 +6,6 @@ use ApiClients\Client\Github\CommandBus\Command\User\RepositoryCommand;
 use ApiClients\Client\Github\Resource\RepositoryInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use React\Promise\PromiseInterface;
-use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class RepositoryHandler
 {

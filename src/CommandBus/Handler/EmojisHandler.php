@@ -7,7 +7,7 @@ use ApiClients\Client\Github\Resource\EmojiInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use React\Promise\PromiseInterface;
-use Rx\Observable;
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
 
 final class EmojisHandler
@@ -50,7 +50,7 @@ final class EmojisHandler
                         ];
                     }
 
-                    return Observable::fromArray($structuredEmojis);
+                    return observableFromArray($structuredEmojis);
                 })->map(function ($emoji) {
                     return $this->hydrator->hydrate(EmojiInterface::HYDRATE_CLASS, $emoji);
                 })

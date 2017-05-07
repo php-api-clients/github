@@ -5,8 +5,6 @@ namespace ApiClients\Client\Github\CommandBus\Handler;
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use React\Promise\PromiseInterface;
-use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class RefreshHandler
 {

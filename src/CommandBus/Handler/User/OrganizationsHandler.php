@@ -7,10 +7,8 @@ use ApiClients\Client\Github\Resource\OrganizationInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use React\Promise\PromiseInterface;
-use Rx\Observable;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class OrganizationsHandler
 {
@@ -43,7 +41,7 @@ final class OrganizationsHandler
         return resolve(
             $this->service->iterate('users/' . $command->getLogin() . '/orgs')
                 ->flatMap(function ($organizations) {
-                    return Observable::fromArray($organizations);
+                    return observableFromArray($organizations);
                 })->map(function ($organization) {
                     return $this->hydrator->hydrate(OrganizationInterface::HYDRATE_CLASS, $organization);
                 })

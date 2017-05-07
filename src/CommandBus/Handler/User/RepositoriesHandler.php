@@ -7,10 +7,8 @@ use ApiClients\Client\Github\Resource\RepositoryInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use React\Promise\PromiseInterface;
-use Rx\Observable;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class RepositoriesHandler
 {
@@ -45,7 +43,7 @@ final class RepositoriesHandler
         return resolve(
             $this->iteratePagesService->iterate('users/' . $command->getLogin() . '/repos')
                 ->flatMap(function ($repositories) {
-                    return Observable::fromArray($repositories);
+                    return observableFromArray($repositories);
                 })->map(function ($repository) {
                     return $this->hydrator->hydrate(RepositoryInterface::HYDRATE_CLASS, $repository);
                 })

@@ -5,8 +5,6 @@ namespace ApiClients\Client\Github\CommandBus\Handler;
 use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use React\Promise\CancellablePromiseInterface;
-use Rx\Observable;
-use function React\Promise\all;
 use function React\Promise\resolve;
 
 final class IteratePagesHandler

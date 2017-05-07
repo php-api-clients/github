@@ -6,8 +6,6 @@ use ApiClients\Client\Github\CommandBus\Command\UserCommand;
 use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use React\Promise\PromiseInterface;
-use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class UserHandler
 {

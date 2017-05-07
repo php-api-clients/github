@@ -7,10 +7,8 @@ use ApiClients\Client\Github\Resource\Repository\CommitInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use React\Promise\PromiseInterface;
-use Rx\Observable;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
-use function WyriHaximus\React\futureFunctionPromise;
 
 final class CommitsHandler
 {
@@ -43,7 +41,7 @@ final class CommitsHandler
         return resolve(
             $this->iteratePagesService->iterate('repos/' . $command->getFullName() . '/commits')
                 ->flatMap(function ($commits) {
-                    return Observable::fromArray($commits);
+                    return observableFromArray($commits);
                 })->map(function ($commit) {
                     return $this->hydrator->hydrate(CommitInterface::HYDRATE_CLASS, $commit);
                 })
