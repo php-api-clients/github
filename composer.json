@@ -1,5 +1,6 @@
 {
   "name": "api-clients/github",
+  "description": "Async first Github client",
   "license": "MIT",
   "minimum-stability": "dev",
   "prefer-stable": true,

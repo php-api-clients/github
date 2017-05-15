@@ -2781,7 +2781,7 @@
                 }
             ],
             "description": "Resource from YAML generation tool",
-            "time": "2017-05-15T08:59:28+00:00"
+            "time": "2017-05-15 08:59:28"
         },
         {
             "name": "api-clients/resource-test-utilities",
