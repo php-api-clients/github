@@ -8,7 +8,7 @@ use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Label extends BaseLabel
 {
-    public function refresh() : Label
+    public function refresh(): Label
     {
         return $this->wait(
             $this->handleCommand(

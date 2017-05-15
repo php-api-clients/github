@@ -28,7 +28,7 @@ abstract class RateLimit extends AbstractResource implements RateLimitInterface
     /**
      * @return RateLimit\Resource
      */
-    public function resources() : RateLimit\Resource
+    public function resources(): RateLimit\Resource
     {
         return $this->resources;
     }
@@ -36,7 +36,7 @@ abstract class RateLimit extends AbstractResource implements RateLimitInterface
     /**
      * @return Rate
      */
-    public function rate() : Rate
+    public function rate(): Rate
     {
         return $this->rate;
     }

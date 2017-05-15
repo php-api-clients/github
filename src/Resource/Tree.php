@@ -23,7 +23,7 @@ abstract class Tree extends AbstractResource implements TreeInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -31,7 +31,7 @@ abstract class Tree extends AbstractResource implements TreeInterface
     /**
      * @return string
      */
-    public function sha() : string
+    public function sha(): string
     {
         return $this->sha;
     }

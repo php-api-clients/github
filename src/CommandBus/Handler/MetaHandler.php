@@ -24,7 +24,7 @@ final class MetaHandler
     }
 
     /**
-     * @param MetaCommand $command
+     * @param  MetaCommand      $command
      * @return PromiseInterface
      */
     public function handle(MetaCommand $command): PromiseInterface

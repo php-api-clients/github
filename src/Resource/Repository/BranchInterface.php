@@ -12,20 +12,20 @@ interface BranchInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function name() : string;
+    public function name(): string;
 
     /**
      * @return TreeInterface
      */
-    public function commit() : TreeInterface;
+    public function commit(): TreeInterface;
 
     /**
      * @return bool
      */
-    public function protected() : bool;
+    public function protected(): bool;
 
     /**
      * @return string
      */
-    public function protectionUrl() : string;
+    public function protectionUrl(): string;
 }

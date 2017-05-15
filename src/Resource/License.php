@@ -33,7 +33,7 @@ abstract class License extends AbstractResource implements LicenseInterface
     /**
      * @return string
      */
-    public function key() : string
+    public function key(): string
     {
         return $this->key;
     }
@@ -41,7 +41,7 @@ abstract class License extends AbstractResource implements LicenseInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -49,7 +49,7 @@ abstract class License extends AbstractResource implements LicenseInterface
     /**
      * @return string
      */
-    public function spdxId() : string
+    public function spdxId(): string
     {
         return $this->spdx_id;
     }
@@ -57,7 +57,7 @@ abstract class License extends AbstractResource implements LicenseInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }

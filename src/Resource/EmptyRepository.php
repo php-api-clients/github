@@ -10,7 +10,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return null;
     }
@@ -18,7 +18,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -26,7 +26,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function fullName() : string
+    public function fullName(): string
     {
         return null;
     }
@@ -34,7 +34,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -42,7 +42,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function description() : string
+    public function description(): string
     {
         return null;
     }
@@ -50,7 +50,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return bool
      */
-    public function private() : bool
+    public function private(): bool
     {
         return null;
     }
@@ -58,7 +58,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return bool
      */
-    public function fork() : bool
+    public function fork(): bool
     {
         return null;
     }
@@ -66,7 +66,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function homepage() : string
+    public function homepage(): string
     {
         return null;
     }
@@ -74,7 +74,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function language() : string
+    public function language(): string
     {
         return null;
     }
@@ -82,7 +82,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return int
      */
-    public function forksCount() : int
+    public function forksCount(): int
     {
         return null;
     }
@@ -90,7 +90,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return int
      */
-    public function stargazersCount() : int
+    public function stargazersCount(): int
     {
         return null;
     }
@@ -98,7 +98,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return int
      */
-    public function watchersCount() : int
+    public function watchersCount(): int
     {
         return null;
     }
@@ -106,7 +106,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return int
      */
-    public function size() : int
+    public function size(): int
     {
         return null;
     }
@@ -114,7 +114,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function defaultBranch() : string
+    public function defaultBranch(): string
     {
         return null;
     }
@@ -122,7 +122,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return int
      */
-    public function openIssuesCount() : int
+    public function openIssuesCount(): int
     {
         return null;
     }
@@ -130,7 +130,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return bool
      */
-    public function hasIssues() : bool
+    public function hasIssues(): bool
     {
         return null;
     }
@@ -138,7 +138,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return bool
      */
-    public function hasWiki() : bool
+    public function hasWiki(): bool
     {
         return null;
     }
@@ -146,7 +146,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return bool
      */
-    public function hasPages() : bool
+    public function hasPages(): bool
     {
         return null;
     }
@@ -154,7 +154,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return bool
      */
-    public function hasDownloads() : bool
+    public function hasDownloads(): bool
     {
         return null;
     }
@@ -162,7 +162,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return DateTimeInterface
      */
-    public function pushedAt() : DateTimeInterface
+    public function pushedAt(): DateTimeInterface
     {
         return null;
     }
@@ -170,7 +170,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return DateTimeInterface
      */
-    public function createdAt() : DateTimeInterface
+    public function createdAt(): DateTimeInterface
     {
         return null;
     }
@@ -178,7 +178,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return null;
     }
@@ -186,7 +186,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return array
      */
-    public function permissions() : array
+    public function permissions(): array
     {
         return null;
     }
@@ -194,7 +194,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return string
      */
-    public function htmlUrl() : string
+    public function htmlUrl(): string
     {
         return null;
     }
@@ -202,7 +202,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return User
      */
-    public function owner() : User
+    public function owner(): User
     {
         return null;
     }
@@ -210,7 +210,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return License
      */
-    public function license() : License
+    public function license(): License
     {
         return null;
     }
@@ -218,7 +218,7 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
     /**
      * @return array
      */
-    public function topics() : array
+    public function topics(): array
     {
         return null;
     }

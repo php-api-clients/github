@@ -22,7 +22,7 @@ final class RefreshHandler
     }
 
     /**
-     * @param RefreshCommand $command
+     * @param  RefreshCommand   $command
      * @return PromiseInterface
      */
     public function handle(RefreshCommand $command): PromiseInterface

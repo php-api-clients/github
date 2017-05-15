@@ -11,15 +11,15 @@ interface LabelInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function url() : string;
+    public function url(): string;
 
     /**
      * @return string
      */
-    public function name() : string;
+    public function name(): string;
 
     /**
      * @return string
      */
-    public function color() : string;
+    public function color(): string;
 }

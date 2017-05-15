@@ -24,7 +24,7 @@ final class AddLabelHandler
 
     /**
      * @param RequestService $requestService
-     * @param Hydrator $hydrator
+     * @param Hydrator       $hydrator
      */
     public function __construct(RequestService $requestService, Hydrator $hydrator)
     {
@@ -33,7 +33,7 @@ final class AddLabelHandler
     }
 
     /**
-     * @param AddLabelCommand $command
+     * @param  AddLabelCommand  $command
      * @return PromiseInterface
      */
     public function handle(AddLabelCommand $command): PromiseInterface

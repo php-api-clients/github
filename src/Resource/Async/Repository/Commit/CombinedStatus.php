@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Repository\Commit\CombinedStatus as BaseCo
 
 class CombinedStatus extends BaseCombinedStatus
 {
-    public function refresh() : CombinedStatus
+    public function refresh(): CombinedStatus
     {
         throw new \Exception('TODO: create refresh method!');
     }

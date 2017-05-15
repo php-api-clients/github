@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Tree as BaseTree;
 
 class Tree extends BaseTree
 {
-    public function refresh() : Tree
+    public function refresh(): Tree
     {
         throw new \Exception('TODO: create refresh method!');
     }

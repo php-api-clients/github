@@ -68,7 +68,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return $this->id;
     }
@@ -76,7 +76,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function login() : string
+    public function login(): string
     {
         return $this->login;
     }
@@ -84,7 +84,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -92,7 +92,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function reposUrl() : string
+    public function reposUrl(): string
     {
         return $this->repos_url;
     }
@@ -100,7 +100,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function eventsUrl() : string
+    public function eventsUrl(): string
     {
         return $this->events_url;
     }
@@ -108,7 +108,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function hooksUrl() : string
+    public function hooksUrl(): string
     {
         return $this->hooks_url;
     }
@@ -116,7 +116,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function issuesUrl() : string
+    public function issuesUrl(): string
     {
         return $this->issues_url;
     }
@@ -124,7 +124,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function membersUrl() : string
+    public function membersUrl(): string
     {
         return $this->members_url;
     }
@@ -132,7 +132,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function publicMembersUrl() : string
+    public function publicMembersUrl(): string
     {
         return $this->public_members_url;
     }
@@ -140,7 +140,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function avatarUrl() : string
+    public function avatarUrl(): string
     {
         return $this->avatar_url;
     }
@@ -148,7 +148,7 @@ abstract class Organization extends AbstractResource implements OrganizationInte
     /**
      * @return string
      */
-    public function description() : string
+    public function description(): string
     {
         return (string)$this->description;
     }

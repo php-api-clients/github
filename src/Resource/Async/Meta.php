@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Meta as BaseMeta;
 
 class Meta extends BaseMeta
 {
-    public function refresh() : Meta
+    public function refresh(): Meta
     {
         throw new \Exception('TODO: create refresh method!');
     }

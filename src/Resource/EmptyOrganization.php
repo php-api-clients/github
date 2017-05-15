@@ -9,7 +9,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function login() : string
+    public function login(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -33,7 +33,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function reposUrl() : string
+    public function reposUrl(): string
     {
         return null;
     }
@@ -41,7 +41,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function eventsUrl() : string
+    public function eventsUrl(): string
     {
         return null;
     }
@@ -49,7 +49,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function hooksUrl() : string
+    public function hooksUrl(): string
     {
         return null;
     }
@@ -57,7 +57,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function issuesUrl() : string
+    public function issuesUrl(): string
     {
         return null;
     }
@@ -65,7 +65,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function membersUrl() : string
+    public function membersUrl(): string
     {
         return null;
     }
@@ -73,7 +73,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function publicMembersUrl() : string
+    public function publicMembersUrl(): string
     {
         return null;
     }
@@ -81,7 +81,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function avatarUrl() : string
+    public function avatarUrl(): string
     {
         return null;
     }
@@ -89,7 +89,7 @@ abstract class EmptyOrganization implements OrganizationInterface, EmptyResource
     /**
      * @return string
      */
-    public function description() : string
+    public function description(): string
     {
         return null;
     }

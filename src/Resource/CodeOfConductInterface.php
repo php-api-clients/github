@@ -11,20 +11,20 @@ interface CodeOfConductInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function key() : string;
+    public function key(): string;
 
     /**
      * @return string
      */
-    public function name() : string;
+    public function name(): string;
 
     /**
      * @return string
      */
-    public function spdxId() : string;
+    public function spdxId(): string;
 
     /**
      * @return string
      */
-    public function url() : string;
+    public function url(): string;
 }

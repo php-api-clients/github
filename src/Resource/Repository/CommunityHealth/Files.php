@@ -40,7 +40,7 @@ abstract class Files extends AbstractResource implements FilesInterface
     /**
      * @return CodeOfConduct
      */
-    public function codeOfConduct() : CodeOfConduct
+    public function codeOfConduct(): CodeOfConduct
     {
         return $this->code_of_conduct;
     }
@@ -48,7 +48,7 @@ abstract class Files extends AbstractResource implements FilesInterface
     /**
      * @return Url
      */
-    public function contributing() : Url
+    public function contributing(): Url
     {
         return $this->contributing;
     }
@@ -56,7 +56,7 @@ abstract class Files extends AbstractResource implements FilesInterface
     /**
      * @return License
      */
-    public function license() : License
+    public function license(): License
     {
         return $this->license;
     }
@@ -64,7 +64,7 @@ abstract class Files extends AbstractResource implements FilesInterface
     /**
      * @return Url
      */
-    public function readme() : Url
+    public function readme(): Url
     {
         return $this->readme;
     }

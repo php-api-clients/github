@@ -11,10 +11,10 @@ interface TreeInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function url() : string;
+    public function url(): string;
 
     /**
      * @return string
      */
-    public function sha() : string;
+    public function sha(): string;
 }

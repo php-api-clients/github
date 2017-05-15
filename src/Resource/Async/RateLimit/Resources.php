@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\RateLimit\Resources as BaseResources;
 
 class Resources extends BaseResources
 {
-    public function refresh() : Resources
+    public function refresh(): Resources
     {
         throw new \Exception('TODO: create refresh method!');
     }

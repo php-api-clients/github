@@ -9,7 +9,7 @@ abstract class EmptyUrl implements UrlInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyUrl implements UrlInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function htmlUrl() : string
+    public function htmlUrl(): string
     {
         return null;
     }

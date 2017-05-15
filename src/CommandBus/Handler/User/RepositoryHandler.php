@@ -23,9 +23,9 @@ final class RepositoryHandler
     }
 
     /**
-     * Fetch the given repository and hydrate it
+     * Fetch the given repository and hydrate it.
      *
-     * @param RepositoryCommand $command
+     * @param  RepositoryCommand $command
      * @return PromiseInterface
      */
     public function handle(RepositoryCommand $command): PromiseInterface

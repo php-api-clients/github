@@ -24,7 +24,7 @@ final class StatusHandler
     }
 
     /**
-     * @param StatusCommand $command
+     * @param  StatusCommand    $command
      * @return PromiseInterface
      */
     public function handle(StatusCommand $command): PromiseInterface

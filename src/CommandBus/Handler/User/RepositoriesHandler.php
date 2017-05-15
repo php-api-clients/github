@@ -24,7 +24,7 @@ final class RepositoriesHandler
 
     /**
      * @param IteratePagesService $iteratePagesService
-     * @param Hydrator $hydrator
+     * @param Hydrator            $hydrator
      */
     public function __construct(IteratePagesService $iteratePagesService, Hydrator $hydrator)
     {
@@ -33,9 +33,9 @@ final class RepositoriesHandler
     }
 
     /**
-     * Fetch the given repository and hydrate it
+     * Fetch the given repository and hydrate it.
      *
-     * @param RepositoriesCommand $command
+     * @param  RepositoriesCommand $command
      * @return PromiseInterface
      */
     public function handle(RepositoriesCommand $command): PromiseInterface

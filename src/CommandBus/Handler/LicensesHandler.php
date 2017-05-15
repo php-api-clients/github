@@ -26,7 +26,7 @@ final class LicensesHandler
     }
 
     /**
-     * @param MyOrganizationsCommand $command
+     * @param  MyOrganizationsCommand $command
      * @return PromiseInterface
      */
     public function handle(LicensesCommand $command): PromiseInterface

@@ -8,7 +8,7 @@ use React\Promise\CancellablePromiseInterface;
 
 class File extends BaseFile
 {
-    public function refresh() : CancellablePromiseInterface
+    public function refresh(): CancellablePromiseInterface
     {
         return $this->handleCommand(new RefreshCommand($this));
     }

@@ -23,7 +23,7 @@ final class SaveHandler
 
     /**
      * @param RequestService $requestService
-     * @param Hydrator $hydrator
+     * @param Hydrator       $hydrator
      */
     public function __construct(RequestService $requestService, Hydrator $hydrator)
     {

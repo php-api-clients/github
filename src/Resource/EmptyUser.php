@@ -10,7 +10,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return null;
     }
@@ -18,7 +18,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function login() : string
+    public function login(): string
     {
         return null;
     }
@@ -26,7 +26,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -34,7 +34,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function avatarUrl() : string
+    public function avatarUrl(): string
     {
         return null;
     }
@@ -42,7 +42,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function type() : string
+    public function type(): string
     {
         return null;
     }
@@ -50,7 +50,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return bool
      */
-    public function siteAdmin() : bool
+    public function siteAdmin(): bool
     {
         return null;
     }
@@ -58,7 +58,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -66,7 +66,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function company() : string
+    public function company(): string
     {
         return null;
     }
@@ -74,7 +74,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function blog() : string
+    public function blog(): string
     {
         return null;
     }
@@ -82,7 +82,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function location() : string
+    public function location(): string
     {
         return null;
     }
@@ -90,7 +90,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function email() : string
+    public function email(): string
     {
         return null;
     }
@@ -98,7 +98,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return bool
      */
-    public function hireable() : bool
+    public function hireable(): bool
     {
         return null;
     }
@@ -106,7 +106,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function bio() : string
+    public function bio(): string
     {
         return null;
     }
@@ -114,7 +114,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function publicRepos() : string
+    public function publicRepos(): string
     {
         return null;
     }
@@ -122,7 +122,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function publicGists() : string
+    public function publicGists(): string
     {
         return null;
     }
@@ -130,7 +130,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function followers() : string
+    public function followers(): string
     {
         return null;
     }
@@ -138,7 +138,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function following() : string
+    public function following(): string
     {
         return null;
     }
@@ -146,7 +146,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return DateTimeInterface
      */
-    public function createdAt() : DateTimeInterface
+    public function createdAt(): DateTimeInterface
     {
         return null;
     }
@@ -154,7 +154,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return null;
     }

@@ -9,7 +9,7 @@ abstract class EmptyRate implements RateInterface, EmptyResourceInterface
     /**
      * @return int
      */
-    public function limit() : int
+    public function limit(): int
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyRate implements RateInterface, EmptyResourceInterface
     /**
      * @return int
      */
-    public function remaining() : int
+    public function remaining(): int
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyRate implements RateInterface, EmptyResourceInterface
     /**
      * @return int
      */
-    public function reset() : int
+    public function reset(): int
     {
         return null;
     }

@@ -12,20 +12,20 @@ interface CommunityHealthInterface extends ResourceInterface
     /**
      * @return int
      */
-    public function healthPercentage() : int;
+    public function healthPercentage(): int;
 
     /**
      * @return Repository\CommunityHealth\Files
      */
-    public function files() : Repository\CommunityHealth\Files;
+    public function files(): Repository\CommunityHealth\Files;
 
     /**
      * @return bool
      */
-    public function protected() : bool;
+    public function protected(): bool;
 
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface;
+    public function updatedAt(): DateTimeInterface;
 }

@@ -24,7 +24,7 @@ final class CommitsHandler
 
     /**
      * @param IteratePagesService $iteratePagesService
-     * @param Hydrator $hydrator
+     * @param Hydrator            $hydrator
      */
     public function __construct(IteratePagesService $iteratePagesService, Hydrator $hydrator)
     {
@@ -33,7 +33,7 @@ final class CommitsHandler
     }
 
     /**
-     * @param CommitsCommand $command
+     * @param  CommitsCommand   $command
      * @return PromiseInterface
      */
     public function handle(CommitsCommand $command): PromiseInterface

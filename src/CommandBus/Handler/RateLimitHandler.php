@@ -25,7 +25,7 @@ final class RateLimitHandler
     }
 
     /**
-     * @param RateLimitCommand $command
+     * @param  RateLimitCommand $command
      * @return PromiseInterface
      */
     public function handle(RateLimitCommand $command): PromiseInterface

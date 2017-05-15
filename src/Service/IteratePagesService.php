@@ -4,17 +4,11 @@ namespace ApiClients\Client\Github\Service;
 
 use ApiClients\Foundation\Transport\Service\RequestService;
 use Psr\Http\Message\ResponseInterface;
-use React\Promise\CancellablePromiseInterface;
 use RingCentral\Psr7\Request;
 use Rx\AsyncSchedulerInterface;
-use Rx\Disposable\CallbackDisposable;
 use Rx\Observable;
-use Rx\ObserverInterface;
 use Rx\Scheduler;
-use Rx\SchedulerInterface;
 use Rx\Subject\Subject;
-use function React\Promise\all;
-use function React\Promise\resolve;
 
 class IteratePagesService
 {
@@ -29,7 +23,7 @@ class IteratePagesService
     private $scheduler;
 
     /**
-     * @param RequestService $requestService
+     * @param RequestService          $requestService
      * @param AsyncSchedulerInterface $scheduler
      */
     public function __construct(RequestService $requestService, AsyncSchedulerInterface $scheduler = null)
@@ -99,11 +93,13 @@ class IteratePagesService
 
         if ($subject->isDisposed() || !$subject->hasObservers()) {
             $subject->onCompleted();
+
             return;
         }
 
         if (!$response->hasHeader('link')) {
             $subject->onCompleted();
+
             return;
         }
 
@@ -120,6 +116,7 @@ class IteratePagesService
 
         if ($links['next'] === false || $links['last'] === false) {
             $subject->onCompleted();
+
             return;
         }
 

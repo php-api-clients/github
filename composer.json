@@ -1,105 +1,109 @@
 {
-    "name": "api-clients/github",
-    "license": "MIT",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "authors": [
-        {
-            "name": "Cees-Jan Kiewiet",
-            "email": "ceesjank@gmail.com"
-        }
-    ],
-    "require": {
-        "php": "^7.0",
-        "api-clients/client-services": "^1.0",
-        "api-clients/foundation": "dev-master",
-        "api-clients/middleware": "^2.0",
-        "api-clients/middleware-http-exceptions": "^1.0",
-        "api-clients/middleware-json": "^1.0",
-        "api-clients/middleware-token-authorization": "^2.0",
-        "api-clients/middleware-user-agent": "^1.0",
-        "api-clients/rx": "^2.1",
-        "api-clients/rx-operators": "^2.0"
-    },
-    "require-dev": {
-        "api-clients/appveyor": "dev-master",
-        "api-clients/resource-generator": "dev-master",
-        "api-clients/resource-test-utilities": "dev-master",
-        "api-clients/test-utilities": "^3.0.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "ApiClients\\Client\\Github\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ApiClients\\Tests\\Client\\Github\\": "tests/"
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "api-clients": {
-            "command-bus": {
-                "path": "src/CommandBus",
-                "namespace": "ApiClients\\Client\\Github\\CommandBus"
-            }
-        }
-    },
-    "suggest": {
-        "api-clients/appveyor": "Easy access to AppVeyor client",
-        "api-clients/scrutinizer": "Easy access to Scrutinizer client",
-        "api-clients/travis": "Easy access to Travis client"
-    },
-    "scripts": {
-        "ensure-installed": "composer install --ansi -n -q",
-        "cs": [
-            "@ensure-installed",
-            "phpcs --standard=PSR2 src/"
-        ],
-        "unit": [
-            "@ensure-installed",
-            "phpunit --colors=always -c phpunit.xml.dist"
-        ],
-        "unit-coverage": [
-            "@ensure-installed",
-            "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
-        ],
-        "lint-php": [
-            "@ensure-installed",
-            "parallel-lint --exclude vendor ."
-        ],
-        "qa-all": [
-            "@lint-php",
-            "@cs",
-            "@unit"
-        ],
-        "qa-all-coverage": [
-            "@lint-php",
-            "@cs",
-            "@unit-coverage"
-        ],
-        "qa-windows": [
-            "@lint-php",
-            "@cs",
-            "@unit"
-        ],
-        "qa-ci": [
-            "@qa-all"
-        ],
-        "qa-ci-coverage": [
-            "@qa-all-coverage"
-        ],
-        "qa-ci-windows": [
-            "@qa-windows"
-        ],
-        "qa-contrib": [
-            "@qa-all"
-        ],
-        "ci-coverage": [
-            "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
-        ]
+  "name": "api-clients/github",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Cees-Jan Kiewiet",
+      "email": "ceesjank@gmail.com"
     }
+  ],
+  "require": {
+    "php": "^7.0",
+    "api-clients/client-services": "^1.0",
+    "api-clients/foundation": "dev-master",
+    "api-clients/middleware": "^2.0",
+    "api-clients/middleware-http-exceptions": "^1.0",
+    "api-clients/middleware-json": "^1.0",
+    "api-clients/middleware-token-authorization": "^2.0",
+    "api-clients/middleware-user-agent": "^1.0",
+    "api-clients/rx": "^2.1",
+    "api-clients/rx-operators": "^2.0"
+  },
+  "require-dev": {
+    "api-clients/appveyor": "dev-master",
+    "api-clients/resource-generator": "dev-master",
+    "api-clients/resource-test-utilities": "dev-master",
+    "api-clients/test-utilities": "^4.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ApiClients\\Client\\Github\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ApiClients\\Tests\\Client\\Github\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "api-clients": {
+      "command-bus": {
+        "path": "src/CommandBus",
+        "namespace": "ApiClients\\Client\\Github\\CommandBus"
+      }
+    }
+  },
+  "suggest": {
+    "api-clients/appveyor": "Easy access to AppVeyor client",
+    "api-clients/scrutinizer": "Easy access to Scrutinizer client",
+    "api-clients/travis": "Easy access to Travis client"
+  },
+  "scripts": {
+    "ensure-installed": "composer install --ansi -n -q",
+    "cs": [
+      "@ensure-installed",
+      "php-cs-fixer fix --config=.php_cs --ansi --dry-run --diff --verbose --allow-risky=yes --show-progress=estimating"
+    ],
+    "cs-fix": [
+      "@ensure-installed",
+      "php-cs-fixer fix --config=.php_cs --ansi --verbose --allow-risky=yes --show-progress=estimating"
+    ],
+    "unit": [
+      "@ensure-installed",
+      "phpunit --colors=always -c phpunit.xml.dist"
+    ],
+    "unit-coverage": [
+      "@ensure-installed",
+      "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
+    ],
+    "lint-php": [
+      "@ensure-installed",
+      "parallel-lint --exclude vendor ."
+    ],
+    "qa-all": [
+      "@lint-php",
+      "@cs",
+      "@unit"
+    ],
+    "qa-all-coverage": [
+      "@lint-php",
+      "@cs",
+      "@unit-coverage"
+    ],
+    "qa-windows": [
+      "@lint-php",
+      "@cs",
+      "@unit"
+    ],
+    "qa-ci": [
+      "@qa-all"
+    ],
+    "qa-ci-coverage": [
+      "@qa-all-coverage"
+    ],
+    "qa-ci-windows": [
+      "@qa-windows"
+    ],
+    "qa-contrib": [
+      "@qa-all"
+    ],
+    "ci-coverage": [
+      "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
+    ]
+  }
 }

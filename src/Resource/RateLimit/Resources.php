@@ -28,7 +28,7 @@ abstract class Resources extends AbstractResource implements ResourcesInterface
     /**
      * @return Rate
      */
-    public function core() : Rate
+    public function core(): Rate
     {
         return $this->core;
     }
@@ -36,7 +36,7 @@ abstract class Resources extends AbstractResource implements ResourcesInterface
     /**
      * @return Rate
      */
-    public function search() : Rate
+    public function search(): Rate
     {
         return $this->search;
     }

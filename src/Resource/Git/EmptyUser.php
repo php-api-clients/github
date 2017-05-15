@@ -10,7 +10,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -18,7 +18,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function email() : string
+    public function email(): string
     {
         return null;
     }
@@ -26,7 +26,7 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
     /**
      * @return DateTimeInterface
      */
-    public function date() : DateTimeInterface
+    public function date(): DateTimeInterface
     {
         return null;
     }

@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Emoji as BaseEmoji;
 
 class Emoji extends BaseEmoji
 {
-    public function refresh() : Emoji
+    public function refresh(): Emoji
     {
         throw new \Exception('TODO: create refresh method!');
     }

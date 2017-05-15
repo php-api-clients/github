@@ -38,8 +38,8 @@ final class RateLimitStateMiddleware implements MiddlewareInterface
     }
 
     /**
-     * @param ResponseInterface $response
-     * @param array $options
+     * @param  ResponseInterface           $response
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      */
     public function post(ResponseInterface $response, array $options = []): CancellablePromiseInterface

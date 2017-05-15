@@ -12,7 +12,7 @@ use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 class Commit extends BaseCommit
 {
-    public function refresh() : PromiseInterface
+    public function refresh(): PromiseInterface
     {
         return $this->handleCommand(
             new RefreshCommand($this)

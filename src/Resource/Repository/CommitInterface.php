@@ -14,35 +14,35 @@ interface CommitInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function url() : string;
+    public function url(): string;
 
     /**
      * @return string
      */
-    public function sha() : string;
+    public function sha(): string;
 
     /**
      * @return string
      */
-    public function htmlUrl() : string;
+    public function htmlUrl(): string;
 
     /**
      * @return GitCommitInterface
      */
-    public function commit() : GitCommitInterface;
+    public function commit(): GitCommitInterface;
 
     /**
      * @return UserInterface
      */
-    public function author() : UserInterface;
+    public function author(): UserInterface;
 
     /**
      * @return UserInterface
      */
-    public function comitter() : UserInterface;
+    public function comitter(): UserInterface;
 
     /**
      * @return TreeInterface
      */
-    public function parents() : TreeInterface;
+    public function parents(): TreeInterface;
 }

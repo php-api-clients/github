@@ -26,7 +26,7 @@ final class CommunityHealthHandler
     }
 
     /**
-     * @param CommunityHealthCommand $command
+     * @param  CommunityHealthCommand $command
      * @return PromiseInterface
      */
     public function handle(CommunityHealthCommand $command): PromiseInterface

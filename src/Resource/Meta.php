@@ -43,7 +43,7 @@ abstract class Meta extends AbstractResource implements MetaInterface
     /**
      * @return bool
      */
-    public function verifiablePasswordAuthentication() : bool
+    public function verifiablePasswordAuthentication(): bool
     {
         return $this->verifiable_password_authentication;
     }
@@ -51,7 +51,7 @@ abstract class Meta extends AbstractResource implements MetaInterface
     /**
      * @return string
      */
-    public function githubServicesSha() : string
+    public function githubServicesSha(): string
     {
         return $this->github_services_sha;
     }
@@ -59,7 +59,7 @@ abstract class Meta extends AbstractResource implements MetaInterface
     /**
      * @return array
      */
-    public function hooks() : array
+    public function hooks(): array
     {
         return $this->hooks;
     }
@@ -67,7 +67,7 @@ abstract class Meta extends AbstractResource implements MetaInterface
     /**
      * @return array
      */
-    public function git() : array
+    public function git(): array
     {
         return $this->git;
     }
@@ -75,7 +75,7 @@ abstract class Meta extends AbstractResource implements MetaInterface
     /**
      * @return array
      */
-    public function pages() : array
+    public function pages(): array
     {
         return $this->pages;
     }
@@ -83,7 +83,7 @@ abstract class Meta extends AbstractResource implements MetaInterface
     /**
      * @return array
      */
-    public function importer() : array
+    public function importer(): array
     {
         return $this->importer;
     }

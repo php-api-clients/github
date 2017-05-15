@@ -154,7 +154,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return $this->id;
     }
@@ -162,7 +162,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -170,7 +170,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function fullName() : string
+    public function fullName(): string
     {
         return $this->full_name;
     }
@@ -178,7 +178,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -186,7 +186,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function description() : string
+    public function description(): string
     {
         return $this->description;
     }
@@ -194,7 +194,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return bool
      */
-    public function private() : bool
+    public function private(): bool
     {
         return $this->private;
     }
@@ -202,7 +202,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return bool
      */
-    public function fork() : bool
+    public function fork(): bool
     {
         return $this->fork;
     }
@@ -210,7 +210,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function homepage() : string
+    public function homepage(): string
     {
         return $this->homepage;
     }
@@ -218,7 +218,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function language() : string
+    public function language(): string
     {
         return $this->language;
     }
@@ -226,7 +226,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return int
      */
-    public function forksCount() : int
+    public function forksCount(): int
     {
         return $this->forks_count;
     }
@@ -234,7 +234,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return int
      */
-    public function stargazersCount() : int
+    public function stargazersCount(): int
     {
         return $this->stargazers_count;
     }
@@ -242,7 +242,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return int
      */
-    public function watchersCount() : int
+    public function watchersCount(): int
     {
         return $this->watchers_count;
     }
@@ -250,7 +250,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return int
      */
-    public function size() : int
+    public function size(): int
     {
         return $this->size;
     }
@@ -258,7 +258,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function defaultBranch() : string
+    public function defaultBranch(): string
     {
         return $this->default_branch;
     }
@@ -266,7 +266,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return int
      */
-    public function openIssuesCount() : int
+    public function openIssuesCount(): int
     {
         return $this->open_issues_count;
     }
@@ -274,7 +274,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return bool
      */
-    public function hasIssues() : bool
+    public function hasIssues(): bool
     {
         return $this->has_issues;
     }
@@ -282,7 +282,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return bool
      */
-    public function hasWiki() : bool
+    public function hasWiki(): bool
     {
         return $this->has_wiki;
     }
@@ -290,7 +290,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return bool
      */
-    public function hasPages() : bool
+    public function hasPages(): bool
     {
         return $this->has_pages;
     }
@@ -298,7 +298,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return bool
      */
-    public function hasDownloads() : bool
+    public function hasDownloads(): bool
     {
         return $this->has_downloads;
     }
@@ -306,7 +306,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return DateTimeInterface
      */
-    public function pushedAt() : DateTimeInterface
+    public function pushedAt(): DateTimeInterface
     {
         return $this->pushed_at;
     }
@@ -314,7 +314,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return DateTimeInterface
      */
-    public function createdAt() : DateTimeInterface
+    public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
@@ -322,7 +322,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
     }
@@ -330,7 +330,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return array
      */
-    public function permissions() : array
+    public function permissions(): array
     {
         return $this->permissions;
     }
@@ -338,7 +338,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return string
      */
-    public function htmlUrl() : string
+    public function htmlUrl(): string
     {
         return $this->html_url;
     }
@@ -346,7 +346,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return User
      */
-    public function owner() : User
+    public function owner(): User
     {
         return $this->owner;
     }
@@ -354,7 +354,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return License
      */
-    public function license() : License
+    public function license(): License
     {
         return $this->license;
     }
@@ -362,7 +362,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
     /**
      * @return array
      */
-    public function topics() : array
+    public function topics(): array
     {
         return $this->topics;
     }

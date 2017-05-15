@@ -9,7 +9,7 @@ abstract class EmptyRateLimit implements RateLimitInterface, EmptyResourceInterf
     /**
      * @return RateLimit\Resource
      */
-    public function resources() : RateLimit\Resource
+    public function resources(): RateLimit\Resource
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyRateLimit implements RateLimitInterface, EmptyResourceInterf
     /**
      * @return Rate
      */
-    public function rate() : Rate
+    public function rate(): Rate
     {
         return null;
     }

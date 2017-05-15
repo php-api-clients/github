@@ -11,20 +11,20 @@ interface VerificationInterface extends ResourceInterface
     /**
      * @return bool
      */
-    public function verified() : bool;
+    public function verified(): bool;
 
     /**
      * @return string
      */
-    public function reason() : string;
+    public function reason(): string;
 
     /**
      * @return string
      */
-    public function signature() : string;
+    public function signature(): string;
 
     /**
      * @return string
      */
-    public function payload() : string;
+    public function payload(): string;
 }

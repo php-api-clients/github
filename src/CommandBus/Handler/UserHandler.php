@@ -23,9 +23,9 @@ final class UserHandler
     }
 
     /**
-     * Fetch the given repository and hydrate it
+     * Fetch the given repository and hydrate it.
      *
-     * @param UserCommand $command
+     * @param  UserCommand      $command
      * @return PromiseInterface
      */
     public function handle(UserCommand $command): PromiseInterface

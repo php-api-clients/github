@@ -9,7 +9,7 @@ abstract class EmptyLabel implements LabelInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyLabel implements LabelInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyLabel implements LabelInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function color() : string
+    public function color(): string
     {
         return null;
     }

@@ -11,57 +11,57 @@ interface DirectoryInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function type() : string;
+    public function type(): string;
 
     /**
      * @return string
      */
-    public function encoding() : string;
+    public function encoding(): string;
 
     /**
      * @return int
      */
-    public function size() : int;
+    public function size(): int;
 
     /**
      * @return string
      */
-    public function name() : string;
+    public function name(): string;
 
     /**
      * @return string
      */
-    public function path() : string;
+    public function path(): string;
 
     /**
      * @return string
      */
-    public function sha() : string;
+    public function sha(): string;
 
     /**
      * @return string
      */
-    public function url() : string;
+    public function url(): string;
 
     /**
      * @return string
      */
-    public function gitUrl() : string;
+    public function gitUrl(): string;
 
     /**
      * @return string
      */
-    public function htmlUrl() : string;
+    public function htmlUrl(): string;
 
     /**
      * @return string
      */
-    public function downloadUrl() : string;
+    public function downloadUrl(): string;
 
     /**
      * @return Links
      */
-    public function links() : Links;
+    public function links(): Links;
 
     /**
      * @return string

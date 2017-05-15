@@ -8,7 +8,7 @@ use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Organization extends BaseOrganization
 {
-    public function refresh() : Organization
+    public function refresh(): Organization
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)

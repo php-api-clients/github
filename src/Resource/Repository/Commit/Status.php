@@ -63,7 +63,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return DateTimeInterface
      */
-    public function createdAt() : DateTimeInterface
+    public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
@@ -71,7 +71,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
     }
@@ -79,7 +79,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return string
      */
-    public function state() : string
+    public function state(): string
     {
         return $this->state;
     }
@@ -87,7 +87,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return string
      */
-    public function targetUrl() : string
+    public function targetUrl(): string
     {
         return $this->target_url;
     }
@@ -95,7 +95,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return string
      */
-    public function description() : string
+    public function description(): string
     {
         return $this->description;
     }
@@ -103,7 +103,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return $this->id;
     }
@@ -111,7 +111,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -119,7 +119,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return string
      */
-    public function context() : string
+    public function context(): string
     {
         return $this->context;
     }
@@ -127,7 +127,7 @@ abstract class Status extends AbstractResource implements StatusInterface
     /**
      * @return User
      */
-    public function creator() : User
+    public function creator(): User
     {
         return $this->creator;
     }

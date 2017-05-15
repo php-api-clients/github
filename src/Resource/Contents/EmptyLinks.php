@@ -9,7 +9,7 @@ abstract class EmptyLinks implements LinksInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function git() : string
+    public function git(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyLinks implements LinksInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function self() : string
+    public function self(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyLinks implements LinksInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function html() : string
+    public function html(): string
     {
         return null;
     }

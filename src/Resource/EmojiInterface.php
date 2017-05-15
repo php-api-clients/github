@@ -11,10 +11,10 @@ interface EmojiInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function name() : string;
+    public function name(): string;
 
     /**
      * @return string
      */
-    public function image() : string;
+    public function image(): string;
 }

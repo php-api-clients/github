@@ -11,20 +11,20 @@ interface FilesInterface extends ResourceInterface
     /**
      * @return CodeOfConduct
      */
-    public function codeOfConduct() : CodeOfConduct;
+    public function codeOfConduct(): CodeOfConduct;
 
     /**
      * @return Url
      */
-    public function contributing() : Url;
+    public function contributing(): Url;
 
     /**
      * @return License
      */
-    public function license() : License;
+    public function license(): License;
 
     /**
      * @return Url
      */
-    public function readme() : Url;
+    public function readme(): Url;
 }

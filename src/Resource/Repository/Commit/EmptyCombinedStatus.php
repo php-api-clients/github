@@ -9,7 +9,7 @@ abstract class EmptyCombinedStatus implements CombinedStatusInterface, EmptyReso
     /**
      * @return string
      */
-    public function state() : string
+    public function state(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyCombinedStatus implements CombinedStatusInterface, EmptyReso
     /**
      * @return string
      */
-    public function sha() : string
+    public function sha(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyCombinedStatus implements CombinedStatusInterface, EmptyReso
     /**
      * @return int
      */
-    public function totalCount() : int
+    public function totalCount(): int
     {
         return null;
     }
@@ -33,7 +33,7 @@ abstract class EmptyCombinedStatus implements CombinedStatusInterface, EmptyReso
     /**
      * @return Repository\Commit\Status
      */
-    public function statuses() : Repository\Commit\Status
+    public function statuses(): Repository\Commit\Status
     {
         return null;
     }
@@ -41,7 +41,7 @@ abstract class EmptyCombinedStatus implements CombinedStatusInterface, EmptyReso
     /**
      * @return Repository
      */
-    public function repository() : Repository
+    public function repository(): Repository
     {
         return null;
     }

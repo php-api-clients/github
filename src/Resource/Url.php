@@ -23,7 +23,7 @@ abstract class Url extends AbstractResource implements UrlInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -31,7 +31,7 @@ abstract class Url extends AbstractResource implements UrlInterface
     /**
      * @return string
      */
-    public function htmlUrl() : string
+    public function htmlUrl(): string
     {
         return $this->html_url;
     }

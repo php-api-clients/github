@@ -11,30 +11,30 @@ interface MetaInterface extends ResourceInterface
     /**
      * @return bool
      */
-    public function verifiablePasswordAuthentication() : bool;
+    public function verifiablePasswordAuthentication(): bool;
 
     /**
      * @return string
      */
-    public function githubServicesSha() : string;
+    public function githubServicesSha(): string;
 
     /**
      * @return array
      */
-    public function hooks() : array;
+    public function hooks(): array;
 
     /**
      * @return array
      */
-    public function git() : array;
+    public function git(): array;
 
     /**
      * @return array
      */
-    public function pages() : array;
+    public function pages(): array;
 
     /**
      * @return array
      */
-    public function importer() : array;
+    public function importer(): array;
 }

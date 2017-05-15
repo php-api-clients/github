@@ -9,7 +9,7 @@ abstract class EmptyEmoji implements EmojiInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyEmoji implements EmojiInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function image() : string
+    public function image(): string
     {
         return null;
     }

@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Git\Verification as BaseVerification;
 
 class Verification extends BaseVerification
 {
-    public function refresh() : Verification
+    public function refresh(): Verification
     {
         throw new \Exception('TODO: create refresh method!');
     }

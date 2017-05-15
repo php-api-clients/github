@@ -2,13 +2,13 @@
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
-use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 use ApiClients\Client\Github\Resource\RateLimit as BaseRateLimit;
 use ApiClients\Client\Github\Resource\RateLimitInterface;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class RateLimit extends BaseRateLimit
 {
-    public function refresh() : RateLimit
+    public function refresh(): RateLimit
     {
         return $this->wait(
             $this->handleCommand(

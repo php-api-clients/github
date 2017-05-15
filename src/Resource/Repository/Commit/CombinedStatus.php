@@ -46,7 +46,7 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     /**
      * @return string
      */
-    public function state() : string
+    public function state(): string
     {
         return $this->state;
     }
@@ -54,7 +54,7 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     /**
      * @return string
      */
-    public function sha() : string
+    public function sha(): string
     {
         return $this->sha;
     }
@@ -62,7 +62,7 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     /**
      * @return int
      */
-    public function totalCount() : int
+    public function totalCount(): int
     {
         return $this->total_count;
     }
@@ -70,7 +70,7 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     /**
      * @return Repository\Commit\Status
      */
-    public function statuses() : Repository\Commit\Status
+    public function statuses(): Repository\Commit\Status
     {
         return $this->statuses;
     }
@@ -78,7 +78,7 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     /**
      * @return Repository
      */
-    public function repository() : Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }

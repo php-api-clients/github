@@ -23,7 +23,7 @@ abstract class Emoji extends AbstractResource implements EmojiInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -31,7 +31,7 @@ abstract class Emoji extends AbstractResource implements EmojiInterface
     /**
      * @return string
      */
-    public function image() : string
+    public function image(): string
     {
         return $this->image;
     }

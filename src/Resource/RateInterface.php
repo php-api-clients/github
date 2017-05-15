@@ -11,15 +11,15 @@ interface RateInterface extends ResourceInterface
     /**
      * @return int
      */
-    public function limit() : int;
+    public function limit(): int;
 
     /**
      * @return int
      */
-    public function remaining() : int;
+    public function remaining(): int;
 
     /**
      * @return int
      */
-    public function reset() : int;
+    public function reset(): int;
 }

@@ -29,7 +29,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -37,7 +37,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function email() : string
+    public function email(): string
     {
         return $this->email;
     }
@@ -45,7 +45,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return DateTimeInterface
      */
-    public function date() : DateTimeInterface
+    public function date(): DateTimeInterface
     {
         return new \DateTimeImmutable($this->date);
     }

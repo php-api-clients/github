@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Repository\Commit\Status as BaseStatus;
 
 class Status extends BaseStatus
 {
-    public function refresh() : Status
+    public function refresh(): Status
     {
         throw new \Exception('TODO: create refresh method!');
     }

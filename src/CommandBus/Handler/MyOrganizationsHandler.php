@@ -24,7 +24,7 @@ final class MyOrganizationsHandler
 
     /**
      * @param IteratePagesService $service
-     * @param Hydrator $hydrator
+     * @param Hydrator            $hydrator
      */
     public function __construct(IteratePagesService $service, Hydrator $hydrator)
     {
@@ -33,7 +33,7 @@ final class MyOrganizationsHandler
     }
 
     /**
-     * @param MyOrganizationsCommand $command
+     * @param  MyOrganizationsCommand $command
      * @return PromiseInterface
      */
     public function handle(MyOrganizationsCommand $command): PromiseInterface

@@ -8,7 +8,7 @@ use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Links extends BaseLinks
 {
-    public function refresh() : Links
+    public function refresh(): Links
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)

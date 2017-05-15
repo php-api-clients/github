@@ -26,7 +26,7 @@ final class SaveCommand
 
     /**
      * @param string $hydrateClass
-     * @param array $data
+     * @param array  $data
      * @param string $url
      */
     public function __construct(string $hydrateClass, array $data, string $url)

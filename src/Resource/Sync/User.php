@@ -8,7 +8,7 @@ use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class User extends BaseUser
 {
-    public function refresh() : User
+    public function refresh(): User
     {
         return $this->wait($this->callAsync('refresh'));
     }

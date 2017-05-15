@@ -9,7 +9,7 @@ abstract class EmptyVerification implements VerificationInterface, EmptyResource
     /**
      * @return bool
      */
-    public function verified() : bool
+    public function verified(): bool
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyVerification implements VerificationInterface, EmptyResource
     /**
      * @return string
      */
-    public function reason() : string
+    public function reason(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyVerification implements VerificationInterface, EmptyResource
     /**
      * @return string
      */
-    public function signature() : string
+    public function signature(): string
     {
         return null;
     }
@@ -33,7 +33,7 @@ abstract class EmptyVerification implements VerificationInterface, EmptyResource
     /**
      * @return string
      */
-    public function payload() : string
+    public function payload(): string
     {
         return null;
     }

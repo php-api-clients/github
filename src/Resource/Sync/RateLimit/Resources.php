@@ -2,13 +2,13 @@
 
 namespace ApiClients\Client\Github\Resource\Sync\RateLimit;
 
-use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 use ApiClients\Client\Github\Resource\RateLimit\Resources as BaseResources;
 use ApiClients\Client\Github\Resource\RateLimit\ResourcesInterface;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Resources extends BaseResources
 {
-    public function refresh() : Resources
+    public function refresh(): Resources
     {
         return $this->wait(
             $this->handleCommand(

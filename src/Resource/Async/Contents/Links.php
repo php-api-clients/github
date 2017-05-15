@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Contents\Links as BaseLinks;
 
 class Links extends BaseLinks
 {
-    public function refresh() : Links
+    public function refresh(): Links
     {
         throw new \Exception('TODO: create refresh method!');
     }

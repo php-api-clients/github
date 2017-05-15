@@ -2,12 +2,8 @@
 
 namespace ApiClients\Client\Github;
 
-use ApiClients\Client\Github\CommandBus\Command;
-use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
-use function React\Promise\resolve;
 
 interface AsyncClientInterface
 {

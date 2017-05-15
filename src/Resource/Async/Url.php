@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Url as BaseUrl;
 
 class Url extends BaseUrl
 {
-    public function refresh() : Url
+    public function refresh(): Url
     {
         throw new \Exception('TODO: create refresh method!');
     }

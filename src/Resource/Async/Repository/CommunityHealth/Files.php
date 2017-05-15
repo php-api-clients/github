@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Repository\CommunityHealth\Files as BaseFi
 
 class Files extends BaseFiles
 {
-    public function refresh() : Files
+    public function refresh(): Files
     {
         throw new \Exception('TODO: create refresh method!');
     }

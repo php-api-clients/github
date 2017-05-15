@@ -9,7 +9,7 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
     /**
      * @return bool
      */
-    public function verifiablePasswordAuthentication() : bool
+    public function verifiablePasswordAuthentication(): bool
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function githubServicesSha() : string
+    public function githubServicesSha(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
     /**
      * @return array
      */
-    public function hooks() : array
+    public function hooks(): array
     {
         return null;
     }
@@ -33,7 +33,7 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
     /**
      * @return array
      */
-    public function git() : array
+    public function git(): array
     {
         return null;
     }
@@ -41,7 +41,7 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
     /**
      * @return array
      */
-    public function pages() : array
+    public function pages(): array
     {
         return null;
     }
@@ -49,7 +49,7 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
     /**
      * @return array
      */
-    public function importer() : array
+    public function importer(): array
     {
         return null;
     }

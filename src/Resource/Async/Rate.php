@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Rate as BaseRate;
 
 class Rate extends BaseRate
 {
-    public function refresh() : Rate
+    public function refresh(): Rate
     {
         throw new \Exception('TODO: create refresh method!');
     }

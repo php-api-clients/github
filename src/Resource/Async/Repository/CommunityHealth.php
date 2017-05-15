@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Repository\CommunityHealth as BaseCommunit
 
 class CommunityHealth extends BaseCommunityHealth
 {
-    public function refresh() : CommunityHealth
+    public function refresh(): CommunityHealth
     {
         throw new \Exception('TODO: create refresh method!');
     }

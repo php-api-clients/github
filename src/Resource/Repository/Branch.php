@@ -39,7 +39,7 @@ abstract class Branch extends AbstractResource implements BranchInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -47,7 +47,7 @@ abstract class Branch extends AbstractResource implements BranchInterface
     /**
      * @return TreeInterface
      */
-    public function commit() : TreeInterface
+    public function commit(): TreeInterface
     {
         return $this->commit;
     }
@@ -55,7 +55,7 @@ abstract class Branch extends AbstractResource implements BranchInterface
     /**
      * @return bool
      */
-    public function protected() : bool
+    public function protected(): bool
     {
         return $this->protected;
     }
@@ -63,7 +63,7 @@ abstract class Branch extends AbstractResource implements BranchInterface
     /**
      * @return string
      */
-    public function protectionUrl() : string
+    public function protectionUrl(): string
     {
         return $this->protection_url;
     }

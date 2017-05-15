@@ -24,7 +24,7 @@ final class LabelsHandler
 
     /**
      * @param IteratePagesService $iteratePagesService
-     * @param Hydrator $hydrator
+     * @param Hydrator            $hydrator
      */
     public function __construct(IteratePagesService $iteratePagesService, Hydrator $hydrator)
     {
@@ -33,7 +33,7 @@ final class LabelsHandler
     }
 
     /**
-     * @param LabelsCommand $command
+     * @param  LabelsCommand    $command
      * @return PromiseInterface
      */
     public function handle(LabelsCommand $command): PromiseInterface

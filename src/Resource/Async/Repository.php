@@ -10,16 +10,14 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthComman
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
-use ApiClients\Foundation\Transport\Response;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
 use Rx\ObservableInterface;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
-use function React\Promise\resolve;
 
 class Repository extends BaseRepository
 {
-    public function refresh() : PromiseInterface
+    public function refresh(): PromiseInterface
     {
         return $this->handleCommand(
             new RefreshCommand($this)

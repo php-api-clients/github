@@ -24,7 +24,7 @@ final class StatusesHandler
 
     /**
      * @param IteratePagesService $iteratePagesService
-     * @param Hydrator $hydrator
+     * @param Hydrator            $hydrator
      */
     public function __construct(IteratePagesService $iteratePagesService, Hydrator $hydrator)
     {
@@ -33,7 +33,7 @@ final class StatusesHandler
     }
 
     /**
-     * @param StatusesCommand $command
+     * @param  StatusesCommand  $command
      * @return PromiseInterface
      */
     public function handle(StatusesCommand $command): PromiseInterface

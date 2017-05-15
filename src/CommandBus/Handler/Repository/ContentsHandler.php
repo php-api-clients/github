@@ -27,7 +27,7 @@ final class ContentsHandler
     /**
      * ContentsHandler constructor.
      * @param RequestService $requestService
-     * @param Hydrator $hydrator
+     * @param Hydrator       $hydrator
      */
     public function __construct(RequestService $requestService, Hydrator $hydrator)
     {
@@ -39,6 +39,7 @@ final class ContentsHandler
     {
         $path = ltrim($command->getPath(), '/');
         $uri = 'repos/' . $command->getFullname() . '/contents/' . $path;
+
         return resolve(
             Promise::toObservable(
                 $this->requestService->request(

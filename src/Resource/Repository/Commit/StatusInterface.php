@@ -12,45 +12,45 @@ interface StatusInterface extends ResourceInterface
     /**
      * @return DateTimeInterface
      */
-    public function createdAt() : DateTimeInterface;
+    public function createdAt(): DateTimeInterface;
 
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface;
+    public function updatedAt(): DateTimeInterface;
 
     /**
      * @return string
      */
-    public function state() : string;
+    public function state(): string;
 
     /**
      * @return string
      */
-    public function targetUrl() : string;
+    public function targetUrl(): string;
 
     /**
      * @return string
      */
-    public function description() : string;
+    public function description(): string;
 
     /**
      * @return int
      */
-    public function id() : int;
+    public function id(): int;
 
     /**
      * @return string
      */
-    public function url() : string;
+    public function url(): string;
 
     /**
      * @return string
      */
-    public function context() : string;
+    public function context(): string;
 
     /**
      * @return User
      */
-    public function creator() : User;
+    public function creator(): User;
 }

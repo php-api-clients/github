@@ -9,14 +9,14 @@ use React\Promise\PromiseInterface;
 
 class Label extends BaseLabel
 {
-    public function refresh() : PromiseInterface
+    public function refresh(): PromiseInterface
     {
         return $this->handleCommand(
             new RefreshCommand($this)
         );
     }
 
-    public function save() : PromiseInterface
+    public function save(): PromiseInterface
     {
         return $this->handleCommand(
             new SaveCommand(

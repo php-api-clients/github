@@ -11,10 +11,10 @@ interface RateLimitInterface extends ResourceInterface
     /**
      * @return RateLimit\Resource
      */
-    public function resources() : RateLimit\Resource;
+    public function resources(): RateLimit\Resource;
 
     /**
      * @return Rate
      */
-    public function rate() : Rate;
+    public function rate(): Rate;
 }

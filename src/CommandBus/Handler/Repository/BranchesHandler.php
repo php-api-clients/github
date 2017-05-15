@@ -24,7 +24,7 @@ final class BranchesHandler
 
     /**
      * @param IteratePagesService $iteratePagesService
-     * @param Hydrator $hydrator
+     * @param Hydrator            $hydrator
      */
     public function __construct(IteratePagesService $iteratePagesService, Hydrator $hydrator)
     {
@@ -33,7 +33,7 @@ final class BranchesHandler
     }
 
     /**
-     * @param BranchesCommand $command
+     * @param  BranchesCommand  $command
      * @return PromiseInterface
      */
     public function handle(BranchesCommand $command): PromiseInterface

@@ -7,8 +7,8 @@ use ApiClients\Foundation\Factory as FoundationClientFactory;
 use ApiClients\Foundation\Options;
 use React\EventLoop\Factory;
 use React\EventLoop\LoopInterface;
-use function Clue\React\Block\await;
 use Rx\Scheduler;
+use function Clue\React\Block\await;
 
 final class Client implements ClientInterface
 {
@@ -23,8 +23,18 @@ final class Client implements ClientInterface
     private $client;
 
     /**
-     * @param AuthenticationInterface $auth
-     * @param array $options
+     * @param LoopInterface $loop
+     * @param AsyncClient   $client
+     */
+    private function __construct(LoopInterface $loop, AsyncClient $client)
+    {
+        $this->loop = $loop;
+        $this->client = $client;
+    }
+
+    /**
+     * @param  AuthenticationInterface $auth
+     * @param  array                   $options
      * @return Client
      */
     public static function create(
@@ -50,17 +60,7 @@ final class Client implements ClientInterface
     }
 
     /**
-     * @param LoopInterface $loop
-     * @param AsyncClient $client
-     */
-    private function __construct(LoopInterface $loop, AsyncClient $client)
-    {
-        $this->loop = $loop;
-        $this->client = $client;
-    }
-
-    /**
-     * @param string $user
+     * @param  string        $user
      * @return UserInterface
      */
     public function user(string $user): UserInterface

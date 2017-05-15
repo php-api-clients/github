@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\CodeOfConduct as BaseCodeOfConduct;
 
 class CodeOfConduct extends BaseCodeOfConduct
 {
-    public function refresh() : CodeOfConduct
+    public function refresh(): CodeOfConduct
     {
         throw new \Exception('TODO: create refresh method!');
     }

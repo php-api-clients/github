@@ -11,15 +11,15 @@ interface LinksInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function git() : string;
+    public function git(): string;
 
     /**
      * @return string
      */
-    public function self() : string;
+    public function self(): string;
 
     /**
      * @return string
      */
-    public function html() : string;
+    public function html(): string;
 }

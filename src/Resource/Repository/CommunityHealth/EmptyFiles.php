@@ -9,7 +9,7 @@ abstract class EmptyFiles implements FilesInterface, EmptyResourceInterface
     /**
      * @return CodeOfConduct
      */
-    public function codeOfConduct() : CodeOfConduct
+    public function codeOfConduct(): CodeOfConduct
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyFiles implements FilesInterface, EmptyResourceInterface
     /**
      * @return Url
      */
-    public function contributing() : Url
+    public function contributing(): Url
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyFiles implements FilesInterface, EmptyResourceInterface
     /**
      * @return License
      */
-    public function license() : License
+    public function license(): License
     {
         return null;
     }
@@ -33,7 +33,7 @@ abstract class EmptyFiles implements FilesInterface, EmptyResourceInterface
     /**
      * @return Url
      */
-    public function readme() : Url
+    public function readme(): Url
     {
         return null;
     }

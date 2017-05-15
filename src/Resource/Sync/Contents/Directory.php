@@ -8,7 +8,7 @@ use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Directory extends BaseDirectory
 {
-    public function refresh() : Directory
+    public function refresh(): Directory
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)

@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Organization as BaseOrganization;
 
 class Organization extends BaseOrganization
 {
-    public function refresh() : Organization
+    public function refresh(): Organization
     {
         throw new \Exception('TODO: create refresh method!');
     }

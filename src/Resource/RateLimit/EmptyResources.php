@@ -9,7 +9,7 @@ abstract class EmptyResources implements ResourcesInterface, EmptyResourceInterf
     /**
      * @return Rate
      */
-    public function core() : Rate
+    public function core(): Rate
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyResources implements ResourcesInterface, EmptyResourceInterf
     /**
      * @return Rate
      */
-    public function search() : Rate
+    public function search(): Rate
     {
         return null;
     }

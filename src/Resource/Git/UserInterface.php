@@ -12,15 +12,15 @@ interface UserInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function name() : string;
+    public function name(): string;
 
     /**
      * @return string
      */
-    public function email() : string;
+    public function email(): string;
 
     /**
      * @return DateTimeInterface
      */
-    public function date() : DateTimeInterface;
+    public function date(): DateTimeInterface;
 }

@@ -11,10 +11,10 @@ interface ResourcesInterface extends ResourceInterface
     /**
      * @return Rate
      */
-    public function core() : Rate;
+    public function core(): Rate;
 
     /**
      * @return Rate
      */
-    public function search() : Rate;
+    public function search(): Rate;
 }

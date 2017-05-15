@@ -9,7 +9,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function type() : string
+    public function type(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function encoding() : string
+    public function encoding(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return int
      */
-    public function size() : int
+    public function size(): int
     {
         return null;
     }
@@ -33,7 +33,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -41,7 +41,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function path() : string
+    public function path(): string
     {
         return null;
     }
@@ -49,7 +49,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function content() : string
+    public function content(): string
     {
         return null;
     }
@@ -57,7 +57,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function sha() : string
+    public function sha(): string
     {
         return null;
     }
@@ -65,7 +65,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -73,7 +73,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function gitUrl() : string
+    public function gitUrl(): string
     {
         return null;
     }
@@ -81,7 +81,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function htmlUrl() : string
+    public function htmlUrl(): string
     {
         return null;
     }
@@ -89,7 +89,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function downloadUrl() : string
+    public function downloadUrl(): string
     {
         return null;
     }
@@ -105,7 +105,7 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
     /**
      * @return Links
      */
-    public function links() : Links
+    public function links(): Links
     {
         return null;
     }

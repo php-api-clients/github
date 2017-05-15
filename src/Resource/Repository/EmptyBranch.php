@@ -10,7 +10,7 @@ abstract class EmptyBranch implements BranchInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -18,7 +18,7 @@ abstract class EmptyBranch implements BranchInterface, EmptyResourceInterface
     /**
      * @return TreeInterface
      */
-    public function commit() : TreeInterface
+    public function commit(): TreeInterface
     {
         return null;
     }
@@ -26,7 +26,7 @@ abstract class EmptyBranch implements BranchInterface, EmptyResourceInterface
     /**
      * @return bool
      */
-    public function protected() : bool
+    public function protected(): bool
     {
         return null;
     }
@@ -34,7 +34,7 @@ abstract class EmptyBranch implements BranchInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function protectionUrl() : string
+    public function protectionUrl(): string
     {
         return null;
     }

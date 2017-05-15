@@ -28,7 +28,7 @@ abstract class Label extends AbstractResource implements LabelInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -36,7 +36,7 @@ abstract class Label extends AbstractResource implements LabelInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -44,30 +44,32 @@ abstract class Label extends AbstractResource implements LabelInterface
     /**
      * @return string
      */
-    public function color() : string
+    public function color(): string
     {
         return $this->color;
     }
 
     /**
-     * @param string $name
+     * @param  string $name
      * @return Label
      */
     public function withName(string $name): self
     {
         $clone = clone $this;
         $clone->name = $name;
+
         return $clone;
     }
 
     /**
-     * @param string $colour
+     * @param  string $colour
      * @return Label
      */
     public function withColor(string $colour): self
     {
         $clone = clone $this;
         $clone->color = $colour;
+
         return $clone;
     }
 }

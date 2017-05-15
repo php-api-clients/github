@@ -10,7 +10,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return DateTimeInterface
      */
-    public function createdAt() : DateTimeInterface
+    public function createdAt(): DateTimeInterface
     {
         return null;
     }
@@ -18,7 +18,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return null;
     }
@@ -26,7 +26,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function state() : string
+    public function state(): string
     {
         return null;
     }
@@ -34,7 +34,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function targetUrl() : string
+    public function targetUrl(): string
     {
         return null;
     }
@@ -42,7 +42,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function description() : string
+    public function description(): string
     {
         return null;
     }
@@ -50,7 +50,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return null;
     }
@@ -58,7 +58,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -66,7 +66,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function context() : string
+    public function context(): string
     {
         return null;
     }
@@ -74,7 +74,7 @@ abstract class EmptyStatus implements StatusInterface, EmptyResourceInterface
     /**
      * @return User
      */
-    public function creator() : User
+    public function creator(): User
     {
         return null;
     }

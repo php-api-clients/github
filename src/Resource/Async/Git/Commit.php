@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Git\Commit as BaseCommit;
 
 class Commit extends BaseCommit
 {
-    public function refresh() : Commit
+    public function refresh(): Commit
     {
         throw new \Exception('TODO: create refresh method!');
     }

@@ -6,7 +6,7 @@ use ApiClients\Client\Github\Resource\Repository\Branch as BaseBranch;
 
 class Branch extends BaseBranch
 {
-    public function refresh() : Branch
+    public function refresh(): Branch
     {
         throw new \Exception('TODO: create refresh method!');
     }

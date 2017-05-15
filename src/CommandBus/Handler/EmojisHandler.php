@@ -24,7 +24,7 @@ final class EmojisHandler
 
     /**
      * @param IteratePagesService $service
-     * @param Hydrator $hydrator
+     * @param Hydrator            $hydrator
      */
     public function __construct(IteratePagesService $service, Hydrator $hydrator)
     {
@@ -33,7 +33,7 @@ final class EmojisHandler
     }
 
     /**
-     * @param EmojisCommand $command
+     * @param  EmojisCommand    $command
      * @return PromiseInterface
      */
     public function handle(EmojisCommand $command): PromiseInterface

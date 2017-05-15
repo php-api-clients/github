@@ -28,7 +28,7 @@ abstract class Links extends AbstractResource implements LinksInterface
     /**
      * @return string
      */
-    public function git() : string
+    public function git(): string
     {
         return $this->git;
     }
@@ -36,7 +36,7 @@ abstract class Links extends AbstractResource implements LinksInterface
     /**
      * @return string
      */
-    public function self() : string
+    public function self(): string
     {
         return $this->self;
     }
@@ -44,7 +44,7 @@ abstract class Links extends AbstractResource implements LinksInterface
     /**
      * @return string
      */
-    public function html() : string
+    public function html(): string
     {
         return $this->html;
     }

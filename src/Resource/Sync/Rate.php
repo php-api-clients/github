@@ -2,13 +2,13 @@
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
-use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 use ApiClients\Client\Github\Resource\Rate as BaseRate;
 use ApiClients\Client\Github\Resource\RateInterface;
+use ApiClients\Foundation\Hydrator\CommandBus\Command\BuildAsyncFromSyncCommand;
 
 class Rate extends BaseRate
 {
-    public function refresh() : Rate
+    public function refresh(): Rate
     {
         return $this->wait(
             $this->handleCommand(

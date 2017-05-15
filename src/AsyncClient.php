@@ -25,9 +25,19 @@ final class AsyncClient implements AsyncClientInterface
     private $rateLimitState;
 
     /**
-     * @param LoopInterface $loop
-     * @param AuthenticationInterface $auth
-     * @param array $options
+     * @param ClientInterface $client
+     * @param RateLimitState  $rateLimitState
+     */
+    private function __construct(ClientInterface $client, RateLimitState $rateLimitState)
+    {
+        $this->client = $client;
+        $this->rateLimitState = $rateLimitState;
+    }
+
+    /**
+     * @param  LoopInterface           $loop
+     * @param  AuthenticationInterface $auth
+     * @param  array                   $options
      * @return AsyncClient
      */
     public static function create(
@@ -52,23 +62,13 @@ final class AsyncClient implements AsyncClientInterface
 
     /**
      * @internal
-     * @param ClientInterface $client
-     * @param RateLimitState $rateLimitState
+     * @param  ClientInterface $client
+     * @param  RateLimitState  $rateLimitState
      * @return AsyncClient
      */
     public static function createFromClient(ClientInterface $client, RateLimitState $rateLimitState): self
     {
         return new self($client, $rateLimitState);
-    }
-
-    /**
-     * @param ClientInterface $client
-     * @param RateLimitState $rateLimitState
-     */
-    private function __construct(ClientInterface $client, RateLimitState $rateLimitState)
-    {
-        $this->client = $client;
-        $this->rateLimitState = $rateLimitState;
     }
 
     public function meta(): PromiseInterface
@@ -77,7 +77,7 @@ final class AsyncClient implements AsyncClientInterface
     }
 
     /**
-     * @param string $user
+     * @param  string           $user
      * @return PromiseInterface
      */
     public function user(string $user): PromiseInterface

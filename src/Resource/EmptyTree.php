@@ -9,7 +9,7 @@ abstract class EmptyTree implements TreeInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyTree implements TreeInterface, EmptyResourceInterface
     /**
      * @return string
      */
-    public function sha() : string
+    public function sha(): string
     {
         return null;
     }

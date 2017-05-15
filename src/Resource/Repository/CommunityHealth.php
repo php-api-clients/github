@@ -38,7 +38,7 @@ abstract class CommunityHealth extends AbstractResource implements CommunityHeal
     /**
      * @return int
      */
-    public function healthPercentage() : int
+    public function healthPercentage(): int
     {
         return $this->health_percentage;
     }
@@ -46,7 +46,7 @@ abstract class CommunityHealth extends AbstractResource implements CommunityHeal
     /**
      * @return Repository\CommunityHealth\Files
      */
-    public function files() : Repository\CommunityHealth\Files
+    public function files(): Repository\CommunityHealth\Files
     {
         return $this->files;
     }
@@ -54,7 +54,7 @@ abstract class CommunityHealth extends AbstractResource implements CommunityHeal
     /**
      * @return bool
      */
-    public function protected() : bool
+    public function protected(): bool
     {
         return $this->protected;
     }
@@ -62,7 +62,7 @@ abstract class CommunityHealth extends AbstractResource implements CommunityHeal
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
     }

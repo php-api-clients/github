@@ -55,7 +55,7 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -63,7 +63,7 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return User
      */
-    public function author() : User
+    public function author(): User
     {
         return $this->author;
     }
@@ -71,7 +71,7 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return User
      */
-    public function comitter() : User
+    public function comitter(): User
     {
         return $this->comitter;
     }
@@ -79,7 +79,7 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return string
      */
-    public function message() : string
+    public function message(): string
     {
         return $this->message;
     }
@@ -87,7 +87,7 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return Tree
      */
-    public function tree() : Tree
+    public function tree(): Tree
     {
         return $this->tree;
     }
@@ -95,7 +95,7 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return int
      */
-    public function commentCount() : int
+    public function commentCount(): int
     {
         return $this->comment_count;
     }
@@ -103,7 +103,7 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return string
      */
-    public function protectionUrl() : string
+    public function protectionUrl(): string
     {
         return $this->protection_url;
     }

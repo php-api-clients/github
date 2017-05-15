@@ -109,7 +109,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return int
      */
-    public function id() : int
+    public function id(): int
     {
         return $this->id;
     }
@@ -117,7 +117,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function login() : string
+    public function login(): string
     {
         return $this->login;
     }
@@ -125,7 +125,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -133,7 +133,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function avatarUrl() : string
+    public function avatarUrl(): string
     {
         return $this->avatar_url;
     }
@@ -141,7 +141,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function type() : string
+    public function type(): string
     {
         return $this->type;
     }
@@ -149,7 +149,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return bool
      */
-    public function siteAdmin() : bool
+    public function siteAdmin(): bool
     {
         return $this->site_admin;
     }
@@ -157,7 +157,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -165,7 +165,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function company() : string
+    public function company(): string
     {
         return $this->company;
     }
@@ -173,7 +173,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function blog() : string
+    public function blog(): string
     {
         return $this->blog;
     }
@@ -181,7 +181,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function location() : string
+    public function location(): string
     {
         return $this->location;
     }
@@ -189,7 +189,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function email() : string
+    public function email(): string
     {
         return $this->email;
     }
@@ -197,7 +197,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return bool
      */
-    public function hireable() : bool
+    public function hireable(): bool
     {
         return $this->hireable;
     }
@@ -205,7 +205,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function bio() : string
+    public function bio(): string
     {
         return $this->bio;
     }
@@ -213,7 +213,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function publicRepos() : string
+    public function publicRepos(): string
     {
         return $this->public_repos;
     }
@@ -221,7 +221,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function publicGists() : string
+    public function publicGists(): string
     {
         return $this->public_gists;
     }
@@ -229,7 +229,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function followers() : string
+    public function followers(): string
     {
         return $this->followers;
     }
@@ -237,7 +237,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return string
      */
-    public function following() : string
+    public function following(): string
     {
         return $this->following;
     }
@@ -245,7 +245,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return DateTimeInterface
      */
-    public function createdAt() : DateTimeInterface
+    public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
@@ -253,7 +253,7 @@ abstract class User extends AbstractResource implements UserInterface
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
     }

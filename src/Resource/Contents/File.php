@@ -84,7 +84,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function type() : string
+    public function type(): string
     {
         return $this->type;
     }
@@ -92,7 +92,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function encoding() : string
+    public function encoding(): string
     {
         return $this->encoding;
     }
@@ -100,7 +100,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return int
      */
-    public function size() : int
+    public function size(): int
     {
         return $this->size;
     }
@@ -108,7 +108,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
@@ -116,7 +116,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function path() : string
+    public function path(): string
     {
         return $this->path;
     }
@@ -124,7 +124,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function content() : string
+    public function content(): string
     {
         return $this->content;
     }
@@ -132,7 +132,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function sha() : string
+    public function sha(): string
     {
         return $this->sha;
     }
@@ -140,7 +140,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return $this->url;
     }
@@ -148,7 +148,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function gitUrl() : string
+    public function gitUrl(): string
     {
         return $this->git_url;
     }
@@ -156,7 +156,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function htmlUrl() : string
+    public function htmlUrl(): string
     {
         return $this->html_url;
     }
@@ -164,7 +164,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return string
      */
-    public function downloadUrl() : string
+    public function downloadUrl(): string
     {
         return $this->download_url;
     }
@@ -180,7 +180,7 @@ abstract class File extends AbstractResource implements FileInterface
     /**
      * @return Links
      */
-    public function links() : Links
+    public function links(): Links
     {
         return $this->_links;
     }

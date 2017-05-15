@@ -33,7 +33,7 @@ abstract class Verification extends AbstractResource implements VerificationInte
     /**
      * @return bool
      */
-    public function verified() : bool
+    public function verified(): bool
     {
         return $this->verified;
     }
@@ -41,7 +41,7 @@ abstract class Verification extends AbstractResource implements VerificationInte
     /**
      * @return string
      */
-    public function reason() : string
+    public function reason(): string
     {
         return $this->reason;
     }
@@ -49,7 +49,7 @@ abstract class Verification extends AbstractResource implements VerificationInte
     /**
      * @return string
      */
-    public function signature() : string
+    public function signature(): string
     {
         return $this->signature;
     }
@@ -57,7 +57,7 @@ abstract class Verification extends AbstractResource implements VerificationInte
     /**
      * @return string
      */
-    public function payload() : string
+    public function payload(): string
     {
         return $this->payload;
     }

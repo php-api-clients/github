@@ -11,25 +11,25 @@ interface CombinedStatusInterface extends ResourceInterface
     /**
      * @return string
      */
-    public function state() : string;
+    public function state(): string;
 
     /**
      * @return string
      */
-    public function sha() : string;
+    public function sha(): string;
 
     /**
      * @return int
      */
-    public function totalCount() : int;
+    public function totalCount(): int;
 
     /**
      * @return Repository\Commit\Status
      */
-    public function statuses() : Repository\Commit\Status;
+    public function statuses(): Repository\Commit\Status;
 
     /**
      * @return Repository
      */
-    public function repository() : Repository;
+    public function repository(): Repository;
 }

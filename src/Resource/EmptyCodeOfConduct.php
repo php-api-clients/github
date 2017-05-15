@@ -9,7 +9,7 @@ abstract class EmptyCodeOfConduct implements CodeOfConductInterface, EmptyResour
     /**
      * @return string
      */
-    public function key() : string
+    public function key(): string
     {
         return null;
     }
@@ -17,7 +17,7 @@ abstract class EmptyCodeOfConduct implements CodeOfConductInterface, EmptyResour
     /**
      * @return string
      */
-    public function name() : string
+    public function name(): string
     {
         return null;
     }
@@ -25,7 +25,7 @@ abstract class EmptyCodeOfConduct implements CodeOfConductInterface, EmptyResour
     /**
      * @return string
      */
-    public function spdxId() : string
+    public function spdxId(): string
     {
         return null;
     }
@@ -33,7 +33,7 @@ abstract class EmptyCodeOfConduct implements CodeOfConductInterface, EmptyResour
     /**
      * @return string
      */
-    public function url() : string
+    public function url(): string
     {
         return null;
     }

@@ -28,7 +28,7 @@ abstract class Rate extends AbstractResource implements RateInterface
     /**
      * @return int
      */
-    public function limit() : int
+    public function limit(): int
     {
         return $this->limit;
     }
@@ -36,7 +36,7 @@ abstract class Rate extends AbstractResource implements RateInterface
     /**
      * @return int
      */
-    public function remaining() : int
+    public function remaining(): int
     {
         return $this->remaining;
     }
@@ -44,7 +44,7 @@ abstract class Rate extends AbstractResource implements RateInterface
     /**
      * @return int
      */
-    public function reset() : int
+    public function reset(): int
     {
         return $this->reset;
     }

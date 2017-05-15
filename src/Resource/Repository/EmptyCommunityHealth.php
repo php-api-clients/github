@@ -10,7 +10,7 @@ abstract class EmptyCommunityHealth implements CommunityHealthInterface, EmptyRe
     /**
      * @return int
      */
-    public function healthPercentage() : int
+    public function healthPercentage(): int
     {
         return null;
     }
@@ -18,7 +18,7 @@ abstract class EmptyCommunityHealth implements CommunityHealthInterface, EmptyRe
     /**
      * @return Repository\CommunityHealth\Files
      */
-    public function files() : Repository\CommunityHealth\Files
+    public function files(): Repository\CommunityHealth\Files
     {
         return null;
     }
@@ -26,7 +26,7 @@ abstract class EmptyCommunityHealth implements CommunityHealthInterface, EmptyRe
     /**
      * @return bool
      */
-    public function protected() : bool
+    public function protected(): bool
     {
         return null;
     }
@@ -34,7 +34,7 @@ abstract class EmptyCommunityHealth implements CommunityHealthInterface, EmptyRe
     /**
      * @return DateTimeInterface
      */
-    public function updatedAt() : DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return null;
     }
