@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 use ApiClients\Client\Github\Authentication\Anonymous;
 use ApiClients\Client\Github\Authentication\Token;
 use ApiClients\Client\Github\RateLimitState;
@@ -15,7 +14,8 @@ function display_throwable(Throwable $throwable)
     echo (string) $throwable, PHP_EOL;
 }
 
-function displayState(RateLimitState $state) {
+function displayState(RateLimitState $state)
+{
     echo 'Rate Limit State: ', PHP_EOL;
     echo "\t", 'Limit: ', $state->getLimit(), PHP_EOL;
     echo "\t", 'Remaining: ', $state->getRemaining(), PHP_EOL;
@@ -28,6 +28,7 @@ if (!file_exists($keyFile)) {
     echo 'No key file find, copy token.sample.php to token.php and add a token from https://github.com/settings/tokens to run examples.', PHP_EOL;
     echo 'We\'ll make Anonymous calls to Github, add a token to token.sample.php to authenticated requests.', PHP_EOL;
     echo '-----------------------------------------------------------------------------------------------------------------------------', PHP_EOL;
+
     return new Anonymous();
 }
 

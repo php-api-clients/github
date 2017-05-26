@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\User;
 use React\EventLoop\Factory;
@@ -24,6 +23,7 @@ if (count($argv) > 1) {
 foreach ($users as $user) {
     $client->user($user)->then(function (User $user) {
         resource_pretty_print($user);
+
         return $user->refresh();
     })->done(function (User $user) {
         resource_pretty_print($user);

@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Contents\File;
 use ApiClients\Client\Github\Resource\Async\Repository;
@@ -16,6 +15,7 @@ $client = AsyncClient::create($loop, require 'resolve_token.php');
 
 $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($argv) {
     resource_pretty_print($user);
+
     return $user->repository($argv[2] ?? 'github');
 })->then(function (Repository $repository) {
     $repository->contents()->filter(function ($resource) {
@@ -24,7 +24,7 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
         $content->refresh()->done(function (File $content) {
             resource_pretty_print($content, 1, true);
             if ($content->encoding() === 'base64') {
-                echo PHP_EOL, base64_decode($content->content()), PHP_EOL;
+                echo PHP_EOL, base64_decode($content->content(), true), PHP_EOL;
             } else {
                 echo PHP_EOL, 'File encoded as "', $content->encoding(), '", we don\'t support that in this example', PHP_EOL;
             }

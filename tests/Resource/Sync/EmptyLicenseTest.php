@@ -2,16 +2,17 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Sync;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 use ApiClients\Client\Github\Resource\Sync\EmptyLicense;
+use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
 final class EmptyLicenseTest extends AbstractEmptyResourceTest
 {
-    public function getSyncAsync() : string
+    public function getSyncAsync(): string
     {
         return 'Sync';
     }
-    public function getClass() : string
+
+    public function getClass(): string
     {
         return EmptyLicense::class;
     }

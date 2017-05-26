@@ -2,21 +2,23 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Async\Repository\CommunityHealth;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Repository\CommunityHealth\Files;
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class FilesTest extends AbstractResourceTest
 {
-    public function getSyncAsync() : string
+    public function getSyncAsync(): string
     {
         return 'Async';
     }
-    public function getClass() : string
+
+    public function getClass(): string
     {
         return Files::class;
     }
-    public function getNamespace() : string
+
+    public function getNamespace(): string
     {
         return Apisettings::NAMESPACE;
     }

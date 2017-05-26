@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Repository;
 use ApiClients\Client\Github\Resource\Async\User;
@@ -14,6 +13,7 @@ $client = AsyncClient::create($loop, require 'resolve_token.php');
 
 $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($argv) {
     resource_pretty_print($user);
+
     return $user->repository($argv[2] ?? 'github');
 })->then(function (Repository $repository) use ($argv) {
     $repository->contents($argv[3] ?? 'github')->subscribe(function ($content) {

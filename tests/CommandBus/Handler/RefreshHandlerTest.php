@@ -13,7 +13,7 @@ final class RefreshHandlerTest extends TestCase
 {
     public function testCommand()
     {
-        $resource = new class () implements ResourceInterface {
+        $resource = new class() implements ResourceInterface {
             const HYDRATE_CLASS = 'foo.bar';
 
             public function url(): string

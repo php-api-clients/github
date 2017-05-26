@@ -2,13 +2,10 @@
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository\Commit;
 
-use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\StatusCommand;
-use ApiClients\Client\Github\CommandBus\Handler\RefreshHandler;
 use ApiClients\Client\Github\CommandBus\Handler\Repository\Commit\StatusHandler;
 use ApiClients\Client\Github\Resource\Async\Repository\Commit;
 use ApiClients\Client\Github\Resource\Repository\Commit\CombinedStatusInterface;
-use ApiClients\Foundation\Resource\ResourceInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use function React\Promise\resolve;

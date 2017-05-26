@@ -1,7 +1,5 @@
-<?php
-
+<?php declare(strict_types=1);
 use ApiClients\Client\Github\AsyncClient;
-use ApiClients\Client\Github\Resource\Async\Repository;
 use ApiClients\Client\Github\Resource\Async\User;
 use ApiClients\Client\Github\Resource\OrganizationInterface;
 use React\EventLoop\Factory;

@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\EmojiInterface;
 use React\EventLoop\Factory;

@@ -2,16 +2,17 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Async\Git;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 use ApiClients\Client\Github\Resource\Async\Git\EmptyCommit;
+use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
 final class EmptyCommitTest extends AbstractEmptyResourceTest
 {
-    public function getSyncAsync() : string
+    public function getSyncAsync(): string
     {
         return 'Async';
     }
-    public function getClass() : string
+
+    public function getClass(): string
     {
         return EmptyCommit::class;
     }

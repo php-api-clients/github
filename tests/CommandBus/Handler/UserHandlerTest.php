@@ -14,12 +14,12 @@ final class UserHandlerTest extends TestCase
     {
         yield [
             'users/WyriHaximus',
-            'WyriHaximus'
+            'WyriHaximus',
         ];
 
         yield [
             'user',
-            ''
+            '',
         ];
     }
 

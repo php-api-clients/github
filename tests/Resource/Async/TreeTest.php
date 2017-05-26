@@ -2,21 +2,23 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Async;
 
-use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Tree;
+use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 class TreeTest extends AbstractResourceTest
 {
-    public function getSyncAsync() : string
+    public function getSyncAsync(): string
     {
         return 'Async';
     }
-    public function getClass() : string
+
+    public function getClass(): string
     {
         return Tree::class;
     }
-    public function getNamespace() : string
+
+    public function getNamespace(): string
     {
         return Apisettings::NAMESPACE;
     }

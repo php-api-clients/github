@@ -1,8 +1,6 @@
-<?php
-
+<?php declare(strict_types=1);
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\LicenseInterface;
-use ApiClients\Client\Github\Resource\OrganizationInterface;
 use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
 

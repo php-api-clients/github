@@ -9,8 +9,8 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
-use function React\Promise\resolve;
 use Rx\Testing\TestScheduler;
+use function React\Promise\resolve;
 
 final class IteratePagesServiceTest extends TestCase
 {
@@ -21,7 +21,7 @@ final class IteratePagesServiceTest extends TestCase
         $client = $this->prophesize(ClientInterface::class);
 
         /**
-         * First request
+         * First request.
          */
         $firstRequest = new Request('GET', '/foo.bar');
         $firstBody = ['a'];
@@ -35,7 +35,7 @@ final class IteratePagesServiceTest extends TestCase
         $client->request($firstRequest, Argument::type('array'))->shouldBeCalled()->willReturn(resolve($firstResponse));
 
         /**
-         * Second request
+         * Second request.
          */
         $secondRequest = new Request('GET', 'https://api.example.com/1');
         $secondBody = ['b'];
@@ -49,7 +49,7 @@ final class IteratePagesServiceTest extends TestCase
         $client->request($secondRequest, Argument::type('array'))->shouldBeCalled()->willReturn(resolve($secondResponse));
 
         /**
-         * Third request
+         * Third request.
          */
         $thirdRequest = new Request('GET', 'https://api.example.com/2');
         $client->request($thirdRequest, Argument::type('array'))->shouldNotBeCalled();

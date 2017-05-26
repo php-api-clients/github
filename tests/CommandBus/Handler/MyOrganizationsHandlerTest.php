@@ -2,13 +2,8 @@
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
-use ApiClients\Client\Github\CommandBus\Command\EmojisCommand;
-use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\MyOrganizationsCommand;
-use ApiClients\Client\Github\CommandBus\Handler\EmojisHandler;
-use ApiClients\Client\Github\CommandBus\Handler\IteratePagesHandler;
 use ApiClients\Client\Github\CommandBus\Handler\MyOrganizationsHandler;
-use ApiClients\Client\Github\Resource\EmojiInterface;
 use ApiClients\Client\Github\Resource\OrganizationInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;

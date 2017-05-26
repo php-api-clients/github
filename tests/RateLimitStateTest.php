@@ -2,15 +2,7 @@
 
 namespace ApiClients\Client\Github;
 
-use ApiClients\Foundation\Transport\ClientInterface;
-use ApiClients\Foundation\Transport\JsonStream;
-use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Tools\TestUtilities\TestCase;
-use Prophecy\Argument;
-use RingCentral\Psr7\Request;
-use RingCentral\Psr7\Response;
-use function React\Promise\resolve;
-use Rx\Testing\TestScheduler;
 
 final class RateLimitStateTest extends TestCase
 {

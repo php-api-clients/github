@@ -11,7 +11,6 @@ use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Rx\Observable;
 use Rx\React\Promise;
-use function React\Promise\resolve;
 
 final class CommitsHandlerTest extends TestCase
 {
