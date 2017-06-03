@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\Resource\Contents;
 use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
 use ApiClients\Foundation\Hydrator\Annotation\Nested;
 use ApiClients\Foundation\Resource\AbstractResource;
+use RuntimeException;
 
 /**
  * @Nested(
@@ -127,6 +128,19 @@ abstract class File extends AbstractResource implements FileInterface
     public function content(): string
     {
         return $this->content;
+    }
+
+    /**
+     * @throws RuntimeException
+     * @return string
+     */
+    public function decodedContent(): string
+    {
+        if ($this->encoding === 'base64') {
+            return base64_decode($this->content, true);
+        }
+
+        throw new RuntimeException('Unknown encoding: ' . $this->encoding);
     }
 
     /**

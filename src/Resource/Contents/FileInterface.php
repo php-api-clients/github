@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Contents;
 
 use ApiClients\Foundation\Resource\ResourceInterface;
+use RuntimeException;
 
 interface FileInterface extends ResourceInterface
 {
@@ -37,6 +38,12 @@ interface FileInterface extends ResourceInterface
      * @return string
      */
     public function content(): string;
+
+    /**
+     * @throws RuntimeException When unknown encoding is encountered
+     * @return string
+     */
+    public function decodedContent(): string;
 
     /**
      * @return string

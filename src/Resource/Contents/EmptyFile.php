@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Contents;
 
 use ApiClients\Foundation\Resource\EmptyResourceInterface;
+use RuntimeException;
 
 abstract class EmptyFile implements FileInterface, EmptyResourceInterface
 {
@@ -50,6 +51,15 @@ abstract class EmptyFile implements FileInterface, EmptyResourceInterface
      * @return string
      */
     public function content(): string
+    {
+        return null;
+    }
+
+    /**
+     * @throws RuntimeException
+     * @return string
+     */
+    public function decodedContent(): string
     {
         return null;
     }

@@ -23,11 +23,7 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     })->take(1)->subscribe(function ($content) {
         $content->refresh()->done(function (File $content) {
             resource_pretty_print($content, 1, true);
-            if ($content->encoding() === 'base64') {
-                echo PHP_EOL, base64_decode($content->content(), true), PHP_EOL;
-            } else {
-                echo PHP_EOL, 'File encoded as "', $content->encoding(), '", we don\'t support that in this example', PHP_EOL;
-            }
+            echo PHP_EOL, $content->decodedContent(), PHP_EOL;
         });
     }, function ($error) {
         echo (string)$error;
