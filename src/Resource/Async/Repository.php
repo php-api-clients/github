@@ -9,6 +9,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
@@ -66,5 +67,12 @@ class Repository extends BaseRepository
         return $this->handleCommand(
             new CommunityHealthCommand($this->fullName())
         );
+    }
+
+    public function tags(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new TagsCommand($this->fullName())
+        ));
     }
 }

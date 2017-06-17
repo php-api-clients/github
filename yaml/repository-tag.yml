@@ -1,0 +1,9 @@
+class: Repository\Tag
+properties:
+  name: string
+  commit:
+    type: Tree
+    annotations:
+      nested: Tree
+  zipball_url: string
+  tarball_url: string
