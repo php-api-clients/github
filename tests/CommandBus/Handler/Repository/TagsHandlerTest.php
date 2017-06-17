@@ -24,7 +24,9 @@ final class TagsHandlerTest extends TestCase
         $command = new TagsCommand('api-clients/github');
 
         $iteratePagesService = $this->prophesize(IteratePagesService::class);
-        $iteratePagesService->iterate('repos/api-clients/github/tags')->shouldBeCalled()->willReturn(Observable::fromArray([[$tagArray]]));
+        $iteratePagesService->iterate('repos/api-clients/github/tags')
+            ->shouldBeCalled()
+            ->willReturn(Observable::fromArray([[$tagArray]]));
 
         $hydrator = $this->prophesize(Hydrator::class);
         $hydrator->hydrate(TagInterface::HYDRATE_CLASS, $tagArray)->shouldBeCalled()->wilLReturn($tag);
