@@ -9,6 +9,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
@@ -73,6 +74,13 @@ class Repository extends BaseRepository
     {
         return unwrapObservableFromPromise($this->handleCommand(
             new TagsCommand($this->fullName())
+        ));
+    }
+
+    public function releases(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new ReleasesCommand($this->fullName())
         ));
     }
 }
