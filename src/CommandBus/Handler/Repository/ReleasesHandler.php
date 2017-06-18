@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\Resource\Repository\ReleaseInterface;
-use ApiClients\Client\Github\Resource\Repository\TagInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use React\Promise\PromiseInterface;
