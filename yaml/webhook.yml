@@ -1,0 +1,15 @@
+class: WebHook
+properties:
+  id: int
+  url: string
+  test_url: string
+  ping_url: string
+  name: string
+  events: array
+  active: bool
+  config:
+    type: WebHook\Config
+    annotations:
+      nested: WebHook\Config
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface

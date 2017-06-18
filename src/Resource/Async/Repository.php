@@ -12,6 +12,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
@@ -90,5 +91,12 @@ class Repository extends BaseRepository
         return $this->handleCommand(
             new LanguagesCommand($this->fullName())
         );
+    }
+
+    public function webHooks(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new WebHooksCommand($this->fullName())
+        ));
     }
 }
