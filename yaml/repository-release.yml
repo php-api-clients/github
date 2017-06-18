@@ -1,0 +1,19 @@
+class: Repository\Release
+properties:
+  id: int
+  tag_name: string
+  target_commitish: string
+  name: string
+  body: string
+  draft: bool
+  prerelease: bool
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface
+  author:
+    type: User
+    annotations:
+      nested: User
+  assets:
+    type: array
+    annotations:
+      collection: Repository\Release\Asset

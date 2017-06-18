@@ -1,0 +1,17 @@
+class: Repository\Release\Asset
+properties:
+  url: string
+  browser_download_url: string
+  id: int
+  name: string
+  label: string
+  state: string
+  content_type: string
+  size: int
+  download_count: int
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface
+  uploader:
+    type: User
+    annotations:
+      nested: User
