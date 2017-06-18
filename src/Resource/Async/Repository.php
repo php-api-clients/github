@@ -9,6 +9,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
@@ -82,5 +83,12 @@ class Repository extends BaseRepository
         return unwrapObservableFromPromise($this->handleCommand(
             new ReleasesCommand($this->fullName())
         ));
+    }
+
+    public function languages(): PromiseInterface
+    {
+        return $this->handleCommand(
+            new LanguagesCommand($this->fullName())
+        );
     }
 }
