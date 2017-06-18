@@ -13,4 +13,7 @@ properties:
     type: User
     annotations:
       nested: User
-  assets: array
+  assets:
+    type: array
+    annotations:
+      collection: Repository\Release\Asset

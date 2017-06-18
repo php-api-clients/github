@@ -1,38 +1,34 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Resource\Repository;
+namespace ApiClients\Client\Github\Resource\Repository\Release;
 
-use ApiClients\Foundation\Hydrator\Annotation\Collection;
 use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
 use ApiClients\Foundation\Hydrator\Annotation\Nested;
 use ApiClients\Foundation\Resource\AbstractResource;
 use DateTimeInterface;
 
 /**
- * @Collection(
- *     assets="Repository\Release\Asset"
- * )
  * @Nested(
- *     author="User"
+ *     uploader="User"
  * )
- * @EmptyResource("Repository\EmptyRelease")
+ * @EmptyResource("Repository\Release\EmptyAsset")
  */
-abstract class Release extends AbstractResource implements ReleaseInterface
+abstract class Asset extends AbstractResource implements AssetInterface
 {
+    /**
+     * @var string
+     */
+    protected $url;
+
+    /**
+     * @var string
+     */
+    protected $browser_download_url;
+
     /**
      * @var int
      */
     protected $id;
-
-    /**
-     * @var string
-     */
-    protected $tag_name;
-
-    /**
-     * @var string
-     */
-    protected $target_commitish;
 
     /**
      * @var string
@@ -42,17 +38,27 @@ abstract class Release extends AbstractResource implements ReleaseInterface
     /**
      * @var string
      */
-    protected $body;
+    protected $label;
 
     /**
-     * @var bool
+     * @var string
      */
-    protected $draft;
+    protected $state;
 
     /**
-     * @var bool
+     * @var string
      */
-    protected $prerelease;
+    protected $content_type;
+
+    /**
+     * @var int
+     */
+    protected $size;
+
+    /**
+     * @var int
+     */
+    protected $download_count;
 
     /**
      * @var DateTimeInterface
@@ -67,12 +73,23 @@ abstract class Release extends AbstractResource implements ReleaseInterface
     /**
      * @var User
      */
-    protected $author;
+    protected $uploader;
 
     /**
-     * @var Repository\Release\Asset
+     * @return string
      */
-    protected $assets;
+    public function url(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return string
+     */
+    public function browserDownloadUrl(): string
+    {
+        return $this->browser_download_url;
+    }
 
     /**
      * @return int
@@ -80,22 +97,6 @@ abstract class Release extends AbstractResource implements ReleaseInterface
     public function id(): int
     {
         return $this->id;
-    }
-
-    /**
-     * @return string
-     */
-    public function tagName(): string
-    {
-        return $this->tag_name;
-    }
-
-    /**
-     * @return string
-     */
-    public function targetCommitish(): string
-    {
-        return $this->target_commitish;
     }
 
     /**
@@ -109,25 +110,41 @@ abstract class Release extends AbstractResource implements ReleaseInterface
     /**
      * @return string
      */
-    public function body(): string
+    public function label(): string
     {
-        return $this->body;
+        return $this->label;
     }
 
     /**
-     * @return bool
+     * @return string
      */
-    public function draft(): bool
+    public function state(): string
     {
-        return $this->draft;
+        return $this->state;
     }
 
     /**
-     * @return bool
+     * @return string
      */
-    public function prerelease(): bool
+    public function contentType(): string
     {
-        return $this->prerelease;
+        return $this->content_type;
+    }
+
+    /**
+     * @return int
+     */
+    public function size(): int
+    {
+        return $this->size;
+    }
+
+    /**
+     * @return int
+     */
+    public function downloadCount(): int
+    {
+        return $this->download_count;
     }
 
     /**
@@ -149,16 +166,8 @@ abstract class Release extends AbstractResource implements ReleaseInterface
     /**
      * @return User
      */
-    public function author(): User
+    public function uploader(): User
     {
-        return $this->author;
-    }
-
-    /**
-     * @return array
-     */
-    public function assets(): array
-    {
-        return $this->assets;
+        return $this->uploader;
     }
 }
