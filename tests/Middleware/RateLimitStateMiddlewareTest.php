@@ -18,13 +18,14 @@ final class RateLimitStateMiddlewareTest extends TestCase
 
         $middleware = new RateLimitStateMiddleware($state);
 
-        $middleware->post(new Response(200, ['X-RateLimit-Limit' => '2']));
+        $middleware->post(new Response(200, ['X-RateLimit-Limit' => '2']), 'abc');
         self::assertSame(2, $state->getLimit());
 
-        $middleware->post(new Response(200, ['X-RateLimit-Remaining' => '1']));
+        $middleware->post(new Response(200, ['X-RateLimit-Remaining' => '1']), 'abc');
+        -
         self::assertSame(1, $state->getRemaining());
 
-        $middleware->post(new Response(200, ['X-RateLimit-Reset' => $time]));
+        $middleware->post(new Response(200, ['X-RateLimit-Reset' => $time]), 'abc');
         self::assertSame($time, $state->getReset());
     }
 }
