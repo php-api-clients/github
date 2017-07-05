@@ -3,7 +3,6 @@
 namespace ApiClients\Client\Github\Middleware;
 
 use ApiClients\Client\Github\RateLimitState;
-use ApiClients\Foundation\Middleware\DefaultPriorityTrait;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PreTrait;
@@ -13,7 +12,6 @@ use function React\Promise\resolve;
 
 final class RateLimitStateMiddleware implements MiddlewareInterface
 {
-    use DefaultPriorityTrait;
     use PreTrait;
     use ErrorTrait;
 
@@ -42,8 +40,11 @@ final class RateLimitStateMiddleware implements MiddlewareInterface
      * @param  array                       $options
      * @return CancellablePromiseInterface
      */
-    public function post(ResponseInterface $response, array $options = []): CancellablePromiseInterface
-    {
+    public function post(
+        ResponseInterface $response,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         foreach (self::HEADERS as $header => $method) {
             if (!$response->hasHeader($header)) {
                 continue;
