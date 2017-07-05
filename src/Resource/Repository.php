@@ -188,7 +188,7 @@ abstract class Repository extends AbstractResource implements RepositoryInterfac
      */
     public function description(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
