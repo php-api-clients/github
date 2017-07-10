@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github;
 use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Foundation\Factory as FoundationClientFactory;
 use ApiClients\Foundation\Options;
+use ApiClients\Foundation\Resource\ResourceInterface;
 use React\EventLoop\Factory;
 use React\EventLoop\LoopInterface;
 use Rx\Scheduler;
@@ -20,7 +21,7 @@ final class Client implements ClientInterface
     /**
      * @var AsyncClient
      */
-    private $client;
+    private $asyncClient;
 
     /**
      * @param LoopInterface $loop
@@ -29,7 +30,7 @@ final class Client implements ClientInterface
     private function __construct(LoopInterface $loop, AsyncClient $client)
     {
         $this->loop = $loop;
-        $this->client = $client;
+        $this->asyncClient = $client;
     }
 
     /**
@@ -59,6 +60,22 @@ final class Client implements ClientInterface
         return new self($loop, $asyncClient);
     }
 
+    public function hydrate(string $resource): ResourceInterface
+    {
+        return await(
+            $this->asyncClient->hydrate($resource),
+            $this->loop
+        );
+    }
+
+    public function extract(ResourceInterface $resource): string
+    {
+        return await(
+            $this->asyncClient->extract($resource),
+            $this->loop
+        );
+    }
+
     /**
      * @param  string        $user
      * @return UserInterface
@@ -66,7 +83,7 @@ final class Client implements ClientInterface
     public function user(string $user): UserInterface
     {
         return await(
-            $this->client->user($user),
+            $this->asyncClient->user($user),
             $this->loop
         );
     }
@@ -76,6 +93,6 @@ final class Client implements ClientInterface
      */
     public function getRateLimitState(): RateLimitState
     {
-        return $this->client->getRateLimitState();
+        return $this->asyncClient->getRateLimitState();
     }
 }
