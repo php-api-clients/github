@@ -20,10 +20,15 @@ final class WatchingHandlerTest extends TestCase
         $resource = $this->prophesize(ResourceInterface::class)->reveal();
 
         $service = $this->prophesize(IteratePagesService::class);
-        $service->iterate('user/subscriptions')->shouldBeCalled()->willReturn(Observable::fromArray([[['php-api-clients']]]));
+        $service->iterate(
+            'user/subscriptions'
+        )->shouldBeCalled()->willReturn(Observable::fromArray([[['php-api-clients']]]));
 
         $hydrator = $this->prophesize(Hydrator::class);
-        $hydrator->hydrate(RepositoryInterface::HYDRATE_CLASS, ['php-api-clients'])->shouldBeCalled()->willReturn($resource);
+        $hydrator->hydrate(
+            RepositoryInterface::HYDRATE_CLASS,
+            ['php-api-clients']
+        )->shouldBeCalled()->willReturn($resource);
 
         $handler = new WatchingHandler($service->reveal(), $hydrator->reveal());
         $result = $this->await(
