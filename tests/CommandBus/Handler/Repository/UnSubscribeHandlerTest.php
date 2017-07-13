@@ -21,6 +21,6 @@ final class UnSubscribeHandlerTest extends TestCase
             )
         )->shouldBecalled()->willReturn(resolve());
         $handler = new UnSubscribeHandler($service->reveal());
-        $handler->handle(new UnSubscribeCommand('api-clients/github'));
+        $handler->handle(new UnSubscribeCommand('php-api-clients/github'));
     }
 }
