@@ -6,7 +6,9 @@ use ApiClients\Client\Github\CommandBus\Command;
 use ApiClients\Foundation\ClientInterface;
 use ApiClients\Foundation\Factory;
 use ApiClients\Foundation\Options;
+use ApiClients\Foundation\Resource\ResourceInterface;
 use React\EventLoop\LoopInterface;
+use React\Promise\CancellablePromiseInterface;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
 use Rx\Scheduler;
@@ -69,6 +71,16 @@ final class AsyncClient implements AsyncClientInterface
     public static function createFromClient(ClientInterface $client, RateLimitState $rateLimitState): self
     {
         return new self($client, $rateLimitState);
+    }
+
+    public function hydrate(string $resource): CancellablePromiseInterface
+    {
+        return $this->client->hydrate($resource);
+    }
+
+    public function extract(ResourceInterface $resource): CancellablePromiseInterface
+    {
+        return $this->client->extract($resource);
     }
 
     public function meta(): PromiseInterface
