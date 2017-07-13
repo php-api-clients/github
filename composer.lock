@@ -341,16 +341,16 @@
         },
         {
             "name": "api-clients/middleware-json",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/middleware-json.git",
-                "reference": "a59293516db3b69348f466a7e8e4ba43dd88b1ce"
+                "reference": "2715b99244e1d608461b4ced0d280930ccbe2057"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/middleware-json/zipball/a59293516db3b69348f466a7e8e4ba43dd88b1ce",
-                "reference": "a59293516db3b69348f466a7e8e4ba43dd88b1ce",
+                "url": "https://api.github.com/repos/php-api-clients/middleware-json/zipball/2715b99244e1d608461b4ced0d280930ccbe2057",
+                "reference": "2715b99244e1d608461b4ced0d280930ccbe2057",
                 "shasum": ""
             },
             "require": {
@@ -381,7 +381,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-07-04T20:44:52+00:00"
+            "time": "2017-07-13T19:38:25+00:00"
         },
         {
             "name": "api-clients/middleware-token-authorization",
