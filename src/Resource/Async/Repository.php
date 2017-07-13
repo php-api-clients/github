@@ -11,7 +11,9 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
@@ -89,6 +91,20 @@ class Repository extends BaseRepository
     {
         return $this->handleCommand(
             new LanguagesCommand($this->fullName())
+        );
+    }
+
+    public function subscribe(bool $subscribed = true, bool $ignored = false): PromiseInterface
+    {
+        return $this->handleCommand(
+            new SubscribeCommand($this->fullName(), $subscribed, $ignored)
+        );
+    }
+
+    public function unSubscribe(): PromiseInterface
+    {
+        return $this->handleCommand(
+            new UnSubscribeCommand($this->fullName())
         );
     }
 }
