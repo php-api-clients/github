@@ -47,6 +47,6 @@ abstract class User extends AbstractResource implements UserInterface
      */
     public function date(): DateTimeInterface
     {
-        return new \DateTimeImmutable($this->date);
+        return $this->date;
     }
 }

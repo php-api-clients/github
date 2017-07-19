@@ -2,12 +2,17 @@
 
 namespace ApiClients\Client\Github\Resource\Git;
 
-use ApiClients\Client\Github\Resource\Tree;
+use ApiClients\Client\Github\Resource\TreeInterface;
 use ApiClients\Foundation\Resource\ResourceInterface;
 
 interface CommitInterface extends ResourceInterface
 {
     const HYDRATE_CLASS = 'Git\\Commit';
+
+    /**
+     * @return string
+     */
+    public function sha(): string;
 
     /**
      * @return string
@@ -30,9 +35,9 @@ interface CommitInterface extends ResourceInterface
     public function message(): string;
 
     /**
-     * @return Tree
+     * @return TreeInterface
      */
-    public function tree(): Tree;
+    public function tree(): TreeInterface;
 
     /**
      * @return int
