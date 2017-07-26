@@ -89,7 +89,7 @@ final class FileDeleteHandlerTest extends TestCase
         $hydrator->hydrate(
             FileOperationInterface::HYDRATE_CLASS,
             [
-            'foo' => 'bar',
+                'foo' => 'bar',
             ]
         )->shouldBeCalled()->willReturn($resource);
 
