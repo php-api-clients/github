@@ -41,8 +41,13 @@ final class FileDeleteCommand
      * @param string $sha
      * @param string $branch
      */
-    public function __construct(string $repository, string $commitMessage, string $url, string $sha, string $branch = '')
-    {
+    public function __construct(
+        string $repository,
+        string $commitMessage,
+        string $url,
+        string $sha,
+        string $branch = ''
+    ) {
         $this->repository = $repository;
         $this->commitMessage = $commitMessage;
         $this->url = $url;

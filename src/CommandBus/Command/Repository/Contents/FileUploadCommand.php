@@ -41,7 +41,6 @@ final class FileUploadCommand
     private $stream;
 
     /**
-     * FileUploadCommand constructor.
      * @param string                  $repository
      * @param string                  $commitMessage
      * @param string                  $url
@@ -49,8 +48,14 @@ final class FileUploadCommand
      * @param string                  $branch
      * @param ReadableStreamInterface $stream
      */
-    public function __construct(string $repository, string $commitMessage, string $url, string $sha, string $branch, ReadableStreamInterface $stream)
-    {
+    public function __construct(
+        string $repository,
+        string $commitMessage,
+        string $url,
+        string $sha,
+        string $branch,
+        ReadableStreamInterface $stream
+    ) {
         $this->repository = $repository;
         $this->commitMessage = $commitMessage;
         $this->url = $url;

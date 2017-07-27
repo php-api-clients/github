@@ -10,8 +10,12 @@ class FileOperation extends BaseFileOperation
 {
     public function refresh(): FileOperation
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (FileOperationInterface $fileOperation) {
-            return $fileOperation->refresh();
-        }));
+        return $this->wait(
+            $this->handleCommand(
+                new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+            )->then(function (FileOperationInterface $fileOperation) {
+                return $fileOperation->refresh();
+            })
+        );
     }
 }
