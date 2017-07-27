@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Async\Contents;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\Contents\FileDeleteCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Contents\FileUploadCommand;
 use ApiClients\Client\Github\Resource\Contents\File as BaseFile;
 use React\Promise\CancellablePromiseInterface;
@@ -15,10 +16,10 @@ class File extends BaseFile
         return $this->handleCommand(new RefreshCommand($this));
     }
 
-    public function update(ReadableStreamInterface $stream, string $commitMessage = null)
+    public function update(ReadableStreamInterface $stream, string $commitMessage = '', string $branch = '')
     {
-        if ($commitMessage === null) {
-            $commitMessage = 'Updated ' . $this->name;
+        if ($commitMessage === '') {
+            $commitMessage = 'Update ' . $this->name;
         }
 
         return $this->handleCommand(new FileUploadCommand(
@@ -26,7 +27,23 @@ class File extends BaseFile
             $commitMessage,
             $this->url,
             $this->sha,
+            $branch,
             $stream
+        ));
+    }
+
+    public function delete(string $commitMessage = '', string $branch = '')
+    {
+        if ($commitMessage === '') {
+            $commitMessage = 'Delete ' . $this->name;
+        }
+
+        return $this->handleCommand(new FileDeleteCommand(
+            $this->repository_fullname,
+            $commitMessage,
+            $this->url,
+            $this->sha,
+            $branch
         ));
     }
 }
