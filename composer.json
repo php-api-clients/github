@@ -23,7 +23,7 @@
     "api-clients/rx-operators": "^2.0",
     "react/promise-stream": "^0.1.1",
     "wyrihaximus/react-stream-base64": "^1.0",
-    "wyrihaximus/react-stream-json": "dev-master"
+    "wyrihaximus/react-stream-json": "^1.0"
   },
   "require-dev": {
     "api-clients/resource-generator": "dev-master",

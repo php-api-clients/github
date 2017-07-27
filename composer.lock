@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f35110cbb0e3e17171b04d05d9718475",
+    "content-hash": "16e308b8746bb480594eddbd026b5654",
     "packages": [
         {
             "name": "api-clients/client-services",
@@ -2571,7 +2571,7 @@
         },
         {
             "name": "wyrihaximus/react-stream-json",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/reactphp-stream-json.git",
@@ -2613,7 +2613,7 @@
                 }
             ],
             "description": "Incremental JSON encoder writing to a react/stream",
-            "time": "2017-07-21 15:41:20"
+            "time": "2017-07-21T15:41:20+00:00"
         },
         {
             "name": "wyrihaximus/tactician-command-handler-mapper",
@@ -2866,7 +2866,7 @@
                 }
             ],
             "description": "Resource from YAML generation tool",
-            "time": "2017-05-15T08:59:28+00:00"
+            "time": "2017-05-15 08:59:28"
         },
         {
             "name": "api-clients/resource-test-utilities",
@@ -2913,7 +2913,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-05-21T12:13:29+00:00"
+            "time": "2017-05-21 12:13:29"
         },
         {
             "name": "api-clients/test-utilities",
@@ -5403,7 +5403,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "api-clients/foundation": 20,
-        "wyrihaximus/react-stream-json": 20,
         "api-clients/resource-generator": 20,
         "api-clients/resource-test-utilities": 20
     },
