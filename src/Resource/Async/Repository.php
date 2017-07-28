@@ -15,7 +15,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
-use ApiClients\Client\Github\CommandBus\Command\Repository\WebHooksCommand;
+use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
 use React\Stream\ReadableStreamInterface;
@@ -100,7 +100,7 @@ class Repository extends BaseRepository
     public function webHooks(): ObservableInterface
     {
         return unwrapObservableFromPromise($this->handleCommand(
-            new WebHooksCommand($this->fullName())
+            new WebHooksCommand($this->fullName(), 'repos')
         ));
     }
 

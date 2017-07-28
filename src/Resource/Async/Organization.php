@@ -6,6 +6,7 @@ use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\User\OrganizationsCommand;
 use ApiClients\Client\Github\CommandBus\Command\User\RepositoriesCommand;
 use ApiClients\Client\Github\CommandBus\Command\User\RepositoryCommand;
+use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Organization as BaseOrganization;
 use React\Promise\PromiseInterface;
 use Rx\ObservableInterface;
@@ -38,6 +39,13 @@ class Organization extends BaseOrganization
     {
         return unwrapObservableFromPromise($this->handleCommand(
             new OrganizationsCommand($this->login())
+        ));
+    }
+
+    public function webHooks(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new WebHooksCommand($this->login(), 'orgs')
         ));
     }
 }

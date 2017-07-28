@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
+namespace ApiClients\Client\Github\CommandBus\Handler;
 
-use ApiClients\Client\Github\CommandBus\Command\Repository\WebHooksCommand;
+use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\WebHookInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
@@ -39,7 +39,7 @@ final class WebHooksHandler
     public function handle(WebHooksCommand $command): PromiseInterface
     {
         return resolve(
-            $this->iteratePagesService->iterate('repos/' . $command->getFullName() . '/hooks')
+            $this->iteratePagesService->iterate($command->getPrefix() . '/' . $command->getName() . '/hooks')
                 ->flatMap(function ($webHooks) {
                     return observableFromArray($webHooks);
                 })->map(function ($webHook) {
