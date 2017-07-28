@@ -2,11 +2,19 @@
 
 namespace ApiClients\Client\Github\Resource\Git;
 
-use ApiClients\Client\Github\Resource\Tree;
+use ApiClients\Client\Github\Resource\TreeInterface;
 use ApiClients\Foundation\Resource\EmptyResourceInterface;
 
 abstract class EmptyCommit implements CommitInterface, EmptyResourceInterface
 {
+    /**
+     * @return string
+     */
+    public function sha(): string
+    {
+        return null;
+    }
+
     /**
      * @return string
      */
@@ -40,9 +48,9 @@ abstract class EmptyCommit implements CommitInterface, EmptyResourceInterface
     }
 
     /**
-     * @return Tree
+     * @return TreeInterface
      */
-    public function tree(): Tree
+    public function tree(): TreeInterface
     {
         return null;
     }
