@@ -2,21 +2,26 @@
 
 namespace ApiClients\Client\Github\Resource\Git;
 
-use ApiClients\Client\Github\Resource\Tree;
+use ApiClients\Client\Github\Resource\TreeInterface;
 use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
 use ApiClients\Foundation\Hydrator\Annotation\Nested;
 use ApiClients\Foundation\Resource\AbstractResource;
 
 /**
  * @Nested(
- *     author="Git\User",
- *     comitter="Git\User",
+ *     author="User",
+ *     comitter="User",
  *     tree="Tree"
  * )
  * @EmptyResource("Git\EmptyCommit")
  */
 abstract class Commit extends AbstractResource implements CommitInterface
 {
+    /**
+     * @var string
+     */
+    protected $sha;
+
     /**
      * @var string
      */
@@ -55,6 +60,14 @@ abstract class Commit extends AbstractResource implements CommitInterface
     /**
      * @return string
      */
+    public function sha(): string
+    {
+        return $this->sha;
+    }
+
+    /**
+     * @return string
+     */
     public function url(): string
     {
         return $this->url;
@@ -85,9 +98,9 @@ abstract class Commit extends AbstractResource implements CommitInterface
     }
 
     /**
-     * @return Tree
+     * @return TreeInterface
      */
-    public function tree(): Tree
+    public function tree(): TreeInterface
     {
         return $this->tree;
     }

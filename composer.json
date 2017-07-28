@@ -14,16 +14,18 @@
     "php": "^7.0",
     "api-clients/client-services": "^1.0",
     "api-clients/foundation": "dev-master",
-    "api-clients/middleware": "^2.0",
-    "api-clients/middleware-http-exceptions": "^1.0",
-    "api-clients/middleware-json": "^1.0",
-    "api-clients/middleware-token-authorization": "^2.0",
-    "api-clients/middleware-user-agent": "^1.0",
+    "api-clients/middleware": "^4.0",
+    "api-clients/middleware-http-exceptions": "^2.0",
+    "api-clients/middleware-json": "^2.0",
+    "api-clients/middleware-token-authorization": "^3.0",
+    "api-clients/middleware-user-agent": "^2.0",
     "api-clients/rx": "^2.1",
-    "api-clients/rx-operators": "^2.0"
+    "api-clients/rx-operators": "^2.0",
+    "react/promise-stream": "^0.1.1",
+    "wyrihaximus/react-stream-base64": "^1.0",
+    "wyrihaximus/react-stream-json": "^1.0"
   },
   "require-dev": {
-    "api-clients/appveyor": "dev-master",
     "api-clients/resource-generator": "dev-master",
     "api-clients/resource-test-utilities": "dev-master",
     "api-clients/test-utilities": "^4.1"

@@ -1,0 +1,10 @@
+class: Contents\FileOperation
+properties:
+  content:
+    type: Contents\File
+    annotations:
+      nested: Contents\File
+  commit:
+    type: Git\Commit
+    annotations:
+      nested: Git\Commit

@@ -6,7 +6,9 @@ use ApiClients\Client\Github\CommandBus\Command;
 use ApiClients\Foundation\ClientInterface;
 use ApiClients\Foundation\Factory;
 use ApiClients\Foundation\Options;
+use ApiClients\Foundation\Resource\ResourceInterface;
 use React\EventLoop\LoopInterface;
+use React\Promise\CancellablePromiseInterface;
 use React\Promise\PromiseInterface;
 use Rx\Observable;
 use Rx\Scheduler;
@@ -71,6 +73,16 @@ final class AsyncClient implements AsyncClientInterface
         return new self($client, $rateLimitState);
     }
 
+    public function hydrate(string $resource): CancellablePromiseInterface
+    {
+        return $this->client->hydrate($resource);
+    }
+
+    public function extract(ResourceInterface $resource): CancellablePromiseInterface
+    {
+        return $this->client->extract($resource);
+    }
+
     public function meta(): PromiseInterface
     {
         return $this->client->handle(new Command\MetaCommand());
@@ -109,6 +121,11 @@ final class AsyncClient implements AsyncClientInterface
     public function licenses(): Observable
     {
         return unwrapObservableFromPromise($this->client->handle(new Command\LicensesCommand()));
+    }
+
+    public function watching(): Observable
+    {
+        return unwrapObservableFromPromise($this->client->handle(new Command\WatchingCommand()));
     }
 
     /**

@@ -1,5 +1,6 @@
 class: Git\Commit
 properties:
+  sha: string
   url: string
   author:
     type: User

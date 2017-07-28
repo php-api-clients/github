@@ -7,14 +7,18 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\Contents\FileUploadCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
+use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
 use Rx\ObservableInterface;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
@@ -98,5 +102,39 @@ class Repository extends BaseRepository
         return unwrapObservableFromPromise($this->handleCommand(
             new WebHooksCommand($this->fullName())
         ));
+    }
+
+    public function addFile(
+        string $filename,
+        ReadableStreamInterface $stream,
+        string $commitMessage = '',
+        string $branch = ''
+    ): PromiseInterface {
+        if ($commitMessage === '') {
+            $commitMessage = 'Update ' . $this->name;
+        }
+
+        return $this->handleCommand(new FileUploadCommand(
+            $this->full_name,
+            $commitMessage,
+            '/repos/' . $this->full_name . '/contents/' . $filename,
+            '',
+            $branch,
+            $stream
+        ));
+    }
+
+    public function subscribe(bool $subscribed = true, bool $ignored = false): PromiseInterface
+    {
+        return $this->handleCommand(
+            new SubscribeCommand($this->fullName(), $subscribed, $ignored)
+        );
+    }
+
+    public function unSubscribe(): PromiseInterface
+    {
+        return $this->handleCommand(
+            new UnSubscribeCommand($this->fullName())
+        );
     }
 }
