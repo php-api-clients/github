@@ -98,6 +98,15 @@ final class AsyncClient implements AsyncClientInterface
     }
 
     /**
+     * @param  string           $organization
+     * @return PromiseInterface
+     */
+    public function organization(string $organization): PromiseInterface
+    {
+        return $this->client->handle(new Command\OrganizationCommand($organization));
+    }
+
+    /**
      * @return PromiseInterface
      */
     public function whoami(): PromiseInterface
