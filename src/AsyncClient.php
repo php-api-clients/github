@@ -148,6 +148,7 @@ final class AsyncClient implements AsyncClientInterface
         string $context = ''
     ): PromiseInterface {
         $stream->pause();
+
         return $this->client->handle(new Command\RenderMarkdownCommand(
             $stream,
             $mode,
