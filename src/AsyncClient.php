@@ -10,6 +10,7 @@ use ApiClients\Foundation\Resource\ResourceInterface;
 use React\EventLoop\LoopInterface;
 use React\Promise\CancellablePromiseInterface;
 use React\Promise\PromiseInterface;
+use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
 use Rx\Scheduler;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
@@ -139,5 +140,18 @@ final class AsyncClient implements AsyncClientInterface
     public function rateLimit(): PromiseInterface
     {
         return $this->client->handle(new Command\RateLimitCommand());
+    }
+
+    public function renderMarkdown(
+        ReadableStreamInterface $stream,
+        string $mode = 'markdown',
+        string $context = ''
+    ): PromiseInterface {
+        $stream->pause();
+        return $this->client->handle(new Command\RenderMarkdownCommand(
+            $stream,
+            $mode,
+            $context
+        ));
     }
 }
