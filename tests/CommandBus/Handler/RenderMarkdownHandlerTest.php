@@ -89,8 +89,8 @@ final class RenderMarkdownHandlerTest extends TestCase
 
         $handler = new RenderMarkdownHandler($requestService->reveal(), $loop);
 
-        $result = $this->await($handler->handle($command), $loop);
-        //self::assertSame('foo.bar', $result);
+        $result = (string)$this->await($handler->handle($command), $loop);
+        self::assertSame('foo.bar', $result);
         self::assertSame($expectedjson, json_decode($stream, true));
     }
 }
