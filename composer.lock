@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "16e308b8746bb480594eddbd026b5654",
+    "content-hash": "4b00b6e484ab3075bde32ac69602e6ad",
     "packages": [
         {
             "name": "api-clients/client-services",
@@ -341,16 +341,16 @@
         },
         {
             "name": "api-clients/middleware-json",
-            "version": "2.0.2",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/middleware-json.git",
-                "reference": "2715b99244e1d608461b4ced0d280930ccbe2057"
+                "reference": "15df10abbabe7de2cfd077ad2420289d1c24f21f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/middleware-json/zipball/2715b99244e1d608461b4ced0d280930ccbe2057",
-                "reference": "2715b99244e1d608461b4ced0d280930ccbe2057",
+                "url": "https://api.github.com/repos/php-api-clients/middleware-json/zipball/15df10abbabe7de2cfd077ad2420289d1c24f21f",
+                "reference": "15df10abbabe7de2cfd077ad2420289d1c24f21f",
                 "shasum": ""
             },
             "require": {
@@ -381,7 +381,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-07-13T19:38:25+00:00"
+            "time": "2017-07-30T23:54:12+00:00"
         },
         {
             "name": "api-clients/middleware-token-authorization",
