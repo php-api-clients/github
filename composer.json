@@ -2,8 +2,6 @@
   "name": "api-clients/github",
   "description": "Async first Github client",
   "license": "MIT",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "authors": [
     {
       "name": "Cees-Jan Kiewiet",
@@ -12,8 +10,8 @@
   ],
   "require": {
     "php": "^7.0",
-    "api-clients/client-services": "^1.0",
-    "api-clients/foundation": "dev-master",
+    "api-clients/client-services": "^1.3",
+    "api-clients/foundation": "^1.0",
     "api-clients/middleware": "^4.0",
     "api-clients/middleware-http-exceptions": "^2.0",
     "api-clients/middleware-json": "^3.0",
@@ -26,8 +24,8 @@
     "wyrihaximus/react-stream-json": "^1.0"
   },
   "require-dev": {
-    "api-clients/resource-generator": "dev-master",
-    "api-clients/resource-test-utilities": "dev-master",
+    "api-clients/resource-generator": "^1.0",
+    "api-clients/resource-test-utilities": "^1.0",
     "api-clients/test-utilities": "^4.1"
   },
   "autoload": {
