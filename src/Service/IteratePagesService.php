@@ -9,6 +9,7 @@ use Rx\AsyncSchedulerInterface;
 use Rx\Observable;
 use Rx\Scheduler;
 use Rx\Subject\Subject;
+use function Kelunik\LinkHeaderRfc5988\parseLinks;
 
 class IteratePagesService
 {
@@ -46,23 +47,18 @@ class IteratePagesService
                     return;
                 }
 
+                $parsedLinks = parseLinks($response->getHeaderLine('link'));
                 $links = [
-                    'next' => false,
-                    'last' => false,
+                    'next' => $parsedLinks->getByRel('next'),
+                    'last' => $parsedLinks->getByRel('last'),
                 ];
-                foreach (explode(', ', $response->getHeader('link')[0]) as $link) {
-                    list($url, $rel) = explode('>; rel="', ltrim(rtrim($link, '"'), '<'));
-                    if (isset($links[$rel])) {
-                        $links[$rel] = $url;
-                    }
-                }
 
-                if ($links['next'] === false || $links['last'] === false) {
+                if ($links['next'] === null || $links['last'] === null) {
                     return;
                 }
 
                 $this->scheduler->schedule(function () use ($paths, $links) {
-                    $paths->onNext($links['next']);
+                    $paths->onNext($links['next']->getUri());
                 });
             })
             ->map(function (ResponseInterface $response) {
