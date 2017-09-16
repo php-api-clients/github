@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7a490951441aaf48e3989c14789161b",
+    "content-hash": "f6cf6fd607c160e49ff858b3ce55d997",
     "packages": [
         {
             "name": "api-clients/client-services",
@@ -1262,6 +1262,46 @@
                 "package"
             ],
             "time": "2015-07-16T22:30:20+00:00"
+        },
+        {
+            "name": "kelunik/link-header-rfc5988",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kelunik/link-header-rfc5988.git",
+                "reference": "027a34c61060eb349c1b9c875186cc68812fd14a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kelunik/link-header-rfc5988/zipball/027a34c61060eb349c1b9c875186cc68812fd14a",
+                "reference": "027a34c61060eb349c1b9c875186cc68812fd14a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.3",
+                "phpunit/phpunit": "^6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kelunik\\LinkHeaderRfc5988\\": "src"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Niklas Keller",
+                    "email": "me@kelunik.com"
+                }
+            ],
+            "description": "RFC 5988 compatible link header parser.",
+            "time": "2017-09-16T16:48:40+00:00"
         },
         {
             "name": "league/tactician",
@@ -5356,7 +5396,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "kelunik/link-header-rfc5988": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

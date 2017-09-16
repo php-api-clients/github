@@ -20,6 +20,7 @@
     "api-clients/rx": "^2.1",
     "api-clients/rx-operators": "^2.0",
     "api-clients/transport": "^3.0",
+    "kelunik/link-header-rfc5988": "dev-master",
     "react/promise-stream": "^0.1.1",
     "wyrihaximus/react-stream-base64": "^1.0",
     "wyrihaximus/react-stream-json": "^1.0"
