@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6cf6fd607c160e49ff858b3ce55d997",
+    "content-hash": "e7dee045b0e4e54d01b9487ba442e860",
     "packages": [
         {
             "name": "api-clients/client-services",
@@ -1265,7 +1265,7 @@
         },
         {
             "name": "kelunik/link-header-rfc5988",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kelunik/link-header-rfc5988.git",
@@ -5396,9 +5396,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "kelunik/link-header-rfc5988": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
