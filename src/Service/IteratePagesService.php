@@ -45,6 +45,7 @@ class IteratePagesService
             ->do(function (ResponseInterface $response) use ($paths) {
                 if (!$response->hasHeader('link')) {
                     $paths->onCompleted();
+
                     return;
                 }
 
