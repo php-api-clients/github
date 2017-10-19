@@ -55,8 +55,6 @@
     }
   },
   "suggest": {
-    "api-clients/appveyor": "Easy access to AppVeyor client",
-    "api-clients/scrutinizer": "Easy access to Scrutinizer client",
     "api-clients/travis": "Easy access to Travis client"
   },
   "scripts": {
