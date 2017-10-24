@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Service;
+namespace ApiClients\Tests\Client\Github\Service;
 
+use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Transport\ClientInterface;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
