@@ -21,7 +21,7 @@
     "api-clients/rx-operators": "^2.0",
     "api-clients/transport": "^3.0",
     "kelunik/link-header-rfc5988": "^1.0",
-    "react/promise-stream": "^0.1.1",
+    "react/promise-stream": "^1.0 || ^0.1.1",
     "wyrihaximus/react-stream-base64": "^1.0",
     "wyrihaximus/react-stream-json": "^1.0"
   },
