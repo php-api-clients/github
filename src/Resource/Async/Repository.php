@@ -12,6 +12,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\ReplaceTopicsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
@@ -127,6 +128,13 @@ class Repository extends BaseRepository
     {
         return $this->handleCommand(
             new UnSubscribeCommand($this->fullName())
+        );
+    }
+
+    public function replaceTopics(string ...$topics): PromiseInterface
+    {
+        return $this->handleCommand(
+            new ReplaceTopicsCommand($this->fullName(), ...$topics)
         );
     }
 }
