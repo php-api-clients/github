@@ -3,9 +3,9 @@
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Repository;
 use ApiClients\Client\Github\Resource\UserInterface;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
@@ -23,7 +23,7 @@ unwrapObservableFromPromise($client->user($argv[1])->then(function (UserInterfac
 })->filter(function (Repository $repository) {
     return substr($repository->name(), 0, 3) === 'php';
 })->filter(function (Repository $repository) {
-    return !in_array('php', $repository->topics());
+    return !in_array('php', $repository->topics(), true);
 })->subscribe(function (Repository $repository) {
     $topics = $repository->topics();
     $topics[] = 'php';
