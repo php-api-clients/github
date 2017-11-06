@@ -15,6 +15,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReplaceTopicsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\TravisCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
@@ -136,5 +137,10 @@ class Repository extends BaseRepository
         return $this->handleCommand(
             new ReplaceTopicsCommand($this->fullName(), ...$topics)
         );
+    }
+
+    public function travisRepository(): PromiseInterface
+    {
+        return $this->handleCommand(new TravisCommand($this->fullName()));
     }
 }
