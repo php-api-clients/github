@@ -55,22 +55,32 @@ $githubClient = AsyncClient::create($loop, require 'resolve_token.php', [
     ],
 ]);
 
+// Fetch the user/org given as first argument to this script
 unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserInterface $user) use ($argv) {
     resource_pretty_print($user);
 
+    // Get all repositories for the given user
     return $user->repositories();
 }))->filter(function (Repository $repository) {
+    // Filter out forks
     return !$repository->fork();
 })->filter(function (Repository $repository) {
+    // Filter out repositories with nothing in them
     return $repository->size() > 0;
 })->filter(function (Repository $repository) {
+    // Only check repositories that start with reactphp-http
+    // This is optional and you can remove this to check all repositories
+    // BUT that takes a lot of calls to check and time due to throttling
     return strpos($repository->name(), 'reactphp-http') === 0;
 })->flatMap(function (Repository $repository) {
+    // Check if the repository contains a .travis.yml
     return Observable::fromPromise(new React\Promise\Promise(function ($resolve, $reject) use ($repository) {
         $hasTravisYml = false;
         $repository->contents()->filter(function ($node) {
+            // Only let through files
             return $node instanceof FileInterface;
         })->filter(function (File $file) {
+            // Only let the .travis.yml file through
             return $file->name() === '.travis.yml';
         })->subscribe(function () use (&$hasTravisYml) {
             $hasTravisYml = true;
@@ -84,14 +94,18 @@ unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserIn
     })
     ->mapTo($repository);
 })->flatMap(function (Repository $repository) {
+    // Get Travis repository for the Github repository
     return Observable::fromPromise($repository->travisRepository());
 })->flatMap(function (TravisRepository $repository) {
+    // Check if the repository on Travis is active
+    // We're only interested in inactive repositories
     return Observable::fromPromise($repository->isActive())
         ->filter(function ($isActive) {
             return !$isActive;
         })
         ->mapTo($repository);
 })->subscribe(function (TravisRepository $repository) {
+    // Activate repository on Travis
     $repository->enable()->done(function (TravisRepository $repository) {
         resource_pretty_print($repository);
     }, 'display_throwable');
@@ -99,4 +113,5 @@ unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserIn
 
 $loop->run();
 
+// Display Github API token status
 displayState($githubClient->getRateLimitState());
