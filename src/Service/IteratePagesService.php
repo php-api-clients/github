@@ -55,7 +55,9 @@ class IteratePagesService
                     'last' => $parsedLinks->getByRel('last'),
                 ];
 
-                if ($links['next'] === null || $links['last'] === null) {
+                if ($links['next'] === null && $links['last'] === null) {
+                    $paths->onCompleted();
+
                     return;
                 }
 

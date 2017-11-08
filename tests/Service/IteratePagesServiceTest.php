@@ -53,7 +53,15 @@ final class IteratePagesServiceTest extends TestCase
          * Third request.
          */
         $thirdRequest = new Request('GET', 'https://api.example.com/2');
-        $client->request($thirdRequest, Argument::type('array'))->shouldNotBeCalled();
+        $thirdBody = [];
+        $thirdStream = new JsonStream($thirdBody);
+        $thirdHeaders = [
+            'Link' => [
+                '<https://api.example.com/1>; rel="prev"',
+            ],
+        ];
+        $thirdResponse = new Response(200, $thirdHeaders, $thirdStream);
+        $client->request($thirdRequest, Argument::type('array'))->shouldBeCalled()->willReturn(resolve($thirdResponse));
 
         $requestService = new RequestService($client->reveal());
         $testScheduler = new TestScheduler();
@@ -62,8 +70,8 @@ final class IteratePagesServiceTest extends TestCase
         $items = [];
         $completed = false;
 
-        $stream = $iteratePagesService->iterate($path)->take(2)->subscribe(
-            function ($item) use (&$items, &$stream) {
+        $iteratePagesService->iterate($path)->subscribe(
+            function ($item) use (&$items) {
                 $items[] = $item;
             },
             function ($t) {
@@ -77,6 +85,6 @@ final class IteratePagesServiceTest extends TestCase
         $testScheduler->start();
 
         self::assertTrue($completed);
-        self::assertSame([$firstBody, $secondBody], $items);
+        self::assertSame([$firstBody, $secondBody, $thirdBody], $items);
     }
 }
