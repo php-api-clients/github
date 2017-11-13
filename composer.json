@@ -10,6 +10,7 @@
   ],
   "require": {
     "php": "^7.0",
+    "api-clients/appveyor": "dev-master",
     "api-clients/client-services": "^1.3",
     "api-clients/foundation": "^1.0",
     "api-clients/middleware": "^4.0",
