@@ -2,4 +2,5 @@ build/
 covHtml/
 vendor/
 token.php
+appveyor-key.php
 travis-key.php
