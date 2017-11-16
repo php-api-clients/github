@@ -11,7 +11,8 @@ use ApiClients\Client\Github\Resource\Async\Repository;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Client\Travis\AsyncClient as AsyncTravisClient;
-use ApiClients\Client\Travis\AsyncClientInterface;
+use ApiClients\Client\Travis\AsyncClientInterface as AsyncTravisClientInterface;
+use ApiClients\Client\AppVeyor\AsyncClient as AsyncAppVeyorClient;
 use ApiClients\Client\Travis\Resource\Async\Repository as TravisRepository;
 use ApiClients\Foundation\Options;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
@@ -44,14 +45,18 @@ $transportOptions = [
 ];
 
 $loop = Factory::create();
+$appVeyorClient = AsyncAppVeyorClient::create($loop, require 'resolve_appveyor-key.php', [
+    Options::TRANSPORT_OPTIONS => $transportOptions,
+]);
 $travisClient = AsyncTravisClient::create($loop, require 'resolve_travis-key.php', [
     Options::TRANSPORT_OPTIONS => $transportOptions,
 ]);
 $githubClient = AsyncClient::create($loop, require 'resolve_token.php', [
     Options::TRANSPORT_OPTIONS => $transportOptions,
-    // Pass the Travis client into the Github client internal container
+    // Pass the AppVeyor and Travis client into the Github client internal container
     Options::CONTAINER_DEFINITIONS => [
-        AsyncClientInterface::class => $travisClient,
+    AsyncAppVeyorClient::class => $appVeyorClient,
+        AsyncTravisClientInterface::class => $travisClient,
     ],
 ]);
 
