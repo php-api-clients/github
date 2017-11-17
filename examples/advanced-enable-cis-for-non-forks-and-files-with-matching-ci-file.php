@@ -55,7 +55,7 @@ $githubClient = AsyncClient::create($loop, require 'resolve_token.php', [
     Options::TRANSPORT_OPTIONS => $transportOptions,
     // Pass the AppVeyor and Travis client into the Github client internal container
     Options::CONTAINER_DEFINITIONS => [
-    AsyncAppVeyorClient::class => $appVeyorClient,
+        AsyncAppVeyorClient::class => $appVeyorClient,
         AsyncTravisClientInterface::class => $travisClient,
     ],
 ]);
