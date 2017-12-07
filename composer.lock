@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "60fd4cda8933bf3ec3990e4f0b0039d5",
+    "content-hash": "b263455987b14aead8f087ca7bbba4b9",
     "packages": [
         {
             "name": "api-clients/appveyor",
@@ -3270,49 +3270,6 @@
     ],
     "packages-dev": [
         {
-            "name": "api-clients/middleware-debug",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-api-clients/middleware-debug.git",
-                "reference": "2ea3345beb17038861a2da0ce2e67d85bcf64a91"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/middleware-debug/zipball/2ea3345beb17038861a2da0ce2e67d85bcf64a91",
-                "reference": "2ea3345beb17038861a2da0ce2e67d85bcf64a91",
-                "shasum": ""
-            },
-            "require": {
-                "api-clients/middleware": "^4.0",
-                "php": "^7.0",
-                "react/promise-stream": "^1.1",
-                "react/stream": "^0.7.5",
-                "ringcentral/psr7": "^1.2"
-            },
-            "require-dev": {
-                "api-clients/test-utilities": "^4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ApiClients\\Middleware\\Debug\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cees-Jan Kiewiet",
-                    "email": "ceesjank@gmail.com"
-                }
-            ],
-            "description": "Debug Middleware for API Clients",
-            "time": "2017-12-07T13:31:05+00:00"
-        },
-        {
             "name": "api-clients/middleware-delay",
             "version": "3.0.0",
             "source": {
@@ -6300,8 +6257,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "api-clients/appveyor": 20,
-        "api-clients/middleware-debug": 20
+        "api-clients/appveyor": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
