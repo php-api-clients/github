@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\AppVeyorCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
@@ -142,5 +143,10 @@ class Repository extends BaseRepository
     public function travisRepository(): PromiseInterface
     {
         return $this->handleCommand(new TravisCommand($this->fullName()));
+    }
+
+    public function appVeyorRepository(): PromiseInterface
+    {
+        return $this->handleCommand(new AppVeyorCommand($this->fullName()));
     }
 }

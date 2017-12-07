@@ -56,6 +56,8 @@ class IteratePagesService
                 ];
 
                 if ($links['next'] === null || $links['last'] === null) {
+                    $paths->onCompleted();
+
                     return;
                 }
 

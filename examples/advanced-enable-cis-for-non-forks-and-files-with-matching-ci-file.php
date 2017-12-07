@@ -5,6 +5,7 @@
  * with a .travis.yml that aren't forks and aren't enabled yet.
  */
 
+use ApiClients\Client\AppVeyor\AsyncClient as AsyncAppVeyorClient;
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Contents\File;
 use ApiClients\Client\Github\Resource\Async\Repository;
@@ -12,10 +13,10 @@ use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Client\Travis\AsyncClient as AsyncTravisClient;
 use ApiClients\Client\Travis\AsyncClientInterface as AsyncTravisClientInterface;
-use ApiClients\Client\AppVeyor\AsyncClient as AsyncAppVeyorClient;
 use ApiClients\Client\Travis\Resource\Async\Repository as TravisRepository;
 use ApiClients\Foundation\Options;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
+use ApiClients\Middleware\Debug\DebugMiddleware;
 use ApiClients\Middleware\Delay\DelayMiddleware;
 use ApiClients\Middleware\Pool\PoolMiddleware;
 use React\EventLoop\Factory;
@@ -23,6 +24,7 @@ use ResourcePool\Pool;
 use Rx\Observable;
 use function ApiClients\Foundation\resource_pretty_print;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function React\Promise\reject;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
@@ -41,6 +43,7 @@ $transportOptions = [
     TransportOptions::MIDDLEWARE => [
         PoolMiddleware::class,
         DelayMiddleware::class,
+        DebugMiddleware::class,
     ],
 ];
 
@@ -61,7 +64,7 @@ $githubClient = AsyncClient::create($loop, require 'resolve_token.php', [
 ]);
 
 // Fetch the user/org given as first argument to this script
-unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserInterface $user) use ($argv) {
+$baseStream = unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserInterface $user) use ($argv) {
     resource_pretty_print($user);
 
     // Get all repositories for the given user
@@ -76,28 +79,42 @@ unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserIn
     // Only check repositories that start with reactphp-http
     // This is optional and you can remove this to check all repositories
     // BUT that takes a lot of calls to check and time due to throttling
-    return strpos($repository->name(), 'reactphp-http') === 0;
+    return strpos($repository->name(), 'php-super') === 0;
 })->flatMap(function (Repository $repository) {
     // Check if the repository contains a .travis.yml
     return Observable::fromPromise(new React\Promise\Promise(function ($resolve, $reject) use ($repository) {
-        $hasTravisYml = false;
+        $hasCi = [
+            'repo' => $repository,
+            'travis' => false,
+            'appveyor' => false,
+        ];
         $repository->contents()->filter(function ($node) {
             // Only let through files
             return $node instanceof FileInterface;
-        })->filter(function (File $file) {
-            // Only let the .travis.yml file through
-            return $file->name() === '.travis.yml';
-        })->subscribe(function () use (&$hasTravisYml) {
-            $hasTravisYml = true;
+        })->subscribe(function (File $file) use (&$hasCi) {
+            if ($file->name() === '.travis.yml') {
+                $hasCi['travis'] = true;
+                return;
+            }
+            if ($file->name() === 'appveyor.yml') {
+                $hasCi['appveyor'] = true;
+                return;
+            }
         }, function ($error) use ($reject) {
             $reject($error);
-        }, function () use (&$hasTravisYml, $resolve) {
-            $resolve($hasTravisYml);
+        }, function () use (&$hasCi, $resolve) {
+            $resolve($hasCi);
         });
-    }))->filter(function ($hasTravisYml) {
-        return !$hasTravisYml;
-    })
-    ->mapTo($repository);
+    }));
+});
+
+/**
+ * Stream handling the Travis side of things
+ */
+$baseStream->filter(function (array $d) {
+    return $d['travis'];
+})->map(function (array $d) {
+    return $d['repo'];
 })->flatMap(function (Repository $repository) {
     // Get Travis repository for the Github repository
     return Observable::fromPromise($repository->travisRepository());
@@ -112,6 +129,25 @@ unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserIn
 })->subscribe(function (TravisRepository $repository) {
     // Activate repository on Travis
     $repository->enable()->done(function (TravisRepository $repository) {
+        resource_pretty_print($repository);
+    }, 'display_throwable');
+}, 'display_throwable');
+
+/**
+ * Stream handling the AppVeyor side of things
+ */
+$baseStream->filter(function (array $d) {
+    return $d['appveyor'];
+})->map(function (array $d) {
+    return $d['repo'];
+})->subscribe(function (Repository $repository) use ($appVeyorClient) {
+    $repository->appVeyorRepository()->then(function ($appVeyorRepository) use ($appVeyorClient, $repository) {
+        if ($appVeyorRepository !== false) {
+            return reject();
+        }
+
+        return $appVeyorClient->addProject('gitHub', $repository->fullName());
+    })->done(function ($repository) {
         resource_pretty_print($repository);
     }, 'display_throwable');
 }, 'display_throwable');
