@@ -16,7 +16,6 @@ use ApiClients\Client\Travis\AsyncClientInterface as AsyncTravisClientInterface;
 use ApiClients\Client\Travis\Resource\Async\Repository as TravisRepository;
 use ApiClients\Foundation\Options;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
-use ApiClients\Middleware\Debug\DebugMiddleware;
 use ApiClients\Middleware\Delay\DelayMiddleware;
 use ApiClients\Middleware\Pool\PoolMiddleware;
 use React\EventLoop\Factory;
@@ -43,7 +42,6 @@ $transportOptions = [
     TransportOptions::MIDDLEWARE => [
         PoolMiddleware::class,
         DelayMiddleware::class,
-        DebugMiddleware::class,
     ],
 ];
 
