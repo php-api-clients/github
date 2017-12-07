@@ -106,7 +106,7 @@ $baseStream = unwrapObservableFromPromise($githubClient->user($argv[1])->then(fu
             $resolve($hasCi);
         });
     }));
-});
+})->share();
 
 /**
  * Stream handling the Travis side of things
