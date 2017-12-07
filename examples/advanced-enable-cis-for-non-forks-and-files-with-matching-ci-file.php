@@ -62,7 +62,9 @@ $githubClient = AsyncClient::create($loop, require 'resolve_token.php', [
 ]);
 
 // Fetch the user/org given as first argument to this script
-$baseStream = unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserInterface $user) use ($argv) {
+$baseStream = unwrapObservableFromPromise(
+    $githubClient->user($argv[1]
+)->then(function (UserInterface $user) use ($argv) {
     resource_pretty_print($user);
 
     // Get all repositories for the given user
