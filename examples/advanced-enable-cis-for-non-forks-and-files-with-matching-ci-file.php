@@ -63,13 +63,15 @@ $githubClient = AsyncClient::create($loop, require 'resolve_token.php', [
 
 // Fetch the user/org given as first argument to this script
 $baseStream = unwrapObservableFromPromise(
-    $githubClient->user($argv[1]
-)->then(function (UserInterface $user) use ($argv) {
-    resource_pretty_print($user);
+    $githubClient->user(
+        $argv[1]
+    )->then(function (UserInterface $user) use ($argv) {
+        resource_pretty_print($user);
 
-    // Get all repositories for the given user
-    return $user->repositories();
-}))->filter(function (Repository $repository) {
+        // Get all repositories for the given user
+        return $user->repositories();
+    })
+)->filter(function (Repository $repository) {
     // Filter out forks
     return !$repository->fork();
 })->filter(function (Repository $repository) {
@@ -94,10 +96,12 @@ $baseStream = unwrapObservableFromPromise(
         })->subscribe(function (File $file) use (&$hasCi) {
             if ($file->name() === '.travis.yml') {
                 $hasCi['travis'] = true;
+
                 return;
             }
             if ($file->name() === 'appveyor.yml') {
                 $hasCi['appveyor'] = true;
+
                 return;
             }
         }, function ($error) use ($reject) {
@@ -109,7 +113,7 @@ $baseStream = unwrapObservableFromPromise(
 })->share();
 
 /**
- * Stream handling the Travis side of things
+ * Stream handling the Travis side of things.
  */
 $baseStream->filter(function (array $d) {
     return $d['travis'];
@@ -134,7 +138,7 @@ $baseStream->filter(function (array $d) {
 }, 'display_throwable');
 
 /**
- * Stream handling the AppVeyor side of things
+ * Stream handling the AppVeyor side of things.
  */
 $baseStream->filter(function (array $d) {
     return $d['appveyor'];

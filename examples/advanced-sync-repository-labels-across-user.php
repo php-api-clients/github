@@ -6,21 +6,10 @@
  */
 
 use ApiClients\Client\Github\AsyncClient;
-use ApiClients\Client\Github\Resource\Async\Contents\File;
 use ApiClients\Client\Github\Resource\Async\Label;
 use ApiClients\Client\Github\Resource\Async\Repository;
-use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Client\Github\Resource\UserInterface;
-use ApiClients\Client\Travis\AsyncClient as AsyncTravisClient;
-use ApiClients\Client\Travis\AsyncClientInterface;
-use ApiClients\Client\Travis\Resource\Async\Repository as TravisRepository;
-use ApiClients\Foundation\Options;
-use ApiClients\Foundation\Transport\Options as TransportOptions;
-use ApiClients\Middleware\Delay\DelayMiddleware;
-use ApiClients\Middleware\Pool\PoolMiddleware;
 use React\EventLoop\Factory;
-use ResourcePool\Pool;
-use Rx\Observable;
 use function ApiClients\Foundation\resource_pretty_print;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
