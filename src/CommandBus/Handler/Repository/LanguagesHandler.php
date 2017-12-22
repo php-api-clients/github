@@ -33,7 +33,7 @@ final class LanguagesHandler
         return $this->requestService->request(
             new Request('GET', 'repos/' . $command->getFullName() . '/languages')
         )->then(function ($response) {
-            return resolve($response->getBody()->getJson());
+            return resolve($response->getBody()->getParsedContents());
         });
     }
 }

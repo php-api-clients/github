@@ -78,7 +78,10 @@ final class FileUploadHandler
                 new ReadableBodyStream($stream)
             )
         )->then(function ($operation) {
-            return $this->hydrator->hydrate(FileOperationInterface::HYDRATE_CLASS, $operation->getBody()->getJson());
+            return $this->hydrator->hydrate(
+                FileOperationInterface::HYDRATE_CLASS,
+                $operation->getBody()->getParsedContents()
+            );
         });
     }
 }

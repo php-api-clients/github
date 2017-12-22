@@ -39,7 +39,7 @@ final class ReplaceTopicsHandler
                 ])
             )
         )->then(function ($response) {
-            return $response->getBody()->getJson()['names'];
+            return $response->getBody()->getParsedContents()['names'];
         });
     }
 }

@@ -46,7 +46,7 @@ final class ContentsHandler
                     new Request('GET', $uri)
                 )
             )->flatMap(function ($contents) {
-                return observableFromArray($contents->getBody()->getJson());
+                return observableFromArray($contents->getBody()->getParsedContents());
             })->map(function ($content) use ($command) {
                 $content['repository_fullname'] = $command->getFullname();
                 if ($content['type'] === 'file') {
