@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 use ApiClients\Client\AppVeyor\AsyncClient;
 use ApiClients\Client\AppVeyor\Resource\ProjectInterface;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AppVeyorCommand;
-use ApiClients\Client\Github\CommandBus\Command\Repository\TravisCommand;
 use React\Promise\Promise;
 use React\Promise\PromiseInterface;
 
@@ -25,7 +24,7 @@ final class AppVeyorHandler
     }
 
     /**
-     * @param  TravisCommand    $command
+     * @param  AppVeyorCommand  $command
      * @return PromiseInterface
      */
     public function handle(AppVeyorCommand $command): PromiseInterface
