@@ -14,6 +14,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReplaceTopicsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\ScrutinizerCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TravisCommand;
@@ -148,5 +149,10 @@ class Repository extends BaseRepository
     public function appVeyorRepository(): PromiseInterface
     {
         return $this->handleCommand(new AppVeyorCommand($this->fullName()));
+    }
+
+    public function scrutinizerRepository(): PromiseInterface
+    {
+        return $this->handleCommand(new ScrutinizerCommand(...explode('/', $this->fullName())));
     }
 }
