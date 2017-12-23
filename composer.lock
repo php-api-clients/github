@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "feca687e9320c0bad890749fad10312e",
+    "content-hash": "e6e73241285e9e2efe3899015d315db2",
     "packages": [
+        {
+            "name": "api-clients/appveyor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/appveyor.git",
+                "reference": "f74ec7ba524eed8a6cc3dff4b1a83f73ca4bc26b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/f74ec7ba524eed8a6cc3dff4b1a83f73ca4bc26b",
+                "reference": "f74ec7ba524eed8a6cc3dff4b1a83f73ca4bc26b",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/client-services": "^1.4",
+                "api-clients/foundation": "^1.0",
+                "api-clients/middleware": "^4.0",
+                "api-clients/middleware-bearer-authorization": "^2.0",
+                "api-clients/middleware-http-exceptions": "^2.0",
+                "api-clients/middleware-json": "^3.0",
+                "api-clients/middleware-user-agent": "^2.0",
+                "api-clients/rx": "^2.1",
+                "api-clients/rx-operators": "^2.0",
+                "api-clients/transport": "^3.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "api-clients/resource-generator": "^1.0",
+                "api-clients/resource-test-utilities": "^1.0",
+                "api-clients/test-utilities": "^4.1"
+            },
+            "type": "library",
+            "extra": {
+                "api-clients": {
+                    "command-bus": {
+                        "path": "src/CommandBus",
+                        "namespace": "ApiClients\\Client\\AppVeyor\\CommandBus"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Client\\AppVeyor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Async first AppVeyor client",
+            "time": "2017-12-23T19:01:24+00:00"
+        },
         {
             "name": "api-clients/client-services",
             "version": "1.4.0",
@@ -295,6 +354,52 @@
             "time": "2017-06-28T19:24:19+00:00"
         },
         {
+            "name": "api-clients/middleware-bearer-authorization",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/middleware-bearer-authorization.git",
+                "reference": "92054999e4dc31aa0729539404f0105d5728a0e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/middleware-bearer-authorization/zipball/92054999e4dc31aa0729539404f0105d5728a0e4",
+                "reference": "92054999e4dc31aa0729539404f0105d5728a0e4",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/middleware": "^4.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^3.0.1",
+                "ringcentral/psr7": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Middleware\\BearerAuthorization\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                },
+                {
+                    "name": "Mateusz Drost",
+                    "email": "mat.drost@gmail.com"
+                }
+            ],
+            "description": "Bearer authorization middleware",
+            "homepage": "https://php-api-clients.org/clients/travis/",
+            "time": "2017-07-02T14:15:22+00:00"
+        },
+        {
             "name": "api-clients/middleware-http-exceptions",
             "version": "2.0.1",
             "source": {
@@ -509,6 +614,64 @@
             "time": "2017-03-08T06:57:57+00:00"
         },
         {
+            "name": "api-clients/pusher",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/pusher.git",
+                "reference": "7dab60b6508c1361ceab62f1b60016a60ed7463e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/pusher/zipball/7dab60b6508c1361ceab62f1b60016a60ed7463e",
+                "reference": "7dab60b6508c1361ceab62f1b60016a60ed7463e",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/command-bus": "^2.0",
+                "clue/block-react": "^1.1",
+                "ocramius/package-versions": "^1.1",
+                "php": "^7.0",
+                "react/dns": "^0.4.9",
+                "react/http-client": "^0.5 || ^0.4.17",
+                "reactivex/rxphp": "^2.0.4",
+                "rx/helpers": "^1.0",
+                "rx/operator-extras": "^2.1",
+                "rx/websocket": "^2.0 || ^1.0",
+                "voryx/event-loop": "^2.0.2"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^4.1"
+            },
+            "type": "library",
+            "extra": {
+                "api-clients": {
+                    "command-bus": {
+                        "path": "src/CommandBus",
+                        "namespace": "ApiClients\\Client\\Pusher\\CommandBus"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Client\\Pusher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Async first Pusher client",
+            "homepage": "https://php-api-clients.org/clients/pusher",
+            "time": "2017-11-07T16:24:13+00:00"
+        },
+        {
             "name": "api-clients/resource",
             "version": "3.0.1",
             "source": {
@@ -637,6 +800,62 @@
             "time": "2017-03-23T07:06:10+00:00"
         },
         {
+            "name": "api-clients/scrutinizer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/scrutinizer.git",
+                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2ab1d3ee1f3008248d72a313161256c25692e495",
+                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/client-services": "^1.3",
+                "api-clients/foundation": "^1.0",
+                "api-clients/middleware-http-exceptions": "^2.0",
+                "api-clients/middleware-json": "^3.0",
+                "api-clients/middleware-user-agent": "^2.0",
+                "api-clients/rx": "^2.2",
+                "api-clients/transport": "^3.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "api-clients/resource-generator": "^1.0",
+                "api-clients/resource-test-utilities": "^1.0",
+                "api-clients/test-utilities": "4.1"
+            },
+            "type": "library",
+            "extra": {
+                "api-clients": {
+                    "command-bus": {
+                        "path": "src/CommandBus",
+                        "namespace": "ApiClients\\Client\\Scrutinizer\\CommandBus"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Client\\Scrutinizer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Async first Scrutinizer API client",
+            "time": "2017-12-23T19:29:12+00:00"
+        },
+        {
             "name": "api-clients/transport",
             "version": "3.1.0",
             "source": {
@@ -693,6 +912,74 @@
             ],
             "description": "Middleware infused clue/buzz-react",
             "time": "2017-12-19T20:58:17+00:00"
+        },
+        {
+            "name": "api-clients/travis",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/travis.git",
+                "reference": "7709fde885d4b7839f63cdfff26e6382b1ea0b17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/travis/zipball/7709fde885d4b7839f63cdfff26e6382b1ea0b17",
+                "reference": "7709fde885d4b7839f63cdfff26e6382b1ea0b17",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/client-services": "^1.3",
+                "api-clients/foundation": "^1.0",
+                "api-clients/middleware-json": "^3.0",
+                "api-clients/middleware-token-authorization": "^3.0",
+                "api-clients/middleware-user-agent": "^2.0",
+                "api-clients/pusher": "^1.0",
+                "api-clients/rx": "^2.2",
+                "api-clients/rx-operators": "^2.0",
+                "api-clients/transport": "^3.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "api-clients/middleware-delay": "^3.0",
+                "api-clients/middleware-pool": "^3.0",
+                "api-clients/resource-generator": "^1.0.1",
+                "api-clients/test-utilities": "^4.1"
+            },
+            "suggest": {
+                "api-clients/middleware-delay": "Add a delay between requests to not hammer Travis",
+                "api-clients/middleware-pool": "Keep your request count under control"
+            },
+            "type": "library",
+            "extra": {
+                "api-clients": {
+                    "command-bus": {
+                        "path": "src/CommandBus",
+                        "namespace": "ApiClients\\Client\\Travis\\CommandBus"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Client\\Travis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                },
+                {
+                    "name": "Andreas Möller",
+                    "email": "am@localheinz.com"
+                }
+            ],
+            "description": "Async first TravisCI PHP API Client",
+            "homepage": "https://php-api-clients.org/clients/travis/",
+            "time": "2017-11-05T18:36:16+00:00"
         },
         {
             "name": "clue/block-react",
@@ -1864,6 +2151,55 @@
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
+            "name": "ratchet/rfc6455",
+            "version": "v0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ratchetphp/RFC6455.git",
+                "reference": "cc8a1a46a703ce01de10fdb5fab387381b66edc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ratchetphp/RFC6455/zipball/cc8a1a46a703ce01de10fdb5fab387381b66edc8",
+                "reference": "cc8a1a46a703ce01de10fdb5fab387381b66edc8",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/psr7": "^1.0",
+                "php": ">=5.4.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*",
+                "react/http": "^0.4.1",
+                "react/socket-client": "^0.4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ratchet\\RFC6455\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "RFC6455 WebSocket protocol handler",
+            "homepage": "http://socketo.me",
+            "keywords": [
+                "WebSockets",
+                "rfc6455",
+                "websocket"
+            ],
+            "time": "2017-09-13T13:49:42+00:00"
+        },
+        {
             "name": "react/cache",
             "version": "v0.4.2",
             "source": {
@@ -1992,6 +2328,54 @@
             "time": "2017-04-27T10:56:23+00:00"
         },
         {
+            "name": "react/http",
+            "version": "v0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/http.git",
+                "reference": "0410c94463bdae4bdf34d60bff91e9e1eb4a6652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/http/zipball/0410c94463bdae4bdf34d60bff91e9e1eb4a6652",
+                "reference": "0410c94463bdae4bdf34d60bff91e9e1eb4a6652",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+                "php": ">=5.3.0",
+                "react/promise": "^2.3 || ^1.2.1",
+                "react/promise-stream": "^1.1",
+                "react/socket": "^1.0 || ^0.8.3",
+                "react/stream": "^1.0 || ^0.7.1",
+                "ringcentral/psr7": "^1.2"
+            },
+            "require-dev": {
+                "clue/block-react": "^1.1",
+                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Http\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Event-driven, streaming plaintext HTTP and secure HTTPS server for ReactPHP",
+            "keywords": [
+                "event-driven",
+                "http",
+                "https",
+                "reactphp",
+                "server",
+                "streaming"
+            ],
+            "time": "2017-12-12T13:01:48+00:00"
+        },
+        {
             "name": "react/http-client",
             "version": "v0.5.6",
             "source": {
@@ -2081,16 +2465,16 @@
         },
         {
             "name": "react/promise-stream",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise-stream.git",
-                "reference": "77ca2a233db59d671864c88e2b716d875cfbeb1f"
+                "reference": "00e269d611e9c9a29356aef64c07f7e513e73dc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise-stream/zipball/77ca2a233db59d671864c88e2b716d875cfbeb1f",
-                "reference": "77ca2a233db59d671864c88e2b716d875cfbeb1f",
+                "url": "https://api.github.com/repos/reactphp/promise-stream/zipball/00e269d611e9c9a29356aef64c07f7e513e73dc9",
+                "reference": "00e269d611e9c9a29356aef64c07f7e513e73dc9",
                 "shasum": ""
             },
             "require": {
@@ -2100,7 +2484,7 @@
             },
             "require-dev": {
                 "clue/block-react": "^1.0",
-                "phpunit/phpunit": "^4.8",
+                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35",
                 "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3",
                 "react/promise-timer": "^1.0"
             },
@@ -2133,20 +2517,20 @@
                 "stream",
                 "unwrap"
             ],
-            "time": "2017-11-28T18:31:39+00:00"
+            "time": "2017-12-22T12:02:05+00:00"
         },
         {
             "name": "react/promise-timer",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise-timer.git",
-                "reference": "3bc527fbd1201a193ab41c19b9a770d71a3514af"
+                "reference": "9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/3bc527fbd1201a193ab41c19b9a770d71a3514af",
-                "reference": "3bc527fbd1201a193ab41c19b9a770d71a3514af",
+                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd",
+                "reference": "9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd",
                 "shasum": ""
             },
             "require": {
@@ -2155,7 +2539,7 @@
                 "react/promise": "~2.1|~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.0 || ^4.8"
+                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
             },
             "type": "library",
             "autoload": {
@@ -2176,7 +2560,7 @@
                     "email": "christian@lueck.tv"
                 }
             ],
-            "description": "Trivial timeout implementation for Promises",
+            "description": "A trivial implementation of timeouts for Promises, built on top of ReactPHP.",
             "homepage": "https://github.com/react/promise-timer",
             "keywords": [
                 "async",
@@ -2186,7 +2570,7 @@
                 "timeout",
                 "timer"
             ],
-            "time": "2017-08-08T16:30:19+00:00"
+            "time": "2017-12-22T15:41:41+00:00"
         },
         {
             "name": "react/socket",
@@ -2405,6 +2789,55 @@
             "time": "2016-03-25T17:36:49+00:00"
         },
         {
+            "name": "rx/helpers",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RxPHP/RxHelpers.git",
+                "reference": "ade044bc8afc131b40287dc58b721526ab9277d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RxPHP/RxHelpers/zipball/ade044bc8afc131b40287dc58b721526ab9277d6",
+                "reference": "ade044bc8afc131b40287dc58b721526ab9277d6",
+                "shasum": ""
+            },
+            "require": {
+                "reactivex/rxphp": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Bonneau",
+                    "email": "matt@bonneau.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "David Dan",
+                    "email": "davidwdan@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A collection of functions to use with RxPHP",
+            "keywords": [
+                "react",
+                "reactive",
+                "rx",
+                "rx.php",
+                "rxphp"
+            ],
+            "time": "2017-09-14T01:31:18+00:00"
+        },
+        {
             "name": "rx/operator-extras",
             "version": "2.1",
             "source": {
@@ -2454,6 +2887,118 @@
                 "rxphp"
             ],
             "time": "2017-03-23T12:29:46+00:00"
+        },
+        {
+            "name": "rx/websocket",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RxPHP/RxWebsocket.git",
+                "reference": "2f6725a0c45eb8f5f0412f402b0539d53e9f0f05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RxPHP/RxWebsocket/zipball/2f6725a0c45eb8f5f0412f402b0539d53e9f0f05",
+                "reference": "2f6725a0c45eb8f5f0412f402b0539d53e9f0f05",
+                "shasum": ""
+            },
+            "require": {
+                "ratchet/rfc6455": "^0.2.2",
+                "react/http": "^0.7.3 | ^0.8",
+                "react/http-client": "^0.5.3",
+                "reactivex/rxphp": "^2.0.1",
+                "voryx/event-loop": "^2.0.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rx\\Websocket\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Bonneau",
+                    "email": "matt@bonneau.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "David Dan",
+                    "email": "davidwdan@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Websockets for PHP using Rx",
+            "keywords": [
+                "WebSockets",
+                "react",
+                "reactive",
+                "rfc6455",
+                "rx",
+                "rx.php",
+                "rxphp",
+                "websocket"
+            ],
+            "time": "2017-12-15T14:51:21+00:00"
+        },
+        {
+            "name": "voryx/event-loop",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voryx/event-loop.git",
+                "reference": "4cd6bc28465303bf6da63202201463e420d4ec79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voryx/event-loop/zipball/4cd6bc28465303bf6da63202201463e420d4ec79",
+                "reference": "4cd6bc28465303bf6da63202201463e420d4ec79",
+                "shasum": ""
+            },
+            "require": {
+                "react/event-loop": "^0.4.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EventLoop\\": "src"
+                },
+                "files": [
+                    "src/functions.php",
+                    "src/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Bonneau",
+                    "email": "matt@bonneau.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "David Dan",
+                    "email": "davidwdan@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Global static wrapper for react event-loop",
+            "keywords": [
+                "event-loop",
+                "eventloop",
+                "global",
+                "static",
+                "timer"
+            ],
+            "time": "2017-03-14T01:10:32+00:00"
         },
         {
             "name": "wyrihaximus/doctrine-annotation-autoloader",
@@ -2784,111 +3329,6 @@
     ],
     "packages-dev": [
         {
-            "name": "api-clients/appveyor",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "cfe9da2653aec59d44752b8df85882a045abdbe9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/cfe9da2653aec59d44752b8df85882a045abdbe9",
-                "reference": "cfe9da2653aec59d44752b8df85882a045abdbe9",
-                "shasum": ""
-            },
-            "require": {
-                "api-clients/client-services": "^1.3",
-                "api-clients/foundation": "^1.0",
-                "api-clients/middleware": "^4.0",
-                "api-clients/middleware-bearer-authorization": "^2.0",
-                "api-clients/middleware-http-exceptions": "^2.0",
-                "api-clients/middleware-json": "^3.0",
-                "api-clients/middleware-user-agent": "^2.0",
-                "api-clients/rx": "^2.1",
-                "api-clients/rx-operators": "^2.0",
-                "api-clients/transport": "^3.0",
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "api-clients/resource-generator": "^1.0",
-                "api-clients/resource-test-utilities": "^1.0",
-                "api-clients/test-utilities": "^4.1"
-            },
-            "type": "library",
-            "extra": {
-                "api-clients": {
-                    "command-bus": {
-                        "path": "src/CommandBus",
-                        "namespace": "ApiClients\\Client\\AppVeyor\\CommandBus"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ApiClients\\Client\\AppVeyor\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cees-Jan Kiewiet",
-                    "email": "ceesjank@gmail.com"
-                }
-            ],
-            "description": "Async first AppVeyor client",
-            "time": "2017-11-17T06:44:24+00:00"
-        },
-        {
-            "name": "api-clients/middleware-bearer-authorization",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-api-clients/middleware-bearer-authorization.git",
-                "reference": "92054999e4dc31aa0729539404f0105d5728a0e4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/middleware-bearer-authorization/zipball/92054999e4dc31aa0729539404f0105d5728a0e4",
-                "reference": "92054999e4dc31aa0729539404f0105d5728a0e4",
-                "shasum": ""
-            },
-            "require": {
-                "api-clients/middleware": "^4.0",
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "api-clients/test-utilities": "^3.0.1",
-                "ringcentral/psr7": "^1.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ApiClients\\Middleware\\BearerAuthorization\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cees-Jan Kiewiet",
-                    "email": "ceesjank@gmail.com"
-                },
-                {
-                    "name": "Mateusz Drost",
-                    "email": "mat.drost@gmail.com"
-                }
-            ],
-            "description": "Bearer authorization middleware",
-            "homepage": "https://php-api-clients.org/clients/travis/",
-            "time": "2017-07-02T14:15:22+00:00"
-        },
-        {
             "name": "api-clients/middleware-delay",
             "version": "3.0.0",
             "source": {
@@ -2969,64 +3409,6 @@
             ],
             "description": "Request pool middleware",
             "time": "2017-07-02T14:14:57+00:00"
-        },
-        {
-            "name": "api-clients/pusher",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-api-clients/pusher.git",
-                "reference": "7dab60b6508c1361ceab62f1b60016a60ed7463e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/pusher/zipball/7dab60b6508c1361ceab62f1b60016a60ed7463e",
-                "reference": "7dab60b6508c1361ceab62f1b60016a60ed7463e",
-                "shasum": ""
-            },
-            "require": {
-                "api-clients/command-bus": "^2.0",
-                "clue/block-react": "^1.1",
-                "ocramius/package-versions": "^1.1",
-                "php": "^7.0",
-                "react/dns": "^0.4.9",
-                "react/http-client": "^0.5 || ^0.4.17",
-                "reactivex/rxphp": "^2.0.4",
-                "rx/helpers": "^1.0",
-                "rx/operator-extras": "^2.1",
-                "rx/websocket": "^2.0 || ^1.0",
-                "voryx/event-loop": "^2.0.2"
-            },
-            "require-dev": {
-                "api-clients/test-utilities": "^4.1"
-            },
-            "type": "library",
-            "extra": {
-                "api-clients": {
-                    "command-bus": {
-                        "path": "src/CommandBus",
-                        "namespace": "ApiClients\\Client\\Pusher\\CommandBus"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ApiClients\\Client\\Pusher\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cees-Jan Kiewiet",
-                    "email": "ceesjank@gmail.com"
-                }
-            ],
-            "description": "Async first Pusher client",
-            "homepage": "https://php-api-clients.org/clients/pusher",
-            "time": "2017-11-07T16:24:13+00:00"
         },
         {
             "name": "api-clients/resource-generator",
@@ -3127,62 +3509,6 @@
             "time": "2017-12-01T07:03:04+00:00"
         },
         {
-            "name": "api-clients/scrutinizer",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "886570259b1885070ef2d00f33b81542edca2fc4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/886570259b1885070ef2d00f33b81542edca2fc4",
-                "reference": "886570259b1885070ef2d00f33b81542edca2fc4",
-                "shasum": ""
-            },
-            "require": {
-                "api-clients/client-services": "^1.3",
-                "api-clients/foundation": "^1.0",
-                "api-clients/middleware-http-exceptions": "^2.0",
-                "api-clients/middleware-json": "^3.0",
-                "api-clients/middleware-user-agent": "^2.0",
-                "api-clients/rx": "^2.2",
-                "api-clients/transport": "^3.0",
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "api-clients/resource-generator": "^1.0",
-                "api-clients/resource-test-utilities": "^1.0",
-                "api-clients/test-utilities": "4.1"
-            },
-            "type": "library",
-            "extra": {
-                "api-clients": {
-                    "command-bus": {
-                        "path": "src/CommandBus",
-                        "namespace": "ApiClients\\Client\\Scrutinizer\\CommandBus"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ApiClients\\Client\\Scrutinizer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cees-Jan Kiewiet",
-                    "email": "ceesjank@gmail.com"
-                }
-            ],
-            "description": "Async first Scrutinizer API client",
-            "time": "2017-12-21T21:11:19+00:00"
-        },
-        {
             "name": "api-clients/test-utilities",
             "version": "4.2.0",
             "source": {
@@ -3217,80 +3543,12 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
             "description": "Test utilities for api-clients packages",
             "time": "2017-09-07T09:07:01+00:00"
-        },
-        {
-            "name": "api-clients/travis",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-api-clients/travis.git",
-                "reference": "7709fde885d4b7839f63cdfff26e6382b1ea0b17"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/travis/zipball/7709fde885d4b7839f63cdfff26e6382b1ea0b17",
-                "reference": "7709fde885d4b7839f63cdfff26e6382b1ea0b17",
-                "shasum": ""
-            },
-            "require": {
-                "api-clients/client-services": "^1.3",
-                "api-clients/foundation": "^1.0",
-                "api-clients/middleware-json": "^3.0",
-                "api-clients/middleware-token-authorization": "^3.0",
-                "api-clients/middleware-user-agent": "^2.0",
-                "api-clients/pusher": "^1.0",
-                "api-clients/rx": "^2.2",
-                "api-clients/rx-operators": "^2.0",
-                "api-clients/transport": "^3.0",
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "api-clients/middleware-delay": "^3.0",
-                "api-clients/middleware-pool": "^3.0",
-                "api-clients/resource-generator": "^1.0.1",
-                "api-clients/test-utilities": "^4.1"
-            },
-            "suggest": {
-                "api-clients/middleware-delay": "Add a delay between requests to not hammer Travis",
-                "api-clients/middleware-pool": "Keep your request count under control"
-            },
-            "type": "library",
-            "extra": {
-                "api-clients": {
-                    "command-bus": {
-                        "path": "src/CommandBus",
-                        "namespace": "ApiClients\\Client\\Travis\\CommandBus"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ApiClients\\Client\\Travis\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cees-Jan Kiewiet",
-                    "email": "ceesjank@gmail.com"
-                },
-                {
-                    "name": "Andreas Möller",
-                    "email": "am@localheinz.com"
-                }
-            ],
-            "description": "Async first TravisCI PHP API Client",
-            "homepage": "https://php-api-clients.org/clients/travis/",
-            "time": "2017-11-05T18:36:16+00:00"
         },
         {
             "name": "composer/semver",
@@ -4741,211 +4999,6 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
-            "name": "ratchet/rfc6455",
-            "version": "v0.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ratchetphp/RFC6455.git",
-                "reference": "cc8a1a46a703ce01de10fdb5fab387381b66edc8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ratchetphp/RFC6455/zipball/cc8a1a46a703ce01de10fdb5fab387381b66edc8",
-                "reference": "cc8a1a46a703ce01de10fdb5fab387381b66edc8",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/psr7": "^1.0",
-                "php": ">=5.4.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.8.*",
-                "react/http": "^0.4.1",
-                "react/socket-client": "^0.4.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Ratchet\\RFC6455\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Boden",
-                    "email": "cboden@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "RFC6455 WebSocket protocol handler",
-            "homepage": "http://socketo.me",
-            "keywords": [
-                "WebSockets",
-                "rfc6455",
-                "websocket"
-            ],
-            "time": "2017-09-13T13:49:42+00:00"
-        },
-        {
-            "name": "react/http",
-            "version": "v0.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/http.git",
-                "reference": "0410c94463bdae4bdf34d60bff91e9e1eb4a6652"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/http/zipball/0410c94463bdae4bdf34d60bff91e9e1eb4a6652",
-                "reference": "0410c94463bdae4bdf34d60bff91e9e1eb4a6652",
-                "shasum": ""
-            },
-            "require": {
-                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
-                "php": ">=5.3.0",
-                "react/promise": "^2.3 || ^1.2.1",
-                "react/promise-stream": "^1.1",
-                "react/socket": "^1.0 || ^0.8.3",
-                "react/stream": "^1.0 || ^0.7.1",
-                "ringcentral/psr7": "^1.2"
-            },
-            "require-dev": {
-                "clue/block-react": "^1.1",
-                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "React\\Http\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Event-driven, streaming plaintext HTTP and secure HTTPS server for ReactPHP",
-            "keywords": [
-                "event-driven",
-                "http",
-                "https",
-                "reactphp",
-                "server",
-                "streaming"
-            ],
-            "time": "2017-12-12T13:01:48+00:00"
-        },
-        {
-            "name": "rx/helpers",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/RxPHP/RxHelpers.git",
-                "reference": "ade044bc8afc131b40287dc58b721526ab9277d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/RxPHP/RxHelpers/zipball/ade044bc8afc131b40287dc58b721526ab9277d6",
-                "reference": "ade044bc8afc131b40287dc58b721526ab9277d6",
-                "shasum": ""
-            },
-            "require": {
-                "reactivex/rxphp": "^2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Bonneau",
-                    "email": "matt@bonneau.net",
-                    "role": "Developer"
-                },
-                {
-                    "name": "David Dan",
-                    "email": "davidwdan@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A collection of functions to use with RxPHP",
-            "keywords": [
-                "react",
-                "reactive",
-                "rx",
-                "rx.php",
-                "rxphp"
-            ],
-            "time": "2017-09-14T01:31:18+00:00"
-        },
-        {
-            "name": "rx/websocket",
-            "version": "2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/RxPHP/RxWebsocket.git",
-                "reference": "2f6725a0c45eb8f5f0412f402b0539d53e9f0f05"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/RxPHP/RxWebsocket/zipball/2f6725a0c45eb8f5f0412f402b0539d53e9f0f05",
-                "reference": "2f6725a0c45eb8f5f0412f402b0539d53e9f0f05",
-                "shasum": ""
-            },
-            "require": {
-                "ratchet/rfc6455": "^0.2.2",
-                "react/http": "^0.7.3 | ^0.8",
-                "react/http-client": "^0.5.3",
-                "reactivex/rxphp": "^2.0.1",
-                "voryx/event-loop": "^2.0.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~5.7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Rx\\Websocket\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Bonneau",
-                    "email": "matt@bonneau.net",
-                    "role": "Developer"
-                },
-                {
-                    "name": "David Dan",
-                    "email": "davidwdan@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Websockets for PHP using Rx",
-            "keywords": [
-                "WebSockets",
-                "react",
-                "reactive",
-                "rfc6455",
-                "rx",
-                "rx.php",
-                "rxphp",
-                "websocket"
-            ],
-            "time": "2017-12-15T14:51:21+00:00"
-        },
-        {
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.1",
             "source": {
@@ -4992,16 +5045,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "1174d9018191e93cb9d719edec01257fc05f8158"
+                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/1174d9018191e93cb9d719edec01257fc05f8158",
-                "reference": "1174d9018191e93cb9d719edec01257fc05f8158",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
+                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
                 "shasum": ""
             },
             "require": {
@@ -5052,7 +5105,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-11-03T07:16:52+00:00"
+            "time": "2017-12-22T14:50:35+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -6209,59 +6262,6 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2017-04-07T12:08:54+00:00"
-        },
-        {
-            "name": "voryx/event-loop",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/voryx/event-loop.git",
-                "reference": "4cd6bc28465303bf6da63202201463e420d4ec79"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/voryx/event-loop/zipball/4cd6bc28465303bf6da63202201463e420d4ec79",
-                "reference": "4cd6bc28465303bf6da63202201463e420d4ec79",
-                "shasum": ""
-            },
-            "require": {
-                "react/event-loop": "^0.4.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EventLoop\\": "src"
-                },
-                "files": [
-                    "src/functions.php",
-                    "src/bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Bonneau",
-                    "email": "matt@bonneau.net",
-                    "role": "Developer"
-                },
-                {
-                    "name": "David Dan",
-                    "email": "davidwdan@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Global static wrapper for react event-loop",
-            "keywords": [
-                "event-loop",
-                "eventloop",
-                "global",
-                "static",
-                "timer"
-            ],
-            "time": "2017-03-14T01:10:32+00:00"
         },
         {
             "name": "webmozart/assert",
