@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5eaffbaea761ba779b65f87216785b3",
+    "content-hash": "8d655df94d55bba456b946c977e17647",
     "packages": [
         {
             "name": "api-clients/appveyor",

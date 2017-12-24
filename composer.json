@@ -18,7 +18,7 @@
     "api-clients/middleware-json": "^3.0",
     "api-clients/middleware-token-authorization": "^3.0",
     "api-clients/middleware-user-agent": "^2.0",
-    "api-clients/rx": "^2.1",
+    "api-clients/rx": "^2.2",
     "api-clients/rx-operators": "^2.0",
     "api-clients/scrutinizer": "dev-master",
     "api-clients/transport": "^3.1",
