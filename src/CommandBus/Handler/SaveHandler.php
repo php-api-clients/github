@@ -43,7 +43,7 @@ final class SaveHandler
         )->then(function ($response) use ($command) {
             return $this->hydrator->hydrate(
                 $command->getHydrateClass(),
-                $response->getBody()->getJson()
+                $response->getBody()->getParsedContents()
             );
         });
     }

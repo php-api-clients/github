@@ -55,7 +55,7 @@ class IteratePagesService
                     'last' => $parsedLinks->getByRel('last'),
                 ];
 
-                if ($links['next'] === null && $links['last'] === null) {
+                if ($links['next'] === null || $links['last'] === null) {
                     $paths->onCompleted();
 
                     return;
@@ -66,7 +66,7 @@ class IteratePagesService
                 });
             })
             ->map(function (ResponseInterface $response) {
-                return $response->getBody()->getJson();
+                return $response->getBody()->getParsedContents();
             });
     }
 
@@ -89,7 +89,7 @@ class IteratePagesService
         ResponseInterface $response,
         Subject $subject
     ) {
-        $subject->onNext($response->getBody()->getJson());
+        $subject->onNext($response->getBody()->getParsedContents());
 
         if ($subject->isDisposed() || !$subject->hasObservers()) {
             $subject->onCompleted();
