@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\AppVeyorCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
@@ -12,8 +13,11 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\ReplaceTopicsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\ScrutinizerCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\TravisCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
@@ -136,5 +140,27 @@ class Repository extends BaseRepository
         return $this->handleCommand(
             new UnSubscribeCommand($this->fullName())
         );
+    }
+
+    public function replaceTopics(string ...$topics): PromiseInterface
+    {
+        return $this->handleCommand(
+            new ReplaceTopicsCommand($this->fullName(), ...$topics)
+        );
+    }
+
+    public function travisRepository(): PromiseInterface
+    {
+        return $this->handleCommand(new TravisCommand($this->fullName()));
+    }
+
+    public function appVeyorRepository(): PromiseInterface
+    {
+        return $this->handleCommand(new AppVeyorCommand($this->fullName()));
+    }
+
+    public function scrutinizerRepository(): PromiseInterface
+    {
+        return $this->handleCommand(new ScrutinizerCommand(...explode('/', $this->fullName())));
     }
 }

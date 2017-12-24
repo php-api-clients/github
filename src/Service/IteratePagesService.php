@@ -9,6 +9,7 @@ use Rx\AsyncSchedulerInterface;
 use Rx\Observable;
 use Rx\Scheduler;
 use Rx\Subject\Subject;
+use function Kelunik\LinkHeaderRfc5988\parseLinks;
 
 class IteratePagesService
 {
@@ -43,30 +44,29 @@ class IteratePagesService
             })
             ->do(function (ResponseInterface $response) use ($paths) {
                 if (!$response->hasHeader('link')) {
+                    $paths->onCompleted();
+
                     return;
                 }
 
+                $parsedLinks = parseLinks($response->getHeaderLine('link'));
                 $links = [
-                    'next' => false,
-                    'last' => false,
+                    'next' => $parsedLinks->getByRel('next'),
+                    'last' => $parsedLinks->getByRel('last'),
                 ];
-                foreach (explode(', ', $response->getHeader('link')[0]) as $link) {
-                    list($url, $rel) = explode('>; rel="', ltrim(rtrim($link, '"'), '<'));
-                    if (isset($links[$rel])) {
-                        $links[$rel] = $url;
-                    }
-                }
 
-                if ($links['next'] === false || $links['last'] === false) {
+                if ($links['next'] === null || $links['last'] === null) {
+                    $paths->onCompleted();
+
                     return;
                 }
 
                 $this->scheduler->schedule(function () use ($paths, $links) {
-                    $paths->onNext($links['next']);
+                    $paths->onNext($links['next']->getUri());
                 });
             })
             ->map(function (ResponseInterface $response) {
-                return $response->getBody()->getJson();
+                return $response->getBody()->getParsedContents();
             });
     }
 
@@ -89,7 +89,7 @@ class IteratePagesService
         ResponseInterface $response,
         Subject $subject
     ) {
-        $subject->onNext($response->getBody()->getJson());
+        $subject->onNext($response->getBody()->getParsedContents());
 
         if ($subject->isDisposed() || !$subject->hasObservers()) {
             $subject->onCompleted();
@@ -103,23 +103,16 @@ class IteratePagesService
             return;
         }
 
+        $parsedLinks = parseLinks($response->getHeaderLine('link'));
         $links = [
-            'next' => false,
-            'last' => false,
+            'next' => $parsedLinks->getByRel('next'),
+            'last' => $parsedLinks->getByRel('last'),
         ];
-        foreach (explode(', ', $response->getHeader('link')[0]) as $link) {
-            list($url, $rel) = explode('>; rel="', ltrim(rtrim($link, '"'), '<'));
-            if (isset($links[$rel])) {
-                $links[$rel] = $url;
-            }
-        }
 
-        if ($links['next'] === false || $links['last'] === false) {
+        if ($links['next'] === null || $links['last'] === null) {
             $subject->onCompleted();
-
-            return;
         }
 
-        $this->sendRequest($links['next'], $subject);
+        $this->sendRequest($links['next']->getUri(), $subject);
     }
 }

@@ -49,7 +49,7 @@ final class AddLabelHandler
                 ])
             )
         )->then(function ($label) {
-            return $this->hydrator->hydrate(LabelInterface::HYDRATE_CLASS, $label->getBody()->getJson());
+            return $this->hydrator->hydrate(LabelInterface::HYDRATE_CLASS, $label->getBody()->getParsedContents());
         });
     }
 }

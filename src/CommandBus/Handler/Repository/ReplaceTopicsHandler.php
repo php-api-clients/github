@@ -2,13 +2,13 @@
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
-use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\ReplaceTopicsCommand;
 use ApiClients\Foundation\Transport\Service\RequestService;
+use ApiClients\Middleware\Json\JsonStream;
 use React\Promise\PromiseInterface;
 use RingCentral\Psr7\Request;
-use function React\Promise\resolve;
 
-final class LanguagesHandler
+final class ReplaceTopicsHandler
 {
     /**
      * @var RequestService
@@ -16,7 +16,6 @@ final class LanguagesHandler
     private $requestService;
 
     /**
-     * LanguagesHandler constructor.
      * @param RequestService $requestService
      */
     public function __construct(RequestService $requestService)
@@ -25,15 +24,22 @@ final class LanguagesHandler
     }
 
     /**
-     * @param  LanguagesCommand $command
+     * @param  ReplaceTopicsCommand $command
      * @return PromiseInterface
      */
-    public function handle(LanguagesCommand $command): PromiseInterface
+    public function handle(ReplaceTopicsCommand $command): PromiseInterface
     {
         return $this->requestService->request(
-            new Request('GET', 'repos/' . $command->getFullName() . '/languages')
+            new Request(
+                'PUT',
+                'repos/' . $command->getRepository() . '/topics',
+                [],
+                new JsonStream([
+                    'names' => $command->getTopics(),
+                ])
+            )
         )->then(function ($response) {
-            return resolve($response->getBody()->getParsedContents());
+            return $response->getBody()->getParsedContents()['names'];
         });
     }
 }
