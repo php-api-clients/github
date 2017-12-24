@@ -11,7 +11,7 @@
   "require": {
     "php": "^7.0",
     "api-clients/appveyor": "dev-master",
-    "api-clients/client-services": "^1.3",
+    "api-clients/client-services": "^1.4",
     "api-clients/foundation": "^1.0",
     "api-clients/middleware": "^4.0",
     "api-clients/middleware-http-exceptions": "^2.0",
@@ -21,7 +21,7 @@
     "api-clients/rx": "^2.1",
     "api-clients/rx-operators": "^2.0",
     "api-clients/scrutinizer": "dev-master",
-    "api-clients/transport": "^3.0",
+    "api-clients/transport": "^3.1",
     "api-clients/travis": "^1.0",
     "kelunik/link-header-rfc5988": "^1.0",
     "react/promise-stream": "^1.0 || ^0.1.1",
