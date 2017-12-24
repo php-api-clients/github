@@ -22,7 +22,6 @@ use ApiClients\Foundation\Transport\Options as TransportOptions;
 use ApiClients\Middleware\Delay\DelayMiddleware;
 use ApiClients\Middleware\Pool\PoolMiddleware;
 use React\EventLoop\Factory;
-use function React\Promise\resolve;
 use ResourcePool\Pool;
 use Rx\Observable;
 use function ApiClients\Foundation\resource_pretty_print;
