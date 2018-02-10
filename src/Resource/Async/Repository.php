@@ -19,6 +19,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\SubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TravisCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\UpdateSettingsCommand;
 use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
@@ -162,5 +163,14 @@ class Repository extends BaseRepository
     public function scrutinizerRepository(): PromiseInterface
     {
         return $this->handleCommand(new ScrutinizerCommand(...explode('/', $this->fullName())));
+    }
+
+    public function updateSettings(array $settings): PromiseInterface
+    {
+        if (!isset($settings['name'])) {
+            $settings['name'] = $this->name();
+        }
+
+        return $this->handleCommand(new UpdateSettingsCommand($this->fullName(), $settings));
     }
 }
