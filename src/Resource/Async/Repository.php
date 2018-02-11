@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\AddWebHookCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AppVeyorCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
@@ -107,6 +108,23 @@ class Repository extends BaseRepository
         return unwrapObservableFromPromise($this->handleCommand(
             new WebHooksCommand($this->fullName(), 'repos')
         ));
+    }
+
+    public function addWebHook(
+        string $name,
+        array $config,
+        array $events,
+        bool $active
+    ): PromiseInterface {
+        return $this->handleCommand(
+            new AddWebHookCommand(
+                $this->fullName(),
+                $name,
+                $config,
+                $events,
+                $active
+            )
+        );
     }
 
     public function addFile(
