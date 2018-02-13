@@ -35,15 +35,15 @@ final class AddWebHookCommand
     private $active;
 
     /**
-     * @param string $repository
+     * @param string $organization
      * @param string $name
      * @param array  $config
      * @param array  $events
      * @param bool   $active
      */
-    public function __construct(string $repository, string $name, array $config, array $events, bool $active)
+    public function __construct(string $organization, string $name, array $config, array $events, bool $active)
     {
-        $this->organization = $repository;
+        $this->organization = $organization;
         $this->name = $name;
         $this->config = $config;
         $this->events = $events;

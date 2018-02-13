@@ -2,6 +2,7 @@
 
 namespace ApiClients\Client\Github\Resource\Async;
 
+use ApiClients\Client\Github\CommandBus\Command\Organization\AddWebHookCommand;
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\User\OrganizationsCommand;
 use ApiClients\Client\Github\CommandBus\Command\User\RepositoriesCommand;
@@ -40,6 +41,23 @@ class Organization extends BaseOrganization
         return unwrapObservableFromPromise($this->handleCommand(
             new OrganizationsCommand($this->login())
         ));
+    }
+
+    public function addWebHook(
+        string $name,
+        array $config,
+        array $events,
+        bool $active
+    ): PromiseInterface {
+        return $this->handleCommand(
+            new AddWebHookCommand(
+                $this->login(),
+                $name,
+                $config,
+                $events,
+                $active
+            )
+        );
     }
 
     public function webHooks(): ObservableInterface
