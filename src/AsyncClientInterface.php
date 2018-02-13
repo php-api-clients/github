@@ -29,6 +29,8 @@ interface AsyncClientInterface
 
     public function user(string $user): PromiseInterface;
 
+    public function organization(string $organization): PromiseInterface;
+
     public function whoami(): PromiseInterface;
 
     public function emojis(): Observable;

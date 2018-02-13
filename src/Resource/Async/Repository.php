@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AddLabelCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\AddWebHookCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AppVeyorCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
@@ -20,6 +21,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\TravisCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UpdateSettingsCommand;
+use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use React\Promise\PromiseInterface;
 use React\Stream\ReadableStreamInterface;
@@ -98,6 +100,30 @@ class Repository extends BaseRepository
     {
         return $this->handleCommand(
             new LanguagesCommand($this->fullName())
+        );
+    }
+
+    public function webHooks(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new WebHooksCommand($this->fullName(), 'repos')
+        ));
+    }
+
+    public function addWebHook(
+        string $name,
+        array $config,
+        array $events,
+        bool $active
+    ): PromiseInterface {
+        return $this->handleCommand(
+            new AddWebHookCommand(
+                $this->fullName(),
+                $name,
+                $config,
+                $events,
+                $active
+            )
         );
     }
 

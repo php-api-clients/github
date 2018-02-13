@@ -1,0 +1,4 @@
+class: WebHook\Config
+properties:
+  url: string
+  content_type: string
