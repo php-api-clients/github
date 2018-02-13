@@ -20,10 +20,15 @@ final class WebHooksHandlerTest extends TestCase
         $resource = $this->prophesize(ResourceInterface::class)->reveal();
 
         $service = $this->prophesize(IteratePagesService::class);
-        $service->iterate('prefix/foo/bar/hooks')->shouldBeCalled()->willReturn(Observable::fromArray([[['php-api-clients']]]));
+        $service->iterate('prefix/foo/bar/hooks')->shouldBeCalled()->willReturn(
+            Observable::fromArray([[['php-api-clients']]])
+        );
 
         $hydrator = $this->prophesize(Hydrator::class);
-        $hydrator->hydrate(WebHookInterface::HYDRATE_CLASS, ['php-api-clients'])->shouldBeCalled()->willReturn($resource);
+        $hydrator->hydrate(
+            WebHookInterface::HYDRATE_CLASS,
+            ['php-api-clients']
+        )->shouldBeCalled()->willReturn($resource);
 
         $handler = new WebHooksHandler($service->reveal(), $hydrator->reveal());
         $result = $this->await(

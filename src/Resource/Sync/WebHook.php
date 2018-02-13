@@ -10,8 +10,12 @@ class WebHook extends BaseWebHook
 {
     public function refresh(): WebHook
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (WebHookInterface $webHook) {
-            return $webHook->refresh();
-        }));
+        return $this->wait(
+            $this->handleCommand(
+                new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
+            )->then(function (WebHookInterface $webHook) {
+                return $webHook->refresh();
+            })
+        );
     }
 }
