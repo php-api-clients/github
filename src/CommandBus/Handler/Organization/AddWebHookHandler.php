@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
+namespace ApiClients\Client\Github\CommandBus\Handler\Organization;
 
-use ApiClients\Client\Github\CommandBus\Command\Repository\AddWebHookCommand;
+use ApiClients\Client\Github\CommandBus\Command\Organization\AddWebHookCommand;
 use ApiClients\Client\Github\Resource\WebHookInterface;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Transport\Service\RequestService;
@@ -41,7 +41,7 @@ final class AddWebHookHandler
         return $this->requestService->request(
             new Request(
                 'POST',
-                'repos/' . $command->getRepository() . '/hooks',
+                'orgs/' . $command->getOrganization() . '/hooks',
                 [],
                 new JsonStream([
                     'name'   => $command->getName(),
