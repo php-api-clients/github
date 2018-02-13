@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Client\Github\CommandBus\Command;
+namespace ApiClients\Client\Github\CommandBus\Command\WebHook;
 
 use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
 
 /**
- * @Handler("ApiClients\Client\Github\CommandBus\Handler\PingWebHookHandler")
+ * @Handler("ApiClients\Client\Github\CommandBus\Handler\WebHook\PingHandler")
  */
-final class PingWebHookCommand
+final class PingCommand
 {
     /**
      * @var string

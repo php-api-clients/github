@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\Resource\Async;
 
-use ApiClients\Client\Github\CommandBus\Command\PingWebHookCommand;
+use ApiClients\Client\Github\CommandBus\Command\WebHook\PingCommand;
 use ApiClients\Client\Github\Resource\WebHook as BaseWebHook;
 use React\Promise\PromiseInterface;
 
@@ -16,7 +16,7 @@ class WebHook extends BaseWebHook
     public function ping(): PromiseInterface
     {
         return $this->handleCommand(
-            new PingWebHookCommand($this->pingUrl())
+            new PingCommand($this->pingUrl())
         );
     }
 }
