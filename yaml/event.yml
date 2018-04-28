@@ -1,0 +1,15 @@
+class: Event
+properties:
+  id: int
+  type: string
+  actor:
+    type: User
+    annotations:
+      nested: User
+  repo:
+    type: RepositorySimple
+    annotations:
+      nested: RepositorySimple
+  payload: array
+  public: bool
+  created_at: DateTimeInterface

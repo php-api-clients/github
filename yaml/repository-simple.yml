@@ -1,0 +1,5 @@
+class: RepositorySimple
+properties:
+  id: int
+  name: string
+  url: string
