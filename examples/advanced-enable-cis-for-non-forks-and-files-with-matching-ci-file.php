@@ -6,7 +6,7 @@
  * files that aren't forks and aren't enabled yet.
  */
 
-use ApiClients\Client\AppVeyor\AsyncClient as AsyncAppVeyorClient;
+use ApiClients\Client\AppVeyor\AsyncClientInterface as AsyncAppVeyorClientInterface;
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Contents\File;
 use ApiClients\Client\Github\Resource\Async\Repository;
@@ -62,7 +62,7 @@ $githubClient = AsyncClient::create($loop, require 'resolve_token.php', [
     Options::TRANSPORT_OPTIONS => $transportOptions,
     // Pass the AppVeyor and Travis client into the Github client internal container
     Options::CONTAINER_DEFINITIONS => [
-        AsyncAppVeyorClient::class => $appVeyorClient,
+        AsyncAppVeyorClientInterface::class => $appVeyorClient,
         AsyncTravisClientInterface::class => $travisClient,
         AsyncScrutinizerClientInterface::class => $scrutinizerClient,
     ],

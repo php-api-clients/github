@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
-use ApiClients\Client\AppVeyor\AsyncClient;
+use ApiClients\Client\AppVeyor\AsyncClientInterface;
 use ApiClients\Client\AppVeyor\Resource\ProjectInterface;
 use ApiClients\Client\Github\CommandBus\Command\Repository\AppVeyorCommand;
 use React\Promise\Promise;
@@ -11,14 +11,14 @@ use React\Promise\PromiseInterface;
 final class AppVeyorHandler
 {
     /**
-     * @var AsyncClient
+     * @var AsyncClientInterface
      */
     private $appveyor;
 
     /**
-     * @param AsyncClient $appveyor
+     * @param AsyncClientInterface $appveyor
      */
-    public function __construct(AsyncClient $appveyor)
+    public function __construct(AsyncClientInterface $appveyor)
     {
         $this->appveyor = $appveyor;
     }
