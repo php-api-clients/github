@@ -2,6 +2,7 @@
 
 namespace ApiClients\Client\Github;
 
+use ApiClients\Client\Github\Middleware\ErrorMiddleware;
 use ApiClients\Client\Github\Middleware\RateLimitStateMiddleware;
 use ApiClients\Foundation\Hydrator\Options as HydratorOptions;
 use ApiClients\Foundation\Options as FoundationOptions;
@@ -28,9 +29,10 @@ final class ApiSettings
             TransportOptions::MIDDLEWARE => [
                 JsonDecodeMiddleware::class,
                 JsonEncodeMiddleware::class,
-                HttpExceptionsMiddleware::class,
                 UserAgentMiddleware::class,
                 RateLimitStateMiddleware::class,
+                HttpExceptionsMiddleware::class,
+                ErrorMiddleware::class,
             ],
             TransportOptions::DEFAULT_REQUEST_OPTIONS => [
                 UserAgentMiddleware::class => [
