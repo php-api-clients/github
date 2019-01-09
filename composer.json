@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "php": "^7.0",
+    "php": "^7.2",
     "api-clients/appveyor": "dev-master",
     "api-clients/client-services": "^1.4",
     "api-clients/foundation": "^1.0",
@@ -48,7 +48,7 @@
   "config": {
     "sort-packages": true,
     "platform": {
-      "php": "7.0"
+      "php": "7.2"
     }
   },
   "extra": {
