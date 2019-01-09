@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "505c68366fd17b36d6d7a4a5828ffa7f",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "0c27d0b1274b0c2c06d39d390c1c427da94c8135"
+                "reference": "6a0ed7380624377487e7907041fb9122ab048327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/0c27d0b1274b0c2c06d39d390c1c427da94c8135",
-                "reference": "0c27d0b1274b0c2c06d39d390c1c427da94c8135",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/6a0ed7380624377487e7907041fb9122ab048327",
+                "reference": "6a0ed7380624377487e7907041fb9122ab048327",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "api-clients/middleware": "^4.0",
                 "api-clients/middleware-bearer-authorization": "^2.0",
                 "api-clients/middleware-http-exceptions": "^2.0",
-                "api-clients/middleware-json": "^3.0",
+                "api-clients/middleware-json": "^3.1",
                 "api-clients/middleware-user-agent": "^2.0",
                 "api-clients/rx": "^2.1",
                 "api-clients/rx-operators": "^2.0",
@@ -63,7 +63,7 @@
                 }
             ],
             "description": "Async first AppVeyor client",
-            "time": "2018-05-07T11:01:39+00:00"
+            "time": "2018-07-16T08:30:54+00:00"
         },
         {
             "name": "api-clients/client-services",
@@ -387,7 +387,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 },
                 {
@@ -480,7 +480,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -606,7 +606,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -793,7 +793,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -805,12 +805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495"
+                "reference": "df8e5131f5b26f423275d459ca2858a7dd7b477b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2ab1d3ee1f3008248d72a313161256c25692e495",
-                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/df8e5131f5b26f423275d459ca2858a7dd7b477b",
+                "reference": "df8e5131f5b26f423275d459ca2858a7dd7b477b",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2017-12-23T19:29:12+00:00"
+            "time": "2018-07-14T21:12:35+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -2395,16 +2395,16 @@
         },
         {
             "name": "react/event-loop",
-            "version": "v0.5.2",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/event-loop.git",
-                "reference": "e94985d93c689c554265b01014f8c3064921ca27"
+                "reference": "0266aff7aa7b0613b1f38a723e14a0ebc55cfca3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/e94985d93c689c554265b01014f8c3064921ca27",
-                "reference": "e94985d93c689c554265b01014f8c3064921ca27",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/0266aff7aa7b0613b1f38a723e14a0ebc55cfca3",
+                "reference": "0266aff7aa7b0613b1f38a723e14a0ebc55cfca3",
                 "shasum": ""
             },
             "require": {
@@ -2432,7 +2432,7 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2018-04-24T11:23:06+00:00"
+            "time": "2018-07-11T14:37:46+00:00"
         },
         {
             "name": "react/http",
@@ -2528,16 +2528,16 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.5.1",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053"
+                "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/62785ae604c8d69725d693eb370e1d67e94c4053",
-                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
+                "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
                 "shasum": ""
             },
             "require": {
@@ -2570,7 +2570,7 @@
                 "promise",
                 "promises"
             ],
-            "time": "2017-03-25T12:08:31+00:00"
+            "time": "2019-01-07T21:25:54+00:00"
         },
         {
             "name": "react/promise-stream",
@@ -2630,22 +2630,22 @@
         },
         {
             "name": "react/promise-timer",
-            "version": "v1.3.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise-timer.git",
-                "reference": "604513e33feb96ffb0dfb3d25233d3f9f0dce356"
+                "reference": "a11206938ca2394dc7bb368f5da25cd4533fa603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/604513e33feb96ffb0dfb3d25233d3f9f0dce356",
-                "reference": "604513e33feb96ffb0dfb3d25233d3f9f0dce356",
+                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/a11206938ca2394dc7bb368f5da25cd4533fa603",
+                "reference": "a11206938ca2394dc7bb368f5da25cd4533fa603",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3",
                 "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
-                "react/promise": "~2.1|~1.2"
+                "react/promise": "^2.7.0 || ^1.2.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
@@ -2670,7 +2670,7 @@
                 }
             ],
             "description": "A trivial implementation of timeouts for Promises, built on top of ReactPHP.",
-            "homepage": "https://github.com/react/promise-timer",
+            "homepage": "https://github.com/reactphp/promise-timer",
             "keywords": [
                 "async",
                 "event-loop",
@@ -2679,7 +2679,7 @@
                 "timeout",
                 "timer"
             ],
-            "time": "2018-04-24T14:19:26+00:00"
+            "time": "2018-06-13T16:45:37+00:00"
         },
         {
             "name": "react/socket",
@@ -3294,7 +3294,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -3385,7 +3385,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
