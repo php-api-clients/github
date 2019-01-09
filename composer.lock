@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "505c68366fd17b36d6d7a4a5828ffa7f",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "0c27d0b1274b0c2c06d39d390c1c427da94c8135"
+                "reference": "6a0ed7380624377487e7907041fb9122ab048327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/0c27d0b1274b0c2c06d39d390c1c427da94c8135",
-                "reference": "0c27d0b1274b0c2c06d39d390c1c427da94c8135",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/6a0ed7380624377487e7907041fb9122ab048327",
+                "reference": "6a0ed7380624377487e7907041fb9122ab048327",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "api-clients/middleware": "^4.0",
                 "api-clients/middleware-bearer-authorization": "^2.0",
                 "api-clients/middleware-http-exceptions": "^2.0",
-                "api-clients/middleware-json": "^3.0",
+                "api-clients/middleware-json": "^3.1",
                 "api-clients/middleware-user-agent": "^2.0",
                 "api-clients/rx": "^2.1",
                 "api-clients/rx-operators": "^2.0",
@@ -58,12 +58,12 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
             "description": "Async first AppVeyor client",
-            "time": "2018-05-07T11:01:39+00:00"
+            "time": "2018-07-16T08:30:54+00:00"
         },
         {
             "name": "api-clients/client-services",
@@ -150,7 +150,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -387,7 +387,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 },
                 {
@@ -805,12 +805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495"
+                "reference": "df8e5131f5b26f423275d459ca2858a7dd7b477b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2ab1d3ee1f3008248d72a313161256c25692e495",
-                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/df8e5131f5b26f423275d459ca2858a7dd7b477b",
+                "reference": "df8e5131f5b26f423275d459ca2858a7dd7b477b",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2017-12-23T19:29:12+00:00"
+            "time": "2018-07-14T21:12:35+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -1123,17 +1123,20 @@
         },
         {
             "name": "daverandom/exceptional-json",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DaveRandom/ExceptionalJSON.git",
-                "reference": "7dfa85369633669d9694cbc79db005268718f15a"
+                "reference": "fed957142b4687b079495c80975666dd1a67d61d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DaveRandom/ExceptionalJSON/zipball/7dfa85369633669d9694cbc79db005268718f15a",
-                "reference": "7dfa85369633669d9694cbc79db005268718f15a",
+                "url": "https://api.github.com/repos/DaveRandom/ExceptionalJSON/zipball/fed957142b4687b079495c80975666dd1a67d61d",
+                "reference": "fed957142b4687b079495c80975666dd1a67d61d",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1154,7 +1157,7 @@
                 }
             ],
             "description": "JSON encoding and decoding that throws exceptions on failure",
-            "time": "2017-05-31T16:37:55+00:00"
+            "time": "2018-06-11T11:25:57+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -3767,7 +3770,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
