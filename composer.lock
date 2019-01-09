@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "505c68366fd17b36d6d7a4a5828ffa7f",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "0c27d0b1274b0c2c06d39d390c1c427da94c8135"
+                "reference": "6a0ed7380624377487e7907041fb9122ab048327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/0c27d0b1274b0c2c06d39d390c1c427da94c8135",
-                "reference": "0c27d0b1274b0c2c06d39d390c1c427da94c8135",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/6a0ed7380624377487e7907041fb9122ab048327",
+                "reference": "6a0ed7380624377487e7907041fb9122ab048327",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "api-clients/middleware": "^4.0",
                 "api-clients/middleware-bearer-authorization": "^2.0",
                 "api-clients/middleware-http-exceptions": "^2.0",
-                "api-clients/middleware-json": "^3.0",
+                "api-clients/middleware-json": "^3.1",
                 "api-clients/middleware-user-agent": "^2.0",
                 "api-clients/rx": "^2.1",
                 "api-clients/rx-operators": "^2.0",
@@ -63,7 +63,7 @@
                 }
             ],
             "description": "Async first AppVeyor client",
-            "time": "2018-05-07T11:01:39+00:00"
+            "time": "2018-07-16T08:30:54+00:00"
         },
         {
             "name": "api-clients/client-services",
@@ -387,7 +387,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 },
                 {
@@ -480,7 +480,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -606,7 +606,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -793,7 +793,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -805,12 +805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495"
+                "reference": "df8e5131f5b26f423275d459ca2858a7dd7b477b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2ab1d3ee1f3008248d72a313161256c25692e495",
-                "reference": "2ab1d3ee1f3008248d72a313161256c25692e495",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/df8e5131f5b26f423275d459ca2858a7dd7b477b",
+                "reference": "df8e5131f5b26f423275d459ca2858a7dd7b477b",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2017-12-23T19:29:12+00:00"
+            "time": "2018-07-14T21:12:35+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -3294,7 +3294,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -3385,7 +3385,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-Jan Kiewiet",
+                    "name": "Cees-jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -5542,16 +5542,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "5.0.6",
+            "version": "5.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf"
+                "reference": "cd1cf05c553ecfec36b170070573e540b67d3f1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
-                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/cd1cf05c553ecfec36b170070573e540b67d3f1f",
+                "reference": "cd1cf05c553ecfec36b170070573e540b67d3f1f",
                 "shasum": ""
             },
             "require": {
@@ -5564,7 +5564,7 @@
                 "phpunit/phpunit": "<6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5"
+                "phpunit/phpunit": "^6.5.11"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -5597,7 +5597,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-01-06T05:45:45+00:00"
+            "time": "2018-08-09T05:50:03+00:00"
         },
         {
             "name": "pimple/pimple",
