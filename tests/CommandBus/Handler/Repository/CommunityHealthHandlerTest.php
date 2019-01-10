@@ -11,6 +11,9 @@ use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class CommunityHealthHandlerTest extends TestCase
 {
     public function testCommand()

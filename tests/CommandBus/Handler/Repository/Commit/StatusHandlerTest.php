@@ -10,6 +10,9 @@ use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class StatusHandlerTest extends TestCase
 {
     public function testCommand()

@@ -188,7 +188,6 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
      */
     public function permissions(): array
     {
-        return null;
     }
 
     /**
@@ -220,6 +219,5 @@ abstract class EmptyRepository implements RepositoryInterface, EmptyResourceInte
      */
     public function topics(): array
     {
-        return null;
     }
 }

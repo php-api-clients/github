@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "835c8b84cca4a7b363b878867830c2b3",
+    "content-hash": "6c521395665145710dc9da1bc6f2f2a1",
     "packages": [
         {
             "name": "api-clients/appveyor",
@@ -150,7 +150,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -198,7 +198,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -387,7 +387,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 },
                 {
@@ -434,7 +434,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -480,7 +480,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -565,7 +565,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -606,7 +606,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -793,7 +793,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -906,7 +906,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -3297,7 +3297,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -3388,7 +3388,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -3554,6 +3554,46 @@
     ],
     "packages-dev": [
         {
+            "name": "api-clients/cs-fixer-config",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/cs-fixer-config.git",
+                "reference": "91df959c3d8ab7e1797d03e1fc47e2f48377cf6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/cs-fixer-config/zipball/91df959c3d8ab7e1797d03e1fc47e2f48377cf6a",
+                "reference": "91df959c3d8ab7e1797d03e1fc47e2f48377cf6a",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofphp/php-cs-fixer": "^2.5",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Tools\\CsFixerConfig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "friendsofphp/php-cs-fixer config",
+            "time": "2018-12-24T13:32:35+00:00"
+        },
+        {
             "name": "api-clients/middleware-delay",
             "version": "3.0.0",
             "source": {
@@ -3628,7 +3668,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -3770,7 +3810,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -3896,6 +3936,50 @@
             "time": "2016-08-30T16:08:34+00:00"
         },
         {
+            "name": "composer/xdebug-handler",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/xdebug-handler.git",
+                "reference": "dc523135366eb68f22268d069ea7749486458562"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/dc523135366eb68f22268d069ea7749486458562",
+                "reference": "dc523135366eb68f22268d069ea7749486458562",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\XdebugHandler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Stevenson",
+                    "email": "john-stevenson@blueyonder.co.uk"
+                }
+            ],
+            "description": "Restarts a process without xdebug.",
+            "keywords": [
+                "Xdebug",
+                "performance"
+            ],
+            "time": "2018-11-29T10:59:02+00:00"
+        },
+        {
             "name": "doctrine/inflector",
             "version": "v1.2.0",
             "source": {
@@ -4018,20 +4102,21 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.11.1",
+            "version": "v2.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "ad94441c17b8ef096e517acccdbf3238af8a2da8"
+                "reference": "7136aa4e0c5f912e8af82383775460d906168a10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/ad94441c17b8ef096e517acccdbf3238af8a2da8",
-                "reference": "ad94441c17b8ef096e517acccdbf3238af8a2da8",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/7136aa4e0c5f912e8af82383775460d906168a10",
+                "reference": "7136aa4e0c5f912e8af82383775460d906168a10",
                 "shasum": ""
             },
             "require": {
                 "composer/semver": "^1.4",
+                "composer/xdebug-handler": "^1.2",
                 "doctrine/annotations": "^1.2",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
@@ -4053,16 +4138,20 @@
             "require-dev": {
                 "johnkary/phpunit-speedtrap": "^1.1 || ^2.0 || ^3.0",
                 "justinrainbow/json-schema": "^5.0",
-                "keradus/cli-executor": "^1.0",
+                "keradus/cli-executor": "^1.1",
                 "mikey179/vfsstream": "^1.6",
-                "php-coveralls/php-coveralls": "^2.0",
+                "php-coveralls/php-coveralls": "^2.1",
                 "php-cs-fixer/accessible-object": "^1.0",
-                "phpunit/phpunit": "^5.7.23 || ^6.4.3 || ^7.0",
-                "phpunitgoodpractices/traits": "^1.3.1",
-                "symfony/phpunit-bridge": "^3.2.2 || ^4.0"
+                "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.0.1",
+                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.0.1",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1",
+                "phpunitgoodpractices/traits": "^1.5.1",
+                "symfony/phpunit-bridge": "^4.0"
             },
             "suggest": {
                 "ext-mbstring": "For handling non-UTF8 characters in cache signature.",
+                "php-cs-fixer/phpunit-constraint-isidenticalstring": "For IsIdenticalString constraint.",
+                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "For XmlMatchesXsd constraint.",
                 "symfony/polyfill-mbstring": "When enabling `ext-mbstring` is not possible."
             },
             "bin": [
@@ -4071,7 +4160,7 @@
             "type": "application",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.11-dev"
+                    "dev-master": "2.13-dev"
                 }
             },
             "autoload": {
@@ -4083,9 +4172,6 @@
                     "tests/Test/AbstractIntegrationCaseFactory.php",
                     "tests/Test/AbstractIntegrationTestCase.php",
                     "tests/Test/Assert/AssertTokensTrait.php",
-                    "tests/Test/Constraint/SameStringsConstraint.php",
-                    "tests/Test/Constraint/SameStringsConstraintForV5.php",
-                    "tests/Test/Constraint/SameStringsConstraintForV7.php",
                     "tests/Test/IntegrationCase.php",
                     "tests/Test/IntegrationCaseFactory.php",
                     "tests/Test/IntegrationCaseFactoryInterface.php",
@@ -4108,7 +4194,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2018-03-21T17:41:26+00:00"
+            "time": "2018-08-23T13:15:44+00:00"
         },
         {
             "name": "infection/infection",

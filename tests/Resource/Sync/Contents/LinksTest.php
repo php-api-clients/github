@@ -6,6 +6,9 @@ use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Contents\Links;
 use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
+/**
+ * @internal
+ */
 class LinksTest extends AbstractResourceTest
 {
     public function getSyncAsync(): string

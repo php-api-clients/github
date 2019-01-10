@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Async;
 use ApiClients\Client\Github\Resource\Async\EmptyEmoji;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
+/**
+ * @internal
+ */
 final class EmptyEmojiTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string

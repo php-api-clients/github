@@ -14,6 +14,9 @@ use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class CreateStatusHandlerTest extends TestCase
 {
     public function provideCommandsAndJsonCombinations()

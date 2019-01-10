@@ -8,6 +8,9 @@ use ApiClients\Client\Github\RateLimitState;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 
+/**
+ * @internal
+ */
 final class AsyncClientTest extends TestCase
 {
     public function testGetRateLimitState()

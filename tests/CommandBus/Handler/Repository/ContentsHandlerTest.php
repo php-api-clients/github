@@ -16,6 +16,9 @@ use Rx\React\Promise;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class ContentsHandlerTest extends TestCase
 {
     public function pathsProvider()

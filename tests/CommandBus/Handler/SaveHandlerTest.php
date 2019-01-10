@@ -14,6 +14,9 @@ use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class SaveHandlerTest extends TestCase
 {
     public function testCommand()

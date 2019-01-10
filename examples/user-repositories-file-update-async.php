@@ -9,7 +9,7 @@ use React\Stream\ThroughStream;
 use Rx\React\Promise;
 use function ApiClients\Foundation\resource_pretty_print;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');
@@ -27,7 +27,7 @@ $client->user($argv[1] ?? 'WyriHaximus')->then(function (UserInterface $user) us
 })->then(function (File $file) use ($loop) {
     $stream = new ThroughStream();
     $loop->addTimer(1, function () use ($stream) {
-        $stream->end(implode(PHP_EOL, str_split(bin2hex(random_bytes(1024 * 1024)), 32)));
+        $stream->end(\implode(\PHP_EOL, \str_split(\bin2hex(\random_bytes(1024 * 1024)), 32)));
     });
 
     return $file->update($stream);

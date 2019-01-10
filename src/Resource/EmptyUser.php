@@ -161,6 +161,5 @@ abstract class EmptyUser implements UserInterface, EmptyResourceInterface
 
     public function repository(string $repository)
     {
-        return null;
     }
 }

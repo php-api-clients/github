@@ -28,7 +28,7 @@ use function ApiClients\Foundation\resource_pretty_print;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use function React\Promise\reject;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 /**
  * This example has the potential for a lot of calls, so throttling a bit.
@@ -88,7 +88,7 @@ $baseStream = unwrapObservableFromPromise(
     // Only check repositories that start with reactphp-http
     // This is optional and you can remove this to check all repositories
     // BUT that takes a lot of calls to check and time due to throttling
-    return strpos($repository->name(), 'reactphp-') === 0;
+    return \strpos($repository->name(), 'reactphp-') === 0;
 })->flatMap(function (Repository $repository) {
     // Check if the repository contains a .travis.yml
     return Observable::fromPromise(new React\Promise\Promise(function ($resolve, $reject) use ($repository) {
@@ -148,11 +148,11 @@ $baseStream->filter(function (array $d) {
     $repository->enable()->done(function (TravisRepository $repository) {
         resource_pretty_print($repository);
     }, function ($e) {
-        echo 'Travis', PHP_EOL;
+        echo 'Travis', \PHP_EOL;
         echo (string)$e;
     });
 }, function ($e) {
-    echo 'Travis', PHP_EOL;
+    echo 'Travis', \PHP_EOL;
     echo (string)$e;
 });
 
@@ -177,11 +177,11 @@ $baseStream->filter(function (array $d) {
             return;
         }
 
-        echo 'AppVeyor', PHP_EOL;
+        echo 'AppVeyor', \PHP_EOL;
         echo (string)$e;
     });
 }, function ($e) {
-    echo 'AppVeyor', PHP_EOL;
+    echo 'AppVeyor', \PHP_EOL;
     echo (string)$e;
 });
 
@@ -206,11 +206,11 @@ $baseStream->filter(function (array $d) {
             return;
         }
 
-        echo 'Scrutinizer', PHP_EOL;
+        echo 'Scrutinizer', \PHP_EOL;
         echo (string)$e;
     });
 }, function ($e) {
-    echo 'Scrutinizer', PHP_EOL;
+    echo 'Scrutinizer', \PHP_EOL;
     echo (string)$e;
 });
 

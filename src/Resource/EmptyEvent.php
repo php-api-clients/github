@@ -44,7 +44,6 @@ abstract class EmptyEvent implements EventInterface, EmptyResourceInterface
      */
     public function payload(): array
     {
-        return null;
     }
 
     /**

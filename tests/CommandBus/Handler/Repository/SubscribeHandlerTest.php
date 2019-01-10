@@ -10,6 +10,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use RingCentral\Psr7\Request;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class SubscribeHandlerTest extends TestCase
 {
     public function provideCommands()

@@ -6,6 +6,9 @@ use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\WebHook\Config;
 use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
+/**
+ * @internal
+ */
 class ConfigTest extends AbstractResourceTest
 {
     public function getSyncAsync(): string

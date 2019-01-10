@@ -6,6 +6,9 @@ use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Repository\Commit\Status;
 use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
+/**
+ * @internal
+ */
 class StatusTest extends AbstractResourceTest
 {
     public function getSyncAsync(): string

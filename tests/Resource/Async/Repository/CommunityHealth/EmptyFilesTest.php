@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Async\Repository\CommunityHeal
 use ApiClients\Client\Github\Resource\Async\Repository\CommunityHealth\EmptyFiles;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
+/**
+ * @internal
+ */
 final class EmptyFilesTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string

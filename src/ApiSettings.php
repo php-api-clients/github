@@ -22,7 +22,7 @@ final class ApiSettings
     const TRANSPORT_OPTIONS = [
         FoundationOptions::HYDRATOR_OPTIONS => [
             HydratorOptions::NAMESPACE => self::NAMESPACE,
-            HydratorOptions::NAMESPACE_DIR => __DIR__ . DIRECTORY_SEPARATOR . 'Resource' . DIRECTORY_SEPARATOR,
+            HydratorOptions::NAMESPACE_DIR => __DIR__ . \DIRECTORY_SEPARATOR . 'Resource' . \DIRECTORY_SEPARATOR,
         ],
         FoundationOptions::TRANSPORT_OPTIONS => [
             TransportOptions::HOST => 'api.github.com',

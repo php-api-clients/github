@@ -6,6 +6,9 @@ use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Repository;
 use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
+/**
+ * @internal
+ */
 class RepositoryTest extends AbstractResourceTest
 {
     public function getSyncAsync(): string

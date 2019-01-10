@@ -7,11 +7,14 @@ use ApiClients\Client\Github\RateLimitState;
 use ApiClients\Tools\TestUtilities\TestCase;
 use RingCentral\Psr7\Response;
 
+/**
+ * @internal
+ */
 final class RateLimitStateMiddlewareTest extends TestCase
 {
     public function testPost()
     {
-        $time = time();
+        $time = \time();
         $state = new RateLimitState();
         self::assertSame(0, $state->getLimit());
         self::assertSame(0, $state->getRemaining());

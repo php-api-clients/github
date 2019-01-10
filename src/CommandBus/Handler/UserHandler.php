@@ -32,7 +32,7 @@ final class UserHandler
     {
         $user = $command->getUser();
 
-        if (strlen($user) > 0) {
+        if (\strlen($user) > 0) {
             return $this->service->fetch('users/' . $user, '', UserInterface::HYDRATE_CLASS);
         }
 

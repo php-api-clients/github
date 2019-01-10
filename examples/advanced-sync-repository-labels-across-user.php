@@ -13,7 +13,7 @@ use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 $githubClient = AsyncClient::create($loop, require 'resolve_token.php');
@@ -34,14 +34,14 @@ unwrapObservableFromPromise($githubClient->user($argv[1])->then(function (UserIn
 })->flatMap(function (Repository $repository) {
     return $repository->labels();
 })->subscribe(function (Label $label) use (&$labels) {
-    if (!isset($labels[strtolower($label->name())])) {
-        $labels[strtolower($label->name())] = [
+    if (!isset($labels[\strtolower($label->name())])) {
+        $labels[\strtolower($label->name())] = [
             'name' => $label->name(),
             'color' => $label->color(),
         ];
     }
 }, 'display_throwable', function () use (&$labels) {
-    var_export($labels);
+    \var_export($labels);
 });
 
 $loop->run();

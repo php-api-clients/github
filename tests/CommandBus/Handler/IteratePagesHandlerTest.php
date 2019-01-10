@@ -7,6 +7,9 @@ use ApiClients\Client\Github\CommandBus\Handler\IteratePagesHandler;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Tools\TestUtilities\TestCase;
 
+/**
+ * @internal
+ */
 final class IteratePagesHandlerTest extends TestCase
 {
     public function testCommand()

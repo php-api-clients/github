@@ -8,6 +8,9 @@ use ApiClients\Client\Github\Resource\RepositoryInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
 
+/**
+ * @internal
+ */
 final class RepositoryHandlerTest extends TestCase
 {
     public function testCommand()

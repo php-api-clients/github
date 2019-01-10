@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Async\WebHook;
 use ApiClients\Client\Github\Resource\Async\WebHook\EmptyConfig;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
+/**
+ * @internal
+ */
 final class EmptyConfigTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string

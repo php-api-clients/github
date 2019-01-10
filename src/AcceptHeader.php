@@ -29,6 +29,6 @@ final class AcceptHeader
 
     public static function getHeader(array $chunks): string
     {
-        return implode('; ', $chunks);
+        return \implode('; ', $chunks);
     }
 }

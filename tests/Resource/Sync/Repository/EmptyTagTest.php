@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Sync\Repository;
 use ApiClients\Client\Github\Resource\Sync\Repository\EmptyTag;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
+/**
+ * @internal
+ */
 final class EmptyTagTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string

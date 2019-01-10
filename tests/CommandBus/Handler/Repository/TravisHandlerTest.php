@@ -9,6 +9,9 @@ use ApiClients\Client\Travis\Resource\RepositoryInterface;
 use ApiClients\Tools\TestUtilities\TestCase;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class TravisHandlerTest extends TestCase
 {
     public function testCommand()

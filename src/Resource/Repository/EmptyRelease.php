@@ -92,6 +92,5 @@ abstract class EmptyRelease implements ReleaseInterface, EmptyResourceInterface
      */
     public function assets(): array
     {
-        return null;
     }
 }

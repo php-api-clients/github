@@ -17,6 +17,9 @@ use RingCentral\Psr7\Response;
 use function React\Promise\Stream\buffer;
 use function WyriHaximus\React\timedPromise;
 
+/**
+ * @internal
+ */
 final class FileUploadHandlerTest extends TestCase
 {
     public function provideCommands()
@@ -40,7 +43,7 @@ final class FileUploadHandlerTest extends TestCase
                 );
                 $expectedJson = [
                     'message' => $commitMessage,
-                    'content' => base64_encode($body),
+                    'content' => \base64_encode($body),
                     'sha' => 'sha',
                 ];
 
@@ -67,7 +70,7 @@ final class FileUploadHandlerTest extends TestCase
                 );
                 $expectedJson = [
                     'message' => $commitMessage,
-                    'content' => base64_encode($body),
+                    'content' => \base64_encode($body),
                     'sha' => 'sha',
                     'branch' => 'master',
                 ];
@@ -95,7 +98,7 @@ final class FileUploadHandlerTest extends TestCase
                 );
                 $expectedJson = [
                     'message' => $commitMessage,
-                    'content' => base64_encode($body),
+                    'content' => \base64_encode($body),
                     'branch' => 'new-pr',
                 ];
 
@@ -133,6 +136,6 @@ final class FileUploadHandlerTest extends TestCase
 
         $result = $this->await($handler->handle($command), $loop);
         self::assertSame($resource, $result);
-        self::assertSame($expectedjson, json_decode($stream, true));
+        self::assertSame($expectedjson, \json_decode($stream, true));
     }
 }

@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Sync;
 use ApiClients\Client\Github\Resource\Sync\EmptyRateLimit;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
+/**
+ * @internal
+ */
 final class EmptyRateLimitTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string

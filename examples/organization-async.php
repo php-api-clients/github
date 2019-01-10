@@ -5,7 +5,7 @@ use ApiClients\Client\Github\Resource\Async\Organization;
 use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');
@@ -16,7 +16,7 @@ $organizations = [
     'recoilphp',
 ];
 
-if (count($argv) > 1) {
+if (\count($argv) > 1) {
     unset($argv[0]);
     foreach ($argv as $organization) {
         $organizations[] = $organization;

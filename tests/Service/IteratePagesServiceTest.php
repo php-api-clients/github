@@ -13,6 +13,9 @@ use RingCentral\Psr7\Response;
 use Rx\Testing\TestScheduler;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class IteratePagesServiceTest extends TestCase
 {
     public function testHandle()

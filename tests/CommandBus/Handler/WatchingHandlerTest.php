@@ -13,6 +13,9 @@ use Rx\Observable;
 use Rx\React\Promise;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
+/**
+ * @internal
+ */
 final class WatchingHandlerTest extends TestCase
 {
     public function testCommand()

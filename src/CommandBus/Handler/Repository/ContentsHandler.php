@@ -37,7 +37,7 @@ final class ContentsHandler
 
     public function handle(ContentsCommand $command)
     {
-        $path = ltrim($command->getPath(), '/');
+        $path = \ltrim($command->getPath(), '/');
         $uri = 'repos/' . $command->getFullname() . '/contents/' . $path;
 
         return resolve(

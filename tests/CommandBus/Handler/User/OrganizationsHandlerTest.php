@@ -11,6 +11,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Rx\Observable;
 use Rx\React\Promise;
 
+/**
+ * @internal
+ */
 final class OrganizationsHandlerTest extends TestCase
 {
     public function testCommand()

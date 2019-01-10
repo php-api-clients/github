@@ -29,6 +29,7 @@
     "wyrihaximus/react-stream-json": "^1.0"
   },
   "require-dev": {
+    "api-clients/cs-fixer-config": "^1.1",
     "api-clients/middleware-delay": "^3.0",
     "api-clients/middleware-pool": "^3.0",
     "api-clients/resource-generator": "^1.0",

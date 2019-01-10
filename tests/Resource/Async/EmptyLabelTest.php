@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Async;
 use ApiClients\Client\Github\Resource\Async\EmptyLabel;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
+/**
+ * @internal
+ */
 final class EmptyLabelTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string

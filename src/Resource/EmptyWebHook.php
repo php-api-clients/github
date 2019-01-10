@@ -52,7 +52,6 @@ abstract class EmptyWebHook implements WebHookInterface, EmptyResourceInterface
      */
     public function events(): array
     {
-        return null;
     }
 
     /**

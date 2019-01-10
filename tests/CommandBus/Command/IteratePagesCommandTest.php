@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Github\CommandBus\Command;
 use ApiClients\Client\Github\CommandBus\Command\IteratePagesCommand;
 use ApiClients\Tools\TestUtilities\TestCase;
 
+/**
+ * @internal
+ */
 final class IteratePagesCommandTest extends TestCase
 {
     public function testCommand()

@@ -6,6 +6,9 @@ use ApiClients\Client\Github\ApiSettings;
 use ApiClients\Client\Github\Resource\Repository\CommunityHealth;
 use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
+/**
+ * @internal
+ */
 class CommunityHealthTest extends AbstractResourceTest
 {
     public function getSyncAsync(): string

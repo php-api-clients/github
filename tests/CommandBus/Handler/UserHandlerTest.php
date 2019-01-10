@@ -8,6 +8,9 @@ use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
 
+/**
+ * @internal
+ */
 final class UserHandlerTest extends TestCase
 {
     public function provideUsers()

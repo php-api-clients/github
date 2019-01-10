@@ -15,6 +15,9 @@ use RingCentral\Psr7\Response;
 use function React\Promise\Stream\buffer;
 use function WyriHaximus\React\timedPromise;
 
+/**
+ * @internal
+ */
 final class RenderMarkdownHandlerTest extends TestCase
 {
     public function provideCommands()
@@ -91,6 +94,6 @@ final class RenderMarkdownHandlerTest extends TestCase
 
         $result = (string)$this->await($handler->handle($command), $loop);
         self::assertSame('foo.bar', $result);
-        self::assertSame($expectedjson, json_decode($stream, true));
+        self::assertSame($expectedjson, \json_decode($stream, true));
     }
 }

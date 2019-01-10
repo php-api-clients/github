@@ -4,7 +4,7 @@ use ApiClients\Client\Github\AsyncClient;
 use React\EventLoop\Factory;
 use React\Stream\ThroughStream;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');

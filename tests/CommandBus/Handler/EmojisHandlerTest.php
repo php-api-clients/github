@@ -12,6 +12,9 @@ use Rx\Observable;
 use Rx\React\Promise;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
+/**
+ * @internal
+ */
 final class EmojisHandlerTest extends TestCase
 {
     public function testCommand()

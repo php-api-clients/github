@@ -7,7 +7,7 @@ use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 
@@ -23,7 +23,7 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     })->take(1)->subscribe(function ($content) {
         $content->refresh()->done(function (File $content) {
             resource_pretty_print($content, 1, true);
-            echo PHP_EOL, $content->decodedContent(), PHP_EOL;
+            echo \PHP_EOL, $content->decodedContent(), \PHP_EOL;
         });
     }, function ($error) {
         echo (string)$error;

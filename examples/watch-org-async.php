@@ -6,13 +6,13 @@ use React\EventLoop\Factory;
 use Rx\React\Promise;
 use function ApiClients\Foundation\resource_pretty_print;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');
 
 if (!isset($argv[1])) {
-    die('Supply org name' . PHP_EOL);
+    die('Supply org name' . \PHP_EOL);
 }
 
 Promise::toObservable($client->user($argv[1]))->flatMap(function (User $user) {

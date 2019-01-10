@@ -27,7 +27,6 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
      */
     public function hooks(): array
     {
-        return null;
     }
 
     /**
@@ -35,7 +34,6 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
      */
     public function git(): array
     {
-        return null;
     }
 
     /**
@@ -43,7 +41,6 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
      */
     public function pages(): array
     {
-        return null;
     }
 
     /**
@@ -51,6 +48,5 @@ abstract class EmptyMeta implements MetaInterface, EmptyResourceInterface
      */
     public function importer(): array
     {
-        return null;
     }
 }

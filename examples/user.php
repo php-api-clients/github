@@ -2,7 +2,7 @@
 use ApiClients\Client\Github\Client;
 use function ApiClients\Foundation\resource_pretty_print;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $client = Client::create(require 'resolve_token.php');
 
@@ -10,7 +10,7 @@ $users = [
     'WyriHaximus',
 ];
 
-if (count($argv) > 1) {
+if (\count($argv) > 1) {
     unset($argv[0]);
     foreach ($argv as $user) {
         $users[] = $user;

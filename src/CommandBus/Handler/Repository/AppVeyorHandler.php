@@ -32,8 +32,8 @@ final class AppVeyorHandler
         return new Promise(function ($resolve, $reject) use ($command) {
             $repo = false;
             $this->appveyor->projects()->filter(function (ProjectInterface $project) use ($command) {
-                return strtolower($project->repositoryType()) === 'github' &&
-                    strtolower($project->repositoryName()) === strtolower($command->getRepository());
+                return \strtolower($project->repositoryType()) === 'github' &&
+                    \strtolower($project->repositoryName()) === \strtolower($command->getRepository());
             })->take(1)->subscribe(function ($repository) use (&$repo) {
                 $repo = $repository;
             }, function ($error) use ($reject) {

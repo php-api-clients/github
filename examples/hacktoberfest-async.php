@@ -8,7 +8,7 @@ use React\EventLoop\Factory;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use function React\Promise\resolve;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 $client = AsyncClient::create($loop, require 'resolve_token.php');
@@ -20,20 +20,20 @@ unwrapObservableFromPromise($client->user($argv[1])->then(function (User $user) 
 })->subscribe(function (Repository $repository) {
     $hasHacktoberfestLabel = false;
     $repository->labels()->filter(function (Label $label) {
-        return strtolower($label->name()) === 'hacktoberfest';
+        return \strtolower($label->name()) === 'hacktoberfest';
     })->subscribe(function () use (&$hasHacktoberfestLabel) {
         $hasHacktoberfestLabel = true;
     }, function ($error) {
         echo (string)$error;
     }, function () use ($repository, &$hasHacktoberfestLabel) {
         if ($hasHacktoberfestLabel === true) {
-            echo $repository->fullName(), ' ✗', PHP_EOL;
+            echo $repository->fullName(), ' ✗', \PHP_EOL;
 
             return;
         }
 
         $repository->addLabel('hacktoberfest', '3241a6')->done(function () use ($repository) {
-            echo $repository->fullName(), ' ✓', PHP_EOL;
+            echo $repository->fullName(), ' ✓', \PHP_EOL;
         });
     });
 }, function ($error) {

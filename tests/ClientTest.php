@@ -7,6 +7,9 @@ use ApiClients\Client\Github\Client;
 use ApiClients\Client\Github\RateLimitState;
 use ApiClients\Tools\TestUtilities\TestCase;
 
+/**
+ * @internal
+ */
 final class ClientTest extends TestCase
 {
     public function testGetRateLimitState()

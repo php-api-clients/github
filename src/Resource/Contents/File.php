@@ -137,7 +137,7 @@ abstract class File extends AbstractResource implements FileInterface
     public function decodedContent(): string
     {
         if ($this->encoding === 'base64') {
-            return base64_decode($this->content, true);
+            return \base64_decode($this->content, true);
         }
 
         throw new RuntimeException('Unknown encoding: ' . $this->encoding);

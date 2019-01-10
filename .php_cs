@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use ApiClients\Tools\TestUtilities\PhpCsFixerConfig;
+use ApiClients\Tools\CsFixerConfig\PhpCsFixerConfig;
 use PhpCsFixer\Config;
 
 return (function (): Config
@@ -11,7 +11,12 @@ return (function (): Config
         __DIR__ . DIRECTORY_SEPARATOR . 'examples',
     ];
 
-    return PhpCsFixerConfig::create()
+    $config = PhpCsFixerConfig::create();
+    $rules = $config->getRules();
+    $rules['void_return'] = false;
+
+    return $config
+        ->setRules($rules)
         ->setFinder(
             PhpCsFixer\Finder::create()
                 ->in($paths)

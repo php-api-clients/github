@@ -9,6 +9,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use RingCentral\Psr7\Request;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class UnSubscribeHandlerTest extends TestCase
 {
     public function testCommand()

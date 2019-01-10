@@ -8,6 +8,9 @@ use ApiClients\Client\Github\Resource\OrganizationInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
 
+/**
+ * @internal
+ */
 final class OrganizationHandlerTest extends TestCase
 {
     public function testCommand()

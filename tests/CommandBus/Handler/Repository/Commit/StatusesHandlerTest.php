@@ -13,6 +13,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Rx\Observable;
 use Rx\React\Promise;
 
+/**
+ * @internal
+ */
 final class StatusesHandlerTest extends TestCase
 {
     public function testCommand()

@@ -5,7 +5,7 @@ use ApiClients\Client\Github\Resource\Async\User;
 use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $loop = Factory::create();
 
@@ -19,7 +19,7 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     resource_pretty_print($repository, 1, true);
     $repository->unSubscribe();
 })->done(function () {
-    echo 'Unsubscribed', PHP_EOL;
+    echo 'Unsubscribed', \PHP_EOL;
 }, 'display_throwable');
 
 $loop->run();

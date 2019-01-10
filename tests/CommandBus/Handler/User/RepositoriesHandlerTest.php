@@ -12,6 +12,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Rx\Observable;
 use Rx\React\Promise;
 
+/**
+ * @internal
+ */
 final class RepositoriesHandlerTest extends TestCase
 {
     public function testCommand()

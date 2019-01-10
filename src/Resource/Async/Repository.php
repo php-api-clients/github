@@ -180,7 +180,7 @@ class Repository extends BaseRepository
 
     public function scrutinizerRepository(): PromiseInterface
     {
-        return $this->handleCommand(new ScrutinizerCommand(...explode('/', $this->fullName())));
+        return $this->handleCommand(new ScrutinizerCommand(...\explode('/', $this->fullName())));
     }
 
     public function updateSettings(array $settings): PromiseInterface

@@ -5,6 +5,9 @@ namespace ApiClients\Tests\Client\Github\Resource\Async\Contents;
 use ApiClients\Client\Github\Resource\Async\Contents\EmptyDirectory;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
+/**
+ * @internal
+ */
 final class EmptyDirectoryTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string
