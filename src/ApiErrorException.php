@@ -21,6 +21,7 @@ final class ApiErrorException extends Exception
     {
         $exception = new self($message, $code, $previous);
         $exception->setContext($errors);
+
         return $exception;
     }
 
