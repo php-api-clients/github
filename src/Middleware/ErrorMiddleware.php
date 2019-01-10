@@ -20,9 +20,9 @@ final class ErrorMiddleware implements MiddlewareInterface
     use PostTrait;
 
     /**
-     * @param Throwable $throwable
-     * @param string $transactionId
-     * @param array $options
+     * @param  Throwable                   $throwable
+     * @param  string                      $transactionId
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      * @SecondLast()
      */
@@ -30,8 +30,7 @@ final class ErrorMiddleware implements MiddlewareInterface
         Throwable $throwable,
         string $transactionId,
         array $options = []
-    ): CancellablePromiseInterface
-    {
+    ): CancellablePromiseInterface {
         if ($throwable instanceof UnprocessableEntityException ||
             $throwable instanceof BadRequestException
         ) {
