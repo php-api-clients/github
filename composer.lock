@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11"
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/6207b29a6ed784ac32d8949938c426fa4f874d11",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/7148c7bab46023b714ac84e49240d1eef5177cb8",
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 }
             ],
             "description": "Async first AppVeyor client",
-            "time": "2019-01-10T16:18:13+00:00"
+            "time": "2019-01-13T09:15:58+00:00"
         },
         {
             "name": "api-clients/client-services",
@@ -805,12 +805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714"
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2371af43eb56cceff14d0db9cae9f82b84c67714",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/69d7e1ec267d429a37bcd10dc734934d1f76f07d",
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2019-01-11T00:49:53+00:00"
+            "time": "2019-01-12T09:39:37+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -3438,16 +3438,16 @@
         },
         {
             "name": "zendframework/zend-hydrator",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-hydrator.git",
-                "reference": "bd48bc3bc046df007a94125f868dd1aa1b73a813"
+                "reference": "70b02f4d8676e64af932625751750b5ca72fff3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/bd48bc3bc046df007a94125f868dd1aa1b73a813",
-                "reference": "bd48bc3bc046df007a94125f868dd1aa1b73a813",
+                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/70b02f4d8676e64af932625751750b5ca72fff3a",
+                "reference": "70b02f4d8676e64af932625751750b5ca72fff3a",
                 "shasum": ""
             },
             "require": {
@@ -3497,20 +3497,20 @@
                 "hydrator",
                 "zf"
             ],
-            "time": "2018-04-30T21:22:14+00:00"
+            "time": "2018-11-19T19:16:10+00:00"
         },
         {
             "name": "zendframework/zend-stdlib",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-stdlib.git",
-                "reference": "cd164b4a18b5d1aeb69be2c26db035b5ed6925ae"
+                "reference": "66536006722aff9e62d1b331025089b7ec71c065"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/cd164b4a18b5d1aeb69be2c26db035b5ed6925ae",
-                "reference": "cd164b4a18b5d1aeb69be2c26db035b5ed6925ae",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/66536006722aff9e62d1b331025089b7ec71c065",
+                "reference": "66536006722aff9e62d1b331025089b7ec71c065",
                 "shasum": ""
             },
             "require": {
@@ -3543,7 +3543,7 @@
                 "stdlib",
                 "zf"
             ],
-            "time": "2018-04-30T13:50:40+00:00"
+            "time": "2018-08-28T21:34:05+00:00"
         }
     ],
     "packages-dev": [
