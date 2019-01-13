@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11"
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/6207b29a6ed784ac32d8949938c426fa4f874d11",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/7148c7bab46023b714ac84e49240d1eef5177cb8",
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 }
             ],
             "description": "Async first AppVeyor client",
-            "time": "2019-01-10T16:18:13+00:00"
+            "time": "2019-01-13T09:15:58+00:00"
         },
         {
             "name": "api-clients/client-services",
@@ -805,12 +805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714"
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2371af43eb56cceff14d0db9cae9f82b84c67714",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/69d7e1ec267d429a37bcd10dc734934d1f76f07d",
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2019-01-11T00:49:53+00:00"
+            "time": "2019-01-12T09:39:37+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -4824,33 +4824,29 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.12",
+            "version": "v9.99.99",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb"
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
-                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.0"
+                "php": "^7"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
+                "phpunit/phpunit": "4.*|5.*",
+                "vimeo/psalm": "^1"
             },
             "suggest": {
                 "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
             },
             "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/random.php"
-                ]
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -4865,10 +4861,11 @@
             "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
             "keywords": [
                 "csprng",
+                "polyfill",
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-04-04T21:24:14+00:00"
+            "time": "2018-07-02T15:55:56+00:00"
         },
         {
             "name": "phake/phake",
@@ -6797,26 +6794,26 @@
         },
         {
             "name": "symfony/polyfill-php70",
-            "version": "v1.8.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "77454693d8f10dd23bb24955cffd2d82db1007a6"
+                "reference": "6b88000cdd431cd2e940caa2cb569201f3f84224"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/77454693d8f10dd23bb24955cffd2d82db1007a6",
-                "reference": "77454693d8f10dd23bb24955cffd2d82db1007a6",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/6b88000cdd431cd2e940caa2cb569201f3f84224",
+                "reference": "6b88000cdd431cd2e940caa2cb569201f3f84224",
                 "shasum": ""
             },
             "require": {
-                "paragonie/random_compat": "~1.0|~2.0",
+                "paragonie/random_compat": "~1.0|~2.0|~9.99",
                 "php": ">=5.3.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -6852,7 +6849,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-04-26T10:06:28+00:00"
+            "time": "2018-09-21T06:26:08+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
