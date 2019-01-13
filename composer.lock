@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11"
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/6207b29a6ed784ac32d8949938c426fa4f874d11",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/7148c7bab46023b714ac84e49240d1eef5177cb8",
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 }
             ],
             "description": "Async first AppVeyor client",
-            "time": "2019-01-10T16:18:13+00:00"
+            "time": "2019-01-13T09:15:58+00:00"
         },
         {
             "name": "api-clients/client-services",
@@ -805,12 +805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714"
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2371af43eb56cceff14d0db9cae9f82b84c67714",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/69d7e1ec267d429a37bcd10dc734934d1f76f07d",
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2019-01-11T00:49:53+00:00"
+            "time": "2019-01-12T09:39:37+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -5734,16 +5734,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
                 "shasum": ""
             },
             "require": {
@@ -5777,7 +5777,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2018-11-20T15:27:04+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
