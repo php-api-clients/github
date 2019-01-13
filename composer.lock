@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/appveyor.git",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11"
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/6207b29a6ed784ac32d8949938c426fa4f874d11",
-                "reference": "6207b29a6ed784ac32d8949938c426fa4f874d11",
+                "url": "https://api.github.com/repos/php-api-clients/appveyor/zipball/7148c7bab46023b714ac84e49240d1eef5177cb8",
+                "reference": "7148c7bab46023b714ac84e49240d1eef5177cb8",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 }
             ],
             "description": "Async first AppVeyor client",
-            "time": "2019-01-10T16:18:13+00:00"
+            "time": "2019-01-13T09:15:58+00:00"
         },
         {
             "name": "api-clients/client-services",
@@ -805,12 +805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714"
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/2371af43eb56cceff14d0db9cae9f82b84c67714",
-                "reference": "2371af43eb56cceff14d0db9cae9f82b84c67714",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/69d7e1ec267d429a37bcd10dc734934d1f76f07d",
+                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2019-01-11T00:49:53+00:00"
+            "time": "2019-01-12T09:39:37+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -4824,16 +4824,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.12",
+            "version": "v2.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb"
+                "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
-                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
+                "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
                 "shasum": ""
             },
             "require": {
@@ -4865,10 +4865,11 @@
             "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
             "keywords": [
                 "csprng",
+                "polyfill",
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-04-04T21:24:14+00:00"
+            "time": "2019-01-03T20:59:08+00:00"
         },
         {
             "name": "phake/phake",
