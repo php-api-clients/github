@@ -2065,16 +2065,16 @@
         },
         {
             "name": "php-di/php-di",
-            "version": "6.0.2",
+            "version": "6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "71a7f2ed1e728138060ea159cbb1a92dc8620bd2"
+                "reference": "5e8b809960d5c3bfa096a90da9a78650e80b1f0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/71a7f2ed1e728138060ea159cbb1a92dc8620bd2",
-                "reference": "71a7f2ed1e728138060ea159cbb1a92dc8620bd2",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/5e8b809960d5c3bfa096a90da9a78650e80b1f0e",
+                "reference": "5e8b809960d5c3bfa096a90da9a78650e80b1f0e",
                 "shasum": ""
             },
             "require": {
@@ -2124,7 +2124,7 @@
                 "ioc",
                 "psr11"
             ],
-            "time": "2018-04-23T06:54:40+00:00"
+            "time": "2018-09-17T15:34:44+00:00"
         },
         {
             "name": "php-di/phpdoc-reader",
