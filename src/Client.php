@@ -6,10 +6,10 @@ use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Foundation\Factory as FoundationClientFactory;
 use ApiClients\Foundation\Options;
 use ApiClients\Foundation\Resource\ResourceInterface;
+use function Clue\React\Block\await;
 use React\EventLoop\Factory;
 use React\EventLoop\LoopInterface;
 use Rx\Scheduler;
-use function Clue\React\Block\await;
 
 final class Client implements ClientInterface
 {

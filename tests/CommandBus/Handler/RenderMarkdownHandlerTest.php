@@ -9,10 +9,10 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use Psr\Http\Message\RequestInterface;
 use React\EventLoop\Factory;
+use function React\Promise\Stream\buffer;
 use React\Stream\ThroughStream;
 use RingCentral\Psr7\BufferStream;
 use RingCentral\Psr7\Response;
-use function React\Promise\Stream\buffer;
 use function WyriHaximus\React\timedPromise;
 
 /**

@@ -5,8 +5,8 @@ namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use React\Promise\PromiseInterface;
-use RingCentral\Psr7\Request;
 use function React\Promise\resolve;
+use RingCentral\Psr7\Request;
 
 final class LanguagesHandler
 {

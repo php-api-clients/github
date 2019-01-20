@@ -10,9 +10,9 @@ use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
+use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
-use function React\Promise\resolve;
 
 /**
  * @internal

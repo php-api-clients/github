@@ -4,8 +4,8 @@ namespace ApiClients\Client\Github\Resource\Async\Contents;
 
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\Resource\Contents\Directory as BaseDirectory;
-use Rx\Observable;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use Rx\Observable;
 
 class Directory extends BaseDirectory
 {

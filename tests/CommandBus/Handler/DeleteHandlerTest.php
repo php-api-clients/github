@@ -6,9 +6,9 @@ use ApiClients\Client\Github\CommandBus\Command\DeleteCommand;
 use ApiClients\Client\Github\CommandBus\Handler\DeleteHandler;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Tools\TestUtilities\TestCase;
+use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
-use function React\Promise\resolve;
 
 /**
  * @internal

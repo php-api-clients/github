@@ -7,9 +7,9 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\CreateStatusCo
 use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\StatusCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\StatusesCommand;
 use ApiClients\Client\Github\Resource\Repository\Commit as BaseCommit;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\Promise\PromiseInterface;
 use Rx\ObservableInterface;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 class Commit extends BaseCommit
 {
