@@ -4,8 +4,8 @@ use ApiClients\Client\Github\Resource\Async\Contents\File;
 use ApiClients\Client\Github\Resource\Async\Repository;
 use ApiClients\Client\Github\Resource\Async\User;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
-use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
+use React\EventLoop\Factory;
 
 require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 

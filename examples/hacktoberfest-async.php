@@ -4,8 +4,8 @@ use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Label;
 use ApiClients\Client\Github\Resource\Async\Repository;
 use ApiClients\Client\Github\Resource\Async\User;
-use React\EventLoop\Factory;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use React\EventLoop\Factory;
 use function React\Promise\resolve;
 
 require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';

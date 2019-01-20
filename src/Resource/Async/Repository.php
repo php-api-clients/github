@@ -23,11 +23,11 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UpdateSettingsCommand;
 use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\Promise\PromiseInterface;
 use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
 use Rx\ObservableInterface;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 class Repository extends BaseRepository
 {

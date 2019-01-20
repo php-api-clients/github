@@ -3,13 +3,13 @@
 namespace ApiClients\Client\Github\Service;
 
 use ApiClients\Foundation\Transport\Service\RequestService;
+use function Kelunik\LinkHeaderRfc5988\parseLinks;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use Rx\AsyncSchedulerInterface;
 use Rx\Observable;
 use Rx\Scheduler;
 use Rx\Subject\Subject;
-use function Kelunik\LinkHeaderRfc5988\parseLinks;
 
 class IteratePagesService
 {

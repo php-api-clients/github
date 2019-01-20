@@ -7,10 +7,10 @@ use ApiClients\Client\Github\CommandBus\Handler\EmojisHandler;
 use ApiClients\Client\Github\Resource\EmojiInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Rx\Observable;
 use Rx\React\Promise;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 /**
  * @internal
