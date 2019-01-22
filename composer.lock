@@ -111,31 +111,34 @@
         },
         {
             "name": "api-clients/command-bus",
-            "version": "2.0.2",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/command-bus.git",
-                "reference": "b3974b5a1ebe3c391b728c59542bfa4231902531"
+                "reference": "b49fe32d8491558173113beb087980acde99107f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/command-bus/zipball/b3974b5a1ebe3c391b728c59542bfa4231902531",
-                "reference": "b3974b5a1ebe3c391b728c59542bfa4231902531",
+                "url": "https://api.github.com/repos/php-api-clients/command-bus/zipball/b49fe32d8491558173113beb087980acde99107f",
+                "reference": "b49fe32d8491558173113beb087980acde99107f",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "^1.1",
-                "igorw/get-in": "^1.0",
+                "container-interop/container-interop": "^1.2",
+                "daverandom/exceptional-json": "^1.0.4",
                 "joshdifabio/composed": "^1.0",
                 "league/tactician": "^1.0",
                 "league/tactician-container": "^2.0 || ^1.0",
-                "php": "^7.0",
+                "ocramius/package-versions": "^1.3",
+                "php": "^7.2",
                 "react/event-loop": "^1.0 || ^0.5 || ^0.4.2",
-                "wyrihaximus/tactician-command-handler-mapper": "^1.0",
+                "wyrihaximus/iterator-or-array-to-array": "^1.0",
+                "wyrihaximus/string-get-in": "^1.0",
+                "wyrihaximus/tactician-command-handler-mapper": "^2.0.1 || ^1.0",
                 "wyrihaximus/ticking-promise": "^1.6"
             },
             "require-dev": {
-                "api-clients/test-utilities": "^2.0",
+                "api-clients/test-utilities": "^5.1",
                 "php-di/php-di": "^5.4"
             },
             "type": "library",
@@ -155,20 +158,20 @@
                 }
             ],
             "description": "Light weight wrapper around league/tactician adding promised based interface(s) and next tick execution",
-            "time": "2017-12-24T23:31:24+00:00"
+            "time": "2018-12-16T21:38:35+00:00"
         },
         {
             "name": "api-clients/foundation",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/foundation.git",
-                "reference": "5b995c539a2087333cf7413a12963058c37e6ee5"
+                "reference": "410a25f794be38cd9b02bf870f9fdc2caa1b2344"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/foundation/zipball/5b995c539a2087333cf7413a12963058c37e6ee5",
-                "reference": "5b995c539a2087333cf7413a12963058c37e6ee5",
+                "url": "https://api.github.com/repos/php-api-clients/foundation/zipball/410a25f794be38cd9b02bf870f9fdc2caa1b2344",
+                "reference": "410a25f794be38cd9b02bf870f9fdc2caa1b2344",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +206,7 @@
                 }
             ],
             "description": "Foundation for creating synchronous and asynchronous API clients",
-            "time": "2018-05-09T18:52:46+00:00"
+            "time": "2019-01-12T12:15:59+00:00"
         },
         {
             "name": "api-clients/hydrator",
@@ -805,12 +808,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/scrutinizer.git",
-                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d"
+                "reference": "af39f79af27e3b56cf4b5cd4b2a31a0733c37115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/69d7e1ec267d429a37bcd10dc734934d1f76f07d",
-                "reference": "69d7e1ec267d429a37bcd10dc734934d1f76f07d",
+                "url": "https://api.github.com/repos/php-api-clients/scrutinizer/zipball/af39f79af27e3b56cf4b5cd4b2a31a0733c37115",
+                "reference": "af39f79af27e3b56cf4b5cd4b2a31a0733c37115",
                 "shasum": ""
             },
             "require": {
@@ -826,7 +829,7 @@
             "require-dev": {
                 "api-clients/resource-generator": "^1.0",
                 "api-clients/resource-test-utilities": "^1.0",
-                "api-clients/test-utilities": "4.1"
+                "api-clients/test-utilities": "4.3.0"
             },
             "type": "library",
             "extra": {
@@ -853,7 +856,7 @@
                 }
             ],
             "description": "Async first Scrutinizer API client",
-            "time": "2019-01-12T09:39:37+00:00"
+            "time": "2019-01-21T18:00:00+00:00"
         },
         {
             "name": "api-clients/transport",
@@ -1231,33 +1234,38 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.6.2",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "eb152c5100571c7a45470ff2a35095ab3f3b900b"
+                "reference": "d768d58baee9a4862ca783840eca1b9add7a7f57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/eb152c5100571c7a45470ff2a35095ab3f3b900b",
-                "reference": "eb152c5100571c7a45470ff2a35095ab3f3b900b",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/d768d58baee9a4862ca783840eca1b9add7a7f57",
+                "reference": "d768d58baee9a4862ca783840eca1b9add7a7f57",
                 "shasum": ""
             },
             "require": {
-                "php": "~5.5|~7.0"
+                "php": "~7.1"
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8|~5.0",
-                "predis/predis": "~1.0",
-                "satooshi/php-coveralls": "~0.6"
+                "alcaeus/mongo-php-adapter": "^1.1",
+                "doctrine/coding-standard": "^4.0",
+                "mongodb/mongodb": "^1.1",
+                "phpunit/phpunit": "^7.0",
+                "predis/predis": "~1.0"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.8.x-dev"
                 }
             },
             "autoload": {
@@ -1292,12 +1300,12 @@
                 }
             ],
             "description": "Caching library offering an object-oriented API for many cache backends",
-            "homepage": "http://www.doctrine-project.org",
+            "homepage": "https://www.doctrine-project.org",
             "keywords": [
                 "cache",
                 "caching"
             ],
-            "time": "2017-07-22T12:49:21+00:00"
+            "time": "2018-08-21T18:01:43+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -3262,6 +3270,46 @@
             "time": "2018-12-24T00:51:41+00:00"
         },
         {
+            "name": "wyrihaximus/iterator-or-array-to-array",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-iterator-or-array-to-array.git",
+                "reference": "2d8ea61e3c7affaee7deec1a0b0bdc667a3e9cc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-iterator-or-array-to-array/zipball/2d8ea61e3c7affaee7deec1a0b0bdc667a3e9cc4",
+                "reference": "2d8ea61e3c7affaee7deec1a0b0bdc667a3e9cc4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "api-clients/cs-fixer-config": "^1.1",
+                "api-clients/test-utilities": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Like iterator_to_array but doesn't error when handed an array",
+            "time": "2018-12-29T20:17:57+00:00"
+        },
+        {
             "name": "wyrihaximus/react-stream-base64",
             "version": "1.1.0",
             "source": {
@@ -3345,6 +3393,46 @@
             ],
             "description": "Incremental JSON encoder writing to a react/stream",
             "time": "2019-01-01T17:36:59+00:00"
+        },
+        {
+            "name": "wyrihaximus/string-get-in",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-string-get-in.git",
+                "reference": "649eea6067e1caed118ea9e67b9ed703ad1a1ba8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-string-get-in/zipball/649eea6067e1caed118ea9e67b9ed703ad1a1ba8",
+                "reference": "649eea6067e1caed118ea9e67b9ed703ad1a1ba8",
+                "shasum": ""
+            },
+            "require": {
+                "igorw/get-in": "^1.0.3",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Wrapper around igorw/get-in using strings rather then arrays are keys",
+            "time": "2018-10-14T15:34:54+00:00"
         },
         {
             "name": "wyrihaximus/tactician-command-handler-mapper",
