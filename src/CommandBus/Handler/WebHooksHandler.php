@@ -6,8 +6,8 @@ use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\WebHookInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
-use React\Promise\PromiseInterface;
 use function ApiClients\Tools\Rx\observableFromArray;
+use React\Promise\PromiseInterface;
 use function React\Promise\resolve;
 
 final class WebHooksHandler

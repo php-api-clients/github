@@ -7,13 +7,13 @@ use ApiClients\Foundation\ClientInterface;
 use ApiClients\Foundation\Factory;
 use ApiClients\Foundation\Options;
 use ApiClients\Foundation\Resource\ResourceInterface;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\EventLoop\LoopInterface;
 use React\Promise\CancellablePromiseInterface;
 use React\Promise\PromiseInterface;
 use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
 use Rx\Scheduler;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 final class AsyncClient implements AsyncClientInterface
 {

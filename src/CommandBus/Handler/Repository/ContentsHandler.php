@@ -7,10 +7,10 @@ use ApiClients\Client\Github\Resource\Contents\DirectoryInterface;
 use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Transport\Service\RequestService;
-use RingCentral\Psr7\Request;
-use Rx\React\Promise;
 use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
+use RingCentral\Psr7\Request;
+use Rx\React\Promise;
 
 final class ContentsHandler
 {

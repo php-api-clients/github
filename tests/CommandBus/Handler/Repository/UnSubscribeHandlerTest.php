@@ -6,8 +6,8 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Handler\Repository\UnSubscribeHandler;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Tools\TestUtilities\TestCase;
-use RingCentral\Psr7\Request;
 use function React\Promise\resolve;
+use RingCentral\Psr7\Request;
 
 /**
  * @internal

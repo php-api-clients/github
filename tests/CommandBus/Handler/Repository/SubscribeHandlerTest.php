@@ -7,8 +7,8 @@ use ApiClients\Client\Github\CommandBus\Handler\Repository\SubscribeHandler;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
-use RingCentral\Psr7\Request;
 use function React\Promise\resolve;
+use RingCentral\Psr7\Request;
 
 /**
  * @internal

@@ -7,8 +7,8 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\TagsCommand;
 use ApiClients\Client\Github\Resource\Repository\ReleaseInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
-use React\Promise\PromiseInterface;
 use function ApiClients\Tools\Rx\observableFromArray;
+use React\Promise\PromiseInterface;
 use function React\Promise\resolve;
 
 final class ReleasesHandler

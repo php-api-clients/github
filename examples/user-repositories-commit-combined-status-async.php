@@ -3,8 +3,8 @@ use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Repository;
 use ApiClients\Client\Github\Resource\Async\User;
 use ApiClients\Client\Github\Resource\Repository\Commit\CombinedStatusInterface;
-use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
+use React\EventLoop\Factory;
 
 require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 

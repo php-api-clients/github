@@ -11,8 +11,8 @@ use ApiClients\Foundation\Transport\ParsedContentsInterface;
 use ApiClients\Tools\Psr7\HttpStatusExceptions\BadRequestException;
 use ApiClients\Tools\Psr7\HttpStatusExceptions\UnprocessableEntityException;
 use React\Promise\CancellablePromiseInterface;
-use Throwable;
 use function React\Promise\reject;
+use Throwable;
 
 final class ErrorMiddleware implements MiddlewareInterface
 {

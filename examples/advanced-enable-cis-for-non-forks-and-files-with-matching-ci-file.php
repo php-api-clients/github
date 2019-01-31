@@ -18,15 +18,15 @@ use ApiClients\Client\Travis\AsyncClient as AsyncTravisClient;
 use ApiClients\Client\Travis\AsyncClientInterface as AsyncTravisClientInterface;
 use ApiClients\Client\Travis\Resource\Async\Repository as TravisRepository;
 use ApiClients\Foundation\Options;
+use function ApiClients\Foundation\resource_pretty_print;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
 use ApiClients\Middleware\Delay\DelayMiddleware;
 use ApiClients\Middleware\Pool\PoolMiddleware;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\EventLoop\Factory;
+use function React\Promise\reject;
 use ResourcePool\Pool;
 use Rx\Observable;
-use function ApiClients\Foundation\resource_pretty_print;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
-use function React\Promise\reject;
 
 require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 

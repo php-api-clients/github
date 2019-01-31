@@ -6,8 +6,8 @@ use ApiClients\Client\Github\CommandBus\Command\MyOrganizationsCommand;
 use ApiClients\Client\Github\Resource\OrganizationInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
-use React\Promise\PromiseInterface;
 use function ApiClients\Tools\Rx\observableFromArray;
+use React\Promise\PromiseInterface;
 use function React\Promise\resolve;
 
 final class MyOrganizationsHandler

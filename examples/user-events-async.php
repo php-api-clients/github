@@ -2,9 +2,9 @@
 use ApiClients\Client\Github\AsyncClient;
 use ApiClients\Client\Github\Resource\Async\Event;
 use ApiClients\Client\Github\Resource\Async\User;
-use React\EventLoop\Factory;
 use function ApiClients\Foundation\resource_pretty_print;
 use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use React\EventLoop\Factory;
 
 require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
