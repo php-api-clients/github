@@ -1,0 +1,9 @@
+class: Git\Tree
+properties:
+  sha: string
+  url: string
+  tree:
+    type: array
+    annotations:
+      collection: Git\NamedBlob
+  truncated: bool

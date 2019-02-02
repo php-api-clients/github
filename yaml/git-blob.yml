@@ -1,0 +1,7 @@
+class: Git\Blob
+properties:
+  content: string
+  encoding: string
+  url: string
+  sha: string
+  size: int

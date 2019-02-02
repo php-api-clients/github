@@ -1,0 +1,8 @@
+class: Git\NamedBlog
+properties:
+  path: string
+  mode: string
+  type: string
+  size: int
+  sha: string
+  url: string
