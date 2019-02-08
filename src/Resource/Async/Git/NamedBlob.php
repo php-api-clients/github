@@ -2,11 +2,11 @@
 
 namespace ApiClients\Client\Github\Resource\Async\Git;
 
-use ApiClients\Client\Github\Resource\Git\NamedBlog as BaseNamedBlog;
+use ApiClients\Client\Github\Resource\Git\NamedBlob as BaseNamedBlob;
 
-class NamedBlog extends BaseNamedBlog
+class NamedBlob extends BaseNamedBlob
 {
-    public function refresh(): NamedBlog
+    public function refresh(): NamedBlob
     {
         throw new \Exception('TODO: create refresh method!');
     }

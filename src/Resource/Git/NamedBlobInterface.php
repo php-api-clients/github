@@ -4,9 +4,9 @@ namespace ApiClients\Client\Github\Resource\Git;
 
 use ApiClients\Foundation\Resource\ResourceInterface;
 
-interface NamedBlogInterface extends ResourceInterface
+interface NamedBlobInterface extends ResourceInterface
 {
-    const HYDRATE_CLASS = 'Git\\NamedBlog';
+    const HYDRATE_CLASS = 'Git\\NamedBlob';
 
     /**
      * @return string

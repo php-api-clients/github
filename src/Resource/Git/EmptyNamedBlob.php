@@ -4,7 +4,7 @@ namespace ApiClients\Client\Github\Resource\Git;
 
 use ApiClients\Foundation\Resource\EmptyResourceInterface;
 
-abstract class EmptyNamedBlog implements NamedBlogInterface, EmptyResourceInterface
+abstract class EmptyNamedBlob implements NamedBlobInterface, EmptyResourceInterface
 {
     /**
      * @return string

@@ -1,4 +1,4 @@
-class: Git\NamedBlog
+class: Git\NamedBlob
 properties:
   path: string
   mode: string

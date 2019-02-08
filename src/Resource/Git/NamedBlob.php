@@ -6,9 +6,9 @@ use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
 use ApiClients\Foundation\Resource\AbstractResource;
 
 /**
- * @EmptyResource("Git\EmptyNamedBlog")
+ * @EmptyResource("Git\EmptyNamedBlob")
  */
-abstract class NamedBlog extends AbstractResource implements NamedBlogInterface
+abstract class NamedBlob extends AbstractResource implements NamedBlobInterface
 {
     /**
      * @var string
