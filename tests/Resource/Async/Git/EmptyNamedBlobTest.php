@@ -2,13 +2,13 @@
 
 namespace ApiClients\Tests\Client\Github\Resource\Async\Git;
 
-use ApiClients\Client\Github\Resource\Async\Git\EmptyNamedBlog;
+use ApiClients\Client\Github\Resource\Async\Git\EmptyNamedBlob;
 use ApiClients\Tools\ResourceTestUtilities\AbstractEmptyResourceTest;
 
 /**
  * @internal
  */
-final class EmptyNamedBlogTest extends AbstractEmptyResourceTest
+final class EmptyNamedBlobTest extends AbstractEmptyResourceTest
 {
     public function getSyncAsync(): string
     {
@@ -17,6 +17,6 @@ final class EmptyNamedBlogTest extends AbstractEmptyResourceTest
 
     public function getClass(): string
     {
-        return EmptyNamedBlog::class;
+        return EmptyNamedBlob::class;
     }
 }

@@ -3,13 +3,13 @@
 namespace ApiClients\Tests\Client\Github\Resource\Async\Git;
 
 use ApiClients\Client\Github\ApiSettings;
-use ApiClients\Client\Github\Resource\Git\NamedBlog;
+use ApiClients\Client\Github\Resource\Git\NamedBlob;
 use ApiClients\Tools\ResourceTestUtilities\AbstractResourceTest;
 
 /**
  * @internal
  */
-class NamedBlogTest extends AbstractResourceTest
+class NamedBlobTest extends AbstractResourceTest
 {
     public function getSyncAsync(): string
     {
@@ -18,7 +18,7 @@ class NamedBlogTest extends AbstractResourceTest
 
     public function getClass(): string
     {
-        return NamedBlog::class;
+        return NamedBlob::class;
     }
 
     public function getNamespace(): string
