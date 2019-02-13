@@ -8,7 +8,7 @@ use ApiClients\Foundation\Resource\AbstractResource;
 
 /**
  * @Nested(
- *     author="Git\Ref\Object_"
+ *     object="Git\Ref\Object_"
  * )
  * @EmptyResource("Git\EmptyRef")
  */
@@ -27,7 +27,7 @@ abstract class Ref extends AbstractResource implements RefInterface
     /**
      * @var Git\Ref\Object_
      */
-    protected $author;
+    protected $object;
 
     /**
      * @return string
@@ -48,8 +48,8 @@ abstract class Ref extends AbstractResource implements RefInterface
     /**
      * @return Git\Ref\Object_
      */
-    public function author(): Git\Ref\Object_
+    public function object(): Git\Ref\Object_
     {
-        return $this->author;
+        return $this->object;
     }
 }

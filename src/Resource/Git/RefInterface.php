@@ -21,5 +21,5 @@ interface RefInterface extends ResourceInterface
     /**
      * @return Git\Ref\Object_
      */
-    public function author(): Git\Ref\Object_;
+    public function object(): Git\Ref\Object_;
 }

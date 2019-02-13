@@ -25,7 +25,7 @@ abstract class EmptyRef implements RefInterface, EmptyResourceInterface
     /**
      * @return Git\Ref\Object_
      */
-    public function author(): Git\Ref\Object_
+    public function object(): Git\Ref\Object_
     {
         return null;
     }
