@@ -1,0 +1,8 @@
+class: Git\Ref
+properties:
+  ref: string
+  url: string
+  author:
+    type: Git\Ref\Object_
+    annotations:
+      nested: Git\Ref\Object_
