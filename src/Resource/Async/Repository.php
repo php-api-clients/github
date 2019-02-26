@@ -15,6 +15,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\Contents\FileUploadCo
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\RefCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\RefsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReplaceTopicsCommand;
@@ -26,6 +27,8 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\TreeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UnSubscribeCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\UpdateSettingsCommand;
 use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
+use ApiClients\Client\Github\Resource\Git\CommitInterface;
+use ApiClients\Client\Github\Resource\Git\RefInterface;
 use ApiClients\Client\Github\Resource\Git\TreeInterface;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use ApiClients\Client\Github\VO\NamedBlob;
@@ -218,5 +221,10 @@ class Repository extends BaseRepository
         return unwrapObservableFromPromise($this->handleCommand(
             new RefsCommand($this->fullName(), $namespace)
         ));
+    }
+
+    public function ref(RefInterface $ref, CommitInterface $tree): PromiseInterface
+    {
+        return $this->handleCommand(new RefCommand($this->fullName(), $ref->ref(), $tree->sha()));
     }
 }
