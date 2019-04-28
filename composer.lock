@@ -3354,16 +3354,16 @@
         },
         {
             "name": "wyrihaximus/react-stream-json",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/reactphp-stream-json.git",
-                "reference": "6ddfaedbe51b0ff68c473e2a6893a7d588c1c0e3"
+                "reference": "c39e96119af9c07cd05ad13a8d65a7c04db34351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/reactphp-stream-json/zipball/6ddfaedbe51b0ff68c473e2a6893a7d588c1c0e3",
-                "reference": "6ddfaedbe51b0ff68c473e2a6893a7d588c1c0e3",
+                "url": "https://api.github.com/repos/WyriHaximus/reactphp-stream-json/zipball/c39e96119af9c07cd05ad13a8d65a7c04db34351",
+                "reference": "c39e96119af9c07cd05ad13a8d65a7c04db34351",
                 "shasum": ""
             },
             "require": {
@@ -3374,9 +3374,8 @@
                 "reactivex/rxphp": "^2.0"
             },
             "require-dev": {
-                "api-clients/cs-fixer-config": "^1.1",
-                "api-clients/test-utilities": "^5.4",
-                "react/promise-stream": "^1.0 || ^0.1.1",
+                "react/promise-stream": "^1.1",
+                "wyrihaximus/async-test-utilities": "^1.1",
                 "wyrihaximus/ticking-promise": "^1.6"
             },
             "type": "library",
@@ -3396,7 +3395,7 @@
                 }
             ],
             "description": "Incremental JSON encoder writing to a react/stream",
-            "time": "2019-04-26T17:15:31+00:00"
+            "time": "2019-04-27T23:19:25+00:00"
         },
         {
             "name": "wyrihaximus/string-get-in",
