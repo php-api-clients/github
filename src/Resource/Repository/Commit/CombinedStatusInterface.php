@@ -19,6 +19,11 @@ interface CombinedStatusInterface extends ResourceInterface
     public function sha(): string;
 
     /**
+     * @return string
+     */
+    public function url(): string;
+
+    /**
      * @return int
      */
     public function totalCount(): int;

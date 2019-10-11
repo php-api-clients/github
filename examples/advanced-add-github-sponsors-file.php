@@ -8,11 +8,10 @@ use ApiClients\Client\Github\Resource\Async\User;
 use ApiClients\Client\Github\Resource\Git\RefInterface;
 use ApiClients\Client\Github\Resource\TreeInterface;
 use ApiClients\Client\Github\VO\NamedBlob;
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\EventLoop\Factory;
 use React\Stream\ThroughStream;
 use Rx\React\Promise;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
-use function React\Promise\reject;
 
 require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
@@ -28,7 +27,7 @@ unwrapObservableFromPromise($client->user($argv[1] ?? 'WyriHaximus')->then(funct
 })->filter(function (Repository $repository) {
     return $repository->name() !== 'reactphp-simple-orm';
 })->filter(function (Repository $repository) {
-    return strpos($repository->name(), 'reactphp') !== false;
+    return \strpos($repository->name(), 'reactphp') !== false;
 })->subscribe(function (Repository $repository) use ($argv, $loop) {
     $stream = new ThroughStream();
 
@@ -66,7 +65,7 @@ unwrapObservableFromPromise($client->user($argv[1] ?? 'WyriHaximus')->then(funct
             return $repository->ref($ref, $commit);
         });
     })->done(function () use ($repository) {
-        echo $repository->htmlUrl(), PHP_EOL;
+        echo $repository->htmlUrl(), \PHP_EOL;
     }, 'display_throwable');
 }, 'display_throwable');
 

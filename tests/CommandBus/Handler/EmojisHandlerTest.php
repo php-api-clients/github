@@ -29,14 +29,14 @@ final class EmojisHandlerTest extends TestCase
         $hydrator = $this->prophesize(Hydrator::class);
         $hydrator->hydrate(
             EmojiInterface::HYDRATE_CLASS,
-                [
+            [
                     'name' => 'foo',
                     'image' => 'bar',
                 ]
         )->shouldBeCalled()->willReturn($this->prophesize(EmojiInterface::class)->reveal());
         $hydrator->hydrate(
             EmojiInterface::HYDRATE_CLASS,
-                [
+            [
                     'name' => 'bar',
                     'image' => 'foo',
                 ]

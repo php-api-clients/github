@@ -18,11 +18,16 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     return $user->repository($argv[2] ?? 'github');
 })->then(function (Repository $repository) {
     resource_pretty_print($repository, 1, true);
-    $repository->commits()->take(1)->subscribe(function (Repository\Commit $commit) {
-        $commit->status()->done(function (CombinedStatusInterface $combinedStatus) {
-            resource_pretty_print($combinedStatus, 3, true);
-        }, 'display_throwable');
-    }, 'display_throwable');
+
+    return $repository->commits()->take(1)->toPromise();
+})->then(function (Repository\Commit $commit) {
+    return $commit->status();
+})->then(function (CombinedStatusInterface $combinedStatus) {
+    resource_pretty_print($combinedStatus, 3, true);
+
+    return $combinedStatus->refresh();
+})->then(function (CombinedStatusInterface $combinedStatus) {
+    resource_pretty_print($combinedStatus, 3, true);
 })->done(null, 'display_throwable');
 
 $loop->run();
