@@ -23,6 +23,14 @@ abstract class EmptyCombinedStatus implements CombinedStatusInterface, EmptyReso
     }
 
     /**
+     * @return string
+     */
+    public function url(): string
+    {
+        return null;
+    }
+
+    /**
      * @return int
      */
     public function totalCount(): int

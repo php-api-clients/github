@@ -29,6 +29,11 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     protected $sha;
 
     /**
+     * @var string
+     */
+    protected $url;
+
+    /**
      * @var int
      */
     protected $total_count;
@@ -57,6 +62,14 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     public function sha(): string
     {
         return $this->sha;
+    }
+
+    /**
+     * @return string
+     */
+    public function url(): string
+    {
+        return $this->url;
     }
 
     /**
