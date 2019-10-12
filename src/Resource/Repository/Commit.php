@@ -9,6 +9,8 @@ use ApiClients\Foundation\Hydrator\Annotation\Collection;
 use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
 use ApiClients\Foundation\Hydrator\Annotation\Nested;
 use ApiClients\Foundation\Resource\AbstractResource;
+use Rx\Observable;
+use function ApiClients\Tools\Rx\observableFromArray;
 
 /**
  * @Collection(
@@ -107,9 +109,9 @@ abstract class Commit extends AbstractResource implements CommitInterface
     }
 
     /**
-     * @return TreeInterface
+     * @return TreeInterface[]
      */
-    public function parents(): TreeInterface
+    public function parents(): array
     {
         return $this->parents;
     }
