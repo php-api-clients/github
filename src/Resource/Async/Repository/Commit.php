@@ -3,6 +3,7 @@
 namespace ApiClients\Client\Github\Resource\Async\Repository;
 
 use ApiClients\Client\Github\CommandBus\Command\RefreshCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\ChecksCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\CreateStatusCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\StatusCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\StatusesCommand;
@@ -31,6 +32,13 @@ class Commit extends BaseCommit
     {
         return unwrapObservableFromPromise($this->handleCommand(
             new StatusesCommand($this)
+        ));
+    }
+
+    public function checks(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new ChecksCommand($this)
         ));
     }
 

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github;
 final class AcceptHeader
 {
     const PRESET_DEFAULT = [
+        self::CHECK_RUNS,
         self::LICENSE,
         self::TOPICS,
         self::DEFAULT,
@@ -26,6 +27,9 @@ final class AcceptHeader
 
     // Topics on repository object: https://developer.github.com/v3/repos/#repositories
     const TOPICS = 'application/vnd.github.mercy-preview+json';
+
+    // Topics on repository object: https://developer.github.com/v3/repos/#repositories
+    const CHECK_RUNS = 'application/vnd.github.antiope-preview+json';
 
     public static function getHeader(array $chunks): string
     {
