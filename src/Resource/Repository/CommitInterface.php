@@ -42,7 +42,7 @@ interface CommitInterface extends ResourceInterface
     public function comitter(): UserInterface;
 
     /**
-     * @return TreeInterface
+     * @return TreeInterface[]
      */
-    public function parents(): TreeInterface;
+    public function parents(): array;
 }
