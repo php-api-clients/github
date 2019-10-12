@@ -16,7 +16,7 @@ class Branch extends BaseBranch
     public function detailedCommit(): PromiseInterface
     {
         return $this->handleCommand(new DetailedCommitCommand(
-            \str_replace('/branches/' . $this->name . '/protection', '', \explode('/repos/', $this->protection_url)[1]),
+            \str_replace('/commits/' . $this->commit->sha(), '', \explode('/repos/', $this->commit->url())[1]),
             $this->commit->sha()
         ));
     }
