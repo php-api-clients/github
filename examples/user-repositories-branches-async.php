@@ -17,8 +17,11 @@ $client->user($argv[1] ?? 'php-api-clients')->then(function (User $user) use ($a
     return $user->repository($argv[2] ?? 'github');
 })->then(function (Repository $repository) {
     resource_pretty_print($repository, 1, true);
-    $repository->branches()->subscribe(function ($labels) {
-        resource_pretty_print($labels, 2, true);
+    $repository->branches()->subscribe(function (Repository\Branch $branch) {
+        resource_pretty_print($branch, 2, true);
+        $branch->detailedCommit()->then(function (Repository\Commit $commit) {
+            resource_pretty_print($commit);
+        })->done(null, 'display_throwable');
     }, function ($error) {
         echo (string)$error;
     });
