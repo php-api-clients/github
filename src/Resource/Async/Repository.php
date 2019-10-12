@@ -13,6 +13,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Contents\FileUploadCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\DetailedCommitCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\RefCommand;
@@ -59,6 +60,16 @@ class Repository extends BaseRepository
         return unwrapObservableFromPromise($this->handleCommand(
             new CommitsCommand($this->fullName())
         ));
+    }
+
+    public function specificCommit(string $sha): PromiseInterface
+    {
+        return $this->handleCommand(
+            new DetailedCommitCommand(
+                $this->fullName(),
+                $sha
+            )
+        );
     }
 
     public function labels(): ObservableInterface
