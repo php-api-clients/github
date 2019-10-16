@@ -1,0 +1,13 @@
+class: Repository\PullRequest\Rb
+properties:
+  label: string
+  ref: string
+  sha: string
+  user:
+      type: User
+      annotations:
+          nested: User
+  repo:
+      type: Repository
+      annotations:
+          nested: Repository
