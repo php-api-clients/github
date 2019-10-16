@@ -1,0 +1,65 @@
+class: Repository\PullRequest
+properties:
+  url: string
+  id: int
+  html_url: string
+  number: int
+  state: string
+  locked: bool
+  title: string
+  user:
+      type: User
+      annotations:
+          nested: User
+  body: string
+  labels:
+      type: Label
+      annotations:
+          collection: Label
+  milestone:
+      type: Repository\Milestone
+      annotations:
+          nested: Repository\Milestone
+  active_lock_reason: string
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface
+  closed_at: DateTimeInterface
+  merged_at: DateTimeInterface
+  merge_commit_sha: string
+  assignee:
+      type: User
+      annotations:
+          nested: User
+  assignees:
+      type: User
+      annotations:
+          collection: User
+  requested_reviewers:
+      type: User
+      annotations:
+          collection: User
+  head:
+      type: Repository\PullRequest\Rb
+      annotations:
+          nested: Repository\PullRequest\Rb
+  base:
+      type: Repository\PullRequest\Rb
+      annotations:
+          nested: Repository\PullRequest\Rb
+  author_association: string
+  draft: bool
+  merged: bool
+  mergeable: bool
+  rebaseable: bool
+  mergeable_state: string
+  merged_by:
+      type: User
+      annotations:
+          nested: User
+  comments: int
+  review_comments: int
+  maintainer_can_modify: bool
+  commits: int
+  additions: int
+  deletions: int
+  changed_files: int
