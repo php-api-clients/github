@@ -1,0 +1,14 @@
+class: Repository\Milestone
+properties:
+  id: int
+  number: int
+  state: string
+  title: string
+  description: string
+  creator:
+      type: User
+      annotations:
+          nested: User
+  open_issues: int
+  closed_issues: int
+  url: string

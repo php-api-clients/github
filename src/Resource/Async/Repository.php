@@ -16,6 +16,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\DetailedCommitCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LabelsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\LanguagesCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\MilestonesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\RefCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\RefsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ReleasesCommand;
@@ -127,6 +128,13 @@ class Repository extends BaseRepository
     {
         return unwrapObservableFromPromise($this->handleCommand(
             new WebHooksCommand($this->fullName(), 'repos')
+        ));
+    }
+
+    public function milestones(): ObservableInterface
+    {
+        return unwrapObservableFromPromise($this->handleCommand(
+            new MilestonesCommand($this->fullName())
         ));
     }
 
