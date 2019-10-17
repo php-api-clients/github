@@ -19,3 +19,7 @@ properties:
     type: Tree
     annotations:
       collection: Tree
+  files:
+    type: Repository\Commit\File
+    annotations:
+      collection: Repository\Commit\File

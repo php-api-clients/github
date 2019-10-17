@@ -14,7 +14,8 @@ use function ApiClients\Tools\Rx\observableFromArray;
 
 /**
  * @Collection(
- *     parents="Tree"
+ *     parents="Tree",
+ *     files="Repository\Commit\File"
  * )
  * @Nested(
  *     commit="Git\Commit",
@@ -59,6 +60,11 @@ abstract class Commit extends AbstractResource implements CommitInterface
      * @var TreeInterface
      */
     protected $parents;
+
+    /**
+     * @var Commit\File[]
+     */
+    protected $files;
 
     /**
      * @return string
@@ -114,5 +120,13 @@ abstract class Commit extends AbstractResource implements CommitInterface
     public function parents(): array
     {
         return $this->parents;
+    }
+
+    /**
+     * @return Commit\File[]
+     */
+    public function files(): array
+    {
+        return $this->files;
     }
 }

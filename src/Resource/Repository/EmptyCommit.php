@@ -2,9 +2,6 @@
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
-use ApiClients\Client\Github\Resource\Git\CommitInterface as GitCommitInterface;
-use ApiClients\Client\Github\Resource\TreeInterface;
-use ApiClients\Client\Github\Resource\UserInterface;
 use ApiClients\Foundation\Resource\EmptyResourceInterface;
 
 abstract class EmptyCommit implements CommitInterface, EmptyResourceInterface
@@ -34,33 +31,41 @@ abstract class EmptyCommit implements CommitInterface, EmptyResourceInterface
     }
 
     /**
-     * @return GitCommitInterface
+     * @return Git\Commit
      */
-    public function commit(): GitCommitInterface
+    public function commit(): Git\Commit
     {
         return null;
     }
 
     /**
-     * @return UserInterface
+     * @return User
      */
-    public function author(): UserInterface
+    public function author(): User
     {
         return null;
     }
 
     /**
-     * @return UserInterface
+     * @return User
      */
-    public function comitter(): UserInterface
+    public function comitter(): User
     {
         return null;
     }
 
     /**
-     * @return TreeInterface
+     * @return Tree
      */
-    public function parents(): TreeInterface
+    public function parents(): Tree
+    {
+        return null;
+    }
+
+    /**
+     * @return Repository\Commit\File
+     */
+    public function files(): Repository\Commit\File
     {
         return null;
     }
