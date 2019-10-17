@@ -1,0 +1,23 @@
+class: Repository\Compare
+properties:
+  url: string
+  base_commit:
+      type: Repository\Commit
+      annotations:
+          nested: Repository\Commit
+  merge_base_commit:
+      type: Repository\Commit
+      annotations:
+          nested: Repository\Commit
+  status: string
+  ahead_by: int
+  behind_by: int
+  total_commits: int
+  commits:
+      type: Repository\Commit
+      annotations:
+          collection: Repository\Commit
+  files:
+      type: Repository\Commit\File
+      annotations:
+          collection: Repository\Commit\File
