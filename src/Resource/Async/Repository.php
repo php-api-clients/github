@@ -11,6 +11,7 @@ use ApiClients\Client\Github\CommandBus\Command\Repository\BranchesCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\CommunityHealthCommand;
+use ApiClients\Client\Github\CommandBus\Command\Repository\CompareCommitsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\Contents\FileUploadCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\CommandBus\Command\Repository\DetailedCommitCommand;
@@ -144,6 +145,11 @@ class Repository extends BaseRepository
         return unwrapObservableFromPromise($this->handleCommand(
             new PullRequestsCommand($this->fullName())
         ));
+    }
+
+    public function compareCommits(string $base, string $head): PromiseInterface
+    {
+        return $this->handleCommand(new CompareCommitsCommand($this, $base, $head));
     }
 
     public function addWebHook(
