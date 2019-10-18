@@ -49,7 +49,7 @@ interface CompareInterface extends ResourceInterface
     public function commits(): Repository\Commit;
 
     /**
-     * @return Repository\Commit\File
+     * @return Commit\File[]
      */
-    public function files(): Repository\Commit\File;
+    public function files(): array;
 }
