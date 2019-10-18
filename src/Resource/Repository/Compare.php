@@ -61,7 +61,7 @@ abstract class Compare extends AbstractResource implements CompareInterface
     protected $commits;
 
     /**
-     * @var Repository\Commit\File
+     * @var Commit\File[]
      */
     protected $files;
 
@@ -130,9 +130,9 @@ abstract class Compare extends AbstractResource implements CompareInterface
     }
 
     /**
-     * @return Repository\Commit\File
+     * @return Commit\File[]
      */
-    public function files(): Repository\Commit\File
+    public function files(): array
     {
         return $this->files;
     }
