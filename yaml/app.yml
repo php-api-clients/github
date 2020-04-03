@@ -1,0 +1,17 @@
+class: App
+properties:
+  id: int
+  slug: string
+  owner:
+    type: User
+    annotations:
+      nested: User
+  name: string
+  description: string
+  external_url: string
+  html_url: string
+  created_at: DateTimeInterface
+  updated_at: DateTimeInterface
+  permissions: array
+  events: array
+  installations_count: int

@@ -151,6 +151,11 @@ final class AsyncClient implements AsyncClientInterface
         return $this->client->handle(new Command\RateLimitCommand());
     }
 
+    public function app(): PromiseInterface
+    {
+        return $this->client->handle(new Command\AppCommand());
+    }
+
     public function renderMarkdown(
         ReadableStreamInterface $stream,
         string $mode = 'markdown',
