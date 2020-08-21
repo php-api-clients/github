@@ -1721,16 +1721,16 @@
         },
         {
             "name": "lcobucci/jwt",
-            "version": "3.3.1",
+            "version": "3.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "a11ec5f4b4d75d1fcd04e133dede4c317aac9e18"
+                "reference": "c1123697f6a2ec29162b82f170dd4a491f524773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/a11ec5f4b4d75d1fcd04e133dede4c317aac9e18",
-                "reference": "a11ec5f4b4d75d1fcd04e133dede4c317aac9e18",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/c1123697f6a2ec29162b82f170dd4a491f524773",
+                "reference": "c1123697f6a2ec29162b82f170dd4a491f524773",
                 "shasum": ""
             },
             "require": {
@@ -1772,7 +1772,17 @@
                 "JWS",
                 "jwt"
             ],
-            "time": "2019-05-24T18:30:49+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/lcobucci",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/lcobucci",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-08-20T13:22:28+00:00"
         },
         {
             "name": "league/tactician",
@@ -4485,6 +4495,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -4529,6 +4540,7 @@
                     "homepage": "http://www.acci.cz/"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
@@ -4576,6 +4588,7 @@
             ],
             "description": "This tool check syntax of PHP files about 20x faster than serial check.",
             "homepage": "https://github.com/JakubOnderka/PHP-Parallel-Lint",
+            "abandoned": "php-parallel-lint/php-parallel-lint",
             "time": "2015-12-15T10:42:16+00:00"
         },
         {
@@ -4749,6 +4762,7 @@
                 "normalizer",
                 "plugin"
             ],
+            "abandoned": "ergebnis/composer-normalize",
             "time": "2018-01-14T12:15:12+00:00"
         },
         {
@@ -4799,6 +4813,7 @@
                 "json",
                 "normalizer"
             ],
+            "abandoned": "ergebnis/json-normalizer",
             "time": "2018-01-13T21:59:29+00:00"
         },
         {
@@ -4848,6 +4863,7 @@
                 "json",
                 "printer"
             ],
+            "abandoned": "ergebnis/json-printer",
             "time": "2018-01-27T21:05:05+00:00"
         },
         {
@@ -5678,6 +5694,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2018-10-30T05:52:18+00:00"
         },
         {
@@ -7279,5 +7296,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.3"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
