@@ -81,9 +81,9 @@ abstract class CombinedStatus extends AbstractResource implements CombinedStatus
     }
 
     /**
-     * @return Repository\Commit\Status
+     * @return array
      */
-    public function statuses(): Repository\Commit\Status
+    public function statuses(): array
     {
         return $this->statuses;
     }
