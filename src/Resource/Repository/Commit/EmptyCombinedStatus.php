@@ -39,11 +39,11 @@ abstract class EmptyCombinedStatus implements CombinedStatusInterface, EmptyReso
     }
 
     /**
-     * @return Repository\Commit\Status
+     * @return array
      */
-    public function statuses(): Repository\Commit\Status
+    public function statuses(): array
     {
-        return null;
+        return [];
     }
 
     /**
