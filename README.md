@@ -7,16 +7,13 @@
 [![License](https://poser.pugx.org/api-clients/github/license.png)](https://packagist.org/packages/api-clients/github)
 [![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/github/badge.svg)](https://travis-ci.org/php-api-clients/github)
 
-# Goals
-
-* 100% Github [API](https://developer.github.com/v3/) support
-* Both synchronous and asynchronous
+The branch contains the work for the next generation of this package. [The old branch containing v0.1.0 can be found here.](https://github.com/php-api-clients/github/tree/master)
 
 # License
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Cees-Jan Kiewiet
+Copyright (c) 2021 Cees-Jan Kiewiet
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
