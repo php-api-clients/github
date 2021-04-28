@@ -1,0 +1,15 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\Path\\Orgs\CbOrgRcb\Hooks\CbHookIdRcb;
+
+final class Config
+{
+    function get($org, $hook_id) : \ApiClients\Client\Github\OpenAPI\Operation\Orgs\GetWebhookConfigForOrgOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\Operation\Orgs\GetWebhookConfigForOrgOperation($org, $hook_id);
+    }
+    function patch($org, $hook_id) : \ApiClients\Client\Github\OpenAPI\Operation\Orgs\UpdateWebhookConfigForOrgOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\Operation\Orgs\UpdateWebhookConfigForOrgOperation($org, $hook_id);
+    }
+}

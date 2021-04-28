@@ -1,0 +1,19 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\Path\\Enterprises\CbEnterpriseRcb\Actions\Runner-Groups;
+
+final class CbRunnerGroupIdRcb
+{
+    function get($enterprise, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\Operation\EnterpriseAdmin\GetSelfHostedRunnerGroupForEnterpriseOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\Operation\EnterpriseAdmin\GetSelfHostedRunnerGroupForEnterpriseOperation($enterprise, $runner_group_id);
+    }
+    function delete($enterprise, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\Operation\EnterpriseAdmin\DeleteSelfHostedRunnerGroupFromEnterpriseOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\Operation\EnterpriseAdmin\DeleteSelfHostedRunnerGroupFromEnterpriseOperation($enterprise, $runner_group_id);
+    }
+    function patch($enterprise, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\Operation\EnterpriseAdmin\UpdateSelfHostedRunnerGroupForEnterpriseOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\Operation\EnterpriseAdmin\UpdateSelfHostedRunnerGroupForEnterpriseOperation($enterprise, $runner_group_id);
+    }
+}
