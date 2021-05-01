@@ -1,0 +1,19 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Enterprise;
+
+final class Announcement
+{
+    function get() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetAnnouncementOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetAnnouncementOperation();
+    }
+    function delete() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\RemoveAnnouncementOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\RemoveAnnouncementOperation();
+    }
+    function patch() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\SetAnnouncementOperation
+    {
+        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\SetAnnouncementOperation();
+    }
+}
