@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CommunityProfile
 {
     public const SCHEMA_TITLE = 'Community Profile';
-    public const SPL_HASH = '00000000084e11550000000020f58f84';
+    public const SPL_HASH = '000000000cd53a210000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Community Profile';
     private ?int $health_percentage = null;
     private ?string $description = null;

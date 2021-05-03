@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class InstallationGhes2
 {
     public const SCHEMA_TITLE = 'Installation';
-    public const SPL_HASH = '00000000577b25090000000061bd81a4';
+    public const SPL_HASH = '0000000051ede1620000000051f77f0f';
     public const SCHEMA_DESCRIPTION = 'Installation';
     /**
      * The ID of the installation.

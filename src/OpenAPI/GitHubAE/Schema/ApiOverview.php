@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ApiOverview
 {
     public const SCHEMA_TITLE = 'Api Overview';
-    public const SPL_HASH = '000000001ef8e6ea000000007fdcfded';
+    public const SPL_HASH = '000000001d5bae1a00000000544e0d87';
     public const SCHEMA_DESCRIPTION = 'Api Overview';
     private ?bool $verifiable_password_authentication = null;
     private ?object $ssh_key_fingerprints = null;

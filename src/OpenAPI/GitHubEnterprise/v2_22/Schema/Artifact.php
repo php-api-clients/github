@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Artifact
 {
     public const SCHEMA_TITLE = 'Artifact';
-    public const SPL_HASH = '000000000b4c01000000000005634a32';
+    public const SPL_HASH = '000000003d2c31e80000000068da5fbb';
     public const SCHEMA_DESCRIPTION = 'An artifact';
     private ?int $id = null;
     private ?string $node_id = null;

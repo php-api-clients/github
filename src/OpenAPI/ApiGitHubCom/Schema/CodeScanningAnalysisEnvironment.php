@@ -5,6 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeScanningAnalysisEnvironment
 {
     public const SCHEMA_TITLE = 'code-scanning-analysis-environment';
-    public const SPL_HASH = '00000000084e10b30000000020f58f84';
+    public const SPL_HASH = '000000000cd53bc70000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Identifies the variable values associated with the environment in which this analysis was performed.';
 }

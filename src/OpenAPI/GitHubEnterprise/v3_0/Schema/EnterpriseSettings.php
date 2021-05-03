@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class EnterpriseSettings
 {
     public const SCHEMA_TITLE = 'enterprise-settings';
-    public const SPL_HASH = '000000002cadeeb900000000748d5a43';
+    public const SPL_HASH = '000000005f18366900000000682da57f';
     public const SCHEMA_DESCRIPTION = '';
     private ?object $enterprise = null;
     private array $run_list = array();

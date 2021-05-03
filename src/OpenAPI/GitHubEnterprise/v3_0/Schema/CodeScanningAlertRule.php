@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class CodeScanningAlertRule
 {
     public const SCHEMA_TITLE = 'code-scanning-alert-rule';
-    public const SPL_HASH = '000000002cadf59200000000748d5a43';
+    public const SPL_HASH = '000000005f182d4200000000682da57f';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * A unique identifier for the rule used to detect the alert.

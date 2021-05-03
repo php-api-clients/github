@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class Repository
 {
     public const SCHEMA_TITLE = 'Repository';
-    public const SPL_HASH = '000000004536431f000000004b854126';
+    public const SPL_HASH = '000000002d0a6c810000000001e9ea35';
     public const SCHEMA_DESCRIPTION = 'A git repository';
     /**
      * Unique identifier of the repository
@@ -19,6 +19,7 @@ final class Repository
     private $license;
     private $organization;
     private ?int $forks = null;
+    private ?bool $private = null;
     public function id() : ?int
     {
         return $this->id;
@@ -42,5 +43,9 @@ final class Repository
     public function forks() : ?int
     {
         return $this->forks;
+    }
+    public function private() : ?bool
+    {
+        return $this->private;
     }
 }

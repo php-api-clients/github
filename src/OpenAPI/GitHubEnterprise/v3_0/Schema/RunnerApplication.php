@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class RunnerApplication
 {
     public const SCHEMA_TITLE = 'Runner Application';
-    public const SPL_HASH = '000000002cadfb3d00000000748d5a43';
+    public const SPL_HASH = '000000005f1823ed00000000682da57f';
     public const SCHEMA_DESCRIPTION = 'Runner Application';
     private ?string $os = null;
     private ?string $architecture = null;

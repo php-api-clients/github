@@ -5,6 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class WebhookConfigSecret
 {
     public const SCHEMA_TITLE = 'webhook-config-secret';
-    public const SPL_HASH = '000000002cadfd7000000000748d5a43';
+    public const SPL_HASH = '000000005f1825a000000000682da57f';
     public const SCHEMA_DESCRIPTION = 'If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/enterprise-server@3.0/webhooks/event-payloads/#delivery-headers).';
 }
