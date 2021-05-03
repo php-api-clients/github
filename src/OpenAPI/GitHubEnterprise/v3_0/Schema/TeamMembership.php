@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class TeamMembership
 {
     public const SCHEMA_TITLE = 'Team Membership';
-    public const SPL_HASH = '0000000008b92bf100000000412ebbda';
+    public const SPL_HASH = '000000002cadf86f00000000748d5a43';
     public const SCHEMA_DESCRIPTION = 'Team Membership';
     private ?string $url = null;
     /**

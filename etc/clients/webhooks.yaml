@@ -1,3 +1,3 @@
-spec: /home/wyrihaximus/Projects/PHPAPIClients/github/etc/webhooks.yaml
+spec: https://raw.githubusercontent.com/php-api-clients/github/openapi-based-client-proof-of-concept/etc/webhooks.yaml
 namespace: ApiClients\Client\Github\OpenAPI\WebHooks
 destination: src/OpenAPI/WebHooks

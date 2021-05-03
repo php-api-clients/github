@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class SimpleUser
 {
     public const SCHEMA_TITLE = 'Simple User';
-    public const SPL_HASH = '0000000036b6f81c0000000068d6d7fd';
+    public const SPL_HASH = '0000000045364302000000004b854126';
     public const SCHEMA_DESCRIPTION = 'Simple User';
     private ?string $login = null;
     private ?int $id = null;

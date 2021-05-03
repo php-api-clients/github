@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class BaseGist
 {
     public const SCHEMA_TITLE = 'Base Gist';
-    public const SPL_HASH = '000000005bc9824d000000002dbcf303';
+    public const SPL_HASH = '000000005b3e52ae000000001bb9a56a';
     public const SCHEMA_DESCRIPTION = 'Base Gist';
     private ?string $url = null;
     private ?string $forks_url = null;

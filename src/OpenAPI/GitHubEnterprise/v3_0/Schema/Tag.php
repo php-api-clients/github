@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Tag
 {
     public const SCHEMA_TITLE = 'Tag';
-    public const SPL_HASH = '0000000008b93cf100000000412ebbda';
+    public const SPL_HASH = '000000002cadef6f00000000748d5a43';
     public const SCHEMA_DESCRIPTION = 'Tag';
     private ?string $name = null;
     private ?object $commit = null;

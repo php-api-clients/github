@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ValidationError
 {
     public const SCHEMA_TITLE = 'Validation Error';
-    public const SPL_HASH = '000000005dfdaf8a0000000040885a06';
+    public const SPL_HASH = '000000001ef898bf000000007fdcfded';
     public const SCHEMA_DESCRIPTION = 'Validation Error';
     private ?string $message = null;
     private ?string $documentation_url = null;

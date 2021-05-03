@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class GistComment
 {
     public const SCHEMA_TITLE = 'Gist Comment';
-    public const SPL_HASH = '0000000008b929e200000000412ebbda';
+    public const SPL_HASH = '000000002cadfa7c00000000748d5a43';
     public const SCHEMA_DESCRIPTION = 'A comment made to a gist.';
     private ?int $id = null;
     private ?string $node_id = null;

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class IssueEventDismissedReview
 {
     public const SCHEMA_TITLE = 'Issue Event Dismissed Review';
-    public const SPL_HASH = '00000000252f469d0000000029de5079';
+    public const SPL_HASH = '00000000084e13950000000020f58f84';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $state = null;
     private ?int $review_id = null;

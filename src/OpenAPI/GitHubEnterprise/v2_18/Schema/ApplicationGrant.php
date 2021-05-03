@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class ApplicationGrant
 {
     public const SCHEMA_TITLE = 'Application Grant';
-    public const SPL_HASH = '000000000c92e96a000000006ad867a6';
+    public const SPL_HASH = '00000000577b24270000000061bd81a4';
     public const SCHEMA_DESCRIPTION = 'The authorization associated with an OAuth Access.';
     private ?int $id = null;
     private ?string $url = null;

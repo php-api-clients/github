@@ -350,7 +350,6 @@ components:
       - repositories_url
       - events
       - account
-      - permissions
       - created_at
       - updated_at
       - suspended_by

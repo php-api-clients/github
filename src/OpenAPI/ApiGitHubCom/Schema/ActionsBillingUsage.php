@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ActionsBillingUsage
 {
     public const SCHEMA_TITLE = 'actions-billing-usage';
-    public const SPL_HASH = '00000000252f5d6c0000000029de5079';
+    public const SPL_HASH = '00000000084e08640000000020f58f84';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The sum of the free and paid GitHub Actions minutes used.

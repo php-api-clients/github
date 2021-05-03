@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PendingDeployment
 {
     public const SCHEMA_TITLE = 'Pending Deployment';
-    public const SPL_HASH = '00000000252f43d60000000029de5079';
+    public const SPL_HASH = '00000000084e16de0000000020f58f84';
     public const SCHEMA_DESCRIPTION = 'Details of a deployment that is waiting for protection rules to pass';
     private ?object $environment = null;
     /**

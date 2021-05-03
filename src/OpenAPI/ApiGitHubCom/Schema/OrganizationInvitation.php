@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class OrganizationInvitation
 {
     public const SCHEMA_TITLE = 'Organization Invitation';
-    public const SPL_HASH = '00000000252f5eb00000000029de5079';
+    public const SPL_HASH = '00000000084e0bb80000000020f58f84';
     public const SCHEMA_DESCRIPTION = 'Organization Invitation';
     private ?int $id = null;
     private ?string $login = null;

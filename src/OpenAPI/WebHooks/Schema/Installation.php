@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class Installation
 {
     public const SCHEMA_TITLE = 'Installation';
-    public const SPL_HASH = '0000000036b6f9f30000000068d6d7fd';
+    public const SPL_HASH = '0000000045364363000000004b854126';
     public const SCHEMA_DESCRIPTION = 'Installation';
     /**
      * The ID of the installation.
@@ -27,7 +27,6 @@ final class Installation
      */
     private ?int $target_id = null;
     private ?string $target_type = null;
-    private ?object $permissions = null;
     private array $events = array();
     private ?string $created_at = null;
     private ?string $updated_at = null;
@@ -69,10 +68,6 @@ final class Installation
     public function target_type() : ?string
     {
         return $this->target_type;
-    }
-    public function permissions() : ?object
-    {
-        return $this->permissions;
     }
     public function events() : array
     {

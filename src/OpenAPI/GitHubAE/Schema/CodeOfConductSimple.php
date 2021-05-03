@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CodeOfConductSimple
 {
     public const SCHEMA_TITLE = 'Code Of Conduct Simple';
-    public const SPL_HASH = '000000005dfdd2130000000040885a06';
+    public const SPL_HASH = '000000001ef8e526000000007fdcfded';
     public const SCHEMA_DESCRIPTION = 'Code of Conduct Simple';
     private ?string $url = null;
     private ?string $key = null;

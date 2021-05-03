@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CodeScanningAlertInstance
 {
     public const SCHEMA_TITLE = 'code-scanning-alert-instance';
-    public const SPL_HASH = '000000005dfdd4f40000000040885a06';
+    public const SPL_HASH = '000000001ef8e3c1000000007fdcfded';
     public const SCHEMA_DESCRIPTION = '';
     /**
     * The full Git reference, formatted as `refs/heads/<branch name>`,

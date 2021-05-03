@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Status
 {
     public const SCHEMA_TITLE = 'Status';
-    public const SPL_HASH = '00000000252f444a0000000029de5079';
+    public const SPL_HASH = '00000000084e11420000000020f58f84';
     public const SCHEMA_DESCRIPTION = 'The status of a commit.';
     private ?string $url = null;
     private ?string $avatar_url = null;

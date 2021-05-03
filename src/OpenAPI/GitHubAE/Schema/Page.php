@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Page
 {
     public const SCHEMA_TITLE = 'GitHub Pages';
-    public const SPL_HASH = '000000005dfdd8080000000040885a06';
+    public const SPL_HASH = '000000001ef8ef3d000000007fdcfded';
     public const SCHEMA_DESCRIPTION = 'The configuration for GitHub Pages for a repository.';
     /**
      * The API address for accessing this Page resource.

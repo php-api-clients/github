@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class SelectedActions
 {
     public const SCHEMA_TITLE = 'selected-actions';
-    public const SPL_HASH = '000000005dfdae1a0000000040885a06';
+    public const SPL_HASH = '000000001ef8992f000000007fdcfded';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.

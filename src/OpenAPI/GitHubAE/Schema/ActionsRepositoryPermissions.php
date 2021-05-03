@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ActionsRepositoryPermissions
 {
     public const SCHEMA_TITLE = 'actions-repository-permissions';
-    public const SPL_HASH = '000000005dfdd28b0000000040885a06';
+    public const SPL_HASH = '000000001ef8e5be000000007fdcfded';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Whether GitHub Actions is enabled on the repository.

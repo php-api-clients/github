@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class InstallationRespositoriesEvent
 {
     public const SCHEMA_TITLE = 'Installation Event';
-    public const SPL_HASH = '0000000036b6f8f10000000068d6d7fd';
+    public const SPL_HASH = '0000000045364320000000004b854126';
     public const SCHEMA_DESCRIPTION = 'Installation Event';
     private ?string $action = null;
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation $installation = null;

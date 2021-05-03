@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Stargazer
 {
     public const SCHEMA_TITLE = 'Stargazer';
-    public const SPL_HASH = '000000005dfdda5d0000000040885a06';
+    public const SPL_HASH = '000000001ef8ed68000000007fdcfded';
     public const SCHEMA_DESCRIPTION = 'Stargazer';
     private ?string $starred_at = null;
     private $user;

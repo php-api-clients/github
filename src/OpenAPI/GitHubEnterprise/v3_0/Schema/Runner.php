@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Runner
 {
     public const SCHEMA_TITLE = 'Self hosted runners';
-    public const SPL_HASH = '0000000008b928b800000000412ebbda';
+    public const SPL_HASH = '000000002cadfb2600000000748d5a43';
     public const SCHEMA_DESCRIPTION = 'A self hosted runner';
     /**
      * The id of the runner.
