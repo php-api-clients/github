@@ -8,8 +8,8 @@ final class ReactionRollup
     public const SCHEMA_DESCRIPTION = '';
     private ?string $url = null;
     private ?int $total_count = null;
-    private ?int $+1 = null;
-    private ?int $-1 = null;
+    private ?int $_PLUSES_1 = null;
+    private ?int $_MINUS_1 = null;
     private ?int $laugh = null;
     private ?int $confused = null;
     private ?int $heart = null;
@@ -24,13 +24,13 @@ final class ReactionRollup
     {
         return $this->total_count;
     }
-    public function +1() : ?int
+    public function _PLUSES_1() : ?int
     {
-        return $this->+1;
+        return $this->_PLUSES_1;
     }
-    public function -1() : ?int
+    public function _MINUS_1() : ?int
     {
-        return $this->-1;
+        return $this->_MINUS_1;
     }
     public function laugh() : ?int
     {
