@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class ProtectedBranch
 {
     public const SCHEMA_TITLE = 'Protected Branch';
-    public const SPL_HASH = '000000006887e31e0000000064418fb6';
     public const SCHEMA_DESCRIPTION = 'Branch protections protect branches';
     private ?string $url = null;
     /**

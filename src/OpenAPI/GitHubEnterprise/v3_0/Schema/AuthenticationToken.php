@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class AuthenticationToken
 {
     public const SCHEMA_TITLE = 'Authentication Token';
-    public const SPL_HASH = '000000005f1823e400000000682da57f';
     public const SCHEMA_DESCRIPTION = 'Authentication Token';
     /**
      * The token used for authentication

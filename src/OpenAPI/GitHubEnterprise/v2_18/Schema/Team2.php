@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Team2
 {
     public const SCHEMA_TITLE = 'team-2';
-    public const SPL_HASH = '0000000051ed97740000000051f77f0f';
     public const SCHEMA_DESCRIPTION = '';
     private ?int $id = null;
     private ?string $node_id = null;

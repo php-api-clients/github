@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class UserSearchResultItem
 {
     public const SCHEMA_TITLE = 'User Search Result Item';
-    public const SPL_HASH = '000000002493252000000000123fabb6';
     public const SCHEMA_DESCRIPTION = 'User Search Result Item';
     private ?string $login = null;
     private ?int $id = null;

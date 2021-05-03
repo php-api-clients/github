@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class FullRepository
 {
     public const SCHEMA_TITLE = 'Full Repository';
-    public const SPL_HASH = '000000000cd53e9b0000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Full Repository';
     private ?int $id = null;
     private ?string $node_id = null;

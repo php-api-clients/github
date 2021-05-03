@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class PullRequestReviewComment
 {
     public const SCHEMA_TITLE = 'Pull Request Review Comment';
-    public const SPL_HASH = '00000000688799e40000000064418fb6';
     public const SCHEMA_DESCRIPTION = 'Pull Request Review Comments are comments on a portion of the Pull Request\'s diff.';
     /**
      * URL for the pull request review comment

@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class GistSimple
 {
     public const SCHEMA_TITLE = 'Gist Simple';
-    public const SPL_HASH = '000000005f1822f000000000682da57f';
     public const SCHEMA_DESCRIPTION = 'Gist Simple';
     private array $forks = array();
     private array $history = array();

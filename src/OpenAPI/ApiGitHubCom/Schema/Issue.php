@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Issue
 {
     public const SCHEMA_TITLE = 'Issue';
-    public const SPL_HASH = '000000000cd521b40000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.';
     private ?int $id = null;
     private ?string $node_id = null;

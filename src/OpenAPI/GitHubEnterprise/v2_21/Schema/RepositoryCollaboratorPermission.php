@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class RepositoryCollaboratorPermission
 {
     public const SCHEMA_TITLE = 'Repository Collaborator Permission';
-    public const SPL_HASH = '000000006887e2680000000064418fb6';
     public const SCHEMA_DESCRIPTION = 'Repository Collaborator Permission';
     private ?string $permission = null;
     private $user;

@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ContentReferenceAttachment
 {
     public const SCHEMA_TITLE = 'ContentReferenceAttachment';
-    public const SPL_HASH = '000000001d5bd02200000000544e0d87';
     public const SCHEMA_DESCRIPTION = 'Content Reference attachments allow you to provide context around URLs posted in comments';
     /**
      * The ID of the attachment

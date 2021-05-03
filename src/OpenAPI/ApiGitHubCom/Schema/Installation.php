@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Installation
 {
     public const SCHEMA_TITLE = 'Installation';
-    public const SPL_HASH = '000000000cd525740000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Installation';
     /**
      * The ID of the installation.

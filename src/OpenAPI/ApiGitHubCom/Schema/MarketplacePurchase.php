@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class MarketplacePurchase
 {
     public const SCHEMA_TITLE = 'Marketplace Purchase';
-    public const SPL_HASH = '000000000cd521dc0000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Marketplace Purchase';
     private ?string $url = null;
     private ?string $type = null;

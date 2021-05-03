@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class Hovercard
 {
     public const SCHEMA_TITLE = 'Hovercard';
-    public const SPL_HASH = '00000000688794ca0000000064418fb6';
     public const SCHEMA_DESCRIPTION = 'Hovercard';
     private array $contexts = array();
     public function contexts() : array

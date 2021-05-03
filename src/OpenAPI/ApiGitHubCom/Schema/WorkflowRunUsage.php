@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class WorkflowRunUsage
 {
     public const SCHEMA_TITLE = 'Workflow Run Usage';
-    public const SPL_HASH = '000000000cd53de50000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Workflow Run Usage';
     private ?object $billable = null;
     private ?int $run_duration_ms = null;

@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class TeamSimple
 {
     public const SCHEMA_TITLE = 'Team Simple';
-    public const SPL_HASH = '000000005f18212600000000682da57f';
     public const SCHEMA_DESCRIPTION = 'Groups of organization members that gives permissions on specified repositories.';
     /**
      * Unique identifier of the team

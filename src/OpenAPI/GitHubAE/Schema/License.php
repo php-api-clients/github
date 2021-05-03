@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class License
 {
     public const SCHEMA_TITLE = 'License';
-    public const SPL_HASH = '000000001d5bae2b00000000544e0d87';
     public const SCHEMA_DESCRIPTION = 'License';
     private ?string $key = null;
     private ?string $name = null;

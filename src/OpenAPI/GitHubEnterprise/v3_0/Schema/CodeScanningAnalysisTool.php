@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class CodeScanningAnalysisTool
 {
     public const SCHEMA_TITLE = 'code-scanning-analysis-tool';
-    public const SPL_HASH = '000000005f182d9200000000682da57f';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The name of the tool used to generate the code scanning analysis.

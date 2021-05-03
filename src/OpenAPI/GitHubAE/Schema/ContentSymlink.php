@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ContentSymlink
 {
     public const SCHEMA_TITLE = 'Symlink Content';
-    public const SPL_HASH = '000000001d5ba95e00000000544e0d87';
     public const SCHEMA_DESCRIPTION = 'An object describing a symlink';
     private ?string $type = null;
     private ?string $target = null;

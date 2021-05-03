@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CombinedBillingUsage
 {
     public const SCHEMA_TITLE = 'combined-billing-usage';
-    public const SPL_HASH = '000000000cd523040000000040effa88';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Numbers of days left in billing cycle.

@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class CodeOfConduct
 {
     public const SCHEMA_TITLE = 'Code Of Conduct';
-    public const SPL_HASH = '0000000051ede3b90000000051f77f0f';
     public const SCHEMA_DESCRIPTION = 'Code Of Conduct';
     private ?string $key = null;
     private ?string $name = null;

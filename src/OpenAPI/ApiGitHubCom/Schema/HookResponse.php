@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class HookResponse
 {
     public const SCHEMA_TITLE = 'Hook Response';
-    public const SPL_HASH = '000000000cd538b70000000040effa88';
     public const SCHEMA_DESCRIPTION = '';
     private ?int $code = null;
     private ?string $status = null;

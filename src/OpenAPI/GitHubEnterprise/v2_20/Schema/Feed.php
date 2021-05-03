@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Feed
 {
     public const SCHEMA_TITLE = 'Feed';
-    public const SPL_HASH = '000000002493504d00000000123fabb6';
     public const SCHEMA_DESCRIPTION = 'Feed';
     private ?string $timeline_url = null;
     private ?string $user_url = null;

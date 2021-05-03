@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class IssueSimple
 {
     public const SCHEMA_TITLE = 'Issue Simple';
-    public const SPL_HASH = '0000000051ede3d60000000051f77f0f';
     public const SCHEMA_DESCRIPTION = 'Issue Simple';
     private ?int $id = null;
     private ?string $node_id = null;

@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class RepositoryPreReceiveHook
 {
     public const SCHEMA_TITLE = 'repository-pre-receive-hook';
-    public const SPL_HASH = '00000000249358fb00000000123fabb6';
     public const SCHEMA_DESCRIPTION = '';
     private ?int $id = null;
     private ?string $name = null;

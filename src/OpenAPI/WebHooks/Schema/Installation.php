@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class Installation
 {
     public const SCHEMA_TITLE = 'Installation';
-    public const SPL_HASH = '000000002d0a6cfc0000000001e9ea35';
     public const SCHEMA_DESCRIPTION = 'Installation';
     /**
      * The ID of the installation.

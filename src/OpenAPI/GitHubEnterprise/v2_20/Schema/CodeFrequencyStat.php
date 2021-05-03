@@ -5,6 +5,5 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class CodeFrequencyStat
 {
     public const SCHEMA_TITLE = 'Code Frequency Stat';
-    public const SPL_HASH = '00000000249326e500000000123fabb6';
     public const SCHEMA_DESCRIPTION = 'Code Frequency Stat';
 }

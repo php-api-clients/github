@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CodeScanningAlertItems
 {
     public const SCHEMA_TITLE = 'code-scanning-alert-items';
-    public const SPL_HASH = '000000001d5bab2900000000544e0d87';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The security alert number.

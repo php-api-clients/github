@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class LdapMappingUser
 {
     public const SCHEMA_TITLE = 'Ldap Private User';
-    public const SPL_HASH = '000000003d2c48a90000000068da5fbb';
     public const SCHEMA_DESCRIPTION = 'Ldap Private User';
     private ?string $ldap_dn = null;
     private ?string $login = null;

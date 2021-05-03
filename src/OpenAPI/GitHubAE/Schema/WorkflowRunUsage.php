@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class WorkflowRunUsage
 {
     public const SCHEMA_TITLE = 'Workflow Run Usage';
-    public const SPL_HASH = '000000001d5baafc00000000544e0d87';
     public const SCHEMA_DESCRIPTION = 'Workflow Run Usage';
     private ?object $billable = null;
     private ?int $run_duration_ms = null;

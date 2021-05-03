@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class DeployKey
 {
     public const SCHEMA_TITLE = 'Deploy Key';
-    public const SPL_HASH = '000000005f182a3600000000682da57f';
     public const SCHEMA_DESCRIPTION = 'An SSH key granting access to a single repository.';
     private ?int $id = null;
     private ?string $key = null;

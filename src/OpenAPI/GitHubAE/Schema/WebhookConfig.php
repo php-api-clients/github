@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class WebhookConfig
 {
     public const SCHEMA_TITLE = 'Webhook Configuration';
-    public const SPL_HASH = '000000001d5bd36900000000544e0d87';
     public const SCHEMA_DESCRIPTION = 'Configuration object of the webhook';
     /**
      * The URL to which the payloads will be delivered.

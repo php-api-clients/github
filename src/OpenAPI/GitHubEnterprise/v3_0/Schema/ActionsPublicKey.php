@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class ActionsPublicKey
 {
     public const SCHEMA_TITLE = 'ActionsPublicKey';
-    public const SPL_HASH = '000000005f18216700000000682da57f';
     public const SCHEMA_DESCRIPTION = 'The public key used for setting Actions Secrets.';
     /**
      * The identifier for the key.

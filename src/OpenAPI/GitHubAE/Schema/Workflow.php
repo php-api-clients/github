@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Workflow
 {
     public const SCHEMA_TITLE = 'Workflow';
-    public const SPL_HASH = '000000001d5baaec00000000544e0d87';
     public const SCHEMA_DESCRIPTION = 'A GitHub Actions workflow';
     private ?int $id = null;
     private ?string $node_id = null;

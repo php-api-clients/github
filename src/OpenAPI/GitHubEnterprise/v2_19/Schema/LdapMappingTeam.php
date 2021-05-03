@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class LdapMappingTeam
 {
     public const SCHEMA_TITLE = 'ldap-mapping-team';
-    public const SPL_HASH = '00000000183132f0000000004028667d';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $ldap_dn = null;
     private ?int $id = null;

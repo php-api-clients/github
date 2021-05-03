@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class TeamDiscussion
 {
     public const SCHEMA_TITLE = 'Team Discussion';
-    public const SPL_HASH = '0000000051ed97390000000051f77f0f';
     public const SCHEMA_DESCRIPTION = 'A team discussion is a persistent record of a free-form conversation within a team.';
     private $author;
     /**

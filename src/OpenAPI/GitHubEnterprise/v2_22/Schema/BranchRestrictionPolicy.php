@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class BranchRestrictionPolicy
 {
     public const SCHEMA_TITLE = 'Branch Restriction Policy';
-    public const SPL_HASH = '000000003d2c31710000000068da5fbb';
     public const SCHEMA_DESCRIPTION = 'Branch Restriction Policy';
     private ?string $url = null;
     private ?string $users_url = null;

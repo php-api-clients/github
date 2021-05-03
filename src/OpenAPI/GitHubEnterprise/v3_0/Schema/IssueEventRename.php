@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class IssueEventRename
 {
     public const SCHEMA_TITLE = 'Issue Event Rename';
-    public const SPL_HASH = '000000005f182a8c00000000682da57f';
     public const SCHEMA_DESCRIPTION = 'Issue Event Rename';
     private ?string $from = null;
     private ?string $to = null;

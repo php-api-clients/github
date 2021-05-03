@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PorterLargeFile
 {
     public const SCHEMA_TITLE = 'Porter Large File';
-    public const SPL_HASH = '000000000cd538f90000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Porter Large File';
     private ?string $ref_name = null;
     private ?string $path = null;

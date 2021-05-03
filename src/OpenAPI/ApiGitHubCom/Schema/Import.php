@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Import
 {
     public const SCHEMA_TITLE = 'Import';
-    public const SPL_HASH = '000000000cd5389d0000000040effa88';
     public const SCHEMA_DESCRIPTION = 'A repository import from an external source.';
     private ?string $vcs = null;
     private ?bool $use_lfs = null;

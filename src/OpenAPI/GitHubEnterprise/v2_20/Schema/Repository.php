@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Repository
 {
     public const SCHEMA_TITLE = 'Repository';
-    public const SPL_HASH = '00000000249351ab00000000123fabb6';
     public const SCHEMA_DESCRIPTION = 'A git repository';
     /**
      * Unique identifier of the repository

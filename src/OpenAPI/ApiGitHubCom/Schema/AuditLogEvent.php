@@ -5,12 +5,11 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class AuditLogEvent
 {
     public const SCHEMA_TITLE = 'audit-log-event';
-    public const SPL_HASH = '000000000cd523340000000040effa88';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The time the audit log event occurred, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
      */
-    private ?int $@timestamp = null;
+    private ?int $timestamp = null;
     /**
      * The name of the action that was performed, for example `user.login` or `repo.create`.
      */
@@ -75,9 +74,9 @@ final class AuditLogEvent
      * The repository visibility, for example `public` or `private`.
      */
     private ?string $visibility = null;
-    public function @timestamp() : ?int
+    public function timestamp() : ?int
     {
-        return $this->@timestamp;
+        return $this->timestamp;
     }
     public function action() : ?string
     {

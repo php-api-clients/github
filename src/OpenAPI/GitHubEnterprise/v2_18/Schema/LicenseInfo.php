@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class LicenseInfo
 {
     public const SCHEMA_TITLE = 'license-info';
-    public const SPL_HASH = '0000000051ede38e0000000051f77f0f';
     public const SCHEMA_DESCRIPTION = '';
     private ?int $seats = null;
     private ?int $seats_used = null;

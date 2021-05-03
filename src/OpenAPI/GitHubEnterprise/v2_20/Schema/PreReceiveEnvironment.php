@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class PreReceiveEnvironment
 {
     public const SCHEMA_TITLE = 'pre-receive-environment';
-    public const SPL_HASH = '000000002493528d00000000123fabb6';
     public const SCHEMA_DESCRIPTION = '';
     private ?int $id = null;
     private ?string $name = null;

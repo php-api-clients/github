@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class RepoSearchResultItem
 {
     public const SCHEMA_TITLE = 'Repo Search Result Item';
-    public const SPL_HASH = '000000000cd534640000000040effa88';
     public const SCHEMA_DESCRIPTION = 'Repo Search Result Item';
     private ?int $id = null;
     private ?string $node_id = null;

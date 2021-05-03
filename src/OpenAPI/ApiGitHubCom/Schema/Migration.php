@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Migration
 {
     public const SCHEMA_TITLE = 'Migration';
-    public const SPL_HASH = '000000000cd520640000000040effa88';
     public const SCHEMA_DESCRIPTION = 'A migration.';
     private ?int $id = null;
     private $owner;

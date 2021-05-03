@@ -5,7 +5,6 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class RunnerNoLabels
 {
     public const SCHEMA_TITLE = 'runner-no-labels';
-    public const SPL_HASH = '000000003d2c364f0000000068da5fbb';
     public const SCHEMA_DESCRIPTION = '';
     private ?number $id = null;
     private ?string $name = null;
