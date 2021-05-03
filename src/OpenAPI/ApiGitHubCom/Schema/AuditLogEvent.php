@@ -9,7 +9,7 @@ final class AuditLogEvent
     /**
      * The time the audit log event occurred, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
      */
-    private ?int $timestamp = null;
+    private ?int $_AT_timestamp = null;
     /**
      * The name of the action that was performed, for example `user.login` or `repo.create`.
      */
@@ -74,9 +74,9 @@ final class AuditLogEvent
      * The repository visibility, for example `public` or `private`.
      */
     private ?string $visibility = null;
-    public function timestamp() : ?int
+    public function _AT_timestamp() : ?int
     {
-        return $this->timestamp;
+        return $this->_AT_timestamp;
     }
     public function action() : ?string
     {
