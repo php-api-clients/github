@@ -5,40 +5,40 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class CommitSearchResultItem
 {
     public const SCHEMA_TITLE = 'Commit Search Result Item';
-    public const SPL_HASH = '000000006312803b0000000044ad25fc';
+    public const SPL_HASH = '00000000567e576600000000401184f6';
     public const SCHEMA_DESCRIPTION = 'Commit Search Result Item';
-    private string $url;
-    private string $sha;
-    private string $html_url;
-    private string $comments_url;
-    private object $commit;
+    private ?string $url = null;
+    private ?string $sha = null;
+    private ?string $html_url = null;
+    private ?string $comments_url = null;
+    private ?object $commit = null;
     private $author;
     private $committer;
-    private array $parents;
+    private array $parents = array();
     /**
      * Minimal Repository
      */
-    private object $repository;
-    private number $score;
-    private string $node_id;
-    private array $text_matches;
-    public function url() : string
+    private ?object $repository = null;
+    private ?number $score = null;
+    private ?string $node_id = null;
+    private array $text_matches = array();
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function sha() : string
+    public function sha() : ?string
     {
         return $this->sha;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function comments_url() : string
+    public function comments_url() : ?string
     {
         return $this->comments_url;
     }
-    public function commit() : object
+    public function commit() : ?object
     {
         return $this->commit;
     }
@@ -54,15 +54,15 @@ final class CommitSearchResultItem
     {
         return $this->parents;
     }
-    public function repository() : object
+    public function repository() : ?object
     {
         return $this->repository;
     }
-    public function score() : number
+    public function score() : ?number
     {
         return $this->score;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }

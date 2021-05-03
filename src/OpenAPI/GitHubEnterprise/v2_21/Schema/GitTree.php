@@ -5,24 +5,24 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class GitTree
 {
     public const SCHEMA_TITLE = 'Git Tree';
-    public const SPL_HASH = '00000000181420d2000000005f691719';
+    public const SPL_HASH = '0000000036641eb9000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = 'The hierarchy between files in a Git repository.';
-    private string $sha;
-    private string $url;
-    private bool $truncated;
+    private ?string $sha = null;
+    private ?string $url = null;
+    private ?bool $truncated = null;
     /**
      * Objects specifying a tree structure
      */
-    private array $tree;
-    public function sha() : string
+    private array $tree = array();
+    public function sha() : ?string
     {
         return $this->sha;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function truncated() : bool
+    public function truncated() : ?bool
     {
         return $this->truncated;
     }

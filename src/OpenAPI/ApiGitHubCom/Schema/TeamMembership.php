@@ -5,26 +5,26 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class TeamMembership
 {
     public const SCHEMA_TITLE = 'Team Membership';
-    public const SPL_HASH = '0000000020701e4d0000000042193899';
+    public const SPL_HASH = '00000000729dcd6700000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Team Membership';
-    private string $url;
+    private ?string $url = null;
     /**
      * The role of the user in the team.
      */
-    private string $role;
+    private ?string $role = null;
     /**
      * The state of the user's membership in the team.
      */
-    private string $state;
-    public function url() : string
+    private ?string $state = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function role() : string
+    public function role() : ?string
     {
         return $this->role;
     }
-    public function state() : string
+    public function state() : ?string
     {
         return $this->state;
     }

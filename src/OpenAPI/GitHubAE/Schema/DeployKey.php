@@ -5,40 +5,40 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class DeployKey
 {
     public const SCHEMA_TITLE = 'Deploy Key';
-    public const SPL_HASH = '000000007ee6e4fc0000000021479ea3';
+    public const SPL_HASH = '000000001f77f02d000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'An SSH key granting access to a single repository.';
-    private int $id;
-    private string $key;
-    private string $url;
-    private string $title;
-    private bool $verified;
-    private string $created_at;
-    private bool $read_only;
-    public function id() : int
+    private ?int $id = null;
+    private ?string $key = null;
+    private ?string $url = null;
+    private ?string $title = null;
+    private ?bool $verified = null;
+    private ?string $created_at = null;
+    private ?bool $read_only = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function key() : string
+    public function key() : ?string
     {
         return $this->key;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function title() : string
+    public function title() : ?string
     {
         return $this->title;
     }
-    public function verified() : bool
+    public function verified() : ?bool
     {
         return $this->verified;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function read_only() : bool
+    public function read_only() : ?bool
     {
         return $this->read_only;
     }

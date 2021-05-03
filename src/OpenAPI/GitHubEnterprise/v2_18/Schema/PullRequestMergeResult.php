@@ -5,20 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class PullRequestMergeResult
 {
     public const SCHEMA_TITLE = 'Pull Request Merge Result';
-    public const SPL_HASH = '000000006e7b0d5c000000005d0d00fd';
+    public const SPL_HASH = '000000004679abd10000000066e19307';
     public const SCHEMA_DESCRIPTION = 'Pull Request Merge Result';
-    private string $sha;
-    private bool $merged;
-    private string $message;
-    public function sha() : string
+    private ?string $sha = null;
+    private ?bool $merged = null;
+    private ?string $message = null;
+    public function sha() : ?string
     {
         return $this->sha;
     }
-    public function merged() : bool
+    public function merged() : ?bool
     {
         return $this->merged;
     }
-    public function message() : string
+    public function message() : ?string
     {
         return $this->message;
     }

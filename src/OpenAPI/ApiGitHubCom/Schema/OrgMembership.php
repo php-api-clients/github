@@ -5,41 +5,41 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class OrgMembership
 {
     public const SCHEMA_TITLE = 'Org Membership';
-    public const SPL_HASH = '00000000207001fe0000000042193899';
+    public const SPL_HASH = '00000000729dd2d400000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Org Membership';
-    private string $url;
+    private ?string $url = null;
     /**
      * The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
      */
-    private string $state;
+    private ?string $state = null;
     /**
      * The user's membership type in the organization.
      */
-    private string $role;
-    private string $organization_url;
+    private ?string $role = null;
+    private ?string $organization_url = null;
     /**
      * Organization Simple
      */
-    private object $organization;
+    private ?object $organization = null;
     private $user;
-    private object $permissions;
-    public function url() : string
+    private ?object $permissions = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function state() : string
+    public function state() : ?string
     {
         return $this->state;
     }
-    public function role() : string
+    public function role() : ?string
     {
         return $this->role;
     }
-    public function organization_url() : string
+    public function organization_url() : ?string
     {
         return $this->organization_url;
     }
-    public function organization() : object
+    public function organization() : ?object
     {
         return $this->organization;
     }
@@ -47,7 +47,7 @@ final class OrgMembership
     {
         return $this->user;
     }
-    public function permissions() : object
+    public function permissions() : ?object
     {
         return $this->permissions;
     }

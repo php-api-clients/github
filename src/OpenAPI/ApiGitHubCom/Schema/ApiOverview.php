@@ -5,24 +5,24 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ApiOverview
 {
     public const SCHEMA_TITLE = 'Api Overview';
-    public const SPL_HASH = '00000000207000be0000000042193899';
+    public const SPL_HASH = '00000000729dd39400000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Api Overview';
-    private bool $verifiable_password_authentication;
-    private object $ssh_key_fingerprints;
-    private array $hooks;
-    private array $web;
-    private array $api;
-    private array $git;
-    private array $packages;
-    private array $pages;
-    private array $importer;
-    private array $actions;
-    private array $dependabot;
-    public function verifiable_password_authentication() : bool
+    private ?bool $verifiable_password_authentication = null;
+    private ?object $ssh_key_fingerprints = null;
+    private array $hooks = array();
+    private array $web = array();
+    private array $api = array();
+    private array $git = array();
+    private array $packages = array();
+    private array $pages = array();
+    private array $importer = array();
+    private array $actions = array();
+    private array $dependabot = array();
+    public function verifiable_password_authentication() : ?bool
     {
         return $this->verifiable_password_authentication;
     }
-    public function ssh_key_fingerprints() : object
+    public function ssh_key_fingerprints() : ?object
     {
         return $this->ssh_key_fingerprints;
     }

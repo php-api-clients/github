@@ -5,15 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class GitignoreTemplate
 {
     public const SCHEMA_TITLE = 'Gitignore Template';
-    public const SPL_HASH = '00000000207003c30000000042193899';
+    public const SPL_HASH = '00000000729dd0e900000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Gitignore Template';
-    private string $name;
-    private string $source;
-    public function name() : string
+    private ?string $name = null;
+    private ?string $source = null;
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function source() : string
+    public function source() : ?string
     {
         return $this->source;
     }

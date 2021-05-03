@@ -5,29 +5,29 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ActionsRepositoryPermissions
 {
     public const SCHEMA_TITLE = 'actions-repository-permissions';
-    public const SPL_HASH = '0000000020701ffc0000000042193899';
+    public const SPL_HASH = '00000000729dccd600000000797f0b2e';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Whether GitHub Actions is enabled on the repository.
      */
-    private bool $enabled;
+    private ?bool $enabled = null;
     /**
      * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
      */
-    private string $allowed_actions;
+    private ?string $allowed_actions = null;
     /**
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    private string $selected_actions_url;
-    public function enabled() : bool
+    private ?string $selected_actions_url = null;
+    public function enabled() : ?bool
     {
         return $this->enabled;
     }
-    public function allowed_actions() : string
+    public function allowed_actions() : ?string
     {
         return $this->allowed_actions;
     }
-    public function selected_actions_url() : string
+    public function selected_actions_url() : ?string
     {
         return $this->selected_actions_url;
     }

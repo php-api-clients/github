@@ -5,25 +5,25 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class IssueEventDismissedReview
 {
     public const SCHEMA_TITLE = 'Issue Event Dismissed Review';
-    public const SPL_HASH = '000000007ee6e5580000000021479ea3';
+    public const SPL_HASH = '000000001f77f189000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = '';
-    private string $state;
-    private int $review_id;
-    private string $dismissal_message;
-    private string $dismissal_commit_id;
-    public function state() : string
+    private ?string $state = null;
+    private ?int $review_id = null;
+    private ?string $dismissal_message = null;
+    private ?string $dismissal_commit_id = null;
+    public function state() : ?string
     {
         return $this->state;
     }
-    public function review_id() : int
+    public function review_id() : ?int
     {
         return $this->review_id;
     }
-    public function dismissal_message() : string
+    public function dismissal_message() : ?string
     {
         return $this->dismissal_message;
     }
-    public function dismissal_commit_id() : string
+    public function dismissal_commit_id() : ?string
     {
         return $this->dismissal_commit_id;
     }

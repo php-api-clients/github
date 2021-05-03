@@ -5,16 +5,16 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class ContributorActivity
 {
     public const SCHEMA_TITLE = 'Contributor Activity';
-    public const SPL_HASH = '0000000037ddc4a50000000010a967e8';
+    public const SPL_HASH = '000000004c46aa0d00000000443897a0';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     private $author;
-    private int $total;
-    private array $weeks;
+    private ?int $total = null;
+    private array $weeks = array();
     public function author()
     {
         return $this->author;
     }
-    public function total() : int
+    public function total() : ?int
     {
         return $this->total;
     }

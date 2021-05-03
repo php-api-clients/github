@@ -5,55 +5,55 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class EnterpriseOverview
 {
     public const SCHEMA_TITLE = 'enterprise-overview';
-    public const SPL_HASH = '0000000031ee59b400000000484d7fbe';
+    public const SPL_HASH = '000000001138a00200000000791e6d28';
     public const SCHEMA_DESCRIPTION = '';
-    private object $repos;
-    private object $hooks;
-    private object $pages;
-    private object $orgs;
-    private object $users;
-    private object $pulls;
-    private object $issues;
-    private object $milestones;
-    private object $gists;
-    private object $comments;
-    public function repos() : object
+    private ?object $repos = null;
+    private ?object $hooks = null;
+    private ?object $pages = null;
+    private ?object $orgs = null;
+    private ?object $users = null;
+    private ?object $pulls = null;
+    private ?object $issues = null;
+    private ?object $milestones = null;
+    private ?object $gists = null;
+    private ?object $comments = null;
+    public function repos() : ?object
     {
         return $this->repos;
     }
-    public function hooks() : object
+    public function hooks() : ?object
     {
         return $this->hooks;
     }
-    public function pages() : object
+    public function pages() : ?object
     {
         return $this->pages;
     }
-    public function orgs() : object
+    public function orgs() : ?object
     {
         return $this->orgs;
     }
-    public function users() : object
+    public function users() : ?object
     {
         return $this->users;
     }
-    public function pulls() : object
+    public function pulls() : ?object
     {
         return $this->pulls;
     }
-    public function issues() : object
+    public function issues() : ?object
     {
         return $this->issues;
     }
-    public function milestones() : object
+    public function milestones() : ?object
     {
         return $this->milestones;
     }
-    public function gists() : object
+    public function gists() : ?object
     {
         return $this->gists;
     }
-    public function comments() : object
+    public function comments() : ?object
     {
         return $this->comments;
     }

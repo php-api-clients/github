@@ -5,55 +5,55 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class GitCommit
 {
     public const SCHEMA_TITLE = 'Git Commit';
-    public const SPL_HASH = '0000000037ddbbf30000000010a967e8';
+    public const SPL_HASH = '000000004c46d55b00000000443897a0';
     public const SCHEMA_DESCRIPTION = 'Low-level Git commit operations within a repository';
     /**
      * SHA for the commit
      */
-    private string $sha;
-    private string $node_id;
-    private string $url;
+    private ?string $sha = null;
+    private ?string $node_id = null;
+    private ?string $url = null;
     /**
      * Identifying information for the git-user
      */
-    private object $author;
+    private ?object $author = null;
     /**
      * Identifying information for the git-user
      */
-    private object $committer;
+    private ?object $committer = null;
     /**
      * Message describing the purpose of the commit
      */
-    private string $message;
-    private object $tree;
-    private array $parents;
-    private object $verification;
-    private string $html_url;
-    public function sha() : string
+    private ?string $message = null;
+    private ?object $tree = null;
+    private array $parents = array();
+    private ?object $verification = null;
+    private ?string $html_url = null;
+    public function sha() : ?string
     {
         return $this->sha;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function author() : object
+    public function author() : ?object
     {
         return $this->author;
     }
-    public function committer() : object
+    public function committer() : ?object
     {
         return $this->committer;
     }
-    public function message() : string
+    public function message() : ?string
     {
         return $this->message;
     }
-    public function tree() : object
+    public function tree() : ?object
     {
         return $this->tree;
     }
@@ -61,11 +61,11 @@ final class GitCommit
     {
         return $this->parents;
     }
-    public function verification() : object
+    public function verification() : ?object
     {
         return $this->verification;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

@@ -5,43 +5,43 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Runner
 {
     public const SCHEMA_TITLE = 'Self hosted runners';
-    public const SPL_HASH = '00000000207002580000000042193899';
+    public const SPL_HASH = '00000000729dd17200000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'A self hosted runner';
     /**
      * The id of the runner.
      */
-    private int $id;
+    private ?int $id = null;
     /**
      * The name of the runner.
      */
-    private string $name;
+    private ?string $name = null;
     /**
      * The Operating System of the runner.
      */
-    private string $os;
+    private ?string $os = null;
     /**
      * The status of the runner.
      */
-    private string $status;
-    private bool $busy;
-    private array $labels;
-    public function id() : int
+    private ?string $status = null;
+    private ?bool $busy = null;
+    private array $labels = array();
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function os() : string
+    public function os() : ?string
     {
         return $this->os;
     }
-    public function status() : string
+    public function status() : ?string
     {
         return $this->status;
     }
-    public function busy() : bool
+    public function busy() : ?bool
     {
         return $this->busy;
     }

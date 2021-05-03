@@ -5,71 +5,71 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimUser
 {
     public const SCHEMA_TITLE = 'SCIM /Users';
-    public const SPL_HASH = '00000000207015370000000042193899';
+    public const SPL_HASH = '00000000729dc61d00000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'SCIM /Users provisioning endpoints';
     /**
      * SCIM schema used.
      */
-    private array $schemas;
+    private array $schemas = array();
     /**
      * Unique identifier of an external identity
      */
-    private string $id;
+    private ?string $id = null;
     /**
      * The ID of the User.
      */
-    private string $externalId;
+    private ?string $externalId = null;
     /**
      * Configured by the admin. Could be an email, login, or username
      */
-    private string $userName;
+    private ?string $userName = null;
     /**
      * The name of the user, suitable for display to end-users
      */
-    private string $displayName;
-    private object $name;
+    private ?string $displayName = null;
+    private ?object $name = null;
     /**
      * user emails
      */
-    private array $emails;
+    private array $emails = array();
     /**
      * The active status of the User.
      */
-    private bool $active;
-    private object $meta;
+    private ?bool $active = null;
+    private ?object $meta = null;
     /**
      * The ID of the organization.
      */
-    private int $organization_id;
+    private ?int $organization_id = null;
     /**
      * Set of operations to be performed
      */
-    private array $operations;
+    private array $operations = array();
     /**
      * associated groups
      */
-    private array $groups;
+    private array $groups = array();
     public function schemas() : array
     {
         return $this->schemas;
     }
-    public function id() : string
+    public function id() : ?string
     {
         return $this->id;
     }
-    public function externalId() : string
+    public function externalId() : ?string
     {
         return $this->externalId;
     }
-    public function userName() : string
+    public function userName() : ?string
     {
         return $this->userName;
     }
-    public function displayName() : string
+    public function displayName() : ?string
     {
         return $this->displayName;
     }
-    public function name() : object
+    public function name() : ?object
     {
         return $this->name;
     }
@@ -77,15 +77,15 @@ final class ScimUser
     {
         return $this->emails;
     }
-    public function active() : bool
+    public function active() : ?bool
     {
         return $this->active;
     }
-    public function meta() : object
+    public function meta() : ?object
     {
         return $this->meta;
     }
-    public function organization_id() : int
+    public function organization_id() : ?int
     {
         return $this->organization_id;
     }

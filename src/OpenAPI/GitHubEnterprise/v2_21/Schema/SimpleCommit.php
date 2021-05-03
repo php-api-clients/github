@@ -5,35 +5,35 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class SimpleCommit
 {
     public const SCHEMA_TITLE = 'Simple Commit';
-    public const SPL_HASH = '000000001814221f000000005f691719';
+    public const SPL_HASH = '0000000036641c74000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = 'Simple Commit';
-    private string $id;
-    private string $tree_id;
-    private string $message;
-    private string $timestamp;
-    private object $author;
-    private object $committer;
-    public function id() : string
+    private ?string $id = null;
+    private ?string $tree_id = null;
+    private ?string $message = null;
+    private ?string $timestamp = null;
+    private ?object $author = null;
+    private ?object $committer = null;
+    public function id() : ?string
     {
         return $this->id;
     }
-    public function tree_id() : string
+    public function tree_id() : ?string
     {
         return $this->tree_id;
     }
-    public function message() : string
+    public function message() : ?string
     {
         return $this->message;
     }
-    public function timestamp() : string
+    public function timestamp() : ?string
     {
         return $this->timestamp;
     }
-    public function author() : object
+    public function author() : ?object
     {
         return $this->author;
     }
-    public function committer() : object
+    public function committer() : ?object
     {
         return $this->committer;
     }

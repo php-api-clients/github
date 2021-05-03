@@ -5,40 +5,40 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class PreReceiveHook
 {
     public const SCHEMA_TITLE = 'pre-receive-hook';
-    public const SPL_HASH = '0000000018145a8c000000005f691719';
+    public const SPL_HASH = '00000000366464e7000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = '';
-    private int $id;
-    private string $name;
-    private string $enforcement;
-    private string $script;
-    private object $script_repository;
-    private object $environment;
-    private bool $allow_downstream_configuration;
-    public function id() : int
+    private ?int $id = null;
+    private ?string $name = null;
+    private ?string $enforcement = null;
+    private ?string $script = null;
+    private ?object $script_repository = null;
+    private ?object $environment = null;
+    private ?bool $allow_downstream_configuration = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function enforcement() : string
+    public function enforcement() : ?string
     {
         return $this->enforcement;
     }
-    public function script() : string
+    public function script() : ?string
     {
         return $this->script;
     }
-    public function script_repository() : object
+    public function script_repository() : ?object
     {
         return $this->script_repository;
     }
-    public function environment() : object
+    public function environment() : ?object
     {
         return $this->environment;
     }
-    public function allow_downstream_configuration() : bool
+    public function allow_downstream_configuration() : ?bool
     {
         return $this->allow_downstream_configuration;
     }

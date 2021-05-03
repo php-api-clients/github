@@ -5,111 +5,111 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Release
 {
     public const SCHEMA_TITLE = 'Release';
-    public const SPL_HASH = '0000000031ee555d00000000484d7fbe';
+    public const SPL_HASH = '000000001138aceb00000000791e6d28';
     public const SCHEMA_DESCRIPTION = 'A release.';
-    private string $url;
-    private string $html_url;
-    private string $assets_url;
-    private string $upload_url;
-    private string $tarball_url;
-    private string $zipball_url;
-    private int $id;
-    private string $node_id;
+    private ?string $url = null;
+    private ?string $html_url = null;
+    private ?string $assets_url = null;
+    private ?string $upload_url = null;
+    private ?string $tarball_url = null;
+    private ?string $zipball_url = null;
+    private ?int $id = null;
+    private ?string $node_id = null;
     /**
      * The name of the tag.
      */
-    private string $tag_name;
+    private ?string $tag_name = null;
     /**
      * Specifies the commitish value that determines where the Git tag is created from.
      */
-    private string $target_commitish;
-    private string $name;
-    private string $body;
+    private ?string $target_commitish = null;
+    private ?string $name = null;
+    private ?string $body = null;
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
-    private bool $draft;
+    private ?bool $draft = null;
     /**
      * Whether to identify the release as a prerelease or a full release.
      */
-    private bool $prerelease;
-    private string $created_at;
-    private string $published_at;
+    private ?bool $prerelease = null;
+    private ?string $created_at = null;
+    private ?string $published_at = null;
     /**
      * Simple User
      */
-    private object $author;
+    private ?object $author = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\ReleaseAsset>
      */
-    private array $assets;
-    private string $body_html;
-    private string $body_text;
-    public function url() : string
+    private array $assets = array();
+    private ?string $body_html = null;
+    private ?string $body_text = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function assets_url() : string
+    public function assets_url() : ?string
     {
         return $this->assets_url;
     }
-    public function upload_url() : string
+    public function upload_url() : ?string
     {
         return $this->upload_url;
     }
-    public function tarball_url() : string
+    public function tarball_url() : ?string
     {
         return $this->tarball_url;
     }
-    public function zipball_url() : string
+    public function zipball_url() : ?string
     {
         return $this->zipball_url;
     }
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function tag_name() : string
+    public function tag_name() : ?string
     {
         return $this->tag_name;
     }
-    public function target_commitish() : string
+    public function target_commitish() : ?string
     {
         return $this->target_commitish;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function draft() : bool
+    public function draft() : ?bool
     {
         return $this->draft;
     }
-    public function prerelease() : bool
+    public function prerelease() : ?bool
     {
         return $this->prerelease;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function published_at() : string
+    public function published_at() : ?string
     {
         return $this->published_at;
     }
-    public function author() : object
+    public function author() : ?object
     {
         return $this->author;
     }
@@ -117,11 +117,11 @@ final class Release
     {
         return $this->assets;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }

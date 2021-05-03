@@ -5,15 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class PagesSourceHash
 {
     public const SCHEMA_TITLE = 'Pages Source Hash';
-    public const SPL_HASH = '000000007ee6e4de0000000021479ea3';
+    public const SPL_HASH = '000000001f77f00f000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = '';
-    private string $branch;
-    private string $path;
-    public function branch() : string
+    private ?string $branch = null;
+    private ?string $path = null;
+    public function branch() : ?string
     {
         return $this->branch;
     }
-    public function path() : string
+    public function path() : ?string
     {
         return $this->path;
     }

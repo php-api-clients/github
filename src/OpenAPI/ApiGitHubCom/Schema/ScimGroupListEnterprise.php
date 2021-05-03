@@ -5,26 +5,26 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimGroupListEnterprise
 {
     public const SCHEMA_TITLE = 'scim-group-list-enterprise';
-    public const SPL_HASH = '00000000207014930000000042193899';
+    public const SPL_HASH = '00000000729dc7b900000000797f0b2e';
     public const SCHEMA_DESCRIPTION = '';
-    private array $schemas;
-    private number $totalResults;
-    private number $itemsPerPage;
-    private number $startIndex;
-    private array $Resources;
+    private array $schemas = array();
+    private ?number $totalResults = null;
+    private ?number $itemsPerPage = null;
+    private ?number $startIndex = null;
+    private array $Resources = array();
     public function schemas() : array
     {
         return $this->schemas;
     }
-    public function totalResults() : number
+    public function totalResults() : ?number
     {
         return $this->totalResults;
     }
-    public function itemsPerPage() : number
+    public function itemsPerPage() : ?number
     {
         return $this->itemsPerPage;
     }
-    public function startIndex() : number
+    public function startIndex() : ?number
     {
         return $this->startIndex;
     }

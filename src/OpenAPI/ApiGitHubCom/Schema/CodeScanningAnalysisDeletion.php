@@ -5,21 +5,21 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeScanningAnalysisDeletion
 {
     public const SCHEMA_TITLE = 'Analysis deletion';
-    public const SPL_HASH = '0000000020701aa50000000042193899';
+    public const SPL_HASH = '00000000729dc98f00000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Successful deletion of a code scanning analysis';
     /**
      * Next deletable analysis in chain, without last analysis deletion confirmation
      */
-    private string $next_analysis_url;
+    private ?string $next_analysis_url = null;
     /**
      * Next deletable analysis in chain, with last analysis deletion confirmation
      */
-    private string $confirm_delete_url;
-    public function next_analysis_url() : string
+    private ?string $confirm_delete_url = null;
+    public function next_analysis_url() : ?string
     {
         return $this->next_analysis_url;
     }
-    public function confirm_delete_url() : string
+    public function confirm_delete_url() : ?string
     {
         return $this->confirm_delete_url;
     }

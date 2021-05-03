@@ -5,51 +5,51 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Event
 {
     public const SCHEMA_TITLE = 'Event';
-    public const SPL_HASH = '000000001f1e280b000000004be6709d';
+    public const SPL_HASH = '0000000066e6c18b0000000066ded04e';
     public const SCHEMA_DESCRIPTION = 'Event';
-    private string $id;
-    private string $type;
+    private ?string $id = null;
+    private ?string $type = null;
     /**
      * Actor
      */
-    private object $actor;
-    private object $repo;
+    private ?object $actor = null;
+    private ?object $repo = null;
     /**
      * Actor
      */
-    private object $org;
-    private object $payload;
-    private bool $public;
-    private string $created_at;
-    public function id() : string
+    private ?object $org = null;
+    private ?object $payload = null;
+    private ?bool $public = null;
+    private ?string $created_at = null;
+    public function id() : ?string
     {
         return $this->id;
     }
-    public function type() : string
+    public function type() : ?string
     {
         return $this->type;
     }
-    public function actor() : object
+    public function actor() : ?object
     {
         return $this->actor;
     }
-    public function repo() : object
+    public function repo() : ?object
     {
         return $this->repo;
     }
-    public function org() : object
+    public function org() : ?object
     {
         return $this->org;
     }
-    public function payload() : object
+    public function payload() : ?object
     {
         return $this->payload;
     }
-    public function public() : bool
+    public function public() : ?bool
     {
         return $this->public;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }

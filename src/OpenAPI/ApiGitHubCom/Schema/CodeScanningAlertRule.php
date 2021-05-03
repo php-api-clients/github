@@ -5,53 +5,53 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeScanningAlertRule
 {
     public const SCHEMA_TITLE = 'code-scanning-alert-rule';
-    public const SPL_HASH = '0000000020701a7d0000000042193899';
+    public const SPL_HASH = '00000000729dc95700000000797f0b2e';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private string $id;
+    private ?string $id = null;
     /**
      * The name of the rule used to detect the alert.
      */
-    private string $name;
+    private ?string $name = null;
     /**
      * The severity of the alert.
      */
-    private string $severity;
+    private ?string $severity = null;
     /**
      * A short description of the rule used to detect the alert.
      */
-    private string $description;
+    private ?string $description = null;
     /**
      * description of the rule used to detect the alert.
      */
-    private string $full_description;
+    private ?string $full_description = null;
     /**
      * A set of tags applicable for the rule.
      */
-    private array $tags;
+    private array $tags = array();
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    private string $help;
-    public function id() : string
+    private ?string $help = null;
+    public function id() : ?string
     {
         return $this->id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function severity() : string
+    public function severity() : ?string
     {
         return $this->severity;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
-    public function full_description() : string
+    public function full_description() : ?string
     {
         return $this->full_description;
     }
@@ -59,7 +59,7 @@ final class CodeScanningAlertRule
     {
         return $this->tags;
     }
-    public function help() : string
+    public function help() : ?string
     {
         return $this->help;
     }

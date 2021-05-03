@@ -5,35 +5,35 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class GistComment
 {
     public const SCHEMA_TITLE = 'Gist Comment';
-    public const SPL_HASH = '000000007ee6ed9f0000000021479ea3';
+    public const SPL_HASH = '000000001f77f94e000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'A comment made to a gist.';
-    private int $id;
-    private string $node_id;
-    private string $url;
+    private ?int $id = null;
+    private ?string $node_id = null;
+    private ?string $url = null;
     /**
      * The comment text.
      */
-    private string $body;
+    private ?string $body = null;
     private $user;
-    private string $created_at;
-    private string $updated_at;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
-    public function id() : int
+    private ?string $author_association = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -41,15 +41,15 @@ final class GistComment
     {
         return $this->user;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
-    public function author_association() : string
+    public function author_association() : ?string
     {
         return $this->author_association;
     }

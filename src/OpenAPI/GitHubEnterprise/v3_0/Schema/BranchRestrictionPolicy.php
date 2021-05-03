@@ -5,28 +5,28 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class BranchRestrictionPolicy
 {
     public const SCHEMA_TITLE = 'Branch Restriction Policy';
-    public const SPL_HASH = '000000001f1e25a9000000004be6709d';
+    public const SPL_HASH = '0000000066e6cc290000000066ded04e';
     public const SCHEMA_DESCRIPTION = 'Branch Restriction Policy';
-    private string $url;
-    private string $users_url;
-    private string $teams_url;
-    private string $apps_url;
-    private array $users;
-    private array $teams;
-    private array $apps;
-    public function url() : string
+    private ?string $url = null;
+    private ?string $users_url = null;
+    private ?string $teams_url = null;
+    private ?string $apps_url = null;
+    private array $users = array();
+    private array $teams = array();
+    private array $apps = array();
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function users_url() : string
+    public function users_url() : ?string
     {
         return $this->users_url;
     }
-    public function teams_url() : string
+    public function teams_url() : ?string
     {
         return $this->teams_url;
     }
-    public function apps_url() : string
+    public function apps_url() : ?string
     {
         return $this->apps_url;
     }

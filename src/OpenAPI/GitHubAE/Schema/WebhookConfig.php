@@ -5,30 +5,30 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class WebhookConfig
 {
     public const SCHEMA_TITLE = 'Webhook Configuration';
-    public const SPL_HASH = '000000007ee690720000000021479ea3';
+    public const SPL_HASH = '000000001f7784a3000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'Configuration object of the webhook';
     /**
      * The URL to which the payloads will be delivered.
      */
-    private string $url;
+    private ?string $url = null;
     /**
      * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
      */
-    private string $content_type;
+    private ?string $content_type = null;
     /**
      * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/github-ae@latest/webhooks/event-payloads/#delivery-headers).
      */
-    private string $secret;
+    private ?string $secret = null;
     private $insecure_ssl;
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function content_type() : string
+    public function content_type() : ?string
     {
         return $this->content_type;
     }
-    public function secret() : string
+    public function secret() : ?string
     {
         return $this->secret;
     }

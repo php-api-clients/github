@@ -5,37 +5,37 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ContentReferenceAttachment
 {
     public const SCHEMA_TITLE = 'ContentReferenceAttachment';
-    public const SPL_HASH = '000000007ee693390000000021479ea3';
+    public const SPL_HASH = '000000001f7787e8000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'Content Reference attachments allow you to provide context around URLs posted in comments';
     /**
      * The ID of the attachment
      */
-    private int $id;
+    private ?int $id = null;
     /**
      * The title of the attachment
      */
-    private string $title;
+    private ?string $title = null;
     /**
      * The body of the attachment
      */
-    private string $body;
+    private ?string $body = null;
     /**
      * The node_id of the content attachment
      */
-    private string $node_id;
-    public function id() : int
+    private ?string $node_id = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function title() : string
+    public function title() : ?string
     {
         return $this->title;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }

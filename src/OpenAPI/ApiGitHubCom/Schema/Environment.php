@@ -5,57 +5,57 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Environment
 {
     public const SCHEMA_TITLE = 'Environment';
-    public const SPL_HASH = '00000000207018b20000000042193899';
+    public const SPL_HASH = '00000000729dcb9800000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Details of a deployment environment';
     /**
      * The id of the environment.
      */
-    private int $id;
-    private string $node_id;
+    private ?int $id = null;
+    private ?string $node_id = null;
     /**
      * The name of the environment.
      */
-    private string $name;
-    private string $url;
-    private string $html_url;
+    private ?string $name = null;
+    private ?string $url = null;
+    private ?string $html_url = null;
     /**
      * The time that the environment was created, in ISO 8601 format.
      */
-    private string $created_at;
+    private ?string $created_at = null;
     /**
      * The time that the environment was last updated, in ISO 8601 format.
      */
-    private string $updated_at;
-    private array $protection_rules;
+    private ?string $updated_at = null;
+    private array $protection_rules = array();
     /**
      * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
-    private object $deployment_branch_policy;
-    public function id() : int
+    private ?object $deployment_branch_policy = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
@@ -63,7 +63,7 @@ final class Environment
     {
         return $this->protection_rules;
     }
-    public function deployment_branch_policy() : object
+    public function deployment_branch_policy() : ?object
     {
         return $this->deployment_branch_policy;
     }

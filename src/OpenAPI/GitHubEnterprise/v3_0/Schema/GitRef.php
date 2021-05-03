@@ -5,25 +5,25 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class GitRef
 {
     public const SCHEMA_TITLE = 'Git Reference';
-    public const SPL_HASH = '000000001f1e21bb000000004be6709d';
+    public const SPL_HASH = '0000000066e6c83b0000000066ded04e';
     public const SCHEMA_DESCRIPTION = 'Git references within a repository';
-    private string $ref;
-    private string $node_id;
-    private string $url;
-    private object $object;
-    public function ref() : string
+    private ?string $ref = null;
+    private ?string $node_id = null;
+    private ?string $url = null;
+    private ?object $object = null;
+    public function ref() : ?string
     {
         return $this->ref;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function object() : object
+    public function object() : ?object
     {
         return $this->object;
     }

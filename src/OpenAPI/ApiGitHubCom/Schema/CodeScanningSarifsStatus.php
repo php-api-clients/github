@@ -5,21 +5,21 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeScanningSarifsStatus
 {
     public const SCHEMA_TITLE = 'code-scanning-sarifs-status';
-    public const SPL_HASH = '0000000020701a940000000042193899';
+    public const SPL_HASH = '00000000729dc9be00000000797f0b2e';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * `pending` files have not yet been processed, while `complete` means all results in the SARIF have been stored.
      */
-    private string $processing_status;
+    private ?string $processing_status = null;
     /**
      * The REST API URL for getting the analyses associated with the upload.
      */
-    private string $analyses_url;
-    public function processing_status() : string
+    private ?string $analyses_url = null;
+    public function processing_status() : ?string
     {
         return $this->processing_status;
     }
-    public function analyses_url() : string
+    public function analyses_url() : ?string
     {
         return $this->analyses_url;
     }

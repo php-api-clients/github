@@ -5,32 +5,32 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class ApplicationGrant
 {
     public const SCHEMA_TITLE = 'Application Grant';
-    public const SPL_HASH = '00000000181458cf000000005f691719';
+    public const SPL_HASH = '00000000366466a4000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = 'The authorization associated with an OAuth Access.';
-    private int $id;
-    private string $url;
-    private object $app;
-    private string $created_at;
-    private string $updated_at;
-    private array $scopes;
+    private ?int $id = null;
+    private ?string $url = null;
+    private ?object $app = null;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
+    private array $scopes = array();
     private $user;
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function app() : object
+    public function app() : ?object
     {
         return $this->app;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

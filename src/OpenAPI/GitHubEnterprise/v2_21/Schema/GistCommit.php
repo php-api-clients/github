@@ -5,18 +5,18 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class GistCommit
 {
     public const SCHEMA_TITLE = 'Gist Commit';
-    public const SPL_HASH = '0000000018145e45000000005f691719';
+    public const SPL_HASH = '000000003664602e000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = 'Gist Commit';
-    private string $url;
-    private string $version;
+    private ?string $url = null;
+    private ?string $version = null;
     private $user;
-    private object $change_status;
-    private string $committed_at;
-    public function url() : string
+    private ?object $change_status = null;
+    private ?string $committed_at = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function version() : string
+    public function version() : ?string
     {
         return $this->version;
     }
@@ -24,11 +24,11 @@ final class GistCommit
     {
         return $this->user;
     }
-    public function change_status() : object
+    public function change_status() : ?object
     {
         return $this->change_status;
     }
-    public function committed_at() : string
+    public function committed_at() : ?string
     {
         return $this->committed_at;
     }

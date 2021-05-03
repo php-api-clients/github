@@ -5,35 +5,35 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class IssueEventProjectCard
 {
     public const SCHEMA_TITLE = 'Issue Event Project Card';
-    public const SPL_HASH = '000000007ee6e5530000000021479ea3';
+    public const SPL_HASH = '000000001f77f182000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'Issue Event Project Card';
-    private string $url;
-    private int $id;
-    private string $project_url;
-    private int $project_id;
-    private string $column_name;
-    private string $previous_column_name;
-    public function url() : string
+    private ?string $url = null;
+    private ?int $id = null;
+    private ?string $project_url = null;
+    private ?int $project_id = null;
+    private ?string $column_name = null;
+    private ?string $previous_column_name = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function project_url() : string
+    public function project_url() : ?string
     {
         return $this->project_url;
     }
-    public function project_id() : int
+    public function project_id() : ?int
     {
         return $this->project_id;
     }
-    public function column_name() : string
+    public function column_name() : ?string
     {
         return $this->column_name;
     }
-    public function previous_column_name() : string
+    public function previous_column_name() : ?string
     {
         return $this->previous_column_name;
     }

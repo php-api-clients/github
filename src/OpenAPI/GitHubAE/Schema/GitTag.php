@@ -5,54 +5,54 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class GitTag
 {
     public const SCHEMA_TITLE = 'Git Tag';
-    public const SPL_HASH = '000000007ee6e5860000000021479ea3';
+    public const SPL_HASH = '000000001f77f157000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'Metadata for a Git tag';
-    private string $node_id;
+    private ?string $node_id = null;
     /**
      * Name of the tag
      */
-    private string $tag;
-    private string $sha;
+    private ?string $tag = null;
+    private ?string $sha = null;
     /**
      * URL for the tag
      */
-    private string $url;
+    private ?string $url = null;
     /**
      * Message describing the purpose of the tag
      */
-    private string $message;
-    private object $tagger;
-    private object $object;
-    private object $verification;
-    public function node_id() : string
+    private ?string $message = null;
+    private ?object $tagger = null;
+    private ?object $object = null;
+    private ?object $verification = null;
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function tag() : string
+    public function tag() : ?string
     {
         return $this->tag;
     }
-    public function sha() : string
+    public function sha() : ?string
     {
         return $this->sha;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function message() : string
+    public function message() : ?string
     {
         return $this->message;
     }
-    public function tagger() : object
+    public function tagger() : ?object
     {
         return $this->tagger;
     }
-    public function object() : object
+    public function object() : ?object
     {
         return $this->object;
     }
-    public function verification() : object
+    public function verification() : ?object
     {
         return $this->verification;
     }

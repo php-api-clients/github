@@ -5,11 +5,11 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class RepositoryCollaboratorPermission
 {
     public const SCHEMA_TITLE = 'Repository Collaborator Permission';
-    public const SPL_HASH = '0000000037ddbfe80000000010a967e8';
+    public const SPL_HASH = '000000004c46d14000000000443897a0';
     public const SCHEMA_DESCRIPTION = 'Repository Collaborator Permission';
-    private string $permission;
+    private ?string $permission = null;
     private $user;
-    public function permission() : string
+    public function permission() : ?string
     {
         return $this->permission;
     }

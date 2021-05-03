@@ -5,11 +5,11 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Stargazer
 {
     public const SCHEMA_TITLE = 'Stargazer';
-    public const SPL_HASH = '000000001f1e3cb1000000004be6709d';
+    public const SPL_HASH = '0000000066e6d5310000000066ded04e';
     public const SCHEMA_DESCRIPTION = 'Stargazer';
-    private string $starred_at;
+    private ?string $starred_at = null;
     private $user;
-    public function starred_at() : string
+    public function starred_at() : ?string
     {
         return $this->starred_at;
     }

@@ -5,19 +5,19 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ViewTraffic
 {
     public const SCHEMA_TITLE = 'View Traffic';
-    public const SPL_HASH = '000000002070149a0000000042193899';
+    public const SPL_HASH = '00000000729dc7b000000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'View Traffic';
-    private int $count;
-    private int $uniques;
+    private ?int $count = null;
+    private ?int $uniques = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic>
      */
-    private array $views;
-    public function count() : int
+    private array $views = array();
+    public function count() : ?int
     {
         return $this->count;
     }
-    public function uniques() : int
+    public function uniques() : ?int
     {
         return $this->uniques;
     }

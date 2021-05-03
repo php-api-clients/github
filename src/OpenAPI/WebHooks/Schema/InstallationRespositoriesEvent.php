@@ -5,23 +5,23 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class InstallationRespositoriesEvent
 {
     public const SCHEMA_TITLE = 'Installation Event';
-    public const SPL_HASH = '0000000038cc28cb000000003d7dc56f';
+    public const SPL_HASH = '000000003b7eb5a4000000003fb64a07';
     public const SCHEMA_DESCRIPTION = 'Installation Event';
-    private string $action;
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation $installation;
+    private ?string $action = null;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation $installation = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository>
      */
-    private array $repositories_added;
+    private array $repositories_added = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository>
      */
-    private array $repositories_removed;
-    public function action() : string
+    private array $repositories_removed = array();
+    public function action() : ?string
     {
         return $this->action;
     }
-    public function installation()
+    public function installation() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation
     {
         return $this->installation;
     }

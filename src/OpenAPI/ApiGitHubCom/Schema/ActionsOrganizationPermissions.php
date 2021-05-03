@@ -5,37 +5,37 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ActionsOrganizationPermissions
 {
     public const SCHEMA_TITLE = 'actions-organization-permissions';
-    public const SPL_HASH = '00000000207001740000000042193899';
+    public const SPL_HASH = '00000000729dd25e00000000797f0b2e';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The policy that controls the repositories in the organization that are allowed to run GitHub Actions. Can be one of: `all`, `none`, or `selected`.
      */
-    private string $enabled_repositories;
+    private ?string $enabled_repositories = null;
     /**
      * The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.
      */
-    private string $selected_repositories_url;
+    private ?string $selected_repositories_url = null;
     /**
      * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
      */
-    private string $allowed_actions;
+    private ?string $allowed_actions = null;
     /**
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    private string $selected_actions_url;
-    public function enabled_repositories() : string
+    private ?string $selected_actions_url = null;
+    public function enabled_repositories() : ?string
     {
         return $this->enabled_repositories;
     }
-    public function selected_repositories_url() : string
+    public function selected_repositories_url() : ?string
     {
         return $this->selected_repositories_url;
     }
-    public function allowed_actions() : string
+    public function allowed_actions() : ?string
     {
         return $this->allowed_actions;
     }
-    public function selected_actions_url() : string
+    public function selected_actions_url() : ?string
     {
         return $this->selected_actions_url;
     }

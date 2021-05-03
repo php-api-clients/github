@@ -5,53 +5,53 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class RunnerGroupsOrg
 {
     public const SCHEMA_TITLE = 'runner-groups-org';
-    public const SPL_HASH = '0000000031ee5cd100000000484d7fbe';
+    public const SPL_HASH = '000000001138a56700000000791e6d28';
     public const SCHEMA_DESCRIPTION = '';
-    private number $id;
-    private string $name;
-    private string $visibility;
-    private bool $default;
+    private ?number $id = null;
+    private ?string $name = null;
+    private ?string $visibility = null;
+    private ?bool $default = null;
     /**
      * Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
      */
-    private string $selected_repositories_url;
-    private string $runners_url;
-    private bool $inherited;
-    private bool $inherited_allows_public_repositories;
-    private bool $allows_public_repositories;
-    public function id() : number
+    private ?string $selected_repositories_url = null;
+    private ?string $runners_url = null;
+    private ?bool $inherited = null;
+    private ?bool $inherited_allows_public_repositories = null;
+    private ?bool $allows_public_repositories = null;
+    public function id() : ?number
     {
         return $this->id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function visibility() : string
+    public function visibility() : ?string
     {
         return $this->visibility;
     }
-    public function default() : bool
+    public function default() : ?bool
     {
         return $this->default;
     }
-    public function selected_repositories_url() : string
+    public function selected_repositories_url() : ?string
     {
         return $this->selected_repositories_url;
     }
-    public function runners_url() : string
+    public function runners_url() : ?string
     {
         return $this->runners_url;
     }
-    public function inherited() : bool
+    public function inherited() : ?bool
     {
         return $this->inherited;
     }
-    public function inherited_allows_public_repositories() : bool
+    public function inherited_allows_public_repositories() : ?bool
     {
         return $this->inherited_allows_public_repositories;
     }
-    public function allows_public_repositories() : bool
+    public function allows_public_repositories() : ?bool
     {
         return $this->allows_public_repositories;
     }

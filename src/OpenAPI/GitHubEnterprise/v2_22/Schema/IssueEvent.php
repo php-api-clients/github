@@ -5,24 +5,24 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class IssueEvent
 {
     public const SCHEMA_TITLE = 'Issue Event';
-    public const SPL_HASH = '0000000031ee53c800000000484d7fbe';
+    public const SPL_HASH = '000000001138aa7e00000000791e6d28';
     public const SCHEMA_DESCRIPTION = 'Issue Event';
-    private int $id;
-    private string $node_id;
-    private string $url;
+    private ?int $id = null;
+    private ?string $node_id = null;
+    private ?string $url = null;
     private $actor;
-    private string $event;
-    private string $commit_id;
-    private string $commit_url;
-    private string $created_at;
+    private ?string $event = null;
+    private ?string $commit_id = null;
+    private ?string $commit_url = null;
+    private ?string $created_at = null;
     /**
      * Issue Simple
      */
-    private object $issue;
+    private ?object $issue = null;
     /**
      * Issue Event Label
      */
-    private object $label;
+    private ?object $label = null;
     private $assignee;
     private $assigner;
     private $review_requester;
@@ -30,35 +30,35 @@ final class IssueEvent
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    private object $requested_team;
-    private object $dismissed_review;
+    private ?object $requested_team = null;
+    private ?object $dismissed_review = null;
     /**
      * Issue Event Milestone
      */
-    private object $milestone;
+    private ?object $milestone = null;
     /**
      * Issue Event Project Card
      */
-    private object $project_card;
+    private ?object $project_card = null;
     /**
      * Issue Event Rename
      */
-    private object $rename;
+    private ?object $rename = null;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
-    private string $lock_reason;
+    private ?string $author_association = null;
+    private ?string $lock_reason = null;
     private $performed_via_github_app;
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
@@ -66,27 +66,27 @@ final class IssueEvent
     {
         return $this->actor;
     }
-    public function event() : string
+    public function event() : ?string
     {
         return $this->event;
     }
-    public function commit_id() : string
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
-    public function commit_url() : string
+    public function commit_url() : ?string
     {
         return $this->commit_url;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function issue() : object
+    public function issue() : ?object
     {
         return $this->issue;
     }
-    public function label() : object
+    public function label() : ?object
     {
         return $this->label;
     }
@@ -106,31 +106,31 @@ final class IssueEvent
     {
         return $this->requested_reviewer;
     }
-    public function requested_team() : object
+    public function requested_team() : ?object
     {
         return $this->requested_team;
     }
-    public function dismissed_review() : object
+    public function dismissed_review() : ?object
     {
         return $this->dismissed_review;
     }
-    public function milestone() : object
+    public function milestone() : ?object
     {
         return $this->milestone;
     }
-    public function project_card() : object
+    public function project_card() : ?object
     {
         return $this->project_card;
     }
-    public function rename() : object
+    public function rename() : ?object
     {
         return $this->rename;
     }
-    public function author_association() : string
+    public function author_association() : ?string
     {
         return $this->author_association;
     }
-    public function lock_reason() : string
+    public function lock_reason() : ?string
     {
         return $this->lock_reason;
     }

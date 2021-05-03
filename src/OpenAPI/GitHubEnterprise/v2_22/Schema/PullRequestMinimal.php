@@ -5,30 +5,30 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class PullRequestMinimal
 {
     public const SCHEMA_TITLE = 'Pull Request Minimal';
-    public const SPL_HASH = '0000000031ee5ee700000000484d7fbe';
+    public const SPL_HASH = '000000001138a75100000000791e6d28';
     public const SCHEMA_DESCRIPTION = '';
-    private int $id;
-    private int $number;
-    private string $url;
-    private object $head;
-    private object $base;
-    public function id() : int
+    private ?int $id = null;
+    private ?int $number = null;
+    private ?string $url = null;
+    private ?object $head = null;
+    private ?object $base = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function number() : int
+    public function number() : ?int
     {
         return $this->number;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function head() : object
+    public function head() : ?object
     {
         return $this->head;
     }
-    public function base() : object
+    public function base() : ?object
     {
         return $this->base;
     }

@@ -5,37 +5,37 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class AutoMerge
 {
     public const SCHEMA_TITLE = 'Auto merge';
-    public const SPL_HASH = '000000007ee6eb440000000021479ea3';
+    public const SPL_HASH = '000000001f77ff95000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'The status of auto merging a pull request.';
     /**
      * Simple User
      */
-    private object $enabled_by;
+    private ?object $enabled_by = null;
     /**
      * The merge method to use.
      */
-    private string $merge_method;
+    private ?string $merge_method = null;
     /**
      * Title for the merge commit message.
      */
-    private string $commit_title;
+    private ?string $commit_title = null;
     /**
      * Commit message for the merge commit.
      */
-    private string $commit_message;
-    public function enabled_by() : object
+    private ?string $commit_message = null;
+    public function enabled_by() : ?object
     {
         return $this->enabled_by;
     }
-    public function merge_method() : string
+    public function merge_method() : ?string
     {
         return $this->merge_method;
     }
-    public function commit_title() : string
+    public function commit_title() : ?string
     {
         return $this->commit_title;
     }
-    public function commit_message() : string
+    public function commit_message() : ?string
     {
         return $this->commit_message;
     }

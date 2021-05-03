@@ -5,35 +5,35 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class LicenseInfo
 {
     public const SCHEMA_TITLE = 'license-info';
-    public const SPL_HASH = '000000007ee693060000000021479ea3';
+    public const SPL_HASH = '000000001f7787d7000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = '';
-    private int $seats;
-    private int $seats_used;
-    private int $seats_available;
-    private string $kind;
-    private int $days_until_expiration;
-    private string $expire_at;
-    public function seats() : int
+    private ?int $seats = null;
+    private ?int $seats_used = null;
+    private ?int $seats_available = null;
+    private ?string $kind = null;
+    private ?int $days_until_expiration = null;
+    private ?string $expire_at = null;
+    public function seats() : ?int
     {
         return $this->seats;
     }
-    public function seats_used() : int
+    public function seats_used() : ?int
     {
         return $this->seats_used;
     }
-    public function seats_available() : int
+    public function seats_available() : ?int
     {
         return $this->seats_available;
     }
-    public function kind() : string
+    public function kind() : ?string
     {
         return $this->kind;
     }
-    public function days_until_expiration() : int
+    public function days_until_expiration() : ?int
     {
         return $this->days_until_expiration;
     }
-    public function expire_at() : string
+    public function expire_at() : ?string
     {
         return $this->expire_at;
     }

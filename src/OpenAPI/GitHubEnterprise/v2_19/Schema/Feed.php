@@ -5,37 +5,37 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class Feed
 {
     public const SCHEMA_TITLE = 'Feed';
-    public const SPL_HASH = '000000006312f64c0000000044ad25fc';
+    public const SPL_HASH = '00000000567e211100000000401184f6';
     public const SCHEMA_DESCRIPTION = 'Feed';
-    private string $timeline_url;
-    private string $user_url;
-    private string $current_user_public_url;
-    private string $current_user_url;
-    private string $current_user_actor_url;
-    private string $current_user_organization_url;
-    private array $current_user_organization_urls;
-    private object $_links;
-    public function timeline_url() : string
+    private ?string $timeline_url = null;
+    private ?string $user_url = null;
+    private ?string $current_user_public_url = null;
+    private ?string $current_user_url = null;
+    private ?string $current_user_actor_url = null;
+    private ?string $current_user_organization_url = null;
+    private array $current_user_organization_urls = array();
+    private ?object $_links = null;
+    public function timeline_url() : ?string
     {
         return $this->timeline_url;
     }
-    public function user_url() : string
+    public function user_url() : ?string
     {
         return $this->user_url;
     }
-    public function current_user_public_url() : string
+    public function current_user_public_url() : ?string
     {
         return $this->current_user_public_url;
     }
-    public function current_user_url() : string
+    public function current_user_url() : ?string
     {
         return $this->current_user_url;
     }
-    public function current_user_actor_url() : string
+    public function current_user_actor_url() : ?string
     {
         return $this->current_user_actor_url;
     }
-    public function current_user_organization_url() : string
+    public function current_user_organization_url() : ?string
     {
         return $this->current_user_organization_url;
     }
@@ -43,7 +43,7 @@ final class Feed
     {
         return $this->current_user_organization_urls;
     }
-    public function _links() : object
+    public function _links() : ?object
     {
         return $this->_links;
     }

@@ -5,40 +5,40 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class Commit
 {
     public const SCHEMA_TITLE = 'Commit';
-    public const SPL_HASH = '0000000018145dd8000000005f691719';
+    public const SPL_HASH = '00000000366463b3000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = 'Commit';
-    private string $url;
-    private string $sha;
-    private string $node_id;
-    private string $html_url;
-    private string $comments_url;
-    private object $commit;
+    private ?string $url = null;
+    private ?string $sha = null;
+    private ?string $node_id = null;
+    private ?string $html_url = null;
+    private ?string $comments_url = null;
+    private ?object $commit = null;
     private $author;
     private $committer;
-    private array $parents;
-    private object $stats;
-    private array $files;
-    public function url() : string
+    private array $parents = array();
+    private ?object $stats = null;
+    private array $files = array();
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function sha() : string
+    public function sha() : ?string
     {
         return $this->sha;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function comments_url() : string
+    public function comments_url() : ?string
     {
         return $this->comments_url;
     }
-    public function commit() : object
+    public function commit() : ?object
     {
         return $this->commit;
     }
@@ -54,7 +54,7 @@ final class Commit
     {
         return $this->parents;
     }
-    public function stats() : object
+    public function stats() : ?object
     {
         return $this->stats;
     }

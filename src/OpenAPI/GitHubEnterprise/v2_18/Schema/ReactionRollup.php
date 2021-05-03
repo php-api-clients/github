@@ -5,55 +5,55 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class ReactionRollup
 {
     public const SCHEMA_TITLE = 'Reaction Rollup';
-    public const SPL_HASH = '000000006e7b7bca000000005d0d00fd';
+    public const SPL_HASH = '000000004679dd470000000066e19307';
     public const SCHEMA_DESCRIPTION = '';
-    private string $url;
-    private int $total_count;
-    private int $+1;
-    private int $-1;
-    private int $laugh;
-    private int $confused;
-    private int $heart;
-    private int $hooray;
-    private int $eyes;
-    private int $rocket;
-    public function url() : string
+    private ?string $url = null;
+    private ?int $total_count = null;
+    private ?int $+1 = null;
+    private ?int $-1 = null;
+    private ?int $laugh = null;
+    private ?int $confused = null;
+    private ?int $heart = null;
+    private ?int $hooray = null;
+    private ?int $eyes = null;
+    private ?int $rocket = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function total_count() : int
+    public function total_count() : ?int
     {
         return $this->total_count;
     }
-    public function +1() : int
+    public function +1() : ?int
     {
         return $this->+1;
     }
-    public function -1() : int
+    public function -1() : ?int
     {
         return $this->-1;
     }
-    public function laugh() : int
+    public function laugh() : ?int
     {
         return $this->laugh;
     }
-    public function confused() : int
+    public function confused() : ?int
     {
         return $this->confused;
     }
-    public function heart() : int
+    public function heart() : ?int
     {
         return $this->heart;
     }
-    public function hooray() : int
+    public function hooray() : ?int
     {
         return $this->hooray;
     }
-    public function eyes() : int
+    public function eyes() : ?int
     {
         return $this->eyes;
     }
-    public function rocket() : int
+    public function rocket() : ?int
     {
         return $this->rocket;
     }

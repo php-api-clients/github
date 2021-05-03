@@ -5,67 +5,67 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class CodeScanningAlertInstance
 {
     public const SCHEMA_TITLE = 'code-scanning-alert-instance';
-    public const SPL_HASH = '000000001f1e26d2000000004be6709d';
+    public const SPL_HASH = '0000000066e6cf520000000066ded04e';
     public const SCHEMA_DESCRIPTION = '';
     /**
     * The full Git reference, formatted as `refs/heads/<branch name>`,
     `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
     */
-    private string $ref;
+    private ?string $ref = null;
     /**
      * Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
      */
-    private string $analysis_key;
+    private ?string $analysis_key = null;
     /**
      * Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
      */
-    private string $environment;
+    private ?string $environment = null;
     /**
      * State of a code scanning alert.
      */
-    private string $state;
-    private string $commit_sha;
-    private object $message;
+    private ?string $state = null;
+    private ?string $commit_sha = null;
+    private ?object $message = null;
     /**
      * Describe a region within a file for the alert.
      */
-    private object $location;
-    private string $html_url;
+    private ?object $location = null;
+    private ?string $html_url = null;
     /**
     * Classifications that have been applied to the file that triggered the alert.
     For example identifying it as documentation, or a generated file.
     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\CodeScanningAlertClassification>
     */
-    private array $classifications;
-    public function ref() : string
+    private array $classifications = array();
+    public function ref() : ?string
     {
         return $this->ref;
     }
-    public function analysis_key() : string
+    public function analysis_key() : ?string
     {
         return $this->analysis_key;
     }
-    public function environment() : string
+    public function environment() : ?string
     {
         return $this->environment;
     }
-    public function state() : string
+    public function state() : ?string
     {
         return $this->state;
     }
-    public function commit_sha() : string
+    public function commit_sha() : ?string
     {
         return $this->commit_sha;
     }
-    public function message() : object
+    public function message() : ?object
     {
         return $this->message;
     }
-    public function location() : object
+    public function location() : ?object
     {
         return $this->location;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

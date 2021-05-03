@@ -5,50 +5,50 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class PreReceiveEnvironment
 {
     public const SCHEMA_TITLE = 'pre-receive-environment';
-    public const SPL_HASH = '000000007ee690ea0000000021479ea3';
+    public const SPL_HASH = '000000001f77843b000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = '';
-    private int $id;
-    private string $name;
-    private string $image_url;
-    private string $url;
-    private string $html_url;
-    private bool $default_environment;
-    private string $created_at;
-    private int $hooks_count;
-    private object $download;
-    public function id() : int
+    private ?int $id = null;
+    private ?string $name = null;
+    private ?string $image_url = null;
+    private ?string $url = null;
+    private ?string $html_url = null;
+    private ?bool $default_environment = null;
+    private ?string $created_at = null;
+    private ?int $hooks_count = null;
+    private ?object $download = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function image_url() : string
+    public function image_url() : ?string
     {
         return $this->image_url;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function default_environment() : bool
+    public function default_environment() : ?bool
     {
         return $this->default_environment;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function hooks_count() : int
+    public function hooks_count() : ?int
     {
         return $this->hooks_count;
     }
-    public function download() : object
+    public function download() : ?object
     {
         return $this->download;
     }

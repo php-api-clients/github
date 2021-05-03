@@ -5,95 +5,95 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class IssueSimple
 {
     public const SCHEMA_TITLE = 'Issue Simple';
-    public const SPL_HASH = '00000000207002e40000000042193899';
+    public const SPL_HASH = '00000000729dd1ce00000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Issue Simple';
-    private int $id;
-    private string $node_id;
-    private string $url;
-    private string $repository_url;
-    private string $labels_url;
-    private string $comments_url;
-    private string $events_url;
-    private string $html_url;
-    private int $number;
-    private string $state;
-    private string $title;
-    private string $body;
+    private ?int $id = null;
+    private ?string $node_id = null;
+    private ?string $url = null;
+    private ?string $repository_url = null;
+    private ?string $labels_url = null;
+    private ?string $comments_url = null;
+    private ?string $events_url = null;
+    private ?string $html_url = null;
+    private ?int $number = null;
+    private ?string $state = null;
+    private ?string $title = null;
+    private ?string $body = null;
     private $user;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label>
      */
-    private array $labels;
+    private array $labels = array();
     private $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    private array $assignees;
+    private array $assignees = array();
     private $milestone;
-    private bool $locked;
-    private string $active_lock_reason;
-    private int $comments;
-    private object $pull_request;
-    private string $closed_at;
-    private string $created_at;
-    private string $updated_at;
+    private ?bool $locked = null;
+    private ?string $active_lock_reason = null;
+    private ?int $comments = null;
+    private ?object $pull_request = null;
+    private ?string $closed_at = null;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
-    private string $body_html;
-    private string $body_text;
-    private string $timeline_url;
+    private ?string $author_association = null;
+    private ?string $body_html = null;
+    private ?string $body_text = null;
+    private ?string $timeline_url = null;
     /**
      * A git repository
      */
-    private object $repository;
+    private ?object $repository = null;
     private $performed_via_github_app;
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function repository_url() : string
+    public function repository_url() : ?string
     {
         return $this->repository_url;
     }
-    public function labels_url() : string
+    public function labels_url() : ?string
     {
         return $this->labels_url;
     }
-    public function comments_url() : string
+    public function comments_url() : ?string
     {
         return $this->comments_url;
     }
-    public function events_url() : string
+    public function events_url() : ?string
     {
         return $this->events_url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function number() : int
+    public function number() : ?int
     {
         return $this->number;
     }
-    public function state() : string
+    public function state() : ?string
     {
         return $this->state;
     }
-    public function title() : string
+    public function title() : ?string
     {
         return $this->title;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -117,51 +117,51 @@ final class IssueSimple
     {
         return $this->milestone;
     }
-    public function locked() : bool
+    public function locked() : ?bool
     {
         return $this->locked;
     }
-    public function active_lock_reason() : string
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
-    public function comments() : int
+    public function comments() : ?int
     {
         return $this->comments;
     }
-    public function pull_request() : object
+    public function pull_request() : ?object
     {
         return $this->pull_request;
     }
-    public function closed_at() : string
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
-    public function author_association() : string
+    public function author_association() : ?string
     {
         return $this->author_association;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }
-    public function timeline_url() : string
+    public function timeline_url() : ?string
     {
         return $this->timeline_url;
     }
-    public function repository() : object
+    public function repository() : ?object
     {
         return $this->repository;
     }

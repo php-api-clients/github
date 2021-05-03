@@ -5,143 +5,143 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class PullRequest
 {
     public const SCHEMA_TITLE = 'Pull Request';
-    public const SPL_HASH = '00000000181421f0000000005f691719';
+    public const SPL_HASH = '0000000036641f9b000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = 'Pull requests let you tell others about changes you\'ve pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.';
-    private string $url;
-    private int $id;
-    private string $node_id;
-    private string $html_url;
-    private string $diff_url;
-    private string $patch_url;
-    private string $issue_url;
-    private string $commits_url;
-    private string $review_comments_url;
-    private string $review_comment_url;
-    private string $comments_url;
-    private string $statuses_url;
+    private ?string $url = null;
+    private ?int $id = null;
+    private ?string $node_id = null;
+    private ?string $html_url = null;
+    private ?string $diff_url = null;
+    private ?string $patch_url = null;
+    private ?string $issue_url = null;
+    private ?string $commits_url = null;
+    private ?string $review_comments_url = null;
+    private ?string $review_comment_url = null;
+    private ?string $comments_url = null;
+    private ?string $statuses_url = null;
     /**
      * Number uniquely identifying the pull request within its repository.
      */
-    private int $number;
+    private ?int $number = null;
     /**
      * State of this Pull Request. Either `open` or `closed`.
      */
-    private string $state;
-    private bool $locked;
+    private ?string $state = null;
+    private ?bool $locked = null;
     /**
      * The title of the pull request.
      */
-    private string $title;
+    private ?string $title = null;
     private $user;
-    private string $body;
-    private array $labels;
+    private ?string $body = null;
+    private array $labels = array();
     private $milestone;
-    private string $active_lock_reason;
-    private string $created_at;
-    private string $updated_at;
-    private string $closed_at;
-    private string $merged_at;
-    private string $merge_commit_sha;
+    private ?string $active_lock_reason = null;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
+    private ?string $closed_at = null;
+    private ?string $merged_at = null;
+    private ?string $merge_commit_sha = null;
     private $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser>
      */
-    private array $assignees;
+    private array $assignees = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser>
      */
-    private array $requested_reviewers;
+    private array $requested_reviewers = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\TeamSimple>
      */
-    private array $requested_teams;
-    private object $head;
-    private object $base;
-    private object $_links;
+    private array $requested_teams = array();
+    private ?object $head = null;
+    private ?object $base = null;
+    private ?object $_links = null;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
+    private ?string $author_association = null;
     /**
      * Indicates whether or not the pull request is a draft.
      */
-    private bool $draft;
-    private bool $merged;
-    private bool $mergeable;
-    private bool $rebaseable;
-    private string $mergeable_state;
+    private ?bool $draft = null;
+    private ?bool $merged = null;
+    private ?bool $mergeable = null;
+    private ?bool $rebaseable = null;
+    private ?string $mergeable_state = null;
     private $merged_by;
-    private int $comments;
-    private int $review_comments;
+    private ?int $comments = null;
+    private ?int $review_comments = null;
     /**
      * Indicates whether maintainers can modify the pull request.
      */
-    private bool $maintainer_can_modify;
-    private int $commits;
-    private int $additions;
-    private int $deletions;
-    private int $changed_files;
-    public function url() : string
+    private ?bool $maintainer_can_modify = null;
+    private ?int $commits = null;
+    private ?int $additions = null;
+    private ?int $deletions = null;
+    private ?int $changed_files = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function diff_url() : string
+    public function diff_url() : ?string
     {
         return $this->diff_url;
     }
-    public function patch_url() : string
+    public function patch_url() : ?string
     {
         return $this->patch_url;
     }
-    public function issue_url() : string
+    public function issue_url() : ?string
     {
         return $this->issue_url;
     }
-    public function commits_url() : string
+    public function commits_url() : ?string
     {
         return $this->commits_url;
     }
-    public function review_comments_url() : string
+    public function review_comments_url() : ?string
     {
         return $this->review_comments_url;
     }
-    public function review_comment_url() : string
+    public function review_comment_url() : ?string
     {
         return $this->review_comment_url;
     }
-    public function comments_url() : string
+    public function comments_url() : ?string
     {
         return $this->comments_url;
     }
-    public function statuses_url() : string
+    public function statuses_url() : ?string
     {
         return $this->statuses_url;
     }
-    public function number() : int
+    public function number() : ?int
     {
         return $this->number;
     }
-    public function state() : string
+    public function state() : ?string
     {
         return $this->state;
     }
-    public function locked() : bool
+    public function locked() : ?bool
     {
         return $this->locked;
     }
-    public function title() : string
+    public function title() : ?string
     {
         return $this->title;
     }
@@ -149,7 +149,7 @@ final class PullRequest
     {
         return $this->user;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -161,27 +161,27 @@ final class PullRequest
     {
         return $this->milestone;
     }
-    public function active_lock_reason() : string
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
-    public function closed_at() : string
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
-    public function merged_at() : string
+    public function merged_at() : ?string
     {
         return $this->merged_at;
     }
-    public function merge_commit_sha() : string
+    public function merge_commit_sha() : ?string
     {
         return $this->merge_commit_sha;
     }
@@ -201,39 +201,39 @@ final class PullRequest
     {
         return $this->requested_teams;
     }
-    public function head() : object
+    public function head() : ?object
     {
         return $this->head;
     }
-    public function base() : object
+    public function base() : ?object
     {
         return $this->base;
     }
-    public function _links() : object
+    public function _links() : ?object
     {
         return $this->_links;
     }
-    public function author_association() : string
+    public function author_association() : ?string
     {
         return $this->author_association;
     }
-    public function draft() : bool
+    public function draft() : ?bool
     {
         return $this->draft;
     }
-    public function merged() : bool
+    public function merged() : ?bool
     {
         return $this->merged;
     }
-    public function mergeable() : bool
+    public function mergeable() : ?bool
     {
         return $this->mergeable;
     }
-    public function rebaseable() : bool
+    public function rebaseable() : ?bool
     {
         return $this->rebaseable;
     }
-    public function mergeable_state() : string
+    public function mergeable_state() : ?string
     {
         return $this->mergeable_state;
     }
@@ -241,31 +241,31 @@ final class PullRequest
     {
         return $this->merged_by;
     }
-    public function comments() : int
+    public function comments() : ?int
     {
         return $this->comments;
     }
-    public function review_comments() : int
+    public function review_comments() : ?int
     {
         return $this->review_comments;
     }
-    public function maintainer_can_modify() : bool
+    public function maintainer_can_modify() : ?bool
     {
         return $this->maintainer_can_modify;
     }
-    public function commits() : int
+    public function commits() : ?int
     {
         return $this->commits;
     }
-    public function additions() : int
+    public function additions() : ?int
     {
         return $this->additions;
     }
-    public function deletions() : int
+    public function deletions() : ?int
     {
         return $this->deletions;
     }
-    public function changed_files() : int
+    public function changed_files() : ?int
     {
         return $this->changed_files;
     }

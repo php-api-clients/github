@@ -5,35 +5,35 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class EnterprisePublicKey
 {
     public const SCHEMA_TITLE = 'enterprise-public-key';
-    public const SPL_HASH = '0000000018145ae8000000005f691719';
+    public const SPL_HASH = '0000000036646483000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = '';
-    private int $id;
-    private string $key_id;
-    private string $key;
-    private int $user_id;
-    private int $repository_id;
-    private string $url;
-    public function id() : int
+    private ?int $id = null;
+    private ?string $key_id = null;
+    private ?string $key = null;
+    private ?int $user_id = null;
+    private ?int $repository_id = null;
+    private ?string $url = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function key_id() : string
+    public function key_id() : ?string
     {
         return $this->key_id;
     }
-    public function key() : string
+    public function key() : ?string
     {
         return $this->key;
     }
-    public function user_id() : int
+    public function user_id() : ?int
     {
         return $this->user_id;
     }
-    public function repository_id() : int
+    public function repository_id() : ?int
     {
         return $this->repository_id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }

@@ -5,65 +5,65 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CodeSearchResultItem
 {
     public const SCHEMA_TITLE = 'Code Search Result Item';
-    public const SPL_HASH = '000000007ee6e6210000000021479ea3';
+    public const SPL_HASH = '000000001f77f2f0000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = 'Code Search Result Item';
-    private string $name;
-    private string $path;
-    private string $sha;
-    private string $url;
-    private string $git_url;
-    private string $html_url;
+    private ?string $name = null;
+    private ?string $path = null;
+    private ?string $sha = null;
+    private ?string $url = null;
+    private ?string $git_url = null;
+    private ?string $html_url = null;
     /**
      * Minimal Repository
      */
-    private object $repository;
-    private number $score;
-    private int $file_size;
-    private string $language;
-    private string $last_modified_at;
-    private array $line_numbers;
-    private array $text_matches;
-    public function name() : string
+    private ?object $repository = null;
+    private ?number $score = null;
+    private ?int $file_size = null;
+    private ?string $language = null;
+    private ?string $last_modified_at = null;
+    private array $line_numbers = array();
+    private array $text_matches = array();
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function path() : string
+    public function path() : ?string
     {
         return $this->path;
     }
-    public function sha() : string
+    public function sha() : ?string
     {
         return $this->sha;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function git_url() : string
+    public function git_url() : ?string
     {
         return $this->git_url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function repository() : object
+    public function repository() : ?object
     {
         return $this->repository;
     }
-    public function score() : number
+    public function score() : ?number
     {
         return $this->score;
     }
-    public function file_size() : int
+    public function file_size() : ?int
     {
         return $this->file_size;
     }
-    public function language() : string
+    public function language() : ?string
     {
         return $this->language;
     }
-    public function last_modified_at() : string
+    public function last_modified_at() : ?string
     {
         return $this->last_modified_at;
     }

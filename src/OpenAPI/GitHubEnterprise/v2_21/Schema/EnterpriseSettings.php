@@ -5,11 +5,11 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class EnterpriseSettings
 {
     public const SCHEMA_TITLE = 'enterprise-settings';
-    public const SPL_HASH = '000000001814254a000000005f691719';
+    public const SPL_HASH = '0000000036641b21000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = '';
-    private object $enterprise;
-    private array $run_list;
-    public function enterprise() : object
+    private ?object $enterprise = null;
+    private array $run_list = array();
+    public function enterprise() : ?object
     {
         return $this->enterprise;
     }

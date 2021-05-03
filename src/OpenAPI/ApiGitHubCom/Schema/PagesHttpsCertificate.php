@@ -5,20 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PagesHttpsCertificate
 {
     public const SCHEMA_TITLE = 'Pages Https Certificate';
-    public const SPL_HASH = '00000000207019e40000000042193899';
+    public const SPL_HASH = '00000000729dcace00000000797f0b2e';
     public const SCHEMA_DESCRIPTION = '';
-    private string $state;
-    private string $description;
+    private ?string $state = null;
+    private ?string $description = null;
     /**
      * Array of the domain set and its alternate name (if it is configured)
      */
-    private array $domains;
-    private string $expires_at;
-    public function state() : string
+    private array $domains = array();
+    private ?string $expires_at = null;
+    public function state() : ?string
     {
         return $this->state;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -26,7 +26,7 @@ final class PagesHttpsCertificate
     {
         return $this->domains;
     }
-    public function expires_at() : string
+    public function expires_at() : ?string
     {
         return $this->expires_at;
     }

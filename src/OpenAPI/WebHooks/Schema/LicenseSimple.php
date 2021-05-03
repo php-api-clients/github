@@ -5,35 +5,35 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class LicenseSimple
 {
     public const SCHEMA_TITLE = 'License Simple';
-    public const SPL_HASH = '0000000038cc28fd000000003d7dc56f';
+    public const SPL_HASH = '000000003b7eb592000000003fb64a07';
     public const SCHEMA_DESCRIPTION = 'License Simple';
-    private string $key;
-    private string $name;
-    private string $url;
-    private string $spdx_id;
-    private string $node_id;
-    private string $html_url;
-    public function key() : string
+    private ?string $key = null;
+    private ?string $name = null;
+    private ?string $url = null;
+    private ?string $spdx_id = null;
+    private ?string $node_id = null;
+    private ?string $html_url = null;
+    public function key() : ?string
     {
         return $this->key;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function spdx_id() : string
+    public function spdx_id() : ?string
     {
         return $this->spdx_id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

@@ -5,50 +5,50 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class License
 {
     public const SCHEMA_TITLE = 'License';
-    public const SPL_HASH = '0000000031ee5b9b00000000484d7fbe';
+    public const SPL_HASH = '000000001138a22d00000000791e6d28';
     public const SCHEMA_DESCRIPTION = 'License';
-    private string $key;
-    private string $name;
-    private string $spdx_id;
-    private string $url;
-    private string $node_id;
-    private string $html_url;
-    private string $description;
-    private string $implementation;
-    private array $permissions;
-    private array $conditions;
-    private array $limitations;
-    private string $body;
-    private bool $featured;
-    public function key() : string
+    private ?string $key = null;
+    private ?string $name = null;
+    private ?string $spdx_id = null;
+    private ?string $url = null;
+    private ?string $node_id = null;
+    private ?string $html_url = null;
+    private ?string $description = null;
+    private ?string $implementation = null;
+    private array $permissions = array();
+    private array $conditions = array();
+    private array $limitations = array();
+    private ?string $body = null;
+    private ?bool $featured = null;
+    public function key() : ?string
     {
         return $this->key;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function spdx_id() : string
+    public function spdx_id() : ?string
     {
         return $this->spdx_id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
-    public function implementation() : string
+    public function implementation() : ?string
     {
         return $this->implementation;
     }
@@ -64,11 +64,11 @@ final class License
     {
         return $this->limitations;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function featured() : bool
+    public function featured() : ?bool
     {
         return $this->featured;
     }

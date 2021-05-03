@@ -5,20 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class BranchShort
 {
     public const SCHEMA_TITLE = 'Branch Short';
-    public const SPL_HASH = '0000000020701ad10000000042193899';
+    public const SPL_HASH = '00000000729dc9fb00000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Branch Short';
-    private string $name;
-    private object $commit;
-    private bool $protected;
-    public function name() : string
+    private ?string $name = null;
+    private ?object $commit = null;
+    private ?bool $protected = null;
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function commit() : object
+    public function commit() : ?object
     {
         return $this->commit;
     }
-    public function protected() : bool
+    public function protected() : ?bool
     {
         return $this->protected;
     }

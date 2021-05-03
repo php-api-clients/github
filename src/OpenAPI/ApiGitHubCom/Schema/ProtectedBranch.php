@@ -5,61 +5,61 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ProtectedBranch
 {
     public const SCHEMA_TITLE = 'Protected Branch';
-    public const SPL_HASH = '0000000020701d690000000042193899';
+    public const SPL_HASH = '00000000729dce4300000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Branch protections protect branches';
-    private string $url;
+    private ?string $url = null;
     /**
      * Status Check Policy
      */
-    private object $required_status_checks;
-    private object $required_pull_request_reviews;
-    private object $required_signatures;
-    private object $enforce_admins;
-    private object $required_linear_history;
-    private object $allow_force_pushes;
-    private object $allow_deletions;
+    private ?object $required_status_checks = null;
+    private ?object $required_pull_request_reviews = null;
+    private ?object $required_signatures = null;
+    private ?object $enforce_admins = null;
+    private ?object $required_linear_history = null;
+    private ?object $allow_force_pushes = null;
+    private ?object $allow_deletions = null;
     /**
      * Branch Restriction Policy
      */
-    private object $restrictions;
-    private object $required_conversation_resolution;
-    public function url() : string
+    private ?object $restrictions = null;
+    private ?object $required_conversation_resolution = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function required_status_checks() : object
+    public function required_status_checks() : ?object
     {
         return $this->required_status_checks;
     }
-    public function required_pull_request_reviews() : object
+    public function required_pull_request_reviews() : ?object
     {
         return $this->required_pull_request_reviews;
     }
-    public function required_signatures() : object
+    public function required_signatures() : ?object
     {
         return $this->required_signatures;
     }
-    public function enforce_admins() : object
+    public function enforce_admins() : ?object
     {
         return $this->enforce_admins;
     }
-    public function required_linear_history() : object
+    public function required_linear_history() : ?object
     {
         return $this->required_linear_history;
     }
-    public function allow_force_pushes() : object
+    public function allow_force_pushes() : ?object
     {
         return $this->allow_force_pushes;
     }
-    public function allow_deletions() : object
+    public function allow_deletions() : ?object
     {
         return $this->allow_deletions;
     }
-    public function restrictions() : object
+    public function restrictions() : ?object
     {
         return $this->restrictions;
     }
-    public function required_conversation_resolution() : object
+    public function required_conversation_resolution() : ?object
     {
         return $this->required_conversation_resolution;
     }

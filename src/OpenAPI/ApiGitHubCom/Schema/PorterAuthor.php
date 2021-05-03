@@ -5,40 +5,40 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PorterAuthor
 {
     public const SCHEMA_TITLE = 'Porter Author';
-    public const SPL_HASH = '00000000207019790000000042193899';
+    public const SPL_HASH = '00000000729dca5300000000797f0b2e';
     public const SCHEMA_DESCRIPTION = 'Porter Author';
-    private int $id;
-    private string $remote_id;
-    private string $remote_name;
-    private string $email;
-    private string $name;
-    private string $url;
-    private string $import_url;
-    public function id() : int
+    private ?int $id = null;
+    private ?string $remote_id = null;
+    private ?string $remote_name = null;
+    private ?string $email = null;
+    private ?string $name = null;
+    private ?string $url = null;
+    private ?string $import_url = null;
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function remote_id() : string
+    public function remote_id() : ?string
     {
         return $this->remote_id;
     }
-    public function remote_name() : string
+    public function remote_name() : ?string
     {
         return $this->remote_name;
     }
-    public function email() : string
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function import_url() : string
+    public function import_url() : ?string
     {
         return $this->import_url;
     }

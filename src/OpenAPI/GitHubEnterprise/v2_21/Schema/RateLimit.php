@@ -5,20 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class RateLimit
 {
     public const SCHEMA_TITLE = 'Rate Limit';
-    public const SPL_HASH = '0000000018145ce5000000005f691719';
+    public const SPL_HASH = '000000003664628e000000006f97d8a9';
     public const SCHEMA_DESCRIPTION = '';
-    private int $limit;
-    private int $remaining;
-    private int $reset;
-    public function limit() : int
+    private ?int $limit = null;
+    private ?int $remaining = null;
+    private ?int $reset = null;
+    public function limit() : ?int
     {
         return $this->limit;
     }
-    public function remaining() : int
+    public function remaining() : ?int
     {
         return $this->remaining;
     }
-    public function reset() : int
+    public function reset() : ?int
     {
         return $this->reset;
     }

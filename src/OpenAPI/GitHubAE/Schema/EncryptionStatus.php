@@ -5,21 +5,21 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class EncryptionStatus
 {
     public const SCHEMA_TITLE = 'encryption-status';
-    public const SPL_HASH = '000000007ee693030000000021479ea3';
+    public const SPL_HASH = '000000001f7787d2000000002b0b9da2';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The status of updating an encryption key or disabling encryption at rest.
      */
-    private string $result;
+    private ?string $result = null;
     /**
      * The error message if the `result` is `failure`.
      */
-    private string $error;
-    public function result() : string
+    private ?string $error = null;
+    public function result() : ?string
     {
         return $this->result;
     }
-    public function error() : string
+    public function error() : ?string
     {
         return $this->error;
     }

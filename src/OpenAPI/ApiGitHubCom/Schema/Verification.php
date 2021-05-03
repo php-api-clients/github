@@ -5,25 +5,25 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Verification
 {
     public const SCHEMA_TITLE = 'Verification';
-    public const SPL_HASH = '0000000020701d390000000042193899';
+    public const SPL_HASH = '00000000729dce1300000000797f0b2e';
     public const SCHEMA_DESCRIPTION = '';
-    private bool $verified;
-    private string $reason;
-    private string $payload;
-    private string $signature;
-    public function verified() : bool
+    private ?bool $verified = null;
+    private ?string $reason = null;
+    private ?string $payload = null;
+    private ?string $signature = null;
+    public function verified() : ?bool
     {
         return $this->verified;
     }
-    public function reason() : string
+    public function reason() : ?string
     {
         return $this->reason;
     }
-    public function payload() : string
+    public function payload() : ?string
     {
         return $this->payload;
     }
-    public function signature() : string
+    public function signature() : ?string
     {
         return $this->signature;
     }

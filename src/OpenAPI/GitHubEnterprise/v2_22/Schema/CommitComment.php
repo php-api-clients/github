@@ -5,58 +5,58 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class CommitComment
 {
     public const SCHEMA_TITLE = 'Commit Comment';
-    public const SPL_HASH = '0000000031ee501f00000000484d7fbe';
+    public const SPL_HASH = '000000001138a9a900000000791e6d28';
     public const SCHEMA_DESCRIPTION = 'Commit Comment';
-    private string $html_url;
-    private string $url;
-    private int $id;
-    private string $node_id;
-    private string $body;
-    private string $path;
-    private int $position;
-    private int $line;
-    private string $commit_id;
+    private ?string $html_url = null;
+    private ?string $url = null;
+    private ?int $id = null;
+    private ?string $node_id = null;
+    private ?string $body = null;
+    private ?string $path = null;
+    private ?int $position = null;
+    private ?int $line = null;
+    private ?string $commit_id = null;
     private $user;
-    private string $created_at;
-    private string $updated_at;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
-    private object $reactions;
-    public function html_url() : string
+    private ?string $author_association = null;
+    private ?object $reactions = null;
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function path() : string
+    public function path() : ?string
     {
         return $this->path;
     }
-    public function position() : int
+    public function position() : ?int
     {
         return $this->position;
     }
-    public function line() : int
+    public function line() : ?int
     {
         return $this->line;
     }
-    public function commit_id() : string
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
@@ -64,19 +64,19 @@ final class CommitComment
     {
         return $this->user;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
-    public function author_association() : string
+    public function author_association() : ?string
     {
         return $this->author_association;
     }
-    public function reactions() : object
+    public function reactions() : ?object
     {
         return $this->reactions;
     }

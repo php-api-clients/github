@@ -5,20 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class GitUser
 {
     public const SCHEMA_TITLE = 'Git User';
-    public const SPL_HASH = '000000006312fab20000000044ad25fc';
+    public const SPL_HASH = '00000000567e2def00000000401184f6';
     public const SCHEMA_DESCRIPTION = 'Metaproperties for Git author/committer information.';
-    private string $name;
-    private string $email;
-    private string $date;
-    public function name() : string
+    private ?string $name = null;
+    private ?string $email = null;
+    private ?string $date = null;
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function email() : string
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function date() : string
+    public function date() : ?string
     {
         return $this->date;
     }
