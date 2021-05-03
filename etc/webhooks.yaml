@@ -114,6 +114,8 @@ components:
             - "$ref": "#/components/schemas/simple-user"
         forks:
           type: integer
+        private:
+          type: boolean
     simple-user:
       title: Simple User
       description: Simple User
