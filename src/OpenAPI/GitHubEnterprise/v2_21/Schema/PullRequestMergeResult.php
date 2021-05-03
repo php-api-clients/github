@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class PullRequestMergeResult
 {
     public const SCHEMA_TITLE = 'Pull Request Merge Result';
-    public const SPL_HASH = '000000003664192d000000006f97d8a9';
+    public const SPL_HASH = '0000000045a097e30000000057b08344';
     public const SCHEMA_DESCRIPTION = 'Pull Request Merge Result';
     private ?string $sha = null;
     private ?bool $merged = null;

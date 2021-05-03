@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class PagesSourceHash
 {
     public const SCHEMA_TITLE = 'Pages Source Hash';
-    public const SPL_HASH = '000000001138aa0f00000000791e6d28';
+    public const SPL_HASH = '00000000269f217300000000005e85e5';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $branch = null;
     private ?string $path = null;

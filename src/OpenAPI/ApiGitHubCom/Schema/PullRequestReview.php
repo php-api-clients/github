@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PullRequestReview
 {
     public const SCHEMA_TITLE = 'Pull Request Review';
-    public const SPL_HASH = '00000000729dc4ce00000000797f0b2e';
+    public const SPL_HASH = '00000000252f48100000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Pull Request Reviews are reviews on pull requests.';
     /**
      * Unique identifier of the review

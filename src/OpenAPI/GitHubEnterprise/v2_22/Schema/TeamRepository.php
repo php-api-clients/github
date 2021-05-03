@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class TeamRepository
 {
     public const SCHEMA_TITLE = 'Team Repository';
-    public const SPL_HASH = '000000001138a58f00000000791e6d28';
+    public const SPL_HASH = '00000000269f2ef300000000005e85e5';
     public const SCHEMA_DESCRIPTION = 'A team\'s access to a repository.';
     /**
      * Unique identifier of the repository

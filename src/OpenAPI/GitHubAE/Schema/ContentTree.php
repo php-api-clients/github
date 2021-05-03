@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ContentTree
 {
     public const SCHEMA_TITLE = 'Content Tree';
-    public const SPL_HASH = '000000001f77fe54000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdd65b0000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Content Tree';
     private ?string $type = null;
     private ?int $size = null;

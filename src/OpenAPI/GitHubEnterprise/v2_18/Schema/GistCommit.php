@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class GistCommit
 {
     public const SCHEMA_TITLE = 'Gist Commit';
-    public const SPL_HASH = '000000004679dc650000000066e19307';
+    public const SPL_HASH = '000000000c92eb18000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'Gist Commit';
     private ?string $url = null;
     private ?string $version = null;

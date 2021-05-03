@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Key
 {
     public const SCHEMA_TITLE = 'Key';
-    public const SPL_HASH = '000000004c46af4700000000443897a0';
+    public const SPL_HASH = '000000005d4ce164000000005494ca51';
     public const SCHEMA_DESCRIPTION = 'Key';
     private ?string $key = null;
     private ?int $id = null;

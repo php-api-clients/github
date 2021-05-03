@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class Repository
 {
     public const SCHEMA_TITLE = 'Repository';
-    public const SPL_HASH = '000000003b7eb59b000000003fb64a07';
+    public const SPL_HASH = '0000000036b6f8ce0000000068d6d7fd';
     public const SCHEMA_DESCRIPTION = 'A git repository';
     /**
      * Unique identifier of the repository

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class CheckRun
 {
     public const SCHEMA_TITLE = 'CheckRun';
-    public const SPL_HASH = '000000004c46d08000000000443897a0';
+    public const SPL_HASH = '000000005d4c9ea3000000005494ca51';
     public const SCHEMA_DESCRIPTION = 'A check performed on the code of a given code change';
     /**
      * The id of the check.

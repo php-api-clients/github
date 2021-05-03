@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Label
 {
     public const SCHEMA_TITLE = 'Label';
-    public const SPL_HASH = '000000001f778676000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdae790000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Color-coded labels help you categorize and filter your issues (just like labels in Gmail).';
     private ?int $id = null;
     private ?string $node_id = null;

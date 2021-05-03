@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class GitCommit
 {
     public const SCHEMA_TITLE = 'Git Commit';
-    public const SPL_HASH = '0000000066e6c9d60000000066ded04e';
+    public const SPL_HASH = '0000000008b9204b00000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Low-level Git commit operations within a repository';
     /**
      * SHA for the commit

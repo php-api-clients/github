@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Thread
 {
     public const SCHEMA_TITLE = 'Thread';
-    public const SPL_HASH = '000000004679d3950000000066e19307';
+    public const SPL_HASH = '000000000c92e4e8000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'Thread';
     private ?string $id = null;
     /**

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class EnvironmentApprovals
 {
     public const SCHEMA_TITLE = 'Environment Approval';
-    public const SPL_HASH = '00000000729dcf1800000000797f0b2e';
+    public const SPL_HASH = '00000000252f43c60000000029de5079';
     public const SCHEMA_DESCRIPTION = 'An entry in the reviews log for environment deployments';
     /**
      * The list of environments that were approved or rejected

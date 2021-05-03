@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Collaborator
 {
     public const SCHEMA_TITLE = 'Collaborator';
-    public const SPL_HASH = '00000000729dc9bb00000000797f0b2e';
+    public const SPL_HASH = '00000000252f45650000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Collaborator';
     private ?string $login = null;
     private ?int $id = null;

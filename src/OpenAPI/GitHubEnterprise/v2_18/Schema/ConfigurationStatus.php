@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class ConfigurationStatus
 {
     public const SCHEMA_TITLE = 'configuration-status';
-    public const SPL_HASH = '000000004679a9f80000000066e19307';
+    public const SPL_HASH = '000000000c929e85000000006ad867a6';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $status = null;
     private array $progress = array();

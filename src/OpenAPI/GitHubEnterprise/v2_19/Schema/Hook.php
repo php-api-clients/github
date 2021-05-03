@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class Hook
 {
     public const SCHEMA_TITLE = 'Webhook';
-    public const SPL_HASH = '00000000567e28d700000000401184f6';
+    public const SPL_HASH = '000000005bc98bec000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'Webhooks for repositories.';
     private ?string $type = null;
     /**

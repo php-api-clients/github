@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Event
 {
     public const SCHEMA_TITLE = 'Event';
-    public const SPL_HASH = '00000000729dd02000000000797f0b2e';
+    public const SPL_HASH = '00000000252f5cfe0000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Event';
     private ?string $id = null;
     private ?string $type = null;

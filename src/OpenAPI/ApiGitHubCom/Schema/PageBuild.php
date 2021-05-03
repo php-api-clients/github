@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PageBuild
 {
     public const SCHEMA_TITLE = 'Page Build';
-    public const SPL_HASH = '00000000729dcafb00000000797f0b2e';
+    public const SPL_HASH = '00000000252f46250000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Page Build';
     private ?string $url = null;
     private ?string $status = null;

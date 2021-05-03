@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ReleaseAsset
 {
     public const SCHEMA_TITLE = 'Release Asset';
-    public const SPL_HASH = '00000000567e57ef00000000401184f6';
+    public const SPL_HASH = '000000005bc9f4d4000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'Data related to a release.';
     private ?string $url = null;
     private ?string $browser_download_url = null;

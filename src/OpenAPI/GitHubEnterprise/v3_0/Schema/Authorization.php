@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Authorization
 {
     public const SCHEMA_TITLE = 'Authorization';
-    public const SPL_HASH = '0000000066e6c7300000000066ded04e';
+    public const SPL_HASH = '0000000008b92ead00000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'The authorization for an OAuth app, GitHub App, or a Personal Access Token.';
     private ?int $id = null;
     private ?string $url = null;

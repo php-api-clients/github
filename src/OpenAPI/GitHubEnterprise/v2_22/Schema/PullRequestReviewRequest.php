@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class PullRequestReviewRequest
 {
     public const SCHEMA_TITLE = 'Pull Request Review Request';
-    public const SPL_HASH = '000000001138ac4c00000000791e6d28';
+    public const SPL_HASH = '00000000269f273000000000005e85e5';
     public const SCHEMA_DESCRIPTION = 'Pull Request Review Request';
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\SimpleUser>

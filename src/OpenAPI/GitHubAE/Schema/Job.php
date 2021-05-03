@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Job
 {
     public const SCHEMA_TITLE = 'Job';
-    public const SPL_HASH = '000000001f77fa93000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdd29c0000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Information of a job execution in a workflow run';
     /**
      * The id of the job.

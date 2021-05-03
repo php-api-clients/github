@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScopedInstallation
 {
     public const SCHEMA_TITLE = 'Scoped Installation';
-    public const SPL_HASH = '00000000729dd11b00000000797f0b2e';
+    public const SPL_HASH = '00000000252f5dc50000000029de5079';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The permissions granted to the user-to-server access token.

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class CheckSuite
 {
     public const SCHEMA_TITLE = 'CheckSuite';
-    public const SPL_HASH = '000000004c46d74a00000000443897a0';
+    public const SPL_HASH = '000000005d4c9969000000005494ca51';
     public const SCHEMA_DESCRIPTION = 'A suite of checks performed on the code of a given code change';
     private ?int $id = null;
     private ?string $node_id = null;

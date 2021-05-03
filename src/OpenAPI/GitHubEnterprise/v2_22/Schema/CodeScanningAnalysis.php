@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class CodeScanningAnalysis
 {
     public const SCHEMA_TITLE = 'code-scanning-analysis';
-    public const SPL_HASH = '000000001138a9fb00000000791e6d28';
+    public const SPL_HASH = '00000000269f228700000000005e85e5';
     public const SCHEMA_DESCRIPTION = '';
     /**
     * The full Git reference, formatted as `refs/heads/<branch name>`,

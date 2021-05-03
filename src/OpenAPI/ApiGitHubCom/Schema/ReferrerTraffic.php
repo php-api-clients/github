@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ReferrerTraffic
 {
     public const SCHEMA_TITLE = 'Referrer Traffic';
-    public const SPL_HASH = '00000000729dc7b400000000797f0b2e';
+    public const SPL_HASH = '00000000252f4b6a0000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Referrer Traffic';
     private ?string $referrer = null;
     private ?int $count = null;

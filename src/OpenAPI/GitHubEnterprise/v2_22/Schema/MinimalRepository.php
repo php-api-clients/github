@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class MinimalRepository
 {
     public const SCHEMA_TITLE = 'Minimal Repository';
-    public const SPL_HASH = '000000001138a21500000000791e6d28';
+    public const SPL_HASH = '00000000269f296900000000005e85e5';
     public const SCHEMA_DESCRIPTION = 'Minimal Repository';
     private ?int $id = null;
     private ?string $node_id = null;

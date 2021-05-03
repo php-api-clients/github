@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class InstallationToken
 {
     public const SCHEMA_TITLE = 'Installation Token';
-    public const SPL_HASH = '0000000036646684000000006f97d8a9';
+    public const SPL_HASH = '0000000045a0e84a0000000057b08344';
     public const SCHEMA_DESCRIPTION = 'Authentication token for a GitHub App installed on a user or org.';
     private ?string $token = null;
     private ?string $expires_at = null;

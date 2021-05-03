@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class GitTree
 {
     public const SCHEMA_TITLE = 'Git Tree';
-    public const SPL_HASH = '000000004679d67f0000000066e19307';
+    public const SPL_HASH = '000000000c92e102000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'The hierarchy between files in a Git repository.';
     private ?string $sha = null;
     private ?string $url = null;

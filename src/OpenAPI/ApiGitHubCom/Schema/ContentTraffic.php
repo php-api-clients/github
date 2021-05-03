@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ContentTraffic
 {
     public const SCHEMA_TITLE = 'Content Traffic';
-    public const SPL_HASH = '00000000729dc78900000000797f0b2e';
+    public const SPL_HASH = '00000000252f4b570000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Content Traffic';
     private ?string $path = null;
     private ?string $title = null;

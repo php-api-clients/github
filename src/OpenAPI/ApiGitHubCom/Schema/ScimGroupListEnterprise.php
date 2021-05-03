@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimGroupListEnterprise
 {
     public const SCHEMA_TITLE = 'scim-group-list-enterprise';
-    public const SPL_HASH = '00000000729dc7b900000000797f0b2e';
+    public const SPL_HASH = '00000000252f4b670000000029de5079';
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas = array();
     private ?number $totalResults = null;

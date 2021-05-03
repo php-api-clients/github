@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Blob
 {
     public const SCHEMA_TITLE = 'Blob';
-    public const SPL_HASH = '0000000066e6c9de0000000066ded04e';
+    public const SPL_HASH = '0000000008b9204300000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Blob';
     private ?string $content = null;
     private ?string $encoding = null;

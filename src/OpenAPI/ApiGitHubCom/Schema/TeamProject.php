@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class TeamProject
 {
     public const SCHEMA_TITLE = 'Team Project';
-    public const SPL_HASH = '00000000729dcd6300000000797f0b2e';
+    public const SPL_HASH = '00000000252f41bd0000000029de5079';
     public const SCHEMA_DESCRIPTION = 'A team\'s access to a project.';
     private ?string $owner_url = null;
     private ?string $url = null;

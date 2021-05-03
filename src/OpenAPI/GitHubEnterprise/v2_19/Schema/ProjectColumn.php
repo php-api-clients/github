@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ProjectColumn
 {
     public const SCHEMA_TITLE = 'Project Column';
-    public const SPL_HASH = '00000000567e2f4100000000401184f6';
+    public const SPL_HASH = '000000005bc98c7a000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'Project columns contain cards of work.';
     private ?string $url = null;
     private ?string $project_url = null;

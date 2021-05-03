@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Package
 {
     public const SCHEMA_TITLE = 'Package';
-    public const SPL_HASH = '00000000729dd2f100000000797f0b2e';
+    public const SPL_HASH = '00000000252f5e2f0000000029de5079';
     public const SCHEMA_DESCRIPTION = 'A software package';
     /**
      * Unique identifier of the package.

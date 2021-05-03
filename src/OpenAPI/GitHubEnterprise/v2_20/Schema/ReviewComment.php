@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class ReviewComment
 {
     public const SCHEMA_TITLE = 'Legacy Review Comment';
-    public const SPL_HASH = '000000004c46aa6f00000000443897a0';
+    public const SPL_HASH = '000000005d4ce44c000000005494ca51';
     public const SCHEMA_DESCRIPTION = 'Legacy Review Comment';
     private ?string $url = null;
     private ?int $pull_request_review_id = null;

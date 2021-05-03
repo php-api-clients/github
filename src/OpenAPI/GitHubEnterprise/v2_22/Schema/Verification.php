@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Verification
 {
     public const SCHEMA_TITLE = 'Verification';
-    public const SPL_HASH = '000000001138a67500000000791e6d28';
+    public const SPL_HASH = '00000000269f2d0900000000005e85e5';
     public const SCHEMA_DESCRIPTION = '';
     private ?bool $verified = null;
     private ?string $reason = null;

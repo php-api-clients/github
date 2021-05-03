@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Enterprise
 {
     public const SCHEMA_TITLE = 'Enterprise';
-    public const SPL_HASH = '000000004679df360000000066e19307';
+    public const SPL_HASH = '000000000c92e84b000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'An enterprise account';
     /**
      * A short description of the enterprise.

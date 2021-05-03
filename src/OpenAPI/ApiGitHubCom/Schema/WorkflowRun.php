@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class WorkflowRun
 {
     public const SCHEMA_TITLE = 'Workflow Run';
-    public const SPL_HASH = '00000000729dccff00000000797f0b2e';
+    public const SPL_HASH = '00000000252f40210000000029de5079';
     public const SCHEMA_DESCRIPTION = 'An invocation of a workflow';
     /**
      * The ID of the workflow run.

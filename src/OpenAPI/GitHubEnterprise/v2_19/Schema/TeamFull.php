@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class TeamFull
 {
     public const SCHEMA_TITLE = 'Full Team';
-    public const SPL_HASH = '00000000567e2f1800000000401184f6';
+    public const SPL_HASH = '000000005bc98c23000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'Groups of organization members that gives permissions on specified repositories.';
     /**
      * Unique identifier of the team

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ContributorActivity
 {
     public const SCHEMA_TITLE = 'Contributor Activity';
-    public const SPL_HASH = '00000000729dc76700000000797f0b2e';
+    public const SPL_HASH = '00000000252f4bb90000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     private $author;
     private ?int $total = null;

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class CombinedCommitStatus
 {
     public const SCHEMA_TITLE = 'Combined Commit Status';
-    public const SPL_HASH = '000000004679d7ca0000000066e19307';
+    public const SPL_HASH = '000000000c92e0b7000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'Combined Commit Status';
     private ?string $state = null;
     /**

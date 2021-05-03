@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class DeploymentSimple
 {
     public const SCHEMA_TITLE = 'Deployment';
-    public const SPL_HASH = '000000004c46d0b200000000443897a0';
+    public const SPL_HASH = '000000005d4c9e91000000005494ca51';
     public const SCHEMA_DESCRIPTION = 'A deployment created as the result of an Actions check run from a workflow that references an environment';
     private ?string $url = null;
     /**

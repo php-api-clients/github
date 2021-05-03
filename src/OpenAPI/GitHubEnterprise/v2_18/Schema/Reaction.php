@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Reaction
 {
     public const SCHEMA_TITLE = 'Reaction';
-    public const SPL_HASH = '000000004679d0590000000066e19307';
+    public const SPL_HASH = '000000000c92e724000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'Reactions to conversations provide a way to help people express their feelings more simply and effectively.';
     private ?int $id = null;
     private ?string $node_id = null;

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class IssueSearchResultItem
 {
     public const SCHEMA_TITLE = 'Issue Search Result Item';
-    public const SPL_HASH = '000000004679aaec0000000066e19307';
+    public const SPL_HASH = '000000000c929d91000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'Issue Search Result Item';
     private ?string $url = null;
     private ?string $repository_url = null;

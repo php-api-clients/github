@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class BasicError
 {
     public const SCHEMA_TITLE = 'Basic Error';
-    public const SPL_HASH = '000000001138a15200000000791e6d28';
+    public const SPL_HASH = '00000000269f2a2e00000000005e85e5';
     public const SCHEMA_DESCRIPTION = 'Basic Error';
     private ?string $message = null;
     private ?string $documentation_url = null;

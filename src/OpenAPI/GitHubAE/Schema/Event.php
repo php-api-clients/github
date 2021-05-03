@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Event
 {
     public const SCHEMA_TITLE = 'Event';
-    public const SPL_HASH = '000000001f7786f3000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdaefc0000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Event';
     private ?string $id = null;
     private ?string $type = null;

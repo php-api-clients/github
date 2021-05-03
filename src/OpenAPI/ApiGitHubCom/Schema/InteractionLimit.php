@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class InteractionLimit
 {
     public const SCHEMA_TITLE = 'Interaction Restrictions';
-    public const SPL_HASH = '00000000729dd28800000000797f0b2e';
+    public const SPL_HASH = '00000000252f5e560000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Limit interactions to a specific type of user for a specified duration';
     /**
      * The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: `existing_users`, `contributors_only`, `collaborators_only`.

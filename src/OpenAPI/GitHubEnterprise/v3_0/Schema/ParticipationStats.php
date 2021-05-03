@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class ParticipationStats
 {
     public const SCHEMA_TITLE = 'Participation Stats';
-    public const SPL_HASH = '0000000066e6d5180000000066ded04e';
+    public const SPL_HASH = '0000000008b93c8500000000412ebbda';
     public const SCHEMA_DESCRIPTION = '';
     private array $all = array();
     private array $owner = array();

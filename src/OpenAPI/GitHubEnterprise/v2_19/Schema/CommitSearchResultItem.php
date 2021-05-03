@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class CommitSearchResultItem
 {
     public const SCHEMA_TITLE = 'Commit Search Result Item';
-    public const SPL_HASH = '00000000567e576600000000401184f6';
+    public const SPL_HASH = '000000005bc9f45d000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'Commit Search Result Item';
     private ?string $url = null;
     private ?string $sha = null;

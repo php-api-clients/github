@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ProjectCard
 {
     public const SCHEMA_TITLE = 'Project Card';
-    public const SPL_HASH = '00000000567e2f7000000000401184f6';
+    public const SPL_HASH = '000000005bc98c4b000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'Project cards represent a scope of work.';
     private ?string $url = null;
     /**

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PorterAuthor
 {
     public const SCHEMA_TITLE = 'Porter Author';
-    public const SPL_HASH = '00000000729dca5300000000797f0b2e';
+    public const SPL_HASH = '00000000252f468d0000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Porter Author';
     private ?int $id = null;
     private ?string $remote_id = null;

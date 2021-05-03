@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class ShortBlob
 {
     public const SCHEMA_TITLE = 'Short Blob';
-    public const SPL_HASH = '0000000066e6c9dd0000000066ded04e';
+    public const SPL_HASH = '0000000008b9204000000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Short Blob';
     private ?string $url = null;
     private ?string $sha = null;

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class RateLimit
 {
     public const SCHEMA_TITLE = 'Rate Limit';
-    public const SPL_HASH = '000000004c46d15a00000000443897a0';
+    public const SPL_HASH = '000000005d4c9f79000000005494ca51';
     public const SCHEMA_DESCRIPTION = '';
     private ?int $limit = null;
     private ?int $remaining = null;

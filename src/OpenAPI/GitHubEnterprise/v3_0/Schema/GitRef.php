@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class GitRef
 {
     public const SCHEMA_TITLE = 'Git Reference';
-    public const SPL_HASH = '0000000066e6c83b0000000066ded04e';
+    public const SPL_HASH = '0000000008b921a600000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Git references within a repository';
     private ?string $ref = null;
     private ?string $node_id = null;

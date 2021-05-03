@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class IssueEventLabel
 {
     public const SCHEMA_TITLE = 'Issue Event Label';
-    public const SPL_HASH = '00000000567e283500000000401184f6';
+    public const SPL_HASH = '000000005bc98b0e000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'Issue Event Label';
     private ?string $name = null;
     private ?string $color = null;

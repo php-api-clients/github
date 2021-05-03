@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class TeamDiscussionComment
 {
     public const SCHEMA_TITLE = 'Team Discussion Comment';
-    public const SPL_HASH = '000000004679a95a0000000066e19307';
+    public const SPL_HASH = '000000000c929e27000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'A reply to a discussion within a team.';
     private $author;
     /**

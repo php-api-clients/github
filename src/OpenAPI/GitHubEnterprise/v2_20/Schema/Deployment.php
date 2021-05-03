@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Deployment
 {
     public const SCHEMA_TITLE = 'Deployment';
-    public const SPL_HASH = '000000004c46d69700000000443897a0';
+    public const SPL_HASH = '000000005d4c98b4000000005494ca51';
     public const SCHEMA_DESCRIPTION = 'A request for a specific ref(branch,sha,tag) to be deployed';
     private ?string $url = null;
     /**

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class ProtectedBranchPullRequestReview
 {
     public const SCHEMA_TITLE = 'Protected Branch Pull Request Review';
-    public const SPL_HASH = '000000004c46d1a800000000443897a0';
+    public const SPL_HASH = '000000005d4c9f8b000000005494ca51';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Pull Request Review';
     private ?string $url = null;
     private ?object $dismissal_restrictions = null;

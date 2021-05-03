@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Environment
 {
     public const SCHEMA_TITLE = 'Environment';
-    public const SPL_HASH = '00000000729dcb9800000000797f0b2e';
+    public const SPL_HASH = '00000000252f47460000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Details of a deployment environment';
     /**
      * The id of the environment.

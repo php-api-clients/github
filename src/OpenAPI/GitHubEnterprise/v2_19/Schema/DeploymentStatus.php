@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class DeploymentStatus
 {
     public const SCHEMA_TITLE = 'Deployment Status';
-    public const SPL_HASH = '00000000567e28ac00000000401184f6';
+    public const SPL_HASH = '000000005bc98b97000000002dbcf303';
     public const SCHEMA_DESCRIPTION = 'The status of a deployment.';
     private ?string $url = null;
     private ?int $id = null;

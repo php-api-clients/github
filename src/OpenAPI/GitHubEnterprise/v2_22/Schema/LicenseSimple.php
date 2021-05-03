@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class LicenseSimple
 {
     public const SCHEMA_TITLE = 'License Simple';
-    public const SPL_HASH = '000000001138a11800000000791e6d28';
+    public const SPL_HASH = '00000000269f2a6400000000005e85e5';
     public const SCHEMA_DESCRIPTION = 'License Simple';
     private ?string $key = null;
     private ?string $name = null;

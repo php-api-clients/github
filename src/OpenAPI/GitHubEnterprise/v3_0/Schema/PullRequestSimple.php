@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class PullRequestSimple
 {
     public const SCHEMA_TITLE = 'Pull Request Simple';
-    public const SPL_HASH = '0000000066e6ce470000000066ded04e';
+    public const SPL_HASH = '0000000008b927da00000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Pull Request Simple';
     private ?string $url = null;
     private ?int $id = null;

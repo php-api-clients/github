@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class Enterprise
 {
     public const SCHEMA_TITLE = 'Enterprise';
-    public const SPL_HASH = '000000003b7eb4bd000000003fb64a07';
+    public const SPL_HASH = '0000000036b6f9e80000000068d6d7fd';
     public const SCHEMA_DESCRIPTION = 'An enterprise account';
     /**
      * A short description of the enterprise.

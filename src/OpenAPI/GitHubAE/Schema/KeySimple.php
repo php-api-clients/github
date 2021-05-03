@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class KeySimple
 {
     public const SCHEMA_TITLE = 'Key Simple';
-    public const SPL_HASH = '000000001f77f4b7000000002b0b9da2';
+    public const SPL_HASH = '000000005dfddcb80000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Key Simple';
     private ?int $id = null;
     private ?string $key = null;

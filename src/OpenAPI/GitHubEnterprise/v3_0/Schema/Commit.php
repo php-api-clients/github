@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Commit
 {
     public const SCHEMA_TITLE = 'Commit';
-    public const SPL_HASH = '0000000066e6cca80000000066ded04e';
+    public const SPL_HASH = '0000000008b9253500000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Commit';
     private ?string $url = null;
     private ?string $sha = null;

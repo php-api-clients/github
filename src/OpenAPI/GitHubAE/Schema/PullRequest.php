@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class PullRequest
 {
     public const SCHEMA_TITLE = 'Pull Request';
-    public const SPL_HASH = '000000001f77f061000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdd86e0000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Pull requests let you tell others about changes you\'ve pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.';
     private ?string $url = null;
     private ?int $id = null;

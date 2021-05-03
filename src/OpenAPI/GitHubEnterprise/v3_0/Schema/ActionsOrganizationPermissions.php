@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class ActionsOrganizationPermissions
 {
     public const SCHEMA_TITLE = 'actions-organization-permissions';
-    public const SPL_HASH = '0000000066e6c3530000000066ded04e';
+    public const SPL_HASH = '0000000008b92ace00000000412ebbda';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The policy that controls the repositories in the organization that are allowed to run GitHub Actions. Can be one of: `all`, `none`, or `selected`.

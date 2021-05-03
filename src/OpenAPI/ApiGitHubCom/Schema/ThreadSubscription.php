@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ThreadSubscription
 {
     public const SCHEMA_TITLE = 'Thread Subscription';
-    public const SPL_HASH = '00000000729dd21b00000000797f0b2e';
+    public const SPL_HASH = '00000000252f5ec50000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Thread Subscription';
     private ?bool $subscribed = null;
     private ?bool $ignored = null;

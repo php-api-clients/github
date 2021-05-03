@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimUserList
 {
     public const SCHEMA_TITLE = 'SCIM User List';
-    public const SPL_HASH = '00000000729dc63a00000000797f0b2e';
+    public const SPL_HASH = '00000000252f4ae40000000029de5079';
     public const SCHEMA_DESCRIPTION = 'SCIM User List';
     /**
      * SCIM schema used.

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Email
 {
     public const SCHEMA_TITLE = 'Email';
-    public const SPL_HASH = '0000000066e6d7400000000066ded04e';
+    public const SPL_HASH = '0000000008b93edd00000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Email';
     private ?string $email = null;
     private ?bool $primary = null;

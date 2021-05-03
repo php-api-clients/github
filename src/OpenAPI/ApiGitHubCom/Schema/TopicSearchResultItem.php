@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class TopicSearchResultItem
 {
     public const SCHEMA_TITLE = 'Topic Search Result Item';
-    public const SPL_HASH = '00000000729dc12600000000797f0b2e';
+    public const SPL_HASH = '00000000252f4df80000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Topic Search Result Item';
     private ?string $name = null;
     private ?string $display_name = null;

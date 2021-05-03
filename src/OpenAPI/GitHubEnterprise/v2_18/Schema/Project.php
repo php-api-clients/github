@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Project
 {
     public const SCHEMA_TITLE = 'Project';
-    public const SPL_HASH = '000000004679d3260000000066e19307';
+    public const SPL_HASH = '000000000c92e45b000000006ad867a6';
     public const SCHEMA_DESCRIPTION = 'Projects are a way to organize columns and cards of work.';
     private ?string $owner_url = null;
     private ?string $url = null;

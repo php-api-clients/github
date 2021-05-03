@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class AppPermissions
 {
     public const SCHEMA_TITLE = 'App Permissions';
-    public const SPL_HASH = '0000000036646514000000006f97d8a9';
+    public const SPL_HASH = '0000000045a0ebda0000000057b08344';
     public const SCHEMA_DESCRIPTION = 'The permissions granted to the user-to-server access token.';
     /**
      * The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: `read` or `write`.

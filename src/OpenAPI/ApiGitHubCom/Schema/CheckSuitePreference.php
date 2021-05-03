@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CheckSuitePreference
 {
     public const SCHEMA_TITLE = 'Check Suite Preference';
-    public const SPL_HASH = '00000000729dcec300000000797f0b2e';
+    public const SPL_HASH = '00000000252f421d0000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Check suite configuration preferences for a repository.';
     private ?object $preferences = null;
     /**

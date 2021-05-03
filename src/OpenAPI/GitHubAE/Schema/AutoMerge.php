@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class AutoMerge
 {
     public const SCHEMA_TITLE = 'Auto merge';
-    public const SPL_HASH = '000000001f77ff95000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdd79a0000000040885a06';
     public const SCHEMA_DESCRIPTION = 'The status of auto merging a pull request.';
     /**
      * Simple User

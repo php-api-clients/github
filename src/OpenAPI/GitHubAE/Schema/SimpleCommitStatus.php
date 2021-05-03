@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class SimpleCommitStatus
 {
     public const SCHEMA_TITLE = 'Simple Commit Status';
-    public const SPL_HASH = '000000001f77fe1f000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdd6100000000040885a06';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $description = null;
     private ?int $id = null;

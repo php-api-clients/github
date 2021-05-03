@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Team
 {
     public const SCHEMA_TITLE = 'Team';
-    public const SPL_HASH = '0000000066e6c3c80000000066ded04e';
+    public const SPL_HASH = '0000000008b92a5500000000412ebbda';
     public const SCHEMA_DESCRIPTION = 'Groups of organization members that gives permissions on specified repositories.';
     private ?int $id = null;
     private ?string $node_id = null;

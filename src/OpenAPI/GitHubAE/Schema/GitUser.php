@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class GitUser
 {
     public const SCHEMA_TITLE = 'Git User';
-    public const SPL_HASH = '000000001f77fd86000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdd5890000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Metaproperties for Git author/committer information.';
     private ?string $name = null;
     private ?string $email = null;

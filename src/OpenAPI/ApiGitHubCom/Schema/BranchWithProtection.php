@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class BranchWithProtection
 {
     public const SCHEMA_TITLE = 'Branch With Protection';
-    public const SPL_HASH = '00000000729dce2800000000797f0b2e';
+    public const SPL_HASH = '00000000252f42f60000000029de5079';
     public const SCHEMA_DESCRIPTION = 'Branch With Protection';
     private ?string $name = null;
     /**

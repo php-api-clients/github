@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class FileCommit
 {
     public const SCHEMA_TITLE = 'File Commit';
-    public const SPL_HASH = '0000000036641e09000000006f97d8a9';
+    public const SPL_HASH = '0000000045a090c70000000057b08344';
     public const SCHEMA_DESCRIPTION = 'File Commit';
     private ?object $content = null;
     private ?object $commit = null;

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class LabelSearchResultItem
 {
     public const SCHEMA_TITLE = 'Label Search Result Item';
-    public const SPL_HASH = '000000001f77f575000000002b0b9da2';
+    public const SPL_HASH = '000000005dfddd7a0000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Label Search Result Item';
     private ?int $id = null;
     private ?string $node_id = null;

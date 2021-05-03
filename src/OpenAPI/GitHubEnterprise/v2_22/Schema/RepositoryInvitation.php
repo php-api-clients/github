@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class RepositoryInvitation
 {
     public const SCHEMA_TITLE = 'Repository Invitation';
-    public const SPL_HASH = '000000001138a9ba00000000791e6d28';
+    public const SPL_HASH = '00000000269f22c600000000005e85e5';
     public const SCHEMA_DESCRIPTION = 'Repository invitations let you manage who you collaborate with.';
     /**
      * Unique identifier of the repository invitation.

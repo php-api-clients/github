@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class IssueComment
 {
     public const SCHEMA_TITLE = 'Issue Comment';
-    public const SPL_HASH = '000000003664675b000000006f97d8a9';
+    public const SPL_HASH = '0000000045a0e9950000000057b08344';
     public const SCHEMA_DESCRIPTION = 'Comments provide a way for people to collaborate on an issue.';
     /**
      * Unique identifier of the issue comment

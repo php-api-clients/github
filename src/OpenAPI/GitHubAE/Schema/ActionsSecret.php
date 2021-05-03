@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ActionsSecret
 {
     public const SCHEMA_TITLE = 'Actions Secret';
-    public const SPL_HASH = '000000001f77fd22000000002b0b9da2';
+    public const SPL_HASH = '000000005dfdd52d0000000040885a06';
     public const SCHEMA_DESCRIPTION = 'Set secrets for GitHub Actions.';
     /**
      * The name of the secret.
