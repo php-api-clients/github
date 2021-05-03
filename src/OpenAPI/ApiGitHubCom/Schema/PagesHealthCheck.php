@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PagesHealthCheck
 {
     public const SCHEMA_TITLE = 'Pages Health Check Status';
+    public const SPL_HASH = '0000000054d5e14b0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Pages Health Check Status';
     private object $domain;
     private object $alt_domain;

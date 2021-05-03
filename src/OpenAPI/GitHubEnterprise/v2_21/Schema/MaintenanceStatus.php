@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class MaintenanceStatus
 {
     public const SCHEMA_TITLE = 'maintenance-status';
+    public const SPL_HASH = '0000000065d623d0000000007ce49c9a';
     public const SCHEMA_DESCRIPTION = '';
     private string $status;
     private string $scheduled_time;

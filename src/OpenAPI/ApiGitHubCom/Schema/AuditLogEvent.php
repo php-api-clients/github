@@ -5,22 +5,33 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class AuditLogEvent
 {
     public const SCHEMA_TITLE = 'audit-log-event';
+    public const SPL_HASH = '0000000054d5fa360000000071115dec';
     public const SCHEMA_DESCRIPTION = '';
-    /**The time the audit log event occurred, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).**/
+    /**
+     * The time the audit log event occurred, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
+     */
     private int $@timestamp;
-    /**The name of the action that was performed, for example `user.login` or `repo.create`.**/
+    /**
+     * The name of the action that was performed, for example `user.login` or `repo.create`.
+     */
     private string $action;
     private boolean $active;
     private boolean $active_was;
-    /**The actor who performed the action.**/
+    /**
+     * The actor who performed the action.
+     */
     private string $actor;
-    /**The username of the account being blocked.**/
+    /**
+     * The username of the account being blocked.
+     */
     private string $blocked_user;
     private string $business;
     private array $config;
     private array $config_was;
     private string $content_type;
-    /**The time the audit log event was recorded, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).**/
+    /**
+     * The time the audit log event was recorded, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
+     */
     private int $created_at;
     private string $deploy_key_fingerprint;
     private string $emoji;
@@ -37,20 +48,32 @@ final class AuditLogEvent
     private string $org;
     private string $previous_visibility;
     private boolean $read_only;
-    /**The name of the repository.**/
+    /**
+     * The name of the repository.
+     */
     private string $repo;
-    /**The name of the repository.**/
+    /**
+     * The name of the repository.
+     */
     private string $repository;
     private boolean $repository_public;
     private string $target_login;
     private string $team;
-    /**The type of protocol (for example, HTTP or SSH) used to transfer Git data.**/
+    /**
+     * The type of protocol (for example, HTTP or SSH) used to transfer Git data.
+     */
     private int $transport_protocol;
-    /**A human readable name for the protocol (for example, HTTP or SSH) used to transfer Git data.**/
+    /**
+     * A human readable name for the protocol (for example, HTTP or SSH) used to transfer Git data.
+     */
     private string $transport_protocol_name;
-    /**The user that was affected by the action performed (if available).**/
+    /**
+     * The user that was affected by the action performed (if available).
+     */
     private string $user;
-    /**The repository visibility, for example `public` or `private`.**/
+    /**
+     * The repository visibility, for example `public` or `private`.
+     */
     private string $visibility;
     public function @timestamp() : int
     {

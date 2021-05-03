@@ -5,26 +5,39 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class DeploymentStatus
 {
     public const SCHEMA_TITLE = 'Deployment Status';
+    public const SPL_HASH = '000000001c23f04b000000003890ca58';
     public const SCHEMA_DESCRIPTION = 'The status of a deployment.';
     private string $url;
     private int $id;
     private string $node_id;
-    /**The state of the status.**/
+    /**
+     * The state of the status.
+     */
     private string $state;
     private $creator;
-    /**A short description of the status.**/
+    /**
+     * A short description of the status.
+     */
     private string $description;
-    /**The environment of the deployment that the status is for.**/
+    /**
+     * The environment of the deployment that the status is for.
+     */
     private string $environment;
-    /**Deprecated: the URL to associate with this status.**/
+    /**
+     * Deprecated: the URL to associate with this status.
+     */
     private string $target_url;
     private string $created_at;
     private string $updated_at;
     private string $deployment_url;
     private string $repository_url;
-    /**The URL for accessing your environment.**/
+    /**
+     * The URL for accessing your environment.
+     */
     private string $environment_url;
-    /**The URL to associate with this status.**/
+    /**
+     * The URL to associate with this status.
+     */
     private string $log_url;
     private $performed_via_github_app;
     public function url() : string

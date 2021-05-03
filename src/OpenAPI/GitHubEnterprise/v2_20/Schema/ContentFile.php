@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class ContentFile
 {
     public const SCHEMA_TITLE = 'Content File';
+    public const SPL_HASH = '000000001c23f3d0000000003890ca58';
     public const SCHEMA_DESCRIPTION = 'Content File';
     private string $type;
     private string $encoding;

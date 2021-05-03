@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class PrivateUser
 {
     public const SCHEMA_TITLE = 'Private User';
+    public const SPL_HASH = '000000002eab1faa00000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Private User';
     private string $login;
     private int $id;

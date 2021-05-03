@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class GlobalHook2
 {
     public const SCHEMA_TITLE = 'global-hook-2';
+    public const SPL_HASH = '00000000159350de000000001856c88e';
     public const SCHEMA_DESCRIPTION = '';
     private string $type;
     private int $id;

@@ -5,12 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class RunnerApplication
 {
     public const SCHEMA_TITLE = 'Runner Application';
+    public const SPL_HASH = '0000000054d5fac70000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Runner Application';
     private string $os;
     private string $architecture;
     private string $download_url;
     private string $filename;
-    /**A short lived bearer token used to download the runner, if needed.**/
+    /**
+     * A short lived bearer token used to download the runner, if needed.
+     */
     private string $temp_download_token;
     private string $sha256_checksum;
     public function os() : string

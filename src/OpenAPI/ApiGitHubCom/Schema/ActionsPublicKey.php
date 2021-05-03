@@ -5,10 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ActionsPublicKey
 {
     public const SCHEMA_TITLE = 'ActionsPublicKey';
+    public const SPL_HASH = '0000000054d5f9d30000000071115dec';
     public const SCHEMA_DESCRIPTION = 'The public key used for setting Actions Secrets.';
-    /**The identifier for the key.**/
+    /**
+     * The identifier for the key.
+     */
     private string $key_id;
-    /**The Base64 encoded public key.**/
+    /**
+     * The Base64 encoded public key.
+     */
     private string $key;
     private int $id;
     private string $url;

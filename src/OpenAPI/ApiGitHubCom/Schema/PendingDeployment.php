@@ -5,15 +5,24 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PendingDeployment
 {
     public const SCHEMA_TITLE = 'Pending Deployment';
+    public const SPL_HASH = '0000000054d5e4a80000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Details of a deployment that is waiting for protection rules to pass';
     private object $environment;
-    /**The set duration of the wait timer**/
+    /**
+     * The set duration of the wait timer
+     */
     private int $wait_timer;
-    /**The time that the wait timer began.**/
+    /**
+     * The time that the wait timer began.
+     */
     private string $wait_timer_started_at;
-    /**Whether the currently authenticated user can approve the deployment**/
+    /**
+     * Whether the currently authenticated user can approve the deployment
+     */
     private boolean $current_user_can_approve;
-    /**The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.**/
+    /**
+     * The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+     */
     private array $reviewers;
     public function environment() : object
     {

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Migration
 {
     public const SCHEMA_TITLE = 'Migration';
+    public const SPL_HASH = '0000000054d5f9660000000071115dec';
     public const SCHEMA_DESCRIPTION = 'A migration.';
     private int $id;
     private $owner;
@@ -12,6 +13,9 @@ final class Migration
     private string $state;
     private boolean $lock_repositories;
     private boolean $exclude_attachments;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
+     */
     private array $repositories;
     private string $url;
     private string $created_at;

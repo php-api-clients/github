@@ -5,9 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class ProtectedBranch
 {
     public const SCHEMA_TITLE = 'Protected Branch';
+    public const SPL_HASH = '000000004a4ba44d0000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'Branch protections protect branches';
     private string $url;
-    /**Status Check Policy**/
+    /**
+     * Status Check Policy
+     */
     private object $required_status_checks;
     private object $required_pull_request_reviews;
     private object $required_signatures;
@@ -15,7 +18,9 @@ final class ProtectedBranch
     private object $required_linear_history;
     private object $allow_force_pushes;
     private object $allow_deletions;
-    /**Branch Restriction Policy**/
+    /**
+     * Branch Restriction Policy
+     */
     private object $restrictions;
     private object $required_conversation_resolution;
     public function url() : string

@@ -5,28 +5,44 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Issue
 {
     public const SCHEMA_TITLE = 'Issue';
+    public const SPL_HASH = '0000000054d5f8b60000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.';
     private int $id;
     private string $node_id;
-    /**URL for the issue**/
+    /**
+     * URL for the issue
+     */
     private string $url;
     private string $repository_url;
     private string $labels_url;
     private string $comments_url;
     private string $events_url;
     private string $html_url;
-    /**Number uniquely identifying the issue within its repository**/
+    /**
+     * Number uniquely identifying the issue within its repository
+     */
     private int $number;
-    /**State of the issue; either 'open' or 'closed'**/
+    /**
+     * State of the issue; either 'open' or 'closed'
+     */
     private string $state;
-    /**Title of the issue**/
+    /**
+     * Title of the issue
+     */
     private string $title;
-    /**Contents of the issue**/
+    /**
+     * Contents of the issue
+     */
     private string $body;
     private $user;
-    /**Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository**/
+    /**
+     * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
+     */
     private array $labels;
     private $assignee;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
     private array $assignees;
     private $milestone;
     private boolean $locked;
@@ -40,10 +56,14 @@ final class Issue
     private string $body_html;
     private string $body_text;
     private string $timeline_url;
-    /**A git repository**/
+    /**
+     * A git repository
+     */
     private object $repository;
     private $performed_via_github_app;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     private object $reactions;
     public function id() : int

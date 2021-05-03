@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class OrganizationInvitation
 {
     public const SCHEMA_TITLE = 'Organization Invitation';
+    public const SPL_HASH = '0000000054d5f9ce0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Organization Invitation';
     private int $id;
     private string $login;
@@ -13,7 +14,9 @@ final class OrganizationInvitation
     private string $created_at;
     private string $failed_at;
     private string $failed_reason;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $inviter;
     private int $team_count;
     private string $node_id;

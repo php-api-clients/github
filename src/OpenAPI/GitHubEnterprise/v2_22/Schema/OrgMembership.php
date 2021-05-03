@@ -5,14 +5,21 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class OrgMembership
 {
     public const SCHEMA_TITLE = 'Org Membership';
+    public const SPL_HASH = '000000004a4ba7590000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'Org Membership';
     private string $url;
-    /**The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.**/
+    /**
+     * The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
+     */
     private string $state;
-    /**The user's membership type in the organization.**/
+    /**
+     * The user's membership type in the organization.
+     */
     private string $role;
     private string $organization_url;
-    /**Organization Simple**/
+    /**
+     * Organization Simple
+     */
     private object $organization;
     private $user;
     private object $permissions;

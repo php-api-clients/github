@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class ApiOverview
 {
     public const SCHEMA_TITLE = 'Api Overview';
+    public const SPL_HASH = '0000000065dd63be000000006352672d';
     public const SCHEMA_DESCRIPTION = 'Api Overview';
     private boolean $verifiable_password_authentication;
     private array $packages;

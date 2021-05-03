@@ -5,20 +5,31 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Environment
 {
     public const SCHEMA_TITLE = 'Environment';
+    public const SPL_HASH = '0000000054d5e0380000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Details of a deployment environment';
-    /**The id of the environment.**/
+    /**
+     * The id of the environment.
+     */
     private int $id;
     private string $node_id;
-    /**The name of the environment.**/
+    /**
+     * The name of the environment.
+     */
     private string $name;
     private string $url;
     private string $html_url;
-    /**The time that the environment was created, in ISO 8601 format.**/
+    /**
+     * The time that the environment was created, in ISO 8601 format.
+     */
     private string $created_at;
-    /**The time that the environment was last updated, in ISO 8601 format.**/
+    /**
+     * The time that the environment was last updated, in ISO 8601 format.
+     */
     private string $updated_at;
     private array $protection_rules;
-    /**The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.**/
+    /**
+     * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
+     */
     private object $deployment_branch_policy;
     public function id() : int
     {

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class RepoSearchResultItem
 {
     public const SCHEMA_TITLE = 'Repo Search Result Item';
+    public const SPL_HASH = '000000002eab1c3000000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Repo Search Result Item';
     private int $id;
     private string $node_id;
@@ -80,7 +81,9 @@ final class RepoSearchResultItem
     private boolean $has_wiki;
     private boolean $has_downloads;
     private boolean $archived;
-    /**Returns whether or not this repository disabled.**/
+    /**
+     * Returns whether or not this repository disabled.
+     */
     private boolean $disabled;
     private $license;
     private object $permissions;

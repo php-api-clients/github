@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class AuthorizationWithUser
 {
     public const SCHEMA_TITLE = 'authorization-with-user';
+    public const SPL_HASH = '000000002eab68aa00000000697c5254';
     public const SCHEMA_DESCRIPTION = '';
     private int $id;
     private string $url;

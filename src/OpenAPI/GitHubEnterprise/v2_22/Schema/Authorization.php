@@ -5,10 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Authorization
 {
     public const SCHEMA_TITLE = 'Authorization';
+    public const SPL_HASH = '000000004a4bdce10000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'The authorization for an OAuth app, GitHub App, or a Personal Access Token.';
     private int $id;
     private string $url;
-    /**A list of scopes that this authorization is in.**/
+    /**
+     * A list of scopes that this authorization is in.
+     */
     private array $scopes;
     private string $token;
     private string $token_last_eight;

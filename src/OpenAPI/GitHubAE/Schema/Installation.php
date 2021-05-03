@@ -5,17 +5,24 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Installation
 {
     public const SCHEMA_TITLE = 'Installation';
+    public const SPL_HASH = '000000000c1c98140000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'Installation';
-    /**The ID of the installation.**/
+    /**
+     * The ID of the installation.
+     */
     private int $id;
     private $account;
-    /**Describe whether all repositories have been selected or there's a selection involved**/
+    /**
+     * Describe whether all repositories have been selected or there's a selection involved
+     */
     private string $repository_selection;
     private string $access_tokens_url;
     private string $repositories_url;
     private string $html_url;
     private int $app_id;
-    /**The ID of the user or organization this token is being scoped to.**/
+    /**
+     * The ID of the user or organization this token is being scoped to.
+     */
     private int $target_id;
     private string $target_type;
     private object $permissions;

@@ -5,9 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class StarredRepository
 {
     public const SCHEMA_TITLE = 'Starred Repository';
+    public const SPL_HASH = '0000000054d5eba40000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Starred Repository';
     private string $starred_at;
-    /**A git repository**/
+    /**
+     * A git repository
+     */
     private object $repo;
     public function starred_at() : string
     {

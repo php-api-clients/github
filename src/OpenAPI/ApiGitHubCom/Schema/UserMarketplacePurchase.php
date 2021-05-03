@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class UserMarketplacePurchase
 {
     public const SCHEMA_TITLE = 'User Marketplace Purchase';
+    public const SPL_HASH = '0000000054d5ebb10000000071115dec';
     public const SCHEMA_DESCRIPTION = 'User Marketplace Purchase';
     private string $billing_cycle;
     private string $next_billing_date;
@@ -13,7 +14,9 @@ final class UserMarketplacePurchase
     private string $free_trial_ends_on;
     private string $updated_at;
     private object $account;
-    /**Marketplace Listing Plan**/
+    /**
+     * Marketplace Listing Plan
+     */
     private object $plan;
     public function billing_cycle() : string
     {

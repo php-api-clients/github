@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PullRequest
 {
     public const SCHEMA_TITLE = 'Pull Request';
+    public const SPL_HASH = '0000000054d5ee800000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Pull requests let you tell others about changes you\'ve pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.';
     private string $url;
     private int $id;
@@ -18,12 +19,18 @@ final class PullRequest
     private string $review_comment_url;
     private string $comments_url;
     private string $statuses_url;
-    /**Number uniquely identifying the pull request within its repository.**/
+    /**
+     * Number uniquely identifying the pull request within its repository.
+     */
     private int $number;
-    /**State of this Pull Request. Either `open` or `closed`.**/
+    /**
+     * State of this Pull Request. Either `open` or `closed`.
+     */
     private string $state;
     private boolean $locked;
-    /**The title of the pull request.**/
+    /**
+     * The title of the pull request.
+     */
     private string $title;
     private $user;
     private string $body;
@@ -36,17 +43,32 @@ final class PullRequest
     private string $merged_at;
     private string $merge_commit_sha;
     private $assignee;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
     private array $assignees;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
     private array $requested_reviewers;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
+     */
     private array $requested_teams;
     private object $head;
     private object $base;
     private object $_links;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
-    /**The status of auto merging a pull request.**/
+    /**
+     * The status of auto merging a pull request.
+     */
     private object $auto_merge;
-    /**Indicates whether or not the pull request is a draft.**/
+    /**
+     * Indicates whether or not the pull request is a draft.
+     */
     private boolean $draft;
     private boolean $merged;
     private boolean $mergeable;
@@ -55,7 +77,9 @@ final class PullRequest
     private $merged_by;
     private int $comments;
     private int $review_comments;
-    /**Indicates whether maintainers can modify the pull request.**/
+    /**
+     * Indicates whether maintainers can modify the pull request.
+     */
     private boolean $maintainer_can_modify;
     private int $commits;
     private int $additions;

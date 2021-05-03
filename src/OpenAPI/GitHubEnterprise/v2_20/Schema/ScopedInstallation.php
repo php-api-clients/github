@@ -5,16 +5,23 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class ScopedInstallation
 {
     public const SCHEMA_TITLE = 'Scoped Installation';
+    public const SPL_HASH = '000000001c23fbca000000003890ca58';
     public const SCHEMA_DESCRIPTION = '';
-    /**The permissions granted to the user-to-server access token.**/
+    /**
+     * The permissions granted to the user-to-server access token.
+     */
     private object $permissions;
-    /**Describe whether all repositories have been selected or there's a selection involved**/
+    /**
+     * Describe whether all repositories have been selected or there's a selection involved
+     */
     private string $repository_selection;
     private string $single_file_name;
     private boolean $has_multiple_single_files;
     private array $single_file_paths;
     private string $repositories_url;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $account;
     public function permissions() : object
     {

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class TeamProject
 {
     public const SCHEMA_TITLE = 'Team Project';
+    public const SPL_HASH = '000000002eab1f9d00000000697c5254';
     public const SCHEMA_DESCRIPTION = 'A team\'s access to a project.';
     private string $owner_url;
     private string $url;
@@ -16,13 +17,19 @@ final class TeamProject
     private string $body;
     private int $number;
     private string $state;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $creator;
     private string $created_at;
     private string $updated_at;
-    /**The organization permission for this project. Only present when owner is an organization.**/
+    /**
+     * The organization permission for this project. Only present when owner is an organization.
+     */
     private string $organization_permission;
-    /**Whether the project is private or not. Only present when owner is an organization.**/
+    /**
+     * Whether the project is private or not. Only present when owner is an organization.
+     */
     private boolean $private;
     private object $permissions;
     public function owner_url() : string

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class IssueEvent
 {
     public const SCHEMA_TITLE = 'Issue Event';
+    public const SPL_HASH = '0000000065dd6b03000000006352672d';
     public const SCHEMA_DESCRIPTION = 'Issue Event';
     private int $id;
     private string $node_id;
@@ -14,24 +15,38 @@ final class IssueEvent
     private string $commit_id;
     private string $commit_url;
     private string $created_at;
-    /**Issue Simple**/
+    /**
+     * Issue Simple
+     */
     private object $issue;
-    /**Issue Event Label**/
+    /**
+     * Issue Event Label
+     */
     private object $label;
     private $assignee;
     private $assigner;
     private $review_requester;
     private $requested_reviewer;
-    /**Groups of organization members that gives permissions on specified repositories.**/
+    /**
+     * Groups of organization members that gives permissions on specified repositories.
+     */
     private object $requested_team;
     private object $dismissed_review;
-    /**Issue Event Milestone**/
+    /**
+     * Issue Event Milestone
+     */
     private object $milestone;
-    /**Issue Event Project Card**/
+    /**
+     * Issue Event Project Card
+     */
     private object $project_card;
-    /**Issue Event Rename**/
+    /**
+     * Issue Event Rename
+     */
     private object $rename;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     private string $lock_reason;
     private $performed_via_github_app;

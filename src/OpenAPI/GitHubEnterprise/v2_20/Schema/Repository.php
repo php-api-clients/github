@@ -5,11 +5,16 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Repository
 {
     public const SCHEMA_TITLE = 'Repository';
+    public const SPL_HASH = '000000001c23f84d000000003890ca58';
     public const SCHEMA_DESCRIPTION = 'A git repository';
-    /**Unique identifier of the repository**/
+    /**
+     * Unique identifier of the repository
+     */
     private int $id;
     private string $node_id;
-    /**The name of the repository.**/
+    /**
+     * The name of the repository.
+     */
     private string $name;
     private string $full_name;
     private $license;
@@ -17,7 +22,9 @@ final class Repository
     private int $forks;
     private object $permissions;
     private $owner;
-    /**Whether the repository is private or public.**/
+    /**
+     * Whether the repository is private or public.
+     */
     private boolean $private;
     private string $html_url;
     private string $description;
@@ -70,36 +77,60 @@ final class Repository
     private int $stargazers_count;
     private int $watchers_count;
     private int $size;
-    /**The default branch of the repository.**/
+    /**
+     * The default branch of the repository.
+     */
     private string $default_branch;
     private int $open_issues_count;
-    /**Whether this repository acts as a template that can be used to generate new repositories.**/
+    /**
+     * Whether this repository acts as a template that can be used to generate new repositories.
+     */
     private boolean $is_template;
     private array $topics;
-    /**Whether issues are enabled.**/
+    /**
+     * Whether issues are enabled.
+     */
     private boolean $has_issues;
-    /**Whether projects are enabled.**/
+    /**
+     * Whether projects are enabled.
+     */
     private boolean $has_projects;
-    /**Whether the wiki is enabled.**/
+    /**
+     * Whether the wiki is enabled.
+     */
     private boolean $has_wiki;
     private boolean $has_pages;
-    /**Whether downloads are enabled.**/
+    /**
+     * Whether downloads are enabled.
+     */
     private boolean $has_downloads;
-    /**Whether the repository is archived.**/
+    /**
+     * Whether the repository is archived.
+     */
     private boolean $archived;
-    /**Returns whether or not this repository disabled.**/
+    /**
+     * Returns whether or not this repository disabled.
+     */
     private boolean $disabled;
-    /**The repository visibility: public, private, or internal.**/
+    /**
+     * The repository visibility: public, private, or internal.
+     */
     private string $visibility;
     private string $pushed_at;
     private string $created_at;
     private string $updated_at;
-    /**Whether to allow rebase merges for pull requests.**/
+    /**
+     * Whether to allow rebase merges for pull requests.
+     */
     private boolean $allow_rebase_merge;
     private object $template_repository;
-    /**Whether to allow squash merges for pull requests.**/
+    /**
+     * Whether to allow squash merges for pull requests.
+     */
     private boolean $allow_squash_merge;
-    /**Whether to allow merge commits for pull requests.**/
+    /**
+     * Whether to allow merge commits for pull requests.
+     */
     private boolean $allow_merge_commit;
     private int $subscribers_count;
     private int $network_count;

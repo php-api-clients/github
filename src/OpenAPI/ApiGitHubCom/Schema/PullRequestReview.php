@@ -5,23 +5,32 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PullRequestReview
 {
     public const SCHEMA_TITLE = 'Pull Request Review';
+    public const SPL_HASH = '0000000054d5ef6e0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Pull Request Reviews are reviews on pull requests.';
-    /**Unique identifier of the review**/
+    /**
+     * Unique identifier of the review
+     */
     private int $id;
     private string $node_id;
     private $user;
-    /**The text of the review.**/
+    /**
+     * The text of the review.
+     */
     private string $body;
     private string $state;
     private string $html_url;
     private string $pull_request_url;
     private object $_links;
     private string $submitted_at;
-    /**A commit SHA for the review.**/
+    /**
+     * A commit SHA for the review.
+     */
     private string $commit_id;
     private string $body_html;
     private string $body_text;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     public function id() : int
     {

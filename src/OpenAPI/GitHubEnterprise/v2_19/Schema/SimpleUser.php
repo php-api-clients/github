@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class SimpleUser
 {
     public const SCHEMA_TITLE = 'Simple User';
+    public const SPL_HASH = '0000000015935052000000001856c88e';
     public const SCHEMA_DESCRIPTION = 'Simple User';
     private string $login;
     private int $id;

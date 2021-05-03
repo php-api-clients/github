@@ -5,10 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class GistSimple
 {
     public const SCHEMA_TITLE = 'Gist Simple';
+    public const SPL_HASH = '0000000015935356000000001856c88e';
     public const SCHEMA_DESCRIPTION = 'Gist Simple';
     private array $forks;
     private array $history;
-    /**Gist**/
+    /**
+     * Gist
+     */
     private object $fork_of;
     private string $url;
     private string $forks_url;
@@ -26,7 +29,9 @@ final class GistSimple
     private int $comments;
     private string $user;
     private string $comments_url;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $owner;
     private boolean $truncated;
     public function forks() : array

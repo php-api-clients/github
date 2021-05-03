@@ -5,16 +5,21 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ProjectCard
 {
     public const SCHEMA_TITLE = 'Project Card';
+    public const SPL_HASH = '0000000015935d7d000000001856c88e';
     public const SCHEMA_DESCRIPTION = 'Project cards represent a scope of work.';
     private string $url;
-    /**The project card's ID**/
+    /**
+     * The project card's ID
+     */
     private int $id;
     private string $node_id;
     private string $note;
     private $creator;
     private string $created_at;
     private string $updated_at;
-    /**Whether or not the card is archived**/
+    /**
+     * Whether or not the card is archived
+     */
     private boolean $archived;
     private string $column_url;
     private string $content_url;

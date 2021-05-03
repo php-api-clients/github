@@ -5,25 +5,40 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class TeamSimple
 {
     public const SCHEMA_TITLE = 'Team Simple';
+    public const SPL_HASH = '0000000054d5f9110000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Groups of organization members that gives permissions on specified repositories.';
-    /**Unique identifier of the team**/
+    /**
+     * Unique identifier of the team
+     */
     private int $id;
     private string $node_id;
-    /**URL for the team**/
+    /**
+     * URL for the team
+     */
     private string $url;
     private string $members_url;
-    /**Name of the team**/
+    /**
+     * Name of the team
+     */
     private string $name;
-    /**Description of the team**/
+    /**
+     * Description of the team
+     */
     private string $description;
-    /**Permission that the team will have for its repositories**/
+    /**
+     * Permission that the team will have for its repositories
+     */
     private string $permission;
-    /**The level of privacy this team should have**/
+    /**
+     * The level of privacy this team should have
+     */
     private string $privacy;
     private string $html_url;
     private string $repositories_url;
     private string $slug;
-    /**Distinguished Name (DN) that team maps to within LDAP environment**/
+    /**
+     * Distinguished Name (DN) that team maps to within LDAP environment
+     */
     private string $ldap_dn;
     public function id() : int
     {

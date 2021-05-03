@@ -5,8 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class PullRequestReviewRequest
 {
     public const SCHEMA_TITLE = 'Pull Request Review Request';
+    public const SPL_HASH = '0000000065d621fb000000007ce49c9a';
     public const SCHEMA_DESCRIPTION = 'Pull Request Review Request';
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser>
+     */
     private array $users;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\TeamSimple>
+     */
     private array $teams;
     public function users() : array
     {

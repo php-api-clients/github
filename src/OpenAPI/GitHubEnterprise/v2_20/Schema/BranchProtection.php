@@ -5,14 +5,21 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class BranchProtection
 {
     public const SCHEMA_TITLE = 'Branch Protection';
+    public const SPL_HASH = '000000001c23f570000000003890ca58';
     public const SCHEMA_DESCRIPTION = 'Branch Protection';
     private string $url;
     private object $required_status_checks;
-    /**Protected Branch Admin Enforced**/
+    /**
+     * Protected Branch Admin Enforced
+     */
     private object $enforce_admins;
-    /**Protected Branch Pull Request Review**/
+    /**
+     * Protected Branch Pull Request Review
+     */
     private object $required_pull_request_reviews;
-    /**Branch Restriction Policy**/
+    /**
+     * Branch Restriction Policy
+     */
     private object $restrictions;
     private object $required_linear_history;
     private object $allow_force_pushes;

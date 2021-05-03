@@ -5,15 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ReleaseAsset
 {
     public const SCHEMA_TITLE = 'Release Asset';
+    public const SPL_HASH = '0000000054d5ecad0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Data related to a release.';
     private string $url;
     private string $browser_download_url;
     private int $id;
     private string $node_id;
-    /**The file name of the asset.**/
+    /**
+     * The file name of the asset.
+     */
     private string $name;
     private string $label;
-    /**State of the release asset.**/
+    /**
+     * State of the release asset.
+     */
     private string $state;
     private string $content_type;
     private int $size;

@@ -5,25 +5,38 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class Integration
 {
     public const SCHEMA_TITLE = 'GitHub app';
+    public const SPL_HASH = '0000000065d65d93000000007ce49c9a';
     public const SCHEMA_DESCRIPTION = 'GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.';
-    /**Unique identifier of the GitHub app**/
+    /**
+     * Unique identifier of the GitHub app
+     */
     private int $id;
-    /**The slug name of the GitHub app**/
+    /**
+     * The slug name of the GitHub app
+     */
     private string $slug;
     private string $node_id;
     private $owner;
-    /**The name of the GitHub app**/
+    /**
+     * The name of the GitHub app
+     */
     private string $name;
     private string $description;
     private string $external_url;
     private string $html_url;
     private string $created_at;
     private string $updated_at;
-    /**The set of permissions for the GitHub app**/
+    /**
+     * The set of permissions for the GitHub app
+     */
     private object $permissions;
-    /**The list of events for the GitHub app**/
+    /**
+     * The list of events for the GitHub app
+     */
     private array $events;
-    /**The number of installations associated with the GitHub app**/
+    /**
+     * The number of installations associated with the GitHub app
+     */
     private int $installations_count;
     private string $client_id;
     private string $client_secret;

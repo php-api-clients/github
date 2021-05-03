@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class SimpleUser
 {
     public const SCHEMA_TITLE = 'Simple User';
+    public const SPL_HASH = '000000000c1c98b70000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'Simple User';
     private string $login;
     private int $id;

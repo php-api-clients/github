@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Status
 {
     public const SCHEMA_TITLE = 'Status';
+    public const SPL_HASH = '000000002eab611300000000697c5254';
     public const SCHEMA_DESCRIPTION = 'The status of a commit.';
     private string $url;
     private string $avatar_url;
@@ -16,7 +17,9 @@ final class Status
     private string $context;
     private string $created_at;
     private string $updated_at;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $creator;
     public function url() : string
     {

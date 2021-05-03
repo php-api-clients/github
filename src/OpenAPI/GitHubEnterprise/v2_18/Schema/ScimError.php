@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class ScimError
 {
     public const SCHEMA_TITLE = 'Scim Error';
+    public const SPL_HASH = '000000002eab66ee00000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Scim Error';
     private string $message;
     private string $documentation_url;

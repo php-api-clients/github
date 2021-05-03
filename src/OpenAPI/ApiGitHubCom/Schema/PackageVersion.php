@@ -5,10 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PackageVersion
 {
     public const SCHEMA_TITLE = 'Package Version';
+    public const SPL_HASH = '0000000054d5f94f0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'A version of a software package';
-    /**Unique identifier of the package version.**/
+    /**
+     * Unique identifier of the package version.
+     */
     private int $id;
-    /**The name of the package version.**/
+    /**
+     * The name of the package version.
+     */
     private string $name;
     private string $url;
     private string $package_html_url;

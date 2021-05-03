@@ -5,24 +5,34 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class CheckSuite
 {
     public const SCHEMA_TITLE = 'CheckSuite';
+    public const SPL_HASH = '0000000065d624b5000000007ce49c9a';
     public const SCHEMA_DESCRIPTION = 'A suite of checks performed on the code of a given code change';
     private int $id;
     private string $node_id;
     private string $head_branch;
-    /**The SHA of the head commit that is being checked.**/
+    /**
+     * The SHA of the head commit that is being checked.
+     */
     private string $head_sha;
     private string $status;
     private string $conclusion;
     private string $url;
     private string $before;
     private string $after;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\PullRequestMinimal>
+     */
     private array $pull_requests;
     private $app;
-    /**Minimal Repository**/
+    /**
+     * Minimal Repository
+     */
     private object $repository;
     private string $created_at;
     private string $updated_at;
-    /**Simple Commit**/
+    /**
+     * Simple Commit
+     */
     private object $head_commit;
     private int $latest_check_runs_count;
     private string $check_runs_url;

@@ -5,12 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class FullRepository
 {
     public const SCHEMA_TITLE = 'Full Repository';
+    public const SPL_HASH = '000000004a4ba68b0000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'Full Repository';
     private int $id;
     private string $node_id;
     private string $name;
     private string $full_name;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $owner;
     private boolean $private;
     private string $html_url;
@@ -74,9 +77,13 @@ final class FullRepository
     private boolean $has_pages;
     private boolean $has_downloads;
     private boolean $archived;
-    /**Returns whether or not this repository disabled.**/
+    /**
+     * Returns whether or not this repository disabled.
+     */
     private boolean $disabled;
-    /**The repository visibility: public, private, or internal.**/
+    /**
+     * The repository visibility: public, private, or internal.
+     */
     private string $visibility;
     private string $pushed_at;
     private string $created_at;
@@ -92,17 +99,25 @@ final class FullRepository
     private int $network_count;
     private $license;
     private $organization;
-    /**A git repository**/
+    /**
+     * A git repository
+     */
     private object $parent;
-    /**A git repository**/
+    /**
+     * A git repository
+     */
     private object $source;
     private int $forks;
     private string $master_branch;
     private int $open_issues;
     private int $watchers;
-    /**Whether anonymous git access is allowed.**/
+    /**
+     * Whether anonymous git access is allowed.
+     */
     private boolean $anonymous_access_enabled;
-    /**Code of Conduct Simple**/
+    /**
+     * Code of Conduct Simple
+     */
     private object $code_of_conduct;
     public function id() : int
     {

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class RunnerGroupsEnterprise
 {
     public const SCHEMA_TITLE = 'runner-groups-enterprise';
+    public const SPL_HASH = '000000004a4ba2b70000000021d13a21';
     public const SCHEMA_DESCRIPTION = '';
     private number $id;
     private string $name;

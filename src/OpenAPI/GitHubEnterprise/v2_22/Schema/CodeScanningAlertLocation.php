@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class CodeScanningAlertLocation
 {
     public const SCHEMA_TITLE = 'code-scanning-alert-location';
+    public const SPL_HASH = '000000004a4bab150000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'Describe a region within a file for the alert.';
     private string $path;
     private int $start_line;

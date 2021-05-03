@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class PreReceiveEnvironmentDownloadStatus
 {
     public const SCHEMA_TITLE = 'pre-receive-environment-download-status';
+    public const SPL_HASH = '000000004a4bdc870000000021d13a21';
     public const SCHEMA_DESCRIPTION = '';
     private string $url;
     private string $state;

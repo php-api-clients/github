@@ -5,22 +5,37 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Page
 {
     public const SCHEMA_TITLE = 'GitHub Pages';
+    public const SPL_HASH = '000000004a4ba86f0000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'The configuration for GitHub Pages for a repository.';
-    /**The API address for accessing this Page resource.**/
+    /**
+     * The API address for accessing this Page resource.
+     */
     private string $url;
-    /**The status of the most recent build of the Page.**/
+    /**
+     * The status of the most recent build of the Page.
+     */
     private string $status;
-    /**The Pages site's custom domain**/
+    /**
+     * The Pages site's custom domain
+     */
     private string $cname;
-    /**Whether the Page has a custom 404 page.**/
+    /**
+     * Whether the Page has a custom 404 page.
+     */
     private boolean $custom_404;
-    /**The web address the Page can be accessed from.**/
+    /**
+     * The web address the Page can be accessed from.
+     */
     private string $html_url;
     private object $source;
-    /**Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.**/
+    /**
+     * Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
+     */
     private boolean $public;
     private object $https_certificate;
-    /**Whether https is enabled on the domain**/
+    /**
+     * Whether https is enabled on the domain
+     */
     private boolean $https_enforced;
     public function url() : string
     {

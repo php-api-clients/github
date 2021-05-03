@@ -5,11 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class ShortBranch
 {
     public const SCHEMA_TITLE = 'Short Branch';
+    public const SPL_HASH = '000000004a4ba4130000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'Short Branch';
     private string $name;
     private object $commit;
     private boolean $protected;
-    /**Branch Protection**/
+    /**
+     * Branch Protection
+     */
     private object $protection;
     private string $protection_url;
     public function name() : string

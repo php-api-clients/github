@@ -5,28 +5,47 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Job
 {
     public const SCHEMA_TITLE = 'Job';
+    public const SPL_HASH = '000000004a4ba5070000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'Information of a job execution in a workflow run';
-    /**The id of the job.**/
+    /**
+     * The id of the job.
+     */
     private int $id;
-    /**The id of the associated workflow run.**/
+    /**
+     * The id of the associated workflow run.
+     */
     private int $run_id;
     private string $run_url;
     private string $node_id;
-    /**The SHA of the commit that is being run.**/
+    /**
+     * The SHA of the commit that is being run.
+     */
     private string $head_sha;
     private string $url;
     private string $html_url;
-    /**The phase of the lifecycle that the job is currently in.**/
+    /**
+     * The phase of the lifecycle that the job is currently in.
+     */
     private string $status;
-    /**The outcome of the job.**/
+    /**
+     * The outcome of the job.
+     */
     private string $conclusion;
-    /**The time that the job started, in ISO 8601 format.**/
+    /**
+     * The time that the job started, in ISO 8601 format.
+     */
     private string $started_at;
-    /**The time that the job finished, in ISO 8601 format.**/
+    /**
+     * The time that the job finished, in ISO 8601 format.
+     */
     private string $completed_at;
-    /**The name of the job.**/
+    /**
+     * The name of the job.
+     */
     private string $name;
-    /**Steps in this job.**/
+    /**
+     * Steps in this job.
+     */
     private array $steps;
     private string $check_run_url;
     public function id() : int

@@ -5,14 +5,23 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class CodeScanningAlertRuleSummary
 {
     public const SCHEMA_TITLE = 'code-scanning-alert-rule-summary';
+    public const SPL_HASH = '0000000065dd6c10000000006352672d';
     public const SCHEMA_DESCRIPTION = '';
-    /**A unique identifier for the rule used to detect the alert.**/
+    /**
+     * A unique identifier for the rule used to detect the alert.
+     */
     private string $id;
-    /**The name of the rule used to detect the alert.**/
+    /**
+     * The name of the rule used to detect the alert.
+     */
     private string $name;
-    /**The severity of the alert.**/
+    /**
+     * The severity of the alert.
+     */
     private string $severity;
-    /**A short description of the rule used to detect the alert.**/
+    /**
+     * A short description of the rule used to detect the alert.
+     */
     private string $description;
     public function id() : string
     {

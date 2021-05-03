@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class OrgHook
 {
     public const SCHEMA_TITLE = 'Org Hook';
+    public const SPL_HASH = '000000000c1ce4700000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'Org Hook';
     private int $id;
     private string $url;

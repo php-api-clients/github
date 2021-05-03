@@ -5,11 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class IssueEventForIssue
 {
     public const SCHEMA_TITLE = 'Issue Event for Issue';
+    public const SPL_HASH = '000000002eab635200000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Issue Event for Issue';
     private int $id;
     private string $node_id;
     private string $url;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $actor;
     private string $event;
     private string $commit_id;
@@ -20,7 +23,9 @@ final class IssueEventForIssue
     private string $message;
     private string $issue_url;
     private string $updated_at;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     private string $body;
     private string $lock_reason;

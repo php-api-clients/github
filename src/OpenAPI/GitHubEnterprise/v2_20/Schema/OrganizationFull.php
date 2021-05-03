@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class OrganizationFull
 {
     public const SCHEMA_TITLE = 'Organization Full';
+    public const SPL_HASH = '000000001c23f72b000000003890ca58';
     public const SCHEMA_DESCRIPTION = 'Organization Full';
     private string $login;
     private int $id;

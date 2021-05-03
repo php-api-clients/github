@@ -5,12 +5,17 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class TeamDiscussion
 {
     public const SCHEMA_TITLE = 'Team Discussion';
+    public const SPL_HASH = '0000000054d5e68b0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'A team discussion is a persistent record of a free-form conversation within a team.';
     private $author;
-    /**The main text of the discussion.**/
+    /**
+     * The main text of the discussion.
+     */
     private string $body;
     private string $body_html;
-    /**The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.**/
+    /**
+     * The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
+     */
     private string $body_version;
     private int $comments_count;
     private string $comments_url;
@@ -18,14 +23,22 @@ final class TeamDiscussion
     private string $last_edited_at;
     private string $html_url;
     private string $node_id;
-    /**The unique sequence number of a team discussion.**/
+    /**
+     * The unique sequence number of a team discussion.
+     */
     private int $number;
-    /**Whether or not this discussion should be pinned for easy retrieval.**/
+    /**
+     * Whether or not this discussion should be pinned for easy retrieval.
+     */
     private boolean $pinned;
-    /**Whether or not this discussion should be restricted to team members and organization administrators.**/
+    /**
+     * Whether or not this discussion should be restricted to team members and organization administrators.
+     */
     private boolean $private;
     private string $team_url;
-    /**The title of the discussion.**/
+    /**
+     * The title of the discussion.
+     */
     private string $title;
     private string $updated_at;
     private string $url;

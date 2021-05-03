@@ -5,13 +5,18 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Event
 {
     public const SCHEMA_TITLE = 'Event';
+    public const SPL_HASH = '0000000065dd62d0000000006352672d';
     public const SCHEMA_DESCRIPTION = 'Event';
     private string $id;
     private string $type;
-    /**Actor**/
+    /**
+     * Actor
+     */
     private object $actor;
     private object $repo;
-    /**Actor**/
+    /**
+     * Actor
+     */
     private object $org;
     private object $payload;
     private boolean $public;

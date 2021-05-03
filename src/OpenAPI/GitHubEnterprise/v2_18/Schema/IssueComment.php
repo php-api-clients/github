@@ -5,13 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class IssueComment
 {
     public const SCHEMA_TITLE = 'Issue Comment';
+    public const SPL_HASH = '000000002eab6be600000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Comments provide a way for people to collaborate on an issue.';
-    /**Unique identifier of the issue comment**/
+    /**
+     * Unique identifier of the issue comment
+     */
     private int $id;
     private string $node_id;
-    /**URL for the issue comment**/
+    /**
+     * URL for the issue comment
+     */
     private string $url;
-    /**Contents of the issue comment**/
+    /**
+     * Contents of the issue comment
+     */
     private string $body;
     private string $body_text;
     private string $body_html;
@@ -20,7 +27,9 @@ final class IssueComment
     private string $created_at;
     private string $updated_at;
     private string $issue_url;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     private $performed_via_github_app;
     private object $reactions;

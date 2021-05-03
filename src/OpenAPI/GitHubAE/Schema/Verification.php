@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Verification
 {
     public const SCHEMA_TITLE = 'Verification';
+    public const SPL_HASH = '000000000c1ce1650000000065732ccc';
     public const SCHEMA_DESCRIPTION = '';
     private boolean $verified;
     private string $reason;

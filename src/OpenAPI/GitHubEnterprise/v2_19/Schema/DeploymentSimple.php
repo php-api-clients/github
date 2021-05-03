@@ -5,24 +5,35 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class DeploymentSimple
 {
     public const SCHEMA_TITLE = 'Deployment';
+    public const SPL_HASH = '0000000015935f77000000001856c88e';
     public const SCHEMA_DESCRIPTION = 'A deployment created as the result of an Actions check run from a workflow that references an environment';
     private string $url;
-    /**Unique identifier of the deployment**/
+    /**
+     * Unique identifier of the deployment
+     */
     private int $id;
     private string $node_id;
-    /**Parameter to specify a task to execute**/
+    /**
+     * Parameter to specify a task to execute
+     */
     private string $task;
     private string $original_environment;
-    /**Name for the target deployment environment.**/
+    /**
+     * Name for the target deployment environment.
+     */
     private string $environment;
     private string $description;
     private string $created_at;
     private string $updated_at;
     private string $statuses_url;
     private string $repository_url;
-    /**Specifies if the given environment is will no longer exist at some point in the future. Default: false.**/
+    /**
+     * Specifies if the given environment is will no longer exist at some point in the future. Default: false.
+     */
     private boolean $transient_environment;
-    /**Specifies if the given environment is one that end-users directly interact with. Default: false.**/
+    /**
+     * Specifies if the given environment is one that end-users directly interact with. Default: false.
+     */
     private boolean $production_environment;
     private $performed_via_github_app;
     public function url() : string

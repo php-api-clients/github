@@ -5,27 +5,48 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CredentialAuthorization
 {
     public const SCHEMA_TITLE = 'Credential Authorization';
+    public const SPL_HASH = '0000000054d5f9db0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Credential Authorization';
-    /**User login that owns the underlying credential.**/
+    /**
+     * User login that owns the underlying credential.
+     */
     private string $login;
-    /**Unique identifier for the credential.**/
+    /**
+     * Unique identifier for the credential.
+     */
     private int $credential_id;
-    /**Human-readable description of the credential type.**/
+    /**
+     * Human-readable description of the credential type.
+     */
     private string $credential_type;
-    /**Last eight characters of the credential. Only included in responses with credential_type of personal access token.**/
+    /**
+     * Last eight characters of the credential. Only included in responses with credential_type of personal access token.
+     */
     private string $token_last_eight;
-    /**Date when the credential was authorized for use.**/
+    /**
+     * Date when the credential was authorized for use.
+     */
     private string $credential_authorized_at;
-    /**List of oauth scopes the token has been granted.**/
+    /**
+     * List of oauth scopes the token has been granted.
+     */
     private array $scopes;
-    /**Unique string to distinguish the credential. Only included in responses with credential_type of SSH Key.**/
+    /**
+     * Unique string to distinguish the credential. Only included in responses with credential_type of SSH Key.
+     */
     private string $fingerprint;
-    /**Date when the credential was last accessed. May be null if it was never accessed**/
+    /**
+     * Date when the credential was last accessed. May be null if it was never accessed
+     */
     private string $credential_accessed_at;
     private int $authorized_credential_id;
-    /**The title given to the ssh key. This will only be present when the credential is an ssh key.**/
+    /**
+     * The title given to the ssh key. This will only be present when the credential is an ssh key.
+     */
     private string $authorized_credential_title;
-    /**The note given to the token. This will only be present when the credential is a token.**/
+    /**
+     * The note given to the token. This will only be present when the credential is a token.
+     */
     private string $authorized_credential_note;
     public function login() : string
     {

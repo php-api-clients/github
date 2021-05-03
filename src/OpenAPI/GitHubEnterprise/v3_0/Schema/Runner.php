@@ -5,14 +5,23 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Runner
 {
     public const SCHEMA_TITLE = 'Self hosted runners';
+    public const SPL_HASH = '0000000065dd627e000000006352672d';
     public const SCHEMA_DESCRIPTION = 'A self hosted runner';
-    /**The id of the runner.**/
+    /**
+     * The id of the runner.
+     */
     private int $id;
-    /**The name of the runner.**/
+    /**
+     * The name of the runner.
+     */
     private string $name;
-    /**The Operating System of the runner.**/
+    /**
+     * The Operating System of the runner.
+     */
     private string $os;
-    /**The status of the runner.**/
+    /**
+     * The status of the runner.
+     */
     private string $status;
     private boolean $busy;
     private array $labels;

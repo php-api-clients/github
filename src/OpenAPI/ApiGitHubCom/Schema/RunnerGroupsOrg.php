@@ -5,12 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class RunnerGroupsOrg
 {
     public const SCHEMA_TITLE = 'runner-groups-org';
+    public const SPL_HASH = '0000000054d5f9e30000000071115dec';
     public const SCHEMA_DESCRIPTION = '';
     private number $id;
     private string $name;
     private string $visibility;
     private boolean $default;
-    /**Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`**/
+    /**
+     * Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
+     */
     private string $selected_repositories_url;
     private string $runners_url;
     private boolean $inherited;

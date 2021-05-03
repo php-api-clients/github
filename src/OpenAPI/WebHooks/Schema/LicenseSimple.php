@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class LicenseSimple
 {
     public const SCHEMA_TITLE = 'License Simple';
+    public const SPL_HASH = '00000000733b76bc0000000053f73146';
     public const SCHEMA_DESCRIPTION = 'License Simple';
     private string $key;
     private string $name;

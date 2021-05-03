@@ -5,8 +5,11 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ActionsSecret
 {
     public const SCHEMA_TITLE = 'Actions Secret';
+    public const SPL_HASH = '0000000054d5e4eb0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Set secrets for GitHub Actions.';
-    /**The name of the secret.**/
+    /**
+     * The name of the secret.
+     */
     private string $name;
     private string $created_at;
     private string $updated_at;

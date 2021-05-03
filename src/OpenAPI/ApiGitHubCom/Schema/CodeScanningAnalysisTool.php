@@ -5,12 +5,19 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeScanningAnalysisTool
 {
     public const SCHEMA_TITLE = 'code-scanning-analysis-tool';
+    public const SPL_HASH = '0000000054d5e5470000000071115dec';
     public const SCHEMA_DESCRIPTION = '';
-    /**The name of the tool used to generate the code scanning analysis.**/
+    /**
+     * The name of the tool used to generate the code scanning analysis.
+     */
     private string $name;
-    /**The version of the tool used to generate the code scanning analysis.**/
+    /**
+     * The version of the tool used to generate the code scanning analysis.
+     */
     private string $version;
-    /**The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.**/
+    /**
+     * The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
+     */
     private string $guid;
     public function name() : string
     {

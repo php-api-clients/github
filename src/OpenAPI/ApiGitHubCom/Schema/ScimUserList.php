@@ -5,12 +5,18 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimUserList
 {
     public const SCHEMA_TITLE = 'SCIM User List';
+    public const SPL_HASH = '0000000054d5ed9a0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'SCIM User List';
-    /**SCIM schema used.**/
+    /**
+     * SCIM schema used.
+     */
     private array $schemas;
     private int $totalResults;
     private int $itemsPerPage;
     private int $startIndex;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser>
+     */
     private array $Resources;
     public function schemas() : array
     {

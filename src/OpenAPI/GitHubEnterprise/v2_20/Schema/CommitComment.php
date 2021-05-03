@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class CommitComment
 {
     public const SCHEMA_TITLE = 'Commit Comment';
+    public const SPL_HASH = '000000001c23f22c000000003890ca58';
     public const SCHEMA_DESCRIPTION = 'Commit Comment';
     private string $html_url;
     private string $url;
@@ -18,7 +19,9 @@ final class CommitComment
     private $user;
     private string $created_at;
     private string $updated_at;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     private object $reactions;
     public function html_url() : string

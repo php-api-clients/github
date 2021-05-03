@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Contributor
 {
     public const SCHEMA_TITLE = 'Contributor';
+    public const SPL_HASH = '000000002eab605d00000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Contributor';
     private string $login;
     private int $id;

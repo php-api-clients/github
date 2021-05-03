@@ -5,16 +5,23 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Artifact
 {
     public const SCHEMA_TITLE = 'Artifact';
+    public const SPL_HASH = '0000000054d5e7280000000071115dec';
     public const SCHEMA_DESCRIPTION = 'An artifact';
     private int $id;
     private string $node_id;
-    /**The name of the artifact.**/
+    /**
+     * The name of the artifact.
+     */
     private string $name;
-    /**The size in bytes of the artifact.**/
+    /**
+     * The size in bytes of the artifact.
+     */
     private int $size_in_bytes;
     private string $url;
     private string $archive_download_url;
-    /**Whether or not the artifact has expired.**/
+    /**
+     * Whether or not the artifact has expired.
+     */
     private boolean $expired;
     private string $created_at;
     private string $expires_at;

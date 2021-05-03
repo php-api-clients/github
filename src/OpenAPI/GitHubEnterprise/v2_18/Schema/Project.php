@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class Project
 {
     public const SCHEMA_TITLE = 'Project';
+    public const SPL_HASH = '000000002eab658a00000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Projects are a way to organize columns and cards of work.';
     private string $owner_url;
     private string $url;
@@ -12,19 +13,29 @@ final class Project
     private string $columns_url;
     private int $id;
     private string $node_id;
-    /**Name of the project**/
+    /**
+     * Name of the project
+     */
     private string $name;
-    /**Body of the project**/
+    /**
+     * Body of the project
+     */
     private string $body;
     private int $number;
-    /**State of the project; either 'open' or 'closed'**/
+    /**
+     * State of the project; either 'open' or 'closed'
+     */
     private string $state;
     private $creator;
     private string $created_at;
     private string $updated_at;
-    /**The baseline permission that all organization members have on this project. Only present if owner is an organization.**/
+    /**
+     * The baseline permission that all organization members have on this project. Only present if owner is an organization.
+     */
     private string $organization_permission;
-    /**Whether or not this project can be seen by everyone. Only present if owner is an organization.**/
+    /**
+     * Whether or not this project can be seen by everyone. Only present if owner is an organization.
+     */
     private boolean $private;
     public function owner_url() : string
     {

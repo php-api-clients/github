@@ -5,14 +5,23 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class EnvironmentApprovals
 {
     public const SCHEMA_TITLE = 'Environment Approval';
+    public const SPL_HASH = '0000000054d5e4b80000000071115dec';
     public const SCHEMA_DESCRIPTION = 'An entry in the reviews log for environment deployments';
-    /**The list of environments that were approved or rejected**/
+    /**
+     * The list of environments that were approved or rejected
+     */
     private array $environments;
-    /**Whether deployment to the environment(s) was approved or rejected**/
+    /**
+     * Whether deployment to the environment(s) was approved or rejected
+     */
     private string $state;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $user;
-    /**The comment submitted with the deployment review**/
+    /**
+     * The comment submitted with the deployment review
+     */
     private string $comment;
     public function environments() : array
     {

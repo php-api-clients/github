@@ -5,11 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Reaction
 {
     public const SCHEMA_TITLE = 'Reaction';
+    public const SPL_HASH = '000000000c1ce7c10000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'Reactions to conversations provide a way to help people express their feelings more simply and effectively.';
     private int $id;
     private string $node_id;
     private $user;
-    /**The reaction to use**/
+    /**
+     * The reaction to use
+     */
     private string $content;
     private string $created_at;
     public function id() : int

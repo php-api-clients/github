@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CommitSearchResultItem
 {
     public const SCHEMA_TITLE = 'Commit Search Result Item';
+    public const SPL_HASH = '000000000c1cee7a0000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'Commit Search Result Item';
     private string $url;
     private string $sha;
@@ -14,7 +15,9 @@ final class CommitSearchResultItem
     private $author;
     private $committer;
     private array $parents;
-    /**Minimal Repository**/
+    /**
+     * Minimal Repository
+     */
     private object $repository;
     private number $score;
     private string $node_id;

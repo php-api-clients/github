@@ -5,16 +5,26 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class AuthenticationToken
 {
     public const SCHEMA_TITLE = 'Authentication Token';
+    public const SPL_HASH = '000000004a4ba2a80000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'Authentication Token';
-    /**The token used for authentication**/
+    /**
+     * The token used for authentication
+     */
     private string $token;
-    /**The time this token expires**/
+    /**
+     * The time this token expires
+     */
     private string $expires_at;
     private object $permissions;
-    /**The repositories this token has access to**/
+    /**
+     * The repositories this token has access to
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Repository>
+     */
     private array $repositories;
     private string $single_file;
-    /**Describe whether all repositories have been selected or there's a selection involved**/
+    /**
+     * Describe whether all repositories have been selected or there's a selection involved
+     */
     private string $repository_selection;
     public function token() : string
     {

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class PullRequestSimple
 {
     public const SCHEMA_TITLE = 'Pull Request Simple';
+    public const SPL_HASH = '000000000c1ce3110000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'Pull Request Simple';
     private string $url;
     private int $id;
@@ -33,17 +34,32 @@ final class PullRequestSimple
     private string $merged_at;
     private string $merge_commit_sha;
     private $assignee;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
+     */
     private array $assignees;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
+     */
     private array $requested_reviewers;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TeamSimple>
+     */
     private array $requested_teams;
     private object $head;
     private object $base;
     private object $_links;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
-    /**The status of auto merging a pull request.**/
+    /**
+     * The status of auto merging a pull request.
+     */
     private object $auto_merge;
-    /**Indicates whether or not the pull request is a draft.**/
+    /**
+     * Indicates whether or not the pull request is a draft.
+     */
     private boolean $draft;
     public function url() : string
     {

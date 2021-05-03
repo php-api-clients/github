@@ -5,28 +5,39 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class CheckRun
 {
     public const SCHEMA_TITLE = 'CheckRun';
+    public const SPL_HASH = '000000004a4ba48a0000000021d13a21';
     public const SCHEMA_DESCRIPTION = 'A check performed on the code of a given code change';
-    /**The id of the check.**/
+    /**
+     * The id of the check.
+     */
     private int $id;
-    /**The SHA of the commit that is being checked.**/
+    /**
+     * The SHA of the commit that is being checked.
+     */
     private string $head_sha;
     private string $node_id;
     private string $external_id;
     private string $url;
     private string $html_url;
     private string $details_url;
-    /**The phase of the lifecycle that the check is currently in.**/
+    /**
+     * The phase of the lifecycle that the check is currently in.
+     */
     private string $status;
     private string $conclusion;
     private string $started_at;
     private string $completed_at;
     private object $output;
-    /**The name of the check.**/
+    /**
+     * The name of the check.
+     */
     private string $name;
     private object $check_suite;
     private $app;
     private $pull_requests;
-    /**A deployment created as the result of an Actions check run from a workflow that references an environment**/
+    /**
+     * A deployment created as the result of an Actions check run from a workflow that references an environment
+     */
     private object $deployment;
     public function id() : int
     {

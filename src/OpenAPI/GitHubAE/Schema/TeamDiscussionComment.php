@@ -5,19 +5,26 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class TeamDiscussionComment
 {
     public const SCHEMA_TITLE = 'Team Discussion Comment';
+    public const SPL_HASH = '000000000c1ce7f60000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'A reply to a discussion within a team.';
     private $author;
-    /**The main text of the comment.**/
+    /**
+     * The main text of the comment.
+     */
     private string $body;
     private string $body_html;
-    /**The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.**/
+    /**
+     * The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
+     */
     private string $body_version;
     private string $created_at;
     private string $last_edited_at;
     private string $discussion_url;
     private string $html_url;
     private string $node_id;
-    /**The unique sequence number of a team discussion comment.**/
+    /**
+     * The unique sequence number of a team discussion comment.
+     */
     private int $number;
     private string $updated_at;
     private string $url;

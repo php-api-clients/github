@@ -5,12 +5,18 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CombinedCommitStatus
 {
     public const SCHEMA_TITLE = 'Combined Commit Status';
+    public const SPL_HASH = '000000000c1ce2940000000065732ccc';
     public const SCHEMA_DESCRIPTION = 'Combined Commit Status';
     private string $state;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleCommitStatus>
+     */
     private array $statuses;
     private string $sha;
     private int $total_count;
-    /**Minimal Repository**/
+    /**
+     * Minimal Repository
+     */
     private object $repository;
     private string $commit_url;
     private string $url;

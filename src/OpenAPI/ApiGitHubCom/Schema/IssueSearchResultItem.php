@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class IssueSearchResultItem
 {
     public const SCHEMA_TITLE = 'Issue Search Result Item';
+    public const SPL_HASH = '0000000054d5ed360000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Issue Search Result Item';
     private string $url;
     private string $repository_url;
@@ -18,6 +19,9 @@ final class IssueSearchResultItem
     private string $title;
     private boolean $locked;
     private string $active_lock_reason;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
     private array $assignees;
     private $user;
     private array $labels;
@@ -32,10 +36,14 @@ final class IssueSearchResultItem
     private object $pull_request;
     private string $body;
     private number $score;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     private boolean $draft;
-    /**A git repository**/
+    /**
+     * A git repository
+     */
     private object $repository;
     private string $body_html;
     private string $body_text;

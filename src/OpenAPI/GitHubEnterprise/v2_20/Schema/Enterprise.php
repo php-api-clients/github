@@ -5,18 +5,29 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Enterprise
 {
     public const SCHEMA_TITLE = 'Enterprise';
+    public const SPL_HASH = '000000001c23fb86000000003890ca58';
     public const SCHEMA_DESCRIPTION = 'An enterprise account';
-    /**A short description of the enterprise.**/
+    /**
+     * A short description of the enterprise.
+     */
     private string $description;
     private string $html_url;
-    /**The enterprise's website URL.**/
+    /**
+     * The enterprise's website URL.
+     */
     private string $website_url;
-    /**Unique identifier of the enterprise**/
+    /**
+     * Unique identifier of the enterprise
+     */
     private int $id;
     private string $node_id;
-    /**The name of the enterprise.**/
+    /**
+     * The name of the enterprise.
+     */
     private string $name;
-    /**The slug url identifier for the enterprise.**/
+    /**
+     * The slug url identifier for the enterprise.
+     */
     private string $slug;
     private string $created_at;
     private string $updated_at;

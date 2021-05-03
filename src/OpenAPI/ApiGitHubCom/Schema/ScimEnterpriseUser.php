@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimEnterpriseUser
 {
     public const SCHEMA_TITLE = 'scim-enterprise-user';
+    public const SPL_HASH = '0000000054d5ec440000000071115dec';
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas;
     private string $id;

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class BranchShort
 {
     public const SCHEMA_TITLE = 'Branch Short';
+    public const SPL_HASH = '000000002eab66e600000000697c5254';
     public const SCHEMA_DESCRIPTION = 'Branch Short';
     private string $name;
     private object $commit;

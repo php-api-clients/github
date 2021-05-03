@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Release
 {
     public const SCHEMA_TITLE = 'Release';
+    public const SPL_HASH = '0000000054d5ec9c0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'A release.';
     private string $url;
     private string $html_url;
@@ -14,24 +15,39 @@ final class Release
     private string $zipball_url;
     private int $id;
     private string $node_id;
-    /**The name of the tag.**/
+    /**
+     * The name of the tag.
+     */
     private string $tag_name;
-    /**Specifies the commitish value that determines where the Git tag is created from.**/
+    /**
+     * Specifies the commitish value that determines where the Git tag is created from.
+     */
     private string $target_commitish;
     private string $name;
     private string $body;
-    /**true to create a draft (unpublished) release, false to create a published one.**/
+    /**
+     * true to create a draft (unpublished) release, false to create a published one.
+     */
     private boolean $draft;
-    /**Whether to identify the release as a prerelease or a full release.**/
+    /**
+     * Whether to identify the release as a prerelease or a full release.
+     */
     private boolean $prerelease;
     private string $created_at;
     private string $published_at;
-    /**Simple User**/
+    /**
+     * Simple User
+     */
     private object $author;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>
+     */
     private array $assets;
     private string $body_html;
     private string $body_text;
-    /**The URL of the release discussion.**/
+    /**
+     * The URL of the release discussion.
+     */
     private string $discussion_url;
     public function url() : string
     {

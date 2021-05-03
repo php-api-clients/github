@@ -5,10 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class EncryptionUpdate
 {
     public const SCHEMA_TITLE = 'encryption-update';
+    public const SPL_HASH = '000000000c1c9b420000000065732ccc';
     public const SCHEMA_DESCRIPTION = '';
-    /**A message indicating the action being taken on the encryption key.**/
+    /**
+     * A message indicating the action being taken on the encryption key.
+     */
     private string $message;
-    /**The REST API URL to retrieve the status of updating or deleting the encryption key. The status URL contain the status `request_id`.**/
+    /**
+     * The REST API URL to retrieve the status of updating or deleting the encryption key. The status URL contain the status `request_id`.
+     */
     private string $status_url;
     public function message() : string
     {

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class GpgKey
 {
     public const SCHEMA_TITLE = 'GPG Key';
+    public const SPL_HASH = '0000000065d62336000000007ce49c9a';
     public const SCHEMA_DESCRIPTION = 'A unique encryption key';
     private int $id;
     private int $primary_key_id;

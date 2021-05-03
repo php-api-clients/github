@@ -5,28 +5,49 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimUser
 {
     public const SCHEMA_TITLE = 'SCIM /Users';
+    public const SPL_HASH = '0000000054d5edbd0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'SCIM /Users provisioning endpoints';
-    /**SCIM schema used.**/
+    /**
+     * SCIM schema used.
+     */
     private array $schemas;
-    /**Unique identifier of an external identity**/
+    /**
+     * Unique identifier of an external identity
+     */
     private string $id;
-    /**The ID of the User.**/
+    /**
+     * The ID of the User.
+     */
     private string $externalId;
-    /**Configured by the admin. Could be an email, login, or username**/
+    /**
+     * Configured by the admin. Could be an email, login, or username
+     */
     private string $userName;
-    /**The name of the user, suitable for display to end-users**/
+    /**
+     * The name of the user, suitable for display to end-users
+     */
     private string $displayName;
     private object $name;
-    /**user emails**/
+    /**
+     * user emails
+     */
     private array $emails;
-    /**The active status of the User.**/
+    /**
+     * The active status of the User.
+     */
     private boolean $active;
     private object $meta;
-    /**The ID of the organization.**/
+    /**
+     * The ID of the organization.
+     */
     private int $organization_id;
-    /**Set of operations to be performed**/
+    /**
+     * Set of operations to be performed
+     */
     private array $operations;
-    /**associated groups**/
+    /**
+     * associated groups
+     */
     private array $groups;
     public function schemas() : array
     {

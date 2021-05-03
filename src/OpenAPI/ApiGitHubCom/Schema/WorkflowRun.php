@@ -5,50 +5,88 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class WorkflowRun
 {
     public const SCHEMA_TITLE = 'Workflow Run';
+    public const SPL_HASH = '0000000054d5e75f0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'An invocation of a workflow';
-    /**The ID of the workflow run.**/
+    /**
+     * The ID of the workflow run.
+     */
     private int $id;
-    /**The name of the workflow run.**/
+    /**
+     * The name of the workflow run.
+     */
     private string $name;
     private string $node_id;
-    /**The ID of the associated check suite.**/
+    /**
+     * The ID of the associated check suite.
+     */
     private int $check_suite_id;
-    /**The node ID of the associated check suite.**/
+    /**
+     * The node ID of the associated check suite.
+     */
     private string $check_suite_node_id;
     private string $head_branch;
-    /**The SHA of the head commit that points to the version of the worflow being run.**/
+    /**
+     * The SHA of the head commit that points to the version of the worflow being run.
+     */
     private string $head_sha;
-    /**The auto incrementing run number for the workflow run.**/
+    /**
+     * The auto incrementing run number for the workflow run.
+     */
     private int $run_number;
     private string $event;
     private string $status;
     private string $conclusion;
-    /**The ID of the parent workflow.**/
+    /**
+     * The ID of the parent workflow.
+     */
     private int $workflow_id;
-    /**The URL to the workflow run.**/
+    /**
+     * The URL to the workflow run.
+     */
     private string $url;
     private string $html_url;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
+     */
     private array $pull_requests;
     private string $created_at;
     private string $updated_at;
-    /**The URL to the jobs for the workflow run.**/
+    /**
+     * The URL to the jobs for the workflow run.
+     */
     private string $jobs_url;
-    /**The URL to download the logs for the workflow run.**/
+    /**
+     * The URL to download the logs for the workflow run.
+     */
     private string $logs_url;
-    /**The URL to the associated check suite.**/
+    /**
+     * The URL to the associated check suite.
+     */
     private string $check_suite_url;
-    /**The URL to the artifacts for the workflow run.**/
+    /**
+     * The URL to the artifacts for the workflow run.
+     */
     private string $artifacts_url;
-    /**The URL to cancel the workflow run.**/
+    /**
+     * The URL to cancel the workflow run.
+     */
     private string $cancel_url;
-    /**The URL to rerun the workflow run.**/
+    /**
+     * The URL to rerun the workflow run.
+     */
     private string $rerun_url;
-    /**The URL to the workflow.**/
+    /**
+     * The URL to the workflow.
+     */
     private string $workflow_url;
     private $head_commit;
-    /**Minimal Repository**/
+    /**
+     * Minimal Repository
+     */
     private object $repository;
-    /**Minimal Repository**/
+    /**
+     * Minimal Repository
+     */
     private object $head_repository;
     private int $head_repository_id;
     public function id() : int

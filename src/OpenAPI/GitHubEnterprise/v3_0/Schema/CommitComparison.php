@@ -5,21 +5,32 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class CommitComparison
 {
     public const SCHEMA_TITLE = 'Commit Comparison';
+    public const SPL_HASH = '0000000065dd6a7f000000006352672d';
     public const SCHEMA_DESCRIPTION = 'Commit Comparison';
     private string $url;
     private string $html_url;
     private string $permalink_url;
     private string $diff_url;
     private string $patch_url;
-    /**Commit**/
+    /**
+     * Commit
+     */
     private object $base_commit;
-    /**Commit**/
+    /**
+     * Commit
+     */
     private object $merge_base_commit;
     private string $status;
     private int $ahead_by;
     private int $behind_by;
     private int $total_commits;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Commit>
+     */
     private array $commits;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\DiffEntry>
+     */
     private array $files;
     public function url() : string
     {

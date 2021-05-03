@@ -5,15 +5,24 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class Hook
 {
     public const SCHEMA_TITLE = 'Webhook';
+    public const SPL_HASH = '0000000065d62603000000007ce49c9a';
     public const SCHEMA_DESCRIPTION = 'Webhooks for repositories.';
     private string $type;
-    /**Unique identifier of the webhook.**/
+    /**
+     * Unique identifier of the webhook.
+     */
     private int $id;
-    /**The name of a valid service, use 'web' for a webhook.**/
+    /**
+     * The name of a valid service, use 'web' for a webhook.
+     */
     private string $name;
-    /**Determines whether the hook is actually triggered on pushes.**/
+    /**
+     * Determines whether the hook is actually triggered on pushes.
+     */
     private boolean $active;
-    /**Determines what events the hook is triggered for. Default: ['push'].**/
+    /**
+     * Determines what events the hook is triggered for. Default: ['push'].
+     */
     private array $events;
     private object $config;
     private string $updated_at;

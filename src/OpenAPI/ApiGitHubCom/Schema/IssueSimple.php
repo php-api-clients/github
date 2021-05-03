@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class IssueSimple
 {
     public const SCHEMA_TITLE = 'Issue Simple';
+    public const SPL_HASH = '0000000054d5fa6e0000000071115dec';
     public const SCHEMA_DESCRIPTION = 'Issue Simple';
     private int $id;
     private string $node_id;
@@ -19,8 +20,14 @@ final class IssueSimple
     private string $title;
     private string $body;
     private $user;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label>
+     */
     private array $labels;
     private $assignee;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
     private array $assignees;
     private $milestone;
     private boolean $locked;
@@ -30,12 +37,16 @@ final class IssueSimple
     private string $closed_at;
     private string $created_at;
     private string $updated_at;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     private string $body_html;
     private string $body_text;
     private string $timeline_url;
-    /**A git repository**/
+    /**
+     * A git repository
+     */
     private object $repository;
     private $performed_via_github_app;
     public function id() : int

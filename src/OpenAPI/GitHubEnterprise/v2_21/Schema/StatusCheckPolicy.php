@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class StatusCheckPolicy
 {
     public const SCHEMA_TITLE = 'Status Check Policy';
+    public const SPL_HASH = '0000000065d65b32000000007ce49c9a';
     public const SCHEMA_DESCRIPTION = 'Status Check Policy';
     private string $url;
     private boolean $strict;

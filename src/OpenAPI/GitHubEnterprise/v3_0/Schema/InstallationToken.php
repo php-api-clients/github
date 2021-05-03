@@ -5,11 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class InstallationToken
 {
     public const SCHEMA_TITLE = 'Installation Token';
+    public const SPL_HASH = '0000000065dd6501000000006352672d';
     public const SCHEMA_DESCRIPTION = 'Authentication token for a GitHub App installed on a user or org.';
     private string $token;
     private string $expires_at;
     private object $permissions;
     private string $repository_selection;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Repository>
+     */
     private array $repositories;
     private string $single_file;
     private boolean $has_multiple_single_files;

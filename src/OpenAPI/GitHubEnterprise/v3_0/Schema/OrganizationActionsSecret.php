@@ -5,12 +5,17 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class OrganizationActionsSecret
 {
     public const SCHEMA_TITLE = 'Actions Secret for an Organization';
+    public const SPL_HASH = '0000000065dd60e5000000006352672d';
     public const SCHEMA_DESCRIPTION = 'Secrets for GitHub Actions for an organization.';
-    /**The name of the secret.**/
+    /**
+     * The name of the secret.
+     */
     private string $name;
     private string $created_at;
     private string $updated_at;
-    /**Visibility of a secret**/
+    /**
+     * Visibility of a secret
+     */
     private string $visibility;
     private string $selected_repositories_url;
     public function name() : string

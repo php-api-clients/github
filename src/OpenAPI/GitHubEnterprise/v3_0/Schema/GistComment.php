@@ -5,16 +5,21 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class GistComment
 {
     public const SCHEMA_TITLE = 'Gist Comment';
+    public const SPL_HASH = '0000000065dd6324000000006352672d';
     public const SCHEMA_DESCRIPTION = 'A comment made to a gist.';
     private int $id;
     private string $node_id;
     private string $url;
-    /**The comment text.**/
+    /**
+     * The comment text.
+     */
     private string $body;
     private $user;
     private string $created_at;
     private string $updated_at;
-    /**How the author is associated with the repository.**/
+    /**
+     * How the author is associated with the repository.
+     */
     private string $author_association;
     public function id() : int
     {
