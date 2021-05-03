@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class DiffEntry
 {
     public const SCHEMA_TITLE = 'Diff Entry';
-    public const SPL_HASH = '000000000c1ce2ef0000000065732ccc';
+    public const SPL_HASH = '000000007ee6eaa10000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Diff Entry';
     private string $sha;
     private string $filename;

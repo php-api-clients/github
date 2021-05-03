@@ -5,14 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ApiOverview
 {
     public const SCHEMA_TITLE = 'Api Overview';
-    public const SPL_HASH = '0000000015935c1c000000001856c88e';
+    public const SPL_HASH = '000000006312f94c0000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Api Overview';
-    private boolean $verifiable_password_authentication;
+    private bool $verifiable_password_authentication;
     private array $packages;
     private array $dependabot;
     private string $installed_version;
     private string $github_services_sha;
-    public function verifiable_password_authentication() : boolean
+    public function verifiable_password_authentication() : bool
     {
         return $this->verifiable_password_authentication;
     }

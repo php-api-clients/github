@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimEnterpriseUser
 {
     public const SCHEMA_TITLE = 'scim-enterprise-user';
-    public const SPL_HASH = '0000000054d5ec440000000071115dec';
+    public const SPL_HASH = '00000000207014ce0000000042193899';
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas;
     private string $id;
@@ -14,7 +14,7 @@ final class ScimEnterpriseUser
     private object $name;
     private array $emails;
     private array $groups;
-    private boolean $active;
+    private bool $active;
     private object $meta;
     public function schemas() : array
     {
@@ -44,7 +44,7 @@ final class ScimEnterpriseUser
     {
         return $this->groups;
     }
-    public function active() : boolean
+    public function active() : bool
     {
         return $this->active;
     }

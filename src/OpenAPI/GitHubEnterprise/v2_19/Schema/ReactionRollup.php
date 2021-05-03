@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ReactionRollup
 {
     public const SCHEMA_TITLE = 'Reaction Rollup';
-    public const SPL_HASH = '00000000159353c2000000001856c88e';
+    public const SPL_HASH = '000000006312f6920000000044ad25fc';
     public const SCHEMA_DESCRIPTION = '';
     private string $url;
     private int $total_count;

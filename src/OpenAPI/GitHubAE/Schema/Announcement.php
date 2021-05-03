@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Announcement
 {
     public const SCHEMA_TITLE = 'Enterprise Announcement';
-    public const SPL_HASH = '000000000c1c9b7e0000000065732ccc';
+    public const SPL_HASH = '000000007ee693300000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Enterprise global announcement';
     /**
      * The announcement text in GitHub Flavored Markdown. For more information about GitHub Flavored Markdown, see "[Mastering markdown](https://guides.github.com/features/mastering-markdown/)."

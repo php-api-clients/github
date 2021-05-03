@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Artifact
 {
     public const SCHEMA_TITLE = 'Artifact';
-    public const SPL_HASH = '000000000c1ce6390000000065732ccc';
+    public const SPL_HASH = '000000007ee6ee770000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'An artifact';
     private int $id;
     private string $node_id;
@@ -22,7 +22,7 @@ final class Artifact
     /**
      * Whether or not the artifact has expired.
      */
-    private boolean $expired;
+    private bool $expired;
     private string $created_at;
     private string $expires_at;
     private string $updated_at;
@@ -50,7 +50,7 @@ final class Artifact
     {
         return $this->archive_download_url;
     }
-    public function expired() : boolean
+    public function expired() : bool
     {
         return $this->expired;
     }

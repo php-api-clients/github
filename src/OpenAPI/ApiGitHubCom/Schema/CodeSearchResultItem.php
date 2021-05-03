@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeSearchResultItem
 {
     public const SCHEMA_TITLE = 'Code Search Result Item';
-    public const SPL_HASH = '0000000054d5edf50000000071115dec';
+    public const SPL_HASH = '000000002070157f0000000042193899';
     public const SCHEMA_DESCRIPTION = 'Code Search Result Item';
     private string $name;
     private string $path;

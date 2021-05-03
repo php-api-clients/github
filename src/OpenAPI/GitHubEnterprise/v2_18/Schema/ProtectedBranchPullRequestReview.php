@@ -5,12 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class ProtectedBranchPullRequestReview
 {
     public const SCHEMA_TITLE = 'Protected Branch Pull Request Review';
-    public const SPL_HASH = '000000002eab649100000000697c5254';
+    public const SPL_HASH = '000000006e7b74b0000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Pull Request Review';
     private string $url;
     private object $dismissal_restrictions;
-    private boolean $dismiss_stale_reviews;
-    private boolean $require_code_owner_reviews;
+    private bool $dismiss_stale_reviews;
+    private bool $require_code_owner_reviews;
     private int $required_approving_review_count;
     public function url() : string
     {
@@ -20,11 +20,11 @@ final class ProtectedBranchPullRequestReview
     {
         return $this->dismissal_restrictions;
     }
-    public function dismiss_stale_reviews() : boolean
+    public function dismiss_stale_reviews() : bool
     {
         return $this->dismiss_stale_reviews;
     }
-    public function require_code_owner_reviews() : boolean
+    public function require_code_owner_reviews() : bool
     {
         return $this->require_code_owner_reviews;
     }

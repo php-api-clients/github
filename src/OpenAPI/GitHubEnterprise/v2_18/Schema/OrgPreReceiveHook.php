@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class OrgPreReceiveHook
 {
     public const SCHEMA_TITLE = 'org-pre-receive-hook';
-    public const SPL_HASH = '000000002eab659400000000697c5254';
+    public const SPL_HASH = '000000006e7b75b5000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = '';
     private int $id;
     private string $name;
     private string $enforcement;
     private string $configuration_url;
-    private boolean $allow_downstream_configuration;
+    private bool $allow_downstream_configuration;
     public function id() : int
     {
         return $this->id;
@@ -28,7 +28,7 @@ final class OrgPreReceiveHook
     {
         return $this->configuration_url;
     }
-    public function allow_downstream_configuration() : boolean
+    public function allow_downstream_configuration() : bool
     {
         return $this->allow_downstream_configuration;
     }

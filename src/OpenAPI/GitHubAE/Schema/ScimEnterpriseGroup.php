@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ScimEnterpriseGroup
 {
     public const SCHEMA_TITLE = 'scim-enterprise-group';
-    public const SPL_HASH = '000000000c1cee140000000065732ccc';
+    public const SPL_HASH = '000000007ee6e65a0000000021479ea3';
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas;
     private string $id;

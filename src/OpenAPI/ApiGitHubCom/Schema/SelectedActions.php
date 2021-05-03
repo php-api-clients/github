@@ -5,25 +5,25 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class SelectedActions
 {
     public const SCHEMA_TITLE = 'selected-actions';
-    public const SPL_HASH = '0000000054d5faef0000000071115dec';
+    public const SPL_HASH = '00000000207002650000000042193899';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
      */
-    private boolean $github_owned_allowed;
+    private bool $github_owned_allowed;
     /**
      * Whether actions in GitHub Marketplace from verified creators are allowed. Set to `true` to allow all GitHub Marketplace actions by verified creators.
      */
-    private boolean $verified_allowed;
+    private bool $verified_allowed;
     /**
      * Specifies a list of string-matching patterns to allow specific action(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`."
      */
     private array $patterns_allowed;
-    public function github_owned_allowed() : boolean
+    public function github_owned_allowed() : bool
     {
         return $this->github_owned_allowed;
     }
-    public function verified_allowed() : boolean
+    public function verified_allowed() : bool
     {
         return $this->verified_allowed;
     }

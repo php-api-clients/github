@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Feed
 {
     public const SCHEMA_TITLE = 'Feed';
-    public const SPL_HASH = '000000000c1c9a4e0000000065732ccc';
+    public const SPL_HASH = '000000007ee692000000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Feed';
     private string $timeline_url;
     private string $user_url;

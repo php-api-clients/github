@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class GpgKey
 {
     public const SCHEMA_TITLE = 'GPG Key';
-    public const SPL_HASH = '000000000c1ce8fd0000000065732ccc';
+    public const SPL_HASH = '000000007ee6e0b30000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'A unique encryption key';
     private int $id;
     private int $primary_key_id;
@@ -13,10 +13,10 @@ final class GpgKey
     private string $public_key;
     private array $emails;
     private array $subkeys;
-    private boolean $can_sign;
-    private boolean $can_encrypt_comms;
-    private boolean $can_encrypt_storage;
-    private boolean $can_certify;
+    private bool $can_sign;
+    private bool $can_encrypt_comms;
+    private bool $can_encrypt_storage;
+    private bool $can_certify;
     private string $created_at;
     private string $expires_at;
     private string $raw_key;
@@ -44,19 +44,19 @@ final class GpgKey
     {
         return $this->subkeys;
     }
-    public function can_sign() : boolean
+    public function can_sign() : bool
     {
         return $this->can_sign;
     }
-    public function can_encrypt_comms() : boolean
+    public function can_encrypt_comms() : bool
     {
         return $this->can_encrypt_comms;
     }
-    public function can_encrypt_storage() : boolean
+    public function can_encrypt_storage() : bool
     {
         return $this->can_encrypt_storage;
     }
-    public function can_certify() : boolean
+    public function can_certify() : bool
     {
         return $this->can_certify;
     }

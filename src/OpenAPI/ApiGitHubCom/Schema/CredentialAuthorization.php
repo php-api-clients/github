@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CredentialAuthorization
 {
     public const SCHEMA_TITLE = 'Credential Authorization';
-    public const SPL_HASH = '0000000054d5f9db0000000071115dec';
+    public const SPL_HASH = '00000000207001510000000042193899';
     public const SCHEMA_DESCRIPTION = 'Credential Authorization';
     /**
      * User login that owns the underlying credential.

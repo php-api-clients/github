@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CommitComparison
 {
     public const SCHEMA_TITLE = 'Commit Comparison';
-    public const SPL_HASH = '000000000c1ce2f30000000065732ccc';
+    public const SPL_HASH = '000000007ee6eabd0000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Commit Comparison';
     private string $url;
     private string $html_url;

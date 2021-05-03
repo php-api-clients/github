@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PullRequest
 {
     public const SCHEMA_TITLE = 'Pull Request';
-    public const SPL_HASH = '0000000054d5ee800000000071115dec';
+    public const SPL_HASH = '000000002070160a0000000042193899';
     public const SCHEMA_DESCRIPTION = 'Pull requests let you tell others about changes you\'ve pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.';
     private string $url;
     private int $id;
@@ -27,7 +27,7 @@ final class PullRequest
      * State of this Pull Request. Either `open` or `closed`.
      */
     private string $state;
-    private boolean $locked;
+    private bool $locked;
     /**
      * The title of the pull request.
      */
@@ -69,10 +69,10 @@ final class PullRequest
     /**
      * Indicates whether or not the pull request is a draft.
      */
-    private boolean $draft;
-    private boolean $merged;
-    private boolean $mergeable;
-    private boolean $rebaseable;
+    private bool $draft;
+    private bool $merged;
+    private bool $mergeable;
+    private bool $rebaseable;
     private string $mergeable_state;
     private $merged_by;
     private int $comments;
@@ -80,7 +80,7 @@ final class PullRequest
     /**
      * Indicates whether maintainers can modify the pull request.
      */
-    private boolean $maintainer_can_modify;
+    private bool $maintainer_can_modify;
     private int $commits;
     private int $additions;
     private int $deletions;
@@ -141,7 +141,7 @@ final class PullRequest
     {
         return $this->state;
     }
-    public function locked() : boolean
+    public function locked() : bool
     {
         return $this->locked;
     }
@@ -225,19 +225,19 @@ final class PullRequest
     {
         return $this->auto_merge;
     }
-    public function draft() : boolean
+    public function draft() : bool
     {
         return $this->draft;
     }
-    public function merged() : boolean
+    public function merged() : bool
     {
         return $this->merged;
     }
-    public function mergeable() : boolean
+    public function mergeable() : bool
     {
         return $this->mergeable;
     }
-    public function rebaseable() : boolean
+    public function rebaseable() : bool
     {
         return $this->rebaseable;
     }
@@ -257,7 +257,7 @@ final class PullRequest
     {
         return $this->review_comments;
     }
-    public function maintainer_can_modify() : boolean
+    public function maintainer_can_modify() : bool
     {
         return $this->maintainer_can_modify;
     }

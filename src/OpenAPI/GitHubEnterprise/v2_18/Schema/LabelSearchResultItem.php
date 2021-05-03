@@ -5,14 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class LabelSearchResultItem
 {
     public const SCHEMA_TITLE = 'Label Search Result Item';
-    public const SPL_HASH = '000000002eab1c0400000000697c5254';
+    public const SPL_HASH = '000000006e7b0c25000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = 'Label Search Result Item';
     private int $id;
     private string $node_id;
     private string $url;
     private string $name;
     private string $color;
-    private boolean $default;
+    private bool $default;
     private string $description;
     private number $score;
     private array $text_matches;
@@ -36,7 +36,7 @@ final class LabelSearchResultItem
     {
         return $this->color;
     }
-    public function default() : boolean
+    public function default() : bool
     {
         return $this->default;
     }

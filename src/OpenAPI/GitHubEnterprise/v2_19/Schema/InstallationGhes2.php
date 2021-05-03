@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class InstallationGhes2
 {
     public const SCHEMA_TITLE = 'Installation';
-    public const SPL_HASH = '0000000015935128000000001856c88e';
+    public const SPL_HASH = '000000006312f4780000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Installation';
     /**
      * The ID of the installation.
      */
     private int $id;
-    private $account;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleUser $account;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class InstallationToken
 {
     public const SCHEMA_TITLE = 'Installation Token';
-    public const SPL_HASH = '000000002eab689b00000000697c5254';
+    public const SPL_HASH = '000000006e7b78ba000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = 'Authentication token for a GitHub App installed on a user or org.';
     private string $token;
     private string $expires_at;
@@ -16,7 +16,7 @@ final class InstallationToken
      */
     private array $repositories;
     private string $single_file;
-    private boolean $has_multiple_single_files;
+    private bool $has_multiple_single_files;
     private array $single_file_paths;
     public function token() : string
     {
@@ -42,7 +42,7 @@ final class InstallationToken
     {
         return $this->single_file;
     }
-    public function has_multiple_single_files() : boolean
+    public function has_multiple_single_files() : bool
     {
         return $this->has_multiple_single_files;
     }

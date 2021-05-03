@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class MarketplaceListingPlan
 {
     public const SCHEMA_TITLE = 'Marketplace Listing Plan';
-    public const SPL_HASH = '0000000054d5f8ed0000000071115dec';
+    public const SPL_HASH = '00000000207000670000000042193899';
     public const SCHEMA_DESCRIPTION = 'Marketplace Listing Plan';
     private string $url;
     private string $accounts_url;
@@ -16,7 +16,7 @@ final class MarketplaceListingPlan
     private int $monthly_price_in_cents;
     private int $yearly_price_in_cents;
     private string $price_model;
-    private boolean $has_free_trial;
+    private bool $has_free_trial;
     private string $unit_name;
     private string $state;
     private array $bullets;
@@ -56,7 +56,7 @@ final class MarketplaceListingPlan
     {
         return $this->price_model;
     }
-    public function has_free_trial() : boolean
+    public function has_free_trial() : bool
     {
         return $this->has_free_trial;
     }

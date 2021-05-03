@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class EnterpriseOverview
 {
     public const SCHEMA_TITLE = 'enterprise-overview';
-    public const SPL_HASH = '000000004a4ba26a0000000021d13a21';
+    public const SPL_HASH = '0000000031ee59b400000000484d7fbe';
     public const SCHEMA_DESCRIPTION = '';
     private object $repos;
     private object $hooks;

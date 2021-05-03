@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class Deployment
 {
     public const SCHEMA_TITLE = 'Deployment';
-    public const SPL_HASH = '0000000065d62683000000007ce49c9a';
+    public const SPL_HASH = '0000000018142022000000005f691719';
     public const SCHEMA_DESCRIPTION = 'A request for a specific ref(branch,sha,tag) to be deployed';
     private string $url;
     /**
@@ -37,11 +37,11 @@ final class Deployment
     /**
      * Specifies if the given environment is will no longer exist at some point in the future. Default: false.
      */
-    private boolean $transient_environment;
+    private bool $transient_environment;
     /**
      * Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
-    private boolean $production_environment;
+    private bool $production_environment;
     private $performed_via_github_app;
     public function url() : string
     {
@@ -103,11 +103,11 @@ final class Deployment
     {
         return $this->repository_url;
     }
-    public function transient_environment() : boolean
+    public function transient_environment() : bool
     {
         return $this->transient_environment;
     }
-    public function production_environment() : boolean
+    public function production_environment() : bool
     {
         return $this->production_environment;
     }

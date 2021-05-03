@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ContentTree
 {
     public const SCHEMA_TITLE = 'Content Tree';
-    public const SPL_HASH = '0000000054d5e3600000000071115dec';
+    public const SPL_HASH = '0000000020701bea0000000042193899';
     public const SCHEMA_DESCRIPTION = 'Content Tree';
     private string $type;
     private int $size;

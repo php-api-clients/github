@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeScanningSarifsReceipt
 {
     public const SCHEMA_TITLE = 'code-scanning-sarifs-receipt';
-    public const SPL_HASH = '0000000054d5e2130000000071115dec';
+    public const SPL_HASH = '0000000020701a990000000042193899';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * An identifier for the upload.

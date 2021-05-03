@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class UserSearchResultItem
 {
     public const SCHEMA_TITLE = 'User Search Result Item';
-    public const SPL_HASH = '0000000065d62225000000007ce49c9a';
+    public const SPL_HASH = '0000000018142484000000005f691719';
     public const SCHEMA_DESCRIPTION = 'User Search Result Item';
     private string $login;
     private int $id;
@@ -35,8 +35,8 @@ final class UserSearchResultItem
     private string $bio;
     private string $email;
     private string $location;
-    private boolean $site_admin;
-    private boolean $hireable;
+    private bool $site_admin;
+    private bool $hireable;
     private array $text_matches;
     private string $blog;
     private string $company;
@@ -153,11 +153,11 @@ final class UserSearchResultItem
     {
         return $this->location;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }
-    public function hireable() : boolean
+    public function hireable() : bool
     {
         return $this->hireable;
     }

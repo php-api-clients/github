@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class Repository
 {
     public const SCHEMA_TITLE = 'Repository';
-    public const SPL_HASH = '0000000065d65d7c000000007ce49c9a';
+    public const SPL_HASH = '0000000018145bdd000000005f691719';
     public const SCHEMA_DESCRIPTION = 'A git repository';
     /**
      * Unique identifier of the repository
@@ -25,10 +25,10 @@ final class Repository
     /**
      * Whether the repository is private or public.
      */
-    private boolean $private;
+    private bool $private;
     private string $html_url;
     private string $description;
-    private boolean $fork;
+    private bool $fork;
     private string $url;
     private string $archive_url;
     private string $assignees_url;
@@ -85,33 +85,33 @@ final class Repository
     /**
      * Whether this repository acts as a template that can be used to generate new repositories.
      */
-    private boolean $is_template;
+    private bool $is_template;
     private array $topics;
     /**
      * Whether issues are enabled.
      */
-    private boolean $has_issues;
+    private bool $has_issues;
     /**
      * Whether projects are enabled.
      */
-    private boolean $has_projects;
+    private bool $has_projects;
     /**
      * Whether the wiki is enabled.
      */
-    private boolean $has_wiki;
-    private boolean $has_pages;
+    private bool $has_wiki;
+    private bool $has_pages;
     /**
      * Whether downloads are enabled.
      */
-    private boolean $has_downloads;
+    private bool $has_downloads;
     /**
      * Whether the repository is archived.
      */
-    private boolean $archived;
+    private bool $archived;
     /**
      * Returns whether or not this repository disabled.
      */
-    private boolean $disabled;
+    private bool $disabled;
     /**
      * The repository visibility: public, private, or internal.
      */
@@ -122,27 +122,27 @@ final class Repository
     /**
      * Whether to allow rebase merges for pull requests.
      */
-    private boolean $allow_rebase_merge;
+    private bool $allow_rebase_merge;
     private object $template_repository;
     /**
      * Whether to allow squash merges for pull requests.
      */
-    private boolean $allow_squash_merge;
+    private bool $allow_squash_merge;
     /**
      * Whether to delete head branches when pull requests are merged
      */
-    private boolean $delete_branch_on_merge;
+    private bool $delete_branch_on_merge;
     /**
      * Whether to allow merge commits for pull requests.
      */
-    private boolean $allow_merge_commit;
+    private bool $allow_merge_commit;
     private int $subscribers_count;
     private int $network_count;
     private int $open_issues;
     private int $watchers;
     private string $master_branch;
     private string $starred_at;
-    private boolean $anonymous_access_enabled;
+    private bool $anonymous_access_enabled;
     public function id() : int
     {
         return $this->id;
@@ -179,7 +179,7 @@ final class Repository
     {
         return $this->owner;
     }
-    public function private() : boolean
+    public function private() : bool
     {
         return $this->private;
     }
@@ -191,7 +191,7 @@ final class Repository
     {
         return $this->description;
     }
-    public function fork() : boolean
+    public function fork() : bool
     {
         return $this->fork;
     }
@@ -395,7 +395,7 @@ final class Repository
     {
         return $this->open_issues_count;
     }
-    public function is_template() : boolean
+    public function is_template() : bool
     {
         return $this->is_template;
     }
@@ -403,31 +403,31 @@ final class Repository
     {
         return $this->topics;
     }
-    public function has_issues() : boolean
+    public function has_issues() : bool
     {
         return $this->has_issues;
     }
-    public function has_projects() : boolean
+    public function has_projects() : bool
     {
         return $this->has_projects;
     }
-    public function has_wiki() : boolean
+    public function has_wiki() : bool
     {
         return $this->has_wiki;
     }
-    public function has_pages() : boolean
+    public function has_pages() : bool
     {
         return $this->has_pages;
     }
-    public function has_downloads() : boolean
+    public function has_downloads() : bool
     {
         return $this->has_downloads;
     }
-    public function archived() : boolean
+    public function archived() : bool
     {
         return $this->archived;
     }
-    public function disabled() : boolean
+    public function disabled() : bool
     {
         return $this->disabled;
     }
@@ -447,7 +447,7 @@ final class Repository
     {
         return $this->updated_at;
     }
-    public function allow_rebase_merge() : boolean
+    public function allow_rebase_merge() : bool
     {
         return $this->allow_rebase_merge;
     }
@@ -455,15 +455,15 @@ final class Repository
     {
         return $this->template_repository;
     }
-    public function allow_squash_merge() : boolean
+    public function allow_squash_merge() : bool
     {
         return $this->allow_squash_merge;
     }
-    public function delete_branch_on_merge() : boolean
+    public function delete_branch_on_merge() : bool
     {
         return $this->delete_branch_on_merge;
     }
-    public function allow_merge_commit() : boolean
+    public function allow_merge_commit() : bool
     {
         return $this->allow_merge_commit;
     }
@@ -491,7 +491,7 @@ final class Repository
     {
         return $this->starred_at;
     }
-    public function anonymous_access_enabled() : boolean
+    public function anonymous_access_enabled() : bool
     {
         return $this->anonymous_access_enabled;
     }

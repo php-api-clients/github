@@ -5,20 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class RunnerGroupsOrg
 {
     public const SCHEMA_TITLE = 'runner-groups-org';
-    public const SPL_HASH = '0000000054d5f9e30000000071115dec';
+    public const SPL_HASH = '00000000207001690000000042193899';
     public const SCHEMA_DESCRIPTION = '';
     private number $id;
     private string $name;
     private string $visibility;
-    private boolean $default;
+    private bool $default;
     /**
      * Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
      */
     private string $selected_repositories_url;
     private string $runners_url;
-    private boolean $inherited;
-    private boolean $inherited_allows_public_repositories;
-    private boolean $allows_public_repositories;
+    private bool $inherited;
+    private bool $inherited_allows_public_repositories;
+    private bool $allows_public_repositories;
     public function id() : number
     {
         return $this->id;
@@ -31,7 +31,7 @@ final class RunnerGroupsOrg
     {
         return $this->visibility;
     }
-    public function default() : boolean
+    public function default() : bool
     {
         return $this->default;
     }
@@ -43,15 +43,15 @@ final class RunnerGroupsOrg
     {
         return $this->runners_url;
     }
-    public function inherited() : boolean
+    public function inherited() : bool
     {
         return $this->inherited;
     }
-    public function inherited_allows_public_repositories() : boolean
+    public function inherited_allows_public_repositories() : bool
     {
         return $this->inherited_allows_public_repositories;
     }
-    public function allows_public_repositories() : boolean
+    public function allows_public_repositories() : bool
     {
         return $this->allows_public_repositories;
     }

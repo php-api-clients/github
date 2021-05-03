@@ -5,12 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class UserMarketplacePurchase
 {
     public const SCHEMA_TITLE = 'User Marketplace Purchase';
-    public const SPL_HASH = '0000000054d5ebb10000000071115dec';
+    public const SPL_HASH = '000000002070133b0000000042193899';
     public const SCHEMA_DESCRIPTION = 'User Marketplace Purchase';
     private string $billing_cycle;
     private string $next_billing_date;
     private int $unit_count;
-    private boolean $on_free_trial;
+    private bool $on_free_trial;
     private string $free_trial_ends_on;
     private string $updated_at;
     private object $account;
@@ -30,7 +30,7 @@ final class UserMarketplacePurchase
     {
         return $this->unit_count;
     }
-    public function on_free_trial() : boolean
+    public function on_free_trial() : bool
     {
         return $this->on_free_trial;
     }

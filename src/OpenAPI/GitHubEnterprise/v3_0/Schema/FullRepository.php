@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class FullRepository
 {
     public const SCHEMA_TITLE = 'Full Repository';
-    public const SPL_HASH = '0000000065dd6189000000006352672d';
+    public const SPL_HASH = '000000001f1e2b52000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Full Repository';
     private int $id;
     private string $node_id;
@@ -15,10 +15,10 @@ final class FullRepository
      * Simple User
      */
     private object $owner;
-    private boolean $private;
+    private bool $private;
     private string $html_url;
     private string $description;
-    private boolean $fork;
+    private bool $fork;
     private string $url;
     private string $archive_url;
     private string $assignees_url;
@@ -69,18 +69,18 @@ final class FullRepository
     private int $size;
     private string $default_branch;
     private int $open_issues_count;
-    private boolean $is_template;
+    private bool $is_template;
     private array $topics;
-    private boolean $has_issues;
-    private boolean $has_projects;
-    private boolean $has_wiki;
-    private boolean $has_pages;
-    private boolean $has_downloads;
-    private boolean $archived;
+    private bool $has_issues;
+    private bool $has_projects;
+    private bool $has_wiki;
+    private bool $has_pages;
+    private bool $has_downloads;
+    private bool $archived;
     /**
      * Returns whether or not this repository disabled.
      */
-    private boolean $disabled;
+    private bool $disabled;
     /**
      * The repository visibility: public, private, or internal.
      */
@@ -89,12 +89,12 @@ final class FullRepository
     private string $created_at;
     private string $updated_at;
     private object $permissions;
-    private boolean $allow_rebase_merge;
+    private bool $allow_rebase_merge;
     private object $template_repository;
     private string $temp_clone_token;
-    private boolean $allow_squash_merge;
-    private boolean $delete_branch_on_merge;
-    private boolean $allow_merge_commit;
+    private bool $allow_squash_merge;
+    private bool $delete_branch_on_merge;
+    private bool $allow_merge_commit;
     private int $subscribers_count;
     private int $network_count;
     private $license;
@@ -114,7 +114,7 @@ final class FullRepository
     /**
      * Whether anonymous git access is allowed.
      */
-    private boolean $anonymous_access_enabled;
+    private bool $anonymous_access_enabled;
     /**
      * Code of Conduct Simple
      */
@@ -139,7 +139,7 @@ final class FullRepository
     {
         return $this->owner;
     }
-    public function private() : boolean
+    public function private() : bool
     {
         return $this->private;
     }
@@ -151,7 +151,7 @@ final class FullRepository
     {
         return $this->description;
     }
-    public function fork() : boolean
+    public function fork() : bool
     {
         return $this->fork;
     }
@@ -355,7 +355,7 @@ final class FullRepository
     {
         return $this->open_issues_count;
     }
-    public function is_template() : boolean
+    public function is_template() : bool
     {
         return $this->is_template;
     }
@@ -363,31 +363,31 @@ final class FullRepository
     {
         return $this->topics;
     }
-    public function has_issues() : boolean
+    public function has_issues() : bool
     {
         return $this->has_issues;
     }
-    public function has_projects() : boolean
+    public function has_projects() : bool
     {
         return $this->has_projects;
     }
-    public function has_wiki() : boolean
+    public function has_wiki() : bool
     {
         return $this->has_wiki;
     }
-    public function has_pages() : boolean
+    public function has_pages() : bool
     {
         return $this->has_pages;
     }
-    public function has_downloads() : boolean
+    public function has_downloads() : bool
     {
         return $this->has_downloads;
     }
-    public function archived() : boolean
+    public function archived() : bool
     {
         return $this->archived;
     }
-    public function disabled() : boolean
+    public function disabled() : bool
     {
         return $this->disabled;
     }
@@ -411,7 +411,7 @@ final class FullRepository
     {
         return $this->permissions;
     }
-    public function allow_rebase_merge() : boolean
+    public function allow_rebase_merge() : bool
     {
         return $this->allow_rebase_merge;
     }
@@ -423,15 +423,15 @@ final class FullRepository
     {
         return $this->temp_clone_token;
     }
-    public function allow_squash_merge() : boolean
+    public function allow_squash_merge() : bool
     {
         return $this->allow_squash_merge;
     }
-    public function delete_branch_on_merge() : boolean
+    public function delete_branch_on_merge() : bool
     {
         return $this->delete_branch_on_merge;
     }
-    public function allow_merge_commit() : boolean
+    public function allow_merge_commit() : bool
     {
         return $this->allow_merge_commit;
     }
@@ -475,7 +475,7 @@ final class FullRepository
     {
         return $this->watchers;
     }
-    public function anonymous_access_enabled() : boolean
+    public function anonymous_access_enabled() : bool
     {
         return $this->anonymous_access_enabled;
     }

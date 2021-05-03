@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class OrganizationFull
 {
     public const SCHEMA_TITLE = 'Organization Full';
-    public const SPL_HASH = '000000002eab652100000000697c5254';
+    public const SPL_HASH = '000000006e7b7500000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = 'Organization Full';
     private string $login;
     private int $id;
@@ -24,8 +24,8 @@ final class OrganizationFull
     private string $blog;
     private string $location;
     private string $email;
-    private boolean $has_organization_projects;
-    private boolean $has_repository_projects;
+    private bool $has_organization_projects;
+    private bool $has_repository_projects;
     private int $public_repos;
     private int $public_gists;
     private int $followers;
@@ -41,12 +41,12 @@ final class OrganizationFull
     private string $billing_email;
     private object $plan;
     private string $default_repository_permission;
-    private boolean $members_can_create_repositories;
-    private boolean $two_factor_requirement_enabled;
+    private bool $members_can_create_repositories;
+    private bool $two_factor_requirement_enabled;
     private string $members_allowed_repository_creation_type;
-    private boolean $members_can_create_pages;
-    private boolean $members_can_create_public_pages;
-    private boolean $members_can_create_private_pages;
+    private bool $members_can_create_pages;
+    private bool $members_can_create_public_pages;
+    private bool $members_can_create_private_pages;
     private string $updated_at;
     public function login() : string
     {
@@ -116,11 +116,11 @@ final class OrganizationFull
     {
         return $this->email;
     }
-    public function has_organization_projects() : boolean
+    public function has_organization_projects() : bool
     {
         return $this->has_organization_projects;
     }
-    public function has_repository_projects() : boolean
+    public function has_repository_projects() : bool
     {
         return $this->has_repository_projects;
     }
@@ -184,11 +184,11 @@ final class OrganizationFull
     {
         return $this->default_repository_permission;
     }
-    public function members_can_create_repositories() : boolean
+    public function members_can_create_repositories() : bool
     {
         return $this->members_can_create_repositories;
     }
-    public function two_factor_requirement_enabled() : boolean
+    public function two_factor_requirement_enabled() : bool
     {
         return $this->two_factor_requirement_enabled;
     }
@@ -196,15 +196,15 @@ final class OrganizationFull
     {
         return $this->members_allowed_repository_creation_type;
     }
-    public function members_can_create_pages() : boolean
+    public function members_can_create_pages() : bool
     {
         return $this->members_can_create_pages;
     }
-    public function members_can_create_public_pages() : boolean
+    public function members_can_create_public_pages() : bool
     {
         return $this->members_can_create_public_pages;
     }
-    public function members_can_create_private_pages() : boolean
+    public function members_can_create_private_pages() : bool
     {
         return $this->members_can_create_private_pages;
     }

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class LinkWithType
 {
     public const SCHEMA_TITLE = 'Link With Type';
-    public const SPL_HASH = '0000000065dd62b3000000006352672d';
+    public const SPL_HASH = '000000001f1e2868000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Hypermedia Link with Type';
     private string $href;
     private string $type;

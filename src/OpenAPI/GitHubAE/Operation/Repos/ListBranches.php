@@ -10,7 +10,7 @@ final class ListBranches
     /****/
     public string $repo;
     /**Setting to `true` returns only protected branches. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.**/
-    public boolean $protected;
+    public bool $protected;
     /**Results per page (max 100).**/
     public int $per_page;
     /**Page number of the results to fetch.**/

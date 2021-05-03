@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ScopedInstallation
 {
     public const SCHEMA_TITLE = 'Scoped Installation';
-    public const SPL_HASH = '000000000c1c98e20000000065732ccc';
+    public const SPL_HASH = '000000007ee690ac0000000021479ea3';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The permissions granted to the user-to-server access token.
@@ -16,7 +16,7 @@ final class ScopedInstallation
      */
     private string $repository_selection;
     private string $single_file_name;
-    private boolean $has_multiple_single_files;
+    private bool $has_multiple_single_files;
     private array $single_file_paths;
     private string $repositories_url;
     /**
@@ -35,7 +35,7 @@ final class ScopedInstallation
     {
         return $this->single_file_name;
     }
-    public function has_multiple_single_files() : boolean
+    public function has_multiple_single_files() : bool
     {
         return $this->has_multiple_single_files;
     }

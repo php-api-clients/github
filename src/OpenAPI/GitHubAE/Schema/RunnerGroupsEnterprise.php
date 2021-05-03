@@ -5,15 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class RunnerGroupsEnterprise
 {
     public const SCHEMA_TITLE = 'runner-groups-enterprise';
-    public const SPL_HASH = '000000000c1c9a970000000065732ccc';
+    public const SPL_HASH = '000000007ee692d90000000021479ea3';
     public const SCHEMA_DESCRIPTION = '';
     private number $id;
     private string $name;
     private string $visibility;
-    private boolean $default;
+    private bool $default;
     private string $selected_organizations_url;
     private string $runners_url;
-    private boolean $allows_public_repositories;
+    private bool $allows_public_repositories;
     public function id() : number
     {
         return $this->id;
@@ -26,7 +26,7 @@ final class RunnerGroupsEnterprise
     {
         return $this->visibility;
     }
-    public function default() : boolean
+    public function default() : bool
     {
         return $this->default;
     }
@@ -38,7 +38,7 @@ final class RunnerGroupsEnterprise
     {
         return $this->runners_url;
     }
-    public function allows_public_repositories() : boolean
+    public function allows_public_repositories() : bool
     {
         return $this->allows_public_repositories;
     }

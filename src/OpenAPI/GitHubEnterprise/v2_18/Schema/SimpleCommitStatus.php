@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class SimpleCommitStatus
 {
     public const SCHEMA_TITLE = 'Simple Commit Status';
-    public const SPL_HASH = '000000002eab616a00000000697c5254';
+    public const SPL_HASH = '000000006e7b714b000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = '';
     private string $description;
     private int $id;
@@ -13,7 +13,7 @@ final class SimpleCommitStatus
     private string $state;
     private string $context;
     private string $target_url;
-    private boolean $required;
+    private bool $required;
     private string $avatar_url;
     private string $url;
     private string $created_at;
@@ -42,7 +42,7 @@ final class SimpleCommitStatus
     {
         return $this->target_url;
     }
-    public function required() : boolean
+    public function required() : bool
     {
         return $this->required;
     }

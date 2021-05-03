@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class PagesHttpsCertificate
 {
     public const SCHEMA_TITLE = 'Pages Https Certificate';
-    public const SPL_HASH = '000000001c23f17a000000003890ca58';
+    public const SPL_HASH = '0000000037ddbae50000000010a967e8';
     public const SCHEMA_DESCRIPTION = '';
     private string $state;
     private string $description;

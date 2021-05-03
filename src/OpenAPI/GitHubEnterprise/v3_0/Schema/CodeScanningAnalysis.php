@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class CodeScanningAnalysis
 {
     public const SCHEMA_TITLE = 'code-scanning-analysis';
-    public const SPL_HASH = '0000000065dd6c84000000006352672d';
+    public const SPL_HASH = '000000001f1e265f000000004be6709d';
     public const SCHEMA_DESCRIPTION = '';
     /**
     * The full Git reference, formatted as `refs/heads/<branch name>`,
@@ -54,7 +54,7 @@ final class CodeScanningAnalysis
      */
     private string $sarif_id;
     private object $tool;
-    private boolean $deletable;
+    private bool $deletable;
     /**
      * Warning generated when processing the analysis
      */
@@ -111,7 +111,7 @@ final class CodeScanningAnalysis
     {
         return $this->tool;
     }
-    public function deletable() : boolean
+    public function deletable() : bool
     {
         return $this->deletable;
     }

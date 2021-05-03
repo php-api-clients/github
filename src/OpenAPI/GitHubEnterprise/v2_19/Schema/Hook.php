@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class Hook
 {
     public const SCHEMA_TITLE = 'Webhook';
-    public const SPL_HASH = '0000000015935ada000000001856c88e';
+    public const SPL_HASH = '000000006312ff8a0000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Webhooks for repositories.';
     private string $type;
     /**
@@ -19,7 +19,7 @@ final class Hook
     /**
      * Determines whether the hook is actually triggered on pushes.
      */
-    private boolean $active;
+    private bool $active;
     /**
      * Determines what events the hook is triggered for. Default: ['push'].
      */
@@ -43,7 +43,7 @@ final class Hook
     {
         return $this->name;
     }
-    public function active() : boolean
+    public function active() : bool
     {
         return $this->active;
     }

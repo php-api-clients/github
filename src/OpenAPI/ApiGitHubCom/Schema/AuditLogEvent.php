@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class AuditLogEvent
 {
     public const SCHEMA_TITLE = 'audit-log-event';
-    public const SPL_HASH = '0000000054d5fa360000000071115dec';
+    public const SPL_HASH = '00000000207002bc0000000042193899';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The time the audit log event occurred, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
@@ -15,8 +15,8 @@ final class AuditLogEvent
      * The name of the action that was performed, for example `user.login` or `repo.create`.
      */
     private string $action;
-    private boolean $active;
-    private boolean $active_was;
+    private bool $active;
+    private bool $active_was;
     /**
      * The actor who performed the action.
      */
@@ -40,14 +40,14 @@ final class AuditLogEvent
     private string $explanation;
     private string $fingerprint;
     private int $hook_id;
-    private boolean $limited_availability;
+    private bool $limited_availability;
     private string $message;
     private string $name;
     private string $old_user;
     private string $openssh_public_key;
     private string $org;
     private string $previous_visibility;
-    private boolean $read_only;
+    private bool $read_only;
     /**
      * The name of the repository.
      */
@@ -56,7 +56,7 @@ final class AuditLogEvent
      * The name of the repository.
      */
     private string $repository;
-    private boolean $repository_public;
+    private bool $repository_public;
     private string $target_login;
     private string $team;
     /**
@@ -83,11 +83,11 @@ final class AuditLogEvent
     {
         return $this->action;
     }
-    public function active() : boolean
+    public function active() : bool
     {
         return $this->active;
     }
-    public function active_was() : boolean
+    public function active_was() : bool
     {
         return $this->active_was;
     }
@@ -147,7 +147,7 @@ final class AuditLogEvent
     {
         return $this->hook_id;
     }
-    public function limited_availability() : boolean
+    public function limited_availability() : bool
     {
         return $this->limited_availability;
     }
@@ -175,7 +175,7 @@ final class AuditLogEvent
     {
         return $this->previous_visibility;
     }
-    public function read_only() : boolean
+    public function read_only() : bool
     {
         return $this->read_only;
     }
@@ -187,7 +187,7 @@ final class AuditLogEvent
     {
         return $this->repository;
     }
-    public function repository_public() : boolean
+    public function repository_public() : bool
     {
         return $this->repository_public;
     }

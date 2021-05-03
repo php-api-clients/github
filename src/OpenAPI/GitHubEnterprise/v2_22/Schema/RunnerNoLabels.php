@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class RunnerNoLabels
 {
     public const SCHEMA_TITLE = 'runner-no-labels';
-    public const SPL_HASH = '000000004a4ba2bf0000000021d13a21';
+    public const SPL_HASH = '0000000031ee596100000000484d7fbe';
     public const SCHEMA_DESCRIPTION = '';
     private number $id;
     private string $name;
     private string $os;
     private string $status;
-    private boolean $busy;
+    private bool $busy;
     public function id() : number
     {
         return $this->id;
@@ -28,7 +28,7 @@ final class RunnerNoLabels
     {
         return $this->status;
     }
-    public function busy() : boolean
+    public function busy() : bool
     {
         return $this->busy;
     }

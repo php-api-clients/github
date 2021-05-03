@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CheckAnnotation
 {
     public const SCHEMA_TITLE = 'Check Annotation';
-    public const SPL_HASH = '000000000c1ce0ce0000000065732ccc';
+    public const SPL_HASH = '000000007ee6e8800000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Check Annotation';
     private string $path;
     private int $start_line;

@@ -5,10 +5,10 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Import
 {
     public const SCHEMA_TITLE = 'Import';
-    public const SPL_HASH = '0000000054d5e19f0000000071115dec';
+    public const SPL_HASH = '00000000207019150000000042193899';
     public const SCHEMA_DESCRIPTION = 'A repository import from an external source.';
     private string $vcs;
-    private boolean $use_lfs;
+    private bool $use_lfs;
     /**
      * The URL of the originating repository.
      */
@@ -22,7 +22,7 @@ final class Import
     private int $import_percent;
     private int $commit_count;
     private int $push_percent;
-    private boolean $has_large_files;
+    private bool $has_large_files;
     private int $large_files_size;
     private int $large_files_count;
     private array $project_choices;
@@ -37,7 +37,7 @@ final class Import
     {
         return $this->vcs;
     }
-    public function use_lfs() : boolean
+    public function use_lfs() : bool
     {
         return $this->use_lfs;
     }
@@ -81,7 +81,7 @@ final class Import
     {
         return $this->push_percent;
     }
-    public function has_large_files() : boolean
+    public function has_large_files() : bool
     {
         return $this->has_large_files;
     }

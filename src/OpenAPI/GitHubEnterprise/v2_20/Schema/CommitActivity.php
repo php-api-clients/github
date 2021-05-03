@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class CommitActivity
 {
     public const SCHEMA_TITLE = 'Commit Activity';
-    public const SPL_HASH = '000000001c238f05000000003890ca58';
+    public const SPL_HASH = '0000000037ddc49a0000000010a967e8';
     public const SCHEMA_DESCRIPTION = 'Commit Activity';
     private array $days;
     private int $total;

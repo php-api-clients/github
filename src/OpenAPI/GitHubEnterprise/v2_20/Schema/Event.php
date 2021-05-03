@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Event
 {
     public const SCHEMA_TITLE = 'Event';
-    public const SPL_HASH = '000000001c23f989000000003890ca58';
+    public const SPL_HASH = '0000000037ddb2160000000010a967e8';
     public const SCHEMA_DESCRIPTION = 'Event';
     private string $id;
     private string $type;
@@ -19,7 +19,7 @@ final class Event
      */
     private object $org;
     private object $payload;
-    private boolean $public;
+    private bool $public;
     private string $created_at;
     public function id() : string
     {
@@ -45,7 +45,7 @@ final class Event
     {
         return $this->payload;
     }
-    public function public() : boolean
+    public function public() : bool
     {
         return $this->public;
     }

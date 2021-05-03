@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class OrgMembership
 {
     public const SCHEMA_TITLE = 'Org Membership';
-    public const SPL_HASH = '0000000015935dd9000000001856c88e';
+    public const SPL_HASH = '000000006312f8890000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Org Membership';
     private string $url;
     /**

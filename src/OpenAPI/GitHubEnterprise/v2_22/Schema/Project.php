@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Project
 {
     public const SCHEMA_TITLE = 'Project';
-    public const SPL_HASH = '000000004a4ba74d0000000021d13a21';
+    public const SPL_HASH = '0000000031ee5c9300000000484d7fbe';
     public const SCHEMA_DESCRIPTION = 'Projects are a way to organize columns and cards of work.';
     private string $owner_url;
     private string $url;
@@ -36,7 +36,7 @@ final class Project
     /**
      * Whether or not this project can be seen by everyone. Only present if owner is an organization.
      */
-    private boolean $private;
+    private bool $private;
     public function owner_url() : string
     {
         return $this->owner_url;
@@ -93,7 +93,7 @@ final class Project
     {
         return $this->organization_permission;
     }
-    public function private() : boolean
+    public function private() : bool
     {
         return $this->private;
     }

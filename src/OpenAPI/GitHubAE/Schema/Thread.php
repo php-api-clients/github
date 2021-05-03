@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Thread
 {
     public const SCHEMA_TITLE = 'Thread';
-    public const SPL_HASH = '000000000c1ce4c00000000065732ccc';
+    public const SPL_HASH = '000000007ee6ec8e0000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Thread';
     private string $id;
     /**
@@ -14,7 +14,7 @@ final class Thread
     private object $repository;
     private object $subject;
     private string $reason;
-    private boolean $unread;
+    private bool $unread;
     private string $updated_at;
     private string $last_read_at;
     private string $url;
@@ -35,7 +35,7 @@ final class Thread
     {
         return $this->reason;
     }
-    public function unread() : boolean
+    public function unread() : bool
     {
         return $this->unread;
     }

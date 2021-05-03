@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Milestone
 {
     public const SCHEMA_TITLE = 'Milestone';
-    public const SPL_HASH = '000000000c1c9af10000000065732ccc';
+    public const SPL_HASH = '000000007ee692bf0000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'A collection of related issues and pull requests.';
     private string $url;
     private string $html_url;

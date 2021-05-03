@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class OrganizationFull
 {
     public const SCHEMA_TITLE = 'Organization Full';
-    public const SPL_HASH = '000000004a4ba0fb0000000021d13a21';
+    public const SPL_HASH = '0000000031ee5b2500000000484d7fbe';
     public const SCHEMA_DESCRIPTION = 'Organization Full';
     private string $login;
     private int $id;
@@ -25,9 +25,9 @@ final class OrganizationFull
     private string $location;
     private string $email;
     private string $twitter_username;
-    private boolean $is_verified;
-    private boolean $has_organization_projects;
-    private boolean $has_repository_projects;
+    private bool $is_verified;
+    private bool $has_organization_projects;
+    private bool $has_repository_projects;
     private int $public_repos;
     private int $public_gists;
     private int $followers;
@@ -43,15 +43,15 @@ final class OrganizationFull
     private string $billing_email;
     private object $plan;
     private string $default_repository_permission;
-    private boolean $members_can_create_repositories;
-    private boolean $two_factor_requirement_enabled;
+    private bool $members_can_create_repositories;
+    private bool $two_factor_requirement_enabled;
     private string $members_allowed_repository_creation_type;
-    private boolean $members_can_create_public_repositories;
-    private boolean $members_can_create_private_repositories;
-    private boolean $members_can_create_internal_repositories;
-    private boolean $members_can_create_pages;
-    private boolean $members_can_create_public_pages;
-    private boolean $members_can_create_private_pages;
+    private bool $members_can_create_public_repositories;
+    private bool $members_can_create_private_repositories;
+    private bool $members_can_create_internal_repositories;
+    private bool $members_can_create_pages;
+    private bool $members_can_create_public_pages;
+    private bool $members_can_create_private_pages;
     private string $updated_at;
     public function login() : string
     {
@@ -125,15 +125,15 @@ final class OrganizationFull
     {
         return $this->twitter_username;
     }
-    public function is_verified() : boolean
+    public function is_verified() : bool
     {
         return $this->is_verified;
     }
-    public function has_organization_projects() : boolean
+    public function has_organization_projects() : bool
     {
         return $this->has_organization_projects;
     }
-    public function has_repository_projects() : boolean
+    public function has_repository_projects() : bool
     {
         return $this->has_repository_projects;
     }
@@ -197,11 +197,11 @@ final class OrganizationFull
     {
         return $this->default_repository_permission;
     }
-    public function members_can_create_repositories() : boolean
+    public function members_can_create_repositories() : bool
     {
         return $this->members_can_create_repositories;
     }
-    public function two_factor_requirement_enabled() : boolean
+    public function two_factor_requirement_enabled() : bool
     {
         return $this->two_factor_requirement_enabled;
     }
@@ -209,27 +209,27 @@ final class OrganizationFull
     {
         return $this->members_allowed_repository_creation_type;
     }
-    public function members_can_create_public_repositories() : boolean
+    public function members_can_create_public_repositories() : bool
     {
         return $this->members_can_create_public_repositories;
     }
-    public function members_can_create_private_repositories() : boolean
+    public function members_can_create_private_repositories() : bool
     {
         return $this->members_can_create_private_repositories;
     }
-    public function members_can_create_internal_repositories() : boolean
+    public function members_can_create_internal_repositories() : bool
     {
         return $this->members_can_create_internal_repositories;
     }
-    public function members_can_create_pages() : boolean
+    public function members_can_create_pages() : bool
     {
         return $this->members_can_create_pages;
     }
-    public function members_can_create_public_pages() : boolean
+    public function members_can_create_public_pages() : bool
     {
         return $this->members_can_create_public_pages;
     }
-    public function members_can_create_private_pages() : boolean
+    public function members_can_create_private_pages() : bool
     {
         return $this->members_can_create_private_pages;
     }

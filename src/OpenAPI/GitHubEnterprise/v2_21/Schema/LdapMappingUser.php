@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class LdapMappingUser
 {
     public const SCHEMA_TITLE = 'Ldap Private User';
-    public const SPL_HASH = '0000000065d65c52000000007ce49c9a';
+    public const SPL_HASH = '0000000018145af3000000005f691719';
     public const SCHEMA_DESCRIPTION = 'Ldap Private User';
     private string $ldap_dn;
     private string $login;
@@ -25,13 +25,13 @@ final class LdapMappingUser
     private string $events_url;
     private string $received_events_url;
     private string $type;
-    private boolean $site_admin;
+    private bool $site_admin;
     private string $name;
     private string $company;
     private string $blog;
     private string $location;
     private string $email;
-    private boolean $hireable;
+    private bool $hireable;
     private string $bio;
     private string $twitter_username;
     private int $public_repos;
@@ -45,10 +45,10 @@ final class LdapMappingUser
     private int $owned_private_repos;
     private int $disk_usage;
     private int $collaborators;
-    private boolean $two_factor_authentication;
+    private bool $two_factor_authentication;
     private object $plan;
     private string $suspended_at;
-    private boolean $business_plus;
+    private bool $business_plus;
     public function ldap_dn() : string
     {
         return $this->ldap_dn;
@@ -121,7 +121,7 @@ final class LdapMappingUser
     {
         return $this->type;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }
@@ -145,7 +145,7 @@ final class LdapMappingUser
     {
         return $this->email;
     }
-    public function hireable() : boolean
+    public function hireable() : bool
     {
         return $this->hireable;
     }
@@ -201,7 +201,7 @@ final class LdapMappingUser
     {
         return $this->collaborators;
     }
-    public function two_factor_authentication() : boolean
+    public function two_factor_authentication() : bool
     {
         return $this->two_factor_authentication;
     }
@@ -213,7 +213,7 @@ final class LdapMappingUser
     {
         return $this->suspended_at;
     }
-    public function business_plus() : boolean
+    public function business_plus() : bool
     {
         return $this->business_plus;
     }

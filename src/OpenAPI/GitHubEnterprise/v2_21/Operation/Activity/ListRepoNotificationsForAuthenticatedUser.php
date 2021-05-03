@@ -10,9 +10,9 @@ final class ListRepoNotificationsForAuthenticatedUser
     /****/
     public string $repo;
     /**If `true`, show notifications marked as read.**/
-    public boolean $all;
+    public bool $all;
     /**If `true`, only shows notifications in which the user is directly participating or mentioned.**/
-    public boolean $participating;
+    public bool $participating;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
     public string $since;
     /**Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
@@ -25,7 +25,7 @@ final class ListRepoNotificationsForAuthenticatedUser
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, boolean $all = false, boolean $participating = false, $since, $before, int $per_page = 30, int $page = 1)
+    function __construct($owner, $repo, bool $all = false, bool $participating = false, $since, $before, int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

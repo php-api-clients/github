@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PackagesBillingUsage
 {
     public const SCHEMA_TITLE = 'packages-billing-usage';
-    public const SPL_HASH = '0000000054d5fa1a0000000071115dec';
+    public const SPL_HASH = '00000000207002900000000042193899';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Sum of the free and paid storage space (GB) for GitHuub Packages.

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class TeamDiscussion
 {
     public const SCHEMA_TITLE = 'Team Discussion';
-    public const SPL_HASH = '000000000c1ce79e0000000065732ccc';
+    public const SPL_HASH = '000000007ee6efd00000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'A team discussion is a persistent record of a free-form conversation within a team.';
     private $author;
     /**
@@ -30,11 +30,11 @@ final class TeamDiscussion
     /**
      * Whether or not this discussion should be pinned for easy retrieval.
      */
-    private boolean $pinned;
+    private bool $pinned;
     /**
      * Whether or not this discussion should be restricted to team members and organization administrators.
      */
-    private boolean $private;
+    private bool $private;
     private string $team_url;
     /**
      * The title of the discussion.
@@ -87,11 +87,11 @@ final class TeamDiscussion
     {
         return $this->number;
     }
-    public function pinned() : boolean
+    public function pinned() : bool
     {
         return $this->pinned;
     }
-    public function private() : boolean
+    public function private() : bool
     {
         return $this->private;
     }

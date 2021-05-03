@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class PublicUser
 {
     public const SCHEMA_TITLE = 'Public User';
-    public const SPL_HASH = '000000000c1ce8890000000065732ccc';
+    public const SPL_HASH = '000000007ee6e0c70000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Public User';
     private string $login;
     private int $id;
@@ -24,13 +24,13 @@ final class PublicUser
     private string $events_url;
     private string $received_events_url;
     private string $type;
-    private boolean $site_admin;
+    private bool $site_admin;
     private string $name;
     private string $company;
     private string $blog;
     private string $location;
     private string $email;
-    private boolean $hireable;
+    private bool $hireable;
     private string $bio;
     private string $twitter_username;
     private int $public_repos;
@@ -114,7 +114,7 @@ final class PublicUser
     {
         return $this->type;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }
@@ -138,7 +138,7 @@ final class PublicUser
     {
         return $this->email;
     }
-    public function hireable() : boolean
+    public function hireable() : bool
     {
         return $this->hireable;
     }

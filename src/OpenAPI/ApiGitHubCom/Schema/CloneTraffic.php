@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CloneTraffic
 {
     public const SCHEMA_TITLE = 'Clone Traffic';
-    public const SPL_HASH = '0000000054d5ec200000000071115dec';
+    public const SPL_HASH = '00000000207014aa0000000042193899';
     public const SCHEMA_DESCRIPTION = 'Clone Traffic';
     private int $count;
     private int $uniques;

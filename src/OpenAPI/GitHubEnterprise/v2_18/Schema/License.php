@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class License
 {
     public const SCHEMA_TITLE = 'License';
-    public const SPL_HASH = '000000002eab6ab000000000697c5254';
+    public const SPL_HASH = '000000006e7b7a91000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = 'License';
     private string $key;
     private string $name;
@@ -19,7 +19,7 @@ final class License
     private array $conditions;
     private array $limitations;
     private string $body;
-    private boolean $featured;
+    private bool $featured;
     public function key() : string
     {
         return $this->key;
@@ -68,7 +68,7 @@ final class License
     {
         return $this->body;
     }
-    public function featured() : boolean
+    public function featured() : bool
     {
         return $this->featured;
     }

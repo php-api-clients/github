@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class Issue
 {
     public const SCHEMA_TITLE = 'Issue';
-    public const SPL_HASH = '0000000065d658f7000000007ce49c9a';
+    public const SPL_HASH = '0000000018145e56000000005f691719';
     public const SCHEMA_DESCRIPTION = 'Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.';
     private int $id;
     private string $node_id;
@@ -45,7 +45,7 @@ final class Issue
      */
     private array $assignees;
     private $milestone;
-    private boolean $locked;
+    private bool $locked;
     private string $active_lock_reason;
     private int $comments;
     private object $pull_request;
@@ -134,7 +134,7 @@ final class Issue
     {
         return $this->milestone;
     }
-    public function locked() : boolean
+    public function locked() : bool
     {
         return $this->locked;
     }

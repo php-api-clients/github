@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Runner
 {
     public const SCHEMA_TITLE = 'Self hosted runners';
-    public const SPL_HASH = '000000000c1c9a9f0000000065732ccc';
+    public const SPL_HASH = '000000007ee692d10000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'A self hosted runner';
     /**
      * The id of the runner.
@@ -23,7 +23,7 @@ final class Runner
      * The status of the runner.
      */
     private string $status;
-    private boolean $busy;
+    private bool $busy;
     private array $labels;
     public function id() : int
     {
@@ -41,7 +41,7 @@ final class Runner
     {
         return $this->status;
     }
-    public function busy() : boolean
+    public function busy() : bool
     {
         return $this->busy;
     }

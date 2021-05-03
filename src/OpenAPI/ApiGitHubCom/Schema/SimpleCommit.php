@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class SimpleCommit
 {
     public const SCHEMA_TITLE = 'Simple Commit';
-    public const SPL_HASH = '0000000054d5e76a0000000071115dec';
+    public const SPL_HASH = '0000000020701fe00000000042193899';
     public const SCHEMA_DESCRIPTION = 'Simple Commit';
     private string $id;
     private string $tree_id;

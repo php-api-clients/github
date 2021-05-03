@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Link
 {
     public const SCHEMA_TITLE = 'Link';
-    public const SPL_HASH = '000000001c23f2f9000000003890ca58';
+    public const SPL_HASH = '0000000037ddb9660000000010a967e8';
     public const SCHEMA_DESCRIPTION = 'Hypermedia Link';
     private string $href;
     public function href() : string

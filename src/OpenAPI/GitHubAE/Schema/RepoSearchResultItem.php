@@ -5,17 +5,17 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class RepoSearchResultItem
 {
     public const SCHEMA_TITLE = 'Repo Search Result Item';
-    public const SPL_HASH = '000000000c1ce9fe0000000065732ccc';
+    public const SPL_HASH = '000000007ee6e1b00000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Repo Search Result Item';
     private int $id;
     private string $node_id;
     private string $name;
     private string $full_name;
     private $owner;
-    private boolean $private;
+    private bool $private;
     private string $html_url;
     private string $description;
-    private boolean $fork;
+    private bool $fork;
     private string $url;
     private string $created_at;
     private string $updated_at;
@@ -75,24 +75,24 @@ final class RepoSearchResultItem
     private int $watchers;
     private array $topics;
     private string $mirror_url;
-    private boolean $has_issues;
-    private boolean $has_projects;
-    private boolean $has_pages;
-    private boolean $has_wiki;
-    private boolean $has_downloads;
-    private boolean $archived;
+    private bool $has_issues;
+    private bool $has_projects;
+    private bool $has_pages;
+    private bool $has_wiki;
+    private bool $has_downloads;
+    private bool $archived;
     /**
      * Returns whether or not this repository disabled.
      */
-    private boolean $disabled;
+    private bool $disabled;
     private $license;
     private object $permissions;
     private array $text_matches;
     private string $temp_clone_token;
-    private boolean $allow_merge_commit;
-    private boolean $allow_squash_merge;
-    private boolean $allow_rebase_merge;
-    private boolean $delete_branch_on_merge;
+    private bool $allow_merge_commit;
+    private bool $allow_squash_merge;
+    private bool $allow_rebase_merge;
+    private bool $delete_branch_on_merge;
     public function id() : int
     {
         return $this->id;
@@ -113,7 +113,7 @@ final class RepoSearchResultItem
     {
         return $this->owner;
     }
-    public function private() : boolean
+    public function private() : bool
     {
         return $this->private;
     }
@@ -125,7 +125,7 @@ final class RepoSearchResultItem
     {
         return $this->description;
     }
-    public function fork() : boolean
+    public function fork() : bool
     {
         return $this->fork;
     }
@@ -365,31 +365,31 @@ final class RepoSearchResultItem
     {
         return $this->mirror_url;
     }
-    public function has_issues() : boolean
+    public function has_issues() : bool
     {
         return $this->has_issues;
     }
-    public function has_projects() : boolean
+    public function has_projects() : bool
     {
         return $this->has_projects;
     }
-    public function has_pages() : boolean
+    public function has_pages() : bool
     {
         return $this->has_pages;
     }
-    public function has_wiki() : boolean
+    public function has_wiki() : bool
     {
         return $this->has_wiki;
     }
-    public function has_downloads() : boolean
+    public function has_downloads() : bool
     {
         return $this->has_downloads;
     }
-    public function archived() : boolean
+    public function archived() : bool
     {
         return $this->archived;
     }
-    public function disabled() : boolean
+    public function disabled() : bool
     {
         return $this->disabled;
     }
@@ -409,19 +409,19 @@ final class RepoSearchResultItem
     {
         return $this->temp_clone_token;
     }
-    public function allow_merge_commit() : boolean
+    public function allow_merge_commit() : bool
     {
         return $this->allow_merge_commit;
     }
-    public function allow_squash_merge() : boolean
+    public function allow_squash_merge() : bool
     {
         return $this->allow_squash_merge;
     }
-    public function allow_rebase_merge() : boolean
+    public function allow_rebase_merge() : bool
     {
         return $this->allow_rebase_merge;
     }
-    public function delete_branch_on_merge() : boolean
+    public function delete_branch_on_merge() : bool
     {
         return $this->delete_branch_on_merge;
     }

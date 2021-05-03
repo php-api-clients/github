@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class DeploymentSimple
 {
     public const SCHEMA_TITLE = 'Deployment';
-    public const SPL_HASH = '0000000065d624fd000000007ce49c9a';
+    public const SPL_HASH = '000000001814225c000000005f691719';
     public const SCHEMA_DESCRIPTION = 'A deployment created as the result of an Actions check run from a workflow that references an environment';
     private string $url;
     /**
@@ -30,11 +30,11 @@ final class DeploymentSimple
     /**
      * Specifies if the given environment is will no longer exist at some point in the future. Default: false.
      */
-    private boolean $transient_environment;
+    private bool $transient_environment;
     /**
      * Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
-    private boolean $production_environment;
+    private bool $production_environment;
     private $performed_via_github_app;
     public function url() : string
     {
@@ -80,11 +80,11 @@ final class DeploymentSimple
     {
         return $this->repository_url;
     }
-    public function transient_environment() : boolean
+    public function transient_environment() : bool
     {
         return $this->transient_environment;
     }
-    public function production_environment() : boolean
+    public function production_environment() : bool
     {
         return $this->production_environment;
     }

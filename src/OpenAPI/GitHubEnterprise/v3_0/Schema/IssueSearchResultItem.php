@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class IssueSearchResultItem
 {
     public const SCHEMA_TITLE = 'Issue Search Result Item';
-    public const SPL_HASH = '0000000065dd76e0000000006352672d';
+    public const SPL_HASH = '000000001f1e3c3b000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Issue Search Result Item';
     private string $url;
     private string $repository_url;
@@ -17,7 +17,7 @@ final class IssueSearchResultItem
     private string $node_id;
     private int $number;
     private string $title;
-    private boolean $locked;
+    private bool $locked;
     private string $active_lock_reason;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser>
@@ -40,7 +40,7 @@ final class IssueSearchResultItem
      * How the author is associated with the repository.
      */
     private string $author_association;
-    private boolean $draft;
+    private bool $draft;
     /**
      * A git repository
      */
@@ -89,7 +89,7 @@ final class IssueSearchResultItem
     {
         return $this->title;
     }
-    public function locked() : boolean
+    public function locked() : bool
     {
         return $this->locked;
     }
@@ -157,7 +157,7 @@ final class IssueSearchResultItem
     {
         return $this->author_association;
     }
-    public function draft() : boolean
+    public function draft() : bool
     {
         return $this->draft;
     }

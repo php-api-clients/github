@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class TopicSearchResultItem
 {
     public const SCHEMA_TITLE = 'Topic Search Result Item';
-    public const SPL_HASH = '0000000065d6221a000000007ce49c9a';
+    public const SPL_HASH = '00000000181424bb000000005f691719';
     public const SCHEMA_DESCRIPTION = 'Topic Search Result Item';
     private string $name;
     private string $display_name;
@@ -15,8 +15,8 @@ final class TopicSearchResultItem
     private string $released;
     private string $created_at;
     private string $updated_at;
-    private boolean $featured;
-    private boolean $curated;
+    private bool $featured;
+    private bool $curated;
     private number $score;
     private int $repository_count;
     private string $logo_url;
@@ -55,11 +55,11 @@ final class TopicSearchResultItem
     {
         return $this->updated_at;
     }
-    public function featured() : boolean
+    public function featured() : bool
     {
         return $this->featured;
     }
-    public function curated() : boolean
+    public function curated() : bool
     {
         return $this->curated;
     }

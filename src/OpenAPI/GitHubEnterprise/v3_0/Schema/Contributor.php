@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Contributor
 {
     public const SCHEMA_TITLE = 'Contributor';
-    public const SPL_HASH = '0000000065dd6adf000000006352672d';
+    public const SPL_HASH = '000000001f1e2004000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Contributor';
     private string $login;
     private int $id;
@@ -24,7 +24,7 @@ final class Contributor
     private string $events_url;
     private string $received_events_url;
     private string $type;
-    private boolean $site_admin;
+    private bool $site_admin;
     private int $contributions;
     private string $email;
     private string $name;
@@ -96,7 +96,7 @@ final class Contributor
     {
         return $this->type;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }

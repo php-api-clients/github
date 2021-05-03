@@ -5,20 +5,20 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class ThreadSubscription
 {
     public const SCHEMA_TITLE = 'Thread Subscription';
-    public const SPL_HASH = '000000001c23f733000000003890ca58';
+    public const SPL_HASH = '0000000037ddbcac0000000010a967e8';
     public const SCHEMA_DESCRIPTION = 'Thread Subscription';
-    private boolean $subscribed;
-    private boolean $ignored;
+    private bool $subscribed;
+    private bool $ignored;
     private string $reason;
     private string $created_at;
     private string $url;
     private string $thread_url;
     private string $repository_url;
-    public function subscribed() : boolean
+    public function subscribed() : bool
     {
         return $this->subscribed;
     }
-    public function ignored() : boolean
+    public function ignored() : bool
     {
         return $this->ignored;
     }

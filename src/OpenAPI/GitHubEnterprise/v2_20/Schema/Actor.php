@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class Actor
 {
     public const SCHEMA_TITLE = 'Actor';
-    public const SPL_HASH = '000000001c23f917000000003890ca58';
+    public const SPL_HASH = '0000000037ddb2880000000010a967e8';
     public const SCHEMA_DESCRIPTION = 'Actor';
     private int $id;
     private string $login;

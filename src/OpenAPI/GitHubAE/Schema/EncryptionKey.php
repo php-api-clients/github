@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class EncryptionKey
 {
     public const SCHEMA_TITLE = 'encryption-key';
-    public const SPL_HASH = '000000000c1c9b450000000065732ccc';
+    public const SPL_HASH = '000000007ee6930b0000000021479ea3';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The time the encryption was last updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: YYYY-MM-DDTHH:MM:SSZ.

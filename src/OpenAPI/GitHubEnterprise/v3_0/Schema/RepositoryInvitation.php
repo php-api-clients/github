@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class RepositoryInvitation
 {
     public const SCHEMA_TITLE = 'Repository Invitation';
-    public const SPL_HASH = '0000000065dd6d47000000006352672d';
+    public const SPL_HASH = '000000001f1e279c000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Repository invitations let you manage who you collaborate with.';
     /**
      * Unique identifier of the repository invitation.
@@ -25,7 +25,7 @@ final class RepositoryInvitation
     /**
      * Whether or not the invitation has expired
      */
-    private boolean $expired;
+    private bool $expired;
     /**
      * URL for the repository invitation
      */
@@ -56,7 +56,7 @@ final class RepositoryInvitation
     {
         return $this->created_at;
     }
-    public function expired() : boolean
+    public function expired() : bool
     {
         return $this->expired;
     }

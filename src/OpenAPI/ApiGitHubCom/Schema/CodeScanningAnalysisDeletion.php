@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class CodeScanningAnalysisDeletion
 {
     public const SCHEMA_TITLE = 'Analysis deletion';
-    public const SPL_HASH = '0000000054d5e22f0000000071115dec';
+    public const SPL_HASH = '0000000020701aa50000000042193899';
     public const SCHEMA_DESCRIPTION = 'Successful deletion of a code scanning analysis';
     /**
      * Next deletable analysis in chain, without last analysis deletion confirmation

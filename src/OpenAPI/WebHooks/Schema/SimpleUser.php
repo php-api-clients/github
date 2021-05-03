@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class SimpleUser
 {
     public const SCHEMA_TITLE = 'Simple User';
-    public const SPL_HASH = '00000000733b76670000000053f73146';
+    public const SPL_HASH = '0000000038cc2826000000003d7dc56f';
     public const SCHEMA_DESCRIPTION = 'Simple User';
     private string $login;
     private int $id;
@@ -24,7 +24,7 @@ final class SimpleUser
     private string $events_url;
     private string $received_events_url;
     private string $type;
-    private boolean $site_admin;
+    private bool $site_admin;
     private string $starred_at;
     public function login() : string
     {
@@ -94,7 +94,7 @@ final class SimpleUser
     {
         return $this->type;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }

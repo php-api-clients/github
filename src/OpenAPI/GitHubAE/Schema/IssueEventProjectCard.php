@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class IssueEventProjectCard
 {
     public const SCHEMA_TITLE = 'Issue Event Project Card';
-    public const SPL_HASH = '000000000c1ced1d0000000065732ccc';
+    public const SPL_HASH = '000000007ee6e5530000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Issue Event Project Card';
     private string $url;
     private int $id;

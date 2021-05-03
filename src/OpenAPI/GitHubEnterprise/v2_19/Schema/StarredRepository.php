@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class StarredRepository
 {
     public const SCHEMA_TITLE = 'Starred Repository';
-    public const SPL_HASH = '00000000159320fc000000001856c88e';
+    public const SPL_HASH = '00000000631285ac0000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Starred Repository';
     private string $starred_at;
     /**

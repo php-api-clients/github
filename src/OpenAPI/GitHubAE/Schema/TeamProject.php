@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class TeamProject
 {
     public const SCHEMA_TITLE = 'Team Project';
-    public const SPL_HASH = '000000000c1ce7d60000000065732ccc';
+    public const SPL_HASH = '000000007ee6ef980000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'A team\'s access to a project.';
     private string $owner_url;
     private string $url;
@@ -30,7 +30,7 @@ final class TeamProject
     /**
      * Whether the project is private or not. Only present when owner is an organization.
      */
-    private boolean $private;
+    private bool $private;
     private object $permissions;
     public function owner_url() : string
     {
@@ -88,7 +88,7 @@ final class TeamProject
     {
         return $this->organization_permission;
     }
-    public function private() : boolean
+    public function private() : bool
     {
         return $this->private;
     }

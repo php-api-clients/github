@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class CommitComment
 {
     public const SCHEMA_TITLE = 'Commit Comment';
-    public const SPL_HASH = '000000004a4babc10000000021d13a21';
+    public const SPL_HASH = '0000000031ee501f00000000484d7fbe';
     public const SCHEMA_DESCRIPTION = 'Commit Comment';
     private string $html_url;
     private string $url;

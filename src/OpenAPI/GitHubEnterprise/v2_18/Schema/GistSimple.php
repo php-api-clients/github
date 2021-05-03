@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class GistSimple
 {
     public const SCHEMA_TITLE = 'Gist Simple';
-    public const SPL_HASH = '000000002eab6a6700000000697c5254';
+    public const SPL_HASH = '000000006e7b7a46000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = 'Gist Simple';
     private array $forks;
     private array $history;
@@ -22,7 +22,7 @@ final class GistSimple
     private string $git_push_url;
     private string $html_url;
     private object $files;
-    private boolean $public;
+    private bool $public;
     private string $created_at;
     private string $updated_at;
     private string $description;
@@ -33,7 +33,7 @@ final class GistSimple
      * Simple User
      */
     private object $owner;
-    private boolean $truncated;
+    private bool $truncated;
     public function forks() : array
     {
         return $this->forks;
@@ -82,7 +82,7 @@ final class GistSimple
     {
         return $this->files;
     }
-    public function public() : boolean
+    public function public() : bool
     {
         return $this->public;
     }
@@ -114,7 +114,7 @@ final class GistSimple
     {
         return $this->owner;
     }
-    public function truncated() : boolean
+    public function truncated() : bool
     {
         return $this->truncated;
     }

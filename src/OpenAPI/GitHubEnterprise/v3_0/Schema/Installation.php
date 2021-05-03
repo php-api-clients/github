@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Installation
 {
     public const SCHEMA_TITLE = 'Installation';
-    public const SPL_HASH = '0000000065dd640c000000006352672d';
+    public const SPL_HASH = '000000001f1e2ed7000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Installation';
     /**
      * The ID of the installation.
      */
     private int $id;
-    private $account;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser $account;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -30,7 +30,7 @@ final class Installation
     private string $created_at;
     private string $updated_at;
     private string $single_file_name;
-    private boolean $has_multiple_single_files;
+    private bool $has_multiple_single_files;
     private array $single_file_paths;
     private string $app_slug;
     private $suspended_by;
@@ -92,7 +92,7 @@ final class Installation
     {
         return $this->single_file_name;
     }
-    public function has_multiple_single_files() : boolean
+    public function has_multiple_single_files() : bool
     {
         return $this->has_multiple_single_files;
     }

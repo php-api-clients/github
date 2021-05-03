@@ -5,15 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ProtectedBranchAdminEnforced
 {
     public const SCHEMA_TITLE = 'Protected Branch Admin Enforced';
-    public const SPL_HASH = '0000000015935ed1000000001856c88e';
+    public const SPL_HASH = '000000006312fb810000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Admin Enforced';
     private string $url;
-    private boolean $enabled;
+    private bool $enabled;
     public function url() : string
     {
         return $this->url;
     }
-    public function enabled() : boolean
+    public function enabled() : bool
     {
         return $this->enabled;
     }

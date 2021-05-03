@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PullRequestSimple
 {
     public const SCHEMA_TITLE = 'Pull Request Simple';
-    public const SPL_HASH = '0000000054d5e24c0000000071115dec';
+    public const SPL_HASH = '0000000020701ac60000000042193899';
     public const SCHEMA_DESCRIPTION = 'Pull Request Simple';
     private string $url;
     private int $id;
@@ -21,7 +21,7 @@ final class PullRequestSimple
     private string $statuses_url;
     private int $number;
     private string $state;
-    private boolean $locked;
+    private bool $locked;
     private string $title;
     private $user;
     private string $body;
@@ -60,7 +60,7 @@ final class PullRequestSimple
     /**
      * Indicates whether or not the pull request is a draft.
      */
-    private boolean $draft;
+    private bool $draft;
     public function url() : string
     {
         return $this->url;
@@ -117,7 +117,7 @@ final class PullRequestSimple
     {
         return $this->state;
     }
-    public function locked() : boolean
+    public function locked() : bool
     {
         return $this->locked;
     }
@@ -201,7 +201,7 @@ final class PullRequestSimple
     {
         return $this->auto_merge;
     }
-    public function draft() : boolean
+    public function draft() : bool
     {
         return $this->draft;
     }

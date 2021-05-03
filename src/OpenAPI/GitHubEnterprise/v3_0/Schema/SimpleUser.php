@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class SimpleUser
 {
     public const SCHEMA_TITLE = 'Simple User';
-    public const SPL_HASH = '0000000065dd67ab000000006352672d';
+    public const SPL_HASH = '000000001f1e2d70000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Simple User';
     private string $login;
     private int $id;
@@ -24,7 +24,7 @@ final class SimpleUser
     private string $events_url;
     private string $received_events_url;
     private string $type;
-    private boolean $site_admin;
+    private bool $site_admin;
     private string $starred_at;
     public function login() : string
     {
@@ -94,7 +94,7 @@ final class SimpleUser
     {
         return $this->type;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }

@@ -5,14 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class PreReceiveEnvironment
 {
     public const SCHEMA_TITLE = 'pre-receive-environment';
-    public const SPL_HASH = '000000001c23fb6b000000003890ca58';
+    public const SPL_HASH = '0000000037ddb0f40000000010a967e8';
     public const SCHEMA_DESCRIPTION = '';
     private int $id;
     private string $name;
     private string $image_url;
     private string $url;
     private string $html_url;
-    private boolean $default_environment;
+    private bool $default_environment;
     private string $created_at;
     private int $hooks_count;
     private object $download;
@@ -36,7 +36,7 @@ final class PreReceiveEnvironment
     {
         return $this->html_url;
     }
-    public function default_environment() : boolean
+    public function default_environment() : bool
     {
         return $this->default_environment;
     }

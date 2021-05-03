@@ -5,15 +5,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class Key
 {
     public const SCHEMA_TITLE = 'Key';
-    public const SPL_HASH = '0000000065dd74e5000000006352672d';
+    public const SPL_HASH = '000000001f1e3e3e000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Key';
     private string $key;
     private int $id;
     private string $url;
     private string $title;
     private string $created_at;
-    private boolean $verified;
-    private boolean $read_only;
+    private bool $verified;
+    private bool $read_only;
     public function key() : string
     {
         return $this->key;
@@ -34,11 +34,11 @@ final class Key
     {
         return $this->created_at;
     }
-    public function verified() : boolean
+    public function verified() : bool
     {
         return $this->verified;
     }
-    public function read_only() : boolean
+    public function read_only() : bool
     {
         return $this->read_only;
     }

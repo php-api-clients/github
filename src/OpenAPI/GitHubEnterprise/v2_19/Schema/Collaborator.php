@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class Collaborator
 {
     public const SCHEMA_TITLE = 'Collaborator';
-    public const SPL_HASH = '00000000159358e8000000001856c88e';
+    public const SPL_HASH = '000000006312fdb80000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Collaborator';
     private string $login;
     private int $id;
@@ -24,7 +24,7 @@ final class Collaborator
     private string $events_url;
     private string $received_events_url;
     private string $type;
-    private boolean $site_admin;
+    private bool $site_admin;
     private object $permissions;
     public function login() : string
     {
@@ -94,7 +94,7 @@ final class Collaborator
     {
         return $this->type;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }

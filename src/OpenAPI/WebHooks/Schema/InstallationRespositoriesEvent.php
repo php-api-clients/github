@@ -5,10 +5,10 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class InstallationRespositoriesEvent
 {
     public const SCHEMA_TITLE = 'Installation Event';
-    public const SPL_HASH = '00000000733b768a0000000053f73146';
+    public const SPL_HASH = '0000000038cc28cb000000003d7dc56f';
     public const SCHEMA_DESCRIPTION = 'Installation Event';
     private string $action;
-    private $installation;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation $installation;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository>
      */

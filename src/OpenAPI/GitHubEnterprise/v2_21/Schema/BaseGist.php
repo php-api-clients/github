@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class BaseGist
 {
     public const SCHEMA_TITLE = 'Base Gist';
-    public const SPL_HASH = '0000000065d65f73000000007ce49c9a';
+    public const SPL_HASH = '00000000181459d2000000005f691719';
     public const SCHEMA_DESCRIPTION = 'Base Gist';
     private string $url;
     private string $forks_url;
@@ -16,7 +16,7 @@ final class BaseGist
     private string $git_push_url;
     private string $html_url;
     private object $files;
-    private boolean $public;
+    private bool $public;
     private string $created_at;
     private string $updated_at;
     private string $description;
@@ -24,7 +24,7 @@ final class BaseGist
     private $user;
     private string $comments_url;
     private $owner;
-    private boolean $truncated;
+    private bool $truncated;
     private array $forks;
     private array $history;
     public function url() : string
@@ -63,7 +63,7 @@ final class BaseGist
     {
         return $this->files;
     }
-    public function public() : boolean
+    public function public() : bool
     {
         return $this->public;
     }
@@ -95,7 +95,7 @@ final class BaseGist
     {
         return $this->owner;
     }
-    public function truncated() : boolean
+    public function truncated() : bool
     {
         return $this->truncated;
     }

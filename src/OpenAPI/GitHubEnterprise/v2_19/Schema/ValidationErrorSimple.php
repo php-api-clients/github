@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class ValidationErrorSimple
 {
     public const SCHEMA_TITLE = 'Validation Error Simple';
-    public const SPL_HASH = '00000000159351d8000000001856c88e';
+    public const SPL_HASH = '000000006312f4880000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Validation Error Simple';
     private string $message;
     private string $documentation_url;

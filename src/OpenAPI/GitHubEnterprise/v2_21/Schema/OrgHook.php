@@ -5,14 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class OrgHook
 {
     public const SCHEMA_TITLE = 'Org Hook';
-    public const SPL_HASH = '0000000065d65983000000007ce49c9a';
+    public const SPL_HASH = '0000000018145f22000000005f691719';
     public const SCHEMA_DESCRIPTION = 'Org Hook';
     private int $id;
     private string $url;
     private string $ping_url;
     private string $name;
     private array $events;
-    private boolean $active;
+    private bool $active;
     private object $config;
     private string $updated_at;
     private string $created_at;
@@ -37,7 +37,7 @@ final class OrgHook
     {
         return $this->events;
     }
-    public function active() : boolean
+    public function active() : bool
     {
         return $this->active;
     }

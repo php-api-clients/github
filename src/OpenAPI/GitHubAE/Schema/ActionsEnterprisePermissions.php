@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class ActionsEnterprisePermissions
 {
     public const SCHEMA_TITLE = 'actions-enterprise-permissions';
-    public const SPL_HASH = '000000000c1c9a870000000065732ccc';
+    public const SPL_HASH = '000000007ee692c90000000021479ea3';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The policy that controls the organizations in the enterprise that are allowed to run GitHub Actions. Can be one of: `all`, `none`, or `selected`.

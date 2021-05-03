@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class EncryptionStatus
 {
     public const SCHEMA_TITLE = 'encryption-status';
-    public const SPL_HASH = '000000000c1c9b4d0000000065732ccc';
+    public const SPL_HASH = '000000007ee693030000000021479ea3';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The status of updating an encryption key or disabling encryption at rest.

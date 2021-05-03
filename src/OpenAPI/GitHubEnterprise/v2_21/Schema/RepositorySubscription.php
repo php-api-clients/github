@@ -5,25 +5,25 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 final class RepositorySubscription
 {
     public const SCHEMA_TITLE = 'Repository Invitation';
-    public const SPL_HASH = '0000000065d6210e000000007ce49c9a';
+    public const SPL_HASH = '00000000181427af000000005f691719';
     public const SCHEMA_DESCRIPTION = 'Repository invitations let you manage who you collaborate with.';
     /**
      * Determines if notifications should be received from this repository.
      */
-    private boolean $subscribed;
+    private bool $subscribed;
     /**
      * Determines if all notifications should be blocked from this repository.
      */
-    private boolean $ignored;
+    private bool $ignored;
     private string $reason;
     private string $created_at;
     private string $url;
     private string $repository_url;
-    public function subscribed() : boolean
+    public function subscribed() : bool
     {
         return $this->subscribed;
     }
-    public function ignored() : boolean
+    public function ignored() : bool
     {
         return $this->ignored;
     }

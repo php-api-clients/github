@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 final class Release
 {
     public const SCHEMA_TITLE = 'Release';
-    public const SPL_HASH = '000000004a4bae830000000021d13a21';
+    public const SPL_HASH = '0000000031ee555d00000000484d7fbe';
     public const SCHEMA_DESCRIPTION = 'A release.';
     private string $url;
     private string $html_url;
@@ -28,11 +28,11 @@ final class Release
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
-    private boolean $draft;
+    private bool $draft;
     /**
      * Whether to identify the release as a prerelease or a full release.
      */
-    private boolean $prerelease;
+    private bool $prerelease;
     private string $created_at;
     private string $published_at;
     /**
@@ -93,11 +93,11 @@ final class Release
     {
         return $this->body;
     }
-    public function draft() : boolean
+    public function draft() : bool
     {
         return $this->draft;
     }
-    public function prerelease() : boolean
+    public function prerelease() : bool
     {
         return $this->prerelease;
     }

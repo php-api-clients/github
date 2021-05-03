@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class BranchWithProtection
 {
     public const SCHEMA_TITLE = 'Branch With Protection';
-    public const SPL_HASH = '0000000015935f25000000001856c88e';
+    public const SPL_HASH = '000000006312fa750000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Branch With Protection';
     private string $name;
     /**
@@ -13,7 +13,7 @@ final class BranchWithProtection
      */
     private object $commit;
     private object $_links;
-    private boolean $protected;
+    private bool $protected;
     /**
      * Branch Protection
      */
@@ -33,7 +33,7 @@ final class BranchWithProtection
     {
         return $this->_links;
     }
-    public function protected() : boolean
+    public function protected() : bool
     {
         return $this->protected;
     }

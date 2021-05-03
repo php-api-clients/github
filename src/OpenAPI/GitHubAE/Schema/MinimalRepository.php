@@ -5,17 +5,17 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class MinimalRepository
 {
     public const SCHEMA_TITLE = 'Minimal Repository';
-    public const SPL_HASH = '000000000c1ce4a60000000065732ccc';
+    public const SPL_HASH = '000000007ee6ece80000000021479ea3';
     public const SCHEMA_DESCRIPTION = 'Minimal Repository';
     private int $id;
     private string $node_id;
     private string $name;
     private string $full_name;
     private object $owner;
-    private boolean $private;
+    private bool $private;
     private string $html_url;
     private string $description;
-    private boolean $fork;
+    private bool $fork;
     private string $url;
     private string $archive_url;
     private string $assignees_url;
@@ -66,15 +66,15 @@ final class MinimalRepository
     private int $size;
     private string $default_branch;
     private int $open_issues_count;
-    private boolean $is_template;
+    private bool $is_template;
     private array $topics;
-    private boolean $has_issues;
-    private boolean $has_projects;
-    private boolean $has_wiki;
-    private boolean $has_pages;
-    private boolean $has_downloads;
-    private boolean $archived;
-    private boolean $disabled;
+    private bool $has_issues;
+    private bool $has_projects;
+    private bool $has_wiki;
+    private bool $has_pages;
+    private bool $has_downloads;
+    private bool $archived;
+    private bool $disabled;
     private string $visibility;
     private string $pushed_at;
     private string $created_at;
@@ -82,7 +82,7 @@ final class MinimalRepository
     private object $permissions;
     private object $template_repository;
     private string $temp_clone_token;
-    private boolean $delete_branch_on_merge;
+    private bool $delete_branch_on_merge;
     private int $subscribers_count;
     private int $network_count;
     private object $license;
@@ -109,7 +109,7 @@ final class MinimalRepository
     {
         return $this->owner;
     }
-    public function private() : boolean
+    public function private() : bool
     {
         return $this->private;
     }
@@ -121,7 +121,7 @@ final class MinimalRepository
     {
         return $this->description;
     }
-    public function fork() : boolean
+    public function fork() : bool
     {
         return $this->fork;
     }
@@ -325,7 +325,7 @@ final class MinimalRepository
     {
         return $this->open_issues_count;
     }
-    public function is_template() : boolean
+    public function is_template() : bool
     {
         return $this->is_template;
     }
@@ -333,31 +333,31 @@ final class MinimalRepository
     {
         return $this->topics;
     }
-    public function has_issues() : boolean
+    public function has_issues() : bool
     {
         return $this->has_issues;
     }
-    public function has_projects() : boolean
+    public function has_projects() : bool
     {
         return $this->has_projects;
     }
-    public function has_wiki() : boolean
+    public function has_wiki() : bool
     {
         return $this->has_wiki;
     }
-    public function has_pages() : boolean
+    public function has_pages() : bool
     {
         return $this->has_pages;
     }
-    public function has_downloads() : boolean
+    public function has_downloads() : bool
     {
         return $this->has_downloads;
     }
-    public function archived() : boolean
+    public function archived() : bool
     {
         return $this->archived;
     }
-    public function disabled() : boolean
+    public function disabled() : bool
     {
         return $this->disabled;
     }
@@ -389,7 +389,7 @@ final class MinimalRepository
     {
         return $this->temp_clone_token;
     }
-    public function delete_branch_on_merge() : boolean
+    public function delete_branch_on_merge() : bool
     {
         return $this->delete_branch_on_merge;
     }

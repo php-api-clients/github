@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ProjectCard
 {
     public const SCHEMA_TITLE = 'Project Card';
-    public const SPL_HASH = '0000000054d5e6470000000071115dec';
+    public const SPL_HASH = '0000000020701ecd0000000042193899';
     public const SCHEMA_DESCRIPTION = 'Project cards represent a scope of work.';
     private string $url;
     /**
@@ -20,7 +20,7 @@ final class ProjectCard
     /**
      * Whether or not the card is archived
      */
-    private boolean $archived;
+    private bool $archived;
     private string $column_url;
     private string $content_url;
     private string $project_url;
@@ -52,7 +52,7 @@ final class ProjectCard
     {
         return $this->updated_at;
     }
-    public function archived() : boolean
+    public function archived() : bool
     {
         return $this->archived;
     }

@@ -5,12 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class GlobalHook2
 {
     public const SCHEMA_TITLE = 'global-hook-2';
-    public const SPL_HASH = '000000002eab6ee000000000697c5254';
+    public const SPL_HASH = '000000006e7b7ec1000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = '';
     private string $type;
     private int $id;
     private string $name;
-    private boolean $active;
+    private bool $active;
     private array $events;
     private object $config;
     private string $updated_at;
@@ -29,7 +29,7 @@ final class GlobalHook2
     {
         return $this->name;
     }
-    public function active() : boolean
+    public function active() : bool
     {
         return $this->active;
     }

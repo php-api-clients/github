@@ -5,14 +5,14 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Migration
 {
     public const SCHEMA_TITLE = 'Migration';
-    public const SPL_HASH = '0000000054d5f9660000000071115dec';
+    public const SPL_HASH = '00000000207001ec0000000042193899';
     public const SCHEMA_DESCRIPTION = 'A migration.';
     private int $id;
     private $owner;
     private string $guid;
     private string $state;
-    private boolean $lock_repositories;
-    private boolean $exclude_attachments;
+    private bool $lock_repositories;
+    private bool $exclude_attachments;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
      */
@@ -39,11 +39,11 @@ final class Migration
     {
         return $this->state;
     }
-    public function lock_repositories() : boolean
+    public function lock_repositories() : bool
     {
         return $this->lock_repositories;
     }
-    public function exclude_attachments() : boolean
+    public function exclude_attachments() : bool
     {
         return $this->exclude_attachments;
     }

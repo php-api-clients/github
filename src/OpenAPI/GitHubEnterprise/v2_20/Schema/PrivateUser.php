@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema;
 final class PrivateUser
 {
     public const SCHEMA_TITLE = 'Private User';
-    public const SPL_HASH = '000000001c238df1000000003890ca58';
+    public const SPL_HASH = '0000000037ddc66e0000000010a967e8';
     public const SCHEMA_DESCRIPTION = 'Private User';
     private string $login;
     private int $id;
@@ -24,13 +24,13 @@ final class PrivateUser
     private string $events_url;
     private string $received_events_url;
     private string $type;
-    private boolean $site_admin;
+    private bool $site_admin;
     private string $name;
     private string $company;
     private string $blog;
     private string $location;
     private string $email;
-    private boolean $hireable;
+    private bool $hireable;
     private string $bio;
     private int $public_repos;
     private int $public_gists;
@@ -43,10 +43,10 @@ final class PrivateUser
     private int $owned_private_repos;
     private int $disk_usage;
     private int $collaborators;
-    private boolean $two_factor_authentication;
+    private bool $two_factor_authentication;
     private object $plan;
     private string $suspended_at;
-    private boolean $business_plus;
+    private bool $business_plus;
     private string $ldap_dn;
     public function login() : string
     {
@@ -116,7 +116,7 @@ final class PrivateUser
     {
         return $this->type;
     }
-    public function site_admin() : boolean
+    public function site_admin() : bool
     {
         return $this->site_admin;
     }
@@ -140,7 +140,7 @@ final class PrivateUser
     {
         return $this->email;
     }
-    public function hireable() : boolean
+    public function hireable() : bool
     {
         return $this->hireable;
     }
@@ -192,7 +192,7 @@ final class PrivateUser
     {
         return $this->collaborators;
     }
-    public function two_factor_authentication() : boolean
+    public function two_factor_authentication() : bool
     {
         return $this->two_factor_authentication;
     }
@@ -204,7 +204,7 @@ final class PrivateUser
     {
         return $this->suspended_at;
     }
-    public function business_plus() : boolean
+    public function business_plus() : bool
     {
         return $this->business_plus;
     }

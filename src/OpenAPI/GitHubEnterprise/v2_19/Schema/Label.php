@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class Label
 {
     public const SCHEMA_TITLE = 'Label';
-    public const SPL_HASH = '00000000159353bb000000001856c88e';
+    public const SPL_HASH = '000000006312f6eb0000000044ad25fc';
     public const SCHEMA_DESCRIPTION = 'Color-coded labels help you categorize and filter your issues (just like labels in Gmail).';
     private int $id;
     private string $node_id;
@@ -22,7 +22,7 @@ final class Label
      * 6-character hex code, without the leading #, identifying the color
      */
     private string $color;
-    private boolean $default;
+    private bool $default;
     public function id() : int
     {
         return $this->id;
@@ -47,7 +47,7 @@ final class Label
     {
         return $this->color;
     }
-    public function default() : boolean
+    public function default() : bool
     {
         return $this->default;
     }

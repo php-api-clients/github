@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 final class EnterprisePublicKey
 {
     public const SCHEMA_TITLE = 'enterprise-public-key';
-    public const SPL_HASH = '00000000159350d1000000001856c88e';
+    public const SPL_HASH = '000000006312f5810000000044ad25fc';
     public const SCHEMA_DESCRIPTION = '';
     private int $id;
     private string $key_id;

@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class GitTag
 {
     public const SCHEMA_TITLE = 'Git Tag';
-    public const SPL_HASH = '000000002eab602200000000697c5254';
+    public const SPL_HASH = '000000006e7b7003000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = 'Metadata for a Git tag';
     private string $node_id;
     /**

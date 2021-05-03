@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 final class IssueSimple
 {
     public const SCHEMA_TITLE = 'Issue Simple';
-    public const SPL_HASH = '0000000065dd623e000000006352672d';
+    public const SPL_HASH = '000000001f1e28e5000000004be6709d';
     public const SCHEMA_DESCRIPTION = 'Issue Simple';
     private int $id;
     private string $node_id;
@@ -30,7 +30,7 @@ final class IssueSimple
      */
     private array $assignees;
     private $milestone;
-    private boolean $locked;
+    private bool $locked;
     private string $active_lock_reason;
     private int $comments;
     private object $pull_request;
@@ -117,7 +117,7 @@ final class IssueSimple
     {
         return $this->milestone;
     }
-    public function locked() : boolean
+    public function locked() : bool
     {
         return $this->locked;
     }

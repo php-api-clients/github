@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ScimUser
 {
     public const SCHEMA_TITLE = 'SCIM /Users';
-    public const SPL_HASH = '0000000054d5edbd0000000071115dec';
+    public const SPL_HASH = '00000000207015370000000042193899';
     public const SCHEMA_DESCRIPTION = 'SCIM /Users provisioning endpoints';
     /**
      * SCIM schema used.
@@ -35,7 +35,7 @@ final class ScimUser
     /**
      * The active status of the User.
      */
-    private boolean $active;
+    private bool $active;
     private object $meta;
     /**
      * The ID of the organization.
@@ -77,7 +77,7 @@ final class ScimUser
     {
         return $this->emails;
     }
-    public function active() : boolean
+    public function active() : bool
     {
         return $this->active;
     }

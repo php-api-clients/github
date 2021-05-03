@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 final class SshKey
 {
     public const SCHEMA_TITLE = 'ssh-key';
-    public const SPL_HASH = '000000002eab1fcb00000000697c5254';
+    public const SPL_HASH = '000000006e7b0fea000000005d0d00fd';
     public const SCHEMA_DESCRIPTION = '';
     private string $key;
     private string $pretty-print;

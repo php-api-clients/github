@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class CodeScanningSarifsStatus
 {
     public const SCHEMA_TITLE = 'code-scanning-sarifs-status';
-    public const SPL_HASH = '000000000c1ce3ff0000000065732ccc';
+    public const SPL_HASH = '000000007ee6ebb10000000021479ea3';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * `pending` files have not yet been processed, while `complete` means all results in the SARIF have been stored.
