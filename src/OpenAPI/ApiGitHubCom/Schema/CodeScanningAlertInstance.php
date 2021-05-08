@@ -34,6 +34,7 @@ final class CodeScanningAlertInstance
     * Classifications that have been applied to the file that triggered the alert.
     For example identifying it as documentation, or a generated file.
     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification>
+    * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification::class)
     */
     private array $classifications = array();
     public function ref() : ?string

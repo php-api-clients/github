@@ -12,6 +12,7 @@ final class InstallationToken
     private ?string $repository_selection = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\Repository::class)
      */
     private array $repositories = array();
     private ?string $single_file = null;

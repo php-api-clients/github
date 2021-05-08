@@ -10,7 +10,8 @@
   ],
   "require": {
     "php": "^7.4",
-    "api-clients/openapi-client-generator": "dev-master"
+    "api-clients/openapi-client-generator": "dev-master",
+    "wyrihaximus/hydrator": "dev-master"
   },
   "autoload": {
     "psr-4": {

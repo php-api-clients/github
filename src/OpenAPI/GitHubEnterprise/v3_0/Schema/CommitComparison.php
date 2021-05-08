@@ -25,10 +25,12 @@ final class CommitComparison
     private ?int $total_commits = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Commit>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Commit::class)
      */
     private array $commits = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\DiffEntry>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\DiffEntry::class)
      */
     private array $files = array();
     public function url() : ?string

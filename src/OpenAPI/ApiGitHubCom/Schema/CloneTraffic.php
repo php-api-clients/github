@@ -10,6 +10,7 @@ final class CloneTraffic
     private ?int $uniques = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic::class)
      */
     private array $clones = array();
     public function count() : ?int

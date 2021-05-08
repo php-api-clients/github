@@ -10,6 +10,7 @@ final class ViewTraffic
     private ?int $uniques = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic::class)
      */
     private array $views = array();
     public function count() : ?int

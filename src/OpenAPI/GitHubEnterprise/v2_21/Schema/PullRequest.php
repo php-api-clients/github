@@ -44,14 +44,17 @@ final class PullRequest
     private $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser::class)
      */
     private array $assignees = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser::class)
      */
     private array $requested_reviewers = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\TeamSimple>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\TeamSimple::class)
      */
     private array $requested_teams = array();
     private ?object $head = null;

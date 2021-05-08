@@ -14,6 +14,7 @@ final class Migration
     private ?bool $exclude_attachments = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private array $repositories = array();
     private ?string $url = null;

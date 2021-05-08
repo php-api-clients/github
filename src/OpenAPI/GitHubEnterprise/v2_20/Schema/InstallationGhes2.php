@@ -10,6 +10,9 @@ final class InstallationGhes2
      * The ID of the installation.
      */
     private ?int $id = null;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\SimpleUser::class)
+     */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\SimpleUser $account = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved

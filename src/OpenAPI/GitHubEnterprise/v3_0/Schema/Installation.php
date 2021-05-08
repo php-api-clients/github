@@ -10,6 +10,9 @@ final class Installation
      * The ID of the installation.
      */
     private ?int $id = null;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser::class)
+     */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser $account = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved

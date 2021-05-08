@@ -41,6 +41,7 @@ final class Issue
     private $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private array $assignees = array();
     private $milestone;

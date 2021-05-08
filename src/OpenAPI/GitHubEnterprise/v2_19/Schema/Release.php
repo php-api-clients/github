@@ -40,6 +40,7 @@ final class Release
     private ?object $author = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\ReleaseAsset>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\ReleaseAsset::class)
      */
     private array $assets = array();
     private ?string $body_html = null;

@@ -7,13 +7,18 @@ final class InstallationRespositoriesEvent
     public const SCHEMA_TITLE = 'Installation Event';
     public const SCHEMA_DESCRIPTION = 'Installation Event';
     private ?string $action = null;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation::class)
+     */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation $installation = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
     private array $repositories_added = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
     private array $repositories_removed = array();
     public function action() : ?string

@@ -20,6 +20,7 @@ final class IssueSearchResultItem
     private ?string $active_lock_reason = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private array $assignees = array();
     private $user;

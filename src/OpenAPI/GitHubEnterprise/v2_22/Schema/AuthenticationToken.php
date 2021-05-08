@@ -18,6 +18,7 @@ final class AuthenticationToken
     /**
      * The repositories this token has access to
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Repository::class)
      */
     private array $repositories = array();
     private ?string $single_file = null;

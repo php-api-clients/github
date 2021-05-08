@@ -21,11 +21,13 @@ final class IssueSimple
     private $user;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Label>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Label::class)
      */
     private array $labels = array();
     private $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private array $assignees = array();
     private $milestone;

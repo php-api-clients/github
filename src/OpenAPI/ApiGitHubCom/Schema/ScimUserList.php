@@ -15,6 +15,7 @@ final class ScimUserList
     private ?int $startIndex = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser::class)
      */
     private array $Resources = array();
     public function schemas() : array

@@ -9,6 +9,7 @@ final class CombinedCommitStatus
     private ?string $state = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleCommitStatus>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleCommitStatus::class)
      */
     private array $statuses = array();
     private ?string $sha = null;
