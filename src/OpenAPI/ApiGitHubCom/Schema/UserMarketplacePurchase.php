@@ -12,11 +12,11 @@ final class UserMarketplacePurchase
     private ?bool $on_free_trial = null;
     private ?string $free_trial_ends_on = null;
     private ?string $updated_at = null;
-    private ?object $account = null;
+    private array $account = array();
     /**
      * Marketplace Listing Plan
      */
-    private ?object $plan = null;
+    private array $plan = array();
     public function billing_cycle() : ?string
     {
         return $this->billing_cycle;
@@ -41,11 +41,11 @@ final class UserMarketplacePurchase
     {
         return $this->updated_at;
     }
-    public function account() : ?object
+    public function account() : array
     {
         return $this->account;
     }
-    public function plan() : ?object
+    public function plan() : array
     {
         return $this->plan;
     }

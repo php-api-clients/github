@@ -14,11 +14,11 @@ final class CommitComparison
     /**
      * Commit
      */
-    private ?object $base_commit = null;
+    private array $base_commit = array();
     /**
      * Commit
      */
-    private ?object $merge_base_commit = null;
+    private array $merge_base_commit = array();
     private ?string $status = null;
     private ?int $ahead_by = null;
     private ?int $behind_by = null;
@@ -53,11 +53,11 @@ final class CommitComparison
     {
         return $this->patch_url;
     }
-    public function base_commit() : ?object
+    public function base_commit() : array
     {
         return $this->base_commit;
     }
-    public function merge_base_commit() : ?object
+    public function merge_base_commit() : array
     {
         return $this->merge_base_commit;
     }

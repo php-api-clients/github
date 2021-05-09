@@ -11,7 +11,7 @@ final class ScimEnterpriseGroup
     private ?string $externalId = null;
     private ?string $displayName = null;
     private array $members = array();
-    private ?object $meta = null;
+    private array $meta = array();
     public function schemas() : array
     {
         return $this->schemas;
@@ -32,7 +32,7 @@ final class ScimEnterpriseGroup
     {
         return $this->members;
     }
-    public function meta() : ?object
+    public function meta() : array
     {
         return $this->meta;
     }

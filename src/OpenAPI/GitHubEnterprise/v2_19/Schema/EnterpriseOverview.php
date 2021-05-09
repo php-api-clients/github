@@ -6,53 +6,53 @@ final class EnterpriseOverview
 {
     public const SCHEMA_TITLE = 'enterprise-overview';
     public const SCHEMA_DESCRIPTION = '';
-    private ?object $repos = null;
-    private ?object $hooks = null;
-    private ?object $pages = null;
-    private ?object $orgs = null;
-    private ?object $users = null;
-    private ?object $pulls = null;
-    private ?object $issues = null;
-    private ?object $milestones = null;
-    private ?object $gists = null;
-    private ?object $comments = null;
-    public function repos() : ?object
+    private array $repos = array();
+    private array $hooks = array();
+    private array $pages = array();
+    private array $orgs = array();
+    private array $users = array();
+    private array $pulls = array();
+    private array $issues = array();
+    private array $milestones = array();
+    private array $gists = array();
+    private array $comments = array();
+    public function repos() : array
     {
         return $this->repos;
     }
-    public function hooks() : ?object
+    public function hooks() : array
     {
         return $this->hooks;
     }
-    public function pages() : ?object
+    public function pages() : array
     {
         return $this->pages;
     }
-    public function orgs() : ?object
+    public function orgs() : array
     {
         return $this->orgs;
     }
-    public function users() : ?object
+    public function users() : array
     {
         return $this->users;
     }
-    public function pulls() : ?object
+    public function pulls() : array
     {
         return $this->pulls;
     }
-    public function issues() : ?object
+    public function issues() : array
     {
         return $this->issues;
     }
-    public function milestones() : ?object
+    public function milestones() : array
     {
         return $this->milestones;
     }
-    public function gists() : ?object
+    public function gists() : array
     {
         return $this->gists;
     }
-    public function comments() : ?object
+    public function comments() : array
     {
         return $this->comments;
     }

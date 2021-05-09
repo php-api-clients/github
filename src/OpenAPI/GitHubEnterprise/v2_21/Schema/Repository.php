@@ -19,7 +19,7 @@ final class Repository
     private $license;
     private $organization;
     private ?int $forks = null;
-    private ?object $permissions = null;
+    private array $permissions = array();
     private $owner;
     /**
      * Whether the repository is private or public.
@@ -122,7 +122,7 @@ final class Repository
      * Whether to allow rebase merges for pull requests.
      */
     private ?bool $allow_rebase_merge = null;
-    private ?object $template_repository = null;
+    private array $template_repository = array();
     /**
      * Whether to allow squash merges for pull requests.
      */
@@ -170,7 +170,7 @@ final class Repository
     {
         return $this->forks;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }
@@ -450,7 +450,7 @@ final class Repository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : ?object
+    public function template_repository() : array
     {
         return $this->template_repository;
     }

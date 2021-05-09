@@ -19,9 +19,9 @@ final class OrgMembership
     /**
      * Organization Simple
      */
-    private ?object $organization = null;
+    private array $organization = array();
     private $user;
-    private ?object $permissions = null;
+    private array $permissions = array();
     public function url() : ?string
     {
         return $this->url;
@@ -38,7 +38,7 @@ final class OrgMembership
     {
         return $this->organization_url;
     }
-    public function organization() : ?object
+    public function organization() : array
     {
         return $this->organization;
     }
@@ -46,7 +46,7 @@ final class OrgMembership
     {
         return $this->user;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }

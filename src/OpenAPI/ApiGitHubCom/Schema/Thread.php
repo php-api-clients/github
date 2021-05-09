@@ -10,8 +10,8 @@ final class Thread
     /**
      * Minimal Repository
      */
-    private ?object $repository = null;
-    private ?object $subject = null;
+    private array $repository = array();
+    private array $subject = array();
     private ?string $reason = null;
     private ?bool $unread = null;
     private ?string $updated_at = null;
@@ -22,11 +22,11 @@ final class Thread
     {
         return $this->id;
     }
-    public function repository() : ?object
+    public function repository() : array
     {
         return $this->repository;
     }
-    public function subject() : ?object
+    public function subject() : array
     {
         return $this->subject;
     }

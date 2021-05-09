@@ -20,9 +20,9 @@ final class GitTag
      * Message describing the purpose of the tag
      */
     private ?string $message = null;
-    private ?object $tagger = null;
-    private ?object $object = null;
-    private ?object $verification = null;
+    private array $tagger = array();
+    private array $object = array();
+    private array $verification = array();
     public function node_id() : ?string
     {
         return $this->node_id;
@@ -43,15 +43,15 @@ final class GitTag
     {
         return $this->message;
     }
-    public function tagger() : ?object
+    public function tagger() : array
     {
         return $this->tagger;
     }
-    public function object() : ?object
+    public function object() : array
     {
         return $this->object;
     }
-    public function verification() : ?object
+    public function verification() : array
     {
         return $this->verification;
     }

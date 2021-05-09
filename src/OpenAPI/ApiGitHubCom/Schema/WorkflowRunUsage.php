@@ -6,9 +6,9 @@ final class WorkflowRunUsage
 {
     public const SCHEMA_TITLE = 'Workflow Run Usage';
     public const SCHEMA_DESCRIPTION = 'Workflow Run Usage';
-    private ?object $billable = null;
+    private array $billable = array();
     private ?int $run_duration_ms = null;
-    public function billable() : ?object
+    public function billable() : array
     {
         return $this->billable;
     }

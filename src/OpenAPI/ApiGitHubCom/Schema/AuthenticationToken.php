@@ -14,7 +14,7 @@ final class AuthenticationToken
      * The time this token expires
      */
     private ?string $expires_at = null;
-    private ?object $permissions = null;
+    private array $permissions = array();
     /**
      * The repositories this token has access to
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
@@ -34,7 +34,7 @@ final class AuthenticationToken
     {
         return $this->expires_at;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }

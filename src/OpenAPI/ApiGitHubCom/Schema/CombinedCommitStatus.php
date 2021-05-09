@@ -17,7 +17,7 @@ final class CombinedCommitStatus
     /**
      * Minimal Repository
      */
-    private ?object $repository = null;
+    private array $repository = array();
     private ?string $commit_url = null;
     private ?string $url = null;
     public function state() : ?string
@@ -36,7 +36,7 @@ final class CombinedCommitStatus
     {
         return $this->total_count;
     }
-    public function repository() : ?object
+    public function repository() : array
     {
         return $this->repository;
     }

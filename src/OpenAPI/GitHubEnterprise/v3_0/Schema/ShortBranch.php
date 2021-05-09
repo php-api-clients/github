@@ -7,18 +7,18 @@ final class ShortBranch
     public const SCHEMA_TITLE = 'Short Branch';
     public const SCHEMA_DESCRIPTION = 'Short Branch';
     private ?string $name = null;
-    private ?object $commit = null;
+    private array $commit = array();
     private ?bool $protected = null;
     /**
      * Branch Protection
      */
-    private ?object $protection = null;
+    private array $protection = array();
     private ?string $protection_url = null;
     public function name() : ?string
     {
         return $this->name;
     }
-    public function commit() : ?object
+    public function commit() : array
     {
         return $this->commit;
     }
@@ -26,7 +26,7 @@ final class ShortBranch
     {
         return $this->protected;
     }
-    public function protection() : ?object
+    public function protection() : array
     {
         return $this->protection;
     }

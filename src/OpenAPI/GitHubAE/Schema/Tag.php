@@ -7,7 +7,7 @@ final class Tag
     public const SCHEMA_TITLE = 'Tag';
     public const SCHEMA_DESCRIPTION = 'Tag';
     private ?string $name = null;
-    private ?object $commit = null;
+    private array $commit = array();
     private ?string $zipball_url = null;
     private ?string $tarball_url = null;
     private ?string $node_id = null;
@@ -15,7 +15,7 @@ final class Tag
     {
         return $this->name;
     }
-    public function commit() : ?object
+    public function commit() : array
     {
         return $this->commit;
     }

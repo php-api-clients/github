@@ -27,13 +27,13 @@ final class CheckSuite
     /**
      * Minimal Repository
      */
-    private ?object $repository = null;
+    private array $repository = array();
     private ?string $created_at = null;
     private ?string $updated_at = null;
     /**
      * Simple Commit
      */
-    private ?object $head_commit = null;
+    private array $head_commit = array();
     private ?int $latest_check_runs_count = null;
     private ?string $check_runs_url = null;
     public function id() : ?int
@@ -80,7 +80,7 @@ final class CheckSuite
     {
         return $this->app;
     }
-    public function repository() : ?object
+    public function repository() : array
     {
         return $this->repository;
     }
@@ -92,7 +92,7 @@ final class CheckSuite
     {
         return $this->updated_at;
     }
-    public function head_commit() : ?object
+    public function head_commit() : array
     {
         return $this->head_commit;
     }

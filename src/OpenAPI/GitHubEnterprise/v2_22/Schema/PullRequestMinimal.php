@@ -9,8 +9,8 @@ final class PullRequestMinimal
     private ?int $id = null;
     private ?int $number = null;
     private ?string $url = null;
-    private ?object $head = null;
-    private ?object $base = null;
+    private array $head = array();
+    private array $base = array();
     public function id() : ?int
     {
         return $this->id;
@@ -23,11 +23,11 @@ final class PullRequestMinimal
     {
         return $this->url;
     }
-    public function head() : ?object
+    public function head() : array
     {
         return $this->head;
     }
-    public function base() : ?object
+    public function base() : array
     {
         return $this->base;
     }

@@ -7,13 +7,13 @@ final class BranchShort
     public const SCHEMA_TITLE = 'Branch Short';
     public const SCHEMA_DESCRIPTION = 'Branch Short';
     private ?string $name = null;
-    private ?object $commit = null;
+    private array $commit = array();
     private ?bool $protected = null;
     public function name() : ?string
     {
         return $this->name;
     }
-    public function commit() : ?object
+    public function commit() : array
     {
         return $this->commit;
     }

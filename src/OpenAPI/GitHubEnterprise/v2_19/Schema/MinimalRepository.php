@@ -10,7 +10,7 @@ final class MinimalRepository
     private ?string $node_id = null;
     private ?string $name = null;
     private ?string $full_name = null;
-    private ?object $owner = null;
+    private array $owner = array();
     private ?bool $private = null;
     private ?string $html_url = null;
     private ?string $description = null;
@@ -77,11 +77,11 @@ final class MinimalRepository
     private ?string $pushed_at = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
-    private ?object $permissions = null;
-    private ?object $template_repository = null;
+    private array $permissions = array();
+    private array $template_repository = array();
     private ?int $subscribers_count = null;
     private ?int $network_count = null;
-    private ?object $license = null;
+    private array $license = array();
     private ?int $forks = null;
     private ?int $open_issues = null;
     private ?int $watchers = null;
@@ -102,7 +102,7 @@ final class MinimalRepository
     {
         return $this->full_name;
     }
-    public function owner() : ?object
+    public function owner() : array
     {
         return $this->owner;
     }
@@ -370,11 +370,11 @@ final class MinimalRepository
     {
         return $this->updated_at;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }
-    public function template_repository() : ?object
+    public function template_repository() : array
     {
         return $this->template_repository;
     }
@@ -386,7 +386,7 @@ final class MinimalRepository
     {
         return $this->network_count;
     }
-    public function license() : ?object
+    public function license() : array
     {
         return $this->license;
     }

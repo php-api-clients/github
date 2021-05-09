@@ -44,7 +44,7 @@ final class PrivateUser
     private ?int $disk_usage = null;
     private ?int $collaborators = null;
     private ?bool $two_factor_authentication = null;
-    private ?object $plan = null;
+    private array $plan = array();
     private ?string $suspended_at = null;
     private ?bool $business_plus = null;
     private ?string $ldap_dn = null;
@@ -200,7 +200,7 @@ final class PrivateUser
     {
         return $this->two_factor_authentication;
     }
-    public function plan() : ?object
+    public function plan() : array
     {
         return $this->plan;
     }

@@ -13,7 +13,7 @@ final class FullRepository
     /**
      * Simple User
      */
-    private ?object $owner = null;
+    private array $owner = array();
     private ?bool $private = null;
     private ?string $html_url = null;
     private ?string $description = null;
@@ -87,9 +87,9 @@ final class FullRepository
     private ?string $pushed_at = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
-    private ?object $permissions = null;
+    private array $permissions = array();
     private ?bool $allow_rebase_merge = null;
-    private ?object $template_repository = null;
+    private array $template_repository = array();
     private ?bool $allow_squash_merge = null;
     private ?bool $allow_merge_commit = null;
     private ?int $subscribers_count = null;
@@ -99,11 +99,11 @@ final class FullRepository
     /**
      * A git repository
      */
-    private ?object $parent = null;
+    private array $parent = array();
     /**
      * A git repository
      */
-    private ?object $source = null;
+    private array $source = array();
     private ?int $forks = null;
     private ?string $master_branch = null;
     private ?int $open_issues = null;
@@ -115,7 +115,7 @@ final class FullRepository
     /**
      * Code of Conduct Simple
      */
-    private ?object $code_of_conduct = null;
+    private array $code_of_conduct = array();
     public function id() : ?int
     {
         return $this->id;
@@ -132,7 +132,7 @@ final class FullRepository
     {
         return $this->full_name;
     }
-    public function owner() : ?object
+    public function owner() : array
     {
         return $this->owner;
     }
@@ -404,7 +404,7 @@ final class FullRepository
     {
         return $this->updated_at;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }
@@ -412,7 +412,7 @@ final class FullRepository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : ?object
+    public function template_repository() : array
     {
         return $this->template_repository;
     }
@@ -440,11 +440,11 @@ final class FullRepository
     {
         return $this->organization;
     }
-    public function parent() : ?object
+    public function parent() : array
     {
         return $this->parent;
     }
-    public function source() : ?object
+    public function source() : array
     {
         return $this->source;
     }
@@ -468,7 +468,7 @@ final class FullRepository
     {
         return $this->anonymous_access_enabled;
     }
-    public function code_of_conduct() : ?object
+    public function code_of_conduct() : array
     {
         return $this->code_of_conduct;
     }

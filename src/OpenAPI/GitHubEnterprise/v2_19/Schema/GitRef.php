@@ -9,7 +9,7 @@ final class GitRef
     private ?string $ref = null;
     private ?string $node_id = null;
     private ?string $url = null;
-    private ?object $object = null;
+    private array $object = array();
     public function ref() : ?string
     {
         return $this->ref;
@@ -22,7 +22,7 @@ final class GitRef
     {
         return $this->url;
     }
-    public function object() : ?object
+    public function object() : array
     {
         return $this->object;
     }

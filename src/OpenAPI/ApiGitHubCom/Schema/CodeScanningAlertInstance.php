@@ -24,11 +24,11 @@ final class CodeScanningAlertInstance
      */
     private ?string $state = null;
     private ?string $commit_sha = null;
-    private ?object $message = null;
+    private array $message = array();
     /**
      * Describe a region within a file for the alert.
      */
-    private ?object $location = null;
+    private array $location = array();
     private ?string $html_url = null;
     /**
     * Classifications that have been applied to the file that triggered the alert.
@@ -57,11 +57,11 @@ final class CodeScanningAlertInstance
     {
         return $this->commit_sha;
     }
-    public function message() : ?object
+    public function message() : array
     {
         return $this->message;
     }
-    public function location() : ?object
+    public function location() : array
     {
         return $this->location;
     }

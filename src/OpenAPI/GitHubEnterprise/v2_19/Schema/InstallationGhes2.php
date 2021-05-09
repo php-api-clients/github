@@ -27,7 +27,7 @@ final class InstallationGhes2
      */
     private ?int $target_id = null;
     private ?string $target_type = null;
-    private ?object $permissions = null;
+    private array $permissions = array();
     private array $events = array();
     private ?string $created_at = null;
     private ?string $updated_at = null;
@@ -72,7 +72,7 @@ final class InstallationGhes2
     {
         return $this->target_type;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }

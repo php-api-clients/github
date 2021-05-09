@@ -10,8 +10,8 @@ final class SimpleCommit
     private ?string $tree_id = null;
     private ?string $message = null;
     private ?string $timestamp = null;
-    private ?object $author = null;
-    private ?object $committer = null;
+    private array $author = array();
+    private array $committer = array();
     public function id() : ?string
     {
         return $this->id;
@@ -28,11 +28,11 @@ final class SimpleCommit
     {
         return $this->timestamp;
     }
-    public function author() : ?object
+    public function author() : array
     {
         return $this->author;
     }
-    public function committer() : ?object
+    public function committer() : array
     {
         return $this->committer;
     }

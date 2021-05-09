@@ -9,7 +9,7 @@ final class GistCommit
     private ?string $url = null;
     private ?string $version = null;
     private $user;
-    private ?object $change_status = null;
+    private array $change_status = array();
     private ?string $committed_at = null;
     public function url() : ?string
     {
@@ -23,7 +23,7 @@ final class GistCommit
     {
         return $this->user;
     }
-    public function change_status() : ?object
+    public function change_status() : array
     {
         return $this->change_status;
     }

@@ -10,14 +10,14 @@ final class CommitSearchResultItem
     private ?string $sha = null;
     private ?string $html_url = null;
     private ?string $comments_url = null;
-    private ?object $commit = null;
+    private array $commit = array();
     private $author;
     private $committer;
     private array $parents = array();
     /**
      * Minimal Repository
      */
-    private ?object $repository = null;
+    private array $repository = array();
     private ?number $score = null;
     private ?string $node_id = null;
     private array $text_matches = array();
@@ -37,7 +37,7 @@ final class CommitSearchResultItem
     {
         return $this->comments_url;
     }
-    public function commit() : ?object
+    public function commit() : array
     {
         return $this->commit;
     }
@@ -53,7 +53,7 @@ final class CommitSearchResultItem
     {
         return $this->parents;
     }
-    public function repository() : ?object
+    public function repository() : array
     {
         return $this->repository;
     }
