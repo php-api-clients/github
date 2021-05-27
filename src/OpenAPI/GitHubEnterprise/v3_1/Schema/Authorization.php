@@ -15,7 +15,7 @@ final class Authorization
     private ?string $token = null;
     private ?string $token_last_eight = null;
     private ?string $hashed_token = null;
-    private ?object $app = null;
+    private array $app = array();
     private ?string $note = null;
     private ?string $note_url = null;
     private ?string $updated_at = null;
@@ -47,7 +47,7 @@ final class Authorization
     {
         return $this->hashed_token;
     }
-    public function app() : ?object
+    public function app() : array
     {
         return $this->app;
     }

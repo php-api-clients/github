@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\\Enterprises\CbEnterpriseRcb\Actions\RunnerDashGroups;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Enterprises\CbEnterpriseRcb\Actions\RunnerDashGroups;
 
 final class CbRunnerGroupIdRcb
 {

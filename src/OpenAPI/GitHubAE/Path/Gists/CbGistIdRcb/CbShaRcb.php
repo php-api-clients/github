@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Gists\CbGistIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Gists\CbGistIdRcb;
 
 final class CbShaRcb
 {

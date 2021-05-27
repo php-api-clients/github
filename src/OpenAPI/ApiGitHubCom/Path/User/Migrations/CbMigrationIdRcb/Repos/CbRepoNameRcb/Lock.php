@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb;
 
 final class Lock
 {

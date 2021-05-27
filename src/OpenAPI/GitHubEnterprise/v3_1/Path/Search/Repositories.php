@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\\Search;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Search;
 
 final class Repositories
 {

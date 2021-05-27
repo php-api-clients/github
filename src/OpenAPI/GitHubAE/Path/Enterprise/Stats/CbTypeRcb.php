@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Enterprise\Stats;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Enterprise\Stats;
 
 final class CbTypeRcb
 {

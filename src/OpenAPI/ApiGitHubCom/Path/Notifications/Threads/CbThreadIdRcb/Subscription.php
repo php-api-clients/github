@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Notifications\Threads\CbThreadIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Notifications\Threads\CbThreadIdRcb;
 
 final class Subscription
 {

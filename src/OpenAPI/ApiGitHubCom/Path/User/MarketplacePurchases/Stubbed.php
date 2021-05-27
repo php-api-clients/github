@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User\MarketplacePurchases;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\MarketplacePurchases;
 
 final class Stubbed
 {

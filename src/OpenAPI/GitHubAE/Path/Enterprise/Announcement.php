@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Enterprise;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Enterprise;
 
 final class Announcement
 {

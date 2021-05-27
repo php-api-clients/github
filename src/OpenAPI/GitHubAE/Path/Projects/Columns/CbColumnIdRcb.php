@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Projects\Columns;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Projects\Columns;
 
 final class CbColumnIdRcb
 {

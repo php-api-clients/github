@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\\Admin;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Admin;
 
 final class Users
 {

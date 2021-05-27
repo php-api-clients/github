@@ -29,7 +29,7 @@ final class CodeScanningAlertItems
     /**
      * Simple User
      */
-    private ?object $dismissed_by = null;
+    private array $dismissed_by = array();
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -38,9 +38,9 @@ final class CodeScanningAlertItems
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
     private ?string $dismissed_reason = null;
-    private ?object $rule = null;
-    private ?object $tool = null;
-    private ?object $instance = null;
+    private array $rule = array();
+    private array $tool = array();
+    private array $instance = array();
     /**
      * A classification of the file. For example to identify it as generated.
      */
@@ -65,7 +65,7 @@ final class CodeScanningAlertItems
     {
         return $this->state;
     }
-    public function dismissed_by() : ?object
+    public function dismissed_by() : array
     {
         return $this->dismissed_by;
     }
@@ -77,15 +77,15 @@ final class CodeScanningAlertItems
     {
         return $this->dismissed_reason;
     }
-    public function rule() : ?object
+    public function rule() : array
     {
         return $this->rule;
     }
-    public function tool() : ?object
+    public function tool() : array
     {
         return $this->tool;
     }
-    public function instance() : ?object
+    public function instance() : array
     {
         return $this->instance;
     }

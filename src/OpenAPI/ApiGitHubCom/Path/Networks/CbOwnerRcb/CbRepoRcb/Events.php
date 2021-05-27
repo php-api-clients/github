@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Networks\CbOwnerRcb\CbRepoRcb;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Networks\CbOwnerRcb\CbRepoRcb;
 
 final class Events
 {

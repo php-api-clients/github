@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\App\Hook;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\App\Hook;
 
 final class Config
 {

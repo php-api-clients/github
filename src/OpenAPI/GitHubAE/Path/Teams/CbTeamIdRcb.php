@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Teams;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Teams;
 
 final class CbTeamIdRcb
 {

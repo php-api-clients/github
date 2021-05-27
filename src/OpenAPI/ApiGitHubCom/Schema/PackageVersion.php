@@ -22,7 +22,7 @@ final class PackageVersion
     private ?string $created_at = null;
     private ?string $updated_at = null;
     private ?string $deleted_at = null;
-    private ?object $metadata = null;
+    private array $metadata = array();
     public function id() : ?int
     {
         return $this->id;
@@ -63,7 +63,7 @@ final class PackageVersion
     {
         return $this->deleted_at;
     }
-    public function metadata() : ?object
+    public function metadata() : array
     {
         return $this->metadata;
     }

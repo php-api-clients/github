@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Users;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Users;
 
 final class CbUsernameRcb
 {

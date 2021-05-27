@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\\User\Installations\CbInstallationIdRcb\Repositories;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\User\Installations\CbInstallationIdRcb\Repositories;
 
 final class CbRepositoryIdRcb
 {

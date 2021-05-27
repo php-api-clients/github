@@ -26,7 +26,7 @@ final class ScimUser
      * The name of the user, suitable for display to end-users
      */
     private ?string $displayName = null;
-    private ?object $name = null;
+    private array $name = array();
     /**
      * user emails
      */
@@ -35,7 +35,7 @@ final class ScimUser
      * The active status of the User.
      */
     private ?bool $active = null;
-    private ?object $meta = null;
+    private array $meta = array();
     /**
      * The ID of the organization.
      */
@@ -68,7 +68,7 @@ final class ScimUser
     {
         return $this->displayName;
     }
-    public function name() : ?object
+    public function name() : array
     {
         return $this->name;
     }
@@ -80,7 +80,7 @@ final class ScimUser
     {
         return $this->active;
     }
-    public function meta() : ?object
+    public function meta() : array
     {
         return $this->meta;
     }

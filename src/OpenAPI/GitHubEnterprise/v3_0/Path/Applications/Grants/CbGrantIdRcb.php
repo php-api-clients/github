@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\\Applications\Grants;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Applications\Grants;
 
 final class CbGrantIdRcb
 {

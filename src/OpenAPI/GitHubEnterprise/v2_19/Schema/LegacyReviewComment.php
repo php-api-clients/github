@@ -17,14 +17,14 @@ final class LegacyReviewComment
     private ?string $commit_id = null;
     private ?string $original_commit_id = null;
     private ?int $in_reply_to_id = null;
-    private ?object $user = null;
+    private array $user = array();
     private ?string $body = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
     private ?string $html_url = null;
     private ?string $pull_request_url = null;
     private ?string $author_association = null;
-    private ?object $_links = null;
+    private array $_links = array();
     public function url() : ?string
     {
         return $this->url;
@@ -69,7 +69,7 @@ final class LegacyReviewComment
     {
         return $this->in_reply_to_id;
     }
-    public function user() : ?object
+    public function user() : array
     {
         return $this->user;
     }
@@ -97,7 +97,7 @@ final class LegacyReviewComment
     {
         return $this->author_association;
     }
-    public function _links() : ?object
+    public function _links() : array
     {
         return $this->_links;
     }

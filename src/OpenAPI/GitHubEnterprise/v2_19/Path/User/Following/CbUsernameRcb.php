@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\\User\Following;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\User\Following;
 
 final class CbUsernameRcb
 {

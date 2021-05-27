@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User;
 
 final class Issues
 {

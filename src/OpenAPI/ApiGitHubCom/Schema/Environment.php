@@ -29,7 +29,7 @@ final class Environment
     /**
      * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
-    private ?object $deployment_branch_policy = null;
+    private array $deployment_branch_policy = array();
     public function id() : ?int
     {
         return $this->id;
@@ -62,7 +62,7 @@ final class Environment
     {
         return $this->protection_rules;
     }
-    public function deployment_branch_policy() : ?object
+    public function deployment_branch_policy() : array
     {
         return $this->deployment_branch_policy;
     }

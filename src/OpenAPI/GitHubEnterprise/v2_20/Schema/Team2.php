@@ -16,7 +16,7 @@ final class Team2
     private ?string $permission = null;
     private ?string $members_url = null;
     private ?string $repositories_url = null;
-    private ?object $parent = null;
+    private array $parent = array();
     public function id() : ?int
     {
         return $this->id;
@@ -57,7 +57,7 @@ final class Team2
     {
         return $this->repositories_url;
     }
-    public function parent() : ?object
+    public function parent() : array
     {
         return $this->parent;
     }

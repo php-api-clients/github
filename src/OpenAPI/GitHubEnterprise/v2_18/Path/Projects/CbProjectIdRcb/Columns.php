@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\\Projects\CbProjectIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Projects\CbProjectIdRcb;
 
 final class Columns
 {

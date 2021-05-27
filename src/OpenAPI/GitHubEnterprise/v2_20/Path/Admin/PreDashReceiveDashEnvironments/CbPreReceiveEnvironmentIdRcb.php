@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\\Admin\PreDashReceiveDashEnvironments;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Admin\PreDashReceiveDashEnvironments;
 
 final class CbPreReceiveEnvironmentIdRcb
 {

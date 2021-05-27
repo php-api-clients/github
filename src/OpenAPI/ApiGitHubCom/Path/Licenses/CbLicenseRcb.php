@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Licenses;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Licenses;
 
 final class CbLicenseRcb
 {

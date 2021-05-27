@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Notifications\Threads;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Notifications\Threads;
 
 final class CbThreadIdRcb
 {

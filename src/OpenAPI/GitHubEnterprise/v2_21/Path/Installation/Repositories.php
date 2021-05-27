@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\\Installation;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Installation;
 
 final class Repositories
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\CodesOfConduct;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\CodesOfConduct;
 
 final class CbKeyRcb
 {

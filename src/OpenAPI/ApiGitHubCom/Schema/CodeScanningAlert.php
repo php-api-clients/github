@@ -34,7 +34,7 @@ final class CodeScanningAlert
     /**
      * Simple User
      */
-    private ?object $dismissed_by = null;
+    private array $dismissed_by = array();
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -43,9 +43,9 @@ final class CodeScanningAlert
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
     private ?string $dismissed_reason = null;
-    private ?object $rule = null;
-    private ?object $tool = null;
-    private ?object $most_recent_instance = null;
+    private array $rule = array();
+    private array $tool = array();
+    private array $most_recent_instance = array();
     public function number() : ?int
     {
         return $this->number;
@@ -74,7 +74,7 @@ final class CodeScanningAlert
     {
         return $this->state;
     }
-    public function dismissed_by() : ?object
+    public function dismissed_by() : array
     {
         return $this->dismissed_by;
     }
@@ -86,15 +86,15 @@ final class CodeScanningAlert
     {
         return $this->dismissed_reason;
     }
-    public function rule() : ?object
+    public function rule() : array
     {
         return $this->rule;
     }
-    public function tool() : ?object
+    public function tool() : array
     {
         return $this->tool;
     }
-    public function most_recent_instance() : ?object
+    public function most_recent_instance() : array
     {
         return $this->most_recent_instance;
     }

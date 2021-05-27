@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\\Search;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Search;
 
 final class Topics
 {

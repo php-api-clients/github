@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\\User\GpgKeys;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\User\GpgKeys;
 
 final class CbGpgKeyIdRcb
 {

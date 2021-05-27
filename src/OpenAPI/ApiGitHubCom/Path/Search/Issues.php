@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Search;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Search;
 
 final class Issues
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\\Orgs\CbOrgRcb\Hooks\CbHookIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Orgs\CbOrgRcb\Hooks\CbHookIdRcb;
 
 final class Pings
 {

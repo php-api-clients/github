@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\\Applications;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Applications;
 
 final class Grants
 {

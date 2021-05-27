@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User\Memberships;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Memberships;
 
 final class Orgs
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\\User;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\User;
 
 final class PublicEmails
 {

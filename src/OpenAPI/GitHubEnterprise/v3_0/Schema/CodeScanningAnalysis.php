@@ -52,7 +52,7 @@ final class CodeScanningAnalysis
      * An identifier for the upload.
      */
     private ?string $sarif_id = null;
-    private ?object $tool = null;
+    private array $tool = array();
     private ?bool $deletable = null;
     /**
      * Warning generated when processing the analysis
@@ -106,7 +106,7 @@ final class CodeScanningAnalysis
     {
         return $this->sarif_id;
     }
-    public function tool() : ?object
+    public function tool() : array
     {
         return $this->tool;
     }

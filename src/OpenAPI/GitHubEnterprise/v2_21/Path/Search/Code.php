@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\\Search;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Search;
 
 final class Code
 {

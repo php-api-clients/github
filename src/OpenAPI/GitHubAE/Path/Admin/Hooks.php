@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Admin;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin;
 
 final class Hooks
 {

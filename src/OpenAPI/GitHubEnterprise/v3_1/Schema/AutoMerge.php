@@ -9,7 +9,7 @@ final class AutoMerge
     /**
      * Simple User
      */
-    private ?object $enabled_by = null;
+    private array $enabled_by = array();
     /**
      * The merge method to use.
      */
@@ -22,7 +22,7 @@ final class AutoMerge
      * Commit message for the merge commit.
      */
     private ?string $commit_message = null;
-    public function enabled_by() : ?object
+    public function enabled_by() : array
     {
         return $this->enabled_by;
     }

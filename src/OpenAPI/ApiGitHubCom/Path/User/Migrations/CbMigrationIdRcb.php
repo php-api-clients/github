@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User\Migrations;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Migrations;
 
 final class CbMigrationIdRcb
 {

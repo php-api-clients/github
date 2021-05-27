@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Admin\PreDashReceiveDashEnvironments\CbPreReceiveEnvironmentIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\PreDashReceiveDashEnvironments\CbPreReceiveEnvironmentIdRcb;
 
 final class Downloads
 {

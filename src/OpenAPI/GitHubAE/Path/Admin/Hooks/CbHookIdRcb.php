@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Admin\Hooks;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Hooks;
 
 final class CbHookIdRcb
 {

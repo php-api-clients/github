@@ -7,59 +7,59 @@ final class BranchProtection
     public const SCHEMA_TITLE = 'Branch Protection';
     public const SCHEMA_DESCRIPTION = 'Branch Protection';
     private ?string $url = null;
-    private ?object $required_status_checks = null;
+    private array $required_status_checks = array();
     /**
      * Protected Branch Admin Enforced
      */
-    private ?object $enforce_admins = null;
+    private array $enforce_admins = array();
     /**
      * Protected Branch Pull Request Review
      */
-    private ?object $required_pull_request_reviews = null;
+    private array $required_pull_request_reviews = array();
     /**
      * Branch Restriction Policy
      */
-    private ?object $restrictions = null;
-    private ?object $required_linear_history = null;
-    private ?object $allow_force_pushes = null;
-    private ?object $allow_deletions = null;
-    private ?object $required_conversation_resolution = null;
+    private array $restrictions = array();
+    private array $required_linear_history = array();
+    private array $allow_force_pushes = array();
+    private array $allow_deletions = array();
+    private array $required_conversation_resolution = array();
     private ?string $name = null;
     private ?string $protection_url = null;
-    private ?object $required_signatures = null;
+    private array $required_signatures = array();
     public function url() : ?string
     {
         return $this->url;
     }
-    public function required_status_checks() : ?object
+    public function required_status_checks() : array
     {
         return $this->required_status_checks;
     }
-    public function enforce_admins() : ?object
+    public function enforce_admins() : array
     {
         return $this->enforce_admins;
     }
-    public function required_pull_request_reviews() : ?object
+    public function required_pull_request_reviews() : array
     {
         return $this->required_pull_request_reviews;
     }
-    public function restrictions() : ?object
+    public function restrictions() : array
     {
         return $this->restrictions;
     }
-    public function required_linear_history() : ?object
+    public function required_linear_history() : array
     {
         return $this->required_linear_history;
     }
-    public function allow_force_pushes() : ?object
+    public function allow_force_pushes() : array
     {
         return $this->allow_force_pushes;
     }
-    public function allow_deletions() : ?object
+    public function allow_deletions() : array
     {
         return $this->allow_deletions;
     }
-    public function required_conversation_resolution() : ?object
+    public function required_conversation_resolution() : array
     {
         return $this->required_conversation_resolution;
     }
@@ -71,7 +71,7 @@ final class BranchProtection
     {
         return $this->protection_url;
     }
-    public function required_signatures() : ?object
+    public function required_signatures() : array
     {
         return $this->required_signatures;
     }

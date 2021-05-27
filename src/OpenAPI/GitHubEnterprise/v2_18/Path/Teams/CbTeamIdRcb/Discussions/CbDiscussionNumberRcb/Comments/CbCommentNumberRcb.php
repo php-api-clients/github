@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments;
 
 final class CbCommentNumberRcb
 {

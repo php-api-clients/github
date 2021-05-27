@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User\Starred\CbOwnerRcb;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Starred\CbOwnerRcb;
 
 final class CbRepoRcb
 {

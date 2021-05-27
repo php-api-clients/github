@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User\Email;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Email;
 
 final class Visibility
 {

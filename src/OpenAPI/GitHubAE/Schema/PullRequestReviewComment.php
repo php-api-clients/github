@@ -53,7 +53,7 @@ final class PullRequestReviewComment
     /**
      * Simple User
      */
-    private ?object $user = null;
+    private array $user = array();
     /**
      * The text of the comment.
      */
@@ -72,7 +72,7 @@ final class PullRequestReviewComment
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private ?object $_links = null;
+    private array $_links = array();
     /**
      * The first line of the range for a multi-line comment.
      */
@@ -97,7 +97,7 @@ final class PullRequestReviewComment
      * The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
      */
     private ?string $side = null;
-    private ?object $reactions = null;
+    private array $reactions = array();
     private ?string $body_html = null;
     private ?string $body_text = null;
     public function url() : ?string
@@ -144,7 +144,7 @@ final class PullRequestReviewComment
     {
         return $this->in_reply_to_id;
     }
-    public function user() : ?object
+    public function user() : array
     {
         return $this->user;
     }
@@ -172,7 +172,7 @@ final class PullRequestReviewComment
     {
         return $this->author_association;
     }
-    public function _links() : ?object
+    public function _links() : array
     {
         return $this->_links;
     }
@@ -200,7 +200,7 @@ final class PullRequestReviewComment
     {
         return $this->side;
     }
-    public function reactions() : ?object
+    public function reactions() : array
     {
         return $this->reactions;
     }

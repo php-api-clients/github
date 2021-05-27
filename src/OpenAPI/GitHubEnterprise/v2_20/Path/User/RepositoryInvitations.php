@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\\User;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\User;
 
 final class RepositoryInvitations
 {

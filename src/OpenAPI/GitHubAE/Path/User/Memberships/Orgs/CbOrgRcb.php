@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\User\Memberships\Orgs;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\User\Memberships\Orgs;
 
 final class CbOrgRcb
 {

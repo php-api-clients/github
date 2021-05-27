@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\\Markdown;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Markdown;
 
 final class Raw
 {

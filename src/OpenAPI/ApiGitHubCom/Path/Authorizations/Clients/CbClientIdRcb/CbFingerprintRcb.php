@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Authorizations\Clients\CbClientIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Authorizations\Clients\CbClientIdRcb;
 
 final class CbFingerprintRcb
 {

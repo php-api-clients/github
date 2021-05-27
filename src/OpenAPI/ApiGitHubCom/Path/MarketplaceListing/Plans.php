@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\MarketplaceListing;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\MarketplaceListing;
 
 final class Plans
 {

@@ -33,7 +33,7 @@ final class IssueSearchResultItem
     private ?string $updated_at = null;
     private ?string $closed_at = null;
     private array $text_matches = array();
-    private ?object $pull_request = null;
+    private array $pull_request = array();
     private ?string $body = null;
     private ?number $score = null;
     /**
@@ -44,7 +44,7 @@ final class IssueSearchResultItem
     /**
      * A git repository
      */
-    private ?object $repository = null;
+    private array $repository = array();
     private ?string $body_html = null;
     private ?string $body_text = null;
     private ?string $timeline_url = null;
@@ -141,7 +141,7 @@ final class IssueSearchResultItem
     {
         return $this->text_matches;
     }
-    public function pull_request() : ?object
+    public function pull_request() : array
     {
         return $this->pull_request;
     }
@@ -161,7 +161,7 @@ final class IssueSearchResultItem
     {
         return $this->draft;
     }
-    public function repository() : ?object
+    public function repository() : array
     {
         return $this->repository;
     }

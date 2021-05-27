@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Gitignore\Templates;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Gitignore\Templates;
 
 final class CbNameRcb
 {

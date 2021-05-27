@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\\Reactions;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Reactions;
 
 final class CbReactionIdRcb
 {

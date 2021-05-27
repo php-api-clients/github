@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Admin\Users\CbUsernameRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Users\CbUsernameRcb;
 
 final class Authorizations
 {

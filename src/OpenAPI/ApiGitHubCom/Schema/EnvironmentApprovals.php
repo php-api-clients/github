@@ -17,7 +17,7 @@ final class EnvironmentApprovals
     /**
      * Simple User
      */
-    private ?object $user = null;
+    private array $user = array();
     /**
      * The comment submitted with the deployment review
      */
@@ -30,7 +30,7 @@ final class EnvironmentApprovals
     {
         return $this->state;
     }
-    public function user() : ?object
+    public function user() : array
     {
         return $this->user;
     }

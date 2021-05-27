@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\User;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\User;
 
 final class Subscriptions
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\\User\Keys;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\User\Keys;
 
 final class CbKeyIdRcb
 {

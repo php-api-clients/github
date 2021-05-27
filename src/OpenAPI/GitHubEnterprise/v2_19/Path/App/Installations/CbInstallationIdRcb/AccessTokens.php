@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\\App\Installations\CbInstallationIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\App\Installations\CbInstallationIdRcb;
 
 final class AccessTokens
 {

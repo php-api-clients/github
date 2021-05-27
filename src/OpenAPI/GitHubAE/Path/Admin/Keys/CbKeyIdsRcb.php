@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Admin\Keys;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Keys;
 
 final class CbKeyIdsRcb
 {

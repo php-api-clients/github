@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Admin\Tokens;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Tokens;
 
 final class CbTokenIdRcb
 {

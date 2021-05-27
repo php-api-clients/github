@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb;
 
 final class Generate
 {

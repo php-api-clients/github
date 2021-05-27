@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Projects\Columns\Cards;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Projects\Columns\Cards;
 
 final class CbCardIdRcb
 {

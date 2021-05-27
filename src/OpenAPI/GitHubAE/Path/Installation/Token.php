@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Installation;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Installation;
 
 final class Token
 {

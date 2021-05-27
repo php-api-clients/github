@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Projects\CbProjectIdRcb\Collaborators\CbUsernameRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Projects\CbProjectIdRcb\Collaborators\CbUsernameRcb;
 
 final class Permission
 {

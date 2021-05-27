@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Gists;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Gists;
 
 final class Starred
 {

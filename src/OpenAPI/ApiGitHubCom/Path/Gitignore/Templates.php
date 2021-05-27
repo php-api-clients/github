@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Gitignore;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Gitignore;
 
 final class Templates
 {

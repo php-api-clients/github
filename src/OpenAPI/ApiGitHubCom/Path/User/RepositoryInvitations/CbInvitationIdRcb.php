@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\User\RepositoryInvitations;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\RepositoryInvitations;
 
 final class CbInvitationIdRcb
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\\Authorizations;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Authorizations;
 
 final class CbAuthorizationIdRcb
 {

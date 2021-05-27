@@ -8,7 +8,7 @@ final class InstallationToken
     public const SCHEMA_DESCRIPTION = 'Authentication token for a GitHub App installed on a user or org.';
     private ?string $token = null;
     private ?string $expires_at = null;
-    private ?object $permissions = null;
+    private array $permissions = array();
     private ?string $repository_selection = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
@@ -26,7 +26,7 @@ final class InstallationToken
     {
         return $this->expires_at;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }

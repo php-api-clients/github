@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\AppManifests\CbCodeRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\AppManifests\CbCodeRcb;
 
 final class Conversions
 {

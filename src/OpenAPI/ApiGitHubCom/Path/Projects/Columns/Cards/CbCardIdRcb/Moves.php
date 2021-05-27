@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Projects\Columns\Cards\CbCardIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Projects\Columns\Cards\CbCardIdRcb;
 
 final class Moves
 {

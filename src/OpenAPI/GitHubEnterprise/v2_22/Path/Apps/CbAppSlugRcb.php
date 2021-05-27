@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\\Apps;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Apps;
 
 final class CbAppSlugRcb
 {

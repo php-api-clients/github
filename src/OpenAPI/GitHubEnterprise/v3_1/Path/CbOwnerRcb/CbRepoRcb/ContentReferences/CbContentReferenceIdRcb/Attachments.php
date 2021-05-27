@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\\CbOwnerRcb\CbRepoRcb\ContentReferences\CbContentReferenceIdRcb;
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\CbOwnerRcb\CbRepoRcb\ContentReferences\CbContentReferenceIdRcb;
 
 final class Attachments
 {

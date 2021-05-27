@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\App;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\App;
 
 final class Installations
 {

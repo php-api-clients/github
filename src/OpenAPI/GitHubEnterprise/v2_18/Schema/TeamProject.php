@@ -19,7 +19,7 @@ final class TeamProject
     /**
      * Simple User
      */
-    private ?object $creator = null;
+    private array $creator = array();
     private ?string $created_at = null;
     private ?string $updated_at = null;
     /**
@@ -30,7 +30,7 @@ final class TeamProject
      * Whether the project is private or not. Only present when owner is an organization.
      */
     private ?bool $private = null;
-    private ?object $permissions = null;
+    private array $permissions = array();
     public function owner_url() : ?string
     {
         return $this->owner_url;
@@ -71,7 +71,7 @@ final class TeamProject
     {
         return $this->state;
     }
-    public function creator() : ?object
+    public function creator() : array
     {
         return $this->creator;
     }
@@ -91,7 +91,7 @@ final class TeamProject
     {
         return $this->private;
     }
-    public function permissions() : ?object
+    public function permissions() : array
     {
         return $this->permissions;
     }

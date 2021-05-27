@@ -37,7 +37,7 @@ final class SecretScanningAlert
     /**
      * Simple User
      */
-    private ?object $resolved_by = null;
+    private array $resolved_by = array();
     /**
      * The type of secret that secret scanning detected.
      */
@@ -74,7 +74,7 @@ final class SecretScanningAlert
     {
         return $this->resolved_at;
     }
-    public function resolved_by() : ?object
+    public function resolved_by() : array
     {
         return $this->resolved_by;
     }

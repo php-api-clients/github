@@ -17,7 +17,7 @@ final class LicenseContent
     private ?string $type = null;
     private ?string $content = null;
     private ?string $encoding = null;
-    private ?object $_links = null;
+    private array $_links = array();
     private $license;
     public function name() : ?string
     {
@@ -63,7 +63,7 @@ final class LicenseContent
     {
         return $this->encoding;
     }
-    public function _links() : ?object
+    public function _links() : array
     {
         return $this->_links;
     }

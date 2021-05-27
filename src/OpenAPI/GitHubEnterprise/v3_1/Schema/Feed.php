@@ -14,7 +14,7 @@ final class Feed
     private ?string $current_user_organization_url = null;
     private array $current_user_organization_urls = array();
     private ?string $security_advisories_url = null;
-    private ?object $_links = null;
+    private array $_links = array();
     public function timeline_url() : ?string
     {
         return $this->timeline_url;
@@ -47,7 +47,7 @@ final class Feed
     {
         return $this->security_advisories_url;
     }
-    public function _links() : ?object
+    public function _links() : array
     {
         return $this->_links;
     }

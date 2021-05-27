@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\\Scim\V2\Enterprises\CbEnterpriseRcb\Groups;
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Scim\V2\Enterprises\CbEnterpriseRcb\Groups;
 
 final class CbScimGroupIdRcb
 {
