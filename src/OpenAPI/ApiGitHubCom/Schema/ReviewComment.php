@@ -27,7 +27,7 @@ final class ReviewComment
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private array $_links = array();
+    private ?object $_links = null;
     private ?string $body_text = null;
     private ?string $body_html = null;
     /**
@@ -126,7 +126,7 @@ final class ReviewComment
     {
         return $this->author_association;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }

@@ -6,13 +6,13 @@ final class LicenseInfo
 {
     public const SCHEMA_TITLE = 'license-info';
     public const SCHEMA_DESCRIPTION = '';
-    private ?int $seats = null;
+    private $seats;
     private ?int $seats_used = null;
-    private ?int $seats_available = null;
+    private $seats_available;
     private ?string $kind = null;
     private ?int $days_until_expiration = null;
     private ?string $expire_at = null;
-    public function seats() : ?int
+    public function seats()
     {
         return $this->seats;
     }
@@ -20,7 +20,7 @@ final class LicenseInfo
     {
         return $this->seats_used;
     }
-    public function seats_available() : ?int
+    public function seats_available()
     {
         return $this->seats_available;
     }

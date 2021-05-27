@@ -48,9 +48,9 @@ final class PullRequestSimple
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
      */
     private array $requested_teams = array();
-    private array $head = array();
-    private array $base = array();
-    private array $_links = array();
+    private ?object $head = null;
+    private ?object $base = null;
+    private ?object $_links = null;
     /**
      * How the author is associated with the repository.
      */
@@ -58,7 +58,7 @@ final class PullRequestSimple
     /**
      * The status of auto merging a pull request.
      */
-    private array $auto_merge = array();
+    private ?object $auto_merge = null;
     /**
      * Indicates whether or not the pull request is a draft.
      */
@@ -183,15 +183,15 @@ final class PullRequestSimple
     {
         return $this->requested_teams;
     }
-    public function head() : array
+    public function head() : ?object
     {
         return $this->head;
     }
-    public function base() : array
+    public function base() : ?object
     {
         return $this->base;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }
@@ -199,7 +199,7 @@ final class PullRequestSimple
     {
         return $this->author_association;
     }
-    public function auto_merge() : array
+    public function auto_merge() : ?object
     {
         return $this->auto_merge;
     }

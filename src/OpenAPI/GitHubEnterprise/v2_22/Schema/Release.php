@@ -37,7 +37,7 @@ final class Release
     /**
      * Simple User
      */
-    private array $author = array();
+    private ?object $author = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\ReleaseAsset>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\ReleaseAsset::class)
@@ -45,6 +45,7 @@ final class Release
     private array $assets = array();
     private ?string $body_html = null;
     private ?string $body_text = null;
+    private ?object $reactions = null;
     public function url() : ?string
     {
         return $this->url;
@@ -109,7 +110,7 @@ final class Release
     {
         return $this->published_at;
     }
-    public function author() : array
+    public function author() : ?object
     {
         return $this->author;
     }
@@ -124,5 +125,9 @@ final class Release
     public function body_text() : ?string
     {
         return $this->body_text;
+    }
+    public function reactions() : ?object
+    {
+        return $this->reactions;
     }
 }

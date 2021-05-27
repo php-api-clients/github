@@ -16,7 +16,7 @@ final class ContentTree
     private ?string $html_url = null;
     private ?string $download_url = null;
     private array $entries = array();
-    private array $_links = array();
+    private ?object $_links = null;
     public function type() : ?string
     {
         return $this->type;
@@ -57,7 +57,7 @@ final class ContentTree
     {
         return $this->entries;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }

@@ -28,7 +28,7 @@ final class Integration
     /**
      * The set of permissions for the GitHub app
      */
-    private array $permissions = array();
+    private ?object $permissions = null;
     /**
      * The list of events for the GitHub app
      */
@@ -81,7 +81,7 @@ final class Integration
     {
         return $this->updated_at;
     }
-    public function permissions() : array
+    public function permissions() : ?object
     {
         return $this->permissions;
     }

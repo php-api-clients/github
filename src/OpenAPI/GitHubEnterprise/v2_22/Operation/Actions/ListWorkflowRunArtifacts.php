@@ -9,7 +9,7 @@ final class ListWorkflowRunArtifacts
     public string $owner;
     /****/
     public string $repo;
-    /**The id of the workflow run**/
+    /**The id of the workflow run.**/
     public int $run_id;
     /**Results per page (max 100).**/
     public int $per_page;

@@ -19,7 +19,7 @@ final class PullRequestReview
     private ?string $state = null;
     private ?string $html_url = null;
     private ?string $pull_request_url = null;
-    private array $_links = array();
+    private ?object $_links = null;
     private ?string $submitted_at = null;
     /**
      * A commit SHA for the review.
@@ -59,7 +59,7 @@ final class PullRequestReview
     {
         return $this->pull_request_url;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }

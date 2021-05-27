@@ -6,7 +6,7 @@ final class PendingDeployment
 {
     public const SCHEMA_TITLE = 'Pending Deployment';
     public const SCHEMA_DESCRIPTION = 'Details of a deployment that is waiting for protection rules to pass';
-    private array $environment = array();
+    private ?object $environment = null;
     /**
      * The set duration of the wait timer
      */
@@ -23,7 +23,7 @@ final class PendingDeployment
      * The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
      */
     private array $reviewers = array();
-    public function environment() : array
+    public function environment() : ?object
     {
         return $this->environment;
     }

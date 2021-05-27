@@ -31,7 +31,7 @@ final class IssueComment
      */
     private ?string $author_association = null;
     private $performed_via_github_app;
-    private array $reactions = array();
+    private ?object $reactions = null;
     public function id() : ?int
     {
         return $this->id;
@@ -84,7 +84,7 @@ final class IssueComment
     {
         return $this->performed_via_github_app;
     }
-    public function reactions() : array
+    public function reactions() : ?object
     {
         return $this->reactions;
     }

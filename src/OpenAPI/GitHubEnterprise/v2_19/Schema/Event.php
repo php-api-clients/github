@@ -11,13 +11,13 @@ final class Event
     /**
      * Actor
      */
-    private array $actor = array();
-    private array $repo = array();
+    private ?object $actor = null;
+    private ?object $repo = null;
     /**
      * Actor
      */
-    private array $org = array();
-    private array $payload = array();
+    private ?object $org = null;
+    private ?object $payload = null;
     private ?bool $public = null;
     private ?string $created_at = null;
     public function id() : ?string
@@ -28,19 +28,19 @@ final class Event
     {
         return $this->type;
     }
-    public function actor() : array
+    public function actor() : ?object
     {
         return $this->actor;
     }
-    public function repo() : array
+    public function repo() : ?object
     {
         return $this->repo;
     }
-    public function org() : array
+    public function org() : ?object
     {
         return $this->org;
     }
-    public function payload() : array
+    public function payload() : ?object
     {
         return $this->payload;
     }

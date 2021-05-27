@@ -83,11 +83,11 @@ final class WorkflowRun
     /**
      * Minimal Repository
      */
-    private array $repository = array();
+    private ?object $repository = null;
     /**
      * Minimal Repository
      */
-    private array $head_repository = array();
+    private ?object $head_repository = null;
     private ?int $head_repository_id = null;
     public function id() : ?int
     {
@@ -189,11 +189,11 @@ final class WorkflowRun
     {
         return $this->head_commit;
     }
-    public function repository() : array
+    public function repository() : ?object
     {
         return $this->repository;
     }
-    public function head_repository() : array
+    public function head_repository() : ?object
     {
         return $this->head_repository;
     }

@@ -10,12 +10,12 @@ final class StarredRepository
     /**
      * A git repository
      */
-    private array $repo = array();
+    private ?object $repo = null;
     public function starred_at() : ?string
     {
         return $this->starred_at;
     }
-    public function repo() : array
+    public function repo() : ?object
     {
         return $this->repo;
     }

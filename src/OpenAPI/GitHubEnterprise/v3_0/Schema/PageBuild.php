@@ -8,7 +8,7 @@ final class PageBuild
     public const SCHEMA_DESCRIPTION = 'Page Build';
     private ?string $url = null;
     private ?string $status = null;
-    private array $error = array();
+    private ?object $error = null;
     private $pusher;
     private ?string $commit = null;
     private ?int $duration = null;
@@ -22,7 +22,7 @@ final class PageBuild
     {
         return $this->status;
     }
-    public function error() : array
+    public function error() : ?object
     {
         return $this->error;
     }

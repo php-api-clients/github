@@ -15,7 +15,7 @@ final class CodeSearchResultItem
     /**
      * Minimal Repository
      */
-    private array $repository = array();
+    private ?object $repository = null;
     private ?number $score = null;
     private ?int $file_size = null;
     private ?string $language = null;
@@ -46,7 +46,7 @@ final class CodeSearchResultItem
     {
         return $this->html_url;
     }
-    public function repository() : array
+    public function repository() : ?object
     {
         return $this->repository;
     }

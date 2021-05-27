@@ -6,13 +6,13 @@ final class RateLimitOverview
 {
     public const SCHEMA_TITLE = 'Rate Limit Overview';
     public const SCHEMA_DESCRIPTION = 'Rate Limit Overview';
-    private array $resources = array();
-    private array $rate = array();
-    public function resources() : array
+    private ?object $resources = null;
+    private ?object $rate = null;
+    public function resources() : ?object
     {
         return $this->resources;
     }
-    public function rate() : array
+    public function rate() : ?object
     {
         return $this->rate;
     }

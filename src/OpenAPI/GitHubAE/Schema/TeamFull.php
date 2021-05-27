@@ -40,7 +40,7 @@ final class TeamFull
     /**
      * Organization Full
      */
-    private array $organization = array();
+    private ?object $organization = null;
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
@@ -109,7 +109,7 @@ final class TeamFull
     {
         return $this->updated_at;
     }
-    public function organization() : array
+    public function organization() : ?object
     {
         return $this->organization;
     }

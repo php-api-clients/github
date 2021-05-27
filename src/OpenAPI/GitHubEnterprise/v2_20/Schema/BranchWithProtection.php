@@ -10,13 +10,13 @@ final class BranchWithProtection
     /**
      * Commit
      */
-    private array $commit = array();
-    private array $_links = array();
+    private ?object $commit = null;
+    private ?object $_links = null;
     private ?bool $protected = null;
     /**
      * Branch Protection
      */
-    private array $protection = array();
+    private ?object $protection = null;
     private ?string $protection_url = null;
     private ?string $pattern = null;
     private ?int $required_approving_review_count = null;
@@ -24,11 +24,11 @@ final class BranchWithProtection
     {
         return $this->name;
     }
-    public function commit() : array
+    public function commit() : ?object
     {
         return $this->commit;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }
@@ -36,7 +36,7 @@ final class BranchWithProtection
     {
         return $this->protected;
     }
-    public function protection() : array
+    public function protection() : ?object
     {
         return $this->protection;
     }

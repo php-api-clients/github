@@ -14,7 +14,7 @@ final class PreReceiveEnvironment
     private ?bool $default_environment = null;
     private ?string $created_at = null;
     private ?int $hooks_count = null;
-    private array $download = array();
+    private ?object $download = null;
     public function id() : ?int
     {
         return $this->id;
@@ -47,7 +47,7 @@ final class PreReceiveEnvironment
     {
         return $this->hooks_count;
     }
-    public function download() : array
+    public function download() : ?object
     {
         return $this->download;
     }

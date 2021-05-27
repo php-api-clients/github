@@ -23,13 +23,13 @@ final class Hook
      * Determines what events the hook is triggered for. Default: ['push'].
      */
     private array $events = array();
-    private array $config = array();
+    private ?object $config = null;
     private ?string $updated_at = null;
     private ?string $created_at = null;
     private ?string $url = null;
     private ?string $test_url = null;
     private ?string $ping_url = null;
-    private array $last_response = array();
+    private ?object $last_response = null;
     public function type() : ?string
     {
         return $this->type;
@@ -50,7 +50,7 @@ final class Hook
     {
         return $this->events;
     }
-    public function config() : array
+    public function config() : ?object
     {
         return $this->config;
     }
@@ -74,7 +74,7 @@ final class Hook
     {
         return $this->ping_url;
     }
-    public function last_response() : array
+    public function last_response() : ?object
     {
         return $this->last_response;
     }

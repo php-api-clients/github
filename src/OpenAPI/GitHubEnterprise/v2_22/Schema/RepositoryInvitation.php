@@ -13,7 +13,7 @@ final class RepositoryInvitation
     /**
      * Minimal Repository
      */
-    private array $repository = array();
+    private ?object $repository = null;
     private $invitee;
     private $inviter;
     /**
@@ -35,7 +35,7 @@ final class RepositoryInvitation
     {
         return $this->id;
     }
-    public function repository() : array
+    public function repository() : ?object
     {
         return $this->repository;
     }

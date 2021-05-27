@@ -33,6 +33,10 @@ final class AuditLogEvent
      */
     private ?int $created_at = null;
     private ?string $deploy_key_fingerprint = null;
+    /**
+     * A unique identifier for an audit event.
+     */
+    private ?string $_document_id = null;
     private ?string $emoji = null;
     private array $events = array();
     private array $events_were = array();
@@ -121,6 +125,10 @@ final class AuditLogEvent
     public function deploy_key_fingerprint() : ?string
     {
         return $this->deploy_key_fingerprint;
+    }
+    public function _document_id() : ?string
+    {
+        return $this->_document_id;
     }
     public function emoji() : ?string
     {

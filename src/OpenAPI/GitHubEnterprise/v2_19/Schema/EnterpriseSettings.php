@@ -6,9 +6,9 @@ final class EnterpriseSettings
 {
     public const SCHEMA_TITLE = 'enterprise-settings';
     public const SCHEMA_DESCRIPTION = '';
-    private array $enterprise = array();
+    private ?object $enterprise = null;
     private array $run_list = array();
-    public function enterprise() : array
+    public function enterprise() : ?object
     {
         return $this->enterprise;
     }

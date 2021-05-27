@@ -9,7 +9,7 @@ final class CommunityProfile
     private ?int $health_percentage = null;
     private ?string $description = null;
     private ?string $documentation = null;
-    private array $files = array();
+    private ?object $files = null;
     private ?string $updated_at = null;
     private ?bool $content_reports_enabled = null;
     public function health_percentage() : ?int
@@ -24,7 +24,7 @@ final class CommunityProfile
     {
         return $this->documentation;
     }
-    public function files() : array
+    public function files() : ?object
     {
         return $this->files;
     }

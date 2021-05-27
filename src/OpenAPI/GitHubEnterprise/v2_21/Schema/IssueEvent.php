@@ -17,11 +17,11 @@ final class IssueEvent
     /**
      * Issue Simple
      */
-    private array $issue = array();
+    private ?object $issue = null;
     /**
      * Issue Event Label
      */
-    private array $label = array();
+    private ?object $label = null;
     private $assignee;
     private $assigner;
     private $review_requester;
@@ -29,20 +29,20 @@ final class IssueEvent
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    private array $requested_team = array();
-    private array $dismissed_review = array();
+    private ?object $requested_team = null;
+    private ?object $dismissed_review = null;
     /**
      * Issue Event Milestone
      */
-    private array $milestone = array();
+    private ?object $milestone = null;
     /**
      * Issue Event Project Card
      */
-    private array $project_card = array();
+    private ?object $project_card = null;
     /**
      * Issue Event Rename
      */
-    private array $rename = array();
+    private ?object $rename = null;
     /**
      * How the author is associated with the repository.
      */
@@ -81,11 +81,11 @@ final class IssueEvent
     {
         return $this->created_at;
     }
-    public function issue() : array
+    public function issue() : ?object
     {
         return $this->issue;
     }
-    public function label() : array
+    public function label() : ?object
     {
         return $this->label;
     }
@@ -105,23 +105,23 @@ final class IssueEvent
     {
         return $this->requested_reviewer;
     }
-    public function requested_team() : array
+    public function requested_team() : ?object
     {
         return $this->requested_team;
     }
-    public function dismissed_review() : array
+    public function dismissed_review() : ?object
     {
         return $this->dismissed_review;
     }
-    public function milestone() : array
+    public function milestone() : ?object
     {
         return $this->milestone;
     }
-    public function project_card() : array
+    public function project_card() : ?object
     {
         return $this->project_card;
     }
-    public function rename() : array
+    public function rename() : ?object
     {
         return $this->rename;
     }

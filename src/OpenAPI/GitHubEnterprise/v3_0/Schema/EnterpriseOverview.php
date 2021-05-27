@@ -6,53 +6,53 @@ final class EnterpriseOverview
 {
     public const SCHEMA_TITLE = 'enterprise-overview';
     public const SCHEMA_DESCRIPTION = '';
-    private array $repos = array();
-    private array $hooks = array();
-    private array $pages = array();
-    private array $orgs = array();
-    private array $users = array();
-    private array $pulls = array();
-    private array $issues = array();
-    private array $milestones = array();
-    private array $gists = array();
-    private array $comments = array();
-    public function repos() : array
+    private ?object $repos = null;
+    private ?object $hooks = null;
+    private ?object $pages = null;
+    private ?object $orgs = null;
+    private ?object $users = null;
+    private ?object $pulls = null;
+    private ?object $issues = null;
+    private ?object $milestones = null;
+    private ?object $gists = null;
+    private ?object $comments = null;
+    public function repos() : ?object
     {
         return $this->repos;
     }
-    public function hooks() : array
+    public function hooks() : ?object
     {
         return $this->hooks;
     }
-    public function pages() : array
+    public function pages() : ?object
     {
         return $this->pages;
     }
-    public function orgs() : array
+    public function orgs() : ?object
     {
         return $this->orgs;
     }
-    public function users() : array
+    public function users() : ?object
     {
         return $this->users;
     }
-    public function pulls() : array
+    public function pulls() : ?object
     {
         return $this->pulls;
     }
-    public function issues() : array
+    public function issues() : ?object
     {
         return $this->issues;
     }
-    public function milestones() : array
+    public function milestones() : ?object
     {
         return $this->milestones;
     }
-    public function gists() : array
+    public function gists() : ?object
     {
         return $this->gists;
     }
-    public function comments() : array
+    public function comments() : ?object
     {
         return $this->comments;
     }

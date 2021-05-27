@@ -57,9 +57,9 @@ final class PullRequest
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\TeamSimple::class)
      */
     private array $requested_teams = array();
-    private array $head = array();
-    private array $base = array();
-    private array $_links = array();
+    private ?object $head = null;
+    private ?object $base = null;
+    private ?object $_links = null;
     /**
      * How the author is associated with the repository.
      */
@@ -203,15 +203,15 @@ final class PullRequest
     {
         return $this->requested_teams;
     }
-    public function head() : array
+    public function head() : ?object
     {
         return $this->head;
     }
-    public function base() : array
+    public function base() : ?object
     {
         return $this->base;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }

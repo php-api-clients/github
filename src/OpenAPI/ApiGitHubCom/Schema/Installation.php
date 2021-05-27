@@ -27,7 +27,7 @@ final class Installation
      */
     private ?int $target_id = null;
     private ?string $target_type = null;
-    private array $permissions = array();
+    private ?object $permissions = null;
     private array $events = array();
     private ?string $created_at = null;
     private ?string $updated_at = null;
@@ -74,7 +74,7 @@ final class Installation
     {
         return $this->target_type;
     }
-    public function permissions() : array
+    public function permissions() : ?object
     {
         return $this->permissions;
     }

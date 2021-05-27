@@ -8,7 +8,7 @@ final class ApplicationGrant
     public const SCHEMA_DESCRIPTION = 'The authorization associated with an OAuth Access.';
     private ?int $id = null;
     private ?string $url = null;
-    private array $app = array();
+    private ?object $app = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
     private array $scopes = array();
@@ -21,7 +21,7 @@ final class ApplicationGrant
     {
         return $this->url;
     }
-    public function app() : array
+    public function app() : ?object
     {
         return $this->app;
     }

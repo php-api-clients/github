@@ -22,7 +22,7 @@ final class CommitComment
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private array $reactions = array();
+    private ?object $reactions = null;
     public function html_url() : ?string
     {
         return $this->html_url;
@@ -75,7 +75,7 @@ final class CommitComment
     {
         return $this->author_association;
     }
-    public function reactions() : array
+    public function reactions() : ?object
     {
         return $this->reactions;
     }

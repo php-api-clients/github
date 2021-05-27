@@ -7,7 +7,7 @@ final class ProtectedBranchPullRequestReview
     public const SCHEMA_TITLE = 'Protected Branch Pull Request Review';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Pull Request Review';
     private ?string $url = null;
-    private array $dismissal_restrictions = array();
+    private ?object $dismissal_restrictions = null;
     private ?bool $dismiss_stale_reviews = null;
     private ?bool $require_code_owner_reviews = null;
     private ?int $required_approving_review_count = null;
@@ -15,7 +15,7 @@ final class ProtectedBranchPullRequestReview
     {
         return $this->url;
     }
-    public function dismissal_restrictions() : array
+    public function dismissal_restrictions() : ?object
     {
         return $this->dismissal_restrictions;
     }

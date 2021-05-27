@@ -12,7 +12,7 @@ final class OrgHook
     private ?string $name = null;
     private array $events = array();
     private ?bool $active = null;
-    private array $config = array();
+    private ?object $config = null;
     private ?string $updated_at = null;
     private ?string $created_at = null;
     private ?string $type = null;
@@ -40,7 +40,7 @@ final class OrgHook
     {
         return $this->active;
     }
-    public function config() : array
+    public function config() : ?object
     {
         return $this->config;
     }

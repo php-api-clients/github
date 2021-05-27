@@ -12,7 +12,7 @@ final class IssueEventForIssue
     /**
      * Simple User
      */
-    private array $actor = array();
+    private ?object $actor = null;
     private ?string $event = null;
     private ?string $commit_id = null;
     private ?string $commit_url = null;
@@ -45,7 +45,7 @@ final class IssueEventForIssue
     {
         return $this->url;
     }
-    public function actor() : array
+    public function actor() : ?object
     {
         return $this->actor;
     }

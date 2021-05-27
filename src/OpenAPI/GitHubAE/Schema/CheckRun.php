@@ -26,18 +26,18 @@ final class CheckRun
     private ?string $conclusion = null;
     private ?string $started_at = null;
     private ?string $completed_at = null;
-    private array $output = array();
+    private ?object $output = null;
     /**
      * The name of the check.
      */
     private ?string $name = null;
-    private array $check_suite = array();
+    private ?object $check_suite = null;
     private $app;
     private $pull_requests;
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
      */
-    private array $deployment = array();
+    private ?object $deployment = null;
     public function id() : ?int
     {
         return $this->id;
@@ -82,7 +82,7 @@ final class CheckRun
     {
         return $this->completed_at;
     }
-    public function output() : array
+    public function output() : ?object
     {
         return $this->output;
     }
@@ -90,7 +90,7 @@ final class CheckRun
     {
         return $this->name;
     }
-    public function check_suite() : array
+    public function check_suite() : ?object
     {
         return $this->check_suite;
     }
@@ -102,7 +102,7 @@ final class CheckRun
     {
         return $this->pull_requests;
     }
-    public function deployment() : array
+    public function deployment() : ?object
     {
         return $this->deployment;
     }

@@ -6,13 +6,13 @@ final class FileCommit
 {
     public const SCHEMA_TITLE = 'File Commit';
     public const SCHEMA_DESCRIPTION = 'File Commit';
-    private array $content = array();
-    private array $commit = array();
-    public function content() : array
+    private ?object $content = null;
+    private ?object $commit = null;
+    public function content() : ?object
     {
         return $this->content;
     }
-    public function commit() : array
+    public function commit() : ?object
     {
         return $this->commit;
     }

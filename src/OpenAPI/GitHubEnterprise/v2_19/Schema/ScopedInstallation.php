@@ -9,7 +9,7 @@ final class ScopedInstallation
     /**
      * The permissions granted to the user-to-server access token.
      */
-    private array $permissions = array();
+    private ?object $permissions = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -21,8 +21,8 @@ final class ScopedInstallation
     /**
      * Simple User
      */
-    private array $account = array();
-    public function permissions() : array
+    private ?object $account = null;
+    public function permissions() : ?object
     {
         return $this->permissions;
     }
@@ -46,7 +46,7 @@ final class ScopedInstallation
     {
         return $this->repositories_url;
     }
-    public function account() : array
+    public function account() : ?object
     {
         return $this->account;
     }

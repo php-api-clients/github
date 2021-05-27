@@ -85,7 +85,7 @@ final class RepoSearchResultItem
      */
     private ?bool $disabled = null;
     private $license;
-    private array $permissions = array();
+    private ?object $permissions = null;
     private array $text_matches = array();
     private ?string $temp_clone_token = null;
     private ?bool $allow_merge_commit = null;
@@ -396,7 +396,7 @@ final class RepoSearchResultItem
     {
         return $this->license;
     }
-    public function permissions() : array
+    public function permissions() : ?object
     {
         return $this->permissions;
     }

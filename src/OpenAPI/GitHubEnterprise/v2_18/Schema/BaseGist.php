@@ -14,7 +14,7 @@ final class BaseGist
     private ?string $git_pull_url = null;
     private ?string $git_push_url = null;
     private ?string $html_url = null;
-    private array $files = array();
+    private ?object $files = null;
     private ?bool $public = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
@@ -58,7 +58,7 @@ final class BaseGist
     {
         return $this->html_url;
     }
-    public function files() : array
+    public function files() : ?object
     {
         return $this->files;
     }

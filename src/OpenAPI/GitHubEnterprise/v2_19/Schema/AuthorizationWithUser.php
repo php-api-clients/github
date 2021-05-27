@@ -12,13 +12,13 @@ final class AuthorizationWithUser
     private ?string $token = null;
     private ?string $token_last_eight = null;
     private ?string $hashed_token = null;
-    private array $app = array();
+    private ?object $app = null;
     private ?string $note = null;
     private ?string $note_url = null;
     private ?string $updated_at = null;
     private ?string $created_at = null;
     private ?string $fingerprint = null;
-    private array $user = array();
+    private ?object $user = null;
     public function id() : ?int
     {
         return $this->id;
@@ -43,7 +43,7 @@ final class AuthorizationWithUser
     {
         return $this->hashed_token;
     }
-    public function app() : array
+    public function app() : ?object
     {
         return $this->app;
     }
@@ -67,7 +67,7 @@ final class AuthorizationWithUser
     {
         return $this->fingerprint;
     }
-    public function user() : array
+    public function user() : ?object
     {
         return $this->user;
     }

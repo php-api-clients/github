@@ -11,7 +11,7 @@ final class GistSimple
     /**
      * Gist
      */
-    private array $fork_of = array();
+    private ?object $fork_of = null;
     private ?string $url = null;
     private ?string $forks_url = null;
     private ?string $commits_url = null;
@@ -20,7 +20,7 @@ final class GistSimple
     private ?string $git_pull_url = null;
     private ?string $git_push_url = null;
     private ?string $html_url = null;
-    private array $files = array();
+    private ?object $files = null;
     private ?bool $public = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
@@ -31,7 +31,7 @@ final class GistSimple
     /**
      * Simple User
      */
-    private array $owner = array();
+    private ?object $owner = null;
     private ?bool $truncated = null;
     public function forks() : array
     {
@@ -41,7 +41,7 @@ final class GistSimple
     {
         return $this->history;
     }
-    public function fork_of() : array
+    public function fork_of() : ?object
     {
         return $this->fork_of;
     }
@@ -77,7 +77,7 @@ final class GistSimple
     {
         return $this->html_url;
     }
-    public function files() : array
+    public function files() : ?object
     {
         return $this->files;
     }
@@ -109,7 +109,7 @@ final class GistSimple
     {
         return $this->comments_url;
     }
-    public function owner() : array
+    public function owner() : ?object
     {
         return $this->owner;
     }

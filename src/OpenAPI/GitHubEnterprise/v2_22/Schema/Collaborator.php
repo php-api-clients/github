@@ -24,7 +24,7 @@ final class Collaborator
     private ?string $received_events_url = null;
     private ?string $type = null;
     private ?bool $site_admin = null;
-    private array $permissions = array();
+    private ?object $permissions = null;
     public function login() : ?string
     {
         return $this->login;
@@ -97,7 +97,7 @@ final class Collaborator
     {
         return $this->site_admin;
     }
-    public function permissions() : array
+    public function permissions() : ?object
     {
         return $this->permissions;
     }

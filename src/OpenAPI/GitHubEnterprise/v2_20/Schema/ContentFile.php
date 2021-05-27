@@ -17,7 +17,7 @@ final class ContentFile
     private ?string $git_url = null;
     private ?string $html_url = null;
     private ?string $download_url = null;
-    private array $_links = array();
+    private ?object $_links = null;
     private ?string $target = null;
     private ?string $submodule_git_url = null;
     public function type() : ?string
@@ -64,7 +64,7 @@ final class ContentFile
     {
         return $this->download_url;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }

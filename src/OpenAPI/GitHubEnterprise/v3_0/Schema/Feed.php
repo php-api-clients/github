@@ -13,7 +13,7 @@ final class Feed
     private ?string $current_user_actor_url = null;
     private ?string $current_user_organization_url = null;
     private array $current_user_organization_urls = array();
-    private array $_links = array();
+    private ?object $_links = null;
     public function timeline_url() : ?string
     {
         return $this->timeline_url;
@@ -42,7 +42,7 @@ final class Feed
     {
         return $this->current_user_organization_urls;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }

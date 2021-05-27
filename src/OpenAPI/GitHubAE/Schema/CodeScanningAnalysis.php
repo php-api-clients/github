@@ -24,7 +24,7 @@ final class CodeScanningAnalysis
      */
     private ?string $environment = null;
     /**
-     * Identifies the configuration and environment under which the analysis was executed.
+     * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
      */
     private ?string $category = null;
     private ?string $error = null;
@@ -52,7 +52,7 @@ final class CodeScanningAnalysis
      * An identifier for the upload.
      */
     private ?string $sarif_id = null;
-    private array $tool = array();
+    private ?object $tool = null;
     private ?bool $deletable = null;
     /**
      * Warning generated when processing the analysis
@@ -106,7 +106,7 @@ final class CodeScanningAnalysis
     {
         return $this->sarif_id;
     }
-    public function tool() : array
+    public function tool() : ?object
     {
         return $this->tool;
     }

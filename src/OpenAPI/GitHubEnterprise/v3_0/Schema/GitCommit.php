@@ -15,18 +15,18 @@ final class GitCommit
     /**
      * Identifying information for the git-user
      */
-    private array $author = array();
+    private ?object $author = null;
     /**
      * Identifying information for the git-user
      */
-    private array $committer = array();
+    private ?object $committer = null;
     /**
      * Message describing the purpose of the commit
      */
     private ?string $message = null;
-    private array $tree = array();
+    private ?object $tree = null;
     private array $parents = array();
-    private array $verification = array();
+    private ?object $verification = null;
     private ?string $html_url = null;
     public function sha() : ?string
     {
@@ -40,11 +40,11 @@ final class GitCommit
     {
         return $this->url;
     }
-    public function author() : array
+    public function author() : ?object
     {
         return $this->author;
     }
-    public function committer() : array
+    public function committer() : ?object
     {
         return $this->committer;
     }
@@ -52,7 +52,7 @@ final class GitCommit
     {
         return $this->message;
     }
-    public function tree() : array
+    public function tree() : ?object
     {
         return $this->tree;
     }
@@ -60,7 +60,7 @@ final class GitCommit
     {
         return $this->parents;
     }
-    public function verification() : array
+    public function verification() : ?object
     {
         return $this->verification;
     }

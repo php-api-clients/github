@@ -11,7 +11,7 @@ final class GlobalHook2
     private ?string $name = null;
     private ?bool $active = null;
     private array $events = array();
-    private array $config = array();
+    private ?object $config = null;
     private ?string $updated_at = null;
     private ?string $created_at = null;
     private ?string $url = null;
@@ -36,7 +36,7 @@ final class GlobalHook2
     {
         return $this->events;
     }
-    public function config() : array
+    public function config() : ?object
     {
         return $this->config;
     }

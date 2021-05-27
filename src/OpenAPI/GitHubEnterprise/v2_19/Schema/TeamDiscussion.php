@@ -41,7 +41,7 @@ final class TeamDiscussion
     private ?string $title = null;
     private ?string $updated_at = null;
     private ?string $url = null;
-    private array $reactions = array();
+    private ?object $reactions = null;
     public function author()
     {
         return $this->author;
@@ -110,7 +110,7 @@ final class TeamDiscussion
     {
         return $this->url;
     }
-    public function reactions() : array
+    public function reactions() : ?object
     {
         return $this->reactions;
     }

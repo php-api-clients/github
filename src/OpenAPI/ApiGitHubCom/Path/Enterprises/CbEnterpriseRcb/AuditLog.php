@@ -4,8 +4,8 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\\Enterprises\CbEnte
 
 final class AuditLog
 {
-    function get($enterprise, $phrase, $include, $after, $before, $order, int $page = 1, int $per_page = 30) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\AuditLog\GetAuditLogOperation
+    function get($enterprise, $phrase, $include, $after, $before, $order, int $page = 1, int $per_page = 30) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetAuditLogOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\AuditLog\GetAuditLogOperation($enterprise, $phrase, $include, $after, $before, $order, $page, $per_page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetAuditLogOperation($enterprise, $phrase, $include, $after, $before, $order, $page, $per_page);
     }
 }

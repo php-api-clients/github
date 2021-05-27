@@ -7,44 +7,44 @@ final class BranchProtection
     public const SCHEMA_TITLE = 'Branch Protection';
     public const SCHEMA_DESCRIPTION = 'Branch Protection';
     private ?string $url = null;
-    private array $required_status_checks = array();
+    private ?object $required_status_checks = null;
     /**
      * Protected Branch Admin Enforced
      */
-    private array $enforce_admins = array();
+    private ?object $enforce_admins = null;
     /**
      * Protected Branch Pull Request Review
      */
-    private array $required_pull_request_reviews = array();
+    private ?object $required_pull_request_reviews = null;
     /**
      * Branch Restriction Policy
      */
-    private array $restrictions = array();
-    private array $required_conversation_resolution = array();
+    private ?object $restrictions = null;
+    private ?object $required_conversation_resolution = null;
     private ?string $name = null;
     private ?string $protection_url = null;
-    private array $required_signatures = array();
+    private ?object $required_signatures = null;
     public function url() : ?string
     {
         return $this->url;
     }
-    public function required_status_checks() : array
+    public function required_status_checks() : ?object
     {
         return $this->required_status_checks;
     }
-    public function enforce_admins() : array
+    public function enforce_admins() : ?object
     {
         return $this->enforce_admins;
     }
-    public function required_pull_request_reviews() : array
+    public function required_pull_request_reviews() : ?object
     {
         return $this->required_pull_request_reviews;
     }
-    public function restrictions() : array
+    public function restrictions() : ?object
     {
         return $this->restrictions;
     }
-    public function required_conversation_resolution() : array
+    public function required_conversation_resolution() : ?object
     {
         return $this->required_conversation_resolution;
     }
@@ -56,7 +56,7 @@ final class BranchProtection
     {
         return $this->protection_url;
     }
-    public function required_signatures() : array
+    public function required_signatures() : ?object
     {
         return $this->required_signatures;
     }

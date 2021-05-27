@@ -10,8 +10,8 @@ final class PreReceiveHook
     private ?string $name = null;
     private ?string $enforcement = null;
     private ?string $script = null;
-    private array $script_repository = array();
-    private array $environment = array();
+    private ?object $script_repository = null;
+    private ?object $environment = null;
     private ?bool $allow_downstream_configuration = null;
     public function id() : ?int
     {
@@ -29,11 +29,11 @@ final class PreReceiveHook
     {
         return $this->script;
     }
-    public function script_repository() : array
+    public function script_repository() : ?object
     {
         return $this->script_repository;
     }
-    public function environment() : array
+    public function environment() : ?object
     {
         return $this->environment;
     }

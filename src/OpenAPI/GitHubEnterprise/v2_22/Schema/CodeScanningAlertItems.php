@@ -23,17 +23,13 @@ final class CodeScanningAlertItems
      */
     private ?string $html_url = null;
     /**
-     * The REST API URL for fetching the list of instances for an alert.
-     */
-    private ?string $instances_url = null;
-    /**
      * State of a code scanning alert.
      */
     private ?string $state = null;
     /**
      * Simple User
      */
-    private array $dismissed_by = array();
+    private ?object $dismissed_by = null;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -42,9 +38,13 @@ final class CodeScanningAlertItems
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
     private ?string $dismissed_reason = null;
-    private array $rule = array();
-    private array $tool = array();
-    private array $most_recent_instance = array();
+    private ?object $rule = null;
+    private ?object $tool = null;
+    private ?object $instance = null;
+    /**
+     * A classification of the file. For example to identify it as generated.
+     */
+    private ?string $classification = null;
     public function number() : ?int
     {
         return $this->number;
@@ -61,15 +61,11 @@ final class CodeScanningAlertItems
     {
         return $this->html_url;
     }
-    public function instances_url() : ?string
-    {
-        return $this->instances_url;
-    }
     public function state() : ?string
     {
         return $this->state;
     }
-    public function dismissed_by() : array
+    public function dismissed_by() : ?object
     {
         return $this->dismissed_by;
     }
@@ -81,16 +77,20 @@ final class CodeScanningAlertItems
     {
         return $this->dismissed_reason;
     }
-    public function rule() : array
+    public function rule() : ?object
     {
         return $this->rule;
     }
-    public function tool() : array
+    public function tool() : ?object
     {
         return $this->tool;
     }
-    public function most_recent_instance() : array
+    public function instance() : ?object
     {
-        return $this->most_recent_instance;
+        return $this->instance;
+    }
+    public function classification() : ?string
+    {
+        return $this->classification;
     }
 }

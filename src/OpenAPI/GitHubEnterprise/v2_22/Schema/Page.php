@@ -26,12 +26,12 @@ final class Page
      * The web address the Page can be accessed from.
      */
     private ?string $html_url = null;
-    private array $source = array();
+    private ?object $source = null;
     /**
      * Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      */
     private ?bool $public = null;
-    private array $https_certificate = array();
+    private ?object $https_certificate = null;
     /**
      * Whether https is enabled on the domain
      */
@@ -56,7 +56,7 @@ final class Page
     {
         return $this->html_url;
     }
-    public function source() : array
+    public function source() : ?object
     {
         return $this->source;
     }
@@ -64,7 +64,7 @@ final class Page
     {
         return $this->public;
     }
-    public function https_certificate() : array
+    public function https_certificate() : ?object
     {
         return $this->https_certificate;
     }

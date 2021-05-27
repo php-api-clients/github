@@ -19,7 +19,7 @@ final class Status
     /**
      * Simple User
      */
-    private array $creator = array();
+    private ?object $creator = null;
     public function url() : ?string
     {
         return $this->url;
@@ -60,7 +60,7 @@ final class Status
     {
         return $this->updated_at;
     }
-    public function creator() : array
+    public function creator() : ?object
     {
         return $this->creator;
     }

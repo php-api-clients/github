@@ -11,11 +11,11 @@ final class Commit
     private ?string $node_id = null;
     private ?string $html_url = null;
     private ?string $comments_url = null;
-    private array $commit = array();
+    private ?object $commit = null;
     private $author;
     private $committer;
     private array $parents = array();
-    private array $stats = array();
+    private ?object $stats = null;
     private array $files = array();
     public function url() : ?string
     {
@@ -37,7 +37,7 @@ final class Commit
     {
         return $this->comments_url;
     }
-    public function commit() : array
+    public function commit() : ?object
     {
         return $this->commit;
     }
@@ -53,7 +53,7 @@ final class Commit
     {
         return $this->parents;
     }
-    public function stats() : array
+    public function stats() : ?object
     {
         return $this->stats;
     }

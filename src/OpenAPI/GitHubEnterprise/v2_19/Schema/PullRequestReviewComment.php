@@ -53,7 +53,7 @@ final class PullRequestReviewComment
     /**
      * Simple User
      */
-    private array $user = array();
+    private ?object $user = null;
     /**
      * The text of the comment.
      */
@@ -72,8 +72,8 @@ final class PullRequestReviewComment
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private array $_links = array();
-    private array $reactions = array();
+    private ?object $_links = null;
+    private ?object $reactions = null;
     private ?string $body_html = null;
     private ?string $body_text = null;
     public function url() : ?string
@@ -120,7 +120,7 @@ final class PullRequestReviewComment
     {
         return $this->in_reply_to_id;
     }
-    public function user() : array
+    public function user() : ?object
     {
         return $this->user;
     }
@@ -148,11 +148,11 @@ final class PullRequestReviewComment
     {
         return $this->author_association;
     }
-    public function _links() : array
+    public function _links() : ?object
     {
         return $this->_links;
     }
-    public function reactions() : array
+    public function reactions() : ?object
     {
         return $this->reactions;
     }

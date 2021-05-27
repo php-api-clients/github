@@ -34,7 +34,7 @@ final class IssueSimple
     private ?bool $locked = null;
     private ?string $active_lock_reason = null;
     private ?int $comments = null;
-    private array $pull_request = array();
+    private ?object $pull_request = null;
     private ?string $closed_at = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
@@ -48,7 +48,7 @@ final class IssueSimple
     /**
      * A git repository
      */
-    private array $repository = array();
+    private ?object $repository = null;
     private $performed_via_github_app;
     public function id() : ?int
     {
@@ -130,7 +130,7 @@ final class IssueSimple
     {
         return $this->comments;
     }
-    public function pull_request() : array
+    public function pull_request() : ?object
     {
         return $this->pull_request;
     }
@@ -162,7 +162,7 @@ final class IssueSimple
     {
         return $this->timeline_url;
     }
-    public function repository() : array
+    public function repository() : ?object
     {
         return $this->repository;
     }

@@ -10,11 +10,11 @@ final class ScimEnterpriseUser
     private ?string $id = null;
     private ?string $externalId = null;
     private ?string $userName = null;
-    private array $name = array();
+    private ?object $name = null;
     private array $emails = array();
     private array $groups = array();
     private ?bool $active = null;
-    private array $meta = array();
+    private ?object $meta = null;
     public function schemas() : array
     {
         return $this->schemas;
@@ -31,7 +31,7 @@ final class ScimEnterpriseUser
     {
         return $this->userName;
     }
-    public function name() : array
+    public function name() : ?object
     {
         return $this->name;
     }
@@ -47,7 +47,7 @@ final class ScimEnterpriseUser
     {
         return $this->active;
     }
-    public function meta() : array
+    public function meta() : ?object
     {
         return $this->meta;
     }

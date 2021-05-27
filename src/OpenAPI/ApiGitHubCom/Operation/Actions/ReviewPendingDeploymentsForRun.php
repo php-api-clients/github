@@ -9,7 +9,7 @@ final class ReviewPendingDeploymentsForRun
     public string $owner;
     /****/
     public string $repo;
-    /**The id of the workflow run**/
+    /**The id of the workflow run.**/
     public int $run_id;
     public function operationId() : string
     {

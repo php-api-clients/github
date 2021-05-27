@@ -9,7 +9,7 @@ final class ListJobsForWorkflowRun
     public string $owner;
     /****/
     public string $repo;
-    /**The id of the workflow run**/
+    /**The id of the workflow run.**/
     public int $run_id;
     /**Filters jobs by their `completed_at` timestamp. Can be one of:  
     \* `latest`: Returns jobs from the most recent execution of the workflow run.  

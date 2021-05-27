@@ -16,7 +16,7 @@ final class OrganizationInvitation
     /**
      * Simple User
      */
-    private array $inviter = array();
+    private ?object $inviter = null;
     private ?int $team_count = null;
     private ?string $node_id = null;
     private ?string $invitation_teams_url = null;
@@ -48,7 +48,7 @@ final class OrganizationInvitation
     {
         return $this->failed_reason;
     }
-    public function inviter() : array
+    public function inviter() : ?object
     {
         return $this->inviter;
     }

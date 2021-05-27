@@ -6,16 +6,16 @@ final class CheckSuitePreference
 {
     public const SCHEMA_TITLE = 'Check Suite Preference';
     public const SCHEMA_DESCRIPTION = 'Check suite configuration preferences for a repository.';
-    private array $preferences = array();
+    private ?object $preferences = null;
     /**
      * Minimal Repository
      */
-    private array $repository = array();
-    public function preferences() : array
+    private ?object $repository = null;
+    public function preferences() : ?object
     {
         return $this->preferences;
     }
-    public function repository() : array
+    public function repository() : ?object
     {
         return $this->repository;
     }
