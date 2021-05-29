@@ -13,7 +13,7 @@ final class Membership
     private string $role;
     private string $organization_url;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $user = [];
+    private User $user;
 
     public function url(): string
     {

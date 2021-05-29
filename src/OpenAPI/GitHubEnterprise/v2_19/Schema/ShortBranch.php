@@ -16,7 +16,7 @@ final class ShortBranch
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\BranchProtection::class)
      */
-    private BranchProtection $protection = [];
+    private BranchProtection $protection;
     private string $protection_url;
 
     public function name(): string

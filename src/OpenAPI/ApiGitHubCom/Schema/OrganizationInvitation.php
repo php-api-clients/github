@@ -20,7 +20,7 @@ final class OrganizationInvitation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private SimpleUser $inviter = [];
+    private SimpleUser $inviter;
     private int $team_count;
     private string $node_id;
     private string $invitation_teams_url;

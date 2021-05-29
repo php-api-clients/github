@@ -83,13 +83,13 @@ final class WorkflowRun
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository = [];
+    private MinimalRepository $repository;
     /**
      * Minimal Repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $head_repository = [];
+    private MinimalRepository $head_repository;
     private int $head_repository_id;
 
     /**

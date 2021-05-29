@@ -25,7 +25,7 @@ final class CommitComment
      */
     private string $author_association;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\ReactionRollup::class) */
-    private ReactionRollup $reactions = [];
+    private ReactionRollup $reactions;
 
     public function html_url(): string
     {

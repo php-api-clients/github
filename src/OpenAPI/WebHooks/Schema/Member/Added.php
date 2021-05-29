@@ -14,21 +14,21 @@ final class Added
     public const SCHEMA_DESCRIPTION = 'Activity related to repository collaborators. The type of activity is specified in the action property.';
     private string $action;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $member = [];
+    private User $member;
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private Repository $repository = [];
+    private Repository $repository;
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private InstallationLite $installation = [];
+    private InstallationLite $installation;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
 
     public function action(): string
     {

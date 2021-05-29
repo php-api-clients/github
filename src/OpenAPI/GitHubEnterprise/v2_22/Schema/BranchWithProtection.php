@@ -14,15 +14,15 @@ final class BranchWithProtection
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Commit::class)
      */
-    private Commit $commit = [];
-    private array $_links  = [];
+    private Commit $commit;
+    private array $_links = [];
     private bool $protected;
     /**
      * Branch Protection
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\BranchProtection::class)
      */
-    private BranchProtection $protection = [];
+    private BranchProtection $protection;
     private string $protection_url;
     private string $pattern;
     private int $required_approving_review_count;

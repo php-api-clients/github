@@ -13,7 +13,7 @@ final class AutoMerge
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
-    private SimpleUser $enabled_by = [];
+    private SimpleUser $enabled_by;
     /**
      * The merge method to use.
      */

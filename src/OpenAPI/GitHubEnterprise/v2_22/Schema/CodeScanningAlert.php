@@ -34,7 +34,7 @@ final class CodeScanningAlert
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\SimpleUser::class)
      */
-    private SimpleUser $dismissed_by = [];
+    private SimpleUser $dismissed_by;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -44,9 +44,9 @@ final class CodeScanningAlert
      */
     private string $dismissed_reason;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertRule::class) */
-    private CodeScanningAlertRule $rule = [];
+    private CodeScanningAlertRule $rule;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAnalysisTool::class) */
-    private CodeScanningAnalysisTool $tool = [];
+    private CodeScanningAnalysisTool $tool;
 
     /**
      * The security alert number.

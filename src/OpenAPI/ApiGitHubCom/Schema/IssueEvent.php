@@ -21,13 +21,13 @@ final class IssueEvent
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSimple::class)
      */
-    private IssueSimple $issue = [];
+    private IssueSimple $issue;
     /**
      * Issue Event Label
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel::class)
      */
-    private IssueEventLabel $label = [];
+    private IssueEventLabel $label;
     private $assignee;
     private $assigner;
     private $review_requester;
@@ -37,27 +37,27 @@ final class IssueEvent
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team::class)
      */
-    private Team $requested_team = [];
+    private Team $requested_team;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventDismissedReview::class) */
-    private IssueEventDismissedReview $dismissed_review = [];
+    private IssueEventDismissedReview $dismissed_review;
     /**
      * Issue Event Milestone
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventMilestone::class)
      */
-    private IssueEventMilestone $milestone = [];
+    private IssueEventMilestone $milestone;
     /**
      * Issue Event Project Card
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventProjectCard::class)
      */
-    private IssueEventProjectCard $project_card = [];
+    private IssueEventProjectCard $project_card;
     /**
      * Issue Event Rename
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventRename::class)
      */
-    private IssueEventRename $rename = [];
+    private IssueEventRename $rename;
     /**
      * How the author is associated with the repository.
      */

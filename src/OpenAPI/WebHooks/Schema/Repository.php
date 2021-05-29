@@ -23,7 +23,7 @@ final class Repository
      */
     private bool $private;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $owner = [];
+    private User $owner;
     private string $html_url;
     private $description;
     private bool $fork;

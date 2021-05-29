@@ -20,7 +20,7 @@ final class IssueComment
     private int $id;
     private string $node_id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $user = [];
+    private User $user;
     private string $created_at;
     private string $updated_at;
     /**

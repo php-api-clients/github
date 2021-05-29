@@ -25,9 +25,9 @@ final class Deleted
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private Repository $repository = [];
+    private Repository $repository;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
 
     public function action(): string
     {

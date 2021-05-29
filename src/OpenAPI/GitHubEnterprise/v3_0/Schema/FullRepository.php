@@ -17,7 +17,7 @@ final class FullRepository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser::class)
      */
-    private SimpleUser $owner = [];
+    private SimpleUser $owner;
     private bool $private;
     private string $html_url;
     private string $description;
@@ -107,13 +107,13 @@ final class FullRepository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Repository::class)
      */
-    private Repository $parent = [];
+    private Repository $parent;
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Repository::class)
      */
-    private Repository $source = [];
+    private Repository $source;
     private int $forks;
     private string $master_branch;
     private int $open_issues;
@@ -127,7 +127,7 @@ final class FullRepository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\CodeOfConductSimple::class)
      */
-    private CodeOfConductSimple $code_of_conduct = [];
+    private CodeOfConductSimple $code_of_conduct;
 
     public function id(): int
     {

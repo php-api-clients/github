@@ -47,7 +47,7 @@ final class IssueSearchResultItem
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
      */
-    private Repository $repository = [];
+    private Repository $repository;
     private string $body_html;
     private string $body_text;
     private string $timeline_url;

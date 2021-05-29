@@ -21,7 +21,7 @@ final class CodeSearchResultItem
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository = [];
+    private MinimalRepository $repository;
     private number $score;
     private int $file_size;
     private string $language;

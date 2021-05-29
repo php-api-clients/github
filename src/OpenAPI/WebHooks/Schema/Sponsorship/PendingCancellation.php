@@ -17,7 +17,7 @@ final class PendingCancellation
      */
     private string $effective_date;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
 
     public function action(): string
     {

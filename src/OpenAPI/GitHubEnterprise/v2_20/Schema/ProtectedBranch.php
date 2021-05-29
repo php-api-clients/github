@@ -14,19 +14,19 @@ final class ProtectedBranch
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\StatusCheckPolicy::class)
      */
-    private StatusCheckPolicy $required_status_checks = [];
-    private array $required_pull_request_reviews      = [];
-    private array $required_signatures                = [];
-    private array $enforce_admins                     = [];
-    private array $required_linear_history            = [];
-    private array $allow_force_pushes                 = [];
-    private array $allow_deletions                    = [];
+    private StatusCheckPolicy $required_status_checks;
+    private array $required_pull_request_reviews = [];
+    private array $required_signatures           = [];
+    private array $enforce_admins                = [];
+    private array $required_linear_history       = [];
+    private array $allow_force_pushes            = [];
+    private array $allow_deletions               = [];
     /**
      * Branch Restriction Policy
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\BranchRestrictionPolicy::class)
      */
-    private BranchRestrictionPolicy $restrictions   = [];
+    private BranchRestrictionPolicy $restrictions;
     private array $required_conversation_resolution = [];
 
     public function url(): string

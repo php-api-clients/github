@@ -14,7 +14,7 @@ final class StarredRepository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\Repository::class)
      */
-    private Repository $repo = [];
+    private Repository $repo;
 
     public function starred_at(): string
     {

@@ -13,7 +13,7 @@ final class Installation
      */
     private int $id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $account = [];
+    private User $account;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */

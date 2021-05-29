@@ -41,12 +41,12 @@ final class Release
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser::class)
      */
-    private SimpleUser $author = [];
-    private array $assets      = [];
+    private SimpleUser $author;
+    private array $assets = [];
     private string $body_html;
     private string $body_text;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\ReactionRollup::class) */
-    private ReactionRollup $reactions = [];
+    private ReactionRollup $reactions;
 
     public function url(): string
     {

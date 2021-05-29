@@ -32,7 +32,7 @@ final class Hook
     private string $test_url;
     private string $ping_url;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\HookResponse::class) */
-    private HookResponse $last_response = [];
+    private HookResponse $last_response;
 
     public function type(): string
     {

@@ -13,7 +13,7 @@ final class Created
     private string $action;
     private array $sponsorship = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
 
     public function action(): string
     {

@@ -13,7 +13,7 @@ final class ScopedInstallation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions::class)
      */
-    private AppPermissions $permissions = [];
+    private AppPermissions $permissions;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -27,7 +27,7 @@ final class ScopedInstallation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private SimpleUser $account = [];
+    private SimpleUser $account;
 
     /**
      * The permissions granted to the user-to-server access token.

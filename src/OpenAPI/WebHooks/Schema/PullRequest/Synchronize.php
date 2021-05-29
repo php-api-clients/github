@@ -22,23 +22,23 @@ final class Synchronize
     private string $before;
     private string $after;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class) */
-    private PullRequest $pull_request = [];
+    private PullRequest $pull_request;
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private Repository $repository = [];
+    private Repository $repository;
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private InstallationLite $installation = [];
+    private InstallationLite $installation;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private Organization $organization = [];
+    private Organization $organization;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
 
     public function action(): string
     {

@@ -17,7 +17,7 @@ final class RepositoryInvitation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository = [];
+    private MinimalRepository $repository;
     private $invitee;
     private $inviter;
     /**

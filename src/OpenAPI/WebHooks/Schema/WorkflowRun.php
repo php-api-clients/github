@@ -18,9 +18,9 @@ final class WorkflowRun
     private string $event;
     private string $head_branch;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\CommitSimple::class) */
-    private CommitSimple $head_commit = [];
+    private CommitSimple $head_commit;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\RepositoryLite::class) */
-    private RepositoryLite $head_repository = [];
+    private RepositoryLite $head_repository;
     private string $head_sha;
     private string $html_url;
     private int $id;
@@ -30,7 +30,7 @@ final class WorkflowRun
     private string $name;
     private array $pull_requests = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\RepositoryLite::class) */
-    private RepositoryLite $repository = [];
+    private RepositoryLite $repository;
     private string $rerun_url;
     private int $run_number;
     private string $status;

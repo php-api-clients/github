@@ -19,7 +19,7 @@ final class Removed
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation::class)
      */
-    private Installation $installation = [];
+    private Installation $installation;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -34,7 +34,7 @@ final class Removed
     private array $repositories_removed = [];
     private $requester;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
 
     public function action(): string
     {

@@ -29,13 +29,13 @@ final class Page
      */
     private string $html_url;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\PagesSourceHash::class) */
-    private PagesSourceHash $source = [];
+    private PagesSourceHash $source;
     /**
      * Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      */
     private bool $public;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\PagesHttpsCertificate::class) */
-    private PagesHttpsCertificate $https_certificate = [];
+    private PagesHttpsCertificate $https_certificate;
     /**
      * Whether https is enabled on the domain
      */

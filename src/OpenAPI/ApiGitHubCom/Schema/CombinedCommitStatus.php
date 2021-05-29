@@ -17,7 +17,7 @@ final class CombinedCommitStatus
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository = [];
+    private MinimalRepository $repository;
     private string $commit_url;
     private string $url;
 

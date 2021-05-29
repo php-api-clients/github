@@ -31,13 +31,13 @@ final class Commit
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private Committer $author = [];
+    private Committer $author;
     /**
      * Metaproperties for Git author/committer information.
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private Committer $committer = [];
+    private Committer $committer;
     /**
      * An array of files added in the commit.
      */

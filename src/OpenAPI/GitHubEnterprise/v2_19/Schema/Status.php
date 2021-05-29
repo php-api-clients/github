@@ -23,7 +23,7 @@ final class Status
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleUser::class)
      */
-    private SimpleUser $creator = [];
+    private SimpleUser $creator;
 
     public function url(): string
     {

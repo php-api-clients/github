@@ -19,17 +19,17 @@ final class MemberAdded
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership::class)
      */
-    private Membership $membership = [];
+    private Membership $membership;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private InstallationLite $installation = [];
+    private InstallationLite $installation;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private Organization $organization = [];
+    private Organization $organization;
 
     public function action(): string
     {

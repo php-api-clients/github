@@ -27,7 +27,7 @@ final class ReleaseAsset
     private string $created_at;
     private string $updated_at;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $uploader = [];
+    private User $uploader;
 
     public function url(): string
     {

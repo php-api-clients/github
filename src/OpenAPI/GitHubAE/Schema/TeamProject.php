@@ -23,7 +23,7 @@ final class TeamProject
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
-    private SimpleUser $creator = [];
+    private SimpleUser $creator;
     private string $created_at;
     private string $updated_at;
     /**

@@ -34,7 +34,7 @@ final class IssueComment
     private string $author_association;
     private $performed_via_github_app;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\ReactionRollup::class) */
-    private ReactionRollup $reactions = [];
+    private ReactionRollup $reactions;
 
     /**
      * Unique identifier of the issue comment

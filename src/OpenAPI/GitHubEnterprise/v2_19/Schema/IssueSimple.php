@@ -44,7 +44,7 @@ final class IssueSimple
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\Repository::class)
      */
-    private Repository $repository = [];
+    private Repository $repository;
     private $performed_via_github_app;
 
     public function id(): int

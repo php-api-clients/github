@@ -23,7 +23,7 @@ final class OrgMembership
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
      */
-    private OrganizationSimple $organization = [];
+    private OrganizationSimple $organization;
     private $user;
     private array $permissions = [];
 

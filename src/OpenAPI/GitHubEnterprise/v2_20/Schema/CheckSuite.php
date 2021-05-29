@@ -27,7 +27,7 @@ final class CheckSuite
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository = [];
+    private MinimalRepository $repository;
     private string $created_at;
     private string $updated_at;
     /**
@@ -35,7 +35,7 @@ final class CheckSuite
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\SimpleCommit::class)
      */
-    private SimpleCommit $head_commit = [];
+    private SimpleCommit $head_commit;
     private int $latest_check_runs_count;
     private string $check_runs_url;
 

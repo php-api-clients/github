@@ -25,7 +25,7 @@ final class GitTag
     private array $tagger = [];
     private array $object = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Verification::class) */
-    private Verification $verification = [];
+    private Verification $verification;
 
     public function node_id(): string
     {

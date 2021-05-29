@@ -20,7 +20,7 @@ final class SimplePullRequest
     private bool $locked;
     private string $title;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $user = [];
+    private User $user;
     private string $body;
     private string $created_at;
     private string $updated_at;

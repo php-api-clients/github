@@ -41,7 +41,7 @@ final class CheckRun
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\DeploymentSimple::class)
      */
-    private DeploymentSimple $deployment = [];
+    private DeploymentSimple $deployment;
 
     /**
      * The id of the check.

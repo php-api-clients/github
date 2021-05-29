@@ -14,17 +14,17 @@ final class Unblocked
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $blocked_user = [];
+    private User $blocked_user;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private InstallationLite $installation = [];
+    private InstallationLite $installation;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private Organization $organization = [];
+    private Organization $organization;
 
     public function action(): string
     {

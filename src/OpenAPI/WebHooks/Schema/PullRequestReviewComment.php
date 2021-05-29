@@ -49,7 +49,7 @@ final class PullRequestReviewComment
      */
     private string $original_commit_id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $user = [];
+    private User $user;
     /**
      * The text of the comment.
      */

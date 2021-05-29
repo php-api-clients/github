@@ -49,7 +49,7 @@ final class RepositoryLite
     private string $node_id;
     private string $notifications_url;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $owner = [];
+    private User $owner;
     /**
      * Whether the repository is private or public.
      */

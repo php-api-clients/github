@@ -41,7 +41,7 @@ final class SecretScanningAlert
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private SimpleUser $resolved_by = [];
+    private SimpleUser $resolved_by;
     /**
      * The type of secret that secret scanning detected.
      */

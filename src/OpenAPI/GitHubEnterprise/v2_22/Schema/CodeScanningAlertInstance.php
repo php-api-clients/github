@@ -32,7 +32,7 @@ final class CodeScanningAlertInstance
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertLocation::class)
      */
-    private CodeScanningAlertLocation $location = [];
+    private CodeScanningAlertLocation $location;
     private string $html_url;
     /**
      * Classifications that have been applied to the file that triggered the alert.

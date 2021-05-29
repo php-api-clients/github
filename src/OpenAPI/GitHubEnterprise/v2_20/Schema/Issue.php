@@ -59,14 +59,14 @@ final class Issue
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\Repository::class)
      */
-    private Repository $repository = [];
+    private Repository $repository;
     private $performed_via_github_app;
     /**
      * How the author is associated with the repository.
      */
     private string $author_association;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\ReactionRollup::class) */
-    private ReactionRollup $reactions = [];
+    private ReactionRollup $reactions;
 
     public function id(): int
     {

@@ -16,23 +16,23 @@ final class Closed
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Project::class) */
-    private Project $project = [];
+    private Project $project;
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private Repository $repository = [];
+    private Repository $repository;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender = [];
+    private User $sender;
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private InstallationLite $installation = [];
+    private InstallationLite $installation;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private Organization $organization = [];
+    private Organization $organization;
 
     public function action(): string
     {

@@ -18,7 +18,7 @@ final class App
     private string $slug;
     private string $node_id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $owner = [];
+    private User $owner;
     /**
      * The name of the GitHub app
      */

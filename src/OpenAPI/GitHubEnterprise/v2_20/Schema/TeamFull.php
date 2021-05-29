@@ -44,7 +44,7 @@ final class TeamFull
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\OrganizationFull::class)
      */
-    private OrganizationFull $organization = [];
+    private OrganizationFull $organization;
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */

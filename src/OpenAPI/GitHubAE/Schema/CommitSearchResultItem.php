@@ -24,7 +24,7 @@ final class CommitSearchResultItem
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository = [];
+    private MinimalRepository $repository;
     private number $score;
     private string $node_id;
     private array $text_matches = [];

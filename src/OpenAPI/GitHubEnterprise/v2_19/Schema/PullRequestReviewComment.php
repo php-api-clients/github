@@ -57,7 +57,7 @@ final class PullRequestReviewComment
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleUser::class)
      */
-    private SimpleUser $user = [];
+    private SimpleUser $user;
     /**
      * The text of the comment.
      */
@@ -78,7 +78,7 @@ final class PullRequestReviewComment
     private string $author_association;
     private array $_links = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\ReactionRollup::class) */
-    private ReactionRollup $reactions = [];
+    private ReactionRollup $reactions;
     private string $body_html;
     private string $body_text;
 

@@ -15,14 +15,14 @@ final class Event
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\Actor::class)
      */
-    private Actor $actor = [];
-    private array $repo  = [];
+    private Actor $actor;
+    private array $repo = [];
     /**
      * Actor
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\Actor::class)
      */
-    private Actor $org     = [];
+    private Actor $org;
     private array $payload = [];
     private bool $public;
     private string $created_at;

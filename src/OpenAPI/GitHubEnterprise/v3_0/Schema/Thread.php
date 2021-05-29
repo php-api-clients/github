@@ -14,8 +14,8 @@ final class Thread
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository = [];
-    private array $subject                = [];
+    private MinimalRepository $repository;
+    private array $subject = [];
     private string $reason;
     private bool $unread;
     private string $updated_at;

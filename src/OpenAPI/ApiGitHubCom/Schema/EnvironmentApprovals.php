@@ -23,7 +23,7 @@ final class EnvironmentApprovals
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private SimpleUser $user = [];
+    private SimpleUser $user;
     /**
      * The comment submitted with the deployment review
      */

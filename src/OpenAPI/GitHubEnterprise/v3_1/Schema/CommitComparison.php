@@ -18,13 +18,13 @@ final class CommitComparison
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Commit::class)
      */
-    private Commit $base_commit = [];
+    private Commit $base_commit;
     /**
      * Commit
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Commit::class)
      */
-    private Commit $merge_base_commit = [];
+    private Commit $merge_base_commit;
     private string $status;
     private int $ahead_by;
     private int $behind_by;

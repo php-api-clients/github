@@ -15,7 +15,7 @@ final class Changed
     private array $sender = [];
     private $marketplace_purchase;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class) */
-    private MarketplacePurchase $previous_marketplace_purchase = [];
+    private MarketplacePurchase $previous_marketplace_purchase;
 
     public function action(): string
     {

@@ -16,7 +16,7 @@ final class IssueEventForIssue
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
-    private SimpleUser $actor = [];
+    private SimpleUser $actor;
     private string $event;
     private string $commit_id;
     private string $commit_url;

@@ -33,7 +33,7 @@ final class CodeScanningAlertItems
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\SimpleUser::class)
      */
-    private SimpleUser $dismissed_by = [];
+    private SimpleUser $dismissed_by;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -43,11 +43,11 @@ final class CodeScanningAlertItems
      */
     private string $dismissed_reason;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertRuleSummary::class) */
-    private CodeScanningAlertRuleSummary $rule = [];
+    private CodeScanningAlertRuleSummary $rule;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAnalysisTool::class) */
-    private CodeScanningAnalysisTool $tool = [];
+    private CodeScanningAnalysisTool $tool;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertInstance::class) */
-    private CodeScanningAlertInstance $instance = [];
+    private CodeScanningAlertInstance $instance;
     /**
      * A classification of the file. For example to identify it as generated.
      */

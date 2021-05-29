@@ -33,7 +33,7 @@ final class Environment
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy::class)
      */
-    private DeploymentBranchPolicy $deployment_branch_policy = [];
+    private DeploymentBranchPolicy $deployment_branch_policy;
 
     /**
      * The id of the environment.

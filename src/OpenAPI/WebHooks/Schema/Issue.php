@@ -25,7 +25,7 @@ final class Issue
      */
     private string $title;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $user    = [];
+    private User $user;
     private array $labels = [];
     /**
      * State of the issue; either 'open' or 'closed'

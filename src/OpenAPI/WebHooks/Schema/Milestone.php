@@ -23,7 +23,7 @@ final class Milestone
     private string $title;
     private $description;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $creator = [];
+    private User $creator;
     private int $open_issues;
     private int $closed_issues;
     /**

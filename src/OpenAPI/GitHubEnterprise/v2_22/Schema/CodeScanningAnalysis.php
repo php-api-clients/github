@@ -55,7 +55,7 @@ final class CodeScanningAnalysis
      */
     private string $sarif_id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAnalysisTool::class) */
-    private CodeScanningAnalysisTool $tool = [];
+    private CodeScanningAnalysisTool $tool;
     private bool $deletable;
     /**
      * Warning generated when processing the analysis

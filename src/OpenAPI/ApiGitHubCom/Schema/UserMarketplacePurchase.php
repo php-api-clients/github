@@ -15,13 +15,13 @@ final class UserMarketplacePurchase
     private string $free_trial_ends_on;
     private string $updated_at;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceAccount::class) */
-    private MarketplaceAccount $account = [];
+    private MarketplaceAccount $account;
     /**
      * Marketplace Listing Plan
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan::class)
      */
-    private MarketplaceListingPlan $plan = [];
+    private MarketplaceListingPlan $plan;
 
     public function billing_cycle(): string
     {

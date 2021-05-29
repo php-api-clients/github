@@ -15,19 +15,19 @@ final class BranchProtection
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\ProtectedBranchAdminEnforced::class)
      */
-    private ProtectedBranchAdminEnforced $enforce_admins = [];
+    private ProtectedBranchAdminEnforced $enforce_admins;
     /**
      * Protected Branch Pull Request Review
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\ProtectedBranchPullRequestReview::class)
      */
-    private ProtectedBranchPullRequestReview $required_pull_request_reviews = [];
+    private ProtectedBranchPullRequestReview $required_pull_request_reviews;
     /**
      * Branch Restriction Policy
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\BranchRestrictionPolicy::class)
      */
-    private BranchRestrictionPolicy $restrictions   = [];
+    private BranchRestrictionPolicy $restrictions;
     private array $required_conversation_resolution = [];
     private string $name;
     private string $protection_url;

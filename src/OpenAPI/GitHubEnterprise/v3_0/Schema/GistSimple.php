@@ -38,7 +38,7 @@ final class GistSimple
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser::class)
      */
-    private SimpleUser $owner = [];
+    private SimpleUser $owner;
     private bool $truncated;
 
     /**

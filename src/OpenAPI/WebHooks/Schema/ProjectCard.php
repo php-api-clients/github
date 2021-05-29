@@ -23,7 +23,7 @@ final class ProjectCard
      */
     private bool $archived;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $creator = [];
+    private User $creator;
     private string $created_at;
     private string $updated_at;
     private string $content_url;

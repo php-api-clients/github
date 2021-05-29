@@ -52,7 +52,7 @@ final class PullRequestSimple
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\AutoMerge::class)
      */
-    private AutoMerge $auto_merge = [];
+    private AutoMerge $auto_merge;
     /**
      * Indicates whether or not the pull request is a draft.
      */
