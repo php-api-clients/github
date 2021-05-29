@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "12c7dc1e449f566a36cdc305031a9cc957cdf317"
+                "reference": "ed2561a5ed796501832d8a25b7bfd45431eeb848"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/12c7dc1e449f566a36cdc305031a9cc957cdf317",
-                "reference": "12c7dc1e449f566a36cdc305031a9cc957cdf317",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/ed2561a5ed796501832d8a25b7bfd45431eeb848",
+                "reference": "ed2561a5ed796501832d8a25b7bfd45431eeb848",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2021-05-29T11:39:07+00:00"
+            "time": "2021-05-29T14:34:58+00:00"
         },
         {
             "name": "cebe/php-openapi",

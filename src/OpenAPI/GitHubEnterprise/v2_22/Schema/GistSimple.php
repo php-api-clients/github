@@ -4,12 +4,23 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\GistSimple\Forks;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\GistSimple\History;
+
 final class GistSimple
 {
     public const SCHEMA_TITLE       = 'Gist Simple';
     public const SCHEMA_DESCRIPTION = 'Gist Simple';
-    private array $forks            = [];
-    private array $history          = [];
+    /**
+     * @var array<Forks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\GistSimple\Forks::class)
+     */
+    private array $forks = [];
+    /**
+     * @var array<History>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\GistSimple\History::class)
+     */
+    private array $history = [];
     /**
      * Gist
      */

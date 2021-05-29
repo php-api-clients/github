@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\ContentTree\Entries;
+
 final class ContentTree
 {
     public const SCHEMA_TITLE       = 'Content Tree';
@@ -17,8 +19,12 @@ final class ContentTree
     private ?string $git_url        = null;
     private ?string $html_url       = null;
     private ?string $download_url   = null;
-    private array $entries          = [];
-    private array $_links           = [];
+    /**
+     * @var array<Entries>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\ContentTree\Entries::class)
+     */
+    private array $entries = [];
+    private array $_links  = [];
 
     public function type(): ?string
     {

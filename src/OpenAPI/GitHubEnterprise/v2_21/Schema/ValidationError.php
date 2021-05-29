@@ -4,13 +4,19 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\ValidationError\Errors;
+
 final class ValidationError
 {
     public const SCHEMA_TITLE          = 'Validation Error';
     public const SCHEMA_DESCRIPTION    = 'Validation Error';
     private ?string $message           = null;
     private ?string $documentation_url = null;
-    private array $errors              = [];
+    /**
+     * @var array<Errors>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\ValidationError\Errors::class)
+     */
+    private array $errors = [];
 
     public function message(): ?string
     {

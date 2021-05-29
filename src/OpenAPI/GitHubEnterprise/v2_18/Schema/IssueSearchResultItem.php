@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\IssueSearchResultItem\Labels;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\IssueSearchResultItem\TextMatches;
+
 final class IssueSearchResultItem
 {
     public const SCHEMA_TITLE           = 'Issue Search Result Item';
@@ -26,6 +29,10 @@ final class IssueSearchResultItem
      */
     private array $assignees = [];
     private $user;
+    /**
+     * @var array<Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\IssueSearchResultItem\Labels::class)
+     */
     private array $labels  = [];
     private ?string $state = null;
     private $assignee;
@@ -34,6 +41,10 @@ final class IssueSearchResultItem
     private ?string $created_at = null;
     private ?string $updated_at = null;
     private ?string $closed_at  = null;
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\IssueSearchResultItem\TextMatches::class)
+     */
     private array $text_matches = [];
     private array $pull_request = [];
     private ?string $body       = null;

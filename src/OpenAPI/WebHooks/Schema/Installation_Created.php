@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation_Created\Repositories;
+
 final class Installation_Created
 {
     public const SCHEMA_TITLE       = 'installation created event';
@@ -17,6 +19,9 @@ final class Installation_Created
     private ?Installation $installation = null;
     /**
      * An array of repository objects that the installation can access.
+     *
+     * @var array<Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation_Created\Repositories::class)
      */
     private array $repositories = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */

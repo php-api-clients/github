@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps;
+
 final class Job
 {
     public const SCHEMA_TITLE       = 'Job';
@@ -46,6 +48,9 @@ final class Job
     private ?string $name = null;
     /**
      * Steps in this job.
+     *
+     * @var array<Steps>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps::class)
      */
     private array $steps           = [];
     private ?string $check_run_url = null;

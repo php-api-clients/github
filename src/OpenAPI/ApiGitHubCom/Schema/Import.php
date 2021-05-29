@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices;
+
 final class Import
 {
     public const SCHEMA_TITLE       = 'Import';
@@ -26,6 +28,10 @@ final class Import
     private ?bool $has_large_files  = null;
     private ?int $large_files_size  = null;
     private ?int $large_files_count = null;
+    /**
+     * @var array<ProjectChoices>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices::class)
+     */
     private array $project_choices  = [];
     private ?string $message        = null;
     private ?int $authors_count     = null;

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Reviewers;
+
 final class PendingDeployment
 {
     public const SCHEMA_TITLE       = 'Pending Deployment';
@@ -23,6 +25,9 @@ final class PendingDeployment
     private ?bool $current_user_can_approve = null;
     /**
      * The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+     *
+     * @var array<Reviewers>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Reviewers::class)
      */
     private array $reviewers = [];
 

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\UserSearchResultItem\TextMatches;
+
 final class UserSearchResultItem
 {
     public const SCHEMA_TITLE            = 'User Search Result Item';
@@ -38,10 +40,14 @@ final class UserSearchResultItem
     private ?string $location            = null;
     private ?bool $site_admin            = null;
     private ?bool $hireable              = null;
-    private array $text_matches          = [];
-    private ?string $blog                = null;
-    private ?string $company             = null;
-    private ?string $suspended_at        = null;
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\UserSearchResultItem\TextMatches::class)
+     */
+    private array $text_matches   = [];
+    private ?string $blog         = null;
+    private ?string $company      = null;
+    private ?string $suspended_at = null;
 
     public function login(): ?string
     {

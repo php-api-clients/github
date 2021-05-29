@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Emails;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations;
+
 final class ScimUser
 {
     public const SCHEMA_TITLE       = 'SCIM /Users';
@@ -31,6 +34,9 @@ final class ScimUser
     private array $name          = [];
     /**
      * user emails
+     *
+     * @var array<Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Emails::class)
      */
     private array $emails = [];
     /**
@@ -44,6 +50,9 @@ final class ScimUser
     private ?int $organization_id = null;
     /**
      * Set of operations to be performed
+     *
+     * @var array<Operations>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations::class)
      */
     private array $operations = [];
     /**

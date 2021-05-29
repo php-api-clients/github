@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeSearchResultItem\TextMatches;
+
 final class CodeSearchResultItem
 {
     public const SCHEMA_TITLE       = 'Code Search Result Item';
@@ -25,7 +27,11 @@ final class CodeSearchResultItem
     private ?string $language              = null;
     private ?string $last_modified_at      = null;
     private array $line_numbers            = [];
-    private array $text_matches            = [];
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeSearchResultItem\TextMatches::class)
+     */
+    private array $text_matches = [];
 
     public function name(): ?string
     {

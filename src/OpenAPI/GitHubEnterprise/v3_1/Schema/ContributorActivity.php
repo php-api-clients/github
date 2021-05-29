@@ -4,12 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Weeks;
+
 final class ContributorActivity
 {
     public const SCHEMA_TITLE       = 'Contributor Activity';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     private $author;
-    private ?int $total  = null;
+    private ?int $total = null;
+    /**
+     * @var array<Weeks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Weeks::class)
+     */
     private array $weeks = [];
 
     public function author()

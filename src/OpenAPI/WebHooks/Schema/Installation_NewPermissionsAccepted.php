@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation_NewPermissionsAccepted\Repositories;
+
 final class Installation_NewPermissionsAccepted
 {
     public const SCHEMA_TITLE       = 'installation new_permissions_accepted event';
@@ -17,6 +19,9 @@ final class Installation_NewPermissionsAccepted
     private ?Installation $installation = null;
     /**
      * An array of repository objects that the installation can access.
+     *
+     * @var array<Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation_NewPermissionsAccepted\Repositories::class)
      */
     private array $repositories = [];
     private ?null $requester    = null;

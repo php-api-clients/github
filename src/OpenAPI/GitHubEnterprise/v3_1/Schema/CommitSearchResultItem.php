@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Parents;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\TextMatches;
+
 final class CommitSearchResultItem
 {
     public const SCHEMA_TITLE       = 'Commit Search Result Item';
@@ -15,6 +18,10 @@ final class CommitSearchResultItem
     private array $commit           = [];
     private $author;
     private $committer;
+    /**
+     * @var array<Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Parents::class)
+     */
     private array $parents = [];
     /**
      * Minimal Repository
@@ -24,7 +31,11 @@ final class CommitSearchResultItem
     private ?MinimalRepository $repository = null;
     private ?number $score                 = null;
     private ?string $node_id               = null;
-    private array $text_matches            = [];
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\TextMatches::class)
+     */
+    private array $text_matches = [];
 
     public function url(): ?string
     {

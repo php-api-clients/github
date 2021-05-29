@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner\Labels;
+
 final class Runner
 {
     public const SCHEMA_TITLE       = 'Self hosted runners';
@@ -25,7 +27,11 @@ final class Runner
      */
     private ?string $status = null;
     private ?bool $busy     = null;
-    private array $labels   = [];
+    /**
+     * @var array<Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner\Labels::class)
+     */
+    private array $labels = [];
 
     public function id(): ?int
     {

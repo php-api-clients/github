@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Status_Event\Branches;
+
 final class Status_Event
 {
     public const SCHEMA_TITLE       = 'status event';
@@ -34,6 +36,9 @@ final class Status_Event
     private array $commit  = [];
     /**
      * An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
+     *
+     * @var array<Branches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Status_Event\Branches::class)
      */
     private array $branches     = [];
     private ?string $created_at = null;

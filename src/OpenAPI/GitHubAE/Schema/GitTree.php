@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GitTree\Tree;
+
 final class GitTree
 {
     public const SCHEMA_TITLE       = 'Git Tree';
@@ -13,6 +15,9 @@ final class GitTree
     private ?bool $truncated        = null;
     /**
      * Objects specifying a tree structure
+     *
+     * @var array<Tree>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GitTree\Tree::class)
      */
     private array $tree = [];
 

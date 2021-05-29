@@ -4,12 +4,17 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Gollum_Event\Pages;
+
 final class Gollum_Event
 {
     public const SCHEMA_TITLE       = 'gollum event';
     public const SCHEMA_DESCRIPTION = 'A wiki page is created or updated.';
     /**
      * The pages that were updated.
+     *
+     * @var array<Pages>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Gollum_Event\Pages::class)
      */
     private array $pages = [];
     /**

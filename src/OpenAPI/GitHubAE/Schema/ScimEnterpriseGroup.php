@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ScimEnterpriseGroup\Members;
+
 final class ScimEnterpriseGroup
 {
     public const SCHEMA_TITLE       = 'scim-enterprise-group';
@@ -12,8 +14,12 @@ final class ScimEnterpriseGroup
     private ?string $id             = null;
     private ?string $externalId     = null;
     private ?string $displayName    = null;
-    private array $members          = [];
-    private array $meta             = [];
+    /**
+     * @var array<Members>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ScimEnterpriseGroup\Members::class)
+     */
+    private array $members = [];
+    private array $meta    = [];
 
     public function schemas(): array
     {

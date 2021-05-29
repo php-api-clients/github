@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources;
+
 final class ScimUserListEnterprise
 {
     public const SCHEMA_TITLE       = 'scim-user-list-enterprise';
@@ -12,7 +14,11 @@ final class ScimUserListEnterprise
     private ?number $totalResults   = null;
     private ?number $itemsPerPage   = null;
     private ?number $startIndex     = null;
-    private array $Resources        = [];
+    /**
+     * @var array<Resources>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources::class)
+     */
+    private array $Resources = [];
 
     public function schemas(): array
     {

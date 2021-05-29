@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches;
+
 final class RepoSearchResultItem
 {
     public const SCHEMA_TITLE       = 'Repo Search Result Item';
@@ -87,7 +89,11 @@ final class RepoSearchResultItem
      */
     private ?bool $disabled = null;
     private $license;
-    private array $permissions            = [];
+    private array $permissions = [];
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches::class)
+     */
     private array $text_matches           = [];
     private ?string $temp_clone_token     = null;
     private ?bool $allow_merge_commit     = null;

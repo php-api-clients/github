@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Commit\Files;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Commit\Parents;
+
 final class Commit
 {
     public const SCHEMA_TITLE       = 'Commit';
@@ -16,9 +19,17 @@ final class Commit
     private array $commit           = [];
     private $author;
     private $committer;
+    /**
+     * @var array<Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Commit\Parents::class)
+     */
     private array $parents = [];
     private array $stats   = [];
-    private array $files   = [];
+    /**
+     * @var array<Files>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Commit\Files::class)
+     */
+    private array $files = [];
 
     public function url(): ?string
     {

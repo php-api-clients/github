@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Emails;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Groups;
+
 final class ScimEnterpriseUser
 {
     public const SCHEMA_TITLE       = 'scim-enterprise-user';
@@ -13,10 +16,18 @@ final class ScimEnterpriseUser
     private ?string $externalId     = null;
     private ?string $userName       = null;
     private array $name             = [];
-    private array $emails           = [];
-    private array $groups           = [];
-    private ?bool $active           = null;
-    private array $meta             = [];
+    /**
+     * @var array<Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Emails::class)
+     */
+    private array $emails = [];
+    /**
+     * @var array<Groups>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Groups::class)
+     */
+    private array $groups = [];
+    private ?bool $active = null;
+    private array $meta   = [];
 
     public function schemas(): array
     {

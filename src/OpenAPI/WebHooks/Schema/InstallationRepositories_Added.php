@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories_Added\RepositoriesAdded;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories_Added\RepositoriesRemoved;
+
 final class InstallationRepositories_Added
 {
     public const SCHEMA_TITLE       = 'installation_repositories added event';
@@ -21,10 +24,16 @@ final class InstallationRepositories_Added
     private ?string $repository_selection = null;
     /**
      * An array of repository objects, which were added to the installation.
+     *
+     * @var array<RepositoriesAdded>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories_Added\RepositoriesAdded::class)
      */
     private array $repositories_added = [];
     /**
      * An array of repository objects, which were removed from the installation.
+     *
+     * @var array<RepositoriesRemoved>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories_Added\RepositoriesRemoved::class)
      */
     private array $repositories_removed = [];
     private $requester;

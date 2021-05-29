@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Apps;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Teams;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Users;
+
 final class BranchRestrictionPolicy
 {
     public const SCHEMA_TITLE       = 'Branch Restriction Policy';
@@ -12,9 +16,21 @@ final class BranchRestrictionPolicy
     private ?string $users_url      = null;
     private ?string $teams_url      = null;
     private ?string $apps_url       = null;
-    private array $users            = [];
-    private array $teams            = [];
-    private array $apps             = [];
+    /**
+     * @var array<Users>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Users::class)
+     */
+    private array $users = [];
+    /**
+     * @var array<Teams>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Teams::class)
+     */
+    private array $teams = [];
+    /**
+     * @var array<Apps>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Apps::class)
+     */
+    private array $apps = [];
 
     public function url(): ?string
     {

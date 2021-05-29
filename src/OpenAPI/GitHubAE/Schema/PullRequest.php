@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequest\Labels;
+
 final class PullRequest
 {
     public const SCHEMA_TITLE            = 'Pull Request';
@@ -35,6 +37,10 @@ final class PullRequest
     private ?string $title = null;
     private $user;
     private ?string $body = null;
+    /**
+     * @var array<Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequest\Labels::class)
+     */
     private array $labels = [];
     private $milestone;
     private ?string $active_lock_reason = null;

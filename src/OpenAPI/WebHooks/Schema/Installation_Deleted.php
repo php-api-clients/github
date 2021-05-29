@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation_Deleted\Repositories;
+
 final class Installation_Deleted
 {
     public const SCHEMA_TITLE       = 'installation deleted event';
@@ -17,6 +19,9 @@ final class Installation_Deleted
     private ?Installation $installation = null;
     /**
      * An array of repository objects that the installation can access.
+     *
+     * @var array<Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation_Deleted\Repositories::class)
      */
     private array $repositories = [];
     private ?null $requester    = null;

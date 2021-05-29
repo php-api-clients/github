@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\GitCommit\Parents;
+
 final class GitCommit
 {
     public const SCHEMA_TITLE       = 'Git Commit';
@@ -25,8 +27,12 @@ final class GitCommit
     /**
      * Message describing the purpose of the commit
      */
-    private ?string $message    = null;
-    private array $tree         = [];
+    private ?string $message = null;
+    private array $tree      = [];
+    /**
+     * @var array<Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\GitCommit\Parents::class)
+     */
     private array $parents      = [];
     private array $verification = [];
     private ?string $html_url   = null;

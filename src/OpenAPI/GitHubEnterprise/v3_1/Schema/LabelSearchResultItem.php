@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\LabelSearchResultItem\TextMatches;
+
 final class LabelSearchResultItem
 {
     public const SCHEMA_TITLE       = 'Label Search Result Item';
@@ -16,7 +18,11 @@ final class LabelSearchResultItem
     private ?bool $default          = null;
     private ?string $description    = null;
     private ?number $score          = null;
-    private array $text_matches     = [];
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\LabelSearchResultItem\TextMatches::class)
+     */
+    private array $text_matches = [];
 
     public function id(): ?int
     {
