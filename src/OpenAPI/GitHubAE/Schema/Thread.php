@@ -11,22 +11,24 @@ final class Thread
     private ?string $id             = null;
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
-    private array $repository         = [];
-    private array $subject            = [];
-    private ?string $reason           = null;
-    private ?bool $unread             = null;
-    private ?string $updated_at       = null;
-    private ?string $last_read_at     = null;
-    private ?string $url              = null;
-    private ?string $subscription_url = null;
+    private ?MinimalRepository $repository = null;
+    private array $subject                 = [];
+    private ?string $reason                = null;
+    private ?bool $unread                  = null;
+    private ?string $updated_at            = null;
+    private ?string $last_read_at          = null;
+    private ?string $url                   = null;
+    private ?string $subscription_url      = null;
 
     public function id(): ?string
     {
         return $this->id;
     }
 
-    public function repository(): array
+    public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }

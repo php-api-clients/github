@@ -22,7 +22,8 @@ final class Milestone
      */
     private ?string $title = null;
     private $description;
-    private array $creator      = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $creator      = null;
     private ?int $open_issues   = null;
     private ?int $closed_issues = null;
     /**
@@ -74,7 +75,7 @@ final class Milestone
         return $this->description;
     }
 
-    public function creator(): array
+    public function creator(): ?User
     {
         return $this->creator;
     }

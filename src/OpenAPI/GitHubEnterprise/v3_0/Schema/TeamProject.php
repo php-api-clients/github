@@ -20,10 +20,12 @@ final class TeamProject
     private ?string $state          = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser::class)
      */
-    private array $creator      = [];
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private ?SimpleUser $creator = null;
+    private ?string $created_at  = null;
+    private ?string $updated_at  = null;
     /**
      * The organization permission for this project. Only present when owner is an organization.
      */
@@ -84,7 +86,7 @@ final class TeamProject
         return $this->state;
     }
 
-    public function creator(): array
+    public function creator(): ?SimpleUser
     {
         return $this->creator;
     }

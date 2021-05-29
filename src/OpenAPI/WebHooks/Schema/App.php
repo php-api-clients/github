@@ -17,7 +17,8 @@ final class App
      */
     private ?string $slug    = null;
     private ?string $node_id = null;
-    private array $owner     = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $owner = null;
     /**
      * The name of the GitHub app
      */
@@ -51,7 +52,7 @@ final class App
         return $this->node_id;
     }
 
-    public function owner(): array
+    public function owner(): ?User
     {
         return $this->owner;
     }

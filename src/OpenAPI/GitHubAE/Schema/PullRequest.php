@@ -68,8 +68,10 @@ final class PullRequest
     private ?string $author_association = null;
     /**
      * The status of auto merging a pull request.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AutoMerge::class)
      */
-    private array $auto_merge = [];
+    private ?AutoMerge $auto_merge = null;
     /**
      * Indicates whether or not the pull request is a draft.
      */
@@ -260,7 +262,7 @@ final class PullRequest
         return $this->author_association;
     }
 
-    public function auto_merge(): array
+    public function auto_merge(): ?AutoMerge
     {
         return $this->auto_merge;
     }

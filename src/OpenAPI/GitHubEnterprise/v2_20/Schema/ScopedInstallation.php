@@ -10,8 +10,10 @@ final class ScopedInstallation
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The permissions granted to the user-to-server access token.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\AppPermissions::class)
      */
-    private array $permissions = [];
+    private ?AppPermissions $permissions = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -22,10 +24,12 @@ final class ScopedInstallation
     private ?string $repositories_url        = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\SimpleUser::class)
      */
-    private array $account = [];
+    private ?SimpleUser $account = null;
 
-    public function permissions(): array
+    public function permissions(): ?AppPermissions
     {
         return $this->permissions;
     }
@@ -55,7 +59,7 @@ final class ScopedInstallation
         return $this->repositories_url;
     }
 
-    public function account(): array
+    public function account(): ?SimpleUser
     {
         return $this->account;
     }

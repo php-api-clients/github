@@ -12,7 +12,8 @@ final class MarketplacePurchase_Cancelled
     private ?string $effective_date = null;
     private array $sender           = [];
     private $marketplace_purchase;
-    private array $previous_marketplace_purchase = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class) */
+    private ?MarketplacePurchase $previous_marketplace_purchase = null;
 
     public function action(): ?string
     {
@@ -34,7 +35,7 @@ final class MarketplacePurchase_Cancelled
         return $this->marketplace_purchase;
     }
 
-    public function previous_marketplace_purchase(): array
+    public function previous_marketplace_purchase(): ?MarketplacePurchase
     {
         return $this->previous_marketplace_purchase;
     }

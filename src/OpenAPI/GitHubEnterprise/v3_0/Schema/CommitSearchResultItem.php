@@ -18,11 +18,13 @@ final class CommitSearchResultItem
     private array $parents = [];
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\MinimalRepository::class)
      */
-    private array $repository   = [];
-    private ?number $score      = null;
-    private ?string $node_id    = null;
-    private array $text_matches = [];
+    private ?MinimalRepository $repository = null;
+    private ?number $score                 = null;
+    private ?string $node_id               = null;
+    private array $text_matches            = [];
 
     public function url(): ?string
     {
@@ -64,7 +66,7 @@ final class CommitSearchResultItem
         return $this->parents;
     }
 
-    public function repository(): array
+    public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }

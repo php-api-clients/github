@@ -17,8 +17,10 @@ final class OrganizationInvitation
     private ?string $failed_reason  = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $inviter                = [];
+    private ?SimpleUser $inviter          = null;
     private ?int $team_count              = null;
     private ?string $node_id              = null;
     private ?string $invitation_teams_url = null;
@@ -58,7 +60,7 @@ final class OrganizationInvitation
         return $this->failed_reason;
     }
 
-    public function inviter(): array
+    public function inviter(): ?SimpleUser
     {
         return $this->inviter;
     }

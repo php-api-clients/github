@@ -15,13 +15,18 @@ final class SecretScanningAlert_Created
     private array $alert = [];
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private array $repository   = [];
-    private array $organization = [];
+    private ?Repository $repository = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
+    private ?InstallationLite $installation = null;
 
     public function action(): ?string
     {
@@ -33,17 +38,17 @@ final class SecretScanningAlert_Created
         return $this->alert;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }

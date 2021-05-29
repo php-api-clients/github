@@ -12,19 +12,27 @@ final class PullRequest_Unassigned
     /**
      * The pull request number.
      */
-    private ?int $number        = null;
-    private array $pull_request = [];
-    private array $assignee     = [];
+    private ?int $number = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class) */
+    private ?PullRequest $pull_request = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $assignee = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private array $repository = [];
+    private ?Repository $repository = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
-    private array $organization = [];
-    private array $sender       = [];
+    private ?InstallationLite $installation = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
@@ -36,32 +44,32 @@ final class PullRequest_Unassigned
         return $this->number;
     }
 
-    public function pull_request(): array
+    public function pull_request(): ?PullRequest
     {
         return $this->pull_request;
     }
 
-    public function assignee(): array
+    public function assignee(): ?User
     {
         return $this->assignee;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

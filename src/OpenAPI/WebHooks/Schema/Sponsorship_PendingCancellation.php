@@ -14,7 +14,8 @@ final class Sponsorship_PendingCancellation
      * The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
      */
     private ?string $effective_date = null;
-    private array $sender           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
@@ -31,7 +32,7 @@ final class Sponsorship_PendingCancellation
         return $this->effective_date;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

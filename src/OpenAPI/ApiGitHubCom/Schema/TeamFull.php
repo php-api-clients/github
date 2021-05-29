@@ -41,8 +41,10 @@ final class TeamFull
     private ?string $updated_at = null;
     /**
      * Organization Full
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull::class)
      */
-    private array $organization = [];
+    private ?OrganizationFull $organization = null;
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
@@ -128,7 +130,7 @@ final class TeamFull
         return $this->updated_at;
     }
 
-    public function organization(): array
+    public function organization(): ?OrganizationFull
     {
         return $this->organization;
     }

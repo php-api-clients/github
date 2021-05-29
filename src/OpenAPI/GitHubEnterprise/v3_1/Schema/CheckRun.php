@@ -38,8 +38,10 @@ final class CheckRun
     private $pull_requests;
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\DeploymentSimple::class)
      */
-    private array $deployment = [];
+    private ?DeploymentSimple $deployment = null;
 
     public function id(): ?int
     {
@@ -121,7 +123,7 @@ final class CheckRun
         return $this->pull_requests;
     }
 
-    public function deployment(): array
+    public function deployment(): ?DeploymentSimple
     {
         return $this->deployment;
     }

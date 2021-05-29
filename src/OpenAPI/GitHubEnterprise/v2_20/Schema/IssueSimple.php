@@ -49,8 +49,10 @@ final class IssueSimple
     private ?string $timeline_url       = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\Repository::class)
      */
-    private array $repository = [];
+    private ?Repository $repository = null;
     private $performed_via_github_app;
 
     public function id(): ?int
@@ -193,7 +195,7 @@ final class IssueSimple
         return $this->timeline_url;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }

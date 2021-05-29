@@ -84,13 +84,17 @@ final class WorkflowRun
     private $head_commit;
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
-    private array $repository = [];
+    private ?MinimalRepository $repository = null;
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
-    private array $head_repository   = [];
-    private ?int $head_repository_id = null;
+    private ?MinimalRepository $head_repository = null;
+    private ?int $head_repository_id            = null;
 
     public function id(): ?int
     {
@@ -217,12 +221,12 @@ final class WorkflowRun
         return $this->head_commit;
     }
 
-    public function repository(): array
+    public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }
 
-    public function head_repository(): array
+    public function head_repository(): ?MinimalRepository
     {
         return $this->head_repository;
     }

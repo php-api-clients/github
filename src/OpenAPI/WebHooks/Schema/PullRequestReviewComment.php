@@ -48,7 +48,8 @@ final class PullRequestReviewComment
      * The SHA of the original commit to which the comment applies.
      */
     private ?string $original_commit_id = null;
-    private array $user                 = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $user = null;
     /**
      * The text of the comment.
      */
@@ -147,7 +148,7 @@ final class PullRequestReviewComment
         return $this->original_commit_id;
     }
 
-    public function user(): array
+    public function user(): ?User
     {
         return $this->user;
     }

@@ -54,8 +54,9 @@ final class CodeScanningAnalysis
      * An identifier for the upload.
      */
     private ?string $sarif_id = null;
-    private array $tool       = [];
-    private ?bool $deletable  = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CodeScanningAnalysisTool::class) */
+    private ?CodeScanningAnalysisTool $tool = null;
+    private ?bool $deletable                = null;
     /**
      * Warning generated when processing the analysis
      */
@@ -121,7 +122,7 @@ final class CodeScanningAnalysis
         return $this->sarif_id;
     }
 
-    public function tool(): array
+    public function tool(): ?CodeScanningAnalysisTool
     {
         return $this->tool;
     }

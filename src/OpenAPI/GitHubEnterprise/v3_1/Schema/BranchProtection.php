@@ -12,16 +12,22 @@ final class BranchProtection
     private array $required_status_checks = [];
     /**
      * Protected Branch Admin Enforced
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchAdminEnforced::class)
      */
-    private array $enforce_admins = [];
+    private ?ProtectedBranchAdminEnforced $enforce_admins = null;
     /**
      * Protected Branch Pull Request Review
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchPullRequestReview::class)
      */
-    private array $required_pull_request_reviews = [];
+    private ?ProtectedBranchPullRequestReview $required_pull_request_reviews = null;
     /**
      * Branch Restriction Policy
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy::class)
      */
-    private array $restrictions                     = [];
+    private ?BranchRestrictionPolicy $restrictions  = null;
     private array $required_linear_history          = [];
     private array $allow_force_pushes               = [];
     private array $allow_deletions                  = [];
@@ -40,17 +46,17 @@ final class BranchProtection
         return $this->required_status_checks;
     }
 
-    public function enforce_admins(): array
+    public function enforce_admins(): ?ProtectedBranchAdminEnforced
     {
         return $this->enforce_admins;
     }
 
-    public function required_pull_request_reviews(): array
+    public function required_pull_request_reviews(): ?ProtectedBranchPullRequestReview
     {
         return $this->required_pull_request_reviews;
     }
 
-    public function restrictions(): array
+    public function restrictions(): ?BranchRestrictionPolicy
     {
         return $this->restrictions;
     }

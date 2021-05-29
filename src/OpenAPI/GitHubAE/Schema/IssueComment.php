@@ -33,7 +33,8 @@ final class IssueComment
      */
     private ?string $author_association = null;
     private $performed_via_github_app;
-    private array $reactions = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReactionRollup::class) */
+    private ?ReactionRollup $reactions = null;
 
     public function id(): ?int
     {
@@ -100,7 +101,7 @@ final class IssueComment
         return $this->performed_via_github_app;
     }
 
-    public function reactions(): array
+    public function reactions(): ?ReactionRollup
     {
         return $this->reactions;
     }

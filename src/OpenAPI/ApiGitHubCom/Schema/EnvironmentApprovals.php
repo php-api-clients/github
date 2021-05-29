@@ -18,8 +18,10 @@ final class EnvironmentApprovals
     private ?string $state = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $user = [];
+    private ?SimpleUser $user = null;
     /**
      * The comment submitted with the deployment review
      */
@@ -35,7 +37,7 @@ final class EnvironmentApprovals
         return $this->state;
     }
 
-    public function user(): array
+    public function user(): ?SimpleUser
     {
         return $this->user;
     }

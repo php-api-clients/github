@@ -38,8 +38,10 @@ final class Release
     private ?string $published_at = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
-    private array $author = [];
+    private ?SimpleUser $author = null;
     /**
      * @var array<ReleaseAsset>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReleaseAsset::class)
@@ -51,7 +53,8 @@ final class Release
      * The URL of the release discussion.
      */
     private ?string $discussion_url = null;
-    private array $reactions        = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReactionRollup::class) */
+    private ?ReactionRollup $reactions = null;
 
     public function url(): ?string
     {
@@ -133,7 +136,7 @@ final class Release
         return $this->published_at;
     }
 
-    public function author(): array
+    public function author(): ?SimpleUser
     {
         return $this->author;
     }
@@ -158,7 +161,7 @@ final class Release
         return $this->discussion_url;
     }
 
-    public function reactions(): array
+    public function reactions(): ?ReactionRollup
     {
         return $this->reactions;
     }

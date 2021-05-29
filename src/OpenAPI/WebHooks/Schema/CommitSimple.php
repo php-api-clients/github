@@ -14,12 +14,16 @@ final class CommitSimple
     private ?string $timestamp      = null;
     /**
      * Metaproperties for Git author/committer information.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private array $author = [];
+    private ?Committer $author = null;
     /**
      * Metaproperties for Git author/committer information.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private array $committer = [];
+    private ?Committer $committer = null;
 
     public function id(): ?string
     {
@@ -41,12 +45,12 @@ final class CommitSimple
         return $this->timestamp;
     }
 
-    public function author(): array
+    public function author(): ?Committer
     {
         return $this->author;
     }
 
-    public function committer(): array
+    public function committer(): ?Committer
     {
         return $this->committer;
     }

@@ -19,10 +19,14 @@ final class Ping_Event
     private array $hook = [];
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private array $repository   = [];
-    private array $sender       = [];
-    private array $organization = [];
+    private ?Repository $repository = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
 
     public function zen(): ?string
     {
@@ -39,17 +43,17 @@ final class Ping_Event
         return $this->hook;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }

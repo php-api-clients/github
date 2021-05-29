@@ -19,10 +19,11 @@ final class SimplePullRequest
     private ?string $state          = null;
     private ?bool $locked           = null;
     private ?string $title          = null;
-    private array $user             = [];
-    private ?string $body           = null;
-    private ?string $created_at     = null;
-    private ?string $updated_at     = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $user         = null;
+    private ?string $body       = null;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
     private $closed_at;
     private $merged_at;
     private $merge_commit_sha;
@@ -115,7 +116,7 @@ final class SimplePullRequest
         return $this->title;
     }
 
-    public function user(): array
+    public function user(): ?User
     {
         return $this->user;
     }

@@ -23,14 +23,20 @@ final class CodeScanningAlert_AppearedInBranch
     private ?string $commit_oid = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private array $repository = [];
-    private array $sender     = [];
+    private ?Repository $repository = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\GithubOrg::class) */
+    private ?GithubOrg $sender = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
-    private array $organization = [];
+    private ?InstallationLite $installation = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
 
     public function action(): ?string
     {
@@ -52,22 +58,22 @@ final class CodeScanningAlert_AppearedInBranch
         return $this->commit_oid;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }
 
-    public function sender(): array
+    public function sender(): ?GithubOrg
     {
         return $this->sender;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }

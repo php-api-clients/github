@@ -45,11 +45,13 @@ final class IssueSearchResultItem
     private ?bool $draft                = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\Repository::class)
      */
-    private array $repository     = [];
-    private ?string $body_html    = null;
-    private ?string $body_text    = null;
-    private ?string $timeline_url = null;
+    private ?Repository $repository = null;
+    private ?string $body_html      = null;
+    private ?string $body_text      = null;
+    private ?string $timeline_url   = null;
     private $performed_via_github_app;
 
     public function url(): ?string
@@ -192,7 +194,7 @@ final class IssueSearchResultItem
         return $this->draft;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }

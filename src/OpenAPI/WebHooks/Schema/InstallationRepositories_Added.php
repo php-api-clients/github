@@ -11,8 +11,10 @@ final class InstallationRepositories_Added
     private ?string $action         = null;
     /**
      * The GitHub App installation.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation::class)
      */
-    private array $installation = [];
+    private ?Installation $installation = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -26,14 +28,15 @@ final class InstallationRepositories_Added
      */
     private array $repositories_removed = [];
     private $requester;
-    private array $sender = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
         return $this->action;
     }
 
-    public function installation(): array
+    public function installation(): ?Installation
     {
         return $this->installation;
     }
@@ -58,7 +61,7 @@ final class InstallationRepositories_Added
         return $this->requester;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

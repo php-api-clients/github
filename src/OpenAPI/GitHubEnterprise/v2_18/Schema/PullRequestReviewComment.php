@@ -54,8 +54,10 @@ final class PullRequestReviewComment
     private ?int $in_reply_to_id = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\SimpleUser::class)
      */
-    private array $user = [];
+    private ?SimpleUser $user = null;
     /**
      * The text of the comment.
      */
@@ -75,9 +77,10 @@ final class PullRequestReviewComment
      */
     private ?string $author_association = null;
     private array $_links               = [];
-    private array $reactions            = [];
-    private ?string $body_html          = null;
-    private ?string $body_text          = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\ReactionRollup::class) */
+    private ?ReactionRollup $reactions = null;
+    private ?string $body_html         = null;
+    private ?string $body_text         = null;
 
     public function url(): ?string
     {
@@ -134,7 +137,7 @@ final class PullRequestReviewComment
         return $this->in_reply_to_id;
     }
 
-    public function user(): array
+    public function user(): ?SimpleUser
     {
         return $this->user;
     }
@@ -174,7 +177,7 @@ final class PullRequestReviewComment
         return $this->_links;
     }
 
-    public function reactions(): array
+    public function reactions(): ?ReactionRollup
     {
         return $this->reactions;
     }

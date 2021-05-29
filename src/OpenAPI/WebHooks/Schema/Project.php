@@ -26,8 +26,9 @@ final class Project
     /**
      * State of the project; either 'open' or 'closed'
      */
-    private ?string $state      = null;
-    private array $creator      = [];
+    private ?string $state = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $creator      = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
 
@@ -81,7 +82,7 @@ final class Project
         return $this->state;
     }
 
-    public function creator(): array
+    public function creator(): ?User
     {
         return $this->creator;
     }

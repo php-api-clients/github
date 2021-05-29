@@ -14,11 +14,14 @@ final class UserMarketplacePurchase
     private ?bool $on_free_trial        = null;
     private ?string $free_trial_ends_on = null;
     private ?string $updated_at         = null;
-    private array $account              = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceAccount::class) */
+    private ?MarketplaceAccount $account = null;
     /**
      * Marketplace Listing Plan
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan::class)
      */
-    private array $plan = [];
+    private ?MarketplaceListingPlan $plan = null;
 
     public function billing_cycle(): ?string
     {
@@ -50,12 +53,12 @@ final class UserMarketplacePurchase
         return $this->updated_at;
     }
 
-    public function account(): array
+    public function account(): ?MarketplaceAccount
     {
         return $this->account;
     }
 
-    public function plan(): array
+    public function plan(): ?MarketplaceListingPlan
     {
         return $this->plan;
     }

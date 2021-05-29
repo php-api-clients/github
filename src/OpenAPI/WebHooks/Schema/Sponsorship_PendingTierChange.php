@@ -15,7 +15,8 @@ final class Sponsorship_PendingTierChange
      */
     private ?string $effective_date = null;
     private array $changes          = [];
-    private array $sender           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
@@ -37,7 +38,7 @@ final class Sponsorship_PendingTierChange
         return $this->changes;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

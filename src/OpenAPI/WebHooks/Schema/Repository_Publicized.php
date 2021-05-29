@@ -10,12 +10,16 @@ final class Repository_Publicized
     public const SCHEMA_DESCRIPTION = '';
     private ?string $action         = null;
     private $repository;
-    private array $sender = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
-    private array $organization = [];
+    private ?InstallationLite $installation = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
 
     public function action(): ?string
     {
@@ -27,17 +31,17 @@ final class Repository_Publicized
         return $this->repository;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }

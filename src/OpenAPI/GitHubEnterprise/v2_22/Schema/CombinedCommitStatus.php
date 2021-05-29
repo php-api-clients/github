@@ -18,10 +18,12 @@ final class CombinedCommitStatus
     private ?int $total_count = null;
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\MinimalRepository::class)
      */
-    private array $repository   = [];
-    private ?string $commit_url = null;
-    private ?string $url        = null;
+    private ?MinimalRepository $repository = null;
+    private ?string $commit_url            = null;
+    private ?string $url                   = null;
 
     public function state(): ?string
     {
@@ -43,7 +45,7 @@ final class CombinedCommitStatus
         return $this->total_count;
     }
 
-    public function repository(): array
+    public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }

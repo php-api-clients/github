@@ -13,12 +13,13 @@ final class Discussion
     private $answer_html_url;
     private $answer_chosen_at;
     private $answer_chosen_by;
-    private ?string $html_url   = null;
-    private ?int $id            = null;
-    private ?string $node_id    = null;
-    private ?int $number        = null;
-    private ?string $title      = null;
-    private array $user         = [];
+    private ?string $html_url = null;
+    private ?int $id          = null;
+    private ?string $node_id  = null;
+    private ?int $number      = null;
+    private ?string $title    = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $user         = null;
     private ?string $state      = null;
     private ?bool $locked       = null;
     private ?int $comments      = null;
@@ -81,7 +82,7 @@ final class Discussion
         return $this->title;
     }
 
-    public function user(): array
+    public function user(): ?User
     {
         return $this->user;
     }

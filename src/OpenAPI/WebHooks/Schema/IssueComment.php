@@ -17,9 +17,10 @@ final class IssueComment
     /**
      * Unique identifier of the issue comment
      */
-    private ?int $id            = null;
-    private ?string $node_id    = null;
-    private array $user         = [];
+    private ?int $id         = null;
+    private ?string $node_id = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $user         = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
     /**
@@ -57,7 +58,7 @@ final class IssueComment
         return $this->node_id;
     }
 
-    public function user(): array
+    public function user(): ?User
     {
         return $this->user;
     }

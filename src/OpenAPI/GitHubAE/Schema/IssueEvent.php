@@ -18,33 +18,46 @@ final class IssueEvent
     private ?string $created_at = null;
     /**
      * Issue Simple
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueSimple::class)
      */
-    private array $issue = [];
+    private ?IssueSimple $issue = null;
     /**
      * Issue Event Label
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueEventLabel::class)
      */
-    private array $label = [];
+    private ?IssueEventLabel $label = null;
     private $assignee;
     private $assigner;
     private $review_requester;
     private $requested_reviewer;
     /**
      * Groups of organization members that gives permissions on specified repositories.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Team::class)
      */
-    private array $requested_team   = [];
-    private array $dismissed_review = [];
+    private ?Team $requested_team = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueEventDismissedReview::class) */
+    private ?IssueEventDismissedReview $dismissed_review = null;
     /**
      * Issue Event Milestone
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueEventMilestone::class)
      */
-    private array $milestone = [];
+    private ?IssueEventMilestone $milestone = null;
     /**
      * Issue Event Project Card
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueEventProjectCard::class)
      */
-    private array $project_card = [];
+    private ?IssueEventProjectCard $project_card = null;
     /**
      * Issue Event Rename
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueEventRename::class)
      */
-    private array $rename = [];
+    private ?IssueEventRename $rename = null;
     /**
      * How the author is associated with the repository.
      */
@@ -92,12 +105,12 @@ final class IssueEvent
         return $this->created_at;
     }
 
-    public function issue(): array
+    public function issue(): ?IssueSimple
     {
         return $this->issue;
     }
 
-    public function label(): array
+    public function label(): ?IssueEventLabel
     {
         return $this->label;
     }
@@ -122,27 +135,27 @@ final class IssueEvent
         return $this->requested_reviewer;
     }
 
-    public function requested_team(): array
+    public function requested_team(): ?Team
     {
         return $this->requested_team;
     }
 
-    public function dismissed_review(): array
+    public function dismissed_review(): ?IssueEventDismissedReview
     {
         return $this->dismissed_review;
     }
 
-    public function milestone(): array
+    public function milestone(): ?IssueEventMilestone
     {
         return $this->milestone;
     }
 
-    public function project_card(): array
+    public function project_card(): ?IssueEventProjectCard
     {
         return $this->project_card;
     }
 
-    public function rename(): array
+    public function rename(): ?IssueEventRename
     {
         return $this->rename;
     }

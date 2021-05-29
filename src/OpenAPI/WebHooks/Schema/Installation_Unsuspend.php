@@ -15,7 +15,8 @@ final class Installation_Unsuspend
      */
     private array $repositories = [];
     private ?null $requester    = null;
-    private array $sender       = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
@@ -37,7 +38,7 @@ final class Installation_Unsuspend
         return $this->requester;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

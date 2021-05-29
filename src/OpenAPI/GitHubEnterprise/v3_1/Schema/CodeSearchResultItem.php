@@ -16,14 +16,16 @@ final class CodeSearchResultItem
     private ?string $html_url       = null;
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MinimalRepository::class)
      */
-    private array $repository         = [];
-    private ?number $score            = null;
-    private ?int $file_size           = null;
-    private ?string $language         = null;
-    private ?string $last_modified_at = null;
-    private array $line_numbers       = [];
-    private array $text_matches       = [];
+    private ?MinimalRepository $repository = null;
+    private ?number $score                 = null;
+    private ?int $file_size                = null;
+    private ?string $language              = null;
+    private ?string $last_modified_at      = null;
+    private array $line_numbers            = [];
+    private array $text_matches            = [];
 
     public function name(): ?string
     {
@@ -55,7 +57,7 @@ final class CodeSearchResultItem
         return $this->html_url;
     }
 
-    public function repository(): array
+    public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }

@@ -10,8 +10,10 @@ final class AutoMerge
     public const SCHEMA_DESCRIPTION = 'The status of auto merging a pull request.';
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
-    private array $enabled_by = [];
+    private ?SimpleUser $enabled_by = null;
     /**
      * The merge method to use.
      */
@@ -25,7 +27,7 @@ final class AutoMerge
      */
     private ?string $commit_message = null;
 
-    public function enabled_by(): array
+    public function enabled_by(): ?SimpleUser
     {
         return $this->enabled_by;
     }

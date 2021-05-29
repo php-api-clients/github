@@ -24,7 +24,8 @@ final class Issue
      * Title of the issue
      */
     private ?string $title = null;
-    private array $user    = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $user = null;
     /**
      * @var array<Label>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
@@ -108,7 +109,7 @@ final class Issue
         return $this->title;
     }
 
-    public function user(): array
+    public function user(): ?User
     {
         return $this->user;
     }

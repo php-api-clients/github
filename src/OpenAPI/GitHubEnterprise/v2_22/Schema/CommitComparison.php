@@ -15,16 +15,20 @@ final class CommitComparison
     private ?string $patch_url      = null;
     /**
      * Commit
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Commit::class)
      */
-    private array $base_commit = [];
+    private ?Commit $base_commit = null;
     /**
      * Commit
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Commit::class)
      */
-    private array $merge_base_commit = [];
-    private ?string $status          = null;
-    private ?int $ahead_by           = null;
-    private ?int $behind_by          = null;
-    private ?int $total_commits      = null;
+    private ?Commit $merge_base_commit = null;
+    private ?string $status            = null;
+    private ?int $ahead_by             = null;
+    private ?int $behind_by            = null;
+    private ?int $total_commits        = null;
     /**
      * @var array<Commit>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Commit::class)
@@ -61,12 +65,12 @@ final class CommitComparison
         return $this->patch_url;
     }
 
-    public function base_commit(): array
+    public function base_commit(): ?Commit
     {
         return $this->base_commit;
     }
 
-    public function merge_base_commit(): array
+    public function merge_base_commit(): ?Commit
     {
         return $this->merge_base_commit;
     }

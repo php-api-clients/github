@@ -13,8 +13,10 @@ final class IssueEventForIssue
     private ?string $url            = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleUser::class)
      */
-    private array $actor        = [];
+    private ?SimpleUser $actor  = null;
     private ?string $event      = null;
     private ?string $commit_id  = null;
     private ?string $commit_url = null;
@@ -51,7 +53,7 @@ final class IssueEventForIssue
         return $this->url;
     }
 
-    public function actor(): array
+    public function actor(): ?SimpleUser
     {
         return $this->actor;
     }

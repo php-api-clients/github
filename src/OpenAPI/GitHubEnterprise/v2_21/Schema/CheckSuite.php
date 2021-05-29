@@ -28,14 +28,18 @@ final class CheckSuite
     private $app;
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\MinimalRepository::class)
      */
-    private array $repository   = [];
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private ?MinimalRepository $repository = null;
+    private ?string $created_at            = null;
+    private ?string $updated_at            = null;
     /**
      * Simple Commit
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleCommit::class)
      */
-    private array $head_commit            = [];
+    private ?SimpleCommit $head_commit    = null;
     private ?int $latest_check_runs_count = null;
     private ?string $check_runs_url       = null;
 
@@ -94,7 +98,7 @@ final class CheckSuite
         return $this->app;
     }
 
-    public function repository(): array
+    public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }
@@ -109,7 +113,7 @@ final class CheckSuite
         return $this->updated_at;
     }
 
-    public function head_commit(): array
+    public function head_commit(): ?SimpleCommit
     {
         return $this->head_commit;
     }

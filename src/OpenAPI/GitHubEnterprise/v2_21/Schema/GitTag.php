@@ -21,10 +21,11 @@ final class GitTag
     /**
      * Message describing the purpose of the tag
      */
-    private ?string $message    = null;
-    private array $tagger       = [];
-    private array $object       = [];
-    private array $verification = [];
+    private ?string $message = null;
+    private array $tagger    = [];
+    private array $object    = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\Verification::class) */
+    private ?Verification $verification = null;
 
     public function node_id(): ?string
     {
@@ -61,7 +62,7 @@ final class GitTag
         return $this->object;
     }
 
-    public function verification(): array
+    public function verification(): ?Verification
     {
         return $this->verification;
     }

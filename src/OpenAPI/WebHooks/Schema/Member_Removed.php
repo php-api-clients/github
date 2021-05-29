@@ -9,38 +9,44 @@ final class Member_Removed
     public const SCHEMA_TITLE       = 'member removed event';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $action         = null;
-    private array $member           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $member = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private array $repository = [];
+    private ?Repository $repository = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
-    private array $sender       = [];
+    private ?InstallationLite $installation = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
         return $this->action;
     }
 
-    public function member(): array
+    public function member(): ?User
     {
         return $this->member;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

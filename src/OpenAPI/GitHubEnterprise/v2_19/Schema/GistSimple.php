@@ -32,9 +32,11 @@ final class GistSimple
     private ?string $comments_url = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleUser::class)
      */
-    private array $owner     = [];
-    private ?bool $truncated = null;
+    private ?SimpleUser $owner = null;
+    private ?bool $truncated   = null;
 
     public function forks(): array
     {
@@ -131,7 +133,7 @@ final class GistSimple
         return $this->comments_url;
     }
 
-    public function owner(): array
+    public function owner(): ?SimpleUser
     {
         return $this->owner;
     }

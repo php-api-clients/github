@@ -13,17 +13,24 @@ final class Membership_Added
      * The scope of the membership. Currently, can only be `team`.
      */
     private ?string $scope = null;
-    private array $member  = [];
-    private array $sender  = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $member = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
     /**
      * Groups of organization members that gives permissions on specified repositories.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team::class)
      */
-    private array $team         = [];
-    private array $organization = [];
+    private ?Team $team = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
+    private ?InstallationLite $installation = null;
 
     public function action(): ?string
     {
@@ -35,27 +42,27 @@ final class Membership_Added
         return $this->scope;
     }
 
-    public function member(): array
+    public function member(): ?User
     {
         return $this->member;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }
 
-    public function team(): array
+    public function team(): ?Team
     {
         return $this->team;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }

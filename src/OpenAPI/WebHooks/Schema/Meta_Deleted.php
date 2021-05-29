@@ -19,9 +19,12 @@ final class Meta_Deleted
     private array $hook = [];
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private array $repository = [];
-    private array $sender     = [];
+    private ?Repository $repository = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
@@ -38,12 +41,12 @@ final class Meta_Deleted
         return $this->hook;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

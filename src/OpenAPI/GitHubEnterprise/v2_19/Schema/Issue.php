@@ -60,14 +60,17 @@ final class Issue
     private ?string $timeline_url = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\Repository::class)
      */
-    private array $repository = [];
+    private ?Repository $repository = null;
     private $performed_via_github_app;
     /**
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private array $reactions            = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\ReactionRollup::class) */
+    private ?ReactionRollup $reactions = null;
 
     public function id(): ?int
     {
@@ -209,7 +212,7 @@ final class Issue
         return $this->timeline_url;
     }
 
-    public function repository(): array
+    public function repository(): ?Repository
     {
         return $this->repository;
     }
@@ -224,7 +227,7 @@ final class Issue
         return $this->author_association;
     }
 
-    public function reactions(): array
+    public function reactions(): ?ReactionRollup
     {
         return $this->reactions;
     }

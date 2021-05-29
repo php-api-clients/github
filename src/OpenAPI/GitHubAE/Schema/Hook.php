@@ -24,14 +24,15 @@ final class Hook
     /**
      * Determines what events the hook is triggered for. Default: ['push'].
      */
-    private array $events        = [];
-    private array $config        = [];
-    private ?string $updated_at  = null;
-    private ?string $created_at  = null;
-    private ?string $url         = null;
-    private ?string $test_url    = null;
-    private ?string $ping_url    = null;
-    private array $last_response = [];
+    private array $events       = [];
+    private array $config       = [];
+    private ?string $updated_at = null;
+    private ?string $created_at = null;
+    private ?string $url        = null;
+    private ?string $test_url   = null;
+    private ?string $ping_url   = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\HookResponse::class) */
+    private ?HookResponse $last_response = null;
 
     public function type(): ?string
     {
@@ -88,7 +89,7 @@ final class Hook
         return $this->ping_url;
     }
 
-    public function last_response(): array
+    public function last_response(): ?HookResponse
     {
         return $this->last_response;
     }

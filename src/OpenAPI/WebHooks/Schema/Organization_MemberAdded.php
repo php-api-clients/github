@@ -11,36 +11,42 @@ final class Organization_MemberAdded
     private ?string $action         = null;
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership::class)
      */
-    private array $membership = [];
-    private array $sender     = [];
+    private ?Membership $membership = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
-    private array $organization = [];
+    private ?InstallationLite $installation = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
 
     public function action(): ?string
     {
         return $this->action;
     }
 
-    public function membership(): array
+    public function membership(): ?Membership
     {
         return $this->membership;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }

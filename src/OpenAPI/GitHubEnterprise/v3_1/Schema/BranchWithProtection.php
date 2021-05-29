@@ -11,14 +11,18 @@ final class BranchWithProtection
     private ?string $name           = null;
     /**
      * Commit
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Commit::class)
      */
-    private array $commit    = [];
+    private ?Commit $commit  = null;
     private array $_links    = [];
     private ?bool $protected = null;
     /**
      * Branch Protection
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection::class)
      */
-    private array $protection                     = [];
+    private ?BranchProtection $protection         = null;
     private ?string $protection_url               = null;
     private ?string $pattern                      = null;
     private ?int $required_approving_review_count = null;
@@ -28,7 +32,7 @@ final class BranchWithProtection
         return $this->name;
     }
 
-    public function commit(): array
+    public function commit(): ?Commit
     {
         return $this->commit;
     }
@@ -43,7 +47,7 @@ final class BranchWithProtection
         return $this->protected;
     }
 
-    public function protection(): array
+    public function protection(): ?BranchProtection
     {
         return $this->protection;
     }

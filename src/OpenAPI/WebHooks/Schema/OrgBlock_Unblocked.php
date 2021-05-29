@@ -9,35 +9,40 @@ final class OrgBlock_Unblocked
     public const SCHEMA_TITLE       = 'org_block unblocked event';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $action         = null;
-    private array $blocked_user     = [];
-    private array $sender           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $blocked_user = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
     /**
      * Installation
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private array $installation = [];
-    private array $organization = [];
+    private ?InstallationLite $installation = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private ?Organization $organization = null;
 
     public function action(): ?string
     {
         return $this->action;
     }
 
-    public function blocked_user(): array
+    public function blocked_user(): ?User
     {
         return $this->blocked_user;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }
 
-    public function installation(): array
+    public function installation(): ?InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): array
+    public function organization(): ?Organization
     {
         return $this->organization;
     }

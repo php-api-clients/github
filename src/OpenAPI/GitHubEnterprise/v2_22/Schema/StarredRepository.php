@@ -11,15 +11,17 @@ final class StarredRepository
     private ?string $starred_at     = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Repository::class)
      */
-    private array $repo = [];
+    private ?Repository $repo = null;
 
     public function starred_at(): ?string
     {
         return $this->starred_at;
     }
 
-    public function repo(): array
+    public function repo(): ?Repository
     {
         return $this->repo;
     }

@@ -26,7 +26,8 @@ final class ReleaseAsset
     private ?int $download_count  = null;
     private ?string $created_at   = null;
     private ?string $updated_at   = null;
-    private array $uploader       = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $uploader = null;
 
     public function url(): ?string
     {
@@ -88,7 +89,7 @@ final class ReleaseAsset
         return $this->updated_at;
     }
 
-    public function uploader(): array
+    public function uploader(): ?User
     {
         return $this->uploader;
     }

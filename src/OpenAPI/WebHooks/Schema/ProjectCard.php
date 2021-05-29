@@ -21,8 +21,9 @@ final class ProjectCard
     /**
      * Whether or not the card is archived
      */
-    private ?bool $archived      = null;
-    private array $creator       = [];
+    private ?bool $archived = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $creator       = null;
     private ?string $created_at  = null;
     private ?string $updated_at  = null;
     private ?string $content_url = null;
@@ -68,7 +69,7 @@ final class ProjectCard
         return $this->archived;
     }
 
-    public function creator(): array
+    public function creator(): ?User
     {
         return $this->creator;
     }

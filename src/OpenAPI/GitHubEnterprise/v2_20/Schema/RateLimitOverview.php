@@ -9,14 +9,15 @@ final class RateLimitOverview
     public const SCHEMA_TITLE       = 'Rate Limit Overview';
     public const SCHEMA_DESCRIPTION = 'Rate Limit Overview';
     private array $resources        = [];
-    private array $rate             = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\RateLimit::class) */
+    private ?RateLimit $rate = null;
 
     public function resources(): array
     {
         return $this->resources;
     }
 
-    public function rate(): array
+    public function rate(): ?RateLimit
     {
         return $this->rate;
     }

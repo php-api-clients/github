@@ -9,14 +9,15 @@ final class GithubAppAuthorization_Revoked
     public const SCHEMA_TITLE       = 'github_app_authorization revoked event';
     public const SCHEMA_DESCRIPTION = '';
     private ?string $action         = null;
-    private array $sender           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
         return $this->action;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

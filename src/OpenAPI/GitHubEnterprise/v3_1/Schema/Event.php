@@ -12,13 +12,17 @@ final class Event
     private ?string $type           = null;
     /**
      * Actor
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Actor::class)
      */
-    private array $actor = [];
-    private array $repo  = [];
+    private ?Actor $actor = null;
+    private array $repo   = [];
     /**
      * Actor
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Actor::class)
      */
-    private array $org          = [];
+    private ?Actor $org         = null;
     private array $payload      = [];
     private ?bool $public       = null;
     private ?string $created_at = null;
@@ -33,7 +37,7 @@ final class Event
         return $this->type;
     }
 
-    public function actor(): array
+    public function actor(): ?Actor
     {
         return $this->actor;
     }
@@ -43,7 +47,7 @@ final class Event
         return $this->repo;
     }
 
-    public function org(): array
+    public function org(): ?Actor
     {
         return $this->org;
     }

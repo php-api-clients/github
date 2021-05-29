@@ -43,7 +43,8 @@ final class TeamDiscussion
     private ?string $title      = null;
     private ?string $updated_at = null;
     private ?string $url        = null;
-    private array $reactions    = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ReactionRollup::class) */
+    private ?ReactionRollup $reactions = null;
 
     public function author()
     {
@@ -130,7 +131,7 @@ final class TeamDiscussion
         return $this->url;
     }
 
-    public function reactions(): array
+    public function reactions(): ?ReactionRollup
     {
         return $this->reactions;
     }

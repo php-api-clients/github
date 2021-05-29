@@ -11,7 +11,8 @@ final class Sponsorship_TierChanged
     private ?string $action         = null;
     private array $sponsorship      = [];
     private array $changes          = [];
-    private array $sender           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
@@ -28,7 +29,7 @@ final class Sponsorship_TierChanged
         return $this->changes;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

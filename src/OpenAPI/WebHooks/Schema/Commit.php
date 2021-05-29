@@ -28,12 +28,16 @@ final class Commit
     private ?string $url = null;
     /**
      * Metaproperties for Git author/committer information.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private array $author = [];
+    private ?Committer $author = null;
     /**
      * Metaproperties for Git author/committer information.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private array $committer = [];
+    private ?Committer $committer = null;
     /**
      * An array of files added in the commit.
      */
@@ -77,12 +81,12 @@ final class Commit
         return $this->url;
     }
 
-    public function author(): array
+    public function author(): ?Committer
     {
         return $this->author;
     }
 
-    public function committer(): array
+    public function committer(): ?Committer
     {
         return $this->committer;
     }

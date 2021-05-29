@@ -10,7 +10,8 @@ final class Sponsorship_Created
     public const SCHEMA_DESCRIPTION = '';
     private ?string $action         = null;
     private array $sponsorship      = [];
-    private array $sender           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $sender = null;
 
     public function action(): ?string
     {
@@ -22,7 +23,7 @@ final class Sponsorship_Created
         return $this->sponsorship;
     }
 
-    public function sender(): array
+    public function sender(): ?User
     {
         return $this->sender;
     }

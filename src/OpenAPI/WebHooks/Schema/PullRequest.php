@@ -27,8 +27,9 @@ final class PullRequest
     /**
      * The title of the pull request.
      */
-    private ?string $title      = null;
-    private array $user         = [];
+    private ?string $title = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $user         = null;
     private ?string $body       = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
@@ -142,7 +143,7 @@ final class PullRequest
         return $this->title;
     }
 
-    public function user(): array
+    public function user(): ?User
     {
         return $this->user;
     }

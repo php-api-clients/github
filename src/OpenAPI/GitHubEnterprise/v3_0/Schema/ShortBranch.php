@@ -13,9 +13,11 @@ final class ShortBranch
     private ?bool $protected        = null;
     /**
      * Branch Protection
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\BranchProtection::class)
      */
-    private array $protection       = [];
-    private ?string $protection_url = null;
+    private ?BranchProtection $protection = null;
+    private ?string $protection_url       = null;
 
     public function name(): ?string
     {
@@ -32,7 +34,7 @@ final class ShortBranch
         return $this->protected;
     }
 
-    public function protection(): array
+    public function protection(): ?BranchProtection
     {
         return $this->protection;
     }

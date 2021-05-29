@@ -11,18 +11,22 @@ final class ProtectedBranch
     private ?string $url            = null;
     /**
      * Status Check Policy
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy::class)
      */
-    private array $required_status_checks        = [];
-    private array $required_pull_request_reviews = [];
-    private array $required_signatures           = [];
-    private array $enforce_admins                = [];
-    private array $required_linear_history       = [];
-    private array $allow_force_pushes            = [];
-    private array $allow_deletions               = [];
+    private ?StatusCheckPolicy $required_status_checks = null;
+    private array $required_pull_request_reviews       = [];
+    private array $required_signatures                 = [];
+    private array $enforce_admins                      = [];
+    private array $required_linear_history             = [];
+    private array $allow_force_pushes                  = [];
+    private array $allow_deletions                     = [];
     /**
      * Branch Restriction Policy
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy::class)
      */
-    private array $restrictions                     = [];
+    private ?BranchRestrictionPolicy $restrictions  = null;
     private array $required_conversation_resolution = [];
 
     public function url(): ?string
@@ -30,7 +34,7 @@ final class ProtectedBranch
         return $this->url;
     }
 
-    public function required_status_checks(): array
+    public function required_status_checks(): ?StatusCheckPolicy
     {
         return $this->required_status_checks;
     }
@@ -65,7 +69,7 @@ final class ProtectedBranch
         return $this->allow_deletions;
     }
 
-    public function restrictions(): array
+    public function restrictions(): ?BranchRestrictionPolicy
     {
         return $this->restrictions;
     }

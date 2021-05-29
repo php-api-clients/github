@@ -14,8 +14,10 @@ final class RepositoryInvitation
     private ?int $id = null;
     /**
      * Minimal Repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\MinimalRepository::class)
      */
-    private array $repository = [];
+    private ?MinimalRepository $repository = null;
     private $invitee;
     private $inviter;
     /**
@@ -39,7 +41,7 @@ final class RepositoryInvitation
         return $this->id;
     }
 
-    public function repository(): array
+    public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }

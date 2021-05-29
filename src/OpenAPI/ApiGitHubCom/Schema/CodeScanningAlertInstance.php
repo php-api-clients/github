@@ -29,9 +29,11 @@ final class CodeScanningAlertInstance
     private array $message      = [];
     /**
      * Describe a region within a file for the alert.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertLocation::class)
      */
-    private array $location   = [];
-    private ?string $html_url = null;
+    private ?CodeScanningAlertLocation $location = null;
+    private ?string $html_url                    = null;
     /**
      * Classifications that have been applied to the file that triggered the alert.
     For example identifying it as documentation, or a generated file.
@@ -71,7 +73,7 @@ final class CodeScanningAlertInstance
         return $this->message;
     }
 
-    public function location(): array
+    public function location(): ?CodeScanningAlertLocation
     {
         return $this->location;
     }

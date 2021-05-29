@@ -14,31 +14,34 @@ final class WorkflowRun
     private ?int $check_suite_id         = null;
     private ?string $check_suite_node_id = null;
     private $conclusion;
-    private ?string $created_at    = null;
-    private ?string $event         = null;
-    private ?string $head_branch   = null;
-    private array $head_commit     = [];
-    private array $head_repository = [];
-    private ?string $head_sha      = null;
-    private ?string $html_url      = null;
-    private ?int $id               = null;
-    private ?string $jobs_url      = null;
-    private ?string $logs_url      = null;
-    private ?string $node_id       = null;
-    private ?string $name          = null;
+    private ?string $created_at  = null;
+    private ?string $event       = null;
+    private ?string $head_branch = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\CommitSimple::class) */
+    private ?CommitSimple $head_commit = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\RepositoryLite::class) */
+    private ?RepositoryLite $head_repository = null;
+    private ?string $head_sha                = null;
+    private ?string $html_url                = null;
+    private ?int $id                         = null;
+    private ?string $jobs_url                = null;
+    private ?string $logs_url                = null;
+    private ?string $node_id                 = null;
+    private ?string $name                    = null;
     /**
      * @var array<PullRequest>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class)
      */
-    private array $pull_requests  = [];
-    private array $repository     = [];
-    private ?string $rerun_url    = null;
-    private ?int $run_number      = null;
-    private ?string $status       = null;
-    private ?string $updated_at   = null;
-    private ?string $url          = null;
-    private ?int $workflow_id     = null;
-    private ?string $workflow_url = null;
+    private array $pull_requests = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\RepositoryLite::class) */
+    private ?RepositoryLite $repository = null;
+    private ?string $rerun_url          = null;
+    private ?int $run_number            = null;
+    private ?string $status             = null;
+    private ?string $updated_at         = null;
+    private ?string $url                = null;
+    private ?int $workflow_id           = null;
+    private ?string $workflow_url       = null;
 
     public function artifacts_url(): ?string
     {
@@ -85,12 +88,12 @@ final class WorkflowRun
         return $this->head_branch;
     }
 
-    public function head_commit(): array
+    public function head_commit(): ?CommitSimple
     {
         return $this->head_commit;
     }
 
-    public function head_repository(): array
+    public function head_repository(): ?RepositoryLite
     {
         return $this->head_repository;
     }
@@ -135,7 +138,7 @@ final class WorkflowRun
         return $this->pull_requests;
     }
 
-    public function repository(): array
+    public function repository(): ?RepositoryLite
     {
         return $this->repository;
     }

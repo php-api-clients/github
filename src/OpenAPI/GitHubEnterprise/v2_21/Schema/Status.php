@@ -20,8 +20,10 @@ final class Status
     private ?string $updated_at     = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser::class)
      */
-    private array $creator = [];
+    private ?SimpleUser $creator = null;
 
     public function url(): ?string
     {
@@ -73,7 +75,7 @@ final class Status
         return $this->updated_at;
     }
 
-    public function creator(): array
+    public function creator(): ?SimpleUser
     {
         return $this->creator;
     }

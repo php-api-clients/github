@@ -12,7 +12,8 @@ final class Membership
     private ?string $state            = null;
     private ?string $role             = null;
     private ?string $organization_url = null;
-    private array $user               = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $user = null;
 
     public function url(): ?string
     {
@@ -34,7 +35,7 @@ final class Membership
         return $this->organization_url;
     }
 
-    public function user(): array
+    public function user(): ?User
     {
         return $this->user;
     }

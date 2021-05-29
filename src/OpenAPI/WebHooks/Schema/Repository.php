@@ -21,8 +21,9 @@ final class Repository
     /**
      * Whether the repository is private or public.
      */
-    private ?bool $private    = null;
-    private array $owner      = [];
+    private ?bool $private = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $owner      = null;
     private ?string $html_url = null;
     private $description;
     private ?bool $fork                = null;
@@ -158,7 +159,7 @@ final class Repository
         return $this->private;
     }
 
-    public function owner(): array
+    public function owner(): ?User
     {
         return $this->owner;
     }

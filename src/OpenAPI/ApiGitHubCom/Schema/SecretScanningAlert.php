@@ -38,8 +38,10 @@ final class SecretScanningAlert
     private ?string $resolved_at = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $resolved_by = [];
+    private ?SimpleUser $resolved_by = null;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -84,7 +86,7 @@ final class SecretScanningAlert
         return $this->resolved_at;
     }
 
-    public function resolved_by(): array
+    public function resolved_by(): ?SimpleUser
     {
         return $this->resolved_by;
     }

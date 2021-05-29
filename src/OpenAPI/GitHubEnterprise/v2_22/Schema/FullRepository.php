@@ -14,8 +14,10 @@ final class FullRepository
     private ?string $full_name      = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\SimpleUser::class)
      */
-    private array $owner               = [];
+    private ?SimpleUser $owner         = null;
     private ?bool $private             = null;
     private ?string $html_url          = null;
     private ?string $description       = null;
@@ -102,12 +104,16 @@ final class FullRepository
     private $organization;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Repository::class)
      */
-    private array $parent = [];
+    private ?Repository $parent = null;
     /**
      * A git repository
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Repository::class)
      */
-    private array $source          = [];
+    private ?Repository $source    = null;
     private ?int $forks            = null;
     private ?string $master_branch = null;
     private ?int $open_issues      = null;
@@ -118,8 +124,10 @@ final class FullRepository
     private ?bool $anonymous_access_enabled = null;
     /**
      * Code of Conduct Simple
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeOfConductSimple::class)
      */
-    private array $code_of_conduct = [];
+    private ?CodeOfConductSimple $code_of_conduct = null;
 
     public function id(): ?int
     {
@@ -141,7 +149,7 @@ final class FullRepository
         return $this->full_name;
     }
 
-    public function owner(): array
+    public function owner(): ?SimpleUser
     {
         return $this->owner;
     }
@@ -536,12 +544,12 @@ final class FullRepository
         return $this->organization;
     }
 
-    public function parent(): array
+    public function parent(): ?Repository
     {
         return $this->parent;
     }
 
-    public function source(): array
+    public function source(): ?Repository
     {
         return $this->source;
     }
@@ -571,7 +579,7 @@ final class FullRepository
         return $this->anonymous_access_enabled;
     }
 
-    public function code_of_conduct(): array
+    public function code_of_conduct(): ?CodeOfConductSimple
     {
         return $this->code_of_conduct;
     }

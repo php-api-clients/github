@@ -30,8 +30,10 @@ final class CodeScanningAlertItems
     private ?string $state = null;
     /**
      * Simple User
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\SimpleUser::class)
      */
-    private array $dismissed_by = [];
+    private ?SimpleUser $dismissed_by = null;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -40,9 +42,12 @@ final class CodeScanningAlertItems
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
     private ?string $dismissed_reason = null;
-    private array $rule               = [];
-    private array $tool               = [];
-    private array $instance           = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertRuleSummary::class) */
+    private ?CodeScanningAlertRuleSummary $rule = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAnalysisTool::class) */
+    private ?CodeScanningAnalysisTool $tool = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertInstance::class) */
+    private ?CodeScanningAlertInstance $instance = null;
     /**
      * A classification of the file. For example to identify it as generated.
      */
@@ -73,7 +78,7 @@ final class CodeScanningAlertItems
         return $this->state;
     }
 
-    public function dismissed_by(): array
+    public function dismissed_by(): ?SimpleUser
     {
         return $this->dismissed_by;
     }
@@ -88,17 +93,17 @@ final class CodeScanningAlertItems
         return $this->dismissed_reason;
     }
 
-    public function rule(): array
+    public function rule(): ?CodeScanningAlertRuleSummary
     {
         return $this->rule;
     }
 
-    public function tool(): array
+    public function tool(): ?CodeScanningAnalysisTool
     {
         return $this->tool;
     }
 
-    public function instance(): array
+    public function instance(): ?CodeScanningAlertInstance
     {
         return $this->instance;
     }

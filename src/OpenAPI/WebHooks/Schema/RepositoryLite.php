@@ -48,7 +48,8 @@ final class RepositoryLite
     private ?string $name              = null;
     private ?string $node_id           = null;
     private ?string $notifications_url = null;
-    private array $owner               = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $owner = null;
     /**
      * Whether the repository is private or public.
      */
@@ -234,7 +235,7 @@ final class RepositoryLite
         return $this->notifications_url;
     }
 
-    public function owner(): array
+    public function owner(): ?User
     {
         return $this->owner;
     }

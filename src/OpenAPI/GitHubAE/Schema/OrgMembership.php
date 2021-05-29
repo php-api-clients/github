@@ -20,8 +20,10 @@ final class OrgMembership
     private ?string $organization_url = null;
     /**
      * Organization Simple
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
      */
-    private array $organization = [];
+    private ?OrganizationSimple $organization = null;
     private $user;
     private array $permissions = [];
 
@@ -45,7 +47,7 @@ final class OrgMembership
         return $this->organization_url;
     }
 
-    public function organization(): array
+    public function organization(): ?OrganizationSimple
     {
         return $this->organization;
     }

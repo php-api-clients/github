@@ -24,7 +24,8 @@ final class CommitComment
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private array $reactions            = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class) */
+    private ?ReactionRollup $reactions = null;
 
     public function html_url(): ?string
     {
@@ -91,7 +92,7 @@ final class CommitComment
         return $this->author_association;
     }
 
-    public function reactions(): array
+    public function reactions(): ?ReactionRollup
     {
         return $this->reactions;
     }

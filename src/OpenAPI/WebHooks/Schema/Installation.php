@@ -11,8 +11,9 @@ final class Installation
     /**
      * The ID of the installation.
      */
-    private ?int $id       = null;
-    private array $account = [];
+    private ?int $id = null;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private ?User $account = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -42,7 +43,7 @@ final class Installation
         return $this->id;
     }
 
-    public function account(): array
+    public function account(): ?User
     {
         return $this->account;
     }
