@@ -10,28 +10,28 @@ final class TextMatches
 {
     public const SCHEMA_TITLE       = 'topic-search-result-item::text_matches';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $object_url     = null;
-    private ?string $object_type    = null;
-    private ?string $property       = null;
-    private ?string $fragment       = null;
-    private array $matches          = [];
+    private string $object_url;
+    private string $object_type;
+    private string $property;
+    private string $fragment;
+    private array $matches = [];
 
-    public function object_url(): ?string
+    public function object_url(): string
     {
         return $this->object_url;
     }
 
-    public function object_type(): ?string
+    public function object_type(): string
     {
         return $this->object_type;
     }
 
-    public function property(): ?string
+    public function property(): string
     {
         return $this->property;
     }
 
-    public function fragment(): ?string
+    public function fragment(): string
     {
         return $this->fragment;
     }

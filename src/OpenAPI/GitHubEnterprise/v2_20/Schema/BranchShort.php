@@ -8,11 +8,11 @@ final class BranchShort
 {
     public const SCHEMA_TITLE       = 'Branch Short';
     public const SCHEMA_DESCRIPTION = 'Branch Short';
-    private ?string $name           = null;
-    private array $commit           = [];
-    private ?bool $protected        = null;
+    private string $name;
+    private array $commit = [];
+    private bool $protected;
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -22,7 +22,7 @@ final class BranchShort
         return $this->commit;
     }
 
-    public function protected(): ?bool
+    public function protected(): bool
     {
         return $this->protected;
     }

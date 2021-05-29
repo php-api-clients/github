@@ -8,29 +8,29 @@ final class SimpleCommit
 {
     public const SCHEMA_TITLE       = 'Simple Commit';
     public const SCHEMA_DESCRIPTION = 'Simple Commit';
-    private ?string $id             = null;
-    private ?string $tree_id        = null;
-    private ?string $message        = null;
-    private ?string $timestamp      = null;
-    private array $author           = [];
-    private array $committer        = [];
+    private string $id;
+    private string $tree_id;
+    private string $message;
+    private string $timestamp;
+    private array $author    = [];
+    private array $committer = [];
 
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
 
-    public function tree_id(): ?string
+    public function tree_id(): string
     {
         return $this->tree_id;
     }
 
-    public function message(): ?string
+    public function message(): string
     {
         return $this->message;
     }
 
-    public function timestamp(): ?string
+    public function timestamp(): string
     {
         return $this->timestamp;
     }

@@ -11,20 +11,20 @@ final class CodeScanningAnalysisTool
     /**
      * The name of the tool used to generate the code scanning analysis.
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * The version of the tool used to generate the code scanning analysis.
      */
-    private ?string $version = null;
+    private string $version;
     /**
      * The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
      */
-    private ?string $guid = null;
+    private string $guid;
 
     /**
      * The name of the tool used to generate the code scanning analysis.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -32,7 +32,7 @@ final class CodeScanningAnalysisTool
     /**
      * The version of the tool used to generate the code scanning analysis.
      */
-    public function version(): ?string
+    public function version(): string
     {
         return $this->version;
     }
@@ -40,7 +40,7 @@ final class CodeScanningAnalysisTool
     /**
      * The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
      */
-    public function guid(): ?string
+    public function guid(): string
     {
         return $this->guid;
     }

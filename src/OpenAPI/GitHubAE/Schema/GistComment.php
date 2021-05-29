@@ -8,32 +8,32 @@ final class GistComment
 {
     public const SCHEMA_TITLE       = 'Gist Comment';
     public const SCHEMA_DESCRIPTION = 'A comment made to a gist.';
-    private ?int $id                = null;
-    private ?string $node_id        = null;
-    private ?string $url            = null;
+    private int $id;
+    private string $node_id;
+    private string $url;
     /**
      * The comment text.
      */
-    private ?string $body = null;
+    private string $body;
     private $user;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private string $created_at;
+    private string $updated_at;
     /**
      * How the author is associated with the repository.
      */
-    private ?string $author_association = null;
+    private string $author_association;
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -41,7 +41,7 @@ final class GistComment
     /**
      * The comment text.
      */
-    public function body(): ?string
+    public function body(): string
     {
         return $this->body;
     }
@@ -51,12 +51,12 @@ final class GistComment
         return $this->user;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
@@ -64,7 +64,7 @@ final class GistComment
     /**
      * How the author is associated with the repository.
      */
-    public function author_association(): ?string
+    public function author_association(): string
     {
         return $this->author_association;
     }

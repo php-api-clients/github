@@ -6,221 +6,221 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class OrganizationFull
 {
-    public const SCHEMA_TITLE                                 = 'Organization Full';
-    public const SCHEMA_DESCRIPTION                           = 'Organization Full';
-    private ?string $login                                    = null;
-    private ?int $id                                          = null;
-    private ?string $node_id                                  = null;
-    private ?string $url                                      = null;
-    private ?string $repos_url                                = null;
-    private ?string $events_url                               = null;
-    private ?string $hooks_url                                = null;
-    private ?string $issues_url                               = null;
-    private ?string $members_url                              = null;
-    private ?string $public_members_url                       = null;
-    private ?string $avatar_url                               = null;
-    private ?string $description                              = null;
-    private ?string $name                                     = null;
-    private ?string $company                                  = null;
-    private ?string $blog                                     = null;
-    private ?string $location                                 = null;
-    private ?string $email                                    = null;
-    private ?string $twitter_username                         = null;
-    private ?bool $is_verified                                = null;
-    private ?bool $has_organization_projects                  = null;
-    private ?bool $has_repository_projects                    = null;
-    private ?int $public_repos                                = null;
-    private ?int $public_gists                                = null;
-    private ?int $followers                                   = null;
-    private ?int $following                                   = null;
-    private ?string $html_url                                 = null;
-    private ?string $created_at                               = null;
-    private ?string $type                                     = null;
-    private ?int $total_private_repos                         = null;
-    private ?int $owned_private_repos                         = null;
-    private ?int $private_gists                               = null;
-    private ?int $disk_usage                                  = null;
-    private ?int $collaborators                               = null;
-    private ?string $billing_email                            = null;
-    private array $plan                                       = [];
-    private ?string $default_repository_permission            = null;
-    private ?bool $members_can_create_repositories            = null;
-    private ?bool $two_factor_requirement_enabled             = null;
-    private ?string $members_allowed_repository_creation_type = null;
-    private ?bool $members_can_create_public_repositories     = null;
-    private ?bool $members_can_create_private_repositories    = null;
-    private ?bool $members_can_create_internal_repositories   = null;
-    private ?bool $members_can_create_pages                   = null;
-    private ?bool $members_can_create_public_pages            = null;
-    private ?bool $members_can_create_private_pages           = null;
-    private ?string $updated_at                               = null;
+    public const SCHEMA_TITLE       = 'Organization Full';
+    public const SCHEMA_DESCRIPTION = 'Organization Full';
+    private string $login;
+    private int $id;
+    private string $node_id;
+    private string $url;
+    private string $repos_url;
+    private string $events_url;
+    private string $hooks_url;
+    private string $issues_url;
+    private string $members_url;
+    private string $public_members_url;
+    private string $avatar_url;
+    private string $description;
+    private string $name;
+    private string $company;
+    private string $blog;
+    private string $location;
+    private string $email;
+    private string $twitter_username;
+    private bool $is_verified;
+    private bool $has_organization_projects;
+    private bool $has_repository_projects;
+    private int $public_repos;
+    private int $public_gists;
+    private int $followers;
+    private int $following;
+    private string $html_url;
+    private string $created_at;
+    private string $type;
+    private int $total_private_repos;
+    private int $owned_private_repos;
+    private int $private_gists;
+    private int $disk_usage;
+    private int $collaborators;
+    private string $billing_email;
+    private array $plan = [];
+    private string $default_repository_permission;
+    private bool $members_can_create_repositories;
+    private bool $two_factor_requirement_enabled;
+    private string $members_allowed_repository_creation_type;
+    private bool $members_can_create_public_repositories;
+    private bool $members_can_create_private_repositories;
+    private bool $members_can_create_internal_repositories;
+    private bool $members_can_create_pages;
+    private bool $members_can_create_public_pages;
+    private bool $members_can_create_private_pages;
+    private string $updated_at;
 
-    public function login(): ?string
+    public function login(): string
     {
         return $this->login;
     }
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function repos_url(): ?string
+    public function repos_url(): string
     {
         return $this->repos_url;
     }
 
-    public function events_url(): ?string
+    public function events_url(): string
     {
         return $this->events_url;
     }
 
-    public function hooks_url(): ?string
+    public function hooks_url(): string
     {
         return $this->hooks_url;
     }
 
-    public function issues_url(): ?string
+    public function issues_url(): string
     {
         return $this->issues_url;
     }
 
-    public function members_url(): ?string
+    public function members_url(): string
     {
         return $this->members_url;
     }
 
-    public function public_members_url(): ?string
+    public function public_members_url(): string
     {
         return $this->public_members_url;
     }
 
-    public function avatar_url(): ?string
+    public function avatar_url(): string
     {
         return $this->avatar_url;
     }
 
-    public function description(): ?string
+    public function description(): string
     {
         return $this->description;
     }
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function company(): ?string
+    public function company(): string
     {
         return $this->company;
     }
 
-    public function blog(): ?string
+    public function blog(): string
     {
         return $this->blog;
     }
 
-    public function location(): ?string
+    public function location(): string
     {
         return $this->location;
     }
 
-    public function email(): ?string
+    public function email(): string
     {
         return $this->email;
     }
 
-    public function twitter_username(): ?string
+    public function twitter_username(): string
     {
         return $this->twitter_username;
     }
 
-    public function is_verified(): ?bool
+    public function is_verified(): bool
     {
         return $this->is_verified;
     }
 
-    public function has_organization_projects(): ?bool
+    public function has_organization_projects(): bool
     {
         return $this->has_organization_projects;
     }
 
-    public function has_repository_projects(): ?bool
+    public function has_repository_projects(): bool
     {
         return $this->has_repository_projects;
     }
 
-    public function public_repos(): ?int
+    public function public_repos(): int
     {
         return $this->public_repos;
     }
 
-    public function public_gists(): ?int
+    public function public_gists(): int
     {
         return $this->public_gists;
     }
 
-    public function followers(): ?int
+    public function followers(): int
     {
         return $this->followers;
     }
 
-    public function following(): ?int
+    public function following(): int
     {
         return $this->following;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }
 
-    public function total_private_repos(): ?int
+    public function total_private_repos(): int
     {
         return $this->total_private_repos;
     }
 
-    public function owned_private_repos(): ?int
+    public function owned_private_repos(): int
     {
         return $this->owned_private_repos;
     }
 
-    public function private_gists(): ?int
+    public function private_gists(): int
     {
         return $this->private_gists;
     }
 
-    public function disk_usage(): ?int
+    public function disk_usage(): int
     {
         return $this->disk_usage;
     }
 
-    public function collaborators(): ?int
+    public function collaborators(): int
     {
         return $this->collaborators;
     }
 
-    public function billing_email(): ?string
+    public function billing_email(): string
     {
         return $this->billing_email;
     }
@@ -230,57 +230,57 @@ final class OrganizationFull
         return $this->plan;
     }
 
-    public function default_repository_permission(): ?string
+    public function default_repository_permission(): string
     {
         return $this->default_repository_permission;
     }
 
-    public function members_can_create_repositories(): ?bool
+    public function members_can_create_repositories(): bool
     {
         return $this->members_can_create_repositories;
     }
 
-    public function two_factor_requirement_enabled(): ?bool
+    public function two_factor_requirement_enabled(): bool
     {
         return $this->two_factor_requirement_enabled;
     }
 
-    public function members_allowed_repository_creation_type(): ?string
+    public function members_allowed_repository_creation_type(): string
     {
         return $this->members_allowed_repository_creation_type;
     }
 
-    public function members_can_create_public_repositories(): ?bool
+    public function members_can_create_public_repositories(): bool
     {
         return $this->members_can_create_public_repositories;
     }
 
-    public function members_can_create_private_repositories(): ?bool
+    public function members_can_create_private_repositories(): bool
     {
         return $this->members_can_create_private_repositories;
     }
 
-    public function members_can_create_internal_repositories(): ?bool
+    public function members_can_create_internal_repositories(): bool
     {
         return $this->members_can_create_internal_repositories;
     }
 
-    public function members_can_create_pages(): ?bool
+    public function members_can_create_pages(): bool
     {
         return $this->members_can_create_pages;
     }
 
-    public function members_can_create_public_pages(): ?bool
+    public function members_can_create_public_pages(): bool
     {
         return $this->members_can_create_public_pages;
     }
 
-    public function members_can_create_private_pages(): ?bool
+    public function members_can_create_private_pages(): bool
     {
         return $this->members_can_create_private_pages;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }

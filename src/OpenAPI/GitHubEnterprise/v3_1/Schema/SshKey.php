@@ -6,17 +6,17 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class SshKey
 {
-    public const SCHEMA_TITLE           = 'ssh-key';
-    public const SCHEMA_DESCRIPTION     = '';
-    private ?string $key                = null;
-    private ?string $pretty_MINUS_print = null;
+    public const SCHEMA_TITLE       = 'ssh-key';
+    public const SCHEMA_DESCRIPTION = '';
+    private string $key;
+    private string $pretty_MINUS_print;
 
-    public function key(): ?string
+    public function key(): string
     {
         return $this->key;
     }
 
-    public function pretty_MINUS_print(): ?string
+    public function pretty_MINUS_print(): string
     {
         return $this->pretty_MINUS_print;
     }

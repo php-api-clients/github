@@ -8,15 +8,15 @@ final class Progress
 {
     public const SCHEMA_TITLE       = 'configuration-status::progress';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $status         = null;
-    private ?string $key            = null;
+    private string $status;
+    private string $key;
 
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
 
-    public function key(): ?string
+    public function key(): string
     {
         return $this->key;
     }

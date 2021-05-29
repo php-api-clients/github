@@ -8,16 +8,16 @@ final class Operations
 {
     public const SCHEMA_TITLE       = 'scim-user::operations';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $op             = null;
-    private ?string $path           = null;
+    private string $op;
+    private string $path;
     private $value;
 
-    public function op(): ?string
+    public function op(): string
     {
         return $this->op;
     }
 
-    public function path(): ?string
+    public function path(): string
     {
         return $this->path;
     }

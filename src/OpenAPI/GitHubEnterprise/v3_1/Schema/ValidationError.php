@@ -8,18 +8,18 @@ use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ValidationErro
 
 final class ValidationError
 {
-    public const SCHEMA_TITLE          = 'Validation Error';
-    public const SCHEMA_DESCRIPTION    = 'Validation Error';
-    private ?string $message           = null;
-    private ?string $documentation_url = null;
-    private array $errors              = [];
+    public const SCHEMA_TITLE       = 'Validation Error';
+    public const SCHEMA_DESCRIPTION = 'Validation Error';
+    private string $message;
+    private string $documentation_url;
+    private array $errors = [];
 
-    public function message(): ?string
+    public function message(): string
     {
         return $this->message;
     }
 
-    public function documentation_url(): ?string
+    public function documentation_url(): string
     {
         return $this->documentation_url;
     }

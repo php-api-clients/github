@@ -8,29 +8,29 @@ final class PersonalAccessToken
 {
     public const SCHEMA_TITLE       = 'Personal Access Token';
     public const SCHEMA_DESCRIPTION = 'The authorization for a Personal Access Token.';
-    private ?int $id                = null;
-    private ?string $url            = null;
+    private int $id;
+    private string $url;
     /**
      * A list of scopes that this authorization is in.
      */
-    private array $scopes             = [];
-    private ?string $token            = null;
-    private ?string $token_last_eight = null;
-    private ?string $hashed_token     = null;
-    private ?string $note             = null;
-    private ?string $note_url         = null;
-    private ?string $updated_at       = null;
-    private ?string $created_at       = null;
-    private ?string $fingerprint      = null;
+    private array $scopes = [];
+    private string $token;
+    private string $token_last_eight;
+    private string $hashed_token;
+    private string $note;
+    private string $note_url;
+    private string $updated_at;
+    private string $created_at;
+    private string $fingerprint;
     private $user;
-    private ?string $expiration = null;
+    private string $expiration;
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -43,42 +43,42 @@ final class PersonalAccessToken
         return $this->scopes;
     }
 
-    public function token(): ?string
+    public function token(): string
     {
         return $this->token;
     }
 
-    public function token_last_eight(): ?string
+    public function token_last_eight(): string
     {
         return $this->token_last_eight;
     }
 
-    public function hashed_token(): ?string
+    public function hashed_token(): string
     {
         return $this->hashed_token;
     }
 
-    public function note(): ?string
+    public function note(): string
     {
         return $this->note;
     }
 
-    public function note_url(): ?string
+    public function note_url(): string
     {
         return $this->note_url;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function fingerprint(): ?string
+    public function fingerprint(): string
     {
         return $this->fingerprint;
     }
@@ -88,7 +88,7 @@ final class PersonalAccessToken
         return $this->user;
     }
 
-    public function expiration(): ?string
+    public function expiration(): string
     {
         return $this->expiration;
     }

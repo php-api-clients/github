@@ -8,18 +8,18 @@ final class GistCommit
 {
     public const SCHEMA_TITLE       = 'Gist Commit';
     public const SCHEMA_DESCRIPTION = 'Gist Commit';
-    private ?string $url            = null;
-    private ?string $version        = null;
+    private string $url;
+    private string $version;
     private $user;
-    private array $change_status  = [];
-    private ?string $committed_at = null;
+    private array $change_status = [];
+    private string $committed_at;
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function version(): ?string
+    public function version(): string
     {
         return $this->version;
     }
@@ -34,7 +34,7 @@ final class GistCommit
         return $this->change_status;
     }
 
-    public function committed_at(): ?string
+    public function committed_at(): string
     {
         return $this->committed_at;
     }

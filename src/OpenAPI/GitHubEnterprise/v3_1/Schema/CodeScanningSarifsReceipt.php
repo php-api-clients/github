@@ -11,16 +11,16 @@ final class CodeScanningSarifsReceipt
     /**
      * An identifier for the upload.
      */
-    private ?string $id = null;
+    private string $id;
     /**
      * The REST API URL for checking the status of the upload.
      */
-    private ?string $url = null;
+    private string $url;
 
     /**
      * An identifier for the upload.
      */
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
@@ -28,7 +28,7 @@ final class CodeScanningSarifsReceipt
     /**
      * The REST API URL for checking the status of the upload.
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }

@@ -6,44 +6,44 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class ReleaseAsset
 {
-    public const SCHEMA_TITLE             = 'Release Asset';
-    public const SCHEMA_DESCRIPTION       = 'Data related to a release.';
-    private ?string $url                  = null;
-    private ?string $browser_download_url = null;
-    private ?int $id                      = null;
-    private ?string $node_id              = null;
+    public const SCHEMA_TITLE       = 'Release Asset';
+    public const SCHEMA_DESCRIPTION = 'Data related to a release.';
+    private string $url;
+    private string $browser_download_url;
+    private int $id;
+    private string $node_id;
     /**
      * The file name of the asset.
      */
-    private ?string $name  = null;
-    private ?string $label = null;
+    private string $name;
+    private string $label;
     /**
      * State of the release asset.
      */
-    private ?string $state        = null;
-    private ?string $content_type = null;
-    private ?int $size            = null;
-    private ?int $download_count  = null;
-    private ?string $created_at   = null;
-    private ?string $updated_at   = null;
+    private string $state;
+    private string $content_type;
+    private int $size;
+    private int $download_count;
+    private string $created_at;
+    private string $updated_at;
     private $uploader;
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function browser_download_url(): ?string
+    public function browser_download_url(): string
     {
         return $this->browser_download_url;
     }
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -51,12 +51,12 @@ final class ReleaseAsset
     /**
      * The file name of the asset.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function label(): ?string
+    public function label(): string
     {
         return $this->label;
     }
@@ -64,32 +64,32 @@ final class ReleaseAsset
     /**
      * State of the release asset.
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
 
-    public function content_type(): ?string
+    public function content_type(): string
     {
         return $this->content_type;
     }
 
-    public function size(): ?int
+    public function size(): int
     {
         return $this->size;
     }
 
-    public function download_count(): ?int
+    public function download_count(): int
     {
         return $this->download_count;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }

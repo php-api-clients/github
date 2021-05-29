@@ -12,23 +12,23 @@ final class MemberInvited
 {
     public const SCHEMA_TITLE       = 'organization member_invited event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * The invitation for the user or email if the action is `member_invited`.
      */
     private array $invitation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -41,7 +41,7 @@ final class MemberInvited
         return $this->invitation;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
@@ -49,12 +49,12 @@ final class MemberInvited
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

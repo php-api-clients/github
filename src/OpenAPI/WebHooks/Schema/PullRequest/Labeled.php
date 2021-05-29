@@ -15,33 +15,33 @@ final class Labeled
 {
     public const SCHEMA_TITLE       = 'pull_request labeled event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * The pull request number.
      */
-    private ?int $number = null;
+    private int $number;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class) */
-    private ?PullRequest $pull_request = null;
+    private PullRequest $pull_request = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class) */
-    private ?Label $label = null;
+    private Label $label = [];
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -49,17 +49,17 @@ final class Labeled
     /**
      * The pull request number.
      */
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }
 
-    public function pull_request(): ?PullRequest
+    public function pull_request(): PullRequest
     {
         return $this->pull_request;
     }
 
-    public function label(): ?Label
+    public function label(): Label
     {
         return $this->label;
     }
@@ -67,7 +67,7 @@ final class Labeled
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
@@ -75,17 +75,17 @@ final class Labeled
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

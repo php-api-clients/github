@@ -14,9 +14,9 @@ final class Edited
 {
     public const SCHEMA_TITLE       = 'label edited event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class) */
-    private ?Label $label = null;
+    private Label $label = [];
     /**
      * The changes to the label if the action was `edited`.
      */
@@ -26,24 +26,24 @@ final class Edited
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
 
-    public function label(): ?Label
+    public function label(): Label
     {
         return $this->label;
     }
@@ -59,12 +59,12 @@ final class Edited
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
@@ -72,12 +72,12 @@ final class Edited
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

@@ -11,18 +11,18 @@ final class Committer
     /**
      * The git author's name.
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * The git author's email address.
      */
     private $email;
-    private ?string $date     = null;
-    private ?string $username = null;
+    private string $date;
+    private string $username;
 
     /**
      * The git author's name.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -35,12 +35,12 @@ final class Committer
         return $this->email;
     }
 
-    public function date(): ?string
+    public function date(): string
     {
         return $this->date;
     }
 
-    public function username(): ?string
+    public function username(): string
     {
         return $this->username;
     }

@@ -11,28 +11,28 @@ final class Resources
     public const SCHEMA_TITLE       = 'scim-group-list-enterprise::Resources';
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas          = [];
-    private ?string $id             = null;
-    private ?string $externalId     = null;
-    private ?string $displayName    = null;
-    private array $members          = [];
-    private array $meta             = [];
+    private string $id;
+    private string $externalId;
+    private string $displayName;
+    private array $members = [];
+    private array $meta    = [];
 
     public function schemas(): array
     {
         return $this->schemas;
     }
 
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
 
-    public function externalId(): ?string
+    public function externalId(): string
     {
         return $this->externalId;
     }
 
-    public function displayName(): ?string
+    public function displayName(): string
     {
         return $this->displayName;
     }

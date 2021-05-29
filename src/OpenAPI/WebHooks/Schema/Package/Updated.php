@@ -12,7 +12,7 @@ final class Updated
 {
     public const SCHEMA_TITLE       = 'package updated event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * Information about the package.
      */
@@ -22,13 +22,13 @@ final class Updated
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -44,17 +44,17 @@ final class Updated
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

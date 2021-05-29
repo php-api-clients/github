@@ -11,29 +11,29 @@ final class Steps
     /**
      * The phase of the lifecycle that the job is currently in.
      */
-    private ?string $status = null;
+    private string $status;
     /**
      * The outcome of the job.
      */
-    private ?string $conclusion = null;
+    private string $conclusion;
     /**
      * The name of the job.
      */
-    private ?string $name = null;
-    private ?int $number  = null;
+    private string $name;
+    private int $number;
     /**
      * The time that the step started, in ISO 8601 format.
      */
-    private ?string $started_at = null;
+    private string $started_at;
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    private ?string $completed_at = null;
+    private string $completed_at;
 
     /**
      * The phase of the lifecycle that the job is currently in.
      */
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
@@ -41,7 +41,7 @@ final class Steps
     /**
      * The outcome of the job.
      */
-    public function conclusion(): ?string
+    public function conclusion(): string
     {
         return $this->conclusion;
     }
@@ -49,12 +49,12 @@ final class Steps
     /**
      * The name of the job.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }
@@ -62,7 +62,7 @@ final class Steps
     /**
      * The time that the step started, in ISO 8601 format.
      */
-    public function started_at(): ?string
+    public function started_at(): string
     {
         return $this->started_at;
     }
@@ -70,7 +70,7 @@ final class Steps
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    public function completed_at(): ?string
+    public function completed_at(): string
     {
         return $this->completed_at;
     }

@@ -13,19 +13,19 @@ final class Reviewers
     /**
      * The type of reviewer. Must be one of: `User` or `Team`
      */
-    private ?string $type = null;
+    private string $type;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
-    private ?SimpleUser $reviewer = null;
+    private SimpleUser $reviewer;
 
     /**
      * The type of reviewer. Must be one of: `User` or `Team`
      */
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }
 
-    public function reviewer(): ?SimpleUser
+    public function reviewer(): SimpleUser
     {
         return $this->reviewer;
     }

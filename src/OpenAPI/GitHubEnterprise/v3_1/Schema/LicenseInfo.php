@@ -9,18 +9,18 @@ final class LicenseInfo
     public const SCHEMA_TITLE       = 'license-info';
     public const SCHEMA_DESCRIPTION = '';
     private $seats;
-    private ?int $seats_used = null;
+    private int $seats_used;
     private $seats_available;
-    private ?string $kind               = null;
-    private ?int $days_until_expiration = null;
-    private ?string $expire_at          = null;
+    private string $kind;
+    private int $days_until_expiration;
+    private string $expire_at;
 
     public function seats()
     {
         return $this->seats;
     }
 
-    public function seats_used(): ?int
+    public function seats_used(): int
     {
         return $this->seats_used;
     }
@@ -30,17 +30,17 @@ final class LicenseInfo
         return $this->seats_available;
     }
 
-    public function kind(): ?string
+    public function kind(): string
     {
         return $this->kind;
     }
 
-    public function days_until_expiration(): ?int
+    public function days_until_expiration(): int
     {
         return $this->days_until_expiration;
     }
 
-    public function expire_at(): ?string
+    public function expire_at(): string
     {
         return $this->expire_at;
     }

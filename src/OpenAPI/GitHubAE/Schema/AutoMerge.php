@@ -13,24 +13,24 @@ final class AutoMerge
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
-    private ?SimpleUser $enabled_by = null;
+    private SimpleUser $enabled_by = [];
     /**
      * The merge method to use.
      */
-    private ?string $merge_method = null;
+    private string $merge_method;
     /**
      * Title for the merge commit message.
      */
-    private ?string $commit_title = null;
+    private string $commit_title;
     /**
      * Commit message for the merge commit.
      */
-    private ?string $commit_message = null;
+    private string $commit_message;
 
     /**
      * Simple User
      */
-    public function enabled_by(): ?SimpleUser
+    public function enabled_by(): SimpleUser
     {
         return $this->enabled_by;
     }
@@ -38,7 +38,7 @@ final class AutoMerge
     /**
      * The merge method to use.
      */
-    public function merge_method(): ?string
+    public function merge_method(): string
     {
         return $this->merge_method;
     }
@@ -46,7 +46,7 @@ final class AutoMerge
     /**
      * Title for the merge commit message.
      */
-    public function commit_title(): ?string
+    public function commit_title(): string
     {
         return $this->commit_title;
     }
@@ -54,7 +54,7 @@ final class AutoMerge
     /**
      * Commit message for the merge commit.
      */
-    public function commit_message(): ?string
+    public function commit_message(): string
     {
         return $this->commit_message;
     }

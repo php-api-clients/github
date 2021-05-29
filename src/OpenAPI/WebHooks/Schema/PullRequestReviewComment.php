@@ -11,27 +11,27 @@ final class PullRequestReviewComment
     /**
      * URL for the pull request review comment
      */
-    private ?string $url = null;
+    private string $url;
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    private ?int $pull_request_review_id = null;
+    private int $pull_request_review_id;
     /**
      * The ID of the pull request review comment.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The node ID of the pull request review comment.
      */
-    private ?string $node_id = null;
+    private string $node_id;
     /**
      * The diff of the line that the comment refers to.
      */
-    private ?string $diff_hunk = null;
+    private string $diff_hunk;
     /**
      * The relative path of the file to which the comment applies.
      */
-    private ?string $path = null;
+    private string $path;
     /**
      * The line index in the diff to which the comment applies.
      */
@@ -39,36 +39,36 @@ final class PullRequestReviewComment
     /**
      * The index of the original line in the diff to which the comment applies.
      */
-    private ?int $original_position = null;
+    private int $original_position;
     /**
      * The SHA of the commit to which the comment applies.
      */
-    private ?string $commit_id = null;
+    private string $commit_id;
     /**
      * The SHA of the original commit to which the comment applies.
      */
-    private ?string $original_commit_id = null;
+    private string $original_commit_id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $user = null;
+    private User $user = [];
     /**
      * The text of the comment.
      */
-    private ?string $body       = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private string $body;
+    private string $created_at;
+    private string $updated_at;
     /**
      * HTML URL for the pull request review comment.
      */
-    private ?string $html_url = null;
+    private string $html_url;
     /**
      * URL for the pull request that the review comment belongs to.
      */
-    private ?string $pull_request_url = null;
+    private string $pull_request_url;
     /**
      * How the author is associated with the repository.
      */
-    private ?string $author_association = null;
-    private array $_links               = [];
+    private string $author_association;
+    private array $_links = [];
     /**
      * The first line of the range for a multi-line comment.
      */
@@ -88,20 +88,20 @@ final class PullRequestReviewComment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    private ?int $original_line = null;
+    private int $original_line;
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    private ?string $side = null;
+    private string $side;
     /**
      * The comment ID to reply to.
      */
-    private ?int $in_reply_to_id = null;
+    private int $in_reply_to_id;
 
     /**
      * URL for the pull request review comment
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -109,7 +109,7 @@ final class PullRequestReviewComment
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    public function pull_request_review_id(): ?int
+    public function pull_request_review_id(): int
     {
         return $this->pull_request_review_id;
     }
@@ -117,7 +117,7 @@ final class PullRequestReviewComment
     /**
      * The ID of the pull request review comment.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -125,7 +125,7 @@ final class PullRequestReviewComment
     /**
      * The node ID of the pull request review comment.
      */
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -133,7 +133,7 @@ final class PullRequestReviewComment
     /**
      * The diff of the line that the comment refers to.
      */
-    public function diff_hunk(): ?string
+    public function diff_hunk(): string
     {
         return $this->diff_hunk;
     }
@@ -141,7 +141,7 @@ final class PullRequestReviewComment
     /**
      * The relative path of the file to which the comment applies.
      */
-    public function path(): ?string
+    public function path(): string
     {
         return $this->path;
     }
@@ -157,7 +157,7 @@ final class PullRequestReviewComment
     /**
      * The index of the original line in the diff to which the comment applies.
      */
-    public function original_position(): ?int
+    public function original_position(): int
     {
         return $this->original_position;
     }
@@ -165,7 +165,7 @@ final class PullRequestReviewComment
     /**
      * The SHA of the commit to which the comment applies.
      */
-    public function commit_id(): ?string
+    public function commit_id(): string
     {
         return $this->commit_id;
     }
@@ -173,12 +173,12 @@ final class PullRequestReviewComment
     /**
      * The SHA of the original commit to which the comment applies.
      */
-    public function original_commit_id(): ?string
+    public function original_commit_id(): string
     {
         return $this->original_commit_id;
     }
 
-    public function user(): ?User
+    public function user(): User
     {
         return $this->user;
     }
@@ -186,17 +186,17 @@ final class PullRequestReviewComment
     /**
      * The text of the comment.
      */
-    public function body(): ?string
+    public function body(): string
     {
         return $this->body;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
@@ -204,7 +204,7 @@ final class PullRequestReviewComment
     /**
      * HTML URL for the pull request review comment.
      */
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -212,7 +212,7 @@ final class PullRequestReviewComment
     /**
      * URL for the pull request that the review comment belongs to.
      */
-    public function pull_request_url(): ?string
+    public function pull_request_url(): string
     {
         return $this->pull_request_url;
     }
@@ -220,7 +220,7 @@ final class PullRequestReviewComment
     /**
      * How the author is associated with the repository.
      */
-    public function author_association(): ?string
+    public function author_association(): string
     {
         return $this->author_association;
     }
@@ -265,7 +265,7 @@ final class PullRequestReviewComment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function original_line(): ?int
+    public function original_line(): int
     {
         return $this->original_line;
     }
@@ -273,7 +273,7 @@ final class PullRequestReviewComment
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function side(): ?string
+    public function side(): string
     {
         return $this->side;
     }
@@ -281,7 +281,7 @@ final class PullRequestReviewComment
     /**
      * The comment ID to reply to.
      */
-    public function in_reply_to_id(): ?int
+    public function in_reply_to_id(): int
     {
         return $this->in_reply_to_id;
     }

@@ -14,7 +14,7 @@ final class CheckSuitePreference
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
-    private ?MinimalRepository $repository = null;
+    private MinimalRepository $repository = [];
 
     public function preferences(): array
     {
@@ -24,7 +24,7 @@ final class CheckSuitePreference
     /**
      * Minimal Repository
      */
-    public function repository(): ?MinimalRepository
+    public function repository(): MinimalRepository
     {
         return $this->repository;
     }

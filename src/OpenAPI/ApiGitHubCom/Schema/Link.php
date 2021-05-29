@@ -8,9 +8,9 @@ final class Link
 {
     public const SCHEMA_TITLE       = 'Link';
     public const SCHEMA_DESCRIPTION = 'Hypermedia Link';
-    private ?string $href           = null;
+    private string $href;
 
-    public function href(): ?string
+    public function href(): string
     {
         return $this->href;
     }

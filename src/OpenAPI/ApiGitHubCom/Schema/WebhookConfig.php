@@ -11,21 +11,21 @@ final class WebhookConfig
     /**
      * The URL to which the payloads will be delivered.
      */
-    private ?string $url = null;
+    private string $url;
     /**
      * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
      */
-    private ?string $content_type = null;
+    private string $content_type;
     /**
      * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
      */
-    private ?string $secret = null;
+    private string $secret;
     private $insecure_ssl;
 
     /**
      * The URL to which the payloads will be delivered.
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -33,7 +33,7 @@ final class WebhookConfig
     /**
      * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
      */
-    public function content_type(): ?string
+    public function content_type(): string
     {
         return $this->content_type;
     }
@@ -41,7 +41,7 @@ final class WebhookConfig
     /**
      * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
      */
-    public function secret(): ?string
+    public function secret(): string
     {
         return $this->secret;
     }

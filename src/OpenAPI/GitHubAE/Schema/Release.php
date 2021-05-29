@@ -8,86 +8,86 @@ final class Release
 {
     public const SCHEMA_TITLE       = 'Release';
     public const SCHEMA_DESCRIPTION = 'A release.';
-    private ?string $url            = null;
-    private ?string $html_url       = null;
-    private ?string $assets_url     = null;
-    private ?string $upload_url     = null;
-    private ?string $tarball_url    = null;
-    private ?string $zipball_url    = null;
-    private ?int $id                = null;
-    private ?string $node_id        = null;
+    private string $url;
+    private string $html_url;
+    private string $assets_url;
+    private string $upload_url;
+    private string $tarball_url;
+    private string $zipball_url;
+    private int $id;
+    private string $node_id;
     /**
      * The name of the tag.
      */
-    private ?string $tag_name = null;
+    private string $tag_name;
     /**
      * Specifies the commitish value that determines where the Git tag is created from.
      */
-    private ?string $target_commitish = null;
-    private ?string $name             = null;
-    private ?string $body             = null;
+    private string $target_commitish;
+    private string $name;
+    private string $body;
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
-    private ?bool $draft = null;
+    private bool $draft;
     /**
      * Whether to identify the release as a prerelease or a full release.
      */
-    private ?bool $prerelease     = null;
-    private ?string $created_at   = null;
-    private ?string $published_at = null;
+    private bool $prerelease;
+    private string $created_at;
+    private string $published_at;
     /**
      * Simple User
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
-    private ?SimpleUser $author = null;
-    private array $assets       = [];
-    private ?string $body_html  = null;
-    private ?string $body_text  = null;
+    private SimpleUser $author = [];
+    private array $assets      = [];
+    private string $body_html;
+    private string $body_text;
     /**
      * The URL of the release discussion.
      */
-    private ?string $discussion_url = null;
+    private string $discussion_url;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReactionRollup::class) */
-    private ?ReactionRollup $reactions = null;
+    private ReactionRollup $reactions = [];
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function assets_url(): ?string
+    public function assets_url(): string
     {
         return $this->assets_url;
     }
 
-    public function upload_url(): ?string
+    public function upload_url(): string
     {
         return $this->upload_url;
     }
 
-    public function tarball_url(): ?string
+    public function tarball_url(): string
     {
         return $this->tarball_url;
     }
 
-    public function zipball_url(): ?string
+    public function zipball_url(): string
     {
         return $this->zipball_url;
     }
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -95,7 +95,7 @@ final class Release
     /**
      * The name of the tag.
      */
-    public function tag_name(): ?string
+    public function tag_name(): string
     {
         return $this->tag_name;
     }
@@ -103,17 +103,17 @@ final class Release
     /**
      * Specifies the commitish value that determines where the Git tag is created from.
      */
-    public function target_commitish(): ?string
+    public function target_commitish(): string
     {
         return $this->target_commitish;
     }
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function body(): ?string
+    public function body(): string
     {
         return $this->body;
     }
@@ -121,7 +121,7 @@ final class Release
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
-    public function draft(): ?bool
+    public function draft(): bool
     {
         return $this->draft;
     }
@@ -129,17 +129,17 @@ final class Release
     /**
      * Whether to identify the release as a prerelease or a full release.
      */
-    public function prerelease(): ?bool
+    public function prerelease(): bool
     {
         return $this->prerelease;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function published_at(): ?string
+    public function published_at(): string
     {
         return $this->published_at;
     }
@@ -147,7 +147,7 @@ final class Release
     /**
      * Simple User
      */
-    public function author(): ?SimpleUser
+    public function author(): SimpleUser
     {
         return $this->author;
     }
@@ -160,12 +160,12 @@ final class Release
         return $this->assets;
     }
 
-    public function body_html(): ?string
+    public function body_html(): string
     {
         return $this->body_html;
     }
 
-    public function body_text(): ?string
+    public function body_text(): string
     {
         return $this->body_text;
     }
@@ -173,12 +173,12 @@ final class Release
     /**
      * The URL of the release discussion.
      */
-    public function discussion_url(): ?string
+    public function discussion_url(): string
     {
         return $this->discussion_url;
     }
 
-    public function reactions(): ?ReactionRollup
+    public function reactions(): ReactionRollup
     {
         return $this->reactions;
     }

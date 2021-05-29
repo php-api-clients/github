@@ -13,9 +13,9 @@ final class GitCommit
     /**
      * SHA for the commit
      */
-    private ?string $sha     = null;
-    private ?string $node_id = null;
-    private ?string $url     = null;
+    private string $sha;
+    private string $node_id;
+    private string $url;
     /**
      * Identifying information for the git-user
      */
@@ -27,26 +27,26 @@ final class GitCommit
     /**
      * Message describing the purpose of the commit
      */
-    private ?string $message    = null;
+    private string $message;
     private array $tree         = [];
     private array $parents      = [];
     private array $verification = [];
-    private ?string $html_url   = null;
+    private string $html_url;
 
     /**
      * SHA for the commit
      */
-    public function sha(): ?string
+    public function sha(): string
     {
         return $this->sha;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -70,7 +70,7 @@ final class GitCommit
     /**
      * Message describing the purpose of the commit
      */
-    public function message(): ?string
+    public function message(): string
     {
         return $this->message;
     }
@@ -93,7 +93,7 @@ final class GitCommit
         return $this->verification;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }

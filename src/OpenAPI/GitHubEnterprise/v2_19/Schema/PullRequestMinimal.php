@@ -8,23 +8,23 @@ final class PullRequestMinimal
 {
     public const SCHEMA_TITLE       = 'Pull Request Minimal';
     public const SCHEMA_DESCRIPTION = '';
-    private ?int $id                = null;
-    private ?int $number            = null;
-    private ?string $url            = null;
-    private array $head             = [];
-    private array $base             = [];
+    private int $id;
+    private int $number;
+    private string $url;
+    private array $head = [];
+    private array $base = [];
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }

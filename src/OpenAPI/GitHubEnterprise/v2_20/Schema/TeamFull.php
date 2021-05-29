@@ -11,54 +11,54 @@ final class TeamFull
     /**
      * Unique identifier of the team
      */
-    private ?int $id         = null;
-    private ?string $node_id = null;
+    private int $id;
+    private string $node_id;
     /**
      * URL for the team
      */
-    private ?string $url      = null;
-    private ?string $html_url = null;
+    private string $url;
+    private string $html_url;
     /**
      * Name of the team
      */
-    private ?string $name        = null;
-    private ?string $slug        = null;
-    private ?string $description = null;
+    private string $name;
+    private string $slug;
+    private string $description;
     /**
      * The level of privacy this team should have
      */
-    private ?string $privacy = null;
+    private string $privacy;
     /**
      * Permission that the team will have for its repositories
      */
-    private ?string $permission       = null;
-    private ?string $members_url      = null;
-    private ?string $repositories_url = null;
+    private string $permission;
+    private string $members_url;
+    private string $repositories_url;
     private $parent;
-    private ?int $members_count = null;
-    private ?int $repos_count   = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private int $members_count;
+    private int $repos_count;
+    private string $created_at;
+    private string $updated_at;
     /**
      * Organization Full
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\OrganizationFull::class)
      */
-    private ?OrganizationFull $organization = null;
+    private OrganizationFull $organization = [];
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
-    private ?string $ldap_dn = null;
+    private string $ldap_dn;
 
     /**
      * Unique identifier of the team
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -66,12 +66,12 @@ final class TeamFull
     /**
      * URL for the team
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -79,17 +79,17 @@ final class TeamFull
     /**
      * Name of the team
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function slug(): ?string
+    public function slug(): string
     {
         return $this->slug;
     }
 
-    public function description(): ?string
+    public function description(): string
     {
         return $this->description;
     }
@@ -97,7 +97,7 @@ final class TeamFull
     /**
      * The level of privacy this team should have
      */
-    public function privacy(): ?string
+    public function privacy(): string
     {
         return $this->privacy;
     }
@@ -105,17 +105,17 @@ final class TeamFull
     /**
      * Permission that the team will have for its repositories
      */
-    public function permission(): ?string
+    public function permission(): string
     {
         return $this->permission;
     }
 
-    public function members_url(): ?string
+    public function members_url(): string
     {
         return $this->members_url;
     }
 
-    public function repositories_url(): ?string
+    public function repositories_url(): string
     {
         return $this->repositories_url;
     }
@@ -125,22 +125,22 @@ final class TeamFull
         return $this->parent;
     }
 
-    public function members_count(): ?int
+    public function members_count(): int
     {
         return $this->members_count;
     }
 
-    public function repos_count(): ?int
+    public function repos_count(): int
     {
         return $this->repos_count;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
@@ -148,7 +148,7 @@ final class TeamFull
     /**
      * Organization Full
      */
-    public function organization(): ?OrganizationFull
+    public function organization(): OrganizationFull
     {
         return $this->organization;
     }
@@ -156,7 +156,7 @@ final class TeamFull
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
-    public function ldap_dn(): ?string
+    public function ldap_dn(): string
     {
         return $this->ldap_dn;
     }

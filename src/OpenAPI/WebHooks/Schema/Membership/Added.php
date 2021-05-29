@@ -13,31 +13,31 @@ final class Added
 {
     public const SCHEMA_TITLE       = 'membership added event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * The scope of the membership. Currently, can only be `team`.
      */
-    private ?string $scope = null;
+    private string $scope;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $member = null;
+    private User $member = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /**
      * Groups of organization members that gives permissions on specified repositories.
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team::class)
      */
-    private ?Team $team = null;
+    private Team $team = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -45,17 +45,17 @@ final class Added
     /**
      * The scope of the membership. Currently, can only be `team`.
      */
-    public function scope(): ?string
+    public function scope(): string
     {
         return $this->scope;
     }
 
-    public function member(): ?User
+    public function member(): User
     {
         return $this->member;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
@@ -63,12 +63,12 @@ final class Added
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function team(): ?Team
+    public function team(): Team
     {
         return $this->team;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }
@@ -76,7 +76,7 @@ final class Added
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }

@@ -10,19 +10,19 @@ final class PendingChangeCancelled
 {
     public const SCHEMA_TITLE       = 'marketplace_purchase pending_change_cancelled event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
-    private ?string $effective_date = null;
-    private array $sender           = [];
+    private string $action;
+    private string $effective_date;
+    private array $sender = [];
     private $marketplace_purchase;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class) */
-    private ?MarketplacePurchase $previous_marketplace_purchase = null;
+    private MarketplacePurchase $previous_marketplace_purchase = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
 
-    public function effective_date(): ?string
+    public function effective_date(): string
     {
         return $this->effective_date;
     }
@@ -37,7 +37,7 @@ final class PendingChangeCancelled
         return $this->marketplace_purchase;
     }
 
-    public function previous_marketplace_purchase(): ?MarketplacePurchase
+    public function previous_marketplace_purchase(): MarketplacePurchase
     {
         return $this->previous_marketplace_purchase;
     }

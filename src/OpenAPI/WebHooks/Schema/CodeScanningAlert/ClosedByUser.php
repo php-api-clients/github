@@ -13,7 +13,7 @@ final class ClosedByUser
 {
     public const SCHEMA_TITLE       = 'code_scanning_alert closed_by_user event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * The code scanning alert involved in the event.
      */
@@ -21,29 +21,29 @@ final class ClosedByUser
     /**
      * The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    private ?string $ref = null;
+    private string $ref;
     /**
      * The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    private ?string $commit_oid = null;
+    private string $commit_oid;
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -59,7 +59,7 @@ final class ClosedByUser
     /**
      * The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    public function ref(): ?string
+    public function ref(): string
     {
         return $this->ref;
     }
@@ -67,7 +67,7 @@ final class ClosedByUser
     /**
      * The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    public function commit_oid(): ?string
+    public function commit_oid(): string
     {
         return $this->commit_oid;
     }
@@ -75,12 +75,12 @@ final class ClosedByUser
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
@@ -88,12 +88,12 @@ final class ClosedByUser
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

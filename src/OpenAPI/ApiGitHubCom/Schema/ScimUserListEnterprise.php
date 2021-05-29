@@ -11,27 +11,27 @@ final class ScimUserListEnterprise
     public const SCHEMA_TITLE       = 'scim-user-list-enterprise';
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas          = [];
-    private ?number $totalResults   = null;
-    private ?number $itemsPerPage   = null;
-    private ?number $startIndex     = null;
-    private array $Resources        = [];
+    private number $totalResults;
+    private number $itemsPerPage;
+    private number $startIndex;
+    private array $Resources = [];
 
     public function schemas(): array
     {
         return $this->schemas;
     }
 
-    public function totalResults(): ?number
+    public function totalResults(): number
     {
         return $this->totalResults;
     }
 
-    public function itemsPerPage(): ?number
+    public function itemsPerPage(): number
     {
         return $this->itemsPerPage;
     }
 
-    public function startIndex(): ?number
+    public function startIndex(): number
     {
         return $this->startIndex;
     }

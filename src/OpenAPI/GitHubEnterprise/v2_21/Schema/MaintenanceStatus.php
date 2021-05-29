@@ -8,18 +8,18 @@ use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\MaintenanceSt
 
 final class MaintenanceStatus
 {
-    public const SCHEMA_TITLE          = 'maintenance-status';
-    public const SCHEMA_DESCRIPTION    = '';
-    private ?string $status            = null;
-    private ?string $scheduled_time    = null;
+    public const SCHEMA_TITLE       = 'maintenance-status';
+    public const SCHEMA_DESCRIPTION = '';
+    private string $status;
+    private string $scheduled_time;
     private array $connection_services = [];
 
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
 
-    public function scheduled_time(): ?string
+    public function scheduled_time(): string
     {
         return $this->scheduled_time;
     }

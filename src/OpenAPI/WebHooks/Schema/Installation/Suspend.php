@@ -11,17 +11,17 @@ final class Suspend
 {
     public const SCHEMA_TITLE       = 'installation suspend event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     private $installation;
     /**
      * An array of repository objects that the installation can access.
      */
     private array $repositories = [];
-    private ?null $requester    = null;
+    private null $requester;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -41,12 +41,12 @@ final class Suspend
         return $this->repositories;
     }
 
-    public function requester(): ?null
+    public function requester(): null
     {
         return $this->requester;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

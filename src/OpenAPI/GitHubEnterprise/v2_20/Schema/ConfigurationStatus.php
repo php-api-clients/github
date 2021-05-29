@@ -10,10 +10,10 @@ final class ConfigurationStatus
 {
     public const SCHEMA_TITLE       = 'configuration-status';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $status         = null;
-    private array $progress         = [];
+    private string $status;
+    private array $progress = [];
 
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }

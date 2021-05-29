@@ -13,26 +13,26 @@ final class Runner
     /**
      * The id of the runner.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The name of the runner.
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * The Operating System of the runner.
      */
-    private ?string $os = null;
+    private string $os;
     /**
      * The status of the runner.
      */
-    private ?string $status = null;
-    private ?bool $busy     = null;
-    private array $labels   = [];
+    private string $status;
+    private bool $busy;
+    private array $labels = [];
 
     /**
      * The id of the runner.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -40,7 +40,7 @@ final class Runner
     /**
      * The name of the runner.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -48,7 +48,7 @@ final class Runner
     /**
      * The Operating System of the runner.
      */
-    public function os(): ?string
+    public function os(): string
     {
         return $this->os;
     }
@@ -56,12 +56,12 @@ final class Runner
     /**
      * The status of the runner.
      */
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
 
-    public function busy(): ?bool
+    public function busy(): bool
     {
         return $this->busy;
     }

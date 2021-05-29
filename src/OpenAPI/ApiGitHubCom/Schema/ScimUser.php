@@ -18,20 +18,20 @@ final class ScimUser
     /**
      * Unique identifier of an external identity
      */
-    private ?string $id = null;
+    private string $id;
     /**
      * The ID of the User.
      */
-    private ?string $externalId = null;
+    private string $externalId;
     /**
      * Configured by the admin. Could be an email, login, or username
      */
-    private ?string $userName = null;
+    private string $userName;
     /**
      * The name of the user, suitable for display to end-users
      */
-    private ?string $displayName = null;
-    private array $name          = [];
+    private string $displayName;
+    private array $name = [];
     /**
      * user emails
      */
@@ -39,12 +39,12 @@ final class ScimUser
     /**
      * The active status of the User.
      */
-    private ?bool $active = null;
-    private array $meta   = [];
+    private bool $active;
+    private array $meta = [];
     /**
      * The ID of the organization.
      */
-    private ?int $organization_id = null;
+    private int $organization_id;
     /**
      * Set of operations to be performed
      */
@@ -65,7 +65,7 @@ final class ScimUser
     /**
      * Unique identifier of an external identity
      */
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
@@ -73,7 +73,7 @@ final class ScimUser
     /**
      * The ID of the User.
      */
-    public function externalId(): ?string
+    public function externalId(): string
     {
         return $this->externalId;
     }
@@ -81,7 +81,7 @@ final class ScimUser
     /**
      * Configured by the admin. Could be an email, login, or username
      */
-    public function userName(): ?string
+    public function userName(): string
     {
         return $this->userName;
     }
@@ -89,7 +89,7 @@ final class ScimUser
     /**
      * The name of the user, suitable for display to end-users
      */
-    public function displayName(): ?string
+    public function displayName(): string
     {
         return $this->displayName;
     }
@@ -112,7 +112,7 @@ final class ScimUser
     /**
      * The active status of the User.
      */
-    public function active(): ?bool
+    public function active(): bool
     {
         return $this->active;
     }
@@ -125,7 +125,7 @@ final class ScimUser
     /**
      * The ID of the organization.
      */
-    public function organization_id(): ?int
+    public function organization_id(): int
     {
         return $this->organization_id;
     }

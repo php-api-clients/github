@@ -17,18 +17,18 @@ final class Event
     /**
      * The unique identifier of the status.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The Commit SHA.
      */
-    private ?string $sha  = null;
-    private ?string $name = null;
+    private string $sha;
+    private string $name;
     private $avatar_url;
     /**
      * The optional link added to the status.
      */
     private $target_url;
-    private ?string $context = null;
+    private string $context;
     /**
      * The optional human-readable description added to the status.
      */
@@ -36,35 +36,35 @@ final class Event
     /**
      * The new state. Can be `pending`, `success`, `failure`, or `error`.
      */
-    private ?string $state = null;
-    private array $commit  = [];
+    private string $state;
+    private array $commit = [];
     /**
      * An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
      */
-    private array $branches     = [];
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private array $branches = [];
+    private string $created_at;
+    private string $updated_at;
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
     /**
      * The unique identifier of the status.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -72,12 +72,12 @@ final class Event
     /**
      * The Commit SHA.
      */
-    public function sha(): ?string
+    public function sha(): string
     {
         return $this->sha;
     }
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -95,7 +95,7 @@ final class Event
         return $this->target_url;
     }
 
-    public function context(): ?string
+    public function context(): string
     {
         return $this->context;
     }
@@ -111,7 +111,7 @@ final class Event
     /**
      * The new state. Can be `pending`, `success`, `failure`, or `error`.
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
@@ -131,12 +131,12 @@ final class Event
         return $this->branches;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
@@ -144,12 +144,12 @@ final class Event
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
@@ -157,12 +157,12 @@ final class Event
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

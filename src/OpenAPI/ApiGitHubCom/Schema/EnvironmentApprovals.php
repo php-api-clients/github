@@ -17,17 +17,17 @@ final class EnvironmentApprovals
     /**
      * Whether deployment to the environment(s) was approved or rejected
      */
-    private ?string $state = null;
+    private string $state;
     /**
      * Simple User
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?SimpleUser $user = null;
+    private SimpleUser $user = [];
     /**
      * The comment submitted with the deployment review
      */
-    private ?string $comment = null;
+    private string $comment;
 
     /**
      * The list of environments that were approved or rejected
@@ -42,7 +42,7 @@ final class EnvironmentApprovals
     /**
      * Whether deployment to the environment(s) was approved or rejected
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
@@ -50,7 +50,7 @@ final class EnvironmentApprovals
     /**
      * Simple User
      */
-    public function user(): ?SimpleUser
+    public function user(): SimpleUser
     {
         return $this->user;
     }
@@ -58,7 +58,7 @@ final class EnvironmentApprovals
     /**
      * The comment submitted with the deployment review
      */
-    public function comment(): ?string
+    public function comment(): string
     {
         return $this->comment;
     }

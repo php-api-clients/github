@@ -11,52 +11,52 @@ final class CodeScanningAlertItems
     /**
      * The security alert number.
      */
-    private ?int $number = null;
+    private int $number;
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $created_at = null;
+    private string $created_at;
     /**
      * The REST API URL of the alert resource.
      */
-    private ?string $url = null;
+    private string $url;
     /**
      * The GitHub URL of the alert resource.
      */
-    private ?string $html_url = null;
+    private string $html_url;
     /**
      * State of a code scanning alert.
      */
-    private ?string $state = null;
+    private string $state;
     /**
      * Simple User
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\SimpleUser::class)
      */
-    private ?SimpleUser $dismissed_by = null;
+    private SimpleUser $dismissed_by = [];
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $dismissed_at = null;
+    private string $dismissed_at;
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
-    private ?string $dismissed_reason = null;
+    private string $dismissed_reason;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertRuleSummary::class) */
-    private ?CodeScanningAlertRuleSummary $rule = null;
+    private CodeScanningAlertRuleSummary $rule = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAnalysisTool::class) */
-    private ?CodeScanningAnalysisTool $tool = null;
+    private CodeScanningAnalysisTool $tool = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\CodeScanningAlertInstance::class) */
-    private ?CodeScanningAlertInstance $instance = null;
+    private CodeScanningAlertInstance $instance = [];
     /**
      * A classification of the file. For example to identify it as generated.
      */
-    private ?string $classification = null;
+    private string $classification;
 
     /**
      * The security alert number.
      */
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }
@@ -64,7 +64,7 @@ final class CodeScanningAlertItems
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
@@ -72,7 +72,7 @@ final class CodeScanningAlertItems
     /**
      * The REST API URL of the alert resource.
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -80,7 +80,7 @@ final class CodeScanningAlertItems
     /**
      * The GitHub URL of the alert resource.
      */
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -88,7 +88,7 @@ final class CodeScanningAlertItems
     /**
      * State of a code scanning alert.
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
@@ -96,7 +96,7 @@ final class CodeScanningAlertItems
     /**
      * Simple User
      */
-    public function dismissed_by(): ?SimpleUser
+    public function dismissed_by(): SimpleUser
     {
         return $this->dismissed_by;
     }
@@ -104,7 +104,7 @@ final class CodeScanningAlertItems
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function dismissed_at(): ?string
+    public function dismissed_at(): string
     {
         return $this->dismissed_at;
     }
@@ -112,22 +112,22 @@ final class CodeScanningAlertItems
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
-    public function dismissed_reason(): ?string
+    public function dismissed_reason(): string
     {
         return $this->dismissed_reason;
     }
 
-    public function rule(): ?CodeScanningAlertRuleSummary
+    public function rule(): CodeScanningAlertRuleSummary
     {
         return $this->rule;
     }
 
-    public function tool(): ?CodeScanningAnalysisTool
+    public function tool(): CodeScanningAnalysisTool
     {
         return $this->tool;
     }
 
-    public function instance(): ?CodeScanningAlertInstance
+    public function instance(): CodeScanningAlertInstance
     {
         return $this->instance;
     }
@@ -135,7 +135,7 @@ final class CodeScanningAlertItems
     /**
      * A classification of the file. For example to identify it as generated.
      */
-    public function classification(): ?string
+    public function classification(): string
     {
         return $this->classification;
     }

@@ -11,35 +11,35 @@ final class Team
     /**
      * Name of the team
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * Unique identifier of the team
      */
-    private ?int $id         = null;
-    private ?string $node_id = null;
-    private ?string $slug    = null;
+    private int $id;
+    private string $node_id;
+    private string $slug;
     /**
      * Description of the team
      */
     private $description;
-    private ?string $privacy = null;
+    private string $privacy;
     /**
      * URL for the team
      */
-    private ?string $url              = null;
-    private ?string $html_url         = null;
-    private ?string $members_url      = null;
-    private ?string $repositories_url = null;
+    private string $url;
+    private string $html_url;
+    private string $members_url;
+    private string $repositories_url;
     /**
      * Permission that the team will have for its repositories
      */
-    private ?string $permission = null;
+    private string $permission;
     private $parent;
 
     /**
      * Name of the team
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -47,17 +47,17 @@ final class Team
     /**
      * Unique identifier of the team
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function slug(): ?string
+    public function slug(): string
     {
         return $this->slug;
     }
@@ -70,7 +70,7 @@ final class Team
         return $this->description;
     }
 
-    public function privacy(): ?string
+    public function privacy(): string
     {
         return $this->privacy;
     }
@@ -78,22 +78,22 @@ final class Team
     /**
      * URL for the team
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function members_url(): ?string
+    public function members_url(): string
     {
         return $this->members_url;
     }
 
-    public function repositories_url(): ?string
+    public function repositories_url(): string
     {
         return $this->repositories_url;
     }
@@ -101,7 +101,7 @@ final class Team
     /**
      * Permission that the team will have for its repositories
      */
-    public function permission(): ?string
+    public function permission(): string
     {
         return $this->permission;
     }

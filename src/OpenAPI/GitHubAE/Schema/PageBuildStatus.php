@@ -8,15 +8,15 @@ final class PageBuildStatus
 {
     public const SCHEMA_TITLE       = 'Page Build Status';
     public const SCHEMA_DESCRIPTION = 'Page Build Status';
-    private ?string $url            = null;
-    private ?string $status         = null;
+    private string $url;
+    private string $status;
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }

@@ -8,21 +8,21 @@ final class ReferrerTraffic
 {
     public const SCHEMA_TITLE       = 'Referrer Traffic';
     public const SCHEMA_DESCRIPTION = 'Referrer Traffic';
-    private ?string $referrer       = null;
-    private ?int $count             = null;
-    private ?int $uniques           = null;
+    private string $referrer;
+    private int $count;
+    private int $uniques;
 
-    public function referrer(): ?string
+    public function referrer(): string
     {
         return $this->referrer;
     }
 
-    public function count(): ?int
+    public function count(): int
     {
         return $this->count;
     }
 
-    public function uniques(): ?int
+    public function uniques(): int
     {
         return $this->uniques;
     }

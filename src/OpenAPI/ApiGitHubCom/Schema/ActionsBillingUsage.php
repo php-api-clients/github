@@ -11,21 +11,21 @@ final class ActionsBillingUsage
     /**
      * The sum of the free and paid GitHub Actions minutes used.
      */
-    private ?int $total_minutes_used = null;
+    private int $total_minutes_used;
     /**
      * The total paid GitHub Actions minutes used.
      */
-    private ?int $total_paid_minutes_used = null;
+    private int $total_paid_minutes_used;
     /**
      * The amount of free GitHub Actions minutes available.
      */
-    private ?int $included_minutes        = null;
+    private int $included_minutes;
     private array $minutes_used_breakdown = [];
 
     /**
      * The sum of the free and paid GitHub Actions minutes used.
      */
-    public function total_minutes_used(): ?int
+    public function total_minutes_used(): int
     {
         return $this->total_minutes_used;
     }
@@ -33,7 +33,7 @@ final class ActionsBillingUsage
     /**
      * The total paid GitHub Actions minutes used.
      */
-    public function total_paid_minutes_used(): ?int
+    public function total_paid_minutes_used(): int
     {
         return $this->total_paid_minutes_used;
     }
@@ -41,7 +41,7 @@ final class ActionsBillingUsage
     /**
      * The amount of free GitHub Actions minutes available.
      */
-    public function included_minutes(): ?int
+    public function included_minutes(): int
     {
         return $this->included_minutes;
     }

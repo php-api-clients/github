@@ -8,21 +8,21 @@ final class Migration
 {
     public const SCHEMA_TITLE       = 'Migration';
     public const SCHEMA_DESCRIPTION = 'A migration.';
-    private ?int $id                = null;
+    private int $id;
     private $owner;
-    private ?string $guid              = null;
-    private ?string $state             = null;
-    private ?bool $lock_repositories   = null;
-    private ?bool $exclude_attachments = null;
-    private array $repositories        = [];
-    private ?string $url               = null;
-    private ?string $created_at        = null;
-    private ?string $updated_at        = null;
-    private ?string $node_id           = null;
-    private ?string $archive_url       = null;
-    private array $exclude             = [];
+    private string $guid;
+    private string $state;
+    private bool $lock_repositories;
+    private bool $exclude_attachments;
+    private array $repositories = [];
+    private string $url;
+    private string $created_at;
+    private string $updated_at;
+    private string $node_id;
+    private string $archive_url;
+    private array $exclude = [];
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -32,22 +32,22 @@ final class Migration
         return $this->owner;
     }
 
-    public function guid(): ?string
+    public function guid(): string
     {
         return $this->guid;
     }
 
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
 
-    public function lock_repositories(): ?bool
+    public function lock_repositories(): bool
     {
         return $this->lock_repositories;
     }
 
-    public function exclude_attachments(): ?bool
+    public function exclude_attachments(): bool
     {
         return $this->exclude_attachments;
     }
@@ -60,27 +60,27 @@ final class Migration
         return $this->repositories;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function archive_url(): ?string
+    public function archive_url(): string
     {
         return $this->archive_url;
     }

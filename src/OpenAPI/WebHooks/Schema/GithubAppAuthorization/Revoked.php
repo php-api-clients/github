@@ -10,16 +10,16 @@ final class Revoked
 {
     public const SCHEMA_TITLE       = 'github_app_authorization revoked event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

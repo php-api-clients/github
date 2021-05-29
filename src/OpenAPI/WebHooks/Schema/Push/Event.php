@@ -18,20 +18,20 @@ final class Event
     /**
      * The full git ref that was pushed. Example: `refs/heads/main`.
      */
-    private ?string $ref = null;
+    private string $ref;
     /**
      * The SHA of the most recent commit on `ref` before the push.
      */
-    private ?string $before = null;
+    private string $before;
     /**
      * The SHA of the most recent commit on `ref` after the push.
      */
-    private ?string $after = null;
-    private ?bool $created = null;
-    private ?bool $deleted = null;
-    private ?bool $forced  = null;
+    private string $after;
+    private bool $created;
+    private bool $deleted;
+    private bool $forced;
     private $base_ref;
-    private ?string $compare = null;
+    private string $compare;
     /**
      * An array of commit objects describing the pushed commits.
      */
@@ -42,28 +42,28 @@ final class Event
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /**
      * Metaproperties for Git author/committer information.
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private ?Committer $pusher = null;
+    private Committer $pusher = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
     /**
      * The full git ref that was pushed. Example: `refs/heads/main`.
      */
-    public function ref(): ?string
+    public function ref(): string
     {
         return $this->ref;
     }
@@ -71,7 +71,7 @@ final class Event
     /**
      * The SHA of the most recent commit on `ref` before the push.
      */
-    public function before(): ?string
+    public function before(): string
     {
         return $this->before;
     }
@@ -79,22 +79,22 @@ final class Event
     /**
      * The SHA of the most recent commit on `ref` after the push.
      */
-    public function after(): ?string
+    public function after(): string
     {
         return $this->after;
     }
 
-    public function created(): ?bool
+    public function created(): bool
     {
         return $this->created;
     }
 
-    public function deleted(): ?bool
+    public function deleted(): bool
     {
         return $this->deleted;
     }
 
-    public function forced(): ?bool
+    public function forced(): bool
     {
         return $this->forced;
     }
@@ -104,7 +104,7 @@ final class Event
         return $this->base_ref;
     }
 
-    public function compare(): ?string
+    public function compare(): string
     {
         return $this->compare;
     }
@@ -127,7 +127,7 @@ final class Event
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
@@ -135,12 +135,12 @@ final class Event
     /**
      * Metaproperties for Git author/committer information.
      */
-    public function pusher(): ?Committer
+    public function pusher(): Committer
     {
         return $this->pusher;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
@@ -148,12 +148,12 @@ final class Event
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

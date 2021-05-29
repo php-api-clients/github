@@ -8,26 +8,26 @@ final class BranchWithProtection
 {
     public const SCHEMA_TITLE       = 'Branch With Protection';
     public const SCHEMA_DESCRIPTION = 'Branch With Protection';
-    private ?string $name           = null;
+    private string $name;
     /**
      * Commit
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\Commit::class)
      */
-    private ?Commit $commit  = null;
-    private array $_links    = [];
-    private ?bool $protected = null;
+    private Commit $commit = [];
+    private array $_links  = [];
+    private bool $protected;
     /**
      * Branch Protection
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\BranchProtection::class)
      */
-    private ?BranchProtection $protection         = null;
-    private ?string $protection_url               = null;
-    private ?string $pattern                      = null;
-    private ?int $required_approving_review_count = null;
+    private BranchProtection $protection = [];
+    private string $protection_url;
+    private string $pattern;
+    private int $required_approving_review_count;
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -35,7 +35,7 @@ final class BranchWithProtection
     /**
      * Commit
      */
-    public function commit(): ?Commit
+    public function commit(): Commit
     {
         return $this->commit;
     }
@@ -45,7 +45,7 @@ final class BranchWithProtection
         return $this->_links;
     }
 
-    public function protected(): ?bool
+    public function protected(): bool
     {
         return $this->protected;
     }
@@ -53,22 +53,22 @@ final class BranchWithProtection
     /**
      * Branch Protection
      */
-    public function protection(): ?BranchProtection
+    public function protection(): BranchProtection
     {
         return $this->protection;
     }
 
-    public function protection_url(): ?string
+    public function protection_url(): string
     {
         return $this->protection_url;
     }
 
-    public function pattern(): ?string
+    public function pattern(): string
     {
         return $this->pattern;
     }
 
-    public function required_approving_review_count(): ?int
+    public function required_approving_review_count(): int
     {
         return $this->required_approving_review_count;
     }

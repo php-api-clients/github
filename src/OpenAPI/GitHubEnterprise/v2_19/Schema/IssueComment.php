@@ -11,40 +11,40 @@ final class IssueComment
     /**
      * Unique identifier of the issue comment
      */
-    private ?int $id         = null;
-    private ?string $node_id = null;
+    private int $id;
+    private string $node_id;
     /**
      * URL for the issue comment
      */
-    private ?string $url = null;
+    private string $url;
     /**
      * Contents of the issue comment
      */
-    private ?string $body      = null;
-    private ?string $body_text = null;
-    private ?string $body_html = null;
-    private ?string $html_url  = null;
+    private string $body;
+    private string $body_text;
+    private string $body_html;
+    private string $html_url;
     private $user;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
-    private ?string $issue_url  = null;
+    private string $created_at;
+    private string $updated_at;
+    private string $issue_url;
     /**
      * How the author is associated with the repository.
      */
-    private ?string $author_association = null;
+    private string $author_association;
     private $performed_via_github_app;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\ReactionRollup::class) */
-    private ?ReactionRollup $reactions = null;
+    private ReactionRollup $reactions = [];
 
     /**
      * Unique identifier of the issue comment
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -52,7 +52,7 @@ final class IssueComment
     /**
      * URL for the issue comment
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -60,22 +60,22 @@ final class IssueComment
     /**
      * Contents of the issue comment
      */
-    public function body(): ?string
+    public function body(): string
     {
         return $this->body;
     }
 
-    public function body_text(): ?string
+    public function body_text(): string
     {
         return $this->body_text;
     }
 
-    public function body_html(): ?string
+    public function body_html(): string
     {
         return $this->body_html;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -85,17 +85,17 @@ final class IssueComment
         return $this->user;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
 
-    public function issue_url(): ?string
+    public function issue_url(): string
     {
         return $this->issue_url;
     }
@@ -103,7 +103,7 @@ final class IssueComment
     /**
      * How the author is associated with the repository.
      */
-    public function author_association(): ?string
+    public function author_association(): string
     {
         return $this->author_association;
     }
@@ -113,7 +113,7 @@ final class IssueComment
         return $this->performed_via_github_app;
     }
 
-    public function reactions(): ?ReactionRollup
+    public function reactions(): ReactionRollup
     {
         return $this->reactions;
     }

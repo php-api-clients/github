@@ -8,36 +8,36 @@ final class Commit
 {
     public const SCHEMA_TITLE       = 'Commit';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $id             = null;
-    private ?string $tree_id        = null;
+    private string $id;
+    private string $tree_id;
     /**
      * Whether this commit is distinct from any that have been pushed before.
      */
-    private ?bool $distinct = null;
+    private bool $distinct;
     /**
      * The commit message.
      */
-    private ?string $message = null;
+    private string $message;
     /**
      * The ISO 8601 timestamp of the commit.
      */
-    private ?string $timestamp = null;
+    private string $timestamp;
     /**
      * URL that points to the commit API resource.
      */
-    private ?string $url = null;
+    private string $url;
     /**
      * Metaproperties for Git author/committer information.
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private ?Committer $author = null;
+    private Committer $author = [];
     /**
      * Metaproperties for Git author/committer information.
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Committer::class)
      */
-    private ?Committer $committer = null;
+    private Committer $committer = [];
     /**
      * An array of files added in the commit.
      */
@@ -51,12 +51,12 @@ final class Commit
      */
     private array $modified = [];
 
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
 
-    public function tree_id(): ?string
+    public function tree_id(): string
     {
         return $this->tree_id;
     }
@@ -64,7 +64,7 @@ final class Commit
     /**
      * Whether this commit is distinct from any that have been pushed before.
      */
-    public function distinct(): ?bool
+    public function distinct(): bool
     {
         return $this->distinct;
     }
@@ -72,7 +72,7 @@ final class Commit
     /**
      * The commit message.
      */
-    public function message(): ?string
+    public function message(): string
     {
         return $this->message;
     }
@@ -80,7 +80,7 @@ final class Commit
     /**
      * The ISO 8601 timestamp of the commit.
      */
-    public function timestamp(): ?string
+    public function timestamp(): string
     {
         return $this->timestamp;
     }
@@ -88,7 +88,7 @@ final class Commit
     /**
      * URL that points to the commit API resource.
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -96,7 +96,7 @@ final class Commit
     /**
      * Metaproperties for Git author/committer information.
      */
-    public function author(): ?Committer
+    public function author(): Committer
     {
         return $this->author;
     }
@@ -104,7 +104,7 @@ final class Commit
     /**
      * Metaproperties for Git author/committer information.
      */
-    public function committer(): ?Committer
+    public function committer(): Committer
     {
         return $this->committer;
     }

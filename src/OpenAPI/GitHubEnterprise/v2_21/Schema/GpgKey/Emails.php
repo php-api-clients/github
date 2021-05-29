@@ -8,15 +8,15 @@ final class Emails
 {
     public const SCHEMA_TITLE       = 'gpg-key::emails';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $email          = null;
-    private ?bool $verified         = null;
+    private string $email;
+    private bool $verified;
 
-    public function email(): ?string
+    public function email(): string
     {
         return $this->email;
     }
 
-    public function verified(): ?bool
+    public function verified(): bool
     {
         return $this->verified;
     }

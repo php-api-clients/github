@@ -8,27 +8,27 @@ final class Weeks
 {
     public const SCHEMA_TITLE       = 'contributor-activity::weeks';
     public const SCHEMA_DESCRIPTION = '';
-    private ?int $w                 = null;
-    private ?int $a                 = null;
-    private ?int $d                 = null;
-    private ?int $c                 = null;
+    private int $w;
+    private int $a;
+    private int $d;
+    private int $c;
 
-    public function w(): ?int
+    public function w(): int
     {
         return $this->w;
     }
 
-    public function a(): ?int
+    public function a(): int
     {
         return $this->a;
     }
 
-    public function d(): ?int
+    public function d(): int
     {
         return $this->d;
     }
 
-    public function c(): ?int
+    public function c(): int
     {
         return $this->c;
     }

@@ -8,15 +8,15 @@ final class ConnectionServices
 {
     public const SCHEMA_TITLE       = 'maintenance-status::connection_services';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $name           = null;
-    private ?int $number            = null;
+    private string $name;
+    private int $number;
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }

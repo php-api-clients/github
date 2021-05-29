@@ -8,51 +8,51 @@ final class DeploymentStatus
 {
     public const SCHEMA_TITLE       = 'Deployment Status';
     public const SCHEMA_DESCRIPTION = 'The status of a deployment.';
-    private ?string $url            = null;
-    private ?int $id                = null;
-    private ?string $node_id        = null;
+    private string $url;
+    private int $id;
+    private string $node_id;
     /**
      * The state of the status.
      */
-    private ?string $state = null;
+    private string $state;
     private $creator;
     /**
      * A short description of the status.
      */
-    private ?string $description = null;
+    private string $description;
     /**
      * The environment of the deployment that the status is for.
      */
-    private ?string $environment = null;
+    private string $environment;
     /**
      * Deprecated: the URL to associate with this status.
      */
-    private ?string $target_url     = null;
-    private ?string $created_at     = null;
-    private ?string $updated_at     = null;
-    private ?string $deployment_url = null;
-    private ?string $repository_url = null;
+    private string $target_url;
+    private string $created_at;
+    private string $updated_at;
+    private string $deployment_url;
+    private string $repository_url;
     /**
      * The URL for accessing your environment.
      */
-    private ?string $environment_url = null;
+    private string $environment_url;
     /**
      * The URL to associate with this status.
      */
-    private ?string $log_url = null;
+    private string $log_url;
     private $performed_via_github_app;
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -60,7 +60,7 @@ final class DeploymentStatus
     /**
      * The state of the status.
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
@@ -73,7 +73,7 @@ final class DeploymentStatus
     /**
      * A short description of the status.
      */
-    public function description(): ?string
+    public function description(): string
     {
         return $this->description;
     }
@@ -81,7 +81,7 @@ final class DeploymentStatus
     /**
      * The environment of the deployment that the status is for.
      */
-    public function environment(): ?string
+    public function environment(): string
     {
         return $this->environment;
     }
@@ -89,27 +89,27 @@ final class DeploymentStatus
     /**
      * Deprecated: the URL to associate with this status.
      */
-    public function target_url(): ?string
+    public function target_url(): string
     {
         return $this->target_url;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
 
-    public function deployment_url(): ?string
+    public function deployment_url(): string
     {
         return $this->deployment_url;
     }
 
-    public function repository_url(): ?string
+    public function repository_url(): string
     {
         return $this->repository_url;
     }
@@ -117,7 +117,7 @@ final class DeploymentStatus
     /**
      * The URL for accessing your environment.
      */
-    public function environment_url(): ?string
+    public function environment_url(): string
     {
         return $this->environment_url;
     }
@@ -125,7 +125,7 @@ final class DeploymentStatus
     /**
      * The URL to associate with this status.
      */
-    public function log_url(): ?string
+    public function log_url(): string
     {
         return $this->log_url;
     }

@@ -11,20 +11,20 @@ final class AlertInstance
     /**
      * The full Git reference, formatted as `refs/heads/<branch name>`.
      */
-    private ?string $ref = null;
+    private string $ref;
     /**
      * Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
      */
-    private ?string $analysis_key = null;
+    private string $analysis_key;
     /**
      * Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
      */
-    private ?string $environment = null;
+    private string $environment;
     /**
      * State of a code scanning alert.
      */
-    private ?string $state         = null;
-    private ?string $commit_sha    = null;
+    private string $state;
+    private string $commit_sha;
     private array $message         = [];
     private array $location        = [];
     private array $classifications = [];
@@ -32,7 +32,7 @@ final class AlertInstance
     /**
      * The full Git reference, formatted as `refs/heads/<branch name>`.
      */
-    public function ref(): ?string
+    public function ref(): string
     {
         return $this->ref;
     }
@@ -40,7 +40,7 @@ final class AlertInstance
     /**
      * Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
      */
-    public function analysis_key(): ?string
+    public function analysis_key(): string
     {
         return $this->analysis_key;
     }
@@ -48,7 +48,7 @@ final class AlertInstance
     /**
      * Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
      */
-    public function environment(): ?string
+    public function environment(): string
     {
         return $this->environment;
     }
@@ -56,12 +56,12 @@ final class AlertInstance
     /**
      * State of a code scanning alert.
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
 
-    public function commit_sha(): ?string
+    public function commit_sha(): string
     {
         return $this->commit_sha;
     }

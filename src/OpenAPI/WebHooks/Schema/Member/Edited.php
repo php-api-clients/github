@@ -12,9 +12,9 @@ final class Edited
 {
     public const SCHEMA_TITLE       = 'member edited event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $member = null;
+    private User $member = [];
     /**
      * The changes to the collaborator permissions
      */
@@ -24,22 +24,22 @@ final class Edited
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
 
-    public function member(): ?User
+    public function member(): User
     {
         return $this->member;
     }
@@ -55,7 +55,7 @@ final class Edited
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
@@ -63,12 +63,12 @@ final class Edited
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

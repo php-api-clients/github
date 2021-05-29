@@ -8,31 +8,31 @@ final class Event
 {
     public const SCHEMA_TITLE       = 'Event';
     public const SCHEMA_DESCRIPTION = 'Event';
-    private ?string $id             = null;
-    private ?string $type           = null;
+    private string $id;
+    private string $type;
     /**
      * Actor
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Actor::class)
      */
-    private ?Actor $actor = null;
-    private array $repo   = [];
+    private Actor $actor = [];
+    private array $repo  = [];
     /**
      * Actor
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Actor::class)
      */
-    private ?Actor $org         = null;
-    private array $payload      = [];
-    private ?bool $public       = null;
-    private ?string $created_at = null;
+    private Actor $org     = [];
+    private array $payload = [];
+    private bool $public;
+    private string $created_at;
 
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
 
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }
@@ -40,7 +40,7 @@ final class Event
     /**
      * Actor
      */
-    public function actor(): ?Actor
+    public function actor(): Actor
     {
         return $this->actor;
     }
@@ -53,7 +53,7 @@ final class Event
     /**
      * Actor
      */
-    public function org(): ?Actor
+    public function org(): Actor
     {
         return $this->org;
     }
@@ -63,12 +63,12 @@ final class Event
         return $this->payload;
     }
 
-    public function public(): ?bool
+    public function public(): bool
     {
         return $this->public;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }

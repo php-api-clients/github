@@ -11,27 +11,27 @@ final class Repositories
     /**
      * Unique identifier of the repository
      */
-    private ?int $id         = null;
-    private ?string $node_id = null;
+    private int $id;
+    private string $node_id;
     /**
      * The name of the repository.
      */
-    private ?string $name      = null;
-    private ?string $full_name = null;
+    private string $name;
+    private string $full_name;
     /**
      * Whether the repository is private or public.
      */
-    private ?bool $private = null;
+    private bool $private;
 
     /**
      * Unique identifier of the repository
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -39,12 +39,12 @@ final class Repositories
     /**
      * The name of the repository.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function full_name(): ?string
+    public function full_name(): string
     {
         return $this->full_name;
     }
@@ -52,7 +52,7 @@ final class Repositories
     /**
      * Whether the repository is private or public.
      */
-    public function private(): ?bool
+    public function private(): bool
     {
         return $this->private;
     }

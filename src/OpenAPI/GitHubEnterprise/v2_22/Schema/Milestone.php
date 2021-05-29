@@ -8,53 +8,53 @@ final class Milestone
 {
     public const SCHEMA_TITLE       = 'Milestone';
     public const SCHEMA_DESCRIPTION = 'A collection of related issues and pull requests.';
-    private ?string $url            = null;
-    private ?string $html_url       = null;
-    private ?string $labels_url     = null;
-    private ?int $id                = null;
-    private ?string $node_id        = null;
+    private string $url;
+    private string $html_url;
+    private string $labels_url;
+    private int $id;
+    private string $node_id;
     /**
      * The number of the milestone.
      */
-    private ?int $number = null;
+    private int $number;
     /**
      * The state of the milestone.
      */
-    private ?string $state = null;
+    private string $state;
     /**
      * The title of the milestone.
      */
-    private ?string $title       = null;
-    private ?string $description = null;
+    private string $title;
+    private string $description;
     private $creator;
-    private ?int $open_issues   = null;
-    private ?int $closed_issues = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
-    private ?string $closed_at  = null;
-    private ?string $due_on     = null;
+    private int $open_issues;
+    private int $closed_issues;
+    private string $created_at;
+    private string $updated_at;
+    private string $closed_at;
+    private string $due_on;
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function labels_url(): ?string
+    public function labels_url(): string
     {
         return $this->labels_url;
     }
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -62,7 +62,7 @@ final class Milestone
     /**
      * The number of the milestone.
      */
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }
@@ -70,7 +70,7 @@ final class Milestone
     /**
      * The state of the milestone.
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
@@ -78,12 +78,12 @@ final class Milestone
     /**
      * The title of the milestone.
      */
-    public function title(): ?string
+    public function title(): string
     {
         return $this->title;
     }
 
-    public function description(): ?string
+    public function description(): string
     {
         return $this->description;
     }
@@ -93,32 +93,32 @@ final class Milestone
         return $this->creator;
     }
 
-    public function open_issues(): ?int
+    public function open_issues(): int
     {
         return $this->open_issues;
     }
 
-    public function closed_issues(): ?int
+    public function closed_issues(): int
     {
         return $this->closed_issues;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
 
-    public function closed_at(): ?string
+    public function closed_at(): string
     {
         return $this->closed_at;
     }
 
-    public function due_on(): ?string
+    public function due_on(): string
     {
         return $this->due_on;
     }

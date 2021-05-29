@@ -6,14 +6,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class ApiOverview
 {
-    public const SCHEMA_TITLE                         = 'Api Overview';
-    public const SCHEMA_DESCRIPTION                   = 'Api Overview';
-    private ?bool $verifiable_password_authentication = null;
-    private array $packages                           = [];
-    private array $dependabot                         = [];
-    private ?string $installed_version                = null;
+    public const SCHEMA_TITLE       = 'Api Overview';
+    public const SCHEMA_DESCRIPTION = 'Api Overview';
+    private bool $verifiable_password_authentication;
+    private array $packages   = [];
+    private array $dependabot = [];
+    private string $installed_version;
 
-    public function verifiable_password_authentication(): ?bool
+    public function verifiable_password_authentication(): bool
     {
         return $this->verifiable_password_authentication;
     }
@@ -28,7 +28,7 @@ final class ApiOverview
         return $this->dependabot;
     }
 
-    public function installed_version(): ?string
+    public function installed_version(): string
     {
         return $this->installed_version;
     }

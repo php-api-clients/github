@@ -11,28 +11,28 @@ final class Package
     /**
      * Unique identifier of the package.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The name of the package.
      */
-    private ?string $name         = null;
-    private ?string $package_type = null;
-    private ?string $url          = null;
-    private ?string $html_url     = null;
+    private string $name;
+    private string $package_type;
+    private string $url;
+    private string $html_url;
     /**
      * The number of versions of the package.
      */
-    private ?int $version_count = null;
-    private ?string $visibility = null;
+    private int $version_count;
+    private string $visibility;
     private $owner;
     private $repository;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private string $created_at;
+    private string $updated_at;
 
     /**
      * Unique identifier of the package.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -40,22 +40,22 @@ final class Package
     /**
      * The name of the package.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function package_type(): ?string
+    public function package_type(): string
     {
         return $this->package_type;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -63,12 +63,12 @@ final class Package
     /**
      * The number of versions of the package.
      */
-    public function version_count(): ?int
+    public function version_count(): int
     {
         return $this->version_count;
     }
 
-    public function visibility(): ?string
+    public function visibility(): string
     {
         return $this->visibility;
     }
@@ -83,12 +83,12 @@ final class Package
         return $this->repository;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }

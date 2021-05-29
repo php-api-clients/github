@@ -14,7 +14,7 @@ final class Edited
 {
     public const SCHEMA_TITLE       = 'pull_request_review_comment edited event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * The changes to the comment.
      */
@@ -24,26 +24,26 @@ final class Edited
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequestReviewComment::class)
      */
-    private ?PullRequestReviewComment $comment = null;
-    private array $pull_request                = [];
+    private PullRequestReviewComment $comment = [];
+    private array $pull_request               = [];
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -59,7 +59,7 @@ final class Edited
     /**
      * The [comment](https://docs.github.com/en/rest/reference/pulls#comments) itself.
      */
-    public function comment(): ?PullRequestReviewComment
+    public function comment(): PullRequestReviewComment
     {
         return $this->comment;
     }
@@ -72,7 +72,7 @@ final class Edited
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
@@ -80,17 +80,17 @@ final class Edited
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

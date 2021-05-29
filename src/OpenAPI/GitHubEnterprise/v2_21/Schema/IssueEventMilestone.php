@@ -8,9 +8,9 @@ final class IssueEventMilestone
 {
     public const SCHEMA_TITLE       = 'Issue Event Milestone';
     public const SCHEMA_DESCRIPTION = 'Issue Event Milestone';
-    private ?string $title          = null;
+    private string $title;
 
-    public function title(): ?string
+    public function title(): string
     {
         return $this->title;
     }

@@ -8,17 +8,17 @@ final class StatusCheckPolicy
 {
     public const SCHEMA_TITLE       = 'Status Check Policy';
     public const SCHEMA_DESCRIPTION = 'Status Check Policy';
-    private ?string $url            = null;
-    private ?bool $strict           = null;
-    private array $contexts         = [];
-    private ?string $contexts_url   = null;
+    private string $url;
+    private bool $strict;
+    private array $contexts = [];
+    private string $contexts_url;
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function strict(): ?bool
+    public function strict(): bool
     {
         return $this->strict;
     }
@@ -28,7 +28,7 @@ final class StatusCheckPolicy
         return $this->contexts;
     }
 
-    public function contexts_url(): ?string
+    public function contexts_url(): string
     {
         return $this->contexts_url;
     }

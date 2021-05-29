@@ -11,20 +11,20 @@ final class RepositorySubscription
     /**
      * Determines if notifications should be received from this repository.
      */
-    private ?bool $subscribed = null;
+    private bool $subscribed;
     /**
      * Determines if all notifications should be blocked from this repository.
      */
-    private ?bool $ignored          = null;
-    private ?string $reason         = null;
-    private ?string $created_at     = null;
-    private ?string $url            = null;
-    private ?string $repository_url = null;
+    private bool $ignored;
+    private string $reason;
+    private string $created_at;
+    private string $url;
+    private string $repository_url;
 
     /**
      * Determines if notifications should be received from this repository.
      */
-    public function subscribed(): ?bool
+    public function subscribed(): bool
     {
         return $this->subscribed;
     }
@@ -32,27 +32,27 @@ final class RepositorySubscription
     /**
      * Determines if all notifications should be blocked from this repository.
      */
-    public function ignored(): ?bool
+    public function ignored(): bool
     {
         return $this->ignored;
     }
 
-    public function reason(): ?string
+    public function reason(): string
     {
         return $this->reason;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function repository_url(): ?string
+    public function repository_url(): string
     {
         return $this->repository_url;
     }

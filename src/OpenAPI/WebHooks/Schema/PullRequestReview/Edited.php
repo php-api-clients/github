@@ -14,32 +14,32 @@ final class Edited
 {
     public const SCHEMA_TITLE       = 'pull_request_review edited event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
-    private array $changes          = [];
+    private string $action;
+    private array $changes = [];
     /**
      * The review that was affected.
      */
     private array $review = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\SimplePullRequest::class) */
-    private ?SimplePullRequest $pull_request = null;
+    private SimplePullRequest $pull_request = [];
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -57,7 +57,7 @@ final class Edited
         return $this->review;
     }
 
-    public function pull_request(): ?SimplePullRequest
+    public function pull_request(): SimplePullRequest
     {
         return $this->pull_request;
     }
@@ -65,7 +65,7 @@ final class Edited
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
@@ -73,17 +73,17 @@ final class Edited
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

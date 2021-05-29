@@ -12,23 +12,23 @@ final class Created
 {
     public const SCHEMA_TITLE       = 'installation created event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * The GitHub App installation.
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation::class)
      */
-    private ?Installation $installation = null;
+    private Installation $installation = [];
     /**
      * An array of repository objects that the installation can access.
      */
     private array $repositories = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $requester = null;
+    private User $requester = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -36,7 +36,7 @@ final class Created
     /**
      * The GitHub App installation.
      */
-    public function installation(): ?Installation
+    public function installation(): Installation
     {
         return $this->installation;
     }
@@ -51,12 +51,12 @@ final class Created
         return $this->repositories;
     }
 
-    public function requester(): ?User
+    public function requester(): User
     {
         return $this->requester;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

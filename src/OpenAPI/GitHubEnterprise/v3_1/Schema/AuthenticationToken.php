@@ -11,26 +11,26 @@ final class AuthenticationToken
     /**
      * The token used for authentication
      */
-    private ?string $token = null;
+    private string $token;
     /**
      * The time this token expires
      */
-    private ?string $expires_at = null;
-    private array $permissions  = [];
+    private string $expires_at;
+    private array $permissions = [];
     /**
      * The repositories this token has access to
      */
-    private array $repositories  = [];
-    private ?string $single_file = null;
+    private array $repositories = [];
+    private string $single_file;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    private ?string $repository_selection = null;
+    private string $repository_selection;
 
     /**
      * The token used for authentication
      */
-    public function token(): ?string
+    public function token(): string
     {
         return $this->token;
     }
@@ -38,7 +38,7 @@ final class AuthenticationToken
     /**
      * The time this token expires
      */
-    public function expires_at(): ?string
+    public function expires_at(): string
     {
         return $this->expires_at;
     }
@@ -58,7 +58,7 @@ final class AuthenticationToken
         return $this->repositories;
     }
 
-    public function single_file(): ?string
+    public function single_file(): string
     {
         return $this->single_file;
     }
@@ -66,7 +66,7 @@ final class AuthenticationToken
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    public function repository_selection(): ?string
+    public function repository_selection(): string
     {
         return $this->repository_selection;
     }

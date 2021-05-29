@@ -8,28 +8,28 @@ final class ProtectedBranch
 {
     public const SCHEMA_TITLE       = 'Protected Branch';
     public const SCHEMA_DESCRIPTION = 'Branch protections protect branches';
-    private ?string $url            = null;
+    private string $url;
     /**
      * Status Check Policy
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\StatusCheckPolicy::class)
      */
-    private ?StatusCheckPolicy $required_status_checks = null;
-    private array $required_pull_request_reviews       = [];
-    private array $required_signatures                 = [];
-    private array $enforce_admins                      = [];
-    private array $required_linear_history             = [];
-    private array $allow_force_pushes                  = [];
-    private array $allow_deletions                     = [];
+    private StatusCheckPolicy $required_status_checks = [];
+    private array $required_pull_request_reviews      = [];
+    private array $required_signatures                = [];
+    private array $enforce_admins                     = [];
+    private array $required_linear_history            = [];
+    private array $allow_force_pushes                 = [];
+    private array $allow_deletions                    = [];
     /**
      * Branch Restriction Policy
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\BranchRestrictionPolicy::class)
      */
-    private ?BranchRestrictionPolicy $restrictions  = null;
+    private BranchRestrictionPolicy $restrictions   = [];
     private array $required_conversation_resolution = [];
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -37,7 +37,7 @@ final class ProtectedBranch
     /**
      * Status Check Policy
      */
-    public function required_status_checks(): ?StatusCheckPolicy
+    public function required_status_checks(): StatusCheckPolicy
     {
         return $this->required_status_checks;
     }
@@ -75,7 +75,7 @@ final class ProtectedBranch
     /**
      * Branch Restriction Policy
      */
-    public function restrictions(): ?BranchRestrictionPolicy
+    public function restrictions(): BranchRestrictionPolicy
     {
         return $this->restrictions;
     }

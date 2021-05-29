@@ -11,11 +11,11 @@ final class SelectedActions
     /**
      * Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
      */
-    private ?bool $github_owned_allowed = null;
+    private bool $github_owned_allowed;
     /**
      * Whether actions in GitHub Marketplace from verified creators are allowed. Set to `true` to allow all GitHub Marketplace actions by verified creators.
      */
-    private ?bool $verified_allowed = null;
+    private bool $verified_allowed;
     /**
      * Specifies a list of string-matching patterns to allow specific action(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`."
      */
@@ -24,7 +24,7 @@ final class SelectedActions
     /**
      * Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
      */
-    public function github_owned_allowed(): ?bool
+    public function github_owned_allowed(): bool
     {
         return $this->github_owned_allowed;
     }
@@ -32,7 +32,7 @@ final class SelectedActions
     /**
      * Whether actions in GitHub Marketplace from verified creators are allowed. Set to `true` to allow all GitHub Marketplace actions by verified creators.
      */
-    public function verified_allowed(): ?bool
+    public function verified_allowed(): bool
     {
         return $this->verified_allowed;
     }

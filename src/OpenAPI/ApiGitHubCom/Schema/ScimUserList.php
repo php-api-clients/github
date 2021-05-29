@@ -11,11 +11,11 @@ final class ScimUserList
     /**
      * SCIM schema used.
      */
-    private array $schemas     = [];
-    private ?int $totalResults = null;
-    private ?int $itemsPerPage = null;
-    private ?int $startIndex   = null;
-    private array $Resources   = [];
+    private array $schemas = [];
+    private int $totalResults;
+    private int $itemsPerPage;
+    private int $startIndex;
+    private array $Resources = [];
 
     /**
      * SCIM schema used.
@@ -25,17 +25,17 @@ final class ScimUserList
         return $this->schemas;
     }
 
-    public function totalResults(): ?int
+    public function totalResults(): int
     {
         return $this->totalResults;
     }
 
-    public function itemsPerPage(): ?int
+    public function itemsPerPage(): int
     {
         return $this->itemsPerPage;
     }
 
-    public function startIndex(): ?int
+    public function startIndex(): int
     {
         return $this->startIndex;
     }

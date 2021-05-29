@@ -13,17 +13,17 @@ final class Removed
 {
     public const SCHEMA_TITLE       = 'installation_repositories removed event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
+    private string $action;
     /**
      * The GitHub App installation.
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation::class)
      */
-    private ?Installation $installation = null;
+    private Installation $installation = [];
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    private ?string $repository_selection = null;
+    private string $repository_selection;
     /**
      * An array of repository objects, which were added to the installation.
      */
@@ -34,9 +34,9 @@ final class Removed
     private array $repositories_removed = [];
     private $requester;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -44,7 +44,7 @@ final class Removed
     /**
      * The GitHub App installation.
      */
-    public function installation(): ?Installation
+    public function installation(): Installation
     {
         return $this->installation;
     }
@@ -52,7 +52,7 @@ final class Removed
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    public function repository_selection(): ?string
+    public function repository_selection(): string
     {
         return $this->repository_selection;
     }
@@ -82,7 +82,7 @@ final class Removed
         return $this->requester;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

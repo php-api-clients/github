@@ -11,20 +11,20 @@ final class ActionsRepositoryPermissions
     /**
      * Whether GitHub Actions is enabled on the repository.
      */
-    private ?bool $enabled = null;
+    private bool $enabled;
     /**
      * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
      */
-    private ?string $allowed_actions = null;
+    private string $allowed_actions;
     /**
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    private ?string $selected_actions_url = null;
+    private string $selected_actions_url;
 
     /**
      * Whether GitHub Actions is enabled on the repository.
      */
-    public function enabled(): ?bool
+    public function enabled(): bool
     {
         return $this->enabled;
     }
@@ -32,7 +32,7 @@ final class ActionsRepositoryPermissions
     /**
      * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
      */
-    public function allowed_actions(): ?string
+    public function allowed_actions(): string
     {
         return $this->allowed_actions;
     }
@@ -40,7 +40,7 @@ final class ActionsRepositoryPermissions
     /**
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    public function selected_actions_url(): ?string
+    public function selected_actions_url(): string
     {
         return $this->selected_actions_url;
     }

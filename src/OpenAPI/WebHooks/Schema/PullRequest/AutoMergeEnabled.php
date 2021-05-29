@@ -14,38 +14,38 @@ final class AutoMergeEnabled
 {
     public const SCHEMA_TITLE       = 'pull_request auto_merge_enabled event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
-    private ?int $number            = null;
+    private string $action;
+    private int $number;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class) */
-    private ?PullRequest $pull_request = null;
+    private PullRequest $pull_request = [];
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
 
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }
 
-    public function pull_request(): ?PullRequest
+    public function pull_request(): PullRequest
     {
         return $this->pull_request;
     }
@@ -53,7 +53,7 @@ final class AutoMergeEnabled
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
@@ -61,17 +61,17 @@ final class AutoMergeEnabled
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

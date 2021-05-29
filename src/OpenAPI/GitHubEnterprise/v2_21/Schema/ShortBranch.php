@@ -8,18 +8,18 @@ final class ShortBranch
 {
     public const SCHEMA_TITLE       = 'Short Branch';
     public const SCHEMA_DESCRIPTION = 'Short Branch';
-    private ?string $name           = null;
-    private array $commit           = [];
-    private ?bool $protected        = null;
+    private string $name;
+    private array $commit = [];
+    private bool $protected;
     /**
      * Branch Protection
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\BranchProtection::class)
      */
-    private ?BranchProtection $protection = null;
-    private ?string $protection_url       = null;
+    private BranchProtection $protection = [];
+    private string $protection_url;
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -29,7 +29,7 @@ final class ShortBranch
         return $this->commit;
     }
 
-    public function protected(): ?bool
+    public function protected(): bool
     {
         return $this->protected;
     }
@@ -37,12 +37,12 @@ final class ShortBranch
     /**
      * Branch Protection
      */
-    public function protection(): ?BranchProtection
+    public function protection(): BranchProtection
     {
         return $this->protection;
     }
 
-    public function protection_url(): ?string
+    public function protection_url(): string
     {
         return $this->protection_url;
     }

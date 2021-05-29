@@ -11,35 +11,35 @@ final class RepositoryInvitation
     /**
      * Unique identifier of the repository invitation.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * Minimal Repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\MinimalRepository::class)
      */
-    private ?MinimalRepository $repository = null;
+    private MinimalRepository $repository = [];
     private $invitee;
     private $inviter;
     /**
      * The permission associated with the invitation.
      */
-    private ?string $permissions = null;
-    private ?string $created_at  = null;
+    private string $permissions;
+    private string $created_at;
     /**
      * Whether or not the invitation has expired
      */
-    private ?bool $expired = null;
+    private bool $expired;
     /**
      * URL for the repository invitation
      */
-    private ?string $url      = null;
-    private ?string $html_url = null;
-    private ?string $node_id  = null;
+    private string $url;
+    private string $html_url;
+    private string $node_id;
 
     /**
      * Unique identifier of the repository invitation.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -47,7 +47,7 @@ final class RepositoryInvitation
     /**
      * Minimal Repository
      */
-    public function repository(): ?MinimalRepository
+    public function repository(): MinimalRepository
     {
         return $this->repository;
     }
@@ -65,12 +65,12 @@ final class RepositoryInvitation
     /**
      * The permission associated with the invitation.
      */
-    public function permissions(): ?string
+    public function permissions(): string
     {
         return $this->permissions;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
@@ -78,7 +78,7 @@ final class RepositoryInvitation
     /**
      * Whether or not the invitation has expired
      */
-    public function expired(): ?bool
+    public function expired(): bool
     {
         return $this->expired;
     }
@@ -86,17 +86,17 @@ final class RepositoryInvitation
     /**
      * URL for the repository invitation
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }

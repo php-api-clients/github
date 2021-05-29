@@ -12,11 +12,11 @@ final class Event
 {
     public const SCHEMA_TITLE       = 'ping event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $zen            = null;
+    private string $zen;
     /**
      * The ID of the webhook that triggered the ping.
      */
-    private ?int $hook_id = null;
+    private int $hook_id;
     /**
      * The [webhook configuration](https://docs.github.com/en/rest/reference/repos#get-a-repository-webhook).
      */
@@ -26,13 +26,13 @@ final class Event
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
-    public function zen(): ?string
+    public function zen(): string
     {
         return $this->zen;
     }
@@ -40,7 +40,7 @@ final class Event
     /**
      * The ID of the webhook that triggered the ping.
      */
-    public function hook_id(): ?int
+    public function hook_id(): int
     {
         return $this->hook_id;
     }
@@ -56,17 +56,17 @@ final class Event
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

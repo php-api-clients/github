@@ -11,128 +11,128 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: `read` or `write`.
      */
-    private ?string $actions = null;
+    private string $actions;
     /**
      * The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation. Can be one of: `read` or `write`.
      */
-    private ?string $administration = null;
+    private string $administration;
     /**
      * The level of permission to grant the access token for checks on code. Can be one of: `read` or `write`.
      */
-    private ?string $checks = null;
+    private string $checks;
     /**
      * The level of permission to grant the access token for notification of content references and creation content attachments. Can be one of: `read` or `write`.
      */
-    private ?string $content_references = null;
+    private string $content_references;
     /**
      * The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: `read` or `write`.
      */
-    private ?string $contents = null;
+    private string $contents;
     /**
      * The level of permission to grant the access token for deployments and deployment statuses. Can be one of: `read` or `write`.
      */
-    private ?string $deployments = null;
+    private string $deployments;
     /**
      * The level of permission to grant the access token for managing repository environments. Can be one of: `read` or `write`.
      */
-    private ?string $environments = null;
+    private string $environments;
     /**
      * The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones. Can be one of: `read` or `write`.
      */
-    private ?string $issues = null;
+    private string $issues;
     /**
      * The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata. Can be one of: `read` or `write`.
      */
-    private ?string $metadata = null;
+    private string $metadata;
     /**
      * The level of permission to grant the access token for packages published to GitHub Packages. Can be one of: `read` or `write`.
      */
-    private ?string $packages = null;
+    private string $packages;
     /**
      * The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds. Can be one of: `read` or `write`.
      */
-    private ?string $pages = null;
+    private string $pages;
     /**
      * The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges. Can be one of: `read` or `write`.
      */
-    private ?string $pull_requests = null;
+    private string $pull_requests;
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for a repository. Can be one of: `read` or `write`.
      */
-    private ?string $repository_hooks = null;
+    private string $repository_hooks;
     /**
      * The level of permission to grant the access token to manage repository projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
      */
-    private ?string $repository_projects = null;
+    private string $repository_projects;
     /**
      * The level of permission to grant the access token to view and manage secret scanning alerts. Can be one of: `read` or `write`.
      */
-    private ?string $secret_scanning_alerts = null;
+    private string $secret_scanning_alerts;
     /**
      * The level of permission to grant the access token to manage repository secrets. Can be one of: `read` or `write`.
      */
-    private ?string $secrets = null;
+    private string $secrets;
     /**
      * The level of permission to grant the access token to view and manage security events like code scanning alerts. Can be one of: `read` or `write`.
      */
-    private ?string $security_events = null;
+    private string $security_events;
     /**
      * The level of permission to grant the access token to manage just a single file. Can be one of: `read` or `write`.
      */
-    private ?string $single_file = null;
+    private string $single_file;
     /**
      * The level of permission to grant the access token for commit statuses. Can be one of: `read` or `write`.
      */
-    private ?string $statuses = null;
+    private string $statuses;
     /**
      * The level of permission to grant the access token to retrieve Dependabot alerts. Can be one of: `read`.
      */
-    private ?string $vulnerability_alerts = null;
+    private string $vulnerability_alerts;
     /**
      * The level of permission to grant the access token to update GitHub Actions workflow files. Can be one of: `write`.
      */
-    private ?string $workflows = null;
+    private string $workflows;
     /**
      * The level of permission to grant the access token for organization teams and members. Can be one of: `read` or `write`.
      */
-    private ?string $members = null;
+    private string $members;
     /**
      * The level of permission to grant the access token to manage access to an organization. Can be one of: `read` or `write`.
      */
-    private ?string $organization_administration = null;
+    private string $organization_administration;
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for an organization. Can be one of: `read` or `write`.
      */
-    private ?string $organization_hooks = null;
+    private string $organization_hooks;
     /**
      * The level of permission to grant the access token for viewing an organization's plan. Can be one of: `read`.
      */
-    private ?string $organization_plan = null;
+    private string $organization_plan;
     /**
      * The level of permission to grant the access token to manage organization projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
      */
-    private ?string $organization_projects = null;
+    private string $organization_projects;
     /**
      * The level of permission to grant the access token to manage organization secrets. Can be one of: `read` or `write`.
      */
-    private ?string $organization_secrets = null;
+    private string $organization_secrets;
     /**
      * The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization. Can be one of: `read` or `write`.
      */
-    private ?string $organization_self_hosted_runners = null;
+    private string $organization_self_hosted_runners;
     /**
      * The level of permission to grant the access token to view and manage users blocked by the organization. Can be one of: `read` or `write`.
      */
-    private ?string $organization_user_blocking = null;
+    private string $organization_user_blocking;
     /**
      * The level of permission to grant the access token to manage team discussions and related comments. Can be one of: `read` or `write`.
      */
-    private ?string $team_discussions = null;
+    private string $team_discussions;
 
     /**
      * The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: `read` or `write`.
      */
-    public function actions(): ?string
+    public function actions(): string
     {
         return $this->actions;
     }
@@ -140,7 +140,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation. Can be one of: `read` or `write`.
      */
-    public function administration(): ?string
+    public function administration(): string
     {
         return $this->administration;
     }
@@ -148,7 +148,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for checks on code. Can be one of: `read` or `write`.
      */
-    public function checks(): ?string
+    public function checks(): string
     {
         return $this->checks;
     }
@@ -156,7 +156,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for notification of content references and creation content attachments. Can be one of: `read` or `write`.
      */
-    public function content_references(): ?string
+    public function content_references(): string
     {
         return $this->content_references;
     }
@@ -164,7 +164,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: `read` or `write`.
      */
-    public function contents(): ?string
+    public function contents(): string
     {
         return $this->contents;
     }
@@ -172,7 +172,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for deployments and deployment statuses. Can be one of: `read` or `write`.
      */
-    public function deployments(): ?string
+    public function deployments(): string
     {
         return $this->deployments;
     }
@@ -180,7 +180,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for managing repository environments. Can be one of: `read` or `write`.
      */
-    public function environments(): ?string
+    public function environments(): string
     {
         return $this->environments;
     }
@@ -188,7 +188,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones. Can be one of: `read` or `write`.
      */
-    public function issues(): ?string
+    public function issues(): string
     {
         return $this->issues;
     }
@@ -196,7 +196,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata. Can be one of: `read` or `write`.
      */
-    public function metadata(): ?string
+    public function metadata(): string
     {
         return $this->metadata;
     }
@@ -204,7 +204,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for packages published to GitHub Packages. Can be one of: `read` or `write`.
      */
-    public function packages(): ?string
+    public function packages(): string
     {
         return $this->packages;
     }
@@ -212,7 +212,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds. Can be one of: `read` or `write`.
      */
-    public function pages(): ?string
+    public function pages(): string
     {
         return $this->pages;
     }
@@ -220,7 +220,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges. Can be one of: `read` or `write`.
      */
-    public function pull_requests(): ?string
+    public function pull_requests(): string
     {
         return $this->pull_requests;
     }
@@ -228,7 +228,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for a repository. Can be one of: `read` or `write`.
      */
-    public function repository_hooks(): ?string
+    public function repository_hooks(): string
     {
         return $this->repository_hooks;
     }
@@ -236,7 +236,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage repository projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
      */
-    public function repository_projects(): ?string
+    public function repository_projects(): string
     {
         return $this->repository_projects;
     }
@@ -244,7 +244,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to view and manage secret scanning alerts. Can be one of: `read` or `write`.
      */
-    public function secret_scanning_alerts(): ?string
+    public function secret_scanning_alerts(): string
     {
         return $this->secret_scanning_alerts;
     }
@@ -252,7 +252,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage repository secrets. Can be one of: `read` or `write`.
      */
-    public function secrets(): ?string
+    public function secrets(): string
     {
         return $this->secrets;
     }
@@ -260,7 +260,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to view and manage security events like code scanning alerts. Can be one of: `read` or `write`.
      */
-    public function security_events(): ?string
+    public function security_events(): string
     {
         return $this->security_events;
     }
@@ -268,7 +268,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage just a single file. Can be one of: `read` or `write`.
      */
-    public function single_file(): ?string
+    public function single_file(): string
     {
         return $this->single_file;
     }
@@ -276,7 +276,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for commit statuses. Can be one of: `read` or `write`.
      */
-    public function statuses(): ?string
+    public function statuses(): string
     {
         return $this->statuses;
     }
@@ -284,7 +284,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to retrieve Dependabot alerts. Can be one of: `read`.
      */
-    public function vulnerability_alerts(): ?string
+    public function vulnerability_alerts(): string
     {
         return $this->vulnerability_alerts;
     }
@@ -292,7 +292,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to update GitHub Actions workflow files. Can be one of: `write`.
      */
-    public function workflows(): ?string
+    public function workflows(): string
     {
         return $this->workflows;
     }
@@ -300,7 +300,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for organization teams and members. Can be one of: `read` or `write`.
      */
-    public function members(): ?string
+    public function members(): string
     {
         return $this->members;
     }
@@ -308,7 +308,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage access to an organization. Can be one of: `read` or `write`.
      */
-    public function organization_administration(): ?string
+    public function organization_administration(): string
     {
         return $this->organization_administration;
     }
@@ -316,7 +316,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for an organization. Can be one of: `read` or `write`.
      */
-    public function organization_hooks(): ?string
+    public function organization_hooks(): string
     {
         return $this->organization_hooks;
     }
@@ -324,7 +324,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for viewing an organization's plan. Can be one of: `read`.
      */
-    public function organization_plan(): ?string
+    public function organization_plan(): string
     {
         return $this->organization_plan;
     }
@@ -332,7 +332,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage organization projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
      */
-    public function organization_projects(): ?string
+    public function organization_projects(): string
     {
         return $this->organization_projects;
     }
@@ -340,7 +340,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage organization secrets. Can be one of: `read` or `write`.
      */
-    public function organization_secrets(): ?string
+    public function organization_secrets(): string
     {
         return $this->organization_secrets;
     }
@@ -348,7 +348,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization. Can be one of: `read` or `write`.
      */
-    public function organization_self_hosted_runners(): ?string
+    public function organization_self_hosted_runners(): string
     {
         return $this->organization_self_hosted_runners;
     }
@@ -356,7 +356,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to view and manage users blocked by the organization. Can be one of: `read` or `write`.
      */
-    public function organization_user_blocking(): ?string
+    public function organization_user_blocking(): string
     {
         return $this->organization_user_blocking;
     }
@@ -364,7 +364,7 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token to manage team discussions and related comments. Can be one of: `read` or `write`.
      */
-    public function team_discussions(): ?string
+    public function team_discussions(): string
     {
         return $this->team_discussions;
     }

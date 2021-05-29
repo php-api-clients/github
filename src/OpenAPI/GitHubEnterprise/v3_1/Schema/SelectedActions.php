@@ -11,7 +11,7 @@ final class SelectedActions
     /**
      * Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
      */
-    private ?bool $github_owned_allowed = null;
+    private bool $github_owned_allowed;
     /**
      * Specifies a list of string-matching patterns to allow specific action(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`."
      */
@@ -20,7 +20,7 @@ final class SelectedActions
     /**
      * Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
      */
-    public function github_owned_allowed(): ?bool
+    public function github_owned_allowed(): bool
     {
         return $this->github_owned_allowed;
     }

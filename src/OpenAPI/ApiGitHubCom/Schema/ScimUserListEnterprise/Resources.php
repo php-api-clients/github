@@ -12,31 +12,31 @@ final class Resources
     public const SCHEMA_TITLE       = 'scim-user-list-enterprise::Resources';
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas          = [];
-    private ?string $id             = null;
-    private ?string $externalId     = null;
-    private ?string $userName       = null;
-    private array $name             = [];
-    private array $emails           = [];
-    private array $groups           = [];
-    private ?bool $active           = null;
-    private array $meta             = [];
+    private string $id;
+    private string $externalId;
+    private string $userName;
+    private array $name   = [];
+    private array $emails = [];
+    private array $groups = [];
+    private bool $active;
+    private array $meta = [];
 
     public function schemas(): array
     {
         return $this->schemas;
     }
 
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
 
-    public function externalId(): ?string
+    public function externalId(): string
     {
         return $this->externalId;
     }
 
-    public function userName(): ?string
+    public function userName(): string
     {
         return $this->userName;
     }
@@ -62,7 +62,7 @@ final class Resources
         return $this->groups;
     }
 
-    public function active(): ?bool
+    public function active(): bool
     {
         return $this->active;
     }

@@ -11,24 +11,24 @@ final class ContentReferenceAttachment
     /**
      * The ID of the attachment
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The title of the attachment
      */
-    private ?string $title = null;
+    private string $title;
     /**
      * The body of the attachment
      */
-    private ?string $body = null;
+    private string $body;
     /**
      * The node_id of the content attachment
      */
-    private ?string $node_id = null;
+    private string $node_id;
 
     /**
      * The ID of the attachment
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -36,7 +36,7 @@ final class ContentReferenceAttachment
     /**
      * The title of the attachment
      */
-    public function title(): ?string
+    public function title(): string
     {
         return $this->title;
     }
@@ -44,7 +44,7 @@ final class ContentReferenceAttachment
     /**
      * The body of the attachment
      */
-    public function body(): ?string
+    public function body(): string
     {
         return $this->body;
     }
@@ -52,7 +52,7 @@ final class ContentReferenceAttachment
     /**
      * The node_id of the content attachment
      */
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }

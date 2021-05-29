@@ -8,23 +8,23 @@ final class CheckRunPullRequest
 {
     public const SCHEMA_TITLE       = 'Check Run Pull Request';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $url            = null;
-    private ?int $id                = null;
-    private ?int $number            = null;
-    private array $head             = [];
-    private array $base             = [];
+    private string $url;
+    private int $id;
+    private int $number;
+    private array $head = [];
+    private array $base = [];
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }

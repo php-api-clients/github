@@ -11,40 +11,40 @@ final class Page
     /**
      * The API address for accessing this Page resource.
      */
-    private ?string $url = null;
+    private string $url;
     /**
      * The status of the most recent build of the Page.
      */
-    private ?string $status = null;
+    private string $status;
     /**
      * The Pages site's custom domain
      */
-    private ?string $cname = null;
+    private string $cname;
     /**
      * Whether the Page has a custom 404 page.
      */
-    private ?bool $custom_404 = null;
+    private bool $custom_404;
     /**
      * The web address the Page can be accessed from.
      */
-    private ?string $html_url = null;
+    private string $html_url;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\PagesSourceHash::class) */
-    private ?PagesSourceHash $source = null;
+    private PagesSourceHash $source = [];
     /**
      * Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      */
-    private ?bool $public = null;
+    private bool $public;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\PagesHttpsCertificate::class) */
-    private ?PagesHttpsCertificate $https_certificate = null;
+    private PagesHttpsCertificate $https_certificate = [];
     /**
      * Whether https is enabled on the domain
      */
-    private ?bool $https_enforced = null;
+    private bool $https_enforced;
 
     /**
      * The API address for accessing this Page resource.
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -52,7 +52,7 @@ final class Page
     /**
      * The status of the most recent build of the Page.
      */
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
@@ -60,7 +60,7 @@ final class Page
     /**
      * The Pages site's custom domain
      */
-    public function cname(): ?string
+    public function cname(): string
     {
         return $this->cname;
     }
@@ -68,7 +68,7 @@ final class Page
     /**
      * Whether the Page has a custom 404 page.
      */
-    public function custom_404(): ?bool
+    public function custom_404(): bool
     {
         return $this->custom_404;
     }
@@ -76,12 +76,12 @@ final class Page
     /**
      * The web address the Page can be accessed from.
      */
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function source(): ?PagesSourceHash
+    public function source(): PagesSourceHash
     {
         return $this->source;
     }
@@ -89,12 +89,12 @@ final class Page
     /**
      * Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      */
-    public function public(): ?bool
+    public function public(): bool
     {
         return $this->public;
     }
 
-    public function https_certificate(): ?PagesHttpsCertificate
+    public function https_certificate(): PagesHttpsCertificate
     {
         return $this->https_certificate;
     }
@@ -102,7 +102,7 @@ final class Page
     /**
      * Whether https is enabled on the domain
      */
-    public function https_enforced(): ?bool
+    public function https_enforced(): bool
     {
         return $this->https_enforced;
     }

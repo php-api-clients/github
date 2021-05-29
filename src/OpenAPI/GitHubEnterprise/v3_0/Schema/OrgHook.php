@@ -8,33 +8,33 @@ final class OrgHook
 {
     public const SCHEMA_TITLE       = 'Org Hook';
     public const SCHEMA_DESCRIPTION = 'Org Hook';
-    private ?int $id                = null;
-    private ?string $url            = null;
-    private ?string $ping_url       = null;
-    private ?string $name           = null;
-    private array $events           = [];
-    private ?bool $active           = null;
-    private array $config           = [];
-    private ?string $updated_at     = null;
-    private ?string $created_at     = null;
-    private ?string $type           = null;
+    private int $id;
+    private string $url;
+    private string $ping_url;
+    private string $name;
+    private array $events = [];
+    private bool $active;
+    private array $config = [];
+    private string $updated_at;
+    private string $created_at;
+    private string $type;
 
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function ping_url(): ?string
+    public function ping_url(): string
     {
         return $this->ping_url;
     }
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -44,7 +44,7 @@ final class OrgHook
         return $this->events;
     }
 
-    public function active(): ?bool
+    public function active(): bool
     {
         return $this->active;
     }
@@ -54,17 +54,17 @@ final class OrgHook
         return $this->config;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }

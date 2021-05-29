@@ -8,21 +8,21 @@ final class Emails
 {
     public const SCHEMA_TITLE       = 'scim-enterprise-user::emails';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $value          = null;
-    private ?string $type           = null;
-    private ?bool $primary          = null;
+    private string $value;
+    private string $type;
+    private bool $primary;
 
-    public function value(): ?string
+    public function value(): string
     {
         return $this->value;
     }
 
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }
 
-    public function primary(): ?bool
+    public function primary(): bool
     {
         return $this->primary;
     }

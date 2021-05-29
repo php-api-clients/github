@@ -10,25 +10,25 @@ final class GitTree
 {
     public const SCHEMA_TITLE       = 'Git Tree';
     public const SCHEMA_DESCRIPTION = 'The hierarchy between files in a Git repository.';
-    private ?string $sha            = null;
-    private ?string $url            = null;
-    private ?bool $truncated        = null;
+    private string $sha;
+    private string $url;
+    private bool $truncated;
     /**
      * Objects specifying a tree structure
      */
     private array $tree = [];
 
-    public function sha(): ?string
+    public function sha(): string
     {
         return $this->sha;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function truncated(): ?bool
+    public function truncated(): bool
     {
         return $this->truncated;
     }

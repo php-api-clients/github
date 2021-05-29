@@ -11,23 +11,23 @@ final class App
     /**
      * Unique identifier of the GitHub app
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The slug name of the GitHub app
      */
-    private ?string $slug    = null;
-    private ?string $node_id = null;
+    private string $slug;
+    private string $node_id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $owner = null;
+    private User $owner = [];
     /**
      * The name of the GitHub app
      */
-    private ?string $name = null;
+    private string $name;
     private $description;
-    private ?string $external_url = null;
-    private ?string $html_url     = null;
-    private ?string $created_at   = null;
-    private ?string $updated_at   = null;
+    private string $external_url;
+    private string $html_url;
+    private string $created_at;
+    private string $updated_at;
     /**
      * The set of permissions for the GitHub app
      */
@@ -40,7 +40,7 @@ final class App
     /**
      * Unique identifier of the GitHub app
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -48,17 +48,17 @@ final class App
     /**
      * The slug name of the GitHub app
      */
-    public function slug(): ?string
+    public function slug(): string
     {
         return $this->slug;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function owner(): ?User
+    public function owner(): User
     {
         return $this->owner;
     }
@@ -66,7 +66,7 @@ final class App
     /**
      * The name of the GitHub app
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -76,22 +76,22 @@ final class App
         return $this->description;
     }
 
-    public function external_url(): ?string
+    public function external_url(): string
     {
         return $this->external_url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }

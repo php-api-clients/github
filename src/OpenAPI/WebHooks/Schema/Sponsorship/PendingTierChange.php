@@ -10,17 +10,17 @@ final class PendingTierChange
 {
     public const SCHEMA_TITLE       = 'sponsorship pending_tier_change event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
-    private array $sponsorship      = [];
+    private string $action;
+    private array $sponsorship = [];
     /**
      * The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
      */
-    private ?string $effective_date = null;
-    private array $changes          = [];
+    private string $effective_date;
+    private array $changes = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -33,7 +33,7 @@ final class PendingTierChange
     /**
      * The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
      */
-    public function effective_date(): ?string
+    public function effective_date(): string
     {
         return $this->effective_date;
     }
@@ -43,7 +43,7 @@ final class PendingTierChange
         return $this->changes;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

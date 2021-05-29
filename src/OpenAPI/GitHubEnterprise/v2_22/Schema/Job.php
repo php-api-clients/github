@@ -13,49 +13,49 @@ final class Job
     /**
      * The id of the job.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The id of the associated workflow run.
      */
-    private ?int $run_id     = null;
-    private ?string $run_url = null;
-    private ?string $node_id = null;
+    private int $run_id;
+    private string $run_url;
+    private string $node_id;
     /**
      * The SHA of the commit that is being run.
      */
-    private ?string $head_sha = null;
-    private ?string $url      = null;
-    private ?string $html_url = null;
+    private string $head_sha;
+    private string $url;
+    private string $html_url;
     /**
      * The phase of the lifecycle that the job is currently in.
      */
-    private ?string $status = null;
+    private string $status;
     /**
      * The outcome of the job.
      */
-    private ?string $conclusion = null;
+    private string $conclusion;
     /**
      * The time that the job started, in ISO 8601 format.
      */
-    private ?string $started_at = null;
+    private string $started_at;
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    private ?string $completed_at = null;
+    private string $completed_at;
     /**
      * The name of the job.
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * Steps in this job.
      */
-    private array $steps           = [];
-    private ?string $check_run_url = null;
+    private array $steps = [];
+    private string $check_run_url;
 
     /**
      * The id of the job.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -63,17 +63,17 @@ final class Job
     /**
      * The id of the associated workflow run.
      */
-    public function run_id(): ?int
+    public function run_id(): int
     {
         return $this->run_id;
     }
 
-    public function run_url(): ?string
+    public function run_url(): string
     {
         return $this->run_url;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -81,17 +81,17 @@ final class Job
     /**
      * The SHA of the commit that is being run.
      */
-    public function head_sha(): ?string
+    public function head_sha(): string
     {
         return $this->head_sha;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -99,7 +99,7 @@ final class Job
     /**
      * The phase of the lifecycle that the job is currently in.
      */
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
@@ -107,7 +107,7 @@ final class Job
     /**
      * The outcome of the job.
      */
-    public function conclusion(): ?string
+    public function conclusion(): string
     {
         return $this->conclusion;
     }
@@ -115,7 +115,7 @@ final class Job
     /**
      * The time that the job started, in ISO 8601 format.
      */
-    public function started_at(): ?string
+    public function started_at(): string
     {
         return $this->started_at;
     }
@@ -123,7 +123,7 @@ final class Job
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    public function completed_at(): ?string
+    public function completed_at(): string
     {
         return $this->completed_at;
     }
@@ -131,7 +131,7 @@ final class Job
     /**
      * The name of the job.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -146,7 +146,7 @@ final class Job
         return $this->steps;
     }
 
-    public function check_run_url(): ?string
+    public function check_run_url(): string
     {
         return $this->check_run_url;
     }

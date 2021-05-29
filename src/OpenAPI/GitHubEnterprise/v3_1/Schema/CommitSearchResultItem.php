@@ -11,11 +11,11 @@ final class CommitSearchResultItem
 {
     public const SCHEMA_TITLE       = 'Commit Search Result Item';
     public const SCHEMA_DESCRIPTION = 'Commit Search Result Item';
-    private ?string $url            = null;
-    private ?string $sha            = null;
-    private ?string $html_url       = null;
-    private ?string $comments_url   = null;
-    private array $commit           = [];
+    private string $url;
+    private string $sha;
+    private string $html_url;
+    private string $comments_url;
+    private array $commit = [];
     private $author;
     private $committer;
     private array $parents = [];
@@ -24,27 +24,27 @@ final class CommitSearchResultItem
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MinimalRepository::class)
      */
-    private ?MinimalRepository $repository = null;
-    private ?number $score                 = null;
-    private ?string $node_id               = null;
-    private array $text_matches            = [];
+    private MinimalRepository $repository = [];
+    private number $score;
+    private string $node_id;
+    private array $text_matches = [];
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function sha(): ?string
+    public function sha(): string
     {
         return $this->sha;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function comments_url(): ?string
+    public function comments_url(): string
     {
         return $this->comments_url;
     }
@@ -75,17 +75,17 @@ final class CommitSearchResultItem
     /**
      * Minimal Repository
      */
-    public function repository(): ?MinimalRepository
+    public function repository(): MinimalRepository
     {
         return $this->repository;
     }
 
-    public function score(): ?number
+    public function score(): number
     {
         return $this->score;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }

@@ -11,42 +11,42 @@ final class Installation
     /**
      * The ID of the installation.
      */
-    private ?int $id = null;
+    private int $id;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $account = null;
+    private User $account = [];
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    private ?string $repository_selection = null;
-    private ?string $access_tokens_url    = null;
-    private ?string $repositories_url     = null;
-    private ?string $html_url             = null;
-    private ?int $app_id                  = null;
-    private ?string $app_slug             = null;
+    private string $repository_selection;
+    private string $access_tokens_url;
+    private string $repositories_url;
+    private string $html_url;
+    private int $app_id;
+    private string $app_slug;
     /**
      * The ID of the user or organization this token is being scoped to.
      */
-    private ?int $target_id      = null;
-    private ?string $target_type = null;
-    private array $permissions   = [];
-    private array $events        = [];
+    private int $target_id;
+    private string $target_type;
+    private array $permissions = [];
+    private array $events      = [];
     private $created_at;
     private $updated_at;
     private $single_file_name;
-    private ?bool $has_multiple_single_files = null;
-    private array $single_file_paths         = [];
+    private bool $has_multiple_single_files;
+    private array $single_file_paths = [];
     private $suspended_by;
     private $suspended_at;
 
     /**
      * The ID of the installation.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function account(): ?User
+    public function account(): User
     {
         return $this->account;
     }
@@ -54,32 +54,32 @@ final class Installation
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    public function repository_selection(): ?string
+    public function repository_selection(): string
     {
         return $this->repository_selection;
     }
 
-    public function access_tokens_url(): ?string
+    public function access_tokens_url(): string
     {
         return $this->access_tokens_url;
     }
 
-    public function repositories_url(): ?string
+    public function repositories_url(): string
     {
         return $this->repositories_url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function app_id(): ?int
+    public function app_id(): int
     {
         return $this->app_id;
     }
 
-    public function app_slug(): ?string
+    public function app_slug(): string
     {
         return $this->app_slug;
     }
@@ -87,12 +87,12 @@ final class Installation
     /**
      * The ID of the user or organization this token is being scoped to.
      */
-    public function target_id(): ?int
+    public function target_id(): int
     {
         return $this->target_id;
     }
 
-    public function target_type(): ?string
+    public function target_type(): string
     {
         return $this->target_type;
     }
@@ -122,7 +122,7 @@ final class Installation
         return $this->single_file_name;
     }
 
-    public function has_multiple_single_files(): ?bool
+    public function has_multiple_single_files(): bool
     {
         return $this->has_multiple_single_files;
     }

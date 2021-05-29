@@ -8,22 +8,22 @@ final class GitRef
 {
     public const SCHEMA_TITLE       = 'Git Reference';
     public const SCHEMA_DESCRIPTION = 'Git references within a repository';
-    private ?string $ref            = null;
-    private ?string $node_id        = null;
-    private ?string $url            = null;
-    private array $object           = [];
+    private string $ref;
+    private string $node_id;
+    private string $url;
+    private array $object = [];
 
-    public function ref(): ?string
+    public function ref(): string
     {
         return $this->ref;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }

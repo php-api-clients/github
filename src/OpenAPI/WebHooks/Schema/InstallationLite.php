@@ -11,18 +11,18 @@ final class InstallationLite
     /**
      * The ID of the installation.
      */
-    private ?int $id         = null;
-    private ?string $node_id = null;
+    private int $id;
+    private string $node_id;
 
     /**
      * The ID of the installation.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }

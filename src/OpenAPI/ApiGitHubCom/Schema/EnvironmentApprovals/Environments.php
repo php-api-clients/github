@@ -11,32 +11,32 @@ final class Environments
     /**
      * The id of the environment.
      */
-    private ?int $id         = null;
-    private ?string $node_id = null;
+    private int $id;
+    private string $node_id;
     /**
      * The name of the environment.
      */
-    private ?string $name     = null;
-    private ?string $url      = null;
-    private ?string $html_url = null;
+    private string $name;
+    private string $url;
+    private string $html_url;
     /**
      * The time that the environment was created, in ISO 8601 format.
      */
-    private ?string $created_at = null;
+    private string $created_at;
     /**
      * The time that the environment was last updated, in ISO 8601 format.
      */
-    private ?string $updated_at = null;
+    private string $updated_at;
 
     /**
      * The id of the environment.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
@@ -44,17 +44,17 @@ final class Environments
     /**
      * The name of the environment.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -62,7 +62,7 @@ final class Environments
     /**
      * The time that the environment was created, in ISO 8601 format.
      */
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
@@ -70,7 +70,7 @@ final class Environments
     /**
      * The time that the environment was last updated, in ISO 8601 format.
      */
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }

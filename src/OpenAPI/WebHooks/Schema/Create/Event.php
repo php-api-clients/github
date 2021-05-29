@@ -16,15 +16,15 @@ final class Event
     /**
      * The [`git ref`](https://docs.github.com/en/rest/reference/git#get-a-reference) resource.
      */
-    private ?string $ref = null;
+    private string $ref;
     /**
      * The type of Git ref object created in the repository. Can be either `branch` or `tag`.
      */
-    private ?string $ref_type = null;
+    private string $ref_type;
     /**
      * The name of the repository's default branch (usually `main`).
      */
-    private ?string $master_branch = null;
+    private string $master_branch;
     /**
      * The repository's current description.
      */
@@ -32,28 +32,28 @@ final class Event
     /**
      * The pusher type for the event. Can be either `user` or a deploy key.
      */
-    private ?string $pusher_type = null;
+    private string $pusher_type;
     /**
      * A git repository
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private ?Repository $repository = null;
+    private Repository $repository = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
     /**
      * Installation
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private ?InstallationLite $installation = null;
+    private InstallationLite $installation = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private ?Organization $organization = null;
+    private Organization $organization = [];
 
     /**
      * The [`git ref`](https://docs.github.com/en/rest/reference/git#get-a-reference) resource.
      */
-    public function ref(): ?string
+    public function ref(): string
     {
         return $this->ref;
     }
@@ -61,7 +61,7 @@ final class Event
     /**
      * The type of Git ref object created in the repository. Can be either `branch` or `tag`.
      */
-    public function ref_type(): ?string
+    public function ref_type(): string
     {
         return $this->ref_type;
     }
@@ -69,7 +69,7 @@ final class Event
     /**
      * The name of the repository's default branch (usually `main`).
      */
-    public function master_branch(): ?string
+    public function master_branch(): string
     {
         return $this->master_branch;
     }
@@ -85,7 +85,7 @@ final class Event
     /**
      * The pusher type for the event. Can be either `user` or a deploy key.
      */
-    public function pusher_type(): ?string
+    public function pusher_type(): string
     {
         return $this->pusher_type;
     }
@@ -93,12 +93,12 @@ final class Event
     /**
      * A git repository
      */
-    public function repository(): ?Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }
@@ -106,12 +106,12 @@ final class Event
     /**
      * Installation
      */
-    public function installation(): ?InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
 
-    public function organization(): ?Organization
+    public function organization(): Organization
     {
         return $this->organization;
     }

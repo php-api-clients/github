@@ -11,28 +11,28 @@ final class Groups
     /**
      * The ID of the group
      */
-    private ?string $group_id = null;
+    private string $group_id;
     /**
      * The name of the group
      */
-    private ?string $group_name = null;
+    private string $group_name;
     /**
      * a description of the group
      */
-    private ?string $group_description = null;
+    private string $group_description;
     /**
      * synchronization status for this group mapping
      */
-    private ?string $status = null;
+    private string $status;
     /**
      * the time of the last sync for this group-mapping
      */
-    private ?string $synced_at = null;
+    private string $synced_at;
 
     /**
      * The ID of the group
      */
-    public function group_id(): ?string
+    public function group_id(): string
     {
         return $this->group_id;
     }
@@ -40,7 +40,7 @@ final class Groups
     /**
      * The name of the group
      */
-    public function group_name(): ?string
+    public function group_name(): string
     {
         return $this->group_name;
     }
@@ -48,7 +48,7 @@ final class Groups
     /**
      * a description of the group
      */
-    public function group_description(): ?string
+    public function group_description(): string
     {
         return $this->group_description;
     }
@@ -56,7 +56,7 @@ final class Groups
     /**
      * synchronization status for this group mapping
      */
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
@@ -64,7 +64,7 @@ final class Groups
     /**
      * the time of the last sync for this group-mapping
      */
-    public function synced_at(): ?string
+    public function synced_at(): string
     {
         return $this->synced_at;
     }

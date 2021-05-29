@@ -6,21 +6,21 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class ApiOverview
 {
-    public const SCHEMA_TITLE                         = 'Api Overview';
-    public const SCHEMA_DESCRIPTION                   = 'Api Overview';
-    private ?bool $verifiable_password_authentication = null;
-    private array $ssh_key_fingerprints               = [];
-    private array $hooks                              = [];
-    private array $web                                = [];
-    private array $api                                = [];
-    private array $git                                = [];
-    private array $packages                           = [];
-    private array $pages                              = [];
-    private array $importer                           = [];
-    private array $actions                            = [];
-    private array $dependabot                         = [];
+    public const SCHEMA_TITLE       = 'Api Overview';
+    public const SCHEMA_DESCRIPTION = 'Api Overview';
+    private bool $verifiable_password_authentication;
+    private array $ssh_key_fingerprints = [];
+    private array $hooks                = [];
+    private array $web                  = [];
+    private array $api                  = [];
+    private array $git                  = [];
+    private array $packages             = [];
+    private array $pages                = [];
+    private array $importer             = [];
+    private array $actions              = [];
+    private array $dependabot           = [];
 
-    public function verifiable_password_authentication(): ?bool
+    public function verifiable_password_authentication(): bool
     {
         return $this->verifiable_password_authentication;
     }

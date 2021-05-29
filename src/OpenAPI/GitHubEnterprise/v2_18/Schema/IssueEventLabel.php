@@ -8,15 +8,15 @@ final class IssueEventLabel
 {
     public const SCHEMA_TITLE       = 'Issue Event Label';
     public const SCHEMA_DESCRIPTION = 'Issue Event Label';
-    private ?string $name           = null;
-    private ?string $color          = null;
+    private string $name;
+    private string $color;
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function color(): ?string
+    public function color(): string
     {
         return $this->color;
     }

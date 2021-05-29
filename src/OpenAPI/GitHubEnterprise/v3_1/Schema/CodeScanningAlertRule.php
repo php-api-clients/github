@@ -11,23 +11,23 @@ final class CodeScanningAlertRule
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private ?string $id = null;
+    private string $id;
     /**
      * The name of the rule used to detect the alert.
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * The severity of the alert.
      */
-    private ?string $severity = null;
+    private string $severity;
     /**
      * A short description of the rule used to detect the alert.
      */
-    private ?string $description = null;
+    private string $description;
     /**
      * description of the rule used to detect the alert.
      */
-    private ?string $full_description = null;
+    private string $full_description;
     /**
      * A set of tags applicable for the rule.
      */
@@ -35,12 +35,12 @@ final class CodeScanningAlertRule
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    private ?string $help = null;
+    private string $help;
 
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    public function id(): ?string
+    public function id(): string
     {
         return $this->id;
     }
@@ -48,7 +48,7 @@ final class CodeScanningAlertRule
     /**
      * The name of the rule used to detect the alert.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -56,7 +56,7 @@ final class CodeScanningAlertRule
     /**
      * The severity of the alert.
      */
-    public function severity(): ?string
+    public function severity(): string
     {
         return $this->severity;
     }
@@ -64,7 +64,7 @@ final class CodeScanningAlertRule
     /**
      * A short description of the rule used to detect the alert.
      */
-    public function description(): ?string
+    public function description(): string
     {
         return $this->description;
     }
@@ -72,7 +72,7 @@ final class CodeScanningAlertRule
     /**
      * description of the rule used to detect the alert.
      */
-    public function full_description(): ?string
+    public function full_description(): string
     {
         return $this->full_description;
     }
@@ -88,7 +88,7 @@ final class CodeScanningAlertRule
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    public function help(): ?string
+    public function help(): string
     {
         return $this->help;
     }

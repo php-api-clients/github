@@ -11,20 +11,20 @@ final class Labels
     /**
      * Unique identifier of the label.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * Name of the label.
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * The type of label. Read-only labels are applied automatically when the runner is configured.
      */
-    private ?string $type = null;
+    private string $type;
 
     /**
      * Unique identifier of the label.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -32,7 +32,7 @@ final class Labels
     /**
      * Name of the label.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -40,7 +40,7 @@ final class Labels
     /**
      * The type of label. Read-only labels are applied automatically when the runner is configured.
      */
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }

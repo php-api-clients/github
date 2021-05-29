@@ -11,50 +11,50 @@ final class SecretScanningAlert
     /**
      * The security alert number.
      */
-    private ?int $number = null;
+    private int $number;
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $created_at = null;
+    private string $created_at;
     /**
      * The REST API URL of the alert resource.
      */
-    private ?string $url = null;
+    private string $url;
     /**
      * The GitHub URL of the alert resource.
      */
-    private ?string $html_url = null;
+    private string $html_url;
     /**
      * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
      */
-    private ?string $state = null;
+    private string $state;
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
      */
-    private ?string $resolution = null;
+    private string $resolution;
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $resolved_at = null;
+    private string $resolved_at;
     /**
      * Simple User
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\SimpleUser::class)
      */
-    private ?SimpleUser $resolved_by = null;
+    private SimpleUser $resolved_by = [];
     /**
      * The type of secret that secret scanning detected.
      */
-    private ?string $secret_type = null;
+    private string $secret_type;
     /**
      * The secret that was detected.
      */
-    private ?string $secret = null;
+    private string $secret;
 
     /**
      * The security alert number.
      */
-    public function number(): ?int
+    public function number(): int
     {
         return $this->number;
     }
@@ -62,7 +62,7 @@ final class SecretScanningAlert
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
@@ -70,7 +70,7 @@ final class SecretScanningAlert
     /**
      * The REST API URL of the alert resource.
      */
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -78,7 +78,7 @@ final class SecretScanningAlert
     /**
      * The GitHub URL of the alert resource.
      */
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
@@ -86,7 +86,7 @@ final class SecretScanningAlert
     /**
      * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
      */
-    public function state(): ?string
+    public function state(): string
     {
         return $this->state;
     }
@@ -94,7 +94,7 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
      */
-    public function resolution(): ?string
+    public function resolution(): string
     {
         return $this->resolution;
     }
@@ -102,7 +102,7 @@ final class SecretScanningAlert
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function resolved_at(): ?string
+    public function resolved_at(): string
     {
         return $this->resolved_at;
     }
@@ -110,7 +110,7 @@ final class SecretScanningAlert
     /**
      * Simple User
      */
-    public function resolved_by(): ?SimpleUser
+    public function resolved_by(): SimpleUser
     {
         return $this->resolved_by;
     }
@@ -118,7 +118,7 @@ final class SecretScanningAlert
     /**
      * The type of secret that secret scanning detected.
      */
-    public function secret_type(): ?string
+    public function secret_type(): string
     {
         return $this->secret_type;
     }
@@ -126,7 +126,7 @@ final class SecretScanningAlert
     /**
      * The secret that was detected.
      */
-    public function secret(): ?string
+    public function secret(): string
     {
         return $this->secret;
     }

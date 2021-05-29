@@ -8,33 +8,33 @@ final class Hook
 {
     public const SCHEMA_TITLE       = 'Webhook';
     public const SCHEMA_DESCRIPTION = 'Webhooks for repositories.';
-    private ?string $type           = null;
+    private string $type;
     /**
      * Unique identifier of the webhook.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The name of a valid service, use 'web' for a webhook.
      */
-    private ?string $name = null;
+    private string $name;
     /**
      * Determines whether the hook is actually triggered on pushes.
      */
-    private ?bool $active = null;
+    private bool $active;
     /**
      * Determines what events the hook is triggered for. Default: ['push'].
      */
-    private array $events       = [];
-    private array $config       = [];
-    private ?string $updated_at = null;
-    private ?string $created_at = null;
-    private ?string $url        = null;
-    private ?string $test_url   = null;
-    private ?string $ping_url   = null;
+    private array $events = [];
+    private array $config = [];
+    private string $updated_at;
+    private string $created_at;
+    private string $url;
+    private string $test_url;
+    private string $ping_url;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse::class) */
-    private ?HookResponse $last_response = null;
+    private HookResponse $last_response = [];
 
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }
@@ -42,7 +42,7 @@ final class Hook
     /**
      * Unique identifier of the webhook.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -50,7 +50,7 @@ final class Hook
     /**
      * The name of a valid service, use 'web' for a webhook.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -58,7 +58,7 @@ final class Hook
     /**
      * Determines whether the hook is actually triggered on pushes.
      */
-    public function active(): ?bool
+    public function active(): bool
     {
         return $this->active;
     }
@@ -76,32 +76,32 @@ final class Hook
         return $this->config;
     }
 
-    public function updated_at(): ?string
+    public function updated_at(): string
     {
         return $this->updated_at;
     }
 
-    public function created_at(): ?string
+    public function created_at(): string
     {
         return $this->created_at;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function test_url(): ?string
+    public function test_url(): string
     {
         return $this->test_url;
     }
 
-    public function ping_url(): ?string
+    public function ping_url(): string
     {
         return $this->ping_url;
     }
 
-    public function last_response(): ?HookResponse
+    public function last_response(): HookResponse
     {
         return $this->last_response;
     }

@@ -6,37 +6,37 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 
 final class BranchProtection
 {
-    public const SCHEMA_TITLE             = 'Branch Protection';
-    public const SCHEMA_DESCRIPTION       = 'Branch Protection';
-    private ?string $url                  = null;
+    public const SCHEMA_TITLE       = 'Branch Protection';
+    public const SCHEMA_DESCRIPTION = 'Branch Protection';
+    private string $url;
     private array $required_status_checks = [];
     /**
      * Protected Branch Admin Enforced
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\ProtectedBranchAdminEnforced::class)
      */
-    private ?ProtectedBranchAdminEnforced $enforce_admins = null;
+    private ProtectedBranchAdminEnforced $enforce_admins = [];
     /**
      * Protected Branch Pull Request Review
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\ProtectedBranchPullRequestReview::class)
      */
-    private ?ProtectedBranchPullRequestReview $required_pull_request_reviews = null;
+    private ProtectedBranchPullRequestReview $required_pull_request_reviews = [];
     /**
      * Branch Restriction Policy
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\BranchRestrictionPolicy::class)
      */
-    private ?BranchRestrictionPolicy $restrictions  = null;
+    private BranchRestrictionPolicy $restrictions   = [];
     private array $required_linear_history          = [];
     private array $allow_force_pushes               = [];
     private array $allow_deletions                  = [];
     private array $required_conversation_resolution = [];
-    private ?string $name                           = null;
-    private ?string $protection_url                 = null;
-    private array $required_signatures              = [];
+    private string $name;
+    private string $protection_url;
+    private array $required_signatures = [];
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
@@ -49,7 +49,7 @@ final class BranchProtection
     /**
      * Protected Branch Admin Enforced
      */
-    public function enforce_admins(): ?ProtectedBranchAdminEnforced
+    public function enforce_admins(): ProtectedBranchAdminEnforced
     {
         return $this->enforce_admins;
     }
@@ -57,7 +57,7 @@ final class BranchProtection
     /**
      * Protected Branch Pull Request Review
      */
-    public function required_pull_request_reviews(): ?ProtectedBranchPullRequestReview
+    public function required_pull_request_reviews(): ProtectedBranchPullRequestReview
     {
         return $this->required_pull_request_reviews;
     }
@@ -65,7 +65,7 @@ final class BranchProtection
     /**
      * Branch Restriction Policy
      */
-    public function restrictions(): ?BranchRestrictionPolicy
+    public function restrictions(): BranchRestrictionPolicy
     {
         return $this->restrictions;
     }
@@ -90,12 +90,12 @@ final class BranchProtection
         return $this->required_conversation_resolution;
     }
 
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function protection_url(): ?string
+    public function protection_url(): string
     {
         return $this->protection_url;
     }

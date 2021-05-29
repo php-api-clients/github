@@ -10,13 +10,13 @@ final class Edited
 {
     public const SCHEMA_TITLE       = 'sponsorship edited event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action         = null;
-    private array $sponsorship      = [];
-    private array $changes          = [];
+    private string $action;
+    private array $sponsorship = [];
+    private array $changes     = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $sender = null;
+    private User $sender = [];
 
-    public function action(): ?string
+    public function action(): string
     {
         return $this->action;
     }
@@ -31,7 +31,7 @@ final class Edited
         return $this->changes;
     }
 
-    public function sender(): ?User
+    public function sender(): User
     {
         return $this->sender;
     }

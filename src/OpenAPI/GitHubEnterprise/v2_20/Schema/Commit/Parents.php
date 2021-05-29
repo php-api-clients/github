@@ -8,21 +8,21 @@ final class Parents
 {
     public const SCHEMA_TITLE       = 'commit::parents';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $sha            = null;
-    private ?string $url            = null;
-    private ?string $html_url       = null;
+    private string $sha;
+    private string $url;
+    private string $html_url;
 
-    public function sha(): ?string
+    public function sha(): string
     {
         return $this->sha;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }

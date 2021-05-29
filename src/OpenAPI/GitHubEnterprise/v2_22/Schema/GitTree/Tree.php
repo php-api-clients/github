@@ -8,39 +8,39 @@ final class Tree
 {
     public const SCHEMA_TITLE       = 'git-tree::tree';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $path           = null;
-    private ?string $mode           = null;
-    private ?string $type           = null;
-    private ?string $sha            = null;
-    private ?int $size              = null;
-    private ?string $url            = null;
+    private string $path;
+    private string $mode;
+    private string $type;
+    private string $sha;
+    private int $size;
+    private string $url;
 
-    public function path(): ?string
+    public function path(): string
     {
         return $this->path;
     }
 
-    public function mode(): ?string
+    public function mode(): string
     {
         return $this->mode;
     }
 
-    public function type(): ?string
+    public function type(): string
     {
         return $this->type;
     }
 
-    public function sha(): ?string
+    public function sha(): string
     {
         return $this->sha;
     }
 
-    public function size(): ?int
+    public function size(): int
     {
         return $this->size;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }

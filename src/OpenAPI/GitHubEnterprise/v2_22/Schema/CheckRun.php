@@ -11,28 +11,28 @@ final class CheckRun
     /**
      * The id of the check.
      */
-    private ?int $id = null;
+    private int $id;
     /**
      * The SHA of the commit that is being checked.
      */
-    private ?string $head_sha    = null;
-    private ?string $node_id     = null;
-    private ?string $external_id = null;
-    private ?string $url         = null;
-    private ?string $html_url    = null;
-    private ?string $details_url = null;
+    private string $head_sha;
+    private string $node_id;
+    private string $external_id;
+    private string $url;
+    private string $html_url;
+    private string $details_url;
     /**
      * The phase of the lifecycle that the check is currently in.
      */
-    private ?string $status       = null;
-    private ?string $conclusion   = null;
-    private ?string $started_at   = null;
-    private ?string $completed_at = null;
-    private array $output         = [];
+    private string $status;
+    private string $conclusion;
+    private string $started_at;
+    private string $completed_at;
+    private array $output = [];
     /**
      * The name of the check.
      */
-    private ?string $name      = null;
+    private string $name;
     private array $check_suite = [];
     private $app;
     private $pull_requests;
@@ -41,12 +41,12 @@ final class CheckRun
      *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\DeploymentSimple::class)
      */
-    private ?DeploymentSimple $deployment = null;
+    private DeploymentSimple $deployment = [];
 
     /**
      * The id of the check.
      */
-    public function id(): ?int
+    public function id(): int
     {
         return $this->id;
     }
@@ -54,32 +54,32 @@ final class CheckRun
     /**
      * The SHA of the commit that is being checked.
      */
-    public function head_sha(): ?string
+    public function head_sha(): string
     {
         return $this->head_sha;
     }
 
-    public function node_id(): ?string
+    public function node_id(): string
     {
         return $this->node_id;
     }
 
-    public function external_id(): ?string
+    public function external_id(): string
     {
         return $this->external_id;
     }
 
-    public function url(): ?string
+    public function url(): string
     {
         return $this->url;
     }
 
-    public function html_url(): ?string
+    public function html_url(): string
     {
         return $this->html_url;
     }
 
-    public function details_url(): ?string
+    public function details_url(): string
     {
         return $this->details_url;
     }
@@ -87,22 +87,22 @@ final class CheckRun
     /**
      * The phase of the lifecycle that the check is currently in.
      */
-    public function status(): ?string
+    public function status(): string
     {
         return $this->status;
     }
 
-    public function conclusion(): ?string
+    public function conclusion(): string
     {
         return $this->conclusion;
     }
 
-    public function started_at(): ?string
+    public function started_at(): string
     {
         return $this->started_at;
     }
 
-    public function completed_at(): ?string
+    public function completed_at(): string
     {
         return $this->completed_at;
     }
@@ -115,7 +115,7 @@ final class CheckRun
     /**
      * The name of the check.
      */
-    public function name(): ?string
+    public function name(): string
     {
         return $this->name;
     }
@@ -138,7 +138,7 @@ final class CheckRun
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
      */
-    public function deployment(): ?DeploymentSimple
+    public function deployment(): DeploymentSimple
     {
         return $this->deployment;
     }

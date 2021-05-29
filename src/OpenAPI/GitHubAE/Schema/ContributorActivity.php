@@ -11,7 +11,7 @@ final class ContributorActivity
     public const SCHEMA_TITLE       = 'Contributor Activity';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     private $author;
-    private ?int $total  = null;
+    private int $total;
     private array $weeks = [];
 
     public function author()
@@ -19,7 +19,7 @@ final class ContributorActivity
         return $this->author;
     }
 
-    public function total(): ?int
+    public function total(): int
     {
         return $this->total;
     }

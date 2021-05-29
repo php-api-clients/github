@@ -8,9 +8,9 @@ final class Groups
 {
     public const SCHEMA_TITLE       = 'scim-enterprise-user::groups';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $value          = null;
+    private string $value;
 
-    public function value(): ?string
+    public function value(): string
     {
         return $this->value;
     }
