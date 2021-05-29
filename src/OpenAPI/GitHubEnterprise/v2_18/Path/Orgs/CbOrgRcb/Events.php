@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Activity\ListPublicOrgEventsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Activity\ListPublicOrgEvents;
 
 final class Events
 {
-    function get($org, int $per_page = 30, int $page = 1): ListPublicOrgEventsOperation
+    function get($org, int $per_page = 30, int $page = 1): ListPublicOrgEvents
     {
-        return new ListPublicOrgEventsOperation($org, $per_page, $page);
+        return new ListPublicOrgEvents($org, $per_page, $page);
     }
 }

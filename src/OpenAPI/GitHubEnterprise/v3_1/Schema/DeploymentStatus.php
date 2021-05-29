@@ -57,6 +57,9 @@ final class DeploymentStatus
         return $this->node_id;
     }
 
+    /**
+     * The state of the status.
+     */
     public function state(): ?string
     {
         return $this->state;
@@ -67,16 +70,25 @@ final class DeploymentStatus
         return $this->creator;
     }
 
+    /**
+     * A short description of the status.
+     */
     public function description(): ?string
     {
         return $this->description;
     }
 
+    /**
+     * The environment of the deployment that the status is for.
+     */
     public function environment(): ?string
     {
         return $this->environment;
     }
 
+    /**
+     * Deprecated: the URL to associate with this status.
+     */
     public function target_url(): ?string
     {
         return $this->target_url;
@@ -102,11 +114,17 @@ final class DeploymentStatus
         return $this->repository_url;
     }
 
+    /**
+     * The URL for accessing your environment.
+     */
     public function environment_url(): ?string
     {
         return $this->environment_url;
     }
 
+    /**
+     * The URL to associate with this status.
+     */
     public function log_url(): ?string
     {
         return $this->log_url;

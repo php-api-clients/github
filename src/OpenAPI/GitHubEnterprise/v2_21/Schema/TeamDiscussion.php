@@ -51,6 +51,9 @@ final class TeamDiscussion
         return $this->author;
     }
 
+    /**
+     * The main text of the discussion.
+     */
     public function body(): ?string
     {
         return $this->body;
@@ -61,6 +64,9 @@ final class TeamDiscussion
         return $this->body_html;
     }
 
+    /**
+     * The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
+     */
     public function body_version(): ?string
     {
         return $this->body_version;
@@ -96,16 +102,25 @@ final class TeamDiscussion
         return $this->node_id;
     }
 
+    /**
+     * The unique sequence number of a team discussion.
+     */
     public function number(): ?int
     {
         return $this->number;
     }
 
+    /**
+     * Whether or not this discussion should be pinned for easy retrieval.
+     */
     public function pinned(): ?bool
     {
         return $this->pinned;
     }
 
+    /**
+     * Whether or not this discussion should be restricted to team members and organization administrators.
+     */
     public function private(): ?bool
     {
         return $this->private;
@@ -116,6 +131,9 @@ final class TeamDiscussion
         return $this->team_url;
     }
 
+    /**
+     * The title of the discussion.
+     */
     public function title(): ?string
     {
         return $this->title;

@@ -14,16 +14,12 @@ final class CheckSuite
     /**
      * The SHA of the head commit that is being checked.
      */
-    private ?string $head_sha   = null;
-    private ?string $status     = null;
-    private ?string $conclusion = null;
-    private ?string $url        = null;
-    private ?string $before     = null;
-    private ?string $after      = null;
-    /**
-     * @var array<PullRequestMinimal>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal::class)
-     */
+    private ?string $head_sha    = null;
+    private ?string $status      = null;
+    private ?string $conclusion  = null;
+    private ?string $url         = null;
+    private ?string $before      = null;
+    private ?string $after       = null;
     private array $pull_requests = [];
     private $app;
     /**
@@ -58,6 +54,9 @@ final class CheckSuite
         return $this->head_branch;
     }
 
+    /**
+     * The SHA of the head commit that is being checked.
+     */
     public function head_sha(): ?string
     {
         return $this->head_sha;
@@ -88,6 +87,9 @@ final class CheckSuite
         return $this->after;
     }
 
+    /**
+     * @return array<PullRequestMinimal>
+     */
     public function pull_requests(): array
     {
         return $this->pull_requests;
@@ -98,6 +100,9 @@ final class CheckSuite
         return $this->app;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;
@@ -113,6 +118,9 @@ final class CheckSuite
         return $this->updated_at;
     }
 
+    /**
+     * Simple Commit
+     */
     public function head_commit(): ?SimpleCommit
     {
         return $this->head_commit;

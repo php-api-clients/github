@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Orgs\CbOrgRcb\Actions\Permissions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\GetAllowedActionsOrganizationOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\SetAllowedActionsOrganizationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\GetAllowedActionsOrganization;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\SetAllowedActionsOrganization;
 
 final class SelectedActions
 {
-    function get($org): GetAllowedActionsOrganizationOperation
+    function get($org): GetAllowedActionsOrganization
     {
-        return new GetAllowedActionsOrganizationOperation($org);
+        return new GetAllowedActionsOrganization($org);
     }
 
-    function put($org): SetAllowedActionsOrganizationOperation
+    function put($org): SetAllowedActionsOrganization
     {
-        return new SetAllowedActionsOrganizationOperation($org);
+        return new SetAllowedActionsOrganization($org);
     }
 }

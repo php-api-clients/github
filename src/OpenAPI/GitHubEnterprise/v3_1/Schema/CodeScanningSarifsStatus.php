@@ -17,11 +17,17 @@ final class CodeScanningSarifsStatus
      */
     private ?string $analyses_url = null;
 
+    /**
+     * `pending` files have not yet been processed, while `complete` means all results in the SARIF have been stored.
+     */
     public function processing_status(): ?string
     {
         return $this->processing_status;
     }
 
+    /**
+     * The REST API URL for getting the analyses associated with the upload.
+     */
     public function analyses_url(): ?string
     {
         return $this->analyses_url;

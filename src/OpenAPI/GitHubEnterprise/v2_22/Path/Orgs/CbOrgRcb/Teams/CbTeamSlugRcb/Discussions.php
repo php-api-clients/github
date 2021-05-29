@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\CreateDiscussionInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\ListDiscussionsInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\CreateDiscussionInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\ListDiscussionsInOrg;
 
 final class Discussions
 {
-    function get($org, $team_slug, string $direction = 'desc', int $per_page = 30, int $page = 1, $pinned): ListDiscussionsInOrgOperation
+    function get($org, $team_slug, string $direction = 'desc', int $per_page = 30, int $page = 1, $pinned): ListDiscussionsInOrg
     {
-        return new ListDiscussionsInOrgOperation($org, $team_slug, $direction, $per_page, $page, $pinned);
+        return new ListDiscussionsInOrg($org, $team_slug, $direction, $per_page, $page, $pinned);
     }
 
-    function post($org, $team_slug): CreateDiscussionInOrgOperation
+    function post($org, $team_slug): CreateDiscussionInOrg
     {
-        return new CreateDiscussionInOrgOperation($org, $team_slug);
+        return new CreateDiscussionInOrg($org, $team_slug);
     }
 }

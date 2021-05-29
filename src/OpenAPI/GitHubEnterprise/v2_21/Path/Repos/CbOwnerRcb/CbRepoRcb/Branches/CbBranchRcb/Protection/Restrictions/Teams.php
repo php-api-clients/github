@@ -4,30 +4,30 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\Restrictions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\AddTeamAccessRestrictionsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetTeamsWithAccessToProtectedBranchOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\RemoveTeamAccessRestrictionsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\SetTeamAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\AddTeamAccessRestrictions;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetTeamsWithAccessToProtectedBranch;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\RemoveTeamAccessRestrictions;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\SetTeamAccessRestrictions;
 
 final class Teams
 {
-    function get($owner, $repo, $branch): GetTeamsWithAccessToProtectedBranchOperation
+    function get($owner, $repo, $branch): GetTeamsWithAccessToProtectedBranch
     {
-        return new GetTeamsWithAccessToProtectedBranchOperation($owner, $repo, $branch);
+        return new GetTeamsWithAccessToProtectedBranch($owner, $repo, $branch);
     }
 
-    function put($owner, $repo, $branch): SetTeamAccessRestrictionsOperation
+    function put($owner, $repo, $branch): SetTeamAccessRestrictions
     {
-        return new SetTeamAccessRestrictionsOperation($owner, $repo, $branch);
+        return new SetTeamAccessRestrictions($owner, $repo, $branch);
     }
 
-    function post($owner, $repo, $branch): AddTeamAccessRestrictionsOperation
+    function post($owner, $repo, $branch): AddTeamAccessRestrictions
     {
-        return new AddTeamAccessRestrictionsOperation($owner, $repo, $branch);
+        return new AddTeamAccessRestrictions($owner, $repo, $branch);
     }
 
-    function delete($owner, $repo, $branch): RemoveTeamAccessRestrictionsOperation
+    function delete($owner, $repo, $branch): RemoveTeamAccessRestrictions
     {
-        return new RemoveTeamAccessRestrictionsOperation($owner, $repo, $branch);
+        return new RemoveTeamAccessRestrictions($owner, $repo, $branch);
     }
 }

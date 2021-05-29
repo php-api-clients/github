@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RenameBranchOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RenameBranch;
 
 final class Rename
 {
-    function post($owner, $repo, $branch): RenameBranchOperation
+    function post($owner, $repo, $branch): RenameBranch
     {
-        return new RenameBranchOperation($owner, $repo, $branch);
+        return new RenameBranch($owner, $repo, $branch);
     }
 }

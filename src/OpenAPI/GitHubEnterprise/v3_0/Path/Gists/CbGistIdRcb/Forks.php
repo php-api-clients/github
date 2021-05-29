@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Gists\CbGistIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\ForkOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\ListForksOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\Fork;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\ListForks;
 
 final class Forks
 {
-    function get($gist_id, int $per_page = 30, int $page = 1): ListForksOperation
+    function get($gist_id, int $per_page = 30, int $page = 1): ListForks
     {
-        return new ListForksOperation($gist_id, $per_page, $page);
+        return new ListForks($gist_id, $per_page, $page);
     }
 
-    function post($gist_id): ForkOperation
+    function post($gist_id): Fork
     {
-        return new ForkOperation($gist_id);
+        return new Fork($gist_id);
     }
 }

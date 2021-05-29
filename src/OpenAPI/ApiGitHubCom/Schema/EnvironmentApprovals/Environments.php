@@ -28,6 +28,9 @@ final class Environments
      */
     private ?string $updated_at = null;
 
+    /**
+     * The id of the environment.
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -38,6 +41,9 @@ final class Environments
         return $this->node_id;
     }
 
+    /**
+     * The name of the environment.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -53,11 +59,17 @@ final class Environments
         return $this->html_url;
     }
 
+    /**
+     * The time that the environment was created, in ISO 8601 format.
+     */
     public function created_at(): ?string
     {
         return $this->created_at;
     }
 
+    /**
+     * The time that the environment was last updated, in ISO 8601 format.
+     */
     public function updated_at(): ?string
     {
         return $this->updated_at;

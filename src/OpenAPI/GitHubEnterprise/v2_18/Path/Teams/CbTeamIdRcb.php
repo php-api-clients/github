@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Teams;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\DeleteOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\GetOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\UpdateOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\Delete;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\Get;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\Update;
 
 final class CbTeamIdRcb
 {
-    function get($team_id): GetOperation
+    function get($team_id): Get
     {
-        return new GetOperation($team_id);
+        return new Get($team_id);
     }
 
-    function delete($team_id): DeleteOperation
+    function delete($team_id): Delete
     {
-        return new DeleteOperation($team_id);
+        return new Delete($team_id);
     }
 
-    function patch($team_id): UpdateOperation
+    function patch($team_id): Update
     {
-        return new UpdateOperation($team_id);
+        return new Update($team_id);
     }
 }

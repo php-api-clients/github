@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\OutsideCollaborators;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ConvertMemberToOutsideCollaboratorOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveOutsideCollaboratorOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ConvertMemberToOutsideCollaborator;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveOutsideCollaborator;
 
 final class CbUsernameRcb
 {
-    function put($org, $username): ConvertMemberToOutsideCollaboratorOperation
+    function put($org, $username): ConvertMemberToOutsideCollaborator
     {
-        return new ConvertMemberToOutsideCollaboratorOperation($org, $username);
+        return new ConvertMemberToOutsideCollaborator($org, $username);
     }
 
-    function delete($org, $username): RemoveOutsideCollaboratorOperation
+    function delete($org, $username): RemoveOutsideCollaborator
     {
-        return new RemoveOutsideCollaboratorOperation($org, $username);
+        return new RemoveOutsideCollaborator($org, $username);
     }
 }

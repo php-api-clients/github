@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\GetReadmeOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\GetReadme;
 
 final class Readme
 {
-    function get($owner, $repo, $ref): GetReadmeOperation
+    function get($owner, $repo, $ref): GetReadme
     {
-        return new GetReadmeOperation($owner, $repo, $ref);
+        return new GetReadme($owner, $repo, $ref);
     }
 }

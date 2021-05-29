@@ -15,12 +15,11 @@ final class ScimUserList
     private ?int $totalResults = null;
     private ?int $itemsPerPage = null;
     private ?int $startIndex   = null;
-    /**
-     * @var array<ScimUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser::class)
-     */
-    private array $Resources = [];
+    private array $Resources   = [];
 
+    /**
+     * SCIM schema used.
+     */
     public function schemas(): array
     {
         return $this->schemas;
@@ -41,6 +40,9 @@ final class ScimUserList
         return $this->startIndex;
     }
 
+    /**
+     * @return array<ScimUser>
+     */
     public function Resources(): array
     {
         return $this->Resources;

@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Orgs\CbOrgRcb\Memberships;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Orgs\GetMembershipForUserOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Orgs\RemoveMembershipForUserOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Orgs\SetMembershipForUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Orgs\GetMembershipForUser;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Orgs\RemoveMembershipForUser;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Orgs\SetMembershipForUser;
 
 final class CbUsernameRcb
 {
-    function get($org, $username): GetMembershipForUserOperation
+    function get($org, $username): GetMembershipForUser
     {
-        return new GetMembershipForUserOperation($org, $username);
+        return new GetMembershipForUser($org, $username);
     }
 
-    function put($org, $username): SetMembershipForUserOperation
+    function put($org, $username): SetMembershipForUser
     {
-        return new SetMembershipForUserOperation($org, $username);
+        return new SetMembershipForUser($org, $username);
     }
 
-    function delete($org, $username): RemoveMembershipForUserOperation
+    function delete($org, $username): RemoveMembershipForUser
     {
-        return new RemoveMembershipForUserOperation($org, $username);
+        return new RemoveMembershipForUser($org, $username);
     }
 }

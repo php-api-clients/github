@@ -34,9 +34,6 @@ final class ScimUser
     private array $name          = [];
     /**
      * user emails
-     *
-     * @var array<Emails>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Emails::class)
      */
     private array $emails = [];
     /**
@@ -50,9 +47,6 @@ final class ScimUser
     private ?int $organization_id = null;
     /**
      * Set of operations to be performed
-     *
-     * @var array<Operations>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations::class)
      */
     private array $operations = [];
     /**
@@ -60,26 +54,41 @@ final class ScimUser
      */
     private array $groups = [];
 
+    /**
+     * SCIM schema used.
+     */
     public function schemas(): array
     {
         return $this->schemas;
     }
 
+    /**
+     * Unique identifier of an external identity
+     */
     public function id(): ?string
     {
         return $this->id;
     }
 
+    /**
+     * The ID of the User.
+     */
     public function externalId(): ?string
     {
         return $this->externalId;
     }
 
+    /**
+     * Configured by the admin. Could be an email, login, or username
+     */
     public function userName(): ?string
     {
         return $this->userName;
     }
 
+    /**
+     * The name of the user, suitable for display to end-users
+     */
     public function displayName(): ?string
     {
         return $this->displayName;
@@ -90,11 +99,19 @@ final class ScimUser
         return $this->name;
     }
 
+    /**
+     * user emails
+     *
+     * @return array<Emails>
+     */
     public function emails(): array
     {
         return $this->emails;
     }
 
+    /**
+     * The active status of the User.
+     */
     public function active(): ?bool
     {
         return $this->active;
@@ -105,16 +122,27 @@ final class ScimUser
         return $this->meta;
     }
 
+    /**
+     * The ID of the organization.
+     */
     public function organization_id(): ?int
     {
         return $this->organization_id;
     }
 
+    /**
+     * Set of operations to be performed
+     *
+     * @return array<Operations>
+     */
     public function operations(): array
     {
         return $this->operations;
     }
 
+    /**
+     * associated groups
+     */
     public function groups(): array
     {
         return $this->groups;

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Orgs\CbOrgRcb\Actions\Permissions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganizationOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\SetSelectedRepositoriesEnabledGithubActionsOrganizationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\SetSelectedRepositoriesEnabledGithubActionsOrganization;
 
 final class Repositories
 {
-    function get($org, int $per_page = 30, int $page = 1): ListSelectedRepositoriesEnabledGithubActionsOrganizationOperation
+    function get($org, int $per_page = 30, int $page = 1): ListSelectedRepositoriesEnabledGithubActionsOrganization
     {
-        return new ListSelectedRepositoriesEnabledGithubActionsOrganizationOperation($org, $per_page, $page);
+        return new ListSelectedRepositoriesEnabledGithubActionsOrganization($org, $per_page, $page);
     }
 
-    function put($org): SetSelectedRepositoriesEnabledGithubActionsOrganizationOperation
+    function put($org): SetSelectedRepositoriesEnabledGithubActionsOrganization
     {
-        return new SetSelectedRepositoriesEnabledGithubActionsOrganizationOperation($org);
+        return new SetSelectedRepositoriesEnabledGithubActionsOrganization($org);
     }
 }

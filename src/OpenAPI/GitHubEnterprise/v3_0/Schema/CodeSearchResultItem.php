@@ -27,11 +27,7 @@ final class CodeSearchResultItem
     private ?string $language              = null;
     private ?string $last_modified_at      = null;
     private array $line_numbers            = [];
-    /**
-     * @var array<TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\CodeSearchResultItem\TextMatches::class)
-     */
-    private array $text_matches = [];
+    private array $text_matches            = [];
 
     public function name(): ?string
     {
@@ -63,6 +59,9 @@ final class CodeSearchResultItem
         return $this->html_url;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;
@@ -93,6 +92,9 @@ final class CodeSearchResultItem
         return $this->line_numbers;
     }
 
+    /**
+     * @return array<TextMatches>
+     */
     public function text_matches(): array
     {
         return $this->text_matches;

@@ -17,26 +17,10 @@ final class BranchRestrictionPolicy
     private ?string $users_url      = null;
     private ?string $teams_url      = null;
     private ?string $apps_url       = null;
-    /**
-     * @var array<Users>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\BranchRestrictionPolicy\Users::class)
-     */
-    private array $users = [];
-    /**
-     * @var array<Teams>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\BranchRestrictionPolicy\Teams::class)
-     */
-    private array $teams = [];
-    /**
-     * @var array<Apps>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\BranchRestrictionPolicy\Apps::class)
-     */
-    private array $apps = [];
-    /**
-     * @var array<Restrictions>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\BranchRestrictionPolicy\Restrictions::class)
-     */
-    private array $restrictions = [];
+    private array $users            = [];
+    private array $teams            = [];
+    private array $apps             = [];
+    private array $restrictions     = [];
 
     public function url(): ?string
     {
@@ -58,21 +42,33 @@ final class BranchRestrictionPolicy
         return $this->apps_url;
     }
 
+    /**
+     * @return array<Users>
+     */
     public function users(): array
     {
         return $this->users;
     }
 
+    /**
+     * @return array<Teams>
+     */
     public function teams(): array
     {
         return $this->teams;
     }
 
+    /**
+     * @return array<Apps>
+     */
     public function apps(): array
     {
         return $this->apps;
     }
 
+    /**
+     * @return array<Restrictions>
+     */
     public function restrictions(): array
     {
         return $this->restrictions;

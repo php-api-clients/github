@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\Pages;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\ListPagesBuildsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\RequestPagesBuildOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\ListPagesBuilds;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\RequestPagesBuild;
 
 final class Builds
 {
-    function get($owner, $repo, int $per_page = 30, int $page = 1): ListPagesBuildsOperation
+    function get($owner, $repo, int $per_page = 30, int $page = 1): ListPagesBuilds
     {
-        return new ListPagesBuildsOperation($owner, $repo, $per_page, $page);
+        return new ListPagesBuilds($owner, $repo, $per_page, $page);
     }
 
-    function post($owner, $repo): RequestPagesBuildOperation
+    function post($owner, $repo): RequestPagesBuild
     {
-        return new RequestPagesBuildOperation($owner, $repo);
+        return new RequestPagesBuild($owner, $repo);
     }
 }

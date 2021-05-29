@@ -4,8 +4,8 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Users\CbUsernameRcb\Eve
 
 final class Public
 {
-    function get($username, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\ListPublicEventsForUserOperation
+    function get($username, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\ListPublicEventsForUser
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\ListPublicEventsForUserOperation($username, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\ListPublicEventsForUser($username, $per_page, $page);
     }
 }

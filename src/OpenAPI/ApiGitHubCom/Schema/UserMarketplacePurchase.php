@@ -58,6 +58,9 @@ final class UserMarketplacePurchase
         return $this->account;
     }
 
+    /**
+     * Marketplace Listing Plan
+     */
     public function plan(): ?MarketplaceListingPlan
     {
         return $this->plan;

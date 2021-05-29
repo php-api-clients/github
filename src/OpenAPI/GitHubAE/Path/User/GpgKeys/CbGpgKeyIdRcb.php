@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\User\GpgKeys;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\DeleteGpgKeyForAuthenticatedOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetGpgKeyForAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\DeleteGpgKeyForAuthenticated;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetGpgKeyForAuthenticated;
 
 final class CbGpgKeyIdRcb
 {
-    function get($gpg_key_id): GetGpgKeyForAuthenticatedOperation
+    function get($gpg_key_id): GetGpgKeyForAuthenticated
     {
-        return new GetGpgKeyForAuthenticatedOperation($gpg_key_id);
+        return new GetGpgKeyForAuthenticated($gpg_key_id);
     }
 
-    function delete($gpg_key_id): DeleteGpgKeyForAuthenticatedOperation
+    function delete($gpg_key_id): DeleteGpgKeyForAuthenticated
     {
-        return new DeleteGpgKeyForAuthenticatedOperation($gpg_key_id);
+        return new DeleteGpgKeyForAuthenticated($gpg_key_id);
     }
 }

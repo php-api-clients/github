@@ -4,30 +4,30 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\Restrictions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\AddUserAccessRestrictionsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetUsersWithAccessToProtectedBranchOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\RemoveUserAccessRestrictionsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\SetUserAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\AddUserAccessRestrictions;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetUsersWithAccessToProtectedBranch;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\RemoveUserAccessRestrictions;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\SetUserAccessRestrictions;
 
 final class Users
 {
-    function get($owner, $repo, $branch): GetUsersWithAccessToProtectedBranchOperation
+    function get($owner, $repo, $branch): GetUsersWithAccessToProtectedBranch
     {
-        return new GetUsersWithAccessToProtectedBranchOperation($owner, $repo, $branch);
+        return new GetUsersWithAccessToProtectedBranch($owner, $repo, $branch);
     }
 
-    function put($owner, $repo, $branch): SetUserAccessRestrictionsOperation
+    function put($owner, $repo, $branch): SetUserAccessRestrictions
     {
-        return new SetUserAccessRestrictionsOperation($owner, $repo, $branch);
+        return new SetUserAccessRestrictions($owner, $repo, $branch);
     }
 
-    function post($owner, $repo, $branch): AddUserAccessRestrictionsOperation
+    function post($owner, $repo, $branch): AddUserAccessRestrictions
     {
-        return new AddUserAccessRestrictionsOperation($owner, $repo, $branch);
+        return new AddUserAccessRestrictions($owner, $repo, $branch);
     }
 
-    function delete($owner, $repo, $branch): RemoveUserAccessRestrictionsOperation
+    function delete($owner, $repo, $branch): RemoveUserAccessRestrictions
     {
-        return new RemoveUserAccessRestrictionsOperation($owner, $repo, $branch);
+        return new RemoveUserAccessRestrictions($owner, $repo, $branch);
     }
 }

@@ -29,11 +29,17 @@ final class ScopedInstallation
      */
     private ?SimpleUser $account = null;
 
+    /**
+     * The permissions granted to the user-to-server access token.
+     */
     public function permissions(): ?AppPermissions
     {
         return $this->permissions;
     }
 
+    /**
+     * Describe whether all repositories have been selected or there's a selection involved
+     */
     public function repository_selection(): ?string
     {
         return $this->repository_selection;
@@ -59,6 +65,9 @@ final class ScopedInstallation
         return $this->repositories_url;
     }
 
+    /**
+     * Simple User
+     */
     public function account(): ?SimpleUser
     {
         return $this->account;

@@ -43,6 +43,9 @@ final class DeploymentSimple
         return $this->url;
     }
 
+    /**
+     * Unique identifier of the deployment
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -53,6 +56,9 @@ final class DeploymentSimple
         return $this->node_id;
     }
 
+    /**
+     * Parameter to specify a task to execute
+     */
     public function task(): ?string
     {
         return $this->task;
@@ -63,6 +69,9 @@ final class DeploymentSimple
         return $this->original_environment;
     }
 
+    /**
+     * Name for the target deployment environment.
+     */
     public function environment(): ?string
     {
         return $this->environment;
@@ -93,11 +102,17 @@ final class DeploymentSimple
         return $this->repository_url;
     }
 
+    /**
+     * Specifies if the given environment is will no longer exist at some point in the future. Default: false.
+     */
     public function transient_environment(): ?bool
     {
         return $this->transient_environment;
     }
 
+    /**
+     * Specifies if the given environment is one that end-users directly interact with. Default: false.
+     */
     public function production_environment(): ?bool
     {
         return $this->production_environment;

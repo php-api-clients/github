@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\User\Starred\CbOwnerRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\CheckRepoIsStarredByAuthenticatedUserOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\StarRepoForAuthenticatedUserOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\UnstarRepoForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\CheckRepoIsStarredByAuthenticatedUser;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\StarRepoForAuthenticatedUser;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\UnstarRepoForAuthenticatedUser;
 
 final class CbRepoRcb
 {
-    function get($owner, $repo): CheckRepoIsStarredByAuthenticatedUserOperation
+    function get($owner, $repo): CheckRepoIsStarredByAuthenticatedUser
     {
-        return new CheckRepoIsStarredByAuthenticatedUserOperation($owner, $repo);
+        return new CheckRepoIsStarredByAuthenticatedUser($owner, $repo);
     }
 
-    function put($owner, $repo): StarRepoForAuthenticatedUserOperation
+    function put($owner, $repo): StarRepoForAuthenticatedUser
     {
-        return new StarRepoForAuthenticatedUserOperation($owner, $repo);
+        return new StarRepoForAuthenticatedUser($owner, $repo);
     }
 
-    function delete($owner, $repo): UnstarRepoForAuthenticatedUserOperation
+    function delete($owner, $repo): UnstarRepoForAuthenticatedUser
     {
-        return new UnstarRepoForAuthenticatedUserOperation($owner, $repo);
+        return new UnstarRepoForAuthenticatedUser($owner, $repo);
     }
 }

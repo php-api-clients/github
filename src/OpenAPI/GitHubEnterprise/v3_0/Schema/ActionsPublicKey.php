@@ -21,11 +21,17 @@ final class ActionsPublicKey
     private ?string $title      = null;
     private ?string $created_at = null;
 
+    /**
+     * The identifier for the key.
+     */
     public function key_id(): ?string
     {
         return $this->key_id;
     }
 
+    /**
+     * The Base64 encoded public key.
+     */
     public function key(): ?string
     {
         return $this->key;

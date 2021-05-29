@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Apps\GetOrgInstallationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Apps\GetOrgInstallation;
 
 final class Installation
 {
-    function get(string $accept = 'application/vnd.github.machine-man-preview+json', $org): GetOrgInstallationOperation
+    function get(string $accept = 'application/vnd.github.machine-man-preview+json', $org): GetOrgInstallation
     {
-        return new GetOrgInstallationOperation($accept, $org);
+        return new GetOrgInstallation($accept, $org);
     }
 }

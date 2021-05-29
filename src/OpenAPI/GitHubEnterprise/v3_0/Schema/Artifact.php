@@ -38,11 +38,17 @@ final class Artifact
         return $this->node_id;
     }
 
+    /**
+     * The name of the artifact.
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * The size in bytes of the artifact.
+     */
     public function size_in_bytes(): ?int
     {
         return $this->size_in_bytes;
@@ -58,6 +64,9 @@ final class Artifact
         return $this->archive_download_url;
     }
 
+    /**
+     * Whether or not the artifact has expired.
+     */
     public function expired(): ?bool
     {
         return $this->expired;

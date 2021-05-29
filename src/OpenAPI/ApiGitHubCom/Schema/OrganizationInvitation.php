@@ -60,6 +60,9 @@ final class OrganizationInvitation
         return $this->failed_reason;
     }
 
+    /**
+     * Simple User
+     */
     public function inviter(): ?SimpleUser
     {
         return $this->inviter;

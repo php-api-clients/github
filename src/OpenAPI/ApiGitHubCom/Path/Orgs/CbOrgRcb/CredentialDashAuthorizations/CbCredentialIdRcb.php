@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\CredentialDashAuthorizations;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveSamlSsoAuthorizationOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveSamlSsoAuthorization;
 
 final class CbCredentialIdRcb
 {
-    function delete($org, $credential_id): RemoveSamlSsoAuthorizationOperation
+    function delete($org, $credential_id): RemoveSamlSsoAuthorization
     {
-        return new RemoveSamlSsoAuthorizationOperation($org, $credential_id);
+        return new RemoveSamlSsoAuthorization($org, $credential_id);
     }
 }

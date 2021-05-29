@@ -23,11 +23,17 @@ final class TeamMembership
         return $this->url;
     }
 
+    /**
+     * The role of the user in the team.
+     */
     public function role(): ?string
     {
         return $this->role;
     }
 
+    /**
+     * The state of the user's membership in the team.
+     */
     public function state(): ?string
     {
         return $this->state;

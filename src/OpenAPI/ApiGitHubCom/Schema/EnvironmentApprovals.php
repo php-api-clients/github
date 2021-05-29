@@ -12,9 +12,6 @@ final class EnvironmentApprovals
     public const SCHEMA_DESCRIPTION = 'An entry in the reviews log for environment deployments';
     /**
      * The list of environments that were approved or rejected
-     *
-     * @var array<Environments>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments::class)
      */
     private array $environments = [];
     /**
@@ -32,21 +29,35 @@ final class EnvironmentApprovals
      */
     private ?string $comment = null;
 
+    /**
+     * The list of environments that were approved or rejected
+     *
+     * @return array<Environments>
+     */
     public function environments(): array
     {
         return $this->environments;
     }
 
+    /**
+     * Whether deployment to the environment(s) was approved or rejected
+     */
     public function state(): ?string
     {
         return $this->state;
     }
 
+    /**
+     * Simple User
+     */
     public function user(): ?SimpleUser
     {
         return $this->user;
     }
 
+    /**
+     * The comment submitted with the deployment review
+     */
     public function comment(): ?string
     {
         return $this->comment;

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\TeamDashSync;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CreateOrUpdateIdpGroupConnectionsInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListIdpGroupsInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CreateOrUpdateIdpGroupConnectionsInOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListIdpGroupsInOrg;
 
 final class GroupDashMappings
 {
-    function get($org, $team_slug): ListIdpGroupsInOrgOperation
+    function get($org, $team_slug): ListIdpGroupsInOrg
     {
-        return new ListIdpGroupsInOrgOperation($org, $team_slug);
+        return new ListIdpGroupsInOrg($org, $team_slug);
     }
 
-    function patch($org, $team_slug): CreateOrUpdateIdpGroupConnectionsInOrgOperation
+    function patch($org, $team_slug): CreateOrUpdateIdpGroupConnectionsInOrg
     {
-        return new CreateOrUpdateIdpGroupConnectionsInOrgOperation($org, $team_slug);
+        return new CreateOrUpdateIdpGroupConnectionsInOrg($org, $team_slug);
     }
 }

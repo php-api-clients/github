@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Applications\CbClientIdRcb\Tokens;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\CheckAuthorizationOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\ResetAuthorizationOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\RevokeAuthorizationForApplicationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\CheckAuthorization;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\ResetAuthorization;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\RevokeAuthorizationForApplication;
 
 final class CbAccessTokenRcb
 {
-    function get($client_id, $access_token): CheckAuthorizationOperation
+    function get($client_id, $access_token): CheckAuthorization
     {
-        return new CheckAuthorizationOperation($client_id, $access_token);
+        return new CheckAuthorization($client_id, $access_token);
     }
 
-    function post($client_id, $access_token): ResetAuthorizationOperation
+    function post($client_id, $access_token): ResetAuthorization
     {
-        return new ResetAuthorizationOperation($client_id, $access_token);
+        return new ResetAuthorization($client_id, $access_token);
     }
 
-    function delete($client_id, $access_token): RevokeAuthorizationForApplicationOperation
+    function delete($client_id, $access_token): RevokeAuthorizationForApplication
     {
-        return new RevokeAuthorizationForApplicationOperation($client_id, $access_token);
+        return new RevokeAuthorizationForApplication($client_id, $access_token);
     }
 }

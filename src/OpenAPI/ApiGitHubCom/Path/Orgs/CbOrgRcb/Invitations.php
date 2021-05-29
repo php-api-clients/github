@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CreateInvitationOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitationsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CreateInvitation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitations;
 
 final class Invitations
 {
-    function get($org, int $per_page = 30, int $page = 1): ListPendingInvitationsOperation
+    function get($org, int $per_page = 30, int $page = 1): ListPendingInvitations
     {
-        return new ListPendingInvitationsOperation($org, $per_page, $page);
+        return new ListPendingInvitations($org, $per_page, $page);
     }
 
-    function post($org): CreateInvitationOperation
+    function post($org): CreateInvitation
     {
-        return new CreateInvitationOperation($org);
+        return new CreateInvitation($org);
     }
 }

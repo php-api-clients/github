@@ -44,12 +44,8 @@ final class WorkflowRun
     /**
      * The URL to the workflow run.
      */
-    private ?string $url      = null;
-    private ?string $html_url = null;
-    /**
-     * @var array<PullRequestMinimal>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\PullRequestMinimal::class)
-     */
+    private ?string $url         = null;
+    private ?string $html_url    = null;
     private array $pull_requests = [];
     private ?string $created_at  = null;
     private ?string $updated_at  = null;
@@ -96,11 +92,17 @@ final class WorkflowRun
     private ?MinimalRepository $head_repository = null;
     private ?int $head_repository_id            = null;
 
+    /**
+     * The ID of the workflow run.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The name of the workflow run.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -111,11 +113,17 @@ final class WorkflowRun
         return $this->node_id;
     }
 
+    /**
+     * The ID of the associated check suite.
+     */
     public function check_suite_id(): ?int
     {
         return $this->check_suite_id;
     }
 
+    /**
+     * The node ID of the associated check suite.
+     */
     public function check_suite_node_id(): ?string
     {
         return $this->check_suite_node_id;
@@ -126,11 +134,17 @@ final class WorkflowRun
         return $this->head_branch;
     }
 
+    /**
+     * The SHA of the head commit that points to the version of the worflow being run.
+     */
     public function head_sha(): ?string
     {
         return $this->head_sha;
     }
 
+    /**
+     * The auto incrementing run number for the workflow run.
+     */
     public function run_number(): ?int
     {
         return $this->run_number;
@@ -151,11 +165,17 @@ final class WorkflowRun
         return $this->conclusion;
     }
 
+    /**
+     * The ID of the parent workflow.
+     */
     public function workflow_id(): ?int
     {
         return $this->workflow_id;
     }
 
+    /**
+     * The URL to the workflow run.
+     */
     public function url(): ?string
     {
         return $this->url;
@@ -166,6 +186,9 @@ final class WorkflowRun
         return $this->html_url;
     }
 
+    /**
+     * @return array<PullRequestMinimal>
+     */
     public function pull_requests(): array
     {
         return $this->pull_requests;
@@ -181,36 +204,57 @@ final class WorkflowRun
         return $this->updated_at;
     }
 
+    /**
+     * The URL to the jobs for the workflow run.
+     */
     public function jobs_url(): ?string
     {
         return $this->jobs_url;
     }
 
+    /**
+     * The URL to download the logs for the workflow run.
+     */
     public function logs_url(): ?string
     {
         return $this->logs_url;
     }
 
+    /**
+     * The URL to the associated check suite.
+     */
     public function check_suite_url(): ?string
     {
         return $this->check_suite_url;
     }
 
+    /**
+     * The URL to the artifacts for the workflow run.
+     */
     public function artifacts_url(): ?string
     {
         return $this->artifacts_url;
     }
 
+    /**
+     * The URL to cancel the workflow run.
+     */
     public function cancel_url(): ?string
     {
         return $this->cancel_url;
     }
 
+    /**
+     * The URL to rerun the workflow run.
+     */
     public function rerun_url(): ?string
     {
         return $this->rerun_url;
     }
 
+    /**
+     * The URL to the workflow.
+     */
     public function workflow_url(): ?string
     {
         return $this->workflow_url;
@@ -221,11 +265,17 @@ final class WorkflowRun
         return $this->head_commit;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function head_repository(): ?MinimalRepository
     {
         return $this->head_repository;

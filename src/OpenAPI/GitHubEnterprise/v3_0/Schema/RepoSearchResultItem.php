@@ -89,11 +89,7 @@ final class RepoSearchResultItem
      */
     private ?bool $disabled = null;
     private $license;
-    private array $permissions = [];
-    /**
-     * @var array<TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\RepoSearchResultItem\TextMatches::class)
-     */
+    private array $permissions            = [];
     private array $text_matches           = [];
     private ?string $temp_clone_token     = null;
     private ?bool $allow_merge_commit     = null;
@@ -471,6 +467,9 @@ final class RepoSearchResultItem
         return $this->archived;
     }
 
+    /**
+     * Returns whether or not this repository disabled.
+     */
     public function disabled(): ?bool
     {
         return $this->disabled;
@@ -486,6 +485,9 @@ final class RepoSearchResultItem
         return $this->permissions;
     }
 
+    /**
+     * @return array<TextMatches>
+     */
     public function text_matches(): array
     {
         return $this->text_matches;

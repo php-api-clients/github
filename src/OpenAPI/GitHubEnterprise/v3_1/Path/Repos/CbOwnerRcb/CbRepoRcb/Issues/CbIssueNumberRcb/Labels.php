@@ -4,30 +4,30 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\AddLabelsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\ListLabelsOnIssueOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\RemoveAllLabelsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\SetLabelsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\AddLabels;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\ListLabelsOnIssue;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\RemoveAllLabels;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Issues\SetLabels;
 
 final class Labels
 {
-    function get($owner, $repo, $issue_number, int $per_page = 30, int $page = 1): ListLabelsOnIssueOperation
+    function get($owner, $repo, $issue_number, int $per_page = 30, int $page = 1): ListLabelsOnIssue
     {
-        return new ListLabelsOnIssueOperation($owner, $repo, $issue_number, $per_page, $page);
+        return new ListLabelsOnIssue($owner, $repo, $issue_number, $per_page, $page);
     }
 
-    function put($owner, $repo, $issue_number): SetLabelsOperation
+    function put($owner, $repo, $issue_number): SetLabels
     {
-        return new SetLabelsOperation($owner, $repo, $issue_number);
+        return new SetLabels($owner, $repo, $issue_number);
     }
 
-    function post($owner, $repo, $issue_number): AddLabelsOperation
+    function post($owner, $repo, $issue_number): AddLabels
     {
-        return new AddLabelsOperation($owner, $repo, $issue_number);
+        return new AddLabels($owner, $repo, $issue_number);
     }
 
-    function delete($owner, $repo, $issue_number): RemoveAllLabelsOperation
+    function delete($owner, $repo, $issue_number): RemoveAllLabels
     {
-        return new RemoveAllLabelsOperation($owner, $repo, $issue_number);
+        return new RemoveAllLabels($owner, $repo, $issue_number);
     }
 }

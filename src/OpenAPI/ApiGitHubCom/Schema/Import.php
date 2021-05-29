@@ -28,10 +28,6 @@ final class Import
     private ?bool $has_large_files  = null;
     private ?int $large_files_size  = null;
     private ?int $large_files_count = null;
-    /**
-     * @var array<ProjectChoices>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices::class)
-     */
     private array $project_choices  = [];
     private ?string $message        = null;
     private ?int $authors_count     = null;
@@ -51,6 +47,9 @@ final class Import
         return $this->use_lfs;
     }
 
+    /**
+     * The URL of the originating repository.
+     */
     public function vcs_url(): ?string
     {
         return $this->vcs_url;
@@ -116,6 +115,9 @@ final class Import
         return $this->large_files_count;
     }
 
+    /**
+     * @return array<ProjectChoices>
+     */
     public function project_choices(): array
     {
         return $this->project_choices;

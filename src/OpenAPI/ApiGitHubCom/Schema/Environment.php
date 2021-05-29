@@ -35,6 +35,9 @@ final class Environment
      */
     private ?DeploymentBranchPolicy $deployment_branch_policy = null;
 
+    /**
+     * The id of the environment.
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -45,6 +48,9 @@ final class Environment
         return $this->node_id;
     }
 
+    /**
+     * The name of the environment.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -60,11 +66,17 @@ final class Environment
         return $this->html_url;
     }
 
+    /**
+     * The time that the environment was created, in ISO 8601 format.
+     */
     public function created_at(): ?string
     {
         return $this->created_at;
     }
 
+    /**
+     * The time that the environment was last updated, in ISO 8601 format.
+     */
     public function updated_at(): ?string
     {
         return $this->updated_at;
@@ -75,6 +87,9 @@ final class Environment
         return $this->protection_rules;
     }
 
+    /**
+     * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
+     */
     public function deployment_branch_policy(): ?DeploymentBranchPolicy
     {
         return $this->deployment_branch_policy;

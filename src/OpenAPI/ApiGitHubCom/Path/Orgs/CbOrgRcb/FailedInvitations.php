@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFailedInvitationsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFailedInvitations;
 
 final class FailedInvitations
 {
-    function get($org, int $per_page = 30, int $page = 1): ListFailedInvitationsOperation
+    function get($org, int $per_page = 30, int $page = 1): ListFailedInvitations
     {
-        return new ListFailedInvitationsOperation($org, $per_page, $page);
+        return new ListFailedInvitations($org, $per_page, $page);
     }
 }

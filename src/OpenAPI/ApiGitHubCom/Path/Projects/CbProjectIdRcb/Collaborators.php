@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Projects\CbProjectIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCollaboratorsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCollaborators;
 
 final class Collaborators
 {
-    function get($project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1): ListCollaboratorsOperation
+    function get($project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1): ListCollaborators
     {
-        return new ListCollaboratorsOperation($project_id, $affiliation, $per_page, $page);
+        return new ListCollaborators($project_id, $affiliation, $per_page, $page);
     }
 }

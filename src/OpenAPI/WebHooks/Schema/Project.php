@@ -62,11 +62,17 @@ final class Project
         return $this->node_id;
     }
 
+    /**
+     * Name of the project
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Body of the project
+     */
     public function body()
     {
         return $this->body;
@@ -77,6 +83,9 @@ final class Project
         return $this->number;
     }
 
+    /**
+     * State of the project; either 'open' or 'closed'
+     */
     public function state(): ?string
     {
         return $this->state;

@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Admin\PreDashReceiveDashEnvironments;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\DeletePreReceiveEnvironmentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\GetPreReceiveEnvironmentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\UpdatePreReceiveEnvironmentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\DeletePreReceiveEnvironment;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\GetPreReceiveEnvironment;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\UpdatePreReceiveEnvironment;
 
 final class CbPreReceiveEnvironmentIdRcb
 {
-    function get($pre_receive_environment_id): GetPreReceiveEnvironmentOperation
+    function get($pre_receive_environment_id): GetPreReceiveEnvironment
     {
-        return new GetPreReceiveEnvironmentOperation($pre_receive_environment_id);
+        return new GetPreReceiveEnvironment($pre_receive_environment_id);
     }
 
-    function delete($pre_receive_environment_id): DeletePreReceiveEnvironmentOperation
+    function delete($pre_receive_environment_id): DeletePreReceiveEnvironment
     {
-        return new DeletePreReceiveEnvironmentOperation($pre_receive_environment_id);
+        return new DeletePreReceiveEnvironment($pre_receive_environment_id);
     }
 
-    function patch($pre_receive_environment_id): UpdatePreReceiveEnvironmentOperation
+    function patch($pre_receive_environment_id): UpdatePreReceiveEnvironment
     {
-        return new UpdatePreReceiveEnvironmentOperation($pre_receive_environment_id);
+        return new UpdatePreReceiveEnvironment($pre_receive_environment_id);
     }
 }

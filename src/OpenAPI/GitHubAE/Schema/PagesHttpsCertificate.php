@@ -26,6 +26,9 @@ final class PagesHttpsCertificate
         return $this->description;
     }
 
+    /**
+     * Array of the domain set and its alternate name (if it is configured)
+     */
     public function domains(): array
     {
         return $this->domains;

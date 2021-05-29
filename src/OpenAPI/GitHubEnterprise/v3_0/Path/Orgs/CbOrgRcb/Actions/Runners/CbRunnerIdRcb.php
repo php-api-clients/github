@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Orgs\CbOrgRcb\Actions\Runners;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\DeleteSelfHostedRunnerFromOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\GetSelfHostedRunnerForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\DeleteSelfHostedRunnerFromOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\GetSelfHostedRunnerForOrg;
 
 final class CbRunnerIdRcb
 {
-    function get($org, $runner_id): GetSelfHostedRunnerForOrgOperation
+    function get($org, $runner_id): GetSelfHostedRunnerForOrg
     {
-        return new GetSelfHostedRunnerForOrgOperation($org, $runner_id);
+        return new GetSelfHostedRunnerForOrg($org, $runner_id);
     }
 
-    function delete($org, $runner_id): DeleteSelfHostedRunnerFromOrgOperation
+    function delete($org, $runner_id): DeleteSelfHostedRunnerFromOrg
     {
-        return new DeleteSelfHostedRunnerFromOrgOperation($org, $runner_id);
+        return new DeleteSelfHostedRunnerFromOrg($org, $runner_id);
     }
 }

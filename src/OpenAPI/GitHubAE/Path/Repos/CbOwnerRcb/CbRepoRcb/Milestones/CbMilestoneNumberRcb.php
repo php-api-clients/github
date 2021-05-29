@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Milestones;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\DeleteMilestoneOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\GetMilestoneOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\UpdateMilestoneOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\DeleteMilestone;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\GetMilestone;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\UpdateMilestone;
 
 final class CbMilestoneNumberRcb
 {
-    function get($owner, $repo, $milestone_number): GetMilestoneOperation
+    function get($owner, $repo, $milestone_number): GetMilestone
     {
-        return new GetMilestoneOperation($owner, $repo, $milestone_number);
+        return new GetMilestone($owner, $repo, $milestone_number);
     }
 
-    function delete($owner, $repo, $milestone_number): DeleteMilestoneOperation
+    function delete($owner, $repo, $milestone_number): DeleteMilestone
     {
-        return new DeleteMilestoneOperation($owner, $repo, $milestone_number);
+        return new DeleteMilestone($owner, $repo, $milestone_number);
     }
 
-    function patch($owner, $repo, $milestone_number): UpdateMilestoneOperation
+    function patch($owner, $repo, $milestone_number): UpdateMilestone
     {
-        return new UpdateMilestoneOperation($owner, $repo, $milestone_number);
+        return new UpdateMilestone($owner, $repo, $milestone_number);
     }
 }

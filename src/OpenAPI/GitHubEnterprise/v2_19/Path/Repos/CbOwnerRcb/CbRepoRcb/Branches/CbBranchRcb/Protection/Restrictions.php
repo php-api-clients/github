@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\DeleteAccessRestrictionsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\DeleteAccessRestrictions;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetAccessRestrictions;
 
 final class Restrictions
 {
-    function get($owner, $repo, $branch): GetAccessRestrictionsOperation
+    function get($owner, $repo, $branch): GetAccessRestrictions
     {
-        return new GetAccessRestrictionsOperation($owner, $repo, $branch);
+        return new GetAccessRestrictions($owner, $repo, $branch);
     }
 
-    function delete($owner, $repo, $branch): DeleteAccessRestrictionsOperation
+    function delete($owner, $repo, $branch): DeleteAccessRestrictions
     {
-        return new DeleteAccessRestrictionsOperation($owner, $repo, $branch);
+        return new DeleteAccessRestrictions($owner, $repo, $branch);
     }
 }

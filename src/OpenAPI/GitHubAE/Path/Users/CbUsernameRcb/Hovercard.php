@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Users\CbUsernameRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetContextForUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetContextForUser;
 
 final class Hovercard
 {
-    function get($username, $subject_type, $subject_id): GetContextForUserOperation
+    function get($username, $subject_type, $subject_id): GetContextForUser
     {
-        return new GetContextForUserOperation($username, $subject_type, $subject_id);
+        return new GetContextForUser($username, $subject_type, $subject_id);
     }
 }

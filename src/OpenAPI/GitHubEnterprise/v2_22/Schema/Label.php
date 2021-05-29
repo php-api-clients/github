@@ -35,11 +35,17 @@ final class Label
         return $this->node_id;
     }
 
+    /**
+     * URL for the label
+     */
     public function url(): ?string
     {
         return $this->url;
     }
 
+    /**
+     * The name of the label.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -50,6 +56,9 @@ final class Label
         return $this->description;
     }
 
+    /**
+     * 6-character hex code, without the leading #, identifying the color
+     */
     public function color(): ?string
     {
         return $this->color;

@@ -4,24 +4,23 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Gists\CbGistIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\CheckIsStarredOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\StarOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\UnstarOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\CheckIsStarred;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\Unstar;
 
 final class Star
 {
-    function get($gist_id): CheckIsStarredOperation
+    function get($gist_id): CheckIsStarred
     {
-        return new CheckIsStarredOperation($gist_id);
+        return new CheckIsStarred($gist_id);
     }
 
-    function put($gist_id): StarOperation
+    function put($gist_id): \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\Star
     {
-        return new StarOperation($gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\Star($gist_id);
     }
 
-    function delete($gist_id): UnstarOperation
+    function delete($gist_id): Unstar
     {
-        return new UnstarOperation($gist_id);
+        return new Unstar($gist_id);
     }
 }

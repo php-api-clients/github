@@ -61,46 +61,73 @@ final class Commit
         return $this->tree_id;
     }
 
+    /**
+     * Whether this commit is distinct from any that have been pushed before.
+     */
     public function distinct(): ?bool
     {
         return $this->distinct;
     }
 
+    /**
+     * The commit message.
+     */
     public function message(): ?string
     {
         return $this->message;
     }
 
+    /**
+     * The ISO 8601 timestamp of the commit.
+     */
     public function timestamp(): ?string
     {
         return $this->timestamp;
     }
 
+    /**
+     * URL that points to the commit API resource.
+     */
     public function url(): ?string
     {
         return $this->url;
     }
 
+    /**
+     * Metaproperties for Git author/committer information.
+     */
     public function author(): ?Committer
     {
         return $this->author;
     }
 
+    /**
+     * Metaproperties for Git author/committer information.
+     */
     public function committer(): ?Committer
     {
         return $this->committer;
     }
 
+    /**
+     * An array of files added in the commit.
+     */
     public function added(): array
     {
         return $this->added;
     }
 
+    /**
+     * An array of files modified by the commit.
+     */
     public function removed(): array
     {
         return $this->removed;
     }
 
+    /**
+     * An array of files removed in the commit.
+     */
     public function modified(): array
     {
         return $this->modified;

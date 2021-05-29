@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Packages\CbPackageTypeRcb\CbPackageNameRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\RestorePackageForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\RestorePackageForAuthenticatedUser;
 
 final class Restore
 {
-    function post($package_type, $package_name, $token): RestorePackageForAuthenticatedUserOperation
+    function post($package_type, $package_name, $token): RestorePackageForAuthenticatedUser
     {
-        return new RestorePackageForAuthenticatedUserOperation($package_type, $package_name, $token);
+        return new RestorePackageForAuthenticatedUser($package_type, $package_name, $token);
     }
 }

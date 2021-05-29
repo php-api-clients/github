@@ -23,16 +23,8 @@ final class IssueSearchResultItem
     private ?string $title              = null;
     private ?bool $locked               = null;
     private ?string $active_lock_reason = null;
-    /**
-     * @var array<SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\SimpleUser::class)
-     */
-    private array $assignees = [];
+    private array $assignees            = [];
     private $user;
-    /**
-     * @var array<Labels>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\IssueSearchResultItem\Labels::class)
-     */
     private array $labels  = [];
     private ?string $state = null;
     private $assignee;
@@ -41,10 +33,6 @@ final class IssueSearchResultItem
     private ?string $created_at = null;
     private ?string $updated_at = null;
     private ?string $closed_at  = null;
-    /**
-     * @var array<TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\IssueSearchResultItem\TextMatches::class)
-     */
     private array $text_matches = [];
     private array $pull_request = [];
     private ?string $body       = null;
@@ -125,6 +113,9 @@ final class IssueSearchResultItem
         return $this->active_lock_reason;
     }
 
+    /**
+     * @return array<SimpleUser>
+     */
     public function assignees(): array
     {
         return $this->assignees;
@@ -135,6 +126,9 @@ final class IssueSearchResultItem
         return $this->user;
     }
 
+    /**
+     * @return array<Labels>
+     */
     public function labels(): array
     {
         return $this->labels;
@@ -175,6 +169,9 @@ final class IssueSearchResultItem
         return $this->closed_at;
     }
 
+    /**
+     * @return array<TextMatches>
+     */
     public function text_matches(): array
     {
         return $this->text_matches;
@@ -195,6 +192,9 @@ final class IssueSearchResultItem
         return $this->score;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;
@@ -205,6 +205,9 @@ final class IssueSearchResultItem
         return $this->draft;
     }
 
+    /**
+     * A git repository
+     */
     public function repository(): ?Repository
     {
         return $this->repository;

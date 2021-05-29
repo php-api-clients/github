@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Pulls\ListCommitsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Pulls\ListCommits;
 
 final class Commits
 {
-    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1): ListCommitsOperation
+    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1): ListCommits
     {
-        return new ListCommitsOperation($owner, $repo, $pull_number, $per_page, $page);
+        return new ListCommits($owner, $repo, $pull_number, $per_page, $page);
     }
 }

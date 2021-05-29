@@ -27,16 +27,15 @@ final class GitCommit
     /**
      * Message describing the purpose of the commit
      */
-    private ?string $message = null;
-    private array $tree      = [];
-    /**
-     * @var array<Parents>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GitCommit\Parents::class)
-     */
+    private ?string $message    = null;
+    private array $tree         = [];
     private array $parents      = [];
     private array $verification = [];
     private ?string $html_url   = null;
 
+    /**
+     * SHA for the commit
+     */
     public function sha(): ?string
     {
         return $this->sha;
@@ -52,16 +51,25 @@ final class GitCommit
         return $this->url;
     }
 
+    /**
+     * Identifying information for the git-user
+     */
     public function author(): array
     {
         return $this->author;
     }
 
+    /**
+     * Identifying information for the git-user
+     */
     public function committer(): array
     {
         return $this->committer;
     }
 
+    /**
+     * Message describing the purpose of the commit
+     */
     public function message(): ?string
     {
         return $this->message;
@@ -72,6 +80,9 @@ final class GitCommit
         return $this->tree;
     }
 
+    /**
+     * @return array<Parents>
+     */
     public function parents(): array
     {
         return $this->parents;

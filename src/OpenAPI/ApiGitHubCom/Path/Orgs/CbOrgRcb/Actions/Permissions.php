@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Actions;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetGithubActionsPermissionsOrganizationOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsPermissionsOrganizationOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetGithubActionsPermissionsOrganization;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsPermissionsOrganization;
 
 final class Permissions
 {
-    function get($org): GetGithubActionsPermissionsOrganizationOperation
+    function get($org): GetGithubActionsPermissionsOrganization
     {
-        return new GetGithubActionsPermissionsOrganizationOperation($org);
+        return new GetGithubActionsPermissionsOrganization($org);
     }
 
-    function put($org): SetGithubActionsPermissionsOrganizationOperation
+    function put($org): SetGithubActionsPermissionsOrganization
     {
-        return new SetGithubActionsPermissionsOrganizationOperation($org);
+        return new SetGithubActionsPermissionsOrganization($org);
     }
 }

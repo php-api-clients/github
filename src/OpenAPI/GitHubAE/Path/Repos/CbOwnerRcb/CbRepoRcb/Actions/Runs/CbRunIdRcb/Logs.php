@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteWorkflowRunLogsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DownloadWorkflowRunLogsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteWorkflowRunLogs;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DownloadWorkflowRunLogs;
 
 final class Logs
 {
-    function get($owner, $repo, $run_id): DownloadWorkflowRunLogsOperation
+    function get($owner, $repo, $run_id): DownloadWorkflowRunLogs
     {
-        return new DownloadWorkflowRunLogsOperation($owner, $repo, $run_id);
+        return new DownloadWorkflowRunLogs($owner, $repo, $run_id);
     }
 
-    function delete($owner, $repo, $run_id): DeleteWorkflowRunLogsOperation
+    function delete($owner, $repo, $run_id): DeleteWorkflowRunLogs
     {
-        return new DeleteWorkflowRunLogsOperation($owner, $repo, $run_id);
+        return new DeleteWorkflowRunLogs($owner, $repo, $run_id);
     }
 }

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\CreateForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\CreateForAuthenticatedUser;
 
 final class Projects
 {
-    function post(): CreateForAuthenticatedUserOperation
+    function post(): CreateForAuthenticatedUser
     {
-        return new CreateForAuthenticatedUserOperation();
+        return new CreateForAuthenticatedUser();
     }
 }

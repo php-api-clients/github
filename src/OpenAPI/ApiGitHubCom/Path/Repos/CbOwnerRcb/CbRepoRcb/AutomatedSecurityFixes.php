@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DisableAutomatedSecurityFixesOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\EnableAutomatedSecurityFixesOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DisableAutomatedSecurityFixes;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\EnableAutomatedSecurityFixes;
 
 final class AutomatedSecurityFixes
 {
-    function put($owner, $repo): EnableAutomatedSecurityFixesOperation
+    function put($owner, $repo): EnableAutomatedSecurityFixes
     {
-        return new EnableAutomatedSecurityFixesOperation($owner, $repo);
+        return new EnableAutomatedSecurityFixes($owner, $repo);
     }
 
-    function delete($owner, $repo): DisableAutomatedSecurityFixesOperation
+    function delete($owner, $repo): DisableAutomatedSecurityFixes
     {
-        return new DisableAutomatedSecurityFixesOperation($owner, $repo);
+        return new DisableAutomatedSecurityFixes($owner, $repo);
     }
 }

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Admin\Organizations;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\UpdateOrgNameOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\UpdateOrgName;
 
 final class CbOrgRcb
 {
-    function patch($org): UpdateOrgNameOperation
+    function patch($org): UpdateOrgName
     {
-        return new UpdateOrgNameOperation($org);
+        return new UpdateOrgName($org);
     }
 }

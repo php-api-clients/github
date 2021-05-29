@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\User\Installations\CbInstallationIdRcb\Repositories;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Apps\AddRepoToInstallationOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Apps\RemoveRepoFromInstallationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Apps\AddRepoToInstallation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Apps\RemoveRepoFromInstallation;
 
 final class CbRepositoryIdRcb
 {
-    function put($installation_id, $repository_id): AddRepoToInstallationOperation
+    function put($installation_id, $repository_id): AddRepoToInstallation
     {
-        return new AddRepoToInstallationOperation($installation_id, $repository_id);
+        return new AddRepoToInstallation($installation_id, $repository_id);
     }
 
-    function delete($installation_id, $repository_id): RemoveRepoFromInstallationOperation
+    function delete($installation_id, $repository_id): RemoveRepoFromInstallation
     {
-        return new RemoveRepoFromInstallationOperation($installation_id, $repository_id);
+        return new RemoveRepoFromInstallation($installation_id, $repository_id);
     }
 }

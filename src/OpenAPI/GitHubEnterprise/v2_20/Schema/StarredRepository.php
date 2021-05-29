@@ -21,6 +21,9 @@ final class StarredRepository
         return $this->starred_at;
     }
 
+    /**
+     * A git repository
+     */
     public function repo(): ?Repository
     {
         return $this->repo;

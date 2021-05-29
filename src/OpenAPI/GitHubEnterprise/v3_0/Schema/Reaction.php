@@ -32,6 +32,9 @@ final class Reaction
         return $this->user;
     }
 
+    /**
+     * The reaction to use
+     */
     public function content(): ?string
     {
         return $this->content;

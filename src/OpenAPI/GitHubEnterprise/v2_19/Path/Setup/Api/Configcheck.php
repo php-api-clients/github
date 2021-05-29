@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Setup\Api;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\GetConfigurationStatusOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\GetConfigurationStatus;
 
 final class Configcheck
 {
-    function get(): GetConfigurationStatusOperation
+    function get(): GetConfigurationStatus
     {
-        return new GetConfigurationStatusOperation();
+        return new GetConfigurationStatus();
     }
 }

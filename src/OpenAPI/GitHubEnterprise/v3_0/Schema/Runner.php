@@ -27,27 +27,35 @@ final class Runner
      */
     private ?string $status = null;
     private ?bool $busy     = null;
-    /**
-     * @var array<Labels>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Runner\Labels::class)
-     */
-    private array $labels = [];
+    private array $labels   = [];
 
+    /**
+     * The id of the runner.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The name of the runner.
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * The Operating System of the runner.
+     */
     public function os(): ?string
     {
         return $this->os;
     }
 
+    /**
+     * The status of the runner.
+     */
     public function status(): ?string
     {
         return $this->status;
@@ -58,6 +66,9 @@ final class Runner
         return $this->busy;
     }
 
+    /**
+     * @return array<Labels>
+     */
     public function labels(): array
     {
         return $this->labels;

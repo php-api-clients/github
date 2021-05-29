@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Orgs\CbOrgRcb\Teams;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\DeleteInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\GetByNameOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\UpdateInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\DeleteInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\GetByName;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\UpdateInOrg;
 
 final class CbTeamSlugRcb
 {
-    function get($org, $team_slug): GetByNameOperation
+    function get($org, $team_slug): GetByName
     {
-        return new GetByNameOperation($org, $team_slug);
+        return new GetByName($org, $team_slug);
     }
 
-    function delete($org, $team_slug): DeleteInOrgOperation
+    function delete($org, $team_slug): DeleteInOrg
     {
-        return new DeleteInOrgOperation($org, $team_slug);
+        return new DeleteInOrg($org, $team_slug);
     }
 
-    function patch($org, $team_slug): UpdateInOrgOperation
+    function patch($org, $team_slug): UpdateInOrg
     {
-        return new UpdateInOrgOperation($org, $team_slug);
+        return new UpdateInOrg($org, $team_slug);
     }
 }

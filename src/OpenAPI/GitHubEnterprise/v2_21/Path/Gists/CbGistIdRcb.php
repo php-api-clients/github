@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Gists;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\DeleteOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\GetOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\UpdateOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\Delete;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\Get;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Gists\Update;
 
 final class CbGistIdRcb
 {
-    function get($gist_id): GetOperation
+    function get($gist_id): Get
     {
-        return new GetOperation($gist_id);
+        return new Get($gist_id);
     }
 
-    function delete($gist_id): DeleteOperation
+    function delete($gist_id): Delete
     {
-        return new DeleteOperation($gist_id);
+        return new Delete($gist_id);
     }
 
-    function patch($gist_id): UpdateOperation
+    function patch($gist_id): Update
     {
-        return new UpdateOperation($gist_id);
+        return new Update($gist_id);
     }
 }

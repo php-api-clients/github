@@ -19,11 +19,17 @@ final class Committer
     private ?string $date     = null;
     private ?string $username = null;
 
+    /**
+     * The git author's name.
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * The git author's email address.
+     */
     public function email()
     {
         return $this->email;

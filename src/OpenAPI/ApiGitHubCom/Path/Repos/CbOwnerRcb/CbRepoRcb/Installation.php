@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetRepoInstallationOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetRepoInstallation;
 
 final class Installation
 {
-    function get($owner, $repo): GetRepoInstallationOperation
+    function get($owner, $repo): GetRepoInstallation
     {
-        return new GetRepoInstallationOperation($owner, $repo);
+        return new GetRepoInstallation($owner, $repo);
     }
 }

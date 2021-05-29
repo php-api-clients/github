@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Setup\Api;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\GetSettingsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\SetSettingsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\GetSettings;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\SetSettings;
 
 final class Settings
 {
-    function get(): GetSettingsOperation
+    function get(): GetSettings
     {
-        return new GetSettingsOperation();
+        return new GetSettings();
     }
 
-    function put(): SetSettingsOperation
+    function put(): SetSettings
     {
-        return new SetSettingsOperation();
+        return new SetSettings();
     }
 }

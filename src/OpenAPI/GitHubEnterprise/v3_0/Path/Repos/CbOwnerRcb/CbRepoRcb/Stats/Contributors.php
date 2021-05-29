@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Stats;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetContributorsStatsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetContributorsStats;
 
 final class Contributors
 {
-    function get($owner, $repo): GetContributorsStatsOperation
+    function get($owner, $repo): GetContributorsStats
     {
-        return new GetContributorsStatsOperation($owner, $repo);
+        return new GetContributorsStats($owner, $repo);
     }
 }

@@ -41,6 +41,9 @@ final class RunnerGroupsOrg
         return $this->default;
     }
 
+    /**
+     * Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
+     */
     public function selected_repositories_url(): ?string
     {
         return $this->selected_repositories_url;

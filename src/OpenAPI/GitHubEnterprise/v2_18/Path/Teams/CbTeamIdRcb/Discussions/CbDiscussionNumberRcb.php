@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Teams\CbTeamIdRcb\Discussions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\DeleteDiscussionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\GetDiscussionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\UpdateDiscussionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\DeleteDiscussion;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\GetDiscussion;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Teams\UpdateDiscussion;
 
 final class CbDiscussionNumberRcb
 {
-    function get(string $accept = 'application/vnd.github.echo-preview+json', $team_id, $discussion_number): GetDiscussionOperation
+    function get(string $accept = 'application/vnd.github.echo-preview+json', $team_id, $discussion_number): GetDiscussion
     {
-        return new GetDiscussionOperation($accept, $team_id, $discussion_number);
+        return new GetDiscussion($accept, $team_id, $discussion_number);
     }
 
-    function delete(string $accept = 'application/vnd.github.echo-preview+json', $team_id, $discussion_number): DeleteDiscussionOperation
+    function delete(string $accept = 'application/vnd.github.echo-preview+json', $team_id, $discussion_number): DeleteDiscussion
     {
-        return new DeleteDiscussionOperation($accept, $team_id, $discussion_number);
+        return new DeleteDiscussion($accept, $team_id, $discussion_number);
     }
 
-    function patch(string $accept = 'application/vnd.github.echo-preview+json', $team_id, $discussion_number): UpdateDiscussionOperation
+    function patch(string $accept = 'application/vnd.github.echo-preview+json', $team_id, $discussion_number): UpdateDiscussion
     {
-        return new UpdateDiscussionOperation($accept, $team_id, $discussion_number);
+        return new UpdateDiscussion($accept, $team_id, $discussion_number);
     }
 }

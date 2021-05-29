@@ -28,6 +28,9 @@ final class Thread
         return $this->id;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;

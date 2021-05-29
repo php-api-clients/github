@@ -43,16 +43,25 @@ final class BranchProtection
         return $this->required_status_checks;
     }
 
+    /**
+     * Protected Branch Admin Enforced
+     */
     public function enforce_admins(): ?ProtectedBranchAdminEnforced
     {
         return $this->enforce_admins;
     }
 
+    /**
+     * Protected Branch Pull Request Review
+     */
     public function required_pull_request_reviews(): ?ProtectedBranchPullRequestReview
     {
         return $this->required_pull_request_reviews;
     }
 
+    /**
+     * Branch Restriction Policy
+     */
     public function restrictions(): ?BranchRestrictionPolicy
     {
         return $this->restrictions;

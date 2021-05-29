@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListLanguagesOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListLanguages;
 
 final class Languages
 {
-    function get($owner, $repo): ListLanguagesOperation
+    function get($owner, $repo): ListLanguages
     {
-        return new ListLanguagesOperation($owner, $repo);
+        return new ListLanguages($owner, $repo);
     }
 }

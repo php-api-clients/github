@@ -175,6 +175,9 @@ final class RepositoryLite
         return $this->html_url;
     }
 
+    /**
+     * Unique identifier of the repository
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -220,6 +223,9 @@ final class RepositoryLite
         return $this->milestones_url;
     }
 
+    /**
+     * The name of the repository.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -240,6 +246,9 @@ final class RepositoryLite
         return $this->owner;
     }
 
+    /**
+     * Whether the repository is private or public.
+     */
     public function private(): ?bool
     {
         return $this->private;

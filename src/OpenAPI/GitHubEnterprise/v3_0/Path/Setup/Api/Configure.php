@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Setup\Api;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\StartConfigurationProcessOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\StartConfigurationProcess;
 
 final class Configure
 {
-    function post(): StartConfigurationProcessOperation
+    function post(): StartConfigurationProcess
     {
-        return new StartConfigurationProcessOperation();
+        return new StartConfigurationProcess();
     }
 }

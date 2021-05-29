@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\App\Hook;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetWebhookConfigForAppOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\UpdateWebhookConfigForAppOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetWebhookConfigForApp;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\UpdateWebhookConfigForApp;
 
 final class Config
 {
-    function get(): GetWebhookConfigForAppOperation
+    function get(): GetWebhookConfigForApp
     {
-        return new GetWebhookConfigForAppOperation();
+        return new GetWebhookConfigForApp();
     }
 
-    function patch(): UpdateWebhookConfigForAppOperation
+    function patch(): UpdateWebhookConfigForApp
     {
-        return new UpdateWebhookConfigForAppOperation();
+        return new UpdateWebhookConfigForApp();
     }
 }

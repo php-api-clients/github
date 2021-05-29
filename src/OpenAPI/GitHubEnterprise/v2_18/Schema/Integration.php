@@ -40,6 +40,9 @@ final class Integration
     private ?string $webhook_secret   = null;
     private ?string $pem              = null;
 
+    /**
+     * Unique identifier of the GitHub app
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -55,6 +58,9 @@ final class Integration
         return $this->owner;
     }
 
+    /**
+     * The name of the GitHub app
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -85,16 +91,25 @@ final class Integration
         return $this->updated_at;
     }
 
+    /**
+     * The set of permissions for the GitHub app
+     */
     public function permissions(): array
     {
         return $this->permissions;
     }
 
+    /**
+     * The list of events for the GitHub app
+     */
     public function events(): array
     {
         return $this->events;
     }
 
+    /**
+     * The number of installations associated with the GitHub app
+     */
     public function installations_count(): ?int
     {
         return $this->installations_count;

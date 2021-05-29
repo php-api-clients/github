@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\AppManifests\CbCodeRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Apps\CreateFromManifestOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Apps\CreateFromManifest;
 
 final class Conversions
 {
-    function post($code): CreateFromManifestOperation
+    function post($code): CreateFromManifest
     {
-        return new CreateFromManifestOperation($code);
+        return new CreateFromManifest($code);
     }
 }

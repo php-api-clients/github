@@ -38,6 +38,9 @@ final class GistComment
         return $this->url;
     }
 
+    /**
+     * The comment text.
+     */
     public function body(): ?string
     {
         return $this->body;
@@ -58,6 +61,9 @@ final class GistComment
         return $this->updated_at;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

@@ -48,6 +48,9 @@ final class ReleaseAsset
         return $this->node_id;
     }
 
+    /**
+     * The file name of the asset.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -58,6 +61,9 @@ final class ReleaseAsset
         return $this->label;
     }
 
+    /**
+     * State of the release asset.
+     */
     public function state(): ?string
     {
         return $this->state;

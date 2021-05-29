@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Scim\V2\Organizations\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ListProvisionedIdentitiesOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ProvisionAndInviteUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ListProvisionedIdentities;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ProvisionAndInviteUser;
 
 final class Users
 {
-    function get($org, $startIndex, $count, $filter): ListProvisionedIdentitiesOperation
+    function get($org, $startIndex, $count, $filter): ListProvisionedIdentities
     {
-        return new ListProvisionedIdentitiesOperation($org, $startIndex, $count, $filter);
+        return new ListProvisionedIdentities($org, $startIndex, $count, $filter);
     }
 
-    function post($org): ProvisionAndInviteUserOperation
+    function post($org): ProvisionAndInviteUser
     {
-        return new ProvisionAndInviteUserOperation($org);
+        return new ProvisionAndInviteUser($org);
     }
 }

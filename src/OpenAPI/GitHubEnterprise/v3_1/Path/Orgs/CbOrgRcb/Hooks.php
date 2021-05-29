@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Orgs\CreateWebhookOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Orgs\ListWebhooksOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Orgs\CreateWebhook;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Orgs\ListWebhooks;
 
 final class Hooks
 {
-    function get($org, int $per_page = 30, int $page = 1): ListWebhooksOperation
+    function get($org, int $per_page = 30, int $page = 1): ListWebhooks
     {
-        return new ListWebhooksOperation($org, $per_page, $page);
+        return new ListWebhooks($org, $per_page, $page);
     }
 
-    function post($org): CreateWebhookOperation
+    function post($org): CreateWebhook
     {
-        return new CreateWebhookOperation($org);
+        return new CreateWebhook($org);
     }
 }

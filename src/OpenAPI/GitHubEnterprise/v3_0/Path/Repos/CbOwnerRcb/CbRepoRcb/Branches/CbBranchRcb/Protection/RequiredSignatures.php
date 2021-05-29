@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\CreateCommitSignatureProtectionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeleteCommitSignatureProtectionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetCommitSignatureProtectionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\CreateCommitSignatureProtection;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeleteCommitSignatureProtection;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetCommitSignatureProtection;
 
 final class RequiredSignatures
 {
-    function get($owner, $repo, $branch): GetCommitSignatureProtectionOperation
+    function get($owner, $repo, $branch): GetCommitSignatureProtection
     {
-        return new GetCommitSignatureProtectionOperation($owner, $repo, $branch);
+        return new GetCommitSignatureProtection($owner, $repo, $branch);
     }
 
-    function post($owner, $repo, $branch): CreateCommitSignatureProtectionOperation
+    function post($owner, $repo, $branch): CreateCommitSignatureProtection
     {
-        return new CreateCommitSignatureProtectionOperation($owner, $repo, $branch);
+        return new CreateCommitSignatureProtection($owner, $repo, $branch);
     }
 
-    function delete($owner, $repo, $branch): DeleteCommitSignatureProtectionOperation
+    function delete($owner, $repo, $branch): DeleteCommitSignatureProtection
     {
-        return new DeleteCommitSignatureProtectionOperation($owner, $repo, $branch);
+        return new DeleteCommitSignatureProtection($owner, $repo, $branch);
     }
 }

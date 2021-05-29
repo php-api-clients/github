@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\CreateAuthorizationOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\ListAuthorizationsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\CreateAuthorization;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\ListAuthorizations;
 
 final class Authorizations
 {
-    function get(int $per_page = 30, int $page = 1, $client_id): ListAuthorizationsOperation
+    function get(int $per_page = 30, int $page = 1, $client_id): ListAuthorizations
     {
-        return new ListAuthorizationsOperation($per_page, $page, $client_id);
+        return new ListAuthorizations($per_page, $page, $client_id);
     }
 
-    function post(): CreateAuthorizationOperation
+    function post(): CreateAuthorization
     {
-        return new CreateAuthorizationOperation();
+        return new CreateAuthorization();
     }
 }

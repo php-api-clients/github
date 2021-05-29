@@ -36,11 +36,17 @@ final class RepositoryInvitation
     private ?string $html_url = null;
     private ?string $node_id  = null;
 
+    /**
+     * Unique identifier of the repository invitation.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;
@@ -56,6 +62,9 @@ final class RepositoryInvitation
         return $this->inviter;
     }
 
+    /**
+     * The permission associated with the invitation.
+     */
     public function permissions(): ?string
     {
         return $this->permissions;
@@ -66,11 +75,17 @@ final class RepositoryInvitation
         return $this->created_at;
     }
 
+    /**
+     * Whether or not the invitation has expired
+     */
     public function expired(): ?bool
     {
         return $this->expired;
     }
 
+    /**
+     * URL for the repository invitation
+     */
     public function url(): ?string
     {
         return $this->url;

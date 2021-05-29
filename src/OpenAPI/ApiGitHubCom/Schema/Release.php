@@ -42,13 +42,9 @@ final class Release
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private ?SimpleUser $author = null;
-    /**
-     * @var array<ReleaseAsset>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset::class)
-     */
-    private array $assets      = [];
-    private ?string $body_html = null;
-    private ?string $body_text = null;
+    private array $assets       = [];
+    private ?string $body_html  = null;
+    private ?string $body_text  = null;
     /**
      * The URL of the release discussion.
      */
@@ -96,11 +92,17 @@ final class Release
         return $this->node_id;
     }
 
+    /**
+     * The name of the tag.
+     */
     public function tag_name(): ?string
     {
         return $this->tag_name;
     }
 
+    /**
+     * Specifies the commitish value that determines where the Git tag is created from.
+     */
     public function target_commitish(): ?string
     {
         return $this->target_commitish;
@@ -116,11 +118,17 @@ final class Release
         return $this->body;
     }
 
+    /**
+     * true to create a draft (unpublished) release, false to create a published one.
+     */
     public function draft(): ?bool
     {
         return $this->draft;
     }
 
+    /**
+     * Whether to identify the release as a prerelease or a full release.
+     */
     public function prerelease(): ?bool
     {
         return $this->prerelease;
@@ -136,11 +144,17 @@ final class Release
         return $this->published_at;
     }
 
+    /**
+     * Simple User
+     */
     public function author(): ?SimpleUser
     {
         return $this->author;
     }
 
+    /**
+     * @return array<ReleaseAsset>
+     */
     public function assets(): array
     {
         return $this->assets;
@@ -156,6 +170,9 @@ final class Release
         return $this->body_text;
     }
 
+    /**
+     * The URL of the release discussion.
+     */
     public function discussion_url(): ?string
     {
         return $this->discussion_url;

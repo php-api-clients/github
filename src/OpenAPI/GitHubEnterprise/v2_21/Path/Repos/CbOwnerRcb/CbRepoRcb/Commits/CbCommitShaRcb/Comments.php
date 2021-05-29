@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbCommitShaRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\CreateCommitCommentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\ListCommentsForCommitOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\CreateCommitComment;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\ListCommentsForCommit;
 
 final class Comments
 {
-    function get($owner, $repo, $commit_sha, int $per_page = 30, int $page = 1): ListCommentsForCommitOperation
+    function get($owner, $repo, $commit_sha, int $per_page = 30, int $page = 1): ListCommentsForCommit
     {
-        return new ListCommentsForCommitOperation($owner, $repo, $commit_sha, $per_page, $page);
+        return new ListCommentsForCommit($owner, $repo, $commit_sha, $per_page, $page);
     }
 
-    function post($owner, $repo, $commit_sha): CreateCommitCommentOperation
+    function post($owner, $repo, $commit_sha): CreateCommitComment
     {
-        return new CreateCommitCommentOperation($owner, $repo, $commit_sha);
+        return new CreateCommitComment($owner, $repo, $commit_sha);
     }
 }

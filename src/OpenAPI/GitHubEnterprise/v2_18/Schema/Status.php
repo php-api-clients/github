@@ -75,6 +75,9 @@ final class Status
         return $this->updated_at;
     }
 
+    /**
+     * Simple User
+     */
     public function creator(): ?SimpleUser
     {
         return $this->creator;

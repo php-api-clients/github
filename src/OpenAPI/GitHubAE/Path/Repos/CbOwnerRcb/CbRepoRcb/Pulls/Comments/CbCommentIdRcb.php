@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\Comments;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls\DeleteReviewCommentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls\GetReviewCommentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls\UpdateReviewCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls\DeleteReviewComment;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls\GetReviewComment;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls\UpdateReviewComment;
 
 final class CbCommentIdRcb
 {
-    function get($owner, $repo, $comment_id): GetReviewCommentOperation
+    function get($owner, $repo, $comment_id): GetReviewComment
     {
-        return new GetReviewCommentOperation($owner, $repo, $comment_id);
+        return new GetReviewComment($owner, $repo, $comment_id);
     }
 
-    function delete($owner, $repo, $comment_id): DeleteReviewCommentOperation
+    function delete($owner, $repo, $comment_id): DeleteReviewComment
     {
-        return new DeleteReviewCommentOperation($owner, $repo, $comment_id);
+        return new DeleteReviewComment($owner, $repo, $comment_id);
     }
 
-    function patch($owner, $repo, $comment_id): UpdateReviewCommentOperation
+    function patch($owner, $repo, $comment_id): UpdateReviewComment
     {
-        return new UpdateReviewCommentOperation($owner, $repo, $comment_id);
+        return new UpdateReviewComment($owner, $repo, $comment_id);
     }
 }

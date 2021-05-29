@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Activity\ListPublicEventsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Activity\ListPublicEvents;
 
 final class Events
 {
-    function get(int $per_page = 30, int $page = 1): ListPublicEventsOperation
+    function get(int $per_page = 30, int $page = 1): ListPublicEvents
     {
-        return new ListPublicEventsOperation($per_page, $page);
+        return new ListPublicEvents($per_page, $page);
     }
 }

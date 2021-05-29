@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Assignees;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Issues\CheckUserCanBeAssignedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Issues\CheckUserCanBeAssigned;
 
 final class CbAssigneeRcb
 {
-    function get($owner, $repo, $assignee): CheckUserCanBeAssignedOperation
+    function get($owner, $repo, $assignee): CheckUserCanBeAssigned
     {
-        return new CheckUserCanBeAssignedOperation($owner, $repo, $assignee);
+        return new CheckUserCanBeAssigned($owner, $repo, $assignee);
     }
 }

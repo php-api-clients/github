@@ -4,30 +4,30 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\Restrictions;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddAppAccessRestrictionsOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAppsWithAccessToProtectedBranchOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveAppAccessRestrictionsOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetAppAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddAppAccessRestrictions;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAppsWithAccessToProtectedBranch;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveAppAccessRestrictions;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetAppAccessRestrictions;
 
 final class Apps
 {
-    function get($owner, $repo, $branch): GetAppsWithAccessToProtectedBranchOperation
+    function get($owner, $repo, $branch): GetAppsWithAccessToProtectedBranch
     {
-        return new GetAppsWithAccessToProtectedBranchOperation($owner, $repo, $branch);
+        return new GetAppsWithAccessToProtectedBranch($owner, $repo, $branch);
     }
 
-    function put($owner, $repo, $branch): SetAppAccessRestrictionsOperation
+    function put($owner, $repo, $branch): SetAppAccessRestrictions
     {
-        return new SetAppAccessRestrictionsOperation($owner, $repo, $branch);
+        return new SetAppAccessRestrictions($owner, $repo, $branch);
     }
 
-    function post($owner, $repo, $branch): AddAppAccessRestrictionsOperation
+    function post($owner, $repo, $branch): AddAppAccessRestrictions
     {
-        return new AddAppAccessRestrictionsOperation($owner, $repo, $branch);
+        return new AddAppAccessRestrictions($owner, $repo, $branch);
     }
 
-    function delete($owner, $repo, $branch): RemoveAppAccessRestrictionsOperation
+    function delete($owner, $repo, $branch): RemoveAppAccessRestrictions
     {
-        return new RemoveAppAccessRestrictionsOperation($owner, $repo, $branch);
+        return new RemoveAppAccessRestrictions($owner, $repo, $branch);
     }
 }

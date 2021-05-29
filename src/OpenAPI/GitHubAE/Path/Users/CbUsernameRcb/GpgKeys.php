@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Users\CbUsernameRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\ListGpgKeysForUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\ListGpgKeysForUser;
 
 final class GpgKeys
 {
-    function get($username, int $per_page = 30, int $page = 1): ListGpgKeysForUserOperation
+    function get($username, int $per_page = 30, int $page = 1): ListGpgKeysForUser
     {
-        return new ListGpgKeysForUserOperation($username, $per_page, $page);
+        return new ListGpgKeysForUser($username, $per_page, $page);
     }
 }

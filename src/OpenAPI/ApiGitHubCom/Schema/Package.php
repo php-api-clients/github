@@ -29,11 +29,17 @@ final class Package
     private ?string $created_at = null;
     private ?string $updated_at = null;
 
+    /**
+     * Unique identifier of the package.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The name of the package.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -54,6 +60,9 @@ final class Package
         return $this->html_url;
     }
 
+    /**
+     * The number of versions of the package.
+     */
     public function version_count(): ?int
     {
         return $this->version_count;

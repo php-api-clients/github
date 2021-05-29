@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Issues\CreateLabelOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Issues\ListLabelsForRepoOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Issues\CreateLabel;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Issues\ListLabelsForRepo;
 
 final class Labels
 {
-    function get($owner, $repo, int $per_page = 30, int $page = 1): ListLabelsForRepoOperation
+    function get($owner, $repo, int $per_page = 30, int $page = 1): ListLabelsForRepo
     {
-        return new ListLabelsForRepoOperation($owner, $repo, $per_page, $page);
+        return new ListLabelsForRepo($owner, $repo, $per_page, $page);
     }
 
-    function post($owner, $repo): CreateLabelOperation
+    function post($owner, $repo): CreateLabel
     {
-        return new CreateLabelOperation($owner, $repo);
+        return new CreateLabel($owner, $repo);
     }
 }

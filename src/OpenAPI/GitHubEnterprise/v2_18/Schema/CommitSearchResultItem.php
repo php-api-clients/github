@@ -18,10 +18,6 @@ final class CommitSearchResultItem
     private array $commit           = [];
     private $author;
     private $committer;
-    /**
-     * @var array<Parents>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\CommitSearchResultItem\Parents::class)
-     */
     private array $parents = [];
     /**
      * Minimal Repository
@@ -31,11 +27,7 @@ final class CommitSearchResultItem
     private ?MinimalRepository $repository = null;
     private ?number $score                 = null;
     private ?string $node_id               = null;
-    /**
-     * @var array<TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\CommitSearchResultItem\TextMatches::class)
-     */
-    private array $text_matches = [];
+    private array $text_matches            = [];
 
     public function url(): ?string
     {
@@ -72,11 +64,17 @@ final class CommitSearchResultItem
         return $this->committer;
     }
 
+    /**
+     * @return array<Parents>
+     */
     public function parents(): array
     {
         return $this->parents;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;
@@ -92,6 +90,9 @@ final class CommitSearchResultItem
         return $this->node_id;
     }
 
+    /**
+     * @return array<TextMatches>
+     */
     public function text_matches(): array
     {
         return $this->text_matches;

@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Teams\CbTeamIdRcb\Discussions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\DeleteDiscussionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\GetDiscussionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\UpdateDiscussionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\DeleteDiscussion;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\GetDiscussion;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\UpdateDiscussion;
 
 final class CbDiscussionNumberRcb
 {
-    function get($team_id, $discussion_number): GetDiscussionOperation
+    function get($team_id, $discussion_number): GetDiscussion
     {
-        return new GetDiscussionOperation($team_id, $discussion_number);
+        return new GetDiscussion($team_id, $discussion_number);
     }
 
-    function delete($team_id, $discussion_number): DeleteDiscussionOperation
+    function delete($team_id, $discussion_number): DeleteDiscussion
     {
-        return new DeleteDiscussionOperation($team_id, $discussion_number);
+        return new DeleteDiscussion($team_id, $discussion_number);
     }
 
-    function patch($team_id, $discussion_number): UpdateDiscussionOperation
+    function patch($team_id, $discussion_number): UpdateDiscussion
     {
-        return new UpdateDiscussionOperation($team_id, $discussion_number);
+        return new UpdateDiscussion($team_id, $discussion_number);
     }
 }

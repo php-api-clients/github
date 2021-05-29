@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Orgs\CbOrgRcb\Actions\RunnerDashGroups;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\DeleteSelfHostedRunnerGroupFromOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\GetSelfHostedRunnerGroupForOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\UpdateSelfHostedRunnerGroupForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\DeleteSelfHostedRunnerGroupFromOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\GetSelfHostedRunnerGroupForOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\UpdateSelfHostedRunnerGroupForOrg;
 
 final class CbRunnerGroupIdRcb
 {
-    function get($org, $runner_group_id): GetSelfHostedRunnerGroupForOrgOperation
+    function get($org, $runner_group_id): GetSelfHostedRunnerGroupForOrg
     {
-        return new GetSelfHostedRunnerGroupForOrgOperation($org, $runner_group_id);
+        return new GetSelfHostedRunnerGroupForOrg($org, $runner_group_id);
     }
 
-    function delete($org, $runner_group_id): DeleteSelfHostedRunnerGroupFromOrgOperation
+    function delete($org, $runner_group_id): DeleteSelfHostedRunnerGroupFromOrg
     {
-        return new DeleteSelfHostedRunnerGroupFromOrgOperation($org, $runner_group_id);
+        return new DeleteSelfHostedRunnerGroupFromOrg($org, $runner_group_id);
     }
 
-    function patch($org, $runner_group_id): UpdateSelfHostedRunnerGroupForOrgOperation
+    function patch($org, $runner_group_id): UpdateSelfHostedRunnerGroupForOrg
     {
-        return new UpdateSelfHostedRunnerGroupForOrgOperation($org, $runner_group_id);
+        return new UpdateSelfHostedRunnerGroupForOrg($org, $runner_group_id);
     }
 }

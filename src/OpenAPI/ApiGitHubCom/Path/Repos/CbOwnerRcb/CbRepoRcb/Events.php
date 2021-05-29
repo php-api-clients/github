@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListRepoEventsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListRepoEvents;
 
 final class Events
 {
-    function get($owner, $repo, int $per_page = 30, int $page = 1): ListRepoEventsOperation
+    function get($owner, $repo, int $per_page = 30, int $page = 1): ListRepoEvents
     {
-        return new ListRepoEventsOperation($owner, $repo, $per_page, $page);
+        return new ListRepoEvents($owner, $repo, $per_page, $page);
     }
 }

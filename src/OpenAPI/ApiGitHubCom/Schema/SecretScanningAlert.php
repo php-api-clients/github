@@ -51,51 +51,81 @@ final class SecretScanningAlert
      */
     private ?string $secret = null;
 
+    /**
+     * The security alert number.
+     */
     public function number(): ?int
     {
         return $this->number;
     }
 
+    /**
+     * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
     public function created_at(): ?string
     {
         return $this->created_at;
     }
 
+    /**
+     * The REST API URL of the alert resource.
+     */
     public function url(): ?string
     {
         return $this->url;
     }
 
+    /**
+     * The GitHub URL of the alert resource.
+     */
     public function html_url(): ?string
     {
         return $this->html_url;
     }
 
+    /**
+     * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
+     */
     public function state(): ?string
     {
         return $this->state;
     }
 
+    /**
+     * **Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
+     */
     public function resolution(): ?string
     {
         return $this->resolution;
     }
 
+    /**
+     * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
     public function resolved_at(): ?string
     {
         return $this->resolved_at;
     }
 
+    /**
+     * Simple User
+     */
     public function resolved_by(): ?SimpleUser
     {
         return $this->resolved_by;
     }
 
+    /**
+     * The type of secret that secret scanning detected.
+     */
     public function secret_type(): ?string
     {
         return $this->secret_type;
     }
 
+    /**
+     * The secret that was detected.
+     */
     public function secret(): ?string
     {
         return $this->secret;

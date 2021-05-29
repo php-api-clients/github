@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Admin;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\CreatePreReceiveEnvironmentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\ListPreReceiveEnvironmentsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\CreatePreReceiveEnvironment;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\ListPreReceiveEnvironments;
 
 final class PreReceiveEnvironments
 {
-    function get(int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created'): ListPreReceiveEnvironmentsOperation
+    function get(int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created'): ListPreReceiveEnvironments
     {
-        return new ListPreReceiveEnvironmentsOperation($per_page, $page, $direction, $sort);
+        return new ListPreReceiveEnvironments($per_page, $page, $direction, $sort);
     }
 
-    function post(): CreatePreReceiveEnvironmentOperation
+    function post(): CreatePreReceiveEnvironment
     {
-        return new CreatePreReceiveEnvironmentOperation();
+        return new CreatePreReceiveEnvironment();
     }
 }

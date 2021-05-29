@@ -33,6 +33,9 @@ final class IssueComment
     private ?string $body = null;
     private $performed_via_github_app;
 
+    /**
+     * URL for the issue comment
+     */
     public function url(): ?string
     {
         return $this->url;
@@ -48,6 +51,9 @@ final class IssueComment
         return $this->issue_url;
     }
 
+    /**
+     * Unique identifier of the issue comment
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -73,11 +79,17 @@ final class IssueComment
         return $this->updated_at;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;
     }
 
+    /**
+     * Contents of the issue comment
+     */
     public function body(): ?string
     {
         return $this->body;

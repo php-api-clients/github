@@ -142,6 +142,9 @@ final class ReviewComment
         return $this->pull_request_url;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;
@@ -162,31 +165,49 @@ final class ReviewComment
         return $this->body_html;
     }
 
+    /**
+     * The side of the first line of the range for a multi-line comment.
+     */
     public function side(): ?string
     {
         return $this->side;
     }
 
+    /**
+     * The side of the first line of the range for a multi-line comment.
+     */
     public function start_side(): ?string
     {
         return $this->start_side;
     }
 
+    /**
+     * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+     */
     public function line(): ?int
     {
         return $this->line;
     }
 
+    /**
+     * The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
+     */
     public function original_line(): ?int
     {
         return $this->original_line;
     }
 
+    /**
+     * The first line of the range for a multi-line comment.
+     */
     public function start_line(): ?int
     {
         return $this->start_line;
     }
 
+    /**
+     * The original first line of the range for a multi-line comment.
+     */
     public function original_start_line(): ?int
     {
         return $this->original_start_line;

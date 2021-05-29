@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Orgs\ListAppInstallationsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Orgs\ListAppInstallations;
 
 final class Installations
 {
-    function get(string $accept = 'application/vnd.github.machine-man-preview+json', $org, int $per_page = 30, int $page = 1): ListAppInstallationsOperation
+    function get(string $accept = 'application/vnd.github.machine-man-preview+json', $org, int $per_page = 30, int $page = 1): ListAppInstallations
     {
-        return new ListAppInstallationsOperation($accept, $org, $per_page, $page);
+        return new ListAppInstallations($accept, $org, $per_page, $page);
     }
 }

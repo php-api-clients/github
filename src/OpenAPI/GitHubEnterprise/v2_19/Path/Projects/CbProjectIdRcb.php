@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Projects;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Projects\DeleteOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Projects\GetOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Projects\UpdateOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Projects\Delete;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Projects\Get;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Projects\Update;
 
 final class CbProjectIdRcb
 {
-    function get($project_id): GetOperation
+    function get($project_id): Get
     {
-        return new GetOperation($project_id);
+        return new Get($project_id);
     }
 
-    function delete($project_id): DeleteOperation
+    function delete($project_id): Delete
     {
-        return new DeleteOperation($project_id);
+        return new Delete($project_id);
     }
 
-    function patch($project_id): UpdateOperation
+    function patch($project_id): Update
     {
-        return new UpdateOperation($project_id);
+        return new Update($project_id);
     }
 }

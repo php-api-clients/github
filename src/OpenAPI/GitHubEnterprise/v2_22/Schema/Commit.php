@@ -19,17 +19,9 @@ final class Commit
     private array $commit           = [];
     private $author;
     private $committer;
-    /**
-     * @var array<Parents>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Commit\Parents::class)
-     */
     private array $parents = [];
     private array $stats   = [];
-    /**
-     * @var array<Files>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Commit\Files::class)
-     */
-    private array $files = [];
+    private array $files   = [];
 
     public function url(): ?string
     {
@@ -71,6 +63,9 @@ final class Commit
         return $this->committer;
     }
 
+    /**
+     * @return array<Parents>
+     */
     public function parents(): array
     {
         return $this->parents;
@@ -81,6 +76,9 @@ final class Commit
         return $this->stats;
     }
 
+    /**
+     * @return array<Files>
+     */
     public function files(): array
     {
         return $this->files;

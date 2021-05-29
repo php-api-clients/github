@@ -14,11 +14,7 @@ final class TextMatches
     private ?string $object_type    = null;
     private ?string $property       = null;
     private ?string $fragment       = null;
-    /**
-     * @var array<Matches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CommitSearchResultItem\TextMatches\Matches::class)
-     */
-    private array $matches = [];
+    private array $matches          = [];
 
     public function object_url(): ?string
     {
@@ -40,6 +36,9 @@ final class TextMatches
         return $this->fragment;
     }
 
+    /**
+     * @return array<Matches>
+     */
     public function matches(): array
     {
         return $this->matches;

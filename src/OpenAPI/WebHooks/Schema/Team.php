@@ -36,11 +36,17 @@ final class Team
     private ?string $permission = null;
     private $parent;
 
+    /**
+     * Name of the team
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Unique identifier of the team
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -56,6 +62,9 @@ final class Team
         return $this->slug;
     }
 
+    /**
+     * Description of the team
+     */
     public function description()
     {
         return $this->description;
@@ -66,6 +75,9 @@ final class Team
         return $this->privacy;
     }
 
+    /**
+     * URL for the team
+     */
     public function url(): ?string
     {
         return $this->url;
@@ -86,6 +98,9 @@ final class Team
         return $this->repositories_url;
     }
 
+    /**
+     * Permission that the team will have for its repositories
+     */
     public function permission(): ?string
     {
         return $this->permission;

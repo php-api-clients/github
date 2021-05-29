@@ -19,12 +19,8 @@ final class ContentTree
     private ?string $git_url        = null;
     private ?string $html_url       = null;
     private ?string $download_url   = null;
-    /**
-     * @var array<Entries>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentTree\Entries::class)
-     */
-    private array $entries = [];
-    private array $_links  = [];
+    private array $entries          = [];
+    private array $_links           = [];
 
     public function type(): ?string
     {
@@ -71,6 +67,9 @@ final class ContentTree
         return $this->download_url;
     }
 
+    /**
+     * @return array<Entries>
+     */
     public function entries(): array
     {
         return $this->entries;

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListInstallationsForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListInstallationsForAuthenticatedUser;
 
 final class Installations
 {
-    function get(int $per_page = 30, int $page = 1): ListInstallationsForAuthenticatedUserOperation
+    function get(int $per_page = 30, int $page = 1): ListInstallationsForAuthenticatedUser
     {
-        return new ListInstallationsForAuthenticatedUserOperation($per_page, $page);
+        return new ListInstallationsForAuthenticatedUser($per_page, $page);
     }
 }

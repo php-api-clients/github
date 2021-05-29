@@ -53,6 +53,9 @@ final class IssueEventForIssue
         return $this->url;
     }
 
+    /**
+     * Simple User
+     */
     public function actor(): ?SimpleUser
     {
         return $this->actor;
@@ -103,6 +106,9 @@ final class IssueEventForIssue
         return $this->updated_at;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

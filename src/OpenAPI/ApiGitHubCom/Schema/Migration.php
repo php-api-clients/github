@@ -14,17 +14,13 @@ final class Migration
     private ?string $state             = null;
     private ?bool $lock_repositories   = null;
     private ?bool $exclude_attachments = null;
-    /**
-     * @var array<Repository>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
-     */
-    private array $repositories  = [];
-    private ?string $url         = null;
-    private ?string $created_at  = null;
-    private ?string $updated_at  = null;
-    private ?string $node_id     = null;
-    private ?string $archive_url = null;
-    private array $exclude       = [];
+    private array $repositories        = [];
+    private ?string $url               = null;
+    private ?string $created_at        = null;
+    private ?string $updated_at        = null;
+    private ?string $node_id           = null;
+    private ?string $archive_url       = null;
+    private array $exclude             = [];
 
     public function id(): ?int
     {
@@ -56,6 +52,9 @@ final class Migration
         return $this->exclude_attachments;
     }
 
+    /**
+     * @return array<Repository>
+     */
     public function repositories(): array
     {
         return $this->repositories;

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Users\CbUsernameRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\SuspendUserOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UnsuspendUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\SuspendUser;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UnsuspendUser;
 
 final class Suspended
 {
-    function put($username): SuspendUserOperation
+    function put($username): SuspendUser
     {
-        return new SuspendUserOperation($username);
+        return new SuspendUser($username);
     }
 
-    function delete($username): UnsuspendUserOperation
+    function delete($username): UnsuspendUser
     {
-        return new UnsuspendUserOperation($username);
+        return new UnsuspendUser($username);
     }
 }

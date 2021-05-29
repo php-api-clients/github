@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Reviews;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Pulls\DeletePendingReviewOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Pulls\GetReviewOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Pulls\UpdateReviewOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Pulls\DeletePendingReview;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Pulls\GetReview;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Pulls\UpdateReview;
 
 final class CbReviewIdRcb
 {
-    function get($owner, $repo, $pull_number, $review_id): GetReviewOperation
+    function get($owner, $repo, $pull_number, $review_id): GetReview
     {
-        return new GetReviewOperation($owner, $repo, $pull_number, $review_id);
+        return new GetReview($owner, $repo, $pull_number, $review_id);
     }
 
-    function put($owner, $repo, $pull_number, $review_id): UpdateReviewOperation
+    function put($owner, $repo, $pull_number, $review_id): UpdateReview
     {
-        return new UpdateReviewOperation($owner, $repo, $pull_number, $review_id);
+        return new UpdateReview($owner, $repo, $pull_number, $review_id);
     }
 
-    function delete($owner, $repo, $pull_number, $review_id): DeletePendingReviewOperation
+    function delete($owner, $repo, $pull_number, $review_id): DeletePendingReview
     {
-        return new DeletePendingReviewOperation($owner, $repo, $pull_number, $review_id);
+        return new DeletePendingReview($owner, $repo, $pull_number, $review_id);
     }
 }

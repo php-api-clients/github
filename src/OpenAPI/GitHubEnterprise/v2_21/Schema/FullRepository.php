@@ -148,6 +148,9 @@ final class FullRepository
         return $this->full_name;
     }
 
+    /**
+     * Simple User
+     */
     public function owner(): ?SimpleUser
     {
         return $this->owner;
@@ -463,11 +466,17 @@ final class FullRepository
         return $this->archived;
     }
 
+    /**
+     * Returns whether or not this repository disabled.
+     */
     public function disabled(): ?bool
     {
         return $this->disabled;
     }
 
+    /**
+     * The repository visibility: public, private, or internal.
+     */
     public function visibility(): ?string
     {
         return $this->visibility;
@@ -538,11 +547,17 @@ final class FullRepository
         return $this->organization;
     }
 
+    /**
+     * A git repository
+     */
     public function parent(): ?Repository
     {
         return $this->parent;
     }
 
+    /**
+     * A git repository
+     */
     public function source(): ?Repository
     {
         return $this->source;
@@ -568,11 +583,17 @@ final class FullRepository
         return $this->watchers;
     }
 
+    /**
+     * Whether anonymous git access is allowed.
+     */
     public function anonymous_access_enabled(): ?bool
     {
         return $this->anonymous_access_enabled;
     }
 
+    /**
+     * Code of Conduct Simple
+     */
     public function code_of_conduct(): ?CodeOfConductSimple
     {
         return $this->code_of_conduct;

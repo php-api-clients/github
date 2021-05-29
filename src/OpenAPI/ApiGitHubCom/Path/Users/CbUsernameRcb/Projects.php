@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Users\CbUsernameRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForUser;
 
 final class Projects
 {
-    function get($username, string $state = 'open', int $per_page = 30, int $page = 1): ListForUserOperation
+    function get($username, string $state = 'open', int $per_page = 30, int $page = 1): ListForUser
     {
-        return new ListForUserOperation($username, $state, $per_page, $page);
+        return new ListForUser($username, $state, $per_page, $page);
     }
 }

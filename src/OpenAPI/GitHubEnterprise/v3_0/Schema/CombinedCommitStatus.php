@@ -9,13 +9,9 @@ final class CombinedCommitStatus
     public const SCHEMA_TITLE       = 'Combined Commit Status';
     public const SCHEMA_DESCRIPTION = 'Combined Commit Status';
     private ?string $state          = null;
-    /**
-     * @var array<SimpleCommitStatus>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\SimpleCommitStatus::class)
-     */
-    private array $statuses   = [];
-    private ?string $sha      = null;
-    private ?int $total_count = null;
+    private array $statuses         = [];
+    private ?string $sha            = null;
+    private ?int $total_count       = null;
     /**
      * Minimal Repository
      *
@@ -30,6 +26,9 @@ final class CombinedCommitStatus
         return $this->state;
     }
 
+    /**
+     * @return array<SimpleCommitStatus>
+     */
     public function statuses(): array
     {
         return $this->statuses;
@@ -45,6 +44,9 @@ final class CombinedCommitStatus
         return $this->total_count;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;

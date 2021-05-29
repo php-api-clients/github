@@ -28,11 +28,7 @@ final class WorkflowRun
     private ?string $logs_url                = null;
     private ?string $node_id                 = null;
     private ?string $name                    = null;
-    /**
-     * @var array<PullRequest>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class)
-     */
-    private array $pull_requests = [];
+    private array $pull_requests             = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\RepositoryLite::class) */
     private ?RepositoryLite $repository = null;
     private ?string $rerun_url          = null;
@@ -133,6 +129,9 @@ final class WorkflowRun
         return $this->name;
     }
 
+    /**
+     * @return array<PullRequest>
+     */
     public function pull_requests(): array
     {
         return $this->pull_requests;

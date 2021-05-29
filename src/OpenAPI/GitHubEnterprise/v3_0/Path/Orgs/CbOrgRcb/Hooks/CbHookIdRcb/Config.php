@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Orgs\CbOrgRcb\Hooks\CbHookIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Orgs\GetWebhookConfigForOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Orgs\UpdateWebhookConfigForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Orgs\GetWebhookConfigForOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Orgs\UpdateWebhookConfigForOrg;
 
 final class Config
 {
-    function get($org, $hook_id): GetWebhookConfigForOrgOperation
+    function get($org, $hook_id): GetWebhookConfigForOrg
     {
-        return new GetWebhookConfigForOrgOperation($org, $hook_id);
+        return new GetWebhookConfigForOrg($org, $hook_id);
     }
 
-    function patch($org, $hook_id): UpdateWebhookConfigForOrgOperation
+    function patch($org, $hook_id): UpdateWebhookConfigForOrg
     {
-        return new UpdateWebhookConfigForOrgOperation($org, $hook_id);
+        return new UpdateWebhookConfigForOrg($org, $hook_id);
     }
 }

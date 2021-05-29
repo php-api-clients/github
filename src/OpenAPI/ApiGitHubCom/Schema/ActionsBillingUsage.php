@@ -22,16 +22,25 @@ final class ActionsBillingUsage
     private ?int $included_minutes        = null;
     private array $minutes_used_breakdown = [];
 
+    /**
+     * The sum of the free and paid GitHub Actions minutes used.
+     */
     public function total_minutes_used(): ?int
     {
         return $this->total_minutes_used;
     }
 
+    /**
+     * The total paid GitHub Actions minutes used.
+     */
     public function total_paid_minutes_used(): ?int
     {
         return $this->total_paid_minutes_used;
     }
 
+    /**
+     * The amount of free GitHub Actions minutes available.
+     */
     public function included_minutes(): ?int
     {
         return $this->included_minutes;

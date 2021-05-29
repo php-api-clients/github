@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Orgs\CbOrgRcb\PreDashReceiveDashHooks;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\GetPreReceiveHookForOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\RemovePreReceiveHookEnforcementForOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\UpdatePreReceiveHookEnforcementForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\GetPreReceiveHookForOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\RemovePreReceiveHookEnforcementForOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\UpdatePreReceiveHookEnforcementForOrg;
 
 final class CbPreReceiveHookIdRcb
 {
-    function get($org, $pre_receive_hook_id): GetPreReceiveHookForOrgOperation
+    function get($org, $pre_receive_hook_id): GetPreReceiveHookForOrg
     {
-        return new GetPreReceiveHookForOrgOperation($org, $pre_receive_hook_id);
+        return new GetPreReceiveHookForOrg($org, $pre_receive_hook_id);
     }
 
-    function delete($org, $pre_receive_hook_id): RemovePreReceiveHookEnforcementForOrgOperation
+    function delete($org, $pre_receive_hook_id): RemovePreReceiveHookEnforcementForOrg
     {
-        return new RemovePreReceiveHookEnforcementForOrgOperation($org, $pre_receive_hook_id);
+        return new RemovePreReceiveHookEnforcementForOrg($org, $pre_receive_hook_id);
     }
 
-    function patch($org, $pre_receive_hook_id): UpdatePreReceiveHookEnforcementForOrgOperation
+    function patch($org, $pre_receive_hook_id): UpdatePreReceiveHookEnforcementForOrg
     {
-        return new UpdatePreReceiveHookEnforcementForOrgOperation($org, $pre_receive_hook_id);
+        return new UpdatePreReceiveHookEnforcementForOrg($org, $pre_receive_hook_id);
     }
 }

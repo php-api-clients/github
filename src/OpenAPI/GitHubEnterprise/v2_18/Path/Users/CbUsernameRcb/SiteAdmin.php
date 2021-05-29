@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Users\CbUsernameRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\DemoteSiteAdministratorOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\PromoteUserToBeSiteAdministratorOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\DemoteSiteAdministrator;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\EnterpriseAdmin\PromoteUserToBeSiteAdministrator;
 
 final class SiteAdmin
 {
-    function put($username): PromoteUserToBeSiteAdministratorOperation
+    function put($username): PromoteUserToBeSiteAdministrator
     {
-        return new PromoteUserToBeSiteAdministratorOperation($username);
+        return new PromoteUserToBeSiteAdministrator($username);
     }
 
-    function delete($username): DemoteSiteAdministratorOperation
+    function delete($username): DemoteSiteAdministrator
     {
-        return new DemoteSiteAdministratorOperation($username);
+        return new DemoteSiteAdministrator($username);
     }
 }

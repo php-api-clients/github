@@ -15,6 +15,9 @@ final class InteractionLimitResponse
     private ?string $origin     = null;
     private ?string $expires_at = null;
 
+    /**
+     * The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: `existing_users`, `contributors_only`, `collaborators_only`.
+     */
     public function limit(): ?string
     {
         return $this->limit;

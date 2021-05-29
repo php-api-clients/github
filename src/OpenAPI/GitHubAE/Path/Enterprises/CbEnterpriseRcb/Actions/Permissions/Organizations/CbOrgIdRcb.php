@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Enterprises\CbEnterpriseRcb\Actions\Permissions\Organizations;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DisableSelectedOrganizationGithubActionsEnterpriseOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\EnableSelectedOrganizationGithubActionsEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DisableSelectedOrganizationGithubActionsEnterprise;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\EnableSelectedOrganizationGithubActionsEnterprise;
 
 final class CbOrgIdRcb
 {
-    function put($enterprise, $org_id): EnableSelectedOrganizationGithubActionsEnterpriseOperation
+    function put($enterprise, $org_id): EnableSelectedOrganizationGithubActionsEnterprise
     {
-        return new EnableSelectedOrganizationGithubActionsEnterpriseOperation($enterprise, $org_id);
+        return new EnableSelectedOrganizationGithubActionsEnterprise($enterprise, $org_id);
     }
 
-    function delete($enterprise, $org_id): DisableSelectedOrganizationGithubActionsEnterpriseOperation
+    function delete($enterprise, $org_id): DisableSelectedOrganizationGithubActionsEnterprise
     {
-        return new DisableSelectedOrganizationGithubActionsEnterpriseOperation($enterprise, $org_id);
+        return new DisableSelectedOrganizationGithubActionsEnterprise($enterprise, $org_id);
     }
 }

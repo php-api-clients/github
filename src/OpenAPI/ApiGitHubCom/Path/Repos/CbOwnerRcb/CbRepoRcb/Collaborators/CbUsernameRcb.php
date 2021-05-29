@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Collaborators;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddCollaboratorOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CheckCollaboratorOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveCollaboratorOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddCollaborator;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CheckCollaborator;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveCollaborator;
 
 final class CbUsernameRcb
 {
-    function get($owner, $repo, $username): CheckCollaboratorOperation
+    function get($owner, $repo, $username): CheckCollaborator
     {
-        return new CheckCollaboratorOperation($owner, $repo, $username);
+        return new CheckCollaborator($owner, $repo, $username);
     }
 
-    function put($owner, $repo, $username): AddCollaboratorOperation
+    function put($owner, $repo, $username): AddCollaborator
     {
-        return new AddCollaboratorOperation($owner, $repo, $username);
+        return new AddCollaborator($owner, $repo, $username);
     }
 
-    function delete($owner, $repo, $username): RemoveCollaboratorOperation
+    function delete($owner, $repo, $username): RemoveCollaborator
     {
-        return new RemoveCollaboratorOperation($owner, $repo, $username);
+        return new RemoveCollaborator($owner, $repo, $username);
     }
 }

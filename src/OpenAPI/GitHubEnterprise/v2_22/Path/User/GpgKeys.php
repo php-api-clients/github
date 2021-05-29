@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Users\CreateGpgKeyForAuthenticatedOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Users\ListGpgKeysForAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Users\CreateGpgKeyForAuthenticated;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Users\ListGpgKeysForAuthenticated;
 
 final class GpgKeys
 {
-    function get(int $per_page = 30, int $page = 1): ListGpgKeysForAuthenticatedOperation
+    function get(int $per_page = 30, int $page = 1): ListGpgKeysForAuthenticated
     {
-        return new ListGpgKeysForAuthenticatedOperation($per_page, $page);
+        return new ListGpgKeysForAuthenticated($per_page, $page);
     }
 
-    function post(): CreateGpgKeyForAuthenticatedOperation
+    function post(): CreateGpgKeyForAuthenticated
     {
-        return new CreateGpgKeyForAuthenticatedOperation();
+        return new CreateGpgKeyForAuthenticated();
     }
 }

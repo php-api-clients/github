@@ -21,16 +21,8 @@ final class IssueSimple
     private ?string $title          = null;
     private ?string $body           = null;
     private $user;
-    /**
-     * @var array<Label>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\Label::class)
-     */
     private array $labels = [];
     private $assignee;
-    /**
-     * @var array<SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\SimpleUser::class)
-     */
     private array $assignees = [];
     private $milestone;
     private ?bool $locked               = null;
@@ -120,6 +112,9 @@ final class IssueSimple
         return $this->user;
     }
 
+    /**
+     * @return array<Label>
+     */
     public function labels(): array
     {
         return $this->labels;
@@ -130,6 +125,9 @@ final class IssueSimple
         return $this->assignee;
     }
 
+    /**
+     * @return array<SimpleUser>
+     */
     public function assignees(): array
     {
         return $this->assignees;
@@ -175,6 +173,9 @@ final class IssueSimple
         return $this->updated_at;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;
@@ -195,6 +196,9 @@ final class IssueSimple
         return $this->timeline_url;
     }
 
+    /**
+     * A git repository
+     */
     public function repository(): ?Repository
     {
         return $this->repository;

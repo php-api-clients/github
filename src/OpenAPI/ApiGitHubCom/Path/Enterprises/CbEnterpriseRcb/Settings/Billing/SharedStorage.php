@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Enterprises\CbEnterpriseRcb\Settings\Billing;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetSharedStorageBillingGheOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetSharedStorageBillingGhe;
 
 final class SharedStorage
 {
-    function get($enterprise): GetSharedStorageBillingGheOperation
+    function get($enterprise): GetSharedStorageBillingGhe
     {
-        return new GetSharedStorageBillingGheOperation($enterprise);
+        return new GetSharedStorageBillingGhe($enterprise);
     }
 }

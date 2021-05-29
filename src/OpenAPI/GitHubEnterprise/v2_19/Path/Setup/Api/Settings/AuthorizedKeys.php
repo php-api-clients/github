@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Setup\Api\Settings;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\AddAuthorizedSshKeyOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\GetAllAuthorizedSshKeysOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\RemoveAuthorizedSshKeyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\AddAuthorizedSshKey;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\GetAllAuthorizedSshKeys;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\EnterpriseAdmin\RemoveAuthorizedSshKey;
 
 final class AuthorizedKeys
 {
-    function get(): GetAllAuthorizedSshKeysOperation
+    function get(): GetAllAuthorizedSshKeys
     {
-        return new GetAllAuthorizedSshKeysOperation();
+        return new GetAllAuthorizedSshKeys();
     }
 
-    function post(): AddAuthorizedSshKeyOperation
+    function post(): AddAuthorizedSshKey
     {
-        return new AddAuthorizedSshKeyOperation();
+        return new AddAuthorizedSshKey();
     }
 
-    function delete(): RemoveAuthorizedSshKeyOperation
+    function delete(): RemoveAuthorizedSshKey
     {
-        return new RemoveAuthorizedSshKeyOperation();
+        return new RemoveAuthorizedSshKey();
     }
 }

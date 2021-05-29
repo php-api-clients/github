@@ -32,11 +32,17 @@ final class OrgMembership
         return $this->url;
     }
 
+    /**
+     * The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
+     */
     public function state(): ?string
     {
         return $this->state;
     }
 
+    /**
+     * The user's membership type in the organization.
+     */
     public function role(): ?string
     {
         return $this->role;
@@ -47,6 +53,9 @@ final class OrgMembership
         return $this->organization_url;
     }
 
+    /**
+     * Organization Simple
+     */
     public function organization(): ?OrganizationSimple
     {
         return $this->organization;

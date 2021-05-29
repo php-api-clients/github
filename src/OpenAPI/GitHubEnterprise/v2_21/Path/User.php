@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Users\GetAuthenticatedOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Users\UpdateAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Users\GetAuthenticated;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Users\UpdateAuthenticated;
 
 final class User
 {
-    function get(): GetAuthenticatedOperation
+    function get(): GetAuthenticated
     {
-        return new GetAuthenticatedOperation();
+        return new GetAuthenticated();
     }
 
-    function patch(): UpdateAuthenticatedOperation
+    function patch(): UpdateAuthenticated
     {
-        return new UpdateAuthenticatedOperation();
+        return new UpdateAuthenticated();
     }
 }

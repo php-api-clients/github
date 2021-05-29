@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\CreateForRepoOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\ListForRepoOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\CreateForRepo;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\ListForRepo;
 
 final class Projects
 {
-    function get($owner, $repo, string $state = 'open', int $per_page = 30, int $page = 1): ListForRepoOperation
+    function get($owner, $repo, string $state = 'open', int $per_page = 30, int $page = 1): ListForRepo
     {
-        return new ListForRepoOperation($owner, $repo, $state, $per_page, $page);
+        return new ListForRepo($owner, $repo, $state, $per_page, $page);
     }
 
-    function post($owner, $repo): CreateForRepoOperation
+    function post($owner, $repo): CreateForRepo
     {
-        return new CreateForRepoOperation($owner, $repo);
+        return new CreateForRepo($owner, $repo);
     }
 }

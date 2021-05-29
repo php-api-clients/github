@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Artifacts;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\DeleteArtifactOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\GetArtifactOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\DeleteArtifact;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\GetArtifact;
 
 final class CbArtifactIdRcb
 {
-    function get($owner, $repo, $artifact_id): GetArtifactOperation
+    function get($owner, $repo, $artifact_id): GetArtifact
     {
-        return new GetArtifactOperation($owner, $repo, $artifact_id);
+        return new GetArtifact($owner, $repo, $artifact_id);
     }
 
-    function delete($owner, $repo, $artifact_id): DeleteArtifactOperation
+    function delete($owner, $repo, $artifact_id): DeleteArtifact
     {
-        return new DeleteArtifactOperation($owner, $repo, $artifact_id);
+        return new DeleteArtifact($owner, $repo, $artifact_id);
     }
 }

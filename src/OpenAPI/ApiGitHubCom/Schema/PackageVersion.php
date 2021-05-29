@@ -26,11 +26,17 @@ final class PackageVersion
     private ?string $deleted_at       = null;
     private array $metadata           = [];
 
+    /**
+     * Unique identifier of the package version.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The name of the package version.
+     */
     public function name(): ?string
     {
         return $this->name;

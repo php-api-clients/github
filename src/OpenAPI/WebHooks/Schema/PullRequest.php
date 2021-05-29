@@ -37,22 +37,10 @@ final class PullRequest
     private $merged_at;
     private $merge_commit_sha;
     private $assignee;
-    /**
-     * @var array<User>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
     private array $assignees           = [];
     private array $requested_reviewers = [];
-    /**
-     * @var array<Team>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team::class)
-     */
-    private array $requested_teams = [];
-    /**
-     * @var array<Label>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
-     */
-    private array $labels = [];
+    private array $requested_teams     = [];
+    private array $labels              = [];
     private $milestone;
     private ?string $commits_url         = null;
     private ?string $review_comments_url = null;
@@ -123,11 +111,17 @@ final class PullRequest
         return $this->issue_url;
     }
 
+    /**
+     * Number uniquely identifying the pull request within its repository.
+     */
     public function number(): ?int
     {
         return $this->number;
     }
 
+    /**
+     * State of this Pull Request. Either `open` or `closed`.
+     */
     public function state(): ?string
     {
         return $this->state;
@@ -138,6 +132,9 @@ final class PullRequest
         return $this->locked;
     }
 
+    /**
+     * The title of the pull request.
+     */
     public function title(): ?string
     {
         return $this->title;
@@ -183,6 +180,9 @@ final class PullRequest
         return $this->assignee;
     }
 
+    /**
+     * @return array<User>
+     */
     public function assignees(): array
     {
         return $this->assignees;
@@ -193,11 +193,17 @@ final class PullRequest
         return $this->requested_reviewers;
     }
 
+    /**
+     * @return array<Team>
+     */
     public function requested_teams(): array
     {
         return $this->requested_teams;
     }
 
+    /**
+     * @return array<Label>
+     */
     public function labels(): array
     {
         return $this->labels;
@@ -248,6 +254,9 @@ final class PullRequest
         return $this->_links;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;
@@ -263,6 +272,9 @@ final class PullRequest
         return $this->active_lock_reason;
     }
 
+    /**
+     * Indicates whether or not the pull request is a draft.
+     */
     public function draft(): ?bool
     {
         return $this->draft;
@@ -303,6 +315,9 @@ final class PullRequest
         return $this->review_comments;
     }
 
+    /**
+     * Indicates whether maintainers can modify the pull request.
+     */
     public function maintainer_can_modify(): ?bool
     {
         return $this->maintainer_can_modify;

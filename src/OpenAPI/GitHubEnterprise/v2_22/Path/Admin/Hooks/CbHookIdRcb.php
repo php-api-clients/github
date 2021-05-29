@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Admin\Hooks;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DeleteGlobalWebhookOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\GetGlobalWebhookOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UpdateGlobalWebhookOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DeleteGlobalWebhook;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\GetGlobalWebhook;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UpdateGlobalWebhook;
 
 final class CbHookIdRcb
 {
-    function get(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): GetGlobalWebhookOperation
+    function get(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): GetGlobalWebhook
     {
-        return new GetGlobalWebhookOperation($accept, $hook_id);
+        return new GetGlobalWebhook($accept, $hook_id);
     }
 
-    function delete(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): DeleteGlobalWebhookOperation
+    function delete(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): DeleteGlobalWebhook
     {
-        return new DeleteGlobalWebhookOperation($accept, $hook_id);
+        return new DeleteGlobalWebhook($accept, $hook_id);
     }
 
-    function patch(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): UpdateGlobalWebhookOperation
+    function patch(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): UpdateGlobalWebhook
     {
-        return new UpdateGlobalWebhookOperation($accept, $hook_id);
+        return new UpdateGlobalWebhook($accept, $hook_id);
     }
 }

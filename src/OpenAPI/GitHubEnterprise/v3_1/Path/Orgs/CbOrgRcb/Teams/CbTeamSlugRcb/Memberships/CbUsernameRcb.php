@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Memberships;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Teams\AddOrUpdateMembershipForUserInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Teams\GetMembershipForUserInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Teams\RemoveMembershipForUserInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Teams\AddOrUpdateMembershipForUserInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Teams\GetMembershipForUserInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Teams\RemoveMembershipForUserInOrg;
 
 final class CbUsernameRcb
 {
-    function get($org, $team_slug, $username): GetMembershipForUserInOrgOperation
+    function get($org, $team_slug, $username): GetMembershipForUserInOrg
     {
-        return new GetMembershipForUserInOrgOperation($org, $team_slug, $username);
+        return new GetMembershipForUserInOrg($org, $team_slug, $username);
     }
 
-    function put($org, $team_slug, $username): AddOrUpdateMembershipForUserInOrgOperation
+    function put($org, $team_slug, $username): AddOrUpdateMembershipForUserInOrg
     {
-        return new AddOrUpdateMembershipForUserInOrgOperation($org, $team_slug, $username);
+        return new AddOrUpdateMembershipForUserInOrg($org, $team_slug, $username);
     }
 
-    function delete($org, $team_slug, $username): RemoveMembershipForUserInOrgOperation
+    function delete($org, $team_slug, $username): RemoveMembershipForUserInOrg
     {
-        return new RemoveMembershipForUserInOrgOperation($org, $team_slug, $username);
+        return new RemoveMembershipForUserInOrg($org, $team_slug, $username);
     }
 }

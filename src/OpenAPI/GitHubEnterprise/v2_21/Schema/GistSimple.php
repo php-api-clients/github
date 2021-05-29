@@ -11,16 +11,8 @@ final class GistSimple
 {
     public const SCHEMA_TITLE       = 'Gist Simple';
     public const SCHEMA_DESCRIPTION = 'Gist Simple';
-    /**
-     * @var array<Forks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\GistSimple\Forks::class)
-     */
-    private array $forks = [];
-    /**
-     * @var array<History>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\GistSimple\History::class)
-     */
-    private array $history = [];
+    private array $forks            = [];
+    private array $history          = [];
     /**
      * Gist
      */
@@ -49,16 +41,25 @@ final class GistSimple
     private ?SimpleUser $owner = null;
     private ?bool $truncated   = null;
 
+    /**
+     * @return array<Forks>
+     */
     public function forks(): array
     {
         return $this->forks;
     }
 
+    /**
+     * @return array<History>
+     */
     public function history(): array
     {
         return $this->history;
     }
 
+    /**
+     * Gist
+     */
     public function fork_of(): array
     {
         return $this->fork_of;
@@ -144,6 +145,9 @@ final class GistSimple
         return $this->comments_url;
     }
 
+    /**
+     * Simple User
+     */
     public function owner(): ?SimpleUser
     {
         return $this->owner;

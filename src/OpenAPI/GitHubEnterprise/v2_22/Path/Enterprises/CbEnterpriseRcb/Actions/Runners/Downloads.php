@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Enterprises\CbEnterpriseRcb\Actions\Runners;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\ListRunnerApplicationsForEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\ListRunnerApplicationsForEnterprise;
 
 final class Downloads
 {
-    function get($enterprise): ListRunnerApplicationsForEnterpriseOperation
+    function get($enterprise): ListRunnerApplicationsForEnterprise
     {
-        return new ListRunnerApplicationsForEnterpriseOperation($enterprise);
+        return new ListRunnerApplicationsForEnterprise($enterprise);
     }
 }

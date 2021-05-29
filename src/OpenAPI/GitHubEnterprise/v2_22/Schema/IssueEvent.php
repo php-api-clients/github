@@ -105,11 +105,17 @@ final class IssueEvent
         return $this->created_at;
     }
 
+    /**
+     * Issue Simple
+     */
     public function issue(): ?IssueSimple
     {
         return $this->issue;
     }
 
+    /**
+     * Issue Event Label
+     */
     public function label(): ?IssueEventLabel
     {
         return $this->label;
@@ -135,6 +141,9 @@ final class IssueEvent
         return $this->requested_reviewer;
     }
 
+    /**
+     * Groups of organization members that gives permissions on specified repositories.
+     */
     public function requested_team(): ?Team
     {
         return $this->requested_team;
@@ -145,21 +154,33 @@ final class IssueEvent
         return $this->dismissed_review;
     }
 
+    /**
+     * Issue Event Milestone
+     */
     public function milestone(): ?IssueEventMilestone
     {
         return $this->milestone;
     }
 
+    /**
+     * Issue Event Project Card
+     */
     public function project_card(): ?IssueEventProjectCard
     {
         return $this->project_card;
     }
 
+    /**
+     * Issue Event Rename
+     */
     public function rename(): ?IssueEventRename
     {
         return $this->rename;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

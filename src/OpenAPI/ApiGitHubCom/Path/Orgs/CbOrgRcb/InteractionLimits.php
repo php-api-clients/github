@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForOrgOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\RemoveRestrictionsForOrgOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\SetRestrictionsForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\RemoveRestrictionsForOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\SetRestrictionsForOrg;
 
 final class InteractionLimits
 {
-    function get($org): GetRestrictionsForOrgOperation
+    function get($org): GetRestrictionsForOrg
     {
-        return new GetRestrictionsForOrgOperation($org);
+        return new GetRestrictionsForOrg($org);
     }
 
-    function put($org): SetRestrictionsForOrgOperation
+    function put($org): SetRestrictionsForOrg
     {
-        return new SetRestrictionsForOrgOperation($org);
+        return new SetRestrictionsForOrg($org);
     }
 
-    function delete($org): RemoveRestrictionsForOrgOperation
+    function delete($org): RemoveRestrictionsForOrg
     {
-        return new RemoveRestrictionsForOrgOperation($org);
+        return new RemoveRestrictionsForOrg($org);
     }
 }

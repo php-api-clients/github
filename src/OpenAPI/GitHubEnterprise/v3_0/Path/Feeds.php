@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\GetFeedsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\GetFeeds;
 
 final class Feeds
 {
-    function get(): GetFeedsOperation
+    function get(): GetFeeds
     {
-        return new GetFeedsOperation();
+        return new GetFeeds();
     }
 }

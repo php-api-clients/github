@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Users\CbUsernameRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\CreateImpersonationOAuthTokenOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteImpersonationOAuthTokenOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\CreateImpersonationOAuthToken;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteImpersonationOAuthToken;
 
 final class Authorizations
 {
-    function post($username): CreateImpersonationOAuthTokenOperation
+    function post($username): CreateImpersonationOAuthToken
     {
-        return new CreateImpersonationOAuthTokenOperation($username);
+        return new CreateImpersonationOAuthToken($username);
     }
 
-    function delete($username): DeleteImpersonationOAuthTokenOperation
+    function delete($username): DeleteImpersonationOAuthToken
     {
-        return new DeleteImpersonationOAuthTokenOperation($username);
+        return new DeleteImpersonationOAuthToken($username);
     }
 }

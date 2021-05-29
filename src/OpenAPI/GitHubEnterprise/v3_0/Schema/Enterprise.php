@@ -34,6 +34,9 @@ final class Enterprise
     private ?string $updated_at = null;
     private ?string $avatar_url = null;
 
+    /**
+     * A short description of the enterprise.
+     */
     public function description(): ?string
     {
         return $this->description;
@@ -44,11 +47,17 @@ final class Enterprise
         return $this->html_url;
     }
 
+    /**
+     * The enterprise's website URL.
+     */
     public function website_url(): ?string
     {
         return $this->website_url;
     }
 
+    /**
+     * Unique identifier of the enterprise
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -59,11 +68,17 @@ final class Enterprise
         return $this->node_id;
     }
 
+    /**
+     * The name of the enterprise.
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * The slug url identifier for the enterprise.
+     */
     public function slug(): ?string
     {
         return $this->slug;

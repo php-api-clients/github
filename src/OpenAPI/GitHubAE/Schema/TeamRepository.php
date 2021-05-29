@@ -143,6 +143,9 @@ final class TeamRepository
     private ?int $watchers            = null;
     private ?string $master_branch    = null;
 
+    /**
+     * Unique identifier of the repository
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -153,6 +156,9 @@ final class TeamRepository
         return $this->node_id;
     }
 
+    /**
+     * The name of the repository.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -183,6 +189,9 @@ final class TeamRepository
         return $this->owner;
     }
 
+    /**
+     * Whether the repository is private or public.
+     */
     public function private(): ?bool
     {
         return $this->private;
@@ -443,6 +452,9 @@ final class TeamRepository
         return $this->size;
     }
 
+    /**
+     * The default branch of the repository.
+     */
     public function default_branch(): ?string
     {
         return $this->default_branch;
@@ -453,6 +465,9 @@ final class TeamRepository
         return $this->open_issues_count;
     }
 
+    /**
+     * Whether this repository acts as a template that can be used to generate new repositories.
+     */
     public function is_template(): ?bool
     {
         return $this->is_template;
@@ -463,16 +478,25 @@ final class TeamRepository
         return $this->topics;
     }
 
+    /**
+     * Whether issues are enabled.
+     */
     public function has_issues(): ?bool
     {
         return $this->has_issues;
     }
 
+    /**
+     * Whether projects are enabled.
+     */
     public function has_projects(): ?bool
     {
         return $this->has_projects;
     }
 
+    /**
+     * Whether the wiki is enabled.
+     */
     public function has_wiki(): ?bool
     {
         return $this->has_wiki;
@@ -483,21 +507,33 @@ final class TeamRepository
         return $this->has_pages;
     }
 
+    /**
+     * Whether downloads are enabled.
+     */
     public function has_downloads(): ?bool
     {
         return $this->has_downloads;
     }
 
+    /**
+     * Whether the repository is archived.
+     */
     public function archived(): ?bool
     {
         return $this->archived;
     }
 
+    /**
+     * Returns whether or not this repository disabled.
+     */
     public function disabled(): ?bool
     {
         return $this->disabled;
     }
 
+    /**
+     * The repository visibility: public, private, or internal.
+     */
     public function visibility(): ?string
     {
         return $this->visibility;
@@ -518,6 +554,9 @@ final class TeamRepository
         return $this->updated_at;
     }
 
+    /**
+     * Whether to allow rebase merges for pull requests.
+     */
     public function allow_rebase_merge(): ?bool
     {
         return $this->allow_rebase_merge;
@@ -533,16 +572,25 @@ final class TeamRepository
         return $this->temp_clone_token;
     }
 
+    /**
+     * Whether to allow squash merges for pull requests.
+     */
     public function allow_squash_merge(): ?bool
     {
         return $this->allow_squash_merge;
     }
 
+    /**
+     * Whether to delete head branches when pull requests are merged
+     */
     public function delete_branch_on_merge(): ?bool
     {
         return $this->delete_branch_on_merge;
     }
 
+    /**
+     * Whether to allow merge commits for pull requests.
+     */
     public function allow_merge_commit(): ?bool
     {
         return $this->allow_merge_commit;

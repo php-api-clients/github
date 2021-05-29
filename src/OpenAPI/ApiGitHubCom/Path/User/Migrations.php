@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListForAuthenticatedUserOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\StartForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListForAuthenticatedUser;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\StartForAuthenticatedUser;
 
 final class Migrations
 {
-    function get(int $per_page = 30, int $page = 1): ListForAuthenticatedUserOperation
+    function get(int $per_page = 30, int $page = 1): ListForAuthenticatedUser
     {
-        return new ListForAuthenticatedUserOperation($per_page, $page);
+        return new ListForAuthenticatedUser($per_page, $page);
     }
 
-    function post(): StartForAuthenticatedUserOperation
+    function post(): StartForAuthenticatedUser
     {
-        return new StartForAuthenticatedUserOperation();
+        return new StartForAuthenticatedUser();
     }
 }

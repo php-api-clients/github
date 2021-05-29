@@ -28,22 +28,10 @@ final class SimplePullRequest
     private $merged_at;
     private $merge_commit_sha;
     private $assignee;
-    /**
-     * @var array<User>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
     private array $assignees           = [];
     private array $requested_reviewers = [];
-    /**
-     * @var array<Team>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team::class)
-     */
-    private array $requested_teams = [];
-    /**
-     * @var array<Label>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
-     */
-    private array $labels = [];
+    private array $requested_teams     = [];
+    private array $labels              = [];
     private $milestone;
     private ?bool $draft                 = null;
     private ?string $commits_url         = null;
@@ -156,6 +144,9 @@ final class SimplePullRequest
         return $this->assignee;
     }
 
+    /**
+     * @return array<User>
+     */
     public function assignees(): array
     {
         return $this->assignees;
@@ -166,11 +157,17 @@ final class SimplePullRequest
         return $this->requested_reviewers;
     }
 
+    /**
+     * @return array<Team>
+     */
     public function requested_teams(): array
     {
         return $this->requested_teams;
     }
 
+    /**
+     * @return array<Label>
+     */
     public function labels(): array
     {
         return $this->labels;
@@ -226,6 +223,9 @@ final class SimplePullRequest
         return $this->_links;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

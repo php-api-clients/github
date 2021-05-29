@@ -34,6 +34,9 @@ final class ShortBranch
         return $this->protected;
     }
 
+    /**
+     * Branch Protection
+     */
     public function protection(): ?BranchProtection
     {
         return $this->protection;

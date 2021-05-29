@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Repos\CbOwnerRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\AddOrUpdateRepoPermissionsInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\CheckPermissionsForRepoInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\RemoveRepoInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\AddOrUpdateRepoPermissionsInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\CheckPermissionsForRepoInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\RemoveRepoInOrg;
 
 final class CbRepoRcb
 {
-    function get($org, $team_slug, $owner, $repo): CheckPermissionsForRepoInOrgOperation
+    function get($org, $team_slug, $owner, $repo): CheckPermissionsForRepoInOrg
     {
-        return new CheckPermissionsForRepoInOrgOperation($org, $team_slug, $owner, $repo);
+        return new CheckPermissionsForRepoInOrg($org, $team_slug, $owner, $repo);
     }
 
-    function put($org, $team_slug, $owner, $repo): AddOrUpdateRepoPermissionsInOrgOperation
+    function put($org, $team_slug, $owner, $repo): AddOrUpdateRepoPermissionsInOrg
     {
-        return new AddOrUpdateRepoPermissionsInOrgOperation($org, $team_slug, $owner, $repo);
+        return new AddOrUpdateRepoPermissionsInOrg($org, $team_slug, $owner, $repo);
     }
 
-    function delete($org, $team_slug, $owner, $repo): RemoveRepoInOrgOperation
+    function delete($org, $team_slug, $owner, $repo): RemoveRepoInOrg
     {
-        return new RemoveRepoInOrgOperation($org, $team_slug, $owner, $repo);
+        return new RemoveRepoInOrg($org, $team_slug, $owner, $repo);
     }
 }

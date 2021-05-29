@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\App\Installations;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteInstallationOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetInstallationOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteInstallation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetInstallation;
 
 final class CbInstallationIdRcb
 {
-    function get($installation_id): GetInstallationOperation
+    function get($installation_id): GetInstallation
     {
-        return new GetInstallationOperation($installation_id);
+        return new GetInstallation($installation_id);
     }
 
-    function delete($installation_id): DeleteInstallationOperation
+    function delete($installation_id): DeleteInstallation
     {
-        return new DeleteInstallationOperation($installation_id);
+        return new DeleteInstallation($installation_id);
     }
 }

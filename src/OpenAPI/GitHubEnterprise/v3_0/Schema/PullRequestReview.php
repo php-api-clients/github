@@ -34,6 +34,9 @@ final class PullRequestReview
      */
     private ?string $author_association = null;
 
+    /**
+     * Unique identifier of the review
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -49,6 +52,9 @@ final class PullRequestReview
         return $this->user;
     }
 
+    /**
+     * The text of the review.
+     */
     public function body(): ?string
     {
         return $this->body;
@@ -79,6 +85,9 @@ final class PullRequestReview
         return $this->submitted_at;
     }
 
+    /**
+     * A commit SHA for the review.
+     */
     public function commit_id(): ?string
     {
         return $this->commit_id;
@@ -94,6 +103,9 @@ final class PullRequestReview
         return $this->body_text;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

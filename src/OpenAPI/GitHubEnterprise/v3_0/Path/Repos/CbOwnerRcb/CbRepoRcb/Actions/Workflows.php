@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\ListRepoWorkflowsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\ListRepoWorkflows;
 
 final class Workflows
 {
-    function get($owner, $repo, int $per_page = 30, int $page = 1): ListRepoWorkflowsOperation
+    function get($owner, $repo, int $per_page = 30, int $page = 1): ListRepoWorkflows
     {
-        return new ListRepoWorkflowsOperation($owner, $repo, $per_page, $page);
+        return new ListRepoWorkflows($owner, $repo, $per_page, $page);
     }
 }

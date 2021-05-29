@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateDeployKeyOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListDeployKeysOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateDeployKey;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListDeployKeys;
 
 final class Keys
 {
-    function get($owner, $repo, int $per_page = 30, int $page = 1): ListDeployKeysOperation
+    function get($owner, $repo, int $per_page = 30, int $page = 1): ListDeployKeys
     {
-        return new ListDeployKeysOperation($owner, $repo, $per_page, $page);
+        return new ListDeployKeys($owner, $repo, $per_page, $page);
     }
 
-    function post($owner, $repo): CreateDeployKeyOperation
+    function post($owner, $repo): CreateDeployKey
     {
-        return new CreateDeployKeyOperation($owner, $repo);
+        return new CreateDeployKey($owner, $repo);
     }
 }

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\App\Installations\CbInstallationIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Apps\CreateInstallationAccessTokenOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Apps\CreateInstallationAccessToken;
 
 final class AccessTokens
 {
-    function post($installation_id): CreateInstallationAccessTokenOperation
+    function post($installation_id): CreateInstallationAccessToken
     {
-        return new CreateInstallationAccessTokenOperation($installation_id);
+        return new CreateInstallationAccessToken($installation_id);
     }
 }

@@ -8,14 +8,10 @@ use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\MaintenanceSt
 
 final class MaintenanceStatus
 {
-    public const SCHEMA_TITLE       = 'maintenance-status';
-    public const SCHEMA_DESCRIPTION = '';
-    private ?string $status         = null;
-    private ?string $scheduled_time = null;
-    /**
-     * @var array<ConnectionServices>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\MaintenanceStatus\ConnectionServices::class)
-     */
+    public const SCHEMA_TITLE          = 'maintenance-status';
+    public const SCHEMA_DESCRIPTION    = '';
+    private ?string $status            = null;
+    private ?string $scheduled_time    = null;
     private array $connection_services = [];
 
     public function status(): ?string
@@ -28,6 +24,9 @@ final class MaintenanceStatus
         return $this->scheduled_time;
     }
 
+    /**
+     * @return array<ConnectionServices>
+     */
     public function connection_services(): array
     {
         return $this->connection_services;

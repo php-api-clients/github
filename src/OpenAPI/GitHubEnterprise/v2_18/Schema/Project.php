@@ -69,11 +69,17 @@ final class Project
         return $this->node_id;
     }
 
+    /**
+     * Name of the project
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Body of the project
+     */
     public function body(): ?string
     {
         return $this->body;
@@ -84,6 +90,9 @@ final class Project
         return $this->number;
     }
 
+    /**
+     * State of the project; either 'open' or 'closed'
+     */
     public function state(): ?string
     {
         return $this->state;
@@ -104,11 +113,17 @@ final class Project
         return $this->updated_at;
     }
 
+    /**
+     * The baseline permission that all organization members have on this project. Only present if owner is an organization.
+     */
     public function organization_permission(): ?string
     {
         return $this->organization_permission;
     }
 
+    /**
+     * Whether or not this project can be seen by everyone. Only present if owner is an organization.
+     */
     public function private(): ?bool
     {
         return $this->private;

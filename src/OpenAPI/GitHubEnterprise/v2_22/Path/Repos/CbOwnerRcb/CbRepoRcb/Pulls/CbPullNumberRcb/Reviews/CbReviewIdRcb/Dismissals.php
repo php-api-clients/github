@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Reviews\CbReviewIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Pulls\DismissReviewOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Pulls\DismissReview;
 
 final class Dismissals
 {
-    function put($owner, $repo, $pull_number, $review_id): DismissReviewOperation
+    function put($owner, $repo, $pull_number, $review_id): DismissReview
     {
-        return new DismissReviewOperation($owner, $repo, $pull_number, $review_id);
+        return new DismissReview($owner, $repo, $pull_number, $review_id);
     }
 }

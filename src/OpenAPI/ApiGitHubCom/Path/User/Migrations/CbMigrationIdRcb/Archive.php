@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Migrations\CbMigrationIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DeleteArchiveForAuthenticatedUserOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetArchiveForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DeleteArchiveForAuthenticatedUser;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetArchiveForAuthenticatedUser;
 
 final class Archive
 {
-    function get($migration_id): GetArchiveForAuthenticatedUserOperation
+    function get($migration_id): GetArchiveForAuthenticatedUser
     {
-        return new GetArchiveForAuthenticatedUserOperation($migration_id);
+        return new GetArchiveForAuthenticatedUser($migration_id);
     }
 
-    function delete($migration_id): DeleteArchiveForAuthenticatedUserOperation
+    function delete($migration_id): DeleteArchiveForAuthenticatedUser
     {
-        return new DeleteArchiveForAuthenticatedUserOperation($migration_id);
+        return new DeleteArchiveForAuthenticatedUser($migration_id);
     }
 }

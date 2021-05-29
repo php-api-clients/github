@@ -38,6 +38,9 @@ final class Installation
     private $suspended_by;
     private $suspended_at;
 
+    /**
+     * The ID of the installation.
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -48,6 +51,9 @@ final class Installation
         return $this->account;
     }
 
+    /**
+     * Describe whether all repositories have been selected or there's a selection involved
+     */
     public function repository_selection(): ?string
     {
         return $this->repository_selection;
@@ -78,6 +84,9 @@ final class Installation
         return $this->app_slug;
     }
 
+    /**
+     * The ID of the user or organization this token is being scoped to.
+     */
     public function target_id(): ?int
     {
         return $this->target_id;

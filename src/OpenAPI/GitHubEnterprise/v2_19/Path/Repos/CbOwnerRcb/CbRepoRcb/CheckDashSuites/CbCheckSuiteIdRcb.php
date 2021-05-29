@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\CheckDashSuites;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Checks\GetSuiteOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Checks\GetSuite;
 
 final class CbCheckSuiteIdRcb
 {
-    function get($owner, $repo, $check_suite_id): GetSuiteOperation
+    function get($owner, $repo, $check_suite_id): GetSuite
     {
-        return new GetSuiteOperation($owner, $repo, $check_suite_id);
+        return new GetSuite($owner, $repo, $check_suite_id);
     }
 }

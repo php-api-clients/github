@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Releases\CbReleaseIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Reactions\CreateForReleaseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Reactions\CreateForRelease;
 
 final class Reactions
 {
-    function post($owner, $repo, $release_id): CreateForReleaseOperation
+    function post($owner, $repo, $release_id): CreateForRelease
     {
-        return new CreateForReleaseOperation($owner, $repo, $release_id);
+        return new CreateForRelease($owner, $repo, $release_id);
     }
 }

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Meta\GetOctocatOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Meta\GetOctocat;
 
 final class Octocat
 {
-    function get($s): GetOctocatOperation
+    function get($s): GetOctocat
     {
-        return new GetOctocatOperation($s);
+        return new GetOctocat($s);
     }
 }

@@ -45,11 +45,17 @@ final class CommitSimple
         return $this->timestamp;
     }
 
+    /**
+     * Metaproperties for Git author/committer information.
+     */
     public function author(): ?Committer
     {
         return $this->author;
     }
 
+    /**
+     * Metaproperties for Git author/committer information.
+     */
     public function committer(): ?Committer
     {
         return $this->committer;

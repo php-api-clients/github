@@ -34,6 +34,9 @@ final class ProtectedBranch
         return $this->url;
     }
 
+    /**
+     * Status Check Policy
+     */
     public function required_status_checks(): ?StatusCheckPolicy
     {
         return $this->required_status_checks;
@@ -69,6 +72,9 @@ final class ProtectedBranch
         return $this->allow_deletions;
     }
 
+    /**
+     * Branch Restriction Policy
+     */
     public function restrictions(): ?BranchRestrictionPolicy
     {
         return $this->restrictions;

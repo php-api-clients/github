@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Teams\CbTeamIdRcb\TeamDashSync;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CreateOrUpdateIdpGroupConnectionsLegacyOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListIdpGroupsForLegacyOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CreateOrUpdateIdpGroupConnectionsLegacy;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListIdpGroupsForLegacy;
 
 final class GroupDashMappings
 {
-    function get($team_id): ListIdpGroupsForLegacyOperation
+    function get($team_id): ListIdpGroupsForLegacy
     {
-        return new ListIdpGroupsForLegacyOperation($team_id);
+        return new ListIdpGroupsForLegacy($team_id);
     }
 
-    function patch($team_id): CreateOrUpdateIdpGroupConnectionsLegacyOperation
+    function patch($team_id): CreateOrUpdateIdpGroupConnectionsLegacy
     {
-        return new CreateOrUpdateIdpGroupConnectionsLegacyOperation($team_id);
+        return new CreateOrUpdateIdpGroupConnectionsLegacy($team_id);
     }
 }

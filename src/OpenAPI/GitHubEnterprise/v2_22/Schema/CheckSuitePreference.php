@@ -21,6 +21,9 @@ final class CheckSuitePreference
         return $this->preferences;
     }
 
+    /**
+     * Minimal Repository
+     */
     public function repository(): ?MinimalRepository
     {
         return $this->repository;

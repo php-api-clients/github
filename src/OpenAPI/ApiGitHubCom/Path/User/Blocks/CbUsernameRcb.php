@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Blocks;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\BlockOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckBlockedOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\UnblockOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Block;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckBlocked;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Unblock;
 
 final class CbUsernameRcb
 {
-    function get($username): CheckBlockedOperation
+    function get($username): CheckBlocked
     {
-        return new CheckBlockedOperation($username);
+        return new CheckBlocked($username);
     }
 
-    function put($username): BlockOperation
+    function put($username): Block
     {
-        return new BlockOperation($username);
+        return new Block($username);
     }
 
-    function delete($username): UnblockOperation
+    function delete($username): Unblock
     {
-        return new UnblockOperation($username);
+        return new Unblock($username);
     }
 }

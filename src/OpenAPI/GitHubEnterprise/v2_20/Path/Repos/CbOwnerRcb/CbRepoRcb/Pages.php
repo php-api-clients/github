@@ -4,30 +4,30 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\CreatePagesSiteOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeletePagesSiteOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetPagesOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\UpdateInformationAboutPagesSiteOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\CreatePagesSite;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeletePagesSite;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetPages;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\UpdateInformationAboutPagesSite;
 
 final class Pages
 {
-    function get($owner, $repo): GetPagesOperation
+    function get($owner, $repo): GetPages
     {
-        return new GetPagesOperation($owner, $repo);
+        return new GetPages($owner, $repo);
     }
 
-    function put($owner, $repo): UpdateInformationAboutPagesSiteOperation
+    function put($owner, $repo): UpdateInformationAboutPagesSite
     {
-        return new UpdateInformationAboutPagesSiteOperation($owner, $repo);
+        return new UpdateInformationAboutPagesSite($owner, $repo);
     }
 
-    function post($owner, $repo): CreatePagesSiteOperation
+    function post($owner, $repo): CreatePagesSite
     {
-        return new CreatePagesSiteOperation($owner, $repo);
+        return new CreatePagesSite($owner, $repo);
     }
 
-    function delete($owner, $repo): DeletePagesSiteOperation
+    function delete($owner, $repo): DeletePagesSite
     {
-        return new DeletePagesSiteOperation($owner, $repo);
+        return new DeletePagesSite($owner, $repo);
     }
 }

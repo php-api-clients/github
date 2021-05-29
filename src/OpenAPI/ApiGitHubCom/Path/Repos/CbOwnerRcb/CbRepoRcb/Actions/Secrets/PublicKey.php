@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Secrets;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoPublicKeyOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoPublicKey;
 
 final class PublicKey
 {
-    function get($owner, $repo): GetRepoPublicKeyOperation
+    function get($owner, $repo): GetRepoPublicKey
     {
-        return new GetRepoPublicKeyOperation($owner, $repo);
+        return new GetRepoPublicKey($owner, $repo);
     }
 }

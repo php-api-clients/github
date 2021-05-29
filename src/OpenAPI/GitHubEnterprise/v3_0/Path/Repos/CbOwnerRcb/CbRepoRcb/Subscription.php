@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\DeleteRepoSubscriptionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\GetRepoSubscriptionOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\SetRepoSubscriptionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\DeleteRepoSubscription;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\GetRepoSubscription;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Activity\SetRepoSubscription;
 
 final class Subscription
 {
-    function get($owner, $repo): GetRepoSubscriptionOperation
+    function get($owner, $repo): GetRepoSubscription
     {
-        return new GetRepoSubscriptionOperation($owner, $repo);
+        return new GetRepoSubscription($owner, $repo);
     }
 
-    function put($owner, $repo): SetRepoSubscriptionOperation
+    function put($owner, $repo): SetRepoSubscription
     {
-        return new SetRepoSubscriptionOperation($owner, $repo);
+        return new SetRepoSubscription($owner, $repo);
     }
 
-    function delete($owner, $repo): DeleteRepoSubscriptionOperation
+    function delete($owner, $repo): DeleteRepoSubscription
     {
-        return new DeleteRepoSubscriptionOperation($owner, $repo);
+        return new DeleteRepoSubscription($owner, $repo);
     }
 }

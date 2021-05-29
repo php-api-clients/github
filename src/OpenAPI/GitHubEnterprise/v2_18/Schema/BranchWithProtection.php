@@ -32,6 +32,9 @@ final class BranchWithProtection
         return $this->name;
     }
 
+    /**
+     * Commit
+     */
     public function commit(): ?Commit
     {
         return $this->commit;
@@ -47,6 +50,9 @@ final class BranchWithProtection
         return $this->protected;
     }
 
+    /**
+     * Branch Protection
+     */
     public function protection(): ?BranchProtection
     {
         return $this->protection;

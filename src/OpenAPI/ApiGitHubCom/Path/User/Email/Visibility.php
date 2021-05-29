@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Email;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\SetPrimaryEmailVisibilityForAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\SetPrimaryEmailVisibilityForAuthenticated;
 
 final class Visibility
 {
-    function patch(): SetPrimaryEmailVisibilityForAuthenticatedOperation
+    function patch(): SetPrimaryEmailVisibilityForAuthenticated
     {
-        return new SetPrimaryEmailVisibilityForAuthenticatedOperation();
+        return new SetPrimaryEmailVisibilityForAuthenticated();
     }
 }

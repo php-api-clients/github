@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Secrets;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\CreateOrUpdateRepoSecretOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteRepoSecretOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\GetRepoSecretOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\CreateOrUpdateRepoSecret;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteRepoSecret;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\GetRepoSecret;
 
 final class CbSecretNameRcb
 {
-    function get($owner, $repo, $secret_name): GetRepoSecretOperation
+    function get($owner, $repo, $secret_name): GetRepoSecret
     {
-        return new GetRepoSecretOperation($owner, $repo, $secret_name);
+        return new GetRepoSecret($owner, $repo, $secret_name);
     }
 
-    function put($owner, $repo, $secret_name): CreateOrUpdateRepoSecretOperation
+    function put($owner, $repo, $secret_name): CreateOrUpdateRepoSecret
     {
-        return new CreateOrUpdateRepoSecretOperation($owner, $repo, $secret_name);
+        return new CreateOrUpdateRepoSecret($owner, $repo, $secret_name);
     }
 
-    function delete($owner, $repo, $secret_name): DeleteRepoSecretOperation
+    function delete($owner, $repo, $secret_name): DeleteRepoSecret
     {
-        return new DeleteRepoSecretOperation($owner, $repo, $secret_name);
+        return new DeleteRepoSecret($owner, $repo, $secret_name);
     }
 }

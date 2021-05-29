@@ -14,11 +14,7 @@ final class ScimGroupListEnterprise
     private ?number $totalResults   = null;
     private ?number $itemsPerPage   = null;
     private ?number $startIndex     = null;
-    /**
-     * @var array<Resources>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ScimGroupListEnterprise\Resources::class)
-     */
-    private array $Resources = [];
+    private array $Resources        = [];
 
     public function schemas(): array
     {
@@ -40,6 +36,9 @@ final class ScimGroupListEnterprise
         return $this->startIndex;
     }
 
+    /**
+     * @return array<Resources>
+     */
     public function Resources(): array
     {
         return $this->Resources;

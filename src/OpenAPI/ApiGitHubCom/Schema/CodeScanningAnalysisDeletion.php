@@ -17,11 +17,17 @@ final class CodeScanningAnalysisDeletion
      */
     private ?string $confirm_delete_url = null;
 
+    /**
+     * Next deletable analysis in chain, without last analysis deletion confirmation
+     */
     public function next_analysis_url(): ?string
     {
         return $this->next_analysis_url;
     }
 
+    /**
+     * Next deletable analysis in chain, with last analysis deletion confirmation
+     */
     public function confirm_delete_url(): ?string
     {
         return $this->confirm_delete_url;

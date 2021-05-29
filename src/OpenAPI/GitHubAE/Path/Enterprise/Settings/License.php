@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Enterprise\Settings;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetLicenseInformationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetLicenseInformation;
 
 final class License
 {
-    function get(): GetLicenseInformationOperation
+    function get(): GetLicenseInformation
     {
-        return new GetLicenseInformationOperation();
+        return new GetLicenseInformation();
     }
 }

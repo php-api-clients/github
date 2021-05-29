@@ -37,11 +37,17 @@ final class App
      */
     private array $events = [];
 
+    /**
+     * Unique identifier of the GitHub app
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The slug name of the GitHub app
+     */
     public function slug(): ?string
     {
         return $this->slug;
@@ -57,6 +63,9 @@ final class App
         return $this->owner;
     }
 
+    /**
+     * The name of the GitHub app
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -87,11 +96,17 @@ final class App
         return $this->updated_at;
     }
 
+    /**
+     * The set of permissions for the GitHub app
+     */
     public function permissions(): array
     {
         return $this->permissions;
     }
 
+    /**
+     * The list of events for the GitHub app
+     */
     public function events(): array
     {
         return $this->events;

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Repos\CbOwnerRcb\CbRepoRcb\Git\Refs;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Git\DeleteRefOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Git\UpdateRefOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Git\DeleteRef;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Git\UpdateRef;
 
 final class CbRefRcb
 {
-    function delete($owner, $repo, $ref): DeleteRefOperation
+    function delete($owner, $repo, $ref): DeleteRef
     {
-        return new DeleteRefOperation($owner, $repo, $ref);
+        return new DeleteRef($owner, $repo, $ref);
     }
 
-    function patch($owner, $repo, $ref): UpdateRefOperation
+    function patch($owner, $repo, $ref): UpdateRef
     {
-        return new UpdateRefOperation($owner, $repo, $ref);
+        return new UpdateRef($owner, $repo, $ref);
     }
 }

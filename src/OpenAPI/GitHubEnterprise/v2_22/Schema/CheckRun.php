@@ -43,11 +43,17 @@ final class CheckRun
      */
     private ?DeploymentSimple $deployment = null;
 
+    /**
+     * The id of the check.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The SHA of the commit that is being checked.
+     */
     public function head_sha(): ?string
     {
         return $this->head_sha;
@@ -78,6 +84,9 @@ final class CheckRun
         return $this->details_url;
     }
 
+    /**
+     * The phase of the lifecycle that the check is currently in.
+     */
     public function status(): ?string
     {
         return $this->status;
@@ -103,6 +112,9 @@ final class CheckRun
         return $this->output;
     }
 
+    /**
+     * The name of the check.
+     */
     public function name(): ?string
     {
         return $this->name;
@@ -123,6 +135,9 @@ final class CheckRun
         return $this->pull_requests;
     }
 
+    /**
+     * A deployment created as the result of an Actions check run from a workflow that references an environment
+     */
     public function deployment(): ?DeploymentSimple
     {
         return $this->deployment;

@@ -6,16 +6,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 
 final class InstallationToken
 {
-    public const SCHEMA_TITLE             = 'Installation Token';
-    public const SCHEMA_DESCRIPTION       = 'Authentication token for a GitHub App installed on a user or org.';
-    private ?string $token                = null;
-    private ?string $expires_at           = null;
-    private array $permissions            = [];
-    private ?string $repository_selection = null;
-    /**
-     * @var array<Repository>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\Repository::class)
-     */
+    public const SCHEMA_TITLE                = 'Installation Token';
+    public const SCHEMA_DESCRIPTION          = 'Authentication token for a GitHub App installed on a user or org.';
+    private ?string $token                   = null;
+    private ?string $expires_at              = null;
+    private array $permissions               = [];
+    private ?string $repository_selection    = null;
     private array $repositories              = [];
     private ?string $single_file             = null;
     private ?bool $has_multiple_single_files = null;
@@ -41,6 +37,9 @@ final class InstallationToken
         return $this->repository_selection;
     }
 
+    /**
+     * @return array<Repository>
+     */
     public function repositories(): array
     {
         return $this->repositories;

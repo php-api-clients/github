@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Git;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Git\CreateCommitOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Git\CreateCommit;
 
 final class Commits
 {
-    function post($owner, $repo): CreateCommitOperation
+    function post($owner, $repo): CreateCommit
     {
-        return new CreateCommitOperation($owner, $repo);
+        return new CreateCommit($owner, $repo);
     }
 }

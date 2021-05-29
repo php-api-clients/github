@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Permissions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\GetAllowedActionsRepositoryOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\SetAllowedActionsRepositoryOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\GetAllowedActionsRepository;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\SetAllowedActionsRepository;
 
 final class SelectedActions
 {
-    function get($owner, $repo): GetAllowedActionsRepositoryOperation
+    function get($owner, $repo): GetAllowedActionsRepository
     {
-        return new GetAllowedActionsRepositoryOperation($owner, $repo);
+        return new GetAllowedActionsRepository($owner, $repo);
     }
 
-    function put($owner, $repo): SetAllowedActionsRepositoryOperation
+    function put($owner, $repo): SetAllowedActionsRepository
     {
-        return new SetAllowedActionsRepositoryOperation($owner, $repo);
+        return new SetAllowedActionsRepository($owner, $repo);
     }
 }

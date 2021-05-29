@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CreatePublicSshKeyForAuthenticatedOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicSshKeysForAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CreatePublicSshKeyForAuthenticated;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicSshKeysForAuthenticated;
 
 final class Keys
 {
-    function get(int $per_page = 30, int $page = 1): ListPublicSshKeysForAuthenticatedOperation
+    function get(int $per_page = 30, int $page = 1): ListPublicSshKeysForAuthenticated
     {
-        return new ListPublicSshKeysForAuthenticatedOperation($per_page, $page);
+        return new ListPublicSshKeysForAuthenticated($per_page, $page);
     }
 
-    function post(): CreatePublicSshKeyForAuthenticatedOperation
+    function post(): CreatePublicSshKeyForAuthenticated
     {
-        return new CreatePublicSshKeyForAuthenticatedOperation();
+        return new CreatePublicSshKeyForAuthenticated();
     }
 }

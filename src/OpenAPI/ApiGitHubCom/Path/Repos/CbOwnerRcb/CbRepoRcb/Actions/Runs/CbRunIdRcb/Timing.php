@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetWorkflowRunUsageOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetWorkflowRunUsage;
 
 final class Timing
 {
-    function get($owner, $repo, $run_id): GetWorkflowRunUsageOperation
+    function get($owner, $repo, $run_id): GetWorkflowRunUsage
     {
-        return new GetWorkflowRunUsageOperation($owner, $repo, $run_id);
+        return new GetWorkflowRunUsage($owner, $repo, $run_id);
     }
 }

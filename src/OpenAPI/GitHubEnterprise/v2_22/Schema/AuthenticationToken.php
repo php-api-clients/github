@@ -19,9 +19,6 @@ final class AuthenticationToken
     private array $permissions  = [];
     /**
      * The repositories this token has access to
-     *
-     * @var array<Repository>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema\Repository::class)
      */
     private array $repositories  = [];
     private ?string $single_file = null;
@@ -30,11 +27,17 @@ final class AuthenticationToken
      */
     private ?string $repository_selection = null;
 
+    /**
+     * The token used for authentication
+     */
     public function token(): ?string
     {
         return $this->token;
     }
 
+    /**
+     * The time this token expires
+     */
     public function expires_at(): ?string
     {
         return $this->expires_at;
@@ -45,6 +48,11 @@ final class AuthenticationToken
         return $this->permissions;
     }
 
+    /**
+     * The repositories this token has access to
+     *
+     * @return array<Repository>
+     */
     public function repositories(): array
     {
         return $this->repositories;
@@ -55,6 +63,9 @@ final class AuthenticationToken
         return $this->single_file;
     }
 
+    /**
+     * Describe whether all repositories have been selected or there's a selection involved
+     */
     public function repository_selection(): ?string
     {
         return $this->repository_selection;

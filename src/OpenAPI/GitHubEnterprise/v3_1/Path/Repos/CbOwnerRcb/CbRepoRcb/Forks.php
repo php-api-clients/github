@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\CreateForkOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\ListForksOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\CreateFork;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\ListForks;
 
 final class Forks
 {
-    function get($owner, $repo, string $sort = 'newest', int $per_page = 30, int $page = 1): ListForksOperation
+    function get($owner, $repo, string $sort = 'newest', int $per_page = 30, int $page = 1): ListForks
     {
-        return new ListForksOperation($owner, $repo, $sort, $per_page, $page);
+        return new ListForks($owner, $repo, $sort, $per_page, $page);
     }
 
-    function post($owner, $repo): CreateForkOperation
+    function post($owner, $repo): CreateFork
     {
-        return new CreateForkOperation($owner, $repo);
+        return new CreateFork($owner, $repo);
     }
 }

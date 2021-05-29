@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Gists\CbGistIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Gists\ListCommitsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Gists\ListCommits;
 
 final class Commits
 {
-    function get($gist_id, int $per_page = 30, int $page = 1): ListCommitsOperation
+    function get($gist_id, int $per_page = 30, int $page = 1): ListCommits
     {
-        return new ListCommitsOperation($gist_id, $per_page, $page);
+        return new ListCommits($gist_id, $per_page, $page);
     }
 }

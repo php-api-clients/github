@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Users\CbUsernameRcb\Settings\Billing;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubPackagesBillingUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubPackagesBillingUser;
 
 final class Packages
 {
-    function get($username): GetGithubPackagesBillingUserOperation
+    function get($username): GetGithubPackagesBillingUser
     {
-        return new GetGithubPackagesBillingUserOperation($username);
+        return new GetGithubPackagesBillingUser($username);
     }
 }

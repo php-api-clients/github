@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListAppInstallationsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListAppInstallations;
 
 final class Installations
 {
-    function get($org, int $per_page = 30, int $page = 1): ListAppInstallationsOperation
+    function get($org, int $per_page = 30, int $page = 1): ListAppInstallations
     {
-        return new ListAppInstallationsOperation($org, $per_page, $page);
+        return new ListAppInstallations($org, $per_page, $page);
     }
 }

@@ -31,6 +31,9 @@ final class ProjectCard
         return $this->url;
     }
 
+    /**
+     * The project card's ID
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -61,6 +64,9 @@ final class ProjectCard
         return $this->updated_at;
     }
 
+    /**
+     * Whether or not the card is archived
+     */
     public function archived(): ?bool
     {
         return $this->archived;

@@ -29,26 +29,41 @@ final class Groups
      */
     private ?string $synced_at = null;
 
+    /**
+     * The ID of the group
+     */
     public function group_id(): ?string
     {
         return $this->group_id;
     }
 
+    /**
+     * The name of the group
+     */
     public function group_name(): ?string
     {
         return $this->group_name;
     }
 
+    /**
+     * a description of the group
+     */
     public function group_description(): ?string
     {
         return $this->group_description;
     }
 
+    /**
+     * synchronization status for this group mapping
+     */
     public function status(): ?string
     {
         return $this->status;
     }
 
+    /**
+     * the time of the last sync for this group-mapping
+     */
     public function synced_at(): ?string
     {
         return $this->synced_at;

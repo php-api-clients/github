@@ -35,6 +35,9 @@ final class PersonalAccessToken
         return $this->url;
     }
 
+    /**
+     * A list of scopes that this authorization is in.
+     */
     public function scopes(): array
     {
         return $this->scopes;

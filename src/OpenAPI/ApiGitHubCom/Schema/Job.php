@@ -48,18 +48,21 @@ final class Job
     private ?string $name = null;
     /**
      * Steps in this job.
-     *
-     * @var array<Steps>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps::class)
      */
     private array $steps           = [];
     private ?string $check_run_url = null;
 
+    /**
+     * The id of the job.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The id of the associated workflow run.
+     */
     public function run_id(): ?int
     {
         return $this->run_id;
@@ -75,6 +78,9 @@ final class Job
         return $this->node_id;
     }
 
+    /**
+     * The SHA of the commit that is being run.
+     */
     public function head_sha(): ?string
     {
         return $this->head_sha;
@@ -90,31 +96,51 @@ final class Job
         return $this->html_url;
     }
 
+    /**
+     * The phase of the lifecycle that the job is currently in.
+     */
     public function status(): ?string
     {
         return $this->status;
     }
 
+    /**
+     * The outcome of the job.
+     */
     public function conclusion(): ?string
     {
         return $this->conclusion;
     }
 
+    /**
+     * The time that the job started, in ISO 8601 format.
+     */
     public function started_at(): ?string
     {
         return $this->started_at;
     }
 
+    /**
+     * The time that the job finished, in ISO 8601 format.
+     */
     public function completed_at(): ?string
     {
         return $this->completed_at;
     }
 
+    /**
+     * The name of the job.
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Steps in this job.
+     *
+     * @return array<Steps>
+     */
     public function steps(): array
     {
         return $this->steps;

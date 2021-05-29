@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\DeleteDiscussionCommentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\GetDiscussionCommentOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\UpdateDiscussionCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\DeleteDiscussionComment;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\GetDiscussionComment;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\UpdateDiscussionComment;
 
 final class CbCommentNumberRcb
 {
-    function get($team_id, $discussion_number, $comment_number): GetDiscussionCommentOperation
+    function get($team_id, $discussion_number, $comment_number): GetDiscussionComment
     {
-        return new GetDiscussionCommentOperation($team_id, $discussion_number, $comment_number);
+        return new GetDiscussionComment($team_id, $discussion_number, $comment_number);
     }
 
-    function delete($team_id, $discussion_number, $comment_number): DeleteDiscussionCommentOperation
+    function delete($team_id, $discussion_number, $comment_number): DeleteDiscussionComment
     {
-        return new DeleteDiscussionCommentOperation($team_id, $discussion_number, $comment_number);
+        return new DeleteDiscussionComment($team_id, $discussion_number, $comment_number);
     }
 
-    function patch($team_id, $discussion_number, $comment_number): UpdateDiscussionCommentOperation
+    function patch($team_id, $discussion_number, $comment_number): UpdateDiscussionComment
     {
-        return new UpdateDiscussionCommentOperation($team_id, $discussion_number, $comment_number);
+        return new UpdateDiscussionComment($team_id, $discussion_number, $comment_number);
     }
 }

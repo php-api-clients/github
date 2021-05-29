@@ -37,6 +37,9 @@ final class TeamDiscussionComment
         return $this->author;
     }
 
+    /**
+     * The main text of the comment.
+     */
     public function body(): ?string
     {
         return $this->body;
@@ -47,6 +50,9 @@ final class TeamDiscussionComment
         return $this->body_html;
     }
 
+    /**
+     * The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
+     */
     public function body_version(): ?string
     {
         return $this->body_version;
@@ -77,6 +83,9 @@ final class TeamDiscussionComment
         return $this->node_id;
     }
 
+    /**
+     * The unique sequence number of a team discussion comment.
+     */
     public function number(): ?int
     {
         return $this->number;

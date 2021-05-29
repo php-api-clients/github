@@ -27,21 +27,33 @@ final class AutoMerge
      */
     private ?string $commit_message = null;
 
+    /**
+     * Simple User
+     */
     public function enabled_by(): ?SimpleUser
     {
         return $this->enabled_by;
     }
 
+    /**
+     * The merge method to use.
+     */
     public function merge_method(): ?string
     {
         return $this->merge_method;
     }
 
+    /**
+     * Title for the merge commit message.
+     */
     public function commit_title(): ?string
     {
         return $this->commit_title;
     }
 
+    /**
+     * Commit message for the merge commit.
+     */
     public function commit_message(): ?string
     {
         return $this->commit_message;

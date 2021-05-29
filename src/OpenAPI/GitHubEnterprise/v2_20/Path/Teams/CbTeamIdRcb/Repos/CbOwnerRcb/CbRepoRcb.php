@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Teams\CbTeamIdRcb\Repos\CbOwnerRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\AddOrUpdateRepoPermissionsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\CheckPermissionsForRepoOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\RemoveRepoOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\AddOrUpdateRepoPermissions;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\CheckPermissionsForRepo;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Teams\RemoveRepo;
 
 final class CbRepoRcb
 {
-    function get($team_id, $owner, $repo): CheckPermissionsForRepoOperation
+    function get($team_id, $owner, $repo): CheckPermissionsForRepo
     {
-        return new CheckPermissionsForRepoOperation($team_id, $owner, $repo);
+        return new CheckPermissionsForRepo($team_id, $owner, $repo);
     }
 
-    function put($team_id, $owner, $repo): AddOrUpdateRepoPermissionsOperation
+    function put($team_id, $owner, $repo): AddOrUpdateRepoPermissions
     {
-        return new AddOrUpdateRepoPermissionsOperation($team_id, $owner, $repo);
+        return new AddOrUpdateRepoPermissions($team_id, $owner, $repo);
     }
 
-    function delete($team_id, $owner, $repo): RemoveRepoOperation
+    function delete($team_id, $owner, $repo): RemoveRepo
     {
-        return new RemoveRepoOperation($team_id, $owner, $repo);
+        return new RemoveRepo($team_id, $owner, $repo);
     }
 }

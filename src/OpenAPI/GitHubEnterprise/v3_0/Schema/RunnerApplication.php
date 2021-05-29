@@ -38,6 +38,9 @@ final class RunnerApplication
         return $this->filename;
     }
 
+    /**
+     * A short lived bearer token used to download the runner, if needed.
+     */
     public function temp_download_token(): ?string
     {
         return $this->temp_download_token;

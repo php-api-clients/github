@@ -38,6 +38,9 @@ final class ProjectColumn
         return $this->cards_url;
     }
 
+    /**
+     * The unique identifier of the project column
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -48,6 +51,9 @@ final class ProjectColumn
         return $this->node_id;
     }
 
+    /**
+     * Name of the project column
+     */
     public function name(): ?string
     {
         return $this->name;

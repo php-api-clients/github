@@ -25,11 +25,7 @@ final class Issue
      */
     private ?string $title = null;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private ?User $user = null;
-    /**
-     * @var array<Label>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
-     */
+    private ?User $user   = null;
     private array $labels = [];
     /**
      * State of the issue; either 'open' or 'closed'
@@ -37,10 +33,6 @@ final class Issue
     private ?string $state = null;
     private ?bool $locked  = null;
     private $assignee;
-    /**
-     * @var array<User>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
     private array $assignees = [];
     private $milestone;
     private ?int $comments      = null;
@@ -59,6 +51,9 @@ final class Issue
      */
     private $body;
 
+    /**
+     * URL for the issue
+     */
     public function url(): ?string
     {
         return $this->url;
@@ -104,6 +99,9 @@ final class Issue
         return $this->number;
     }
 
+    /**
+     * Title of the issue
+     */
     public function title(): ?string
     {
         return $this->title;
@@ -114,11 +112,17 @@ final class Issue
         return $this->user;
     }
 
+    /**
+     * @return array<Label>
+     */
     public function labels(): array
     {
         return $this->labels;
     }
 
+    /**
+     * State of the issue; either 'open' or 'closed'
+     */
     public function state(): ?string
     {
         return $this->state;
@@ -134,6 +138,9 @@ final class Issue
         return $this->assignee;
     }
 
+    /**
+     * @return array<User>
+     */
     public function assignees(): array
     {
         return $this->assignees;
@@ -164,6 +171,9 @@ final class Issue
         return $this->closed_at;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;
@@ -184,6 +194,9 @@ final class Issue
         return $this->pull_request;
     }
 
+    /**
+     * Contents of the issue
+     */
     public function body()
     {
         return $this->body;

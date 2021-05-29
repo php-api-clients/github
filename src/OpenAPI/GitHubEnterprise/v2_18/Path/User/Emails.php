@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Users\AddEmailForAuthenticatedOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Users\DeleteEmailForAuthenticatedOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Users\ListEmailsForAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Users\AddEmailForAuthenticated;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Users\DeleteEmailForAuthenticated;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Users\ListEmailsForAuthenticated;
 
 final class Emails
 {
-    function get(int $per_page = 30, int $page = 1): ListEmailsForAuthenticatedOperation
+    function get(int $per_page = 30, int $page = 1): ListEmailsForAuthenticated
     {
-        return new ListEmailsForAuthenticatedOperation($per_page, $page);
+        return new ListEmailsForAuthenticated($per_page, $page);
     }
 
-    function post(): AddEmailForAuthenticatedOperation
+    function post(): AddEmailForAuthenticated
     {
-        return new AddEmailForAuthenticatedOperation();
+        return new AddEmailForAuthenticated();
     }
 
-    function delete(): DeleteEmailForAuthenticatedOperation
+    function delete(): DeleteEmailForAuthenticated
     {
-        return new DeleteEmailForAuthenticatedOperation();
+        return new DeleteEmailForAuthenticated();
     }
 }

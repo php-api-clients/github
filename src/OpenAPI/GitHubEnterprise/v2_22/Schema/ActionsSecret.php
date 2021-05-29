@@ -15,6 +15,9 @@ final class ActionsSecret
     private ?string $created_at = null;
     private ?string $updated_at = null;
 
+    /**
+     * The name of the secret.
+     */
     public function name(): ?string
     {
         return $this->name;

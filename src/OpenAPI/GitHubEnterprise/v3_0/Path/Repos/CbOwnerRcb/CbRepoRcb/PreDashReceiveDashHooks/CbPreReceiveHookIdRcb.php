@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\PreDashReceiveDashHooks;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\GetPreReceiveHookForRepoOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\RemovePreReceiveHookEnforcementForRepoOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\UpdatePreReceiveHookEnforcementForRepoOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\GetPreReceiveHookForRepo;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\RemovePreReceiveHookEnforcementForRepo;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\UpdatePreReceiveHookEnforcementForRepo;
 
 final class CbPreReceiveHookIdRcb
 {
-    function get($owner, $repo, $pre_receive_hook_id): GetPreReceiveHookForRepoOperation
+    function get($owner, $repo, $pre_receive_hook_id): GetPreReceiveHookForRepo
     {
-        return new GetPreReceiveHookForRepoOperation($owner, $repo, $pre_receive_hook_id);
+        return new GetPreReceiveHookForRepo($owner, $repo, $pre_receive_hook_id);
     }
 
-    function delete($owner, $repo, $pre_receive_hook_id): RemovePreReceiveHookEnforcementForRepoOperation
+    function delete($owner, $repo, $pre_receive_hook_id): RemovePreReceiveHookEnforcementForRepo
     {
-        return new RemovePreReceiveHookEnforcementForRepoOperation($owner, $repo, $pre_receive_hook_id);
+        return new RemovePreReceiveHookEnforcementForRepo($owner, $repo, $pre_receive_hook_id);
     }
 
-    function patch($owner, $repo, $pre_receive_hook_id): UpdatePreReceiveHookEnforcementForRepoOperation
+    function patch($owner, $repo, $pre_receive_hook_id): UpdatePreReceiveHookEnforcementForRepo
     {
-        return new UpdatePreReceiveHookEnforcementForRepoOperation($owner, $repo, $pre_receive_hook_id);
+        return new UpdatePreReceiveHookEnforcementForRepo($owner, $repo, $pre_receive_hook_id);
     }
 }

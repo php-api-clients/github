@@ -39,21 +39,33 @@ final class Hook
         return $this->type;
     }
 
+    /**
+     * Unique identifier of the webhook.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The name of a valid service, use 'web' for a webhook.
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Determines whether the hook is actually triggered on pushes.
+     */
     public function active(): ?bool
     {
         return $this->active;
     }
 
+    /**
+     * Determines what events the hook is triggered for. Default: ['push'].
+     */
     public function events(): array
     {
         return $this->events;

@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Teams\CbTeamIdRcb\Projects;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\AddOrUpdateProjectPermissionsOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\CheckPermissionsForProjectOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\RemoveProjectOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\AddOrUpdateProjectPermissions;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\CheckPermissionsForProject;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Teams\RemoveProject;
 
 final class CbProjectIdRcb
 {
-    function get(string $accept = 'application/vnd.github.inertia-preview+json', $team_id, $project_id): CheckPermissionsForProjectOperation
+    function get(string $accept = 'application/vnd.github.inertia-preview+json', $team_id, $project_id): CheckPermissionsForProject
     {
-        return new CheckPermissionsForProjectOperation($accept, $team_id, $project_id);
+        return new CheckPermissionsForProject($accept, $team_id, $project_id);
     }
 
-    function put(string $accept = 'application/vnd.github.inertia-preview+json', $team_id, $project_id): AddOrUpdateProjectPermissionsOperation
+    function put(string $accept = 'application/vnd.github.inertia-preview+json', $team_id, $project_id): AddOrUpdateProjectPermissions
     {
-        return new AddOrUpdateProjectPermissionsOperation($accept, $team_id, $project_id);
+        return new AddOrUpdateProjectPermissions($accept, $team_id, $project_id);
     }
 
-    function delete($team_id, $project_id): RemoveProjectOperation
+    function delete($team_id, $project_id): RemoveProject
     {
-        return new RemoveProjectOperation($team_id, $project_id);
+        return new RemoveProject($team_id, $project_id);
     }
 }

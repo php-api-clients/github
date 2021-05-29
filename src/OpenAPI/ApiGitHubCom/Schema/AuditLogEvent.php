@@ -81,11 +81,17 @@ final class AuditLogEvent
      */
     private ?string $visibility = null;
 
+    /**
+     * The time the audit log event occurred, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
+     */
     public function _AT_timestamp(): ?int
     {
         return $this->_AT_timestamp;
     }
 
+    /**
+     * The name of the action that was performed, for example `user.login` or `repo.create`.
+     */
     public function action(): ?string
     {
         return $this->action;
@@ -101,11 +107,17 @@ final class AuditLogEvent
         return $this->active_was;
     }
 
+    /**
+     * The actor who performed the action.
+     */
     public function actor(): ?string
     {
         return $this->actor;
     }
 
+    /**
+     * The username of the account being blocked.
+     */
     public function blocked_user(): ?string
     {
         return $this->blocked_user;
@@ -131,6 +143,9 @@ final class AuditLogEvent
         return $this->content_type;
     }
 
+    /**
+     * The time the audit log event was recorded, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
+     */
     public function created_at(): ?int
     {
         return $this->created_at;
@@ -141,6 +156,9 @@ final class AuditLogEvent
         return $this->deploy_key_fingerprint;
     }
 
+    /**
+     * A unique identifier for an audit event.
+     */
     public function _document_id(): ?string
     {
         return $this->_document_id;
@@ -216,11 +234,17 @@ final class AuditLogEvent
         return $this->read_only;
     }
 
+    /**
+     * The name of the repository.
+     */
     public function repo(): ?string
     {
         return $this->repo;
     }
 
+    /**
+     * The name of the repository.
+     */
     public function repository(): ?string
     {
         return $this->repository;
@@ -241,21 +265,33 @@ final class AuditLogEvent
         return $this->team;
     }
 
+    /**
+     * The type of protocol (for example, HTTP or SSH) used to transfer Git data.
+     */
     public function transport_protocol(): ?int
     {
         return $this->transport_protocol;
     }
 
+    /**
+     * A human readable name for the protocol (for example, HTTP or SSH) used to transfer Git data.
+     */
     public function transport_protocol_name(): ?string
     {
         return $this->transport_protocol_name;
     }
 
+    /**
+     * The user that was affected by the action performed (if available).
+     */
     public function user(): ?string
     {
         return $this->user;
     }
 
+    /**
+     * The repository visibility, for example `public` or `private`.
+     */
     public function visibility(): ?string
     {
         return $this->visibility;

@@ -42,6 +42,9 @@ final class TeamSimple
      */
     private ?string $ldap_dn = null;
 
+    /**
+     * Unique identifier of the team
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -52,6 +55,9 @@ final class TeamSimple
         return $this->node_id;
     }
 
+    /**
+     * URL for the team
+     */
     public function url(): ?string
     {
         return $this->url;
@@ -62,21 +68,33 @@ final class TeamSimple
         return $this->members_url;
     }
 
+    /**
+     * Name of the team
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Description of the team
+     */
     public function description(): ?string
     {
         return $this->description;
     }
 
+    /**
+     * Permission that the team will have for its repositories
+     */
     public function permission(): ?string
     {
         return $this->permission;
     }
 
+    /**
+     * The level of privacy this team should have
+     */
     public function privacy(): ?string
     {
         return $this->privacy;
@@ -97,6 +115,9 @@ final class TeamSimple
         return $this->slug;
     }
 
+    /**
+     * Distinguished Name (DN) that team maps to within LDAP environment
+     */
     public function ldap_dn(): ?string
     {
         return $this->ldap_dn;

@@ -4,30 +4,30 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Scim\V2\Enterprises\CbEnterpriseRcb\Groups;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\DeleteScimGroupFromEnterpriseOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetProvisioningInformationForEnterpriseGroupOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\SetInformationForProvisionedEnterpriseGroupOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\UpdateAttributeForEnterpriseGroupOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\DeleteScimGroupFromEnterprise;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetProvisioningInformationForEnterpriseGroup;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\SetInformationForProvisionedEnterpriseGroup;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\UpdateAttributeForEnterpriseGroup;
 
 final class CbScimGroupIdRcb
 {
-    function get($enterprise, $scim_group_id, $excludedAttributes): GetProvisioningInformationForEnterpriseGroupOperation
+    function get($enterprise, $scim_group_id, $excludedAttributes): GetProvisioningInformationForEnterpriseGroup
     {
-        return new GetProvisioningInformationForEnterpriseGroupOperation($enterprise, $scim_group_id, $excludedAttributes);
+        return new GetProvisioningInformationForEnterpriseGroup($enterprise, $scim_group_id, $excludedAttributes);
     }
 
-    function put($enterprise, $scim_group_id): SetInformationForProvisionedEnterpriseGroupOperation
+    function put($enterprise, $scim_group_id): SetInformationForProvisionedEnterpriseGroup
     {
-        return new SetInformationForProvisionedEnterpriseGroupOperation($enterprise, $scim_group_id);
+        return new SetInformationForProvisionedEnterpriseGroup($enterprise, $scim_group_id);
     }
 
-    function delete($enterprise, $scim_group_id): DeleteScimGroupFromEnterpriseOperation
+    function delete($enterprise, $scim_group_id): DeleteScimGroupFromEnterprise
     {
-        return new DeleteScimGroupFromEnterpriseOperation($enterprise, $scim_group_id);
+        return new DeleteScimGroupFromEnterprise($enterprise, $scim_group_id);
     }
 
-    function patch($enterprise, $scim_group_id): UpdateAttributeForEnterpriseGroupOperation
+    function patch($enterprise, $scim_group_id): UpdateAttributeForEnterpriseGroup
     {
-        return new UpdateAttributeForEnterpriseGroupOperation($enterprise, $scim_group_id);
+        return new UpdateAttributeForEnterpriseGroup($enterprise, $scim_group_id);
     }
 }

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb\CodeScanning;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\CodeScanning\UploadSarifOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\CodeScanning\UploadSarif;
 
 final class Sarifs
 {
-    function post($owner, $repo): UploadSarifOperation
+    function post($owner, $repo): UploadSarif
     {
-        return new UploadSarifOperation($owner, $repo);
+        return new UploadSarif($owner, $repo);
     }
 }

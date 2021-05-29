@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runners;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\CreateRemoveTokenForRepoOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\CreateRemoveTokenForRepo;
 
 final class RemoveToken
 {
-    function post($owner, $repo): CreateRemoveTokenForRepoOperation
+    function post($owner, $repo): CreateRemoveTokenForRepo
     {
-        return new CreateRemoveTokenForRepoOperation($owner, $repo);
+        return new CreateRemoveTokenForRepo($owner, $repo);
     }
 }

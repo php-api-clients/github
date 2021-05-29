@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Teams\CbTeamIdRcb\Members;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Teams\AddMemberLegacyOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Teams\GetMemberLegacyOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Teams\RemoveMemberLegacyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Teams\AddMemberLegacy;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Teams\GetMemberLegacy;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Teams\RemoveMemberLegacy;
 
 final class CbUsernameRcb
 {
-    function get($team_id, $username): GetMemberLegacyOperation
+    function get($team_id, $username): GetMemberLegacy
     {
-        return new GetMemberLegacyOperation($team_id, $username);
+        return new GetMemberLegacy($team_id, $username);
     }
 
-    function put($team_id, $username): AddMemberLegacyOperation
+    function put($team_id, $username): AddMemberLegacy
     {
-        return new AddMemberLegacyOperation($team_id, $username);
+        return new AddMemberLegacy($team_id, $username);
     }
 
-    function delete($team_id, $username): RemoveMemberLegacyOperation
+    function delete($team_id, $username): RemoveMemberLegacy
     {
-        return new RemoveMemberLegacyOperation($team_id, $username);
+        return new RemoveMemberLegacy($team_id, $username);
     }
 }

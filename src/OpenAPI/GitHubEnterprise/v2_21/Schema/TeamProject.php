@@ -86,6 +86,9 @@ final class TeamProject
         return $this->state;
     }
 
+    /**
+     * Simple User
+     */
     public function creator(): ?SimpleUser
     {
         return $this->creator;
@@ -101,11 +104,17 @@ final class TeamProject
         return $this->updated_at;
     }
 
+    /**
+     * The organization permission for this project. Only present when owner is an organization.
+     */
     public function organization_permission(): ?string
     {
         return $this->organization_permission;
     }
 
+    /**
+     * Whether the project is private or not. Only present when owner is an organization.
+     */
     public function private(): ?bool
     {
         return $this->private;

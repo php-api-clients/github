@@ -40,14 +40,10 @@ final class UserSearchResultItem
     private ?string $location            = null;
     private ?bool $site_admin            = null;
     private ?bool $hireable              = null;
-    /**
-     * @var array<TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Schema\UserSearchResultItem\TextMatches::class)
-     */
-    private array $text_matches   = [];
-    private ?string $blog         = null;
-    private ?string $company      = null;
-    private ?string $suspended_at = null;
+    private array $text_matches          = [];
+    private ?string $blog                = null;
+    private ?string $company             = null;
+    private ?string $suspended_at        = null;
 
     public function login(): ?string
     {
@@ -199,6 +195,9 @@ final class UserSearchResultItem
         return $this->hireable;
     }
 
+    /**
+     * @return array<TextMatches>
+     */
     public function text_matches(): array
     {
         return $this->text_matches;

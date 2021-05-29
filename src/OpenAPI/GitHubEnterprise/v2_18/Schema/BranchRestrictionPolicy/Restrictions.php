@@ -14,16 +14,8 @@ final class Restrictions
     private ?string $url            = null;
     private ?string $users_url      = null;
     private ?string $teams_url      = null;
-    /**
-     * @var array<Users>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\BranchRestrictionPolicy\Restrictions\Users::class)
-     */
-    private array $users = [];
-    /**
-     * @var array<Teams>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema\BranchRestrictionPolicy\Restrictions\Teams::class)
-     */
-    private array $teams = [];
+    private array $users            = [];
+    private array $teams            = [];
 
     public function url(): ?string
     {
@@ -40,11 +32,17 @@ final class Restrictions
         return $this->teams_url;
     }
 
+    /**
+     * @return array<Users>
+     */
     public function users(): array
     {
         return $this->users;
     }
 
+    /**
+     * @return array<Teams>
+     */
     public function teams(): array
     {
         return $this->teams;

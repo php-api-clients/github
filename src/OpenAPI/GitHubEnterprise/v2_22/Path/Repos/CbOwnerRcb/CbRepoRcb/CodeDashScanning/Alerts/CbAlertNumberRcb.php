@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Alerts;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\CodeScanning\GetAlertOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\CodeScanning\UpdateAlertOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\CodeScanning\GetAlert;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\CodeScanning\UpdateAlert;
 
 final class CbAlertNumberRcb
 {
-    function get($owner, $repo, $alert_number): GetAlertOperation
+    function get($owner, $repo, $alert_number): GetAlert
     {
-        return new GetAlertOperation($owner, $repo, $alert_number);
+        return new GetAlert($owner, $repo, $alert_number);
     }
 
-    function patch($owner, $repo, $alert_number): UpdateAlertOperation
+    function patch($owner, $repo, $alert_number): UpdateAlert
     {
-        return new UpdateAlertOperation($owner, $repo, $alert_number);
+        return new UpdateAlert($owner, $repo, $alert_number);
     }
 }

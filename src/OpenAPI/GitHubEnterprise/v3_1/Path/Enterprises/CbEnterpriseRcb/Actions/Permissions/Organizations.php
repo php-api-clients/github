@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Enterprises\CbEnterpriseRcb\Actions\Permissions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\EnterpriseAdmin\ListSelectedOrganizationsEnabledGithubActionsEnterpriseOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\EnterpriseAdmin\SetSelectedOrganizationsEnabledGithubActionsEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\EnterpriseAdmin\ListSelectedOrganizationsEnabledGithubActionsEnterprise;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\EnterpriseAdmin\SetSelectedOrganizationsEnabledGithubActionsEnterprise;
 
 final class Organizations
 {
-    function get($enterprise, int $per_page = 30, int $page = 1): ListSelectedOrganizationsEnabledGithubActionsEnterpriseOperation
+    function get($enterprise, int $per_page = 30, int $page = 1): ListSelectedOrganizationsEnabledGithubActionsEnterprise
     {
-        return new ListSelectedOrganizationsEnabledGithubActionsEnterpriseOperation($enterprise, $per_page, $page);
+        return new ListSelectedOrganizationsEnabledGithubActionsEnterprise($enterprise, $per_page, $page);
     }
 
-    function put($enterprise): SetSelectedOrganizationsEnabledGithubActionsEnterpriseOperation
+    function put($enterprise): SetSelectedOrganizationsEnabledGithubActionsEnterprise
     {
-        return new SetSelectedOrganizationsEnabledGithubActionsEnterpriseOperation($enterprise);
+        return new SetSelectedOrganizationsEnabledGithubActionsEnterprise($enterprise);
     }
 }

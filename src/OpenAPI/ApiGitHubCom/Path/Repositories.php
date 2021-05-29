@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPublicOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPublic;
 
 final class Repositories
 {
-    function get($since): ListPublicOperation
+    function get($since): ListPublic
     {
-        return new ListPublicOperation($since);
+        return new ListPublic($since);
     }
 }

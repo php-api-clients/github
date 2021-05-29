@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\User\RepositoryInvitations;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AcceptInvitationOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\DeclineInvitationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AcceptInvitation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\DeclineInvitation;
 
 final class CbInvitationIdRcb
 {
-    function delete($invitation_id): DeclineInvitationOperation
+    function delete($invitation_id): DeclineInvitation
     {
-        return new DeclineInvitationOperation($invitation_id);
+        return new DeclineInvitation($invitation_id);
     }
 
-    function patch($invitation_id): AcceptInvitationOperation
+    function patch($invitation_id): AcceptInvitation
     {
-        return new AcceptInvitationOperation($invitation_id);
+        return new AcceptInvitation($invitation_id);
     }
 }

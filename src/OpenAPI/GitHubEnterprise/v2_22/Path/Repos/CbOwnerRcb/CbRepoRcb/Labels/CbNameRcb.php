@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb\Labels;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\DeleteLabelOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\GetLabelOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\UpdateLabelOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\DeleteLabel;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\GetLabel;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\UpdateLabel;
 
 final class CbNameRcb
 {
-    function get($owner, $repo, $name): GetLabelOperation
+    function get($owner, $repo, $name): GetLabel
     {
-        return new GetLabelOperation($owner, $repo, $name);
+        return new GetLabel($owner, $repo, $name);
     }
 
-    function delete($owner, $repo, $name): DeleteLabelOperation
+    function delete($owner, $repo, $name): DeleteLabel
     {
-        return new DeleteLabelOperation($owner, $repo, $name);
+        return new DeleteLabel($owner, $repo, $name);
     }
 
-    function patch($owner, $repo, $name): UpdateLabelOperation
+    function patch($owner, $repo, $name): UpdateLabel
     {
-        return new UpdateLabelOperation($owner, $repo, $name);
+        return new UpdateLabel($owner, $repo, $name);
     }
 }

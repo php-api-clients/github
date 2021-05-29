@@ -25,21 +25,9 @@ final class TopicSearchResultItem
     private ?number $score             = null;
     private ?int $repository_count     = null;
     private ?string $logo_url          = null;
-    /**
-     * @var array<TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\TopicSearchResultItem\TextMatches::class)
-     */
-    private array $text_matches = [];
-    /**
-     * @var array<Related>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\TopicSearchResultItem\Related::class)
-     */
-    private array $related = [];
-    /**
-     * @var array<Aliases>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema\TopicSearchResultItem\Aliases::class)
-     */
-    private array $aliases = [];
+    private array $text_matches        = [];
+    private array $related             = [];
+    private array $aliases             = [];
 
     public function name(): ?string
     {
@@ -106,16 +94,25 @@ final class TopicSearchResultItem
         return $this->logo_url;
     }
 
+    /**
+     * @return array<TextMatches>
+     */
     public function text_matches(): array
     {
         return $this->text_matches;
     }
 
+    /**
+     * @return array<Related>
+     */
     public function related(): array
     {
         return $this->related;
     }
 
+    /**
+     * @return array<Aliases>
+     */
     public function aliases(): array
     {
         return $this->aliases;

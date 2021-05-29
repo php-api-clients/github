@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Projects\Columns;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Projects\DeleteColumnOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Projects\GetColumnOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Projects\UpdateColumnOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Projects\DeleteColumn;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Projects\GetColumn;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Projects\UpdateColumn;
 
 final class CbColumnIdRcb
 {
-    function get($column_id): GetColumnOperation
+    function get($column_id): GetColumn
     {
-        return new GetColumnOperation($column_id);
+        return new GetColumn($column_id);
     }
 
-    function delete($column_id): DeleteColumnOperation
+    function delete($column_id): DeleteColumn
     {
-        return new DeleteColumnOperation($column_id);
+        return new DeleteColumn($column_id);
     }
 
-    function patch($column_id): UpdateColumnOperation
+    function patch($column_id): UpdateColumn
     {
-        return new UpdateColumnOperation($column_id);
+        return new UpdateColumn($column_id);
     }
 }

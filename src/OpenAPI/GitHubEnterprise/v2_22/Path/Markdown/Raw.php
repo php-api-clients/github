@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Markdown;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Markdown\RenderRawOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Markdown\RenderRaw;
 
 final class Raw
 {
-    function post(): RenderRawOperation
+    function post(): RenderRaw
     {
-        return new RenderRawOperation();
+        return new RenderRaw();
     }
 }

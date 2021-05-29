@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\Events;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\GetEventOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\GetEvent;
 
 final class CbEventIdRcb
 {
-    function get($owner, $repo, $event_id): GetEventOperation
+    function get($owner, $repo, $event_id): GetEvent
     {
-        return new GetEventOperation($owner, $repo, $event_id);
+        return new GetEvent($owner, $repo, $event_id);
     }
 }

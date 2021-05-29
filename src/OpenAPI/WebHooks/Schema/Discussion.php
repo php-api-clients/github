@@ -112,6 +112,9 @@ final class Discussion
         return $this->updated_at;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

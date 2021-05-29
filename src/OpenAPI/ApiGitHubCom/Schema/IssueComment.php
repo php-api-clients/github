@@ -36,6 +36,9 @@ final class IssueComment
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class) */
     private ?ReactionRollup $reactions = null;
 
+    /**
+     * Unique identifier of the issue comment
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -46,11 +49,17 @@ final class IssueComment
         return $this->node_id;
     }
 
+    /**
+     * URL for the issue comment
+     */
     public function url(): ?string
     {
         return $this->url;
     }
 
+    /**
+     * Contents of the issue comment
+     */
     public function body(): ?string
     {
         return $this->body;
@@ -91,6 +100,9 @@ final class IssueComment
         return $this->issue_url;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

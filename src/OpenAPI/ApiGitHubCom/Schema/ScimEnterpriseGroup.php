@@ -14,12 +14,8 @@ final class ScimEnterpriseGroup
     private ?string $id             = null;
     private ?string $externalId     = null;
     private ?string $displayName    = null;
-    /**
-     * @var array<Members>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseGroup\Members::class)
-     */
-    private array $members = [];
-    private array $meta    = [];
+    private array $members          = [];
+    private array $meta             = [];
 
     public function schemas(): array
     {
@@ -41,6 +37,9 @@ final class ScimEnterpriseGroup
         return $this->displayName;
     }
 
+    /**
+     * @return array<Members>
+     */
     public function members(): array
     {
         return $this->members;

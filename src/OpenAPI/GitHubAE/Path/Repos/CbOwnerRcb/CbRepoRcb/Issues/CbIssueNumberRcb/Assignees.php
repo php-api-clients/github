@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\AddAssigneesOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\RemoveAssigneesOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\AddAssignees;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues\RemoveAssignees;
 
 final class Assignees
 {
-    function post($owner, $repo, $issue_number): AddAssigneesOperation
+    function post($owner, $repo, $issue_number): AddAssignees
     {
-        return new AddAssigneesOperation($owner, $repo, $issue_number);
+        return new AddAssignees($owner, $repo, $issue_number);
     }
 
-    function delete($owner, $repo, $issue_number): RemoveAssigneesOperation
+    function delete($owner, $repo, $issue_number): RemoveAssignees
     {
-        return new RemoveAssigneesOperation($owner, $repo, $issue_number);
+        return new RemoveAssignees($owner, $repo, $issue_number);
     }
 }

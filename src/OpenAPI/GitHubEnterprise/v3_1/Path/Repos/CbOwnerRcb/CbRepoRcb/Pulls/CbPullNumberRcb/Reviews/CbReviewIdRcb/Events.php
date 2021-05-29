@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Reviews\CbReviewIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\SubmitReviewOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\SubmitReview;
 
 final class Events
 {
-    function post($owner, $repo, $pull_number, $review_id): SubmitReviewOperation
+    function post($owner, $repo, $pull_number, $review_id): SubmitReview
     {
-        return new SubmitReviewOperation($owner, $repo, $pull_number, $review_id);
+        return new SubmitReview($owner, $repo, $pull_number, $review_id);
     }
 }

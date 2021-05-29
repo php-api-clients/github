@@ -49,6 +49,9 @@ final class ProjectCard
         return $this->column_id;
     }
 
+    /**
+     * The project card's ID
+     */
     public function id(): ?int
     {
         return $this->id;
@@ -64,6 +67,9 @@ final class ProjectCard
         return $this->note;
     }
 
+    /**
+     * Whether or not the card is archived
+     */
     public function archived(): ?bool
     {
         return $this->archived;

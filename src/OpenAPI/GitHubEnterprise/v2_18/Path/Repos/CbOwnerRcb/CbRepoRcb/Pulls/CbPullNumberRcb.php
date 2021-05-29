@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Pulls\GetOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Pulls\UpdateOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Pulls\Get;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Pulls\Update;
 
 final class CbPullNumberRcb
 {
-    function get($owner, $repo, $pull_number): GetOperation
+    function get($owner, $repo, $pull_number): Get
     {
-        return new GetOperation($owner, $repo, $pull_number);
+        return new Get($owner, $repo, $pull_number);
     }
 
-    function patch($owner, $repo, $pull_number): UpdateOperation
+    function patch($owner, $repo, $pull_number): Update
     {
-        return new UpdateOperation($owner, $repo, $pull_number);
+        return new Update($owner, $repo, $pull_number);
     }
 }

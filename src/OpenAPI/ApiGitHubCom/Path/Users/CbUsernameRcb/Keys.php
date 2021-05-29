@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Users\CbUsernameRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicKeysForUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicKeysForUser;
 
 final class Keys
 {
-    function get($username, int $per_page = 30, int $page = 1): ListPublicKeysForUserOperation
+    function get($username, int $per_page = 30, int $page = 1): ListPublicKeysForUser
     {
-        return new ListPublicKeysForUserOperation($username, $per_page, $page);
+        return new ListPublicKeysForUser($username, $per_page, $page);
     }
 }

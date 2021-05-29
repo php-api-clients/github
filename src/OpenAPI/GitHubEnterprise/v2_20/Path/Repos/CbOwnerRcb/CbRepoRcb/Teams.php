@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\ListTeamsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\ListTeams;
 
 final class Teams
 {
-    function get($owner, $repo, int $per_page = 30, int $page = 1): ListTeamsOperation
+    function get($owner, $repo, int $per_page = 30, int $page = 1): ListTeams
     {
-        return new ListTeamsOperation($owner, $repo, $per_page, $page);
+        return new ListTeams($owner, $repo, $per_page, $page);
     }
 }

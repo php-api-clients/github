@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment;
 
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser;
+
 final class Reviewers
 {
     public const SCHEMA_TITLE       = 'pending-deployment::reviewers';
@@ -12,9 +14,12 @@ final class Reviewers
      * The type of reviewer. Must be one of: `User` or `Team`
      */
     private ?string $type = null;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\SimpleUser::class) */
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
     private ?SimpleUser $reviewer = null;
 
+    /**
+     * The type of reviewer. Must be one of: `User` or `Team`
+     */
     public function type(): ?string
     {
         return $this->type;

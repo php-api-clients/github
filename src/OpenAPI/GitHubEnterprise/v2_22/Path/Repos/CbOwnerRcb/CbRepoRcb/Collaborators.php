@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\ListCollaboratorsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\ListCollaborators;
 
 final class Collaborators
 {
-    function get($owner, $repo, string $affiliation = 'all', int $per_page = 30, int $page = 1): ListCollaboratorsOperation
+    function get($owner, $repo, string $affiliation = 'all', int $per_page = 30, int $page = 1): ListCollaborators
     {
-        return new ListCollaboratorsOperation($owner, $repo, $affiliation, $per_page, $page);
+        return new ListCollaborators($owner, $repo, $affiliation, $per_page, $page);
     }
 }

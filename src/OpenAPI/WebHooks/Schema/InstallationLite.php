@@ -14,6 +14,9 @@ final class InstallationLite
     private ?int $id         = null;
     private ?string $node_id = null;
 
+    /**
+     * The ID of the installation.
+     */
     public function id(): ?int
     {
         return $this->id;

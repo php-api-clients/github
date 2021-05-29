@@ -10,11 +10,7 @@ final class CloneTraffic
     public const SCHEMA_DESCRIPTION = 'Clone Traffic';
     private ?int $count             = null;
     private ?int $uniques           = null;
-    /**
-     * @var array<Traffic>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic::class)
-     */
-    private array $clones = [];
+    private array $clones           = [];
 
     public function count(): ?int
     {
@@ -26,6 +22,9 @@ final class CloneTraffic
         return $this->uniques;
     }
 
+    /**
+     * @return array<Traffic>
+     */
     public function clones(): array
     {
         return $this->clones;

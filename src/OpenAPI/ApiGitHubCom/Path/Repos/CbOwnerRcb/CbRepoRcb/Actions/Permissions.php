@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetGithubActionsPermissionsRepositoryOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsPermissionsRepositoryOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetGithubActionsPermissionsRepository;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsPermissionsRepository;
 
 final class Permissions
 {
-    function get($owner, $repo): GetGithubActionsPermissionsRepositoryOperation
+    function get($owner, $repo): GetGithubActionsPermissionsRepository
     {
-        return new GetGithubActionsPermissionsRepositoryOperation($owner, $repo);
+        return new GetGithubActionsPermissionsRepository($owner, $repo);
     }
 
-    function put($owner, $repo): SetGithubActionsPermissionsRepositoryOperation
+    function put($owner, $repo): SetGithubActionsPermissionsRepository
     {
-        return new SetGithubActionsPermissionsRepositoryOperation($owner, $repo);
+        return new SetGithubActionsPermissionsRepository($owner, $repo);
     }
 }

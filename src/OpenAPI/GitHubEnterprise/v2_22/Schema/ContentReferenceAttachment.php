@@ -25,21 +25,33 @@ final class ContentReferenceAttachment
      */
     private ?string $node_id = null;
 
+    /**
+     * The ID of the attachment
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * The title of the attachment
+     */
     public function title(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * The body of the attachment
+     */
     public function body(): ?string
     {
         return $this->body;
     }
 
+    /**
+     * The node_id of the content attachment
+     */
     public function node_id(): ?string
     {
         return $this->node_id;

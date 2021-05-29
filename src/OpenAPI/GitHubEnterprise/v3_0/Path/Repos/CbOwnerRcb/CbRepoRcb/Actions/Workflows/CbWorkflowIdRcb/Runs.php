@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Workflows\CbWorkflowIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\ListWorkflowRunsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\ListWorkflowRuns;
 
 final class Runs
 {
-    function get($owner, $repo, $workflow_id, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1): ListWorkflowRunsOperation
+    function get($owner, $repo, $workflow_id, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1): ListWorkflowRuns
     {
-        return new ListWorkflowRunsOperation($owner, $repo, $workflow_id, $actor, $branch, $event, $status, $per_page, $page);
+        return new ListWorkflowRuns($owner, $repo, $workflow_id, $actor, $branch, $event, $status, $per_page, $page);
     }
 }

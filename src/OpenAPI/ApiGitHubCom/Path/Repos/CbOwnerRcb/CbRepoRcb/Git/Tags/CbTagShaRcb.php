@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Git\Tags;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTagOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTag;
 
 final class CbTagShaRcb
 {
-    function get($owner, $repo, $tag_sha): GetTagOperation
+    function get($owner, $repo, $tag_sha): GetTag
     {
-        return new GetTagOperation($owner, $repo, $tag_sha);
+        return new GetTag($owner, $repo, $tag_sha);
     }
 }

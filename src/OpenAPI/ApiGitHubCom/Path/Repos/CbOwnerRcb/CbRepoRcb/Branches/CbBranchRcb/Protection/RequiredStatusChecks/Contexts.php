@@ -4,30 +4,30 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\RequiredStatusChecks;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddStatusCheckContextsOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAllStatusCheckContextsOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveStatusCheckContextsOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetStatusCheckContextsOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddStatusCheckContexts;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAllStatusCheckContexts;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveStatusCheckContexts;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetStatusCheckContexts;
 
 final class Contexts
 {
-    function get($owner, $repo, $branch): GetAllStatusCheckContextsOperation
+    function get($owner, $repo, $branch): GetAllStatusCheckContexts
     {
-        return new GetAllStatusCheckContextsOperation($owner, $repo, $branch);
+        return new GetAllStatusCheckContexts($owner, $repo, $branch);
     }
 
-    function put($owner, $repo, $branch): SetStatusCheckContextsOperation
+    function put($owner, $repo, $branch): SetStatusCheckContexts
     {
-        return new SetStatusCheckContextsOperation($owner, $repo, $branch);
+        return new SetStatusCheckContexts($owner, $repo, $branch);
     }
 
-    function post($owner, $repo, $branch): AddStatusCheckContextsOperation
+    function post($owner, $repo, $branch): AddStatusCheckContexts
     {
-        return new AddStatusCheckContextsOperation($owner, $repo, $branch);
+        return new AddStatusCheckContexts($owner, $repo, $branch);
     }
 
-    function delete($owner, $repo, $branch): RemoveStatusCheckContextsOperation
+    function delete($owner, $repo, $branch): RemoveStatusCheckContexts
     {
-        return new RemoveStatusCheckContextsOperation($owner, $repo, $branch);
+        return new RemoveStatusCheckContexts($owner, $repo, $branch);
     }
 }

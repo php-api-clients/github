@@ -9,21 +9,13 @@ use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GpgKey\Subkeys
 
 final class GpgKey
 {
-    public const SCHEMA_TITLE       = 'GPG Key';
-    public const SCHEMA_DESCRIPTION = 'A unique encryption key';
-    private ?int $id                = null;
-    private ?int $primary_key_id    = null;
-    private ?string $key_id         = null;
-    private ?string $public_key     = null;
-    /**
-     * @var array<Emails>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GpgKey\Emails::class)
-     */
-    private array $emails = [];
-    /**
-     * @var array<Subkeys>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GpgKey\Subkeys::class)
-     */
+    public const SCHEMA_TITLE          = 'GPG Key';
+    public const SCHEMA_DESCRIPTION    = 'A unique encryption key';
+    private ?int $id                   = null;
+    private ?int $primary_key_id       = null;
+    private ?string $key_id            = null;
+    private ?string $public_key        = null;
+    private array $emails              = [];
     private array $subkeys             = [];
     private ?bool $can_sign            = null;
     private ?bool $can_encrypt_comms   = null;
@@ -53,11 +45,17 @@ final class GpgKey
         return $this->public_key;
     }
 
+    /**
+     * @return array<Emails>
+     */
     public function emails(): array
     {
         return $this->emails;
     }
 
+    /**
+     * @return array<Subkeys>
+     */
     public function subkeys(): array
     {
         return $this->subkeys;

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Users\CbUsernameRcb\Settings\Billing;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubActionsBillingUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubActionsBillingUser;
 
 final class Actions
 {
-    function get($username): GetGithubActionsBillingUserOperation
+    function get($username): GetGithubActionsBillingUser
     {
-        return new GetGithubActionsBillingUserOperation($username);
+        return new GetGithubActionsBillingUser($username);
     }
 }

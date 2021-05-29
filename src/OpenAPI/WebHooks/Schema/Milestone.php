@@ -60,11 +60,17 @@ final class Milestone
         return $this->node_id;
     }
 
+    /**
+     * The number of the milestone.
+     */
     public function number(): ?int
     {
         return $this->number;
     }
 
+    /**
+     * The title of the milestone.
+     */
     public function title(): ?string
     {
         return $this->title;
@@ -90,6 +96,9 @@ final class Milestone
         return $this->closed_issues;
     }
 
+    /**
+     * The state of the milestone.
+     */
     public function state(): ?string
     {
         return $this->state;

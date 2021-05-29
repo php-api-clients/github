@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Users\ListFollowedByAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Users\ListFollowedByAuthenticated;
 
 final class Following
 {
-    function get(int $per_page = 30, int $page = 1): ListFollowedByAuthenticatedOperation
+    function get(int $per_page = 30, int $page = 1): ListFollowedByAuthenticated
     {
-        return new ListFollowedByAuthenticatedOperation($per_page, $page);
+        return new ListFollowedByAuthenticated($per_page, $page);
     }
 }

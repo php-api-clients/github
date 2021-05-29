@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Admin\Keys;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\EnterpriseAdmin\DeletePublicKeyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\EnterpriseAdmin\DeletePublicKey;
 
 final class CbKeyIdsRcb
 {
-    function delete($key_ids): DeletePublicKeyOperation
+    function delete($key_ids): DeletePublicKey
     {
-        return new DeletePublicKeyOperation($key_ids);
+        return new DeletePublicKey($key_ids);
     }
 }

@@ -29,16 +29,8 @@ final class CommitComparison
     private ?int $ahead_by             = null;
     private ?int $behind_by            = null;
     private ?int $total_commits        = null;
-    /**
-     * @var array<Commit>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Commit::class)
-     */
-    private array $commits = [];
-    /**
-     * @var array<DiffEntry>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DiffEntry::class)
-     */
-    private array $files = [];
+    private array $commits             = [];
+    private array $files               = [];
 
     public function url(): ?string
     {
@@ -65,11 +57,17 @@ final class CommitComparison
         return $this->patch_url;
     }
 
+    /**
+     * Commit
+     */
     public function base_commit(): ?Commit
     {
         return $this->base_commit;
     }
 
+    /**
+     * Commit
+     */
     public function merge_base_commit(): ?Commit
     {
         return $this->merge_base_commit;
@@ -95,11 +93,17 @@ final class CommitComparison
         return $this->total_commits;
     }
 
+    /**
+     * @return array<Commit>
+     */
     public function commits(): array
     {
         return $this->commits;
     }
 
+    /**
+     * @return array<DiffEntry>
+     */
     public function files(): array
     {
         return $this->files;

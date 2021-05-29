@@ -18,11 +18,7 @@ final class LabelSearchResultItem
     private ?bool $default          = null;
     private ?string $description    = null;
     private ?number $score          = null;
-    /**
-     * @var array<TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches::class)
-     */
-    private array $text_matches = [];
+    private array $text_matches     = [];
 
     public function id(): ?int
     {
@@ -64,6 +60,9 @@ final class LabelSearchResultItem
         return $this->score;
     }
 
+    /**
+     * @return array<TextMatches>
+     */
     public function text_matches(): array
     {
         return $this->text_matches;

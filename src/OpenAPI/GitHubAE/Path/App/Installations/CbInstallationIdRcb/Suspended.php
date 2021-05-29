@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\App\Installations\CbInstallationIdRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\SuspendInstallationOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\UnsuspendInstallationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\SuspendInstallation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\UnsuspendInstallation;
 
 final class Suspended
 {
-    function put($installation_id): SuspendInstallationOperation
+    function put($installation_id): SuspendInstallation
     {
-        return new SuspendInstallationOperation($installation_id);
+        return new SuspendInstallation($installation_id);
     }
 
-    function delete($installation_id): UnsuspendInstallationOperation
+    function delete($installation_id): UnsuspendInstallation
     {
-        return new UnsuspendInstallationOperation($installation_id);
+        return new UnsuspendInstallation($installation_id);
     }
 }

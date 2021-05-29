@@ -15,6 +15,9 @@ final class Parents
     private ?string $url      = null;
     private ?string $html_url = null;
 
+    /**
+     * SHA for the commit
+     */
     public function sha(): ?string
     {
         return $this->sha;

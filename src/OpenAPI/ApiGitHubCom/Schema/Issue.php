@@ -41,10 +41,6 @@ final class Issue
      */
     private array $labels = [];
     private $assignee;
-    /**
-     * @var array<SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
     private array $assignees = [];
     private $milestone;
     private ?bool $locked               = null;
@@ -82,6 +78,9 @@ final class Issue
         return $this->node_id;
     }
 
+    /**
+     * URL for the issue
+     */
     public function url(): ?string
     {
         return $this->url;
@@ -112,21 +111,33 @@ final class Issue
         return $this->html_url;
     }
 
+    /**
+     * Number uniquely identifying the issue within its repository
+     */
     public function number(): ?int
     {
         return $this->number;
     }
 
+    /**
+     * State of the issue; either 'open' or 'closed'
+     */
     public function state(): ?string
     {
         return $this->state;
     }
 
+    /**
+     * Title of the issue
+     */
     public function title(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * Contents of the issue
+     */
     public function body(): ?string
     {
         return $this->body;
@@ -137,6 +148,9 @@ final class Issue
         return $this->user;
     }
 
+    /**
+     * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
+     */
     public function labels(): array
     {
         return $this->labels;
@@ -147,6 +161,9 @@ final class Issue
         return $this->assignee;
     }
 
+    /**
+     * @return array<SimpleUser>
+     */
     public function assignees(): array
     {
         return $this->assignees;
@@ -212,6 +229,9 @@ final class Issue
         return $this->timeline_url;
     }
 
+    /**
+     * A git repository
+     */
     public function repository(): ?Repository
     {
         return $this->repository;
@@ -222,6 +242,9 @@ final class Issue
         return $this->performed_via_github_app;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;

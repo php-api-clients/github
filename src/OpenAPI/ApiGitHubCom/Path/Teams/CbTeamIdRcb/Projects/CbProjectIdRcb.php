@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Teams\CbTeamIdRcb\Projects;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\AddOrUpdateProjectPermissionsLegacyOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CheckPermissionsForProjectLegacyOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\RemoveProjectLegacyOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\AddOrUpdateProjectPermissionsLegacy;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CheckPermissionsForProjectLegacy;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\RemoveProjectLegacy;
 
 final class CbProjectIdRcb
 {
-    function get($team_id, $project_id): CheckPermissionsForProjectLegacyOperation
+    function get($team_id, $project_id): CheckPermissionsForProjectLegacy
     {
-        return new CheckPermissionsForProjectLegacyOperation($team_id, $project_id);
+        return new CheckPermissionsForProjectLegacy($team_id, $project_id);
     }
 
-    function put($team_id, $project_id): AddOrUpdateProjectPermissionsLegacyOperation
+    function put($team_id, $project_id): AddOrUpdateProjectPermissionsLegacy
     {
-        return new AddOrUpdateProjectPermissionsLegacyOperation($team_id, $project_id);
+        return new AddOrUpdateProjectPermissionsLegacy($team_id, $project_id);
     }
 
-    function delete($team_id, $project_id): RemoveProjectLegacyOperation
+    function delete($team_id, $project_id): RemoveProjectLegacy
     {
-        return new RemoveProjectLegacyOperation($team_id, $project_id);
+        return new RemoveProjectLegacy($team_id, $project_id);
     }
 }

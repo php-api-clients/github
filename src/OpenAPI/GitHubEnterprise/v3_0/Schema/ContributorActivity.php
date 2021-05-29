@@ -11,11 +11,7 @@ final class ContributorActivity
     public const SCHEMA_TITLE       = 'Contributor Activity';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     private $author;
-    private ?int $total = null;
-    /**
-     * @var array<Weeks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema\ContributorActivity\Weeks::class)
-     */
+    private ?int $total  = null;
     private array $weeks = [];
 
     public function author()
@@ -28,6 +24,9 @@ final class ContributorActivity
         return $this->total;
     }
 
+    /**
+     * @return array<Weeks>
+     */
     public function weeks(): array
     {
         return $this->weeks;

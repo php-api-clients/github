@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Installation;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\RevokeInstallationAccessTokenOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\RevokeInstallationAccessToken;
 
 final class Token
 {
-    function delete(): RevokeInstallationAccessTokenOperation
+    function delete(): RevokeInstallationAccessToken
     {
-        return new RevokeInstallationAccessTokenOperation();
+        return new RevokeInstallationAccessToken();
     }
 }

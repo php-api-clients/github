@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Applications\Grants;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\OauthAuthorizations\DeleteGrantOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\OauthAuthorizations\GetGrantOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\OauthAuthorizations\DeleteGrant;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\OauthAuthorizations\GetGrant;
 
 final class CbGrantIdRcb
 {
-    function get($grant_id): GetGrantOperation
+    function get($grant_id): GetGrant
     {
-        return new GetGrantOperation($grant_id);
+        return new GetGrant($grant_id);
     }
 
-    function delete($grant_id): DeleteGrantOperation
+    function delete($grant_id): DeleteGrant
     {
-        return new DeleteGrantOperation($grant_id);
+        return new DeleteGrant($grant_id);
     }
 }

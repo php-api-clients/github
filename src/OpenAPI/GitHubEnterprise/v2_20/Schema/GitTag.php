@@ -32,6 +32,9 @@ final class GitTag
         return $this->node_id;
     }
 
+    /**
+     * Name of the tag
+     */
     public function tag(): ?string
     {
         return $this->tag;
@@ -42,11 +45,17 @@ final class GitTag
         return $this->sha;
     }
 
+    /**
+     * URL for the tag
+     */
     public function url(): ?string
     {
         return $this->url;
     }
 
+    /**
+     * Message describing the purpose of the tag
+     */
     public function message(): ?string
     {
         return $this->message;

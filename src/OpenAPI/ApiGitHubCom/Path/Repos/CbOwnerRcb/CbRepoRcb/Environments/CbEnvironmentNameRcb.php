@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Environments;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateOrUpdateEnvironmentOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteAnEnvironmentOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetEnvironmentOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateOrUpdateEnvironment;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteAnEnvironment;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetEnvironment;
 
 final class CbEnvironmentNameRcb
 {
-    function get($owner, $repo, $environment_name): GetEnvironmentOperation
+    function get($owner, $repo, $environment_name): GetEnvironment
     {
-        return new GetEnvironmentOperation($owner, $repo, $environment_name);
+        return new GetEnvironment($owner, $repo, $environment_name);
     }
 
-    function put($owner, $repo, $environment_name): CreateOrUpdateEnvironmentOperation
+    function put($owner, $repo, $environment_name): CreateOrUpdateEnvironment
     {
-        return new CreateOrUpdateEnvironmentOperation($owner, $repo, $environment_name);
+        return new CreateOrUpdateEnvironment($owner, $repo, $environment_name);
     }
 
-    function delete($owner, $repo, $environment_name): DeleteAnEnvironmentOperation
+    function delete($owner, $repo, $environment_name): DeleteAnEnvironment
     {
-        return new DeleteAnEnvironmentOperation($owner, $repo, $environment_name);
+        return new DeleteAnEnvironment($owner, $repo, $environment_name);
     }
 }

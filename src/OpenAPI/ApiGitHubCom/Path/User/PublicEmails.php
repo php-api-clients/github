@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicEmailsForAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicEmailsForAuthenticated;
 
 final class PublicEmails
 {
-    function get(int $per_page = 30, int $page = 1): ListPublicEmailsForAuthenticatedOperation
+    function get(int $per_page = 30, int $page = 1): ListPublicEmailsForAuthenticated
     {
-        return new ListPublicEmailsForAuthenticatedOperation($per_page, $page);
+        return new ListPublicEmailsForAuthenticated($per_page, $page);
     }
 }

@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\TransferOperation;
-
 final class Transfer
 {
-    function post($owner, $repo): TransferOperation
+    function post($owner, $repo): \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\Transfer
     {
-        return new TransferOperation($owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\Transfer($owner, $repo);
     }
 }

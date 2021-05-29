@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Invitations;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CancelInvitationOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CancelInvitation;
 
 final class CbInvitationIdRcb
 {
-    function delete($org, $invitation_id): CancelInvitationOperation
+    function delete($org, $invitation_id): CancelInvitation
     {
-        return new CancelInvitationOperation($org, $invitation_id);
+        return new CancelInvitation($org, $invitation_id);
     }
 }

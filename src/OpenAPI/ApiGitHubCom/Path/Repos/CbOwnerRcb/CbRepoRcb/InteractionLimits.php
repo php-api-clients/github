@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForRepoOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\RemoveRestrictionsForRepoOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\SetRestrictionsForRepoOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForRepo;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\RemoveRestrictionsForRepo;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\SetRestrictionsForRepo;
 
 final class InteractionLimits
 {
-    function get($owner, $repo): GetRestrictionsForRepoOperation
+    function get($owner, $repo): GetRestrictionsForRepo
     {
-        return new GetRestrictionsForRepoOperation($owner, $repo);
+        return new GetRestrictionsForRepo($owner, $repo);
     }
 
-    function put($owner, $repo): SetRestrictionsForRepoOperation
+    function put($owner, $repo): SetRestrictionsForRepo
     {
-        return new SetRestrictionsForRepoOperation($owner, $repo);
+        return new SetRestrictionsForRepo($owner, $repo);
     }
 
-    function delete($owner, $repo): RemoveRestrictionsForRepoOperation
+    function delete($owner, $repo): RemoveRestrictionsForRepo
     {
-        return new RemoveRestrictionsForRepoOperation($owner, $repo);
+        return new RemoveRestrictionsForRepo($owner, $repo);
     }
 }

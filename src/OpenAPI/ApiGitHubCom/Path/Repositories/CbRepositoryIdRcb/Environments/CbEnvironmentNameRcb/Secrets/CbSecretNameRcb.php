@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateOrUpdateEnvironmentSecretOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentSecretOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetEnvironmentSecretOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateOrUpdateEnvironmentSecret;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentSecret;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetEnvironmentSecret;
 
 final class CbSecretNameRcb
 {
-    function get($repository_id, $environment_name, $secret_name): GetEnvironmentSecretOperation
+    function get($repository_id, $environment_name, $secret_name): GetEnvironmentSecret
     {
-        return new GetEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
+        return new GetEnvironmentSecret($repository_id, $environment_name, $secret_name);
     }
 
-    function put($repository_id, $environment_name, $secret_name): CreateOrUpdateEnvironmentSecretOperation
+    function put($repository_id, $environment_name, $secret_name): CreateOrUpdateEnvironmentSecret
     {
-        return new CreateOrUpdateEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
+        return new CreateOrUpdateEnvironmentSecret($repository_id, $environment_name, $secret_name);
     }
 
-    function delete($repository_id, $environment_name, $secret_name): DeleteEnvironmentSecretOperation
+    function delete($repository_id, $environment_name, $secret_name): DeleteEnvironmentSecret
     {
-        return new DeleteEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
+        return new DeleteEnvironmentSecret($repository_id, $environment_name, $secret_name);
     }
 }

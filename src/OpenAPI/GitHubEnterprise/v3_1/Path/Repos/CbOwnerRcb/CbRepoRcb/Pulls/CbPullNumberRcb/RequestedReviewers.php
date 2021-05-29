@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\ListRequestedReviewersOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\RemoveRequestedReviewersOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\RequestReviewersOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\ListRequestedReviewers;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\RemoveRequestedReviewers;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Pulls\RequestReviewers;
 
 final class RequestedReviewers
 {
-    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1): ListRequestedReviewersOperation
+    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1): ListRequestedReviewers
     {
-        return new ListRequestedReviewersOperation($owner, $repo, $pull_number, $per_page, $page);
+        return new ListRequestedReviewers($owner, $repo, $pull_number, $per_page, $page);
     }
 
-    function post($owner, $repo, $pull_number): RequestReviewersOperation
+    function post($owner, $repo, $pull_number): RequestReviewers
     {
-        return new RequestReviewersOperation($owner, $repo, $pull_number);
+        return new RequestReviewers($owner, $repo, $pull_number);
     }
 
-    function delete($owner, $repo, $pull_number): RemoveRequestedReviewersOperation
+    function delete($owner, $repo, $pull_number): RemoveRequestedReviewers
     {
-        return new RemoveRequestedReviewersOperation($owner, $repo, $pull_number);
+        return new RemoveRequestedReviewers($owner, $repo, $pull_number);
     }
 }

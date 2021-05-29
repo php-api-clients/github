@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Enterprises\CbEnterpriseRcb\Actions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\CreateSelfHostedRunnerGroupForEnterpriseOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\ListSelfHostedRunnerGroupsForEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\CreateSelfHostedRunnerGroupForEnterprise;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\ListSelfHostedRunnerGroupsForEnterprise;
 
 final class RunnerGroups
 {
-    function get($enterprise, int $per_page = 30, int $page = 1): ListSelfHostedRunnerGroupsForEnterpriseOperation
+    function get($enterprise, int $per_page = 30, int $page = 1): ListSelfHostedRunnerGroupsForEnterprise
     {
-        return new ListSelfHostedRunnerGroupsForEnterpriseOperation($enterprise, $per_page, $page);
+        return new ListSelfHostedRunnerGroupsForEnterprise($enterprise, $per_page, $page);
     }
 
-    function post($enterprise): CreateSelfHostedRunnerGroupForEnterpriseOperation
+    function post($enterprise): CreateSelfHostedRunnerGroupForEnterprise
     {
-        return new CreateSelfHostedRunnerGroupForEnterpriseOperation($enterprise);
+        return new CreateSelfHostedRunnerGroupForEnterprise($enterprise);
     }
 }

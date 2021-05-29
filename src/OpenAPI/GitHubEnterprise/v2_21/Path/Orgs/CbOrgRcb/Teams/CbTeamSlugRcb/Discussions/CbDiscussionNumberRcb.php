@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Discussions;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\DeleteDiscussionInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\GetDiscussionInOrgOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\UpdateDiscussionInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\DeleteDiscussionInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\GetDiscussionInOrg;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\UpdateDiscussionInOrg;
 
 final class CbDiscussionNumberRcb
 {
-    function get($org, $team_slug, $discussion_number): GetDiscussionInOrgOperation
+    function get($org, $team_slug, $discussion_number): GetDiscussionInOrg
     {
-        return new GetDiscussionInOrgOperation($org, $team_slug, $discussion_number);
+        return new GetDiscussionInOrg($org, $team_slug, $discussion_number);
     }
 
-    function delete($org, $team_slug, $discussion_number): DeleteDiscussionInOrgOperation
+    function delete($org, $team_slug, $discussion_number): DeleteDiscussionInOrg
     {
-        return new DeleteDiscussionInOrgOperation($org, $team_slug, $discussion_number);
+        return new DeleteDiscussionInOrg($org, $team_slug, $discussion_number);
     }
 
-    function patch($org, $team_slug, $discussion_number): UpdateDiscussionInOrgOperation
+    function patch($org, $team_slug, $discussion_number): UpdateDiscussionInOrg
     {
-        return new UpdateDiscussionInOrgOperation($org, $team_slug, $discussion_number);
+        return new UpdateDiscussionInOrg($org, $team_slug, $discussion_number);
     }
 }

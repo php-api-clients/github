@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Enterprise;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\GetAnnouncementOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\RemoveAnnouncementOperation;
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\SetAnnouncementOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\GetAnnouncement;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\RemoveAnnouncement;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\SetAnnouncement;
 
 final class Announcement
 {
-    function get(): GetAnnouncementOperation
+    function get(): GetAnnouncement
     {
-        return new GetAnnouncementOperation();
+        return new GetAnnouncement();
     }
 
-    function delete(): RemoveAnnouncementOperation
+    function delete(): RemoveAnnouncement
     {
-        return new RemoveAnnouncementOperation();
+        return new RemoveAnnouncement();
     }
 
-    function patch(): SetAnnouncementOperation
+    function patch(): SetAnnouncement
     {
-        return new SetAnnouncementOperation();
+        return new SetAnnouncement();
     }
 }

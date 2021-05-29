@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\Releases\Tags;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetReleaseByTagOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetReleaseByTag;
 
 final class CbTagRcb
 {
-    function get($owner, $repo, $tag): GetReleaseByTagOperation
+    function get($owner, $repo, $tag): GetReleaseByTag
     {
-        return new GetReleaseByTagOperation($owner, $repo, $tag);
+        return new GetReleaseByTag($owner, $repo, $tag);
     }
 }

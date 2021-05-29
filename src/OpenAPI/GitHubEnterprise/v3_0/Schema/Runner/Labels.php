@@ -21,16 +21,25 @@ final class Labels
      */
     private ?string $type = null;
 
+    /**
+     * Unique identifier of the label.
+     */
     public function id(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * Name of the label.
+     */
     public function name(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * The type of label. Read-only labels are applied automatically when the runner is configured.
+     */
     public function type(): ?string
     {
         return $this->type;

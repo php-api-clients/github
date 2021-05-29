@@ -21,11 +21,17 @@ final class RepositorySubscription
     private ?string $url            = null;
     private ?string $repository_url = null;
 
+    /**
+     * Determines if notifications should be received from this repository.
+     */
     public function subscribed(): ?bool
     {
         return $this->subscribed;
     }
 
+    /**
+     * Determines if all notifications should be blocked from this repository.
+     */
     public function ignored(): ?bool
     {
         return $this->ignored;

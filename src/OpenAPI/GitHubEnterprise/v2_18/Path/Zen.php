@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path;
 
-use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Meta\GetZenOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Meta\GetZen;
 
 final class Zen
 {
-    function get(): GetZenOperation
+    function get(): GetZen
     {
-        return new GetZenOperation();
+        return new GetZen();
     }
 }

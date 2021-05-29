@@ -28,10 +28,6 @@ final class PullRequestSimple
     private ?string $title               = null;
     private $user;
     private ?string $body = null;
-    /**
-     * @var array<Labels>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\PullRequestSimple\Labels::class)
-     */
     private array $labels = [];
     private $milestone;
     private ?string $active_lock_reason = null;
@@ -41,24 +37,12 @@ final class PullRequestSimple
     private ?string $merged_at          = null;
     private ?string $merge_commit_sha   = null;
     private $assignee;
-    /**
-     * @var array<SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleUser::class)
-     */
-    private array $assignees = [];
-    /**
-     * @var array<SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\SimpleUser::class)
-     */
+    private array $assignees           = [];
     private array $requested_reviewers = [];
-    /**
-     * @var array<TeamSimple>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema\TeamSimple::class)
-     */
-    private array $requested_teams = [];
-    private array $head            = [];
-    private array $base            = [];
-    private array $_links          = [];
+    private array $requested_teams     = [];
+    private array $head                = [];
+    private array $base                = [];
+    private array $_links              = [];
     /**
      * How the author is associated with the repository.
      */
@@ -158,6 +142,9 @@ final class PullRequestSimple
         return $this->body;
     }
 
+    /**
+     * @return array<Labels>
+     */
     public function labels(): array
     {
         return $this->labels;
@@ -203,16 +190,25 @@ final class PullRequestSimple
         return $this->assignee;
     }
 
+    /**
+     * @return array<SimpleUser>
+     */
     public function assignees(): array
     {
         return $this->assignees;
     }
 
+    /**
+     * @return array<SimpleUser>
+     */
     public function requested_reviewers(): array
     {
         return $this->requested_reviewers;
     }
 
+    /**
+     * @return array<TeamSimple>
+     */
     public function requested_teams(): array
     {
         return $this->requested_teams;
@@ -233,11 +229,17 @@ final class PullRequestSimple
         return $this->_links;
     }
 
+    /**
+     * How the author is associated with the repository.
+     */
     public function author_association(): ?string
     {
         return $this->author_association;
     }
 
+    /**
+     * Indicates whether or not the pull request is a draft.
+     */
     public function draft(): ?bool
     {
         return $this->draft;

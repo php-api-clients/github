@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\CheckSuites;
 
-use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Checks\SetSuitesPreferencesOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Checks\SetSuitesPreferences;
 
 final class Preferences
 {
-    function patch($owner, $repo): SetSuitesPreferencesOperation
+    function patch($owner, $repo): SetSuitesPreferences
     {
-        return new SetSuitesPreferencesOperation($owner, $repo);
+        return new SetSuitesPreferences($owner, $repo);
     }
 }

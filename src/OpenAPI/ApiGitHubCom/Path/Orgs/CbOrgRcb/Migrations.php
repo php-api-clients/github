@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListForOrgOperation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\StartForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListForOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\StartForOrg;
 
 final class Migrations
 {
-    function get($org, int $per_page = 30, int $page = 1, $exclude): ListForOrgOperation
+    function get($org, int $per_page = 30, int $page = 1, $exclude): ListForOrg
     {
-        return new ListForOrgOperation($org, $per_page, $page, $exclude);
+        return new ListForOrg($org, $per_page, $page, $exclude);
     }
 
-    function post($org): StartForOrgOperation
+    function post($org): StartForOrg
     {
-        return new StartForOrgOperation($org);
+        return new StartForOrg($org);
     }
 }

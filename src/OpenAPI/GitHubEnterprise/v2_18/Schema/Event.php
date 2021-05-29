@@ -37,6 +37,9 @@ final class Event
         return $this->type;
     }
 
+    /**
+     * Actor
+     */
     public function actor(): ?Actor
     {
         return $this->actor;
@@ -47,6 +50,9 @@ final class Event
         return $this->repo;
     }
 
+    /**
+     * Actor
+     */
     public function org(): ?Actor
     {
         return $this->org;
