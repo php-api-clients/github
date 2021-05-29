@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class ActionsOrganizationPermissions
 {
-    public const SCHEMA_TITLE = 'actions-organization-permissions';
+    public const SCHEMA_TITLE       = 'actions-organization-permissions';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The policy that controls the repositories in the organization that are allowed to run GitHub Actions. Can be one of: `all`, `none`, or `selected`.
@@ -22,19 +24,23 @@ final class ActionsOrganizationPermissions
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
     private ?string $selected_actions_url = null;
-    public function enabled_repositories() : ?string
+
+    public function enabled_repositories(): ?string
     {
         return $this->enabled_repositories;
     }
-    public function selected_repositories_url() : ?string
+
+    public function selected_repositories_url(): ?string
     {
         return $this->selected_repositories_url;
     }
-    public function allowed_actions() : ?string
+
+    public function allowed_actions(): ?string
     {
         return $this->allowed_actions;
     }
-    public function selected_actions_url() : ?string
+
+    public function selected_actions_url(): ?string
     {
         return $this->selected_actions_url;
     }

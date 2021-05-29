@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Enterprises\CbEnterpriseRcb\Actions\Permissions;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetAllowedActionsEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\SetAllowedActionsEnterpriseOperation;
 
 final class SelectedActions
 {
-    function get($enterprise) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetAllowedActionsEnterpriseOperation
+    function get($enterprise): GetAllowedActionsEnterpriseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetAllowedActionsEnterpriseOperation($enterprise);
+        return new GetAllowedActionsEnterpriseOperation($enterprise);
     }
-    function put($enterprise) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\SetAllowedActionsEnterpriseOperation
+
+    function put($enterprise): SetAllowedActionsEnterpriseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\SetAllowedActionsEnterpriseOperation($enterprise);
+        return new SetAllowedActionsEnterpriseOperation($enterprise);
     }
 }

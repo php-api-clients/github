@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\CreateSuiteOperation;
 
 final class CheckSuites
 {
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\CreateSuiteOperation
+    function post($owner, $repo): CreateSuiteOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\CreateSuiteOperation($owner, $repo);
+        return new CreateSuiteOperation($owner, $repo);
     }
 }

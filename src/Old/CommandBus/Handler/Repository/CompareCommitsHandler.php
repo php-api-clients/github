@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
@@ -9,14 +11,8 @@ use React\Promise\PromiseInterface;
 
 final class CompareCommitsHandler
 {
-    /**
-     * @var FetchAndHydrateService
-     */
-    private $service;
+    private FetchAndHydrateService $service;
 
-    /**
-     * @param FetchAndHydrateService $service
-     */
     public function __construct(FetchAndHydrateService $service)
     {
         $this->service = $service;
@@ -24,9 +20,6 @@ final class CompareCommitsHandler
 
     /**
      * Fetch the given repository and hydrate it.
-     *
-     * @param  CompareCommitsCommand $command
-     * @return PromiseInterface
      */
     public function handle(CompareCommitsCommand $command): PromiseInterface
     {

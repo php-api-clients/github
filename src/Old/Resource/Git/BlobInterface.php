@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Git;
 
@@ -6,16 +8,10 @@ use ApiClients\Foundation\Resource\ResourceInterface;
 
 interface BlobInterface extends ResourceInterface
 {
-    const HYDRATE_CLASS = 'Git\\Blob';
+    public const HYDRATE_CLASS = 'Git\\Blob';
 
-    /**
-     * @return string
-     */
     public function sha(): string;
 
-    /**
-     * @return string
-     */
     public function url(): string;
 
     /**
@@ -23,8 +19,5 @@ interface BlobInterface extends ResourceInterface
      */
     public function tree(): array;
 
-    /**
-     * @return bool
-     */
     public function truncated(): bool;
 }

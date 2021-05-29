@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler;
 
@@ -6,41 +8,28 @@ use ApiClients\Client\Github\CommandBus\Command\EmojisCommand;
 use ApiClients\Client\Github\Resource\EmojiInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
-use function ApiClients\Tools\Rx\observableFromArray;
 use React\Promise\PromiseInterface;
+
+use function ApiClients\Tools\Rx\observableFromArray;
 use function React\Promise\resolve;
 
 final class EmojisHandler
 {
-    /**
-     * @var IteratePagesService
-     */
-    private $service;
+    private IteratePagesService $service;
 
-    /**
-     * @var Hydrator
-     */
-    private $hydrator;
+    private Hydrator $hydrator;
 
-    /**
-     * @param IteratePagesService $service
-     * @param Hydrator            $hydrator
-     */
     public function __construct(IteratePagesService $service, Hydrator $hydrator)
     {
-        $this->service = $service;
+        $this->service  = $service;
         $this->hydrator = $hydrator;
     }
 
-    /**
-     * @param  EmojisCommand    $command
-     * @return PromiseInterface
-     */
     public function handle(EmojisCommand $command): PromiseInterface
     {
         return resolve(
             $this->service->iterate('emojis')
-                ->flatMap(function ($emojis) {
+                ->flatMap(static function ($emojis) {
                     $structuredEmojis = [];
 
                     foreach ($emojis as $name => $image) {

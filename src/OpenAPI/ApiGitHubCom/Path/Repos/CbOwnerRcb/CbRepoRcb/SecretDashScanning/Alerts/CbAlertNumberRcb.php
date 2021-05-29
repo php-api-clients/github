@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\SecretDashScanning\Alerts;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\GetAlertOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\UpdateAlertOperation;
 
 final class CbAlertNumberRcb
 {
-    function get($owner, $repo, $alert_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\GetAlertOperation
+    function get($owner, $repo, $alert_number): GetAlertOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\GetAlertOperation($owner, $repo, $alert_number);
+        return new GetAlertOperation($owner, $repo, $alert_number);
     }
-    function patch($owner, $repo, $alert_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\UpdateAlertOperation
+
+    function patch($owner, $repo, $alert_number): UpdateAlertOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\UpdateAlertOperation($owner, $repo, $alert_number);
+        return new UpdateAlertOperation($owner, $repo, $alert_number);
     }
 }

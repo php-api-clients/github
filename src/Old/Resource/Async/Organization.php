@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Async;
 
@@ -9,9 +11,10 @@ use ApiClients\Client\Github\CommandBus\Command\User\RepositoriesCommand;
 use ApiClients\Client\Github\CommandBus\Command\User\RepositoryCommand;
 use ApiClients\Client\Github\CommandBus\Command\WebHooksCommand;
 use ApiClients\Client\Github\Resource\Organization as BaseOrganization;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\Promise\PromiseInterface;
 use Rx\ObservableInterface;
+
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 class Organization extends BaseOrganization
 {

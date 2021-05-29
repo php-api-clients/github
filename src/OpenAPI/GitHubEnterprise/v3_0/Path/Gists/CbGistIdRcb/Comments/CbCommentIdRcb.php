@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Gists\CbGistIdRcb\Comments;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\DeleteCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\GetCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\UpdateCommentOperation;
 
 final class CbCommentIdRcb
 {
-    function get($gist_id, $comment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\GetCommentOperation
+    function get($gist_id, $comment_id): GetCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\GetCommentOperation($gist_id, $comment_id);
+        return new GetCommentOperation($gist_id, $comment_id);
     }
-    function delete($gist_id, $comment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\DeleteCommentOperation
+
+    function delete($gist_id, $comment_id): DeleteCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\DeleteCommentOperation($gist_id, $comment_id);
+        return new DeleteCommentOperation($gist_id, $comment_id);
     }
-    function patch($gist_id, $comment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\UpdateCommentOperation
+
+    function patch($gist_id, $comment_id): UpdateCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\UpdateCommentOperation($gist_id, $comment_id);
+        return new UpdateCommentOperation($gist_id, $comment_id);
     }
 }

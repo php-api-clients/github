@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command;
 
@@ -9,36 +11,23 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class SaveCommand
 {
-    /**
-     * @var string
-     */
-    private $hydrateClass;
+    private string $hydrateClass;
+
+    /** @var array */
+    private array $data;
+
+    private string $url;
 
     /**
-     * @var array
-     */
-    private $data;
-
-    /**
-     * @var string
-     */
-    private $url;
-
-    /**
-     * @param string $hydrateClass
-     * @param array  $data
-     * @param string $url
+     * @param array $data
      */
     public function __construct(string $hydrateClass, array $data, string $url)
     {
         $this->hydrateClass = $hydrateClass;
-        $this->data = $data;
-        $this->url = $url;
+        $this->data         = $data;
+        $this->url          = $url;
     }
 
-    /**
-     * @return string
-     */
     public function getHydrateClass(): string
     {
         return $this->hydrateClass;
@@ -52,9 +41,6 @@ final class SaveCommand
         return $this->data;
     }
 
-    /**
-     * @return string
-     */
     public function getUrl(): string
     {
         return $this->url;

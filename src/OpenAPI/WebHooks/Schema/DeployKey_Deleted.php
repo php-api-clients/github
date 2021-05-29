@@ -1,47 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class DeployKey_Deleted
 {
-    public const SCHEMA_TITLE = 'deploy_key deleted event';
+    public const SCHEMA_TITLE       = 'deploy_key deleted event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action = null;
+    private ?string $action         = null;
     /**
      * The [`deploy key`](https://docs.github.com/en/rest/reference/repos#get-a-deploy-key) resource.
      */
-    private array $key = array();
+    private array $key = [];
     /**
      * A git repository
      */
-    private array $repository = array();
-    private array $sender = array();
+    private array $repository = [];
+    private array $sender     = [];
     /**
      * Installation
      */
-    private array $installation = array();
-    private array $organization = array();
-    public function action() : ?string
+    private array $installation = [];
+    private array $organization = [];
+
+    public function action(): ?string
     {
         return $this->action;
     }
-    public function key() : array
+
+    public function key(): array
     {
         return $this->key;
     }
-    public function repository() : array
+
+    public function repository(): array
     {
         return $this->repository;
     }
-    public function sender() : array
+
+    public function sender(): array
     {
         return $this->sender;
     }
-    public function installation() : array
+
+    public function installation(): array
     {
         return $this->installation;
     }
-    public function organization() : array
+
+    public function organization(): array
     {
         return $this->organization;
     }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command;
 
@@ -10,55 +12,32 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class RenderMarkdownCommand
 {
-    /**
-     * @var ReadableStreamInterface
-     */
-    private $stream;
+    private ReadableStreamInterface $stream;
 
-    /**
-     * @var string
-     */
-    private $mode;
+    private string $mode;
 
-    /**
-     * @var string
-     */
-    private $context;
+    private string $context;
 
-    /**
-     * @param ReadableStreamInterface $stream
-     * @param string                  $mode
-     * @param string                  $context
-     */
     public function __construct(
         ReadableStreamInterface $stream,
         string $mode,
         string $context
     ) {
-        $this->stream = $stream;
-        $this->mode = $mode;
+        $this->stream  = $stream;
+        $this->mode    = $mode;
         $this->context = $context;
     }
 
-    /**
-     * @return ReadableStreamInterface
-     */
     public function getStream(): ReadableStreamInterface
     {
         return $this->stream;
     }
 
-    /**
-     * @return string
-     */
     public function getMode(): string
     {
         return $this->mode;
     }
 
-    /**
-     * @return string
-     */
     public function getContext(): string
     {
         return $this->context;

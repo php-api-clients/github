@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Admin;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\CreatePreReceiveHookOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\ListPreReceiveHooksOperation;
 
 final class PreReceiveHooks
 {
-    function get(int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created') : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\ListPreReceiveHooksOperation
+    function get(int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created'): ListPreReceiveHooksOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\ListPreReceiveHooksOperation($per_page, $page, $direction, $sort);
+        return new ListPreReceiveHooksOperation($per_page, $page, $direction, $sort);
     }
-    function post() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\CreatePreReceiveHookOperation
+
+    function post(): CreatePreReceiveHookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\CreatePreReceiveHookOperation();
+        return new CreatePreReceiveHookOperation();
     }
 }

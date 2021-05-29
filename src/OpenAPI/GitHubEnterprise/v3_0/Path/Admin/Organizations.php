@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Admin;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\CreateOrgOperation;
 
 final class Organizations
 {
-    function post() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\CreateOrgOperation
+    function post(): CreateOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\CreateOrgOperation();
+        return new CreateOrgOperation();
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository;
 
@@ -9,51 +11,36 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class CommitCommand
 {
-    /** @var string */
-    private $repository;
+    private string $repository;
 
-    /** @var string */
-    private $message;
+    private string $message;
 
-    /** @var string */
-    private $tree;
+    private string $tree;
 
     /** @var string[]|null */
-    private $commit;
+    private ?array $commit = null;
 
     /**
-     * @param string        $repository
-     * @param string        $message
-     * @param string        $tree
      * @param string[]|null $commit
      */
     public function __construct(string $repository, string $message, string $tree, ?string ...$commit)
     {
         $this->repository = $repository;
-        $this->message = $message;
-        $this->tree = $tree;
-        $this->commit = $commit;
+        $this->message    = $message;
+        $this->tree       = $tree;
+        $this->commit     = $commit;
     }
 
-    /**
-     * @return string
-     */
     public function getRepository(): string
     {
         return $this->repository;
     }
 
-    /**
-     * @return string
-     */
     public function getMessage(): string
     {
         return $this->message;
     }
 
-    /**
-     * @return string
-     */
     public function getTree(): string
     {
         return $this->tree;

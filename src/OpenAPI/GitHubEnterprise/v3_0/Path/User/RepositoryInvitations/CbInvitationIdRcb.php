@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\User\RepositoryInvitations;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\AcceptInvitationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeclineInvitationOperation;
 
 final class CbInvitationIdRcb
 {
-    function delete($invitation_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeclineInvitationOperation
+    function delete($invitation_id): DeclineInvitationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeclineInvitationOperation($invitation_id);
+        return new DeclineInvitationOperation($invitation_id);
     }
-    function patch($invitation_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\AcceptInvitationOperation
+
+    function patch($invitation_id): AcceptInvitationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\AcceptInvitationOperation($invitation_id);
+        return new AcceptInvitationOperation($invitation_id);
     }
 }

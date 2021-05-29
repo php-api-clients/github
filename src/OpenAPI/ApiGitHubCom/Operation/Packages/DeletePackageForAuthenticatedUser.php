@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class DeletePackageForAuthenticatedUser
 {
@@ -9,20 +16,24 @@ final class DeletePackageForAuthenticatedUser
     public string $package_type;
     /**The name of the package.**/
     public string $package_name;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($package_type, $package_name)
     {
         $this->package_type = $package_type;
         $this->package_name = $package_name;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{package_type}', '{package_name}'), array($this->package_type, $this->package_name), '/user/packages/{package_type}/{package_name}?'));
+        return new Request('delete', str_replace(['{package_type}', '{package_name}'], [$this->package_type, $this->package_name], '/user/packages/{package_type}/{package_name}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

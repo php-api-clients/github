@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeleteAdminBranchProtectionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetAdminBranchProtectionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\SetAdminBranchProtectionOperation;
 
 final class EnforceAdmins
 {
-    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetAdminBranchProtectionOperation
+    function get($owner, $repo, $branch): GetAdminBranchProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetAdminBranchProtectionOperation($owner, $repo, $branch);
+        return new GetAdminBranchProtectionOperation($owner, $repo, $branch);
     }
-    function post($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\SetAdminBranchProtectionOperation
+
+    function post($owner, $repo, $branch): SetAdminBranchProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\SetAdminBranchProtectionOperation($owner, $repo, $branch);
+        return new SetAdminBranchProtectionOperation($owner, $repo, $branch);
     }
-    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeleteAdminBranchProtectionOperation
+
+    function delete($owner, $repo, $branch): DeleteAdminBranchProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\DeleteAdminBranchProtectionOperation($owner, $repo, $branch);
+        return new DeleteAdminBranchProtectionOperation($owner, $repo, $branch);
     }
 }

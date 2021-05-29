@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Contents;
 
@@ -15,27 +17,15 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class FileOperation extends AbstractResource implements FileOperationInterface
 {
-    /**
-     * @var Contents\File
-     */
-    protected $content;
+    protected Contents\File $content;
 
-    /**
-     * @var Git\Commit
-     */
-    protected $commit;
+    protected Git\Commit $commit;
 
-    /**
-     * @return Contents\File
-     */
     public function content(): Contents\File
     {
         return $this->content;
     }
 
-    /**
-     * @return Git\Commit
-     */
     public function commit(): Git\Commit
     {
         return $this->commit;

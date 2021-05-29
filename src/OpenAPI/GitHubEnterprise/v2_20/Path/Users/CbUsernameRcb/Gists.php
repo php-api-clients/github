@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Users\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Gists\ListForUserOperation;
 
 final class Gists
 {
-    function get($username, $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Gists\ListForUserOperation
+    function get($username, $since, int $per_page = 30, int $page = 1): ListForUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Gists\ListForUserOperation($username, $since, $per_page, $page);
+        return new ListForUserOperation($username, $since, $per_page, $page);
     }
 }

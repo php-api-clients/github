@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCommitsOperation;
 
 final class Commits
 {
-    function get($owner, $repo, $sha, $path, $author, $since, $until, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCommitsOperation
+    function get($owner, $repo, $sha, $path, $author, $since, $until, int $per_page = 30, int $page = 1): ListCommitsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCommitsOperation($owner, $repo, $sha, $path, $author, $since, $until, $per_page, $page);
+        return new ListCommitsOperation($owner, $repo, $sha, $path, $author, $since, $until, $per_page, $page);
     }
 }

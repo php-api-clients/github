@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository\Commit;
 
@@ -18,79 +20,43 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class CombinedStatus extends AbstractResource implements CombinedStatusInterface
 {
-    /**
-     * @var string
-     */
-    protected $state;
+    protected string $state;
 
-    /**
-     * @var string
-     */
-    protected $sha;
+    protected string $sha;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var int
-     */
-    protected $total_count;
+    protected int $total_count;
 
-    /**
-     * @var Repository\Commit\Status
-     */
-    protected $statuses;
+    protected Repository\Commit\Status $statuses;
 
-    /**
-     * @var Repository
-     */
-    protected $repository;
+    protected Repository $repository;
 
-    /**
-     * @return string
-     */
     public function state(): string
     {
         return $this->state;
     }
 
-    /**
-     * @return string
-     */
     public function sha(): string
     {
         return $this->sha;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return int
-     */
     public function totalCount(): int
     {
         return $this->total_count;
     }
 
-    /**
-     * @return Repository\Commit\Status
-     */
     public function statuses(): Repository\Commit\Status
     {
         return $this->statuses;
     }
 
-    /**
-     * @return Repository
-     */
     public function repository(): Repository
     {
         return $this->repository;

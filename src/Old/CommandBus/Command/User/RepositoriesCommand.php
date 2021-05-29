@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\User;
 
@@ -9,22 +11,13 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class RepositoriesCommand
 {
-    /**
-     * @var string
-     */
-    private $login;
+    private string $login;
 
-    /**
-     * @param string $login
-     */
     public function __construct(string $login)
     {
         $this->login = $login;
     }
 
-    /**
-     * @return string
-     */
     public function getLogin(): string
     {
         return $this->login;

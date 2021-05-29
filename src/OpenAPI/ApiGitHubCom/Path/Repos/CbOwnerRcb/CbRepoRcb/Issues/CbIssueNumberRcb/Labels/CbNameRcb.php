@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Labels;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabelOperation;
 
 final class CbNameRcb
 {
-    function delete($owner, $repo, $issue_number, $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabelOperation
+    function delete($owner, $repo, $issue_number, $name): RemoveLabelOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabelOperation($owner, $repo, $issue_number, $name);
+        return new RemoveLabelOperation($owner, $repo, $issue_number, $name);
     }
 }

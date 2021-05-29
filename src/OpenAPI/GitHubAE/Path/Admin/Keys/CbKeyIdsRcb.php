@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Keys;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeletePublicKeyOperation;
 
 final class CbKeyIdsRcb
 {
-    function delete($key_ids) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeletePublicKeyOperation
+    function delete($key_ids): DeletePublicKeyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeletePublicKeyOperation($key_ids);
+        return new DeletePublicKeyOperation($key_ids);
     }
 }

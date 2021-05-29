@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
@@ -9,8 +11,6 @@ use ApiClients\Foundation\Hydrator\Annotation\Collection;
 use ApiClients\Foundation\Hydrator\Annotation\EmptyResource;
 use ApiClients\Foundation\Hydrator\Annotation\Nested;
 use ApiClients\Foundation\Resource\AbstractResource;
-use Rx\Observable;
-use function ApiClients\Tools\Rx\observableFromArray;
 
 /**
  * @Collection(
@@ -26,89 +26,48 @@ use function ApiClients\Tools\Rx\observableFromArray;
  */
 abstract class Commit extends AbstractResource implements CommitInterface
 {
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var string
-     */
-    protected $sha;
+    protected string $sha;
 
-    /**
-     * @var string
-     */
-    protected $html_url;
+    protected string $html_url;
 
-    /**
-     * @var GitCommitInterface
-     */
-    protected $commit;
+    protected GitCommitInterface $commit;
 
-    /**
-     * @var UserInterface
-     */
-    protected $author;
+    protected UserInterface $author;
 
-    /**
-     * @var UserInterface
-     */
-    protected $comitter;
+    protected UserInterface $comitter;
 
-    /**
-     * @var TreeInterface
-     */
-    protected $parents;
+    protected TreeInterface $parents;
 
-    /**
-     * @var Commit\File[]
-     */
-    protected $files;
+    /** @var Commit\File[] */
+    protected array $files;
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function sha(): string
     {
         return $this->sha;
     }
 
-    /**
-     * @return string
-     */
     public function htmlUrl(): string
     {
         return $this->html_url;
     }
 
-    /**
-     * @return GitCommitInterface
-     */
     public function commit(): GitCommitInterface
     {
         return $this->commit;
     }
 
-    /**
-     * @return UserInterface
-     */
     public function author(): UserInterface
     {
         return $this->author;
     }
 
-    /**
-     * @return UserInterface
-     */
     public function comitter(): UserInterface
     {
         return $this->comitter;

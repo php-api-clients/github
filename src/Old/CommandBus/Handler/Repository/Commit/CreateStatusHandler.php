@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository\Commit;
 
@@ -10,32 +12,20 @@ use ApiClients\Middleware\Json\JsonStream;
 use React\Promise\PromiseInterface;
 use RingCentral\Psr7\Request;
 
+use function str_replace;
+
 final class CreateStatusHandler
 {
-    /**
-     * @var RequestService
-     */
-    private $requestService;
+    private RequestService $requestService;
 
-    /**
-     * @var Hydrator
-     */
-    private $hydrator;
+    private Hydrator $hydrator;
 
-    /**
-     * @param RequestService $requestService
-     * @param Hydrator       $hydrator
-     */
     public function __construct(RequestService $requestService, Hydrator $hydrator)
     {
         $this->requestService = $requestService;
-        $this->hydrator = $hydrator;
+        $this->hydrator       = $hydrator;
     }
 
-    /**
-     * @param  CreateStatusCommand $command
-     * @return PromiseInterface
-     */
     public function handle(CreateStatusCommand $command): PromiseInterface
     {
         $json = [
@@ -46,20 +36,23 @@ final class CreateStatusHandler
         if ($targetUrl !== null) {
             $json['target_url'] = $targetUrl;
         }
+
         $description = $command->getDescription();
         if ($description !== null) {
             $json['description'] = $description;
         }
+
         $context = $command->getContext();
         if ($context !== null) {
             $json['context'] = $context;
         }
+
         unset($targetUrl, $description, $context);
 
         return $this->requestService->request(
             new Request(
                 'POST',
-                \str_replace('/commits/', '/statuses/', $command->getCommit()->url()),
+                str_replace('/commits/', '/statuses/', $command->getCommit()->url()),
                 [],
                 new JsonStream($json)
             )

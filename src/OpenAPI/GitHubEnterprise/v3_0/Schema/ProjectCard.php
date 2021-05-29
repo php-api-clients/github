@@ -1,69 +1,82 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 
 final class ProjectCard
 {
-    public const SCHEMA_TITLE = 'Project Card';
+    public const SCHEMA_TITLE       = 'Project Card';
     public const SCHEMA_DESCRIPTION = 'Project cards represent a scope of work.';
-    private ?string $url = null;
+    private ?string $url            = null;
     /**
      * The project card's ID
      */
-    private ?int $id = null;
+    private ?int $id         = null;
     private ?string $node_id = null;
-    private ?string $note = null;
+    private ?string $note    = null;
     private $creator;
     private ?string $created_at = null;
     private ?string $updated_at = null;
     /**
      * Whether or not the card is archived
      */
-    private ?bool $archived = null;
-    private ?string $column_url = null;
+    private ?bool $archived      = null;
+    private ?string $column_url  = null;
     private ?string $content_url = null;
     private ?string $project_url = null;
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function id() : ?int
+
+    public function id(): ?int
     {
         return $this->id;
     }
-    public function node_id() : ?string
+
+    public function node_id(): ?string
     {
         return $this->node_id;
     }
-    public function note() : ?string
+
+    public function note(): ?string
     {
         return $this->note;
     }
+
     public function creator()
     {
         return $this->creator;
     }
-    public function created_at() : ?string
+
+    public function created_at(): ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+
+    public function updated_at(): ?string
     {
         return $this->updated_at;
     }
-    public function archived() : ?bool
+
+    public function archived(): ?bool
     {
         return $this->archived;
     }
-    public function column_url() : ?string
+
+    public function column_url(): ?string
     {
         return $this->column_url;
     }
-    public function content_url() : ?string
+
+    public function content_url(): ?string
     {
         return $this->content_url;
     }
-    public function project_url() : ?string
+
+    public function project_url(): ?string
     {
         return $this->project_url;
     }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository;
 
@@ -13,7 +15,7 @@ class Tag extends BaseTag
         return $this->wait(
             $this->handleCommand(
                 new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-            )->then(function (TagInterface $tag) {
+            )->then(static function (TagInterface $tag) {
                 return $tag->refresh();
             })
         );

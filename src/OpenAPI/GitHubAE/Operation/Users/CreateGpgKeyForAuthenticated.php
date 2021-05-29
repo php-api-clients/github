@@ -1,22 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class CreateGpgKeyForAuthenticated
 {
     private const OPERATION_ID = 'users/create-gpg-key-for-authenticated';
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct()
     {
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/gpg_keys?'));
+        return new Request('post', str_replace([], [], '/user/gpg_keys?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

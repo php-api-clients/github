@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository;
 
@@ -10,37 +12,21 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class BlobCommand
 {
-    /**
-     * @var string
-     */
-    private $repository;
+    private string $repository;
 
-    /**
-     * @var ReadableStreamInterface
-     */
-    private $contents;
+    private ReadableStreamInterface $contents;
 
-    /**
-     * @param string                  $repository
-     * @param ReadableStreamInterface $contents
-     */
     public function __construct(string $repository, ReadableStreamInterface $contents)
     {
         $this->repository = $repository;
-        $this->contents = $contents;
+        $this->contents   = $contents;
     }
 
-    /**
-     * @return string
-     */
     public function getRepository(): string
     {
         return $this->repository;
     }
 
-    /**
-     * @return ReadableStreamInterface
-     */
     public function getContents(): ReadableStreamInterface
     {
         return $this->contents;

@@ -1,23 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Scim\V2\Organizations\CbOrgRcb\Users;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\DeleteUserFromOrgOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\GetProvisioningInformationForUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\SetInformationForProvisionedUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\UpdateAttributeForUserOperation;
 
 final class CbScimUserIdRcb
 {
-    function get($org, $scim_user_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\GetProvisioningInformationForUserOperation
+    function get($org, $scim_user_id): GetProvisioningInformationForUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\GetProvisioningInformationForUserOperation($org, $scim_user_id);
+        return new GetProvisioningInformationForUserOperation($org, $scim_user_id);
     }
-    function put($org, $scim_user_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\SetInformationForProvisionedUserOperation
+
+    function put($org, $scim_user_id): SetInformationForProvisionedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\SetInformationForProvisionedUserOperation($org, $scim_user_id);
+        return new SetInformationForProvisionedUserOperation($org, $scim_user_id);
     }
-    function delete($org, $scim_user_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\DeleteUserFromOrgOperation
+
+    function delete($org, $scim_user_id): DeleteUserFromOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\DeleteUserFromOrgOperation($org, $scim_user_id);
+        return new DeleteUserFromOrgOperation($org, $scim_user_id);
     }
-    function patch($org, $scim_user_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\UpdateAttributeForUserOperation
+
+    function patch($org, $scim_user_id): UpdateAttributeForUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\UpdateAttributeForUserOperation($org, $scim_user_id);
+        return new UpdateAttributeForUserOperation($org, $scim_user_id);
     }
 }

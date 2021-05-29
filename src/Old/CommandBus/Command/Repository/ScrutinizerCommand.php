@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository;
 
@@ -9,37 +11,21 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class ScrutinizerCommand
 {
-    /**
-     * @var string
-     */
-    private $login;
+    private string $login;
 
-    /**
-     * @var string
-     */
-    private $name;
+    private string $name;
 
-    /**
-     * @param string $login
-     * @param string $name
-     */
     public function __construct(string $login, string $name)
     {
         $this->login = $login;
-        $this->name = $name;
+        $this->name  = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getLogin(): string
     {
         return $this->login;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;

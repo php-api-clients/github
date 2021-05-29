@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Orgs\CbOrgRcb\Actions;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\CreateSelfHostedRunnerGroupForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\ListSelfHostedRunnerGroupsForOrgOperation;
 
 final class RunnerGroups
 {
-    function get($org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\ListSelfHostedRunnerGroupsForOrgOperation
+    function get($org, int $per_page = 30, int $page = 1): ListSelfHostedRunnerGroupsForOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\ListSelfHostedRunnerGroupsForOrgOperation($org, $per_page, $page);
+        return new ListSelfHostedRunnerGroupsForOrgOperation($org, $per_page, $page);
     }
-    function post($org) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\CreateSelfHostedRunnerGroupForOrgOperation
+
+    function post($org): CreateSelfHostedRunnerGroupForOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions\CreateSelfHostedRunnerGroupForOrgOperation($org);
+        return new CreateSelfHostedRunnerGroupForOrgOperation($org);
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\RateLimit;
 
@@ -15,27 +17,15 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Resources extends AbstractResource implements ResourcesInterface
 {
-    /**
-     * @var Rate
-     */
-    protected $core;
+    protected Rate $core;
 
-    /**
-     * @var Rate
-     */
-    protected $search;
+    protected Rate $search;
 
-    /**
-     * @return Rate
-     */
     public function core(): Rate
     {
         return $this->core;
     }
 
-    /**
-     * @return Rate
-     */
     public function search(): Rate
     {
         return $this->search;

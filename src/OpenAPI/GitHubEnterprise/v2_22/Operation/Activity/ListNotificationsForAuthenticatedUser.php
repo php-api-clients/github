@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Activity;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListNotificationsForAuthenticatedUser
 {
@@ -17,24 +24,28 @@ final class ListNotificationsForAuthenticatedUser
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct(bool $all = false, bool $participating = false, $since, $before, int $per_page = 30, int $page = 1)
     {
-        $this->all = $all;
+        $this->all           = $all;
         $this->participating = $participating;
-        $this->since = $since;
-        $this->before = $before;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->since         = $since;
+        $this->before        = $before;
+        $this->per_page      = $per_page;
+        $this->page          = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{all}', '{participating}', '{since}', '{before}', '{per_page}', '{page}'), array($this->all, $this->participating, $this->since, $this->before, $this->per_page, $this->page), '/notifications?all={all}&participating={participating}&since={since}&before={before}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{all}', '{participating}', '{since}', '{before}', '{per_page}', '{page}'], [$this->all, $this->participating, $this->since, $this->before, $this->per_page, $this->page], '/notifications?all={all}&participating={participating}&since={since}&before={before}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Projects\CbProjectIdRcb\Collaborators\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Projects\GetPermissionForUserOperation;
 
 final class Permission
 {
-    function get($project_id, $username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Projects\GetPermissionForUserOperation
+    function get($project_id, $username): GetPermissionForUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Projects\GetPermissionForUserOperation($project_id, $username);
+        return new GetPermissionForUserOperation($project_id, $username);
     }
 }

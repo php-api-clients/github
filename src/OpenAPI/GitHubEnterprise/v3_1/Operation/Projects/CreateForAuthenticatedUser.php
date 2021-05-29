@@ -1,22 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Projects;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class CreateForAuthenticatedUser
 {
     private const OPERATION_ID = 'projects/create-for-authenticated-user';
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct()
     {
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/projects?'));
+        return new Request('post', str_replace([], [], '/user/projects?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

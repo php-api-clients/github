@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Actions\Secrets\CbSecretNameRcb\Repositories;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelectedRepoToOrgSecretOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromOrgSecretOperation;
 
 final class CbRepositoryIdRcb
 {
-    function put($org, $secret_name, $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelectedRepoToOrgSecretOperation
+    function put($org, $secret_name, $repository_id): AddSelectedRepoToOrgSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelectedRepoToOrgSecretOperation($org, $secret_name, $repository_id);
+        return new AddSelectedRepoToOrgSecretOperation($org, $secret_name, $repository_id);
     }
-    function delete($org, $secret_name, $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromOrgSecretOperation
+
+    function delete($org, $secret_name, $repository_id): RemoveSelectedRepoFromOrgSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromOrgSecretOperation($org, $secret_name, $repository_id);
+        return new RemoveSelectedRepoFromOrgSecretOperation($org, $secret_name, $repository_id);
     }
 }

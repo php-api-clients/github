@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Git;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Git\CreateTreeOperation;
 
 final class Trees
 {
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Git\CreateTreeOperation
+    function post($owner, $repo): CreateTreeOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Git\CreateTreeOperation($owner, $repo);
+        return new CreateTreeOperation($owner, $repo);
     }
 }

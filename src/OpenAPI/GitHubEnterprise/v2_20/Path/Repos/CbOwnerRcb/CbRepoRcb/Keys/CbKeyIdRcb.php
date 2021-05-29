@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Repos\CbOwnerRcb\CbRepoRcb\Keys;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeleteDeployKeyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetDeployKeyOperation;
 
 final class CbKeyIdRcb
 {
-    function get($owner, $repo, $key_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetDeployKeyOperation
+    function get($owner, $repo, $key_id): GetDeployKeyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetDeployKeyOperation($owner, $repo, $key_id);
+        return new GetDeployKeyOperation($owner, $repo, $key_id);
     }
-    function delete($owner, $repo, $key_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeleteDeployKeyOperation
+
+    function delete($owner, $repo, $key_id): DeleteDeployKeyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeleteDeployKeyOperation($owner, $repo, $key_id);
+        return new DeleteDeployKeyOperation($owner, $repo, $key_id);
     }
 }

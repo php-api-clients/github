@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Orgs\CbOrgRcb\Actions\RunnerDashGroups\CbRunnerGroupIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrgOperation;
 
 final class Repositories
 {
-    function get($org, $runner_group_id, int $page = 1, int $per_page = 30) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrgOperation
+    function get($org, $runner_group_id, int $page = 1, int $per_page = 30): ListRepoAccessToSelfHostedRunnerGroupInOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrgOperation($org, $runner_group_id, $page, $per_page);
+        return new ListRepoAccessToSelfHostedRunnerGroupInOrgOperation($org, $runner_group_id, $page, $per_page);
     }
-    function put($org, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrgOperation
+
+    function put($org, $runner_group_id): SetRepoAccessToSelfHostedRunnerGroupInOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrgOperation($org, $runner_group_id);
+        return new SetRepoAccessToSelfHostedRunnerGroupInOrgOperation($org, $runner_group_id);
     }
 }

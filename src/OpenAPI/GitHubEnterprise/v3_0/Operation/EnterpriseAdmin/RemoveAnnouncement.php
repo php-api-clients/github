@@ -1,22 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class RemoveAnnouncement
 {
     private const OPERATION_ID = 'enterprise-admin/remove-announcement';
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct()
     {
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/enterprise/announcement?'));
+        return new Request('delete', str_replace([], [], '/enterprise/announcement?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

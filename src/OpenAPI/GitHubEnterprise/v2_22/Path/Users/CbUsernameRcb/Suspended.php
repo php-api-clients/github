@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Users\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\SuspendUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UnsuspendUserOperation;
 
 final class Suspended
 {
-    function put($username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\SuspendUserOperation
+    function put($username): SuspendUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\SuspendUserOperation($username);
+        return new SuspendUserOperation($username);
     }
-    function delete($username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UnsuspendUserOperation
+
+    function delete($username): UnsuspendUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UnsuspendUserOperation($username);
+        return new UnsuspendUserOperation($username);
     }
 }

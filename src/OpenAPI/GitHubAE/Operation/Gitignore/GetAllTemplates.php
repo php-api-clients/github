@@ -1,22 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gitignore;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class GetAllTemplates
 {
     private const OPERATION_ID = 'gitignore/get-all-templates';
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct()
     {
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/gitignore/templates?'));
+        return new Request('get', str_replace([], [], '/gitignore/templates?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

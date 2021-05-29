@@ -1,23 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\Restrictions;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AddAppAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\GetAppsWithAccessToProtectedBranchOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\RemoveAppAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\SetAppAccessRestrictionsOperation;
 
 final class Apps
 {
-    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\GetAppsWithAccessToProtectedBranchOperation
+    function get($owner, $repo, $branch): GetAppsWithAccessToProtectedBranchOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\GetAppsWithAccessToProtectedBranchOperation($owner, $repo, $branch);
+        return new GetAppsWithAccessToProtectedBranchOperation($owner, $repo, $branch);
     }
-    function put($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\SetAppAccessRestrictionsOperation
+
+    function put($owner, $repo, $branch): SetAppAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\SetAppAccessRestrictionsOperation($owner, $repo, $branch);
+        return new SetAppAccessRestrictionsOperation($owner, $repo, $branch);
     }
-    function post($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AddAppAccessRestrictionsOperation
+
+    function post($owner, $repo, $branch): AddAppAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AddAppAccessRestrictionsOperation($owner, $repo, $branch);
+        return new AddAppAccessRestrictionsOperation($owner, $repo, $branch);
     }
-    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\RemoveAppAccessRestrictionsOperation
+
+    function delete($owner, $repo, $branch): RemoveAppAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\RemoveAppAccessRestrictionsOperation($owner, $repo, $branch);
+        return new RemoveAppAccessRestrictionsOperation($owner, $repo, $branch);
     }
 }

@@ -1,36 +1,43 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 
 final class ShortBranch
 {
-    public const SCHEMA_TITLE = 'Short Branch';
+    public const SCHEMA_TITLE       = 'Short Branch';
     public const SCHEMA_DESCRIPTION = 'Short Branch';
-    private ?string $name = null;
-    private array $commit = array();
-    private ?bool $protected = null;
+    private ?string $name           = null;
+    private array $commit           = [];
+    private ?bool $protected        = null;
     /**
      * Branch Protection
      */
-    private array $protection = array();
+    private array $protection       = [];
     private ?string $protection_url = null;
-    public function name() : ?string
+
+    public function name(): ?string
     {
         return $this->name;
     }
-    public function commit() : array
+
+    public function commit(): array
     {
         return $this->commit;
     }
-    public function protected() : ?bool
+
+    public function protected(): ?bool
     {
         return $this->protected;
     }
-    public function protection() : array
+
+    public function protection(): array
     {
         return $this->protection;
     }
-    public function protection_url() : ?string
+
+    public function protection_url(): ?string
     {
         return $this->protection_url;
     }

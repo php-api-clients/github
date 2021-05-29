@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Admin\Hooks;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\DeleteGlobalWebhookOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\GetGlobalWebhookOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\UpdateGlobalWebhookOperation;
 
 final class CbHookIdRcb
 {
-    function get(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\GetGlobalWebhookOperation
+    function get(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): GetGlobalWebhookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\GetGlobalWebhookOperation($accept, $hook_id);
+        return new GetGlobalWebhookOperation($accept, $hook_id);
     }
-    function delete(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\DeleteGlobalWebhookOperation
+
+    function delete(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): DeleteGlobalWebhookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\DeleteGlobalWebhookOperation($accept, $hook_id);
+        return new DeleteGlobalWebhookOperation($accept, $hook_id);
     }
-    function patch(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\UpdateGlobalWebhookOperation
+
+    function patch(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id): UpdateGlobalWebhookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\EnterpriseAdmin\UpdateGlobalWebhookOperation($accept, $hook_id);
+        return new UpdateGlobalWebhookOperation($accept, $hook_id);
     }
 }

@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\App\Hook;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\GetWebhookConfigForAppOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\UpdateWebhookConfigForAppOperation;
 
 final class Config
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\GetWebhookConfigForAppOperation
+    function get(): GetWebhookConfigForAppOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\GetWebhookConfigForAppOperation();
+        return new GetWebhookConfigForAppOperation();
     }
-    function patch() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\UpdateWebhookConfigForAppOperation
+
+    function patch(): UpdateWebhookConfigForAppOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps\UpdateWebhookConfigForAppOperation();
+        return new UpdateWebhookConfigForAppOperation();
     }
 }

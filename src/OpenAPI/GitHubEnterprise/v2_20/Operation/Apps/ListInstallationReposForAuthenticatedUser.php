@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Apps;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListInstallationReposForAuthenticatedUser
 {
@@ -13,22 +20,26 @@ final class ListInstallationReposForAuthenticatedUser
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct(string $accept = 'application/vnd.github.machine-man-preview+json', $installation_id, int $per_page = 30, int $page = 1)
     {
-        $this->accept = $accept;
+        $this->accept          = $accept;
         $this->installation_id = $installation_id;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->per_page        = $per_page;
+        $this->page            = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{installation_id}', '{per_page}', '{page}'), array($this->installation_id, $this->per_page, $this->page), '/user/installations/{installation_id}/repositories?per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{installation_id}', '{per_page}', '{page}'], [$this->installation_id, $this->per_page, $this->page], '/user/installations/{installation_id}/repositories?per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

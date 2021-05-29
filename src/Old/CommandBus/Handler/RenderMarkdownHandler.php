@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler;
 
@@ -13,46 +15,34 @@ use WyriHaximus\React\Stream\Json\JsonStream;
 
 final class RenderMarkdownHandler
 {
-    /**
-     * @var RequestService
-     */
-    private $requestService;
+    private RequestService $requestService;
 
-    /**
-     * @var LoopInterface
-     */
-    private $loop;
+    private LoopInterface $loop;
 
-    /**
-     * @param RequestService $requestService
-     * @param LoopInterface  $loop
-     */
     public function __construct(RequestService $requestService, LoopInterface $loop)
     {
         $this->requestService = $requestService;
-        $this->loop = $loop;
+        $this->loop           = $loop;
     }
 
-    /**
-     * @param  RenderMarkdownCommand $command
-     * @return PromiseInterface
-     */
     public function handle(RenderMarkdownCommand $command): PromiseInterface
     {
         $stream = new JsonStream();
 
-        $this->loop->futureTick(function () use ($stream, $command) {
+        $this->loop->futureTick(function () use ($stream, $command): void {
             $markdownStream = new ThroughStream();
             $stream->write('text', $markdownStream);
             if ($command->getMode() !== '') {
                 $stream->write('mode', $command->getMode());
             }
+
             if ($command->getContext() !== '') {
                 $stream->write('context', $command->getContext());
             }
+
             $stream->end();
 
-            $this->loop->futureTick(function () use ($markdownStream, $command) {
+            $this->loop->futureTick(static function () use ($markdownStream, $command): void {
                 $command->getStream()->pipe($markdownStream);
             });
         });
@@ -64,7 +54,7 @@ final class RenderMarkdownHandler
                 [],
                 new ReadableBodyStream($stream)
             )
-        )->then(function ($markdown) {
+        )->then(static function ($markdown) {
             return $markdown->getBody();
         });
     }

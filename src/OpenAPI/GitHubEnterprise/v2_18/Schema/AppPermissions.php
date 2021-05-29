@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 
 final class AppPermissions
 {
-    public const SCHEMA_TITLE = 'App Permissions';
+    public const SCHEMA_TITLE       = 'App Permissions';
     public const SCHEMA_DESCRIPTION = 'The permissions granted to the user-to-server access token.';
     /**
      * The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: `read` or `write`.
@@ -126,123 +128,153 @@ final class AppPermissions
      * The level of permission to grant the access token to manage team discussions and related comments. Can be one of: `read` or `write`.
      */
     private ?string $team_discussions = null;
-    public function actions() : ?string
+
+    public function actions(): ?string
     {
         return $this->actions;
     }
-    public function administration() : ?string
+
+    public function administration(): ?string
     {
         return $this->administration;
     }
-    public function checks() : ?string
+
+    public function checks(): ?string
     {
         return $this->checks;
     }
-    public function content_references() : ?string
+
+    public function content_references(): ?string
     {
         return $this->content_references;
     }
-    public function contents() : ?string
+
+    public function contents(): ?string
     {
         return $this->contents;
     }
-    public function deployments() : ?string
+
+    public function deployments(): ?string
     {
         return $this->deployments;
     }
-    public function environments() : ?string
+
+    public function environments(): ?string
     {
         return $this->environments;
     }
-    public function issues() : ?string
+
+    public function issues(): ?string
     {
         return $this->issues;
     }
-    public function metadata() : ?string
+
+    public function metadata(): ?string
     {
         return $this->metadata;
     }
-    public function packages() : ?string
+
+    public function packages(): ?string
     {
         return $this->packages;
     }
-    public function pages() : ?string
+
+    public function pages(): ?string
     {
         return $this->pages;
     }
-    public function pull_requests() : ?string
+
+    public function pull_requests(): ?string
     {
         return $this->pull_requests;
     }
-    public function repository_hooks() : ?string
+
+    public function repository_hooks(): ?string
     {
         return $this->repository_hooks;
     }
-    public function repository_projects() : ?string
+
+    public function repository_projects(): ?string
     {
         return $this->repository_projects;
     }
-    public function secret_scanning_alerts() : ?string
+
+    public function secret_scanning_alerts(): ?string
     {
         return $this->secret_scanning_alerts;
     }
-    public function secrets() : ?string
+
+    public function secrets(): ?string
     {
         return $this->secrets;
     }
-    public function security_events() : ?string
+
+    public function security_events(): ?string
     {
         return $this->security_events;
     }
-    public function single_file() : ?string
+
+    public function single_file(): ?string
     {
         return $this->single_file;
     }
-    public function statuses() : ?string
+
+    public function statuses(): ?string
     {
         return $this->statuses;
     }
-    public function vulnerability_alerts() : ?string
+
+    public function vulnerability_alerts(): ?string
     {
         return $this->vulnerability_alerts;
     }
-    public function workflows() : ?string
+
+    public function workflows(): ?string
     {
         return $this->workflows;
     }
-    public function members() : ?string
+
+    public function members(): ?string
     {
         return $this->members;
     }
-    public function organization_administration() : ?string
+
+    public function organization_administration(): ?string
     {
         return $this->organization_administration;
     }
-    public function organization_hooks() : ?string
+
+    public function organization_hooks(): ?string
     {
         return $this->organization_hooks;
     }
-    public function organization_plan() : ?string
+
+    public function organization_plan(): ?string
     {
         return $this->organization_plan;
     }
-    public function organization_projects() : ?string
+
+    public function organization_projects(): ?string
     {
         return $this->organization_projects;
     }
-    public function organization_secrets() : ?string
+
+    public function organization_secrets(): ?string
     {
         return $this->organization_secrets;
     }
-    public function organization_self_hosted_runners() : ?string
+
+    public function organization_self_hosted_runners(): ?string
     {
         return $this->organization_self_hosted_runners;
     }
-    public function organization_user_blocking() : ?string
+
+    public function organization_user_blocking(): ?string
     {
         return $this->organization_user_blocking;
     }
-    public function team_discussions() : ?string
+
+    public function team_discussions(): ?string
     {
         return $this->team_discussions;
     }

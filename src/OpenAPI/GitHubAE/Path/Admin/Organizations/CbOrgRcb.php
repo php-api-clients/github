@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Organizations;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\UpdateOrgNameOperation;
 
 final class CbOrgRcb
 {
-    function patch($org) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\UpdateOrgNameOperation
+    function patch($org): UpdateOrgNameOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\UpdateOrgNameOperation($org);
+        return new UpdateOrgNameOperation($org);
     }
 }

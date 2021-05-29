@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteWorkflowRunOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\GetWorkflowRunOperation;
 
 final class CbRunIdRcb
 {
-    function get($owner, $repo, $run_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\GetWorkflowRunOperation
+    function get($owner, $repo, $run_id): GetWorkflowRunOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\GetWorkflowRunOperation($owner, $repo, $run_id);
+        return new GetWorkflowRunOperation($owner, $repo, $run_id);
     }
-    function delete($owner, $repo, $run_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteWorkflowRunOperation
+
+    function delete($owner, $repo, $run_id): DeleteWorkflowRunOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteWorkflowRunOperation($owner, $repo, $run_id);
+        return new DeleteWorkflowRunOperation($owner, $repo, $run_id);
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository;
 
@@ -9,29 +11,20 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class ReplaceTopicsCommand
 {
-    /**
-     * @var string
-     */
-    private $repository;
+    private string $repository;
+
+    /** @var string[] */
+    private array $topics;
 
     /**
-     * @var string[]
-     */
-    private $topics;
-
-    /**
-     * @param string   $repository
      * @param string[] $topics
      */
-    public function __construct($repository, string ...$topics)
+    public function __construct(string $repository, string ...$topics)
     {
         $this->repository = $repository;
-        $this->topics = $topics;
+        $this->topics     = $topics;
     }
 
-    /**
-     * @return string
-     */
     public function getRepository(): string
     {
         return $this->repository;

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
@@ -13,37 +15,19 @@ use RingCentral\Psr7\Request;
 
 final class CommitHandler
 {
-    /**
-     * @var RequestService
-     */
-    private $requestService;
+    private RequestService $requestService;
 
-    /**
-     * @var Hydrator
-     */
-    private $hydrator;
+    private Hydrator $hydrator;
 
-    /**
-     * @var LoopInterface
-     */
-    private $loop;
+    private LoopInterface $loop;
 
-    /**
-     * @param RequestService $requestService
-     * @param Hydrator       $hydrator
-     * @param LoopInterface  $loop
-     */
     public function __construct(RequestService $requestService, Hydrator $hydrator, LoopInterface $loop)
     {
         $this->requestService = $requestService;
-        $this->hydrator = $hydrator;
-        $this->loop = $loop;
+        $this->hydrator       = $hydrator;
+        $this->loop           = $loop;
     }
 
-    /**
-     * @param  CommitCommand    $command
-     * @return PromiseInterface
-     */
     public function handle(CommitCommand $command): PromiseInterface
     {
         return $this->requestService->request(

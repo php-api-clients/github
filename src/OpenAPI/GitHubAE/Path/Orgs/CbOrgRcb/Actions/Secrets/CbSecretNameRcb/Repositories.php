@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Orgs\CbOrgRcb\Actions\Secrets\CbSecretNameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\ListSelectedReposForOrgSecretOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\SetSelectedReposForOrgSecretOperation;
 
 final class Repositories
 {
-    function get($org, $secret_name, int $page = 1, int $per_page = 30) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\ListSelectedReposForOrgSecretOperation
+    function get($org, $secret_name, int $page = 1, int $per_page = 30): ListSelectedReposForOrgSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\ListSelectedReposForOrgSecretOperation($org, $secret_name, $page, $per_page);
+        return new ListSelectedReposForOrgSecretOperation($org, $secret_name, $page, $per_page);
     }
-    function put($org, $secret_name) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\SetSelectedReposForOrgSecretOperation
+
+    function put($org, $secret_name): SetSelectedReposForOrgSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\SetSelectedReposForOrgSecretOperation($org, $secret_name);
+        return new SetSelectedReposForOrgSecretOperation($org, $secret_name);
     }
 }

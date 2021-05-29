@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Gists\CbGistIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\CheckIsStarredOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\StarOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\UnstarOperation;
 
 final class Star
 {
-    function get($gist_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\CheckIsStarredOperation
+    function get($gist_id): CheckIsStarredOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\CheckIsStarredOperation($gist_id);
+        return new CheckIsStarredOperation($gist_id);
     }
-    function put($gist_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\StarOperation
+
+    function put($gist_id): StarOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\StarOperation($gist_id);
+        return new StarOperation($gist_id);
     }
-    function delete($gist_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\UnstarOperation
+
+    function delete($gist_id): UnstarOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Gists\UnstarOperation($gist_id);
+        return new UnstarOperation($gist_id);
     }
 }

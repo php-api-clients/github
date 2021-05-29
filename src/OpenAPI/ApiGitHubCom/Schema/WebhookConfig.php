@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class WebhookConfig
 {
-    public const SCHEMA_TITLE = 'Webhook Configuration';
+    public const SCHEMA_TITLE       = 'Webhook Configuration';
     public const SCHEMA_DESCRIPTION = 'Configuration object of the webhook';
     /**
      * The URL to which the payloads will be delivered.
@@ -19,18 +21,22 @@ final class WebhookConfig
      */
     private ?string $secret = null;
     private $insecure_ssl;
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function content_type() : ?string
+
+    public function content_type(): ?string
     {
         return $this->content_type;
     }
-    public function secret() : ?string
+
+    public function secret(): ?string
     {
         return $this->secret;
     }
+
     public function insecure_ssl()
     {
         return $this->insecure_ssl;

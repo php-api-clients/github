@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbRefRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Checks\ListSuitesForRefOperation;
 
 final class CheckSuites
 {
-    function get($owner, $repo, $ref, $app_id, $check_name, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Checks\ListSuitesForRefOperation
+    function get($owner, $repo, $ref, $app_id, $check_name, int $per_page = 30, int $page = 1): ListSuitesForRefOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Checks\ListSuitesForRefOperation($owner, $repo, $ref, $app_id, $check_name, $per_page, $page);
+        return new ListSuitesForRefOperation($owner, $repo, $ref, $app_id, $check_name, $per_page, $page);
     }
 }

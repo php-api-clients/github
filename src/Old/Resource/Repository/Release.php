@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
@@ -19,136 +21,73 @@ use DateTimeInterface;
  */
 abstract class Release extends AbstractResource implements ReleaseInterface
 {
-    /**
-     * @var int
-     */
-    protected $id;
+    protected int $id;
 
-    /**
-     * @var string
-     */
-    protected $tag_name;
+    protected string $tag_name;
 
-    /**
-     * @var string
-     */
-    protected $target_commitish;
+    protected string $target_commitish;
 
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var string
-     */
-    protected $body;
+    protected string $body;
 
-    /**
-     * @var bool
-     */
-    protected $draft;
+    protected bool $draft;
 
-    /**
-     * @var bool
-     */
-    protected $prerelease;
+    protected bool $prerelease;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $created_at;
+    protected DateTimeInterface $created_at;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $updated_at;
+    protected DateTimeInterface $updated_at;
 
-    /**
-     * @var User
-     */
-    protected $author;
+    protected User $author;
 
-    /**
-     * @var Repository\Release\Asset
-     */
-    protected $assets;
+    protected Repository\Release\Asset $assets;
 
-    /**
-     * @return int
-     */
     public function id(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function tagName(): string
     {
         return $this->tag_name;
     }
 
-    /**
-     * @return string
-     */
     public function targetCommitish(): string
     {
         return $this->target_commitish;
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function body(): string
     {
         return $this->body;
     }
 
-    /**
-     * @return bool
-     */
     public function draft(): bool
     {
         return $this->draft;
     }
 
-    /**
-     * @return bool
-     */
     public function prerelease(): bool
     {
         return $this->prerelease;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
     }
 
-    /**
-     * @return User
-     */
     public function author(): User
     {
         return $this->author;

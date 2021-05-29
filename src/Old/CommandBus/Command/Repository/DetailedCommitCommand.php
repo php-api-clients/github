@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository;
 
@@ -9,37 +11,21 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class DetailedCommitCommand
 {
-    /**
-     * @var string
-     */
-    private $fullName;
+    private string $fullName;
 
-    /**
-     * @var string
-     */
-    private $sha;
+    private string $sha;
 
-    /**
-     * @param string $fullName
-     * @param string $sha
-     */
     public function __construct(string $fullName, string $sha)
     {
         $this->fullName = $fullName;
-        $this->sha = $sha;
+        $this->sha      = $sha;
     }
 
-    /**
-     * @return string
-     */
     public function getFullName(): string
     {
         return $this->fullName;
     }
 
-    /**
-     * @return string
-     */
     public function getSha(): string
     {
         return $this->sha;

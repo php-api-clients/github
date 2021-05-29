@@ -1,15 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListForAuthenticatedUser
 {
     private const OPERATION_ID = 'issues/list-for-authenticated-user';
-    /**Indicates which sorts of issues to return. Can be one of:  
-    \* `assigned`: Issues assigned to you  
-    \* `created`: Issues created by you  
-    \* `mentioned`: Issues mentioning you  
-    \* `subscribed`: Issues you're subscribed to updates for  
+    /**Indicates which sorts of issues to return. Can be one of:
+    \* `assigned`: Issues assigned to you
+    \* `created`: Issues created by you
+    \* `mentioned`: Issues mentioning you
+    \* `subscribed`: Issues you're subscribed to updates for
     \* `all`: All issues the authenticated user can see, regardless of participation or creation**/
     public string $filter;
     /**Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.**/
@@ -26,26 +33,30 @@ final class ListForAuthenticatedUser
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct(string $filter = 'assigned', string $state = 'open', $labels, string $sort = 'created', string $direction = 'desc', $since, int $per_page = 30, int $page = 1)
     {
-        $this->filter = $filter;
-        $this->state = $state;
-        $this->labels = $labels;
-        $this->sort = $sort;
+        $this->filter    = $filter;
+        $this->state     = $state;
+        $this->labels    = $labels;
+        $this->sort      = $sort;
         $this->direction = $direction;
-        $this->since = $since;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->since     = $since;
+        $this->per_page  = $per_page;
+        $this->page      = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{filter}', '{state}', '{labels}', '{sort}', '{direction}', '{since}', '{per_page}', '{page}'), array($this->filter, $this->state, $this->labels, $this->sort, $this->direction, $this->since, $this->per_page, $this->page), '/user/issues?filter={filter}&state={state}&labels={labels}&sort={sort}&direction={direction}&since={since}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{filter}', '{state}', '{labels}', '{sort}', '{direction}', '{since}', '{per_page}', '{page}'], [$this->filter, $this->state, $this->labels, $this->sort, $this->direction, $this->since, $this->per_page, $this->page], '/user/issues?filter={filter}&state={state}&labels={labels}&sort={sort}&direction={direction}&since={since}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Git;
 
@@ -10,53 +12,29 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Verification extends AbstractResource implements VerificationInterface
 {
-    /**
-     * @var bool
-     */
-    protected $verified;
+    protected bool $verified;
 
-    /**
-     * @var string
-     */
-    protected $reason;
+    protected string $reason;
 
-    /**
-     * @var string
-     */
-    protected $signature;
+    protected string $signature;
 
-    /**
-     * @var string
-     */
-    protected $payload;
+    protected string $payload;
 
-    /**
-     * @return bool
-     */
     public function verified(): bool
     {
         return $this->verified;
     }
 
-    /**
-     * @return string
-     */
     public function reason(): string
     {
         return $this->reason;
     }
 
-    /**
-     * @return string
-     */
     public function signature(): string
     {
         return $this->signature;
     }
 
-    /**
-     * @return string
-     */
     public function payload(): string
     {
         return $this->payload;

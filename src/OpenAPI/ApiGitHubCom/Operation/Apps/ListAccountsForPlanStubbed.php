@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListAccountsForPlanStubbed
 {
@@ -15,23 +22,27 @@ final class ListAccountsForPlanStubbed
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($plan_id, string $sort = 'created', $direction, int $per_page = 30, int $page = 1)
     {
-        $this->plan_id = $plan_id;
-        $this->sort = $sort;
+        $this->plan_id   = $plan_id;
+        $this->sort      = $sort;
         $this->direction = $direction;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->per_page  = $per_page;
+        $this->page      = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{plan_id}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->plan_id, $this->sort, $this->direction, $this->per_page, $this->page), '/marketplace_listing/stubbed/plans/{plan_id}/accounts?sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{plan_id}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->plan_id, $this->sort, $this->direction, $this->per_page, $this->page], '/marketplace_listing/stubbed/plans/{plan_id}/accounts?sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

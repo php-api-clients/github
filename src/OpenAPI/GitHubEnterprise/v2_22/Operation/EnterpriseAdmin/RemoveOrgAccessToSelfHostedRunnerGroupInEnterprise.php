@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class RemoveOrgAccessToSelfHostedRunnerGroupInEnterprise
 {
@@ -11,21 +18,25 @@ final class RemoveOrgAccessToSelfHostedRunnerGroupInEnterprise
     public int $runner_group_id;
     /**Unique identifier of an organization.**/
     public int $org_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($enterprise, $runner_group_id, $org_id)
     {
-        $this->enterprise = $enterprise;
+        $this->enterprise      = $enterprise;
         $this->runner_group_id = $runner_group_id;
-        $this->org_id = $org_id;
+        $this->org_id          = $org_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{enterprise}', '{runner_group_id}', '{org_id}'), array($this->enterprise, $this->runner_group_id, $this->org_id), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}?'));
+        return new Request('delete', str_replace(['{enterprise}', '{runner_group_id}', '{org_id}'], [$this->enterprise, $this->runner_group_id, $this->org_id], '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

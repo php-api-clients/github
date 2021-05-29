@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github;
 
@@ -7,10 +9,8 @@ use Throwable;
 
 final class ApiErrorException extends Exception
 {
-    /**
-     * @var array
-     */
-    private $context = [];
+    /** @var array */
+    private array $context = [];
 
     public static function create(string $message, int $code, Throwable $previous): self
     {
@@ -30,7 +30,7 @@ final class ApiErrorException extends Exception
         return $this->context;
     }
 
-    private function setContext(array $context)
+    private function setContext(array $context): void
     {
         $this->context = $context;
     }

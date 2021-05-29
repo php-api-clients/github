@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -15,133 +17,72 @@ use DateTimeInterface;
  */
 abstract class App extends AbstractResource implements AppInterface
 {
-    /**
-     * @var int
-     */
-    protected $id;
+    protected int $id;
 
-    /**
-     * @var string
-     */
-    protected $slug;
+    protected string $slug;
 
-    /**
-     * @var User
-     */
-    protected $owner;
+    protected User $owner;
 
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var string
-     */
-    protected $description;
+    protected string $description;
 
-    /**
-     * @var string
-     */
-    protected $external_url;
+    protected string $external_url;
 
-    /**
-     * @var string
-     */
-    protected $html_url;
+    protected string $html_url;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $created_at;
+    protected DateTimeInterface $created_at;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $updated_at;
+    protected DateTimeInterface $updated_at;
 
-    /**
-     * @var array
-     */
-    protected $permissions;
+    /** @var array */
+    protected array $permissions;
 
-    /**
-     * @var array
-     */
-    protected $events;
+    /** @var array */
+    protected array $events;
 
-    /**
-     * @var int
-     */
-    protected $installations_count;
+    protected int $installations_count;
 
-    /**
-     * @return int
-     */
     public function id(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function slug(): string
     {
         return $this->slug;
     }
 
-    /**
-     * @return User
-     */
     public function owner(): User
     {
         return $this->owner;
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function description(): string
     {
         return $this->description;
     }
 
-    /**
-     * @return string
-     */
     public function externalUrl(): string
     {
         return $this->external_url;
     }
 
-    /**
-     * @return string
-     */
     public function htmlUrl(): string
     {
         return $this->html_url;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
@@ -163,9 +104,6 @@ abstract class App extends AbstractResource implements AppInterface
         return $this->events;
     }
 
-    /**
-     * @return int
-     */
     public function installationsCount(): int
     {
         return $this->installations_count;

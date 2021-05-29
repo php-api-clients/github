@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Orgs\CbOrgRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Orgs\ListOutsideCollaboratorsOperation;
 
 final class OutsideCollaborators
 {
-    function get($org, string $filter = 'all', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Orgs\ListOutsideCollaboratorsOperation
+    function get($org, string $filter = 'all', int $per_page = 30, int $page = 1): ListOutsideCollaboratorsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Orgs\ListOutsideCollaboratorsOperation($org, $filter, $per_page, $page);
+        return new ListOutsideCollaboratorsOperation($org, $filter, $per_page, $page);
     }
 }

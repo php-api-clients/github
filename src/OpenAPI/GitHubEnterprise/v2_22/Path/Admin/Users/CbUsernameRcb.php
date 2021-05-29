@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Admin\Users;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DeleteUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UpdateUsernameForUserOperation;
 
 final class CbUsernameRcb
 {
-    function delete($username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DeleteUserOperation
+    function delete($username): DeleteUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DeleteUserOperation($username);
+        return new DeleteUserOperation($username);
     }
-    function patch($username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UpdateUsernameForUserOperation
+
+    function patch($username): UpdateUsernameForUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\UpdateUsernameForUserOperation($username);
+        return new UpdateUsernameForUserOperation($username);
     }
 }

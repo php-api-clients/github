@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Git\Ref;
 
@@ -10,40 +12,22 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Object_ extends AbstractResource implements Object_Interface
 {
-    /**
-     * @var string
-     */
-    protected $type;
+    protected string $type;
 
-    /**
-     * @var string
-     */
-    protected $sha;
+    protected string $sha;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @return string
-     */
     public function type(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function sha(): string
     {
         return $this->sha;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;

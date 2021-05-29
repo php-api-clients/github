@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Enterprises\CbEnterpriseRcb\Actions\RunnerDashGroups;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteSelfHostedRunnerGroupFromEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetSelfHostedRunnerGroupForEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\UpdateSelfHostedRunnerGroupForEnterpriseOperation;
 
 final class CbRunnerGroupIdRcb
 {
-    function get($enterprise, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetSelfHostedRunnerGroupForEnterpriseOperation
+    function get($enterprise, $runner_group_id): GetSelfHostedRunnerGroupForEnterpriseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\GetSelfHostedRunnerGroupForEnterpriseOperation($enterprise, $runner_group_id);
+        return new GetSelfHostedRunnerGroupForEnterpriseOperation($enterprise, $runner_group_id);
     }
-    function delete($enterprise, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteSelfHostedRunnerGroupFromEnterpriseOperation
+
+    function delete($enterprise, $runner_group_id): DeleteSelfHostedRunnerGroupFromEnterpriseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteSelfHostedRunnerGroupFromEnterpriseOperation($enterprise, $runner_group_id);
+        return new DeleteSelfHostedRunnerGroupFromEnterpriseOperation($enterprise, $runner_group_id);
     }
-    function patch($enterprise, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\UpdateSelfHostedRunnerGroupForEnterpriseOperation
+
+    function patch($enterprise, $runner_group_id): UpdateSelfHostedRunnerGroupForEnterpriseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\UpdateSelfHostedRunnerGroupForEnterpriseOperation($enterprise, $runner_group_id);
+        return new UpdateSelfHostedRunnerGroupForEnterpriseOperation($enterprise, $runner_group_id);
     }
 }

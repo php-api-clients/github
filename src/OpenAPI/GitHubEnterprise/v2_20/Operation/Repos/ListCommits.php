@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListCommits
 {
     private const OPERATION_ID = 'repos/list-commits';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**SHA or branch to start listing commits from. Default: the repository’s default branch (usually `master`).**/
     public string $sha;
@@ -23,27 +28,31 @@ final class ListCommits
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $sha, $path, $author, $since, $until, int $per_page = 30, int $page = 1)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
-        $this->sha = $sha;
-        $this->path = $path;
-        $this->author = $author;
-        $this->since = $since;
-        $this->until = $until;
+        $this->owner    = $owner;
+        $this->repo     = $repo;
+        $this->sha      = $sha;
+        $this->path     = $path;
+        $this->author   = $author;
+        $this->since    = $since;
+        $this->until    = $until;
         $this->per_page = $per_page;
-        $this->page = $page;
+        $this->page     = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{sha}', '{path}', '{author}', '{since}', '{until}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->sha, $this->path, $this->author, $this->since, $this->until, $this->per_page, $this->page), '/repos/{owner}/{repo}/commits?sha={sha}&path={path}&author={author}&since={since}&until={until}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{owner}', '{repo}', '{sha}', '{path}', '{author}', '{since}', '{until}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->sha, $this->path, $this->author, $this->since, $this->until, $this->per_page, $this->page], '/repos/{owner}/{repo}/commits?sha={sha}&path={path}&author={author}&since={since}&until={until}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

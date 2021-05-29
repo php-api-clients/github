@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository\Commit;
 
@@ -15,118 +17,64 @@ use DateTimeInterface;
  */
 abstract class Status extends AbstractResource implements StatusInterface
 {
-    /**
-     * @var DateTimeInterface
-     */
-    protected $created_at;
+    protected DateTimeInterface $created_at;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $updated_at;
+    protected DateTimeInterface $updated_at;
 
-    /**
-     * @var string
-     */
-    protected $state;
+    protected string $state;
 
-    /**
-     * @var string
-     */
-    protected $target_url;
+    protected string $target_url;
 
-    /**
-     * @var string
-     */
-    protected $description;
+    protected string $description;
 
-    /**
-     * @var int
-     */
-    protected $id;
+    protected int $id;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var string
-     */
-    protected $context;
+    protected string $context;
 
-    /**
-     * @var User
-     */
-    protected $creator;
+    protected User $creator;
 
-    /**
-     * @return DateTimeInterface
-     */
     public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
     }
 
-    /**
-     * @return string
-     */
     public function state(): string
     {
         return $this->state;
     }
 
-    /**
-     * @return string
-     */
     public function targetUrl(): string
     {
         return $this->target_url;
     }
 
-    /**
-     * @return string
-     */
     public function description(): string
     {
         return $this->description;
     }
 
-    /**
-     * @return int
-     */
     public function id(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function context(): string
     {
         return $this->context;
     }
 
-    /**
-     * @return User
-     */
     public function creator(): User
     {
         return $this->creator;

@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Projects\CbProjectIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\CreateColumnOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\ListColumnsOperation;
 
 final class Columns
 {
-    function get($project_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\ListColumnsOperation
+    function get($project_id, int $per_page = 30, int $page = 1): ListColumnsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\ListColumnsOperation($project_id, $per_page, $page);
+        return new ListColumnsOperation($project_id, $per_page, $page);
     }
-    function post($project_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\CreateColumnOperation
+
+    function post($project_id): CreateColumnOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Projects\CreateColumnOperation($project_id);
+        return new CreateColumnOperation($project_id);
     }
 }

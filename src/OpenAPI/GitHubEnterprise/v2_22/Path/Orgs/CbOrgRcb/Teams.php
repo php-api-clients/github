@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Orgs\CbOrgRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\CreateOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\ListOperation;
 
 final class Teams
 {
-    function get($org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\ListOperation
+    function get($org, int $per_page = 30, int $page = 1): ListOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\ListOperation($org, $per_page, $page);
+        return new ListOperation($org, $per_page, $page);
     }
-    function post($org) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\CreateOperation
+
+    function post($org): CreateOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Teams\CreateOperation($org);
+        return new CreateOperation($org);
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository\Commit;
 
@@ -12,7 +14,7 @@ class Status extends BaseStatus
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (StatusInterface $status) {
+        )->then(static function (StatusInterface $status) {
             return $status->refresh();
         }));
     }

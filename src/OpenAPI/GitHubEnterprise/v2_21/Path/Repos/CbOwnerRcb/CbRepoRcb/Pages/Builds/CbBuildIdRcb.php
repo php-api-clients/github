@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Repos\CbOwnerRcb\CbRepoRcb\Pages\Builds;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetPagesBuildOperation;
 
 final class CbBuildIdRcb
 {
-    function get($owner, $repo, $build_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetPagesBuildOperation
+    function get($owner, $repo, $build_id): GetPagesBuildOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetPagesBuildOperation($owner, $repo, $build_id);
+        return new GetPagesBuildOperation($owner, $repo, $build_id);
     }
 }

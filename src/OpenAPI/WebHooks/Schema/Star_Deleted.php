@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class Star_Deleted
 {
-    public const SCHEMA_TITLE = 'star deleted event';
+    public const SCHEMA_TITLE       = 'star deleted event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action = null;
+    private ?string $action         = null;
     /**
      * The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
      */
@@ -14,34 +16,40 @@ final class Star_Deleted
     /**
      * A git repository
      */
-    private array $repository = array();
-    private array $sender = array();
-    private array $organization = array();
+    private array $repository   = [];
+    private array $sender       = [];
+    private array $organization = [];
     /**
      * Installation
      */
-    private array $installation = array();
-    public function action() : ?string
+    private array $installation = [];
+
+    public function action(): ?string
     {
         return $this->action;
     }
-    public function starred_at() : ?null
+
+    public function starred_at(): ?null
     {
         return $this->starred_at;
     }
-    public function repository() : array
+
+    public function repository(): array
     {
         return $this->repository;
     }
-    public function sender() : array
+
+    public function sender(): array
     {
         return $this->sender;
     }
-    public function organization() : array
+
+    public function organization(): array
     {
         return $this->organization;
     }
-    public function installation() : array
+
+    public function installation(): array
     {
         return $this->installation;
     }

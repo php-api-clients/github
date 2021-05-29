@@ -1,37 +1,45 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListReviews
 {
     private const OPERATION_ID = 'pulls/list-reviews';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
-    /****/
     public int $pull_number;
     /**Results per page (max 100).**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $pull_number, int $per_page = 30, int $page = 1)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner       = $owner;
+        $this->repo        = $repo;
         $this->pull_number = $pull_number;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->per_page    = $per_page;
+        $this->page        = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{pull_number}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->pull_number, $this->per_page, $this->page), '/repos/{owner}/{repo}/pulls/{pull_number}/reviews?per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{owner}', '{repo}', '{pull_number}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->pull_number, $this->per_page, $this->page], '/repos/{owner}/{repo}/pulls/{pull_number}/reviews?per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

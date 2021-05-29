@@ -1,17 +1,21 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Async\Contents;
 
 use ApiClients\Client\Github\CommandBus\Command\Repository\ContentsCommand;
 use ApiClients\Client\Github\Resource\Contents\Directory as BaseDirectory;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use Exception;
 use Rx\Observable;
+
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 class Directory extends BaseDirectory
 {
     public function refresh(): Directory
     {
-        throw new \Exception('TODO: create refresh method!');
+        throw new Exception('TODO: create refresh method!');
     }
 
     public function contents(): Observable

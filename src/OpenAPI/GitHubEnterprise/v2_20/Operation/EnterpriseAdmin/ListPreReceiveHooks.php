@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListPreReceiveHooks
 {
@@ -13,22 +20,26 @@ final class ListPreReceiveHooks
     public string $direction;
     /**One of `created` (when the repository was starred) or `updated` (when it was last pushed to) or `name`.**/
     public string $sort;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct(int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created')
     {
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->per_page  = $per_page;
+        $this->page      = $page;
         $this->direction = $direction;
-        $this->sort = $sort;
+        $this->sort      = $sort;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{per_page}', '{page}', '{direction}', '{sort}'), array($this->per_page, $this->page, $this->direction, $this->sort), '/admin/pre-receive-hooks?per_page={per_page}&page={page}&direction={direction}&sort={sort}'));
+        return new Request('get', str_replace(['{per_page}', '{page}', '{direction}', '{sort}'], [$this->per_page, $this->page, $this->direction, $this->sort], '/admin/pre-receive-hooks?per_page={per_page}&page={page}&direction={direction}&sort={sort}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

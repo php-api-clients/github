@@ -1,22 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Markdown;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class Render
 {
     private const OPERATION_ID = 'markdown/render';
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct()
     {
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/markdown?'));
+        return new Request('post', str_replace([], [], '/markdown?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

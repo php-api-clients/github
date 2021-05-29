@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class Label
 {
-    public const SCHEMA_TITLE = 'Label';
+    public const SCHEMA_TITLE       = 'Label';
     public const SCHEMA_DESCRIPTION = '';
-    private ?int $id = null;
-    private ?string $node_id = null;
+    private ?int $id                = null;
+    private ?string $node_id        = null;
     /**
      * URL for the label
      */
@@ -22,31 +24,38 @@ final class Label
      */
     private ?string $color = null;
     private ?bool $default = null;
-    public function id() : ?int
+
+    public function id(): ?int
     {
         return $this->id;
     }
-    public function node_id() : ?string
+
+    public function node_id(): ?string
     {
         return $this->node_id;
     }
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function name() : ?string
+
+    public function name(): ?string
     {
         return $this->name;
     }
+
     public function description()
     {
         return $this->description;
     }
-    public function color() : ?string
+
+    public function color(): ?string
     {
         return $this->color;
     }
-    public function default() : ?bool
+
+    public function default(): ?bool
     {
         return $this->default;
     }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\User;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Orgs\ListForAuthenticatedUserOperation;
 
 final class Orgs
 {
-    function get(int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Orgs\ListForAuthenticatedUserOperation
+    function get(int $per_page = 30, int $page = 1): ListForAuthenticatedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Orgs\ListForAuthenticatedUserOperation($per_page, $page);
+        return new ListForAuthenticatedUserOperation($per_page, $page);
     }
 }

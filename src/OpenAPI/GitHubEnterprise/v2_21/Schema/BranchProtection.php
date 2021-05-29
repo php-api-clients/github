@@ -1,77 +1,91 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Schema;
 
 final class BranchProtection
 {
-    public const SCHEMA_TITLE = 'Branch Protection';
-    public const SCHEMA_DESCRIPTION = 'Branch Protection';
-    private ?string $url = null;
-    private array $required_status_checks = array();
+    public const SCHEMA_TITLE             = 'Branch Protection';
+    public const SCHEMA_DESCRIPTION       = 'Branch Protection';
+    private ?string $url                  = null;
+    private array $required_status_checks = [];
     /**
      * Protected Branch Admin Enforced
      */
-    private array $enforce_admins = array();
+    private array $enforce_admins = [];
     /**
      * Protected Branch Pull Request Review
      */
-    private array $required_pull_request_reviews = array();
+    private array $required_pull_request_reviews = [];
     /**
      * Branch Restriction Policy
      */
-    private array $restrictions = array();
-    private array $required_linear_history = array();
-    private array $allow_force_pushes = array();
-    private array $allow_deletions = array();
-    private array $required_conversation_resolution = array();
-    private ?string $name = null;
-    private ?string $protection_url = null;
-    private array $required_signatures = array();
-    public function url() : ?string
+    private array $restrictions                     = [];
+    private array $required_linear_history          = [];
+    private array $allow_force_pushes               = [];
+    private array $allow_deletions                  = [];
+    private array $required_conversation_resolution = [];
+    private ?string $name                           = null;
+    private ?string $protection_url                 = null;
+    private array $required_signatures              = [];
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function required_status_checks() : array
+
+    public function required_status_checks(): array
     {
         return $this->required_status_checks;
     }
-    public function enforce_admins() : array
+
+    public function enforce_admins(): array
     {
         return $this->enforce_admins;
     }
-    public function required_pull_request_reviews() : array
+
+    public function required_pull_request_reviews(): array
     {
         return $this->required_pull_request_reviews;
     }
-    public function restrictions() : array
+
+    public function restrictions(): array
     {
         return $this->restrictions;
     }
-    public function required_linear_history() : array
+
+    public function required_linear_history(): array
     {
         return $this->required_linear_history;
     }
-    public function allow_force_pushes() : array
+
+    public function allow_force_pushes(): array
     {
         return $this->allow_force_pushes;
     }
-    public function allow_deletions() : array
+
+    public function allow_deletions(): array
     {
         return $this->allow_deletions;
     }
-    public function required_conversation_resolution() : array
+
+    public function required_conversation_resolution(): array
     {
         return $this->required_conversation_resolution;
     }
-    public function name() : ?string
+
+    public function name(): ?string
     {
         return $this->name;
     }
-    public function protection_url() : ?string
+
+    public function protection_url(): ?string
     {
         return $this->protection_url;
     }
-    public function required_signatures() : array
+
+    public function required_signatures(): array
     {
         return $this->required_signatures;
     }

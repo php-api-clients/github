@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Authentication;
 
@@ -11,10 +13,7 @@ use Lcobucci\JWT\Token;
 
 final class JWT implements AuthenticationInterface
 {
-    /**
-     * @var Token
-     */
-    private $token;
+    private Token $token;
 
     public function __construct(Token $token)
     {

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
@@ -14,53 +16,29 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Tag extends AbstractResource implements TagInterface
 {
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var Tree
-     */
-    protected $commit;
+    protected Tree $commit;
 
-    /**
-     * @var string
-     */
-    protected $zipball_url;
+    protected string $zipball_url;
 
-    /**
-     * @var string
-     */
-    protected $tarball_url;
+    protected string $tarball_url;
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return Tree
-     */
     public function commit(): Tree
     {
         return $this->commit;
     }
 
-    /**
-     * @return string
-     */
     public function zipballUrl(): string
     {
         return $this->zipball_url;
     }
 
-    /**
-     * @return string
-     */
     public function tarballUrl(): string
     {
         return $this->tarball_url;

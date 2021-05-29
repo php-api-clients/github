@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class AutoMerge
 {
-    public const SCHEMA_TITLE = 'Auto merge';
+    public const SCHEMA_TITLE       = 'Auto merge';
     public const SCHEMA_DESCRIPTION = 'The status of auto merging a pull request.';
     /**
      * Simple User
      */
-    private array $enabled_by = array();
+    private array $enabled_by = [];
     /**
      * The merge method to use.
      */
@@ -22,19 +24,23 @@ final class AutoMerge
      * Commit message for the merge commit.
      */
     private ?string $commit_message = null;
-    public function enabled_by() : array
+
+    public function enabled_by(): array
     {
         return $this->enabled_by;
     }
-    public function merge_method() : ?string
+
+    public function merge_method(): ?string
     {
         return $this->merge_method;
     }
-    public function commit_title() : ?string
+
+    public function commit_title(): ?string
     {
         return $this->commit_title;
     }
-    public function commit_message() : ?string
+
+    public function commit_message(): ?string
     {
         return $this->commit_message;
     }

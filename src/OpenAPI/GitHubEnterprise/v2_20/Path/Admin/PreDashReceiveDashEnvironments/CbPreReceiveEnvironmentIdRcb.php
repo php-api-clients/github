@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Admin\PreDashReceiveDashEnvironments;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\DeletePreReceiveEnvironmentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\GetPreReceiveEnvironmentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\UpdatePreReceiveEnvironmentOperation;
 
 final class CbPreReceiveEnvironmentIdRcb
 {
-    function get($pre_receive_environment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\GetPreReceiveEnvironmentOperation
+    function get($pre_receive_environment_id): GetPreReceiveEnvironmentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\GetPreReceiveEnvironmentOperation($pre_receive_environment_id);
+        return new GetPreReceiveEnvironmentOperation($pre_receive_environment_id);
     }
-    function delete($pre_receive_environment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\DeletePreReceiveEnvironmentOperation
+
+    function delete($pre_receive_environment_id): DeletePreReceiveEnvironmentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\DeletePreReceiveEnvironmentOperation($pre_receive_environment_id);
+        return new DeletePreReceiveEnvironmentOperation($pre_receive_environment_id);
     }
-    function patch($pre_receive_environment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\UpdatePreReceiveEnvironmentOperation
+
+    function patch($pre_receive_environment_id): UpdatePreReceiveEnvironmentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\EnterpriseAdmin\UpdatePreReceiveEnvironmentOperation($pre_receive_environment_id);
+        return new UpdatePreReceiveEnvironmentOperation($pre_receive_environment_id);
     }
 }

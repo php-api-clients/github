@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateMilestoneOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestonesOperation;
 
 final class Milestones
 {
-    function get($owner, $repo, string $state = 'open', string $sort = 'due_on', string $direction = 'asc', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestonesOperation
+    function get($owner, $repo, string $state = 'open', string $sort = 'due_on', string $direction = 'asc', int $per_page = 30, int $page = 1): ListMilestonesOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestonesOperation($owner, $repo, $state, $sort, $direction, $per_page, $page);
+        return new ListMilestonesOperation($owner, $repo, $state, $sort, $direction, $per_page, $page);
     }
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateMilestoneOperation
+
+    function post($owner, $repo): CreateMilestoneOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateMilestoneOperation($owner, $repo);
+        return new CreateMilestoneOperation($owner, $repo);
     }
 }

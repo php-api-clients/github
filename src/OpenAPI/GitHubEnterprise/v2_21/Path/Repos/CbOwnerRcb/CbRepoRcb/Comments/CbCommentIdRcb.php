@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Repos\CbOwnerRcb\CbRepoRcb\Comments;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\DeleteCommitCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetCommitCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\UpdateCommitCommentOperation;
 
 final class CbCommentIdRcb
 {
-    function get($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetCommitCommentOperation
+    function get($owner, $repo, $comment_id): GetCommitCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\GetCommitCommentOperation($owner, $repo, $comment_id);
+        return new GetCommitCommentOperation($owner, $repo, $comment_id);
     }
-    function delete($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\DeleteCommitCommentOperation
+
+    function delete($owner, $repo, $comment_id): DeleteCommitCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\DeleteCommitCommentOperation($owner, $repo, $comment_id);
+        return new DeleteCommitCommentOperation($owner, $repo, $comment_id);
     }
-    function patch($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\UpdateCommitCommentOperation
+
+    function patch($owner, $repo, $comment_id): UpdateCommitCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\UpdateCommitCommentOperation($owner, $repo, $comment_id);
+        return new UpdateCommitCommentOperation($owner, $repo, $comment_id);
     }
 }

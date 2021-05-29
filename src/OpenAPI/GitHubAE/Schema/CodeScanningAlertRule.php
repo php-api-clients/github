@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class CodeScanningAlertRule
 {
-    public const SCHEMA_TITLE = 'code-scanning-alert-rule';
+    public const SCHEMA_TITLE       = 'code-scanning-alert-rule';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * A unique identifier for the rule used to detect the alert.
@@ -29,36 +31,43 @@ final class CodeScanningAlertRule
     /**
      * A set of tags applicable for the rule.
      */
-    private array $tags = array();
+    private array $tags = [];
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
     private ?string $help = null;
-    public function id() : ?string
+
+    public function id(): ?string
     {
         return $this->id;
     }
-    public function name() : ?string
+
+    public function name(): ?string
     {
         return $this->name;
     }
-    public function severity() : ?string
+
+    public function severity(): ?string
     {
         return $this->severity;
     }
-    public function description() : ?string
+
+    public function description(): ?string
     {
         return $this->description;
     }
-    public function full_description() : ?string
+
+    public function full_description(): ?string
     {
         return $this->full_description;
     }
-    public function tags() : array
+
+    public function tags(): array
     {
         return $this->tags;
     }
-    public function help() : ?string
+
+    public function help(): ?string
     {
         return $this->help;
     }

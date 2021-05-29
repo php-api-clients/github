@@ -1,13 +1,16 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Async;
 
 use ApiClients\Client\Github\Resource\RateLimit as BaseRateLimit;
+use Exception;
 
 class RateLimit extends BaseRateLimit
 {
     public function refresh(): RateLimit
     {
-        throw new \Exception('TODO: create refresh method!');
+        throw new Exception('TODO: create refresh method!');
     }
 }

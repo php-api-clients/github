@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\ListRequestedReviewersOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\RemoveRequestedReviewersOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\RequestReviewersOperation;
 
 final class RequestedReviewers
 {
-    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\ListRequestedReviewersOperation
+    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1): ListRequestedReviewersOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\ListRequestedReviewersOperation($owner, $repo, $pull_number, $per_page, $page);
+        return new ListRequestedReviewersOperation($owner, $repo, $pull_number, $per_page, $page);
     }
-    function post($owner, $repo, $pull_number) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\RequestReviewersOperation
+
+    function post($owner, $repo, $pull_number): RequestReviewersOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\RequestReviewersOperation($owner, $repo, $pull_number);
+        return new RequestReviewersOperation($owner, $repo, $pull_number);
     }
-    function delete($owner, $repo, $pull_number) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\RemoveRequestedReviewersOperation
+
+    function delete($owner, $repo, $pull_number): RemoveRequestedReviewersOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Pulls\RemoveRequestedReviewersOperation($owner, $repo, $pull_number);
+        return new RemoveRequestedReviewersOperation($owner, $repo, $pull_number);
     }
 }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\RateLimit\GetOperation;
 
 final class RateLimit
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\RateLimit\GetOperation
+    function get(): GetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\RateLimit\GetOperation();
+        return new GetOperation();
     }
 }

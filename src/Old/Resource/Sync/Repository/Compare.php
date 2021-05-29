@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository;
 
@@ -10,7 +12,7 @@ class Compare extends BaseCompare
 {
     public function refresh(): Compare
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (CompareInterface $compare) {
+        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(static function (CompareInterface $compare) {
             return $compare->refresh();
         }));
     }

@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Orgs\CbOrgRcb\PublicMembers;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\CheckPublicMembershipForUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\RemovePublicMembershipForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\SetPublicMembershipForAuthenticatedUserOperation;
 
 final class CbUsernameRcb
 {
-    function get($org, $username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\CheckPublicMembershipForUserOperation
+    function get($org, $username): CheckPublicMembershipForUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\CheckPublicMembershipForUserOperation($org, $username);
+        return new CheckPublicMembershipForUserOperation($org, $username);
     }
-    function put($org, $username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\SetPublicMembershipForAuthenticatedUserOperation
+
+    function put($org, $username): SetPublicMembershipForAuthenticatedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\SetPublicMembershipForAuthenticatedUserOperation($org, $username);
+        return new SetPublicMembershipForAuthenticatedUserOperation($org, $username);
     }
-    function delete($org, $username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\RemovePublicMembershipForAuthenticatedUserOperation
+
+    function delete($org, $username): RemovePublicMembershipForAuthenticatedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Orgs\RemovePublicMembershipForAuthenticatedUserOperation($org, $username);
+        return new RemovePublicMembershipForAuthenticatedUserOperation($org, $username);
     }
 }

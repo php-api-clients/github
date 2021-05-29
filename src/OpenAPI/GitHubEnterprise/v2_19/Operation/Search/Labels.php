@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Search;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class Labels
 {
@@ -13,22 +20,26 @@ final class Labels
     public string $sort;
     /**Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.**/
     public string $order;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($repository_id, $q, $sort, string $order = 'desc')
     {
         $this->repository_id = $repository_id;
-        $this->q = $q;
-        $this->sort = $sort;
-        $this->order = $order;
+        $this->q             = $q;
+        $this->sort          = $sort;
+        $this->order         = $order;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{repository_id}', '{q}', '{sort}', '{order}'), array($this->repository_id, $this->q, $this->sort, $this->order), '/search/labels?repository_id={repository_id}&q={q}&sort={sort}&order={order}'));
+        return new Request('get', str_replace(['{repository_id}', '{q}', '{sort}', '{order}'], [$this->repository_id, $this->q, $this->sort, $this->order], '/search/labels?repository_id={repository_id}&q={q}&sort={sort}&order={order}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

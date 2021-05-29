@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Contents;
 
@@ -13,7 +15,7 @@ class FileOperation extends BaseFileOperation
         return $this->wait(
             $this->handleCommand(
                 new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-            )->then(function (FileOperationInterface $fileOperation) {
+            )->then(static function (FileOperationInterface $fileOperation) {
                 return $fileOperation->refresh();
             })
         );

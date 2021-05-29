@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Releases\CbReleaseIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\ListReleaseAssetsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\UploadReleaseAssetOperation;
 
 final class Assets
 {
-    function get($owner, $repo, $release_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\ListReleaseAssetsOperation
+    function get($owner, $repo, $release_id, int $per_page = 30, int $page = 1): ListReleaseAssetsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\ListReleaseAssetsOperation($owner, $repo, $release_id, $per_page, $page);
+        return new ListReleaseAssetsOperation($owner, $repo, $release_id, $per_page, $page);
     }
-    function post($owner, $repo, $release_id, $name, $label) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\UploadReleaseAssetOperation
+
+    function post($owner, $repo, $release_id, $name, $label): UploadReleaseAssetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\UploadReleaseAssetOperation($owner, $repo, $release_id, $name, $label);
+        return new UploadReleaseAssetOperation($owner, $repo, $release_id, $name, $label);
     }
 }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Migrations;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetStatusForAuthenticatedUserOperation;
 
 final class CbMigrationIdRcb
 {
-    function get($migration_id, $exclude) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetStatusForAuthenticatedUserOperation
+    function get($migration_id, $exclude): GetStatusForAuthenticatedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetStatusForAuthenticatedUserOperation($migration_id, $exclude);
+        return new GetStatusForAuthenticatedUserOperation($migration_id, $exclude);
     }
 }

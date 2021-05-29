@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
@@ -13,43 +15,27 @@ use React\Promise\PromiseInterface;
 use RingCentral\Psr7\Request;
 use WyriHaximus\React\Stream\Json\JsonStream;
 
+use function assert;
+
 final class TreeHandler
 {
-    /**
-     * @var RequestService
-     */
-    private $requestService;
+    private RequestService $requestService;
 
-    /**
-     * @var Hydrator
-     */
-    private $hydrator;
+    private Hydrator $hydrator;
 
-    /**
-     * @var LoopInterface
-     */
-    private $loop;
+    private LoopInterface $loop;
 
-    /**
-     * @param RequestService $requestService
-     * @param Hydrator       $hydrator
-     * @param LoopInterface  $loop
-     */
     public function __construct(RequestService $requestService, Hydrator $hydrator, LoopInterface $loop)
     {
         $this->requestService = $requestService;
-        $this->hydrator = $hydrator;
-        $this->loop = $loop;
+        $this->hydrator       = $hydrator;
+        $this->loop           = $loop;
     }
 
-    /**
-     * @param  TreeCommand      $command
-     * @return PromiseInterface
-     */
     public function handle(TreeCommand $command): PromiseInterface
     {
         $stream = new JsonStream();
-        $this->loop->futureTick(function () use ($stream, $command) {
+        $this->loop->futureTick(function () use ($stream, $command): void {
             if ($command->getBaseTree() !== null) {
                 $stream->write('base_tree', $command->getBaseTree());
             }
@@ -58,9 +44,9 @@ final class TreeHandler
             $stream->write('tree', $trees);
             $stream->end();
 
-            $this->loop->futureTick(function () use ($trees, $command) {
-                /** @var NamedBlob $blob */
+            $this->loop->futureTick(static function () use ($trees, $command): void {
                 foreach ($command->getBlobs() as $blob) {
+                    assert($blob instanceof NamedBlob);
                     $node = [
                         'path' => $blob->getPath(),
                         'mode' => $blob->getMode(),
@@ -77,6 +63,7 @@ final class TreeHandler
 
                     $trees->writeValue($node);
                 }
+
                 $trees->close();
             });
         });

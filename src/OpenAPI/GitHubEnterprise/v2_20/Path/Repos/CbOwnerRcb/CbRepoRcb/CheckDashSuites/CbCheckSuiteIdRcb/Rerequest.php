@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Repos\CbOwnerRcb\CbRepoRcb\CheckDashSuites\CbCheckSuiteIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Checks\RerequestSuiteOperation;
 
 final class Rerequest
 {
-    function post($owner, $repo, $check_suite_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Checks\RerequestSuiteOperation
+    function post($owner, $repo, $check_suite_id): RerequestSuiteOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Checks\RerequestSuiteOperation($owner, $repo, $check_suite_id);
+        return new RerequestSuiteOperation($owner, $repo, $check_suite_id);
     }
 }

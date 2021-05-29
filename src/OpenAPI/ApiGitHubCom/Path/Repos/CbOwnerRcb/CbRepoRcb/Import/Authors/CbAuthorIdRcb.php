@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Import\Authors;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\MapCommitAuthorOperation;
 
 final class CbAuthorIdRcb
 {
-    function patch($owner, $repo, $author_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\MapCommitAuthorOperation
+    function patch($owner, $repo, $author_id): MapCommitAuthorOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\MapCommitAuthorOperation($owner, $repo, $author_id);
+        return new MapCommitAuthorOperation($owner, $repo, $author_id);
     }
 }

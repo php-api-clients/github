@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -10,64 +12,44 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Label extends AbstractResource implements LabelInterface
 {
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var string
-     */
-    protected $color;
+    protected string $color;
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function color(): string
     {
         return $this->color;
     }
 
     /**
-     * @param  string $name
      * @return Label
      */
     public function withName(string $name): self
     {
-        $clone = clone $this;
+        $clone       = clone $this;
         $clone->name = $name;
 
         return $clone;
     }
 
     /**
-     * @param  string $colour
      * @return Label
      */
     public function withColor(string $colour): self
     {
-        $clone = clone $this;
+        $clone        = clone $this;
         $clone->color = $colour;
 
         return $clone;

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Users\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Activity\ListReposWatchedByUserOperation;
 
 final class Subscriptions
 {
-    function get($username, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Activity\ListReposWatchedByUserOperation
+    function get($username, int $per_page = 30, int $page = 1): ListReposWatchedByUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Activity\ListReposWatchedByUserOperation($username, $per_page, $page);
+        return new ListReposWatchedByUserOperation($username, $per_page, $page);
     }
 }

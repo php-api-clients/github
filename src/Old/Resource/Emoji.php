@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -10,27 +12,15 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Emoji extends AbstractResource implements EmojiInterface
 {
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var string
-     */
-    protected $image;
+    protected string $image;
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function image(): string
     {
         return $this->image;

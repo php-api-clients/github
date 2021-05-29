@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler;
 
@@ -11,24 +13,14 @@ use RingCentral\Psr7\Request;
 
 final class SaveHandler
 {
-    /**
-     * @var RequestService
-     */
-    private $requestService;
+    private RequestService $requestService;
 
-    /**
-     * @var Hydrator
-     */
-    private $hydrator;
+    private Hydrator $hydrator;
 
-    /**
-     * @param RequestService $requestService
-     * @param Hydrator       $hydrator
-     */
     public function __construct(RequestService $requestService, Hydrator $hydrator)
     {
         $this->requestService = $requestService;
-        $this->hydrator = $hydrator;
+        $this->hydrator       = $hydrator;
     }
 
     public function handle(SaveCommand $command): PromiseInterface

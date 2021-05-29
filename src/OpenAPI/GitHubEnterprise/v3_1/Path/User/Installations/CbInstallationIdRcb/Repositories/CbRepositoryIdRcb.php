@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\User\Installations\CbInstallationIdRcb\Repositories;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Apps\AddRepoToInstallationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Apps\RemoveRepoFromInstallationOperation;
 
 final class CbRepositoryIdRcb
 {
-    function put($installation_id, $repository_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Apps\AddRepoToInstallationOperation
+    function put($installation_id, $repository_id): AddRepoToInstallationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Apps\AddRepoToInstallationOperation($installation_id, $repository_id);
+        return new AddRepoToInstallationOperation($installation_id, $repository_id);
     }
-    function delete($installation_id, $repository_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Apps\RemoveRepoFromInstallationOperation
+
+    function delete($installation_id, $repository_id): RemoveRepoFromInstallationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Apps\RemoveRepoFromInstallationOperation($installation_id, $repository_id);
+        return new RemoveRepoFromInstallationOperation($installation_id, $repository_id);
     }
 }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Meta\GetOperation;
 
 final class Meta
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Meta\GetOperation
+    function get(): GetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Meta\GetOperation();
+        return new GetOperation();
     }
 }

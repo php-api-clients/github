@@ -1,31 +1,40 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class DeleteFile
 {
     private const OPERATION_ID = 'repos/delete-file';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**path parameter**/
     public string $path;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $path)
     {
         $this->owner = $owner;
-        $this->repo = $repo;
-        $this->path = $path;
+        $this->repo  = $repo;
+        $this->path  = $path;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{path}'), array($this->owner, $this->repo, $this->path), '/repos/{owner}/{repo}/contents/{path}?'));
+        return new Request('delete', str_replace(['{owner}', '{repo}', '{path}'], [$this->owner, $this->repo, $this->path], '/repos/{owner}/{repo}/contents/{path}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

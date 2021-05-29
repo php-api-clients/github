@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListStarred
 {
@@ -11,21 +18,25 @@ final class ListStarred
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($since, int $per_page = 30, int $page = 1)
     {
-        $this->since = $since;
+        $this->since    = $since;
         $this->per_page = $per_page;
-        $this->page = $page;
+        $this->page     = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{since}', '{per_page}', '{page}'), array($this->since, $this->per_page, $this->page), '/gists/starred?since={since}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{since}', '{per_page}', '{page}'], [$this->since, $this->per_page, $this->page], '/gists/starred?since={since}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

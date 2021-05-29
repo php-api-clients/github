@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository\Contents;
 
@@ -16,56 +18,39 @@ use WyriHaximus\React\Stream\Json\JsonStream;
 
 final class FileUploadHandler
 {
-    /**
-     * @var RequestService
-     */
-    private $requestService;
+    private RequestService $requestService;
 
-    /**
-     * @var Hydrator
-     */
-    private $hydrator;
+    private Hydrator $hydrator;
 
-    /**
-     * @var LoopInterface
-     */
-    private $loop;
+    private LoopInterface $loop;
 
-    /**
-     * @param RequestService $requestService
-     * @param Hydrator       $hydrator
-     * @param LoopInterface  $loop
-     */
     public function __construct(RequestService $requestService, Hydrator $hydrator, LoopInterface $loop)
     {
         $this->requestService = $requestService;
-        $this->hydrator = $hydrator;
-        $this->loop = $loop;
+        $this->hydrator       = $hydrator;
+        $this->loop           = $loop;
     }
 
-    /**
-     * @param  FileUploadCommand $command
-     * @return PromiseInterface
-     */
     public function handle(FileUploadCommand $command): PromiseInterface
     {
         $stream = new JsonStream();
 
-        $this->loop->futureTick(function () use ($stream, $command) {
-            $fileStream = new ThroughStream();
+        $this->loop->futureTick(function () use ($stream, $command): void {
+            $fileStream          = new ThroughStream();
             $decoratedFileStream = new WritableStreamBase64Encode($fileStream);
             $stream->write('message', $command->getCommitMessage());
             $stream->write('content', $fileStream);
             if ($command->getSha() !== '') {
                 $stream->write('sha', $command->getSha());
             }
+
             if ($command->getBranch() !== '') {
                 $stream->write('branch', $command->getBranch());
             }
 
             $stream->end();
 
-            $this->loop->futureTick(function () use ($decoratedFileStream, $command) {
+            $this->loop->futureTick(static function () use ($decoratedFileStream, $command): void {
                 $command->getStream()->pipe($decoratedFileStream);
             });
         });

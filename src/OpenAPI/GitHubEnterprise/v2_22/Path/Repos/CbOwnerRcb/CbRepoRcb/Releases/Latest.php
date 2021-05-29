@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb\Releases;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\GetLatestReleaseOperation;
 
 final class Latest
 {
-    function get($owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\GetLatestReleaseOperation
+    function get($owner, $repo): GetLatestReleaseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\GetLatestReleaseOperation($owner, $repo);
+        return new GetLatestReleaseOperation($owner, $repo);
     }
 }

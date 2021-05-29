@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Git;
 
@@ -7,45 +9,21 @@ use ApiClients\Foundation\Resource\ResourceInterface;
 
 interface CommitInterface extends ResourceInterface
 {
-    const HYDRATE_CLASS = 'Git\\Commit';
+    public const HYDRATE_CLASS = 'Git\\Commit';
 
-    /**
-     * @return string
-     */
     public function sha(): string;
 
-    /**
-     * @return string
-     */
     public function url(): string;
 
-    /**
-     * @return User
-     */
     public function author(): User;
 
-    /**
-     * @return User
-     */
     public function comitter(): User;
 
-    /**
-     * @return string
-     */
     public function message(): string;
 
-    /**
-     * @return TreeInterface
-     */
     public function tree(): TreeInterface;
 
-    /**
-     * @return int
-     */
     public function commentCount(): int;
 
-    /**
-     * @return string
-     */
     public function protectionUrl(): string;
 }

@@ -1,23 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\RequiredStatusChecks;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\AddStatusCheckContextsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetAllStatusCheckContextsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\RemoveStatusCheckContextsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\SetStatusCheckContextsOperation;
 
 final class Contexts
 {
-    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetAllStatusCheckContextsOperation
+    function get($owner, $repo, $branch): GetAllStatusCheckContextsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\GetAllStatusCheckContextsOperation($owner, $repo, $branch);
+        return new GetAllStatusCheckContextsOperation($owner, $repo, $branch);
     }
-    function put($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\SetStatusCheckContextsOperation
+
+    function put($owner, $repo, $branch): SetStatusCheckContextsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\SetStatusCheckContextsOperation($owner, $repo, $branch);
+        return new SetStatusCheckContextsOperation($owner, $repo, $branch);
     }
-    function post($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\AddStatusCheckContextsOperation
+
+    function post($owner, $repo, $branch): AddStatusCheckContextsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\AddStatusCheckContextsOperation($owner, $repo, $branch);
+        return new AddStatusCheckContextsOperation($owner, $repo, $branch);
     }
-    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\RemoveStatusCheckContextsOperation
+
+    function delete($owner, $repo, $branch): RemoveStatusCheckContextsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos\RemoveStatusCheckContextsOperation($owner, $repo, $branch);
+        return new RemoveStatusCheckContextsOperation($owner, $repo, $branch);
     }
 }

@@ -1,11 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Projects;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListForOrg
 {
     private const OPERATION_ID = 'projects/list-for-org';
-    /****/
     public string $org;
     /**Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.**/
     public string $state;
@@ -13,22 +19,26 @@ final class ListForOrg
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org, string $state = 'open', int $per_page = 30, int $page = 1)
     {
-        $this->org = $org;
-        $this->state = $state;
+        $this->org      = $org;
+        $this->state    = $state;
         $this->per_page = $per_page;
-        $this->page = $page;
+        $this->page     = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{state}', '{per_page}', '{page}'), array($this->org, $this->state, $this->per_page, $this->page), '/orgs/{org}/projects?state={state}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{org}', '{state}', '{per_page}', '{page}'], [$this->org, $this->state, $this->per_page, $this->page], '/orgs/{org}/projects?state={state}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

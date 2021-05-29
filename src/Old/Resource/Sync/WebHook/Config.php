@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\WebHook;
 
@@ -13,7 +15,7 @@ class Config extends BaseConfig
         return $this->wait(
             $this->handleCommand(
                 new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-            )->then(function (ConfigInterface $config) {
+            )->then(static function (ConfigInterface $config) {
                 return $config->refresh();
             })
         );

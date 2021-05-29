@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Schema;
 
 final class GitTag
 {
-    public const SCHEMA_TITLE = 'Git Tag';
+    public const SCHEMA_TITLE       = 'Git Tag';
     public const SCHEMA_DESCRIPTION = 'Metadata for a Git tag';
-    private ?string $node_id = null;
+    private ?string $node_id        = null;
     /**
      * Name of the tag
      */
@@ -19,39 +21,47 @@ final class GitTag
     /**
      * Message describing the purpose of the tag
      */
-    private ?string $message = null;
-    private array $tagger = array();
-    private array $object = array();
-    private array $verification = array();
-    public function node_id() : ?string
+    private ?string $message    = null;
+    private array $tagger       = [];
+    private array $object       = [];
+    private array $verification = [];
+
+    public function node_id(): ?string
     {
         return $this->node_id;
     }
-    public function tag() : ?string
+
+    public function tag(): ?string
     {
         return $this->tag;
     }
-    public function sha() : ?string
+
+    public function sha(): ?string
     {
         return $this->sha;
     }
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function message() : ?string
+
+    public function message(): ?string
     {
         return $this->message;
     }
-    public function tagger() : array
+
+    public function tagger(): array
     {
         return $this->tagger;
     }
-    public function object() : array
+
+    public function object(): array
     {
         return $this->object;
     }
-    public function verification() : array
+
+    public function verification(): array
     {
         return $this->verification;
     }

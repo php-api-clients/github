@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -10,53 +12,29 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class CodeOfConduct extends AbstractResource implements CodeOfConductInterface
 {
-    /**
-     * @var string
-     */
-    protected $key;
+    protected string $key;
 
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var string
-     */
-    protected $spdx_id;
+    protected string $spdx_id;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @return string
-     */
     public function key(): string
     {
         return $this->key;
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function spdxId(): string
     {
         return $this->spdx_id;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;

@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Gists\CbGistIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gists\CreateCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gists\ListCommentsOperation;
 
 final class Comments
 {
-    function get($gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gists\ListCommentsOperation
+    function get($gist_id, int $per_page = 30, int $page = 1): ListCommentsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gists\ListCommentsOperation($gist_id, $per_page, $page);
+        return new ListCommentsOperation($gist_id, $per_page, $page);
     }
-    function post($gist_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gists\CreateCommentOperation
+
+    function post($gist_id): CreateCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gists\CreateCommentOperation($gist_id);
+        return new CreateCommentOperation($gist_id);
     }
 }

@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Repos\CbOwnerRcb\CbRepoRcb\Releases;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\DeleteReleaseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\GetReleaseOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\UpdateReleaseOperation;
 
 final class CbReleaseIdRcb
 {
-    function get($owner, $repo, $release_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\GetReleaseOperation
+    function get($owner, $repo, $release_id): GetReleaseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\GetReleaseOperation($owner, $repo, $release_id);
+        return new GetReleaseOperation($owner, $repo, $release_id);
     }
-    function delete($owner, $repo, $release_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\DeleteReleaseOperation
+
+    function delete($owner, $repo, $release_id): DeleteReleaseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\DeleteReleaseOperation($owner, $repo, $release_id);
+        return new DeleteReleaseOperation($owner, $repo, $release_id);
     }
-    function patch($owner, $repo, $release_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\UpdateReleaseOperation
+
+    function patch($owner, $repo, $release_id): UpdateReleaseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos\UpdateReleaseOperation($owner, $repo, $release_id);
+        return new UpdateReleaseOperation($owner, $repo, $release_id);
     }
 }

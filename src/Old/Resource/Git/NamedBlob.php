@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Git;
 
@@ -10,79 +12,43 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class NamedBlob extends AbstractResource implements NamedBlobInterface
 {
-    /**
-     * @var string
-     */
-    protected $path;
+    protected string $path;
 
-    /**
-     * @var string
-     */
-    protected $mode;
+    protected string $mode;
 
-    /**
-     * @var string
-     */
-    protected $type;
+    protected string $type;
 
-    /**
-     * @var int
-     */
-    protected $size;
+    protected int $size;
 
-    /**
-     * @var string
-     */
-    protected $sha;
+    protected string $sha;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @return string
-     */
     public function path(): string
     {
         return $this->path;
     }
 
-    /**
-     * @return string
-     */
     public function mode(): string
     {
         return $this->mode;
     }
 
-    /**
-     * @return string
-     */
     public function type(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return int
-     */
     public function size(): int
     {
         return $this->size;
     }
 
-    /**
-     * @return string
-     */
     public function sha(): string
     {
         return $this->sha;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;

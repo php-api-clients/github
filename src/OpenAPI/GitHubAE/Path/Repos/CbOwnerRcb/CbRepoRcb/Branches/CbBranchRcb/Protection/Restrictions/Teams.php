@@ -1,23 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\Restrictions;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AddTeamAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\GetTeamsWithAccessToProtectedBranchOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\RemoveTeamAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\SetTeamAccessRestrictionsOperation;
 
 final class Teams
 {
-    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\GetTeamsWithAccessToProtectedBranchOperation
+    function get($owner, $repo, $branch): GetTeamsWithAccessToProtectedBranchOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\GetTeamsWithAccessToProtectedBranchOperation($owner, $repo, $branch);
+        return new GetTeamsWithAccessToProtectedBranchOperation($owner, $repo, $branch);
     }
-    function put($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\SetTeamAccessRestrictionsOperation
+
+    function put($owner, $repo, $branch): SetTeamAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\SetTeamAccessRestrictionsOperation($owner, $repo, $branch);
+        return new SetTeamAccessRestrictionsOperation($owner, $repo, $branch);
     }
-    function post($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AddTeamAccessRestrictionsOperation
+
+    function post($owner, $repo, $branch): AddTeamAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\AddTeamAccessRestrictionsOperation($owner, $repo, $branch);
+        return new AddTeamAccessRestrictionsOperation($owner, $repo, $branch);
     }
-    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\RemoveTeamAccessRestrictionsOperation
+
+    function delete($owner, $repo, $branch): RemoveTeamAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\RemoveTeamAccessRestrictionsOperation($owner, $repo, $branch);
+        return new RemoveTeamAccessRestrictionsOperation($owner, $repo, $branch);
     }
 }

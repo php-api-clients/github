@@ -1,33 +1,40 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 
 final class GistCommit
 {
-    public const SCHEMA_TITLE = 'Gist Commit';
+    public const SCHEMA_TITLE       = 'Gist Commit';
     public const SCHEMA_DESCRIPTION = 'Gist Commit';
-    private ?string $url = null;
-    private ?string $version = null;
+    private ?string $url            = null;
+    private ?string $version        = null;
     private $user;
-    private array $change_status = array();
+    private array $change_status  = [];
     private ?string $committed_at = null;
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function version() : ?string
+
+    public function version(): ?string
     {
         return $this->version;
     }
+
     public function user()
     {
         return $this->user;
     }
-    public function change_status() : array
+
+    public function change_status(): array
     {
         return $this->change_status;
     }
-    public function committed_at() : ?string
+
+    public function committed_at(): ?string
     {
         return $this->committed_at;
     }

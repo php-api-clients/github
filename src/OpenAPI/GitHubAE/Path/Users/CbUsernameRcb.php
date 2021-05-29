@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Users;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetByUsernameOperation;
 
 final class CbUsernameRcb
 {
-    function get($username) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetByUsernameOperation
+    function get($username): GetByUsernameOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetByUsernameOperation($username);
+        return new GetByUsernameOperation($username);
     }
 }

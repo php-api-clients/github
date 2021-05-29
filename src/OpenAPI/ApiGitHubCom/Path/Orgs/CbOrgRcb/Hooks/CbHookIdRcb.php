@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Hooks;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\DeleteWebhookOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\GetWebhookOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UpdateWebhookOperation;
 
 final class CbHookIdRcb
 {
-    function get($org, $hook_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\GetWebhookOperation
+    function get($org, $hook_id): GetWebhookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\GetWebhookOperation($org, $hook_id);
+        return new GetWebhookOperation($org, $hook_id);
     }
-    function delete($org, $hook_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\DeleteWebhookOperation
+
+    function delete($org, $hook_id): DeleteWebhookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\DeleteWebhookOperation($org, $hook_id);
+        return new DeleteWebhookOperation($org, $hook_id);
     }
-    function patch($org, $hook_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UpdateWebhookOperation
+
+    function patch($org, $hook_id): UpdateWebhookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UpdateWebhookOperation($org, $hook_id);
+        return new UpdateWebhookOperation($org, $hook_id);
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command;
 
@@ -10,22 +12,13 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class RefreshCommand
 {
-    /**
-     * @var ResourceInterface
-     */
-    private $resource;
+    private ResourceInterface $resource;
 
-    /**
-     * @param ResourceInterface $resource
-     */
     public function __construct(ResourceInterface $resource)
     {
         $this->resource = $resource;
     }
 
-    /**
-     * @return ResourceInterface
-     */
     public function getResource(): ResourceInterface
     {
         return $this->resource;

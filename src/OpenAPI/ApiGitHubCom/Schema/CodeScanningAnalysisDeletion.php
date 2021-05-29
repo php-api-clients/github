@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class CodeScanningAnalysisDeletion
 {
-    public const SCHEMA_TITLE = 'Analysis deletion';
+    public const SCHEMA_TITLE       = 'Analysis deletion';
     public const SCHEMA_DESCRIPTION = 'Successful deletion of a code scanning analysis';
     /**
      * Next deletable analysis in chain, without last analysis deletion confirmation
@@ -14,11 +16,13 @@ final class CodeScanningAnalysisDeletion
      * Next deletable analysis in chain, with last analysis deletion confirmation
      */
     private ?string $confirm_delete_url = null;
-    public function next_analysis_url() : ?string
+
+    public function next_analysis_url(): ?string
     {
         return $this->next_analysis_url;
     }
-    public function confirm_delete_url() : ?string
+
+    public function confirm_delete_url(): ?string
     {
         return $this->confirm_delete_url;
     }

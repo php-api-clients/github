@@ -1,25 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class CreateRemoveTokenForOrg
 {
     private const OPERATION_ID = 'actions/create-remove-token-for-org';
-    /****/
     public string $org;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org)
     {
         $this->org = $org;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/runners/remove-token?'));
+        return new Request('post', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/runners/remove-token?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

@@ -1,31 +1,40 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class DeleteAnEnvironment
 {
     private const OPERATION_ID = 'repos/delete-an-environment';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**The name of the environment**/
     public string $environment_name;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $environment_name)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner            = $owner;
+        $this->repo             = $repo;
         $this->environment_name = $environment_name;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{environment_name}'), array($this->owner, $this->repo, $this->environment_name), '/repos/{owner}/{repo}/environments/{environment_name}?'));
+        return new Request('delete', str_replace(['{owner}', '{repo}', '{environment_name}'], [$this->owner, $this->repo, $this->environment_name], '/repos/{owner}/{repo}/environments/{environment_name}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

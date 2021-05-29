@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Git;
 
@@ -12,7 +14,7 @@ class User extends BaseUser
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (UserInterface $user) {
+        )->then(static function (UserInterface $user) {
             return $user->refresh();
         }));
     }

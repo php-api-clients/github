@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\GetFeedsOperation;
 
 final class Feeds
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\GetFeedsOperation
+    function get(): GetFeedsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\GetFeedsOperation();
+        return new GetFeedsOperation();
     }
 }

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Schema;
 
 final class ActionsEnterprisePermissions
 {
-    public const SCHEMA_TITLE = 'actions-enterprise-permissions';
+    public const SCHEMA_TITLE       = 'actions-enterprise-permissions';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The policy that controls the organizations in the enterprise that are allowed to run GitHub Actions. Can be one of: `all`, `none`, or `selected`.
@@ -22,19 +24,23 @@ final class ActionsEnterprisePermissions
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
     private ?string $selected_actions_url = null;
-    public function enabled_organizations() : ?string
+
+    public function enabled_organizations(): ?string
     {
         return $this->enabled_organizations;
     }
-    public function selected_organizations_url() : ?string
+
+    public function selected_organizations_url(): ?string
     {
         return $this->selected_organizations_url;
     }
-    public function allowed_actions() : ?string
+
+    public function allowed_actions(): ?string
     {
         return $this->allowed_actions;
     }
-    public function selected_actions_url() : ?string
+
+    public function selected_actions_url(): ?string
     {
         return $this->selected_actions_url;
     }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Releases\CbReleaseIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForReleaseOperation;
 
 final class Reactions
 {
-    function post($owner, $repo, $release_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForReleaseOperation
+    function post($owner, $repo, $release_id): CreateForReleaseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForReleaseOperation($owner, $repo, $release_id);
+        return new CreateForReleaseOperation($owner, $repo, $release_id);
     }
 }

@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListWorkflowRunsForRepo
 {
     private const OPERATION_ID = 'actions/list-workflow-runs-for-repo';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.**/
     public string $actor;
@@ -21,26 +26,30 @@ final class ListWorkflowRunsForRepo
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
-        $this->actor = $actor;
-        $this->branch = $branch;
-        $this->event = $event;
-        $this->status = $status;
+        $this->owner    = $owner;
+        $this->repo     = $repo;
+        $this->actor    = $actor;
+        $this->branch   = $branch;
+        $this->event    = $event;
+        $this->status   = $status;
         $this->per_page = $per_page;
-        $this->page = $page;
+        $this->page     = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page), '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page], '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

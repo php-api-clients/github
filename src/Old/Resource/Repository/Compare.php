@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
@@ -20,110 +22,60 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Compare extends AbstractResource implements CompareInterface
 {
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var Repository\Commit
-     */
-    protected $base_commit;
+    protected Repository\Commit $base_commit;
 
-    /**
-     * @var Repository\Commit
-     */
-    protected $merge_base_commit;
+    protected Repository\Commit $merge_base_commit;
 
-    /**
-     * @var string
-     */
-    protected $status;
+    protected string $status;
 
-    /**
-     * @var int
-     */
-    protected $ahead_by;
+    protected int $ahead_by;
 
-    /**
-     * @var int
-     */
-    protected $behind_by;
+    protected int $behind_by;
 
-    /**
-     * @var int
-     */
-    protected $total_commits;
+    protected int $total_commits;
 
-    /**
-     * @var Repository\Commit
-     */
-    protected $commits;
+    protected Repository\Commit $commits;
 
-    /**
-     * @var Commit\File[]
-     */
-    protected $files;
+    /** @var Commit\File[] */
+    protected array $files;
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return Repository\Commit
-     */
     public function baseCommit(): Repository\Commit
     {
         return $this->base_commit;
     }
 
-    /**
-     * @return Repository\Commit
-     */
     public function mergeBaseCommit(): Repository\Commit
     {
         return $this->merge_base_commit;
     }
 
-    /**
-     * @return string
-     */
     public function status(): string
     {
         return $this->status;
     }
 
-    /**
-     * @return int
-     */
     public function aheadBy(): int
     {
         return $this->ahead_by;
     }
 
-    /**
-     * @return int
-     */
     public function behindBy(): int
     {
         return $this->behind_by;
     }
 
-    /**
-     * @return int
-     */
     public function totalCommits(): int
     {
         return $this->total_commits;
     }
 
-    /**
-     * @return Repository\Commit
-     */
     public function commits(): Repository\Commit
     {
         return $this->commits;

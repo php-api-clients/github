@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Orgs\CbOrgRcb\Actions;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\CreateSelfHostedRunnerGroupForOrgOperation;
 
 final class RunnerGroups
 {
-    function post($org) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\CreateSelfHostedRunnerGroupForOrgOperation
+    function post($org): CreateSelfHostedRunnerGroupForOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\CreateSelfHostedRunnerGroupForOrgOperation($org);
+        return new CreateSelfHostedRunnerGroupForOrgOperation($org);
     }
 }

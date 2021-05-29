@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
@@ -12,7 +14,7 @@ class Url extends BaseUrl
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (UrlInterface $url) {
+        )->then(static function (UrlInterface $url) {
             return $url->refresh();
         }));
     }

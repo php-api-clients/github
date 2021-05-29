@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Applications;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\OauthAuthorizations\ListGrantsOperation;
 
 final class Grants
 {
-    function get(int $per_page = 30, int $page = 1, $client_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\OauthAuthorizations\ListGrantsOperation
+    function get(int $per_page = 30, int $page = 1, $client_id): ListGrantsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\OauthAuthorizations\ListGrantsOperation($per_page, $page, $client_id);
+        return new ListGrantsOperation($per_page, $page, $client_id);
     }
 }

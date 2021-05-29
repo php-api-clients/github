@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Git;
 
@@ -12,7 +14,7 @@ class Verification extends BaseVerification
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (VerificationInterface $verification) {
+        )->then(static function (VerificationInterface $verification) {
             return $verification->refresh();
         }));
     }

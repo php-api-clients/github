@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository;
 
@@ -12,7 +14,7 @@ class Commit extends BaseCommit
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (CommitInterface $commit) {
+        )->then(static function (CommitInterface $commit) {
             return $commit->refresh();
         }));
     }

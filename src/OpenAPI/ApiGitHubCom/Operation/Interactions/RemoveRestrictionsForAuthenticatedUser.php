@@ -1,22 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class RemoveRestrictionsForAuthenticatedUser
 {
     private const OPERATION_ID = 'interactions/remove-restrictions-for-authenticated-user';
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct()
     {
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/user/interaction-limits?'));
+        return new Request('delete', str_replace([], [], '/user/interaction-limits?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

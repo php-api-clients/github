@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -15,91 +17,47 @@ use DateTimeInterface;
  */
 abstract class WebHook extends AbstractResource implements WebHookInterface
 {
-    /**
-     * @var int
-     */
-    protected $id;
+    protected int $id;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var string
-     */
-    protected $test_url;
+    protected string $test_url;
 
-    /**
-     * @var string
-     */
-    protected $ping_url;
+    protected string $ping_url;
 
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var array
-     */
-    protected $events;
+    /** @var array */
+    protected array $events;
 
-    /**
-     * @var bool
-     */
-    protected $active;
+    protected bool $active;
 
-    /**
-     * @var WebHook\Config
-     */
-    protected $config;
+    protected WebHook\Config $config;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $created_at;
+    protected DateTimeInterface $created_at;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $updated_at;
+    protected DateTimeInterface $updated_at;
 
-    /**
-     * @return int
-     */
     public function id(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function testUrl(): string
     {
         return $this->test_url;
     }
 
-    /**
-     * @return string
-     */
     public function pingUrl(): string
     {
         return $this->ping_url;
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
@@ -113,33 +71,21 @@ abstract class WebHook extends AbstractResource implements WebHookInterface
         return $this->events;
     }
 
-    /**
-     * @return bool
-     */
     public function active(): bool
     {
         return $this->active;
     }
 
-    /**
-     * @return WebHook\Config
-     */
     public function config(): WebHook\Config
     {
         return $this->config;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;

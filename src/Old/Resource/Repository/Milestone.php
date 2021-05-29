@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
@@ -14,118 +16,64 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Milestone extends AbstractResource implements MilestoneInterface
 {
-    /**
-     * @var int
-     */
-    protected $id;
+    protected int $id;
 
-    /**
-     * @var int
-     */
-    protected $number;
+    protected int $number;
 
-    /**
-     * @var string
-     */
-    protected $state;
+    protected string $state;
 
-    /**
-     * @var string
-     */
-    protected $title;
+    protected string $title;
 
-    /**
-     * @var string
-     */
-    protected $description;
+    protected string $description;
 
-    /**
-     * @var User
-     */
-    protected $creator;
+    protected User $creator;
 
-    /**
-     * @var int
-     */
-    protected $open_issues;
+    protected int $open_issues;
 
-    /**
-     * @var int
-     */
-    protected $closed_issues;
+    protected int $closed_issues;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @return int
-     */
     public function id(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function number(): int
     {
         return $this->number;
     }
 
-    /**
-     * @return string
-     */
     public function state(): string
     {
         return $this->state;
     }
 
-    /**
-     * @return string
-     */
     public function title(): string
     {
         return $this->title;
     }
 
-    /**
-     * @return string
-     */
     public function description(): string
     {
         return $this->description;
     }
 
-    /**
-     * @return User
-     */
     public function creator(): User
     {
         return $this->creator;
     }
 
-    /**
-     * @return int
-     */
     public function openIssues(): int
     {
         return $this->open_issues;
     }
 
-    /**
-     * @return int
-     */
     public function closedIssues(): int
     {
         return $this->closed_issues;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;

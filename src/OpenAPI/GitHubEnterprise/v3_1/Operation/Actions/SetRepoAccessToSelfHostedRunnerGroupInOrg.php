@@ -1,28 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class SetRepoAccessToSelfHostedRunnerGroupInOrg
 {
     private const OPERATION_ID = 'actions/set-repo-access-to-self-hosted-runner-group-in-org';
-    /****/
     public string $org;
     /**Unique identifier of the self-hosted runner group.**/
     public int $runner_group_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org, $runner_group_id)
     {
-        $this->org = $org;
+        $this->org             = $org;
         $this->runner_group_id = $runner_group_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}', '{runner_group_id}'), array($this->org, $this->runner_group_id), '/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories?'));
+        return new Request('put', str_replace(['{org}', '{runner_group_id}'], [$this->org, $this->runner_group_id], '/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

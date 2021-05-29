@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\LockOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\UnlockOperation;
 
 final class Lock
 {
-    function put($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\LockOperation
+    function put($owner, $repo, $issue_number): LockOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\LockOperation($owner, $repo, $issue_number);
+        return new LockOperation($owner, $repo, $issue_number);
     }
-    function delete($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\UnlockOperation
+
+    function delete($owner, $repo, $issue_number): UnlockOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Issues\UnlockOperation($owner, $repo, $issue_number);
+        return new UnlockOperation($owner, $repo, $issue_number);
     }
 }

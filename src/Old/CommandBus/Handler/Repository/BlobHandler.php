@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
@@ -16,47 +18,29 @@ use WyriHaximus\React\Stream\Json\JsonStream;
 
 final class BlobHandler
 {
-    /**
-     * @var RequestService
-     */
-    private $requestService;
+    private RequestService $requestService;
 
-    /**
-     * @var Hydrator
-     */
-    private $hydrator;
+    private Hydrator $hydrator;
 
-    /**
-     * @var LoopInterface
-     */
-    private $loop;
+    private LoopInterface $loop;
 
-    /**
-     * @param RequestService $requestService
-     * @param Hydrator       $hydrator
-     * @param LoopInterface  $loop
-     */
     public function __construct(RequestService $requestService, Hydrator $hydrator, LoopInterface $loop)
     {
         $this->requestService = $requestService;
-        $this->hydrator = $hydrator;
-        $this->loop = $loop;
+        $this->hydrator       = $hydrator;
+        $this->loop           = $loop;
     }
 
-    /**
-     * @param  BlobCommand      $command
-     * @return PromiseInterface
-     */
     public function handle(BlobCommand $command): PromiseInterface
     {
         $stream = new JsonStream();
-        $this->loop->futureTick(function () use ($stream, $command) {
+        $this->loop->futureTick(function () use ($stream, $command): void {
             $contentsStream = new ThroughStream();
             $stream->write('encoding', 'base64');
             $stream->write('content', new ReadableStreamBase64Encode($contentsStream));
             $stream->end();
 
-            $this->loop->futureTick(function () use ($contentsStream, $command) {
+            $this->loop->futureTick(static function () use ($contentsStream, $command): void {
                 $command->getContents()->pipe($contentsStream);
             });
         });

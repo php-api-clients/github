@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -10,47 +12,27 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Meta extends AbstractResource implements MetaInterface
 {
-    /**
-     * @var bool
-     */
-    protected $verifiable_password_authentication;
+    protected bool $verifiable_password_authentication;
 
-    /**
-     * @var string
-     */
-    protected $github_services_sha;
+    protected string $github_services_sha;
 
-    /**
-     * @var array
-     */
-    protected $hooks;
+    /** @var array */
+    protected array $hooks;
 
-    /**
-     * @var array
-     */
-    protected $git;
+    /** @var array */
+    protected array $git;
 
-    /**
-     * @var array
-     */
-    protected $pages;
+    /** @var array */
+    protected array $pages;
 
-    /**
-     * @var array
-     */
-    protected $importer;
+    /** @var array */
+    protected array $importer;
 
-    /**
-     * @return bool
-     */
     public function verifiablePasswordAuthentication(): bool
     {
         return $this->verifiable_password_authentication;
     }
 
-    /**
-     * @return string
-     */
     public function githubServicesSha(): string
     {
         return $this->github_services_sha;

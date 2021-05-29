@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeletePullRequestReviewProtectionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetPullRequestReviewProtectionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\UpdatePullRequestReviewProtectionOperation;
 
 final class RequiredPullRequestReviews
 {
-    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetPullRequestReviewProtectionOperation
+    function get($owner, $repo, $branch): GetPullRequestReviewProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\GetPullRequestReviewProtectionOperation($owner, $repo, $branch);
+        return new GetPullRequestReviewProtectionOperation($owner, $repo, $branch);
     }
-    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeletePullRequestReviewProtectionOperation
+
+    function delete($owner, $repo, $branch): DeletePullRequestReviewProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\DeletePullRequestReviewProtectionOperation($owner, $repo, $branch);
+        return new DeletePullRequestReviewProtectionOperation($owner, $repo, $branch);
     }
-    function patch($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\UpdatePullRequestReviewProtectionOperation
+
+    function patch($owner, $repo, $branch): UpdatePullRequestReviewProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Repos\UpdatePullRequestReviewProtectionOperation($owner, $repo, $branch);
+        return new UpdatePullRequestReviewProtectionOperation($owner, $repo, $branch);
     }
 }

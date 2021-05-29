@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\ListLanguagesOperation;
 
 final class Languages
 {
-    function get($owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\ListLanguagesOperation
+    function get($owner, $repo): ListLanguagesOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\ListLanguagesOperation($owner, $repo);
+        return new ListLanguagesOperation($owner, $repo);
     }
 }

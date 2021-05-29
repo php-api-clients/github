@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Git;
 
@@ -11,40 +13,22 @@ use DateTimeInterface;
  */
 abstract class User extends AbstractResource implements UserInterface
 {
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var string
-     */
-    protected $email;
+    protected string $email;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $date;
+    protected DateTimeInterface $date;
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function email(): string
     {
         return $this->email;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function date(): DateTimeInterface
     {
         return $this->date;

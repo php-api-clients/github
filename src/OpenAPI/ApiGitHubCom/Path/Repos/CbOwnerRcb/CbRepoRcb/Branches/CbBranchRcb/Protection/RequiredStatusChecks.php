@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetStatusChecksProtectionOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveStatusCheckProtectionOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateStatusCheckProtectionOperation;
 
 final class RequiredStatusChecks
 {
-    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetStatusChecksProtectionOperation
+    function get($owner, $repo, $branch): GetStatusChecksProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetStatusChecksProtectionOperation($owner, $repo, $branch);
+        return new GetStatusChecksProtectionOperation($owner, $repo, $branch);
     }
-    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveStatusCheckProtectionOperation
+
+    function delete($owner, $repo, $branch): RemoveStatusCheckProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveStatusCheckProtectionOperation($owner, $repo, $branch);
+        return new RemoveStatusCheckProtectionOperation($owner, $repo, $branch);
     }
-    function patch($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateStatusCheckProtectionOperation
+
+    function patch($owner, $repo, $branch): UpdateStatusCheckProtectionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateStatusCheckProtectionOperation($owner, $repo, $branch);
+        return new UpdateStatusCheckProtectionOperation($owner, $repo, $branch);
     }
 }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Reactions;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\DeleteLegacyOperation;
 
 final class CbReactionIdRcb
 {
-    function delete($reaction_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\DeleteLegacyOperation
+    function delete($reaction_id): DeleteLegacyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\DeleteLegacyOperation($reaction_id);
+        return new DeleteLegacyOperation($reaction_id);
     }
 }

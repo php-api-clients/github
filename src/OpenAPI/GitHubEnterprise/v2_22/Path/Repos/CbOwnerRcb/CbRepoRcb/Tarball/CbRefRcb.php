@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Repos\CbOwnerRcb\CbRepoRcb\Tarball;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\DownloadTarballArchiveOperation;
 
 final class CbRefRcb
 {
-    function get($owner, $repo, $ref) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\DownloadTarballArchiveOperation
+    function get($owner, $repo, $ref): DownloadTarballArchiveOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos\DownloadTarballArchiveOperation($owner, $repo, $ref);
+        return new DownloadTarballArchiveOperation($owner, $repo, $ref);
     }
 }

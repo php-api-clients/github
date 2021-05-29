@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Apps;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class CreateContentAttachment
 {
@@ -11,21 +18,25 @@ final class CreateContentAttachment
     public string $repo;
     /**The `id` of the `content_reference` event.**/
     public int $content_reference_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $content_reference_id)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner                = $owner;
+        $this->repo                 = $repo;
         $this->content_reference_id = $content_reference_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{owner}', '{repo}', '{content_reference_id}'), array($this->owner, $this->repo, $this->content_reference_id), '/{owner}/{repo}/content_references/{content_reference_id}/attachments?'));
+        return new Request('post', str_replace(['{owner}', '{repo}', '{content_reference_id}'], [$this->owner, $this->repo, $this->content_reference_id], '/{owner}/{repo}/content_references/{content_reference_id}/attachments?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

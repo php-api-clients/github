@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Contents;
 
@@ -14,159 +16,88 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Directory extends AbstractResource implements DirectoryInterface
 {
-    /**
-     * @var string
-     */
-    protected $type;
+    protected string $type;
 
-    /**
-     * @var string
-     */
-    protected $encoding;
+    protected string $encoding;
 
-    /**
-     * @var int
-     */
-    protected $size;
+    protected int $size;
 
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @var string
-     */
-    protected $path;
+    protected string $path;
 
-    /**
-     * @var string
-     */
-    protected $sha;
+    protected string $sha;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var string
-     */
-    protected $git_url;
+    protected string $git_url;
 
-    /**
-     * @var string
-     */
-    protected $html_url;
+    protected string $html_url;
 
-    /**
-     * @var string
-     */
-    protected $download_url;
+    protected string $download_url;
 
-    /**
-     * @var string
-     */
-    protected $repository_fullname;
+    protected string $repository_fullname;
 
-    /**
-     * @var Links
-     */
+    /** @var Links */
     // @codingStandardsIgnoreStart
     protected $_links;
     // @codingStandardsIgnoreEnd
 
-    /**
-     * @return string
-     */
     public function type(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function encoding(): string
     {
         return $this->encoding;
     }
 
-    /**
-     * @return int
-     */
     public function size(): int
     {
         return $this->size;
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function path(): string
     {
         return $this->path;
     }
 
-    /**
-     * @return string
-     */
     public function sha(): string
     {
         return $this->sha;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function gitUrl(): string
     {
         return $this->git_url;
     }
 
-    /**
-     * @return string
-     */
     public function htmlUrl(): string
     {
         return $this->html_url;
     }
 
-    /**
-     * @return string
-     */
     public function downloadUrl(): string
     {
         return $this->download_url;
     }
 
-    /**
-     * @return string
-     */
     public function repositoryFullname(): string
     {
         return $this->repository_fullname;
     }
 
-    /**
-     * @return Links
-     */
     public function links(): Links
     {
         return $this->_links;

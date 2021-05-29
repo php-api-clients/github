@@ -1,13 +1,16 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Async\Contents;
 
 use ApiClients\Client\Github\Resource\Contents\FileOperation as BaseFileOperation;
+use Exception;
 
 class FileOperation extends BaseFileOperation
 {
     public function refresh(): FileOperation
     {
-        throw new \Exception('TODO: create refresh method!');
+        throw new Exception('TODO: create refresh method!');
     }
 }

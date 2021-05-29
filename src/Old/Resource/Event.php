@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -16,68 +18,36 @@ use DateTimeInterface;
  */
 abstract class Event extends AbstractResource implements EventInterface
 {
-    /**
-     * @var int
-     */
-    protected $id;
+    protected int $id;
 
-    /**
-     * @var string
-     */
-    protected $type;
+    protected string $type;
 
-    /**
-     * @var User
-     */
-    protected $actor;
+    protected User $actor;
 
-    /**
-     * @var RepositorySimple
-     */
-    protected $repo;
+    protected RepositorySimple $repo;
 
-    /**
-     * @var array
-     */
-    protected $payload;
+    /** @var array */
+    protected array $payload;
 
-    /**
-     * @var bool
-     */
-    protected $public;
+    protected bool $public;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $created_at;
+    protected DateTimeInterface $created_at;
 
-    /**
-     * @return int
-     */
     public function id(): int
     {
-        return (int)$this->id;
+        return (int) $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function type(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return User
-     */
     public function actor(): User
     {
         return $this->actor;
     }
 
-    /**
-     * @return RepositorySimple
-     */
     public function repo(): RepositorySimple
     {
         return $this->repo;
@@ -91,17 +61,11 @@ abstract class Event extends AbstractResource implements EventInterface
         return $this->payload;
     }
 
-    /**
-     * @return bool
-     */
     public function public(): bool
     {
         return $this->public;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function createdAt(): DateTimeInterface
     {
         return $this->created_at;

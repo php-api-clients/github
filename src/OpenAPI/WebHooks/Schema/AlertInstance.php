@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class AlertInstance
 {
-    public const SCHEMA_TITLE = 'Alert Instance';
+    public const SCHEMA_TITLE       = 'Alert Instance';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The full Git reference, formatted as `refs/heads/<branch name>`.
@@ -21,40 +23,48 @@ final class AlertInstance
     /**
      * State of a code scanning alert.
      */
-    private ?string $state = null;
-    private ?string $commit_sha = null;
-    private array $message = array();
-    private array $location = array();
-    private array $classifications = array();
-    public function ref() : ?string
+    private ?string $state         = null;
+    private ?string $commit_sha    = null;
+    private array $message         = [];
+    private array $location        = [];
+    private array $classifications = [];
+
+    public function ref(): ?string
     {
         return $this->ref;
     }
-    public function analysis_key() : ?string
+
+    public function analysis_key(): ?string
     {
         return $this->analysis_key;
     }
-    public function environment() : ?string
+
+    public function environment(): ?string
     {
         return $this->environment;
     }
-    public function state() : ?string
+
+    public function state(): ?string
     {
         return $this->state;
     }
-    public function commit_sha() : ?string
+
+    public function commit_sha(): ?string
     {
         return $this->commit_sha;
     }
-    public function message() : array
+
+    public function message(): array
     {
         return $this->message;
     }
-    public function location() : array
+
+    public function location(): array
     {
         return $this->location;
     }
-    public function classifications() : array
+
+    public function classifications(): array
     {
         return $this->classifications;
     }

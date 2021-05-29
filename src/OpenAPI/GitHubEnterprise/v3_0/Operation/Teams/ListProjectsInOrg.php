@@ -1,11 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Teams;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListProjectsInOrg
 {
     private const OPERATION_ID = 'teams/list-projects-in-org';
-    /****/
     public string $org;
     /**team_slug parameter**/
     public string $team_slug;
@@ -13,22 +19,26 @@ final class ListProjectsInOrg
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org, $team_slug, int $per_page = 30, int $page = 1)
     {
-        $this->org = $org;
+        $this->org       = $org;
         $this->team_slug = $team_slug;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->per_page  = $per_page;
+        $this->page      = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{team_slug}', '{per_page}', '{page}'), array($this->org, $this->team_slug, $this->per_page, $this->page), '/orgs/{org}/teams/{team_slug}/projects?per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{org}', '{team_slug}', '{per_page}', '{page}'], [$this->org, $this->team_slug, $this->per_page, $this->page], '/orgs/{org}/teams/{team_slug}/projects?per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

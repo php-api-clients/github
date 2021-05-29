@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Traffic;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetClonesOperation;
 
 final class Clones
 {
-    function get($owner, $repo, string $per = 'day') : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetClonesOperation
+    function get($owner, $repo, string $per = 'day'): GetClonesOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetClonesOperation($owner, $repo, $per);
+        return new GetClonesOperation($owner, $repo, $per);
     }
 }

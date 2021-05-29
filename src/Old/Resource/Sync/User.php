@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
@@ -18,7 +20,7 @@ class User extends BaseUser
         return $this->wait(
             $this->handleCommand(
                 new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-            )->then(function (AsyncUser $user) use ($repository) {
+            )->then(static function (AsyncUser $user) use ($repository) {
                 return $user->repository($repository);
             })
         );

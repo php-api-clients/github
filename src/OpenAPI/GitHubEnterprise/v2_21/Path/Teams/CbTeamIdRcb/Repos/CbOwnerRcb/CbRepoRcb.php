@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Teams\CbTeamIdRcb\Repos\CbOwnerRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\AddOrUpdateRepoPermissionsLegacyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\CheckPermissionsForRepoLegacyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\RemoveRepoLegacyOperation;
 
 final class CbRepoRcb
 {
-    function get($team_id, $owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\CheckPermissionsForRepoLegacyOperation
+    function get($team_id, $owner, $repo): CheckPermissionsForRepoLegacyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\CheckPermissionsForRepoLegacyOperation($team_id, $owner, $repo);
+        return new CheckPermissionsForRepoLegacyOperation($team_id, $owner, $repo);
     }
-    function put($team_id, $owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\AddOrUpdateRepoPermissionsLegacyOperation
+
+    function put($team_id, $owner, $repo): AddOrUpdateRepoPermissionsLegacyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\AddOrUpdateRepoPermissionsLegacyOperation($team_id, $owner, $repo);
+        return new AddOrUpdateRepoPermissionsLegacyOperation($team_id, $owner, $repo);
     }
-    function delete($team_id, $owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\RemoveRepoLegacyOperation
+
+    function delete($team_id, $owner, $repo): RemoveRepoLegacyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Teams\RemoveRepoLegacyOperation($team_id, $owner, $repo);
+        return new RemoveRepoLegacyOperation($team_id, $owner, $repo);
     }
 }

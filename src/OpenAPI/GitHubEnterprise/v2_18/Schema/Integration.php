@@ -1,103 +1,121 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 
 final class Integration
 {
-    public const SCHEMA_TITLE = 'GitHub app';
+    public const SCHEMA_TITLE       = 'GitHub app';
     public const SCHEMA_DESCRIPTION = 'GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.';
     /**
      * Unique identifier of the GitHub app
      */
-    private ?int $id = null;
+    private ?int $id         = null;
     private ?string $node_id = null;
     private $owner;
     /**
      * The name of the GitHub app
      */
-    private ?string $name = null;
-    private ?string $description = null;
+    private ?string $name         = null;
+    private ?string $description  = null;
     private ?string $external_url = null;
-    private ?string $html_url = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private ?string $html_url     = null;
+    private ?string $created_at   = null;
+    private ?string $updated_at   = null;
     /**
      * The set of permissions for the GitHub app
      */
-    private array $permissions = array();
+    private array $permissions = [];
     /**
      * The list of events for the GitHub app
      */
-    private array $events = array();
+    private array $events = [];
     /**
      * The number of installations associated with the GitHub app
      */
     private ?int $installations_count = null;
-    private ?string $client_id = null;
-    private ?string $client_secret = null;
-    private ?string $webhook_secret = null;
-    private ?string $pem = null;
-    public function id() : ?int
+    private ?string $client_id        = null;
+    private ?string $client_secret    = null;
+    private ?string $webhook_secret   = null;
+    private ?string $pem              = null;
+
+    public function id(): ?int
     {
         return $this->id;
     }
-    public function node_id() : ?string
+
+    public function node_id(): ?string
     {
         return $this->node_id;
     }
+
     public function owner()
     {
         return $this->owner;
     }
-    public function name() : ?string
+
+    public function name(): ?string
     {
         return $this->name;
     }
-    public function description() : ?string
+
+    public function description(): ?string
     {
         return $this->description;
     }
-    public function external_url() : ?string
+
+    public function external_url(): ?string
     {
         return $this->external_url;
     }
-    public function html_url() : ?string
+
+    public function html_url(): ?string
     {
         return $this->html_url;
     }
-    public function created_at() : ?string
+
+    public function created_at(): ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+
+    public function updated_at(): ?string
     {
         return $this->updated_at;
     }
-    public function permissions() : array
+
+    public function permissions(): array
     {
         return $this->permissions;
     }
-    public function events() : array
+
+    public function events(): array
     {
         return $this->events;
     }
-    public function installations_count() : ?int
+
+    public function installations_count(): ?int
     {
         return $this->installations_count;
     }
-    public function client_id() : ?string
+
+    public function client_id(): ?string
     {
         return $this->client_id;
     }
-    public function client_secret() : ?string
+
+    public function client_secret(): ?string
     {
         return $this->client_secret;
     }
-    public function webhook_secret() : ?string
+
+    public function webhook_secret(): ?string
     {
         return $this->webhook_secret;
     }
-    public function pem() : ?string
+
+    public function pem(): ?string
     {
         return $this->pem;
     }

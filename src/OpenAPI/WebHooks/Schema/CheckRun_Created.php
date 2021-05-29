@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class CheckRun_Created
 {
-    public const SCHEMA_TITLE = 'check_run created event';
+    public const SCHEMA_TITLE       = 'check_run created event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action = null;
+    private ?string $action         = null;
     /**
      * The [check_run](https://docs.github.com/en/rest/reference/checks#get-a-check-run).
      */
-    private array $check_run = array();
+    private array $check_run = [];
     /**
      * The action requested by the user.
      */
@@ -18,38 +20,45 @@ final class CheckRun_Created
     /**
      * A git repository
      */
-    private array $repository = array();
-    private array $sender = array();
+    private array $repository = [];
+    private array $sender     = [];
     /**
      * Installation
      */
-    private array $installation = array();
-    private array $organization = array();
-    public function action() : ?string
+    private array $installation = [];
+    private array $organization = [];
+
+    public function action(): ?string
     {
         return $this->action;
     }
-    public function check_run() : array
+
+    public function check_run(): array
     {
         return $this->check_run;
     }
+
     public function requested_action()
     {
         return $this->requested_action;
     }
-    public function repository() : array
+
+    public function repository(): array
     {
         return $this->repository;
     }
-    public function sender() : array
+
+    public function sender(): array
     {
         return $this->sender;
     }
-    public function installation() : array
+
+    public function installation(): array
     {
         return $this->installation;
     }
-    public function organization() : array
+
+    public function organization(): array
     {
         return $this->organization;
     }

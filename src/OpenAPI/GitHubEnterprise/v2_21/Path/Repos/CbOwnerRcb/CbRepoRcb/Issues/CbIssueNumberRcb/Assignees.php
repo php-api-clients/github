@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Issues\AddAssigneesOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Issues\RemoveAssigneesOperation;
 
 final class Assignees
 {
-    function post($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Issues\AddAssigneesOperation
+    function post($owner, $repo, $issue_number): AddAssigneesOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Issues\AddAssigneesOperation($owner, $repo, $issue_number);
+        return new AddAssigneesOperation($owner, $repo, $issue_number);
     }
-    function delete($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Issues\RemoveAssigneesOperation
+
+    function delete($owner, $repo, $issue_number): RemoveAssigneesOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Issues\RemoveAssigneesOperation($owner, $repo, $issue_number);
+        return new RemoveAssigneesOperation($owner, $repo, $issue_number);
     }
 }

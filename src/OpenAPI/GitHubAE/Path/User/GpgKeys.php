@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\User;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\CreateGpgKeyForAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\ListGpgKeysForAuthenticatedOperation;
 
 final class GpgKeys
 {
-    function get(int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\ListGpgKeysForAuthenticatedOperation
+    function get(int $per_page = 30, int $page = 1): ListGpgKeysForAuthenticatedOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\ListGpgKeysForAuthenticatedOperation($per_page, $page);
+        return new ListGpgKeysForAuthenticatedOperation($per_page, $page);
     }
-    function post() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\CreateGpgKeyForAuthenticatedOperation
+
+    function post(): CreateGpgKeyForAuthenticatedOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\CreateGpgKeyForAuthenticatedOperation();
+        return new CreateGpgKeyForAuthenticatedOperation();
     }
 }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Path\Repos\CbOwnerRcb\CbRepoRcb\Git\MatchingRefs;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Git\ListMatchingRefsOperation;
 
 final class CbRefRcb
 {
-    function get($owner, $repo, $ref, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Git\ListMatchingRefsOperation
+    function get($owner, $repo, $ref, int $per_page = 30, int $page = 1): ListMatchingRefsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Git\ListMatchingRefsOperation($owner, $repo, $ref, $per_page, $page);
+        return new ListMatchingRefsOperation($owner, $repo, $ref, $per_page, $page);
     }
 }

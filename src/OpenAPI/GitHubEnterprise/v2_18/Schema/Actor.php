@@ -1,38 +1,46 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 
 final class Actor
 {
-    public const SCHEMA_TITLE = 'Actor';
+    public const SCHEMA_TITLE       = 'Actor';
     public const SCHEMA_DESCRIPTION = 'Actor';
-    private ?int $id = null;
-    private ?string $login = null;
-    private ?string $display_login = null;
-    private ?string $gravatar_id = null;
-    private ?string $url = null;
-    private ?string $avatar_url = null;
-    public function id() : ?int
+    private ?int $id                = null;
+    private ?string $login          = null;
+    private ?string $display_login  = null;
+    private ?string $gravatar_id    = null;
+    private ?string $url            = null;
+    private ?string $avatar_url     = null;
+
+    public function id(): ?int
     {
         return $this->id;
     }
-    public function login() : ?string
+
+    public function login(): ?string
     {
         return $this->login;
     }
-    public function display_login() : ?string
+
+    public function display_login(): ?string
     {
         return $this->display_login;
     }
-    public function gravatar_id() : ?string
+
+    public function gravatar_id(): ?string
     {
         return $this->gravatar_id;
     }
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function avatar_url() : ?string
+
+    public function avatar_url(): ?string
     {
         return $this->avatar_url;
     }

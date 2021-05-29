@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
@@ -9,23 +11,13 @@ use React\Promise\PromiseInterface;
 
 final class DetailedCommitHandler
 {
-    /**
-     * @var FetchAndHydrateService
-     */
-    private $fetchAndHydrateService;
+    private FetchAndHydrateService $fetchAndHydrateService;
 
-    /**
-     * @param FetchAndHydrateService $fetchAndHydrateService
-     */
     public function __construct(FetchAndHydrateService $fetchAndHydrateService)
     {
         $this->fetchAndHydrateService = $fetchAndHydrateService;
     }
 
-    /**
-     * @param  DetailedCommitCommand $command
-     * @return PromiseInterface
-     */
     public function handle(DetailedCommitCommand $command): PromiseInterface
     {
         return $this->fetchAndHydrateService->fetch(

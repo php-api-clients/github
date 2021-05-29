@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Async;
 
@@ -36,11 +38,13 @@ use ApiClients\Client\Github\Resource\Git\RefInterface;
 use ApiClients\Client\Github\Resource\Git\TreeInterface;
 use ApiClients\Client\Github\Resource\Repository as BaseRepository;
 use ApiClients\Client\Github\VO\NamedBlob;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\Promise\PromiseInterface;
 use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
 use Rx\ObservableInterface;
+
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function explode;
 
 class Repository extends BaseRepository
 {
@@ -222,12 +226,12 @@ class Repository extends BaseRepository
 
     public function scrutinizerRepository(): PromiseInterface
     {
-        return $this->handleCommand(new ScrutinizerCommand(...\explode('/', $this->fullName())));
+        return $this->handleCommand(new ScrutinizerCommand(...explode('/', $this->fullName())));
     }
 
     public function updateSettings(array $settings): PromiseInterface
     {
-        if (!isset($settings['name'])) {
+        if (! isset($settings['name'])) {
             $settings['name'] = $this->name();
         }
 

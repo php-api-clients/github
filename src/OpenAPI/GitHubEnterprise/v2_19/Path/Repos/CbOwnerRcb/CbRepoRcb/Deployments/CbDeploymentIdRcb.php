@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\Deployments;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetDeploymentOperation;
 
 final class CbDeploymentIdRcb
 {
-    function get($owner, $repo, $deployment_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetDeploymentOperation
+    function get($owner, $repo, $deployment_id): GetDeploymentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\GetDeploymentOperation($owner, $repo, $deployment_id);
+        return new GetDeploymentOperation($owner, $repo, $deployment_id);
     }
 }

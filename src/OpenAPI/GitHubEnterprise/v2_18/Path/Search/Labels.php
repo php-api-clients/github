@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Search;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Search\LabelsOperation;
 
 final class Labels
 {
-    function get($repository_id, $q, $sort, string $order = 'desc') : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Search\LabelsOperation
+    function get($repository_id, $q, $sort, string $order = 'desc'): LabelsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Search\LabelsOperation($repository_id, $q, $sort, $order);
+        return new LabelsOperation($repository_id, $q, $sort, $order);
     }
 }

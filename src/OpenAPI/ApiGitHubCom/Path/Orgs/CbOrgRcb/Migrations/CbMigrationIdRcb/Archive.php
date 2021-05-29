@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DeleteArchiveForOrgOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DownloadArchiveForOrgOperation;
 
 final class Archive
 {
-    function get($org, $migration_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DownloadArchiveForOrgOperation
+    function get($org, $migration_id): DownloadArchiveForOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DownloadArchiveForOrgOperation($org, $migration_id);
+        return new DownloadArchiveForOrgOperation($org, $migration_id);
     }
-    function delete($org, $migration_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DeleteArchiveForOrgOperation
+
+    function delete($org, $migration_id): DeleteArchiveForOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\DeleteArchiveForOrgOperation($org, $migration_id);
+        return new DeleteArchiveForOrgOperation($org, $migration_id);
     }
 }

@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Admin\Users\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\CreateImpersonationOAuthTokenOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteImpersonationOAuthTokenOperation;
 
 final class Authorizations
 {
-    function post($username) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\CreateImpersonationOAuthTokenOperation
+    function post($username): CreateImpersonationOAuthTokenOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\CreateImpersonationOAuthTokenOperation($username);
+        return new CreateImpersonationOAuthTokenOperation($username);
     }
-    function delete($username) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteImpersonationOAuthTokenOperation
+
+    function delete($username): DeleteImpersonationOAuthTokenOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin\DeleteImpersonationOAuthTokenOperation($username);
+        return new DeleteImpersonationOAuthTokenOperation($username);
     }
 }

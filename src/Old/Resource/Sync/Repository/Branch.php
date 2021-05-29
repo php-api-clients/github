@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository;
 
@@ -12,7 +14,7 @@ class Branch extends BaseBranch
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (BranchInterface $branch) {
+        )->then(static function (BranchInterface $branch) {
             return $branch->refresh();
         }));
     }

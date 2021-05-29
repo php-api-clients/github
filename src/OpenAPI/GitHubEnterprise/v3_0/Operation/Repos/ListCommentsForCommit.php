@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Repos;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListCommentsForCommit
 {
     private const OPERATION_ID = 'repos/list-comments-for-commit';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**commit_sha parameter**/
     public string $commit_sha;
@@ -15,23 +20,27 @@ final class ListCommentsForCommit
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $commit_sha, int $per_page = 30, int $page = 1)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner      = $owner;
+        $this->repo       = $repo;
         $this->commit_sha = $commit_sha;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->per_page   = $per_page;
+        $this->page       = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{commit_sha}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->commit_sha, $this->per_page, $this->page), '/repos/{owner}/{repo}/commits/{commit_sha}/comments?per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{owner}', '{repo}', '{commit_sha}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->commit_sha, $this->per_page, $this->page], '/repos/{owner}/{repo}/commits/{commit_sha}/comments?per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

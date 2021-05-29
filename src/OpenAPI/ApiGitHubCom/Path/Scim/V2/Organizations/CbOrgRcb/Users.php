@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Scim\V2\Organizations\CbOrgRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ListProvisionedIdentitiesOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ProvisionAndInviteUserOperation;
 
 final class Users
 {
-    function get($org, $startIndex, $count, $filter) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ListProvisionedIdentitiesOperation
+    function get($org, $startIndex, $count, $filter): ListProvisionedIdentitiesOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ListProvisionedIdentitiesOperation($org, $startIndex, $count, $filter);
+        return new ListProvisionedIdentitiesOperation($org, $startIndex, $count, $filter);
     }
-    function post($org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ProvisionAndInviteUserOperation
+
+    function post($org): ProvisionAndInviteUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim\ProvisionAndInviteUserOperation($org);
+        return new ProvisionAndInviteUserOperation($org);
     }
 }

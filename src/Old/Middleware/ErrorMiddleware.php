@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Middleware;
 
@@ -11,8 +13,9 @@ use ApiClients\Foundation\Transport\ParsedContentsInterface;
 use ApiClients\Tools\Psr7\HttpStatusExceptions\BadRequestException;
 use ApiClients\Tools\Psr7\HttpStatusExceptions\UnprocessableEntityException;
 use React\Promise\CancellablePromiseInterface;
-use function React\Promise\reject;
 use Throwable;
+
+use function React\Promise\reject;
 
 final class ErrorMiddleware implements MiddlewareInterface
 {
@@ -20,10 +23,8 @@ final class ErrorMiddleware implements MiddlewareInterface
     use PostTrait;
 
     /**
-     * @param  Throwable                   $throwable
-     * @param  string                      $transactionId
-     * @param  array                       $options
-     * @return CancellablePromiseInterface
+     * @param  array $options
+     *
      * @SecondLast()
      */
     public function error(
@@ -31,16 +32,18 @@ final class ErrorMiddleware implements MiddlewareInterface
         string $transactionId,
         array $options = []
     ): CancellablePromiseInterface {
-        if ($throwable instanceof UnprocessableEntityException ||
+        if (
+            $throwable instanceof UnprocessableEntityException ||
             $throwable instanceof BadRequestException
         ) {
             $response = $throwable->getResponse();
-            $body = $response->getBody();
-            if (!($body instanceof ParsedContentsInterface)) {
+            $body     = $response->getBody();
+            if (! ($body instanceof ParsedContentsInterface)) {
                 return reject($throwable);
             }
+
             $contents = $body->getParsedContents();
-            $message = $contents['message'] ?? $throwable->getMessage();
+            $message  = $contents['message'] ?? $throwable->getMessage();
 
             if (isset($contents['errors'])) {
                 return reject(

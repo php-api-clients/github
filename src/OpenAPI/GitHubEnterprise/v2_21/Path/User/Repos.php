@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Path\User;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\CreateForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\ListForAuthenticatedUserOperation;
 
 final class Repos
 {
-    function get(string $visibility = 'all', string $affiliation = 'owner,collaborator,organization_member', string $type = 'all', string $sort = 'full_name', $direction, int $per_page = 30, int $page = 1, $since, $before) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\ListForAuthenticatedUserOperation
+    function get(string $visibility = 'all', string $affiliation = 'owner,collaborator,organization_member', string $type = 'all', string $sort = 'full_name', $direction, int $per_page = 30, int $page = 1, $since, $before): ListForAuthenticatedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\ListForAuthenticatedUserOperation($visibility, $affiliation, $type, $sort, $direction, $per_page, $page, $since, $before);
+        return new ListForAuthenticatedUserOperation($visibility, $affiliation, $type, $sort, $direction, $per_page, $page, $since, $before);
     }
-    function post() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\CreateForAuthenticatedUserOperation
+
+    function post(): CreateForAuthenticatedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_21\Operation\Repos\CreateForAuthenticatedUserOperation();
+        return new CreateForAuthenticatedUserOperation();
     }
 }

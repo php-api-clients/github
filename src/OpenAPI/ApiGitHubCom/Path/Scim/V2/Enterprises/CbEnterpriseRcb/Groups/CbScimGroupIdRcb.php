@@ -1,23 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Scim\V2\Enterprises\CbEnterpriseRcb\Groups;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\DeleteScimGroupFromEnterpriseOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetProvisioningInformationForEnterpriseGroupOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\SetInformationForProvisionedEnterpriseGroupOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\UpdateAttributeForEnterpriseGroupOperation;
 
 final class CbScimGroupIdRcb
 {
-    function get($enterprise, $scim_group_id, $excludedAttributes) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetProvisioningInformationForEnterpriseGroupOperation
+    function get($enterprise, $scim_group_id, $excludedAttributes): GetProvisioningInformationForEnterpriseGroupOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetProvisioningInformationForEnterpriseGroupOperation($enterprise, $scim_group_id, $excludedAttributes);
+        return new GetProvisioningInformationForEnterpriseGroupOperation($enterprise, $scim_group_id, $excludedAttributes);
     }
-    function put($enterprise, $scim_group_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\SetInformationForProvisionedEnterpriseGroupOperation
+
+    function put($enterprise, $scim_group_id): SetInformationForProvisionedEnterpriseGroupOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\SetInformationForProvisionedEnterpriseGroupOperation($enterprise, $scim_group_id);
+        return new SetInformationForProvisionedEnterpriseGroupOperation($enterprise, $scim_group_id);
     }
-    function delete($enterprise, $scim_group_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\DeleteScimGroupFromEnterpriseOperation
+
+    function delete($enterprise, $scim_group_id): DeleteScimGroupFromEnterpriseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\DeleteScimGroupFromEnterpriseOperation($enterprise, $scim_group_id);
+        return new DeleteScimGroupFromEnterpriseOperation($enterprise, $scim_group_id);
     }
-    function patch($enterprise, $scim_group_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\UpdateAttributeForEnterpriseGroupOperation
+
+    function patch($enterprise, $scim_group_id): UpdateAttributeForEnterpriseGroupOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\UpdateAttributeForEnterpriseGroupOperation($enterprise, $scim_group_id);
+        return new UpdateAttributeForEnterpriseGroupOperation($enterprise, $scim_group_id);
     }
 }

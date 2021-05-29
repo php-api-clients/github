@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Gists;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\DeleteOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\GetOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\UpdateOperation;
 
 final class CbGistIdRcb
 {
-    function get($gist_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\GetOperation
+    function get($gist_id): GetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\GetOperation($gist_id);
+        return new GetOperation($gist_id);
     }
-    function delete($gist_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\DeleteOperation
+
+    function delete($gist_id): DeleteOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\DeleteOperation($gist_id);
+        return new DeleteOperation($gist_id);
     }
-    function patch($gist_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\UpdateOperation
+
+    function patch($gist_id): UpdateOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Gists\UpdateOperation($gist_id);
+        return new UpdateOperation($gist_id);
     }
 }

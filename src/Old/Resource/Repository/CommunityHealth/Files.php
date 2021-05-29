@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository\CommunityHealth;
 
@@ -17,53 +19,29 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Files extends AbstractResource implements FilesInterface
 {
-    /**
-     * @var CodeOfConduct
-     */
-    protected $code_of_conduct;
+    protected CodeOfConduct $code_of_conduct;
 
-    /**
-     * @var Url
-     */
-    protected $contributing;
+    protected Url $contributing;
 
-    /**
-     * @var License
-     */
-    protected $license;
+    protected License $license;
 
-    /**
-     * @var Url
-     */
-    protected $readme;
+    protected Url $readme;
 
-    /**
-     * @return CodeOfConduct
-     */
     public function codeOfConduct(): CodeOfConduct
     {
         return $this->code_of_conduct;
     }
 
-    /**
-     * @return Url
-     */
     public function contributing(): Url
     {
         return $this->contributing;
     }
 
-    /**
-     * @return License
-     */
     public function license(): License
     {
         return $this->license;
     }
 
-    /**
-     * @return Url
-     */
     public function readme(): Url
     {
         return $this->readme;

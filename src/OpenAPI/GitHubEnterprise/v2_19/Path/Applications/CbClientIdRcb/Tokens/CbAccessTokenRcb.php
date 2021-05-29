@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Applications\CbClientIdRcb\Tokens;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\CheckAuthorizationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\ResetAuthorizationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\RevokeAuthorizationForApplicationOperation;
 
 final class CbAccessTokenRcb
 {
-    function get($client_id, $access_token) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\CheckAuthorizationOperation
+    function get($client_id, $access_token): CheckAuthorizationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\CheckAuthorizationOperation($client_id, $access_token);
+        return new CheckAuthorizationOperation($client_id, $access_token);
     }
-    function post($client_id, $access_token) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\ResetAuthorizationOperation
+
+    function post($client_id, $access_token): ResetAuthorizationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\ResetAuthorizationOperation($client_id, $access_token);
+        return new ResetAuthorizationOperation($client_id, $access_token);
     }
-    function delete($client_id, $access_token) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\RevokeAuthorizationForApplicationOperation
+
+    function delete($client_id, $access_token): RevokeAuthorizationForApplicationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\OauthAuthorizations\RevokeAuthorizationForApplicationOperation($client_id, $access_token);
+        return new RevokeAuthorizationForApplicationOperation($client_id, $access_token);
     }
 }

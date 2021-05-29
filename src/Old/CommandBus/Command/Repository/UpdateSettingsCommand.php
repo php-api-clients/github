@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository;
 
@@ -9,29 +11,20 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class UpdateSettingsCommand
 {
-    /**
-     * @var string
-     */
-    private $repository;
+    private string $repository;
+
+    /** @var array */
+    private array $settings = [];
 
     /**
-     * @var array
-     */
-    private $settings = [];
-
-    /**
-     * @param string $repository
-     * @param array  $settings
+     * @param array $settings
      */
     public function __construct(string $repository, array $settings)
     {
         $this->repository = $repository;
-        $this->settings = $settings;
+        $this->settings   = $settings;
     }
 
-    /**
-     * @return string
-     */
     public function getRepository(): string
     {
         return $this->repository;

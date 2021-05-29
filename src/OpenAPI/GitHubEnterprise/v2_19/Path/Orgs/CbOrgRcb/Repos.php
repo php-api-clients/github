@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Orgs\CbOrgRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\CreateInOrgOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\ListForOrgOperation;
 
 final class Repos
 {
-    function get($org, $type, string $sort = 'created', $direction, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\ListForOrgOperation
+    function get($org, $type, string $sort = 'created', $direction, int $per_page = 30, int $page = 1): ListForOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\ListForOrgOperation($org, $type, $sort, $direction, $per_page, $page);
+        return new ListForOrgOperation($org, $type, $sort, $direction, $per_page, $page);
     }
-    function post($org) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\CreateInOrgOperation
+
+    function post($org): CreateInOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Repos\CreateInOrgOperation($org);
+        return new CreateInOrgOperation($org);
     }
 }

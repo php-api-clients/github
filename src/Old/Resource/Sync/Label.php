@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
@@ -13,7 +15,7 @@ class Label extends BaseLabel
         return $this->wait(
             $this->handleCommand(
                 new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-            )->then(function (LabelInterface $label) {
+            )->then(static function (LabelInterface $label) {
                 return $label->refresh();
             })
         );

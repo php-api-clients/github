@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListWorkflowRuns
 {
     private const OPERATION_ID = 'actions/list-workflow-runs';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**The ID of the workflow. You can also pass the workflow file name as a string.**/
     public $workflow_id;
@@ -23,27 +28,31 @@ final class ListWorkflowRuns
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $workflow_id, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner       = $owner;
+        $this->repo        = $repo;
         $this->workflow_id = $workflow_id;
-        $this->actor = $actor;
-        $this->branch = $branch;
-        $this->event = $event;
-        $this->status = $status;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->actor       = $actor;
+        $this->branch      = $branch;
+        $this->event       = $event;
+        $this->status      = $status;
+        $this->per_page    = $per_page;
+        $this->page        = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{workflow_id}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->workflow_id, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page), '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{owner}', '{repo}', '{workflow_id}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->workflow_id, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page], '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository;
 
@@ -9,38 +11,21 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class ContentsCommand
 {
-    /**
-     * @var string
-     */
-    private $fullname;
+    private string $fullname;
 
-    /**
-     * @var string
-     */
-    private $path;
+    private string $path;
 
-    /**
-     * ContentsCommand constructor.
-     * @param string $fullname
-     * @param string $path
-     */
-    public function __construct($fullname, $path)
+    public function __construct(string $fullname, string $path)
     {
         $this->fullname = $fullname;
-        $this->path = $path;
+        $this->path     = $path;
     }
 
-    /**
-     * @return string
-     */
     public function getFullname(): string
     {
         return $this->fullname;
     }
 
-    /**
-     * @return string
-     */
     public function getPath(): string
     {
         return $this->path;

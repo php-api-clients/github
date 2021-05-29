@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Blocks;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\BlockUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CheckBlockedUserOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UnblockUserOperation;
 
 final class CbUsernameRcb
 {
-    function get($org, $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CheckBlockedUserOperation
+    function get($org, $username): CheckBlockedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CheckBlockedUserOperation($org, $username);
+        return new CheckBlockedUserOperation($org, $username);
     }
-    function put($org, $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\BlockUserOperation
+
+    function put($org, $username): BlockUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\BlockUserOperation($org, $username);
+        return new BlockUserOperation($org, $username);
     }
-    function delete($org, $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UnblockUserOperation
+
+    function delete($org, $username): UnblockUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UnblockUserOperation($org, $username);
+        return new UnblockUserOperation($org, $username);
     }
 }

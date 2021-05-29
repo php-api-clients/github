@@ -1,25 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class GetAllowedActionsOrganization
 {
     private const OPERATION_ID = 'actions/get-allowed-actions-organization';
-    /****/
     public string $org;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org)
     {
         $this->org = $org;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/permissions/selected-actions?'));
+        return new Request('get', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/permissions/selected-actions?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

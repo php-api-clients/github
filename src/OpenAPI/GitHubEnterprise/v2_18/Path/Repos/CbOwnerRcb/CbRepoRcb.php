@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Repos\CbOwnerRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\DeleteOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\UpdateOperation;
 
 final class CbRepoRcb
 {
-    function get($owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetOperation
+    function get($owner, $repo): GetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetOperation($owner, $repo);
+        return new GetOperation($owner, $repo);
     }
-    function delete($owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\DeleteOperation
+
+    function delete($owner, $repo): DeleteOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\DeleteOperation($owner, $repo);
+        return new DeleteOperation($owner, $repo);
     }
-    function patch($owner, $repo) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\UpdateOperation
+
+    function patch($owner, $repo): UpdateOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\UpdateOperation($owner, $repo);
+        return new UpdateOperation($owner, $repo);
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -10,146 +12,80 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Organization extends AbstractResource implements OrganizationInterface
 {
-    /**
-     * @var int
-     */
-    protected $id;
+    protected int $id;
 
-    /**
-     * @var string
-     */
-    protected $login;
+    protected string $login;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var string
-     */
-    protected $repos_url;
+    protected string $repos_url;
 
-    /**
-     * @var string
-     */
-    protected $events_url;
+    protected string $events_url;
 
-    /**
-     * @var string
-     */
-    protected $hooks_url;
+    protected string $hooks_url;
 
-    /**
-     * @var string
-     */
-    protected $issues_url;
+    protected string $issues_url;
 
-    /**
-     * @var string
-     */
-    protected $members_url;
+    protected string $members_url;
 
-    /**
-     * @var string
-     */
-    protected $public_members_url;
+    protected string $public_members_url;
 
-    /**
-     * @var string
-     */
-    protected $avatar_url;
+    protected string $avatar_url;
 
-    /**
-     * @var string
-     */
-    protected $description;
+    protected string $description;
 
-    /**
-     * @return int
-     */
     public function id(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function login(): string
     {
         return $this->login;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function reposUrl(): string
     {
         return $this->repos_url;
     }
 
-    /**
-     * @return string
-     */
     public function eventsUrl(): string
     {
         return $this->events_url;
     }
 
-    /**
-     * @return string
-     */
     public function hooksUrl(): string
     {
         return $this->hooks_url;
     }
 
-    /**
-     * @return string
-     */
     public function issuesUrl(): string
     {
         return $this->issues_url;
     }
 
-    /**
-     * @return string
-     */
     public function membersUrl(): string
     {
         return $this->members_url;
     }
 
-    /**
-     * @return string
-     */
     public function publicMembersUrl(): string
     {
         return $this->public_members_url;
     }
 
-    /**
-     * @return string
-     */
     public function avatarUrl(): string
     {
         return $this->avatar_url;
     }
 
-    /**
-     * @return string
-     */
     public function description(): string
     {
-        return (string)$this->description;
+        return (string) $this->description;
     }
 }

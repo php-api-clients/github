@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository;
 
@@ -11,24 +13,13 @@ use React\Promise\PromiseInterface;
 
 final class CommunityHealthHandler
 {
-    /**
-     * @var FetchAndHydrateService
-     */
-    private $service;
+    private FetchAndHydrateService $service;
 
-    /**
-     * CommunityHealthHandler constructor.
-     * @param FetchAndHydrateService $service
-     */
     public function __construct(FetchAndHydrateService $service)
     {
         $this->service = $service;
     }
 
-    /**
-     * @param  CommunityHealthCommand $command
-     * @return PromiseInterface
-     */
     public function handle(CommunityHealthCommand $command): PromiseInterface
     {
         return $this->service->fetch(

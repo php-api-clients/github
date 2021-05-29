@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class Job
 {
-    public const SCHEMA_TITLE = 'Job';
+    public const SCHEMA_TITLE       = 'Job';
     public const SCHEMA_DESCRIPTION = 'Information of a job execution in a workflow run';
     /**
      * The id of the job.
@@ -13,14 +15,14 @@ final class Job
     /**
      * The id of the associated workflow run.
      */
-    private ?int $run_id = null;
+    private ?int $run_id     = null;
     private ?string $run_url = null;
     private ?string $node_id = null;
     /**
      * The SHA of the commit that is being run.
      */
     private ?string $head_sha = null;
-    private ?string $url = null;
+    private ?string $url      = null;
     private ?string $html_url = null;
     /**
      * The phase of the lifecycle that the job is currently in.
@@ -45,61 +47,75 @@ final class Job
     /**
      * Steps in this job.
      */
-    private array $steps = array();
+    private array $steps           = [];
     private ?string $check_run_url = null;
-    public function id() : ?int
+
+    public function id(): ?int
     {
         return $this->id;
     }
-    public function run_id() : ?int
+
+    public function run_id(): ?int
     {
         return $this->run_id;
     }
-    public function run_url() : ?string
+
+    public function run_url(): ?string
     {
         return $this->run_url;
     }
-    public function node_id() : ?string
+
+    public function node_id(): ?string
     {
         return $this->node_id;
     }
-    public function head_sha() : ?string
+
+    public function head_sha(): ?string
     {
         return $this->head_sha;
     }
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function html_url() : ?string
+
+    public function html_url(): ?string
     {
         return $this->html_url;
     }
-    public function status() : ?string
+
+    public function status(): ?string
     {
         return $this->status;
     }
-    public function conclusion() : ?string
+
+    public function conclusion(): ?string
     {
         return $this->conclusion;
     }
-    public function started_at() : ?string
+
+    public function started_at(): ?string
     {
         return $this->started_at;
     }
-    public function completed_at() : ?string
+
+    public function completed_at(): ?string
     {
         return $this->completed_at;
     }
-    public function name() : ?string
+
+    public function name(): ?string
     {
         return $this->name;
     }
-    public function steps() : array
+
+    public function steps(): array
     {
         return $this->steps;
     }
-    public function check_run_url() : ?string
+
+    public function check_run_url(): ?string
     {
         return $this->check_run_url;
     }

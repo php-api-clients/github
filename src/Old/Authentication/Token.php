@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Authentication;
 
@@ -10,10 +12,7 @@ use ApiClients\Middleware\TokenAuthorization\TokenAuthorizationHeaderMiddleware;
 
 final class Token implements AuthenticationInterface
 {
-    /**
-     * @var string
-     */
-    private $token;
+    private string $token;
 
     public function __construct(string $token)
     {

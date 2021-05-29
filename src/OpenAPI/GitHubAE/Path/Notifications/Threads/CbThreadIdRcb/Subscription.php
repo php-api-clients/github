@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Notifications\Threads\CbThreadIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\DeleteThreadSubscriptionOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\GetThreadSubscriptionForAuthenticatedUserOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\SetThreadSubscriptionOperation;
 
 final class Subscription
 {
-    function get($thread_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\GetThreadSubscriptionForAuthenticatedUserOperation
+    function get($thread_id): GetThreadSubscriptionForAuthenticatedUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\GetThreadSubscriptionForAuthenticatedUserOperation($thread_id);
+        return new GetThreadSubscriptionForAuthenticatedUserOperation($thread_id);
     }
-    function put($thread_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\SetThreadSubscriptionOperation
+
+    function put($thread_id): SetThreadSubscriptionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\SetThreadSubscriptionOperation($thread_id);
+        return new SetThreadSubscriptionOperation($thread_id);
     }
-    function delete($thread_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\DeleteThreadSubscriptionOperation
+
+    function delete($thread_id): DeleteThreadSubscriptionOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity\DeleteThreadSubscriptionOperation($thread_id);
+        return new DeleteThreadSubscriptionOperation($thread_id);
     }
 }

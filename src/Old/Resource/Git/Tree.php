@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Git;
 
@@ -14,37 +16,20 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Tree extends AbstractResource implements TreeInterface
 {
-    /**
-     * @var string
-     */
-    protected $sha;
+    protected string $sha;
 
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var array
-     */
-    protected $tree;
+    /** @var array */
+    protected array $tree;
 
-    /**
-     * @var bool
-     */
-    protected $truncated;
+    protected bool $truncated;
 
-    /**
-     * @return string
-     */
     public function sha(): string
     {
         return $this->sha;
     }
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
@@ -58,9 +43,6 @@ abstract class Tree extends AbstractResource implements TreeInterface
         return $this->tree;
     }
 
-    /**
-     * @return bool
-     */
     public function truncated(): bool
     {
         return $this->truncated;

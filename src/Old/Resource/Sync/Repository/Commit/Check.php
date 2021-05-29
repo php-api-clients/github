@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository\Commit;
 
@@ -10,7 +12,7 @@ class Check extends BaseCheck
 {
     public function refresh(): Check
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (CheckInterface $check) {
+        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(static function (CheckInterface $check) {
             return $check->refresh();
         }));
     }

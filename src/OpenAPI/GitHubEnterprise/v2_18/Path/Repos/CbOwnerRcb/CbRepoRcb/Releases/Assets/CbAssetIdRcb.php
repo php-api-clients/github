@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Repos\CbOwnerRcb\CbRepoRcb\Releases\Assets;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\DeleteReleaseAssetOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetReleaseAssetOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\UpdateReleaseAssetOperation;
 
 final class CbAssetIdRcb
 {
-    function get($owner, $repo, $asset_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetReleaseAssetOperation
+    function get($owner, $repo, $asset_id): GetReleaseAssetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetReleaseAssetOperation($owner, $repo, $asset_id);
+        return new GetReleaseAssetOperation($owner, $repo, $asset_id);
     }
-    function delete($owner, $repo, $asset_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\DeleteReleaseAssetOperation
+
+    function delete($owner, $repo, $asset_id): DeleteReleaseAssetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\DeleteReleaseAssetOperation($owner, $repo, $asset_id);
+        return new DeleteReleaseAssetOperation($owner, $repo, $asset_id);
     }
-    function patch($owner, $repo, $asset_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\UpdateReleaseAssetOperation
+
+    function patch($owner, $repo, $asset_id): UpdateReleaseAssetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\UpdateReleaseAssetOperation($owner, $repo, $asset_id);
+        return new UpdateReleaseAssetOperation($owner, $repo, $asset_id);
     }
 }

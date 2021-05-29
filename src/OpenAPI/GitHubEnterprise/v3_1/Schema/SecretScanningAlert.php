@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class SecretScanningAlert
 {
-    public const SCHEMA_TITLE = 'secret-scanning-alert';
+    public const SCHEMA_TITLE       = 'secret-scanning-alert';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The security alert number.
@@ -37,7 +39,7 @@ final class SecretScanningAlert
     /**
      * Simple User
      */
-    private array $resolved_by = array();
+    private array $resolved_by = [];
     /**
      * The type of secret that secret scanning detected.
      */
@@ -46,43 +48,53 @@ final class SecretScanningAlert
      * The secret that was detected.
      */
     private ?string $secret = null;
-    public function number() : ?int
+
+    public function number(): ?int
     {
         return $this->number;
     }
-    public function created_at() : ?string
+
+    public function created_at(): ?string
     {
         return $this->created_at;
     }
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function html_url() : ?string
+
+    public function html_url(): ?string
     {
         return $this->html_url;
     }
-    public function state() : ?string
+
+    public function state(): ?string
     {
         return $this->state;
     }
-    public function resolution() : ?string
+
+    public function resolution(): ?string
     {
         return $this->resolution;
     }
-    public function resolved_at() : ?string
+
+    public function resolved_at(): ?string
     {
         return $this->resolved_at;
     }
-    public function resolved_by() : array
+
+    public function resolved_by(): array
     {
         return $this->resolved_by;
     }
-    public function secret_type() : ?string
+
+    public function secret_type(): ?string
     {
         return $this->secret_type;
     }
-    public function secret() : ?string
+
+    public function secret(): ?string
     {
         return $this->secret;
     }

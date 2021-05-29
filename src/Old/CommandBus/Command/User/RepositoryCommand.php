@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\User;
 
@@ -9,37 +11,21 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class RepositoryCommand
 {
-    /**
-     * @var string
-     */
-    private $owner;
+    private string $owner;
 
-    /**
-     * @var string
-     */
-    private $repository;
+    private string $repository;
 
-    /**
-     * @param string $owner
-     * @param string $repository
-     */
     public function __construct(string $owner, string $repository)
     {
-        $this->owner = $owner;
+        $this->owner      = $owner;
         $this->repository = $repository;
     }
 
-    /**
-     * @return string
-     */
     public function getOwner(): string
     {
         return $this->owner;
     }
 
-    /**
-     * @return string
-     */
     public function getRepository(): string
     {
         return $this->repository;

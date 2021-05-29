@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
@@ -10,7 +12,7 @@ class Event extends BaseEvent
 {
     public function refresh(): Event
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (EventInterface $event) {
+        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(static function (EventInterface $event) {
             return $event->refresh();
         }));
     }

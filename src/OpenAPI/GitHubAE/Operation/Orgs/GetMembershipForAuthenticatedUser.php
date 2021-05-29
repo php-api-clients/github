@@ -1,25 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Orgs;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class GetMembershipForAuthenticatedUser
 {
     private const OPERATION_ID = 'orgs/get-membership-for-authenticated-user';
-    /****/
     public string $org;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org)
     {
         $this->org = $org;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}'), array($this->org), '/user/memberships/orgs/{org}?'));
+        return new Request('get', str_replace(['{org}'], [$this->org], '/user/memberships/orgs/{org}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

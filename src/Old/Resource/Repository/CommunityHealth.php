@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository;
 
@@ -15,53 +17,29 @@ use DateTimeInterface;
  */
 abstract class CommunityHealth extends AbstractResource implements CommunityHealthInterface
 {
-    /**
-     * @var int
-     */
-    protected $health_percentage;
+    protected int $health_percentage;
 
-    /**
-     * @var Repository\CommunityHealth\Files
-     */
-    protected $files;
+    protected Repository\CommunityHealth\Files $files;
 
-    /**
-     * @var bool
-     */
-    protected $protected;
+    protected bool $protected;
 
-    /**
-     * @var DateTimeInterface
-     */
-    protected $updated_at;
+    protected DateTimeInterface $updated_at;
 
-    /**
-     * @return int
-     */
     public function healthPercentage(): int
     {
         return $this->health_percentage;
     }
 
-    /**
-     * @return Repository\CommunityHealth\Files
-     */
     public function files(): Repository\CommunityHealth\Files
     {
         return $this->files;
     }
 
-    /**
-     * @return bool
-     */
     public function protected(): bool
     {
         return $this->protected;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;

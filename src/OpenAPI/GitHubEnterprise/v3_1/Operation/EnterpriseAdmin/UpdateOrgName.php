@@ -1,25 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\EnterpriseAdmin;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class UpdateOrgName
 {
     private const OPERATION_ID = 'enterprise-admin/update-org-name';
-    /****/
     public string $org;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org)
     {
         $this->org = $org;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{org}'), array($this->org), '/admin/organizations/{org}?'));
+        return new Request('patch', str_replace(['{org}'], [$this->org], '/admin/organizations/{org}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

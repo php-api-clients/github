@@ -1,23 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection\Restrictions;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\AddUserAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetUsersWithAccessToProtectedBranchOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\RemoveUserAccessRestrictionsOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\SetUserAccessRestrictionsOperation;
 
 final class Users
 {
-    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetUsersWithAccessToProtectedBranchOperation
+    function get($owner, $repo, $branch): GetUsersWithAccessToProtectedBranchOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\GetUsersWithAccessToProtectedBranchOperation($owner, $repo, $branch);
+        return new GetUsersWithAccessToProtectedBranchOperation($owner, $repo, $branch);
     }
-    function put($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\SetUserAccessRestrictionsOperation
+
+    function put($owner, $repo, $branch): SetUserAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\SetUserAccessRestrictionsOperation($owner, $repo, $branch);
+        return new SetUserAccessRestrictionsOperation($owner, $repo, $branch);
     }
-    function post($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\AddUserAccessRestrictionsOperation
+
+    function post($owner, $repo, $branch): AddUserAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\AddUserAccessRestrictionsOperation($owner, $repo, $branch);
+        return new AddUserAccessRestrictionsOperation($owner, $repo, $branch);
     }
-    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\RemoveUserAccessRestrictionsOperation
+
+    function delete($owner, $repo, $branch): RemoveUserAccessRestrictionsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Repos\RemoveUserAccessRestrictionsOperation($owner, $repo, $branch);
+        return new RemoveUserAccessRestrictionsOperation($owner, $repo, $branch);
     }
 }

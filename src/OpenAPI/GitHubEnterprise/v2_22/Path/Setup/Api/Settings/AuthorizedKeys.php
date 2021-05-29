@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Setup\Api\Settings;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\AddAuthorizedSshKeyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\GetAllAuthorizedSshKeysOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\RemoveAuthorizedSshKeyOperation;
 
 final class AuthorizedKeys
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\GetAllAuthorizedSshKeysOperation
+    function get(): GetAllAuthorizedSshKeysOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\GetAllAuthorizedSshKeysOperation();
+        return new GetAllAuthorizedSshKeysOperation();
     }
-    function post() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\AddAuthorizedSshKeyOperation
+
+    function post(): AddAuthorizedSshKeyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\AddAuthorizedSshKeyOperation();
+        return new AddAuthorizedSshKeyOperation();
     }
-    function delete() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\RemoveAuthorizedSshKeyOperation
+
+    function delete(): RemoveAuthorizedSshKeyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\RemoveAuthorizedSshKeyOperation();
+        return new RemoveAuthorizedSshKeyOperation();
     }
 }

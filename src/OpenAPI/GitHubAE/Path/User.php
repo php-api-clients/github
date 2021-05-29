@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetAuthenticatedOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\UpdateAuthenticatedOperation;
 
 final class User
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetAuthenticatedOperation
+    function get(): GetAuthenticatedOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\GetAuthenticatedOperation();
+        return new GetAuthenticatedOperation();
     }
-    function patch() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\UpdateAuthenticatedOperation
+
+    function patch(): UpdateAuthenticatedOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Users\UpdateAuthenticatedOperation();
+        return new UpdateAuthenticatedOperation();
     }
 }

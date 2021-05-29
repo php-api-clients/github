@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Issues\CreateCommentOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Issues\ListCommentsOperation;
 
 final class Comments
 {
-    function get($owner, $repo, $issue_number, $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Issues\ListCommentsOperation
+    function get($owner, $repo, $issue_number, $since, int $per_page = 30, int $page = 1): ListCommentsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Issues\ListCommentsOperation($owner, $repo, $issue_number, $since, $per_page, $page);
+        return new ListCommentsOperation($owner, $repo, $issue_number, $since, $per_page, $page);
     }
-    function post($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Issues\CreateCommentOperation
+
+    function post($owner, $repo, $issue_number): CreateCommentOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Issues\CreateCommentOperation($owner, $repo, $issue_number);
+        return new CreateCommentOperation($owner, $repo, $issue_number);
     }
 }

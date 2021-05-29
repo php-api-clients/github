@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Orgs\CbOrgRcb\Actions\Runners;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteSelfHostedRunnerFromOrgOperation;
 
 final class CbRunnerIdRcb
 {
-    function delete($org, $runner_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteSelfHostedRunnerFromOrgOperation
+    function delete($org, $runner_id): DeleteSelfHostedRunnerFromOrgOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions\DeleteSelfHostedRunnerFromOrgOperation($org, $runner_id);
+        return new DeleteSelfHostedRunnerFromOrgOperation($org, $runner_id);
     }
 }

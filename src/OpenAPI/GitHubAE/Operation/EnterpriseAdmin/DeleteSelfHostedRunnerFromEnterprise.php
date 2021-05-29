@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\EnterpriseAdmin;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class DeleteSelfHostedRunnerFromEnterprise
 {
@@ -9,20 +16,24 @@ final class DeleteSelfHostedRunnerFromEnterprise
     public string $enterprise;
     /**Unique identifier of the self-hosted runner.**/
     public int $runner_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($enterprise, $runner_id)
     {
         $this->enterprise = $enterprise;
-        $this->runner_id = $runner_id;
+        $this->runner_id  = $runner_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{enterprise}', '{runner_id}'), array($this->enterprise, $this->runner_id), '/enterprises/{enterprise}/actions/runners/{runner_id}?'));
+        return new Request('delete', str_replace(['{enterprise}', '{runner_id}'], [$this->enterprise, $this->runner_id], '/enterprises/{enterprise}/actions/runners/{runner_id}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

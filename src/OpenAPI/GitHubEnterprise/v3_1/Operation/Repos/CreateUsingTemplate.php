@@ -1,28 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Repos;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class CreateUsingTemplate
 {
     private const OPERATION_ID = 'repos/create-using-template';
-    /****/
     public string $template_owner;
-    /****/
     public string $template_repo;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($template_owner, $template_repo)
     {
         $this->template_owner = $template_owner;
-        $this->template_repo = $template_repo;
+        $this->template_repo  = $template_repo;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{template_owner}', '{template_repo}'), array($this->template_owner, $this->template_repo), '/repos/{template_owner}/{template_repo}/generate?'));
+        return new Request('post', str_replace(['{template_owner}', '{template_repo}'], [$this->template_owner, $this->template_repo], '/repos/{template_owner}/{template_repo}/generate?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

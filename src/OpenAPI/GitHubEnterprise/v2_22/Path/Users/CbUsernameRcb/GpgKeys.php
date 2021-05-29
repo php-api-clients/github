@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Users\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Users\ListGpgKeysForUserOperation;
 
 final class GpgKeys
 {
-    function get($username, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Users\ListGpgKeysForUserOperation
+    function get($username, int $per_page = 30, int $page = 1): ListGpgKeysForUserOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Users\ListGpgKeysForUserOperation($username, $per_page, $page);
+        return new ListGpgKeysForUserOperation($username, $per_page, $page);
     }
 }

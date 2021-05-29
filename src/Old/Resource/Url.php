@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource;
 
@@ -10,27 +12,15 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Url extends AbstractResource implements UrlInterface
 {
-    /**
-     * @var string
-     */
-    protected $url;
+    protected string $url;
 
-    /**
-     * @var string
-     */
-    protected $html_url;
+    protected string $html_url;
 
-    /**
-     * @return string
-     */
     public function url(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function htmlUrl(): string
     {
         return $this->html_url;

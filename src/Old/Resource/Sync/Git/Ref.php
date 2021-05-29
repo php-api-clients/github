@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Git;
 
@@ -10,7 +12,7 @@ class Ref extends BaseRef
 {
     public function refresh(): Ref
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (RefInterface $ref) {
+        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(static function (RefInterface $ref) {
             return $ref->refresh();
         }));
     }

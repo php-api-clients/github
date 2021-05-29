@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 
 final class CodeScanningAlertItems
 {
-    public const SCHEMA_TITLE = 'code-scanning-alert-items';
+    public const SCHEMA_TITLE       = 'code-scanning-alert-items';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The security alert number.
@@ -29,7 +31,7 @@ final class CodeScanningAlertItems
     /**
      * Simple User
      */
-    private array $dismissed_by = array();
+    private array $dismissed_by = [];
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -38,58 +40,70 @@ final class CodeScanningAlertItems
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
     private ?string $dismissed_reason = null;
-    private array $rule = array();
-    private array $tool = array();
-    private array $instance = array();
+    private array $rule               = [];
+    private array $tool               = [];
+    private array $instance           = [];
     /**
      * A classification of the file. For example to identify it as generated.
      */
     private ?string $classification = null;
-    public function number() : ?int
+
+    public function number(): ?int
     {
         return $this->number;
     }
-    public function created_at() : ?string
+
+    public function created_at(): ?string
     {
         return $this->created_at;
     }
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function html_url() : ?string
+
+    public function html_url(): ?string
     {
         return $this->html_url;
     }
-    public function state() : ?string
+
+    public function state(): ?string
     {
         return $this->state;
     }
-    public function dismissed_by() : array
+
+    public function dismissed_by(): array
     {
         return $this->dismissed_by;
     }
-    public function dismissed_at() : ?string
+
+    public function dismissed_at(): ?string
     {
         return $this->dismissed_at;
     }
-    public function dismissed_reason() : ?string
+
+    public function dismissed_reason(): ?string
     {
         return $this->dismissed_reason;
     }
-    public function rule() : array
+
+    public function rule(): array
     {
         return $this->rule;
     }
-    public function tool() : array
+
+    public function tool(): array
     {
         return $this->tool;
     }
-    public function instance() : array
+
+    public function instance(): array
     {
         return $this->instance;
     }
-    public function classification() : ?string
+
+    public function classification(): ?string
     {
         return $this->classification;
     }

@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\OauthAuthorizations\CreateAuthorizationOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\OauthAuthorizations\ListAuthorizationsOperation;
 
 final class Authorizations
 {
-    function get(int $per_page = 30, int $page = 1, $client_id) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\OauthAuthorizations\ListAuthorizationsOperation
+    function get(int $per_page = 30, int $page = 1, $client_id): ListAuthorizationsOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\OauthAuthorizations\ListAuthorizationsOperation($per_page, $page, $client_id);
+        return new ListAuthorizationsOperation($per_page, $page, $client_id);
     }
-    function post() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\OauthAuthorizations\CreateAuthorizationOperation
+
+    function post(): CreateAuthorizationOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\OauthAuthorizations\CreateAuthorizationOperation();
+        return new CreateAuthorizationOperation();
     }
 }

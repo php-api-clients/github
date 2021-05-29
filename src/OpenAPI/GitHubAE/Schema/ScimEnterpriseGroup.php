@@ -1,38 +1,46 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class ScimEnterpriseGroup
 {
-    public const SCHEMA_TITLE = 'scim-enterprise-group';
+    public const SCHEMA_TITLE       = 'scim-enterprise-group';
     public const SCHEMA_DESCRIPTION = '';
-    private array $schemas = array();
-    private ?string $id = null;
-    private ?string $externalId = null;
-    private ?string $displayName = null;
-    private array $members = array();
-    private array $meta = array();
-    public function schemas() : array
+    private array $schemas          = [];
+    private ?string $id             = null;
+    private ?string $externalId     = null;
+    private ?string $displayName    = null;
+    private array $members          = [];
+    private array $meta             = [];
+
+    public function schemas(): array
     {
         return $this->schemas;
     }
-    public function id() : ?string
+
+    public function id(): ?string
     {
         return $this->id;
     }
-    public function externalId() : ?string
+
+    public function externalId(): ?string
     {
         return $this->externalId;
     }
-    public function displayName() : ?string
+
+    public function displayName(): ?string
     {
         return $this->displayName;
     }
-    public function members() : array
+
+    public function members(): array
     {
         return $this->members;
     }
-    public function meta() : array
+
+    public function meta(): array
     {
         return $this->meta;
     }

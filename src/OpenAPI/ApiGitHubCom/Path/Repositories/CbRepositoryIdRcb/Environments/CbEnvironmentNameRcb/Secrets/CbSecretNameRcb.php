@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateOrUpdateEnvironmentSecretOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentSecretOperation;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetEnvironmentSecretOperation;
 
 final class CbSecretNameRcb
 {
-    function get($repository_id, $environment_name, $secret_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetEnvironmentSecretOperation
+    function get($repository_id, $environment_name, $secret_name): GetEnvironmentSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
+        return new GetEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
     }
-    function put($repository_id, $environment_name, $secret_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateOrUpdateEnvironmentSecretOperation
+
+    function put($repository_id, $environment_name, $secret_name): CreateOrUpdateEnvironmentSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateOrUpdateEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
+        return new CreateOrUpdateEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
     }
-    function delete($repository_id, $environment_name, $secret_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentSecretOperation
+
+    function delete($repository_id, $environment_name, $secret_name): DeleteEnvironmentSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
+        return new DeleteEnvironmentSecretOperation($repository_id, $environment_name, $secret_name);
     }
 }

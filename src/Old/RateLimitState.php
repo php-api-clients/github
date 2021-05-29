@@ -1,68 +1,43 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github;
 
 final class RateLimitState
 {
-    /**
-     * @var int
-     */
-    private $limit = 0;
+    private int $limit = 0;
 
-    /**
-     * @var int
-     */
-    private $remaining = 0;
+    private int $remaining = 0;
 
-    /**
-     * @var int
-     */
-    private $reset = 0;
+    private int $reset = 0;
 
-    /**
-     * @return int
-     */
     public function getLimit(): int
     {
         return $this->limit;
     }
 
-    /**
-     * @param int $limit
-     */
-    public function setLimit(int $limit)
+    public function setLimit(int $limit): void
     {
         $this->limit = $limit;
     }
 
-    /**
-     * @return int
-     */
     public function getRemaining(): int
     {
         return $this->remaining;
     }
 
-    /**
-     * @param int $remaining
-     */
-    public function setRemaining(int $remaining)
+    public function setRemaining(int $remaining): void
     {
         $this->remaining = $remaining;
     }
 
-    /**
-     * @return int
-     */
     public function getReset(): int
     {
         return $this->reset;
     }
 
-    /**
-     * @param int $reset
-     */
-    public function setReset(int $reset)
+    public function setReset(int $reset): void
     {
         $this->reset = $reset;
     }

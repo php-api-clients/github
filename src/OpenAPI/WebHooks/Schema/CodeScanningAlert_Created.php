@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class CodeScanningAlert_Created
 {
-    public const SCHEMA_TITLE = 'code_scanning_alert created event';
+    public const SCHEMA_TITLE       = 'code_scanning_alert created event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action = null;
+    private ?string $action         = null;
     /**
      * The code scanning alert involved in the event.
      */
-    private array $alert = array();
+    private array $alert = [];
     /**
      * The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
@@ -22,42 +24,50 @@ final class CodeScanningAlert_Created
     /**
      * A git repository
      */
-    private array $repository = array();
-    private array $sender = array();
+    private array $repository = [];
+    private array $sender     = [];
     /**
      * Installation
      */
-    private array $installation = array();
-    private array $organization = array();
-    public function action() : ?string
+    private array $installation = [];
+    private array $organization = [];
+
+    public function action(): ?string
     {
         return $this->action;
     }
-    public function alert() : array
+
+    public function alert(): array
     {
         return $this->alert;
     }
-    public function ref() : ?string
+
+    public function ref(): ?string
     {
         return $this->ref;
     }
-    public function commit_oid() : ?string
+
+    public function commit_oid(): ?string
     {
         return $this->commit_oid;
     }
-    public function repository() : array
+
+    public function repository(): array
     {
         return $this->repository;
     }
-    public function sender() : array
+
+    public function sender(): array
     {
         return $this->sender;
     }
-    public function installation() : array
+
+    public function installation(): array
     {
         return $this->installation;
     }
-    public function organization() : array
+
+    public function organization(): array
     {
         return $this->organization;
     }

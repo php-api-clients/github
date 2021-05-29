@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github;
 
@@ -7,40 +9,31 @@ use ApiClients\Foundation\ClientInterface;
 use ApiClients\Foundation\Factory;
 use ApiClients\Foundation\Options;
 use ApiClients\Foundation\Resource\ResourceInterface;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use React\EventLoop\LoopInterface;
 use React\Promise\CancellablePromiseInterface;
 use React\Promise\PromiseInterface;
 use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
 use Rx\Scheduler;
+use Throwable;
+
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 final class AsyncClient implements AsyncClientInterface
 {
-    /**
-     * @var ClientInterface
-     */
-    private $client;
+    private ClientInterface $client;
 
-    /**
-     * @var RateLimitState
-     */
-    private $rateLimitState;
+    private RateLimitState $rateLimitState;
 
-    /**
-     * @param ClientInterface $client
-     * @param RateLimitState  $rateLimitState
-     */
     private function __construct(ClientInterface $client, RateLimitState $rateLimitState)
     {
-        $this->client = $client;
+        $this->client         = $client;
         $this->rateLimitState = $rateLimitState;
     }
 
     /**
-     * @param  LoopInterface           $loop
-     * @param  AuthenticationInterface $auth
-     * @param  array                   $options
+     * @param  array $options
+     *
      * @return AsyncClient
      */
     public static function create(
@@ -48,16 +41,16 @@ final class AsyncClient implements AsyncClientInterface
         AuthenticationInterface $auth,
         array $options = []
     ): self {
-        $options = ApiSettings::getOptions($auth, $options, 'Async');
-        $rateLimitState = new RateLimitState();
+        $options                                                        = ApiSettings::getOptions($auth, $options, 'Async');
+        $rateLimitState                                                 = new RateLimitState();
         $options[Options::CONTAINER_DEFINITIONS][RateLimitState::class] = $rateLimitState;
-        $client = Factory::create($loop, $options);
+        $client                                                         = Factory::create($loop, $options);
 
         try {
-            Scheduler::setAsyncFactory(function () use ($loop) {
+            Scheduler::setAsyncFactory(static function () use ($loop) {
                 return new Scheduler\EventLoopScheduler($loop);
             });
-        } catch (\Throwable $t) {
+        } catch (Throwable $t) {
         }
 
         return new self($client, $rateLimitState);
@@ -65,8 +58,7 @@ final class AsyncClient implements AsyncClientInterface
 
     /**
      * @internal
-     * @param  ClientInterface $client
-     * @param  RateLimitState  $rateLimitState
+     *
      * @return AsyncClient
      */
     public static function createFromClient(ClientInterface $client, RateLimitState $rateLimitState): self
@@ -89,35 +81,21 @@ final class AsyncClient implements AsyncClientInterface
         return $this->client->handle(new Command\MetaCommand());
     }
 
-    /**
-     * @param  string           $user
-     * @return PromiseInterface
-     */
     public function user(string $user): PromiseInterface
     {
         return $this->client->handle(new Command\UserCommand($user));
     }
 
-    /**
-     * @param  string           $organization
-     * @return PromiseInterface
-     */
     public function organization(string $organization): PromiseInterface
     {
         return $this->client->handle(new Command\OrganizationCommand($organization));
     }
 
-    /**
-     * @return PromiseInterface
-     */
     public function whoami(): PromiseInterface
     {
         return $this->client->handle(new Command\UserCommand());
     }
 
-    /**
-     * @return Observable
-     */
     public function emojis(): Observable
     {
         return unwrapObservableFromPromise($this->client->handle(new Command\EmojisCommand()));
@@ -138,9 +116,6 @@ final class AsyncClient implements AsyncClientInterface
         return unwrapObservableFromPromise($this->client->handle(new Command\WatchingCommand()));
     }
 
-    /**
-     * @return RateLimitState
-     */
     public function getRateLimitState(): RateLimitState
     {
         return clone $this->rateLimitState;

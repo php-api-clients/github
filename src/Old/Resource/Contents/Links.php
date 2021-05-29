@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Contents;
 
@@ -10,40 +12,22 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class Links extends AbstractResource implements LinksInterface
 {
-    /**
-     * @var string
-     */
-    protected $git;
+    protected string $git;
 
-    /**
-     * @var string
-     */
-    protected $self;
+    protected string $self;
 
-    /**
-     * @var string
-     */
-    protected $html;
+    protected string $html;
 
-    /**
-     * @return string
-     */
     public function git(): string
     {
         return $this->git;
     }
 
-    /**
-     * @return string
-     */
     public function self(): string
     {
         return $this->self;
     }
 
-    /**
-     * @return string
-     */
     public function html(): string
     {
         return $this->html;

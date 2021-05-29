@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Teams;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\DeleteLegacyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\GetLegacyOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\UpdateLegacyOperation;
 
 final class CbTeamIdRcb
 {
-    function get($team_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\GetLegacyOperation
+    function get($team_id): GetLegacyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\GetLegacyOperation($team_id);
+        return new GetLegacyOperation($team_id);
     }
-    function delete($team_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\DeleteLegacyOperation
+
+    function delete($team_id): DeleteLegacyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\DeleteLegacyOperation($team_id);
+        return new DeleteLegacyOperation($team_id);
     }
-    function patch($team_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\UpdateLegacyOperation
+
+    function patch($team_id): UpdateLegacyOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams\UpdateLegacyOperation($team_id);
+        return new UpdateLegacyOperation($team_id);
     }
 }

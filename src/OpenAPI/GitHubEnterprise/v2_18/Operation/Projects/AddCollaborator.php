@@ -1,28 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Operation\Projects;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class AddCollaborator
 {
     private const OPERATION_ID = 'projects/add-collaborator';
-    /****/
     public int $project_id;
-    /****/
     public string $username;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($project_id, $username)
     {
         $this->project_id = $project_id;
-        $this->username = $username;
+        $this->username   = $username;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{project_id}', '{username}'), array($this->project_id, $this->username), '/projects/{project_id}/collaborators/{username}?'));
+        return new Request('put', str_replace(['{project_id}', '{username}'], [$this->project_id, $this->username], '/projects/{project_id}/collaborators/{username}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

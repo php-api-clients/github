@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository\Release;
 
@@ -12,7 +14,7 @@ class Asset extends BaseAsset
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (AssetInterface $asset) {
+        )->then(static function (AssetInterface $asset) {
             return $asset->refresh();
         }));
     }

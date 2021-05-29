@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Command\Repository\Commit;
 
@@ -10,22 +12,13 @@ use WyriHaximus\Tactician\CommandHandler\Annotations\Handler;
  */
 final class StatusesCommand
 {
-    /**
-     * @var Commit
-     */
-    private $commit;
+    private Commit $commit;
 
-    /**
-     * @param Commit $commit
-     */
     public function __construct(Commit $commit)
     {
         $this->commit = $commit;
     }
 
-    /**
-     * @return Commit
-     */
     public function getCommit(): Commit
     {
         return $this->commit;

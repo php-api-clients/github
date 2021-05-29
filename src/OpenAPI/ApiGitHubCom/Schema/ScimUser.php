@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class ScimUser
 {
-    public const SCHEMA_TITLE = 'SCIM /Users';
+    public const SCHEMA_TITLE       = 'SCIM /Users';
     public const SCHEMA_DESCRIPTION = 'SCIM /Users provisioning endpoints';
     /**
      * SCIM schema used.
      */
-    private array $schemas = array();
+    private array $schemas = [];
     /**
      * Unique identifier of an external identity
      */
@@ -26,16 +28,16 @@ final class ScimUser
      * The name of the user, suitable for display to end-users
      */
     private ?string $displayName = null;
-    private array $name = array();
+    private array $name          = [];
     /**
      * user emails
      */
-    private array $emails = array();
+    private array $emails = [];
     /**
      * The active status of the User.
      */
     private ?bool $active = null;
-    private array $meta = array();
+    private array $meta   = [];
     /**
      * The ID of the organization.
      */
@@ -43,56 +45,68 @@ final class ScimUser
     /**
      * Set of operations to be performed
      */
-    private array $operations = array();
+    private array $operations = [];
     /**
      * associated groups
      */
-    private array $groups = array();
-    public function schemas() : array
+    private array $groups = [];
+
+    public function schemas(): array
     {
         return $this->schemas;
     }
-    public function id() : ?string
+
+    public function id(): ?string
     {
         return $this->id;
     }
-    public function externalId() : ?string
+
+    public function externalId(): ?string
     {
         return $this->externalId;
     }
-    public function userName() : ?string
+
+    public function userName(): ?string
     {
         return $this->userName;
     }
-    public function displayName() : ?string
+
+    public function displayName(): ?string
     {
         return $this->displayName;
     }
-    public function name() : array
+
+    public function name(): array
     {
         return $this->name;
     }
-    public function emails() : array
+
+    public function emails(): array
     {
         return $this->emails;
     }
-    public function active() : ?bool
+
+    public function active(): ?bool
     {
         return $this->active;
     }
-    public function meta() : array
+
+    public function meta(): array
     {
         return $this->meta;
     }
-    public function organization_id() : ?int
+
+    public function organization_id(): ?int
     {
         return $this->organization_id;
     }
-    public function operations() : array
+
+    public function operations(): array
     {
         return $this->operations;
     }
-    public function groups() : array
+
+    public function groups(): array
     {
         return $this->groups;
     }

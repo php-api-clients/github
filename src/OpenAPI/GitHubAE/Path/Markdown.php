@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Markdown\RenderOperation;
 
 final class Markdown
 {
-    function post() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Markdown\RenderOperation
+    function post(): RenderOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Markdown\RenderOperation();
+        return new RenderOperation();
     }
 }

@@ -1,49 +1,58 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class Discussion_Edited
 {
-    public const SCHEMA_TITLE = 'discussion edited event';
+    public const SCHEMA_TITLE       = 'discussion edited event';
     public const SCHEMA_DESCRIPTION = '';
-    private array $changes = array();
-    private ?string $action = null;
-    private array $discussion = array();
+    private array $changes          = [];
+    private ?string $action         = null;
+    private array $discussion       = [];
     /**
      * A git repository
      */
-    private array $repository = array();
-    private array $sender = array();
+    private array $repository = [];
+    private array $sender     = [];
     /**
      * Installation
      */
-    private array $installation = array();
-    private array $organization = array();
-    public function changes() : array
+    private array $installation = [];
+    private array $organization = [];
+
+    public function changes(): array
     {
         return $this->changes;
     }
-    public function action() : ?string
+
+    public function action(): ?string
     {
         return $this->action;
     }
-    public function discussion() : array
+
+    public function discussion(): array
     {
         return $this->discussion;
     }
-    public function repository() : array
+
+    public function repository(): array
     {
         return $this->repository;
     }
-    public function sender() : array
+
+    public function sender(): array
     {
         return $this->sender;
     }
-    public function installation() : array
+
+    public function installation(): array
     {
         return $this->installation;
     }
-    public function organization() : array
+
+    public function organization(): array
     {
         return $this->organization;
     }

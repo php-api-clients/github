@@ -1,11 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Repos;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListForOrg
 {
     private const OPERATION_ID = 'repos/list-for-org';
-    /****/
     public string $org;
     /**Specifies the types of repositories you want returned. Can be one of `all`, `public`, `private`, `forks`, `sources`, `member`, `internal`. Note: For GitHub AE, can be one of `all`, `private`, `forks`, `sources`, `member`, `internal`. Default: `all`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `type` can also be `internal`. However, the `internal` value is not yet supported when a GitHub App calls this API with an installation access token.**/
     public string $type;
@@ -17,24 +23,28 @@ final class ListForOrg
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org, $type, string $sort = 'created', $direction, int $per_page = 30, int $page = 1)
     {
-        $this->org = $org;
-        $this->type = $type;
-        $this->sort = $sort;
+        $this->org       = $org;
+        $this->type      = $type;
+        $this->sort      = $sort;
         $this->direction = $direction;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->per_page  = $per_page;
+        $this->page      = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{type}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->org, $this->type, $this->sort, $this->direction, $this->per_page, $this->page), '/orgs/{org}/repos?type={type}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{org}', '{type}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->type, $this->sort, $this->direction, $this->per_page, $this->page], '/orgs/{org}/repos?type={type}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

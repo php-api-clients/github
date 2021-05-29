@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\Checks;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListForRef
 {
     private const OPERATION_ID = 'checks/list-for-ref';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**ref parameter**/
     public string $ref;
@@ -21,29 +26,32 @@ final class ListForRef
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    /****/
     public int $app_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $ref, $check_name, $status, string $filter = 'latest', int $per_page = 30, int $page = 1, $app_id)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
-        $this->ref = $ref;
+        $this->owner      = $owner;
+        $this->repo       = $repo;
+        $this->ref        = $ref;
         $this->check_name = $check_name;
-        $this->status = $status;
-        $this->filter = $filter;
-        $this->per_page = $per_page;
-        $this->page = $page;
-        $this->app_id = $app_id;
+        $this->status     = $status;
+        $this->filter     = $filter;
+        $this->per_page   = $per_page;
+        $this->page       = $page;
+        $this->app_id     = $app_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{ref}', '{check_name}', '{status}', '{filter}', '{per_page}', '{page}', '{app_id}'), array($this->owner, $this->repo, $this->ref, $this->check_name, $this->status, $this->filter, $this->per_page, $this->page, $this->app_id), '/repos/{owner}/{repo}/commits/{ref}/check-runs?check_name={check_name}&status={status}&filter={filter}&per_page={per_page}&page={page}&app_id={app_id}'));
+        return new Request('get', str_replace(['{owner}', '{repo}', '{ref}', '{check_name}', '{status}', '{filter}', '{per_page}', '{page}', '{app_id}'], [$this->owner, $this->repo, $this->ref, $this->check_name, $this->status, $this->filter, $this->per_page, $this->page, $this->app_id], '/repos/{owner}/{repo}/commits/{ref}/check-runs?check_name={check_name}&status={status}&filter={filter}&per_page={per_page}&page={page}&app_id={app_id}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

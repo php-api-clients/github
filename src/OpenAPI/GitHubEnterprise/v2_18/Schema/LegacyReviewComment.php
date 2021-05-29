@@ -1,103 +1,124 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_18\Schema;
 
 final class LegacyReviewComment
 {
-    public const SCHEMA_TITLE = 'legacy-review-comment';
-    public const SCHEMA_DESCRIPTION = '';
-    private ?string $url = null;
+    public const SCHEMA_TITLE            = 'legacy-review-comment';
+    public const SCHEMA_DESCRIPTION      = '';
+    private ?string $url                 = null;
     private ?int $pull_request_review_id = null;
-    private ?int $id = null;
-    private ?string $node_id = null;
-    private ?string $diff_hunk = null;
-    private ?string $path = null;
-    private ?int $position = null;
-    private ?int $original_position = null;
-    private ?string $commit_id = null;
-    private ?string $original_commit_id = null;
-    private ?int $in_reply_to_id = null;
-    private array $user = array();
-    private ?string $body = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
-    private ?string $html_url = null;
-    private ?string $pull_request_url = null;
-    private ?string $author_association = null;
-    private array $_links = array();
-    public function url() : ?string
+    private ?int $id                     = null;
+    private ?string $node_id             = null;
+    private ?string $diff_hunk           = null;
+    private ?string $path                = null;
+    private ?int $position               = null;
+    private ?int $original_position      = null;
+    private ?string $commit_id           = null;
+    private ?string $original_commit_id  = null;
+    private ?int $in_reply_to_id         = null;
+    private array $user                  = [];
+    private ?string $body                = null;
+    private ?string $created_at          = null;
+    private ?string $updated_at          = null;
+    private ?string $html_url            = null;
+    private ?string $pull_request_url    = null;
+    private ?string $author_association  = null;
+    private array $_links                = [];
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function pull_request_review_id() : ?int
+
+    public function pull_request_review_id(): ?int
     {
         return $this->pull_request_review_id;
     }
-    public function id() : ?int
+
+    public function id(): ?int
     {
         return $this->id;
     }
-    public function node_id() : ?string
+
+    public function node_id(): ?string
     {
         return $this->node_id;
     }
-    public function diff_hunk() : ?string
+
+    public function diff_hunk(): ?string
     {
         return $this->diff_hunk;
     }
-    public function path() : ?string
+
+    public function path(): ?string
     {
         return $this->path;
     }
-    public function position() : ?int
+
+    public function position(): ?int
     {
         return $this->position;
     }
-    public function original_position() : ?int
+
+    public function original_position(): ?int
     {
         return $this->original_position;
     }
-    public function commit_id() : ?string
+
+    public function commit_id(): ?string
     {
         return $this->commit_id;
     }
-    public function original_commit_id() : ?string
+
+    public function original_commit_id(): ?string
     {
         return $this->original_commit_id;
     }
-    public function in_reply_to_id() : ?int
+
+    public function in_reply_to_id(): ?int
     {
         return $this->in_reply_to_id;
     }
-    public function user() : array
+
+    public function user(): array
     {
         return $this->user;
     }
-    public function body() : ?string
+
+    public function body(): ?string
     {
         return $this->body;
     }
-    public function created_at() : ?string
+
+    public function created_at(): ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+
+    public function updated_at(): ?string
     {
         return $this->updated_at;
     }
-    public function html_url() : ?string
+
+    public function html_url(): ?string
     {
         return $this->html_url;
     }
-    public function pull_request_url() : ?string
+
+    public function pull_request_url(): ?string
     {
         return $this->pull_request_url;
     }
-    public function author_association() : ?string
+
+    public function author_association(): ?string
     {
         return $this->author_association;
     }
-    public function _links() : array
+
+    public function _links(): array
     {
         return $this->_links;
     }

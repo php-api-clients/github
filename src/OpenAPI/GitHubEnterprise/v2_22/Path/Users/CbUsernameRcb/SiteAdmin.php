@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Path\Users\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DemoteSiteAdministratorOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\PromoteUserToBeSiteAdministratorOperation;
 
 final class SiteAdmin
 {
-    function put($username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\PromoteUserToBeSiteAdministratorOperation
+    function put($username): PromoteUserToBeSiteAdministratorOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\PromoteUserToBeSiteAdministratorOperation($username);
+        return new PromoteUserToBeSiteAdministratorOperation($username);
     }
-    function delete($username) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DemoteSiteAdministratorOperation
+
+    function delete($username): DemoteSiteAdministratorOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Operation\EnterpriseAdmin\DemoteSiteAdministratorOperation($username);
+        return new DemoteSiteAdministratorOperation($username);
     }
 }

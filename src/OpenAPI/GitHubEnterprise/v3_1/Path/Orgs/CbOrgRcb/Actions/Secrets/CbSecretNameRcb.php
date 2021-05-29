@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Path\Orgs\CbOrgRcb\Actions\Secrets;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\CreateOrUpdateOrgSecretOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\DeleteOrgSecretOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\GetOrgSecretOperation;
 
 final class CbSecretNameRcb
 {
-    function get($org, $secret_name) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\GetOrgSecretOperation
+    function get($org, $secret_name): GetOrgSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\GetOrgSecretOperation($org, $secret_name);
+        return new GetOrgSecretOperation($org, $secret_name);
     }
-    function put($org, $secret_name) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\CreateOrUpdateOrgSecretOperation
+
+    function put($org, $secret_name): CreateOrUpdateOrgSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\CreateOrUpdateOrgSecretOperation($org, $secret_name);
+        return new CreateOrUpdateOrgSecretOperation($org, $secret_name);
     }
-    function delete($org, $secret_name) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\DeleteOrgSecretOperation
+
+    function delete($org, $secret_name): DeleteOrgSecretOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actions\DeleteOrgSecretOperation($org, $secret_name);
+        return new DeleteOrgSecretOperation($org, $secret_name);
     }
 }

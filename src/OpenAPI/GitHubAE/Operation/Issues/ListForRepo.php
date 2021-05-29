@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Issues;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListForRepo
 {
     private const OPERATION_ID = 'issues/list-for-repo';
-    /****/
     public string $owner;
-    /****/
     public string $repo;
     /**If an `integer` is passed, it should refer to a milestone by its `number` field. If the string `*` is passed, issues with any milestone are accepted. If the string `none` is passed, issues without milestones are returned.**/
     public string $milestone;
@@ -31,31 +36,35 @@ final class ListForRepo
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($owner, $repo, $milestone, string $state = 'open', $assignee, $creator, $mentioned, $labels, string $sort = 'created', string $direction = 'desc', $since, int $per_page = 30, int $page = 1)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
         $this->milestone = $milestone;
-        $this->state = $state;
-        $this->assignee = $assignee;
-        $this->creator = $creator;
+        $this->state     = $state;
+        $this->assignee  = $assignee;
+        $this->creator   = $creator;
         $this->mentioned = $mentioned;
-        $this->labels = $labels;
-        $this->sort = $sort;
+        $this->labels    = $labels;
+        $this->sort      = $sort;
         $this->direction = $direction;
-        $this->since = $since;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->since     = $since;
+        $this->per_page  = $per_page;
+        $this->page      = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{milestone}', '{state}', '{assignee}', '{creator}', '{mentioned}', '{labels}', '{sort}', '{direction}', '{since}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->milestone, $this->state, $this->assignee, $this->creator, $this->mentioned, $this->labels, $this->sort, $this->direction, $this->since, $this->per_page, $this->page), '/repos/{owner}/{repo}/issues?milestone={milestone}&state={state}&assignee={assignee}&creator={creator}&mentioned={mentioned}&labels={labels}&sort={sort}&direction={direction}&since={since}&per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{owner}', '{repo}', '{milestone}', '{state}', '{assignee}', '{creator}', '{mentioned}', '{labels}', '{sort}', '{direction}', '{since}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->milestone, $this->state, $this->assignee, $this->creator, $this->mentioned, $this->labels, $this->sort, $this->direction, $this->since, $this->per_page, $this->page], '/repos/{owner}/{repo}/issues?milestone={milestone}&state={state}&assignee={assignee}&creator={creator}&mentioned={mentioned}&labels={labels}&sort={sort}&direction={direction}&since={since}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

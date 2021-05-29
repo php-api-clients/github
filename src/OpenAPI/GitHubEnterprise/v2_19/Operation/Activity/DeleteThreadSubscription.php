@@ -1,25 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_19\Operation\Activity;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class DeleteThreadSubscription
 {
     private const OPERATION_ID = 'activity/delete-thread-subscription';
     /**thread_id parameter**/
     public int $thread_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($thread_id)
     {
         $this->thread_id = $thread_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}/subscription?'));
+        return new Request('delete', str_replace(['{thread_id}'], [$this->thread_id], '/notifications/threads/{thread_id}/subscription?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

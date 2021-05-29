@@ -1,31 +1,40 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\Actions;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class AddSelectedRepoToOrgSecret
 {
     private const OPERATION_ID = 'actions/add-selected-repo-to-org-secret';
-    /****/
     public string $org;
     /**secret_name parameter**/
     public string $secret_name;
-    /****/
     public int $repository_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($org, $secret_name, $repository_id)
     {
-        $this->org = $org;
-        $this->secret_name = $secret_name;
+        $this->org           = $org;
+        $this->secret_name   = $secret_name;
         $this->repository_id = $repository_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secret_name, $this->repository_id), '/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}?'));
+        return new Request('put', str_replace(['{org}', '{secret_name}', '{repository_id}'], [$this->org, $this->secret_name, $this->repository_id], '/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

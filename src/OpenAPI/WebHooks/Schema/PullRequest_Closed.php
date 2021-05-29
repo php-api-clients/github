@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class PullRequest_Closed
 {
-    public const SCHEMA_TITLE = 'pull_request closed event';
+    public const SCHEMA_TITLE       = 'pull_request closed event';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $action = null;
+    private ?string $action         = null;
     /**
      * The pull request number.
      */
@@ -15,38 +17,45 @@ final class PullRequest_Closed
     /**
      * A git repository
      */
-    private array $repository = array();
+    private array $repository = [];
     /**
      * Installation
      */
-    private array $installation = array();
-    private array $organization = array();
-    private array $sender = array();
-    public function action() : ?string
+    private array $installation = [];
+    private array $organization = [];
+    private array $sender       = [];
+
+    public function action(): ?string
     {
         return $this->action;
     }
-    public function number() : ?int
+
+    public function number(): ?int
     {
         return $this->number;
     }
+
     public function pull_request()
     {
         return $this->pull_request;
     }
-    public function repository() : array
+
+    public function repository(): array
     {
         return $this->repository;
     }
-    public function installation() : array
+
+    public function installation(): array
     {
         return $this->installation;
     }
-    public function organization() : array
+
+    public function organization(): array
     {
         return $this->organization;
     }
-    public function sender() : array
+
+    public function sender(): array
     {
         return $this->sender;
     }

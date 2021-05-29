@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync;
 
@@ -12,7 +14,7 @@ class CodeOfConduct extends BaseCodeOfConduct
     {
         return $this->wait($this->handleCommand(
             new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this)
-        )->then(function (CodeOfConductInterface $codeOfConduct) {
+        )->then(static function (CodeOfConductInterface $codeOfConduct) {
             return $codeOfConduct->refresh();
         }));
     }

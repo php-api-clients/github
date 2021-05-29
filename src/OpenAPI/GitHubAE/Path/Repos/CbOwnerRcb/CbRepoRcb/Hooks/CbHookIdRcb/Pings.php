@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\PingWebhookOperation;
 
 final class Pings
 {
-    function post($owner, $repo, $hook_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\PingWebhookOperation
+    function post($owner, $repo, $hook_id): PingWebhookOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos\PingWebhookOperation($owner, $repo, $hook_id);
+        return new PingWebhookOperation($owner, $repo, $hook_id);
     }
 }

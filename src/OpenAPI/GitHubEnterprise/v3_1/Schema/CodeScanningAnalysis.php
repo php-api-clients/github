@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class CodeScanningAnalysis
 {
-    public const SCHEMA_TITLE = 'code-scanning-analysis';
+    public const SCHEMA_TITLE       = 'code-scanning-analysis';
     public const SCHEMA_DESCRIPTION = '';
     /**
-    * The full Git reference, formatted as `refs/heads/<branch name>`,
+     * The full Git reference, formatted as `refs/heads/<branch name>`,
     `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
-    */
+     */
     private ?string $ref = null;
     /**
      * The SHA of the commit to which the analysis you are uploading relates.
@@ -27,7 +29,7 @@ final class CodeScanningAnalysis
      * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
      */
     private ?string $category = null;
-    private ?string $error = null;
+    private ?string $error    = null;
     /**
      * The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -52,69 +54,84 @@ final class CodeScanningAnalysis
      * An identifier for the upload.
      */
     private ?string $sarif_id = null;
-    private array $tool = array();
-    private ?bool $deletable = null;
+    private array $tool       = [];
+    private ?bool $deletable  = null;
     /**
      * Warning generated when processing the analysis
      */
     private ?string $warning = null;
-    public function ref() : ?string
+
+    public function ref(): ?string
     {
         return $this->ref;
     }
-    public function commit_sha() : ?string
+
+    public function commit_sha(): ?string
     {
         return $this->commit_sha;
     }
-    public function analysis_key() : ?string
+
+    public function analysis_key(): ?string
     {
         return $this->analysis_key;
     }
-    public function environment() : ?string
+
+    public function environment(): ?string
     {
         return $this->environment;
     }
-    public function category() : ?string
+
+    public function category(): ?string
     {
         return $this->category;
     }
-    public function error() : ?string
+
+    public function error(): ?string
     {
         return $this->error;
     }
-    public function created_at() : ?string
+
+    public function created_at(): ?string
     {
         return $this->created_at;
     }
-    public function results_count() : ?int
+
+    public function results_count(): ?int
     {
         return $this->results_count;
     }
-    public function rules_count() : ?int
+
+    public function rules_count(): ?int
     {
         return $this->rules_count;
     }
-    public function id() : ?int
+
+    public function id(): ?int
     {
         return $this->id;
     }
-    public function url() : ?string
+
+    public function url(): ?string
     {
         return $this->url;
     }
-    public function sarif_id() : ?string
+
+    public function sarif_id(): ?string
     {
         return $this->sarif_id;
     }
-    public function tool() : array
+
+    public function tool(): array
     {
         return $this->tool;
     }
-    public function deletable() : ?bool
+
+    public function deletable(): ?bool
     {
         return $this->deletable;
     }
-    public function warning() : ?string
+
+    public function warning(): ?string
     {
         return $this->warning;
     }

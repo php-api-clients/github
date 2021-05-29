@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Path\Enterprises\CbEnterpriseRcb\Actions\Runners;
+
+use ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\ListRunnerApplicationsForEnterpriseOperation;
 
 final class Downloads
 {
-    function get($enterprise) : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\ListRunnerApplicationsForEnterpriseOperation
+    function get($enterprise): ListRunnerApplicationsForEnterpriseOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_0\Operation\EnterpriseAdmin\ListRunnerApplicationsForEnterpriseOperation($enterprise);
+        return new ListRunnerApplicationsForEnterpriseOperation($enterprise);
     }
 }

@@ -1,56 +1,67 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_22\Schema;
 
 final class RunnerGroupsOrg
 {
-    public const SCHEMA_TITLE = 'runner-groups-org';
+    public const SCHEMA_TITLE       = 'runner-groups-org';
     public const SCHEMA_DESCRIPTION = '';
-    private ?number $id = null;
-    private ?string $name = null;
-    private ?string $visibility = null;
-    private ?bool $default = null;
+    private ?number $id             = null;
+    private ?string $name           = null;
+    private ?string $visibility     = null;
+    private ?bool $default          = null;
     /**
      * Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
      */
-    private ?string $selected_repositories_url = null;
-    private ?string $runners_url = null;
-    private ?bool $inherited = null;
+    private ?string $selected_repositories_url          = null;
+    private ?string $runners_url                        = null;
+    private ?bool $inherited                            = null;
     private ?bool $inherited_allows_public_repositories = null;
-    private ?bool $allows_public_repositories = null;
-    public function id() : ?number
+    private ?bool $allows_public_repositories           = null;
+
+    public function id(): ?number
     {
         return $this->id;
     }
-    public function name() : ?string
+
+    public function name(): ?string
     {
         return $this->name;
     }
-    public function visibility() : ?string
+
+    public function visibility(): ?string
     {
         return $this->visibility;
     }
-    public function default() : ?bool
+
+    public function default(): ?bool
     {
         return $this->default;
     }
-    public function selected_repositories_url() : ?string
+
+    public function selected_repositories_url(): ?string
     {
         return $this->selected_repositories_url;
     }
-    public function runners_url() : ?string
+
+    public function runners_url(): ?string
     {
         return $this->runners_url;
     }
-    public function inherited() : ?bool
+
+    public function inherited(): ?bool
     {
         return $this->inherited;
     }
-    public function inherited_allows_public_repositories() : ?bool
+
+    public function inherited_allows_public_repositories(): ?bool
     {
         return $this->inherited_allows_public_repositories;
     }
-    public function allows_public_repositories() : ?bool
+
+    public function allows_public_repositories(): ?bool
     {
         return $this->allows_public_repositories;
     }

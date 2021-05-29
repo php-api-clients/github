@@ -1,31 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Users;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListFollowingForUser
 {
     private const OPERATION_ID = 'users/list-following-for-user';
-    /****/
     public string $username;
     /**Results per page (max 100).**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($username, int $per_page = 30, int $page = 1)
     {
         $this->username = $username;
         $this->per_page = $per_page;
-        $this->page = $page;
+        $this->page     = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{username}', '{per_page}', '{page}'), array($this->username, $this->per_page, $this->page), '/users/{username}/following?per_page={per_page}&page={page}'));
+        return new Request('get', str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->per_page, $this->page], '/users/{username}/following?per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

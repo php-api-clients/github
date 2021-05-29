@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Git;
 
@@ -10,7 +12,7 @@ class Blob extends BaseBlob
 {
     public function refresh(): Blob
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (BlobInterface $blob) {
+        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(static function (BlobInterface $blob) {
             return $blob->refresh();
         }));
     }

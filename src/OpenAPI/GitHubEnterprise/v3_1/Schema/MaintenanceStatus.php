@@ -1,23 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class MaintenanceStatus
 {
-    public const SCHEMA_TITLE = 'maintenance-status';
-    public const SCHEMA_DESCRIPTION = '';
-    private ?string $status = null;
-    private ?string $scheduled_time = null;
-    private array $connection_services = array();
-    public function status() : ?string
+    public const SCHEMA_TITLE          = 'maintenance-status';
+    public const SCHEMA_DESCRIPTION    = '';
+    private ?string $status            = null;
+    private ?string $scheduled_time    = null;
+    private array $connection_services = [];
+
+    public function status(): ?string
     {
         return $this->status;
     }
-    public function scheduled_time() : ?string
+
+    public function scheduled_time(): ?string
     {
         return $this->scheduled_time;
     }
-    public function connection_services() : array
+
+    public function connection_services(): array
     {
         return $this->connection_services;
     }

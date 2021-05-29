@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Repository\Commit;
 
@@ -10,105 +12,57 @@ use ApiClients\Foundation\Resource\AbstractResource;
  */
 abstract class File extends AbstractResource implements FileInterface
 {
-    /**
-     * @var string
-     */
-    protected $filename;
+    protected string $filename;
 
-    /**
-     * @var int
-     */
-    protected $additions;
+    protected int $additions;
 
-    /**
-     * @var int
-     */
-    protected $deletions;
+    protected int $deletions;
 
-    /**
-     * @var int
-     */
-    protected $changes;
+    protected int $changes;
 
-    /**
-     * @var string
-     */
-    protected $status;
+    protected string $status;
 
-    /**
-     * @var string
-     */
-    protected $raw_url;
+    protected string $raw_url;
 
-    /**
-     * @var string
-     */
-    protected $blob_url;
+    protected string $blob_url;
 
-    /**
-     * @var string
-     */
-    protected $patch;
+    protected string $patch;
 
-    /**
-     * @return string
-     */
     public function filename(): string
     {
         return $this->filename;
     }
 
-    /**
-     * @return int
-     */
     public function additions(): int
     {
         return $this->additions;
     }
 
-    /**
-     * @return int
-     */
     public function deletions(): int
     {
         return $this->deletions;
     }
 
-    /**
-     * @return int
-     */
     public function changes(): int
     {
         return $this->changes;
     }
 
-    /**
-     * @return string
-     */
     public function status(): string
     {
         return $this->status;
     }
 
-    /**
-     * @return string
-     */
     public function rawUrl(): string
     {
         return $this->raw_url;
     }
 
-    /**
-     * @return string
-     */
     public function blobUrl(): string
     {
         return $this->blob_url;
     }
 
-    /**
-     * @return string
-     */
     public function patch(): string
     {
         return $this->patch;

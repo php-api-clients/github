@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\Resource\Sync\Repository\PullRequest;
 
@@ -10,7 +12,7 @@ class Rb extends BaseRb
 {
     public function refresh(): Rb
     {
-        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(function (RbInterface $rb) {
+        return $this->wait($this->handleCommand(new BuildAsyncFromSyncCommand(self::HYDRATE_CLASS, $this))->then(static function (RbInterface $rb) {
             return $rb->refresh();
         }));
     }

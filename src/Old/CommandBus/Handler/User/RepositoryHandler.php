@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Client\Github\CommandBus\Handler\User;
 
@@ -9,14 +11,8 @@ use React\Promise\PromiseInterface;
 
 final class RepositoryHandler
 {
-    /**
-     * @var FetchAndHydrateService
-     */
-    private $service;
+    private FetchAndHydrateService $service;
 
-    /**
-     * @param FetchAndHydrateService $service
-     */
     public function __construct(FetchAndHydrateService $service)
     {
         $this->service = $service;
@@ -24,9 +20,6 @@ final class RepositoryHandler
 
     /**
      * Fetch the given repository and hydrate it.
-     *
-     * @param  RepositoryCommand $command
-     * @return PromiseInterface
      */
     public function handle(RepositoryCommand $command): PromiseInterface
     {

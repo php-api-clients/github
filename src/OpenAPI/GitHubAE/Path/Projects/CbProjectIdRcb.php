@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Path\Projects;
+
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\DeleteOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\GetOperation;
+use ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\UpdateOperation;
 
 final class CbProjectIdRcb
 {
-    function get($project_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\GetOperation
+    function get($project_id): GetOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\GetOperation($project_id);
+        return new GetOperation($project_id);
     }
-    function delete($project_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\DeleteOperation
+
+    function delete($project_id): DeleteOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\DeleteOperation($project_id);
+        return new DeleteOperation($project_id);
     }
-    function patch($project_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\UpdateOperation
+
+    function patch($project_id): UpdateOperation
     {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Projects\UpdateOperation($project_id);
+        return new UpdateOperation($project_id);
     }
 }
