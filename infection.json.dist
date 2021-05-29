@@ -1,0 +1,32 @@
+{
+    "timeout": 120,
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "logs": {
+        "text": "infection-log.txt"
+    },
+    "mutators": {
+        "@default": true,
+        "ArrayItemRemoval": false,
+        "CastString": false,
+        "Identical": false,
+        "MethodCallRemoval": false,
+        "Continue_": false,
+        "FunctionCallRemoval": false,
+        "InstanceOf_": false,
+        "Minus": false,
+        "RoundingFamily": false,
+        "ArrayOneItem": false,
+        "Foreach_": false,
+        "LogicalOr": false,
+        "UnwrapRtrim": false,
+        "LogicalNot": {
+            "ignore": [
+                "WyriHaximus\\Broadcast\\Composer\\Installer::findEventListeners"
+            ]
+        }
+    }
+}

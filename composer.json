@@ -28,5 +28,8 @@
     "platform": {
       "php": "7.4.7"
     }
+  },
+  "require-dev": {
+    "wyrihaximus/async-test-utilities": "^3.4"
   }
 }

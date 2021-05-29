@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -12,9 +14,12 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use Psr\Http\Message\RequestInterface;
 use React\EventLoop\Factory;
-use function React\Promise\Stream\buffer;
 use React\Stream\ThroughStream;
 use RingCentral\Psr7\Response;
+
+use function base64_encode;
+use function json_decode;
+use function React\Promise\Stream\buffer;
 use function WyriHaximus\React\timedPromise;
 
 /**
@@ -48,20 +53,20 @@ final class BlobHandlerTest extends TestCase
         ];*/
 
         yield [
-            function () {
-                $body = 'foo.bar';
-                $loop = Factory::create();
+            static function () {
+                $body   = 'foo.bar';
+                $loop   = Factory::create();
                 $stream = new ThroughStream();
-                $loop->addTimer(1, function () use ($stream, $body) {
+                $loop->addTimer(1, static function () use ($stream, $body): void {
                     $stream->end($body);
                 });
-                $request = new BlobCommand(
+                $request      = new BlobCommand(
                     'login/repo',
                     $stream
                 );
                 $expectedJson = [
                     'encoding' => 'base64',
-                    'content' => \base64_encode($body),
+                    'content' => base64_encode($body),
                 ];
 
                 return [$loop, $request, $expectedJson];
@@ -72,20 +77,18 @@ final class BlobHandlerTest extends TestCase
     /**
      * @dataProvider provideCommands
      */
-    public function testCommand(callable $callable)
+    public function testCommand(callable $callable): void
     {
-        list($loop, $command, $expectedjson) = $callable();
-        $json = [
-            'foo' => 'bar',
-        ];
-        $stream = null;
-        $jsonStream = new JsonStream($json);
+        [$loop, $command, $expectedjson] = $callable();
+        $json                            = ['foo' => 'bar'];
+        $stream                          = null;
+        $jsonStream                      = new JsonStream($json);
 
         $tree = $this->prophesize(TreeInterface::class)->reveal();
 
         $requestService = $this->prophesize(RequestService::class);
-        $requestService->request(Argument::that(function (RequestInterface $request) use (&$stream) {
-            buffer($request->getBody())->done(function ($json) use (&$stream) {
+        $requestService->request(Argument::that(static function (RequestInterface $request) use (&$stream) {
+            buffer($request->getBody())->done(static function ($json) use (&$stream): void {
                 $stream = $json;
             });
 
@@ -103,6 +106,6 @@ final class BlobHandlerTest extends TestCase
 
         $result = $this->await($handler->handle($command), $loop);
         self::assertSame($tree, $result);
-        self::assertSame($expectedjson, \json_decode($stream, true));
+        self::assertSame($expectedjson, json_decode($stream, true));
     }
 }

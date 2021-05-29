@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Client\Github\Service;
 
@@ -8,17 +10,18 @@ use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
 use Rx\Testing\TestScheduler;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
  */
 final class IteratePagesServiceTest extends TestCase
 {
-    public function testHandle()
+    public function testHandle(): void
     {
         $path = '/foo.bar';
 
@@ -27,13 +30,11 @@ final class IteratePagesServiceTest extends TestCase
         /**
          * First request.
          */
-        $firstRequest = new Request('GET', '/foo.bar');
-        $firstBody = ['a'];
-        $firstStream = new JsonStream($firstBody);
-        $firstHeaders = [
-            'Link' => [
-                '<https://api.example.com/1>; rel="next", <https://api.example.com/2>; rel="last"',
-            ],
+        $firstRequest  = new Request('GET', '/foo.bar');
+        $firstBody     = ['a'];
+        $firstStream   = new JsonStream($firstBody);
+        $firstHeaders  = [
+            'Link' => ['<https://api.example.com/1>; rel="next", <https://api.example.com/2>; rel="last"'],
         ];
         $firstResponse = new Response(200, $firstHeaders, $firstStream);
         $client->request($firstRequest, Argument::type('array'))->shouldBeCalled()->willReturn(resolve($firstResponse));
@@ -41,13 +42,11 @@ final class IteratePagesServiceTest extends TestCase
         /**
          * Second request.
          */
-        $secondRequest = new Request('GET', 'https://api.example.com/1');
-        $secondBody = ['b'];
-        $secondStream = new JsonStream($secondBody);
-        $secondHeaders = [
-            'Link' => [
-                '<https://api.example.com/2>; rel="next", <https://api.example.com/2>; rel="last"',
-            ],
+        $secondRequest  = new Request('GET', 'https://api.example.com/1');
+        $secondBody     = ['b'];
+        $secondStream   = new JsonStream($secondBody);
+        $secondHeaders  = [
+            'Link' => ['<https://api.example.com/2>; rel="next", <https://api.example.com/2>; rel="last"'],
         ];
         $secondResponse = new Response(200, $secondHeaders, $secondStream);
         $client->request($secondRequest, Argument::type('array'))->shouldBeCalled()->willReturn(resolve($secondResponse));
@@ -55,32 +54,30 @@ final class IteratePagesServiceTest extends TestCase
         /**
          * Third request.
          */
-        $thirdRequest = new Request('GET', 'https://api.example.com/2');
-        $thirdBody = [];
-        $thirdStream = new JsonStream($thirdBody);
-        $thirdHeaders = [
-            'Link' => [
-                '<https://api.example.com/1>; rel="prev"',
-            ],
+        $thirdRequest  = new Request('GET', 'https://api.example.com/2');
+        $thirdBody     = [];
+        $thirdStream   = new JsonStream($thirdBody);
+        $thirdHeaders  = [
+            'Link' => ['<https://api.example.com/1>; rel="prev"'],
         ];
         $thirdResponse = new Response(200, $thirdHeaders, $thirdStream);
         $client->request($thirdRequest, Argument::type('array'))->shouldBeCalled()->willReturn(resolve($thirdResponse));
 
-        $requestService = new RequestService($client->reveal());
-        $testScheduler = new TestScheduler();
+        $requestService      = new RequestService($client->reveal());
+        $testScheduler       = new TestScheduler();
         $iteratePagesService = new IteratePagesService($requestService, $testScheduler);
 
-        $items = [];
+        $items     = [];
         $completed = false;
 
         $iteratePagesService->iterate($path)->subscribe(
-            function ($item) use (&$items) {
+            static function ($item) use (&$items): void {
                 $items[] = $item;
             },
-            function ($t) {
+            static function ($t): void {
                 throw $t;
             },
-            function () use (&$completed) {
+            static function () use (&$completed): void {
                 $completed = true;
             }
         );

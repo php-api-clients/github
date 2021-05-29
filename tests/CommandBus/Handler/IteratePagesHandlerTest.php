@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
@@ -12,7 +14,7 @@ use ApiClients\Tools\TestUtilities\TestCase;
  */
 final class IteratePagesHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
         $path = 'path';
 

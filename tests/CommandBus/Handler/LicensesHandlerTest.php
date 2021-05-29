@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
@@ -15,7 +17,7 @@ use Rx\React\Promise;
  */
 final class LicensesHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
         $license = $this->prophesize(LicenseInterface::class)->reveal();
 

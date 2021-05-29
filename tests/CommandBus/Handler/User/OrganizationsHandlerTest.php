@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\User;
 
@@ -16,12 +18,10 @@ use Rx\React\Promise;
  */
 final class OrganizationsHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $organizationArray = [
-            'foo' => 'bar',
-        ];
-        $organization = $this->prophesize(OrganizationInterface::class)->reveal();
+        $organizationArray = ['foo' => 'bar'];
+        $organization      = $this->prophesize(OrganizationInterface::class)->reveal();
 
         $command = new OrganizationsCommand('wyrihaximus');
 
