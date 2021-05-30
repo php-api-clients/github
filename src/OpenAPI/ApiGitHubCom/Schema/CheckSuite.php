@@ -20,6 +20,10 @@ final class CheckSuite
     private string $url;
     private string $before;
     private string $after;
+    /**
+     * @var array<PullRequestMinimal>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal::class)
+     */
     private array $pull_requests = [];
     private $app;
     /**

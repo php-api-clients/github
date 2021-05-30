@@ -15,7 +15,15 @@ final class GpgKey
     private int $primary_key_id;
     private string $key_id;
     private string $public_key;
-    private array $emails  = [];
+    /**
+     * @var array<Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey\Emails::class)
+     */
+    private array $emails = [];
+    /**
+     * @var array<Subkeys>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey\Subkeys::class)
+     */
     private array $subkeys = [];
     private bool $can_sign;
     private bool $can_encrypt_comms;

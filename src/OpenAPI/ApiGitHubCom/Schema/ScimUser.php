@@ -34,6 +34,9 @@ final class ScimUser
     private array $name = [];
     /**
      * user emails
+     *
+     * @var array<Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Emails::class)
      */
     private array $emails = [];
     /**
@@ -47,6 +50,9 @@ final class ScimUser
     private int $organization_id;
     /**
      * Set of operations to be performed
+     *
+     * @var array<Operations>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations::class)
      */
     private array $operations = [];
     /**

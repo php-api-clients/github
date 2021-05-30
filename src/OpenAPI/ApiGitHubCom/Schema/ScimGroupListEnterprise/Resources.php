@@ -14,6 +14,10 @@ final class Resources
     private string $id;
     private string $externalId;
     private string $displayName;
+    /**
+     * @var array<Members>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimGroupListEnterprise\Resources\Members::class)
+     */
     private array $members = [];
     private array $meta    = [];
 

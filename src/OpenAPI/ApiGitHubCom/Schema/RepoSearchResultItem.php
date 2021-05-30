@@ -89,7 +89,11 @@ final class RepoSearchResultItem
      */
     private bool $disabled;
     private $license;
-    private array $permissions  = [];
+    private array $permissions = [];
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches::class)
+     */
     private array $text_matches = [];
     private string $temp_clone_token;
     private bool $allow_merge_commit;

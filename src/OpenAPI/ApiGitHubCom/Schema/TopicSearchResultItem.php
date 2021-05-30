@@ -25,9 +25,21 @@ final class TopicSearchResultItem
     private number $score;
     private int $repository_count;
     private string $logo_url;
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches::class)
+     */
     private array $text_matches = [];
-    private array $related      = [];
-    private array $aliases      = [];
+    /**
+     * @var array<Related>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Related::class)
+     */
+    private array $related = [];
+    /**
+     * @var array<Aliases>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Aliases::class)
+     */
+    private array $aliases = [];
 
     public function name(): string
     {

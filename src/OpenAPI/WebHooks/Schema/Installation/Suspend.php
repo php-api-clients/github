@@ -15,6 +15,9 @@ final class Suspend
     private $installation;
     /**
      * An array of repository objects that the installation can access.
+     *
+     * @var array<Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Suspend\Repositories::class)
      */
     private array $repositories = [];
     private null $requester;

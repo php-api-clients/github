@@ -21,8 +21,16 @@ final class IssueSimple
     private string $title;
     private string $body;
     private $user;
+    /**
+     * @var array<Label>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label::class)
+     */
     private array $labels = [];
     private $assignee;
+    /**
+     * @var array<SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
     private array $assignees = [];
     private $milestone;
     private bool $locked;

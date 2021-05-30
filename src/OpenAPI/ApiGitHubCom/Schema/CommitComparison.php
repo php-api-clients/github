@@ -29,8 +29,16 @@ final class CommitComparison
     private int $ahead_by;
     private int $behind_by;
     private int $total_commits;
+    /**
+     * @var array<Commit>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit::class)
+     */
     private array $commits = [];
-    private array $files   = [];
+    /**
+     * @var array<DiffEntry>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry::class)
+     */
+    private array $files = [];
 
     public function url(): string
     {

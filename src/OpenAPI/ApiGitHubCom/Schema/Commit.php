@@ -19,9 +19,17 @@ final class Commit
     private array $commit = [];
     private $author;
     private $committer;
+    /**
+     * @var array<Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents::class)
+     */
     private array $parents = [];
     private array $stats   = [];
-    private array $files   = [];
+    /**
+     * @var array<Files>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Files::class)
+     */
+    private array $files = [];
 
     public function url(): string
     {

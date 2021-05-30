@@ -27,6 +27,10 @@ final class CodeSearchResultItem
     private string $language;
     private string $last_modified_at;
     private array $line_numbers = [];
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches::class)
+     */
     private array $text_matches = [];
 
     public function name(): string

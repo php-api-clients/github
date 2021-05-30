@@ -15,6 +15,9 @@ final class GitTree
     private bool $truncated;
     /**
      * Objects specifying a tree structure
+     *
+     * @var array<Tree>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree\Tree::class)
      */
     private array $tree = [];
 

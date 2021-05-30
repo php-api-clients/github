@@ -40,6 +40,10 @@ final class UserSearchResultItem
     private string $location;
     private bool $site_admin;
     private bool $hireable;
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches::class)
+     */
     private array $text_matches = [];
     private string $blog;
     private string $company;

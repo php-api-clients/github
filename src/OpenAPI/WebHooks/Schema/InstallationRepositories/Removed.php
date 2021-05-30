@@ -26,10 +26,16 @@ final class Removed
     private string $repository_selection;
     /**
      * An array of repository objects, which were added to the installation.
+     *
+     * @var array<RepositoriesAdded>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Removed\RepositoriesAdded::class)
      */
     private array $repositories_added = [];
     /**
      * An array of repository objects, which were removed from the installation.
+     *
+     * @var array<RepositoriesRemoved>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Removed\RepositoriesRemoved::class)
      */
     private array $repositories_removed = [];
     private $requester;

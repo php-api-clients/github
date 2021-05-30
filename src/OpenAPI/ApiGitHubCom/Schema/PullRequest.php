@@ -37,6 +37,10 @@ final class PullRequest
     private string $title;
     private $user;
     private string $body;
+    /**
+     * @var array<Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Labels::class)
+     */
     private array $labels = [];
     private $milestone;
     private string $active_lock_reason;
@@ -46,12 +50,24 @@ final class PullRequest
     private string $merged_at;
     private string $merge_commit_sha;
     private $assignee;
-    private array $assignees           = [];
+    /**
+     * @var array<SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private array $assignees = [];
+    /**
+     * @var array<SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
     private array $requested_reviewers = [];
-    private array $requested_teams     = [];
-    private array $head                = [];
-    private array $base                = [];
-    private array $_links              = [];
+    /**
+     * @var array<TeamSimple>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
+     */
+    private array $requested_teams = [];
+    private array $head            = [];
+    private array $base            = [];
+    private array $_links          = [];
     /**
      * How the author is associated with the repository.
      */

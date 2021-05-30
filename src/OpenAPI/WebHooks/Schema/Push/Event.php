@@ -34,6 +34,9 @@ final class Event
     private string $compare;
     /**
      * An array of commit objects describing the pushed commits.
+     *
+     * @var array<Commit>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Commit::class)
      */
     private array $commits = [];
     private $head_commit;

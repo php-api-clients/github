@@ -10,7 +10,11 @@ final class Hovercard
 {
     public const SCHEMA_TITLE       = 'Hovercard';
     public const SCHEMA_DESCRIPTION = 'Hovercard';
-    private array $contexts         = [];
+    /**
+     * @var array<Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts::class)
+     */
+    private array $contexts = [];
 
     /**
      * @return array<Contexts>

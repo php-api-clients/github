@@ -28,7 +28,11 @@ final class GitCommit
      * Message describing the purpose of the commit
      */
     private string $message;
-    private array $tree         = [];
+    private array $tree = [];
+    /**
+     * @var array<Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Parents::class)
+     */
     private array $parents      = [];
     private array $verification = [];
     private string $html_url;

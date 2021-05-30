@@ -41,6 +41,10 @@ final class Issue
      */
     private array $labels = [];
     private $assignee;
+    /**
+     * @var array<SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
     private array $assignees = [];
     private $milestone;
     private bool $locked;

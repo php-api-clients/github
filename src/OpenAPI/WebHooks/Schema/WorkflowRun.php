@@ -28,6 +28,10 @@ final class WorkflowRun
     private string $logs_url;
     private string $node_id;
     private string $name;
+    /**
+     * @var array<PullRequest>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class)
+     */
     private array $pull_requests = [];
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\RepositoryLite::class) */
     private RepositoryLite $repository;

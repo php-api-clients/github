@@ -14,6 +14,10 @@ final class TextMatches
     private string $object_type;
     private string $property;
     private string $fragment;
+    /**
+     * @var array<Matches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches\Matches::class)
+     */
     private array $matches = [];
 
     public function object_url(): string

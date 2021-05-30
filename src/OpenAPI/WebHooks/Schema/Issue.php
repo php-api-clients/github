@@ -26,6 +26,10 @@ final class Issue
     private string $title;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
     private User $user;
+    /**
+     * @var array<Label>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
+     */
     private array $labels = [];
     /**
      * State of the issue; either 'open' or 'closed'
@@ -33,6 +37,10 @@ final class Issue
     private string $state;
     private bool $locked;
     private $assignee;
+    /**
+     * @var array<User>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     */
     private array $assignees = [];
     private $milestone;
     private int $comments;

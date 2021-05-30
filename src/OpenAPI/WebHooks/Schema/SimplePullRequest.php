@@ -28,10 +28,22 @@ final class SimplePullRequest
     private $merged_at;
     private $merge_commit_sha;
     private $assignee;
+    /**
+     * @var array<User>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     */
     private array $assignees           = [];
     private array $requested_reviewers = [];
-    private array $requested_teams     = [];
-    private array $labels              = [];
+    /**
+     * @var array<Team>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team::class)
+     */
+    private array $requested_teams = [];
+    /**
+     * @var array<Label>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
+     */
+    private array $labels = [];
     private $milestone;
     private bool $draft;
     private string $commits_url;

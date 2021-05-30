@@ -27,6 +27,10 @@ final class Runner
      */
     private string $status;
     private bool $busy;
+    /**
+     * @var array<Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner\Labels::class)
+     */
     private array $labels = [];
 
     /**

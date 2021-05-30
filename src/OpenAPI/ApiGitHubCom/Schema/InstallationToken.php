@@ -12,6 +12,10 @@ final class InstallationToken
     private string $expires_at;
     private array $permissions = [];
     private string $repository_selection;
+    /**
+     * @var array<Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     */
     private array $repositories = [];
     private string $single_file;
     private bool $has_multiple_single_files;

@@ -16,6 +16,9 @@ final class Event
     public const SCHEMA_DESCRIPTION = 'A wiki page is created or updated.';
     /**
      * The pages that were updated.
+     *
+     * @var array<Pages>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Gollum\Event\Pages::class)
      */
     private array $pages = [];
     /**

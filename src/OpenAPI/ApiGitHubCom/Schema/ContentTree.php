@@ -19,6 +19,10 @@ final class ContentTree
     private string $git_url;
     private string $html_url;
     private string $download_url;
+    /**
+     * @var array<Entries>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries::class)
+     */
     private array $entries = [];
     private array $_links  = [];
 

@@ -46,6 +46,10 @@ final class WorkflowRun
      */
     private string $url;
     private string $html_url;
+    /**
+     * @var array<PullRequestMinimal>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal::class)
+     */
     private array $pull_requests = [];
     private string $created_at;
     private string $updated_at;

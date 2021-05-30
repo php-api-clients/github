@@ -14,6 +14,10 @@ final class Migration
     private string $state;
     private bool $lock_repositories;
     private bool $exclude_attachments;
+    /**
+     * @var array<Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     */
     private array $repositories = [];
     private string $url;
     private string $created_at;

@@ -48,6 +48,9 @@ final class Job
     private string $name;
     /**
      * Steps in this job.
+     *
+     * @var array<Steps>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps::class)
      */
     private array $steps = [];
     private string $check_run_url;

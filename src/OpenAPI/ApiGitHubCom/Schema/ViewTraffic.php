@@ -10,6 +10,10 @@ final class ViewTraffic
     public const SCHEMA_DESCRIPTION = 'View Traffic';
     private int $count;
     private int $uniques;
+    /**
+     * @var array<Traffic>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic::class)
+     */
     private array $views = [];
 
     public function count(): int

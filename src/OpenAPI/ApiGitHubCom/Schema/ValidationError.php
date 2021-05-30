@@ -12,6 +12,10 @@ final class ValidationError
     public const SCHEMA_DESCRIPTION = 'Validation Error';
     private string $message;
     private string $documentation_url;
+    /**
+     * @var array<Errors>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors::class)
+     */
     private array $errors = [];
 
     public function message(): string

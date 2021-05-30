@@ -14,6 +14,10 @@ final class ScimUserListEnterprise
     private number $totalResults;
     private number $itemsPerPage;
     private number $startIndex;
+    /**
+     * @var array<Resources>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources::class)
+     */
     private array $Resources = [];
 
     public function schemas(): array

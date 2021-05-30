@@ -8,8 +8,16 @@ final class PullRequestReviewRequest
 {
     public const SCHEMA_TITLE       = 'Pull Request Review Request';
     public const SCHEMA_DESCRIPTION = 'Pull Request Review Request';
-    private array $users            = [];
-    private array $teams            = [];
+    /**
+     * @var array<SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private array $users = [];
+    /**
+     * @var array<TeamSimple>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
+     */
+    private array $teams = [];
 
     /**
      * @return array<SimpleUser>

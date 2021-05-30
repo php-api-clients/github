@@ -15,8 +15,16 @@ final class ScimEnterpriseUser
     private string $id;
     private string $externalId;
     private string $userName;
-    private array $name   = [];
+    private array $name = [];
+    /**
+     * @var array<Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Emails::class)
+     */
     private array $emails = [];
+    /**
+     * @var array<Groups>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Groups::class)
+     */
     private array $groups = [];
     private bool $active;
     private array $meta = [];

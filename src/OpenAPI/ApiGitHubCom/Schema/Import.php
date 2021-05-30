@@ -28,6 +28,10 @@ final class Import
     private bool $has_large_files;
     private int $large_files_size;
     private int $large_files_count;
+    /**
+     * @var array<ProjectChoices>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices::class)
+     */
     private array $project_choices = [];
     private string $message;
     private int $authors_count;

@@ -19,6 +19,9 @@ final class AuthenticationToken
     private array $permissions = [];
     /**
      * The repositories this token has access to
+     *
+     * @var array<Repository>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private array $repositories = [];
     private string $single_file;

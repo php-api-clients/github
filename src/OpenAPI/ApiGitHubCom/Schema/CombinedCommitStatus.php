@@ -9,6 +9,10 @@ final class CombinedCommitStatus
     public const SCHEMA_TITLE       = 'Combined Commit Status';
     public const SCHEMA_DESCRIPTION = 'Combined Commit Status';
     private string $state;
+    /**
+     * @var array<SimpleCommitStatus>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommitStatus::class)
+     */
     private array $statuses = [];
     private string $sha;
     private int $total_count;

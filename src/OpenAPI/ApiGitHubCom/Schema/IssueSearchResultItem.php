@@ -23,8 +23,16 @@ final class IssueSearchResultItem
     private string $title;
     private bool $locked;
     private string $active_lock_reason;
+    /**
+     * @var array<SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
     private array $assignees = [];
     private $user;
+    /**
+     * @var array<Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\Labels::class)
+     */
     private array $labels = [];
     private string $state;
     private $assignee;
@@ -33,6 +41,10 @@ final class IssueSearchResultItem
     private string $created_at;
     private string $updated_at;
     private string $closed_at;
+    /**
+     * @var array<TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches::class)
+     */
     private array $text_matches = [];
     private array $pull_request = [];
     private string $body;

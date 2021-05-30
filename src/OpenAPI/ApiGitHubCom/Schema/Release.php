@@ -42,6 +42,10 @@ final class Release
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private SimpleUser $author;
+    /**
+     * @var array<ReleaseAsset>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset::class)
+     */
     private array $assets = [];
     private string $body_html;
     private string $body_text;

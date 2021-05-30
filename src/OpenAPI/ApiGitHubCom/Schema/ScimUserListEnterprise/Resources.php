@@ -15,8 +15,16 @@ final class Resources
     private string $id;
     private string $externalId;
     private string $userName;
-    private array $name   = [];
+    private array $name = [];
+    /**
+     * @var array<Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Emails::class)
+     */
     private array $emails = [];
+    /**
+     * @var array<Groups>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Groups::class)
+     */
     private array $groups = [];
     private bool $active;
     private array $meta = [];

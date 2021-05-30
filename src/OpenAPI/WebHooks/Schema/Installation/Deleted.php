@@ -21,6 +21,9 @@ final class Deleted
     private Installation $installation;
     /**
      * An array of repository objects that the installation can access.
+     *
+     * @var array<Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Deleted\Repositories::class)
      */
     private array $repositories = [];
     private null $requester;
