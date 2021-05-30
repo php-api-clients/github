@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class ListComments
 {
@@ -18,25 +11,21 @@ final class ListComments
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($gist_id, int $per_page = 30, int $page = 1)
     {
-        $this->gist_id  = $gist_id;
+        $this->gist_id = $gist_id;
         $this->per_page = $per_page;
-        $this->page     = $page;
+        $this->page = $page;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{gist_id}', '{per_page}', '{page}'], [$this->gist_id, $this->per_page, $this->page], '/gists/{gist_id}/comments?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{gist_id}', '{per_page}', '{page}'), array($this->gist_id, $this->per_page, $this->page), '/gists/{gist_id}/comments?per_page={per_page}&page={page}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

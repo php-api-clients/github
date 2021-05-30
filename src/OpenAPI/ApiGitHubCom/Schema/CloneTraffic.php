@@ -1,35 +1,30 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class CloneTraffic
 {
-    public const SCHEMA_TITLE       = 'Clone Traffic';
+    public const SCHEMA_TITLE = 'Clone Traffic';
     public const SCHEMA_DESCRIPTION = 'Clone Traffic';
     private int $count;
     private int $uniques;
     /**
-     * @var array<Traffic>
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic::class)
      */
-    private array $clones = [];
-
-    public function count(): int
+    private array $clones = array();
+    public function count() : int
     {
         return $this->count;
     }
-
-    public function uniques(): int
+    public function uniques() : int
     {
         return $this->uniques;
     }
-
     /**
-     * @return array<Traffic>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic>
      */
-    public function clones(): array
+    public function clones() : array
     {
         return $this->clones;
     }

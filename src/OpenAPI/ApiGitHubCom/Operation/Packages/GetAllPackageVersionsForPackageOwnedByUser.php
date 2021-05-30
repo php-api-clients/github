@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class GetAllPackageVersionsForPackageOwnedByUser
 {
@@ -16,26 +9,23 @@ final class GetAllPackageVersionsForPackageOwnedByUser
     public string $package_type;
     /**The name of the package.**/
     public string $package_name;
+    /****/
     public string $username;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($package_type, $package_name, $username)
     {
         $this->package_type = $package_type;
         $this->package_name = $package_name;
-        $this->username     = $username;
+        $this->username = $username;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{package_type}', '{package_name}', '{username}'], [$this->package_type, $this->package_name, $this->username], '/users/{username}/packages/{package_type}/{package_name}/versions?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{package_type}', '{package_name}', '{username}'), array($this->package_type, $this->package_name, $this->username), '/users/{username}/packages/{package_type}/{package_name}/versions?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

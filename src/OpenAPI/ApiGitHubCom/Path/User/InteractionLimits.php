@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForAuthenticatedUser;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\RemoveRestrictionsForAuthenticatedUser;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\SetRestrictionsForAuthenticatedUser;
 
 final class InteractionLimits
 {
-    function get(): GetRestrictionsForAuthenticatedUser
+    function get() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForAuthenticatedUser
     {
-        return new GetRestrictionsForAuthenticatedUser();
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForAuthenticatedUser();
     }
-
-    function put(): SetRestrictionsForAuthenticatedUser
+    function put() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\SetRestrictionsForAuthenticatedUser
     {
-        return new SetRestrictionsForAuthenticatedUser();
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\SetRestrictionsForAuthenticatedUser();
     }
-
-    function delete(): RemoveRestrictionsForAuthenticatedUser
+    function delete() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\RemoveRestrictionsForAuthenticatedUser
     {
-        return new RemoveRestrictionsForAuthenticatedUser();
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\RemoveRestrictionsForAuthenticatedUser();
     }
 }

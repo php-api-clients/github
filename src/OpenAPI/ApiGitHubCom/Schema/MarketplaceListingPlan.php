@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class MarketplaceListingPlan
 {
-    public const SCHEMA_TITLE       = 'Marketplace Listing Plan';
+    public const SCHEMA_TITLE = 'Marketplace Listing Plan';
     public const SCHEMA_DESCRIPTION = 'Marketplace Listing Plan';
     private string $url;
     private string $accounts_url;
@@ -20,69 +18,56 @@ final class MarketplaceListingPlan
     private bool $has_free_trial;
     private string $unit_name;
     private string $state;
-    private array $bullets = [];
-
-    public function url(): string
+    private array $bullets = array();
+    public function url() : string
     {
         return $this->url;
     }
-
-    public function accounts_url(): string
+    public function accounts_url() : string
     {
         return $this->accounts_url;
     }
-
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
-    public function number(): int
+    public function number() : int
     {
         return $this->number;
     }
-
-    public function name(): string
+    public function name() : string
     {
         return $this->name;
     }
-
-    public function description(): string
+    public function description() : string
     {
         return $this->description;
     }
-
-    public function monthly_price_in_cents(): int
+    public function monthly_price_in_cents() : int
     {
         return $this->monthly_price_in_cents;
     }
-
-    public function yearly_price_in_cents(): int
+    public function yearly_price_in_cents() : int
     {
         return $this->yearly_price_in_cents;
     }
-
-    public function price_model(): string
+    public function price_model() : string
     {
         return $this->price_model;
     }
-
-    public function has_free_trial(): bool
+    public function has_free_trial() : bool
     {
         return $this->has_free_trial;
     }
-
-    public function unit_name(): string
+    public function unit_name() : string
     {
         return $this->unit_name;
     }
-
-    public function state(): string
+    public function state() : string
     {
         return $this->state;
     }
-
-    public function bullets(): array
+    public function bullets() : array
     {
         return $this->bullets;
     }

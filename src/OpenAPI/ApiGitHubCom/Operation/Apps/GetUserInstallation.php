@@ -1,35 +1,25 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class GetUserInstallation
 {
     private const OPERATION_ID = 'apps/get-user-installation';
+    /****/
     public string $username;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($username)
     {
         $this->username = $username;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{username}'], [$this->username], '/users/{username}/installation?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{username}'), array($this->username), '/users/{username}/installation?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

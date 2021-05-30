@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class DisableSelectedOrganizationGithubActionsEnterprise
 {
@@ -16,24 +9,20 @@ final class DisableSelectedOrganizationGithubActionsEnterprise
     public string $enterprise;
     /**Unique identifier of an organization.**/
     public int $org_id;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($enterprise, $org_id)
     {
         $this->enterprise = $enterprise;
-        $this->org_id     = $org_id;
+        $this->org_id = $org_id;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('delete', str_replace(['{enterprise}', '{org_id}'], [$this->enterprise, $this->org_id], '/enterprises/{enterprise}/actions/permissions/organizations/{org_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{enterprise}', '{org_id}'), array($this->enterprise, $this->org_id), '/enterprises/{enterprise}/actions/permissions/organizations/{org_id}?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateUsingTemplate;
 
 final class Generate
 {
-    function post($template_owner, $template_repo): CreateUsingTemplate
+    function post($template_owner, $template_repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateUsingTemplate
     {
-        return new CreateUsingTemplate($template_owner, $template_repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateUsingTemplate($template_owner, $template_repo);
     }
 }

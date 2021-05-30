@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class Release
 {
-    public const SCHEMA_TITLE       = 'Release';
+    public const SCHEMA_TITLE = 'Release';
     public const SCHEMA_DESCRIPTION = 'A release.';
     private string $url;
     private string $html_url;
@@ -38,151 +36,130 @@ final class Release
     private string $published_at;
     /**
      * Simple User
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private SimpleUser $author;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author;
     /**
-     * @var array<ReleaseAsset>
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset::class)
      */
-    private array $assets = [];
+    private array $assets = array();
     private string $body_html;
     private string $body_text;
     /**
      * The URL of the release discussion.
      */
     private string $discussion_url;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class) */
-    private ReactionRollup $reactions;
-
-    public function url(): string
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    public function url() : string
     {
         return $this->url;
     }
-
-    public function html_url(): string
+    public function html_url() : string
     {
         return $this->html_url;
     }
-
-    public function assets_url(): string
+    public function assets_url() : string
     {
         return $this->assets_url;
     }
-
-    public function upload_url(): string
+    public function upload_url() : string
     {
         return $this->upload_url;
     }
-
-    public function tarball_url(): string
+    public function tarball_url() : string
     {
         return $this->tarball_url;
     }
-
-    public function zipball_url(): string
+    public function zipball_url() : string
     {
         return $this->zipball_url;
     }
-
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
-    public function node_id(): string
+    public function node_id() : string
     {
         return $this->node_id;
     }
-
     /**
      * The name of the tag.
      */
-    public function tag_name(): string
+    public function tag_name() : string
     {
         return $this->tag_name;
     }
-
     /**
      * Specifies the commitish value that determines where the Git tag is created from.
      */
-    public function target_commitish(): string
+    public function target_commitish() : string
     {
         return $this->target_commitish;
     }
-
-    public function name(): string
+    public function name() : string
     {
         return $this->name;
     }
-
-    public function body(): string
+    public function body() : string
     {
         return $this->body;
     }
-
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
-    public function draft(): bool
+    public function draft() : bool
     {
         return $this->draft;
     }
-
     /**
      * Whether to identify the release as a prerelease or a full release.
      */
-    public function prerelease(): bool
+    public function prerelease() : bool
     {
         return $this->prerelease;
     }
-
-    public function created_at(): string
+    public function created_at() : string
     {
         return $this->created_at;
     }
-
-    public function published_at(): string
+    public function published_at() : string
     {
         return $this->published_at;
     }
-
     /**
      * Simple User
      */
-    public function author(): SimpleUser
+    public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->author;
     }
-
     /**
-     * @return array<ReleaseAsset>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>
      */
-    public function assets(): array
+    public function assets() : array
     {
         return $this->assets;
     }
-
-    public function body_html(): string
+    public function body_html() : string
     {
         return $this->body_html;
     }
-
-    public function body_text(): string
+    public function body_text() : string
     {
         return $this->body_text;
     }
-
     /**
      * The URL of the release discussion.
      */
-    public function discussion_url(): string
+    public function discussion_url() : string
     {
         return $this->discussion_url;
     }
-
-    public function reactions(): ReactionRollup
+    public function reactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
     {
         return $this->reactions;
     }

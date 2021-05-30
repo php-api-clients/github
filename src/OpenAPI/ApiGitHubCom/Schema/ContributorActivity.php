@@ -1,37 +1,30 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity\Weeks;
 
 final class ContributorActivity
 {
-    public const SCHEMA_TITLE       = 'Contributor Activity';
+    public const SCHEMA_TITLE = 'Contributor Activity';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     private $author;
     private int $total;
     /**
-     * @var array<Weeks>
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity\Weeks>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity\Weeks::class)
      */
-    private array $weeks = [];
-
+    private array $weeks = array();
     public function author()
     {
         return $this->author;
     }
-
-    public function total(): int
+    public function total() : int
     {
         return $this->total;
     }
-
     /**
-     * @return array<Weeks>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity\Weeks>
      */
-    public function weeks(): array
+    public function weeks() : array
     {
         return $this->weeks;
     }

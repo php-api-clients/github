@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteBranchProtection;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetBranchProtection;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateBranchProtection;
 
 final class Protection
 {
-    function get($owner, $repo, $branch): GetBranchProtection
+    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetBranchProtection
     {
-        return new GetBranchProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetBranchProtection($owner, $repo, $branch);
     }
-
-    function put($owner, $repo, $branch): UpdateBranchProtection
+    function put($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateBranchProtection
     {
-        return new UpdateBranchProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateBranchProtection($owner, $repo, $branch);
     }
-
-    function delete($owner, $repo, $branch): DeleteBranchProtection
+    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteBranchProtection
     {
-        return new DeleteBranchProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteBranchProtection($owner, $repo, $branch);
     }
 }

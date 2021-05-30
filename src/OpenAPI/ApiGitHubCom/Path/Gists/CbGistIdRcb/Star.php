@@ -1,26 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Gists\CbGistIdRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Unstar;
 
 final class Star
 {
-    function get($gist_id): CheckIsStarred
+    function get($gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred
     {
-        return new CheckIsStarred($gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred($gist_id);
     }
-
-    function put($gist_id): \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Star
+    function put($gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Star
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Star($gist_id);
     }
-
-    function delete($gist_id): Unstar
+    function delete($gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Unstar
     {
-        return new Unstar($gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Unstar($gist_id);
     }
 }

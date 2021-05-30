@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Projects\Columns\CbColumnIdRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards;
 
 final class Cards
 {
-    function get($column_id, string $archived_state = 'not_archived', int $per_page = 30, int $page = 1): ListCards
+    function get($column_id, string $archived_state = 'not_archived', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards
     {
-        return new ListCards($column_id, $archived_state, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards($column_id, $archived_state, $per_page, $page);
     }
-
-    function post($column_id): CreateCard
+    function post($column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard
     {
-        return new CreateCard($column_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard($column_id);
     }
 }

@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class Hook
 {
-    public const SCHEMA_TITLE       = 'Webhook';
+    public const SCHEMA_TITLE = 'Webhook';
     public const SCHEMA_DESCRIPTION = 'Webhooks for repositories.';
     private string $type;
     /**
@@ -24,84 +22,74 @@ final class Hook
     /**
      * Determines what events the hook is triggered for. Default: ['push'].
      */
-    private array $events = [];
-    private array $config = [];
+    private array $events = array();
+    private array $config = array();
     private string $updated_at;
     private string $created_at;
     private string $url;
     private string $test_url;
     private string $ping_url;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse::class) */
-    private HookResponse $last_response;
-
-    public function type(): string
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse $last_response;
+    public function type() : string
     {
         return $this->type;
     }
-
     /**
      * Unique identifier of the webhook.
      */
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
     /**
      * The name of a valid service, use 'web' for a webhook.
      */
-    public function name(): string
+    public function name() : string
     {
         return $this->name;
     }
-
     /**
      * Determines whether the hook is actually triggered on pushes.
      */
-    public function active(): bool
+    public function active() : bool
     {
         return $this->active;
     }
-
     /**
      * Determines what events the hook is triggered for. Default: ['push'].
      */
-    public function events(): array
+    public function events() : array
     {
         return $this->events;
     }
-
-    public function config(): array
+    public function config() : array
     {
         return $this->config;
     }
-
-    public function updated_at(): string
+    public function updated_at() : string
     {
         return $this->updated_at;
     }
-
-    public function created_at(): string
+    public function created_at() : string
     {
         return $this->created_at;
     }
-
-    public function url(): string
+    public function url() : string
     {
         return $this->url;
     }
-
-    public function test_url(): string
+    public function test_url() : string
     {
         return $this->test_url;
     }
-
-    public function ping_url(): string
+    public function ping_url() : string
     {
         return $this->ping_url;
     }
-
-    public function last_response(): HookResponse
+    public function last_response() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse
     {
         return $this->last_response;
     }

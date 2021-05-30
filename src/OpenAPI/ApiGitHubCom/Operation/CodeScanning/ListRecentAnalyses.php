@@ -1,18 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class ListRecentAnalyses
 {
     private const OPERATION_ID = 'code-scanning/list-recent-analyses';
+    /****/
     public string $owner;
+    /****/
     public string $repo;
     /**The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.**/
     public string $tool_name;
@@ -26,30 +21,26 @@ final class ListRecentAnalyses
     public string $ref;
     /**Filter analyses belonging to the same SARIF upload.**/
     public string $sarif_id;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($owner, $repo, $tool_name, $tool_guid, int $page = 1, int $per_page = 30, $ref, $sarif_id)
     {
-        $this->owner     = $owner;
-        $this->repo      = $repo;
+        $this->owner = $owner;
+        $this->repo = $repo;
         $this->tool_name = $tool_name;
         $this->tool_guid = $tool_guid;
-        $this->page      = $page;
-        $this->per_page  = $per_page;
-        $this->ref       = $ref;
-        $this->sarif_id  = $sarif_id;
+        $this->page = $page;
+        $this->per_page = $per_page;
+        $this->ref = $ref;
+        $this->sarif_id = $sarif_id;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{page}', '{per_page}', '{ref}', '{sarif_id}'], [$this->owner, $this->repo, $this->tool_name, $this->tool_guid, $this->page, $this->per_page, $this->ref, $this->sarif_id], '/repos/{owner}/{repo}/code-scanning/analyses?tool_name={tool_name}&tool_guid={tool_guid}&page={page}&per_page={per_page}&ref={ref}&sarif_id={sarif_id}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{page}', '{per_page}', '{ref}', '{sarif_id}'), array($this->owner, $this->repo, $this->tool_name, $this->tool_guid, $this->page, $this->per_page, $this->ref, $this->sarif_id), '/repos/{owner}/{repo}/code-scanning/analyses?tool_name={tool_name}&tool_guid={tool_guid}&page={page}&per_page={per_page}&ref={ref}&sarif_id={sarif_id}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

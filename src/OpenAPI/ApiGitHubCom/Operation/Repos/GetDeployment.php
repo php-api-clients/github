@@ -1,40 +1,31 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class GetDeployment
 {
     private const OPERATION_ID = 'repos/get-deployment';
+    /****/
     public string $owner;
+    /****/
     public string $repo;
     /**deployment_id parameter**/
     public int $deployment_id;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($owner, $repo, $deployment_id)
     {
-        $this->owner         = $owner;
-        $this->repo          = $repo;
+        $this->owner = $owner;
+        $this->repo = $repo;
         $this->deployment_id = $deployment_id;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{owner}', '{repo}', '{deployment_id}'], [$this->owner, $this->repo, $this->deployment_id], '/repos/{owner}/{repo}/deployments/{deployment_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{deployment_id}'), array($this->owner, $this->repo, $this->deployment_id), '/repos/{owner}/{repo}/deployments/{deployment_id}?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

@@ -1,18 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class ListWorkflowRunArtifacts
 {
     private const OPERATION_ID = 'actions/list-workflow-run-artifacts';
+    /****/
     public string $owner;
+    /****/
     public string $repo;
     /**The id of the workflow run.**/
     public int $run_id;
@@ -20,27 +15,23 @@ final class ListWorkflowRunArtifacts
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($owner, $repo, $run_id, int $per_page = 30, int $page = 1)
     {
-        $this->owner    = $owner;
-        $this->repo     = $repo;
-        $this->run_id   = $run_id;
+        $this->owner = $owner;
+        $this->repo = $repo;
+        $this->run_id = $run_id;
         $this->per_page = $per_page;
-        $this->page     = $page;
+        $this->page = $page;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{owner}', '{repo}', '{run_id}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->run_id, $this->per_page, $this->page], '/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{run_id}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->run_id, $this->per_page, $this->page), '/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts?per_page={per_page}&page={page}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

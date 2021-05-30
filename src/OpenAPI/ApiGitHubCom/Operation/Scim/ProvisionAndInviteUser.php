@@ -1,35 +1,25 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class ProvisionAndInviteUser
 {
     private const OPERATION_ID = 'scim/provision-and-invite-user';
+    /****/
     public string $org;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($org)
     {
         $this->org = $org;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('post', str_replace(['{org}'], [$this->org], '/scim/v2/organizations/{org}/Users?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{org}'), array($this->org), '/scim/v2/organizations/{org}/Users?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

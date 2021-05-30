@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class ListMembershipsForAuthenticatedUser
 {
@@ -18,25 +11,21 @@ final class ListMembershipsForAuthenticatedUser
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($state, int $per_page = 30, int $page = 1)
     {
-        $this->state    = $state;
+        $this->state = $state;
         $this->per_page = $per_page;
-        $this->page     = $page;
+        $this->page = $page;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{state}', '{per_page}', '{page}'], [$this->state, $this->per_page, $this->page], '/user/memberships/orgs?state={state}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{state}', '{per_page}', '{page}'), array($this->state, $this->per_page, $this->page), '/user/memberships/orgs?state={state}&per_page={per_page}&page={page}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

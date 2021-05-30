@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Git;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateRef;
 
 final class Refs
 {
-    function post($owner, $repo): CreateRef
+    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateRef
     {
-        return new CreateRef($owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateRef($owner, $repo);
     }
 }

@@ -1,67 +1,57 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class CombinedCommitStatus
 {
-    public const SCHEMA_TITLE       = 'Combined Commit Status';
+    public const SCHEMA_TITLE = 'Combined Commit Status';
     public const SCHEMA_DESCRIPTION = 'Combined Commit Status';
     private string $state;
     /**
-     * @var array<SimpleCommitStatus>
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommitStatus>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommitStatus::class)
      */
-    private array $statuses = [];
+    private array $statuses = array();
     private string $sha;
     private int $total_count;
     /**
      * Minimal Repository
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
-    private MinimalRepository $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     private string $commit_url;
     private string $url;
-
-    public function state(): string
+    public function state() : string
     {
         return $this->state;
     }
-
     /**
-     * @return array<SimpleCommitStatus>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommitStatus>
      */
-    public function statuses(): array
+    public function statuses() : array
     {
         return $this->statuses;
     }
-
-    public function sha(): string
+    public function sha() : string
     {
         return $this->sha;
     }
-
-    public function total_count(): int
+    public function total_count() : int
     {
         return $this->total_count;
     }
-
     /**
      * Minimal Repository
      */
-    public function repository(): MinimalRepository
+    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository
     {
         return $this->repository;
     }
-
-    public function commit_url(): string
+    public function commit_url() : string
     {
         return $this->commit_url;
     }
-
-    public function url(): string
+    public function url() : string
     {
         return $this->url;
     }

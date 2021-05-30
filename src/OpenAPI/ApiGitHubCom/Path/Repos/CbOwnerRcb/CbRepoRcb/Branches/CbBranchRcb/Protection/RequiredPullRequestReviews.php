@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeletePullRequestReviewProtection;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetPullRequestReviewProtection;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdatePullRequestReviewProtection;
 
 final class RequiredPullRequestReviews
 {
-    function get($owner, $repo, $branch): GetPullRequestReviewProtection
+    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetPullRequestReviewProtection
     {
-        return new GetPullRequestReviewProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetPullRequestReviewProtection($owner, $repo, $branch);
     }
-
-    function delete($owner, $repo, $branch): DeletePullRequestReviewProtection
+    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeletePullRequestReviewProtection
     {
-        return new DeletePullRequestReviewProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeletePullRequestReviewProtection($owner, $repo, $branch);
     }
-
-    function patch($owner, $repo, $branch): UpdatePullRequestReviewProtection
+    function patch($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdatePullRequestReviewProtection
     {
-        return new UpdatePullRequestReviewProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdatePullRequestReviewProtection($owner, $repo, $branch);
     }
 }

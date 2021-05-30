@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Gists\CbGistIdRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Fork;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks;
 
 final class Forks
 {
-    function get($gist_id, int $per_page = 30, int $page = 1): ListForks
+    function get($gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks
     {
-        return new ListForks($gist_id, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks($gist_id, $per_page, $page);
     }
-
-    function post($gist_id): Fork
+    function post($gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Fork
     {
-        return new Fork($gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Fork($gist_id);
     }
 }

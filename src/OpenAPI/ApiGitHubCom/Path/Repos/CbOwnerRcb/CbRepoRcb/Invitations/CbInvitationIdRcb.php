@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Invitations;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteInvitation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateInvitation;
 
 final class CbInvitationIdRcb
 {
-    function delete($owner, $repo, $invitation_id): DeleteInvitation
+    function delete($owner, $repo, $invitation_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteInvitation
     {
-        return new DeleteInvitation($owner, $repo, $invitation_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteInvitation($owner, $repo, $invitation_id);
     }
-
-    function patch($owner, $repo, $invitation_id): UpdateInvitation
+    function patch($owner, $repo, $invitation_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateInvitation
     {
-        return new UpdateInvitation($owner, $repo, $invitation_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\UpdateInvitation($owner, $repo, $invitation_id);
     }
 }

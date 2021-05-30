@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbCommitShaRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListBranchesForHeadCommit;
 
 final class BranchesDashWhereDashHead
 {
-    function get($owner, $repo, $commit_sha): ListBranchesForHeadCommit
+    function get($owner, $repo, $commit_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListBranchesForHeadCommit
     {
-        return new ListBranchesForHeadCommit($owner, $repo, $commit_sha);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListBranchesForHeadCommit($owner, $repo, $commit_sha);
     }
 }

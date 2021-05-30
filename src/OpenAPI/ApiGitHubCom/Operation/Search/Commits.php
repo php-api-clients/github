@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class Commits
 {
@@ -22,27 +15,23 @@ final class Commits
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($q, $sort, string $order = 'desc', int $per_page = 30, int $page = 1)
     {
-        $this->q        = $q;
-        $this->sort     = $sort;
-        $this->order    = $order;
+        $this->q = $q;
+        $this->sort = $sort;
+        $this->order = $order;
         $this->per_page = $per_page;
-        $this->page     = $page;
+        $this->page = $page;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{q}', '{sort}', '{order}', '{per_page}', '{page}'], [$this->q, $this->sort, $this->order, $this->per_page, $this->page], '/search/commits?q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{q}', '{sort}', '{order}', '{per_page}', '{page}'), array($this->q, $this->sort, $this->order, $this->per_page, $this->page), '/search/commits?q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

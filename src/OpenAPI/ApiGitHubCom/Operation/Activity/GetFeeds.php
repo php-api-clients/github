@@ -1,33 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class GetFeeds
 {
     private const OPERATION_ID = 'activity/get-feeds';
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct()
     {
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace([], [], '/feeds?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/feeds?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

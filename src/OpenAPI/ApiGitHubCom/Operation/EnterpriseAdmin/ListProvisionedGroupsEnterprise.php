@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class ListProvisionedGroupsEnterprise
 {
@@ -22,27 +15,23 @@ final class ListProvisionedGroupsEnterprise
     public string $filter;
     /**attributes to exclude**/
     public string $excludedAttributes;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($enterprise, $startIndex, $count, $filter, $excludedAttributes)
     {
-        $this->enterprise         = $enterprise;
-        $this->startIndex         = $startIndex;
-        $this->count              = $count;
-        $this->filter             = $filter;
+        $this->enterprise = $enterprise;
+        $this->startIndex = $startIndex;
+        $this->count = $count;
+        $this->filter = $filter;
         $this->excludedAttributes = $excludedAttributes;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{enterprise}', '{startIndex}', '{count}', '{filter}', '{excludedAttributes}'], [$this->enterprise, $this->startIndex, $this->count, $this->filter, $this->excludedAttributes], '/scim/v2/enterprises/{enterprise}/Groups?startIndex={startIndex}&count={count}&filter={filter}&excludedAttributes={excludedAttributes}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}', '{startIndex}', '{count}', '{filter}', '{excludedAttributes}'), array($this->enterprise, $this->startIndex, $this->count, $this->filter, $this->excludedAttributes), '/scim/v2/enterprises/{enterprise}/Groups?startIndex={startIndex}&count={count}&filter={filter}&excludedAttributes={excludedAttributes}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Removed;
 
 final class RepositoriesAdded
 {
-    public const SCHEMA_TITLE       = 'installation_repositories$removed::repositories_added';
+    public const SCHEMA_TITLE = 'installation_repositories$removed::repositories_added';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Unique identifier of the repository
@@ -22,37 +20,32 @@ final class RepositoriesAdded
      * Whether the repository is private or public.
      */
     private bool $private;
-
     /**
      * Unique identifier of the repository
      */
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
-    public function node_id(): string
+    public function node_id() : string
     {
         return $this->node_id;
     }
-
     /**
      * The name of the repository.
      */
-    public function name(): string
+    public function name() : string
     {
         return $this->name;
     }
-
-    public function full_name(): string
+    public function full_name() : string
     {
         return $this->full_name;
     }
-
     /**
      * Whether the repository is private or public.
      */
-    public function private(): bool
+    public function private() : bool
     {
         return $this->private;
     }

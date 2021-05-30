@@ -1,36 +1,25 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class GetSubscriptionPlanForAccount
 {
     private const OPERATION_ID = 'apps/get-subscription-plan-for-account';
     /**account_id parameter**/
     public int $account_id;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($account_id)
     {
         $this->account_id = $account_id;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{account_id}'], [$this->account_id], '/marketplace_listing/accounts/{account_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{account_id}'), array($this->account_id), '/marketplace_listing/accounts/{account_id}?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

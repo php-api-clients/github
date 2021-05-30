@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Actions\RunnerDashGroups\CbRunnerGroupIdRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersInGroupForOrg;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelfHostedRunnersInGroupForOrg;
 
 final class Runners
 {
-    function get($org, $runner_group_id, int $per_page = 30, int $page = 1): ListSelfHostedRunnersInGroupForOrg
+    function get($org, $runner_group_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersInGroupForOrg
     {
-        return new ListSelfHostedRunnersInGroupForOrg($org, $runner_group_id, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersInGroupForOrg($org, $runner_group_id, $per_page, $page);
     }
-
-    function put($org, $runner_group_id): SetSelfHostedRunnersInGroupForOrg
+    function put($org, $runner_group_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelfHostedRunnersInGroupForOrg
     {
-        return new SetSelfHostedRunnersInGroupForOrg($org, $runner_group_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelfHostedRunnersInGroupForOrg($org, $runner_group_id);
     }
 }

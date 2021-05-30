@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Deployments\CbDeploymentIdRcb\Statuses;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetDeploymentStatus;
 
 final class CbStatusIdRcb
 {
-    function get($owner, $repo, $deployment_id, $status_id): GetDeploymentStatus
+    function get($owner, $repo, $deployment_id, $status_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetDeploymentStatus
     {
-        return new GetDeploymentStatus($owner, $repo, $deployment_id, $status_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetDeploymentStatus($owner, $repo, $deployment_id, $status_id);
     }
 }

@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Branches\CbBranchRcb\Protection;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteAdminBranchProtection;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAdminBranchProtection;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetAdminBranchProtection;
 
 final class EnforceAdmins
 {
-    function get($owner, $repo, $branch): GetAdminBranchProtection
+    function get($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAdminBranchProtection
     {
-        return new GetAdminBranchProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAdminBranchProtection($owner, $repo, $branch);
     }
-
-    function post($owner, $repo, $branch): SetAdminBranchProtection
+    function post($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetAdminBranchProtection
     {
-        return new SetAdminBranchProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetAdminBranchProtection($owner, $repo, $branch);
     }
-
-    function delete($owner, $repo, $branch): DeleteAdminBranchProtection
+    function delete($owner, $repo, $branch) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteAdminBranchProtection
     {
-        return new DeleteAdminBranchProtection($owner, $repo, $branch);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteAdminBranchProtection($owner, $repo, $branch);
     }
 }

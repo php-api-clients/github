@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\UnlockRepoForAuthenticatedUser;
 
 final class Lock
 {
-    function delete($migration_id, $repo_name): UnlockRepoForAuthenticatedUser
+    function delete($migration_id, $repo_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\UnlockRepoForAuthenticatedUser
     {
-        return new UnlockRepoForAuthenticatedUser($migration_id, $repo_name);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\UnlockRepoForAuthenticatedUser($migration_id, $repo_name);
     }
 }

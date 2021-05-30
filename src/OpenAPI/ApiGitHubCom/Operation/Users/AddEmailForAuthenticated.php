@@ -1,33 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class AddEmailForAuthenticated
 {
     private const OPERATION_ID = 'users/add-email-for-authenticated';
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct()
     {
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('post', str_replace([], [], '/user/emails?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/emails?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

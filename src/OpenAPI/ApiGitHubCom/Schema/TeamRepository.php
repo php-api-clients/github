@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class TeamRepository
 {
-    public const SCHEMA_TITLE       = 'Team Repository';
+    public const SCHEMA_TITLE = 'Team Repository';
     public const SCHEMA_DESCRIPTION = 'A team\'s access to a repository.';
     /**
      * Unique identifier of the repository
@@ -20,7 +18,7 @@ final class TeamRepository
     private string $full_name;
     private $license;
     private int $forks;
-    private array $permissions = [];
+    private array $permissions = array();
     private $owner;
     /**
      * Whether the repository is private or public.
@@ -86,7 +84,7 @@ final class TeamRepository
      * Whether this repository acts as a template that can be used to generate new repositories.
      */
     private bool $is_template;
-    private array $topics = [];
+    private array $topics = array();
     /**
      * Whether issues are enabled.
      */
@@ -123,7 +121,7 @@ final class TeamRepository
      * Whether to allow rebase merges for pull requests.
      */
     private bool $allow_rebase_merge;
-    private array $template_repository = [];
+    private array $template_repository = array();
     private string $temp_clone_token;
     /**
      * Whether to allow squash merges for pull requests.
@@ -142,481 +140,395 @@ final class TeamRepository
     private int $open_issues;
     private int $watchers;
     private string $master_branch;
-
     /**
      * Unique identifier of the repository
      */
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
-    public function node_id(): string
+    public function node_id() : string
     {
         return $this->node_id;
     }
-
     /**
      * The name of the repository.
      */
-    public function name(): string
+    public function name() : string
     {
         return $this->name;
     }
-
-    public function full_name(): string
+    public function full_name() : string
     {
         return $this->full_name;
     }
-
     public function license()
     {
         return $this->license;
     }
-
-    public function forks(): int
+    public function forks() : int
     {
         return $this->forks;
     }
-
-    public function permissions(): array
+    public function permissions() : array
     {
         return $this->permissions;
     }
-
     public function owner()
     {
         return $this->owner;
     }
-
     /**
      * Whether the repository is private or public.
      */
-    public function private(): bool
+    public function private() : bool
     {
         return $this->private;
     }
-
-    public function html_url(): string
+    public function html_url() : string
     {
         return $this->html_url;
     }
-
-    public function description(): string
+    public function description() : string
     {
         return $this->description;
     }
-
-    public function fork(): bool
+    public function fork() : bool
     {
         return $this->fork;
     }
-
-    public function url(): string
+    public function url() : string
     {
         return $this->url;
     }
-
-    public function archive_url(): string
+    public function archive_url() : string
     {
         return $this->archive_url;
     }
-
-    public function assignees_url(): string
+    public function assignees_url() : string
     {
         return $this->assignees_url;
     }
-
-    public function blobs_url(): string
+    public function blobs_url() : string
     {
         return $this->blobs_url;
     }
-
-    public function branches_url(): string
+    public function branches_url() : string
     {
         return $this->branches_url;
     }
-
-    public function collaborators_url(): string
+    public function collaborators_url() : string
     {
         return $this->collaborators_url;
     }
-
-    public function comments_url(): string
+    public function comments_url() : string
     {
         return $this->comments_url;
     }
-
-    public function commits_url(): string
+    public function commits_url() : string
     {
         return $this->commits_url;
     }
-
-    public function compare_url(): string
+    public function compare_url() : string
     {
         return $this->compare_url;
     }
-
-    public function contents_url(): string
+    public function contents_url() : string
     {
         return $this->contents_url;
     }
-
-    public function contributors_url(): string
+    public function contributors_url() : string
     {
         return $this->contributors_url;
     }
-
-    public function deployments_url(): string
+    public function deployments_url() : string
     {
         return $this->deployments_url;
     }
-
-    public function downloads_url(): string
+    public function downloads_url() : string
     {
         return $this->downloads_url;
     }
-
-    public function events_url(): string
+    public function events_url() : string
     {
         return $this->events_url;
     }
-
-    public function forks_url(): string
+    public function forks_url() : string
     {
         return $this->forks_url;
     }
-
-    public function git_commits_url(): string
+    public function git_commits_url() : string
     {
         return $this->git_commits_url;
     }
-
-    public function git_refs_url(): string
+    public function git_refs_url() : string
     {
         return $this->git_refs_url;
     }
-
-    public function git_tags_url(): string
+    public function git_tags_url() : string
     {
         return $this->git_tags_url;
     }
-
-    public function git_url(): string
+    public function git_url() : string
     {
         return $this->git_url;
     }
-
-    public function issue_comment_url(): string
+    public function issue_comment_url() : string
     {
         return $this->issue_comment_url;
     }
-
-    public function issue_events_url(): string
+    public function issue_events_url() : string
     {
         return $this->issue_events_url;
     }
-
-    public function issues_url(): string
+    public function issues_url() : string
     {
         return $this->issues_url;
     }
-
-    public function keys_url(): string
+    public function keys_url() : string
     {
         return $this->keys_url;
     }
-
-    public function labels_url(): string
+    public function labels_url() : string
     {
         return $this->labels_url;
     }
-
-    public function languages_url(): string
+    public function languages_url() : string
     {
         return $this->languages_url;
     }
-
-    public function merges_url(): string
+    public function merges_url() : string
     {
         return $this->merges_url;
     }
-
-    public function milestones_url(): string
+    public function milestones_url() : string
     {
         return $this->milestones_url;
     }
-
-    public function notifications_url(): string
+    public function notifications_url() : string
     {
         return $this->notifications_url;
     }
-
-    public function pulls_url(): string
+    public function pulls_url() : string
     {
         return $this->pulls_url;
     }
-
-    public function releases_url(): string
+    public function releases_url() : string
     {
         return $this->releases_url;
     }
-
-    public function ssh_url(): string
+    public function ssh_url() : string
     {
         return $this->ssh_url;
     }
-
-    public function stargazers_url(): string
+    public function stargazers_url() : string
     {
         return $this->stargazers_url;
     }
-
-    public function statuses_url(): string
+    public function statuses_url() : string
     {
         return $this->statuses_url;
     }
-
-    public function subscribers_url(): string
+    public function subscribers_url() : string
     {
         return $this->subscribers_url;
     }
-
-    public function subscription_url(): string
+    public function subscription_url() : string
     {
         return $this->subscription_url;
     }
-
-    public function tags_url(): string
+    public function tags_url() : string
     {
         return $this->tags_url;
     }
-
-    public function teams_url(): string
+    public function teams_url() : string
     {
         return $this->teams_url;
     }
-
-    public function trees_url(): string
+    public function trees_url() : string
     {
         return $this->trees_url;
     }
-
-    public function clone_url(): string
+    public function clone_url() : string
     {
         return $this->clone_url;
     }
-
-    public function mirror_url(): string
+    public function mirror_url() : string
     {
         return $this->mirror_url;
     }
-
-    public function hooks_url(): string
+    public function hooks_url() : string
     {
         return $this->hooks_url;
     }
-
-    public function svn_url(): string
+    public function svn_url() : string
     {
         return $this->svn_url;
     }
-
-    public function homepage(): string
+    public function homepage() : string
     {
         return $this->homepage;
     }
-
-    public function language(): string
+    public function language() : string
     {
         return $this->language;
     }
-
-    public function forks_count(): int
+    public function forks_count() : int
     {
         return $this->forks_count;
     }
-
-    public function stargazers_count(): int
+    public function stargazers_count() : int
     {
         return $this->stargazers_count;
     }
-
-    public function watchers_count(): int
+    public function watchers_count() : int
     {
         return $this->watchers_count;
     }
-
-    public function size(): int
+    public function size() : int
     {
         return $this->size;
     }
-
     /**
      * The default branch of the repository.
      */
-    public function default_branch(): string
+    public function default_branch() : string
     {
         return $this->default_branch;
     }
-
-    public function open_issues_count(): int
+    public function open_issues_count() : int
     {
         return $this->open_issues_count;
     }
-
     /**
      * Whether this repository acts as a template that can be used to generate new repositories.
      */
-    public function is_template(): bool
+    public function is_template() : bool
     {
         return $this->is_template;
     }
-
-    public function topics(): array
+    public function topics() : array
     {
         return $this->topics;
     }
-
     /**
      * Whether issues are enabled.
      */
-    public function has_issues(): bool
+    public function has_issues() : bool
     {
         return $this->has_issues;
     }
-
     /**
      * Whether projects are enabled.
      */
-    public function has_projects(): bool
+    public function has_projects() : bool
     {
         return $this->has_projects;
     }
-
     /**
      * Whether the wiki is enabled.
      */
-    public function has_wiki(): bool
+    public function has_wiki() : bool
     {
         return $this->has_wiki;
     }
-
-    public function has_pages(): bool
+    public function has_pages() : bool
     {
         return $this->has_pages;
     }
-
     /**
      * Whether downloads are enabled.
      */
-    public function has_downloads(): bool
+    public function has_downloads() : bool
     {
         return $this->has_downloads;
     }
-
     /**
      * Whether the repository is archived.
      */
-    public function archived(): bool
+    public function archived() : bool
     {
         return $this->archived;
     }
-
     /**
      * Returns whether or not this repository disabled.
      */
-    public function disabled(): bool
+    public function disabled() : bool
     {
         return $this->disabled;
     }
-
     /**
      * The repository visibility: public, private, or internal.
      */
-    public function visibility(): string
+    public function visibility() : string
     {
         return $this->visibility;
     }
-
-    public function pushed_at(): string
+    public function pushed_at() : string
     {
         return $this->pushed_at;
     }
-
-    public function created_at(): string
+    public function created_at() : string
     {
         return $this->created_at;
     }
-
-    public function updated_at(): string
+    public function updated_at() : string
     {
         return $this->updated_at;
     }
-
     /**
      * Whether to allow rebase merges for pull requests.
      */
-    public function allow_rebase_merge(): bool
+    public function allow_rebase_merge() : bool
     {
         return $this->allow_rebase_merge;
     }
-
-    public function template_repository(): array
+    public function template_repository() : array
     {
         return $this->template_repository;
     }
-
-    public function temp_clone_token(): string
+    public function temp_clone_token() : string
     {
         return $this->temp_clone_token;
     }
-
     /**
      * Whether to allow squash merges for pull requests.
      */
-    public function allow_squash_merge(): bool
+    public function allow_squash_merge() : bool
     {
         return $this->allow_squash_merge;
     }
-
     /**
      * Whether to delete head branches when pull requests are merged
      */
-    public function delete_branch_on_merge(): bool
+    public function delete_branch_on_merge() : bool
     {
         return $this->delete_branch_on_merge;
     }
-
     /**
      * Whether to allow merge commits for pull requests.
      */
-    public function allow_merge_commit(): bool
+    public function allow_merge_commit() : bool
     {
         return $this->allow_merge_commit;
     }
-
-    public function subscribers_count(): int
+    public function subscribers_count() : int
     {
         return $this->subscribers_count;
     }
-
-    public function network_count(): int
+    public function network_count() : int
     {
         return $this->network_count;
     }
-
-    public function open_issues(): int
+    public function open_issues() : int
     {
         return $this->open_issues;
     }
-
-    public function watchers(): int
+    public function watchers() : int
     {
         return $this->watchers;
     }
-
-    public function master_branch(): string
+    public function master_branch() : string
     {
         return $this->master_branch;
     }

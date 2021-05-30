@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class GetProvisioningInformationForEnterpriseGroup
 {
@@ -18,25 +11,21 @@ final class GetProvisioningInformationForEnterpriseGroup
     public string $scim_group_id;
     /**Attributes to exclude.**/
     public string $excludedAttributes;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($enterprise, $scim_group_id, $excludedAttributes)
     {
-        $this->enterprise         = $enterprise;
-        $this->scim_group_id      = $scim_group_id;
+        $this->enterprise = $enterprise;
+        $this->scim_group_id = $scim_group_id;
         $this->excludedAttributes = $excludedAttributes;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace(['{enterprise}', '{scim_group_id}', '{excludedAttributes}'], [$this->enterprise, $this->scim_group_id, $this->excludedAttributes], '/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}?excludedAttributes={excludedAttributes}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}', '{scim_group_id}', '{excludedAttributes}'), array($this->enterprise, $this->scim_group_id, $this->excludedAttributes), '/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}?excludedAttributes={excludedAttributes}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

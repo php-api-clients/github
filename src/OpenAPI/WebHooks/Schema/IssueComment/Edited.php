@@ -1,64 +1,54 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\IssueComment;
-
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\IssueComment;
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Edited
 {
-    public const SCHEMA_TITLE       = 'issue_comment edited event';
+    public const SCHEMA_TITLE = 'issue_comment edited event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
      * The changes to the comment.
      */
-    private array $changes = [];
+    private array $changes = array();
     /**
      * The [issue](https://docs.github.com/en/rest/reference/issues) the comment belongs to.
      */
     private $issue;
     /**
      * The [comment](https://docs.github.com/en/rest/reference/issues#comments) itself.
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\IssueComment::class)
      */
-    private IssueComment $comment;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\IssueComment $comment;
     /**
      * A git repository
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private Repository $repository;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
     /**
      * Installation
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private InstallationLite $installation;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
-    private Organization $organization;
-
-    public function action(): string
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
+    public function action() : string
     {
         return $this->action;
     }
-
     /**
      * The changes to the comment.
      */
-    public function changes(): array
+    public function changes() : array
     {
         return $this->changes;
     }
-
     /**
      * The [issue](https://docs.github.com/en/rest/reference/issues) the comment belongs to.
      */
@@ -66,37 +56,32 @@ final class Edited
     {
         return $this->issue;
     }
-
     /**
      * The [comment](https://docs.github.com/en/rest/reference/issues#comments) itself.
      */
-    public function comment(): IssueComment
+    public function comment() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\IssueComment
     {
         return $this->comment;
     }
-
     /**
      * A git repository
      */
-    public function repository(): Repository
+    public function repository() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository
     {
         return $this->repository;
     }
-
-    public function sender(): User
+    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
     {
         return $this->sender;
     }
-
     /**
      * Installation
      */
-    public function installation(): InstallationLite
+    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
     {
         return $this->installation;
     }
-
-    public function organization(): Organization
+    public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
     {
         return $this->organization;
     }
