@@ -14,7 +14,7 @@ final class Pages
      * The current page title.
      */
     private string $title;
-    private null $summary;
+    private $summary;
     /**
      * The action that was performed on the page. Can be `created` or `edited`.
      */
@@ -41,7 +41,7 @@ final class Pages
     {
         return $this->title;
     }
-    public function summary() : null
+    public function summary()
     {
         return $this->summary;
     }

@@ -10,7 +10,7 @@ final class GithubOrg
     private int $id;
     private string $node_id;
     private string $name;
-    private null $email;
+    private $email;
     private string $avatar_url;
     private string $gravatar_id;
     private string $url;
@@ -42,7 +42,7 @@ final class GithubOrg
     {
         return $this->name;
     }
-    public function email() : null
+    public function email()
     {
         return $this->email;
     }

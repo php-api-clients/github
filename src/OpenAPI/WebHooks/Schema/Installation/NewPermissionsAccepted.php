@@ -18,7 +18,7 @@ final class NewPermissionsAccepted
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\NewPermissionsAccepted\Repositories::class)
      */
     private array $repositories = array();
-    private null $requester;
+    private $requester;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
@@ -42,7 +42,7 @@ final class NewPermissionsAccepted
     {
         return $this->repositories;
     }
-    public function requester() : null
+    public function requester()
     {
         return $this->requester;
     }

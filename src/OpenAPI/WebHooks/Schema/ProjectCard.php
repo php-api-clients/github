@@ -27,7 +27,7 @@ final class ProjectCard
     private string $created_at;
     private string $updated_at;
     private string $content_url;
-    private null $after_id;
+    private $after_id;
     public function url() : string
     {
         return $this->url;
@@ -82,7 +82,7 @@ final class ProjectCard
     {
         return $this->content_url;
     }
-    public function after_id() : null
+    public function after_id()
     {
         return $this->after_id;
     }

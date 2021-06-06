@@ -10,7 +10,7 @@ final class Deleted
     /**
      * The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
      */
-    private null $starred_at;
+    private $starred_at;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
@@ -36,7 +36,7 @@ final class Deleted
     /**
      * The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
      */
-    public function starred_at() : null
+    public function starred_at()
     {
         return $this->starred_at;
     }

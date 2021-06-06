@@ -11,8 +11,8 @@ final class Created
      * The [deployment](https://docs.github.com/en/rest/reference/repos#list-deployments).
      */
     private array $deployment = array();
-    private null $workflow;
-    private null $workflow_run;
+    private $workflow;
+    private $workflow_run;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
@@ -42,11 +42,11 @@ final class Created
     {
         return $this->deployment;
     }
-    public function workflow() : null
+    public function workflow()
     {
         return $this->workflow;
     }
-    public function workflow_run() : null
+    public function workflow_run()
     {
         return $this->workflow_run;
     }

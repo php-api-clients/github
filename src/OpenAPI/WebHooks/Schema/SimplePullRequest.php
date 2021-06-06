@@ -58,7 +58,7 @@ final class SimplePullRequest
      * How the author is associated with the repository.
      */
     private string $author_association;
-    private null $auto_merge;
+    private $auto_merge;
     private $active_lock_reason;
     public function url() : string
     {
@@ -208,7 +208,7 @@ final class SimplePullRequest
     {
         return $this->author_association;
     }
-    public function auto_merge() : null
+    public function auto_merge()
     {
         return $this->auto_merge;
     }
