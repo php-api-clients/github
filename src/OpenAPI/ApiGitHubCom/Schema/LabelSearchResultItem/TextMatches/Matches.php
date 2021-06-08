@@ -1,18 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches;
 
 final class Matches
 {
-    public const SCHEMA_TITLE = 'label-search-result-item::text_matches::matches';
+    public const SCHEMA_TITLE       = 'label-search-result-item::text_matches::matches';
     public const SCHEMA_DESCRIPTION = '';
     private string $text;
-    private array $indices = array();
-    public function text() : string
+    private array $indices = [];
+
+    public function text(): string
     {
         return $this->text;
     }
-    public function indices() : array
+
+    public function indices(): array
     {
         return $this->indices;
     }

@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Actions\Permissions\Repositories;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DisableSelectedRepositoryGithubActionsOrganization;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\EnableSelectedRepositoryGithubActionsOrganization;
 
 final class CbRepositoryIdRcb
 {
-    function put($org, $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\EnableSelectedRepositoryGithubActionsOrganization
+    function put($org, $repository_id): EnableSelectedRepositoryGithubActionsOrganization
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\EnableSelectedRepositoryGithubActionsOrganization($org, $repository_id);
+        return new EnableSelectedRepositoryGithubActionsOrganization($org, $repository_id);
     }
-    function delete($org, $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DisableSelectedRepositoryGithubActionsOrganization
+
+    function delete($org, $repository_id): DisableSelectedRepositoryGithubActionsOrganization
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DisableSelectedRepositoryGithubActionsOrganization($org, $repository_id);
+        return new DisableSelectedRepositoryGithubActionsOrganization($org, $repository_id);
     }
 }

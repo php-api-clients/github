@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class SetInformationForProvisionedEnterpriseUser
 {
@@ -9,20 +16,24 @@ final class SetInformationForProvisionedEnterpriseUser
     public string $enterprise;
     /**scim_user_id parameter**/
     public string $scim_user_id;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($enterprise, $scim_user_id)
     {
-        $this->enterprise = $enterprise;
+        $this->enterprise   = $enterprise;
         $this->scim_user_id = $scim_user_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{scim_user_id}'), array($this->enterprise, $this->scim_user_id), '/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}?'));
+        return new Request('put', str_replace(['{enterprise}', '{scim_user_id}'], [$this->enterprise, $this->scim_user_id], '/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}?'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

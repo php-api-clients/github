@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class Key
 {
-    public const SCHEMA_TITLE = 'Key';
+    public const SCHEMA_TITLE       = 'Key';
     public const SCHEMA_DESCRIPTION = 'Key';
     private string $key;
     private int $id;
@@ -13,31 +15,38 @@ final class Key
     private string $created_at;
     private bool $verified;
     private bool $read_only;
-    public function key() : string
+
+    public function key(): string
     {
         return $this->key;
     }
-    public function id() : int
+
+    public function id(): int
     {
         return $this->id;
     }
-    public function url() : string
+
+    public function url(): string
     {
         return $this->url;
     }
-    public function title() : string
+
+    public function title(): string
     {
         return $this->title;
     }
-    public function created_at() : string
+
+    public function created_at(): string
     {
         return $this->created_at;
     }
-    public function verified() : bool
+
+    public function verified(): bool
     {
         return $this->verified;
     }
-    public function read_only() : bool
+
+    public function read_only(): bool
     {
         return $this->read_only;
     }

@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo;
 
 final class Issues
 {
-    function get($owner, $repo, $milestone, string $state = 'open', $assignee, $creator, $mentioned, $labels, string $sort = 'created', string $direction = 'desc', $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo
+    function get($owner, $repo, $milestone, string $state = 'open', $assignee, $creator, $mentioned, $labels, string $sort = 'created', string $direction = 'desc', $since, int $per_page = 30, int $page = 1): ListForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo($owner, $repo, $milestone, $state, $assignee, $creator, $mentioned, $labels, $sort, $direction, $since, $per_page, $page);
+        return new ListForRepo($owner, $repo, $milestone, $state, $assignee, $creator, $mentioned, $labels, $sort, $direction, $since, $per_page, $page);
     }
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create
+
+    function post($owner, $repo): Create
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create($owner, $repo);
+        return new Create($owner, $repo);
     }
 }

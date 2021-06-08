@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg;
 
 final class Projects
 {
-    function get($org, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg
+    function get($org, string $state = 'open', int $per_page = 30, int $page = 1): ListForOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg($org, $state, $per_page, $page);
+        return new ListForOrg($org, $state, $per_page, $page);
     }
-    function post($org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForOrg
+
+    function post($org): CreateForOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForOrg($org);
+        return new CreateForOrg($org);
     }
 }

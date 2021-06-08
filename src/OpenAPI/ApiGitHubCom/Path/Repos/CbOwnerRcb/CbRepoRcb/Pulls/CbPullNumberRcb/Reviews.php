@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\CreateReview;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListReviews;
 
 final class Reviews
 {
-    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListReviews
+    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1): ListReviews
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListReviews($owner, $repo, $pull_number, $per_page, $page);
+        return new ListReviews($owner, $repo, $pull_number, $per_page, $page);
     }
-    function post($owner, $repo, $pull_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\CreateReview
+
+    function post($owner, $repo, $pull_number): CreateReview
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\CreateReview($owner, $repo, $pull_number);
+        return new CreateReview($owner, $repo, $pull_number);
     }
 }

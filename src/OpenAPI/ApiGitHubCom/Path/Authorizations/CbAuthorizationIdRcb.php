@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Authorizations;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\DeleteAuthorization;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\GetAuthorization;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\UpdateAuthorization;
 
 final class CbAuthorizationIdRcb
 {
-    function get($authorization_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\GetAuthorization
+    function get($authorization_id): GetAuthorization
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\GetAuthorization($authorization_id);
+        return new GetAuthorization($authorization_id);
     }
-    function delete($authorization_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\DeleteAuthorization
+
+    function delete($authorization_id): DeleteAuthorization
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\DeleteAuthorization($authorization_id);
+        return new DeleteAuthorization($authorization_id);
     }
-    function patch($authorization_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\UpdateAuthorization
+
+    function patch($authorization_id): UpdateAuthorization
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\UpdateAuthorization($authorization_id);
+        return new UpdateAuthorization($authorization_id);
     }
 }

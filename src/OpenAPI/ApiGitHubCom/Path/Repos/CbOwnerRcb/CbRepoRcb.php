@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Delete;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Get;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Update;
 
 final class CbRepoRcb
 {
-    function get($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Get
+    function get($owner, $repo): Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Get($owner, $repo);
+        return new Get($owner, $repo);
     }
-    function delete($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Delete
+
+    function delete($owner, $repo): Delete
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Delete($owner, $repo);
+        return new Delete($owner, $repo);
     }
-    function patch($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Update
+
+    function patch($owner, $repo): Update
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Update($owner, $repo);
+        return new Update($owner, $repo);
     }
 }

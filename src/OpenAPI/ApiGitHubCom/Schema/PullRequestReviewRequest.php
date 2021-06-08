@@ -1,32 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class PullRequestReviewRequest
 {
-    public const SCHEMA_TITLE = 'Pull Request Review Request';
+    public const SCHEMA_TITLE       = 'Pull Request Review Request';
     public const SCHEMA_DESCRIPTION = 'Pull Request Review Request';
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     * @var array<SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $users = array();
+    private array $users = [];
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
+     * @var array<TeamSimple>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
      */
-    private array $teams = array();
+    private array $teams = [];
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     * @return array<SimpleUser>
      */
-    public function users() : array
+    public function users(): array
     {
         return $this->users;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
+     * @return array<TeamSimple>
      */
-    public function teams() : array
+    public function teams(): array
     {
         return $this->teams;
     }

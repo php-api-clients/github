@@ -1,61 +1,71 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Project;
+
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Project;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Deleted
 {
-    public const SCHEMA_TITLE = 'project deleted event';
+    public const SCHEMA_TITLE       = 'project deleted event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Project::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Project $project;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Project::class) */
+    private Project $project;
     /**
      * A git repository
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
+    private Repository $repository;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private User $sender;
     /**
      * Installation
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
-    public function action() : string
+    private InstallationLite $installation;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private Organization $organization;
+
+    public function action(): string
     {
         return $this->action;
     }
-    public function project() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Project
+
+    public function project(): Project
     {
         return $this->project;
     }
+
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+
+    public function sender(): User
     {
         return $this->sender;
     }
+
     /**
      * Installation
      */
-    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
+
+    public function organization(): Organization
     {
         return $this->organization;
     }

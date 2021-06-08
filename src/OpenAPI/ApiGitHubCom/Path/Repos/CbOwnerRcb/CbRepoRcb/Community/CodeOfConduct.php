@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Community;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct\GetForRepo;
 
 final class CodeOfConduct
 {
-    function get($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct\GetForRepo
+    function get($owner, $repo): GetForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct\GetForRepo($owner, $repo);
+        return new GetForRepo($owner, $repo);
     }
 }

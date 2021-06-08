@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner\Labels;
 
 final class Runner
 {
-    public const SCHEMA_TITLE = 'Self hosted runners';
+    public const SCHEMA_TITLE       = 'Self hosted runners';
     public const SCHEMA_DESCRIPTION = 'A self hosted runner';
     /**
      * The id of the runner.
@@ -24,46 +28,52 @@ final class Runner
     private string $status;
     private bool $busy;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner\Labels>
+     * @var array<Labels>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner\Labels::class)
      */
-    private array $labels = array();
+    private array $labels = [];
+
     /**
      * The id of the runner.
      */
-    public function id() : int
+    public function id(): int
     {
         return $this->id;
     }
+
     /**
      * The name of the runner.
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
+
     /**
      * The Operating System of the runner.
      */
-    public function os() : string
+    public function os(): string
     {
         return $this->os;
     }
+
     /**
      * The status of the runner.
      */
-    public function status() : string
+    public function status(): string
     {
         return $this->status;
     }
-    public function busy() : bool
+
+    public function busy(): bool
     {
         return $this->busy;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner\Labels>
+     * @return array<Labels>
      */
-    public function labels() : array
+    public function labels(): array
     {
         return $this->labels;
     }

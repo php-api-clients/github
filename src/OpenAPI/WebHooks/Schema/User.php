@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class User
 {
-    public const SCHEMA_TITLE = 'User';
+    public const SCHEMA_TITLE       = 'User';
     public const SCHEMA_DESCRIPTION = '';
     private string $login;
     private int $id;
@@ -26,83 +28,103 @@ final class User
     private string $received_events_url;
     private string $type;
     private bool $site_admin;
-    public function login() : string
+
+    public function login(): string
     {
         return $this->login;
     }
-    public function id() : int
+
+    public function id(): int
     {
         return $this->id;
     }
-    public function node_id() : string
+
+    public function node_id(): string
     {
         return $this->node_id;
     }
-    public function name() : string
+
+    public function name(): string
     {
         return $this->name;
     }
+
     public function email()
     {
         return $this->email;
     }
-    public function avatar_url() : string
+
+    public function avatar_url(): string
     {
         return $this->avatar_url;
     }
-    public function gravatar_id() : string
+
+    public function gravatar_id(): string
     {
         return $this->gravatar_id;
     }
-    public function url() : string
+
+    public function url(): string
     {
         return $this->url;
     }
-    public function html_url() : string
+
+    public function html_url(): string
     {
         return $this->html_url;
     }
-    public function followers_url() : string
+
+    public function followers_url(): string
     {
         return $this->followers_url;
     }
-    public function following_url() : string
+
+    public function following_url(): string
     {
         return $this->following_url;
     }
-    public function gists_url() : string
+
+    public function gists_url(): string
     {
         return $this->gists_url;
     }
-    public function starred_url() : string
+
+    public function starred_url(): string
     {
         return $this->starred_url;
     }
-    public function subscriptions_url() : string
+
+    public function subscriptions_url(): string
     {
         return $this->subscriptions_url;
     }
-    public function organizations_url() : string
+
+    public function organizations_url(): string
     {
         return $this->organizations_url;
     }
-    public function repos_url() : string
+
+    public function repos_url(): string
     {
         return $this->repos_url;
     }
-    public function events_url() : string
+
+    public function events_url(): string
     {
         return $this->events_url;
     }
-    public function received_events_url() : string
+
+    public function received_events_url(): string
     {
         return $this->received_events_url;
     }
-    public function type() : string
+
+    public function type(): string
     {
         return $this->type;
     }
-    public function site_admin() : bool
+
+    public function site_admin(): bool
     {
         return $this->site_admin;
     }

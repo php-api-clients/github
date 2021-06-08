@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Users\CbUsernameRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\GetContextForUser;
 
 final class Hovercard
 {
-    function get($username, $subject_type, $subject_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\GetContextForUser
+    function get($username, $subject_type, $subject_id): GetContextForUser
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\GetContextForUser($username, $subject_type, $subject_id);
+        return new GetContextForUser($username, $subject_type, $subject_id);
     }
 }

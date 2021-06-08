@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForTeamDiscussionLegacy;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForTeamDiscussionLegacy;
 
 final class Reactions
 {
-    function get($team_id, $discussion_number, $content, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForTeamDiscussionLegacy
+    function get($team_id, $discussion_number, $content, int $per_page = 30, int $page = 1): ListForTeamDiscussionLegacy
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForTeamDiscussionLegacy($team_id, $discussion_number, $content, $per_page, $page);
+        return new ListForTeamDiscussionLegacy($team_id, $discussion_number, $content, $per_page, $page);
     }
-    function post($team_id, $discussion_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForTeamDiscussionLegacy
+
+    function post($team_id, $discussion_number): CreateForTeamDiscussionLegacy
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForTeamDiscussionLegacy($team_id, $discussion_number);
+        return new CreateForTeamDiscussionLegacy($team_id, $discussion_number);
     }
 }

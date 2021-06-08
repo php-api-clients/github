@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments\CbCommentIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForIssueComment;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForIssueComment;
 
 final class Reactions
 {
-    function get($owner, $repo, $comment_id, $content, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForIssueComment
+    function get($owner, $repo, $comment_id, $content, int $per_page = 30, int $page = 1): ListForIssueComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForIssueComment($owner, $repo, $comment_id, $content, $per_page, $page);
+        return new ListForIssueComment($owner, $repo, $comment_id, $content, $per_page, $page);
     }
-    function post($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForIssueComment
+
+    function post($owner, $repo, $comment_id): CreateForIssueComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForIssueComment($owner, $repo, $comment_id);
+        return new CreateForIssueComment($owner, $repo, $comment_id);
     }
 }

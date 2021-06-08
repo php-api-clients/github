@@ -1,23 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAllLabels;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels;
 
 final class Labels
 {
-    function get($owner, $repo, $issue_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue
+    function get($owner, $repo, $issue_number, int $per_page = 30, int $page = 1): ListLabelsOnIssue
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue($owner, $repo, $issue_number, $per_page, $page);
+        return new ListLabelsOnIssue($owner, $repo, $issue_number, $per_page, $page);
     }
-    function put($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels
+
+    function put($owner, $repo, $issue_number): SetLabels
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels($owner, $repo, $issue_number);
+        return new SetLabels($owner, $repo, $issue_number);
     }
-    function post($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels
+
+    function post($owner, $repo, $issue_number): AddLabels
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels($owner, $repo, $issue_number);
+        return new AddLabels($owner, $repo, $issue_number);
     }
-    function delete($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAllLabels
+
+    function delete($owner, $repo, $issue_number): RemoveAllLabels
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAllLabels($owner, $repo, $issue_number);
+        return new RemoveAllLabels($owner, $repo, $issue_number);
     }
 }

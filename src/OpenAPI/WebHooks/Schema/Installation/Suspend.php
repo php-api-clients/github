@@ -1,45 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation;
+
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Suspend\Repositories;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Suspend
 {
-    public const SCHEMA_TITLE = 'installation suspend event';
+    public const SCHEMA_TITLE       = 'installation suspend event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     private $installation;
     /**
      * An array of repository objects that the installation can access.
-     * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Suspend\Repositories>
+     *
+     * @var array<Repositories>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Suspend\Repositories::class)
      */
-    private array $repositories = array();
+    private array $repositories = [];
     private $requester;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
-    public function action() : string
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private User $sender;
+
+    public function action(): string
     {
         return $this->action;
     }
+
     public function installation()
     {
         return $this->installation;
     }
+
     /**
      * An array of repository objects that the installation can access.
-     * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Suspend\Repositories>
+     *
+     * @return array<Repositories>
      */
-    public function repositories() : array
+    public function repositories(): array
     {
         return $this->repositories;
     }
+
     public function requester()
     {
         return $this->requester;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+
+    public function sender(): User
     {
         return $this->sender;
     }

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbRefRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetCombinedStatusForRef;
 
 final class Status
 {
-    function get($owner, $repo, $ref, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetCombinedStatusForRef
+    function get($owner, $repo, $ref, int $per_page = 30, int $page = 1): GetCombinedStatusForRef
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetCombinedStatusForRef($owner, $repo, $ref, $per_page, $page);
+        return new GetCombinedStatusForRef($owner, $repo, $ref, $per_page, $page);
     }
 }

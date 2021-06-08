@@ -1,6 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin;
+
+use Psr\Http\Message\RequestInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class ListProvisionedIdentitiesEnterprise
 {
@@ -13,22 +20,26 @@ final class ListProvisionedIdentitiesEnterprise
     public int $count;
     /**filter results**/
     public string $filter;
-    public function operationId() : string
+
+    public function operationId(): string
     {
         return self::OPERATION_ID;
     }
+
     function __construct($enterprise, $startIndex, $count, $filter)
     {
         $this->enterprise = $enterprise;
         $this->startIndex = $startIndex;
-        $this->count = $count;
-        $this->filter = $filter;
+        $this->count      = $count;
+        $this->filter     = $filter;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+
+    function createRequest(): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}', '{startIndex}', '{count}', '{filter}'), array($this->enterprise, $this->startIndex, $this->count, $this->filter), '/scim/v2/enterprises/{enterprise}/Users?startIndex={startIndex}&count={count}&filter={filter}'));
+        return new Request('get', str_replace(['{enterprise}', '{startIndex}', '{count}', '{filter}'], [$this->enterprise, $this->startIndex, $this->count, $this->filter], '/scim/v2/enterprises/{enterprise}/Users?startIndex={startIndex}&count={count}&filter={filter}'));
     }
-    function validateResponse()
+
+    function validateResponse(): void
     {
     }
 }

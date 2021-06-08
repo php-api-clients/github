@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Projects\Columns\Cards\CbCardIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard;
 
 final class Moves
 {
-    function post($card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard
+    function post($card_id): MoveCard
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard($card_id);
+        return new MoveCard($card_id);
     }
 }

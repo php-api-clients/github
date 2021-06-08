@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root;
 
 final class Path
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root
+    function get(): Root
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root();
+        return new Root();
     }
 }

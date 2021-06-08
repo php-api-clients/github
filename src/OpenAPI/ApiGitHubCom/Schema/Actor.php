@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class Actor
 {
-    public const SCHEMA_TITLE = 'Actor';
+    public const SCHEMA_TITLE       = 'Actor';
     public const SCHEMA_DESCRIPTION = 'Actor';
     private int $id;
     private string $login;
@@ -12,27 +14,33 @@ final class Actor
     private string $gravatar_id;
     private string $url;
     private string $avatar_url;
-    public function id() : int
+
+    public function id(): int
     {
         return $this->id;
     }
-    public function login() : string
+
+    public function login(): string
     {
         return $this->login;
     }
-    public function display_login() : string
+
+    public function display_login(): string
     {
         return $this->display_login;
     }
-    public function gravatar_id() : string
+
+    public function gravatar_id(): string
     {
         return $this->gravatar_id;
     }
-    public function url() : string
+
+    public function url(): string
     {
         return $this->url;
     }
-    public function avatar_url() : string
+
+    public function avatar_url(): string
     {
         return $this->avatar_url;
     }

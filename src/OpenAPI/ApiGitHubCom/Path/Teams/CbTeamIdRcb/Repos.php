@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Teams\CbTeamIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListReposLegacy;
 
 final class Repos
 {
-    function get($team_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListReposLegacy
+    function get($team_id, int $per_page = 30, int $page = 1): ListReposLegacy
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListReposLegacy($team_id, $per_page, $page);
+        return new ListReposLegacy($team_id, $per_page, $page);
     }
 }

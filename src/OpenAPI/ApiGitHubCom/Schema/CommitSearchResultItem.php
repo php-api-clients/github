@@ -1,89 +1,107 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches;
 
 final class CommitSearchResultItem
 {
-    public const SCHEMA_TITLE = 'Commit Search Result Item';
+    public const SCHEMA_TITLE       = 'Commit Search Result Item';
     public const SCHEMA_DESCRIPTION = 'Commit Search Result Item';
     private string $url;
     private string $sha;
     private string $html_url;
     private string $comments_url;
-    private array $commit = array();
+    private array $commit = [];
     private $author;
     private $committer;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents>
+     * @var array<Parents>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents::class)
      */
-    private array $parents = array();
+    private array $parents = [];
     /**
      * Minimal Repository
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
+    private MinimalRepository $repository;
     private number $score;
     private string $node_id;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches>
+     * @var array<TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches::class)
      */
-    private array $text_matches = array();
-    public function url() : string
+    private array $text_matches = [];
+
+    public function url(): string
     {
         return $this->url;
     }
-    public function sha() : string
+
+    public function sha(): string
     {
         return $this->sha;
     }
-    public function html_url() : string
+
+    public function html_url(): string
     {
         return $this->html_url;
     }
-    public function comments_url() : string
+
+    public function comments_url(): string
     {
         return $this->comments_url;
     }
-    public function commit() : array
+
+    public function commit(): array
     {
         return $this->commit;
     }
+
     public function author()
     {
         return $this->author;
     }
+
     public function committer()
     {
         return $this->committer;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents>
+     * @return array<Parents>
      */
-    public function parents() : array
+    public function parents(): array
     {
         return $this->parents;
     }
+
     /**
      * Minimal Repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository
+    public function repository(): MinimalRepository
     {
         return $this->repository;
     }
-    public function score() : number
+
+    public function score(): number
     {
         return $this->score;
     }
-    public function node_id() : string
+
+    public function node_id(): string
     {
         return $this->node_id;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches>
+     * @return array<TextMatches>
      */
-    public function text_matches() : array
+    public function text_matches(): array
     {
         return $this->text_matches;
     }

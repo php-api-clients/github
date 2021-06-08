@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Teams\CbTeamIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListMembersLegacy;
 
 final class Members
 {
-    function get($team_id, string $role = 'all', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListMembersLegacy
+    function get($team_id, string $role = 'all', int $per_page = 30, int $page = 1): ListMembersLegacy
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListMembersLegacy($team_id, $role, $per_page, $page);
+        return new ListMembersLegacy($team_id, $role, $per_page, $page);
     }
 }

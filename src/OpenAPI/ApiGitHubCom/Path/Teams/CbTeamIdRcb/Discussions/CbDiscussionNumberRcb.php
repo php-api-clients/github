@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Teams\CbTeamIdRcb\Discussions;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\DeleteDiscussionLegacy;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\GetDiscussionLegacy;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\UpdateDiscussionLegacy;
 
 final class CbDiscussionNumberRcb
 {
-    function get($team_id, $discussion_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\GetDiscussionLegacy
+    function get($team_id, $discussion_number): GetDiscussionLegacy
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\GetDiscussionLegacy($team_id, $discussion_number);
+        return new GetDiscussionLegacy($team_id, $discussion_number);
     }
-    function delete($team_id, $discussion_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\DeleteDiscussionLegacy
+
+    function delete($team_id, $discussion_number): DeleteDiscussionLegacy
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\DeleteDiscussionLegacy($team_id, $discussion_number);
+        return new DeleteDiscussionLegacy($team_id, $discussion_number);
     }
-    function patch($team_id, $discussion_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\UpdateDiscussionLegacy
+
+    function patch($team_id, $discussion_number): UpdateDiscussionLegacy
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\UpdateDiscussionLegacy($team_id, $discussion_number);
+        return new UpdateDiscussionLegacy($team_id, $discussion_number);
     }
 }

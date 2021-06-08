@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAllTopics;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ReplaceAllTopics;
 
 final class Topics
 {
-    function get($owner, $repo, int $page = 1, int $per_page = 30) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAllTopics
+    function get($owner, $repo, int $page = 1, int $per_page = 30): GetAllTopics
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAllTopics($owner, $repo, $page, $per_page);
+        return new GetAllTopics($owner, $repo, $page, $per_page);
     }
-    function put($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ReplaceAllTopics
+
+    function put($owner, $repo): ReplaceAllTopics
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ReplaceAllTopics($owner, $repo);
+        return new ReplaceAllTopics($owner, $repo);
     }
 }

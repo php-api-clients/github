@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CreateDiscussionInOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListDiscussionsInOrg;
 
 final class Discussions
 {
-    function get($org, $team_slug, string $direction = 'desc', int $per_page = 30, int $page = 1, $pinned) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListDiscussionsInOrg
+    function get($org, $team_slug, string $direction = 'desc', int $per_page = 30, int $page = 1, $pinned): ListDiscussionsInOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListDiscussionsInOrg($org, $team_slug, $direction, $per_page, $page, $pinned);
+        return new ListDiscussionsInOrg($org, $team_slug, $direction, $per_page, $page, $pinned);
     }
-    function post($org, $team_slug) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CreateDiscussionInOrg
+
+    function post($org, $team_slug): CreateDiscussionInOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CreateDiscussionInOrg($org, $team_slug);
+        return new CreateDiscussionInOrg($org, $team_slug);
     }
 }

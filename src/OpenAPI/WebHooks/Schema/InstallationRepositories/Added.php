@@ -1,77 +1,94 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories;
+
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesAdded;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesRemoved;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Added
 {
-    public const SCHEMA_TITLE = 'installation_repositories added event';
+    public const SCHEMA_TITLE       = 'installation_repositories added event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
      * The GitHub App installation.
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation $installation;
+    private Installation $installation;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
     private string $repository_selection;
     /**
      * An array of repository objects, which were added to the installation.
-     * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesAdded>
+     *
+     * @var array<RepositoriesAdded>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesAdded::class)
      */
-    private array $repositories_added = array();
+    private array $repositories_added = [];
     /**
      * An array of repository objects, which were removed from the installation.
-     * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesRemoved>
+     *
+     * @var array<RepositoriesRemoved>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesRemoved::class)
      */
-    private array $repositories_removed = array();
+    private array $repositories_removed = [];
     private $requester;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
-    public function action() : string
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private User $sender;
+
+    public function action(): string
     {
         return $this->action;
     }
+
     /**
      * The GitHub App installation.
      */
-    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation
+    public function installation(): Installation
     {
         return $this->installation;
     }
+
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    public function repository_selection() : string
+    public function repository_selection(): string
     {
         return $this->repository_selection;
     }
+
     /**
      * An array of repository objects, which were added to the installation.
-     * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesAdded>
+     *
+     * @return array<RepositoriesAdded>
      */
-    public function repositories_added() : array
+    public function repositories_added(): array
     {
         return $this->repositories_added;
     }
+
     /**
      * An array of repository objects, which were removed from the installation.
-     * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationRepositories\Added\RepositoriesRemoved>
+     *
+     * @return array<RepositoriesRemoved>
      */
-    public function repositories_removed() : array
+    public function repositories_removed(): array
     {
         return $this->repositories_removed;
     }
+
     public function requester()
     {
         return $this->requester;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+
+    public function sender(): User
     {
         return $this->sender;
     }

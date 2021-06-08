@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 
 final class Organization
 {
-    public const SCHEMA_TITLE = 'Organization';
+    public const SCHEMA_TITLE       = 'Organization';
     public const SCHEMA_DESCRIPTION = '';
     private string $login;
     private int $id;
@@ -19,54 +21,67 @@ final class Organization
     private string $public_members_url;
     private string $avatar_url;
     private $description;
-    public function login() : string
+
+    public function login(): string
     {
         return $this->login;
     }
-    public function id() : int
+
+    public function id(): int
     {
         return $this->id;
     }
-    public function node_id() : string
+
+    public function node_id(): string
     {
         return $this->node_id;
     }
-    public function url() : string
+
+    public function url(): string
     {
         return $this->url;
     }
-    public function html_url() : string
+
+    public function html_url(): string
     {
         return $this->html_url;
     }
-    public function repos_url() : string
+
+    public function repos_url(): string
     {
         return $this->repos_url;
     }
-    public function events_url() : string
+
+    public function events_url(): string
     {
         return $this->events_url;
     }
-    public function hooks_url() : string
+
+    public function hooks_url(): string
     {
         return $this->hooks_url;
     }
-    public function issues_url() : string
+
+    public function issues_url(): string
     {
         return $this->issues_url;
     }
-    public function members_url() : string
+
+    public function members_url(): string
     {
         return $this->members_url;
     }
-    public function public_members_url() : string
+
+    public function public_members_url(): string
     {
         return $this->public_members_url;
     }
-    public function avatar_url() : string
+
+    public function avatar_url(): string
     {
         return $this->avatar_url;
     }
+
     public function description()
     {
         return $this->description;

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListJobsForWorkflowRun;
 
 final class Jobs
 {
-    function get($owner, $repo, $run_id, string $filter = 'latest', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListJobsForWorkflowRun
+    function get($owner, $repo, $run_id, string $filter = 'latest', int $per_page = 30, int $page = 1): ListJobsForWorkflowRun
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListJobsForWorkflowRun($owner, $repo, $run_id, $filter, $per_page, $page);
+        return new ListJobsForWorkflowRun($owner, $repo, $run_id, $filter, $per_page, $page);
     }
 }

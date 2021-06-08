@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Authorizations\Clients;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\GetOrCreateAuthorizationForApp;
 
 final class CbClientIdRcb
 {
-    function put($client_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\GetOrCreateAuthorizationForApp
+    function put($client_id): GetOrCreateAuthorizationForApp
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations\GetOrCreateAuthorizationForApp($client_id);
+        return new GetOrCreateAuthorizationForApp($client_id);
     }
 }

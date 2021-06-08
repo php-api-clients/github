@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Repos\CbOwnerRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\AddOrUpdateRepoPermissionsInOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CheckPermissionsForRepoInOrg;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\RemoveRepoInOrg;
 
 final class CbRepoRcb
 {
-    function get($org, $team_slug, $owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CheckPermissionsForRepoInOrg
+    function get($org, $team_slug, $owner, $repo): CheckPermissionsForRepoInOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\CheckPermissionsForRepoInOrg($org, $team_slug, $owner, $repo);
+        return new CheckPermissionsForRepoInOrg($org, $team_slug, $owner, $repo);
     }
-    function put($org, $team_slug, $owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\AddOrUpdateRepoPermissionsInOrg
+
+    function put($org, $team_slug, $owner, $repo): AddOrUpdateRepoPermissionsInOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\AddOrUpdateRepoPermissionsInOrg($org, $team_slug, $owner, $repo);
+        return new AddOrUpdateRepoPermissionsInOrg($org, $team_slug, $owner, $repo);
     }
-    function delete($org, $team_slug, $owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\RemoveRepoInOrg
+
+    function delete($org, $team_slug, $owner, $repo): RemoveRepoInOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\RemoveRepoInOrg($org, $team_slug, $owner, $repo);
+        return new RemoveRepoInOrg($org, $team_slug, $owner, $repo);
     }
 }

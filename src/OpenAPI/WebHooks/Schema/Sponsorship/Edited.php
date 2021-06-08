@@ -1,31 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Sponsorship;
+
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Edited
 {
-    public const SCHEMA_TITLE = 'sponsorship edited event';
+    public const SCHEMA_TITLE       = 'sponsorship edited event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private array $sponsorship = array();
-    private array $changes = array();
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
-    public function action() : string
+    private array $sponsorship = [];
+    private array $changes     = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private User $sender;
+
+    public function action(): string
     {
         return $this->action;
     }
-    public function sponsorship() : array
+
+    public function sponsorship(): array
     {
         return $this->sponsorship;
     }
-    public function changes() : array
+
+    public function changes(): array
     {
         return $this->changes;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+
+    public function sender(): User
     {
         return $this->sender;
     }

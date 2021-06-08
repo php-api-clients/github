@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForRepo;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo;
 
 final class Projects
 {
-    function get($owner, $repo, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo
+    function get($owner, $repo, string $state = 'open', int $per_page = 30, int $page = 1): ListForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo($owner, $repo, $state, $per_page, $page);
+        return new ListForRepo($owner, $repo, $state, $per_page, $page);
     }
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForRepo
+
+    function post($owner, $repo): CreateForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForRepo($owner, $repo);
+        return new CreateForRepo($owner, $repo);
     }
 }

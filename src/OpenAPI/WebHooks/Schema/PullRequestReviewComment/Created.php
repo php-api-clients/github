@@ -1,70 +1,84 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequestReviewComment;
+
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequestReviewComment;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Created
 {
-    public const SCHEMA_TITLE = 'pull_request_review_comment created event';
+    public const SCHEMA_TITLE       = 'pull_request_review_comment created event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
      * The [comment](https://docs.github.com/en/rest/reference/pulls#comments) itself.
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequestReviewComment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequestReviewComment $comment;
-    private array $pull_request = array();
+    private PullRequestReviewComment $comment;
+    private array $pull_request = [];
     /**
      * A git repository
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository;
+    private Repository $repository;
     /**
      * Installation
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
-    public function action() : string
+    private InstallationLite $installation;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private Organization $organization;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private User $sender;
+
+    public function action(): string
     {
         return $this->action;
     }
+
     /**
      * The [comment](https://docs.github.com/en/rest/reference/pulls#comments) itself.
      */
-    public function comment() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequestReviewComment
+    public function comment(): PullRequestReviewComment
     {
         return $this->comment;
     }
-    public function pull_request() : array
+
+    public function pull_request(): array
     {
         return $this->pull_request;
     }
+
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
+
     /**
      * Installation
      */
-    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
+
+    public function organization(): Organization
     {
         return $this->organization;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+
+    public function sender(): User
     {
         return $this->sender;
     }

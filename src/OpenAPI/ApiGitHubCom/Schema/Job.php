@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps;
 
 final class Job
 {
-    public const SCHEMA_TITLE = 'Job';
+    public const SCHEMA_TITLE       = 'Job';
     public const SCHEMA_DESCRIPTION = 'Information of a job execution in a workflow run';
     /**
      * The id of the job.
@@ -44,92 +48,108 @@ final class Job
     private string $name;
     /**
      * Steps in this job.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps>
+     *
+     * @var array<Steps>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps::class)
      */
-    private array $steps = array();
+    private array $steps = [];
     private string $check_run_url;
+
     /**
      * The id of the job.
      */
-    public function id() : int
+    public function id(): int
     {
         return $this->id;
     }
+
     /**
      * The id of the associated workflow run.
      */
-    public function run_id() : int
+    public function run_id(): int
     {
         return $this->run_id;
     }
-    public function run_url() : string
+
+    public function run_url(): string
     {
         return $this->run_url;
     }
-    public function node_id() : string
+
+    public function node_id(): string
     {
         return $this->node_id;
     }
+
     /**
      * The SHA of the commit that is being run.
      */
-    public function head_sha() : string
+    public function head_sha(): string
     {
         return $this->head_sha;
     }
-    public function url() : string
+
+    public function url(): string
     {
         return $this->url;
     }
-    public function html_url() : string
+
+    public function html_url(): string
     {
         return $this->html_url;
     }
+
     /**
      * The phase of the lifecycle that the job is currently in.
      */
-    public function status() : string
+    public function status(): string
     {
         return $this->status;
     }
+
     /**
      * The outcome of the job.
      */
-    public function conclusion() : string
+    public function conclusion(): string
     {
         return $this->conclusion;
     }
+
     /**
      * The time that the job started, in ISO 8601 format.
      */
-    public function started_at() : string
+    public function started_at(): string
     {
         return $this->started_at;
     }
+
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    public function completed_at() : string
+    public function completed_at(): string
     {
         return $this->completed_at;
     }
+
     /**
      * The name of the job.
      */
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
+
     /**
      * Steps in this job.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps>
+     *
+     * @return array<Steps>
      */
-    public function steps() : array
+    public function steps(): array
     {
         return $this->steps;
     }
-    public function check_run_url() : string
+
+    public function check_run_url(): string
     {
         return $this->check_run_url;
     }

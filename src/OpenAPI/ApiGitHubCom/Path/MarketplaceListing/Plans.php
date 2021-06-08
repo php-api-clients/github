@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\MarketplaceListing;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListPlans;
 
 final class Plans
 {
-    function get(int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListPlans
+    function get(int $per_page = 30, int $page = 1): ListPlans
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListPlans($per_page, $page);
+        return new ListPlans($per_page, $page);
     }
 }

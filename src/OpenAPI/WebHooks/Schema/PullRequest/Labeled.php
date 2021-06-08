@@ -1,80 +1,91 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest;
+
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Labeled
 {
-    public const SCHEMA_TITLE = 'pull_request labeled event';
+    public const SCHEMA_TITLE       = 'pull_request labeled event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
      * The pull request number.
      */
     private int $number;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest $pull_request;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label $label;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class) */
+    private PullRequest $pull_request;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class) */
+    private Label $label;
     /**
      * A git repository
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository;
+    private Repository $repository;
     /**
      * Installation
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
-    public function action() : string
+    private InstallationLite $installation;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private Organization $organization;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private User $sender;
+
+    public function action(): string
     {
         return $this->action;
     }
+
     /**
      * The pull request number.
      */
-    public function number() : int
+    public function number(): int
     {
         return $this->number;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest
+
+    public function pull_request(): PullRequest
     {
         return $this->pull_request;
     }
-    public function label() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label
+
+    public function label(): Label
     {
         return $this->label;
     }
+
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository
+    public function repository(): Repository
     {
         return $this->repository;
     }
+
     /**
      * Installation
      */
-    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
+
+    public function organization(): Organization
     {
         return $this->organization;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+
+    public function sender(): User
     {
         return $this->sender;
     }

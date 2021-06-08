@@ -1,15 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\Create;
 
 final class Teams
 {
-    function get($org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\List
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\List($org, $per_page, $page);
-    }
-    function post($org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\Create
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\Create($org);
-    }
+    function get($org, int $per_page = 30, int $page = 1): [$org, $per_page, $page];
+}
+
+function post($org): Create
+{
+    return new Create($org);
+}
 }

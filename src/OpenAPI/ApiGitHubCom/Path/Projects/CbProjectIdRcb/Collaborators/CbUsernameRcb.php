@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Projects\CbProjectIdRcb\Collaborators;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\AddCollaborator;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\RemoveCollaborator;
 
 final class CbUsernameRcb
 {
-    function put($project_id, $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\AddCollaborator
+    function put($project_id, $username): AddCollaborator
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\AddCollaborator($project_id, $username);
+        return new AddCollaborator($project_id, $username);
     }
-    function delete($project_id, $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\RemoveCollaborator
+
+    function delete($project_id, $username): RemoveCollaborator
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\RemoveCollaborator($project_id, $username);
+        return new RemoveCollaborator($project_id, $username);
     }
 }

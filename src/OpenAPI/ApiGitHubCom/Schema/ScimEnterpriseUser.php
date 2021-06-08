@@ -1,67 +1,81 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Emails;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Groups;
 
 final class ScimEnterpriseUser
 {
-    public const SCHEMA_TITLE = 'scim-enterprise-user';
+    public const SCHEMA_TITLE       = 'scim-enterprise-user';
     public const SCHEMA_DESCRIPTION = '';
-    private array $schemas = array();
+    private array $schemas          = [];
     private string $id;
     private string $externalId;
     private string $userName;
-    private array $name = array();
+    private array $name = [];
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Emails>
+     * @var array<Emails>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Emails::class)
      */
-    private array $emails = array();
+    private array $emails = [];
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Groups>
+     * @var array<Groups>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Groups::class)
      */
-    private array $groups = array();
+    private array $groups = [];
     private bool $active;
-    private array $meta = array();
-    public function schemas() : array
+    private array $meta = [];
+
+    public function schemas(): array
     {
         return $this->schemas;
     }
-    public function id() : string
+
+    public function id(): string
     {
         return $this->id;
     }
-    public function externalId() : string
+
+    public function externalId(): string
     {
         return $this->externalId;
     }
-    public function userName() : string
+
+    public function userName(): string
     {
         return $this->userName;
     }
-    public function name() : array
+
+    public function name(): array
     {
         return $this->name;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Emails>
+     * @return array<Emails>
      */
-    public function emails() : array
+    public function emails(): array
     {
         return $this->emails;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseUser\Groups>
+     * @return array<Groups>
      */
-    public function groups() : array
+    public function groups(): array
     {
         return $this->groups;
     }
-    public function active() : bool
+
+    public function active(): bool
     {
         return $this->active;
     }
-    public function meta() : array
+
+    public function meta(): array
     {
         return $this->meta;
     }

@@ -1,64 +1,77 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Apps;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Teams;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Users;
 
 final class BranchRestrictionPolicy
 {
-    public const SCHEMA_TITLE = 'Branch Restriction Policy';
+    public const SCHEMA_TITLE       = 'Branch Restriction Policy';
     public const SCHEMA_DESCRIPTION = 'Branch Restriction Policy';
     private string $url;
     private string $users_url;
     private string $teams_url;
     private string $apps_url;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Users>
+     * @var array<Users>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Users::class)
      */
-    private array $users = array();
+    private array $users = [];
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Teams>
+     * @var array<Teams>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Teams::class)
      */
-    private array $teams = array();
+    private array $teams = [];
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Apps>
+     * @var array<Apps>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Apps::class)
      */
-    private array $apps = array();
-    public function url() : string
+    private array $apps = [];
+
+    public function url(): string
     {
         return $this->url;
     }
-    public function users_url() : string
+
+    public function users_url(): string
     {
         return $this->users_url;
     }
-    public function teams_url() : string
+
+    public function teams_url(): string
     {
         return $this->teams_url;
     }
-    public function apps_url() : string
+
+    public function apps_url(): string
     {
         return $this->apps_url;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Users>
+     * @return array<Users>
      */
-    public function users() : array
+    public function users(): array
     {
         return $this->users;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Teams>
+     * @return array<Teams>
      */
-    public function teams() : array
+    public function teams(): array
     {
         return $this->teams;
     }
+
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy\Apps>
+     * @return array<Apps>
      */
-    public function apps() : array
+    public function apps(): array
     {
         return $this->apps;
     }

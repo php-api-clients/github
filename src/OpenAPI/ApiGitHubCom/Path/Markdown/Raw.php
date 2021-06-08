@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Markdown;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw;
 
 final class Raw
 {
-    function post() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw
+    function post(): RenderRaw
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw();
+        return new RenderRaw();
     }
 }

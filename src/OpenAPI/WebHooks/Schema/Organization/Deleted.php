@@ -1,53 +1,63 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Deleted
 {
-    public const SCHEMA_TITLE = 'organization deleted event';
+    public const SCHEMA_TITLE       = 'organization deleted event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership $membership;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
+    private Membership $membership;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
+    private User $sender;
     /**
      * Installation
+     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
-    public function action() : string
+    private InstallationLite $installation;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
+    private Organization $organization;
+
+    public function action(): string
     {
         return $this->action;
     }
+
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
      */
-    public function membership() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership
+    public function membership(): Membership
     {
         return $this->membership;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+
+    public function sender(): User
     {
         return $this->sender;
     }
+
     /**
      * Installation
      */
-    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
+    public function installation(): InstallationLite
     {
         return $this->installation;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
+
+    public function organization(): Organization
     {
         return $this->organization;
     }

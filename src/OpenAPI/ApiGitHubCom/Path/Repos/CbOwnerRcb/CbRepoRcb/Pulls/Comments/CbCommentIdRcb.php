@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\Comments;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\DeleteReviewComment;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\GetReviewComment;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\UpdateReviewComment;
 
 final class CbCommentIdRcb
 {
-    function get($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\GetReviewComment
+    function get($owner, $repo, $comment_id): GetReviewComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\GetReviewComment($owner, $repo, $comment_id);
+        return new GetReviewComment($owner, $repo, $comment_id);
     }
-    function delete($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\DeleteReviewComment
+
+    function delete($owner, $repo, $comment_id): DeleteReviewComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\DeleteReviewComment($owner, $repo, $comment_id);
+        return new DeleteReviewComment($owner, $repo, $comment_id);
     }
-    function patch($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\UpdateReviewComment
+
+    function patch($owner, $repo, $comment_id): UpdateReviewComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\UpdateReviewComment($owner, $repo, $comment_id);
+        return new UpdateReviewComment($owner, $repo, $comment_id);
     }
 }

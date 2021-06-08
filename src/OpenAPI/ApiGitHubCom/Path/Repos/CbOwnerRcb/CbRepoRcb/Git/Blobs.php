@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Git;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateBlob;
 
 final class Blobs
 {
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateBlob
+    function post($owner, $repo): CreateBlob
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateBlob($owner, $repo);
+        return new CreateBlob($owner, $repo);
     }
 }

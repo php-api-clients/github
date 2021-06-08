@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateRelease;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListReleases;
 
 final class Releases
 {
-    function get($owner, $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListReleases
+    function get($owner, $repo, int $per_page = 30, int $page = 1): ListReleases
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListReleases($owner, $repo, $per_page, $page);
+        return new ListReleases($owner, $repo, $per_page, $page);
     }
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateRelease
+
+    function post($owner, $repo): CreateRelease
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateRelease($owner, $repo);
+        return new CreateRelease($owner, $repo);
     }
 }

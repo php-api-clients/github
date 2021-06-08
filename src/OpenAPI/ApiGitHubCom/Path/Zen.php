@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen;
 
 final class Zen
 {
-    function get() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen
+    function get(): GetZen
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen();
+        return new GetZen();
     }
 }

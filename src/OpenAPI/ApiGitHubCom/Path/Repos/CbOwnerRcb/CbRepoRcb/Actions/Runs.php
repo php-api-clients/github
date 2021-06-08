@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListWorkflowRunsForRepo;
 
 final class Runs
 {
-    function get($owner, $repo, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListWorkflowRunsForRepo
+    function get($owner, $repo, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1): ListWorkflowRunsForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListWorkflowRunsForRepo($owner, $repo, $actor, $branch, $event, $status, $per_page, $page);
+        return new ListWorkflowRunsForRepo($owner, $repo, $actor, $branch, $event, $status, $per_page, $page);
     }
 }

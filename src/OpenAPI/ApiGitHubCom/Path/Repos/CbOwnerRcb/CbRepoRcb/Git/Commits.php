@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Git;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateCommit;
 
 final class Commits
 {
-    function post($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateCommit
+    function post($owner, $repo): CreateCommit
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateCommit($owner, $repo);
+        return new CreateCommit($owner, $repo);
     }
 }

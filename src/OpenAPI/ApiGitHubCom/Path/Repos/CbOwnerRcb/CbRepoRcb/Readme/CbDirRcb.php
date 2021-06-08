@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Readme;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetReadmeInDirectory;
 
 final class CbDirRcb
 {
-    function get($owner, $repo, $dir, $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetReadmeInDirectory
+    function get($owner, $repo, $dir, $ref): GetReadmeInDirectory
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetReadmeInDirectory($owner, $repo, $dir, $ref);
+        return new GetReadmeInDirectory($owner, $repo, $dir, $ref);
     }
 }

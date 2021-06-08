@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Notifications\Threads;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\GetThread;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\MarkThreadAsRead;
 
 final class CbThreadIdRcb
 {
-    function get($thread_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\GetThread
+    function get($thread_id): GetThread
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\GetThread($thread_id);
+        return new GetThread($thread_id);
     }
-    function patch($thread_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\MarkThreadAsRead
+
+    function patch($thread_id): MarkThreadAsRead
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\MarkThreadAsRead($thread_id);
+        return new MarkThreadAsRead($thread_id);
     }
 }
