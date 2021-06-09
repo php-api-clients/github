@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\WebHook;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\WebHookInterface;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Throwable;
 
-final class MarketplacePurchase
+final class MarketplacePurchase implements WebHookInterface
 {
     public function resolve(array $data): string
     {

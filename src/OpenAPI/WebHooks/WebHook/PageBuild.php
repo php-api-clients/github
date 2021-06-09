@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\WebHook;
 
-final class PageBuild
+use ApiClients\Client\Github\OpenAPI\WebHooks\WebHookInterface;
+
+final class PageBuild implements WebHookInterface
 {
     public function resolve(array $data): string
     {

@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\WebHook;
 
-final class Public
+use ApiClients\Client\Github\OpenAPI\WebHooks\WebHookInterface;
+
+final class public implements WebHookInterface
 {
-    public function resolve(array $data) : string
+    public function resolve(array $data): string
     {
     }
 }

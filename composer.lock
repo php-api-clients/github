@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "016c97773bc60c6993b4196890ca395bf7197e26"
+                "reference": "1c5cdeee90036c07b4cb58a3d34d04cd734279fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/016c97773bc60c6993b4196890ca395bf7197e26",
-                "reference": "016c97773bc60c6993b4196890ca395bf7197e26",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/1c5cdeee90036c07b4cb58a3d34d04cd734279fe",
+                "reference": "1c5cdeee90036c07b4cb58a3d34d04cd734279fe",
                 "shasum": ""
             },
             "require": {
@@ -65,7 +65,7 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2021-06-08T18:29:12+00:00"
+            "time": "2021-06-09T21:37:38+00:00"
         },
         {
             "name": "cebe/php-openapi",
@@ -4335,16 +4335,16 @@
         },
         {
             "name": "maglnet/composer-require-checker",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maglnet/ComposerRequireChecker.git",
-                "reference": "cd6c6b91ee3c065e60a35ca1a67becb0ae86dbb7"
+                "reference": "4063254c611acf34f1c15b29b6bcc47d2e7a9a9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maglnet/ComposerRequireChecker/zipball/cd6c6b91ee3c065e60a35ca1a67becb0ae86dbb7",
-                "reference": "cd6c6b91ee3c065e60a35ca1a67becb0ae86dbb7",
+                "url": "https://api.github.com/repos/maglnet/ComposerRequireChecker/zipball/4063254c611acf34f1c15b29b6bcc47d2e7a9a9e",
+                "reference": "4063254c611acf34f1c15b29b6bcc47d2e7a9a9e",
                 "shasum": ""
             },
             "require": {
@@ -4353,17 +4353,17 @@
                 "ext-phar": "*",
                 "nikic/php-parser": "^4.10.2",
                 "php": "^7.4 || ^8.0",
-                "symfony/console": "^5.1.8",
+                "symfony/console": "^5.2.6",
                 "webmozart/assert": "^1.9.1",
-                "webmozart/glob": "^4.2.0"
+                "webmozart/glob": "^4.3.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^8.2.0",
+                "doctrine/coding-standard": "^9.0.0",
                 "ext-zend-opcache": "*",
                 "mikey179/vfsstream": "^1.6.8",
-                "phpstan/phpstan": "^0.12.64",
-                "phpunit/phpunit": "^9.5.0",
-                "vimeo/psalm": "^4.3.2"
+                "phpstan/phpstan": "^0.12.85",
+                "phpunit/phpunit": "^9.5.4",
+                "vimeo/psalm": "^4.7.0"
             },
             "bin": [
                 "bin/composer-require-checker"
@@ -4408,9 +4408,9 @@
             ],
             "support": {
                 "issues": "https://github.com/maglnet/ComposerRequireChecker/issues",
-                "source": "https://github.com/maglnet/ComposerRequireChecker/tree/3.2.0"
+                "source": "https://github.com/maglnet/ComposerRequireChecker/tree/3.3.0"
             },
-            "time": "2021-03-11T11:57:20+00:00"
+            "time": "2021-06-09T11:44:18+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -5537,16 +5537,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.88",
+            "version": "0.12.89",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "464d1a81af49409c41074aa6640ed0c4cbd9bb68"
+                "reference": "54c0f5a6c30511b77128d58b6369f718df250542"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/464d1a81af49409c41074aa6640ed0c4cbd9bb68",
-                "reference": "464d1a81af49409c41074aa6640ed0c4cbd9bb68",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/54c0f5a6c30511b77128d58b6369f718df250542",
+                "reference": "54c0f5a6c30511b77128d58b6369f718df250542",
                 "shasum": ""
             },
             "require": {
@@ -5577,11 +5577,15 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.88"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.89"
             },
             "funding": [
                 {
                     "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
                     "type": "github"
                 },
                 {
@@ -5593,7 +5597,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-17T12:24:49+00:00"
+            "time": "2021-06-09T20:23:49+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
