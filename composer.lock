@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f8be432cba6fca0131fb229a42dc596",
+    "content-hash": "ed27017a5018690647550a2bfa6307ab",
     "packages": [
         {
             "name": "api-clients/openapi-client-generator",
@@ -12,18 +12,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "3c99df5f8ccc7aa7a90d8f41250c9c07945e31d7"
+                "reference": "9c30903e99e625dab392b00e6826c54c48f70ff8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/3c99df5f8ccc7aa7a90d8f41250c9c07945e31d7",
-                "reference": "3c99df5f8ccc7aa7a90d8f41250c9c07945e31d7",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/9c30903e99e625dab392b00e6826c54c48f70ff8",
+                "reference": "9c30903e99e625dab392b00e6826c54c48f70ff8",
                 "shasum": ""
             },
             "require": {
-                "cebe/php-openapi": "dev-webhooks as 1.6.0",
+                "cebe/php-openapi": "^1.5",
                 "jawira/case-converter": "^3.4",
-                "league/openapi-psr7-validator": "dev-webhooks as 0.16.99",
+                "league/openapi-psr7-validator": "^0.16",
                 "nikic/php-parser": "^4.8",
                 "php": "^7.4",
                 "psr/http-message": "^1.0",
@@ -48,7 +48,16 @@
             "autoload": {
                 "psr-4": {
                     "ApiClients\\Tools\\OpenApiClientGenerator\\": "src/"
-                }
+                },
+                "files": [
+                    "external_files/cebe/SpecBaseObject.php",
+                    "external_files/cebe/OpenApi.php",
+                    "external_files/cebe/Schema.php",
+                    "external_files/cebe/Type.php",
+                    "external_files/cebe/WebHooks.php",
+                    "external_files/thephpleague/SchemaValidator.php",
+                    "external_files/thephpleague/Type.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -65,20 +74,20 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2021-06-09T21:53:39+00:00"
+            "time": "2021-06-12T13:03:53+00:00"
         },
         {
             "name": "cebe/php-openapi",
-            "version": "dev-webhooks",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WyriHaximus-labs/php-openapi.git",
-                "reference": "a0ed996272ae7a199df96a5af204c7e01680aeec"
+                "url": "https://github.com/cebe/php-openapi.git",
+                "reference": "8f1f70688fd4bea04410718616450a38b7b8c40b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus-labs/php-openapi/zipball/a0ed996272ae7a199df96a5af204c7e01680aeec",
-                "reference": "a0ed996272ae7a199df96a5af204c7e01680aeec",
+                "url": "https://api.github.com/repos/cebe/php-openapi/zipball/8f1f70688fd4bea04410718616450a38b7b8c40b",
+                "reference": "8f1f70688fd4bea04410718616450a38b7b8c40b",
                 "shasum": ""
             },
             "require": {
@@ -110,6 +119,7 @@
                     "cebe\\openapi\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -130,7 +140,7 @@
                 "issues": "https://github.com/cebe/php-openapi/issues",
                 "source": "https://github.com/cebe/php-openapi"
             },
-            "time": "2021-06-07T18:14:16+00:00"
+            "time": "2021-05-24T11:32:07+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -612,20 +622,20 @@
         },
         {
             "name": "league/openapi-psr7-validator",
-            "version": "dev-webhooks",
+            "version": "0.16.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WyriHaximus-labs/openapi-psr7-validator.git",
-                "reference": "739d63ecfbbfe965151102fd27063c09b78cf384"
+                "url": "https://github.com/thephpleague/openapi-psr7-validator.git",
+                "reference": "580ebf26336240417f253f77441aa12730b60735"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus-labs/openapi-psr7-validator/zipball/739d63ecfbbfe965151102fd27063c09b78cf384",
-                "reference": "739d63ecfbbfe965151102fd27063c09b78cf384",
+                "url": "https://api.github.com/repos/thephpleague/openapi-psr7-validator/zipball/580ebf26336240417f253f77441aa12730b60735",
+                "reference": "580ebf26336240417f253f77441aa12730b60735",
                 "shasum": ""
             },
             "require": {
-                "cebe/php-openapi": "dev-webhooks as 1.4.0",
+                "cebe/php-openapi": "^1.3",
                 "ext-json": "*",
                 "league/uri": "^6.3",
                 "php": ">=7.2",
@@ -653,26 +663,23 @@
                     "League\\OpenAPIValidation\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "League\\OpenAPIValidation\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Validate PSR-7 messages against OpenAPI (3.0.2) specifications \nexpressed in YAML or JSON",
+            "description": "Validate PSR-7 messages against OpenAPI (3.0.2) specifications expressed in YAML or JSON",
             "homepage": "https://github.com/thephpleague/openapi-psr7-validator",
             "keywords": [
-                "OpenAPI",
                 "http",
+                "openapi",
                 "psr7",
                 "validation"
             ],
             "support": {
-                "source": "https://github.com/WyriHaximus-labs/openapi-psr7-validator/tree/webhooks"
+                "issues": "https://github.com/thephpleague/openapi-psr7-validator/issues",
+                "source": "https://github.com/thephpleague/openapi-psr7-validator/tree/0.16.1"
             },
-            "time": "2021-06-07T18:15:16+00:00"
+            "time": "2021-05-12T16:52:09+00:00"
         },
         {
             "name": "league/uri",
@@ -3387,20 +3394,20 @@
         },
         {
             "name": "felixfbecker/advanced-json-rpc",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/felixfbecker/php-advanced-json-rpc.git",
-                "reference": "06f0b06043c7438959dbdeed8bb3f699a19be22e"
+                "reference": "b5f37dbff9a8ad360ca341f3240dc1c168b45447"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/felixfbecker/php-advanced-json-rpc/zipball/06f0b06043c7438959dbdeed8bb3f699a19be22e",
-                "reference": "06f0b06043c7438959dbdeed8bb3f699a19be22e",
+                "url": "https://api.github.com/repos/felixfbecker/php-advanced-json-rpc/zipball/b5f37dbff9a8ad360ca341f3240dc1c168b45447",
+                "reference": "b5f37dbff9a8ad360ca341f3240dc1c168b45447",
                 "shasum": ""
             },
             "require": {
-                "netresearch/jsonmapper": "^1.0 || ^2.0",
+                "netresearch/jsonmapper": "^1.0 || ^2.0 || ^3.0 || ^4.0",
                 "php": "^7.1 || ^8.0",
                 "phpdocumentor/reflection-docblock": "^4.3.4 || ^5.0.0"
             },
@@ -3426,9 +3433,9 @@
             "description": "A more advanced JSONRPC implementation",
             "support": {
                 "issues": "https://github.com/felixfbecker/php-advanced-json-rpc/issues",
-                "source": "https://github.com/felixfbecker/php-advanced-json-rpc/tree/v3.2.0"
+                "source": "https://github.com/felixfbecker/php-advanced-json-rpc/tree/v3.2.1"
             },
-            "time": "2021-01-10T17:48:47+00:00"
+            "time": "2021-06-11T22:34:44+00:00"
         },
         {
             "name": "felixfbecker/language-server-protocol",
@@ -4472,16 +4479,16 @@
         },
         {
             "name": "netresearch/jsonmapper",
-            "version": "v2.1.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cweiske/jsonmapper.git",
-                "reference": "e0f1e33a71587aca81be5cffbb9746510e1fe04e"
+                "reference": "8bbc021a8edb2e4a7ea2f8ad4fa9ec9dce2fcb8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cweiske/jsonmapper/zipball/e0f1e33a71587aca81be5cffbb9746510e1fe04e",
-                "reference": "e0f1e33a71587aca81be5cffbb9746510e1fe04e",
+                "url": "https://api.github.com/repos/cweiske/jsonmapper/zipball/8bbc021a8edb2e4a7ea2f8ad4fa9ec9dce2fcb8d",
+                "reference": "8bbc021a8edb2e4a7ea2f8ad4fa9ec9dce2fcb8d",
                 "shasum": ""
             },
             "require": {
@@ -4489,10 +4496,10 @@
                 "ext-pcre": "*",
                 "ext-reflection": "*",
                 "ext-spl": "*",
-                "php": ">=5.6"
+                "php": ">=7.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8.35 || ~5.7 || ~6.4 || ~7.0",
+                "phpunit/phpunit": "~7.5 || ~8.0 || ~9.0",
                 "squizlabs/php_codesniffer": "~3.5"
             },
             "type": "library",
@@ -4517,9 +4524,9 @@
             "support": {
                 "email": "cweiske@cweiske.de",
                 "issues": "https://github.com/cweiske/jsonmapper/issues",
-                "source": "https://github.com/cweiske/jsonmapper/tree/master"
+                "source": "https://github.com/cweiske/jsonmapper/tree/v4.0.0"
             },
-            "time": "2020-04-16T18:48:43+00:00"
+            "time": "2020-12-01T19:48:11+00:00"
         },
         {
             "name": "nikolaposa/version",
@@ -7439,16 +7446,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "a90ccbddffa067b51f574dea6eb25d5680839455"
+                "reference": "23bd5951f7ff26f12d4e3242864df3e08dec4e49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/a90ccbddffa067b51f574dea6eb25d5680839455",
-                "reference": "a90ccbddffa067b51f574dea6eb25d5680839455",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/23bd5951f7ff26f12d4e3242864df3e08dec4e49",
+                "reference": "23bd5951f7ff26f12d4e3242864df3e08dec4e49",
                 "shasum": ""
             },
             "require": {
@@ -7491,7 +7498,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/global-state/issues",
-                "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.2"
+                "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.3"
             },
             "funding": [
                 {
@@ -7499,7 +7506,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T15:55:19+00:00"
+            "time": "2021-06-11T13:31:12+00:00"
         },
         {
             "name": "sebastian/lines-of-code",
@@ -9860,26 +9867,11 @@
             "time": "2021-04-05T19:59:58+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "cebe/php-openapi",
-            "version": "dev-webhooks",
-            "alias": "1.6.0",
-            "alias_normalized": "1.6.0.0"
-        },
-        {
-            "package": "league/openapi-psr7-validator",
-            "version": "dev-webhooks",
-            "alias": "0.16.99",
-            "alias_normalized": "0.16.99.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "api-clients/openapi-client-generator": 20,
-        "wyrihaximus/hydrator": 20,
-        "cebe/php-openapi": 20,
-        "league/openapi-psr7-validator": 20
+        "wyrihaximus/hydrator": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -9890,5 +9882,5 @@
     "platform-overrides": {
         "php": "7.4.7"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

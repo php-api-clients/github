@@ -11,9 +11,7 @@
   "require": {
     "php": "^7.4",
     "api-clients/openapi-client-generator": "dev-master",
-    "wyrihaximus/hydrator": "dev-master",
-    "cebe/php-openapi": "dev-webhooks as 1.6.0",
-    "league/openapi-psr7-validator": "dev-webhooks as 0.16.99"
+    "wyrihaximus/hydrator": "dev-master"
   },
   "autoload": {
     "psr-4": {
@@ -25,16 +23,6 @@
       "ApiClients\\Tests\\Client\\Github\\": "tests/"
     }
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:WyriHaximus-labs/php-openapi.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:WyriHaximus-labs/openapi-psr7-validator.git"
-    }
-  ],
   "config": {
     "sort-packages": true,
     "platform": {
