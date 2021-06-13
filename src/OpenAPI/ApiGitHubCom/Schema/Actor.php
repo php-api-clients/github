@@ -8,7 +8,7 @@ final class Actor
     public const SCHEMA_DESCRIPTION = 'Actor';
     private int $id;
     private string $login;
-    private string $display_login;
+    private ?string $display_login = null;
     private string $gravatar_id;
     private string $url;
     private string $avatar_url;
@@ -20,7 +20,7 @@ final class Actor
     {
         return $this->login;
     }
-    public function display_login() : string
+    public function display_login() : ?string
     {
         return $this->display_login;
     }

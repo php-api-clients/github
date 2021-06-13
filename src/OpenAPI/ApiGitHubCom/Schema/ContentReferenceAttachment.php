@@ -21,7 +21,7 @@ final class ContentReferenceAttachment
     /**
      * The node_id of the content attachment
      */
-    private string $node_id;
+    private ?string $node_id = null;
     /**
      * The ID of the attachment
      */
@@ -46,7 +46,7 @@ final class ContentReferenceAttachment
     /**
      * The node_id of the content attachment
      */
-    public function node_id() : string
+    public function node_id() : ?string
     {
         return $this->node_id;
     }

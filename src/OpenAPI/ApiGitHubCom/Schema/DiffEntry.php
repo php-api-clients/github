@@ -15,8 +15,8 @@ final class DiffEntry
     private string $blob_url;
     private string $raw_url;
     private string $contents_url;
-    private string $patch;
-    private string $previous_filename;
+    private ?string $patch = null;
+    private ?string $previous_filename = null;
     public function sha() : string
     {
         return $this->sha;
@@ -53,11 +53,11 @@ final class DiffEntry
     {
         return $this->contents_url;
     }
-    public function patch() : string
+    public function patch() : ?string
     {
         return $this->patch;
     }
-    public function previous_filename() : string
+    public function previous_filename() : ?string
     {
         return $this->previous_filename;
     }

@@ -21,7 +21,7 @@ final class CredentialAuthorization
     /**
      * Last eight characters of the credential. Only included in responses with credential_type of personal access token.
      */
-    private string $token_last_eight;
+    private ?string $token_last_eight = null;
     /**
      * Date when the credential was authorized for use.
      */
@@ -29,24 +29,24 @@ final class CredentialAuthorization
     /**
      * List of oauth scopes the token has been granted.
      */
-    private array $scopes = array();
+    private ?array $scopes = array();
     /**
      * Unique string to distinguish the credential. Only included in responses with credential_type of SSH Key.
      */
-    private string $fingerprint;
+    private ?string $fingerprint = null;
     /**
      * Date when the credential was last accessed. May be null if it was never accessed
      */
-    private string $credential_accessed_at;
-    private int $authorized_credential_id;
+    private ?string $credential_accessed_at = null;
+    private ?int $authorized_credential_id = null;
     /**
      * The title given to the ssh key. This will only be present when the credential is an ssh key.
      */
-    private string $authorized_credential_title;
+    private ?string $authorized_credential_title = null;
     /**
      * The note given to the token. This will only be present when the credential is a token.
      */
-    private string $authorized_credential_note;
+    private ?string $authorized_credential_note = null;
     /**
      * User login that owns the underlying credential.
      */
@@ -71,7 +71,7 @@ final class CredentialAuthorization
     /**
      * Last eight characters of the credential. Only included in responses with credential_type of personal access token.
      */
-    public function token_last_eight() : string
+    public function token_last_eight() : ?string
     {
         return $this->token_last_eight;
     }
@@ -85,39 +85,39 @@ final class CredentialAuthorization
     /**
      * List of oauth scopes the token has been granted.
      */
-    public function scopes() : array
+    public function scopes() : ?array
     {
         return $this->scopes;
     }
     /**
      * Unique string to distinguish the credential. Only included in responses with credential_type of SSH Key.
      */
-    public function fingerprint() : string
+    public function fingerprint() : ?string
     {
         return $this->fingerprint;
     }
     /**
      * Date when the credential was last accessed. May be null if it was never accessed
      */
-    public function credential_accessed_at() : string
+    public function credential_accessed_at() : ?string
     {
         return $this->credential_accessed_at;
     }
-    public function authorized_credential_id() : int
+    public function authorized_credential_id() : ?int
     {
         return $this->authorized_credential_id;
     }
     /**
      * The title given to the ssh key. This will only be present when the credential is an ssh key.
      */
-    public function authorized_credential_title() : string
+    public function authorized_credential_title() : ?string
     {
         return $this->authorized_credential_title;
     }
     /**
      * The note given to the token. This will only be present when the credential is a token.
      */
-    public function authorized_credential_note() : string
+    public function authorized_credential_note() : ?string
     {
         return $this->authorized_credential_note;
     }

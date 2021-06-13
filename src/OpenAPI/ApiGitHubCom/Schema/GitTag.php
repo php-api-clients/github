@@ -25,7 +25,7 @@ final class GitTag
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification = null;
     public function node_id() : string
     {
         return $this->node_id;

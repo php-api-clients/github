@@ -32,15 +32,15 @@ final class Installation
     private string $created_at;
     private string $updated_at;
     private string $single_file_name;
-    private bool $has_multiple_single_files;
-    private array $single_file_paths = array();
+    private ?bool $has_multiple_single_files = null;
+    private ?array $single_file_paths = array();
     private string $app_slug;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $suspended_by;
     private string $suspended_at;
-    private string $contact_email;
+    private ?string $contact_email = null;
     /**
      * The ID of the installation.
      */
@@ -106,11 +106,11 @@ final class Installation
     {
         return $this->single_file_name;
     }
-    public function has_multiple_single_files() : bool
+    public function has_multiple_single_files() : ?bool
     {
         return $this->has_multiple_single_files;
     }
-    public function single_file_paths() : array
+    public function single_file_paths() : ?array
     {
         return $this->single_file_paths;
     }
@@ -126,7 +126,7 @@ final class Installation
     {
         return $this->suspended_at;
     }
-    public function contact_email() : string
+    public function contact_email() : ?string
     {
         return $this->contact_email;
     }

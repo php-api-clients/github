@@ -25,12 +25,12 @@ final class Environment
      * The time that the environment was last updated, in ISO 8601 format.
      */
     private string $updated_at;
-    private array $protection_rules = array();
+    private ?array $protection_rules = array();
     /**
      * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy $deployment_branch_policy;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy $deployment_branch_policy = null;
     /**
      * The id of the environment.
      */
@@ -71,7 +71,7 @@ final class Environment
     {
         return $this->updated_at;
     }
-    public function protection_rules() : array
+    public function protection_rules() : ?array
     {
         return $this->protection_rules;
     }

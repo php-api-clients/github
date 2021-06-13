@@ -22,7 +22,7 @@ final class Installation
     private string $repositories_url;
     private string $html_url;
     private int $app_id;
-    private string $app_slug;
+    private ?string $app_slug = null;
     /**
      * The ID of the user or organization this token is being scoped to.
      */
@@ -33,8 +33,8 @@ final class Installation
     private $created_at;
     private $updated_at;
     private $single_file_name;
-    private bool $has_multiple_single_files;
-    private array $single_file_paths = array();
+    private ?bool $has_multiple_single_files = null;
+    private ?array $single_file_paths = array();
     private $suspended_by;
     private $suspended_at;
     /**
@@ -71,7 +71,7 @@ final class Installation
     {
         return $this->app_id;
     }
-    public function app_slug() : string
+    public function app_slug() : ?string
     {
         return $this->app_slug;
     }
@@ -106,11 +106,11 @@ final class Installation
     {
         return $this->single_file_name;
     }
-    public function has_multiple_single_files() : bool
+    public function has_multiple_single_files() : ?bool
     {
         return $this->has_multiple_single_files;
     }
-    public function single_file_paths() : array
+    public function single_file_paths() : ?array
     {
         return $this->single_file_paths;
     }

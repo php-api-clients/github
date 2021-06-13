@@ -32,7 +32,7 @@ final class Added
      * Installation
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     public function action() : string
     {
         return $this->action;

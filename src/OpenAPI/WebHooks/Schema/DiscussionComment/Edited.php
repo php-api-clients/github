@@ -30,7 +30,7 @@ final class Edited
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     public function changes() : array
     {
         return $this->changes;

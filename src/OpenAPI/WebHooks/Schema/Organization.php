@@ -10,7 +10,7 @@ final class Organization
     private int $id;
     private string $node_id;
     private string $url;
-    private string $html_url;
+    private ?string $html_url = null;
     private string $repos_url;
     private string $events_url;
     private string $hooks_url;
@@ -35,7 +35,7 @@ final class Organization
     {
         return $this->url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

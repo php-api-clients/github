@@ -16,7 +16,7 @@ final class PendingChange
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase $previous_marketplace_purchase;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase $previous_marketplace_purchase = null;
     public function action() : string
     {
         return $this->action;

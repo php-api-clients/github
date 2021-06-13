@@ -11,7 +11,7 @@ final class LicenseSimple
     private string $url;
     private string $spdx_id;
     private string $node_id;
-    private string $html_url;
+    private ?string $html_url = null;
     public function key() : string
     {
         return $this->key;
@@ -32,7 +32,7 @@ final class LicenseSimple
     {
         return $this->node_id;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

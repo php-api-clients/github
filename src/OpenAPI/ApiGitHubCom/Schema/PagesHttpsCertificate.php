@@ -12,7 +12,7 @@ final class PagesHttpsCertificate
      * Array of the domain set and its alternate name (if it is configured)
      */
     private array $domains = array();
-    private string $expires_at;
+    private ?string $expires_at = null;
     public function state() : string
     {
         return $this->state;
@@ -28,7 +28,7 @@ final class PagesHttpsCertificate
     {
         return $this->domains;
     }
-    public function expires_at() : string
+    public function expires_at() : ?string
     {
         return $this->expires_at;
     }

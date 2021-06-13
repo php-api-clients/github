@@ -25,7 +25,7 @@ final class ScimUser
     /**
      * The name of the user, suitable for display to end-users
      */
-    private string $displayName;
+    private ?string $displayName = null;
     private array $name = array();
     /**
      * user emails
@@ -41,17 +41,17 @@ final class ScimUser
     /**
      * The ID of the organization.
      */
-    private int $organization_id;
+    private ?int $organization_id = null;
     /**
      * Set of operations to be performed
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations::class)
      */
-    private array $operations = array();
+    private ?array $operations = array();
     /**
      * associated groups
      */
-    private array $groups = array();
+    private ?array $groups = array();
     /**
      * SCIM schema used.
      */
@@ -83,7 +83,7 @@ final class ScimUser
     /**
      * The name of the user, suitable for display to end-users
      */
-    public function displayName() : string
+    public function displayName() : ?string
     {
         return $this->displayName;
     }
@@ -113,7 +113,7 @@ final class ScimUser
     /**
      * The ID of the organization.
      */
-    public function organization_id() : int
+    public function organization_id() : ?int
     {
         return $this->organization_id;
     }
@@ -121,14 +121,14 @@ final class ScimUser
      * Set of operations to be performed
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations>
      */
-    public function operations() : array
+    public function operations() : ?array
     {
         return $this->operations;
     }
     /**
      * associated groups
      */
-    public function groups() : array
+    public function groups() : ?array
     {
         return $this->groups;
     }

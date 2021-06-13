@@ -30,12 +30,12 @@ final class Issue
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
      */
-    private array $labels = array();
+    private ?array $labels = array();
     /**
      * State of the issue; either 'open' or 'closed'
      */
-    private string $state;
-    private bool $locked;
+    private ?string $state = null;
+    private ?bool $locked = null;
     private $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User>
@@ -53,7 +53,7 @@ final class Issue
     private string $author_association;
     private $active_lock_reason;
     private $performed_via_github_app;
-    private array $pull_request = array();
+    private ?array $pull_request = array();
     /**
      * Contents of the issue
      */
@@ -111,18 +111,18 @@ final class Issue
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label>
      */
-    public function labels() : array
+    public function labels() : ?array
     {
         return $this->labels;
     }
     /**
      * State of the issue; either 'open' or 'closed'
      */
-    public function state() : string
+    public function state() : ?string
     {
         return $this->state;
     }
-    public function locked() : bool
+    public function locked() : ?bool
     {
         return $this->locked;
     }
@@ -172,7 +172,7 @@ final class Issue
     {
         return $this->performed_via_github_app;
     }
-    public function pull_request() : array
+    public function pull_request() : ?array
     {
         return $this->pull_request;
     }

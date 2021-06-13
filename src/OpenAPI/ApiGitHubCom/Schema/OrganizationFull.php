@@ -18,13 +18,13 @@ final class OrganizationFull
     private string $public_members_url;
     private string $avatar_url;
     private string $description;
-    private string $name;
-    private string $company;
-    private string $blog;
-    private string $location;
-    private string $email;
-    private string $twitter_username;
-    private bool $is_verified;
+    private ?string $name = null;
+    private ?string $company = null;
+    private ?string $blog = null;
+    private ?string $location = null;
+    private ?string $email = null;
+    private ?string $twitter_username = null;
+    private ?bool $is_verified = null;
     private bool $has_organization_projects;
     private bool $has_repository_projects;
     private int $public_repos;
@@ -34,23 +34,23 @@ final class OrganizationFull
     private string $html_url;
     private string $created_at;
     private string $type;
-    private int $total_private_repos;
-    private int $owned_private_repos;
-    private int $private_gists;
-    private int $disk_usage;
-    private int $collaborators;
-    private string $billing_email;
-    private array $plan = array();
-    private string $default_repository_permission;
-    private bool $members_can_create_repositories;
-    private bool $two_factor_requirement_enabled;
-    private string $members_allowed_repository_creation_type;
-    private bool $members_can_create_public_repositories;
-    private bool $members_can_create_private_repositories;
-    private bool $members_can_create_internal_repositories;
-    private bool $members_can_create_pages;
-    private bool $members_can_create_public_pages;
-    private bool $members_can_create_private_pages;
+    private ?int $total_private_repos = null;
+    private ?int $owned_private_repos = null;
+    private ?int $private_gists = null;
+    private ?int $disk_usage = null;
+    private ?int $collaborators = null;
+    private ?string $billing_email = null;
+    private ?array $plan = array();
+    private ?string $default_repository_permission = null;
+    private ?bool $members_can_create_repositories = null;
+    private ?bool $two_factor_requirement_enabled = null;
+    private ?string $members_allowed_repository_creation_type = null;
+    private ?bool $members_can_create_public_repositories = null;
+    private ?bool $members_can_create_private_repositories = null;
+    private ?bool $members_can_create_internal_repositories = null;
+    private ?bool $members_can_create_pages = null;
+    private ?bool $members_can_create_public_pages = null;
+    private ?bool $members_can_create_private_pages = null;
     private string $updated_at;
     public function login() : string
     {
@@ -100,31 +100,31 @@ final class OrganizationFull
     {
         return $this->description;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function company() : string
+    public function company() : ?string
     {
         return $this->company;
     }
-    public function blog() : string
+    public function blog() : ?string
     {
         return $this->blog;
     }
-    public function location() : string
+    public function location() : ?string
     {
         return $this->location;
     }
-    public function email() : string
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function twitter_username() : string
+    public function twitter_username() : ?string
     {
         return $this->twitter_username;
     }
-    public function is_verified() : bool
+    public function is_verified() : ?bool
     {
         return $this->is_verified;
     }
@@ -164,71 +164,71 @@ final class OrganizationFull
     {
         return $this->type;
     }
-    public function total_private_repos() : int
+    public function total_private_repos() : ?int
     {
         return $this->total_private_repos;
     }
-    public function owned_private_repos() : int
+    public function owned_private_repos() : ?int
     {
         return $this->owned_private_repos;
     }
-    public function private_gists() : int
+    public function private_gists() : ?int
     {
         return $this->private_gists;
     }
-    public function disk_usage() : int
+    public function disk_usage() : ?int
     {
         return $this->disk_usage;
     }
-    public function collaborators() : int
+    public function collaborators() : ?int
     {
         return $this->collaborators;
     }
-    public function billing_email() : string
+    public function billing_email() : ?string
     {
         return $this->billing_email;
     }
-    public function plan() : array
+    public function plan() : ?array
     {
         return $this->plan;
     }
-    public function default_repository_permission() : string
+    public function default_repository_permission() : ?string
     {
         return $this->default_repository_permission;
     }
-    public function members_can_create_repositories() : bool
+    public function members_can_create_repositories() : ?bool
     {
         return $this->members_can_create_repositories;
     }
-    public function two_factor_requirement_enabled() : bool
+    public function two_factor_requirement_enabled() : ?bool
     {
         return $this->two_factor_requirement_enabled;
     }
-    public function members_allowed_repository_creation_type() : string
+    public function members_allowed_repository_creation_type() : ?string
     {
         return $this->members_allowed_repository_creation_type;
     }
-    public function members_can_create_public_repositories() : bool
+    public function members_can_create_public_repositories() : ?bool
     {
         return $this->members_can_create_public_repositories;
     }
-    public function members_can_create_private_repositories() : bool
+    public function members_can_create_private_repositories() : ?bool
     {
         return $this->members_can_create_private_repositories;
     }
-    public function members_can_create_internal_repositories() : bool
+    public function members_can_create_internal_repositories() : ?bool
     {
         return $this->members_can_create_internal_repositories;
     }
-    public function members_can_create_pages() : bool
+    public function members_can_create_pages() : ?bool
     {
         return $this->members_can_create_pages;
     }
-    public function members_can_create_public_pages() : bool
+    public function members_can_create_public_pages() : ?bool
     {
         return $this->members_can_create_public_pages;
     }
-    public function members_can_create_private_pages() : bool
+    public function members_can_create_private_pages() : ?bool
     {
         return $this->members_can_create_private_pages;
     }

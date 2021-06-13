@@ -13,7 +13,7 @@ final class Integration
     /**
      * The slug name of the GitHub app
      */
-    private string $slug;
+    private ?string $slug = null;
     private string $node_id;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -39,11 +39,11 @@ final class Integration
     /**
      * The number of installations associated with the GitHub app
      */
-    private int $installations_count;
-    private string $client_id;
-    private string $client_secret;
-    private string $webhook_secret;
-    private string $pem;
+    private ?int $installations_count = null;
+    private ?string $client_id = null;
+    private ?string $client_secret = null;
+    private ?string $webhook_secret = null;
+    private ?string $pem = null;
     /**
      * Unique identifier of the GitHub app
      */
@@ -54,7 +54,7 @@ final class Integration
     /**
      * The slug name of the GitHub app
      */
-    public function slug() : string
+    public function slug() : ?string
     {
         return $this->slug;
     }
@@ -110,23 +110,23 @@ final class Integration
     /**
      * The number of installations associated with the GitHub app
      */
-    public function installations_count() : int
+    public function installations_count() : ?int
     {
         return $this->installations_count;
     }
-    public function client_id() : string
+    public function client_id() : ?string
     {
         return $this->client_id;
     }
-    public function client_secret() : string
+    public function client_secret() : ?string
     {
         return $this->client_secret;
     }
-    public function webhook_secret() : string
+    public function webhook_secret() : ?string
     {
         return $this->webhook_secret;
     }
-    public function pem() : string
+    public function pem() : ?string
     {
         return $this->pem;
     }

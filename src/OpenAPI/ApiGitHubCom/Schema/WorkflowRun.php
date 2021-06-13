@@ -13,16 +13,16 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    private string $name;
+    private ?string $name = null;
     private string $node_id;
     /**
      * The ID of the associated check suite.
      */
-    private int $check_suite_id;
+    private ?int $check_suite_id = null;
     /**
      * The node ID of the associated check suite.
      */
-    private string $check_suite_node_id;
+    private ?string $check_suite_node_id = null;
     private string $head_branch;
     /**
      * The SHA of the head commit that points to the version of the worflow being run.
@@ -93,7 +93,7 @@ final class WorkflowRun
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $head_repository;
-    private int $head_repository_id;
+    private ?int $head_repository_id = null;
     /**
      * The ID of the workflow run.
      */
@@ -104,7 +104,7 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
@@ -115,14 +115,14 @@ final class WorkflowRun
     /**
      * The ID of the associated check suite.
      */
-    public function check_suite_id() : int
+    public function check_suite_id() : ?int
     {
         return $this->check_suite_id;
     }
     /**
      * The node ID of the associated check suite.
      */
-    public function check_suite_node_id() : string
+    public function check_suite_node_id() : ?string
     {
         return $this->check_suite_node_id;
     }
@@ -256,7 +256,7 @@ final class WorkflowRun
     {
         return $this->head_repository;
     }
-    public function head_repository_id() : int
+    public function head_repository_id() : ?int
     {
         return $this->head_repository_id;
     }

@@ -24,7 +24,7 @@ final class SimpleUser
     private string $received_events_url;
     private string $type;
     private bool $site_admin;
-    private string $starred_at;
+    private ?string $starred_at = null;
     public function login() : string
     {
         return $this->login;
@@ -97,7 +97,7 @@ final class SimpleUser
     {
         return $this->site_admin;
     }
-    public function starred_at() : string
+    public function starred_at() : ?string
     {
         return $this->starred_at;
     }

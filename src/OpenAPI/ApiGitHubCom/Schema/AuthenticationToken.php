@@ -14,18 +14,18 @@ final class AuthenticationToken
      * The time this token expires
      */
     private string $expires_at;
-    private array $permissions = array();
+    private ?array $permissions = array();
     /**
      * The repositories this token has access to
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private array $repositories = array();
-    private string $single_file;
+    private ?array $repositories = array();
+    private ?string $single_file = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    private string $repository_selection;
+    private ?string $repository_selection = null;
     /**
      * The token used for authentication
      */
@@ -40,7 +40,7 @@ final class AuthenticationToken
     {
         return $this->expires_at;
     }
-    public function permissions() : array
+    public function permissions() : ?array
     {
         return $this->permissions;
     }
@@ -48,18 +48,18 @@ final class AuthenticationToken
      * The repositories this token has access to
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
      */
-    public function repositories() : array
+    public function repositories() : ?array
     {
         return $this->repositories;
     }
-    public function single_file() : string
+    public function single_file() : ?string
     {
         return $this->single_file;
     }
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    public function repository_selection() : string
+    public function repository_selection() : ?string
     {
         return $this->repository_selection;
     }

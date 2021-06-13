@@ -26,7 +26,7 @@ final class CodeScanningAnalysis
     /**
      * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
      */
-    private string $category;
+    private ?string $category = null;
     private string $error;
     /**
      * The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -93,7 +93,7 @@ final class CodeScanningAnalysis
     /**
      * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
      */
-    public function category() : string
+    public function category() : ?string
     {
         return $this->category;
     }

@@ -32,7 +32,7 @@ final class Issue
     /**
      * Contents of the issue
      */
-    private string $body;
+    private ?string $body = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -49,15 +49,15 @@ final class Issue
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $assignees = array();
+    private ?array $assignees = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone;
     private bool $locked;
-    private string $active_lock_reason;
+    private ?string $active_lock_reason = null;
     private int $comments;
-    private array $pull_request = array();
+    private ?array $pull_request = array();
     private string $closed_at;
     private string $created_at;
     private string $updated_at;
@@ -65,14 +65,14 @@ final class Issue
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $closed_by;
-    private string $body_html;
-    private string $body_text;
-    private string $timeline_url;
+    private ?string $body_html = null;
+    private ?string $body_text = null;
+    private ?string $timeline_url = null;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
@@ -84,7 +84,7 @@ final class Issue
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
     public function id() : int
     {
         return $this->id;
@@ -144,7 +144,7 @@ final class Issue
     /**
      * Contents of the issue
      */
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -166,7 +166,7 @@ final class Issue
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function assignees() : array
+    public function assignees() : ?array
     {
         return $this->assignees;
     }
@@ -178,7 +178,7 @@ final class Issue
     {
         return $this->locked;
     }
-    public function active_lock_reason() : string
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
@@ -186,7 +186,7 @@ final class Issue
     {
         return $this->comments;
     }
-    public function pull_request() : array
+    public function pull_request() : ?array
     {
         return $this->pull_request;
     }
@@ -206,15 +206,15 @@ final class Issue
     {
         return $this->closed_by;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }
-    public function timeline_url() : string
+    public function timeline_url() : ?string
     {
         return $this->timeline_url;
     }

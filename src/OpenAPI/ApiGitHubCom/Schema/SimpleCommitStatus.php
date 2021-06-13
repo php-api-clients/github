@@ -12,7 +12,7 @@ final class SimpleCommitStatus
     private string $state;
     private string $context;
     private string $target_url;
-    private bool $required;
+    private ?bool $required = null;
     private string $avatar_url;
     private string $url;
     private string $created_at;
@@ -41,7 +41,7 @@ final class SimpleCommitStatus
     {
         return $this->target_url;
     }
-    public function required() : bool
+    public function required() : ?bool
     {
         return $this->required;
     }

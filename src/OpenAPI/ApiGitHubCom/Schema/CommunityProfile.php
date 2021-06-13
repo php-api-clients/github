@@ -11,7 +11,7 @@ final class CommunityProfile
     private string $documentation;
     private array $files = array();
     private string $updated_at;
-    private bool $content_reports_enabled;
+    private ?bool $content_reports_enabled = null;
     public function health_percentage() : int
     {
         return $this->health_percentage;
@@ -32,7 +32,7 @@ final class CommunityProfile
     {
         return $this->updated_at;
     }
-    public function content_reports_enabled() : bool
+    public function content_reports_enabled() : ?bool
     {
         return $this->content_reports_enabled;
     }

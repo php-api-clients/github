@@ -21,7 +21,7 @@ final class TeamRepository
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license;
     private int $forks;
-    private array $permissions = array();
+    private ?array $permissions = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -89,8 +89,8 @@ final class TeamRepository
     /**
      * Whether this repository acts as a template that can be used to generate new repositories.
      */
-    private bool $is_template;
-    private array $topics = array();
+    private ?bool $is_template = null;
+    private ?array $topics = array();
     /**
      * Whether issues are enabled.
      */
@@ -119,36 +119,36 @@ final class TeamRepository
     /**
      * The repository visibility: public, private, or internal.
      */
-    private string $visibility;
+    private ?string $visibility = null;
     private string $pushed_at;
     private string $created_at;
     private string $updated_at;
     /**
      * Whether to allow rebase merges for pull requests.
      */
-    private bool $allow_rebase_merge;
+    private ?bool $allow_rebase_merge = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository;
-    private string $temp_clone_token;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
+    private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
      */
-    private bool $allow_squash_merge;
+    private ?bool $allow_squash_merge = null;
     /**
      * Whether to delete head branches when pull requests are merged
      */
-    private bool $delete_branch_on_merge;
+    private ?bool $delete_branch_on_merge = null;
     /**
      * Whether to allow merge commits for pull requests.
      */
-    private bool $allow_merge_commit;
-    private int $subscribers_count;
-    private int $network_count;
+    private ?bool $allow_merge_commit = null;
+    private ?int $subscribers_count = null;
+    private ?int $network_count = null;
     private int $open_issues;
     private int $watchers;
-    private string $master_branch;
+    private ?string $master_branch = null;
     /**
      * Unique identifier of the repository
      */
@@ -179,7 +179,7 @@ final class TeamRepository
     {
         return $this->forks;
     }
-    public function permissions() : array
+    public function permissions() : ?array
     {
         return $this->permissions;
     }
@@ -412,11 +412,11 @@ final class TeamRepository
     /**
      * Whether this repository acts as a template that can be used to generate new repositories.
      */
-    public function is_template() : bool
+    public function is_template() : ?bool
     {
         return $this->is_template;
     }
-    public function topics() : array
+    public function topics() : ?array
     {
         return $this->topics;
     }
@@ -469,7 +469,7 @@ final class TeamRepository
     /**
      * The repository visibility: public, private, or internal.
      */
-    public function visibility() : string
+    public function visibility() : ?string
     {
         return $this->visibility;
     }
@@ -488,7 +488,7 @@ final class TeamRepository
     /**
      * Whether to allow rebase merges for pull requests.
      */
-    public function allow_rebase_merge() : bool
+    public function allow_rebase_merge() : ?bool
     {
         return $this->allow_rebase_merge;
     }
@@ -496,36 +496,36 @@ final class TeamRepository
     {
         return $this->template_repository;
     }
-    public function temp_clone_token() : string
+    public function temp_clone_token() : ?string
     {
         return $this->temp_clone_token;
     }
     /**
      * Whether to allow squash merges for pull requests.
      */
-    public function allow_squash_merge() : bool
+    public function allow_squash_merge() : ?bool
     {
         return $this->allow_squash_merge;
     }
     /**
      * Whether to delete head branches when pull requests are merged
      */
-    public function delete_branch_on_merge() : bool
+    public function delete_branch_on_merge() : ?bool
     {
         return $this->delete_branch_on_merge;
     }
     /**
      * Whether to allow merge commits for pull requests.
      */
-    public function allow_merge_commit() : bool
+    public function allow_merge_commit() : ?bool
     {
         return $this->allow_merge_commit;
     }
-    public function subscribers_count() : int
+    public function subscribers_count() : ?int
     {
         return $this->subscribers_count;
     }
-    public function network_count() : int
+    public function network_count() : ?int
     {
         return $this->network_count;
     }
@@ -537,7 +537,7 @@ final class TeamRepository
     {
         return $this->watchers;
     }
-    public function master_branch() : string
+    public function master_branch() : ?string
     {
         return $this->master_branch;
     }

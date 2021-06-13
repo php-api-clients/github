@@ -16,7 +16,7 @@ final class DeploymentSimple
      * Parameter to specify a task to execute
      */
     private string $task;
-    private string $original_environment;
+    private ?string $original_environment = null;
     /**
      * Name for the target deployment environment.
      */
@@ -29,11 +29,11 @@ final class DeploymentSimple
     /**
      * Specifies if the given environment is will no longer exist at some point in the future. Default: false.
      */
-    private bool $transient_environment;
+    private ?bool $transient_environment = null;
     /**
      * Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
-    private bool $production_environment;
+    private ?bool $production_environment = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
@@ -60,7 +60,7 @@ final class DeploymentSimple
     {
         return $this->task;
     }
-    public function original_environment() : string
+    public function original_environment() : ?string
     {
         return $this->original_environment;
     }
@@ -94,14 +94,14 @@ final class DeploymentSimple
     /**
      * Specifies if the given environment is will no longer exist at some point in the future. Default: false.
      */
-    public function transient_environment() : bool
+    public function transient_environment() : ?bool
     {
         return $this->transient_environment;
     }
     /**
      * Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
-    public function production_environment() : bool
+    public function production_environment() : ?bool
     {
         return $this->production_environment;
     }

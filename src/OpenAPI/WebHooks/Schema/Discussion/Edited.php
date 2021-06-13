@@ -6,7 +6,7 @@ final class Edited
 {
     public const SCHEMA_TITLE = 'discussion edited event';
     public const SCHEMA_DESCRIPTION = '';
-    private array $changes = array();
+    private ?array $changes = array();
     private string $action;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Discussion::class)
@@ -25,12 +25,12 @@ final class Edited
      * Installation
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
-    public function changes() : array
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
+    public function changes() : ?array
     {
         return $this->changes;
     }

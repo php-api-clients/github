@@ -31,7 +31,7 @@ final class PrivateUser
     private string $email;
     private bool $hireable;
     private string $bio;
-    private string $twitter_username;
+    private ?string $twitter_username = null;
     private int $public_repos;
     private int $public_gists;
     private int $followers;
@@ -44,10 +44,10 @@ final class PrivateUser
     private int $disk_usage;
     private int $collaborators;
     private bool $two_factor_authentication;
-    private array $plan = array();
-    private string $suspended_at;
-    private bool $business_plus;
-    private string $ldap_dn;
+    private ?array $plan = array();
+    private ?string $suspended_at = null;
+    private ?bool $business_plus = null;
+    private ?string $ldap_dn = null;
     public function login() : string
     {
         return $this->login;
@@ -148,7 +148,7 @@ final class PrivateUser
     {
         return $this->bio;
     }
-    public function twitter_username() : string
+    public function twitter_username() : ?string
     {
         return $this->twitter_username;
     }
@@ -200,19 +200,19 @@ final class PrivateUser
     {
         return $this->two_factor_authentication;
     }
-    public function plan() : array
+    public function plan() : ?array
     {
         return $this->plan;
     }
-    public function suspended_at() : string
+    public function suspended_at() : ?string
     {
         return $this->suspended_at;
     }
-    public function business_plus() : bool
+    public function business_plus() : ?bool
     {
         return $this->business_plus;
     }
-    public function ldap_dn() : string
+    public function ldap_dn() : ?string
     {
         return $this->ldap_dn;
     }

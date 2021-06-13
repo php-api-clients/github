@@ -96,7 +96,7 @@ final class PullRequestReviewComment
     /**
      * The comment ID to reply to.
      */
-    private int $in_reply_to_id;
+    private ?int $in_reply_to_id = null;
     /**
      * URL for the pull request review comment
      */
@@ -256,7 +256,7 @@ final class PullRequestReviewComment
     /**
      * The comment ID to reply to.
      */
-    public function in_reply_to_id() : int
+    public function in_reply_to_id() : ?int
     {
         return $this->in_reply_to_id;
     }

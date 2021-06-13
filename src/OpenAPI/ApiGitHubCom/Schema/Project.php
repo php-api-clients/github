@@ -34,11 +34,11 @@ final class Project
     /**
      * The baseline permission that all organization members have on this project. Only present if owner is an organization.
      */
-    private string $organization_permission;
+    private ?string $organization_permission = null;
     /**
      * Whether or not this project can be seen by everyone. Only present if owner is an organization.
      */
-    private bool $private;
+    private ?bool $private = null;
     public function owner_url() : string
     {
         return $this->owner_url;
@@ -103,14 +103,14 @@ final class Project
     /**
      * The baseline permission that all organization members have on this project. Only present if owner is an organization.
      */
-    public function organization_permission() : string
+    public function organization_permission() : ?string
     {
         return $this->organization_permission;
     }
     /**
      * Whether or not this project can be seen by everyone. Only present if owner is an organization.
      */
-    public function private() : bool
+    public function private() : ?bool
     {
         return $this->private;
     }

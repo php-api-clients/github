@@ -11,7 +11,7 @@ final class Team
     private string $name;
     private string $slug;
     private string $description;
-    private string $privacy;
+    private ?string $privacy = null;
     private string $permission;
     private string $url;
     private string $html_url;
@@ -41,7 +41,7 @@ final class Team
     {
         return $this->description;
     }
-    public function privacy() : string
+    public function privacy() : ?string
     {
         return $this->privacy;
     }

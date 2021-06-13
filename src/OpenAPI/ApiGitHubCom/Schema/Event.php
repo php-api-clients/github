@@ -18,7 +18,7 @@ final class Event
      * Actor
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org = null;
     private array $payload = array();
     private bool $public;
     private string $created_at;

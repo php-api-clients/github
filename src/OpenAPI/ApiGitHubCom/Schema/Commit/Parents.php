@@ -8,7 +8,7 @@ final class Parents
     public const SCHEMA_DESCRIPTION = '';
     private string $sha;
     private string $url;
-    private string $html_url;
+    private ?string $html_url = null;
     public function sha() : string
     {
         return $this->sha;
@@ -17,7 +17,7 @@ final class Parents
     {
         return $this->url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

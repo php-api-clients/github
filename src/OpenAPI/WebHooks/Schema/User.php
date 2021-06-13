@@ -9,8 +9,8 @@ final class User
     private string $login;
     private int $id;
     private string $node_id;
-    private ?string  $name = null;
-    private ?string $email = null;
+    private ?string $name = null;
+    private $email;
     private string $avatar_url;
     private string $gravatar_id;
     private string $url;
@@ -38,7 +38,7 @@ final class User
     {
         return $this->node_id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }

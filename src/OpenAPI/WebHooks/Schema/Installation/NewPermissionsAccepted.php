@@ -17,7 +17,7 @@ final class NewPermissionsAccepted
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\NewPermissionsAccepted\Repositories>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\NewPermissionsAccepted\Repositories::class)
      */
-    private array $repositories = array();
+    private ?array $repositories = array();
     private $requester;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
@@ -38,7 +38,7 @@ final class NewPermissionsAccepted
      * An array of repository objects that the installation can access.
      * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\NewPermissionsAccepted\Repositories>
      */
-    public function repositories() : array
+    public function repositories() : ?array
     {
         return $this->repositories;
     }

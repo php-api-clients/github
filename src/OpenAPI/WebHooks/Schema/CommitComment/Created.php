@@ -27,11 +27,11 @@ final class Created
      * Installation
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     /**
      * The action performed. Can be `created`.
      */

@@ -21,12 +21,12 @@ final class IssueEvent
      * Issue Simple
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSimple::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSimple $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSimple $issue = null;
     /**
      * Issue Event Label
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel $label;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel $label = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -47,31 +47,31 @@ final class IssueEvent
      * Groups of organization members that gives permissions on specified repositories.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team $requested_team;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team $requested_team = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventDismissedReview::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventDismissedReview $dismissed_review;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventDismissedReview $dismissed_review = null;
     /**
      * Issue Event Milestone
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventMilestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventMilestone $milestone;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventMilestone $milestone = null;
     /**
      * Issue Event Project Card
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventProjectCard::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventProjectCard $project_card;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventProjectCard $project_card = null;
     /**
      * Issue Event Rename
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventRename::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventRename $rename;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventRename $rename = null;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
-    private string $lock_reason;
+    private ?string $author_association = null;
+    private ?string $lock_reason = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
@@ -173,11 +173,11 @@ final class IssueEvent
     /**
      * How the author is associated with the repository.
      */
-    public function author_association() : string
+    public function author_association() : ?string
     {
         return $this->author_association;
     }
-    public function lock_reason() : string
+    public function lock_reason() : ?string
     {
         return $this->lock_reason;
     }

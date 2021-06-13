@@ -11,7 +11,7 @@ final class MarketplacePurchase
     private int $unit_count;
     private bool $on_free_trial;
     private $free_trial_ends_on;
-    private string $next_billing_date;
+    private ?string $next_billing_date = null;
     private array $plan = array();
     public function account() : array
     {
@@ -33,7 +33,7 @@ final class MarketplacePurchase
     {
         return $this->free_trial_ends_on;
     }
-    public function next_billing_date() : string
+    public function next_billing_date() : ?string
     {
         return $this->next_billing_date;
     }

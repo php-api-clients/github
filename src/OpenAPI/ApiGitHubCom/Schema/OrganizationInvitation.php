@@ -11,8 +11,8 @@ final class OrganizationInvitation
     private string $email;
     private string $role;
     private string $created_at;
-    private string $failed_at;
-    private string $failed_reason;
+    private ?string $failed_at = null;
+    private ?string $failed_reason = null;
     /**
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -41,11 +41,11 @@ final class OrganizationInvitation
     {
         return $this->created_at;
     }
-    public function failed_at() : string
+    public function failed_at() : ?string
     {
         return $this->failed_at;
     }
-    public function failed_reason() : string
+    public function failed_reason() : ?string
     {
         return $this->failed_reason;
     }

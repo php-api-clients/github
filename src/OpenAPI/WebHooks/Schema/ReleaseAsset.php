@@ -27,7 +27,7 @@ final class ReleaseAsset
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $uploader;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $uploader = null;
     public function url() : string
     {
         return $this->url;

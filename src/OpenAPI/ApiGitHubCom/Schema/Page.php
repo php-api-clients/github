@@ -25,11 +25,11 @@ final class Page
     /**
      * The web address the Page can be accessed from.
      */
-    private string $html_url;
+    private ?string $html_url = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash $source;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash $source = null;
     /**
      * Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      */
@@ -37,11 +37,11 @@ final class Page
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate $https_certificate;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate $https_certificate = null;
     /**
      * Whether https is enabled on the domain
      */
-    private bool $https_enforced;
+    private ?bool $https_enforced = null;
     /**
      * The API address for accessing this Page resource.
      */
@@ -73,7 +73,7 @@ final class Page
     /**
      * The web address the Page can be accessed from.
      */
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
@@ -95,7 +95,7 @@ final class Page
     /**
      * Whether https is enabled on the domain
      */
-    public function https_enforced() : bool
+    public function https_enforced() : ?bool
     {
         return $this->https_enforced;
     }

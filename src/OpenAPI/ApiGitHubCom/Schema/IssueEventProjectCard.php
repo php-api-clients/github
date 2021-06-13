@@ -11,7 +11,7 @@ final class IssueEventProjectCard
     private string $project_url;
     private int $project_id;
     private string $column_name;
-    private string $previous_column_name;
+    private ?string $previous_column_name = null;
     public function url() : string
     {
         return $this->url;
@@ -32,7 +32,7 @@ final class IssueEventProjectCard
     {
         return $this->column_name;
     }
-    public function previous_column_name() : string
+    public function previous_column_name() : ?string
     {
         return $this->previous_column_name;
     }
