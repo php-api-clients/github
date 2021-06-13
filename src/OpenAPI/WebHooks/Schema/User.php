@@ -9,8 +9,8 @@ final class User
     private string $login;
     private int $id;
     private string $node_id;
-    private string $name;
-    private $email;
+    private ?string  $name = null;
+    private ?string $email = null;
     private string $avatar_url;
     private string $gravatar_id;
     private string $url;
