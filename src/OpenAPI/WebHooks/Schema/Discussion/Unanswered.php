@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Discussion;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Discussion;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
@@ -14,7 +15,8 @@ final class Unanswered
     public const SCHEMA_TITLE       = 'discussion unanswered event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $discussion;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Discussion::class) */
+    private Discussion $discussion;
     private array $old_answer = [];
     /**
      * A git repository
@@ -38,7 +40,7 @@ final class Unanswered
         return $this->action;
     }
 
-    public function discussion()
+    public function discussion(): Discussion
     {
         return $this->discussion;
     }

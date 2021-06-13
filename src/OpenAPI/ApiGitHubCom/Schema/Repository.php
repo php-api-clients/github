@@ -18,11 +18,14 @@ final class Repository
      */
     private string $name;
     private string $full_name;
-    private $license;
-    private $organization;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class) */
+    private LicenseSimple $license;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $organization;
     private int $forks;
     private array $permissions = [];
-    private $owner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
     /**
      * Whether the repository is private or public.
      */
@@ -171,12 +174,12 @@ final class Repository
         return $this->full_name;
     }
 
-    public function license()
+    public function license(): LicenseSimple
     {
         return $this->license;
     }
 
-    public function organization()
+    public function organization(): SimpleUser
     {
         return $this->organization;
     }
@@ -191,7 +194,7 @@ final class Repository
         return $this->permissions;
     }
 
-    public function owner()
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }

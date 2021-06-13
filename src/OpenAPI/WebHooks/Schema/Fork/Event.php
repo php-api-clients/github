@@ -15,8 +15,10 @@ final class Event
     public const SCHEMA_DESCRIPTION = 'A user forks a repository.';
     /**
      * The created [`repository`](https://docs.github.com/en/rest/reference/repos#get-a-repository) resource.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private $forkee;
+    private Repository $forkee;
     /**
      * A git repository
      *
@@ -37,7 +39,7 @@ final class Event
     /**
      * The created [`repository`](https://docs.github.com/en/rest/reference/repos#get-a-repository) resource.
      */
-    public function forkee()
+    public function forkee(): Repository
     {
         return $this->forkee;
     }

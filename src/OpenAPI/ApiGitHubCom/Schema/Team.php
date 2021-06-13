@@ -19,7 +19,8 @@ final class Team
     private string $html_url;
     private string $members_url;
     private string $repositories_url;
-    private $parent;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class) */
+    private TeamSimple $parent;
 
     public function id(): int
     {
@@ -76,7 +77,7 @@ final class Team
         return $this->repositories_url;
     }
 
-    public function parent()
+    public function parent(): TeamSimple
     {
         return $this->parent;
     }

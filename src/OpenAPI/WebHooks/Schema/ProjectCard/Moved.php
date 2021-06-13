@@ -6,6 +6,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\ProjectCard;
 
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\ProjectCard;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
@@ -15,7 +16,8 @@ final class Moved
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     private array $changes = [];
-    private $project_card;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\ProjectCard::class) */
+    private ProjectCard $project_card;
     /**
      * A git repository
      *
@@ -43,7 +45,7 @@ final class Moved
         return $this->changes;
     }
 
-    public function project_card()
+    public function project_card(): ProjectCard
     {
         return $this->project_card;
     }

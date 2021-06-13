@@ -15,7 +15,8 @@ final class DeploymentStatus
      * The state of the status.
      */
     private string $state;
-    private $creator;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $creator;
     /**
      * A short description of the status.
      */
@@ -40,7 +41,8 @@ final class DeploymentStatus
      * The URL to associate with this status.
      */
     private string $log_url;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
 
     public function url(): string
     {
@@ -65,7 +67,7 @@ final class DeploymentStatus
         return $this->state;
     }
 
-    public function creator()
+    public function creator(): SimpleUser
     {
         return $this->creator;
     }
@@ -130,7 +132,7 @@ final class DeploymentStatus
         return $this->log_url;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

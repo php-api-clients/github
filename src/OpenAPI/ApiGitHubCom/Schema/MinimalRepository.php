@@ -12,7 +12,8 @@ final class MinimalRepository
     private string $node_id;
     private string $name;
     private string $full_name;
-    private array $owner = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
     private bool $private;
     private string $html_url;
     private string $description;
@@ -80,8 +81,9 @@ final class MinimalRepository
     private string $pushed_at;
     private string $created_at;
     private string $updated_at;
-    private array $permissions         = [];
-    private array $template_repository = [];
+    private array $permissions = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class) */
+    private Repository $template_repository;
     private string $temp_clone_token;
     private bool $delete_branch_on_merge;
     private int $subscribers_count;
@@ -111,7 +113,7 @@ final class MinimalRepository
         return $this->full_name;
     }
 
-    public function owner(): array
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }
@@ -456,7 +458,7 @@ final class MinimalRepository
         return $this->permissions;
     }
 
-    public function template_repository(): array
+    public function template_repository(): Repository
     {
         return $this->template_repository;
     }

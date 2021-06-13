@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issues;
 
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
@@ -14,7 +15,8 @@ final class Opened
     public const SCHEMA_TITLE       = 'issues opened event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $issue;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue::class) */
+    private Issue $issue;
     /**
      * A git repository
      *
@@ -37,7 +39,7 @@ final class Opened
         return $this->action;
     }
 
-    public function issue()
+    public function issue(): Issue
     {
         return $this->issue;
     }

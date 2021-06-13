@@ -14,7 +14,8 @@ final class ApplicationGrant
     private string $created_at;
     private string $updated_at;
     private array $scopes = [];
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
 
     public function id(): int
     {
@@ -46,7 +47,7 @@ final class ApplicationGrant
         return $this->scopes;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

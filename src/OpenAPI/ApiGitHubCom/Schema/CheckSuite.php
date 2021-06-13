@@ -25,7 +25,8 @@ final class CheckSuite
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal::class)
      */
     private array $pull_requests = [];
-    private $app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $app;
     /**
      * Minimal Repository
      *
@@ -99,7 +100,7 @@ final class CheckSuite
         return $this->pull_requests;
     }
 
-    public function app()
+    public function app(): Integration
     {
         return $this->app;
     }

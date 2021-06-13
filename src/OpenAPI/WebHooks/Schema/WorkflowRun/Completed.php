@@ -9,6 +9,7 @@ use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Workflow;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\WorkflowRun;
 
 final class Completed
 {
@@ -27,7 +28,8 @@ final class Completed
     private User $sender;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Workflow::class) */
     private Workflow $workflow;
-    private $workflow_run;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\WorkflowRun::class) */
+    private WorkflowRun $workflow_run;
     /**
      * Installation
      *
@@ -63,7 +65,7 @@ final class Completed
         return $this->workflow;
     }
 
-    public function workflow_run()
+    public function workflow_run(): WorkflowRun
     {
         return $this->workflow_run;
     }

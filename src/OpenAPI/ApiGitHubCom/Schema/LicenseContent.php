@@ -20,7 +20,8 @@ final class LicenseContent
     private string $content;
     private string $encoding;
     private array $_links = [];
-    private $license;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class) */
+    private LicenseSimple $license;
 
     public function name(): string
     {
@@ -82,7 +83,7 @@ final class LicenseContent
         return $this->_links;
     }
 
-    public function license()
+    public function license(): LicenseSimple
     {
         return $this->license;
     }

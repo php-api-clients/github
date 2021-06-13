@@ -18,8 +18,10 @@ final class RepositoryInvitation
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
     private MinimalRepository $repository;
-    private $invitee;
-    private $inviter;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $invitee;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $inviter;
     /**
      * The permission associated with the invitation.
      */
@@ -52,12 +54,12 @@ final class RepositoryInvitation
         return $this->repository;
     }
 
-    public function invitee()
+    public function invitee(): SimpleUser
     {
         return $this->invitee;
     }
 
-    public function inviter()
+    public function inviter(): SimpleUser
     {
         return $this->inviter;
     }

@@ -22,9 +22,11 @@ final class BaseGist
     private string $updated_at;
     private string $description;
     private int $comments;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private string $comments_url;
-    private $owner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
     private bool $truncated;
     private array $forks   = [];
     private array $history = [];
@@ -99,7 +101,7 @@ final class BaseGist
         return $this->comments;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
@@ -109,7 +111,7 @@ final class BaseGist
         return $this->comments_url;
     }
 
-    public function owner()
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }

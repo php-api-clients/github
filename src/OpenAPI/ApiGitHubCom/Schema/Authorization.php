@@ -23,8 +23,10 @@ final class Authorization
     private string $updated_at;
     private string $created_at;
     private string $fingerprint;
-    private $user;
-    private $installation;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScopedInstallation::class) */
+    private ScopedInstallation $installation;
 
     public function id(): int
     {
@@ -89,12 +91,12 @@ final class Authorization
         return $this->fingerprint;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
 
-    public function installation()
+    public function installation(): ScopedInstallation
     {
         return $this->installation;
     }

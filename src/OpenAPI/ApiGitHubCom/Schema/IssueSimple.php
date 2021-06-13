@@ -20,19 +20,22 @@ final class IssueSimple
     private string $state;
     private string $title;
     private string $body;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     /**
      * @var array<Label>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label::class)
      */
     private array $labels = [];
-    private $assignee;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $assignee;
     /**
      * @var array<SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private array $assignees = [];
-    private $milestone;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class) */
+    private Milestone $milestone;
     private bool $locked;
     private string $active_lock_reason;
     private int $comments;
@@ -53,7 +56,8 @@ final class IssueSimple
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private Repository $repository;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
 
     public function id(): int
     {
@@ -115,7 +119,7 @@ final class IssueSimple
         return $this->body;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
@@ -128,7 +132,7 @@ final class IssueSimple
         return $this->labels;
     }
 
-    public function assignee()
+    public function assignee(): SimpleUser
     {
         return $this->assignee;
     }
@@ -141,7 +145,7 @@ final class IssueSimple
         return $this->assignees;
     }
 
-    public function milestone()
+    public function milestone(): Milestone
     {
         return $this->milestone;
     }
@@ -212,7 +216,7 @@ final class IssueSimple
         return $this->repository;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

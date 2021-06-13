@@ -14,7 +14,8 @@ final class RepoSearchResultItem
     private string $node_id;
     private string $name;
     private string $full_name;
-    private $owner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
     private bool $private;
     private string $html_url;
     private string $description;
@@ -88,7 +89,8 @@ final class RepoSearchResultItem
      * Returns whether or not this repository disabled.
      */
     private bool $disabled;
-    private $license;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class) */
+    private LicenseSimple $license;
     private array $permissions = [];
     /**
      * @var array<TextMatches>
@@ -121,7 +123,7 @@ final class RepoSearchResultItem
         return $this->full_name;
     }
 
-    public function owner()
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }
@@ -479,7 +481,7 @@ final class RepoSearchResultItem
         return $this->disabled;
     }
 
-    public function license()
+    public function license(): LicenseSimple
     {
         return $this->license;
     }

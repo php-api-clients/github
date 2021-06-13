@@ -9,7 +9,8 @@ final class Migration
     public const SCHEMA_TITLE       = 'Migration';
     public const SCHEMA_DESCRIPTION = 'A migration.';
     private int $id;
-    private $owner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
     private string $guid;
     private string $state;
     private bool $lock_repositories;
@@ -31,7 +32,7 @@ final class Migration
         return $this->id;
     }
 
-    public function owner()
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }

@@ -6,6 +6,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest;
 
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
@@ -18,7 +19,8 @@ final class Reopened
      * The pull request number.
      */
     private int $number;
-    private $pull_request;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class) */
+    private PullRequest $pull_request;
     /**
      * A git repository
      *
@@ -49,7 +51,7 @@ final class Reopened
         return $this->number;
     }
 
-    public function pull_request()
+    public function pull_request(): PullRequest
     {
         return $this->pull_request;
     }

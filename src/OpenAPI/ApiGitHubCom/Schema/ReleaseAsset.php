@@ -26,7 +26,8 @@ final class ReleaseAsset
     private int $download_count;
     private string $created_at;
     private string $updated_at;
-    private $uploader;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $uploader;
 
     public function url(): string
     {
@@ -94,7 +95,7 @@ final class ReleaseAsset
         return $this->updated_at;
     }
 
-    public function uploader()
+    public function uploader(): SimpleUser
     {
         return $this->uploader;
     }

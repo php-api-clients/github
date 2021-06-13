@@ -26,7 +26,8 @@ final class Milestone
      */
     private string $title;
     private string $description;
-    private $creator;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $creator;
     private int $open_issues;
     private int $closed_issues;
     private string $created_at;
@@ -88,7 +89,7 @@ final class Milestone
         return $this->description;
     }
 
-    public function creator()
+    public function creator(): SimpleUser
     {
         return $this->creator;
     }

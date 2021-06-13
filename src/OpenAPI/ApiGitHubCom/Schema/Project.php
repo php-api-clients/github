@@ -27,7 +27,8 @@ final class Project
      * State of the project; either 'open' or 'closed'
      */
     private string $state;
-    private $creator;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $creator;
     private string $created_at;
     private string $updated_at;
     /**
@@ -98,7 +99,7 @@ final class Project
         return $this->state;
     }
 
-    public function creator()
+    public function creator(): SimpleUser
     {
         return $this->creator;
     }

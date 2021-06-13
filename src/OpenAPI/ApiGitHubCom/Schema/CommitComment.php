@@ -17,7 +17,8 @@ final class CommitComment
     private int $position;
     private int $line;
     private string $commit_id;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private string $created_at;
     private string $updated_at;
     /**
@@ -72,7 +73,7 @@ final class CommitComment
         return $this->commit_id;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

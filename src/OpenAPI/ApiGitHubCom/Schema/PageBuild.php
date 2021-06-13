@@ -11,7 +11,8 @@ final class PageBuild
     private string $url;
     private string $status;
     private array $error = [];
-    private $pusher;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $pusher;
     private string $commit;
     private int $duration;
     private string $created_at;
@@ -32,7 +33,7 @@ final class PageBuild
         return $this->error;
     }
 
-    public function pusher()
+    public function pusher(): SimpleUser
     {
         return $this->pusher;
     }

@@ -34,7 +34,8 @@ final class TeamFull
     private string $permission;
     private string $members_url;
     private string $repositories_url;
-    private $parent;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class) */
+    private TeamSimple $parent;
     private int $members_count;
     private int $repos_count;
     private string $created_at;
@@ -120,7 +121,7 @@ final class TeamFull
         return $this->repositories_url;
     }
 
-    public function parent()
+    public function parent(): TeamSimple
     {
         return $this->parent;
     }

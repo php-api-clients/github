@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Milestone;
 
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Milestone;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
@@ -14,7 +15,8 @@ final class Opened
     public const SCHEMA_TITLE       = 'milestone opened event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $milestone;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Milestone::class) */
+    private Milestone $milestone;
     /**
      * A git repository
      *
@@ -37,7 +39,7 @@ final class Opened
         return $this->action;
     }
 
-    public function milestone()
+    public function milestone(): Milestone
     {
         return $this->milestone;
     }

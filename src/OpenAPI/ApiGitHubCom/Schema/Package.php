@@ -24,8 +24,10 @@ final class Package
      */
     private int $version_count;
     private string $visibility;
-    private $owner;
-    private $repository;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class) */
+    private MinimalRepository $repository;
     private string $created_at;
     private string $updated_at;
 
@@ -73,12 +75,12 @@ final class Package
         return $this->visibility;
     }
 
-    public function owner()
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }
 
-    public function repository()
+    public function repository(): MinimalRepository
     {
         return $this->repository;
     }

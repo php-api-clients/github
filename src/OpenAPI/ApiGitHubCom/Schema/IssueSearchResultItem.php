@@ -28,15 +28,18 @@ final class IssueSearchResultItem
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private array $assignees = [];
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     /**
      * @var array<Labels>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\Labels::class)
      */
     private array $labels = [];
     private string $state;
-    private $assignee;
-    private $milestone;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $assignee;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class) */
+    private Milestone $milestone;
     private int $comments;
     private string $created_at;
     private string $updated_at;
@@ -63,7 +66,8 @@ final class IssueSearchResultItem
     private string $body_html;
     private string $body_text;
     private string $timeline_url;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
 
     public function url(): string
     {
@@ -133,7 +137,7 @@ final class IssueSearchResultItem
         return $this->assignees;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
@@ -151,12 +155,12 @@ final class IssueSearchResultItem
         return $this->state;
     }
 
-    public function assignee()
+    public function assignee(): SimpleUser
     {
         return $this->assignee;
     }
 
-    public function milestone()
+    public function milestone(): Milestone
     {
         return $this->milestone;
     }
@@ -240,7 +244,7 @@ final class IssueSearchResultItem
         return $this->timeline_url;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

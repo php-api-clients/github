@@ -26,21 +26,24 @@ final class PullRequestSimple
     private string $state;
     private bool $locked;
     private string $title;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private string $body;
     /**
      * @var array<Labels>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple\Labels::class)
      */
     private array $labels = [];
-    private $milestone;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class) */
+    private Milestone $milestone;
     private string $active_lock_reason;
     private string $created_at;
     private string $updated_at;
     private string $closed_at;
     private string $merged_at;
     private string $merge_commit_sha;
-    private $assignee;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $assignee;
     /**
      * @var array<SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -154,7 +157,7 @@ final class PullRequestSimple
         return $this->title;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
@@ -172,7 +175,7 @@ final class PullRequestSimple
         return $this->labels;
     }
 
-    public function milestone()
+    public function milestone(): Milestone
     {
         return $this->milestone;
     }
@@ -207,7 +210,7 @@ final class PullRequestSimple
         return $this->merge_commit_sha;
     }
 
-    public function assignee()
+    public function assignee(): SimpleUser
     {
         return $this->assignee;
     }

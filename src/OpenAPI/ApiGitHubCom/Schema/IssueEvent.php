@@ -11,7 +11,8 @@ final class IssueEvent
     private int $id;
     private string $node_id;
     private string $url;
-    private $actor;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $actor;
     private string $event;
     private string $commit_id;
     private string $commit_url;
@@ -28,10 +29,14 @@ final class IssueEvent
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel::class)
      */
     private IssueEventLabel $label;
-    private $assignee;
-    private $assigner;
-    private $review_requester;
-    private $requested_reviewer;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $assignee;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $assigner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $review_requester;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $requested_reviewer;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      *
@@ -63,7 +68,8 @@ final class IssueEvent
      */
     private string $author_association;
     private string $lock_reason;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
 
     public function id(): int
     {
@@ -80,7 +86,7 @@ final class IssueEvent
         return $this->url;
     }
 
-    public function actor()
+    public function actor(): SimpleUser
     {
         return $this->actor;
     }
@@ -121,22 +127,22 @@ final class IssueEvent
         return $this->label;
     }
 
-    public function assignee()
+    public function assignee(): SimpleUser
     {
         return $this->assignee;
     }
 
-    public function assigner()
+    public function assigner(): SimpleUser
     {
         return $this->assigner;
     }
 
-    public function review_requester()
+    public function review_requester(): SimpleUser
     {
         return $this->review_requester;
     }
 
-    public function requested_reviewer()
+    public function requested_reviewer(): SimpleUser
     {
         return $this->requested_reviewer;
     }
@@ -191,7 +197,7 @@ final class IssueEvent
         return $this->lock_reason;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

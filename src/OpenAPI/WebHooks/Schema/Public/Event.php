@@ -6,13 +6,15 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Public;
 
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Event
 {
     public const SCHEMA_TITLE       = 'public event';
     public const SCHEMA_DESCRIPTION = 'When a private repository is made public.';
-    private $repository;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class) */
+    private Repository $repository;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
     private User $sender;
     /**
@@ -24,7 +26,7 @@ final class Event
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class) */
     private Organization $organization;
 
-    public function repository()
+    public function repository(): Repository
     {
         return $this->repository;
     }

@@ -81,7 +81,8 @@ final class WorkflowRun
      * The URL to the workflow.
      */
     private string $workflow_url;
-    private $head_commit;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit::class) */
+    private SimpleCommit $head_commit;
     /**
      * Minimal Repository
      *
@@ -264,7 +265,7 @@ final class WorkflowRun
         return $this->workflow_url;
     }
 
-    public function head_commit()
+    public function head_commit(): SimpleCommit
     {
         return $this->head_commit;
     }

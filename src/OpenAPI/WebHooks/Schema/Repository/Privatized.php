@@ -6,6 +6,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Privatized
@@ -13,7 +14,8 @@ final class Privatized
     public const SCHEMA_TITLE       = 'repository privatized event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $repository;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class) */
+    private Repository $repository;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
     private User $sender;
     /**
@@ -30,7 +32,7 @@ final class Privatized
         return $this->action;
     }
 
-    public function repository()
+    public function repository(): Repository
     {
         return $this->repository;
     }

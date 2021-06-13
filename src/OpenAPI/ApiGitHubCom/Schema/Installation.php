@@ -35,7 +35,8 @@ final class Installation
     private bool $has_multiple_single_files;
     private array $single_file_paths = [];
     private string $app_slug;
-    private $suspended_by;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $suspended_by;
     private string $suspended_at;
     private string $contact_email;
 
@@ -133,7 +134,7 @@ final class Installation
         return $this->app_slug;
     }
 
-    public function suspended_by()
+    public function suspended_by(): SimpleUser
     {
         return $this->suspended_by;
     }

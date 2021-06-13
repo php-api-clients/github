@@ -13,7 +13,8 @@ final class Cancelled
     private string $action;
     private string $effective_date;
     private array $sender = [];
-    private $marketplace_purchase;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class) */
+    private MarketplacePurchase $marketplace_purchase;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class) */
     private MarketplacePurchase $previous_marketplace_purchase;
 
@@ -32,7 +33,7 @@ final class Cancelled
         return $this->sender;
     }
 
-    public function marketplace_purchase()
+    public function marketplace_purchase(): MarketplacePurchase
     {
         return $this->marketplace_purchase;
     }

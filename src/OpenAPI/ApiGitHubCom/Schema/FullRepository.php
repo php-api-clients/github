@@ -93,15 +93,18 @@ final class FullRepository
     private string $updated_at;
     private array $permissions = [];
     private bool $allow_rebase_merge;
-    private array $template_repository = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class) */
+    private Repository $template_repository;
     private string $temp_clone_token;
     private bool $allow_squash_merge;
     private bool $delete_branch_on_merge;
     private bool $allow_merge_commit;
     private int $subscribers_count;
     private int $network_count;
-    private $license;
-    private $organization;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class) */
+    private LicenseSimple $license;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $organization;
     /**
      * A git repository
      *
@@ -509,7 +512,7 @@ final class FullRepository
         return $this->allow_rebase_merge;
     }
 
-    public function template_repository(): array
+    public function template_repository(): Repository
     {
         return $this->template_repository;
     }
@@ -544,12 +547,12 @@ final class FullRepository
         return $this->network_count;
     }
 
-    public function license()
+    public function license(): LicenseSimple
     {
         return $this->license;
     }
 
-    public function organization()
+    public function organization(): SimpleUser
     {
         return $this->organization;
     }

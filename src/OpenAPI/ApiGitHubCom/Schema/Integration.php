@@ -17,7 +17,8 @@ final class Integration
      */
     private string $slug;
     private string $node_id;
-    private $owner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
     /**
      * The name of the GitHub app
      */
@@ -65,7 +66,7 @@ final class Integration
         return $this->node_id;
     }
 
-    public function owner()
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }

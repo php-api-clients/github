@@ -18,10 +18,12 @@ final class TeamRepository
      */
     private string $name;
     private string $full_name;
-    private $license;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class) */
+    private LicenseSimple $license;
     private int $forks;
     private array $permissions = [];
-    private $owner;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $owner;
     /**
      * Whether the repository is private or public.
      */
@@ -123,7 +125,8 @@ final class TeamRepository
      * Whether to allow rebase merges for pull requests.
      */
     private bool $allow_rebase_merge;
-    private array $template_repository = [];
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class) */
+    private Repository $template_repository;
     private string $temp_clone_token;
     /**
      * Whether to allow squash merges for pull requests.
@@ -169,7 +172,7 @@ final class TeamRepository
         return $this->full_name;
     }
 
-    public function license()
+    public function license(): LicenseSimple
     {
         return $this->license;
     }
@@ -184,7 +187,7 @@ final class TeamRepository
         return $this->permissions;
     }
 
-    public function owner()
+    public function owner(): SimpleUser
     {
         return $this->owner;
     }
@@ -562,7 +565,7 @@ final class TeamRepository
         return $this->allow_rebase_merge;
     }
 
-    public function template_repository(): array
+    public function template_repository(): Repository
     {
         return $this->template_repository;
     }

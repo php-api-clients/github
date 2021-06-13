@@ -9,14 +9,15 @@ final class Stargazer
     public const SCHEMA_TITLE       = 'Stargazer';
     public const SCHEMA_DESCRIPTION = 'Stargazer';
     private string $starred_at;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
 
     public function starred_at(): string
     {
         return $this->starred_at;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

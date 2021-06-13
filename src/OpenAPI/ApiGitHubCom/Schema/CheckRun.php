@@ -34,7 +34,8 @@ final class CheckRun
      */
     private string $name;
     private array $check_suite = [];
-    private $app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $app;
     private $pull_requests;
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
@@ -125,7 +126,7 @@ final class CheckRun
         return $this->check_suite;
     }
 
-    public function app()
+    public function app(): Integration
     {
         return $this->app;
     }

@@ -24,7 +24,8 @@ final class IssueComment
     private string $body_text;
     private string $body_html;
     private string $html_url;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private string $created_at;
     private string $updated_at;
     private string $issue_url;
@@ -32,7 +33,8 @@ final class IssueComment
      * How the author is associated with the repository.
      */
     private string $author_association;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class) */
     private ReactionRollup $reactions;
 
@@ -80,7 +82,7 @@ final class IssueComment
         return $this->html_url;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
@@ -108,7 +110,7 @@ final class IssueComment
         return $this->author_association;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

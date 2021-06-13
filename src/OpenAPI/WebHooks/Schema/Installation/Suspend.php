@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation;
 
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Suspend\Repositories;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
@@ -12,7 +13,8 @@ final class Suspend
     public const SCHEMA_TITLE       = 'installation suspend event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $installation;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation::class) */
+    private Installation $installation;
     /**
      * An array of repository objects that the installation can access.
      *
@@ -29,7 +31,7 @@ final class Suspend
         return $this->action;
     }
 
-    public function installation()
+    public function installation(): Installation
     {
         return $this->installation;
     }

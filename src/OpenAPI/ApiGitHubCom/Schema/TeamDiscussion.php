@@ -8,7 +8,8 @@ final class TeamDiscussion
 {
     public const SCHEMA_TITLE       = 'Team Discussion';
     public const SCHEMA_DESCRIPTION = 'A team discussion is a persistent record of a free-form conversation within a team.';
-    private $author;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $author;
     /**
      * The main text of the discussion.
      */
@@ -46,7 +47,7 @@ final class TeamDiscussion
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class) */
     private ReactionRollup $reactions;
 
-    public function author()
+    public function author(): SimpleUser
     {
         return $this->author;
     }

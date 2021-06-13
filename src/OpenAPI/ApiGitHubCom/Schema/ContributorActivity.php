@@ -10,7 +10,8 @@ final class ContributorActivity
 {
     public const SCHEMA_TITLE       = 'Contributor Activity';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
-    private $author;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $author;
     private int $total;
     /**
      * @var array<Weeks>
@@ -18,7 +19,7 @@ final class ContributorActivity
      */
     private array $weeks = [];
 
-    public function author()
+    public function author(): SimpleUser
     {
         return $this->author;
     }

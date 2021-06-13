@@ -10,7 +10,8 @@ final class GistCommit
     public const SCHEMA_DESCRIPTION = 'Gist Commit';
     private string $url;
     private string $version;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private array $change_status = [];
     private string $committed_at;
 
@@ -24,7 +25,7 @@ final class GistCommit
         return $this->version;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

@@ -22,7 +22,8 @@ final class PersonalAccessToken
     private string $updated_at;
     private string $created_at;
     private string $fingerprint;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private string $expiration;
 
     public function id(): int
@@ -83,7 +84,7 @@ final class PersonalAccessToken
         return $this->fingerprint;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

@@ -19,7 +19,8 @@ final class ReviewComment
     private string $commit_id;
     private string $original_commit_id;
     private int $in_reply_to_id;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private string $body;
     private string $created_at;
     private string $updated_at;
@@ -112,7 +113,7 @@ final class ReviewComment
         return $this->in_reply_to_id;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

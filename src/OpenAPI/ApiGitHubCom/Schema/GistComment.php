@@ -15,7 +15,8 @@ final class GistComment
      * The comment text.
      */
     private string $body;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     private string $created_at;
     private string $updated_at;
     /**
@@ -46,7 +47,7 @@ final class GistComment
         return $this->body;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

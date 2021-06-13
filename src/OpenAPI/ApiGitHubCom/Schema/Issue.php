@@ -35,18 +35,21 @@ final class Issue
      * Contents of the issue
      */
     private string $body;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     /**
      * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
      */
     private array $labels = [];
-    private $assignee;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $assignee;
     /**
      * @var array<SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private array $assignees = [];
-    private $milestone;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class) */
+    private Milestone $milestone;
     private bool $locked;
     private string $active_lock_reason;
     private int $comments;
@@ -54,7 +57,8 @@ final class Issue
     private string $closed_at;
     private string $created_at;
     private string $updated_at;
-    private $closed_by;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $closed_by;
     private string $body_html;
     private string $body_text;
     private string $timeline_url;
@@ -64,7 +68,8 @@ final class Issue
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private Repository $repository;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
     /**
      * How the author is associated with the repository.
      */
@@ -147,7 +152,7 @@ final class Issue
         return $this->body;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
@@ -160,7 +165,7 @@ final class Issue
         return $this->labels;
     }
 
-    public function assignee()
+    public function assignee(): SimpleUser
     {
         return $this->assignee;
     }
@@ -173,7 +178,7 @@ final class Issue
         return $this->assignees;
     }
 
-    public function milestone()
+    public function milestone(): Milestone
     {
         return $this->milestone;
     }
@@ -213,7 +218,7 @@ final class Issue
         return $this->updated_at;
     }
 
-    public function closed_by()
+    public function closed_by(): SimpleUser
     {
         return $this->closed_by;
     }
@@ -241,7 +246,7 @@ final class Issue
         return $this->repository;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

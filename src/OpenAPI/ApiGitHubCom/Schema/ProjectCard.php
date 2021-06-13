@@ -15,7 +15,8 @@ final class ProjectCard
     private int $id;
     private string $node_id;
     private string $note;
-    private $creator;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $creator;
     private string $created_at;
     private string $updated_at;
     /**
@@ -49,7 +50,7 @@ final class ProjectCard
         return $this->note;
     }
 
-    public function creator()
+    public function creator(): SimpleUser
     {
         return $this->creator;
     }

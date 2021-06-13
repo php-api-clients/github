@@ -36,7 +36,8 @@ final class DeploymentSimple
      * Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
     private bool $production_environment;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
 
     public function url(): string
     {
@@ -118,7 +119,7 @@ final class DeploymentSimple
         return $this->production_environment;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

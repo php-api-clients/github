@@ -17,8 +17,10 @@ final class Commit
     private string $html_url;
     private string $comments_url;
     private array $commit = [];
-    private $author;
-    private $committer;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $author;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $committer;
     /**
      * @var array<Parents>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents::class)
@@ -61,12 +63,12 @@ final class Commit
         return $this->commit;
     }
 
-    public function author()
+    public function author(): SimpleUser
     {
         return $this->author;
     }
 
-    public function committer()
+    public function committer(): SimpleUser
     {
         return $this->committer;
     }

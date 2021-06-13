@@ -30,7 +30,8 @@ final class Deployment
      */
     private string $environment;
     private string $description;
-    private $creator;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $creator;
     private string $created_at;
     private string $updated_at;
     private string $statuses_url;
@@ -43,7 +44,8 @@ final class Deployment
      * Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
     private bool $production_environment;
-    private $performed_via_github_app;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class) */
+    private Integration $performed_via_github_app;
 
     public function url(): string
     {
@@ -107,7 +109,7 @@ final class Deployment
         return $this->description;
     }
 
-    public function creator()
+    public function creator(): SimpleUser
     {
         return $this->creator;
     }
@@ -148,7 +150,7 @@ final class Deployment
         return $this->production_environment;
     }
 
-    public function performed_via_github_app()
+    public function performed_via_github_app(): Integration
     {
         return $this->performed_via_github_app;
     }

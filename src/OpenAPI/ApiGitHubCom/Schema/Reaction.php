@@ -10,7 +10,8 @@ final class Reaction
     public const SCHEMA_DESCRIPTION = 'Reactions to conversations provide a way to help people express their feelings more simply and effectively.';
     private int $id;
     private string $node_id;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     /**
      * The reaction to use
      */
@@ -27,7 +28,7 @@ final class Reaction
         return $this->node_id;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\IssueComment;
 
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
+use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\IssueComment;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization;
 use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
@@ -21,8 +22,10 @@ final class Edited
     private array $changes = [];
     /**
      * The [issue](https://docs.github.com/en/rest/reference/issues) the comment belongs to.
+     *
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue::class)
      */
-    private $issue;
+    private Issue $issue;
     /**
      * The [comment](https://docs.github.com/en/rest/reference/issues#comments) itself.
      *
@@ -62,7 +65,7 @@ final class Edited
     /**
      * The [issue](https://docs.github.com/en/rest/reference/issues) the comment belongs to.
      */
-    public function issue()
+    public function issue(): Issue
     {
         return $this->issue;
     }

@@ -8,7 +8,8 @@ final class TeamDiscussionComment
 {
     public const SCHEMA_TITLE       = 'Team Discussion Comment';
     public const SCHEMA_DESCRIPTION = 'A reply to a discussion within a team.';
-    private $author;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $author;
     /**
      * The main text of the comment.
      */
@@ -32,7 +33,7 @@ final class TeamDiscussionComment
     /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class) */
     private ReactionRollup $reactions;
 
-    public function author()
+    public function author(): SimpleUser
     {
         return $this->author;
     }

@@ -13,7 +13,8 @@ final class PullRequestReview
      */
     private int $id;
     private string $node_id;
-    private $user;
+    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
+    private SimpleUser $user;
     /**
      * The text of the review.
      */
@@ -47,7 +48,7 @@ final class PullRequestReview
         return $this->node_id;
     }
 
-    public function user()
+    public function user(): SimpleUser
     {
         return $this->user;
     }
