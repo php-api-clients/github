@@ -1,40 +1,31 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class RerequestSuite
 {
     private const OPERATION_ID = 'checks/rerequest-suite';
+    /****/
     public string $owner;
+    /****/
     public string $repo;
     /**check_suite_id parameter**/
     public int $check_suite_id;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($owner, $repo, $check_suite_id)
     {
-        $this->owner          = $owner;
-        $this->repo           = $repo;
+        $this->owner = $owner;
+        $this->repo = $repo;
         $this->check_suite_id = $check_suite_id;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('post', str_replace(['{owner}', '{repo}', '{check_suite_id}'], [$this->owner, $this->repo, $this->check_suite_id], '/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{owner}', '{repo}', '{check_suite_id}'), array($this->owner, $this->repo, $this->check_suite_id), '/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

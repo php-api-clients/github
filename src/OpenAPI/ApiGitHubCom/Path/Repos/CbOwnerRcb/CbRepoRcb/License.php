@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetForRepo;
 
 final class License
 {
-    function get($owner, $repo): GetForRepo
+    function get($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetForRepo
     {
-        return new GetForRepo($owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetForRepo($owner, $repo);
     }
 }

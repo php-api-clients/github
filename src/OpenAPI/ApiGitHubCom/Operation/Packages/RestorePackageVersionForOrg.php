@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class RestorePackageVersionForOrg
 {
@@ -16,29 +9,26 @@ final class RestorePackageVersionForOrg
     public string $package_type;
     /**The name of the package.**/
     public string $package_name;
+    /****/
     public string $org;
     /**Unique identifier of the package version.**/
     public int $package_version_id;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($package_type, $package_name, $org, $package_version_id)
     {
-        $this->package_type       = $package_type;
-        $this->package_name       = $package_name;
-        $this->org                = $org;
+        $this->package_type = $package_type;
+        $this->package_name = $package_name;
+        $this->org = $org;
         $this->package_version_id = $package_version_id;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('post', str_replace(['{package_type}', '{package_name}', '{org}', '{package_version_id}'], [$this->package_type, $this->package_name, $this->org, $this->package_version_id], '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{package_type}', '{package_name}', '{org}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->org, $this->package_version_id), '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

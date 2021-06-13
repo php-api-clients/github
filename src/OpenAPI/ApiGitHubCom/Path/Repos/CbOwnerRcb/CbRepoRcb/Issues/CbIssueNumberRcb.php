@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Get;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update;
 
 final class CbIssueNumberRcb
 {
-    function get($owner, $repo, $issue_number): Get
+    function get($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Get
     {
-        return new Get($owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Get($owner, $repo, $issue_number);
     }
-
-    function patch($owner, $repo, $issue_number): Update
+    function patch($owner, $repo, $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update
     {
-        return new Update($owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update($owner, $repo, $issue_number);
     }
 }

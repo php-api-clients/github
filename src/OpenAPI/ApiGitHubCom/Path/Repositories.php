@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPublic;
 
 final class Repositories
 {
-    function get($since): ListPublic
+    function get($since) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPublic
     {
-        return new ListPublic($since);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPublic($since);
     }
 }

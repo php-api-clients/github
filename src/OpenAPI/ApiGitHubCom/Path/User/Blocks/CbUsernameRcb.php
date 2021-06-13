@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Blocks;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Block;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckBlocked;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Unblock;
 
 final class CbUsernameRcb
 {
-    function get($username): CheckBlocked
+    function get($username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckBlocked
     {
-        return new CheckBlocked($username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckBlocked($username);
     }
-
-    function put($username): Block
+    function put($username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Block
     {
-        return new Block($username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Block($username);
     }
-
-    function delete($username): Unblock
+    function delete($username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Unblock
     {
-        return new Unblock($username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Unblock($username);
     }
 }

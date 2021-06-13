@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\Comments\CbCommentIdRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForPullRequestReviewComment;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForPullRequestReviewComment;
 
 final class Reactions
 {
-    function get($owner, $repo, $comment_id, $content, int $per_page = 30, int $page = 1): ListForPullRequestReviewComment
+    function get($owner, $repo, $comment_id, $content, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForPullRequestReviewComment
     {
-        return new ListForPullRequestReviewComment($owner, $repo, $comment_id, $content, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForPullRequestReviewComment($owner, $repo, $comment_id, $content, $per_page, $page);
     }
-
-    function post($owner, $repo, $comment_id): CreateForPullRequestReviewComment
+    function post($owner, $repo, $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForPullRequestReviewComment
     {
-        return new CreateForPullRequestReviewComment($owner, $repo, $comment_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\CreateForPullRequestReviewComment($owner, $repo, $comment_id);
     }
 }

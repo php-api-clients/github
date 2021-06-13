@@ -1,13 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class RestorePackageForAuthenticatedUser
 {
@@ -18,25 +11,21 @@ final class RestorePackageForAuthenticatedUser
     public string $package_name;
     /**package token**/
     public string $token;
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct($package_type, $package_name, $token)
     {
         $this->package_type = $package_type;
         $this->package_name = $package_name;
-        $this->token        = $token;
+        $this->token = $token;
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('post', str_replace(['{package_type}', '{package_name}', '{token}'], [$this->package_type, $this->package_name, $this->token], '/user/packages/{package_type}/{package_name}/restore?token={token}'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{package_type}', '{package_name}', '{token}'), array($this->package_type, $this->package_name, $this->token), '/user/packages/{package_type}/{package_name}/restore?token={token}'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

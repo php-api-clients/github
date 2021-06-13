@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateInOrg;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListForOrg;
 
 final class Repos
 {
-    function get($org, $type, string $sort = 'created', $direction, int $per_page = 30, int $page = 1): ListForOrg
+    function get($org, $type, string $sort = 'created', $direction, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListForOrg
     {
-        return new ListForOrg($org, $type, $sort, $direction, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListForOrg($org, $type, $sort, $direction, $per_page, $page);
     }
-
-    function post($org): CreateInOrg
+    function post($org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateInOrg
     {
-        return new CreateInOrg($org);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateInOrg($org);
     }
 }

@@ -1,53 +1,46 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class ScimUserList
 {
-    public const SCHEMA_TITLE       = 'SCIM User List';
+    public const SCHEMA_TITLE = 'SCIM User List';
     public const SCHEMA_DESCRIPTION = 'SCIM User List';
     /**
      * SCIM schema used.
      */
-    private array $schemas = [];
+    private array $schemas = array();
     private int $totalResults;
     private int $itemsPerPage;
     private int $startIndex;
     /**
-     * @var array<ScimUser>
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser::class)
      */
-    private array $Resources = [];
-
+    private array $Resources = array();
     /**
      * SCIM schema used.
      */
-    public function schemas(): array
+    public function schemas() : array
     {
         return $this->schemas;
     }
-
-    public function totalResults(): int
+    public function totalResults() : int
     {
         return $this->totalResults;
     }
-
-    public function itemsPerPage(): int
+    public function itemsPerPage() : int
     {
         return $this->itemsPerPage;
     }
-
-    public function startIndex(): int
+    public function startIndex() : int
     {
         return $this->startIndex;
     }
-
     /**
-     * @return array<ScimUser>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser>
      */
-    public function Resources(): array
+    public function Resources() : array
     {
         return $this->Resources;
     }

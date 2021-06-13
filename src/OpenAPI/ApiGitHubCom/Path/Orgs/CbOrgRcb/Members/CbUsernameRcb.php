@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Members;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CheckMembershipForUser;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveMember;
 
 final class CbUsernameRcb
 {
-    function get($org, $username): CheckMembershipForUser
+    function get($org, $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CheckMembershipForUser
     {
-        return new CheckMembershipForUser($org, $username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CheckMembershipForUser($org, $username);
     }
-
-    function delete($org, $username): RemoveMember
+    function delete($org, $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveMember
     {
-        return new RemoveMember($org, $username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveMember($org, $username);
     }
 }

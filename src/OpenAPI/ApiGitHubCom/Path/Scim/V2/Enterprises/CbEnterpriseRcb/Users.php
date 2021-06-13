@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Scim\V2\Enterprises\CbEnterpriseRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListProvisionedIdentitiesEnterprise;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ProvisionAndInviteEnterpriseUser;
 
 final class Users
 {
-    function get($enterprise, $startIndex, $count, $filter): ListProvisionedIdentitiesEnterprise
+    function get($enterprise, $startIndex, $count, $filter) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListProvisionedIdentitiesEnterprise
     {
-        return new ListProvisionedIdentitiesEnterprise($enterprise, $startIndex, $count, $filter);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListProvisionedIdentitiesEnterprise($enterprise, $startIndex, $count, $filter);
     }
-
-    function post($enterprise): ProvisionAndInviteEnterpriseUser
+    function post($enterprise) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ProvisionAndInviteEnterpriseUser
     {
-        return new ProvisionAndInviteEnterpriseUser($enterprise);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ProvisionAndInviteEnterpriseUser($enterprise);
     }
 }

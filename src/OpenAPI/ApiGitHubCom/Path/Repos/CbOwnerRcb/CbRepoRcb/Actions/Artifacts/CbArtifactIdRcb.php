@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Actions\Artifacts;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteArtifact;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetArtifact;
 
 final class CbArtifactIdRcb
 {
-    function get($owner, $repo, $artifact_id): GetArtifact
+    function get($owner, $repo, $artifact_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetArtifact
     {
-        return new GetArtifact($owner, $repo, $artifact_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetArtifact($owner, $repo, $artifact_id);
     }
-
-    function delete($owner, $repo, $artifact_id): DeleteArtifact
+    function delete($owner, $repo, $artifact_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteArtifact
     {
-        return new DeleteArtifact($owner, $repo, $artifact_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteArtifact($owner, $repo, $artifact_id);
     }
 }

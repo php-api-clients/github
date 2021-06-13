@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get;
 
 final class Emojis
 {
-    function get(): Get
+    function get() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get
     {
-        return new Get();
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get();
     }
 }

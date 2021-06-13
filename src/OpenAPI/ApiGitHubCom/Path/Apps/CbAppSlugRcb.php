@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Apps;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetBySlug;
 
 final class CbAppSlugRcb
 {
-    function get($app_slug): GetBySlug
+    function get($app_slug) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetBySlug
     {
-        return new GetBySlug($app_slug);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetBySlug($app_slug);
     }
 }

@@ -1,25 +1,20 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts;
 
 final class Hovercard
 {
-    public const SCHEMA_TITLE       = 'Hovercard';
+    public const SCHEMA_TITLE = 'Hovercard';
     public const SCHEMA_DESCRIPTION = 'Hovercard';
     /**
-     * @var array<Contexts>
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts::class)
      */
-    private array $contexts = [];
-
+    private array $contexts = array();
     /**
-     * @return array<Contexts>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts>
      */
-    public function contexts(): array
+    public function contexts() : array
     {
         return $this->contexts;
     }

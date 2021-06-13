@@ -1,62 +1,53 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Member;
-
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite;
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository;
-use ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User;
 
 final class Removed
 {
-    public const SCHEMA_TITLE       = 'member removed event';
+    public const SCHEMA_TITLE = 'member removed event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $member;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $member;
     /**
      * A git repository
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private Repository $repository;
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository;
     /**
      * Installation
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private InstallationLite $installation;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class) */
-    private User $sender;
-
-    public function action(): string
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
+    public function action() : string
     {
         return $this->action;
     }
-
-    public function member(): User
+    public function member() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
     {
         return $this->member;
     }
-
     /**
      * A git repository
      */
-    public function repository(): Repository
+    public function repository() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository
     {
         return $this->repository;
     }
-
     /**
      * Installation
      */
-    public function installation(): InstallationLite
+    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
     {
         return $this->installation;
     }
-
-    public function sender(): User
+    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
     {
         return $this->sender;
     }

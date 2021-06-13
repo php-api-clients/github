@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Git\Refs;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\DeleteRef;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\UpdateRef;
 
 final class CbRefRcb
 {
-    function delete($owner, $repo, $ref): DeleteRef
+    function delete($owner, $repo, $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\DeleteRef
     {
-        return new DeleteRef($owner, $repo, $ref);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\DeleteRef($owner, $repo, $ref);
     }
-
-    function patch($owner, $repo, $ref): UpdateRef
+    function patch($owner, $repo, $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\UpdateRef
     {
-        return new UpdateRef($owner, $repo, $ref);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\UpdateRef($owner, $repo, $ref);
     }
 }

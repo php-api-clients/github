@@ -1,33 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class RenderRaw
 {
     private const OPERATION_ID = 'markdown/render-raw';
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct()
     {
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('post', str_replace([], [], '/markdown/raw?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/markdown/raw?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

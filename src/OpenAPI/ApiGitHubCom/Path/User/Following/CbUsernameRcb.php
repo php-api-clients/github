@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\User\Following;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckPersonIsFollowedByAuthenticated;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Follow;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Unfollow;
 
 final class CbUsernameRcb
 {
-    function get($username): CheckPersonIsFollowedByAuthenticated
+    function get($username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckPersonIsFollowedByAuthenticated
     {
-        return new CheckPersonIsFollowedByAuthenticated($username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\CheckPersonIsFollowedByAuthenticated($username);
     }
-
-    function put($username): Follow
+    function put($username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Follow
     {
-        return new Follow($username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Follow($username);
     }
-
-    function delete($username): Unfollow
+    function delete($username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Unfollow
     {
-        return new Unfollow($username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\Unfollow($username);
     }
 }

@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListRequestedReviewers;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\RemoveRequestedReviewers;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\RequestReviewers;
 
 final class RequestedReviewers
 {
-    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1): ListRequestedReviewers
+    function get($owner, $repo, $pull_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListRequestedReviewers
     {
-        return new ListRequestedReviewers($owner, $repo, $pull_number, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListRequestedReviewers($owner, $repo, $pull_number, $per_page, $page);
     }
-
-    function post($owner, $repo, $pull_number): RequestReviewers
+    function post($owner, $repo, $pull_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\RequestReviewers
     {
-        return new RequestReviewers($owner, $repo, $pull_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\RequestReviewers($owner, $repo, $pull_number);
     }
-
-    function delete($owner, $repo, $pull_number): RemoveRequestedReviewers
+    function delete($owner, $repo, $pull_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\RemoveRequestedReviewers
     {
-        return new RemoveRequestedReviewers($owner, $repo, $pull_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\RemoveRequestedReviewers($owner, $repo, $pull_number);
     }
 }

@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Projects\Columns\Cards;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetCard;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateCard;
 
 final class CbCardIdRcb
 {
-    function get($card_id): GetCard
+    function get($card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetCard
     {
-        return new GetCard($card_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetCard($card_id);
     }
-
-    function delete($card_id): DeleteCard
+    function delete($card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard
     {
-        return new DeleteCard($card_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard($card_id);
     }
-
-    function patch($card_id): UpdateCard
+    function patch($card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateCard
     {
-        return new UpdateCard($card_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateCard($card_id);
     }
 }

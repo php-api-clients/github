@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Applications\CbClientIdRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\CheckToken;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteToken;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ResetToken;
 
 final class Token
 {
-    function post($client_id): CheckToken
+    function post($client_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\CheckToken
     {
-        return new CheckToken($client_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\CheckToken($client_id);
     }
-
-    function delete($client_id): DeleteToken
+    function delete($client_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteToken
     {
-        return new DeleteToken($client_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteToken($client_id);
     }
-
-    function patch($client_id): ResetToken
+    function patch($client_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ResetToken
     {
-        return new ResetToken($client_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ResetToken($client_id);
     }
 }

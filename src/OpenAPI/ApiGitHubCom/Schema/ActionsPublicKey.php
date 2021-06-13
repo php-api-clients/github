@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class ActionsPublicKey
 {
-    public const SCHEMA_TITLE       = 'ActionsPublicKey';
+    public const SCHEMA_TITLE = 'ActionsPublicKey';
     public const SCHEMA_DESCRIPTION = 'The public key used for setting Actions Secrets.';
     /**
      * The identifier for the key.
@@ -20,39 +18,33 @@ final class ActionsPublicKey
     private string $url;
     private string $title;
     private string $created_at;
-
     /**
      * The identifier for the key.
      */
-    public function key_id(): string
+    public function key_id() : string
     {
         return $this->key_id;
     }
-
     /**
      * The Base64 encoded public key.
      */
-    public function key(): string
+    public function key() : string
     {
         return $this->key;
     }
-
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
-    public function url(): string
+    public function url() : string
     {
         return $this->url;
     }
-
-    public function title(): string
+    public function title() : string
     {
         return $this->title;
     }
-
-    public function created_at(): string
+    public function created_at() : string
     {
         return $this->created_at;
     }

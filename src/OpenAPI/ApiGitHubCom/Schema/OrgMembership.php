@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class OrgMembership
 {
-    public const SCHEMA_TITLE       = 'Org Membership';
+    public const SCHEMA_TITLE = 'Org Membership';
     public const SCHEMA_DESCRIPTION = 'Org Membership';
     private string $url;
     /**
@@ -20,54 +18,48 @@ final class OrgMembership
     private string $organization_url;
     /**
      * Organization Simple
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
      */
-    private OrganizationSimple $organization;
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
-    private SimpleUser $user;
-    private array $permissions = [];
-
-    public function url(): string
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
+    private array $permissions = array();
+    public function url() : string
     {
         return $this->url;
     }
-
     /**
      * The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
      */
-    public function state(): string
+    public function state() : string
     {
         return $this->state;
     }
-
     /**
      * The user's membership type in the organization.
      */
-    public function role(): string
+    public function role() : string
     {
         return $this->role;
     }
-
-    public function organization_url(): string
+    public function organization_url() : string
     {
         return $this->organization_url;
     }
-
     /**
      * Organization Simple
      */
-    public function organization(): OrganizationSimple
+    public function organization() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
     {
         return $this->organization;
     }
-
-    public function user(): SimpleUser
+    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }
-
-    public function permissions(): array
+    public function permissions() : array
     {
         return $this->permissions;
     }

@@ -1,28 +1,23 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class BranchShort
 {
-    public const SCHEMA_TITLE       = 'Branch Short';
+    public const SCHEMA_TITLE = 'Branch Short';
     public const SCHEMA_DESCRIPTION = 'Branch Short';
     private string $name;
-    private array $commit = [];
+    private array $commit = array();
     private bool $protected;
-
-    public function name(): string
+    public function name() : string
     {
         return $this->name;
     }
-
-    public function commit(): array
+    public function commit() : array
     {
         return $this->commit;
     }
-
-    public function protected(): bool
+    public function protected() : bool
     {
         return $this->protected;
     }

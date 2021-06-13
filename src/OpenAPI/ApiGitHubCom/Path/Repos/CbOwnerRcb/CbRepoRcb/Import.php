@@ -1,33 +1,23 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\CancelImport;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetImportStatus;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\StartImport;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\UpdateImport;
 
 final class Import
 {
-    function get($owner, $repo): GetImportStatus
+    function get($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetImportStatus
     {
-        return new GetImportStatus($owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetImportStatus($owner, $repo);
     }
-
-    function put($owner, $repo): StartImport
+    function put($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\StartImport
     {
-        return new StartImport($owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\StartImport($owner, $repo);
     }
-
-    function delete($owner, $repo): CancelImport
+    function delete($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\CancelImport
     {
-        return new CancelImport($owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\CancelImport($owner, $repo);
     }
-
-    function patch($owner, $repo): UpdateImport
+    function patch($owner, $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\UpdateImport
     {
-        return new UpdateImport($owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\UpdateImport($owner, $repo);
     }
 }

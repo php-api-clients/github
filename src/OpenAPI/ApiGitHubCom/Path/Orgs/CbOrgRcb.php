@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Get;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Update;
 
 final class CbOrgRcb
 {
-    function get($org): Get
+    function get($org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Get
     {
-        return new Get($org);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Get($org);
     }
-
-    function patch($org): Update
+    function patch($org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Update
     {
-        return new Update($org);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Update($org);
     }
 }

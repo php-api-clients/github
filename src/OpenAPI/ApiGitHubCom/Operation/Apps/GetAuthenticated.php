@@ -1,33 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class GetAuthenticated
 {
     private const OPERATION_ID = 'apps/get-authenticated';
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct()
     {
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('get', str_replace([], [], '/app?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/app?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

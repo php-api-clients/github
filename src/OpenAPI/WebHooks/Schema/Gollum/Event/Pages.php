@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Gollum\Event;
 
 final class Pages
 {
-    public const SCHEMA_TITLE       = 'gollum$event::pages';
+    public const SCHEMA_TITLE = 'gollum$event::pages';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The name of the page.
@@ -29,48 +27,42 @@ final class Pages
      * Points to the HTML wiki page.
      */
     private string $html_url;
-
     /**
      * The name of the page.
      */
-    public function page_name(): string
+    public function page_name() : string
     {
         return $this->page_name;
     }
-
     /**
      * The current page title.
      */
-    public function title(): string
+    public function title() : string
     {
         return $this->title;
     }
-
     public function summary()
     {
         return $this->summary;
     }
-
     /**
      * The action that was performed on the page. Can be `created` or `edited`.
      */
-    public function action(): string
+    public function action() : string
     {
         return $this->action;
     }
-
     /**
      * The latest commit SHA of the page.
      */
-    public function sha(): string
+    public function sha() : string
     {
         return $this->sha;
     }
-
     /**
      * Points to the HTML wiki page.
      */
-    public function html_url(): string
+    public function html_url() : string
     {
         return $this->html_url;
     }

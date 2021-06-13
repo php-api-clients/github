@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class OrganizationInvitation
 {
-    public const SCHEMA_TITLE       = 'Organization Invitation';
+    public const SCHEMA_TITLE = 'Organization Invitation';
     public const SCHEMA_DESCRIPTION = 'Organization Invitation';
     private int $id;
     private string $login;
@@ -17,68 +15,56 @@ final class OrganizationInvitation
     private string $failed_reason;
     /**
      * Simple User
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private SimpleUser $inviter;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $inviter;
     private int $team_count;
     private string $node_id;
     private string $invitation_teams_url;
-
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
-    public function login(): string
+    public function login() : string
     {
         return $this->login;
     }
-
-    public function email(): string
+    public function email() : string
     {
         return $this->email;
     }
-
-    public function role(): string
+    public function role() : string
     {
         return $this->role;
     }
-
-    public function created_at(): string
+    public function created_at() : string
     {
         return $this->created_at;
     }
-
-    public function failed_at(): string
+    public function failed_at() : string
     {
         return $this->failed_at;
     }
-
-    public function failed_reason(): string
+    public function failed_reason() : string
     {
         return $this->failed_reason;
     }
-
     /**
      * Simple User
      */
-    public function inviter(): SimpleUser
+    public function inviter() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->inviter;
     }
-
-    public function team_count(): int
+    public function team_count() : int
     {
         return $this->team_count;
     }
-
-    public function node_id(): string
+    public function node_id() : string
     {
         return $this->node_id;
     }
-
-    public function invitation_teams_url(): string
+    public function invitation_teams_url() : string
     {
         return $this->invitation_teams_url;
     }

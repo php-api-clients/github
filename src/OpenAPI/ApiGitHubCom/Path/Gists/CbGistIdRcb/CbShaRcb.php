@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Gists\CbGistIdRcb;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetRevision;
 
 final class CbShaRcb
 {
-    function get($gist_id, $sha): GetRevision
+    function get($gist_id, $sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetRevision
     {
-        return new GetRevision($gist_id, $sha);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetRevision($gist_id, $sha);
     }
 }

@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Traffic;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetViews;
 
 final class Views
 {
-    function get($owner, $repo, string $per = 'day'): GetViews
+    function get($owner, $repo, string $per = 'day') : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetViews
     {
-        return new GetViews($owner, $repo, $per);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetViews($owner, $repo, $per);
     }
 }

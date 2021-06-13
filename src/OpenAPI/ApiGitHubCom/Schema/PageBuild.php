@@ -1,59 +1,51 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class PageBuild
 {
-    public const SCHEMA_TITLE       = 'Page Build';
+    public const SCHEMA_TITLE = 'Page Build';
     public const SCHEMA_DESCRIPTION = 'Page Build';
     private string $url;
     private string $status;
-    private array $error = [];
-    /** @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class) */
-    private SimpleUser $pusher;
+    private array $error = array();
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $pusher;
     private string $commit;
     private int $duration;
     private string $created_at;
     private string $updated_at;
-
-    public function url(): string
+    public function url() : string
     {
         return $this->url;
     }
-
-    public function status(): string
+    public function status() : string
     {
         return $this->status;
     }
-
-    public function error(): array
+    public function error() : array
     {
         return $this->error;
     }
-
-    public function pusher(): SimpleUser
+    public function pusher() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->pusher;
     }
-
-    public function commit(): string
+    public function commit() : string
     {
         return $this->commit;
     }
-
-    public function duration(): int
+    public function duration() : int
     {
         return $this->duration;
     }
-
-    public function created_at(): string
+    public function created_at() : string
     {
         return $this->created_at;
     }
-
-    public function updated_at(): string
+    public function updated_at() : string
     {
         return $this->updated_at;
     }

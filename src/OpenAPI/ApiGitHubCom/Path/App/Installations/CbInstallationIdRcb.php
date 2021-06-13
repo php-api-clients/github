@@ -1,21 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\App\Installations;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteInstallation;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetInstallation;
 
 final class CbInstallationIdRcb
 {
-    function get($installation_id): GetInstallation
+    function get($installation_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetInstallation
     {
-        return new GetInstallation($installation_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\GetInstallation($installation_id);
     }
-
-    function delete($installation_id): DeleteInstallation
+    function delete($installation_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteInstallation
     {
-        return new DeleteInstallation($installation_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\DeleteInstallation($installation_id);
     }
 }

@@ -1,27 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Contents;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateOrUpdateFileContents;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteFile;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetContent;
 
 final class CbPathRcb
 {
-    function get($owner, $repo, $path, $ref): GetContent
+    function get($owner, $repo, $path, $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetContent
     {
-        return new GetContent($owner, $repo, $path, $ref);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetContent($owner, $repo, $path, $ref);
     }
-
-    function put($owner, $repo, $path): CreateOrUpdateFileContents
+    function put($owner, $repo, $path) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateOrUpdateFileContents
     {
-        return new CreateOrUpdateFileContents($owner, $repo, $path);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateOrUpdateFileContents($owner, $repo, $path);
     }
-
-    function delete($owner, $repo, $path): DeleteFile
+    function delete($owner, $repo, $path) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteFile
     {
-        return new DeleteFile($owner, $repo, $path);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteFile($owner, $repo, $path);
     }
 }

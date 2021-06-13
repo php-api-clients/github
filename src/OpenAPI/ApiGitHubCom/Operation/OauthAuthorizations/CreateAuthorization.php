@@ -1,33 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations;
-
-use Psr\Http\Message\RequestInterface;
-use RingCentral\Psr7\Request;
-
-use function str_replace;
 
 final class CreateAuthorization
 {
     private const OPERATION_ID = 'oauth-authorizations/create-authorization';
-
-    public function operationId(): string
+    public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-
     function __construct()
     {
     }
-
-    function createRequest(): RequestInterface
+    function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new Request('post', str_replace([], [], '/authorizations?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/authorizations?'));
     }
-
-    function validateResponse(): void
+    function validateResponse()
     {
     }
 }

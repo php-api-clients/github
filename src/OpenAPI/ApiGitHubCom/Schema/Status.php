@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class Status
 {
-    public const SCHEMA_TITLE       = 'Status';
+    public const SCHEMA_TITLE = 'Status';
     public const SCHEMA_DESCRIPTION = 'The status of a commit.';
     private string $url;
     private string $avatar_url;
@@ -20,65 +18,53 @@ final class Status
     private string $updated_at;
     /**
      * Simple User
-     *
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private SimpleUser $creator;
-
-    public function url(): string
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
+    public function url() : string
     {
         return $this->url;
     }
-
-    public function avatar_url(): string
+    public function avatar_url() : string
     {
         return $this->avatar_url;
     }
-
-    public function id(): int
+    public function id() : int
     {
         return $this->id;
     }
-
-    public function node_id(): string
+    public function node_id() : string
     {
         return $this->node_id;
     }
-
-    public function state(): string
+    public function state() : string
     {
         return $this->state;
     }
-
-    public function description(): string
+    public function description() : string
     {
         return $this->description;
     }
-
-    public function target_url(): string
+    public function target_url() : string
     {
         return $this->target_url;
     }
-
-    public function context(): string
+    public function context() : string
     {
         return $this->context;
     }
-
-    public function created_at(): string
+    public function created_at() : string
     {
         return $this->created_at;
     }
-
-    public function updated_at(): string
+    public function updated_at() : string
     {
         return $this->updated_at;
     }
-
     /**
      * Simple User
      */
-    public function creator(): SimpleUser
+    public function creator() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->creator;
     }

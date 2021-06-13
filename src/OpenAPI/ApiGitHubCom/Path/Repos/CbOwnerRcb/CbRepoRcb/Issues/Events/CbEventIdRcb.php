@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Repos\CbOwnerRcb\CbRepoRcb\Issues\Events;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetEvent;
 
 final class CbEventIdRcb
 {
-    function get($owner, $repo, $event_id): GetEvent
+    function get($owner, $repo, $event_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetEvent
     {
-        return new GetEvent($owner, $repo, $event_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetEvent($owner, $repo, $event_id);
     }
 }
