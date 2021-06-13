@@ -6,5 +6,6 @@ final class TeamAdd implements \ApiClients\Client\Github\OpenAPI\WebHooks\WebHoo
 {
     public function resolve(array $data) : string
     {
+        return 'TODO: Implement this';
     }
 }

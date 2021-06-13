@@ -6,5 +6,6 @@ final class Fork implements \ApiClients\Client\Github\OpenAPI\WebHooks\WebHookIn
 {
     public function resolve(array $data) : string
     {
+        return 'TODO: Implement this';
     }
 }

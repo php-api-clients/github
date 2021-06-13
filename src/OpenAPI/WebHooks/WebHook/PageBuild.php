@@ -6,5 +6,6 @@ final class PageBuild implements \ApiClients\Client\Github\OpenAPI\WebHooks\WebH
 {
     public function resolve(array $data) : string
     {
+        return 'TODO: Implement this';
     }
 }

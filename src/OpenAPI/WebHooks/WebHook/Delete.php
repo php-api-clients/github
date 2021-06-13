@@ -6,5 +6,6 @@ final class Delete implements \ApiClients\Client\Github\OpenAPI\WebHooks\WebHook
 {
     public function resolve(array $data) : string
     {
+        return 'TODO: Implement this';
     }
 }

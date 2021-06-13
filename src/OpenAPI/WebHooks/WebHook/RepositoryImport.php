@@ -6,5 +6,6 @@ final class RepositoryImport implements \ApiClients\Client\Github\OpenAPI\WebHoo
 {
     public function resolve(array $data) : string
     {
+        return 'TODO: Implement this';
     }
 }

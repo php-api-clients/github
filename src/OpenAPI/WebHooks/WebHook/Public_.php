@@ -2,9 +2,10 @@
 
 namespace ApiClients\Client\Github\OpenAPI\WebHooks\WebHook;
 
-final class Public implements \ApiClients\Client\Github\OpenAPI\WebHooks\WebHookInterface
+final class Public_ implements \ApiClients\Client\Github\OpenAPI\WebHooks\WebHookInterface
 {
     public function resolve(array $data) : string
     {
+        return 'TODO: Implement this';
     }
 }
