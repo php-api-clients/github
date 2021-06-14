@@ -30,7 +30,7 @@ final class Removed
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
     /**
      * Installation
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     public function action() : string

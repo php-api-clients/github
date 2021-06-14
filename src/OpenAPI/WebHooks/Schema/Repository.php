@@ -130,7 +130,7 @@ final class Repository
      */
     private ?bool $delete_branch_on_merge = null;
     private ?string $master_branch = null;
-    private ?array $permissions = array();
+    private array $permissions = array();
     private ?bool $public = null;
     private ?string $organization = null;
     /**
@@ -491,7 +491,7 @@ final class Repository
     {
         return $this->master_branch;
     }
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }

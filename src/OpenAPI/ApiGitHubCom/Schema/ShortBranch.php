@@ -11,7 +11,7 @@ final class ShortBranch
     private bool $protected;
     /**
      * Branch Protection
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection = null;
     private ?string $protection_url = null;

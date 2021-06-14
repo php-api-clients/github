@@ -14,8 +14,8 @@ final class ScimEnterpriseGroup
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseGroup\Members>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseGroup\Members::class)
      */
-    private ?array $members = array();
-    private ?array $meta = array();
+    private array $members = array();
+    private array $meta = array();
     public function schemas() : array
     {
         return $this->schemas;
@@ -35,11 +35,11 @@ final class ScimEnterpriseGroup
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseGroup\Members>
      */
-    public function members() : ?array
+    public function members() : array
     {
         return $this->members;
     }
-    public function meta() : ?array
+    public function meta() : array
     {
         return $this->meta;
     }

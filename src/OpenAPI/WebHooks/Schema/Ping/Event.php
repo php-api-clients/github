@@ -17,15 +17,15 @@ final class Event
     private array $hook = array();
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     public function zen() : string

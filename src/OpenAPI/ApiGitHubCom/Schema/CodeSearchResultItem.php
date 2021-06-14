@@ -21,12 +21,12 @@ final class CodeSearchResultItem
     private ?int $file_size = null;
     private ?string $language = null;
     private ?string $last_modified_at = null;
-    private ?array $line_numbers = array();
+    private array $line_numbers = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches::class)
      */
-    private ?array $text_matches = array();
+    private array $text_matches = array();
     public function name() : string
     {
         return $this->name;
@@ -74,14 +74,14 @@ final class CodeSearchResultItem
     {
         return $this->last_modified_at;
     }
-    public function line_numbers() : ?array
+    public function line_numbers() : array
     {
         return $this->line_numbers;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches>
      */
-    public function text_matches() : ?array
+    public function text_matches() : array
     {
         return $this->text_matches;
     }

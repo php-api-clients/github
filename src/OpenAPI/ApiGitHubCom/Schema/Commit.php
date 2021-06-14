@@ -25,12 +25,12 @@ final class Commit
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents::class)
      */
     private array $parents = array();
-    private ?array $stats = array();
+    private array $stats = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Files>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Files::class)
      */
-    private ?array $files = array();
+    private array $files = array();
     public function url() : string
     {
         return $this->url;
@@ -70,14 +70,14 @@ final class Commit
     {
         return $this->parents;
     }
-    public function stats() : ?array
+    public function stats() : array
     {
         return $this->stats;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Files>
      */
-    public function files() : ?array
+    public function files() : array
     {
         return $this->files;
     }

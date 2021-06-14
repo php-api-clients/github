@@ -22,7 +22,7 @@ final class PackageVersion
     private string $created_at;
     private string $updated_at;
     private ?string $deleted_at = null;
-    private ?array $metadata = array();
+    private array $metadata = array();
     /**
      * Unique identifier of the package version.
      */
@@ -69,7 +69,7 @@ final class PackageVersion
     {
         return $this->deleted_at;
     }
-    public function metadata() : ?array
+    public function metadata() : array
     {
         return $this->metadata;
     }

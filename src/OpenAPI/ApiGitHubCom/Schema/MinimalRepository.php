@@ -69,7 +69,7 @@ final class MinimalRepository
     private ?string $default_branch = null;
     private ?int $open_issues_count = null;
     private ?bool $is_template = null;
-    private ?array $topics = array();
+    private array $topics = array();
     private ?bool $has_issues = null;
     private ?bool $has_projects = null;
     private ?bool $has_wiki = null;
@@ -81,16 +81,16 @@ final class MinimalRepository
     private ?string $pushed_at = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
-    private ?array $permissions = array();
+    private array $permissions = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
     private ?string $temp_clone_token = null;
     private ?bool $delete_branch_on_merge = null;
     private ?int $subscribers_count = null;
     private ?int $network_count = null;
-    private ?array $license = array();
+    private array $license = array();
     private ?int $forks = null;
     private ?int $open_issues = null;
     private ?int $watchers = null;
@@ -334,7 +334,7 @@ final class MinimalRepository
     {
         return $this->is_template;
     }
-    public function topics() : ?array
+    public function topics() : array
     {
         return $this->topics;
     }
@@ -382,7 +382,7 @@ final class MinimalRepository
     {
         return $this->updated_at;
     }
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }
@@ -406,7 +406,7 @@ final class MinimalRepository
     {
         return $this->network_count;
     }
-    public function license() : ?array
+    public function license() : array
     {
         return $this->license;
     }

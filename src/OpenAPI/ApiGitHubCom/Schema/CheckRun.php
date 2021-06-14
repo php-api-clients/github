@@ -39,7 +39,7 @@ final class CheckRun
     private $pull_requests;
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple $deployment = null;
     /**

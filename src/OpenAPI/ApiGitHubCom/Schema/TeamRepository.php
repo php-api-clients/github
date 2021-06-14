@@ -21,7 +21,7 @@ final class TeamRepository
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license;
     private int $forks;
-    private ?array $permissions = array();
+    private array $permissions = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -90,7 +90,7 @@ final class TeamRepository
      * Whether this repository acts as a template that can be used to generate new repositories.
      */
     private ?bool $is_template = null;
-    private ?array $topics = array();
+    private array $topics = array();
     /**
      * Whether issues are enabled.
      */
@@ -128,7 +128,7 @@ final class TeamRepository
      */
     private ?bool $allow_rebase_merge = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
     private ?string $temp_clone_token = null;
@@ -179,7 +179,7 @@ final class TeamRepository
     {
         return $this->forks;
     }
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }
@@ -416,7 +416,7 @@ final class TeamRepository
     {
         return $this->is_template;
     }
-    public function topics() : ?array
+    public function topics() : array
     {
         return $this->topics;
     }

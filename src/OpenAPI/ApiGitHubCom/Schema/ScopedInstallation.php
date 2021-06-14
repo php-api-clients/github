@@ -17,7 +17,7 @@ final class ScopedInstallation
     private string $repository_selection;
     private string $single_file_name;
     private ?bool $has_multiple_single_files = null;
-    private ?array $single_file_paths = array();
+    private array $single_file_paths = array();
     private string $repositories_url;
     /**
      * Simple User
@@ -46,7 +46,7 @@ final class ScopedInstallation
     {
         return $this->has_multiple_single_files;
     }
-    public function single_file_paths() : ?array
+    public function single_file_paths() : array
     {
         return $this->single_file_paths;
     }

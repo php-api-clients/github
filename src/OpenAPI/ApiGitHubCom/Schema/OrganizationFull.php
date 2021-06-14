@@ -40,7 +40,7 @@ final class OrganizationFull
     private ?int $disk_usage = null;
     private ?int $collaborators = null;
     private ?string $billing_email = null;
-    private ?array $plan = array();
+    private array $plan = array();
     private ?string $default_repository_permission = null;
     private ?bool $members_can_create_repositories = null;
     private ?bool $two_factor_requirement_enabled = null;
@@ -188,7 +188,7 @@ final class OrganizationFull
     {
         return $this->billing_email;
     }
-    public function plan() : ?array
+    public function plan() : array
     {
         return $this->plan;
     }

@@ -19,7 +19,7 @@ final class ContentTree
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries::class)
      */
-    private ?array $entries = array();
+    private array $entries = array();
     private array $_links = array();
     public function type() : string
     {
@@ -60,7 +60,7 @@ final class ContentTree
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries>
      */
-    public function entries() : ?array
+    public function entries() : array
     {
         return $this->entries;
     }

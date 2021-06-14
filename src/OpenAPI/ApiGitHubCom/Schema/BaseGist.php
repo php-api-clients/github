@@ -30,8 +30,8 @@ final class BaseGist
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     private ?bool $truncated = null;
-    private ?array $forks = array();
-    private ?array $history = array();
+    private array $forks = array();
+    private array $history = array();
     public function url() : string
     {
         return $this->url;
@@ -104,11 +104,11 @@ final class BaseGist
     {
         return $this->truncated;
     }
-    public function forks() : ?array
+    public function forks() : array
     {
         return $this->forks;
     }
-    public function history() : ?array
+    public function history() : array
     {
         return $this->history;
     }

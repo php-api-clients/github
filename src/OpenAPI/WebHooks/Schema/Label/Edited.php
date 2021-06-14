@@ -14,7 +14,7 @@ final class Edited
     /**
      * The changes to the label if the action was `edited`.
      */
-    private ?array $changes = array();
+    private array $changes = array();
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
@@ -26,11 +26,11 @@ final class Edited
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
     /**
      * Installation
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     public function action() : string
@@ -44,7 +44,7 @@ final class Edited
     /**
      * The changes to the label if the action was `edited`.
      */
-    public function changes() : ?array
+    public function changes() : array
     {
         return $this->changes;
     }

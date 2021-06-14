@@ -12,7 +12,7 @@ final class MarketplacePurchase
     private string $login;
     private ?string $organization_billing_email = null;
     private ?string $email = null;
-    private ?array $marketplace_pending_change = array();
+    private array $marketplace_pending_change = array();
     private array $marketplace_purchase = array();
     public function url() : string
     {
@@ -38,7 +38,7 @@ final class MarketplacePurchase
     {
         return $this->email;
     }
-    public function marketplace_pending_change() : ?array
+    public function marketplace_pending_change() : array
     {
         return $this->marketplace_pending_change;
     }

@@ -75,7 +75,7 @@ final class RepoSearchResultItem
     private int $forks;
     private int $open_issues;
     private int $watchers;
-    private ?array $topics = array();
+    private array $topics = array();
     private string $mirror_url;
     private bool $has_issues;
     private bool $has_projects;
@@ -91,12 +91,12 @@ final class RepoSearchResultItem
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license;
-    private ?array $permissions = array();
+    private array $permissions = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches::class)
      */
-    private ?array $text_matches = array();
+    private array $text_matches = array();
     private ?string $temp_clone_token = null;
     private ?bool $allow_merge_commit = null;
     private ?bool $allow_squash_merge = null;
@@ -366,7 +366,7 @@ final class RepoSearchResultItem
     {
         return $this->watchers;
     }
-    public function topics() : ?array
+    public function topics() : array
     {
         return $this->topics;
     }
@@ -409,14 +409,14 @@ final class RepoSearchResultItem
     {
         return $this->license;
     }
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
      */
-    public function text_matches() : ?array
+    public function text_matches() : array
     {
         return $this->text_matches;
     }

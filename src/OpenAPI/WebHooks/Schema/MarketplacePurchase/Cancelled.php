@@ -14,7 +14,7 @@ final class Cancelled
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase $marketplace_purchase;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase $previous_marketplace_purchase = null;
     public function action() : string

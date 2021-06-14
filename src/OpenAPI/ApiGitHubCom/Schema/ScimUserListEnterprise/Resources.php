@@ -10,19 +10,19 @@ final class Resources
     private string $id;
     private ?string $externalId = null;
     private ?string $userName = null;
-    private ?array $name = array();
+    private array $name = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Emails>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Emails::class)
      */
-    private ?array $emails = array();
+    private array $emails = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Groups>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Groups::class)
      */
-    private ?array $groups = array();
+    private array $groups = array();
     private ?bool $active = null;
-    private ?array $meta = array();
+    private array $meta = array();
     public function schemas() : array
     {
         return $this->schemas;
@@ -39,21 +39,21 @@ final class Resources
     {
         return $this->userName;
     }
-    public function name() : ?array
+    public function name() : array
     {
         return $this->name;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Emails>
      */
-    public function emails() : ?array
+    public function emails() : array
     {
         return $this->emails;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUserListEnterprise\Resources\Groups>
      */
-    public function groups() : ?array
+    public function groups() : array
     {
         return $this->groups;
     }
@@ -61,7 +61,7 @@ final class Resources
     {
         return $this->active;
     }
-    public function meta() : ?array
+    public function meta() : array
     {
         return $this->meta;
     }

@@ -14,7 +14,7 @@ final class Deleted
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team $team;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository = null;
     /**

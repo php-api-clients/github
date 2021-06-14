@@ -28,7 +28,7 @@ final class Edited
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     public function changes() : array

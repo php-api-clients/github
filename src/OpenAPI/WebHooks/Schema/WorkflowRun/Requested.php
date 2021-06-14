@@ -8,7 +8,7 @@ final class Requested
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     /**
@@ -30,7 +30,7 @@ final class Requested
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\WorkflowRun $workflow_run;
     /**
      * Installation
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     public function action() : string

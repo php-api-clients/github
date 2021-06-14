@@ -14,8 +14,8 @@ final class Resources
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimGroupListEnterprise\Resources\Members>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimGroupListEnterprise\Resources\Members::class)
      */
-    private ?array $members = array();
-    private ?array $meta = array();
+    private array $members = array();
+    private array $meta = array();
     public function schemas() : array
     {
         return $this->schemas;
@@ -35,11 +35,11 @@ final class Resources
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimGroupListEnterprise\Resources\Members>
      */
-    public function members() : ?array
+    public function members() : array
     {
         return $this->members;
     }
-    public function meta() : ?array
+    public function meta() : array
     {
         return $this->meta;
     }

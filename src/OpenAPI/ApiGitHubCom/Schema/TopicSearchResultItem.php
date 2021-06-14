@@ -23,17 +23,17 @@ final class TopicSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches::class)
      */
-    private ?array $text_matches = array();
+    private array $text_matches = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Related>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Related::class)
      */
-    private ?array $related = array();
+    private array $related = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Aliases>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Aliases::class)
      */
-    private ?array $aliases = array();
+    private array $aliases = array();
     public function name() : string
     {
         return $this->name;
@@ -89,21 +89,21 @@ final class TopicSearchResultItem
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches>
      */
-    public function text_matches() : ?array
+    public function text_matches() : array
     {
         return $this->text_matches;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Related>
      */
-    public function related() : ?array
+    public function related() : array
     {
         return $this->related;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Aliases>
      */
-    public function aliases() : ?array
+    public function aliases() : array
     {
         return $this->aliases;
     }

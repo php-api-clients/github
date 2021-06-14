@@ -47,11 +47,11 @@ final class ScimUser
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations::class)
      */
-    private ?array $operations = array();
+    private array $operations = array();
     /**
      * associated groups
      */
-    private ?array $groups = array();
+    private array $groups = array();
     /**
      * SCIM schema used.
      */
@@ -121,14 +121,14 @@ final class ScimUser
      * Set of operations to be performed
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimUser\Operations>
      */
-    public function operations() : ?array
+    public function operations() : array
     {
         return $this->operations;
     }
     /**
      * associated groups
      */
-    public function groups() : ?array
+    public function groups() : array
     {
         return $this->groups;
     }

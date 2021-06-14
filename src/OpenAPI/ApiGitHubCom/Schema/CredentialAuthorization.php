@@ -29,7 +29,7 @@ final class CredentialAuthorization
     /**
      * List of oauth scopes the token has been granted.
      */
-    private ?array $scopes = array();
+    private array $scopes = array();
     /**
      * Unique string to distinguish the credential. Only included in responses with credential_type of SSH Key.
      */
@@ -85,7 +85,7 @@ final class CredentialAuthorization
     /**
      * List of oauth scopes the token has been granted.
      */
-    public function scopes() : ?array
+    public function scopes() : array
     {
         return $this->scopes;
     }

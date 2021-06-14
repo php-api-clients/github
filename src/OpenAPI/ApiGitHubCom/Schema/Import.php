@@ -28,7 +28,7 @@ final class Import
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices::class)
      */
-    private ?array $project_choices = array();
+    private array $project_choices = array();
     private ?string $message = null;
     private ?int $authors_count = null;
     private string $url;
@@ -102,7 +102,7 @@ final class Import
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices>
      */
-    public function project_choices() : ?array
+    public function project_choices() : array
     {
         return $this->project_choices;
     }

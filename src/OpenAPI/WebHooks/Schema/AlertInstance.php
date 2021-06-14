@@ -23,9 +23,9 @@ final class AlertInstance
      */
     private string $state;
     private ?string $commit_sha = null;
-    private ?array $message = array();
-    private ?array $location = array();
-    private ?array $classifications = array();
+    private array $message = array();
+    private array $location = array();
+    private array $classifications = array();
     /**
      * The full Git reference, formatted as `refs/heads/<branch name>`.
      */
@@ -58,15 +58,15 @@ final class AlertInstance
     {
         return $this->commit_sha;
     }
-    public function message() : ?array
+    public function message() : array
     {
         return $this->message;
     }
-    public function location() : ?array
+    public function location() : array
     {
         return $this->location;
     }
-    public function classifications() : ?array
+    public function classifications() : array
     {
         return $this->classifications;
     }

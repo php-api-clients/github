@@ -31,11 +31,11 @@ final class App
     /**
      * The set of permissions for the GitHub app
      */
-    private ?array $permissions = array();
+    private array $permissions = array();
     /**
      * The list of events for the GitHub app
      */
-    private ?array $events = array();
+    private array $events = array();
     /**
      * Unique identifier of the GitHub app
      */
@@ -88,14 +88,14 @@ final class App
     /**
      * The set of permissions for the GitHub app
      */
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }
     /**
      * The list of events for the GitHub app
      */
-    public function events() : ?array
+    public function events() : array
     {
         return $this->events;
     }

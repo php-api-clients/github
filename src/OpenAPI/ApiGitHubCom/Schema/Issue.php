@@ -49,7 +49,7 @@ final class Issue
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?array $assignees = array();
+    private array $assignees = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class)
      */
@@ -57,7 +57,7 @@ final class Issue
     private bool $locked;
     private ?string $active_lock_reason = null;
     private int $comments;
-    private ?array $pull_request = array();
+    private array $pull_request = array();
     private string $closed_at;
     private string $created_at;
     private string $updated_at;
@@ -70,7 +70,7 @@ final class Issue
     private ?string $timeline_url = null;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository = null;
     /**
@@ -82,7 +82,7 @@ final class Issue
      */
     private string $author_association;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
     public function id() : int
@@ -166,7 +166,7 @@ final class Issue
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function assignees() : ?array
+    public function assignees() : array
     {
         return $this->assignees;
     }
@@ -186,7 +186,7 @@ final class Issue
     {
         return $this->comments;
     }
-    public function pull_request() : ?array
+    public function pull_request() : array
     {
         return $this->pull_request;
     }

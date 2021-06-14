@@ -25,7 +25,7 @@ final class OrgMembership
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
-    private ?array $permissions = array();
+    private array $permissions = array();
     public function url() : string
     {
         return $this->url;
@@ -59,7 +59,7 @@ final class OrgMembership
     {
         return $this->user;
     }
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }

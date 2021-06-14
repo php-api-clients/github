@@ -40,7 +40,7 @@ final class UserSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches::class)
      */
-    private ?array $text_matches = array();
+    private array $text_matches = array();
     private ?string $blog = null;
     private ?string $company = null;
     private ?string $suspended_at = null;
@@ -167,7 +167,7 @@ final class UserSearchResultItem
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches>
      */
-    public function text_matches() : ?array
+    public function text_matches() : array
     {
         return $this->text_matches;
     }

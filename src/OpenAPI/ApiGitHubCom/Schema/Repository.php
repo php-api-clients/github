@@ -25,7 +25,7 @@ final class Repository
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $organization;
     private int $forks;
-    private ?array $permissions = array();
+    private array $permissions = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -94,7 +94,7 @@ final class Repository
      * Whether this repository acts as a template that can be used to generate new repositories.
      */
     private ?bool $is_template = null;
-    private ?array $topics = array();
+    private array $topics = array();
     /**
      * Whether issues are enabled.
      */
@@ -131,7 +131,7 @@ final class Repository
      * Whether to allow rebase merges for pull requests.
      */
     private ?bool $allow_rebase_merge = null;
-    private ?array $template_repository = array();
+    private array $template_repository = array();
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -185,7 +185,7 @@ final class Repository
     {
         return $this->forks;
     }
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }
@@ -422,7 +422,7 @@ final class Repository
     {
         return $this->is_template;
     }
-    public function topics() : ?array
+    public function topics() : array
     {
         return $this->topics;
     }
@@ -498,7 +498,7 @@ final class Repository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : ?array
+    public function template_repository() : array
     {
         return $this->template_repository;
     }

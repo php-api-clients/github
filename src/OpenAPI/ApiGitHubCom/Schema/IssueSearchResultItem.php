@@ -22,7 +22,7 @@ final class IssueSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?array $assignees = array();
+    private array $assignees = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -49,8 +49,8 @@ final class IssueSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches::class)
      */
-    private ?array $text_matches = array();
-    private ?array $pull_request = array();
+    private array $text_matches = array();
+    private array $pull_request = array();
     private ?string $body = null;
     private number $score;
     /**
@@ -60,7 +60,7 @@ final class IssueSearchResultItem
     private ?bool $draft = null;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository = null;
     private ?string $body_html = null;
@@ -121,7 +121,7 @@ final class IssueSearchResultItem
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function assignees() : ?array
+    public function assignees() : array
     {
         return $this->assignees;
     }
@@ -167,11 +167,11 @@ final class IssueSearchResultItem
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches>
      */
-    public function text_matches() : ?array
+    public function text_matches() : array
     {
         return $this->text_matches;
     }
-    public function pull_request() : ?array
+    public function pull_request() : array
     {
         return $this->pull_request;
     }

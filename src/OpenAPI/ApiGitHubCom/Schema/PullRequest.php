@@ -59,17 +59,17 @@ final class PullRequest
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?array $assignees = array();
+    private array $assignees = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?array $requested_reviewers = array();
+    private array $requested_reviewers = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
      */
-    private ?array $requested_teams = array();
+    private array $requested_teams = array();
     private array $head = array();
     private array $base = array();
     private array $_links = array();
@@ -227,21 +227,21 @@ final class PullRequest
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function assignees() : ?array
+    public function assignees() : array
     {
         return $this->assignees;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function requested_reviewers() : ?array
+    public function requested_reviewers() : array
     {
         return $this->requested_reviewers;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
      */
-    public function requested_teams() : ?array
+    public function requested_teams() : array
     {
         return $this->requested_teams;
     }

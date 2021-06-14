@@ -47,7 +47,7 @@ final class Job
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps::class)
      */
-    private ?array $steps = array();
+    private array $steps = array();
     private string $check_run_url;
     /**
      * The id of the job.
@@ -125,7 +125,7 @@ final class Job
      * Steps in this job.
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps>
      */
-    public function steps() : ?array
+    public function steps() : array
     {
         return $this->steps;
     }

@@ -38,7 +38,7 @@ final class PublicUser
     private int $following;
     private string $created_at;
     private string $updated_at;
-    private ?array $plan = array();
+    private array $plan = array();
     private ?string $suspended_at = null;
     private ?int $private_gists = null;
     private ?int $total_private_repos = null;
@@ -173,7 +173,7 @@ final class PublicUser
     {
         return $this->updated_at;
     }
-    public function plan() : ?array
+    public function plan() : array
     {
         return $this->plan;
     }

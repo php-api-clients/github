@@ -70,7 +70,7 @@ final class FullRepository
     private string $default_branch;
     private int $open_issues_count;
     private ?bool $is_template = null;
-    private ?array $topics = array();
+    private array $topics = array();
     private bool $has_issues;
     private bool $has_projects;
     private bool $has_wiki;
@@ -88,10 +88,10 @@ final class FullRepository
     private string $pushed_at;
     private string $created_at;
     private string $updated_at;
-    private ?array $permissions = array();
+    private array $permissions = array();
     private ?bool $allow_rebase_merge = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
     private ?string $temp_clone_token = null;
@@ -110,12 +110,12 @@ final class FullRepository
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $organization;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $parent = null;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $source = null;
     private int $forks;
@@ -128,7 +128,7 @@ final class FullRepository
     private ?bool $anonymous_access_enabled = null;
     /**
      * Code of Conduct Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple $code_of_conduct = null;
     private ?bool $has_advanced_security = null;
@@ -375,7 +375,7 @@ final class FullRepository
     {
         return $this->is_template;
     }
-    public function topics() : ?array
+    public function topics() : array
     {
         return $this->topics;
     }
@@ -429,7 +429,7 @@ final class FullRepository
     {
         return $this->updated_at;
     }
-    public function permissions() : ?array
+    public function permissions() : array
     {
         return $this->permissions;
     }
