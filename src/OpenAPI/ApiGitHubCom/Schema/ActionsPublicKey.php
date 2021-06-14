@@ -14,10 +14,10 @@ final class ActionsPublicKey
      * The Base64 encoded public key.
      */
     private string $key;
-    private int $id;
-    private string $url;
-    private string $title;
-    private string $created_at;
+    private ?int $id = null;
+    private ?string $url = null;
+    private ?string $title = null;
+    private ?string $created_at = null;
     /**
      * The identifier for the key.
      */
@@ -32,19 +32,19 @@ final class ActionsPublicKey
     {
         return $this->key;
     }
-    public function id() : int
+    public function id() : ?int
     {
         return $this->id;
     }
-    public function url() : string
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function title() : string
+    public function title() : ?string
     {
         return $this->title;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }

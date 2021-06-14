@@ -14,9 +14,9 @@ final class Changed
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase $marketplace_purchase;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase $previous_marketplace_purchase;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase $previous_marketplace_purchase = null;
     public function action() : string
     {
         return $this->action;
@@ -33,7 +33,7 @@ final class Changed
     {
         return $this->marketplace_purchase;
     }
-    public function previous_marketplace_purchase() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase
+    public function previous_marketplace_purchase() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\MarketplacePurchase
     {
         return $this->previous_marketplace_purchase;
     }

@@ -26,8 +26,8 @@ final class ProjectCard
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $creator;
     private string $created_at;
     private string $updated_at;
-    private string $content_url;
-    private $after_id;
+    private ?string $content_url = null;
+    private $after_id = null;
     public function url() : string
     {
         return $this->url;
@@ -78,7 +78,7 @@ final class ProjectCard
     {
         return $this->updated_at;
     }
-    public function content_url() : string
+    public function content_url() : ?string
     {
         return $this->content_url;
     }

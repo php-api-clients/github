@@ -31,9 +31,9 @@ final class TeamDiscussionComment
     private string $updated_at;
     private string $url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
     public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->author;
@@ -91,7 +91,7 @@ final class TeamDiscussionComment
     {
         return $this->url;
     }
-    public function reactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
+    public function reactions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
     {
         return $this->reactions;
     }

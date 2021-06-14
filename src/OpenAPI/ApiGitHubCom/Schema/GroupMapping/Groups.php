@@ -21,11 +21,11 @@ final class Groups
     /**
      * synchronization status for this group mapping
      */
-    private string $status;
+    private ?string $status = null;
     /**
      * the time of the last sync for this group-mapping
      */
-    private string $synced_at;
+    private ?string $synced_at = null;
     /**
      * The ID of the group
      */
@@ -50,14 +50,14 @@ final class Groups
     /**
      * synchronization status for this group mapping
      */
-    public function status() : string
+    public function status() : ?string
     {
         return $this->status;
     }
     /**
      * the time of the last sync for this group-mapping
      */
-    public function synced_at() : string
+    public function synced_at() : ?string
     {
         return $this->synced_at;
     }

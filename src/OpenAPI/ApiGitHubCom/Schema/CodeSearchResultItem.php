@@ -18,15 +18,15 @@ final class CodeSearchResultItem
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     private number $score;
-    private int $file_size;
-    private string $language;
-    private string $last_modified_at;
-    private array $line_numbers = array();
+    private ?int $file_size = null;
+    private ?string $language = null;
+    private ?string $last_modified_at = null;
+    private ?array $line_numbers = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches::class)
      */
-    private array $text_matches = array();
+    private ?array $text_matches = array();
     public function name() : string
     {
         return $this->name;
@@ -62,26 +62,26 @@ final class CodeSearchResultItem
     {
         return $this->score;
     }
-    public function file_size() : int
+    public function file_size() : ?int
     {
         return $this->file_size;
     }
-    public function language() : string
+    public function language() : ?string
     {
         return $this->language;
     }
-    public function last_modified_at() : string
+    public function last_modified_at() : ?string
     {
         return $this->last_modified_at;
     }
-    public function line_numbers() : array
+    public function line_numbers() : ?array
     {
         return $this->line_numbers;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches>
      */
-    public function text_matches() : array
+    public function text_matches() : ?array
     {
         return $this->text_matches;
     }

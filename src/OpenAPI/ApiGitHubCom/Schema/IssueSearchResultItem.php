@@ -17,12 +17,12 @@ final class IssueSearchResultItem
     private int $number;
     private string $title;
     private bool $locked;
-    private string $active_lock_reason;
+    private ?string $active_lock_reason = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $assignees = array();
+    private ?array $assignees = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -49,23 +49,23 @@ final class IssueSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches::class)
      */
-    private array $text_matches = array();
-    private array $pull_request = array();
-    private string $body;
+    private ?array $text_matches = array();
+    private ?array $pull_request = array();
+    private ?string $body = null;
     private number $score;
     /**
      * How the author is associated with the repository.
      */
     private string $author_association;
-    private bool $draft;
+    private ?bool $draft = null;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    private string $body_html;
-    private string $body_text;
-    private string $timeline_url;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository = null;
+    private ?string $body_html = null;
+    private ?string $body_text = null;
+    private ?string $timeline_url = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
@@ -114,14 +114,14 @@ final class IssueSearchResultItem
     {
         return $this->locked;
     }
-    public function active_lock_reason() : string
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function assignees() : array
+    public function assignees() : ?array
     {
         return $this->assignees;
     }
@@ -167,15 +167,15 @@ final class IssueSearchResultItem
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches>
      */
-    public function text_matches() : array
+    public function text_matches() : ?array
     {
         return $this->text_matches;
     }
-    public function pull_request() : array
+    public function pull_request() : ?array
     {
         return $this->pull_request;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -190,26 +190,26 @@ final class IssueSearchResultItem
     {
         return $this->author_association;
     }
-    public function draft() : bool
+    public function draft() : ?bool
     {
         return $this->draft;
     }
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    public function repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
         return $this->repository;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }
-    public function timeline_url() : string
+    public function timeline_url() : ?string
     {
         return $this->timeline_url;
     }

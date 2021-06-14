@@ -35,7 +35,7 @@ final class CommitSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches::class)
      */
-    private array $text_matches = array();
+    private ?array $text_matches = array();
     public function url() : string
     {
         return $this->url;
@@ -89,7 +89,7 @@ final class CommitSearchResultItem
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches>
      */
-    public function text_matches() : array
+    public function text_matches() : ?array
     {
         return $this->text_matches;
     }

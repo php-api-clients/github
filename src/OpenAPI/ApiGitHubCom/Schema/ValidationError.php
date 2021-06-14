@@ -12,7 +12,7 @@ final class ValidationError
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors::class)
      */
-    private array $errors = array();
+    private ?array $errors = array();
     public function message() : string
     {
         return $this->message;
@@ -24,7 +24,7 @@ final class ValidationError
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors>
      */
-    public function errors() : array
+    public function errors() : ?array
     {
         return $this->errors;
     }

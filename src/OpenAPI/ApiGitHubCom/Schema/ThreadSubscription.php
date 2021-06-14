@@ -11,8 +11,8 @@ final class ThreadSubscription
     private string $reason;
     private string $created_at;
     private string $url;
-    private string $thread_url;
-    private string $repository_url;
+    private ?string $thread_url = null;
+    private ?string $repository_url = null;
     public function subscribed() : bool
     {
         return $this->subscribed;
@@ -33,11 +33,11 @@ final class ThreadSubscription
     {
         return $this->url;
     }
-    public function thread_url() : string
+    public function thread_url() : ?string
     {
         return $this->thread_url;
     }
-    public function repository_url() : string
+    public function repository_url() : ?string
     {
         return $this->repository_url;
     }

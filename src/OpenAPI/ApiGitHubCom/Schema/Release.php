@@ -23,7 +23,7 @@ final class Release
      */
     private string $target_commitish;
     private string $name;
-    private string $body;
+    private ?string $body = null;
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
@@ -44,16 +44,16 @@ final class Release
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset::class)
      */
     private array $assets = array();
-    private string $body_html;
-    private string $body_text;
+    private ?string $body_html = null;
+    private ?string $body_text = null;
     /**
      * The URL of the release discussion.
      */
-    private string $discussion_url;
+    private ?string $discussion_url = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
     public function url() : string
     {
         return $this->url;
@@ -104,7 +104,7 @@ final class Release
     {
         return $this->name;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -144,22 +144,22 @@ final class Release
     {
         return $this->assets;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }
     /**
      * The URL of the release discussion.
      */
-    public function discussion_url() : string
+    public function discussion_url() : ?string
     {
         return $this->discussion_url;
     }
-    public function reactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
+    public function reactions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
     {
         return $this->reactions;
     }

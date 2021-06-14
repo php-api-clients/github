@@ -25,7 +25,7 @@ final class TeamFull
     /**
      * The level of privacy this team should have
      */
-    private string $privacy;
+    private ?string $privacy = null;
     /**
      * Permission that the team will have for its repositories
      */
@@ -48,7 +48,7 @@ final class TeamFull
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
-    private string $ldap_dn;
+    private ?string $ldap_dn = null;
     /**
      * Unique identifier of the team
      */
@@ -89,7 +89,7 @@ final class TeamFull
     /**
      * The level of privacy this team should have
      */
-    public function privacy() : string
+    public function privacy() : ?string
     {
         return $this->privacy;
     }
@@ -138,7 +138,7 @@ final class TeamFull
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
-    public function ldap_dn() : string
+    public function ldap_dn() : ?string
     {
         return $this->ldap_dn;
     }

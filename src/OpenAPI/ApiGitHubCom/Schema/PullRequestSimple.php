@@ -36,7 +36,7 @@ final class PullRequestSimple
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone;
-    private string $active_lock_reason;
+    private ?string $active_lock_reason = null;
     private string $created_at;
     private string $updated_at;
     private string $closed_at;
@@ -50,17 +50,17 @@ final class PullRequestSimple
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $assignees = array();
+    private ?array $assignees = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $requested_reviewers = array();
+    private ?array $requested_reviewers = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
      */
-    private array $requested_teams = array();
+    private ?array $requested_teams = array();
     private array $head = array();
     private array $base = array();
     private array $_links = array();
@@ -76,7 +76,7 @@ final class PullRequestSimple
     /**
      * Indicates whether or not the pull request is a draft.
      */
-    private bool $draft;
+    private ?bool $draft = null;
     public function url() : string
     {
         return $this->url;
@@ -160,7 +160,7 @@ final class PullRequestSimple
     {
         return $this->milestone;
     }
-    public function active_lock_reason() : string
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
@@ -191,21 +191,21 @@ final class PullRequestSimple
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function assignees() : array
+    public function assignees() : ?array
     {
         return $this->assignees;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function requested_reviewers() : array
+    public function requested_reviewers() : ?array
     {
         return $this->requested_reviewers;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
      */
-    public function requested_teams() : array
+    public function requested_teams() : ?array
     {
         return $this->requested_teams;
     }
@@ -238,7 +238,7 @@ final class PullRequestSimple
     /**
      * Indicates whether or not the pull request is a draft.
      */
-    public function draft() : bool
+    public function draft() : ?bool
     {
         return $this->draft;
     }

@@ -34,7 +34,7 @@ final class CommitComparison
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry::class)
      */
-    private array $files = array();
+    private ?array $files = array();
     public function url() : string
     {
         return $this->url;
@@ -95,7 +95,7 @@ final class CommitComparison
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>
      */
-    public function files() : array
+    public function files() : ?array
     {
         return $this->files;
     }

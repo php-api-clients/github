@@ -17,7 +17,7 @@ final class IssueSimple
     private int $number;
     private string $state;
     private string $title;
-    private string $body;
+    private ?string $body = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -35,15 +35,15 @@ final class IssueSimple
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $assignees = array();
+    private ?array $assignees = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone;
     private bool $locked;
-    private string $active_lock_reason;
+    private ?string $active_lock_reason = null;
     private int $comments;
-    private array $pull_request = array();
+    private ?array $pull_request = array();
     private string $closed_at;
     private string $created_at;
     private string $updated_at;
@@ -51,14 +51,14 @@ final class IssueSimple
      * How the author is associated with the repository.
      */
     private string $author_association;
-    private string $body_html;
-    private string $body_text;
-    private string $timeline_url;
+    private ?string $body_html = null;
+    private ?string $body_text = null;
+    private ?string $timeline_url = null;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
@@ -107,7 +107,7 @@ final class IssueSimple
     {
         return $this->title;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -129,7 +129,7 @@ final class IssueSimple
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      */
-    public function assignees() : array
+    public function assignees() : ?array
     {
         return $this->assignees;
     }
@@ -141,7 +141,7 @@ final class IssueSimple
     {
         return $this->locked;
     }
-    public function active_lock_reason() : string
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
@@ -149,7 +149,7 @@ final class IssueSimple
     {
         return $this->comments;
     }
-    public function pull_request() : array
+    public function pull_request() : ?array
     {
         return $this->pull_request;
     }
@@ -172,22 +172,22 @@ final class IssueSimple
     {
         return $this->author_association;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }
-    public function timeline_url() : string
+    public function timeline_url() : ?string
     {
         return $this->timeline_url;
     }
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    public function repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
         return $this->repository;
     }

@@ -12,7 +12,7 @@ final class Blob
     private string $sha;
     private int $size;
     private string $node_id;
-    private string $highlighted_content;
+    private ?string $highlighted_content = null;
     public function content() : string
     {
         return $this->content;
@@ -37,7 +37,7 @@ final class Blob
     {
         return $this->node_id;
     }
-    public function highlighted_content() : string
+    public function highlighted_content() : ?string
     {
         return $this->highlighted_content;
     }

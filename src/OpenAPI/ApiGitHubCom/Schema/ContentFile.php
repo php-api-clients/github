@@ -18,8 +18,8 @@ final class ContentFile
     private string $html_url;
     private string $download_url;
     private array $_links = array();
-    private string $target;
-    private string $submodule_git_url;
+    private ?string $target = null;
+    private ?string $submodule_git_url = null;
     public function type() : string
     {
         return $this->type;
@@ -68,11 +68,11 @@ final class ContentFile
     {
         return $this->_links;
     }
-    public function target() : string
+    public function target() : ?string
     {
         return $this->target;
     }
-    public function submodule_git_url() : string
+    public function submodule_git_url() : ?string
     {
         return $this->submodule_git_url;
     }

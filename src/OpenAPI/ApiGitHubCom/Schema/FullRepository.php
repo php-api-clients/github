@@ -69,8 +69,8 @@ final class FullRepository
     private int $size;
     private string $default_branch;
     private int $open_issues_count;
-    private bool $is_template;
-    private array $topics = array();
+    private ?bool $is_template = null;
+    private ?array $topics = array();
     private bool $has_issues;
     private bool $has_projects;
     private bool $has_wiki;
@@ -84,20 +84,20 @@ final class FullRepository
     /**
      * The repository visibility: public, private, or internal.
      */
-    private string $visibility;
+    private ?string $visibility = null;
     private string $pushed_at;
     private string $created_at;
     private string $updated_at;
-    private array $permissions = array();
-    private bool $allow_rebase_merge;
+    private ?array $permissions = array();
+    private ?bool $allow_rebase_merge = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository;
-    private string $temp_clone_token;
-    private bool $allow_squash_merge;
-    private bool $delete_branch_on_merge;
-    private bool $allow_merge_commit;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
+    private ?string $temp_clone_token = null;
+    private ?bool $allow_squash_merge = null;
+    private ?bool $delete_branch_on_merge = null;
+    private ?bool $allow_merge_commit = null;
     private int $subscribers_count;
     private int $network_count;
     /**
@@ -110,28 +110,28 @@ final class FullRepository
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $organization;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $parent;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $parent = null;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $source;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $source = null;
     private int $forks;
-    private string $master_branch;
+    private ?string $master_branch = null;
     private int $open_issues;
     private int $watchers;
     /**
      * Whether anonymous git access is allowed.
      */
-    private bool $anonymous_access_enabled;
+    private ?bool $anonymous_access_enabled = null;
     /**
      * Code of Conduct Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple $code_of_conduct;
-    private bool $has_advanced_security;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple $code_of_conduct = null;
+    private ?bool $has_advanced_security = null;
     public function id() : int
     {
         return $this->id;
@@ -371,11 +371,11 @@ final class FullRepository
     {
         return $this->open_issues_count;
     }
-    public function is_template() : bool
+    public function is_template() : ?bool
     {
         return $this->is_template;
     }
-    public function topics() : array
+    public function topics() : ?array
     {
         return $this->topics;
     }
@@ -413,7 +413,7 @@ final class FullRepository
     /**
      * The repository visibility: public, private, or internal.
      */
-    public function visibility() : string
+    public function visibility() : ?string
     {
         return $this->visibility;
     }
@@ -429,31 +429,31 @@ final class FullRepository
     {
         return $this->updated_at;
     }
-    public function permissions() : array
+    public function permissions() : ?array
     {
         return $this->permissions;
     }
-    public function allow_rebase_merge() : bool
+    public function allow_rebase_merge() : ?bool
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
         return $this->template_repository;
     }
-    public function temp_clone_token() : string
+    public function temp_clone_token() : ?string
     {
         return $this->temp_clone_token;
     }
-    public function allow_squash_merge() : bool
+    public function allow_squash_merge() : ?bool
     {
         return $this->allow_squash_merge;
     }
-    public function delete_branch_on_merge() : bool
+    public function delete_branch_on_merge() : ?bool
     {
         return $this->delete_branch_on_merge;
     }
-    public function allow_merge_commit() : bool
+    public function allow_merge_commit() : ?bool
     {
         return $this->allow_merge_commit;
     }
@@ -476,14 +476,14 @@ final class FullRepository
     /**
      * A git repository
      */
-    public function parent() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    public function parent() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
         return $this->parent;
     }
     /**
      * A git repository
      */
-    public function source() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    public function source() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
         return $this->source;
     }
@@ -491,7 +491,7 @@ final class FullRepository
     {
         return $this->forks;
     }
-    public function master_branch() : string
+    public function master_branch() : ?string
     {
         return $this->master_branch;
     }
@@ -506,18 +506,18 @@ final class FullRepository
     /**
      * Whether anonymous git access is allowed.
      */
-    public function anonymous_access_enabled() : bool
+    public function anonymous_access_enabled() : ?bool
     {
         return $this->anonymous_access_enabled;
     }
     /**
      * Code of Conduct Simple
      */
-    public function code_of_conduct() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple
+    public function code_of_conduct() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple
     {
         return $this->code_of_conduct;
     }
-    public function has_advanced_security() : bool
+    public function has_advanced_security() : ?bool
     {
         return $this->has_advanced_security;
     }

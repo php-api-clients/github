@@ -9,7 +9,7 @@ final class IssueEventDismissedReview
     private string $state;
     private int $review_id;
     private string $dismissal_message;
-    private string $dismissal_commit_id;
+    private ?string $dismissal_commit_id = null;
     public function state() : string
     {
         return $this->state;
@@ -22,7 +22,7 @@ final class IssueEventDismissedReview
     {
         return $this->dismissal_message;
     }
-    public function dismissal_commit_id() : string
+    public function dismissal_commit_id() : ?string
     {
         return $this->dismissal_commit_id;
     }

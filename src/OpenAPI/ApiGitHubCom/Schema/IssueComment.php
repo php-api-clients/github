@@ -18,9 +18,9 @@ final class IssueComment
     /**
      * Contents of the issue comment
      */
-    private string $body;
-    private string $body_text;
-    private string $body_html;
+    private ?string $body = null;
+    private ?string $body_text = null;
+    private ?string $body_html = null;
     private string $html_url;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -38,9 +38,9 @@ final class IssueComment
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
     /**
      * Unique identifier of the issue comment
      */
@@ -62,15 +62,15 @@ final class IssueComment
     /**
      * Contents of the issue comment
      */
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
@@ -105,7 +105,7 @@ final class IssueComment
     {
         return $this->performed_via_github_app;
     }
-    public function reactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
+    public function reactions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
     {
         return $this->reactions;
     }

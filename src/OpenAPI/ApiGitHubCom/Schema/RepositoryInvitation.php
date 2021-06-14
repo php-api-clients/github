@@ -31,7 +31,7 @@ final class RepositoryInvitation
     /**
      * Whether or not the invitation has expired
      */
-    private bool $expired;
+    private ?bool $expired = null;
     /**
      * URL for the repository invitation
      */
@@ -74,7 +74,7 @@ final class RepositoryInvitation
     /**
      * Whether or not the invitation has expired
      */
-    public function expired() : bool
+    public function expired() : ?bool
     {
         return $this->expired;
     }

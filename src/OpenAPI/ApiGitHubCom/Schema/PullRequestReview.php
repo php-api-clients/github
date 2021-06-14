@@ -23,13 +23,13 @@ final class PullRequestReview
     private string $html_url;
     private string $pull_request_url;
     private array $_links = array();
-    private string $submitted_at;
+    private ?string $submitted_at = null;
     /**
      * A commit SHA for the review.
      */
     private string $commit_id;
-    private string $body_html;
-    private string $body_text;
+    private ?string $body_html = null;
+    private ?string $body_text = null;
     /**
      * How the author is associated with the repository.
      */
@@ -72,7 +72,7 @@ final class PullRequestReview
     {
         return $this->_links;
     }
-    public function submitted_at() : string
+    public function submitted_at() : ?string
     {
         return $this->submitted_at;
     }
@@ -83,11 +83,11 @@ final class PullRequestReview
     {
         return $this->commit_id;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }

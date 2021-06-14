@@ -102,13 +102,13 @@ final class Repository
     /**
      * Returns whether or not this repository is disabled.
      */
-    private bool $disabled;
+    private ?bool $disabled = null;
     private int $open_issues_count;
     private $license;
     private int $forks;
     private int $open_issues;
     private int $watchers;
-    private int $stargazers;
+    private ?int $stargazers = null;
     /**
      * The default branch of the repository.
      */
@@ -116,23 +116,23 @@ final class Repository
     /**
      * Whether to allow squash merges for pull requests.
      */
-    private bool $allow_squash_merge;
+    private ?bool $allow_squash_merge = null;
     /**
      * Whether to allow merge commits for pull requests.
      */
-    private bool $allow_merge_commit;
+    private ?bool $allow_merge_commit = null;
     /**
      * Whether to allow rebase merges for pull requests.
      */
-    private bool $allow_rebase_merge;
+    private ?bool $allow_rebase_merge = null;
     /**
      * Whether to delete head branches when pull requests are merged
      */
-    private bool $delete_branch_on_merge;
-    private string $master_branch;
-    private array $permissions = array();
-    private bool $public;
-    private string $organization;
+    private ?bool $delete_branch_on_merge = null;
+    private ?string $master_branch = null;
+    private ?array $permissions = array();
+    private ?bool $public = null;
+    private ?string $organization = null;
     /**
      * Unique identifier of the repository
      */
@@ -424,7 +424,7 @@ final class Repository
     /**
      * Returns whether or not this repository is disabled.
      */
-    public function disabled() : bool
+    public function disabled() : ?bool
     {
         return $this->disabled;
     }
@@ -448,7 +448,7 @@ final class Repository
     {
         return $this->watchers;
     }
-    public function stargazers() : int
+    public function stargazers() : ?int
     {
         return $this->stargazers;
     }
@@ -462,44 +462,44 @@ final class Repository
     /**
      * Whether to allow squash merges for pull requests.
      */
-    public function allow_squash_merge() : bool
+    public function allow_squash_merge() : ?bool
     {
         return $this->allow_squash_merge;
     }
     /**
      * Whether to allow merge commits for pull requests.
      */
-    public function allow_merge_commit() : bool
+    public function allow_merge_commit() : ?bool
     {
         return $this->allow_merge_commit;
     }
     /**
      * Whether to allow rebase merges for pull requests.
      */
-    public function allow_rebase_merge() : bool
+    public function allow_rebase_merge() : ?bool
     {
         return $this->allow_rebase_merge;
     }
     /**
      * Whether to delete head branches when pull requests are merged
      */
-    public function delete_branch_on_merge() : bool
+    public function delete_branch_on_merge() : ?bool
     {
         return $this->delete_branch_on_merge;
     }
-    public function master_branch() : string
+    public function master_branch() : ?string
     {
         return $this->master_branch;
     }
-    public function permissions() : array
+    public function permissions() : ?array
     {
         return $this->permissions;
     }
-    public function public() : bool
+    public function public() : ?bool
     {
         return $this->public;
     }
-    public function organization() : string
+    public function organization() : ?string
     {
         return $this->organization;
     }

@@ -16,7 +16,7 @@ final class ReviewComment
     private int $original_position;
     private string $commit_id;
     private string $original_commit_id;
-    private int $in_reply_to_id;
+    private ?int $in_reply_to_id = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -31,32 +31,32 @@ final class ReviewComment
      */
     private string $author_association;
     private array $_links = array();
-    private string $body_text;
-    private string $body_html;
+    private ?string $body_text = null;
+    private ?string $body_html = null;
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    private string $side;
+    private ?string $side = null;
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    private string $start_side;
+    private ?string $start_side = null;
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    private int $line;
+    private ?int $line = null;
     /**
      * The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    private int $original_line;
+    private ?int $original_line = null;
     /**
      * The first line of the range for a multi-line comment.
      */
-    private int $start_line;
+    private ?int $start_line = null;
     /**
      * The original first line of the range for a multi-line comment.
      */
-    private int $original_start_line;
+    private ?int $original_start_line = null;
     public function url() : string
     {
         return $this->url;
@@ -97,7 +97,7 @@ final class ReviewComment
     {
         return $this->original_commit_id;
     }
-    public function in_reply_to_id() : int
+    public function in_reply_to_id() : ?int
     {
         return $this->in_reply_to_id;
     }
@@ -136,53 +136,53 @@ final class ReviewComment
     {
         return $this->_links;
     }
-    public function body_text() : string
+    public function body_text() : ?string
     {
         return $this->body_text;
     }
-    public function body_html() : string
+    public function body_html() : ?string
     {
         return $this->body_html;
     }
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function side() : string
+    public function side() : ?string
     {
         return $this->side;
     }
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function start_side() : string
+    public function start_side() : ?string
     {
         return $this->start_side;
     }
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function line() : int
+    public function line() : ?int
     {
         return $this->line;
     }
     /**
      * The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function original_line() : int
+    public function original_line() : ?int
     {
         return $this->original_line;
     }
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function start_line() : int
+    public function start_line() : ?int
     {
         return $this->start_line;
     }
     /**
      * The original first line of the range for a multi-line comment.
      */
-    public function original_start_line() : int
+    public function original_start_line() : ?int
     {
         return $this->original_start_line;
     }

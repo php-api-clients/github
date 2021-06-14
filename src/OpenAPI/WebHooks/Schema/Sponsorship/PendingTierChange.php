@@ -11,7 +11,7 @@ final class PendingTierChange
     /**
      * The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
      */
-    private string $effective_date;
+    private ?string $effective_date = null;
     private array $changes = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
@@ -28,7 +28,7 @@ final class PendingTierChange
     /**
      * The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
      */
-    public function effective_date() : string
+    public function effective_date() : ?string
     {
         return $this->effective_date;
     }

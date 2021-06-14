@@ -11,10 +11,10 @@ final class ShortBranch
     private bool $protected;
     /**
      * Branch Protection
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection;
-    private string $protection_url;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection = null;
+    private ?string $protection_url = null;
     public function name() : string
     {
         return $this->name;
@@ -30,11 +30,11 @@ final class ShortBranch
     /**
      * Branch Protection
      */
-    public function protection() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection
+    public function protection() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection
     {
         return $this->protection;
     }
-    public function protection_url() : string
+    public function protection_url() : ?string
     {
         return $this->protection_url;
     }

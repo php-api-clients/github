@@ -24,26 +24,26 @@ final class UserSearchResultItem
     private string $gists_url;
     private string $starred_url;
     private string $events_url;
-    private int $public_repos;
-    private int $public_gists;
-    private int $followers;
-    private int $following;
-    private string $created_at;
-    private string $updated_at;
-    private string $name;
-    private string $bio;
-    private string $email;
-    private string $location;
+    private ?int $public_repos = null;
+    private ?int $public_gists = null;
+    private ?int $followers = null;
+    private ?int $following = null;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
+    private ?string $name = null;
+    private ?string $bio = null;
+    private ?string $email = null;
+    private ?string $location = null;
     private bool $site_admin;
-    private bool $hireable;
+    private ?bool $hireable = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches::class)
      */
-    private array $text_matches = array();
-    private string $blog;
-    private string $company;
-    private string $suspended_at;
+    private ?array $text_matches = array();
+    private ?string $blog = null;
+    private ?string $company = null;
+    private ?string $suspended_at = null;
     public function login() : string
     {
         return $this->login;
@@ -116,43 +116,43 @@ final class UserSearchResultItem
     {
         return $this->events_url;
     }
-    public function public_repos() : int
+    public function public_repos() : ?int
     {
         return $this->public_repos;
     }
-    public function public_gists() : int
+    public function public_gists() : ?int
     {
         return $this->public_gists;
     }
-    public function followers() : int
+    public function followers() : ?int
     {
         return $this->followers;
     }
-    public function following() : int
+    public function following() : ?int
     {
         return $this->following;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function bio() : string
+    public function bio() : ?string
     {
         return $this->bio;
     }
-    public function email() : string
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function location() : string
+    public function location() : ?string
     {
         return $this->location;
     }
@@ -160,26 +160,26 @@ final class UserSearchResultItem
     {
         return $this->site_admin;
     }
-    public function hireable() : bool
+    public function hireable() : ?bool
     {
         return $this->hireable;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches>
      */
-    public function text_matches() : array
+    public function text_matches() : ?array
     {
         return $this->text_matches;
     }
-    public function blog() : string
+    public function blog() : ?string
     {
         return $this->blog;
     }
-    public function company() : string
+    public function company() : ?string
     {
         return $this->company;
     }
-    public function suspended_at() : string
+    public function suspended_at() : ?string
     {
         return $this->suspended_at;
     }

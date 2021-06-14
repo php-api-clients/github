@@ -6,21 +6,21 @@ final class Errors
 {
     public const SCHEMA_TITLE = 'validation-error::errors';
     public const SCHEMA_DESCRIPTION = '';
-    private string $resource;
-    private string $field;
-    private string $message;
+    private ?string $resource = null;
+    private ?string $field = null;
+    private ?string $message = null;
     private string $code;
-    private int $index;
+    private ?int $index = null;
     private $value;
-    public function resource() : string
+    public function resource() : ?string
     {
         return $this->resource;
     }
-    public function field() : string
+    public function field() : ?string
     {
         return $this->field;
     }
-    public function message() : string
+    public function message() : ?string
     {
         return $this->message;
     }
@@ -28,7 +28,7 @@ final class Errors
     {
         return $this->code;
     }
-    public function index() : int
+    public function index() : ?int
     {
         return $this->index;
     }

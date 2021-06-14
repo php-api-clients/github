@@ -16,7 +16,7 @@ final class OrganizationActionsSecret
      * Visibility of a secret
      */
     private string $visibility;
-    private string $selected_repositories_url;
+    private ?string $selected_repositories_url = null;
     /**
      * The name of the secret.
      */
@@ -39,7 +39,7 @@ final class OrganizationActionsSecret
     {
         return $this->visibility;
     }
-    public function selected_repositories_url() : string
+    public function selected_repositories_url() : ?string
     {
         return $this->selected_repositories_url;
     }

@@ -17,17 +17,17 @@ final class Event
     private array $hook = array();
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository $repository = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     public function zen() : string
     {
         return $this->zen;
@@ -49,15 +49,15 @@ final class Event
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository
+    public function repository() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository
     {
         return $this->repository;
     }
-    public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+    public function sender() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
     {
         return $this->sender;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
+    public function organization() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
     {
         return $this->organization;
     }

@@ -23,9 +23,9 @@ final class GitTag
     private array $tagger = array();
     private array $object = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification = null;
     public function node_id() : string
     {
         return $this->node_id;
@@ -63,7 +63,7 @@ final class GitTag
     {
         return $this->object;
     }
-    public function verification() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification
+    public function verification() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification
     {
         return $this->verification;
     }

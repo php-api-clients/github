@@ -29,9 +29,9 @@ final class BaseGist
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
-    private bool $truncated;
-    private array $forks = array();
-    private array $history = array();
+    private ?bool $truncated = null;
+    private ?array $forks = array();
+    private ?array $history = array();
     public function url() : string
     {
         return $this->url;
@@ -100,15 +100,15 @@ final class BaseGist
     {
         return $this->owner;
     }
-    public function truncated() : bool
+    public function truncated() : ?bool
     {
         return $this->truncated;
     }
-    public function forks() : array
+    public function forks() : ?array
     {
         return $this->forks;
     }
-    public function history() : array
+    public function history() : ?array
     {
         return $this->history;
     }

@@ -31,20 +31,20 @@ final class PublicUser
     private string $email;
     private bool $hireable;
     private string $bio;
-    private string $twitter_username;
+    private ?string $twitter_username = null;
     private int $public_repos;
     private int $public_gists;
     private int $followers;
     private int $following;
     private string $created_at;
     private string $updated_at;
-    private array $plan = array();
-    private string $suspended_at;
-    private int $private_gists;
-    private int $total_private_repos;
-    private int $owned_private_repos;
-    private int $disk_usage;
-    private int $collaborators;
+    private ?array $plan = array();
+    private ?string $suspended_at = null;
+    private ?int $private_gists = null;
+    private ?int $total_private_repos = null;
+    private ?int $owned_private_repos = null;
+    private ?int $disk_usage = null;
+    private ?int $collaborators = null;
     public function login() : string
     {
         return $this->login;
@@ -145,7 +145,7 @@ final class PublicUser
     {
         return $this->bio;
     }
-    public function twitter_username() : string
+    public function twitter_username() : ?string
     {
         return $this->twitter_username;
     }
@@ -173,31 +173,31 @@ final class PublicUser
     {
         return $this->updated_at;
     }
-    public function plan() : array
+    public function plan() : ?array
     {
         return $this->plan;
     }
-    public function suspended_at() : string
+    public function suspended_at() : ?string
     {
         return $this->suspended_at;
     }
-    public function private_gists() : int
+    public function private_gists() : ?int
     {
         return $this->private_gists;
     }
-    public function total_private_repos() : int
+    public function total_private_repos() : ?int
     {
         return $this->total_private_repos;
     }
-    public function owned_private_repos() : int
+    public function owned_private_repos() : ?int
     {
         return $this->owned_private_repos;
     }
-    public function disk_usage() : int
+    public function disk_usage() : ?int
     {
         return $this->disk_usage;
     }
-    public function collaborators() : int
+    public function collaborators() : ?int
     {
         return $this->collaborators;
     }

@@ -16,8 +16,8 @@ final class Unsuspend
      * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Unsuspend\Repositories>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Unsuspend\Repositories::class)
      */
-    private array $repositories = array();
-    private $requester;
+    private ?array $repositories = array();
+    private $requester = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
@@ -34,7 +34,7 @@ final class Unsuspend
      * An array of repository objects that the installation can access.
      * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Installation\Unsuspend\Repositories>
      */
-    public function repositories() : array
+    public function repositories() : ?array
     {
         return $this->repositories;
     }

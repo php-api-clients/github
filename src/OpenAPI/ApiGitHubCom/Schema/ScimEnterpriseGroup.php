@@ -8,14 +8,14 @@ final class ScimEnterpriseGroup
     public const SCHEMA_DESCRIPTION = '';
     private array $schemas = array();
     private string $id;
-    private string $externalId;
-    private string $displayName;
+    private ?string $externalId = null;
+    private ?string $displayName = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseGroup\Members>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseGroup\Members::class)
      */
-    private array $members = array();
-    private array $meta = array();
+    private ?array $members = array();
+    private ?array $meta = array();
     public function schemas() : array
     {
         return $this->schemas;
@@ -24,22 +24,22 @@ final class ScimEnterpriseGroup
     {
         return $this->id;
     }
-    public function externalId() : string
+    public function externalId() : ?string
     {
         return $this->externalId;
     }
-    public function displayName() : string
+    public function displayName() : ?string
     {
         return $this->displayName;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimEnterpriseGroup\Members>
      */
-    public function members() : array
+    public function members() : ?array
     {
         return $this->members;
     }
-    public function meta() : array
+    public function meta() : ?array
     {
         return $this->meta;
     }

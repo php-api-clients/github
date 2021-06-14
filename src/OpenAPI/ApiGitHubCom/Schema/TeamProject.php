@@ -26,11 +26,11 @@ final class TeamProject
     /**
      * The organization permission for this project. Only present when owner is an organization.
      */
-    private string $organization_permission;
+    private ?string $organization_permission = null;
     /**
      * Whether the project is private or not. Only present when owner is an organization.
      */
-    private bool $private;
+    private ?bool $private = null;
     private array $permissions = array();
     public function owner_url() : string
     {
@@ -90,14 +90,14 @@ final class TeamProject
     /**
      * The organization permission for this project. Only present when owner is an organization.
      */
-    public function organization_permission() : string
+    public function organization_permission() : ?string
     {
         return $this->organization_permission;
     }
     /**
      * Whether the project is private or not. Only present when owner is an organization.
      */
-    public function private() : bool
+    public function private() : ?bool
     {
         return $this->private;
     }

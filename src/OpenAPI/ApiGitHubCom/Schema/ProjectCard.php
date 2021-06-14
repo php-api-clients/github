@@ -22,9 +22,9 @@ final class ProjectCard
     /**
      * Whether or not the card is archived
      */
-    private bool $archived;
+    private ?bool $archived = null;
     private string $column_url;
-    private string $content_url;
+    private ?string $content_url = null;
     private string $project_url;
     public function url() : string
     {
@@ -60,7 +60,7 @@ final class ProjectCard
     /**
      * Whether or not the card is archived
      */
-    public function archived() : bool
+    public function archived() : ?bool
     {
         return $this->archived;
     }
@@ -68,7 +68,7 @@ final class ProjectCard
     {
         return $this->column_url;
     }
-    public function content_url() : string
+    public function content_url() : ?string
     {
         return $this->content_url;
     }

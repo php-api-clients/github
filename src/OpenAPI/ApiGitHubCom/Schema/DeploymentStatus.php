@@ -24,7 +24,7 @@ final class DeploymentStatus
     /**
      * The environment of the deployment that the status is for.
      */
-    private string $environment;
+    private ?string $environment = null;
     /**
      * Deprecated: the URL to associate with this status.
      */
@@ -36,11 +36,11 @@ final class DeploymentStatus
     /**
      * The URL for accessing your environment.
      */
-    private string $environment_url;
+    private ?string $environment_url = null;
     /**
      * The URL to associate with this status.
      */
-    private string $log_url;
+    private ?string $log_url = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
@@ -78,7 +78,7 @@ final class DeploymentStatus
     /**
      * The environment of the deployment that the status is for.
      */
-    public function environment() : string
+    public function environment() : ?string
     {
         return $this->environment;
     }
@@ -108,14 +108,14 @@ final class DeploymentStatus
     /**
      * The URL for accessing your environment.
      */
-    public function environment_url() : string
+    public function environment_url() : ?string
     {
         return $this->environment_url;
     }
     /**
      * The URL to associate with this status.
      */
-    public function log_url() : string
+    public function log_url() : ?string
     {
         return $this->log_url;
     }

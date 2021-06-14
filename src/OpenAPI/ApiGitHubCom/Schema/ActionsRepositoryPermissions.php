@@ -17,7 +17,7 @@ final class ActionsRepositoryPermissions
     /**
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    private string $selected_actions_url;
+    private ?string $selected_actions_url = null;
     /**
      * Whether GitHub Actions is enabled on the repository.
      */
@@ -35,7 +35,7 @@ final class ActionsRepositoryPermissions
     /**
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    public function selected_actions_url() : string
+    public function selected_actions_url() : ?string
     {
         return $this->selected_actions_url;
     }

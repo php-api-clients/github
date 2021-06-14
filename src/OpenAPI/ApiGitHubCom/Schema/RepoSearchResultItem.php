@@ -29,7 +29,7 @@ final class RepoSearchResultItem
     private string $language;
     private int $forks_count;
     private int $open_issues_count;
-    private string $master_branch;
+    private ?string $master_branch = null;
     private string $default_branch;
     private number $score;
     private string $forks_url;
@@ -75,7 +75,7 @@ final class RepoSearchResultItem
     private int $forks;
     private int $open_issues;
     private int $watchers;
-    private array $topics = array();
+    private ?array $topics = array();
     private string $mirror_url;
     private bool $has_issues;
     private bool $has_projects;
@@ -91,17 +91,17 @@ final class RepoSearchResultItem
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license;
-    private array $permissions = array();
+    private ?array $permissions = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches::class)
      */
-    private array $text_matches = array();
-    private string $temp_clone_token;
-    private bool $allow_merge_commit;
-    private bool $allow_squash_merge;
-    private bool $allow_rebase_merge;
-    private bool $delete_branch_on_merge;
+    private ?array $text_matches = array();
+    private ?string $temp_clone_token = null;
+    private ?bool $allow_merge_commit = null;
+    private ?bool $allow_squash_merge = null;
+    private ?bool $allow_rebase_merge = null;
+    private ?bool $delete_branch_on_merge = null;
     public function id() : int
     {
         return $this->id;
@@ -182,7 +182,7 @@ final class RepoSearchResultItem
     {
         return $this->open_issues_count;
     }
-    public function master_branch() : string
+    public function master_branch() : ?string
     {
         return $this->master_branch;
     }
@@ -366,7 +366,7 @@ final class RepoSearchResultItem
     {
         return $this->watchers;
     }
-    public function topics() : array
+    public function topics() : ?array
     {
         return $this->topics;
     }
@@ -409,34 +409,34 @@ final class RepoSearchResultItem
     {
         return $this->license;
     }
-    public function permissions() : array
+    public function permissions() : ?array
     {
         return $this->permissions;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
      */
-    public function text_matches() : array
+    public function text_matches() : ?array
     {
         return $this->text_matches;
     }
-    public function temp_clone_token() : string
+    public function temp_clone_token() : ?string
     {
         return $this->temp_clone_token;
     }
-    public function allow_merge_commit() : bool
+    public function allow_merge_commit() : ?bool
     {
         return $this->allow_merge_commit;
     }
-    public function allow_squash_merge() : bool
+    public function allow_squash_merge() : ?bool
     {
         return $this->allow_squash_merge;
     }
-    public function allow_rebase_merge() : bool
+    public function allow_rebase_merge() : ?bool
     {
         return $this->allow_rebase_merge;
     }
-    public function delete_branch_on_merge() : bool
+    public function delete_branch_on_merge() : ?bool
     {
         return $this->delete_branch_on_merge;
     }

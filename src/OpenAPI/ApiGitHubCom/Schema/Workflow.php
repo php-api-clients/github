@@ -16,7 +16,7 @@ final class Workflow
     private string $url;
     private string $html_url;
     private string $badge_url;
-    private string $deleted_at;
+    private ?string $deleted_at = null;
     public function id() : int
     {
         return $this->id;
@@ -57,7 +57,7 @@ final class Workflow
     {
         return $this->badge_url;
     }
-    public function deleted_at() : string
+    public function deleted_at() : ?string
     {
         return $this->deleted_at;
     }

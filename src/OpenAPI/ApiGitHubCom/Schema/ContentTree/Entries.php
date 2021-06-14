@@ -10,7 +10,7 @@ final class Entries
     private int $size;
     private string $name;
     private string $path;
-    private string $content;
+    private ?string $content = null;
     private string $sha;
     private string $url;
     private string $git_url;
@@ -33,7 +33,7 @@ final class Entries
     {
         return $this->path;
     }
-    public function content() : string
+    public function content() : ?string
     {
         return $this->content;
     }

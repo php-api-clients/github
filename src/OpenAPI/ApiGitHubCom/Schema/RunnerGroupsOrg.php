@@ -13,10 +13,10 @@ final class RunnerGroupsOrg
     /**
      * Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
      */
-    private string $selected_repositories_url;
+    private ?string $selected_repositories_url = null;
     private string $runners_url;
     private bool $inherited;
-    private bool $inherited_allows_public_repositories;
+    private ?bool $inherited_allows_public_repositories = null;
     private bool $allows_public_repositories;
     public function id() : number
     {
@@ -37,7 +37,7 @@ final class RunnerGroupsOrg
     /**
      * Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
      */
-    public function selected_repositories_url() : string
+    public function selected_repositories_url() : ?string
     {
         return $this->selected_repositories_url;
     }
@@ -49,7 +49,7 @@ final class RunnerGroupsOrg
     {
         return $this->inherited;
     }
-    public function inherited_allows_public_repositories() : bool
+    public function inherited_allows_public_repositories() : ?bool
     {
         return $this->inherited_allows_public_repositories;
     }

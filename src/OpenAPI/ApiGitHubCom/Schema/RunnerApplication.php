@@ -13,8 +13,8 @@ final class RunnerApplication
     /**
      * A short lived bearer token used to download the runner, if needed.
      */
-    private string $temp_download_token;
-    private string $sha256_checksum;
+    private ?string $temp_download_token = null;
+    private ?string $sha256_checksum = null;
     public function os() : string
     {
         return $this->os;
@@ -34,11 +34,11 @@ final class RunnerApplication
     /**
      * A short lived bearer token used to download the runner, if needed.
      */
-    public function temp_download_token() : string
+    public function temp_download_token() : ?string
     {
         return $this->temp_download_token;
     }
-    public function sha256_checksum() : string
+    public function sha256_checksum() : ?string
     {
         return $this->sha256_checksum;
     }

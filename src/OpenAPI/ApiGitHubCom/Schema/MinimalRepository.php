@@ -36,7 +36,7 @@ final class MinimalRepository
     private string $git_commits_url;
     private string $git_refs_url;
     private string $git_tags_url;
-    private string $git_url;
+    private ?string $git_url = null;
     private string $issue_comment_url;
     private string $issue_events_url;
     private string $issues_url;
@@ -48,7 +48,7 @@ final class MinimalRepository
     private string $notifications_url;
     private string $pulls_url;
     private string $releases_url;
-    private string $ssh_url;
+    private ?string $ssh_url = null;
     private string $stargazers_url;
     private string $statuses_url;
     private string $subscribers_url;
@@ -56,44 +56,44 @@ final class MinimalRepository
     private string $tags_url;
     private string $teams_url;
     private string $trees_url;
-    private string $clone_url;
-    private string $mirror_url;
+    private ?string $clone_url = null;
+    private ?string $mirror_url = null;
     private string $hooks_url;
-    private string $svn_url;
-    private string $homepage;
-    private string $language;
-    private int $forks_count;
-    private int $stargazers_count;
-    private int $watchers_count;
-    private int $size;
-    private string $default_branch;
-    private int $open_issues_count;
-    private bool $is_template;
-    private array $topics = array();
-    private bool $has_issues;
-    private bool $has_projects;
-    private bool $has_wiki;
-    private bool $has_pages;
-    private bool $has_downloads;
-    private bool $archived;
-    private bool $disabled;
-    private string $visibility;
-    private string $pushed_at;
-    private string $created_at;
-    private string $updated_at;
-    private array $permissions = array();
+    private ?string $svn_url = null;
+    private ?string $homepage = null;
+    private ?string $language = null;
+    private ?int $forks_count = null;
+    private ?int $stargazers_count = null;
+    private ?int $watchers_count = null;
+    private ?int $size = null;
+    private ?string $default_branch = null;
+    private ?int $open_issues_count = null;
+    private ?bool $is_template = null;
+    private ?array $topics = array();
+    private ?bool $has_issues = null;
+    private ?bool $has_projects = null;
+    private ?bool $has_wiki = null;
+    private ?bool $has_pages = null;
+    private ?bool $has_downloads = null;
+    private ?bool $archived = null;
+    private ?bool $disabled = null;
+    private ?string $visibility = null;
+    private ?string $pushed_at = null;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
+    private ?array $permissions = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository;
-    private string $temp_clone_token;
-    private bool $delete_branch_on_merge;
-    private int $subscribers_count;
-    private int $network_count;
-    private array $license = array();
-    private int $forks;
-    private int $open_issues;
-    private int $watchers;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
+    private ?string $temp_clone_token = null;
+    private ?bool $delete_branch_on_merge = null;
+    private ?int $subscribers_count = null;
+    private ?int $network_count = null;
+    private ?array $license = array();
+    private ?int $forks = null;
+    private ?int $open_issues = null;
+    private ?int $watchers = null;
     public function id() : int
     {
         return $this->id;
@@ -202,7 +202,7 @@ final class MinimalRepository
     {
         return $this->git_tags_url;
     }
-    public function git_url() : string
+    public function git_url() : ?string
     {
         return $this->git_url;
     }
@@ -250,7 +250,7 @@ final class MinimalRepository
     {
         return $this->releases_url;
     }
-    public function ssh_url() : string
+    public function ssh_url() : ?string
     {
         return $this->ssh_url;
     }
@@ -282,11 +282,11 @@ final class MinimalRepository
     {
         return $this->trees_url;
     }
-    public function clone_url() : string
+    public function clone_url() : ?string
     {
         return $this->clone_url;
     }
-    public function mirror_url() : string
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -294,131 +294,131 @@ final class MinimalRepository
     {
         return $this->hooks_url;
     }
-    public function svn_url() : string
+    public function svn_url() : ?string
     {
         return $this->svn_url;
     }
-    public function homepage() : string
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
-    public function language() : string
+    public function language() : ?string
     {
         return $this->language;
     }
-    public function forks_count() : int
+    public function forks_count() : ?int
     {
         return $this->forks_count;
     }
-    public function stargazers_count() : int
+    public function stargazers_count() : ?int
     {
         return $this->stargazers_count;
     }
-    public function watchers_count() : int
+    public function watchers_count() : ?int
     {
         return $this->watchers_count;
     }
-    public function size() : int
+    public function size() : ?int
     {
         return $this->size;
     }
-    public function default_branch() : string
+    public function default_branch() : ?string
     {
         return $this->default_branch;
     }
-    public function open_issues_count() : int
+    public function open_issues_count() : ?int
     {
         return $this->open_issues_count;
     }
-    public function is_template() : bool
+    public function is_template() : ?bool
     {
         return $this->is_template;
     }
-    public function topics() : array
+    public function topics() : ?array
     {
         return $this->topics;
     }
-    public function has_issues() : bool
+    public function has_issues() : ?bool
     {
         return $this->has_issues;
     }
-    public function has_projects() : bool
+    public function has_projects() : ?bool
     {
         return $this->has_projects;
     }
-    public function has_wiki() : bool
+    public function has_wiki() : ?bool
     {
         return $this->has_wiki;
     }
-    public function has_pages() : bool
+    public function has_pages() : ?bool
     {
         return $this->has_pages;
     }
-    public function has_downloads() : bool
+    public function has_downloads() : ?bool
     {
         return $this->has_downloads;
     }
-    public function archived() : bool
+    public function archived() : ?bool
     {
         return $this->archived;
     }
-    public function disabled() : bool
+    public function disabled() : ?bool
     {
         return $this->disabled;
     }
-    public function visibility() : string
+    public function visibility() : ?string
     {
         return $this->visibility;
     }
-    public function pushed_at() : string
+    public function pushed_at() : ?string
     {
         return $this->pushed_at;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
-    public function permissions() : array
+    public function permissions() : ?array
     {
         return $this->permissions;
     }
-    public function template_repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
         return $this->template_repository;
     }
-    public function temp_clone_token() : string
+    public function temp_clone_token() : ?string
     {
         return $this->temp_clone_token;
     }
-    public function delete_branch_on_merge() : bool
+    public function delete_branch_on_merge() : ?bool
     {
         return $this->delete_branch_on_merge;
     }
-    public function subscribers_count() : int
+    public function subscribers_count() : ?int
     {
         return $this->subscribers_count;
     }
-    public function network_count() : int
+    public function network_count() : ?int
     {
         return $this->network_count;
     }
-    public function license() : array
+    public function license() : ?array
     {
         return $this->license;
     }
-    public function forks() : int
+    public function forks() : ?int
     {
         return $this->forks;
     }
-    public function open_issues() : int
+    public function open_issues() : ?int
     {
         return $this->open_issues;
     }
-    public function watchers() : int
+    public function watchers() : ?int
     {
         return $this->watchers;
     }

@@ -9,8 +9,8 @@ final class GithubOrg
     private string $login;
     private int $id;
     private string $node_id;
-    private string $name;
-    private $email;
+    private ?string $name = null;
+    private $email = null;
     private string $avatar_url;
     private string $gravatar_id;
     private string $url;
@@ -38,7 +38,7 @@ final class GithubOrg
     {
         return $this->node_id;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }

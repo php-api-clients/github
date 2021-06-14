@@ -6,16 +6,16 @@ final class ProtectedBranchPullRequestReview
 {
     public const SCHEMA_TITLE = 'Protected Branch Pull Request Review';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Pull Request Review';
-    private string $url;
-    private array $dismissal_restrictions = array();
+    private ?string $url = null;
+    private ?array $dismissal_restrictions = array();
     private bool $dismiss_stale_reviews;
     private bool $require_code_owner_reviews;
-    private int $required_approving_review_count;
-    public function url() : string
+    private ?int $required_approving_review_count = null;
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function dismissal_restrictions() : array
+    public function dismissal_restrictions() : ?array
     {
         return $this->dismissal_restrictions;
     }
@@ -27,7 +27,7 @@ final class ProtectedBranchPullRequestReview
     {
         return $this->require_code_owner_reviews;
     }
-    public function required_approving_review_count() : int
+    public function required_approving_review_count() : ?int
     {
         return $this->required_approving_review_count;
     }

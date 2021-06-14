@@ -12,9 +12,9 @@ final class Edited
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue $issue;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label $label;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label $label = null;
     /**
      * The changes to the issue.
      */
@@ -30,13 +30,13 @@ final class Edited
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
     /**
      * Installation
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization = null;
     public function action() : string
     {
         return $this->action;
@@ -45,7 +45,7 @@ final class Edited
     {
         return $this->issue;
     }
-    public function label() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label
+    public function label() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Label
     {
         return $this->label;
     }
@@ -70,11 +70,11 @@ final class Edited
     /**
      * Installation
      */
-    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
+    public function installation() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
     {
         return $this->installation;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
+    public function organization() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
     {
         return $this->organization;
     }

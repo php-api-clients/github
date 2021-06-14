@@ -16,13 +16,13 @@ final class PackageVersion
     private string $name;
     private string $url;
     private string $package_html_url;
-    private string $html_url;
-    private string $license;
-    private string $description;
+    private ?string $html_url = null;
+    private ?string $license = null;
+    private ?string $description = null;
     private string $created_at;
     private string $updated_at;
-    private string $deleted_at;
-    private array $metadata = array();
+    private ?string $deleted_at = null;
+    private ?array $metadata = array();
     /**
      * Unique identifier of the package version.
      */
@@ -45,15 +45,15 @@ final class PackageVersion
     {
         return $this->package_html_url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function license() : string
+    public function license() : ?string
     {
         return $this->license;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -65,11 +65,11 @@ final class PackageVersion
     {
         return $this->updated_at;
     }
-    public function deleted_at() : string
+    public function deleted_at() : ?string
     {
         return $this->deleted_at;
     }
-    public function metadata() : array
+    public function metadata() : ?array
     {
         return $this->metadata;
     }

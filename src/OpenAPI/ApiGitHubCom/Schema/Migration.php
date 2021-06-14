@@ -24,8 +24,8 @@ final class Migration
     private string $created_at;
     private string $updated_at;
     private string $node_id;
-    private string $archive_url;
-    private array $exclude = array();
+    private ?string $archive_url = null;
+    private ?array $exclude = array();
     public function id() : int
     {
         return $this->id;
@@ -73,11 +73,11 @@ final class Migration
     {
         return $this->node_id;
     }
-    public function archive_url() : string
+    public function archive_url() : ?string
     {
         return $this->archive_url;
     }
-    public function exclude() : array
+    public function exclude() : ?array
     {
         return $this->exclude;
     }

@@ -10,7 +10,7 @@ final class RunnerGroupsEnterprise
     private string $name;
     private string $visibility;
     private bool $default;
-    private string $selected_organizations_url;
+    private ?string $selected_organizations_url = null;
     private string $runners_url;
     private bool $allows_public_repositories;
     public function id() : number
@@ -29,7 +29,7 @@ final class RunnerGroupsEnterprise
     {
         return $this->default;
     }
-    public function selected_organizations_url() : string
+    public function selected_organizations_url() : ?string
     {
         return $this->selected_organizations_url;
     }

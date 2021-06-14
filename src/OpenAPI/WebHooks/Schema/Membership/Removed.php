@@ -30,9 +30,9 @@ final class Removed
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
     /**
      * Installation
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     public function action() : string
     {
         return $this->action;
@@ -66,7 +66,7 @@ final class Removed
     /**
      * Installation
      */
-    public function installation() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
+    public function installation() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
     {
         return $this->installation;
     }

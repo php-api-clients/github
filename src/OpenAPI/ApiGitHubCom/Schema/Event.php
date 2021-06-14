@@ -16,9 +16,9 @@ final class Event
     private array $repo = array();
     /**
      * Actor
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org = null;
     private array $payload = array();
     private bool $public;
     private string $created_at;
@@ -44,7 +44,7 @@ final class Event
     /**
      * Actor
      */
-    public function org() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor
+    public function org() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor
     {
         return $this->org;
     }

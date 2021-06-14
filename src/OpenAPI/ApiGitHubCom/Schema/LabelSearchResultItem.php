@@ -18,7 +18,7 @@ final class LabelSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches::class)
      */
-    private array $text_matches = array();
+    private ?array $text_matches = array();
     public function id() : int
     {
         return $this->id;
@@ -54,7 +54,7 @@ final class LabelSearchResultItem
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches>
      */
-    public function text_matches() : array
+    public function text_matches() : ?array
     {
         return $this->text_matches;
     }

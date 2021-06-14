@@ -9,12 +9,12 @@ final class Enterprise
     /**
      * A short description of the enterprise.
      */
-    private string $description;
+    private ?string $description = null;
     private string $html_url;
     /**
      * The enterprise's website URL.
      */
-    private string $website_url;
+    private ?string $website_url = null;
     /**
      * Unique identifier of the enterprise
      */
@@ -34,7 +34,7 @@ final class Enterprise
     /**
      * A short description of the enterprise.
      */
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -45,7 +45,7 @@ final class Enterprise
     /**
      * The enterprise's website URL.
      */
-    public function website_url() : string
+    public function website_url() : ?string
     {
         return $this->website_url;
     }
