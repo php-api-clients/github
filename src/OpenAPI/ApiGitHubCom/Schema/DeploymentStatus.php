@@ -16,7 +16,7 @@ final class DeploymentStatus
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator = null;
     /**
      * A short description of the status.
      */
@@ -44,7 +44,7 @@ final class DeploymentStatus
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app = null;
     public function url() : string
     {
         return $this->url;
@@ -64,7 +64,7 @@ final class DeploymentStatus
     {
         return $this->state;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function creator() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->creator;
     }
@@ -119,7 +119,7 @@ final class DeploymentStatus
     {
         return $this->log_url;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
+    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
     {
         return $this->performed_via_github_app;
     }

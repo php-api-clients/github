@@ -28,8 +28,8 @@ final class Enterprise
      * The slug url identifier for the enterprise.
      */
     private string $slug;
-    private string $created_at;
-    private string $updated_at;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
     private string $avatar_url;
     /**
      * A short description of the enterprise.
@@ -74,11 +74,11 @@ final class Enterprise
     {
         return $this->slug;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

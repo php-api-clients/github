@@ -13,7 +13,7 @@ final class Installation
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account = null;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -31,15 +31,15 @@ final class Installation
     private array $events = array();
     private string $created_at;
     private string $updated_at;
-    private string $single_file_name;
+    private ?string $single_file_name = null;
     private ?bool $has_multiple_single_files = null;
     private array $single_file_paths = array();
     private string $app_slug;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $suspended_by;
-    private string $suspended_at;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $suspended_by = null;
+    private ?string $suspended_at = null;
     private ?string $contact_email = null;
     /**
      * The ID of the installation.
@@ -48,7 +48,7 @@ final class Installation
     {
         return $this->id;
     }
-    public function account() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function account() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->account;
     }
@@ -102,7 +102,7 @@ final class Installation
     {
         return $this->updated_at;
     }
-    public function single_file_name() : string
+    public function single_file_name() : ?string
     {
         return $this->single_file_name;
     }
@@ -118,11 +118,11 @@ final class Installation
     {
         return $this->app_slug;
     }
-    public function suspended_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function suspended_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->suspended_by;
     }
-    public function suspended_at() : string
+    public function suspended_at() : ?string
     {
         return $this->suspended_at;
     }

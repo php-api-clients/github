@@ -7,7 +7,7 @@ final class Event
     public const SCHEMA_TITLE = 'Event';
     public const SCHEMA_DESCRIPTION = 'Event';
     private string $id;
-    private string $type;
+    private ?string $type = null;
     /**
      * Actor
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor::class)
@@ -21,12 +21,12 @@ final class Event
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org = null;
     private array $payload = array();
     private bool $public;
-    private string $created_at;
+    private ?string $created_at = null;
     public function id() : string
     {
         return $this->id;
     }
-    public function type() : string
+    public function type() : ?string
     {
         return $this->type;
     }
@@ -56,7 +56,7 @@ final class Event
     {
         return $this->public;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }

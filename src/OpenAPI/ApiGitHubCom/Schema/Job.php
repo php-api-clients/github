@@ -21,7 +21,7 @@ final class Job
      */
     private string $head_sha;
     private string $url;
-    private string $html_url;
+    private ?string $html_url = null;
     /**
      * The phase of the lifecycle that the job is currently in.
      */
@@ -29,7 +29,7 @@ final class Job
     /**
      * The outcome of the job.
      */
-    private string $conclusion;
+    private ?string $conclusion = null;
     /**
      * The time that the job started, in ISO 8601 format.
      */
@@ -37,7 +37,7 @@ final class Job
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    private string $completed_at;
+    private ?string $completed_at = null;
     /**
      * The name of the job.
      */
@@ -82,7 +82,7 @@ final class Job
     {
         return $this->url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
@@ -96,7 +96,7 @@ final class Job
     /**
      * The outcome of the job.
      */
-    public function conclusion() : string
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
@@ -110,7 +110,7 @@ final class Job
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    public function completed_at() : string
+    public function completed_at() : ?string
     {
         return $this->completed_at;
     }

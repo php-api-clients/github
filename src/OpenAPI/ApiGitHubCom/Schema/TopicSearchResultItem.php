@@ -7,11 +7,11 @@ final class TopicSearchResultItem
     public const SCHEMA_TITLE = 'Topic Search Result Item';
     public const SCHEMA_DESCRIPTION = 'Topic Search Result Item';
     private string $name;
-    private string $display_name;
-    private string $short_description;
-    private string $description;
-    private string $created_by;
-    private string $released;
+    private ?string $display_name = null;
+    private ?string $short_description = null;
+    private ?string $description = null;
+    private ?string $created_by = null;
+    private ?string $released = null;
     private string $created_at;
     private string $updated_at;
     private bool $featured;
@@ -38,23 +38,23 @@ final class TopicSearchResultItem
     {
         return $this->name;
     }
-    public function display_name() : string
+    public function display_name() : ?string
     {
         return $this->display_name;
     }
-    public function short_description() : string
+    public function short_description() : ?string
     {
         return $this->short_description;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
-    public function created_by() : string
+    public function created_by() : ?string
     {
         return $this->created_by;
     }
-    public function released() : string
+    public function released() : ?string
     {
         return $this->released;
     }

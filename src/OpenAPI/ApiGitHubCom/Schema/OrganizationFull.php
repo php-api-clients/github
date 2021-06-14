@@ -17,7 +17,7 @@ final class OrganizationFull
     private string $members_url;
     private string $public_members_url;
     private string $avatar_url;
-    private string $description;
+    private ?string $description = null;
     private ?string $name = null;
     private ?string $company = null;
     private ?string $blog = null;
@@ -96,7 +96,7 @@ final class OrganizationFull
     {
         return $this->avatar_url;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }

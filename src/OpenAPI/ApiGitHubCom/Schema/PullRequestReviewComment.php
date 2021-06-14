@@ -13,7 +13,7 @@ final class PullRequestReviewComment
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    private int $pull_request_review_id;
+    private ?int $pull_request_review_id = null;
     /**
      * The ID of the pull request review comment.
      */
@@ -54,7 +54,7 @@ final class PullRequestReviewComment
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
     /**
      * The text of the comment.
      */
@@ -114,7 +114,7 @@ final class PullRequestReviewComment
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    public function pull_request_review_id() : int
+    public function pull_request_review_id() : ?int
     {
         return $this->pull_request_review_id;
     }
@@ -184,7 +184,7 @@ final class PullRequestReviewComment
     /**
      * Simple User
      */
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }

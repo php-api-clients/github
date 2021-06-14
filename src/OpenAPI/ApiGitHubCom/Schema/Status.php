@@ -7,7 +7,7 @@ final class Status
     public const SCHEMA_TITLE = 'Status';
     public const SCHEMA_DESCRIPTION = 'The status of a commit.';
     private string $url;
-    private string $avatar_url;
+    private ?string $avatar_url = null;
     private int $id;
     private string $node_id;
     private string $state;
@@ -20,12 +20,12 @@ final class Status
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator = null;
     public function url() : string
     {
         return $this->url;
     }
-    public function avatar_url() : string
+    public function avatar_url() : ?string
     {
         return $this->avatar_url;
     }
@@ -64,7 +64,7 @@ final class Status
     /**
      * Simple User
      */
-    public function creator() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function creator() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->creator;
     }

@@ -8,8 +8,8 @@ final class Verification
     public const SCHEMA_DESCRIPTION = '';
     private bool $verified;
     private string $reason;
-    private string $payload;
-    private string $signature;
+    private ?string $payload = null;
+    private ?string $signature = null;
     public function verified() : bool
     {
         return $this->verified;
@@ -18,11 +18,11 @@ final class Verification
     {
         return $this->reason;
     }
-    public function payload() : string
+    public function payload() : ?string
     {
         return $this->payload;
     }
-    public function signature() : string
+    public function signature() : ?string
     {
         return $this->signature;
     }

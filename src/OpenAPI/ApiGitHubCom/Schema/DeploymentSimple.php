@@ -21,7 +21,7 @@ final class DeploymentSimple
      * Name for the target deployment environment.
      */
     private string $environment;
-    private string $description;
+    private ?string $description = null;
     private string $created_at;
     private string $updated_at;
     private string $statuses_url;
@@ -37,7 +37,7 @@ final class DeploymentSimple
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app = null;
     public function url() : string
     {
         return $this->url;
@@ -71,7 +71,7 @@ final class DeploymentSimple
     {
         return $this->environment;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -105,7 +105,7 @@ final class DeploymentSimple
     {
         return $this->production_environment;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
+    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
     {
         return $this->performed_via_github_app;
     }

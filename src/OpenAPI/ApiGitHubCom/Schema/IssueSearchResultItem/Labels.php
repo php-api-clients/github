@@ -12,7 +12,7 @@ final class Labels
     private string $name;
     private string $color;
     private bool $default;
-    private string $description;
+    private ?string $description = null;
     public function id() : int
     {
         return $this->id;
@@ -37,7 +37,7 @@ final class Labels
     {
         return $this->default;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }

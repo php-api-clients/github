@@ -34,15 +34,15 @@ final class CodeScanningAlertItems
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $dismissed_by;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $dismissed_by = null;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private string $dismissed_at;
+    private ?string $dismissed_at = null;
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
-    private string $dismissed_reason;
+    private ?string $dismissed_reason = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRuleSummary::class)
      */
@@ -100,21 +100,21 @@ final class CodeScanningAlertItems
     /**
      * Simple User
      */
-    public function dismissed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function dismissed_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->dismissed_by;
     }
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function dismissed_at() : string
+    public function dismissed_at() : ?string
     {
         return $this->dismissed_at;
     }
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
-    public function dismissed_reason() : string
+    public function dismissed_reason() : ?string
     {
         return $this->dismissed_reason;
     }

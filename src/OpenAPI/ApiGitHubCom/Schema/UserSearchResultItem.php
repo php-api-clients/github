@@ -10,7 +10,7 @@ final class UserSearchResultItem
     private int $id;
     private string $node_id;
     private string $avatar_url;
-    private string $gravatar_id;
+    private ?string $gravatar_id = null;
     private string $url;
     private string $html_url;
     private string $followers_url;
@@ -60,7 +60,7 @@ final class UserSearchResultItem
     {
         return $this->avatar_url;
     }
-    public function gravatar_id() : string
+    public function gravatar_id() : ?string
     {
         return $this->gravatar_id;
     }

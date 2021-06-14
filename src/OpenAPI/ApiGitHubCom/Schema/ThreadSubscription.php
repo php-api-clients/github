@@ -8,8 +8,8 @@ final class ThreadSubscription
     public const SCHEMA_DESCRIPTION = 'Thread Subscription';
     private bool $subscribed;
     private bool $ignored;
-    private string $reason;
-    private string $created_at;
+    private ?string $reason = null;
+    private ?string $created_at = null;
     private string $url;
     private ?string $thread_url = null;
     private ?string $repository_url = null;
@@ -21,11 +21,11 @@ final class ThreadSubscription
     {
         return $this->ignored;
     }
-    public function reason() : string
+    public function reason() : ?string
     {
         return $this->reason;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }

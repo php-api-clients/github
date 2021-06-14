@@ -11,9 +11,9 @@ final class LicenseContent
     private string $sha;
     private int $size;
     private string $url;
-    private string $html_url;
-    private string $git_url;
-    private string $download_url;
+    private ?string $html_url = null;
+    private ?string $git_url = null;
+    private ?string $download_url = null;
     private string $type;
     private string $content;
     private string $encoding;
@@ -21,7 +21,7 @@ final class LicenseContent
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license = null;
     public function name() : string
     {
         return $this->name;
@@ -42,15 +42,15 @@ final class LicenseContent
     {
         return $this->url;
     }
-    public function html_url() : string
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function git_url() : string
+    public function git_url() : ?string
     {
         return $this->git_url;
     }
-    public function download_url() : string
+    public function download_url() : ?string
     {
         return $this->download_url;
     }
@@ -70,7 +70,7 @@ final class LicenseContent
     {
         return $this->_links;
     }
-    public function license() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
     {
         return $this->license;
     }

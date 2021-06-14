@@ -18,17 +18,17 @@ final class BaseGist
     private bool $public;
     private string $created_at;
     private string $updated_at;
-    private string $description;
+    private ?string $description = null;
     private int $comments;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
     private string $comments_url;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
     private ?bool $truncated = null;
     private array $forks = array();
     private array $history = array();
@@ -80,7 +80,7 @@ final class BaseGist
     {
         return $this->updated_at;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -88,7 +88,7 @@ final class BaseGist
     {
         return $this->comments;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }
@@ -96,7 +96,7 @@ final class BaseGist
     {
         return $this->comments_url;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }

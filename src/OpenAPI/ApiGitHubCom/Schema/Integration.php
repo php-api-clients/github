@@ -18,12 +18,12 @@ final class Integration
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
     /**
      * The name of the GitHub app
      */
     private string $name;
-    private string $description;
+    private ?string $description = null;
     private string $external_url;
     private string $html_url;
     private string $created_at;
@@ -62,7 +62,7 @@ final class Integration
     {
         return $this->node_id;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }
@@ -73,7 +73,7 @@ final class Integration
     {
         return $this->name;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }

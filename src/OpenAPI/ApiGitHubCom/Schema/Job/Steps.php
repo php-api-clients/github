@@ -13,7 +13,7 @@ final class Steps
     /**
      * The outcome of the job.
      */
-    private string $conclusion;
+    private ?string $conclusion = null;
     /**
      * The name of the job.
      */
@@ -37,7 +37,7 @@ final class Steps
     /**
      * The outcome of the job.
      */
-    public function conclusion() : string
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }

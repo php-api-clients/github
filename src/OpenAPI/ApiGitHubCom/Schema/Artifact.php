@@ -22,9 +22,9 @@ final class Artifact
      * Whether or not the artifact has expired.
      */
     private bool $expired;
-    private string $created_at;
-    private string $expires_at;
-    private string $updated_at;
+    private ?string $created_at = null;
+    private ?string $expires_at = null;
+    private ?string $updated_at = null;
     public function id() : int
     {
         return $this->id;
@@ -62,15 +62,15 @@ final class Artifact
     {
         return $this->expired;
     }
-    public function created_at() : string
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function expires_at() : string
+    public function expires_at() : ?string
     {
         return $this->expires_at;
     }
-    public function updated_at() : string
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

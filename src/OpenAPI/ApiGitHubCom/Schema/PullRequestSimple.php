@@ -25,8 +25,8 @@ final class PullRequestSimple
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
-    private string $body;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
+    private ?string $body = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple\Labels>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple\Labels::class)
@@ -35,17 +35,17 @@ final class PullRequestSimple
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone = null;
     private ?string $active_lock_reason = null;
     private string $created_at;
     private string $updated_at;
-    private string $closed_at;
-    private string $merged_at;
-    private string $merge_commit_sha;
+    private ?string $closed_at = null;
+    private ?string $merged_at = null;
+    private ?string $merge_commit_sha = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -72,7 +72,7 @@ final class PullRequestSimple
      * The status of auto merging a pull request.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge $auto_merge;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge $auto_merge = null;
     /**
      * Indicates whether or not the pull request is a draft.
      */
@@ -141,11 +141,11 @@ final class PullRequestSimple
     {
         return $this->title;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -156,7 +156,7 @@ final class PullRequestSimple
     {
         return $this->labels;
     }
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone
+    public function milestone() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone
     {
         return $this->milestone;
     }
@@ -172,19 +172,19 @@ final class PullRequestSimple
     {
         return $this->updated_at;
     }
-    public function closed_at() : string
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
-    public function merged_at() : string
+    public function merged_at() : ?string
     {
         return $this->merged_at;
     }
-    public function merge_commit_sha() : string
+    public function merge_commit_sha() : ?string
     {
         return $this->merge_commit_sha;
     }
-    public function assignee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->assignee;
     }
@@ -231,7 +231,7 @@ final class PullRequestSimple
     /**
      * The status of auto merging a pull request.
      */
-    public function auto_merge() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge
+    public function auto_merge() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge
     {
         return $this->auto_merge;
     }

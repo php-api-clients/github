@@ -14,11 +14,11 @@ final class CommitSearchResultItem
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitUser $committer;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitUser $committer = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents::class)
@@ -56,11 +56,11 @@ final class CommitSearchResultItem
     {
         return $this->commit;
     }
-    public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->author;
     }
-    public function committer() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitUser
+    public function committer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitUser
     {
         return $this->committer;
     }

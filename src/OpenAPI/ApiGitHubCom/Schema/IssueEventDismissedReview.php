@@ -8,7 +8,7 @@ final class IssueEventDismissedReview
     public const SCHEMA_DESCRIPTION = '';
     private string $state;
     private int $review_id;
-    private string $dismissal_message;
+    private ?string $dismissal_message = null;
     private ?string $dismissal_commit_id = null;
     public function state() : string
     {
@@ -18,7 +18,7 @@ final class IssueEventDismissedReview
     {
         return $this->review_id;
     }
-    public function dismissal_message() : string
+    public function dismissal_message() : ?string
     {
         return $this->dismissal_message;
     }

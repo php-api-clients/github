@@ -13,11 +13,11 @@ final class Page
     /**
      * The status of the most recent build of the Page.
      */
-    private string $status;
+    private ?string $status = null;
     /**
      * The Pages site's custom domain
      */
-    private string $cname;
+    private ?string $cname = null;
     /**
      * Whether the Page has a custom 404 page.
      */
@@ -52,14 +52,14 @@ final class Page
     /**
      * The status of the most recent build of the Page.
      */
-    public function status() : string
+    public function status() : ?string
     {
         return $this->status;
     }
     /**
      * The Pages site's custom domain
      */
-    public function cname() : string
+    public function cname() : ?string
     {
         return $this->cname;
     }

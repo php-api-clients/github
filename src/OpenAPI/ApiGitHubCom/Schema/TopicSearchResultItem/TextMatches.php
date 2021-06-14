@@ -7,7 +7,7 @@ final class TextMatches
     public const SCHEMA_TITLE = 'topic-search-result-item::text_matches';
     public const SCHEMA_DESCRIPTION = '';
     private string $object_url;
-    private string $object_type;
+    private ?string $object_type = null;
     private string $property;
     private string $fragment;
     /**
@@ -19,7 +19,7 @@ final class TextMatches
     {
         return $this->object_url;
     }
-    public function object_type() : string
+    public function object_type() : ?string
     {
         return $this->object_type;
     }

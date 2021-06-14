@@ -10,8 +10,8 @@ final class Release
     private string $html_url;
     private string $assets_url;
     private string $upload_url;
-    private string $tarball_url;
-    private string $zipball_url;
+    private ?string $tarball_url = null;
+    private ?string $zipball_url = null;
     private int $id;
     private string $node_id;
     /**
@@ -22,7 +22,7 @@ final class Release
      * Specifies the commitish value that determines where the Git tag is created from.
      */
     private string $target_commitish;
-    private string $name;
+    private ?string $name = null;
     private ?string $body = null;
     /**
      * true to create a draft (unpublished) release, false to create a published one.
@@ -33,12 +33,12 @@ final class Release
      */
     private bool $prerelease;
     private string $created_at;
-    private string $published_at;
+    private ?string $published_at = null;
     /**
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset::class)
@@ -70,11 +70,11 @@ final class Release
     {
         return $this->upload_url;
     }
-    public function tarball_url() : string
+    public function tarball_url() : ?string
     {
         return $this->tarball_url;
     }
-    public function zipball_url() : string
+    public function zipball_url() : ?string
     {
         return $this->zipball_url;
     }
@@ -100,7 +100,7 @@ final class Release
     {
         return $this->target_commitish;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
@@ -126,14 +126,14 @@ final class Release
     {
         return $this->created_at;
     }
-    public function published_at() : string
+    public function published_at() : ?string
     {
         return $this->published_at;
     }
     /**
      * Simple User
      */
-    public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->author;
     }

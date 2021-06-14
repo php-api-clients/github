@@ -21,7 +21,7 @@ final class IssueSimple
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label::class)
@@ -30,7 +30,7 @@ final class IssueSimple
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -39,12 +39,12 @@ final class IssueSimple
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone = null;
     private bool $locked;
     private ?string $active_lock_reason = null;
     private int $comments;
     private array $pull_request = array();
-    private string $closed_at;
+    private ?string $closed_at = null;
     private string $created_at;
     private string $updated_at;
     /**
@@ -62,7 +62,7 @@ final class IssueSimple
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app = null;
     public function id() : int
     {
         return $this->id;
@@ -111,7 +111,7 @@ final class IssueSimple
     {
         return $this->body;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }
@@ -122,7 +122,7 @@ final class IssueSimple
     {
         return $this->labels;
     }
-    public function assignee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->assignee;
     }
@@ -133,7 +133,7 @@ final class IssueSimple
     {
         return $this->assignees;
     }
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone
+    public function milestone() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone
     {
         return $this->milestone;
     }
@@ -153,7 +153,7 @@ final class IssueSimple
     {
         return $this->pull_request;
     }
-    public function closed_at() : string
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
@@ -191,7 +191,7 @@ final class IssueSimple
     {
         return $this->repository;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
+    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
     {
         return $this->performed_via_github_app;
     }

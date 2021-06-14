@@ -13,18 +13,18 @@ final class PersonalAccessToken
      */
     private array $scopes = array();
     private string $token;
-    private string $token_last_eight;
-    private string $hashed_token;
-    private string $note;
-    private string $note_url;
+    private ?string $token_last_eight = null;
+    private ?string $hashed_token = null;
+    private ?string $note = null;
+    private ?string $note_url = null;
     private string $updated_at;
     private string $created_at;
-    private string $fingerprint;
+    private ?string $fingerprint = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
-    private string $expiration;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
+    private ?string $expiration = null;
     public function id() : int
     {
         return $this->id;
@@ -44,19 +44,19 @@ final class PersonalAccessToken
     {
         return $this->token;
     }
-    public function token_last_eight() : string
+    public function token_last_eight() : ?string
     {
         return $this->token_last_eight;
     }
-    public function hashed_token() : string
+    public function hashed_token() : ?string
     {
         return $this->hashed_token;
     }
-    public function note() : string
+    public function note() : ?string
     {
         return $this->note;
     }
-    public function note_url() : string
+    public function note_url() : ?string
     {
         return $this->note_url;
     }
@@ -68,15 +68,15 @@ final class PersonalAccessToken
     {
         return $this->created_at;
     }
-    public function fingerprint() : string
+    public function fingerprint() : ?string
     {
         return $this->fingerprint;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }
-    public function expiration() : string
+    public function expiration() : ?string
     {
         return $this->expiration;
     }

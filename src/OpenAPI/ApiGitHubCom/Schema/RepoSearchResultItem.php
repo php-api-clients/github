@@ -13,20 +13,20 @@ final class RepoSearchResultItem
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
     private bool $private;
     private string $html_url;
-    private string $description;
+    private ?string $description = null;
     private bool $fork;
     private string $url;
     private string $created_at;
     private string $updated_at;
     private string $pushed_at;
-    private string $homepage;
+    private ?string $homepage = null;
     private int $size;
     private int $stargazers_count;
     private int $watchers_count;
-    private string $language;
+    private ?string $language = null;
     private int $forks_count;
     private int $open_issues_count;
     private ?string $master_branch = null;
@@ -76,7 +76,7 @@ final class RepoSearchResultItem
     private int $open_issues;
     private int $watchers;
     private array $topics = array();
-    private string $mirror_url;
+    private ?string $mirror_url = null;
     private bool $has_issues;
     private bool $has_projects;
     private bool $has_pages;
@@ -90,7 +90,7 @@ final class RepoSearchResultItem
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license = null;
     private array $permissions = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
@@ -118,7 +118,7 @@ final class RepoSearchResultItem
     {
         return $this->full_name;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }
@@ -130,7 +130,7 @@ final class RepoSearchResultItem
     {
         return $this->html_url;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -154,7 +154,7 @@ final class RepoSearchResultItem
     {
         return $this->pushed_at;
     }
-    public function homepage() : string
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
@@ -170,7 +170,7 @@ final class RepoSearchResultItem
     {
         return $this->watchers_count;
     }
-    public function language() : string
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -370,7 +370,7 @@ final class RepoSearchResultItem
     {
         return $this->topics;
     }
-    public function mirror_url() : string
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -405,7 +405,7 @@ final class RepoSearchResultItem
     {
         return $this->disabled;
     }
-    public function license() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
     {
         return $this->license;
     }

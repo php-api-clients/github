@@ -6,7 +6,7 @@ final class Import
 {
     public const SCHEMA_TITLE = 'Import';
     public const SCHEMA_DESCRIPTION = 'A repository import from an external source.';
-    private string $vcs;
+    private ?string $vcs = null;
     private ?bool $use_lfs = null;
     /**
      * The URL of the originating repository.
@@ -36,7 +36,7 @@ final class Import
     private string $authors_url;
     private string $repository_url;
     private ?string $svn_root = null;
-    public function vcs() : string
+    public function vcs() : ?string
     {
         return $this->vcs;
     }

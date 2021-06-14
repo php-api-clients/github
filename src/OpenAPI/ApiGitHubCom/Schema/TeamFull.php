@@ -21,7 +21,7 @@ final class TeamFull
      */
     private string $name;
     private string $slug;
-    private string $description;
+    private ?string $description = null;
     /**
      * The level of privacy this team should have
      */
@@ -35,7 +35,7 @@ final class TeamFull
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple $parent;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple $parent = null;
     private int $members_count;
     private int $repos_count;
     private string $created_at;
@@ -82,7 +82,7 @@ final class TeamFull
     {
         return $this->slug;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -108,7 +108,7 @@ final class TeamFull
     {
         return $this->repositories_url;
     }
-    public function parent() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple
+    public function parent() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple
     {
         return $this->parent;
     }

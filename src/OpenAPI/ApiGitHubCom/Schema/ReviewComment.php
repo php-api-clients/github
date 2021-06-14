@@ -7,12 +7,12 @@ final class ReviewComment
     public const SCHEMA_TITLE = 'Legacy Review Comment';
     public const SCHEMA_DESCRIPTION = 'Legacy Review Comment';
     private string $url;
-    private int $pull_request_review_id;
+    private ?int $pull_request_review_id = null;
     private int $id;
     private string $node_id;
     private string $diff_hunk;
     private string $path;
-    private int $position;
+    private ?int $position = null;
     private int $original_position;
     private string $commit_id;
     private string $original_commit_id;
@@ -20,7 +20,7 @@ final class ReviewComment
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
     private string $body;
     private string $created_at;
     private string $updated_at;
@@ -61,7 +61,7 @@ final class ReviewComment
     {
         return $this->url;
     }
-    public function pull_request_review_id() : int
+    public function pull_request_review_id() : ?int
     {
         return $this->pull_request_review_id;
     }
@@ -81,7 +81,7 @@ final class ReviewComment
     {
         return $this->path;
     }
-    public function position() : int
+    public function position() : ?int
     {
         return $this->position;
     }
@@ -101,7 +101,7 @@ final class ReviewComment
     {
         return $this->in_reply_to_id;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }

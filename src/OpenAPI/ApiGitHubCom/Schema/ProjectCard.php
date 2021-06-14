@@ -12,11 +12,11 @@ final class ProjectCard
      */
     private int $id;
     private string $node_id;
-    private string $note;
+    private ?string $note = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator = null;
     private string $created_at;
     private string $updated_at;
     /**
@@ -41,11 +41,11 @@ final class ProjectCard
     {
         return $this->node_id;
     }
-    public function note() : string
+    public function note() : ?string
     {
         return $this->note;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function creator() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->creator;
     }

@@ -13,10 +13,10 @@ final class MinimalRepository
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
     private bool $private;
     private string $html_url;
-    private string $description;
+    private ?string $description = null;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -110,7 +110,7 @@ final class MinimalRepository
     {
         return $this->full_name;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }
@@ -122,7 +122,7 @@ final class MinimalRepository
     {
         return $this->html_url;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }

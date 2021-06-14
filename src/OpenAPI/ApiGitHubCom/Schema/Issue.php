@@ -36,7 +36,7 @@ final class Issue
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
     /**
      * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
      */
@@ -44,7 +44,7 @@ final class Issue
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -53,18 +53,18 @@ final class Issue
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone = null;
     private bool $locked;
     private ?string $active_lock_reason = null;
     private int $comments;
     private array $pull_request = array();
-    private string $closed_at;
+    private ?string $closed_at = null;
     private string $created_at;
     private string $updated_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $closed_by;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $closed_by = null;
     private ?string $body_html = null;
     private ?string $body_text = null;
     private ?string $timeline_url = null;
@@ -76,7 +76,7 @@ final class Issue
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app = null;
     /**
      * How the author is associated with the repository.
      */
@@ -148,7 +148,7 @@ final class Issue
     {
         return $this->body;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }
@@ -159,7 +159,7 @@ final class Issue
     {
         return $this->labels;
     }
-    public function assignee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->assignee;
     }
@@ -170,7 +170,7 @@ final class Issue
     {
         return $this->assignees;
     }
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone
+    public function milestone() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone
     {
         return $this->milestone;
     }
@@ -190,7 +190,7 @@ final class Issue
     {
         return $this->pull_request;
     }
-    public function closed_at() : string
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
@@ -202,7 +202,7 @@ final class Issue
     {
         return $this->updated_at;
     }
-    public function closed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function closed_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->closed_by;
     }
@@ -225,7 +225,7 @@ final class Issue
     {
         return $this->repository;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
+    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
     {
         return $this->performed_via_github_app;
     }

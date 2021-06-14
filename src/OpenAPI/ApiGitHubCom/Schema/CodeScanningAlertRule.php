@@ -9,7 +9,7 @@ final class CodeScanningAlertRule
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private string $id;
+    private ?string $id = null;
     /**
      * The name of the rule used to detect the alert.
      */
@@ -17,7 +17,7 @@ final class CodeScanningAlertRule
     /**
      * The severity of the alert.
      */
-    private string $severity;
+    private ?string $severity = null;
     /**
      * A short description of the rule used to detect the alert.
      */
@@ -33,11 +33,11 @@ final class CodeScanningAlertRule
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    private string $help;
+    private ?string $help = null;
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    public function id() : string
+    public function id() : ?string
     {
         return $this->id;
     }
@@ -51,7 +51,7 @@ final class CodeScanningAlertRule
     /**
      * The severity of the alert.
      */
-    public function severity() : string
+    public function severity() : ?string
     {
         return $this->severity;
     }
@@ -79,7 +79,7 @@ final class CodeScanningAlertRule
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    public function help() : string
+    public function help() : ?string
     {
         return $this->help;
     }

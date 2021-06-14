@@ -19,7 +19,7 @@ final class Project
     /**
      * Body of the project
      */
-    private string $body;
+    private ?string $body = null;
     private int $number;
     /**
      * State of the project; either 'open' or 'closed'
@@ -28,7 +28,7 @@ final class Project
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator = null;
     private string $created_at;
     private string $updated_at;
     /**
@@ -73,7 +73,7 @@ final class Project
     /**
      * Body of the project
      */
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -88,7 +88,7 @@ final class Project
     {
         return $this->state;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function creator() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->creator;
     }

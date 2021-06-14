@@ -32,15 +32,15 @@ final class GistSimple
     private bool $public;
     private string $created_at;
     private string $updated_at;
-    private string $description;
+    private ?string $description = null;
     private int $comments;
-    private string $user;
+    private ?string $user = null;
     private string $comments_url;
     /**
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
     private bool $truncated;
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks>
@@ -111,7 +111,7 @@ final class GistSimple
     {
         return $this->updated_at;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -119,7 +119,7 @@ final class GistSimple
     {
         return $this->comments;
     }
-    public function user() : string
+    public function user() : ?string
     {
         return $this->user;
     }
@@ -130,7 +130,7 @@ final class GistSimple
     /**
      * Simple User
      */
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }

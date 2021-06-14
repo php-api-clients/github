@@ -9,7 +9,7 @@ final class TeamDiscussion
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author = null;
     /**
      * The main text of the discussion.
      */
@@ -22,7 +22,7 @@ final class TeamDiscussion
     private int $comments_count;
     private string $comments_url;
     private string $created_at;
-    private string $last_edited_at;
+    private ?string $last_edited_at = null;
     private string $html_url;
     private string $node_id;
     /**
@@ -48,7 +48,7 @@ final class TeamDiscussion
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
-    public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->author;
     }
@@ -82,7 +82,7 @@ final class TeamDiscussion
     {
         return $this->created_at;
     }
-    public function last_edited_at() : string
+    public function last_edited_at() : ?string
     {
         return $this->last_edited_at;
     }

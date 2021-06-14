@@ -14,7 +14,7 @@ final class ReleaseAsset
      * The file name of the asset.
      */
     private string $name;
-    private string $label;
+    private ?string $label = null;
     /**
      * State of the release asset.
      */
@@ -27,7 +27,7 @@ final class ReleaseAsset
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $uploader;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $uploader = null;
     public function url() : string
     {
         return $this->url;
@@ -51,7 +51,7 @@ final class ReleaseAsset
     {
         return $this->name;
     }
-    public function label() : string
+    public function label() : ?string
     {
         return $this->label;
     }
@@ -82,7 +82,7 @@ final class ReleaseAsset
     {
         return $this->updated_at;
     }
-    public function uploader() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function uploader() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->uploader;
     }

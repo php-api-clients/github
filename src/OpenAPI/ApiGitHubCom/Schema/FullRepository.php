@@ -14,10 +14,10 @@ final class FullRepository
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
     private bool $private;
     private string $html_url;
-    private string $description;
+    private ?string $description = null;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -58,11 +58,11 @@ final class FullRepository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private string $mirror_url;
+    private ?string $mirror_url = null;
     private string $hooks_url;
     private string $svn_url;
-    private string $homepage;
-    private string $language;
+    private ?string $homepage = null;
+    private ?string $language = null;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
@@ -103,11 +103,11 @@ final class FullRepository
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $organization;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $organization = null;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -151,7 +151,7 @@ final class FullRepository
     /**
      * Simple User
      */
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }
@@ -163,7 +163,7 @@ final class FullRepository
     {
         return $this->html_url;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -327,7 +327,7 @@ final class FullRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : string
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -339,11 +339,11 @@ final class FullRepository
     {
         return $this->svn_url;
     }
-    public function homepage() : string
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
-    public function language() : string
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -465,11 +465,11 @@ final class FullRepository
     {
         return $this->network_count;
     }
-    public function license() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
     {
         return $this->license;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->organization;
     }

@@ -13,10 +13,10 @@ final class IssueEventForIssue
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor = null;
     private string $event;
-    private string $commit_id;
-    private string $commit_url;
+    private ?string $commit_id = null;
+    private ?string $commit_url = null;
     private string $created_at;
     private string $sha;
     private string $html_url;
@@ -27,8 +27,8 @@ final class IssueEventForIssue
      * How the author is associated with the repository.
      */
     private string $author_association;
-    private string $body;
-    private string $lock_reason;
+    private ?string $body = null;
+    private ?string $lock_reason = null;
     private string $submitted_at;
     private string $state;
     private string $pull_request_url;
@@ -49,7 +49,7 @@ final class IssueEventForIssue
     /**
      * Simple User
      */
-    public function actor() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function actor() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->actor;
     }
@@ -57,11 +57,11 @@ final class IssueEventForIssue
     {
         return $this->event;
     }
-    public function commit_id() : string
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
-    public function commit_url() : string
+    public function commit_url() : ?string
     {
         return $this->commit_url;
     }
@@ -96,11 +96,11 @@ final class IssueEventForIssue
     {
         return $this->author_association;
     }
-    public function body() : string
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function lock_reason() : string
+    public function lock_reason() : ?string
     {
         return $this->lock_reason;
     }

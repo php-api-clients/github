@@ -10,7 +10,7 @@ final class PrivateUser
     private int $id;
     private string $node_id;
     private string $avatar_url;
-    private string $gravatar_id;
+    private ?string $gravatar_id = null;
     private string $url;
     private string $html_url;
     private string $followers_url;
@@ -24,13 +24,13 @@ final class PrivateUser
     private string $received_events_url;
     private string $type;
     private bool $site_admin;
-    private string $name;
-    private string $company;
-    private string $blog;
-    private string $location;
-    private string $email;
-    private bool $hireable;
-    private string $bio;
+    private ?string $name = null;
+    private ?string $company = null;
+    private ?string $blog = null;
+    private ?string $location = null;
+    private ?string $email = null;
+    private ?bool $hireable = null;
+    private ?string $bio = null;
     private ?string $twitter_username = null;
     private int $public_repos;
     private int $public_gists;
@@ -64,7 +64,7 @@ final class PrivateUser
     {
         return $this->avatar_url;
     }
-    public function gravatar_id() : string
+    public function gravatar_id() : ?string
     {
         return $this->gravatar_id;
     }
@@ -120,31 +120,31 @@ final class PrivateUser
     {
         return $this->site_admin;
     }
-    public function name() : string
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function company() : string
+    public function company() : ?string
     {
         return $this->company;
     }
-    public function blog() : string
+    public function blog() : ?string
     {
         return $this->blog;
     }
-    public function location() : string
+    public function location() : ?string
     {
         return $this->location;
     }
-    public function email() : string
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function hireable() : bool
+    public function hireable() : ?bool
     {
         return $this->hireable;
     }
-    public function bio() : string
+    public function bio() : ?string
     {
         return $this->bio;
     }

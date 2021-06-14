@@ -10,7 +10,7 @@ final class Team
     private string $node_id;
     private string $name;
     private string $slug;
-    private string $description;
+    private ?string $description = null;
     private ?string $privacy = null;
     private string $permission;
     private string $url;
@@ -20,7 +20,7 @@ final class Team
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple $parent;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple $parent = null;
     public function id() : int
     {
         return $this->id;
@@ -37,7 +37,7 @@ final class Team
     {
         return $this->slug;
     }
-    public function description() : string
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -65,7 +65,7 @@ final class Team
     {
         return $this->repositories_url;
     }
-    public function parent() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple
+    public function parent() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple
     {
         return $this->parent;
     }

@@ -9,7 +9,7 @@ final class Email
     private string $email;
     private bool $primary;
     private bool $verified;
-    private string $visibility;
+    private ?string $visibility = null;
     public function email() : string
     {
         return $this->email;
@@ -22,7 +22,7 @@ final class Email
     {
         return $this->verified;
     }
-    public function visibility() : string
+    public function visibility() : ?string
     {
         return $this->visibility;
     }

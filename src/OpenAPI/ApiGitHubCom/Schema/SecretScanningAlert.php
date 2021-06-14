@@ -29,16 +29,16 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
      */
-    private string $resolution;
+    private ?string $resolution = null;
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private string $resolved_at;
+    private ?string $resolved_at = null;
     /**
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $resolved_by;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $resolved_by = null;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -85,21 +85,21 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
      */
-    public function resolution() : string
+    public function resolution() : ?string
     {
         return $this->resolution;
     }
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function resolved_at() : string
+    public function resolved_at() : ?string
     {
         return $this->resolved_at;
     }
     /**
      * Simple User
      */
-    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function resolved_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->resolved_by;
     }

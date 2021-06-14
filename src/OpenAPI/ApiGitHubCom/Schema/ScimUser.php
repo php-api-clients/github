@@ -17,11 +17,11 @@ final class ScimUser
     /**
      * The ID of the User.
      */
-    private string $externalId;
+    private ?string $externalId = null;
     /**
      * Configured by the admin. Could be an email, login, or username
      */
-    private string $userName;
+    private ?string $userName = null;
     /**
      * The name of the user, suitable for display to end-users
      */
@@ -69,14 +69,14 @@ final class ScimUser
     /**
      * The ID of the User.
      */
-    public function externalId() : string
+    public function externalId() : ?string
     {
         return $this->externalId;
     }
     /**
      * Configured by the admin. Could be an email, login, or username
      */
-    public function userName() : string
+    public function userName() : ?string
     {
         return $this->userName;
     }

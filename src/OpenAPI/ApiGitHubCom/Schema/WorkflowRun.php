@@ -23,7 +23,7 @@ final class WorkflowRun
      * The node ID of the associated check suite.
      */
     private ?string $check_suite_node_id = null;
-    private string $head_branch;
+    private ?string $head_branch = null;
     /**
      * The SHA of the head commit that points to the version of the worflow being run.
      */
@@ -33,8 +33,8 @@ final class WorkflowRun
      */
     private int $run_number;
     private string $event;
-    private string $status;
-    private string $conclusion;
+    private ?string $status = null;
+    private ?string $conclusion = null;
     /**
      * The ID of the parent workflow.
      */
@@ -82,7 +82,7 @@ final class WorkflowRun
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit $head_commit;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit $head_commit = null;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
@@ -126,7 +126,7 @@ final class WorkflowRun
     {
         return $this->check_suite_node_id;
     }
-    public function head_branch() : string
+    public function head_branch() : ?string
     {
         return $this->head_branch;
     }
@@ -148,11 +148,11 @@ final class WorkflowRun
     {
         return $this->event;
     }
-    public function status() : string
+    public function status() : ?string
     {
         return $this->status;
     }
-    public function conclusion() : string
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
@@ -238,7 +238,7 @@ final class WorkflowRun
     {
         return $this->workflow_url;
     }
-    public function head_commit() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit
+    public function head_commit() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit
     {
         return $this->head_commit;
     }

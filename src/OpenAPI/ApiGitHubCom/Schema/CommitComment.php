@@ -11,14 +11,14 @@ final class CommitComment
     private int $id;
     private string $node_id;
     private string $body;
-    private string $path;
-    private int $position;
-    private int $line;
+    private ?string $path = null;
+    private ?int $position = null;
+    private ?int $line = null;
     private string $commit_id;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user = null;
     private string $created_at;
     private string $updated_at;
     /**
@@ -49,15 +49,15 @@ final class CommitComment
     {
         return $this->body;
     }
-    public function path() : string
+    public function path() : ?string
     {
         return $this->path;
     }
-    public function position() : int
+    public function position() : ?int
     {
         return $this->position;
     }
-    public function line() : int
+    public function line() : ?int
     {
         return $this->line;
     }
@@ -65,7 +65,7 @@ final class CommitComment
     {
         return $this->commit_id;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->user;
     }
