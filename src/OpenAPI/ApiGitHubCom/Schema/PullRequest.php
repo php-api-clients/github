@@ -86,7 +86,7 @@ final class PullRequest
      * Indicates whether or not the pull request is a draft.
      */
     private ?bool $draft = null;
-    private bool $merged;
+    private ?bool $merged = null;
     private ?bool $mergeable = null;
     private ?bool $rebaseable = null;
     private string $mergeable_state;
@@ -278,7 +278,7 @@ final class PullRequest
     {
         return $this->draft;
     }
-    public function merged() : bool
+    public function merged() : ?bool
     {
         return $this->merged;
     }
