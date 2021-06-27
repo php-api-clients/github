@@ -89,7 +89,7 @@ final class PullRequest
     private ?bool $merged = null;
     private ?bool $mergeable = null;
     private ?bool $rebaseable = null;
-    private string $mergeable_state;
+    private ?string $mergeable_state = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
@@ -290,7 +290,7 @@ final class PullRequest
     {
         return $this->rebaseable;
     }
-    public function mergeable_state() : string
+    public function mergeable_state() : ?string
     {
         return $this->mergeable_state;
     }
