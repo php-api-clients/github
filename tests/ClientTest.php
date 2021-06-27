@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Client\Github;
 
@@ -12,7 +14,7 @@ use ApiClients\Tools\TestUtilities\TestCase;
  */
 final class ClientTest extends TestCase
 {
-    public function testGetRateLimitState()
+    public function testGetRateLimitState(): void
     {
         $client = Client::create(new Anonymous());
         self::assertInstanceOf(RateLimitState::class, $client->getRateLimitState());

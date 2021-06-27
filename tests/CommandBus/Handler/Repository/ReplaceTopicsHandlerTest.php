@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -7,36 +9,33 @@ use ApiClients\Client\Github\CommandBus\Handler\Repository\ReplaceTopicsHandler;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
  */
 final class ReplaceTopicsHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $topics = [
+        $topics     = [
             'foo',
             'bar',
         ];
         $repository = 'repository';
-        $request = new Request(
+        $request    = new Request(
             'PUT',
             'repos/' . $repository . '/topics',
             [],
-            new JsonStream([
-                'names' => $topics,
-            ])
+            new JsonStream(['names' => $topics])
         );
-        $response = new Response(
+        $response   = new Response(
             200,
             [],
-            new JsonStream([
-                'names' => $topics,
-            ])
+            new JsonStream(['names' => $topics])
         );
 
         $service = $this->prophesize(RequestService::class);

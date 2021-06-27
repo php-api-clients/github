@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Command;
 
@@ -10,9 +12,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
  */
 final class IteratePagesCommandTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $path = '/foo.bar';
+        $path    = '/foo.bar';
         $command = new IteratePagesCommand($path);
         self::assertSame($path, $command->getPath());
     }

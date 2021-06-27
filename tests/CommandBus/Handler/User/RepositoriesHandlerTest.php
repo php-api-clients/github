@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\User;
 
@@ -17,12 +19,10 @@ use Rx\React\Promise;
  */
 final class RepositoriesHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $repositoryArray = [
-            'foo' => 'bar',
-        ];
-        $repository = $this->prophesize(Repository::class)->reveal();
+        $repositoryArray = ['foo' => 'bar'];
+        $repository      = $this->prophesize(Repository::class)->reveal();
 
         $command = new RepositoriesCommand('wyrihaximus');
 

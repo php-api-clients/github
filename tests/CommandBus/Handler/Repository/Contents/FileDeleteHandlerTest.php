@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository\Contents;
 
@@ -10,9 +12,10 @@ use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
@@ -67,10 +70,10 @@ final class FileDeleteHandlerTest extends TestCase
     /**
      * @dataProvider provideCommands
      */
-    public function testCommand(FileDeleteCommand $command, array $json)
+    public function testCommand(FileDeleteCommand $command, array $json): void
     {
         $resource = $this->prophesize(FileOperationInterface::class)->reveal();
-        $loop = Factory::create();
+        $loop     = Factory::create();
 
         $requestService = $this->prophesize(RequestService::class);
         $requestService->request(
@@ -83,17 +86,13 @@ final class FileDeleteHandlerTest extends TestCase
         )->shouldBeCalled()->willReturn(resolve(new Response(
             200,
             [],
-            new JsonStream([
-                'foo' => 'bar',
-            ])
+            new JsonStream(['foo' => 'bar'])
         )));
 
         $hydrator = $this->prophesize(Hydrator::class);
         $hydrator->hydrate(
             FileOperationInterface::HYDRATE_CLASS,
-            [
-                'foo' => 'bar',
-            ]
+            ['foo' => 'bar']
         )->shouldBeCalled()->willReturn($resource);
 
         $handler = new FileDeleteHandler($requestService->reveal(), $hydrator->reveal(), $loop);

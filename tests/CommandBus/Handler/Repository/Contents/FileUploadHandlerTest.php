@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository\Contents;
 
@@ -12,9 +14,12 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use Psr\Http\Message\RequestInterface;
 use React\EventLoop\Factory;
-use function React\Promise\Stream\buffer;
 use React\Stream\ThroughStream;
 use RingCentral\Psr7\Response;
+
+use function base64_encode;
+use function json_decode;
+use function React\Promise\Stream\buffer;
 use function WyriHaximus\React\timedPromise;
 
 /**
@@ -25,15 +30,15 @@ final class FileUploadHandlerTest extends TestCase
     public function provideCommands()
     {
         yield [
-            function () {
-                $body = 'foo.bar';
+            static function () {
+                $body          = 'foo.bar';
                 $commitMessage = 'Commit Message';
-                $loop = Factory::create();
-                $stream = new ThroughStream();
-                $loop->addTimer(0.5, function () use ($stream, $body) {
+                $loop          = Factory::create();
+                $stream        = new ThroughStream();
+                $loop->addTimer(0.5, static function () use ($stream, $body): void {
                     $stream->end($body);
                 });
-                $request = new FileUploadCommand(
+                $request      = new FileUploadCommand(
                     'php-api-clients/github',
                     $commitMessage,
                     '/repos/php-api-clients/github/contents/dir/file.pane',
@@ -43,7 +48,7 @@ final class FileUploadHandlerTest extends TestCase
                 );
                 $expectedJson = [
                     'message' => $commitMessage,
-                    'content' => \base64_encode($body),
+                    'content' => base64_encode($body),
                     'sha' => 'sha',
                 ];
 
@@ -52,15 +57,15 @@ final class FileUploadHandlerTest extends TestCase
         ];
 
         yield [
-            function () {
-                $body = 'foo.bar';
+            static function () {
+                $body          = 'foo.bar';
                 $commitMessage = 'Commit Message';
-                $loop = Factory::create();
-                $stream = new ThroughStream();
-                $loop->addTimer(0.5, function () use ($stream, $body) {
+                $loop          = Factory::create();
+                $stream        = new ThroughStream();
+                $loop->addTimer(0.5, static function () use ($stream, $body): void {
                     $stream->end($body);
                 });
-                $request = new FileUploadCommand(
+                $request      = new FileUploadCommand(
                     'php-api-clients/github',
                     $commitMessage,
                     '/repos/php-api-clients/github/contents/dir/file.pane',
@@ -70,7 +75,7 @@ final class FileUploadHandlerTest extends TestCase
                 );
                 $expectedJson = [
                     'message' => $commitMessage,
-                    'content' => \base64_encode($body),
+                    'content' => base64_encode($body),
                     'sha' => 'sha',
                     'branch' => 'master',
                 ];
@@ -80,15 +85,15 @@ final class FileUploadHandlerTest extends TestCase
         ];
 
         yield [
-            function () {
-                $body = 'foo.bar';
+            static function () {
+                $body          = 'foo.bar';
                 $commitMessage = 'Commit Message';
-                $loop = Factory::create();
-                $stream = new ThroughStream();
-                $loop->addTimer(0.5, function () use ($stream, $body) {
+                $loop          = Factory::create();
+                $stream        = new ThroughStream();
+                $loop->addTimer(0.5, static function () use ($stream, $body): void {
                     $stream->end($body);
                 });
-                $request = new FileUploadCommand(
+                $request      = new FileUploadCommand(
                     'php-api-clients/github',
                     $commitMessage,
                     '/repos/php-api-clients/github/contents/dir/file.pane',
@@ -98,7 +103,7 @@ final class FileUploadHandlerTest extends TestCase
                 );
                 $expectedJson = [
                     'message' => $commitMessage,
-                    'content' => \base64_encode($body),
+                    'content' => base64_encode($body),
                     'branch' => 'new-pr',
                 ];
 
@@ -110,15 +115,15 @@ final class FileUploadHandlerTest extends TestCase
     /**
      * @dataProvider provideCommands
      */
-    public function testCommand(callable $callable)
+    public function testCommand(callable $callable): void
     {
-        list($loop, $command, $expectedjson) = $callable();
-        $resource = $this->prophesize(FileOperationInterface::class)->reveal();
-        $stream = null;
+        [$loop, $command, $expectedjson] = $callable();
+        $resource                        = $this->prophesize(FileOperationInterface::class)->reveal();
+        $stream                          = null;
 
         $requestService = $this->prophesize(RequestService::class);
-        $requestService->request(Argument::that(function (RequestInterface $request) use (&$stream) {
-            buffer($request->getBody())->done(function ($json) use (&$stream) {
+        $requestService->request(Argument::that(static function (RequestInterface $request) use (&$stream) {
+            buffer($request->getBody())->done(static function ($json) use (&$stream): void {
                 $stream = $json;
             });
 
@@ -136,6 +141,6 @@ final class FileUploadHandlerTest extends TestCase
 
         $result = $this->await($handler->handle($command), $loop);
         self::assertSame($resource, $result);
-        self::assertSame($expectedjson, \json_decode($stream, true));
+        self::assertSame($expectedjson, json_decode($stream, true));
     }
 }

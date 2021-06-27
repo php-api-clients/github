@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
@@ -27,11 +29,9 @@ final class UserHandlerTest extends TestCase
     }
 
     /**
-     * @param string $path
-     * @param string $user
      * @dataProvider provideUsers
      */
-    public function testCommand(string $path, string $user)
+    public function testCommand(string $path, string $user): void
     {
         $service = $this->prophesize(FetchAndHydrateService::class);
         $service->fetch($path, '', UserInterface::HYDRATE_CLASS)->shouldBeCalled();

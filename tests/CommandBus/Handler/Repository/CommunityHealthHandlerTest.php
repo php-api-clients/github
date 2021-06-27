@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -9,6 +11,7 @@ use ApiClients\Client\Github\Resource\Repository\CommunityHealthInterface;
 use ApiClients\Foundation\Transport\Options as TransportOptions;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
+
 use function React\Promise\resolve;
 
 /**
@@ -16,7 +19,7 @@ use function React\Promise\resolve;
  */
 final class CommunityHealthHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
         $command = new CommunityHealthCommand('php-api-clients/github');
 

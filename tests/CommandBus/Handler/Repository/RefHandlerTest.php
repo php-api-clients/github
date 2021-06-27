@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -13,6 +15,7 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
+
 use function WyriHaximus\React\timedPromise;
 
 /**
@@ -23,8 +26,8 @@ final class RefHandlerTest extends TestCase
     public function provideCommands()
     {
         yield [
-            function () {
-                $loop = Factory::create();
+            static function () {
+                $loop    = Factory::create();
                 $command = new RefCommand(
                     'login/repo',
                     'refs/heads/so-not-master',
@@ -39,13 +42,11 @@ final class RefHandlerTest extends TestCase
     /**
      * @dataProvider provideCommands
      */
-    public function testCommand(callable $callable)
+    public function testCommand(callable $callable): void
     {
-        list($loop, $command) = $callable();
+        [$loop, $command] = $callable();
 
-        $json = [
-            'foo' => 'bar',
-        ];
+        $json       = ['foo' => 'bar'];
         $jsonStream = new JsonStream($json);
 
         $tree = $this->prophesize(TreeInterface::class)->reveal();
@@ -55,9 +56,7 @@ final class RefHandlerTest extends TestCase
             'POST',
             'repos/login/repo/git/refs/heads/so-not-master',
             [],
-            new JsonStream([
-                'sha' => 'sha1234567890',
-            ])
+            new JsonStream(['sha' => 'sha1234567890'])
         ))->willReturn(timedPromise($loop, 1, new Response(
             200,
             [],

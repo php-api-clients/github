@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
@@ -10,21 +12,22 @@ use ApiClients\Foundation\Resource\ResourceInterface;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
  */
 final class SaveHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $url = 'url';
+        $url  = 'url';
         $data = [];
 
-        $request = new Request(
+        $request  = new Request(
             'PATCH',
             $url,
             [],

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
@@ -9,10 +11,12 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use Psr\Http\Message\RequestInterface;
 use React\EventLoop\Factory;
-use function React\Promise\Stream\buffer;
 use React\Stream\ThroughStream;
 use RingCentral\Psr7\BufferStream;
 use RingCentral\Psr7\Response;
+
+use function json_decode;
+use function React\Promise\Stream\buffer;
 use function WyriHaximus\React\timedPromise;
 
 /**
@@ -23,14 +27,14 @@ final class RenderMarkdownHandlerTest extends TestCase
     public function provideCommands()
     {
         yield [
-            function () {
-                $body = 'foo.bar';
-                $loop = Factory::create();
+            static function () {
+                $body   = 'foo.bar';
+                $loop   = Factory::create();
                 $stream = new ThroughStream();
-                $loop->addTimer(1, function () use ($stream, $body) {
+                $loop->addTimer(1, static function () use ($stream, $body): void {
                     $stream->end($body);
                 });
-                $request = new RenderMarkdownCommand(
+                $request      = new RenderMarkdownCommand(
                     $stream,
                     'gfm',
                     'php-api-clients/github'
@@ -46,21 +50,19 @@ final class RenderMarkdownHandlerTest extends TestCase
         ];
 
         yield [
-            function () {
-                $body = 'foo.bar';
-                $loop = Factory::create();
+            static function () {
+                $body   = 'foo.bar';
+                $loop   = Factory::create();
                 $stream = new ThroughStream();
-                $loop->addTimer(1, function () use ($stream, $body) {
+                $loop->addTimer(1, static function () use ($stream, $body): void {
                     $stream->end($body);
                 });
-                $request = new RenderMarkdownCommand(
+                $request      = new RenderMarkdownCommand(
                     $stream,
                     '',
                     ''
                 );
-                $expectedJson = [
-                    'text' => $body,
-                ];
+                $expectedJson = ['text' => $body];
 
                 return [$loop, $request, $expectedJson];
             },
@@ -70,16 +72,16 @@ final class RenderMarkdownHandlerTest extends TestCase
     /**
      * @dataProvider provideCommands
      */
-    public function testCommand(callable $callable)
+    public function testCommand(callable $callable): void
     {
-        list($loop, $command, $expectedjson) = $callable();
-        $stream = null;
-        $bufferStream = new BufferStream();
+        [$loop, $command, $expectedjson] = $callable();
+        $stream                          = null;
+        $bufferStream                    = new BufferStream();
         $bufferStream->write('foo.bar');
 
         $requestService = $this->prophesize(RequestService::class);
-        $requestService->request(Argument::that(function (RequestInterface $request) use (&$stream) {
-            buffer($request->getBody())->done(function ($json) use (&$stream) {
+        $requestService->request(Argument::that(static function (RequestInterface $request) use (&$stream) {
+            buffer($request->getBody())->done(static function ($json) use (&$stream): void {
                 $stream = $json;
             });
 
@@ -92,8 +94,8 @@ final class RenderMarkdownHandlerTest extends TestCase
 
         $handler = new RenderMarkdownHandler($requestService->reveal(), $loop);
 
-        $result = (string)$this->await($handler->handle($command), $loop);
+        $result = (string) $this->await($handler->handle($command), $loop);
         self::assertSame('foo.bar', $result);
-        self::assertSame($expectedjson, \json_decode($stream, true));
+        self::assertSame($expectedjson, json_decode($stream, true));
     }
 }

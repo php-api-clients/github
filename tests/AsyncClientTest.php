@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Client\Github;
 
@@ -13,9 +15,9 @@ use React\EventLoop\Factory;
  */
 final class AsyncClientTest extends TestCase
 {
-    public function testGetRateLimitState()
+    public function testGetRateLimitState(): void
     {
-        $loop = Factory::create();
+        $loop   = Factory::create();
         $client = AsyncClient::create($loop, new Anonymous());
         self::assertInstanceOf(RateLimitState::class, $client->getRateLimitState());
     }

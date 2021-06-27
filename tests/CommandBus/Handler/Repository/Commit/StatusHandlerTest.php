@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository\Commit;
 
@@ -8,6 +10,7 @@ use ApiClients\Client\Github\Resource\Async\Repository\Commit;
 use ApiClients\Client\Github\Resource\Repository\Commit\CombinedStatusInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
+
 use function React\Promise\resolve;
 
 /**
@@ -15,7 +18,7 @@ use function React\Promise\resolve;
  */
 final class StatusHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
         $resource = $this->prophesize(Commit::class);
         $resource->url()->shouldBeCalled()->wilLReturn('https://example.com');

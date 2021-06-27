@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
@@ -7,6 +9,7 @@ use ApiClients\Client\Github\CommandBus\Handler\MetaHandler;
 use ApiClients\Client\Github\Resource\MetaInterface;
 use ApiClients\Tools\Services\Client\FetchAndHydrateService;
 use ApiClients\Tools\TestUtilities\TestCase;
+
 use function React\Promise\resolve;
 
 /**
@@ -14,7 +17,7 @@ use function React\Promise\resolve;
  */
 final class MetaHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
         $meta = $this->prophesize(MetaInterface::class)->reveal();
 

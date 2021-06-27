@@ -1,0 +1,16 @@
+parameters:
+	excludes_analyse:
+		- src/Generated/*
+	ignoreErrors:
+		- '#Method WyriHaximus\\Broadcast\\ContainerListenerProvider::__construct\(\) has a parameter \$container with a type declaration of Psr\\Container\\ContainerInterface, but containers should not be injected.#'
+		- '#Generator expects value type callable\(\): mixed, string given.#'
+		- '#Generator expects value type callable\(\): mixed, array\(mixed, string\) given.#'
+		- '#In method \"WyriHaximus\\Broadcast\\Dispatcher::dispatch\", caught \"Throwable\" must be rethrown. Either catch a more specific exception or add a \"throw\" clause in the \"catch\" block to propagate the exception. More info: http:\/\/bit.ly\/failloud#'
+		- '#Variable \$classReflector might not be defined.#'
+	ergebnis:
+		classesAllowedToBeExtended:
+			- WyriHaximus\Broadcast\Generated\AbstractListenerProvider
+			- WyriHaximus\TestUtilities\TestCase
+
+includes:
+	- vendor/wyrihaximus/phpstan-rules-wrapper/wrapper.neon

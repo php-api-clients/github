@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -7,8 +9,9 @@ use ApiClients\Client\Github\CommandBus\Handler\Repository\SubscribeHandler;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
@@ -35,10 +38,9 @@ final class SubscribeHandlerTest extends TestCase
     }
 
     /**
-     * @param SubscribeCommand $command
      * @dataProvider provideCommands
      */
-    public function testCommand(SubscribeCommand $command)
+    public function testCommand(SubscribeCommand $command): void
     {
         $service = $this->prophesize(RequestService::class);
         $service->request(

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -9,12 +11,13 @@ use ApiClients\Client\Github\Resource\Contents\FileInterface;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
 use Rx\React\Promise;
+
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
+use function React\Promise\resolve;
 
 /**
  * @internal
@@ -29,27 +32,25 @@ final class ContentsHandlerTest extends TestCase
     }
 
     /**
-     * @param string $path
-     * @param string $uriPath
      * @dataProvider pathsProvider
      */
-    public function testCommand(string $path, string $uriPath)
+    public function testCommand(string $path, string $uriPath): void
     {
         $repositoryFullName = 'php-api-clients/github';
-        $file = [
+        $file               = [
             'type' => 'file',
             'repository_fullname' => $repositoryFullName,
         ];
-        $directory = [
+        $directory          = [
             'type' => 'directory',
             'repository_fullname' => $repositoryFullName,
         ];
-        $contents = [
+        $contents           = [
             $directory,
             $file,
         ];
 
-        $request = new Request(
+        $request  = new Request(
             'GET',
             'repos/' . $repositoryFullName . $uriPath
         );

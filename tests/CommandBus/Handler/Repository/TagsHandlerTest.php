@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -17,12 +19,10 @@ use Rx\React\Promise;
  */
 final class TagsHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $tagArray = [
-            'foo' => 'bar',
-        ];
-        $tag = $this->prophesize(Tag::class)->reveal();
+        $tagArray = ['foo' => 'bar'];
+        $tag      = $this->prophesize(Tag::class)->reveal();
 
         $command = new TagsCommand('api-clients/github');
 

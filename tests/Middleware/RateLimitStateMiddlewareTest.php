@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Client\Github;
 
@@ -7,14 +9,16 @@ use ApiClients\Client\Github\RateLimitState;
 use ApiClients\Tools\TestUtilities\TestCase;
 use RingCentral\Psr7\Response;
 
+use function time;
+
 /**
  * @internal
  */
 final class RateLimitStateMiddlewareTest extends TestCase
 {
-    public function testPost()
+    public function testPost(): void
     {
-        $time = \time();
+        $time  = time();
         $state = new RateLimitState();
         self::assertSame(0, $state->getLimit());
         self::assertSame(0, $state->getRemaining());

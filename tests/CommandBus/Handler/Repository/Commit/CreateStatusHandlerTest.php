@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository\Commit;
 
@@ -10,9 +12,10 @@ use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
@@ -29,9 +32,7 @@ final class CreateStatusHandlerTest extends TestCase
                 $commit->reveal(),
                 'error'
             ),
-            [
-                'state' => 'error',
-            ],
+            ['state' => 'error'],
         ];
 
         yield [
@@ -78,19 +79,16 @@ final class CreateStatusHandlerTest extends TestCase
     }
 
     /**
-     * @param CreateStatusCommand $command
-     * @param array               $json
+     * @param array $json
      *
      * @dataProvider provideCommandsAndJsonCombinations
      */
-    public function testCommand(CreateStatusCommand $command, array $json)
+    public function testCommand(CreateStatusCommand $command, array $json): void
     {
         $resource = $this->prophesize(StatusInterface::class)->reveal();
-        $status = [
-            'state' => 'success',
-        ];
+        $status   = ['state' => 'success'];
 
-        $request = new Request(
+        $request  = new Request(
             'POST',
             'repos/login/repository/statuses/0123456789abcdef',
             [],
