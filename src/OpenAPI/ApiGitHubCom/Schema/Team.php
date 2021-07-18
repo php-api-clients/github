@@ -13,6 +13,7 @@ final class Team
     private ?string $description = null;
     private ?string $privacy = null;
     private string $permission;
+    private array $permissions = array();
     private string $url;
     private string $html_url;
     private string $members_url;
@@ -48,6 +49,10 @@ final class Team
     public function permission() : string
     {
         return $this->permission;
+    }
+    public function permissions() : array
+    {
+        return $this->permissions;
     }
     public function url() : string
     {

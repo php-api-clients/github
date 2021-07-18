@@ -7,6 +7,7 @@ final class BranchProtection
     public const SCHEMA_TITLE = 'Branch Protection';
     public const SCHEMA_DESCRIPTION = 'Branch Protection';
     private string $url;
+    private bool $enabled;
     private array $required_status_checks = array();
     /**
      * Protected Branch Admin Enforced
@@ -33,6 +34,10 @@ final class BranchProtection
     public function url() : string
     {
         return $this->url;
+    }
+    public function enabled() : bool
+    {
+        return $this->enabled;
     }
     public function required_status_checks() : array
     {

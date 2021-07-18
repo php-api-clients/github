@@ -27,7 +27,11 @@ final class Installation
      */
     private int $target_id;
     private string $target_type;
-    private array $permissions = array();
+    /**
+     * The permissions granted to the user-to-server access token.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions;
     private array $events = array();
     private string $created_at;
     private string $updated_at;
@@ -86,7 +90,10 @@ final class Installation
     {
         return $this->target_type;
     }
-    public function permissions() : array
+    /**
+     * The permissions granted to the user-to-server access token.
+     */
+    public function permissions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions
     {
         return $this->permissions;
     }

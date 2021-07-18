@@ -90,6 +90,11 @@ final class MinimalRepository
     private ?bool $delete_branch_on_merge = null;
     private ?int $subscribers_count = null;
     private ?int $network_count = null;
+    /**
+     * Code Of Conduct
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct $code_of_conduct = null;
     private array $license = array();
     private ?int $forks = null;
     private ?int $open_issues = null;
@@ -405,6 +410,13 @@ final class MinimalRepository
     public function network_count() : ?int
     {
         return $this->network_count;
+    }
+    /**
+     * Code Of Conduct
+     */
+    public function code_of_conduct() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct
+    {
+        return $this->code_of_conduct;
     }
     public function license() : array
     {

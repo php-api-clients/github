@@ -9,6 +9,7 @@ final class RateLimit
     private int $limit;
     private int $remaining;
     private int $reset;
+    private int $used;
     public function limit() : int
     {
         return $this->limit;
@@ -20,5 +21,9 @@ final class RateLimit
     public function reset() : int
     {
         return $this->reset;
+    }
+    public function used() : int
+    {
+        return $this->used;
     }
 }

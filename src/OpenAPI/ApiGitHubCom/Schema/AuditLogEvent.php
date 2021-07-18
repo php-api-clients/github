@@ -21,6 +21,13 @@ final class AuditLogEvent
      */
     private string $actor;
     /**
+     * The id of the actor who performed the action.
+     */
+    private int $actor_id;
+    private array $actor_location = array();
+    private array $data = array();
+    private int $org_id;
+    /**
      * The username of the account being blocked.
      */
     private string $blocked_user;
@@ -106,6 +113,25 @@ final class AuditLogEvent
     public function actor() : string
     {
         return $this->actor;
+    }
+    /**
+     * The id of the actor who performed the action.
+     */
+    public function actor_id() : int
+    {
+        return $this->actor_id;
+    }
+    public function actor_location() : array
+    {
+        return $this->actor_location;
+    }
+    public function data() : array
+    {
+        return $this->data;
+    }
+    public function org_id() : int
+    {
+        return $this->org_id;
     }
     /**
      * The username of the account being blocked.

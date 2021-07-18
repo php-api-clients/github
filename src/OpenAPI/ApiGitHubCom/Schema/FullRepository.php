@@ -131,7 +131,7 @@ final class FullRepository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple $code_of_conduct = null;
-    private ?bool $has_advanced_security = null;
+    private array $security_and_analysis = array();
     public function id() : int
     {
         return $this->id;
@@ -517,8 +517,8 @@ final class FullRepository
     {
         return $this->code_of_conduct;
     }
-    public function has_advanced_security() : ?bool
+    public function security_and_analysis() : array
     {
-        return $this->has_advanced_security;
+        return $this->security_and_analysis;
     }
 }

@@ -23,6 +23,8 @@ final class ProjectCard
      * Whether or not the card is archived
      */
     private ?bool $archived = null;
+    private ?string $column_name = null;
+    private ?string $project_id = null;
     private string $column_url;
     private ?string $content_url = null;
     private string $project_url;
@@ -63,6 +65,14 @@ final class ProjectCard
     public function archived() : ?bool
     {
         return $this->archived;
+    }
+    public function column_name() : ?string
+    {
+        return $this->column_name;
+    }
+    public function project_id() : ?string
+    {
+        return $this->project_id;
     }
     public function column_url() : string
     {

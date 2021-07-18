@@ -57,8 +57,8 @@ final class PullRequestSimple
      */
     private array $requested_reviewers = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team::class)
      */
     private array $requested_teams = array();
     private array $head = array();
@@ -203,7 +203,7 @@ final class PullRequestSimple
         return $this->requested_reviewers;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>
      */
     public function requested_teams() : array
     {

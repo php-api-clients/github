@@ -12,8 +12,8 @@ final class GistSimple
      */
     private array $forks = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\History>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\History::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory::class)
      */
     private array $history = array();
     /**
@@ -50,7 +50,7 @@ final class GistSimple
         return $this->forks;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\History>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory>
      */
     public function history() : array
     {

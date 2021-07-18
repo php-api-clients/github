@@ -8,7 +8,11 @@ final class InstallationToken
     public const SCHEMA_DESCRIPTION = 'Authentication token for a GitHub App installed on a user or org.';
     private string $token;
     private string $expires_at;
-    private array $permissions = array();
+    /**
+     * The permissions granted to the user-to-server access token.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions = null;
     private ?string $repository_selection = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
@@ -26,7 +30,10 @@ final class InstallationToken
     {
         return $this->expires_at;
     }
-    public function permissions() : array
+    /**
+     * The permissions granted to the user-to-server access token.
+     */
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions
     {
         return $this->permissions;
     }

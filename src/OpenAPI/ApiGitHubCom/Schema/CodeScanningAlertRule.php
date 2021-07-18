@@ -19,6 +19,10 @@ final class CodeScanningAlertRule
      */
     private ?string $severity = null;
     /**
+     * The security severity of the alert.
+     */
+    private ?string $security_severity_level = null;
+    /**
      * A short description of the rule used to detect the alert.
      */
     private string $description;
@@ -54,6 +58,13 @@ final class CodeScanningAlertRule
     public function severity() : ?string
     {
         return $this->severity;
+    }
+    /**
+     * The security severity of the alert.
+     */
+    public function security_severity_level() : ?string
+    {
+        return $this->security_severity_level;
     }
     /**
      * A short description of the rule used to detect the alert.

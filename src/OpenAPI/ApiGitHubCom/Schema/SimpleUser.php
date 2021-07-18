@@ -6,6 +6,8 @@ final class SimpleUser
 {
     public const SCHEMA_TITLE = 'Simple User';
     public const SCHEMA_DESCRIPTION = 'Simple User';
+    private ?string $name = null;
+    private ?string $email = null;
     private string $login;
     private int $id;
     private string $node_id;
@@ -25,6 +27,14 @@ final class SimpleUser
     private string $type;
     private bool $site_admin;
     private ?string $starred_at = null;
+    public function name() : ?string
+    {
+        return $this->name;
+    }
+    public function email() : ?string
+    {
+        return $this->email;
+    }
     public function login() : string
     {
         return $this->login;

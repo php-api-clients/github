@@ -111,6 +111,10 @@ final class AppPermissions
      */
     private string $organization_projects;
     /**
+     * The level of permission to grant the access token for organization packages published to GitHub Packages. Can be one of: `read` or `write`.
+     */
+    private string $organization_packages;
+    /**
      * The level of permission to grant the access token to manage organization secrets. Can be one of: `read` or `write`.
      */
     private string $organization_secrets;
@@ -307,6 +311,13 @@ final class AppPermissions
     public function organization_projects() : string
     {
         return $this->organization_projects;
+    }
+    /**
+     * The level of permission to grant the access token for organization packages published to GitHub Packages. Can be one of: `read` or `write`.
+     */
+    public function organization_packages() : string
+    {
+        return $this->organization_packages;
     }
     /**
      * The level of permission to grant the access token to manage organization secrets. Can be one of: `read` or `write`.

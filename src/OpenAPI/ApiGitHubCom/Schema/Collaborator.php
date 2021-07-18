@@ -8,6 +8,8 @@ final class Collaborator
     public const SCHEMA_DESCRIPTION = 'Collaborator';
     private string $login;
     private int $id;
+    private ?string $email = null;
+    private ?string $name = null;
     private string $node_id;
     private string $avatar_url;
     private ?string $gravatar_id = null;
@@ -32,6 +34,14 @@ final class Collaborator
     public function id() : int
     {
         return $this->id;
+    }
+    public function email() : ?string
+    {
+        return $this->email;
+    }
+    public function name() : ?string
+    {
+        return $this->name;
     }
     public function node_id() : string
     {

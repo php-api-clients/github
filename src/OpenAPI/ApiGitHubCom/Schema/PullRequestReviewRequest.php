@@ -12,8 +12,8 @@ final class PullRequestReviewRequest
      */
     private array $users = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team::class)
      */
     private array $teams = array();
     /**
@@ -24,7 +24,7 @@ final class PullRequestReviewRequest
         return $this->users;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>
      */
     public function teams() : array
     {

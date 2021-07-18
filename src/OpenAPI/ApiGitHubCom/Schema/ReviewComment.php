@@ -34,6 +34,10 @@ final class ReviewComment
     private ?string $body_text = null;
     private ?string $body_html = null;
     /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
+    /**
      * The side of the first line of the range for a multi-line comment.
      */
     private ?string $side = null;
@@ -143,6 +147,10 @@ final class ReviewComment
     public function body_html() : ?string
     {
         return $this->body_html;
+    }
+    public function reactions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
+    {
+        return $this->reactions;
     }
     /**
      * The side of the first line of the range for a multi-line comment.
