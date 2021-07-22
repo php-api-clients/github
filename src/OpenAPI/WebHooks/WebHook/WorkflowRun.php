@@ -9,7 +9,7 @@ final class WorkflowRun implements \ApiClients\Client\Github\OpenAPI\WebHooks\We
         $schemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_REQUEST);
         a:
         try {
-            $schemaValidator->validate($data, \cebe\openapi\Reader::readFromJson('{"title":"workflow_run completed event","required":["action"],"type":"object","properties":{"action":{"enum":["completed"],"type":"string"}},"additionalProperties":false}', '\\cebe\\openapi\\spec\\Schema'));
+            $schemaValidator->validate($data, \cebe\openapi\Reader::readFromJson('{"title":"workflow_run completed event","required":["action"],"type":"object","properties":{"action":{"enum":["completed"],"type":"string"}},"additionalProperties":true}', '\\cebe\\openapi\\spec\\Schema'));
             return 'ApiClients\\Client\\Github\\OpenAPI\\WebHooks\\Schema\\WorkflowRun\\Completed';
         } catch (\Throwable $b) {
             echo $b;
