@@ -13,7 +13,7 @@ final class ActionsRepositoryPermissions
     /**
      * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
      */
-    private string $allowed_actions;
+    private ?string $allowed_actions = null;
     /**
      * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
      */
@@ -28,7 +28,7 @@ final class ActionsRepositoryPermissions
     /**
      * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
      */
-    public function allowed_actions() : string
+    public function allowed_actions() : ?string
     {
         return $this->allowed_actions;
     }

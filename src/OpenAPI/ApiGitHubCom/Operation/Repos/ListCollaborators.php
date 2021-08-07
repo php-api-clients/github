@@ -14,7 +14,7 @@ final class ListCollaborators
     \* `direct`: All collaborators with permissions to an organization-owned repository, regardless of organization membership status.  
     \* `all`: All collaborators the authenticated user can see.**/
     public string $affiliation;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -10,7 +10,7 @@ final class List
     \* `created`: Issues created by you  
     \* `mentioned`: Issues mentioning you  
     \* `subscribed`: Issues you're subscribed to updates for  
-    \* `all`: All issues the authenticated user can see, regardless of participation or creation**/
+    \* `all` or `repos`: All issues the authenticated user can see, regardless of participation or creation**/
     public string $filter;
     /**Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.**/
     public string $state;
@@ -30,7 +30,7 @@ final class List
     public bool $owned;
     /****/
     public bool $pulls;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

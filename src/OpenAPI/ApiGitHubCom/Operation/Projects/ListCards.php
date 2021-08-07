@@ -9,7 +9,7 @@ final class ListCards
     public int $column_id;
     /**Filters the project cards that are returned by the card's state. Can be one of `all`,`archived`, or `not_archived`.**/
     public string $archived_state;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -19,15 +19,17 @@ final class ListWorkflowRuns
     public string $event;
     /**Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`. For a list of the possible `status` and `conclusion` options, see "[Create a check run](https://docs.github.com/rest/reference/checks#create-a-check-run)."**/
     public string $status;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
+    /****/
+    public string $created;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $workflow_id, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1)
+    function __construct($owner, $repo, $workflow_id, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1, $created)
     {
         $this->owner = $owner;
         $this->repo = $repo;
@@ -38,10 +40,11 @@ final class ListWorkflowRuns
         $this->status = $status;
         $this->per_page = $per_page;
         $this->page = $page;
+        $this->created = $created;
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{workflow_id}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->workflow_id, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page), '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{workflow_id}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}'), array($this->owner, $this->repo, $this->workflow_id, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created), '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}'));
     }
     function validateResponse()
     {

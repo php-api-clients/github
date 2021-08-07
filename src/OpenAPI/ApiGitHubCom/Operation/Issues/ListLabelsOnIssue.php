@@ -11,7 +11,7 @@ final class ListLabelsOnIssue
     public string $repo;
     /**issue_number parameter**/
     public int $issue_number;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

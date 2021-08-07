@@ -7,7 +7,7 @@ final class ListSelfHostedRunnerGroupsForOrg
     private const OPERATION_ID = 'actions/list-self-hosted-runner-groups-for-org';
     /****/
     public string $org;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

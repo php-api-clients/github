@@ -27,6 +27,7 @@ final class Repository
     private int $forks;
     private array $permissions = array();
     /**
+     * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
@@ -138,6 +139,10 @@ final class Repository
      */
     private ?bool $allow_squash_merge = null;
     /**
+     * Whether to allow Auto-merge to be used on pull requests.
+     */
+    private ?bool $allow_auto_merge = null;
+    /**
      * Whether to delete head branches when pull requests are merged
      */
     private ?bool $delete_branch_on_merge = null;
@@ -189,6 +194,9 @@ final class Repository
     {
         return $this->permissions;
     }
+    /**
+     * Simple User
+     */
     public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
@@ -512,6 +520,13 @@ final class Repository
     public function allow_squash_merge() : ?bool
     {
         return $this->allow_squash_merge;
+    }
+    /**
+     * Whether to allow Auto-merge to be used on pull requests.
+     */
+    public function allow_auto_merge() : ?bool
+    {
+        return $this->allow_auto_merge;
     }
     /**
      * Whether to delete head branches when pull requests are merged

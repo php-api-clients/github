@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
 final class ListReposAccessibleToInstallation
 {
     private const OPERATION_ID = 'apps/list-repos-accessible-to-installation';
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

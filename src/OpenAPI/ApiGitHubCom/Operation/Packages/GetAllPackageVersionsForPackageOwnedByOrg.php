@@ -13,7 +13,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrg
     public string $org;
     /**Page number of the results to fetch.**/
     public int $page;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**The state of the package, either active or deleted.**/
     public string $state;

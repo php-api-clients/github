@@ -7,7 +7,7 @@ final class ListSelectedOrganizationsEnabledGithubActionsEnterprise
     private const OPERATION_ID = 'enterprise-admin/list-selected-organizations-enabled-github-actions-enterprise';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
     public string $enterprise;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -17,7 +17,7 @@ final class ListDeployments
     public string $task;
     /**The name of the environment that was deployed to (e.g., `staging` or `production`).**/
     public string $environment;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -7,7 +7,7 @@ final class List
     private const OPERATION_ID = 'orgs/list';
     /**An organization ID. Only return organizations with an ID greater than this ID.**/
     public int $since;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     public function operationId() : string
     {

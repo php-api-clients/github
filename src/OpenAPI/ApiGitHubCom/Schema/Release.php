@@ -46,6 +46,7 @@ final class Release
     private array $assets = array();
     private ?string $body_html = null;
     private ?string $body_text = null;
+    private ?int $mentions_count = null;
     /**
      * The URL of the release discussion.
      */
@@ -151,6 +152,10 @@ final class Release
     public function body_text() : ?string
     {
         return $this->body_text;
+    }
+    public function mentions_count() : ?int
+    {
+        return $this->mentions_count;
     }
     /**
      * The URL of the release discussion.

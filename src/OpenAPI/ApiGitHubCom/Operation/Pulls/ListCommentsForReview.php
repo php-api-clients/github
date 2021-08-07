@@ -13,7 +13,7 @@ final class ListCommentsForReview
     public int $pull_number;
     /**review_id parameter**/
     public int $review_id;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

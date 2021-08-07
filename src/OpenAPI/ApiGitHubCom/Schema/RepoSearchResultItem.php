@@ -101,6 +101,7 @@ final class RepoSearchResultItem
     private ?bool $allow_merge_commit = null;
     private ?bool $allow_squash_merge = null;
     private ?bool $allow_rebase_merge = null;
+    private ?bool $allow_auto_merge = null;
     private ?bool $delete_branch_on_merge = null;
     public function id() : int
     {
@@ -435,6 +436,10 @@ final class RepoSearchResultItem
     public function allow_rebase_merge() : ?bool
     {
         return $this->allow_rebase_merge;
+    }
+    public function allow_auto_merge() : ?bool
+    {
+        return $this->allow_auto_merge;
     }
     public function delete_branch_on_merge() : ?bool
     {

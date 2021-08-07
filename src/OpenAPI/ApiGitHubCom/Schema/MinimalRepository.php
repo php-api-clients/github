@@ -11,6 +11,7 @@ final class MinimalRepository
     private string $name;
     private string $full_name;
     /**
+     * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
@@ -115,6 +116,9 @@ final class MinimalRepository
     {
         return $this->full_name;
     }
+    /**
+     * Simple User
+     */
     public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;

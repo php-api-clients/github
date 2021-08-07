@@ -13,7 +13,7 @@ final class ListForTeamDiscussionCommentLegacy
     public int $comment_number;
     /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion comment.**/
     public string $content;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

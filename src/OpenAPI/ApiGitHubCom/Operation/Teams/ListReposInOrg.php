@@ -9,7 +9,7 @@ final class ListReposInOrg
     public string $org;
     /**team_slug parameter**/
     public string $team_slug;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

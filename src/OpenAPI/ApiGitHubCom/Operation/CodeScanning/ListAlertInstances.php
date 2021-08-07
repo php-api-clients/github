@@ -13,7 +13,7 @@ final class ListAlertInstances
     public int $alert_number;
     /**Page number of the results to fetch.**/
     public int $page;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
     public string $ref;

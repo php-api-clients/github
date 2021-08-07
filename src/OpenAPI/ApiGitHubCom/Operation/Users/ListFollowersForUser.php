@@ -7,7 +7,7 @@ final class ListFollowersForUser
     private const OPERATION_ID = 'users/list-followers-for-user';
     /****/
     public string $username;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

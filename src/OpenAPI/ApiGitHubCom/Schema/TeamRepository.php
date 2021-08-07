@@ -137,6 +137,10 @@ final class TeamRepository
      */
     private ?bool $allow_squash_merge = null;
     /**
+     * Whether to allow Auto-merge to be used on pull requests.
+     */
+    private ?bool $allow_auto_merge = null;
+    /**
      * Whether to delete head branches when pull requests are merged
      */
     private ?bool $delete_branch_on_merge = null;
@@ -506,6 +510,13 @@ final class TeamRepository
     public function allow_squash_merge() : ?bool
     {
         return $this->allow_squash_merge;
+    }
+    /**
+     * Whether to allow Auto-merge to be used on pull requests.
+     */
+    public function allow_auto_merge() : ?bool
+    {
+        return $this->allow_auto_merge;
     }
     /**
      * Whether to delete head branches when pull requests are merged

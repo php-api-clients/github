@@ -11,7 +11,7 @@ final class ListLabelsForMilestone
     public string $repo;
     /**milestone_number parameter**/
     public int $milestone_number;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

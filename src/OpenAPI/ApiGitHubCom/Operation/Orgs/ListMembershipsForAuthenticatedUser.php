@@ -7,7 +7,7 @@ final class ListMembershipsForAuthenticatedUser
     private const OPERATION_ID = 'orgs/list-memberships-for-authenticated-user';
     /**Indicates the state of the memberships to return. Can be either `active` or `pending`. If not specified, the API returns both active and pending memberships.**/
     public string $state;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

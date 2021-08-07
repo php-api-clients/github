@@ -16,7 +16,7 @@ final class ListMembers
     \* `admin` - Organization owners.  
     \* `member` - Non-owner organization members.**/
     public string $role;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

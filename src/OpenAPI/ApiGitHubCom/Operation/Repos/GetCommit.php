@@ -11,7 +11,7 @@ final class GetCommit
     public string $repo;
     /**Page number of the results to fetch.**/
     public int $page;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**ref parameter**/
     public string $ref;

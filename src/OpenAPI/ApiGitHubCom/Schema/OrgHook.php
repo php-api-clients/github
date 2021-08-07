@@ -9,6 +9,7 @@ final class OrgHook
     private int $id;
     private string $url;
     private string $ping_url;
+    private ?string $deliveries_url = null;
     private string $name;
     private array $events = array();
     private bool $active;
@@ -27,6 +28,10 @@ final class OrgHook
     public function ping_url() : string
     {
         return $this->ping_url;
+    }
+    public function deliveries_url() : ?string
+    {
+        return $this->deliveries_url;
     }
     public function name() : string
     {

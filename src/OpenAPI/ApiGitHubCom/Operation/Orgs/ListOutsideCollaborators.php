@@ -11,7 +11,7 @@ final class ListOutsideCollaborators
     \* `2fa_disabled`: Outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled.  
     \* `all`: All outside collaborators.**/
     public string $filter;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

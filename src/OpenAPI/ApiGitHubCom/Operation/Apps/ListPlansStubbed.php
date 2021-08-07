@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
 final class ListPlansStubbed
 {
     private const OPERATION_ID = 'apps/list-plans-stubbed';
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

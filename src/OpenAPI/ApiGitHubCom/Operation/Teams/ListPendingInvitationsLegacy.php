@@ -7,7 +7,7 @@ final class ListPendingInvitationsLegacy
     private const OPERATION_ID = 'teams/list-pending-invitations-legacy';
     /****/
     public int $team_id;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

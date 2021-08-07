@@ -11,7 +11,7 @@ final class ListPullRequestsAssociatedWithCommit
     public string $repo;
     /**commit_sha parameter**/
     public string $commit_sha;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -9,7 +9,7 @@ final class ListDiscussionsLegacy
     public int $team_id;
     /**One of `asc` (ascending) or `desc` (descending).**/
     public string $direction;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

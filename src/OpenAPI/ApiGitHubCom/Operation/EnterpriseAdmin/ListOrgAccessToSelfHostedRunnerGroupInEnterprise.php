@@ -9,7 +9,7 @@ final class ListOrgAccessToSelfHostedRunnerGroupInEnterprise
     public string $enterprise;
     /**Unique identifier of the self-hosted runner group.**/
     public int $runner_group_id;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

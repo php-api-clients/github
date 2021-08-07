@@ -11,7 +11,7 @@ final class ListSelectedReposForOrgSecret
     public string $secret_name;
     /**Page number of the results to fetch.**/
     public int $page;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     public function operationId() : string
     {

@@ -12,7 +12,7 @@ final class ListForOrg
     \* `created`: Issues created by you  
     \* `mentioned`: Issues mentioning you  
     \* `subscribed`: Issues you're subscribed to updates for  
-    \* `all`: All issues the authenticated user can see, regardless of participation or creation**/
+    \* `all` or `repos`: All issues the authenticated user can see, regardless of participation or creation**/
     public string $filter;
     /**Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.**/
     public string $state;
@@ -24,7 +24,7 @@ final class ListForOrg
     public string $direction;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
     public string $since;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

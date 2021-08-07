@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users;
 final class ListEmailsForAuthenticated
 {
     private const OPERATION_ID = 'users/list-emails-for-authenticated';
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

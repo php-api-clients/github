@@ -15,7 +15,7 @@ final class ListSuitesForRef
     public int $app_id;
     /**Returns check runs with the specified `name`.**/
     public string $check_name;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

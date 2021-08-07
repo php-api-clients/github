@@ -11,7 +11,7 @@ final class ListAccountsForPlan
     public string $sort;
     /**To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.**/
     public string $direction;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

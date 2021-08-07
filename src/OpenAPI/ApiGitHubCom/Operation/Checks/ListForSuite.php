@@ -17,7 +17,7 @@ final class ListForSuite
     public string $status;
     /**Filters check runs by their `completed_at` timestamp. Can be one of `latest` (returning the most recent check runs) or `all`.**/
     public string $filter;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

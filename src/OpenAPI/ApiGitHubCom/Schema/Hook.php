@@ -29,6 +29,7 @@ final class Hook
     private string $url;
     private string $test_url;
     private string $ping_url;
+    private ?string $deliveries_url = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse::class)
      */
@@ -88,6 +89,10 @@ final class Hook
     public function ping_url() : string
     {
         return $this->ping_url;
+    }
+    public function deliveries_url() : ?string
+    {
+        return $this->deliveries_url;
     }
     public function last_response() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse
     {

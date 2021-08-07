@@ -11,7 +11,7 @@ final class ListForTeamDiscussionLegacy
     public int $discussion_number;
     /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion.**/
     public string $content;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

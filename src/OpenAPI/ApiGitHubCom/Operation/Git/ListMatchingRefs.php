@@ -11,7 +11,7 @@ final class ListMatchingRefs
     public string $repo;
     /**ref parameter**/
     public string $ref;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -7,7 +7,7 @@ final class ListIdpGroupsForOrg
     private const OPERATION_ID = 'teams/list-idp-groups-for-org';
     /****/
     public string $org;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page token**/
     public string $page;

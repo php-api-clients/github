@@ -9,7 +9,7 @@ final class ListForUser
     public string $username;
     /**Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.**/
     public string $state;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

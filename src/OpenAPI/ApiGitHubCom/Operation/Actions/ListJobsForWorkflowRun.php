@@ -15,7 +15,7 @@ final class ListJobsForWorkflowRun
     \* `latest`: Returns jobs from the most recent execution of the workflow run.  
     \* `all`: Returns all jobs for a workflow run, including from old executions of the workflow run.**/
     public string $filter;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

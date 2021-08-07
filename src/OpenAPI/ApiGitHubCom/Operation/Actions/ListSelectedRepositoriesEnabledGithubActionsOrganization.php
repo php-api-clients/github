@@ -7,7 +7,7 @@ final class ListSelectedRepositoriesEnabledGithubActionsOrganization
     private const OPERATION_ID = 'actions/list-selected-repositories-enabled-github-actions-organization';
     /****/
     public string $org;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -7,7 +7,7 @@ final class List
     private const OPERATION_ID = 'users/list';
     /**A user ID. Only return users with an ID greater than this ID.**/
     public int $since;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     public function operationId() : string
     {

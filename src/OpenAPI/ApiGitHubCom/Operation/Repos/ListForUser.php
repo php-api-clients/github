@@ -13,7 +13,7 @@ final class ListForUser
     public string $sort;
     /**Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`**/
     public string $direction;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

@@ -7,7 +7,7 @@ final class ListColumns
     private const OPERATION_ID = 'projects/list-columns';
     /****/
     public int $project_id;
-    /**Results per page (max 100).**/
+    /**Results per page (max 100)**/
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;

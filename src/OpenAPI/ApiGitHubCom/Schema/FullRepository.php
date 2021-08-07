@@ -96,6 +96,7 @@ final class FullRepository
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
     private ?string $temp_clone_token = null;
     private ?bool $allow_squash_merge = null;
+    private ?bool $allow_auto_merge = null;
     private ?bool $delete_branch_on_merge = null;
     private ?bool $allow_merge_commit = null;
     private int $subscribers_count;
@@ -448,6 +449,10 @@ final class FullRepository
     public function allow_squash_merge() : ?bool
     {
         return $this->allow_squash_merge;
+    }
+    public function allow_auto_merge() : ?bool
+    {
+        return $this->allow_auto_merge;
     }
     public function delete_branch_on_merge() : ?bool
     {
