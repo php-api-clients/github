@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "php": "^7.4",
+    "php": "^8 || ^7.4",
     "api-clients/openapi-client-generator": "dev-master",
     "wyrihaximus/hydrator": "dev-master"
   },
