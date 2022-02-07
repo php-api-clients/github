@@ -11,9 +11,9 @@ final class GetAuditLog
     public string $phrase;
     /**The event types to include:
     
-    - `web` - returns web (non-Git) events
-    - `git` - returns Git events
-    - `all` - returns both web and Git events
+    - `web` - returns web (non-Git) events.
+    - `git` - returns Git events.
+    - `all` - returns both web and Git events.
     
     The default is `web`.**/
     public string $include;

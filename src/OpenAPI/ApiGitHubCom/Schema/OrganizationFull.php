@@ -51,6 +51,7 @@ final class OrganizationFull
     private ?bool $members_can_create_pages = null;
     private ?bool $members_can_create_public_pages = null;
     private ?bool $members_can_create_private_pages = null;
+    private ?bool $members_can_fork_private_repositories = null;
     private string $updated_at;
     public function login() : string
     {
@@ -231,6 +232,10 @@ final class OrganizationFull
     public function members_can_create_private_pages() : ?bool
     {
         return $this->members_can_create_private_pages;
+    }
+    public function members_can_fork_private_repositories() : ?bool
+    {
+        return $this->members_can_fork_private_repositories;
     }
     public function updated_at() : string
     {

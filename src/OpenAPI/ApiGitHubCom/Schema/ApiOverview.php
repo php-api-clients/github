@@ -8,6 +8,7 @@ final class ApiOverview
     public const SCHEMA_DESCRIPTION = 'Api Overview';
     private bool $verifiable_password_authentication;
     private array $ssh_key_fingerprints = array();
+    private array $ssh_keys = array();
     private array $hooks = array();
     private array $web = array();
     private array $api = array();
@@ -24,6 +25,10 @@ final class ApiOverview
     public function ssh_key_fingerprints() : array
     {
         return $this->ssh_key_fingerprints;
+    }
+    public function ssh_keys() : array
+    {
+        return $this->ssh_keys;
     }
     public function hooks() : array
     {

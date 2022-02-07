@@ -23,6 +23,10 @@ final class SecretScanningAlert
      */
     private string $html_url;
     /**
+     * The REST API URL of the code locations for this alert.
+     */
+    private string $locations_url;
+    /**
      * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
      */
     private string $state;
@@ -36,9 +40,9 @@ final class SecretScanningAlert
     private ?string $resolved_at = null;
     /**
      * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $resolved_by = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $resolved_by = null;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -76,6 +80,13 @@ final class SecretScanningAlert
         return $this->html_url;
     }
     /**
+     * The REST API URL of the code locations for this alert.
+     */
+    public function locations_url() : string
+    {
+        return $this->locations_url;
+    }
+    /**
      * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
      */
     public function state() : string
@@ -99,7 +110,7 @@ final class SecretScanningAlert
     /**
      * Simple User
      */
-    public function resolved_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function resolved_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
     {
         return $this->resolved_by;
     }

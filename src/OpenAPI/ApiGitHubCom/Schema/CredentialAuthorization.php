@@ -48,6 +48,10 @@ final class CredentialAuthorization
      */
     private ?string $authorized_credential_note = null;
     /**
+     * The expiry for the token. This will only be present when the credential is a token.
+     */
+    private ?string $authorized_credential_expires_at = null;
+    /**
      * User login that owns the underlying credential.
      */
     public function login() : string
@@ -120,5 +124,12 @@ final class CredentialAuthorization
     public function authorized_credential_note() : ?string
     {
         return $this->authorized_credential_note;
+    }
+    /**
+     * The expiry for the token. This will only be present when the credential is a token.
+     */
+    public function authorized_credential_expires_at() : ?string
+    {
+        return $this->authorized_credential_expires_at;
     }
 }

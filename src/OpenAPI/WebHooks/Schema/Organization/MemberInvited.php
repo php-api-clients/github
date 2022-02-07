@@ -14,6 +14,10 @@ final class MemberInvited
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
+     */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
     /**
      * Installation
@@ -34,6 +38,10 @@ final class MemberInvited
     public function invitation() : array
     {
         return $this->invitation;
+    }
+    public function user() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
+    {
+        return $this->user;
     }
     public function sender() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
     {

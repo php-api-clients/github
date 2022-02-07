@@ -19,9 +19,10 @@ final class Team
     private string $members_url;
     private string $repositories_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
+     * Groups of organization members that gives permissions on specified repositories.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableTeamSimple::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple $parent = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableTeamSimple $parent = null;
     public function id() : int
     {
         return $this->id;
@@ -70,7 +71,10 @@ final class Team
     {
         return $this->repositories_url;
     }
-    public function parent() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple
+    /**
+     * Groups of organization members that gives permissions on specified repositories.
+     */
+    public function parent() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableTeamSimple
     {
         return $this->parent;
     }

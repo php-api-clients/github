@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\WebHooks\Schema;
 final class Issue
 {
     public const SCHEMA_TITLE = 'Issue';
-    public const SCHEMA_DESCRIPTION = '';
+    public const SCHEMA_DESCRIPTION = 'The [issue](https://docs.github.com/en/rest/reference/issues) itself.';
     /**
      * URL for the issue
      */
@@ -58,6 +58,11 @@ final class Issue
      * Contents of the issue
      */
     private $body;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions $reactions;
+    private ?string $timeline_url = null;
     /**
      * URL for the issue
      */
@@ -182,5 +187,13 @@ final class Issue
     public function body()
     {
         return $this->body;
+    }
+    public function reactions() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions
+    {
+        return $this->reactions;
+    }
+    public function timeline_url() : ?string
+    {
+        return $this->timeline_url;
     }
 }

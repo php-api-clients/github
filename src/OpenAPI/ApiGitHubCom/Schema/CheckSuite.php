@@ -24,9 +24,10 @@ final class CheckSuite
      */
     private array $pull_requests = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration::class)
+     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableIntegration::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $app = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableIntegration $app = null;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
@@ -41,6 +42,8 @@ final class CheckSuite
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit $head_commit;
     private int $latest_check_runs_count;
     private string $check_runs_url;
+    private ?bool $rerequestable = null;
+    private ?bool $runs_rerequestable = null;
     public function id() : int
     {
         return $this->id;
@@ -87,7 +90,10 @@ final class CheckSuite
     {
         return $this->pull_requests;
     }
-    public function app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration
+    /**
+     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+     */
+    public function app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableIntegration
     {
         return $this->app;
     }
@@ -120,5 +126,13 @@ final class CheckSuite
     public function check_runs_url() : string
     {
         return $this->check_runs_url;
+    }
+    public function rerequestable() : ?bool
+    {
+        return $this->rerequestable;
+    }
+    public function runs_rerequestable() : ?bool
+    {
+        return $this->runs_rerequestable;
     }
 }

@@ -19,13 +19,17 @@ final class ListAlertsForRepo
     public int $per_page;
     /**The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
     public string $ref;
+    /**One of `asc` (ascending) or `desc` (descending).**/
+    public string $direction;
+    /**Can be one of `created`, `updated`, `number`.**/
+    public string $sort;
     /**Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.**/
     public string $state;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $tool_name, $tool_guid, int $page = 1, int $per_page = 30, $ref, $state)
+    function __construct($owner, $repo, $tool_name, $tool_guid, int $page = 1, int $per_page = 30, $ref, string $direction = 'desc', string $sort = 'number', $state)
     {
         $this->owner = $owner;
         $this->repo = $repo;
@@ -34,11 +38,13 @@ final class ListAlertsForRepo
         $this->page = $page;
         $this->per_page = $per_page;
         $this->ref = $ref;
+        $this->direction = $direction;
+        $this->sort = $sort;
         $this->state = $state;
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{page}', '{per_page}', '{ref}', '{state}'), array($this->owner, $this->repo, $this->tool_name, $this->tool_guid, $this->page, $this->per_page, $this->ref, $this->state), '/repos/{owner}/{repo}/code-scanning/alerts?tool_name={tool_name}&tool_guid={tool_guid}&page={page}&per_page={per_page}&ref={ref}&state={state}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{page}', '{per_page}', '{ref}', '{direction}', '{sort}', '{state}'), array($this->owner, $this->repo, $this->tool_name, $this->tool_guid, $this->page, $this->per_page, $this->ref, $this->direction, $this->sort, $this->state), '/repos/{owner}/{repo}/code-scanning/alerts?tool_name={tool_name}&tool_guid={tool_guid}&page={page}&per_page={per_page}&ref={ref}&direction={direction}&sort={sort}&state={state}'));
     }
     function validateResponse()
     {

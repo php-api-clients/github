@@ -15,6 +15,10 @@ final class CodeScanningAlertItems
      */
     private string $created_at;
     /**
+     * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    private ?string $updated_at = null;
+    /**
      * The REST API URL of the alert resource.
      */
     private string $url;
@@ -31,10 +35,14 @@ final class CodeScanningAlertItems
      */
     private string $state;
     /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $dismissed_by = null;
+    private ?string $fixed_at = null;
+    /**
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $dismissed_by = null;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -70,6 +78,13 @@ final class CodeScanningAlertItems
         return $this->created_at;
     }
     /**
+     * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    public function updated_at() : ?string
+    {
+        return $this->updated_at;
+    }
+    /**
      * The REST API URL of the alert resource.
      */
     public function url() : string
@@ -98,9 +113,16 @@ final class CodeScanningAlertItems
         return $this->state;
     }
     /**
+     * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    public function fixed_at() : ?string
+    {
+        return $this->fixed_at;
+    }
+    /**
      * Simple User
      */
-    public function dismissed_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function dismissed_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
     {
         return $this->dismissed_by;
     }

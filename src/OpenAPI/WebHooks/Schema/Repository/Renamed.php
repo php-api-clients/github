@@ -7,6 +7,7 @@ final class Renamed
     public const SCHEMA_TITLE = 'repository renamed event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
+    private array $changes = array();
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
@@ -28,6 +29,10 @@ final class Renamed
     public function action() : string
     {
         return $this->action;
+    }
+    public function changes() : array
+    {
+        return $this->changes;
     }
     /**
      * A git repository

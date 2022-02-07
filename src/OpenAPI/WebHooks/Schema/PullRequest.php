@@ -30,7 +30,7 @@ final class PullRequest
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $user;
-    private string $body;
+    private $body;
     private string $created_at;
     private string $updated_at;
     private $closed_at;
@@ -144,7 +144,7 @@ final class PullRequest
     {
         return $this->user;
     }
-    public function body() : string
+    public function body()
     {
         return $this->body;
     }

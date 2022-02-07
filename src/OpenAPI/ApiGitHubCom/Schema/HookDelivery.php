@@ -50,6 +50,10 @@ final class HookDelivery
      * The id of the repository associated with this event.
      */
     private ?int $repository_id = null;
+    /**
+     * The URL target of the delivery.
+     */
+    private ?string $url = null;
     private array $request = array();
     private array $response = array();
     /**
@@ -128,6 +132,13 @@ final class HookDelivery
     public function repository_id() : ?int
     {
         return $this->repository_id;
+    }
+    /**
+     * The URL target of the delivery.
+     */
+    public function url() : ?string
+    {
+        return $this->url;
     }
     public function request() : array
     {

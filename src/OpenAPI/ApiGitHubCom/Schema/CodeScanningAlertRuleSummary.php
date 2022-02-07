@@ -15,6 +15,10 @@ final class CodeScanningAlertRuleSummary
      */
     private string $name;
     /**
+     * A set of tags applicable for the rule.
+     */
+    private array $tags = array();
+    /**
      * The severity of the alert.
      */
     private ?string $severity = null;
@@ -35,6 +39,13 @@ final class CodeScanningAlertRuleSummary
     public function name() : string
     {
         return $this->name;
+    }
+    /**
+     * A set of tags applicable for the rule.
+     */
+    public function tags() : array
+    {
+        return $this->tags;
     }
     /**
      * The severity of the alert.

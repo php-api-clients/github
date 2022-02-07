@@ -40,9 +40,10 @@ final class Installation
     private array $single_file_paths = array();
     private string $app_slug;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $suspended_by = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $suspended_by = null;
     private ?string $suspended_at = null;
     private ?string $contact_email = null;
     /**
@@ -125,7 +126,10 @@ final class Installation
     {
         return $this->app_slug;
     }
-    public function suspended_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    /**
+     * Simple User
+     */
+    public function suspended_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
     {
         return $this->suspended_by;
     }

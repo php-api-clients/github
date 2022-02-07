@@ -11,9 +11,10 @@ final class RepoSearchResultItem
     private string $name;
     private string $full_name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $owner = null;
     private bool $private;
     private string $html_url;
     private ?string $description = null;
@@ -88,9 +89,14 @@ final class RepoSearchResultItem
      */
     private bool $disabled;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
+     * The repository visibility: public, private, or internal.
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license = null;
+    private ?string $visibility = null;
+    /**
+     * License Simple
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple $license = null;
     private array $permissions = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
@@ -103,6 +109,8 @@ final class RepoSearchResultItem
     private ?bool $allow_rebase_merge = null;
     private ?bool $allow_auto_merge = null;
     private ?bool $delete_branch_on_merge = null;
+    private ?bool $allow_forking = null;
+    private ?bool $is_template = null;
     public function id() : int
     {
         return $this->id;
@@ -119,7 +127,10 @@ final class RepoSearchResultItem
     {
         return $this->full_name;
     }
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    /**
+     * Simple User
+     */
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
     {
         return $this->owner;
     }
@@ -406,7 +417,17 @@ final class RepoSearchResultItem
     {
         return $this->disabled;
     }
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
+    /**
+     * The repository visibility: public, private, or internal.
+     */
+    public function visibility() : ?string
+    {
+        return $this->visibility;
+    }
+    /**
+     * License Simple
+     */
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple
     {
         return $this->license;
     }
@@ -444,5 +465,13 @@ final class RepoSearchResultItem
     public function delete_branch_on_merge() : ?bool
     {
         return $this->delete_branch_on_merge;
+    }
+    public function allow_forking() : ?bool
+    {
+        return $this->allow_forking;
+    }
+    public function is_template() : ?bool
+    {
+        return $this->is_template;
     }
 }

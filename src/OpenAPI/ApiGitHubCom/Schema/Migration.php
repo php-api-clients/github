@@ -8,13 +8,18 @@ final class Migration
     public const SCHEMA_DESCRIPTION = 'A migration.';
     private int $id;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $owner = null;
     private string $guid;
     private string $state;
     private bool $lock_repositories;
+    private bool $exclude_metadata;
+    private bool $exclude_git_data;
     private bool $exclude_attachments;
+    private bool $exclude_releases;
+    private bool $exclude_owner_projects;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -30,7 +35,10 @@ final class Migration
     {
         return $this->id;
     }
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    /**
+     * Simple User
+     */
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
     {
         return $this->owner;
     }
@@ -46,9 +54,25 @@ final class Migration
     {
         return $this->lock_repositories;
     }
+    public function exclude_metadata() : bool
+    {
+        return $this->exclude_metadata;
+    }
+    public function exclude_git_data() : bool
+    {
+        return $this->exclude_git_data;
+    }
     public function exclude_attachments() : bool
     {
         return $this->exclude_attachments;
+    }
+    public function exclude_releases() : bool
+    {
+        return $this->exclude_releases;
+    }
+    public function exclude_owner_projects() : bool
+    {
+        return $this->exclude_owner_projects;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>

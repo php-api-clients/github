@@ -126,6 +126,16 @@ final class Repository
      */
     private ?bool $allow_rebase_merge = null;
     /**
+     * Whether to allow auto-merge for pull requests.
+     */
+    private ?bool $allow_auto_merge = null;
+    /**
+     * Whether to allow private forks
+     */
+    private ?bool $allow_forking = null;
+    private bool $is_template;
+    private ?string $visibility = null;
+    /**
      * Whether to delete head branches when pull requests are merged
      */
     private ?bool $delete_branch_on_merge = null;
@@ -479,6 +489,28 @@ final class Repository
     public function allow_rebase_merge() : ?bool
     {
         return $this->allow_rebase_merge;
+    }
+    /**
+     * Whether to allow auto-merge for pull requests.
+     */
+    public function allow_auto_merge() : ?bool
+    {
+        return $this->allow_auto_merge;
+    }
+    /**
+     * Whether to allow private forks
+     */
+    public function allow_forking() : ?bool
+    {
+        return $this->allow_forking;
+    }
+    public function is_template() : bool
+    {
+        return $this->is_template;
+    }
+    public function visibility() : ?string
+    {
+        return $this->visibility;
     }
     /**
      * Whether to delete head branches when pull requests are merged

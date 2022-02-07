@@ -19,9 +19,10 @@ final class LicenseContent
     private string $encoding;
     private array $_links = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
+     * License Simple
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple $license = null;
     public function name() : string
     {
         return $this->name;
@@ -70,7 +71,10 @@ final class LicenseContent
     {
         return $this->_links;
     }
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
+    /**
+     * License Simple
+     */
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple
     {
         return $this->license;
     }

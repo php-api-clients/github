@@ -32,7 +32,15 @@ final class AuditLogEvent
      */
     private string $blocked_user;
     private string $business;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\Config>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\Config::class)
+     */
     private array $config = array();
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\ConfigWas>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\ConfigWas::class)
+     */
     private array $config_was = array();
     private string $content_type;
     /**
@@ -45,7 +53,15 @@ final class AuditLogEvent
      */
     private string $_document_id;
     private string $emoji;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\Events::class)
+     */
     private array $events = array();
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\EventsWere>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\EventsWere::class)
+     */
     private array $events_were = array();
     private string $explanation;
     private string $fingerprint;
@@ -144,10 +160,16 @@ final class AuditLogEvent
     {
         return $this->business;
     }
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\Config>
+     */
     public function config() : array
     {
         return $this->config;
     }
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\ConfigWas>
+     */
     public function config_was() : array
     {
         return $this->config_was;
@@ -178,10 +200,16 @@ final class AuditLogEvent
     {
         return $this->emoji;
     }
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\Events>
+     */
     public function events() : array
     {
         return $this->events;
     }
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuditLogEvent\EventsWere>
+     */
     public function events_were() : array
     {
         return $this->events_were;

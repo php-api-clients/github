@@ -9,6 +9,11 @@ final class StatusCheckPolicy
     private string $url;
     private bool $strict;
     private array $contexts = array();
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Checks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Checks::class)
+     */
+    private array $checks = array();
     private string $contexts_url;
     public function url() : string
     {
@@ -21,6 +26,13 @@ final class StatusCheckPolicy
     public function contexts() : array
     {
         return $this->contexts;
+    }
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Checks>
+     */
+    public function checks() : array
+    {
+        return $this->checks;
     }
     public function contexts_url() : string
     {

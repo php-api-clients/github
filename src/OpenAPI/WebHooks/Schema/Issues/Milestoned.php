@@ -12,6 +12,11 @@ final class Milestoned
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue $issue;
     /**
+     * A collection of related issues and pull requests.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Milestone::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Milestone $milestone;
+    /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
      */
@@ -36,6 +41,13 @@ final class Milestoned
     public function issue() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue
     {
         return $this->issue;
+    }
+    /**
+     * A collection of related issues and pull requests.
+     */
+    public function milestone() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Milestone
+    {
+        return $this->milestone;
     }
     /**
      * A git repository

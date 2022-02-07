@@ -23,11 +23,15 @@ final class ListWorkflowRunsForRepo
     public int $page;
     /****/
     public string $created;
+    /**If `true` pull requests are omitted from the response (empty array).**/
+    public bool $exclude_pull_requests;
+    /**Returns workflow runs with the `check_suite_id` that you specify.**/
+    public int $check_suite_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1, $created)
+    function __construct($owner, $repo, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1, $created, bool $exclude_pull_requests = false, $check_suite_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;
@@ -38,10 +42,12 @@ final class ListWorkflowRunsForRepo
         $this->per_page = $per_page;
         $this->page = $page;
         $this->created = $created;
+        $this->exclude_pull_requests = $exclude_pull_requests;
+        $this->check_suite_id = $check_suite_id;
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created), '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}', '{exclude_pull_requests}', '{check_suite_id}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created, $this->exclude_pull_requests, $this->check_suite_id), '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}&exclude_pull_requests={exclude_pull_requests}&check_suite_id={check_suite_id}'));
     }
     function validateResponse()
     {

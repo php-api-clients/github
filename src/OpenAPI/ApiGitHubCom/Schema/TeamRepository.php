@@ -17,15 +17,18 @@ final class TeamRepository
     private string $name;
     private string $full_name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
+     * License Simple
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple $license = null;
     private int $forks;
     private array $permissions = array();
+    private ?string $role_name = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $owner = null;
     /**
      * Whether the repository is private or public.
      */
@@ -128,9 +131,10 @@ final class TeamRepository
      */
     private ?bool $allow_rebase_merge = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * A git repository
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository $template_repository = null;
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -148,6 +152,10 @@ final class TeamRepository
      * Whether to allow merge commits for pull requests.
      */
     private ?bool $allow_merge_commit = null;
+    /**
+     * Whether to allow forking this repo
+     */
+    private ?bool $allow_forking = null;
     private ?int $subscribers_count = null;
     private ?int $network_count = null;
     private int $open_issues;
@@ -175,7 +183,10 @@ final class TeamRepository
     {
         return $this->full_name;
     }
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
+    /**
+     * License Simple
+     */
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple
     {
         return $this->license;
     }
@@ -187,7 +198,14 @@ final class TeamRepository
     {
         return $this->permissions;
     }
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function role_name() : ?string
+    {
+        return $this->role_name;
+    }
+    /**
+     * Simple User
+     */
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
     {
         return $this->owner;
     }
@@ -496,7 +514,10 @@ final class TeamRepository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    /**
+     * A git repository
+     */
+    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository
     {
         return $this->template_repository;
     }
@@ -531,6 +552,13 @@ final class TeamRepository
     public function allow_merge_commit() : ?bool
     {
         return $this->allow_merge_commit;
+    }
+    /**
+     * Whether to allow forking this repo
+     */
+    public function allow_forking() : ?bool
+    {
+        return $this->allow_forking;
     }
     public function subscribers_count() : ?int
     {

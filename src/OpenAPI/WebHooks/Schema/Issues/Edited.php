@@ -8,6 +8,7 @@ final class Edited
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
+     * The [issue](https://docs.github.com/en/rest/reference/issues) itself.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue::class)
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue $issue;
@@ -41,6 +42,9 @@ final class Edited
     {
         return $this->action;
     }
+    /**
+     * The [issue](https://docs.github.com/en/rest/reference/issues) itself.
+     */
     public function issue() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue
     {
         return $this->issue;

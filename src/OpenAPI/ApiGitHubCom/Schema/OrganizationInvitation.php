@@ -17,7 +17,7 @@ final class OrganizationInvitation
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $inviter = null;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $inviter;
     private int $team_count;
     private string $node_id;
     private string $invitation_teams_url;
@@ -52,7 +52,7 @@ final class OrganizationInvitation
     /**
      * Simple User
      */
-    public function inviter() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function inviter() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->inviter;
     }

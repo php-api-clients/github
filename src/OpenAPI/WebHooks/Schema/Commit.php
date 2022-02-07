@@ -41,11 +41,11 @@ final class Commit
     /**
      * An array of files modified by the commit.
      */
-    private array $removed = array();
+    private array $modified = array();
     /**
      * An array of files removed in the commit.
      */
-    private array $modified = array();
+    private array $removed = array();
     public function id() : string
     {
         return $this->id;
@@ -106,15 +106,15 @@ final class Commit
     /**
      * An array of files modified by the commit.
      */
-    public function removed() : array
+    public function modified() : array
     {
-        return $this->removed;
+        return $this->modified;
     }
     /**
      * An array of files removed in the commit.
      */
-    public function modified() : array
+    public function removed() : array
     {
-        return $this->modified;
+        return $this->removed;
     }
 }

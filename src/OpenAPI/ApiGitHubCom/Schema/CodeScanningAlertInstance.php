@@ -20,6 +20,10 @@ final class CodeScanningAlertInstance
      */
     private string $environment;
     /**
+     * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
+     */
+    private string $category;
+    /**
      * State of a code scanning alert.
      */
     private string $state;
@@ -59,6 +63,13 @@ final class CodeScanningAlertInstance
     public function environment() : string
     {
         return $this->environment;
+    }
+    /**
+     * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
+     */
+    public function category() : string
+    {
+        return $this->category;
     }
     /**
      * State of a code scanning alert.

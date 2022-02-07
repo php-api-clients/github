@@ -61,7 +61,6 @@ final class CodeScanningAnalysis
      * Warning generated when processing the analysis
      */
     private string $warning;
-    private ?string $tool_name = null;
     /**
     * The full Git reference, formatted as `refs/heads/<branch name>`,
     `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
@@ -158,9 +157,5 @@ final class CodeScanningAnalysis
     public function warning() : string
     {
         return $this->warning;
-    }
-    public function tool_name() : ?string
-    {
-        return $this->tool_name;
     }
 }

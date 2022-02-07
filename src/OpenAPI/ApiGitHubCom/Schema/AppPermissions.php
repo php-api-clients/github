@@ -19,10 +19,6 @@ final class AppPermissions
      */
     private string $checks;
     /**
-     * The level of permission to grant the access token for notification of content references and creation content attachments. Can be one of: `read` or `write`.
-     */
-    private string $content_references;
-    /**
      * The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: `read` or `write`.
      */
     private string $contents;
@@ -83,7 +79,7 @@ final class AppPermissions
      */
     private string $statuses;
     /**
-     * The level of permission to grant the access token to retrieve Dependabot alerts. Can be one of: `read`.
+     * The level of permission to grant the access token to manage Dependabot alerts. Can be one of: `read` or `write`.
      */
     private string $vulnerability_alerts;
     /**
@@ -107,7 +103,7 @@ final class AppPermissions
      */
     private string $organization_plan;
     /**
-     * The level of permission to grant the access token to manage organization projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
+     * The level of permission to grant the access token to manage organization projects and projects beta (where available). Can be one of: `read`, `write`, or `admin`.
      */
     private string $organization_projects;
     /**
@@ -150,13 +146,6 @@ final class AppPermissions
     public function checks() : string
     {
         return $this->checks;
-    }
-    /**
-     * The level of permission to grant the access token for notification of content references and creation content attachments. Can be one of: `read` or `write`.
-     */
-    public function content_references() : string
-    {
-        return $this->content_references;
     }
     /**
      * The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: `read` or `write`.
@@ -264,7 +253,7 @@ final class AppPermissions
         return $this->statuses;
     }
     /**
-     * The level of permission to grant the access token to retrieve Dependabot alerts. Can be one of: `read`.
+     * The level of permission to grant the access token to manage Dependabot alerts. Can be one of: `read` or `write`.
      */
     public function vulnerability_alerts() : string
     {
@@ -306,7 +295,7 @@ final class AppPermissions
         return $this->organization_plan;
     }
     /**
-     * The level of permission to grant the access token to manage organization projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
+     * The level of permission to grant the access token to manage organization projects and projects beta (where available). Can be one of: `read`, `write`, or `admin`.
      */
     public function organization_projects() : string
     {

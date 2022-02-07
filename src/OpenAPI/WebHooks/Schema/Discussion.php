@@ -31,6 +31,10 @@ final class Discussion
     private string $author_association;
     private $active_lock_reason;
     private string $body;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions $reactions = null;
     public function repository_url() : string
     {
         return $this->repository_url;
@@ -109,5 +113,9 @@ final class Discussion
     public function body() : string
     {
         return $this->body;
+    }
+    public function reactions() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions
+    {
+        return $this->reactions;
     }
 }

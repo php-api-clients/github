@@ -17,20 +17,22 @@ final class Repository
     private string $name;
     private string $full_name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::class)
+     * License Simple
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple $license = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple $license = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $organization = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $organization = null;
     private int $forks;
     private array $permissions = array();
     /**
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     /**
      * Whether the repository is private or public.
      */
@@ -150,6 +152,10 @@ final class Repository
      * Whether to allow merge commits for pull requests.
      */
     private ?bool $allow_merge_commit = null;
+    /**
+     * Whether to allow forking this repo
+     */
+    private ?bool $allow_forking = null;
     private ?int $subscribers_count = null;
     private ?int $network_count = null;
     private int $open_issues;
@@ -178,11 +184,17 @@ final class Repository
     {
         return $this->full_name;
     }
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple
+    /**
+     * License Simple
+     */
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple
     {
         return $this->license;
     }
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    /**
+     * Simple User
+     */
+    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
     {
         return $this->organization;
     }
@@ -197,7 +209,7 @@ final class Repository
     /**
      * Simple User
      */
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }
@@ -541,6 +553,13 @@ final class Repository
     public function allow_merge_commit() : ?bool
     {
         return $this->allow_merge_commit;
+    }
+    /**
+     * Whether to allow forking this repo
+     */
+    public function allow_forking() : ?bool
+    {
+        return $this->allow_forking;
     }
     public function subscribers_count() : ?int
     {

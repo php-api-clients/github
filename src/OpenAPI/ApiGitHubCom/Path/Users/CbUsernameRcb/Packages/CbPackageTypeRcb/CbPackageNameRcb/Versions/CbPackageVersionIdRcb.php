@@ -8,4 +8,8 @@ final class CbPackageVersionIdRcb
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\GetPackageVersionForUser($package_type, $package_name, $package_version_id, $username);
     }
+    function delete($package_type, $package_name, $username, $package_version_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\DeletePackageVersionForUser
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\DeletePackageVersionForUser($package_type, $package_name, $username, $package_version_id);
+    }
 }

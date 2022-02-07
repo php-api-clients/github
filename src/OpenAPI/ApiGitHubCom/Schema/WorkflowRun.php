@@ -32,6 +32,10 @@ final class WorkflowRun
      * The auto incrementing run number for the workflow run.
      */
     private int $run_number;
+    /**
+     * Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
+     */
+    private ?int $run_attempt = null;
     private string $event;
     private ?string $status = null;
     private ?string $conclusion = null;
@@ -51,6 +55,10 @@ final class WorkflowRun
     private array $pull_requests = array();
     private string $created_at;
     private string $updated_at;
+    /**
+     * The start time of the latest run. Resets on re-run.
+     */
+    private ?string $run_started_at = null;
     /**
      * The URL to the jobs for the workflow run.
      */
@@ -76,13 +84,18 @@ final class WorkflowRun
      */
     private string $rerun_url;
     /**
+     * The URL to the previous attempted run of this workflow, if one exists.
+     */
+    private ?string $previous_attempt_url = null;
+    /**
      * The URL to the workflow.
      */
     private string $workflow_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit::class)
+     * Simple Commit
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleCommit::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit $head_commit = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleCommit $head_commit = null;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
@@ -144,6 +157,13 @@ final class WorkflowRun
     {
         return $this->run_number;
     }
+    /**
+     * Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
+     */
+    public function run_attempt() : ?int
+    {
+        return $this->run_attempt;
+    }
     public function event() : string
     {
         return $this->event;
@@ -190,6 +210,13 @@ final class WorkflowRun
         return $this->updated_at;
     }
     /**
+     * The start time of the latest run. Resets on re-run.
+     */
+    public function run_started_at() : ?string
+    {
+        return $this->run_started_at;
+    }
+    /**
      * The URL to the jobs for the workflow run.
      */
     public function jobs_url() : string
@@ -232,13 +259,23 @@ final class WorkflowRun
         return $this->rerun_url;
     }
     /**
+     * The URL to the previous attempted run of this workflow, if one exists.
+     */
+    public function previous_attempt_url() : ?string
+    {
+        return $this->previous_attempt_url;
+    }
+    /**
      * The URL to the workflow.
      */
     public function workflow_url() : string
     {
         return $this->workflow_url;
     }
-    public function head_commit() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit
+    /**
+     * Simple Commit
+     */
+    public function head_commit() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleCommit
     {
         return $this->head_commit;
     }

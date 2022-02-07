@@ -31,8 +31,8 @@ final class WorkflowRun
     private string $node_id;
     private string $name;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\WorkflowRun\PullRequests>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\WorkflowRun\PullRequests::class)
      */
     private array $pull_requests = array();
     /**
@@ -119,7 +119,7 @@ final class WorkflowRun
         return $this->name;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\PullRequest>
+     * @return array<\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\WorkflowRun\PullRequests>
      */
     public function pull_requests() : array
     {

@@ -19,6 +19,14 @@ final class Page
      */
     private ?string $cname = null;
     /**
+     * The state if the domain is verified
+     */
+    private ?string $protected_domain_state = null;
+    /**
+     * The timestamp when a pending domain becomes unverified.
+     */
+    private ?string $pending_domain_unverified_at = null;
+    /**
      * Whether the Page has a custom 404 page.
      */
     private bool $custom_404;
@@ -62,6 +70,20 @@ final class Page
     public function cname() : ?string
     {
         return $this->cname;
+    }
+    /**
+     * The state if the domain is verified
+     */
+    public function protected_domain_state() : ?string
+    {
+        return $this->protected_domain_state;
+    }
+    /**
+     * The timestamp when a pending domain becomes unverified.
+     */
+    public function pending_domain_unverified_at() : ?string
+    {
+        return $this->pending_domain_unverified_at;
     }
     /**
      * Whether the Page has a custom 404 page.

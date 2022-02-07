@@ -8,9 +8,9 @@ final class Published
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * The [release](https://docs.github.com/en/rest/reference/repos/#get-a-release) object.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Release::class)
      */
-    private array $release = array();
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Release $release;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Repository::class)
@@ -33,10 +33,7 @@ final class Published
     {
         return $this->action;
     }
-    /**
-     * The [release](https://docs.github.com/en/rest/reference/repos/#get-a-release) object.
-     */
-    public function release() : array
+    public function release() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Release
     {
         return $this->release;
     }

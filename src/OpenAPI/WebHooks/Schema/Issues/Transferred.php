@@ -7,7 +7,9 @@ final class Transferred
     public const SCHEMA_TITLE = 'issues transferred event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
+    private array $changes = array();
     /**
+     * The [issue](https://docs.github.com/en/rest/reference/issues) itself.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue::class)
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue $issue;
@@ -33,6 +35,13 @@ final class Transferred
     {
         return $this->action;
     }
+    public function changes() : array
+    {
+        return $this->changes;
+    }
+    /**
+     * The [issue](https://docs.github.com/en/rest/reference/issues) itself.
+     */
     public function issue() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue
     {
         return $this->issue;

@@ -7,6 +7,7 @@ final class Added
     public const SCHEMA_TITLE = 'member added event';
     public const SCHEMA_DESCRIPTION = 'Activity related to repository collaborators. The type of activity is specified in the action property.';
     private string $action;
+    private array $changes = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
@@ -28,6 +29,10 @@ final class Added
     public function action() : string
     {
         return $this->action;
+    }
+    public function changes() : array
+    {
+        return $this->changes;
     }
     public function member() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User
     {

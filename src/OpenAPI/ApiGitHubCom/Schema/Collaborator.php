@@ -27,6 +27,7 @@ final class Collaborator
     private string $type;
     private bool $site_admin;
     private array $permissions = array();
+    private string $role_name;
     public function login() : string
     {
         return $this->login;
@@ -110,5 +111,9 @@ final class Collaborator
     public function permissions() : array
     {
         return $this->permissions;
+    }
+    public function role_name() : string
+    {
+        return $this->role_name;
     }
 }

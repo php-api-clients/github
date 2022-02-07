@@ -11,7 +11,7 @@ final class Deleted
      * The membership between the user and the organization. Not present when the action is `member_invited`.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership $membership;
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership $membership = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User::class)
      */
@@ -32,7 +32,7 @@ final class Deleted
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
      */
-    public function membership() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership
+    public function membership() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Membership
     {
         return $this->membership;
     }

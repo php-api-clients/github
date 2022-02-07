@@ -8,7 +8,11 @@ final class BranchProtection
     public const SCHEMA_DESCRIPTION = 'Branch Protection';
     private string $url;
     private bool $enabled;
-    private array $required_status_checks = array();
+    /**
+     * Protected Branch Required Status Check
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck $required_status_checks;
     /**
      * Protected Branch Admin Enforced
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchAdminEnforced::class)
@@ -39,7 +43,10 @@ final class BranchProtection
     {
         return $this->enabled;
     }
-    public function required_status_checks() : array
+    /**
+     * Protected Branch Required Status Check
+     */
+    public function required_status_checks() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck
     {
         return $this->required_status_checks;
     }

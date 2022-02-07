@@ -11,9 +11,9 @@ final class GetAuditLog
     public string $phrase;
     /**The event types to include:
     
-    - `web` - returns web (non-Git) events
-    - `git` - returns Git events
-    - `all` - returns both web and Git events
+    - `web` - returns web (non-Git) events.
+    - `git` - returns Git events.
+    - `all` - returns both web and Git events.
     
     The default is `web`.**/
     public string $include;
@@ -27,13 +27,11 @@ final class GetAuditLog
     public string $order;
     /**Results per page (max 100)**/
     public int $per_page;
-    /**Page number of the results to fetch.**/
-    public int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $phrase, $include, $after, $before, $order, int $per_page = 30, int $page = 1)
+    function __construct($org, $phrase, $include, $after, $before, $order, int $per_page = 30)
     {
         $this->org = $org;
         $this->phrase = $phrase;
@@ -42,11 +40,10 @@ final class GetAuditLog
         $this->before = $before;
         $this->order = $order;
         $this->per_page = $per_page;
-        $this->page = $page;
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{phrase}', '{include}', '{after}', '{before}', '{order}', '{per_page}', '{page}'), array($this->org, $this->phrase, $this->include, $this->after, $this->before, $this->order, $this->per_page, $this->page), '/orgs/{org}/audit-log?phrase={phrase}&include={include}&after={after}&before={before}&order={order}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{phrase}', '{include}', '{after}', '{before}', '{order}', '{per_page}'), array($this->org, $this->phrase, $this->include, $this->after, $this->before, $this->order, $this->per_page), '/orgs/{org}/audit-log?phrase={phrase}&include={include}&after={after}&before={before}&order={order}&per_page={per_page}'));
     }
     function validateResponse()
     {

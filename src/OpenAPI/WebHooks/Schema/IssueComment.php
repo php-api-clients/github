@@ -31,6 +31,10 @@ final class IssueComment
      * Contents of the issue comment
      */
     private string $body;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions $reactions;
     private $performed_via_github_app;
     /**
      * URL for the issue comment
@@ -83,6 +87,10 @@ final class IssueComment
     public function body() : string
     {
         return $this->body;
+    }
+    public function reactions() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions
+    {
+        return $this->reactions;
     }
     public function performed_via_github_app()
     {

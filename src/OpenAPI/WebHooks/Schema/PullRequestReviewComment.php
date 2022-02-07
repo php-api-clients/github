@@ -70,6 +70,10 @@ final class PullRequestReviewComment
     private string $author_association;
     private array $_links = array();
     /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions $reactions;
+    /**
      * The first line of the range for a multi-line comment.
      */
     private $start_line;
@@ -210,6 +214,10 @@ final class PullRequestReviewComment
     public function _links() : array
     {
         return $this->_links;
+    }
+    public function reactions() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Reactions
+    {
+        return $this->reactions;
     }
     /**
      * The first line of the range for a multi-line comment.

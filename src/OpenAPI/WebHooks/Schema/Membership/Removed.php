@@ -20,10 +20,9 @@ final class Removed
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\User $sender;
     /**
-     * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team::class)
+     * The [team](https://docs.github.com/en/rest/reference/teams) for the membership.
      */
-    private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team $team;
+    private $team;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
@@ -53,9 +52,9 @@ final class Removed
         return $this->sender;
     }
     /**
-     * Groups of organization members that gives permissions on specified repositories.
+     * The [team](https://docs.github.com/en/rest/reference/teams) for the membership.
      */
-    public function team() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Team
+    public function team()
     {
         return $this->team;
     }

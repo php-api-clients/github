@@ -29,6 +29,11 @@ final class Edited
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization::class)
      */
     private \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization $organization;
+    /**
+     * Installation
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite $installation = null;
     public function action() : string
     {
         return $this->action;
@@ -61,5 +66,12 @@ final class Edited
     public function organization() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Organization
     {
         return $this->organization;
+    }
+    /**
+     * Installation
+     */
+    public function installation() : ?\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\InstallationLite
+    {
+        return $this->installation;
     }
 }

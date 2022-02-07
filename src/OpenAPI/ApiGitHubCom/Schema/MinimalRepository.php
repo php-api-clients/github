@@ -14,7 +14,7 @@ final class MinimalRepository
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner = null;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     private bool $private;
     private string $html_url;
     private ?string $description = null;
@@ -83,10 +83,12 @@ final class MinimalRepository
     private ?string $created_at = null;
     private ?string $updated_at = null;
     private array $permissions = array();
+    private ?string $role_name = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
+     * A git repository
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $template_repository = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository $template_repository = null;
     private ?string $temp_clone_token = null;
     private ?bool $delete_branch_on_merge = null;
     private ?int $subscribers_count = null;
@@ -100,6 +102,7 @@ final class MinimalRepository
     private ?int $forks = null;
     private ?int $open_issues = null;
     private ?int $watchers = null;
+    private ?bool $allow_forking = null;
     public function id() : int
     {
         return $this->id;
@@ -119,7 +122,7 @@ final class MinimalRepository
     /**
      * Simple User
      */
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }
@@ -395,7 +398,14 @@ final class MinimalRepository
     {
         return $this->permissions;
     }
-    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
+    public function role_name() : ?string
+    {
+        return $this->role_name;
+    }
+    /**
+     * A git repository
+     */
+    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository
     {
         return $this->template_repository;
     }
@@ -437,5 +447,9 @@ final class MinimalRepository
     public function watchers() : ?int
     {
         return $this->watchers;
+    }
+    public function allow_forking() : ?bool
+    {
+        return $this->allow_forking;
     }
 }

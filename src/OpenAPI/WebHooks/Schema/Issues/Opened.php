@@ -7,6 +7,7 @@ final class Opened
     public const SCHEMA_TITLE = 'issues opened event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
+    private array $changes = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue::class)
      */
@@ -32,6 +33,10 @@ final class Opened
     public function action() : string
     {
         return $this->action;
+    }
+    public function changes() : array
+    {
+        return $this->changes;
     }
     public function issue() : \ApiClients\Client\Github\OpenAPI\WebHooks\Schema\Issue
     {
