@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -17,12 +19,10 @@ use Rx\React\Promise;
  */
 final class BranchesHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $branchArray = [
-            'foo' => 'bar',
-        ];
-        $branch = $this->prophesize(Branch::class)->reveal();
+        $branchArray = ['foo' => 'bar'];
+        $branch      = $this->prophesize(Branch::class)->reveal();
 
         $command = new BranchesCommand('api-clients/github');
 

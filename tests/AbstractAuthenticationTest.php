@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Client\Github;
 
@@ -9,7 +11,7 @@ abstract class AbstractAuthenticationTest extends TestCase
 {
     abstract public function getAuthentication(): AuthenticationInterface;
 
-    public function testOptionsReturnType()
+    public function testOptionsReturnType(): void
     {
         self::assertInternalType('array', $this->getAuthentication()->getOptions());
     }

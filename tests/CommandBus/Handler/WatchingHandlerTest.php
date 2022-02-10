@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler;
 
@@ -8,17 +10,18 @@ use ApiClients\Client\Github\Resource\RepositoryInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Resource\ResourceInterface;
-use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Rx\Observable;
 use Rx\React\Promise;
+
+use function ApiClients\Tools\Rx\unwrapObservableFromPromise;
 
 /**
  * @internal
  */
 final class WatchingHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
         $resource = $this->prophesize(ResourceInterface::class)->reveal();
 
@@ -34,7 +37,7 @@ final class WatchingHandlerTest extends TestCase
         )->shouldBeCalled()->willReturn($resource);
 
         $handler = new WatchingHandler($service->reveal(), $hydrator->reveal());
-        $result = $this->await(
+        $result  = $this->await(
             Promise::fromObservable(
                 unwrapObservableFromPromise(
                     $handler->handle(new WatchingCommand())

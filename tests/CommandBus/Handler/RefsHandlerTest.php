@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -41,17 +43,12 @@ final class RefsHandlerTest extends TestCase
     }
 
     /**
-     * @param RefsCommand $command
-     * @param string      $path
-     *
      * @dataProvider provideCommands
      */
-    public function testCommand(RefsCommand $command, string $path)
+    public function testCommand(RefsCommand $command, string $path): void
     {
-        $branchArray = [
-            'foo' => 'bar',
-        ];
-        $branch = $this->prophesize(Branch::class)->reveal();
+        $branchArray = ['foo' => 'bar'];
+        $branch      = $this->prophesize(Branch::class)->reveal();
 
         $iteratePagesService = $this->prophesize(IteratePagesService::class);
         $iteratePagesService->iterate($path)->shouldBeCalled()->willReturn(Observable::fromArray([[$branchArray]]));

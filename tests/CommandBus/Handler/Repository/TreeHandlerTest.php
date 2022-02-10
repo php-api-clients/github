@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -13,8 +15,10 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Prophecy\Argument;
 use Psr\Http\Message\RequestInterface;
 use React\EventLoop\Factory;
-use function React\Promise\Stream\buffer;
 use RingCentral\Psr7\Response;
+
+use function json_decode;
+use function React\Promise\Stream\buffer;
 use function WyriHaximus\React\timedPromise;
 
 /**
@@ -25,16 +29,16 @@ final class TreeHandlerTest extends TestCase
     public function provideCommands()
     {
         yield [
-            function () {
-                $loop = Factory::create();
-                $blob = new NamedBlob(
+            static function () {
+                $loop         = Factory::create();
+                $blob         = new NamedBlob(
                     'file.name',
                     '100644',
                     'blob',
                     'sha512',
                     null
                 );
-                $command = new TreeCommand(
+                $command      = new TreeCommand(
                     'login/repo',
                     'sha1234567890',
                     $blob
@@ -59,20 +63,18 @@ final class TreeHandlerTest extends TestCase
     /**
      * @dataProvider provideCommands
      */
-    public function testCommand(callable $callable)
+    public function testCommand(callable $callable): void
     {
-        list($loop, $command, $expectedjson) = $callable();
-        $json = [
-            'foo' => 'bar',
-        ];
-        $stream = null;
-        $jsonStream = new JsonStream($json);
+        [$loop, $command, $expectedjson] = $callable();
+        $json                            = ['foo' => 'bar'];
+        $stream                          = null;
+        $jsonStream                      = new JsonStream($json);
 
         $tree = $this->prophesize(TreeInterface::class)->reveal();
 
         $requestService = $this->prophesize(RequestService::class);
-        $requestService->request(Argument::that(function (RequestInterface $request) use (&$stream) {
-            buffer($request->getBody())->done(function ($json) use (&$stream) {
+        $requestService->request(Argument::that(static function (RequestInterface $request) use (&$stream) {
+            buffer($request->getBody())->done(static function ($json) use (&$stream): void {
                 $stream = $json;
             });
 
@@ -90,6 +92,6 @@ final class TreeHandlerTest extends TestCase
 
         $result = $this->await($handler->handle($command), $loop);
         self::assertSame($tree, $result);
-        self::assertSame($expectedjson, \json_decode($stream, true));
+        self::assertSame($expectedjson, json_decode($stream, true));
     }
 }

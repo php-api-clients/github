@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -9,27 +11,28 @@ use ApiClients\Foundation\Hydrator\Hydrator;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
  */
 final class AddLabelHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $resource = $this->prophesize(LabelInterface::class)->reveal();
+        $resource   = $this->prophesize(LabelInterface::class)->reveal();
         $repository = 'repository';
-        $name = 'repository';
-        $colour = 'repository';
-        $label = [
+        $name       = 'repository';
+        $colour     = 'repository';
+        $label      = [
             'name' => $name,
             'colour' => $colour,
         ];
 
-        $request = new Request(
+        $request  = new Request(
             'POST',
             'repos/' . $repository . '/labels',
             [],

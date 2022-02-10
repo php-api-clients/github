@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\WebHook;
 
@@ -6,20 +8,21 @@ use ApiClients\Client\Github\CommandBus\Command\WebHook\PingCommand;
 use ApiClients\Client\Github\CommandBus\Handler\WebHook\PingHandler;
 use ApiClients\Foundation\Transport\Service\RequestService;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function React\Promise\resolve;
 use RingCentral\Psr7\Request;
 use RingCentral\Psr7\Response;
+
+use function React\Promise\resolve;
 
 /**
  * @internal
  */
 final class PingHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
         $url = 'url';
 
-        $request = new Request('POST', $url);
+        $request  = new Request('POST', $url);
         $response = new Response(204);
 
         $service = $this->prophesize(RequestService::class);
@@ -31,11 +34,11 @@ final class PingHandlerTest extends TestCase
         ))));
     }
 
-    public function testCommandError()
+    public function testCommandError(): void
     {
         $url = 'url';
 
-        $request = new Request('POST', $url);
+        $request  = new Request('POST', $url);
         $response = new Response(500);
 
         $service = $this->prophesize(RequestService::class);

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository;
 
@@ -16,12 +18,10 @@ use Rx\React\Promise;
  */
 final class LabelsHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $labelArray = [
-            'foo' => 'bar',
-        ];
-        $label = $this->prophesize(LabelInterface::class)->reveal();
+        $labelArray = ['foo' => 'bar'];
+        $label      = $this->prophesize(LabelInterface::class)->reveal();
 
         $command = new LabelsCommand('api-clients/github');
 

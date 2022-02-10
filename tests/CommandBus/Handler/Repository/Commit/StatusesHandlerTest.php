@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ApiClients\Tests\Github\CommandBus\Handler\Repository\Commit;
 
@@ -18,12 +20,10 @@ use Rx\React\Promise;
  */
 final class StatusesHandlerTest extends TestCase
 {
-    public function testCommand()
+    public function testCommand(): void
     {
-        $branchArray = [
-            'foo' => 'bar',
-        ];
-        $branch = $this->prophesize(Branch::class)->reveal();
+        $branchArray = ['foo' => 'bar'];
+        $branch      = $this->prophesize(Branch::class)->reveal();
 
         $commit = $this->prophesize(Commit::class);
         $commit->url()->shouldBeCalled()->willReturn('repos/api-clients/github/commits/123');
