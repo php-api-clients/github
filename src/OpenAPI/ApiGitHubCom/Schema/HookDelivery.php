@@ -25,7 +25,7 @@ final class HookDelivery
     /**
      * Time spent delivering.
      */
-    private number $duration;
+    private int $duration;
     /**
      * Description of the status of the attempted delivery
      */
@@ -87,7 +87,7 @@ final class HookDelivery
     /**
      * Time spent delivering.
      */
-    public function duration() : number
+    public function duration() : int
     {
         return $this->duration;
     }

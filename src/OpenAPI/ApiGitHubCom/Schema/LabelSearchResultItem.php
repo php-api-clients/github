@@ -13,7 +13,7 @@ final class LabelSearchResultItem
     private string $color;
     private bool $default;
     private ?string $description = null;
-    private number $score;
+    private int $score;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches::class)
@@ -47,7 +47,7 @@ final class LabelSearchResultItem
     {
         return $this->description;
     }
-    public function score() : number
+    public function score() : int
     {
         return $this->score;
     }

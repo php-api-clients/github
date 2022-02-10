@@ -31,7 +31,7 @@ final class CommitSearchResultItem
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
-    private number $score;
+    private int $score;
     private string $node_id;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\TextMatches>
@@ -86,7 +86,7 @@ final class CommitSearchResultItem
     {
         return $this->repository;
     }
-    public function score() : number
+    public function score() : int
     {
         return $this->score;
     }

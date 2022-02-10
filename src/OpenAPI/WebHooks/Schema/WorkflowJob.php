@@ -7,7 +7,7 @@ final class WorkflowJob
     public const SCHEMA_TITLE = 'Workflow Job';
     public const SCHEMA_DESCRIPTION = '';
     private int $id;
-    private number $run_id;
+    private int $run_id;
     private string $head_sha;
     private string $node_id;
     private string $name;
@@ -33,7 +33,7 @@ final class WorkflowJob
     {
         return $this->id;
     }
-    public function run_id() : number
+    public function run_id() : int
     {
         return $this->run_id;
     }

@@ -16,7 +16,7 @@ final class TopicSearchResultItem
     private string $updated_at;
     private bool $featured;
     private bool $curated;
-    private number $score;
+    private int $score;
     private ?int $repository_count = null;
     private ?string $logo_url = null;
     /**
@@ -74,7 +74,7 @@ final class TopicSearchResultItem
     {
         return $this->curated;
     }
-    public function score() : number
+    public function score() : int
     {
         return $this->score;
     }

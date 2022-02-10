@@ -6,7 +6,7 @@ final class RunnerGroupsOrg
 {
     public const SCHEMA_TITLE = 'runner-groups-org';
     public const SCHEMA_DESCRIPTION = '';
-    private number $id;
+    private int $id;
     private string $name;
     private string $visibility;
     private bool $default;
@@ -18,7 +18,7 @@ final class RunnerGroupsOrg
     private bool $inherited;
     private ?bool $inherited_allows_public_repositories = null;
     private bool $allows_public_repositories;
-    public function id() : number
+    public function id() : int
     {
         return $this->id;
     }

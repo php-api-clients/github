@@ -19,7 +19,7 @@ final class UserSearchResultItem
     private string $repos_url;
     private string $received_events_url;
     private string $type;
-    private number $score;
+    private int $score;
     private string $following_url;
     private string $gists_url;
     private string $starred_url;
@@ -96,7 +96,7 @@ final class UserSearchResultItem
     {
         return $this->type;
     }
-    public function score() : number
+    public function score() : int
     {
         return $this->score;
     }

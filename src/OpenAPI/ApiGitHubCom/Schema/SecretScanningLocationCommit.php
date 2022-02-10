@@ -13,19 +13,19 @@ final class SecretScanningLocationCommit
     /**
      * Line number at which the secret starts in the file
      */
-    private number $start_line;
+    private int $start_line;
     /**
      * Line number at which the secret ends in the file
      */
-    private number $end_line;
+    private int $end_line;
     /**
      * The column at which the secret starts within the start line when the file is interpreted as 8BIT ASCII
      */
-    private number $start_column;
+    private int $start_column;
     /**
      * The column at which the secret ends within the end line when the file is interpreted as 8BIT ASCII
      */
-    private number $end_column;
+    private int $end_column;
     /**
      * SHA-1 hash ID of the associated blob
      */
@@ -52,28 +52,28 @@ final class SecretScanningLocationCommit
     /**
      * Line number at which the secret starts in the file
      */
-    public function start_line() : number
+    public function start_line() : int
     {
         return $this->start_line;
     }
     /**
      * Line number at which the secret ends in the file
      */
-    public function end_line() : number
+    public function end_line() : int
     {
         return $this->end_line;
     }
     /**
      * The column at which the secret starts within the start line when the file is interpreted as 8BIT ASCII
      */
-    public function start_column() : number
+    public function start_column() : int
     {
         return $this->start_column;
     }
     /**
      * The column at which the secret ends within the end line when the file is interpreted as 8BIT ASCII
      */
-    public function end_column() : number
+    public function end_column() : int
     {
         return $this->end_column;
     }

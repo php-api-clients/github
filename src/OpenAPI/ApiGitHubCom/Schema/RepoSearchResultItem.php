@@ -32,7 +32,7 @@ final class RepoSearchResultItem
     private int $open_issues_count;
     private ?string $master_branch = null;
     private string $default_branch;
-    private number $score;
+    private int $score;
     private string $forks_url;
     private string $keys_url;
     private string $collaborators_url;
@@ -202,7 +202,7 @@ final class RepoSearchResultItem
     {
         return $this->default_branch;
     }
-    public function score() : number
+    public function score() : int
     {
         return $this->score;
     }

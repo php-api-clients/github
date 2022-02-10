@@ -7,19 +7,19 @@ final class PullRequests
     public const SCHEMA_TITLE = 'workflow-run::pull_requests';
     public const SCHEMA_DESCRIPTION = '';
     private string $url;
-    private number $id;
-    private number $number;
+    private int $id;
+    private int $number;
     private array $head = array();
     private array $base = array();
     public function url() : string
     {
         return $this->url;
     }
-    public function id() : number
+    public function id() : int
     {
         return $this->id;
     }
-    public function number() : number
+    public function number() : int
     {
         return $this->number;
     }

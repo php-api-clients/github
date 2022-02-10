@@ -17,7 +17,7 @@ final class CodeSearchResultItem
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
-    private number $score;
+    private int $score;
     private ?int $file_size = null;
     private ?string $language = null;
     private ?string $last_modified_at = null;
@@ -58,7 +58,7 @@ final class CodeSearchResultItem
     {
         return $this->repository;
     }
-    public function score() : number
+    public function score() : int
     {
         return $this->score;
     }

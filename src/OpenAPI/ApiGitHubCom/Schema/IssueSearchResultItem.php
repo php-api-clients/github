@@ -55,7 +55,7 @@ final class IssueSearchResultItem
     private array $text_matches = array();
     private array $pull_request = array();
     private ?string $body = null;
-    private number $score;
+    private int $score;
     /**
      * How the author is associated with the repository.
      */
@@ -196,7 +196,7 @@ final class IssueSearchResultItem
     {
         return $this->body;
     }
-    public function score() : number
+    public function score() : int
     {
         return $this->score;
     }
