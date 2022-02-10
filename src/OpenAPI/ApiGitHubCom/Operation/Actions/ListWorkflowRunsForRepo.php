@@ -21,7 +21,7 @@ final class ListWorkflowRunsForRepo
     public int $per_page;
     /**Page number of the results to fetch.**/
     public int $page;
-    /****/
+    /**Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."**/
     public string $created;
     /**If `true` pull requests are omitted from the response (empty array).**/
     public bool $exclude_pull_requests;
