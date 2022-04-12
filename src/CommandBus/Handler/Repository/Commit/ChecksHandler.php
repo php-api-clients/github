@@ -3,22 +3,20 @@
 namespace ApiClients\Client\Github\CommandBus\Handler\Repository\Commit;
 
 use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\ChecksCommand;
-use ApiClients\Client\Github\CommandBus\Command\Repository\Commit\StatusesCommand;
 use ApiClients\Client\Github\Resource\Repository\Commit\CheckInterface;
-use ApiClients\Client\Github\Resource\Repository\Commit\StatusInterface;
 use ApiClients\Client\Github\Service\IteratePagesService;
 use ApiClients\Foundation\Hydrator\Hydrator;
-use ApiClients\Tools\Services\Client\FetchAndIterateService;
 use function ApiClients\Tools\Rx\observableFromArray;
 use React\Promise\PromiseInterface;
 use function React\Promise\resolve;
+use function igorw\get_in;
 
 final class ChecksHandler
 {
     /**
-     * @var FetchAndIterateService
+     * @var IteratePagesService
      */
-    private $fetchAndIterateService;
+    private $iteratePagesService;
 
     /**
      * @var Hydrator
@@ -26,12 +24,12 @@ final class ChecksHandler
     private $hydrator;
 
     /**
-     * @param FetchAndIterateService $fetchAndIterateService
+     * @param IteratePagesService $iteratePagesService
      * @param Hydrator            $hydrator
      */
-    public function __construct(FetchAndIterateService $fetchAndIterateService, Hydrator $hydrator)
+    public function __construct(IteratePagesService $iteratePagesService, Hydrator $hydrator)
     {
-        $this->fetchAndIterateService = $fetchAndIterateService;
+        $this->iteratePagesService = $iteratePagesService;
         $this->hydrator = $hydrator;
     }
 
@@ -42,11 +40,12 @@ final class ChecksHandler
     public function handle(ChecksCommand $command): PromiseInterface
     {
         return resolve(
-            $this->fetchAndIterateService->iterate(
-                $command->getCommit()->url() . '/check-runs',
-                'check_runs',
-                CheckInterface::HYDRATE_CLASS
-            )
+            $this->iteratePagesService->iterate($command->getCommit()->url() . '/check-runs',)
+                ->flatMap(function ($checkRuns) {
+                    return observableFromArray(get_in($checkRuns, ['check_runs'], []));
+                })->map(function ($checkRun) {
+                    return $this->hydrator->hydrate(CheckInterface::HYDRATE_CLASS, $checkRun);
+                })
         );
     }
 }
