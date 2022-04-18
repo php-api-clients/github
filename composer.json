@@ -51,6 +51,10 @@
     "sort-packages": true,
     "platform": {
       "php": "7.3.3"
+    },
+    "allow-plugins": {
+      "ocramius/package-versions": true,
+      "localheinz/composer-normalize": true
     }
   },
   "extra": {
