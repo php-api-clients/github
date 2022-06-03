@@ -19,6 +19,7 @@ final class Subkeys
     private string $created_at;
     private ?string $expires_at = null;
     private ?string $raw_key = null;
+    private bool $revoked;
     public function id() : int
     {
         return $this->id;
@@ -70,5 +71,9 @@ final class Subkeys
     public function raw_key() : ?string
     {
         return $this->raw_key;
+    }
+    public function revoked() : bool
+    {
+        return $this->revoked;
     }
 }

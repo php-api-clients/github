@@ -20,6 +20,7 @@ final class Migration
     private bool $exclude_attachments;
     private bool $exclude_releases;
     private bool $exclude_owner_projects;
+    private bool $org_metadata_only;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -73,6 +74,10 @@ final class Migration
     public function exclude_owner_projects() : bool
     {
         return $this->exclude_owner_projects;
+    }
+    public function org_metadata_only() : bool
+    {
+        return $this->org_metadata_only;
     }
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>

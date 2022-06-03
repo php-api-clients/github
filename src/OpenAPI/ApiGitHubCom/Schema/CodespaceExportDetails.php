@@ -31,6 +31,10 @@ final class CodespaceExportDetails
      */
     private string $export_url;
     /**
+     * Web url for the exported branch
+     */
+    private ?string $html_url = null;
+    /**
      * State of the latest export
      */
     public function state() : ?string
@@ -71,5 +75,12 @@ final class CodespaceExportDetails
     public function export_url() : string
     {
         return $this->export_url;
+    }
+    /**
+     * Web url for the exported branch
+     */
+    public function html_url() : ?string
+    {
+        return $this->html_url;
     }
 }

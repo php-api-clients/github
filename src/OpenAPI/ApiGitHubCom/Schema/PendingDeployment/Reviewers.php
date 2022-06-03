@@ -7,7 +7,7 @@ final class Reviewers
     public const SCHEMA_TITLE = 'pending-deployment::reviewers';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * The type of reviewer. Must be one of: `User` or `Team`
+     * The type of reviewer.
      */
     private string $type;
     /**
@@ -15,7 +15,7 @@ final class Reviewers
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $reviewer;
     /**
-     * The type of reviewer. Must be one of: `User` or `Team`
+     * The type of reviewer.
      */
     public function type() : string
     {

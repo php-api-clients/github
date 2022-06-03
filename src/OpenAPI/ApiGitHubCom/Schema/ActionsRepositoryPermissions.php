@@ -11,11 +11,11 @@ final class ActionsRepositoryPermissions
      */
     private bool $enabled;
     /**
-     * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
+     * The permissions policy that controls the actions and reusable workflows that are allowed to run.
      */
     private ?string $allowed_actions = null;
     /**
-     * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
+     * The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
      */
     private ?string $selected_actions_url = null;
     /**
@@ -26,14 +26,14 @@ final class ActionsRepositoryPermissions
         return $this->enabled;
     }
     /**
-     * The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
+     * The permissions policy that controls the actions and reusable workflows that are allowed to run.
      */
     public function allowed_actions() : ?string
     {
         return $this->allowed_actions;
     }
     /**
-     * The API URL to use to get or set the actions that are allowed to run, when `allowed_actions` is set to `selected`.
+     * The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
      */
     public function selected_actions_url() : ?string
     {

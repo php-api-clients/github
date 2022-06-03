@@ -25,6 +25,7 @@ final class Artifact
     private ?string $created_at = null;
     private ?string $expires_at = null;
     private ?string $updated_at = null;
+    private array $workflow_run = array();
     public function id() : int
     {
         return $this->id;
@@ -73,5 +74,9 @@ final class Artifact
     public function updated_at() : ?string
     {
         return $this->updated_at;
+    }
+    public function workflow_run() : array
+    {
+        return $this->workflow_run;
     }
 }

@@ -48,9 +48,13 @@ final class CodeScanningAlert
      */
     private ?string $dismissed_at = null;
     /**
-     * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+     * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
     private ?string $dismissed_reason = null;
+    /**
+     * The dismissal comment associated with the dismissal of the alert.
+     */
+    private ?string $dismissed_comment = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule::class)
      */
@@ -134,11 +138,18 @@ final class CodeScanningAlert
         return $this->dismissed_at;
     }
     /**
-     * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+     * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
     public function dismissed_reason() : ?string
     {
         return $this->dismissed_reason;
+    }
+    /**
+     * The dismissal comment associated with the dismissal of the alert.
+     */
+    public function dismissed_comment() : ?string
+    {
+        return $this->dismissed_comment;
     }
     public function rule() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule
     {

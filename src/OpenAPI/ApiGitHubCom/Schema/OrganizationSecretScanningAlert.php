@@ -31,7 +31,7 @@ final class OrganizationSecretScanningAlert
      */
     private string $state;
     /**
-     * **Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
+     * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
     private ?string $resolution = null;
     /**
@@ -47,6 +47,11 @@ final class OrganizationSecretScanningAlert
      * The type of secret that secret scanning detected.
      */
     private string $secret_type;
+    /**
+    * User-friendly name for the detected secret, matching the `secret_type`.
+    For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
+    */
+    private string $secret_type_display_name;
     /**
      * The secret that was detected.
      */
@@ -99,7 +104,7 @@ final class OrganizationSecretScanningAlert
         return $this->state;
     }
     /**
-     * **Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
+     * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
     public function resolution() : ?string
     {
@@ -125,6 +130,14 @@ final class OrganizationSecretScanningAlert
     public function secret_type() : string
     {
         return $this->secret_type;
+    }
+    /**
+    * User-friendly name for the detected secret, matching the `secret_type`.
+    For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
+    */
+    public function secret_type_display_name() : string
+    {
+        return $this->secret_type_display_name;
     }
     /**
      * The secret that was detected.

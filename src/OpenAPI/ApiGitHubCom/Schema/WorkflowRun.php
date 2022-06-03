@@ -25,9 +25,13 @@ final class WorkflowRun
     private ?string $check_suite_node_id = null;
     private ?string $head_branch = null;
     /**
-     * The SHA of the head commit that points to the version of the worflow being run.
+     * The SHA of the head commit that points to the version of the workflow being run.
      */
     private string $head_sha;
+    /**
+     * The full path of the workflow
+     */
+    private string $path;
     /**
      * The auto incrementing run number for the workflow run.
      */
@@ -36,6 +40,11 @@ final class WorkflowRun
      * Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
      */
     private ?int $run_attempt = null;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow::class)
+     */
+    private array $referenced_workflows = array();
     private string $event;
     private ?string $status = null;
     private ?string $conclusion = null;
@@ -55,6 +64,16 @@ final class WorkflowRun
     private array $pull_requests = array();
     private string $created_at;
     private string $updated_at;
+    /**
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor = null;
+    /**
+     * Simple User
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $triggering_actor = null;
     /**
      * The start time of the latest run. Resets on re-run.
      */
@@ -144,11 +163,18 @@ final class WorkflowRun
         return $this->head_branch;
     }
     /**
-     * The SHA of the head commit that points to the version of the worflow being run.
+     * The SHA of the head commit that points to the version of the workflow being run.
      */
     public function head_sha() : string
     {
         return $this->head_sha;
+    }
+    /**
+     * The full path of the workflow
+     */
+    public function path() : string
+    {
+        return $this->path;
     }
     /**
      * The auto incrementing run number for the workflow run.
@@ -163,6 +189,13 @@ final class WorkflowRun
     public function run_attempt() : ?int
     {
         return $this->run_attempt;
+    }
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow>
+     */
+    public function referenced_workflows() : array
+    {
+        return $this->referenced_workflows;
     }
     public function event() : string
     {
@@ -208,6 +241,20 @@ final class WorkflowRun
     public function updated_at() : string
     {
         return $this->updated_at;
+    }
+    /**
+     * Simple User
+     */
+    public function actor() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    {
+        return $this->actor;
+    }
+    /**
+     * Simple User
+     */
+    public function triggering_actor() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    {
+        return $this->triggering_actor;
     }
     /**
      * The start time of the latest run. Resets on re-run.

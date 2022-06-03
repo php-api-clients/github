@@ -35,6 +35,10 @@ final class Page
      */
     private ?string $html_url = null;
     /**
+     * The process in which the Page will be built.
+     */
+    private ?string $build_type = null;
+    /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash $source = null;
@@ -98,6 +102,13 @@ final class Page
     public function html_url() : ?string
     {
         return $this->html_url;
+    }
+    /**
+     * The process in which the Page will be built.
+     */
+    public function build_type() : ?string
+    {
+        return $this->build_type;
     }
     public function source() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash
     {

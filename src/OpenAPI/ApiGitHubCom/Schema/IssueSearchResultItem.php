@@ -34,6 +34,7 @@ final class IssueSearchResultItem
      */
     private array $labels = array();
     private string $state;
+    private ?string $state_reason = null;
     /**
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
@@ -150,6 +151,10 @@ final class IssueSearchResultItem
     public function state() : string
     {
         return $this->state;
+    }
+    public function state_reason() : ?string
+    {
+        return $this->state_reason;
     }
     /**
      * Simple User

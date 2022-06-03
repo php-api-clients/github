@@ -1,0 +1,15 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation;
+
+final class Markdown
+{
+    public function render_() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Markdown\Render_
+    {
+        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Markdown\Render_();
+    }
+    public function renderRaw_() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Markdown\RenderRaw_
+    {
+        return new \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v2_20\Operation\Markdown\RenderRaw_();
+    }
+}

@@ -4,6 +4,10 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Teams
 
 final class ExternalDashGroups
 {
+    function get($org, $team_slug) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListLinkedExternalIdpGroupsToTeamForOrg
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListLinkedExternalIdpGroupsToTeamForOrg($org, $team_slug);
+    }
     function delete($org, $team_slug) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\UnlinkExternalIdpGroupFromTeamForOrg
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\UnlinkExternalIdpGroupFromTeamForOrg($org, $team_slug);

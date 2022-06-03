@@ -12,6 +12,10 @@ final class Codespace
      */
     private string $name;
     /**
+     * Display name for this codespace.
+     */
+    private ?string $display_name = null;
+    /**
      * UUID identifying this codespace's environment.
      */
     private ?string $environment_id = null;
@@ -35,6 +39,10 @@ final class Codespace
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableCodespaceMachine::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableCodespaceMachine $machine = null;
+    /**
+     * Path to devcontainer.json from repo root used to create Codespace.
+     */
+    private ?string $devcontainer_path = null;
     /**
      * Whether the codespace was created from a prebuild.
      */
@@ -87,6 +95,18 @@ final class Codespace
     private ?string $pulls_url = null;
     private array $recent_folders = array();
     private array $runtime_constraints = array();
+    /**
+     * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
+     */
+    private ?bool $pending_operation = null;
+    /**
+     * Text to show user when codespace is disabled by a pending operation
+     */
+    private ?string $pending_operation_disabled_reason = null;
+    /**
+     * Text to show user when codespace idle timeout minutes has been overriden by an organization policy
+     */
+    private ?string $idle_timeout_notice = null;
     public function id() : int
     {
         return $this->id;
@@ -97,6 +117,13 @@ final class Codespace
     public function name() : string
     {
         return $this->name;
+    }
+    /**
+     * Display name for this codespace.
+     */
+    public function display_name() : ?string
+    {
+        return $this->display_name;
     }
     /**
      * UUID identifying this codespace's environment.
@@ -132,6 +159,13 @@ final class Codespace
     public function machine() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableCodespaceMachine
     {
         return $this->machine;
+    }
+    /**
+     * Path to devcontainer.json from repo root used to create Codespace.
+     */
+    public function devcontainer_path() : ?string
+    {
+        return $this->devcontainer_path;
     }
     /**
      * Whether the codespace was created from a prebuild.
@@ -232,5 +266,26 @@ final class Codespace
     public function runtime_constraints() : array
     {
         return $this->runtime_constraints;
+    }
+    /**
+     * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
+     */
+    public function pending_operation() : ?bool
+    {
+        return $this->pending_operation;
+    }
+    /**
+     * Text to show user when codespace is disabled by a pending operation
+     */
+    public function pending_operation_disabled_reason() : ?string
+    {
+        return $this->pending_operation_disabled_reason;
+    }
+    /**
+     * Text to show user when codespace idle timeout minutes has been overriden by an organization policy
+     */
+    public function idle_timeout_notice() : ?string
+    {
+        return $this->idle_timeout_notice;
     }
 }

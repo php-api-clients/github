@@ -9,7 +9,7 @@ final class ProtectedBranchPullRequestReview
     private ?string $url = null;
     private array $dismissal_restrictions = array();
     /**
-     * Allow specific users or teams to bypass pull request requirements. Set to `null` to disable.
+     * Allow specific users, teams, or apps to bypass pull request requirements.
      */
     private array $bypass_pull_request_allowances = array();
     private bool $dismiss_stale_reviews;
@@ -24,7 +24,7 @@ final class ProtectedBranchPullRequestReview
         return $this->dismissal_restrictions;
     }
     /**
-     * Allow specific users or teams to bypass pull request requirements. Set to `null` to disable.
+     * Allow specific users, teams, or apps to bypass pull request requirements.
      */
     public function bypass_pull_request_allowances() : array
     {

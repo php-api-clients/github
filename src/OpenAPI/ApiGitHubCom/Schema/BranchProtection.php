@@ -31,6 +31,7 @@ final class BranchProtection
     private array $required_linear_history = array();
     private array $allow_force_pushes = array();
     private array $allow_deletions = array();
+    private array $block_creations = array();
     private array $required_conversation_resolution = array();
     private string $name;
     private string $protection_url;
@@ -82,6 +83,10 @@ final class BranchProtection
     public function allow_deletions() : array
     {
         return $this->allow_deletions;
+    }
+    public function block_creations() : array
+    {
+        return $this->block_creations;
     }
     public function required_conversation_resolution() : array
     {

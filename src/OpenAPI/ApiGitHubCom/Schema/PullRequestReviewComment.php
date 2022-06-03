@@ -31,11 +31,11 @@ final class PullRequestReviewComment
      */
     private string $path;
     /**
-     * The line index in the diff to which the comment applies.
+     * The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
      */
     private int $position;
     /**
-     * The index of the original line in the diff to which the comment applies.
+     * The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
      */
     private int $original_position;
     /**
@@ -147,14 +147,14 @@ final class PullRequestReviewComment
         return $this->path;
     }
     /**
-     * The line index in the diff to which the comment applies.
+     * The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
      */
     public function position() : int
     {
         return $this->position;
     }
     /**
-     * The index of the original line in the diff to which the comment applies.
+     * The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
      */
     public function original_position() : int
     {

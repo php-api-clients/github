@@ -24,6 +24,7 @@ final class ProtectedBranch
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy $restrictions = null;
     private array $required_conversation_resolution = array();
+    private array $block_creations = array();
     public function url() : string
     {
         return $this->url;
@@ -69,5 +70,9 @@ final class ProtectedBranch
     public function required_conversation_resolution() : array
     {
         return $this->required_conversation_resolution;
+    }
+    public function block_creations() : array
+    {
+        return $this->block_creations;
     }
 }

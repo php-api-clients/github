@@ -13,6 +13,18 @@ final class RunnerGroupsEnterprise
     private ?string $selected_organizations_url = null;
     private string $runners_url;
     private bool $allows_public_repositories;
+    /**
+     * If `true`, the `restricted_to_workflows` and `selected_workflows` fields cannot be modified.
+     */
+    private ?bool $workflow_restrictions_read_only = null;
+    /**
+     * If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
+     */
+    private ?bool $restricted_to_workflows = null;
+    /**
+     * List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
+     */
+    private array $selected_workflows = array();
     public function id() : int
     {
         return $this->id;
@@ -40,5 +52,26 @@ final class RunnerGroupsEnterprise
     public function allows_public_repositories() : bool
     {
         return $this->allows_public_repositories;
+    }
+    /**
+     * If `true`, the `restricted_to_workflows` and `selected_workflows` fields cannot be modified.
+     */
+    public function workflow_restrictions_read_only() : ?bool
+    {
+        return $this->workflow_restrictions_read_only;
+    }
+    /**
+     * If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
+     */
+    public function restricted_to_workflows() : ?bool
+    {
+        return $this->restricted_to_workflows;
+    }
+    /**
+     * List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
+     */
+    public function selected_workflows() : array
+    {
+        return $this->selected_workflows;
     }
 }

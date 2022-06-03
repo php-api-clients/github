@@ -26,6 +26,10 @@ final class NullableIssue
      */
     private string $state;
     /**
+     * The reason for the current state
+     */
+    private ?string $state_reason = null;
+    /**
      * Title of the issue
      */
     private string $title;
@@ -139,6 +143,13 @@ final class NullableIssue
     public function state() : string
     {
         return $this->state;
+    }
+    /**
+     * The reason for the current state
+     */
+    public function state_reason() : ?string
+    {
+        return $this->state_reason;
     }
     /**
      * Title of the issue
