@@ -17,7 +17,7 @@ final class SyncLdapMappingForUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{username}'), array($this->username), '/admin/ldap/users/{username}/sync?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{username}'), array($this->username), '/admin/ldap/users/{username}/sync'));
     }
     function validateResponse()
     {

@@ -17,7 +17,7 @@ final class Star_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{gist_id}'), array($this->gist_id), '/gists/{gist_id}/star?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{gist_id}'), array($this->gist_id), '/gists/{gist_id}/star'));
     }
     function validateResponse()
     {

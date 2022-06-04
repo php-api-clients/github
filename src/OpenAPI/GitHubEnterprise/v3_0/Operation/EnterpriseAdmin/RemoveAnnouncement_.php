@@ -14,7 +14,7 @@ final class RemoveAnnouncement_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/enterprise/announcement?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/enterprise/announcement'));
     }
     function validateResponse()
     {

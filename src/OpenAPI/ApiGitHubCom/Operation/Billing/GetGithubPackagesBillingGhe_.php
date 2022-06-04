@@ -17,7 +17,7 @@ final class GetGithubPackagesBillingGhe_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}'), array($this->enterprise), '/enterprises/{enterprise}/settings/billing/packages?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}'), array($this->enterprise), '/enterprises/{enterprise}/settings/billing/packages'));
     }
     function validateResponse()
     {

@@ -14,7 +14,7 @@ final class GetMaintenanceStatus_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/setup/api/maintenance?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/setup/api/maintenance'));
     }
     function validateResponse()
     {

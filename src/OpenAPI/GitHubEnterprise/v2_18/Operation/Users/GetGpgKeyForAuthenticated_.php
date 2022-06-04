@@ -17,7 +17,7 @@ final class GetGpgKeyForAuthenticated_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{gpg_key_id}'), array($this->gpg_key_id), '/user/gpg_keys/{gpg_key_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{gpg_key_id}'), array($this->gpg_key_id), '/user/gpg_keys/{gpg_key_id}'));
     }
     function validateResponse()
     {

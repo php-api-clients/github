@@ -17,7 +17,7 @@ final class CreateImpersonationOAuthToken_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{username}'), array($this->username), '/admin/users/{username}/authorizations?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{username}'), array($this->username), '/admin/users/{username}/authorizations'));
     }
     function validateResponse()
     {

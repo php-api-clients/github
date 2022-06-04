@@ -20,7 +20,7 @@ final class SetInformationForProvisionedEnterpriseUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{scim_user_id}'), array($this->enterprise, $this->scim_user_id), '/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{scim_user_id}'), array($this->enterprise, $this->scim_user_id), '/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}'));
     }
     function validateResponse()
     {

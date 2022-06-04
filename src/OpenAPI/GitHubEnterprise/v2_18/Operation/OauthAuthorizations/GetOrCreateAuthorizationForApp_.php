@@ -17,7 +17,7 @@ final class GetOrCreateAuthorizationForApp_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{client_id}'), array($this->client_id), '/authorizations/clients/{client_id}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{client_id}'), array($this->client_id), '/authorizations/clients/{client_id}'));
     }
     function validateResponse()
     {

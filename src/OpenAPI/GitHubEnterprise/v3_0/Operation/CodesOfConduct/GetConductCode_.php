@@ -17,7 +17,7 @@ final class GetConductCode_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{key}'), array($this->key), '/codes_of_conduct/{key}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{key}'), array($this->key), '/codes_of_conduct/{key}'));
     }
     function validateResponse()
     {

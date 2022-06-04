@@ -17,7 +17,7 @@ final class GetBySlug_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{app_slug}'), array($this->app_slug), '/apps/{app_slug}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{app_slug}'), array($this->app_slug), '/apps/{app_slug}'));
     }
     function validateResponse()
     {

@@ -17,7 +17,7 @@ final class DeleteThreadSubscription_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}/subscription?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}/subscription'));
     }
     function validateResponse()
     {

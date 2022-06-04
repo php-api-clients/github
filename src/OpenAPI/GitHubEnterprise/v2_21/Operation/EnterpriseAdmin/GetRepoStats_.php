@@ -14,7 +14,7 @@ final class GetRepoStats_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/repos?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/repos'));
     }
     function validateResponse()
     {

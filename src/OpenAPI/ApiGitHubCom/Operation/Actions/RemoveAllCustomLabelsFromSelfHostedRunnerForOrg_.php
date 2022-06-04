@@ -20,7 +20,7 @@ final class RemoveAllCustomLabelsFromSelfHostedRunnerForOrg_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{runner_id}'), array($this->org, $this->runner_id), '/orgs/{org}/actions/runners/{runner_id}/labels?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{runner_id}'), array($this->org, $this->runner_id), '/orgs/{org}/actions/runners/{runner_id}/labels'));
     }
     function validateResponse()
     {

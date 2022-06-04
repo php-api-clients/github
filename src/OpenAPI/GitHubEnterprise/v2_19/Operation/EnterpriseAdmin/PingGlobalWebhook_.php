@@ -20,7 +20,7 @@ final class PingGlobalWebhook_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{hook_id}'), array($this->hook_id), '/admin/hooks/{hook_id}/pings?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{hook_id}'), array($this->hook_id), '/admin/hooks/{hook_id}/pings'));
     }
     function validateResponse()
     {

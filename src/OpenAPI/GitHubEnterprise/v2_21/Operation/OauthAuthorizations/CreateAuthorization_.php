@@ -14,7 +14,7 @@ final class CreateAuthorization_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/authorizations?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/authorizations'));
     }
     function validateResponse()
     {

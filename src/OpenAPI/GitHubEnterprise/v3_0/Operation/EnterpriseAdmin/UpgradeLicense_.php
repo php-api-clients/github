@@ -14,7 +14,7 @@ final class UpgradeLicense_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/setup/api/upgrade?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/setup/api/upgrade'));
     }
     function validateResponse()
     {

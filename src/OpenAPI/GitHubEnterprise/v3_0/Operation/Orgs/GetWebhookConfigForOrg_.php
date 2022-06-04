@@ -20,7 +20,7 @@ final class GetWebhookConfigForOrg_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{hook_id}'), array($this->org, $this->hook_id), '/orgs/{org}/hooks/{hook_id}/config?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{hook_id}'), array($this->org, $this->hook_id), '/orgs/{org}/hooks/{hook_id}/config'));
     }
     function validateResponse()
     {

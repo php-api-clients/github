@@ -14,7 +14,7 @@ final class ListBlockedByAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/user/blocks?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/user/blocks'));
     }
     function validateResponse()
     {

@@ -17,7 +17,7 @@ final class RemoveRestrictionsForOrg_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/interaction-limits?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/interaction-limits'));
     }
     function validateResponse()
     {

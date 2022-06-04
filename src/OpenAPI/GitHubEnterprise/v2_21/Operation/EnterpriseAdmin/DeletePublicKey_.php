@@ -17,7 +17,7 @@ final class DeletePublicKey_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{key_ids}'), array($this->key_ids), '/admin/keys/{key_ids}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{key_ids}'), array($this->key_ids), '/admin/keys/{key_ids}'));
     }
     function validateResponse()
     {

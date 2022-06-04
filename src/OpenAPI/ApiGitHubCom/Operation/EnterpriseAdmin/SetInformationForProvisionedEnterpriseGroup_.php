@@ -20,7 +20,7 @@ final class SetInformationForProvisionedEnterpriseGroup_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{scim_group_id}'), array($this->enterprise, $this->scim_group_id), '/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{scim_group_id}'), array($this->enterprise, $this->scim_group_id), '/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}'));
     }
     function validateResponse()
     {

@@ -14,7 +14,7 @@ final class GetAuthenticated_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/app?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/app'));
     }
     function validateResponse()
     {

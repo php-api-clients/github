@@ -17,7 +17,7 @@ final class UpdateUsernameForUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{username}'), array($this->username), '/admin/users/{username}?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{username}'), array($this->username), '/admin/users/{username}'));
     }
     function validateResponse()
     {

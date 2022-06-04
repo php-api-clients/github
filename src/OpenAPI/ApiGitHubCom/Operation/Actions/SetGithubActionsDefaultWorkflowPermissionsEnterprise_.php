@@ -17,7 +17,7 @@ final class SetGithubActionsDefaultWorkflowPermissionsEnterprise_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}'), array($this->enterprise), '/enterprises/{enterprise}/actions/permissions/workflow?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}'), array($this->enterprise), '/enterprises/{enterprise}/actions/permissions/workflow'));
     }
     function validateResponse()
     {

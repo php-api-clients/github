@@ -14,7 +14,7 @@ final class GetZen_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/zen?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/zen'));
     }
     function validateResponse()
     {

@@ -14,7 +14,7 @@ final class Get_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/emojis?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/emojis'));
     }
     function validateResponse()
     {

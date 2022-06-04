@@ -17,7 +17,7 @@ final class Unfollow_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/user/following/{username}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/user/following/{username}'));
     }
     function validateResponse()
     {

@@ -14,7 +14,7 @@ final class EnableOrDisableMaintenanceMode_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/setup/api/maintenance?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/setup/api/maintenance'));
     }
     function validateResponse()
     {

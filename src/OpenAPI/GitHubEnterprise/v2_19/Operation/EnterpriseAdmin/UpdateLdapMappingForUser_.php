@@ -17,7 +17,7 @@ final class UpdateLdapMappingForUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{username}'), array($this->username), '/admin/ldap/users/{username}/mapping?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{username}'), array($this->username), '/admin/ldap/users/{username}/mapping'));
     }
     function validateResponse()
     {

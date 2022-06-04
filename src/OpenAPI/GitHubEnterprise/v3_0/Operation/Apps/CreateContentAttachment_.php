@@ -23,7 +23,7 @@ final class CreateContentAttachment_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{owner}', '{repo}', '{content_reference_id}'), array($this->owner, $this->repo, $this->content_reference_id), '/repos/{owner}/{repo}/content_references/{content_reference_id}/attachments?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{owner}', '{repo}', '{content_reference_id}'), array($this->owner, $this->repo, $this->content_reference_id), '/repos/{owner}/{repo}/content_references/{content_reference_id}/attachments'));
     }
     function validateResponse()
     {

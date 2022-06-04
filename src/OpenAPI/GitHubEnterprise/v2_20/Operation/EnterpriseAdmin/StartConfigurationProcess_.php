@@ -14,7 +14,7 @@ final class StartConfigurationProcess_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/setup/api/configure?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/setup/api/configure'));
     }
     function validateResponse()
     {

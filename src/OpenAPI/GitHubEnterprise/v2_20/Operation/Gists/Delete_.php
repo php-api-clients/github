@@ -17,7 +17,7 @@ final class Delete_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{gist_id}'), array($this->gist_id), '/gists/{gist_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{gist_id}'), array($this->gist_id), '/gists/{gist_id}'));
     }
     function validateResponse()
     {

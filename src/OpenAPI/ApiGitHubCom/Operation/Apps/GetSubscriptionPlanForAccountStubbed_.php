@@ -17,7 +17,7 @@ final class GetSubscriptionPlanForAccountStubbed_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{account_id}'), array($this->account_id), '/marketplace_listing/stubbed/accounts/{account_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{account_id}'), array($this->account_id), '/marketplace_listing/stubbed/accounts/{account_id}'));
     }
     function validateResponse()
     {

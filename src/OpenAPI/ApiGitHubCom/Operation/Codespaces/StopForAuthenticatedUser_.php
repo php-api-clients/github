@@ -17,7 +17,7 @@ final class StopForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}/stop?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}/stop'));
     }
     function validateResponse()
     {

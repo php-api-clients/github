@@ -23,7 +23,7 @@ final class GetAutolink_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{autolink_id}'), array($this->owner, $this->repo, $this->autolink_id), '/repos/{owner}/{repo}/autolinks/{autolink_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{autolink_id}'), array($this->owner, $this->repo, $this->autolink_id), '/repos/{owner}/{repo}/autolinks/{autolink_id}'));
     }
     function validateResponse()
     {

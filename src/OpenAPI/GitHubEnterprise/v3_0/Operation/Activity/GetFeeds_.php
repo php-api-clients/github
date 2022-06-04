@@ -14,7 +14,7 @@ final class GetFeeds_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/feeds?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/feeds'));
     }
     function validateResponse()
     {

@@ -17,7 +17,7 @@ final class ProvisionAndInviteEnterpriseGroup_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{enterprise}'), array($this->enterprise), '/scim/v2/enterprises/{enterprise}/Groups?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{enterprise}'), array($this->enterprise), '/scim/v2/enterprises/{enterprise}/Groups'));
     }
     function validateResponse()
     {

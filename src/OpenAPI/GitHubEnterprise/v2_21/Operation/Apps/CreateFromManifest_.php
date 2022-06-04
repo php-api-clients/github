@@ -17,7 +17,7 @@ final class CreateFromManifest_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{code}'), array($this->code), '/app-manifests/{code}/conversions?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{code}'), array($this->code), '/app-manifests/{code}/conversions'));
     }
     function validateResponse()
     {

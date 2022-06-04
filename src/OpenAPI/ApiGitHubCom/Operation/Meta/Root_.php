@@ -14,7 +14,7 @@ final class Root_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/'));
     }
     function validateResponse()
     {

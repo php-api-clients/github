@@ -14,7 +14,7 @@ final class GetWebhookConfigForApp_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/app/hook/config?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/app/hook/config'));
     }
     function validateResponse()
     {

@@ -20,7 +20,7 @@ final class EnableSelectedOrganizationGithubActionsEnterprise_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{org_id}'), array($this->enterprise, $this->org_id), '/enterprises/{enterprise}/actions/permissions/organizations/{org_id}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{org_id}'), array($this->enterprise, $this->org_id), '/enterprises/{enterprise}/actions/permissions/organizations/{org_id}'));
     }
     function validateResponse()
     {

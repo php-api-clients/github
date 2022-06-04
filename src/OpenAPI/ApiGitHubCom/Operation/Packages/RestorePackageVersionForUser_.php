@@ -26,7 +26,7 @@ final class RestorePackageVersionForUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{package_type}', '{package_name}', '{username}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->username, $this->package_version_id), '/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{package_type}', '{package_name}', '{username}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->username, $this->package_version_id), '/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore'));
     }
     function validateResponse()
     {

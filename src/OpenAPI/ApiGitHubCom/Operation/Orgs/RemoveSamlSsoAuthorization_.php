@@ -20,7 +20,7 @@ final class RemoveSamlSsoAuthorization_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{credential_id}'), array($this->org, $this->credential_id), '/orgs/{org}/credential-authorizations/{credential_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{credential_id}'), array($this->org, $this->credential_id), '/orgs/{org}/credential-authorizations/{credential_id}'));
     }
     function validateResponse()
     {

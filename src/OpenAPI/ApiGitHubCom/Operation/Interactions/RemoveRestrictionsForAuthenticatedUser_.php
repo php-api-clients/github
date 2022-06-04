@@ -14,7 +14,7 @@ final class RemoveRestrictionsForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/user/interaction-limits?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/user/interaction-limits'));
     }
     function validateResponse()
     {

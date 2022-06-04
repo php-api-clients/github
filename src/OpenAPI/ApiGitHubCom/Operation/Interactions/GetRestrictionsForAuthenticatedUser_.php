@@ -14,7 +14,7 @@ final class GetRestrictionsForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/user/interaction-limits?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/user/interaction-limits'));
     }
     function validateResponse()
     {

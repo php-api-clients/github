@@ -14,7 +14,7 @@ final class GetAllTemplates_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/gitignore/templates?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/gitignore/templates'));
     }
     function validateResponse()
     {

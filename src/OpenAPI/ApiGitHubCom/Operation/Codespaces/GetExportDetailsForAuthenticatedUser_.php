@@ -20,7 +20,7 @@ final class GetExportDetailsForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespace_name, $this->export_id), '/user/codespaces/{codespace_name}/exports/{export_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespace_name, $this->export_id), '/user/codespaces/{codespace_name}/exports/{export_id}'));
     }
     function validateResponse()
     {

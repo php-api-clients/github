@@ -17,7 +17,7 @@ final class DeleteColumn_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{column_id}'), array($this->column_id), '/projects/columns/{column_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{column_id}'), array($this->column_id), '/projects/columns/{column_id}'));
     }
     function validateResponse()
     {

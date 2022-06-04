@@ -14,7 +14,7 @@ final class CreateForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/codespaces?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/codespaces'));
     }
     function validateResponse()
     {

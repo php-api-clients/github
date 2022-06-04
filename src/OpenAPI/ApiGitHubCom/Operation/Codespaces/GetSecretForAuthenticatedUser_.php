@@ -17,7 +17,7 @@ final class GetSecretForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{secret_name}'), array($this->secret_name), '/user/codespaces/secrets/{secret_name}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{secret_name}'), array($this->secret_name), '/user/codespaces/secrets/{secret_name}'));
     }
     function validateResponse()
     {

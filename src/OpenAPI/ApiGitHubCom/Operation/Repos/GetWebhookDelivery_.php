@@ -26,7 +26,7 @@ final class GetWebhookDelivery_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{hook_id}', '{delivery_id}'), array($this->owner, $this->repo, $this->hook_id, $this->delivery_id), '/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{hook_id}', '{delivery_id}'), array($this->owner, $this->repo, $this->hook_id, $this->delivery_id), '/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}'));
     }
     function validateResponse()
     {

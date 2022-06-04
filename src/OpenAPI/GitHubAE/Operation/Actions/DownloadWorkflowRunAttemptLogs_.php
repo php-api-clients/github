@@ -26,7 +26,7 @@ final class DownloadWorkflowRunAttemptLogs_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{run_id}', '{attempt_number}'), array($this->owner, $this->repo, $this->run_id, $this->attempt_number), '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{run_id}', '{attempt_number}'), array($this->owner, $this->repo, $this->run_id, $this->attempt_number), '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs'));
     }
     function validateResponse()
     {

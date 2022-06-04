@@ -14,7 +14,7 @@ final class GetOrgStats_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/orgs?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/orgs'));
     }
     function validateResponse()
     {

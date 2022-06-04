@@ -17,7 +17,7 @@ final class DeleteForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}'));
     }
     function validateResponse()
     {

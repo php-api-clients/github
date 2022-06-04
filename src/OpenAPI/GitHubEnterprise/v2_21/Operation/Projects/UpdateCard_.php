@@ -17,7 +17,7 @@ final class UpdateCard_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{card_id}'), array($this->card_id), '/projects/columns/cards/{card_id}?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{card_id}'), array($this->card_id), '/projects/columns/cards/{card_id}'));
     }
     function validateResponse()
     {

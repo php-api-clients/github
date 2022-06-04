@@ -17,7 +17,7 @@ final class GetMembershipForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}'), array($this->org), '/user/memberships/orgs/{org}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}'), array($this->org), '/user/memberships/orgs/{org}'));
     }
     function validateResponse()
     {

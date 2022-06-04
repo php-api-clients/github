@@ -23,7 +23,7 @@ final class UpdateAlert_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{owner}', '{repo}', '{alert_number}'), array($this->owner, $this->repo, $this->alert_number), '/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{owner}', '{repo}', '{alert_number}'), array($this->owner, $this->repo, $this->alert_number), '/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}'));
     }
     function validateResponse()
     {

@@ -20,7 +20,7 @@ final class GetOrCreateAuthorizationForAppAndFingerprint_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{client_id}', '{fingerprint}'), array($this->client_id, $this->fingerprint), '/authorizations/clients/{client_id}/{fingerprint}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{client_id}', '{fingerprint}'), array($this->client_id, $this->fingerprint), '/authorizations/clients/{client_id}/{fingerprint}'));
     }
     function validateResponse()
     {

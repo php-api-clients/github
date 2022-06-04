@@ -20,7 +20,7 @@ final class AddCustomLabelsToSelfHostedRunnerForEnterprise_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{enterprise}', '{runner_id}'), array($this->enterprise, $this->runner_id), '/enterprises/{enterprise}/actions/runners/{runner_id}/labels?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{enterprise}', '{runner_id}'), array($this->enterprise, $this->runner_id), '/enterprises/{enterprise}/actions/runners/{runner_id}/labels'));
     }
     function validateResponse()
     {

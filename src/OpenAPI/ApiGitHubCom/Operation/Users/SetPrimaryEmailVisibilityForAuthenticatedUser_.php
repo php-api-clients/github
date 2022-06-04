@@ -14,7 +14,7 @@ final class SetPrimaryEmailVisibilityForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array(), array(), '/user/email/visibility?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array(), array(), '/user/email/visibility'));
     }
     function validateResponse()
     {

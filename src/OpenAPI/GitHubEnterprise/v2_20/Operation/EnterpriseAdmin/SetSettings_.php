@@ -14,7 +14,7 @@ final class SetSettings_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array(), array(), '/setup/api/settings?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array(), array(), '/setup/api/settings'));
     }
     function validateResponse()
     {

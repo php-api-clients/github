@@ -17,7 +17,7 @@ final class DeletePersonalAccessToken_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{token_id}'), array($this->token_id), '/admin/tokens/{token_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{token_id}'), array($this->token_id), '/admin/tokens/{token_id}'));
     }
     function validateResponse()
     {

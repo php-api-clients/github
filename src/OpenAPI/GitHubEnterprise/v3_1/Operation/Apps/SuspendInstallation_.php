@@ -17,7 +17,7 @@ final class SuspendInstallation_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{installation_id}'), array($this->installation_id), '/app/installations/{installation_id}/suspended?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{installation_id}'), array($this->installation_id), '/app/installations/{installation_id}/suspended'));
     }
     function validateResponse()
     {

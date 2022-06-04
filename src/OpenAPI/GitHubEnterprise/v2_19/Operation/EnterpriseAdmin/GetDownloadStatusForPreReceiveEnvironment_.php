@@ -17,7 +17,7 @@ final class GetDownloadStatusForPreReceiveEnvironment_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{pre_receive_environment_id}'), array($this->pre_receive_environment_id), '/admin/pre-receive-environments/{pre_receive_environment_id}/downloads/latest?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{pre_receive_environment_id}'), array($this->pre_receive_environment_id), '/admin/pre-receive-environments/{pre_receive_environment_id}/downloads/latest'));
     }
     function validateResponse()
     {

@@ -23,7 +23,7 @@ final class DeleteTagProtection_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{tag_protection_id}'), array($this->owner, $this->repo, $this->tag_protection_id), '/repos/{owner}/{repo}/tags/protection/{tag_protection_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{tag_protection_id}'), array($this->owner, $this->repo, $this->tag_protection_id), '/repos/{owner}/{repo}/tags/protection/{tag_protection_id}'));
     }
     function validateResponse()
     {

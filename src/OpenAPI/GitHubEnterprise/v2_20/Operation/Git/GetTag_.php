@@ -23,7 +23,7 @@ final class GetTag_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tag_sha}'), array($this->owner, $this->repo, $this->tag_sha), '/repos/{owner}/{repo}/git/tags/{tag_sha}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tag_sha}'), array($this->owner, $this->repo, $this->tag_sha), '/repos/{owner}/{repo}/git/tags/{tag_sha}'));
     }
     function validateResponse()
     {

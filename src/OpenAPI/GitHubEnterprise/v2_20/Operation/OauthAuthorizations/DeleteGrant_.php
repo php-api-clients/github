@@ -17,7 +17,7 @@ final class DeleteGrant_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{grant_id}'), array($this->grant_id), '/applications/grants/{grant_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{grant_id}'), array($this->grant_id), '/applications/grants/{grant_id}'));
     }
     function validateResponse()
     {

@@ -17,7 +17,7 @@ final class DemoteSiteAdministrator_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/users/{username}/site_admin?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/users/{username}/site_admin'));
     }
     function validateResponse()
     {

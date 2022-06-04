@@ -17,7 +17,7 @@ final class GetPublicSshKeyForAuthenticated_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{key_id}'), array($this->key_id), '/user/keys/{key_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{key_id}'), array($this->key_id), '/user/keys/{key_id}'));
     }
     function validateResponse()
     {

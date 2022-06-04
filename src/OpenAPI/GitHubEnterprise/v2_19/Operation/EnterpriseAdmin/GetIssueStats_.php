@@ -14,7 +14,7 @@ final class GetIssueStats_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/issues?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/issues'));
     }
     function validateResponse()
     {

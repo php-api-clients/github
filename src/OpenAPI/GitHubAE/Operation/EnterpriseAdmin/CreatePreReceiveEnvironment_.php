@@ -14,7 +14,7 @@ final class CreatePreReceiveEnvironment_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/admin/pre-receive-environments?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/admin/pre-receive-environments'));
     }
     function validateResponse()
     {

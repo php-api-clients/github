@@ -14,7 +14,7 @@ final class Render_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/markdown?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/markdown'));
     }
     function validateResponse()
     {

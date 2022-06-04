@@ -17,7 +17,7 @@ final class Unblock_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/user/blocks/{username}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/user/blocks/{username}'));
     }
     function validateResponse()
     {

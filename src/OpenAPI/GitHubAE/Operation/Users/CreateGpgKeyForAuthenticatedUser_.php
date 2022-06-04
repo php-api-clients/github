@@ -14,7 +14,7 @@ final class CreateGpgKeyForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/gpg_keys?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/gpg_keys'));
     }
     function validateResponse()
     {

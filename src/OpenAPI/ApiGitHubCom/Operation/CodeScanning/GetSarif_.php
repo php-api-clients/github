@@ -23,7 +23,7 @@ final class GetSarif_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{sarif_id}'), array($this->owner, $this->repo, $this->sarif_id), '/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{sarif_id}'), array($this->owner, $this->repo, $this->sarif_id), '/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}'));
     }
     function validateResponse()
     {

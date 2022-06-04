@@ -20,7 +20,7 @@ final class CancelInvitation_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{invitation_id}'), array($this->org, $this->invitation_id), '/orgs/{org}/invitations/{invitation_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{invitation_id}'), array($this->org, $this->invitation_id), '/orgs/{org}/invitations/{invitation_id}'));
     }
     function validateResponse()
     {

@@ -17,7 +17,7 @@ final class GetGrant_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{grant_id}'), array($this->grant_id), '/applications/grants/{grant_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{grant_id}'), array($this->grant_id), '/applications/grants/{grant_id}'));
     }
     function validateResponse()
     {

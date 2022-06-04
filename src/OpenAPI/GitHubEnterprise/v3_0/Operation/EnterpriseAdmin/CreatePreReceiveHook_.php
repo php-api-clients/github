@@ -14,7 +14,7 @@ final class CreatePreReceiveHook_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/admin/pre-receive-hooks?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/admin/pre-receive-hooks'));
     }
     function validateResponse()
     {

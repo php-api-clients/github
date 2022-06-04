@@ -20,7 +20,7 @@ final class UnlockRepoForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{migration_id}', '{repo_name}'), array($this->migration_id, $this->repo_name), '/user/migrations/{migration_id}/repos/{repo_name}/lock?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{migration_id}', '{repo_name}'), array($this->migration_id, $this->repo_name), '/user/migrations/{migration_id}/repos/{repo_name}/lock'));
     }
     function validateResponse()
     {

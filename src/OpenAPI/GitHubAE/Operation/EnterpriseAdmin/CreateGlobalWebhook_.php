@@ -14,7 +14,7 @@ final class CreateGlobalWebhook_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/admin/hooks?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/admin/hooks'));
     }
     function validateResponse()
     {

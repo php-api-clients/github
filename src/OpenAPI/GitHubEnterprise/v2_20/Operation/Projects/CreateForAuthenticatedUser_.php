@@ -14,7 +14,7 @@ final class CreateForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/projects?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/projects'));
     }
     function validateResponse()
     {

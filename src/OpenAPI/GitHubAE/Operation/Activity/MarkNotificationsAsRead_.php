@@ -14,7 +14,7 @@ final class MarkNotificationsAsRead_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array(), array(), '/notifications?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array(), array(), '/notifications'));
     }
     function validateResponse()
     {

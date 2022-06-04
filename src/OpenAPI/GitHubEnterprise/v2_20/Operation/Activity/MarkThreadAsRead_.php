@@ -17,7 +17,7 @@ final class MarkThreadAsRead_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}'));
     }
     function validateResponse()
     {

@@ -14,7 +14,7 @@ final class GetPagesStats_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/pages?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/pages'));
     }
     function validateResponse()
     {

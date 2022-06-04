@@ -14,7 +14,7 @@ final class GetPublicKeyForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/user/codespaces/secrets/public-key?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/user/codespaces/secrets/public-key'));
     }
     function validateResponse()
     {

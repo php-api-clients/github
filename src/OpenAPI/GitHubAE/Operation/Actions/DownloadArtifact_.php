@@ -26,7 +26,7 @@ final class DownloadArtifact_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{artifact_id}', '{archive_format}'), array($this->owner, $this->repo, $this->artifact_id, $this->archive_format), '/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{artifact_id}', '{archive_format}'), array($this->owner, $this->repo, $this->artifact_id, $this->archive_format), '/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}'));
     }
     function validateResponse()
     {

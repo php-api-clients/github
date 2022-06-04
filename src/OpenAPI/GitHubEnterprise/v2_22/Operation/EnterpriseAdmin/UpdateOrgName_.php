@@ -17,7 +17,7 @@ final class UpdateOrgName_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{org}'), array($this->org), '/admin/organizations/{org}?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{org}'), array($this->org), '/admin/organizations/{org}'));
     }
     function validateResponse()
     {

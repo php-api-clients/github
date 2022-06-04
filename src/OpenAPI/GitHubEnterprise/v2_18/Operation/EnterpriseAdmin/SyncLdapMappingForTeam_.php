@@ -17,7 +17,7 @@ final class SyncLdapMappingForTeam_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{team_id}'), array($this->team_id), '/admin/ldap/teams/{team_id}/sync?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{team_id}'), array($this->team_id), '/admin/ldap/teams/{team_id}/sync'));
     }
     function validateResponse()
     {

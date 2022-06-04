@@ -20,7 +20,7 @@ final class AddMemberLegacy_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{team_id}', '{username}'), array($this->team_id, $this->username), '/teams/{team_id}/members/{username}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{team_id}', '{username}'), array($this->team_id, $this->username), '/teams/{team_id}/members/{username}'));
     }
     function validateResponse()
     {

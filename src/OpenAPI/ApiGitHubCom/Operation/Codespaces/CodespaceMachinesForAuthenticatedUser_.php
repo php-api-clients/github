@@ -17,7 +17,7 @@ final class CodespaceMachinesForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}/machines?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}/machines'));
     }
     function validateResponse()
     {

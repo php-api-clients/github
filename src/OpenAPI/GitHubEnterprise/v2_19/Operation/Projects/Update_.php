@@ -17,7 +17,7 @@ final class Update_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{project_id}'), array($this->project_id), '/projects/{project_id}?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{project_id}'), array($this->project_id), '/projects/{project_id}'));
     }
     function validateResponse()
     {

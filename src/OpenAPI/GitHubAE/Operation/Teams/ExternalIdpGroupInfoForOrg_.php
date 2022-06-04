@@ -20,7 +20,7 @@ final class ExternalIdpGroupInfoForOrg_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{group_id}'), array($this->org, $this->group_id), '/orgs/{org}/external-group/{group_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{group_id}'), array($this->org, $this->group_id), '/orgs/{org}/external-group/{group_id}'));
     }
     function validateResponse()
     {

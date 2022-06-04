@@ -14,7 +14,7 @@ final class SetAnnouncement_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array(), array(), '/enterprise/announcement?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array(), array(), '/enterprise/announcement'));
     }
     function validateResponse()
     {

@@ -23,7 +23,7 @@ final class AddSelectedRepoToOrgSecret_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secret_name, $this->repository_id), '/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secret_name, $this->repository_id), '/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}'));
     }
     function validateResponse()
     {

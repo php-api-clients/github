@@ -23,7 +23,7 @@ final class GetAnalysis_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{analysis_id}'), array($this->owner, $this->repo, $this->analysis_id), '/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{analysis_id}'), array($this->owner, $this->repo, $this->analysis_id), '/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}'));
     }
     function validateResponse()
     {

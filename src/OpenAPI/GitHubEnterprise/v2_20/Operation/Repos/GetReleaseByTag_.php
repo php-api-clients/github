@@ -23,7 +23,7 @@ final class GetReleaseByTag_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tag}'), array($this->owner, $this->repo, $this->tag), '/repos/{owner}/{repo}/releases/tags/{tag}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tag}'), array($this->owner, $this->repo, $this->tag), '/repos/{owner}/{repo}/releases/tags/{tag}'));
     }
     function validateResponse()
     {

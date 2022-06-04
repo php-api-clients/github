@@ -20,7 +20,7 @@ final class DeletePackageForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{package_type}', '{package_name}'), array($this->package_type, $this->package_name), '/user/packages/{package_type}/{package_name}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{package_type}', '{package_name}'), array($this->package_type, $this->package_name), '/user/packages/{package_type}/{package_name}'));
     }
     function validateResponse()
     {

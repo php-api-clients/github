@@ -17,7 +17,7 @@ final class CreateColumn_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{project_id}'), array($this->project_id), '/projects/{project_id}/columns?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{project_id}'), array($this->project_id), '/projects/{project_id}/columns'));
     }
     function validateResponse()
     {

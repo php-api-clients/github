@@ -14,7 +14,7 @@ final class Create_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/gists?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/gists'));
     }
     function validateResponse()
     {

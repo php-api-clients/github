@@ -14,7 +14,7 @@ final class AddEmailForAuthenticated_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/emails?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/user/emails'));
     }
     function validateResponse()
     {

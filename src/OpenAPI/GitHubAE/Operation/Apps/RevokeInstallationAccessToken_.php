@@ -14,7 +14,7 @@ final class RevokeInstallationAccessToken_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/installation/token?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/installation/token'));
     }
     function validateResponse()
     {

@@ -26,7 +26,7 @@ final class GetPackageVersionForOrganization_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{package_type}', '{package_name}', '{org}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->org, $this->package_version_id), '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{package_type}', '{package_name}', '{org}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->org, $this->package_version_id), '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}'));
     }
     function validateResponse()
     {

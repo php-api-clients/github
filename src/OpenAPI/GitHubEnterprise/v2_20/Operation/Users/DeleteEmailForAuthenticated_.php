@@ -14,7 +14,7 @@ final class DeleteEmailForAuthenticated_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/user/emails?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/user/emails'));
     }
     function validateResponse()
     {

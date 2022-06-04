@@ -17,7 +17,7 @@ final class RedeliverWebhookDelivery_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{delivery_id}'), array($this->delivery_id), '/app/hook/deliveries/{delivery_id}/attempts?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{delivery_id}'), array($this->delivery_id), '/app/hook/deliveries/{delivery_id}/attempts'));
     }
     function validateResponse()
     {

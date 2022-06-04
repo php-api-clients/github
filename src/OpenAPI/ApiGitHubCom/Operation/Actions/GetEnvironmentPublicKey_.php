@@ -20,7 +20,7 @@ final class GetEnvironmentPublicKey_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{repository_id}', '{environment_name}'), array($this->repository_id, $this->environment_name), '/repositories/{repository_id}/environments/{environment_name}/secrets/public-key?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{repository_id}', '{environment_name}'), array($this->repository_id, $this->environment_name), '/repositories/{repository_id}/environments/{environment_name}/secrets/public-key'));
     }
     function validateResponse()
     {

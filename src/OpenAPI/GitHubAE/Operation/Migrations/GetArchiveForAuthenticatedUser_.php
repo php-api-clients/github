@@ -17,7 +17,7 @@ final class GetArchiveForAuthenticatedUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{migration_id}'), array($this->migration_id), '/user/migrations/{migration_id}/archive?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{migration_id}'), array($this->migration_id), '/user/migrations/{migration_id}/archive'));
     }
     function validateResponse()
     {

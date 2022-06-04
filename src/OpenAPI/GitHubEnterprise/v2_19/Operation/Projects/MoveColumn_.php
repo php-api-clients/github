@@ -17,7 +17,7 @@ final class MoveColumn_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{column_id}'), array($this->column_id), '/projects/columns/{column_id}/moves?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array('{column_id}'), array($this->column_id), '/projects/columns/{column_id}/moves'));
     }
     function validateResponse()
     {

@@ -23,7 +23,7 @@ final class CompareCommits_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{basehead}'), array($this->owner, $this->repo, $this->basehead), '/repos/{owner}/{repo}/compare/{basehead}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{basehead}'), array($this->owner, $this->repo, $this->basehead), '/repos/{owner}/{repo}/compare/{basehead}'));
     }
     function validateResponse()
     {

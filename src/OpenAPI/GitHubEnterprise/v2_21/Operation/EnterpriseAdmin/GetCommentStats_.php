@@ -14,7 +14,7 @@ final class GetCommentStats_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/comments?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/stats/comments'));
     }
     function validateResponse()
     {

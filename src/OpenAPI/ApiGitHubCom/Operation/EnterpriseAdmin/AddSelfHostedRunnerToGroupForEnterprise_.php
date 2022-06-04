@@ -23,7 +23,7 @@ final class AddSelfHostedRunnerToGroupForEnterprise_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{runner_group_id}', '{runner_id}'), array($this->enterprise, $this->runner_group_id, $this->runner_id), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}?'));
+        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{runner_group_id}', '{runner_id}'), array($this->enterprise, $this->runner_group_id, $this->runner_id), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}'));
     }
     function validateResponse()
     {

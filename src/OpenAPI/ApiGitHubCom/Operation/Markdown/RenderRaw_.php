@@ -14,7 +14,7 @@ final class RenderRaw_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/markdown/raw?'));
+        return new \RingCentral\Psr7\Request('post', \str_replace(array(), array(), '/markdown/raw'));
     }
     function validateResponse()
     {

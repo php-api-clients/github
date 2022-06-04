@@ -23,7 +23,7 @@ final class DeletePackageForOrg_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{package_type}', '{package_name}', '{org}'), array($this->package_type, $this->package_name, $this->org), '/orgs/{org}/packages/{package_type}/{package_name}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{package_type}', '{package_name}', '{org}'), array($this->package_type, $this->package_name, $this->org), '/orgs/{org}/packages/{package_type}/{package_name}'));
     }
     function validateResponse()
     {

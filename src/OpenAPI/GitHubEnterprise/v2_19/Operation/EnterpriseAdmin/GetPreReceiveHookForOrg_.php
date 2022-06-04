@@ -20,7 +20,7 @@ final class GetPreReceiveHookForOrg_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{pre_receive_hook_id}'), array($this->org, $this->pre_receive_hook_id), '/orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{pre_receive_hook_id}'), array($this->org, $this->pre_receive_hook_id), '/orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}'));
     }
     function validateResponse()
     {

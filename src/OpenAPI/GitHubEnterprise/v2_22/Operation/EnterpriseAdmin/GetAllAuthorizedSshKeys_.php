@@ -14,7 +14,7 @@ final class GetAllAuthorizedSshKeys_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/setup/api/settings/authorized-keys?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/setup/api/settings/authorized-keys'));
     }
     function validateResponse()
     {

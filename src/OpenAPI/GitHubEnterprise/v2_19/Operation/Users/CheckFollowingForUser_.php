@@ -20,7 +20,7 @@ final class CheckFollowingForUser_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{username}', '{target_user}'), array($this->username, $this->target_user), '/users/{username}/following/{target_user}?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{username}', '{target_user}'), array($this->username, $this->target_user), '/users/{username}/following/{target_user}'));
     }
     function validateResponse()
     {

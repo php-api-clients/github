@@ -14,7 +14,7 @@ final class Get_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/rate_limit?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/rate_limit'));
     }
     function validateResponse()
     {

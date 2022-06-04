@@ -17,7 +17,7 @@ final class DeleteImpersonationOAuthToken_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/admin/users/{username}/authorizations?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{username}'), array($this->username), '/admin/users/{username}/authorizations'));
     }
     function validateResponse()
     {

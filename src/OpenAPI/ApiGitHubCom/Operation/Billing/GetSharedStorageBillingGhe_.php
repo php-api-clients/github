@@ -17,7 +17,7 @@ final class GetSharedStorageBillingGhe_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}'), array($this->enterprise), '/enterprises/{enterprise}/settings/billing/shared-storage?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}'), array($this->enterprise), '/enterprises/{enterprise}/settings/billing/shared-storage'));
     }
     function validateResponse()
     {

@@ -26,7 +26,7 @@ final class DeleteForRelease_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{release_id}', '{reaction_id}'), array($this->owner, $this->repo, $this->release_id, $this->reaction_id), '/repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{release_id}', '{reaction_id}'), array($this->owner, $this->repo, $this->release_id, $this->reaction_id), '/repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}'));
     }
     function validateResponse()
     {

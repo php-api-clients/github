@@ -17,7 +17,7 @@ final class CreateOrUpdateIdpGroupConnectionsLegacy_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{team_id}'), array($this->team_id), '/teams/{team_id}/team-sync/group-mappings?'));
+        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{team_id}'), array($this->team_id), '/teams/{team_id}/team-sync/group-mappings'));
     }
     function validateResponse()
     {

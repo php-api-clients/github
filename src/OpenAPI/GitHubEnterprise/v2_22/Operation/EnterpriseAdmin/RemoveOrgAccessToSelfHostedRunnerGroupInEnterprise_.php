@@ -23,7 +23,7 @@ final class RemoveOrgAccessToSelfHostedRunnerGroupInEnterprise_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{enterprise}', '{runner_group_id}', '{org_id}'), array($this->enterprise, $this->runner_group_id, $this->org_id), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{enterprise}', '{runner_group_id}', '{org_id}'), array($this->enterprise, $this->runner_group_id, $this->org_id), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}'));
     }
     function validateResponse()
     {

@@ -17,7 +17,7 @@ final class ListCustomRoles_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{organization_id}'), array($this->organization_id), '/organizations/{organization_id}/custom_roles?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{organization_id}'), array($this->organization_id), '/organizations/{organization_id}/custom_roles'));
     }
     function validateResponse()
     {

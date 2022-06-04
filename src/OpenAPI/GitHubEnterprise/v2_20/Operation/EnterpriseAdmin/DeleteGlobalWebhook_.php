@@ -20,7 +20,7 @@ final class DeleteGlobalWebhook_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{hook_id}'), array($this->hook_id), '/admin/hooks/{hook_id}?'));
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{hook_id}'), array($this->hook_id), '/admin/hooks/{hook_id}'));
     }
     function validateResponse()
     {

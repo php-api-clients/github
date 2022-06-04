@@ -14,7 +14,7 @@ final class GetLicenseInformation_
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/settings/license?'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/enterprise/settings/license'));
     }
     function validateResponse()
     {
