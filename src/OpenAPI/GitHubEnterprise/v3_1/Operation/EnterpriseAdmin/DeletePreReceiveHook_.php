@@ -6,12 +6,12 @@ final class DeletePreReceiveHook_
 {
     private const OPERATION_ID = 'enterprise-admin/delete-pre-receive-hook';
     /**The unique identifier of the pre-receive hook.**/
-    public int $pre_receive_hook_id;
+    private readonly int $pre_receive_hook_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($pre_receive_hook_id)
+    function __construct(int $pre_receive_hook_id)
     {
         $this->pre_receive_hook_id = $pre_receive_hook_id;
     }

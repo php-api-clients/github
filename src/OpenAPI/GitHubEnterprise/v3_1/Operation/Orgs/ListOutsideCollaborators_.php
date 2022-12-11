@@ -6,18 +6,18 @@ final class ListOutsideCollaborators_
 {
     private const OPERATION_ID = 'orgs/list-outside-collaborators';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Filter the list of outside collaborators. `2fa_disabled` means that only outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned.**/
-    public string $filter;
+    private readonly string $filter;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, string $filter = 'all', int $per_page = 30, int $page = 1)
+    function __construct(string $org, string $filter = 'all', int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->filter = $filter;

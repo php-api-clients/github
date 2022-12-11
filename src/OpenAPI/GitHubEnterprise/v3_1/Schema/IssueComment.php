@@ -22,11 +22,7 @@ final class IssueComment
     private ?string $body_text = null;
     private ?string $body_html = null;
     private string $html_url;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $user = null;
+    private $user;
     private string $created_at;
     private string $updated_at;
     private string $issue_url;
@@ -34,11 +30,7 @@ final class IssueComment
      * How the author is associated with the repository.
      */
     private string $author_association;
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration $performed_via_github_app = null;
+    private $performed_via_github_app;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ReactionRollup::class)
      */
@@ -80,10 +72,7 @@ final class IssueComment
     {
         return $this->html_url;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }
@@ -106,10 +95,7 @@ final class IssueComment
     {
         return $this->author_association;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration
+    public function performed_via_github_app()
     {
         return $this->performed_via_github_app;
     }

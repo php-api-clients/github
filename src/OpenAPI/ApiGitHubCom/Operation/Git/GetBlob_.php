@@ -6,16 +6,15 @@ final class GetBlob_
 {
     private const OPERATION_ID = 'git/get-blob';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /****/
-    public string $file_sha;
+    private readonly string $repo;
+    private readonly string $file_sha;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $file_sha)
+    function __construct(string $owner, string $repo, string $file_sha)
     {
         $this->owner = $owner;
         $this->repo = $repo;

@@ -9,11 +9,7 @@ final class PageBuild
     private string $url;
     private string $status;
     private array $error = array();
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $pusher = null;
+    private $pusher;
     private string $commit;
     private int $duration;
     private string $created_at;
@@ -30,10 +26,7 @@ final class PageBuild
     {
         return $this->error;
     }
-    /**
-     * Simple User
-     */
-    public function pusher() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function pusher()
     {
         return $this->pusher;
     }

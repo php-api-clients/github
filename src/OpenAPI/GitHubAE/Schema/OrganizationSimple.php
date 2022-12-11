@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class OrganizationSimple
 {
     public const SCHEMA_TITLE = 'Organization Simple';
-    public const SCHEMA_DESCRIPTION = 'Organization Simple';
+    public const SCHEMA_DESCRIPTION = 'A GitHub organization.';
     private string $login;
     private int $id;
     private string $node_id;
@@ -17,7 +17,7 @@ final class OrganizationSimple
     private string $members_url;
     private string $public_members_url;
     private string $avatar_url;
-    private ?string $description = null;
+    private $description;
     public function login() : string
     {
         return $this->login;
@@ -62,7 +62,7 @@ final class OrganizationSimple
     {
         return $this->avatar_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }

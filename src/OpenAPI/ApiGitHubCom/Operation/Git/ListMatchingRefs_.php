@@ -6,30 +6,24 @@ final class ListMatchingRefs_
 {
     private const OPERATION_ID = 'git/list-matching-refs';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**ref parameter**/
-    public string $ref;
-    /**The number of results per page (max 100).**/
-    public int $per_page;
-    /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly string $ref;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $ref, int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $ref)
     {
         $this->owner = $owner;
         $this->repo = $repo;
         $this->ref = $ref;
-        $this->per_page = $per_page;
-        $this->page = $page;
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{ref}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->ref, $this->per_page, $this->page), '/repos/{owner}/{repo}/git/matching-refs/{ref}?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{ref}'), array($this->owner, $this->repo, $this->ref), '/repos/{owner}/{repo}/git/matching-refs/{ref}'));
     }
     function validateResponse()
     {

@@ -6,18 +6,18 @@ final class ListSelfHostedRunnerGroupsForOrg_
 {
     private const OPERATION_ID = 'actions/list-self-hosted-runner-groups-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**Only return runner groups that are allowed to be used by this repository.**/
-    public string $visible_to_repository;
+    private readonly string $visible_to_repository;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, int $per_page = 30, int $page = 1, $visible_to_repository)
+    function __construct(string $org, int $per_page = 30, int $page = 1, string $visible_to_repository)
     {
         $this->org = $org;
         $this->per_page = $per_page;

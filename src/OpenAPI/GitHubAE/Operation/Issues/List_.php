@@ -6,34 +6,30 @@ final class List_
 {
     private const OPERATION_ID = 'issues/list';
     /**Indicates which sorts of issues to return. `assigned` means issues assigned to you. `created` means issues created by you. `mentioned` means issues mentioning you. `subscribed` means issues you're subscribed to updates for. `all` or `repos` means all issues you can see, regardless of participation or creation.**/
-    public string $filter;
-    /**Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.**/
-    public string $state;
+    private readonly string $filter;
+    /**Indicates the state of the issues to return.**/
+    private readonly string $state;
     /**A list of comma separated label names. Example: `bug,ui,@high`**/
-    public string $labels;
-    /**What to sort results by. Can be either `created`, `updated`, `comments`.**/
-    public string $sort;
+    private readonly string $labels;
+    /**What to sort results by.**/
+    private readonly string $sort;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
-    /****/
-    public bool $collab;
-    /****/
-    public bool $orgs;
-    /****/
-    public bool $owned;
-    /****/
-    public bool $pulls;
+    private readonly string $since;
+    private readonly bool $collab;
+    private readonly bool $orgs;
+    private readonly bool $owned;
+    private readonly bool $pulls;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $filter = 'assigned', string $state = 'open', $labels, string $sort = 'created', string $direction = 'desc', $since, $collab, $orgs, $owned, $pulls, int $per_page = 30, int $page = 1)
+    function __construct(string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, int $per_page = 30, int $page = 1)
     {
         $this->filter = $filter;
         $this->state = $state;

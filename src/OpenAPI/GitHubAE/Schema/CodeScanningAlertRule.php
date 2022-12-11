@@ -9,7 +9,7 @@ final class CodeScanningAlertRule
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private ?string $id = null;
+    private $id;
     /**
      * The name of the rule used to detect the alert.
      */
@@ -17,11 +17,11 @@ final class CodeScanningAlertRule
     /**
      * The severity of the alert.
      */
-    private ?string $severity = null;
+    private $severity;
     /**
      * The security severity of the alert.
      */
-    private ?string $security_severity_level = null;
+    private $security_severity_level;
     /**
      * A short description of the rule used to detect the alert.
      */
@@ -33,15 +33,19 @@ final class CodeScanningAlertRule
     /**
      * A set of tags applicable for the rule.
      */
-    private array $tags = array();
+    private $tags;
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    private ?string $help = null;
+    private $help;
+    /**
+     * A link to the documentation for the rule used to detect the alert.
+     */
+    private $help_uri;
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    public function id() : ?string
+    public function id()
     {
         return $this->id;
     }
@@ -55,14 +59,14 @@ final class CodeScanningAlertRule
     /**
      * The severity of the alert.
      */
-    public function severity() : ?string
+    public function severity()
     {
         return $this->severity;
     }
     /**
      * The security severity of the alert.
      */
-    public function security_severity_level() : ?string
+    public function security_severity_level()
     {
         return $this->security_severity_level;
     }
@@ -83,15 +87,22 @@ final class CodeScanningAlertRule
     /**
      * A set of tags applicable for the rule.
      */
-    public function tags() : array
+    public function tags()
     {
         return $this->tags;
     }
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    public function help() : ?string
+    public function help()
     {
         return $this->help;
+    }
+    /**
+     * A link to the documentation for the rule used to detect the alert.
+     */
+    public function help_uri()
+    {
+        return $this->help_uri;
     }
 }

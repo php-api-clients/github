@@ -5,13 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
 final class CreateFromManifest_
 {
     private const OPERATION_ID = 'apps/create-from-manifest';
-    /****/
-    public string $code;
+    private readonly string $code;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($code)
+    function __construct(string $code)
     {
         $this->code = $code;
     }

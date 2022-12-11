@@ -6,12 +6,12 @@ final class GetGpgKeyForAuthenticatedUser_
 {
     private const OPERATION_ID = 'users/get-gpg-key-for-authenticated-user';
     /**The unique identifier of the GPG key.**/
-    public int $gpg_key_id;
+    private readonly int $gpg_key_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($gpg_key_id)
+    function __construct(int $gpg_key_id)
     {
         $this->gpg_key_id = $gpg_key_id;
     }

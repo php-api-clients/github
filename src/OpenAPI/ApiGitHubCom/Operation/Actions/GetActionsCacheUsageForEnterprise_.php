@@ -6,12 +6,12 @@ final class GetActionsCacheUsageForEnterprise_
 {
     private const OPERATION_ID = 'actions/get-actions-cache-usage-for-enterprise';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
-    public string $enterprise;
+    private readonly string $enterprise;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($enterprise)
+    function __construct(string $enterprise)
     {
         $this->enterprise = $enterprise;
     }

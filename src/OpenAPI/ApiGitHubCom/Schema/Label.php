@@ -16,7 +16,7 @@ final class Label
      * The name of the label.
      */
     private string $name;
-    private ?string $description = null;
+    private $description;
     /**
      * 6-character hex code, without the leading #, identifying the color
      */
@@ -44,7 +44,7 @@ final class Label
     {
         return $this->name;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }

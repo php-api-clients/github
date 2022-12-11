@@ -36,6 +36,14 @@ final class BranchProtection
     private string $name;
     private string $protection_url;
     private array $required_signatures = array();
+    /**
+     * Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+     */
+    private array $lock_branch = array();
+    /**
+     * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+     */
+    private array $allow_fork_syncing = array();
     public function url() : string
     {
         return $this->url;
@@ -103,5 +111,19 @@ final class BranchProtection
     public function required_signatures() : array
     {
         return $this->required_signatures;
+    }
+    /**
+     * Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+     */
+    public function lock_branch() : array
+    {
+        return $this->lock_branch;
+    }
+    /**
+     * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+     */
+    public function allow_fork_syncing() : array
+    {
+        return $this->allow_fork_syncing;
     }
 }

@@ -6,16 +6,16 @@ final class AddOrUpdateRepoPermissionsLegacy_
 {
     private const OPERATION_ID = 'teams/add-or-update-repo-permissions-legacy';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id, $owner, $repo)
+    function __construct(int $team_id, string $owner, string $repo)
     {
         $this->team_id = $team_id;
         $this->owner = $owner;

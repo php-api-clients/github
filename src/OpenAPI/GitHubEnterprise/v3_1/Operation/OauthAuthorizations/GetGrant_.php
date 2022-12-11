@@ -6,12 +6,12 @@ final class GetGrant_
 {
     private const OPERATION_ID = 'oauth-authorizations/get-grant';
     /**The unique identifier of the grant.**/
-    public int $grant_id;
+    private readonly int $grant_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($grant_id)
+    function __construct(int $grant_id)
     {
         $this->grant_id = $grant_id;
     }

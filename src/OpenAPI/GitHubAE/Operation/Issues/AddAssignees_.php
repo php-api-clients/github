@@ -6,16 +6,16 @@ final class AddAssignees_
 {
     private const OPERATION_ID = 'issues/add-assignees';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The number that identifies the issue.**/
-    public int $issue_number;
+    private readonly int $issue_number;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $issue_number)
+    function __construct(string $owner, string $repo, int $issue_number)
     {
         $this->owner = $owner;
         $this->repo = $repo;

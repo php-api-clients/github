@@ -6,16 +6,16 @@ final class AddCustomLabelsToSelfHostedRunnerForRepo_
 {
     private const OPERATION_ID = 'actions/add-custom-labels-to-self-hosted-runner-for-repo';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**Unique identifier of the self-hosted runner.**/
-    public int $runner_id;
+    private readonly int $runner_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $runner_id)
+    function __construct(string $owner, string $repo, int $runner_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

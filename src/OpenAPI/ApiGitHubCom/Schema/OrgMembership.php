@@ -17,15 +17,11 @@ final class OrgMembership
     private string $role;
     private string $organization_url;
     /**
-     * Organization Simple
+     * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $user = null;
+    private $user;
     private array $permissions = array();
     public function url() : string
     {
@@ -50,16 +46,13 @@ final class OrgMembership
         return $this->organization_url;
     }
     /**
-     * Organization Simple
+     * A GitHub organization.
      */
     public function organization() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
     {
         return $this->organization;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

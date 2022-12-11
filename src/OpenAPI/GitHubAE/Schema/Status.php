@@ -7,25 +7,21 @@ final class Status
     public const SCHEMA_TITLE = 'Status';
     public const SCHEMA_DESCRIPTION = 'The status of a commit.';
     private string $url;
-    private ?string $avatar_url = null;
+    private $avatar_url;
     private int $id;
     private string $node_id;
     private string $state;
-    private string $description;
-    private string $target_url;
+    private $description;
+    private $target_url;
     private string $context;
     private string $created_at;
     private string $updated_at;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $creator = null;
+    private $creator;
     public function url() : string
     {
         return $this->url;
     }
-    public function avatar_url() : ?string
+    public function avatar_url()
     {
         return $this->avatar_url;
     }
@@ -41,11 +37,11 @@ final class Status
     {
         return $this->state;
     }
-    public function description() : string
+    public function description()
     {
         return $this->description;
     }
-    public function target_url() : string
+    public function target_url()
     {
         return $this->target_url;
     }
@@ -61,10 +57,7 @@ final class Status
     {
         return $this->updated_at;
     }
-    /**
-     * Simple User
-     */
-    public function creator() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function creator()
     {
         return $this->creator;
     }

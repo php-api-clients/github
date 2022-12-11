@@ -6,12 +6,12 @@ final class DeclineInvitationForAuthenticatedUser_
 {
     private const OPERATION_ID = 'repos/decline-invitation-for-authenticated-user';
     /**The unique identifier of the invitation.**/
-    public int $invitation_id;
+    private readonly int $invitation_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($invitation_id)
+    function __construct(int $invitation_id)
     {
         $this->invitation_id = $invitation_id;
     }

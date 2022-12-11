@@ -6,12 +6,12 @@ final class UnsuspendInstallation_
 {
     private const OPERATION_ID = 'apps/unsuspend-installation';
     /**The unique identifier of the installation.**/
-    public int $installation_id;
+    private readonly int $installation_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($installation_id)
+    function __construct(int $installation_id)
     {
         $this->installation_id = $installation_id;
     }

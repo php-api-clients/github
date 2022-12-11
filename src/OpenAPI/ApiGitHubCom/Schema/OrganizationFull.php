@@ -17,13 +17,13 @@ final class OrganizationFull
     private string $members_url;
     private string $public_members_url;
     private string $avatar_url;
-    private ?string $description = null;
+    private $description;
     private ?string $name = null;
     private ?string $company = null;
     private ?string $blog = null;
     private ?string $location = null;
     private ?string $email = null;
-    private ?string $twitter_username = null;
+    private $twitter_username;
     private ?bool $is_verified = null;
     private bool $has_organization_projects;
     private bool $has_repository_projects;
@@ -36,14 +36,14 @@ final class OrganizationFull
     private string $type;
     private ?int $total_private_repos = null;
     private ?int $owned_private_repos = null;
-    private ?int $private_gists = null;
-    private ?int $disk_usage = null;
-    private ?int $collaborators = null;
-    private ?string $billing_email = null;
+    private $private_gists;
+    private $disk_usage;
+    private $collaborators;
+    private $billing_email;
     private array $plan = array();
-    private ?string $default_repository_permission = null;
-    private ?bool $members_can_create_repositories = null;
-    private ?bool $two_factor_requirement_enabled = null;
+    private $default_repository_permission;
+    private $members_can_create_repositories;
+    private $two_factor_requirement_enabled;
     private ?string $members_allowed_repository_creation_type = null;
     private ?bool $members_can_create_public_repositories = null;
     private ?bool $members_can_create_private_repositories = null;
@@ -51,8 +51,58 @@ final class OrganizationFull
     private ?bool $members_can_create_pages = null;
     private ?bool $members_can_create_public_pages = null;
     private ?bool $members_can_create_private_pages = null;
-    private ?bool $members_can_fork_private_repositories = null;
+    private $members_can_fork_private_repositories;
+    private ?bool $web_commit_signoff_required = null;
     private string $updated_at;
+    /**
+    * Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    private ?bool $advanced_security_enabled_for_new_repositories = null;
+    /**
+    * Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to
+    this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    private ?bool $dependabot_alerts_enabled_for_new_repositories = null;
+    /**
+    * Whether dependabot security updates are automatically enabled for new repositories and repositories transferred
+    to this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    private ?bool $dependabot_security_updates_enabled_for_new_repositories = null;
+    /**
+    * Whether dependency graph is automatically enabled for new repositories and repositories transferred to this
+    organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    private ?bool $dependency_graph_enabled_for_new_repositories = null;
+    /**
+    * Whether secret scanning is automatically enabled for new repositories and repositories transferred to this
+    organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    private ?bool $secret_scanning_enabled_for_new_repositories = null;
+    /**
+    * Whether secret scanning push protection is automatically enabled for new repositories and repositories
+    transferred to this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    private ?bool $secret_scanning_push_protection_enabled_for_new_repositories = null;
+    /**
+     * Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
+     */
+    private ?bool $secret_scanning_push_protection_custom_link_enabled = null;
+    /**
+     * An optional URL string to display to contributors who are blocked from pushing a secret.
+     */
+    private $secret_scanning_push_protection_custom_link;
     public function login() : string
     {
         return $this->login;
@@ -97,7 +147,7 @@ final class OrganizationFull
     {
         return $this->avatar_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -121,7 +171,7 @@ final class OrganizationFull
     {
         return $this->email;
     }
-    public function twitter_username() : ?string
+    public function twitter_username()
     {
         return $this->twitter_username;
     }
@@ -173,19 +223,19 @@ final class OrganizationFull
     {
         return $this->owned_private_repos;
     }
-    public function private_gists() : ?int
+    public function private_gists()
     {
         return $this->private_gists;
     }
-    public function disk_usage() : ?int
+    public function disk_usage()
     {
         return $this->disk_usage;
     }
-    public function collaborators() : ?int
+    public function collaborators()
     {
         return $this->collaborators;
     }
-    public function billing_email() : ?string
+    public function billing_email()
     {
         return $this->billing_email;
     }
@@ -193,15 +243,15 @@ final class OrganizationFull
     {
         return $this->plan;
     }
-    public function default_repository_permission() : ?string
+    public function default_repository_permission()
     {
         return $this->default_repository_permission;
     }
-    public function members_can_create_repositories() : ?bool
+    public function members_can_create_repositories()
     {
         return $this->members_can_create_repositories;
     }
-    public function two_factor_requirement_enabled() : ?bool
+    public function two_factor_requirement_enabled()
     {
         return $this->two_factor_requirement_enabled;
     }
@@ -233,12 +283,89 @@ final class OrganizationFull
     {
         return $this->members_can_create_private_pages;
     }
-    public function members_can_fork_private_repositories() : ?bool
+    public function members_can_fork_private_repositories()
     {
         return $this->members_can_fork_private_repositories;
+    }
+    public function web_commit_signoff_required() : ?bool
+    {
+        return $this->web_commit_signoff_required;
     }
     public function updated_at() : string
     {
         return $this->updated_at;
+    }
+    /**
+    * Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    public function advanced_security_enabled_for_new_repositories() : ?bool
+    {
+        return $this->advanced_security_enabled_for_new_repositories;
+    }
+    /**
+    * Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to
+    this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    public function dependabot_alerts_enabled_for_new_repositories() : ?bool
+    {
+        return $this->dependabot_alerts_enabled_for_new_repositories;
+    }
+    /**
+    * Whether dependabot security updates are automatically enabled for new repositories and repositories transferred
+    to this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    public function dependabot_security_updates_enabled_for_new_repositories() : ?bool
+    {
+        return $this->dependabot_security_updates_enabled_for_new_repositories;
+    }
+    /**
+    * Whether dependency graph is automatically enabled for new repositories and repositories transferred to this
+    organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    public function dependency_graph_enabled_for_new_repositories() : ?bool
+    {
+        return $this->dependency_graph_enabled_for_new_repositories;
+    }
+    /**
+    * Whether secret scanning is automatically enabled for new repositories and repositories transferred to this
+    organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    public function secret_scanning_enabled_for_new_repositories() : ?bool
+    {
+        return $this->secret_scanning_enabled_for_new_repositories;
+    }
+    /**
+    * Whether secret scanning push protection is automatically enabled for new repositories and repositories
+    transferred to this organization.
+    
+    This field is only visible to organization owners or members of a team with the security manager role.
+    */
+    public function secret_scanning_push_protection_enabled_for_new_repositories() : ?bool
+    {
+        return $this->secret_scanning_push_protection_enabled_for_new_repositories;
+    }
+    /**
+     * Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
+     */
+    public function secret_scanning_push_protection_custom_link_enabled() : ?bool
+    {
+        return $this->secret_scanning_push_protection_custom_link_enabled;
+    }
+    /**
+     * An optional URL string to display to contributors who are blocked from pushing a secret.
+     */
+    public function secret_scanning_push_protection_custom_link()
+    {
+        return $this->secret_scanning_push_protection_custom_link;
     }
 }

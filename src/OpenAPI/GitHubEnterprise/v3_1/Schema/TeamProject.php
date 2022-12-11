@@ -13,7 +13,7 @@ final class TeamProject
     private int $id;
     private string $node_id;
     private string $name;
-    private ?string $body = null;
+    private $body;
     private int $number;
     private string $state;
     /**
@@ -60,7 +60,7 @@ final class TeamProject
     {
         return $this->name;
     }
-    public function body() : ?string
+    public function body()
     {
         return $this->body;
     }

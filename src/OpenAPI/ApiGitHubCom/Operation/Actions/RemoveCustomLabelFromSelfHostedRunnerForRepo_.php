@@ -6,18 +6,18 @@ final class RemoveCustomLabelFromSelfHostedRunnerForRepo_
 {
     private const OPERATION_ID = 'actions/remove-custom-label-from-self-hosted-runner-for-repo';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**Unique identifier of the self-hosted runner.**/
-    public int $runner_id;
+    private readonly int $runner_id;
     /**The name of a self-hosted runner's custom label.**/
-    public string $name;
+    private readonly string $name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $runner_id, $name)
+    function __construct(string $owner, string $repo, int $runner_id, string $name)
     {
         $this->owner = $owner;
         $this->repo = $repo;

@@ -13,7 +13,7 @@ final class Installation
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account = null;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -35,17 +35,13 @@ final class Installation
     private array $events = array();
     private string $created_at;
     private string $updated_at;
-    private ?string $single_file_name = null;
+    private $single_file_name;
     private ?bool $has_multiple_single_files = null;
     private array $single_file_paths = array();
     private string $app_slug;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $suspended_by = null;
-    private ?string $suspended_at = null;
-    private ?string $contact_email = null;
+    private $suspended_by;
+    private $suspended_at;
+    private $contact_email;
     /**
      * The ID of the installation.
      */
@@ -53,7 +49,7 @@ final class Installation
     {
         return $this->id;
     }
-    public function account() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function account() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->account;
     }
@@ -110,7 +106,7 @@ final class Installation
     {
         return $this->updated_at;
     }
-    public function single_file_name() : ?string
+    public function single_file_name()
     {
         return $this->single_file_name;
     }
@@ -126,18 +122,15 @@ final class Installation
     {
         return $this->app_slug;
     }
-    /**
-     * Simple User
-     */
-    public function suspended_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function suspended_by()
     {
         return $this->suspended_by;
     }
-    public function suspended_at() : ?string
+    public function suspended_at()
     {
         return $this->suspended_at;
     }
-    public function contact_email() : ?string
+    public function contact_email()
     {
         return $this->contact_email;
     }

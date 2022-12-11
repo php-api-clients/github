@@ -5,17 +5,16 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses;
 final class GetAllCommonlyUsed_
 {
     private const OPERATION_ID = 'licenses/get-all-commonly-used';
-    /****/
-    public bool $featured;
+    private readonly bool $featured;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($featured, int $per_page = 30, int $page = 1)
+    function __construct(bool $featured, int $per_page = 30, int $page = 1)
     {
         $this->featured = $featured;
         $this->per_page = $per_page;

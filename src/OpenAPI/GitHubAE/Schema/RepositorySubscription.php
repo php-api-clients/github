@@ -14,7 +14,7 @@ final class RepositorySubscription
      * Determines if all notifications should be blocked from this repository.
      */
     private bool $ignored;
-    private ?string $reason = null;
+    private $reason;
     private string $created_at;
     private string $url;
     private string $repository_url;
@@ -32,7 +32,7 @@ final class RepositorySubscription
     {
         return $this->ignored;
     }
-    public function reason() : ?string
+    public function reason()
     {
         return $this->reason;
     }

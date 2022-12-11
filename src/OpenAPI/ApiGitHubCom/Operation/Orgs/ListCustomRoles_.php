@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs;
 final class ListCustomRoles_
 {
     private const OPERATION_ID = 'orgs/list-custom-roles';
-    /****/
-    public string $organization_id;
+    /**The unique identifier of the organization.**/
+    private readonly string $organization_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($organization_id)
+    function __construct(string $organization_id)
     {
         $this->organization_id = $organization_id;
     }

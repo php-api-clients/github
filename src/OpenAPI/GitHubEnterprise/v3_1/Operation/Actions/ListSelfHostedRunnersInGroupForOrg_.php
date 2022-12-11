@@ -6,18 +6,18 @@ final class ListSelfHostedRunnersInGroupForOrg_
 {
     private const OPERATION_ID = 'actions/list-self-hosted-runners-in-group-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Unique identifier of the self-hosted runner group.**/
-    public int $runner_group_id;
+    private readonly int $runner_group_id;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $runner_group_id, int $per_page = 30, int $page = 1)
+    function __construct(string $org, int $runner_group_id, int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->runner_group_id = $runner_group_id;

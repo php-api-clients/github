@@ -6,20 +6,20 @@ final class ListAccountsForPlanStubbed_
 {
     private const OPERATION_ID = 'apps/list-accounts-for-plan-stubbed';
     /**The unique identifier of the plan.**/
-    public int $plan_id;
+    private readonly int $plan_id;
     /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
-    public string $sort;
+    private readonly string $sort;
     /**To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($plan_id, string $sort = 'created', $direction, int $per_page = 30, int $page = 1)
+    function __construct(int $plan_id, string $sort = 'created', string $direction, int $per_page = 30, int $page = 1)
     {
         $this->plan_id = $plan_id;
         $this->sort = $sort;

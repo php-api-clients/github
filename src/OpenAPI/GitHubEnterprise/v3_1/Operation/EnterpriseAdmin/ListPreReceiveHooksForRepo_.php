@@ -6,22 +6,21 @@ final class ListPreReceiveHooksForRepo_
 {
     private const OPERATION_ID = 'enterprise-admin/list-pre-receive-hooks-for-repo';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**The direction to sort the results by.**/
-    public string $direction;
-    /****/
-    public string $sort;
+    private readonly string $direction;
+    private readonly string $sort;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created')
+    function __construct(string $owner, string $repo, int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created')
     {
         $this->owner = $owner;
         $this->repo = $repo;

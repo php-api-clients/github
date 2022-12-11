@@ -10,7 +10,7 @@ final class Labels
     private string $node_id;
     private string $url;
     private string $name;
-    private ?string $description = null;
+    private $description;
     private string $color;
     private bool $default;
     public function id() : int
@@ -29,7 +29,7 @@ final class Labels
     {
         return $this->name;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }

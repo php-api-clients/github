@@ -10,7 +10,7 @@ final class Team
     private string $node_id;
     private string $name;
     private string $slug;
-    private ?string $description = null;
+    private $description;
     private ?string $privacy = null;
     private string $permission;
     private array $permissions = array();
@@ -18,11 +18,7 @@ final class Team
     private string $html_url;
     private string $members_url;
     private string $repositories_url;
-    /**
-     * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableTeamSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableTeamSimple $parent = null;
+    private $parent;
     public function id() : int
     {
         return $this->id;
@@ -39,7 +35,7 @@ final class Team
     {
         return $this->slug;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -71,10 +67,7 @@ final class Team
     {
         return $this->repositories_url;
     }
-    /**
-     * Groups of organization members that gives permissions on specified repositories.
-     */
-    public function parent() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableTeamSimple
+    public function parent()
     {
         return $this->parent;
     }

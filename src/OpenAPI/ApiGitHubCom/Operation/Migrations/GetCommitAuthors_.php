@@ -6,16 +6,16 @@ final class GetCommitAuthors_
 {
     private const OPERATION_ID = 'migrations/get-commit-authors';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**A user ID. Only return users with an ID greater than this ID.**/
-    public int $since;
+    private readonly int $since;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $since)
+    function __construct(string $owner, string $repo, int $since)
     {
         $this->owner = $owner;
         $this->repo = $repo;

@@ -6,18 +6,18 @@ final class DeleteForIssue_
 {
     private const OPERATION_ID = 'reactions/delete-for-issue';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The number that identifies the issue.**/
-    public int $issue_number;
+    private readonly int $issue_number;
     /**The unique identifier of the reaction.**/
-    public int $reaction_id;
+    private readonly int $reaction_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $issue_number, $reaction_id)
+    function __construct(string $owner, string $repo, int $issue_number, int $reaction_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

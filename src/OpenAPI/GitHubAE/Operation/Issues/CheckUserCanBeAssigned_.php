@@ -6,16 +6,15 @@ final class CheckUserCanBeAssigned_
 {
     private const OPERATION_ID = 'issues/check-user-can-be-assigned';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /****/
-    public string $assignee;
+    private readonly string $repo;
+    private readonly string $assignee;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $assignee)
+    function __construct(string $owner, string $repo, string $assignee)
     {
         $this->owner = $owner;
         $this->repo = $repo;

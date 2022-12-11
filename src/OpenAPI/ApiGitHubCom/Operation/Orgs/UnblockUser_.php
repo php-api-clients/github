@@ -6,14 +6,14 @@ final class UnblockUser_
 {
     private const OPERATION_ID = 'orgs/unblock-user';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $username)
+    function __construct(string $org, string $username)
     {
         $this->org = $org;
         $this->username = $username;

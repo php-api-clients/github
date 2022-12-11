@@ -25,7 +25,7 @@ final class Errors
     /**
      * Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.
      */
-    private ?string $suggestion = null;
+    private $suggestion;
     /**
      * A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).
      */
@@ -65,7 +65,7 @@ final class Errors
     /**
      * Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.
      */
-    public function suggestion() : ?string
+    public function suggestion()
     {
         return $this->suggestion;
     }

@@ -14,6 +14,7 @@ final class OrganizationSecretScanningAlert
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
     private string $created_at;
+    private $updated_at;
     /**
      * The REST API URL of the alert resource.
      */
@@ -27,22 +28,18 @@ final class OrganizationSecretScanningAlert
      */
     private string $locations_url;
     /**
-     * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
+     * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
      */
     private string $state;
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    private ?string $resolution = null;
+    private $resolution;
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $resolved_at = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $resolved_by = null;
+    private $resolved_at;
+    private $resolved_by;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -57,10 +54,23 @@ final class OrganizationSecretScanningAlert
      */
     private string $secret;
     /**
-     * Minimal Repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
+     * A GitHub repository.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository $repository;
+    /**
+     * Whether push protection was bypassed for the detected secret.
+     */
+    private $push_protection_bypassed;
+    private $push_protection_bypassed_by;
+    /**
+     * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    private $push_protection_bypassed_at;
+    /**
+     * The comment that was optionally added when this alert was closed
+     */
+    private $resolution_comment;
     /**
      * The security alert number.
      */
@@ -74,6 +84,10 @@ final class OrganizationSecretScanningAlert
     public function created_at() : string
     {
         return $this->created_at;
+    }
+    public function updated_at()
+    {
+        return $this->updated_at;
     }
     /**
      * The REST API URL of the alert resource.
@@ -97,7 +111,7 @@ final class OrganizationSecretScanningAlert
         return $this->locations_url;
     }
     /**
-     * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
+     * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
      */
     public function state() : string
     {
@@ -106,21 +120,18 @@ final class OrganizationSecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    public function resolution() : ?string
+    public function resolution()
     {
         return $this->resolution;
     }
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function resolved_at() : ?string
+    public function resolved_at()
     {
         return $this->resolved_at;
     }
-    /**
-     * Simple User
-     */
-    public function resolved_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function resolved_by()
     {
         return $this->resolved_by;
     }
@@ -147,10 +158,35 @@ final class OrganizationSecretScanningAlert
         return $this->secret;
     }
     /**
-     * Minimal Repository
+     * A GitHub repository.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository
+    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository
     {
         return $this->repository;
+    }
+    /**
+     * Whether push protection was bypassed for the detected secret.
+     */
+    public function push_protection_bypassed()
+    {
+        return $this->push_protection_bypassed;
+    }
+    public function push_protection_bypassed_by()
+    {
+        return $this->push_protection_bypassed_by;
+    }
+    /**
+     * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    public function push_protection_bypassed_at()
+    {
+        return $this->push_protection_bypassed_at;
+    }
+    /**
+     * The comment that was optionally added when this alert was closed
+     */
+    public function resolution_comment()
+    {
+        return $this->resolution_comment;
     }
 }

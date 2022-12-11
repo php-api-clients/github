@@ -13,12 +13,12 @@ final class LdapMappingTeam
     private string $html_url;
     private string $name;
     private string $slug;
-    private ?string $description = null;
+    private $description;
     private string $privacy;
     private string $permission;
     private string $members_url;
     private string $repositories_url;
-    private $parent = null;
+    private $parent;
     public function ldap_dn() : string
     {
         return $this->ldap_dn;
@@ -47,7 +47,7 @@ final class LdapMappingTeam
     {
         return $this->slug;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }

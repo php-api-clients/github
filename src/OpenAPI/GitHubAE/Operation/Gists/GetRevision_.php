@@ -6,14 +6,13 @@ final class GetRevision_
 {
     private const OPERATION_ID = 'gists/get-revision';
     /**The unique identifier of the gist.**/
-    public string $gist_id;
-    /****/
-    public string $sha;
+    private readonly string $gist_id;
+    private readonly string $sha;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($gist_id, $sha)
+    function __construct(string $gist_id, string $sha)
     {
         $this->gist_id = $gist_id;
         $this->sha = $sha;

@@ -6,14 +6,14 @@ final class RemovePreReceiveHookEnforcementForOrg_
 {
     private const OPERATION_ID = 'enterprise-admin/remove-pre-receive-hook-enforcement-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The unique identifier of the pre-receive hook.**/
-    public int $pre_receive_hook_id;
+    private readonly int $pre_receive_hook_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $pre_receive_hook_id)
+    function __construct(string $org, int $pre_receive_hook_id)
     {
         $this->org = $org;
         $this->pre_receive_hook_id = $pre_receive_hook_id;

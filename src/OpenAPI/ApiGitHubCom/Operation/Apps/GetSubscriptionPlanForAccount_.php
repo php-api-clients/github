@@ -6,12 +6,12 @@ final class GetSubscriptionPlanForAccount_
 {
     private const OPERATION_ID = 'apps/get-subscription-plan-for-account';
     /**account_id parameter**/
-    public int $account_id;
+    private readonly int $account_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($account_id)
+    function __construct(int $account_id)
     {
         $this->account_id = $account_id;
     }

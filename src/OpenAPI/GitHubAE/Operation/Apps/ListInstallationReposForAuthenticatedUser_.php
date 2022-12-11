@@ -6,16 +6,16 @@ final class ListInstallationReposForAuthenticatedUser_
 {
     private const OPERATION_ID = 'apps/list-installation-repos-for-authenticated-user';
     /**The unique identifier of the installation.**/
-    public int $installation_id;
+    private readonly int $installation_id;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($installation_id, int $per_page = 30, int $page = 1)
+    function __construct(int $installation_id, int $per_page = 30, int $page = 1)
     {
         $this->installation_id = $installation_id;
         $this->per_page = $per_page;

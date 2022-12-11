@@ -21,11 +21,7 @@ final class OrgMembership
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\OrganizationSimple::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\OrganizationSimple $organization;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $user = null;
+    private $user;
     private array $permissions = array();
     public function url() : string
     {
@@ -56,10 +52,7 @@ final class OrgMembership
     {
         return $this->organization;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

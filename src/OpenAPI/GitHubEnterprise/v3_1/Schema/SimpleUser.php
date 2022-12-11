@@ -6,13 +6,13 @@ final class SimpleUser
 {
     public const SCHEMA_TITLE = 'Simple User';
     public const SCHEMA_DESCRIPTION = 'Simple User';
-    private ?string $name = null;
-    private ?string $email = null;
+    private $name;
+    private $email;
     private string $login;
     private int $id;
     private string $node_id;
     private string $avatar_url;
-    private ?string $gravatar_id = null;
+    private $gravatar_id;
     private string $url;
     private string $html_url;
     private string $followers_url;
@@ -27,11 +27,11 @@ final class SimpleUser
     private string $type;
     private bool $site_admin;
     private ?string $starred_at = null;
-    public function name() : ?string
+    public function name()
     {
         return $this->name;
     }
-    public function email() : ?string
+    public function email()
     {
         return $this->email;
     }
@@ -51,7 +51,7 @@ final class SimpleUser
     {
         return $this->avatar_url;
     }
-    public function gravatar_id() : ?string
+    public function gravatar_id()
     {
         return $this->gravatar_id;
     }

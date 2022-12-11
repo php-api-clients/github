@@ -6,20 +6,20 @@ final class IssuesAndPullRequests_
 {
     private const OPERATION_ID = 'search/issues-and-pull-requests';
     /**The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub AE. The REST API supports the same qualifiers as the web interface for GitHub AE. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/github-ae@latest/rest/reference/search#constructing-a-search-query). See "[Searching issues and pull requests](https://docs.github.com/github-ae@latest/search-github/searching-on-github/searching-issues-and-pull-requests)" for a detailed list of qualifiers.**/
-    public string $q;
+    private readonly string $q;
     /**Sorts the results of your query by the number of `comments`, `reactions`, `reactions-+1`, `reactions--1`, `reactions-smile`, `reactions-thinking_face`, `reactions-heart`, `reactions-tada`, or `interactions`. You can also sort results by how recently the items were `created` or `updated`, Default: [best match](https://docs.github.com/github-ae@latest/rest/reference/search#ranking-search-results)**/
-    public string $sort;
+    private readonly string $sort;
     /**Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.**/
-    public string $order;
+    private readonly string $order;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($q, $sort, string $order = 'desc', int $per_page = 30, int $page = 1)
+    function __construct(string $q, string $sort, string $order = 'desc', int $per_page = 30, int $page = 1)
     {
         $this->q = $q;
         $this->sort = $sort;

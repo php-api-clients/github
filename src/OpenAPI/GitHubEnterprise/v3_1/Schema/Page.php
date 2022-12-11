@@ -13,19 +13,19 @@ final class Page
     /**
      * The status of the most recent build of the Page.
      */
-    private ?string $status = null;
+    private $status;
     /**
      * The Pages site's custom domain
      */
-    private ?string $cname = null;
+    private $cname;
     /**
      * The state if the domain is verified
      */
-    private ?string $protected_domain_state = null;
+    private $protected_domain_state;
     /**
      * The timestamp when a pending domain becomes unverified.
      */
-    private ?string $pending_domain_unverified_at = null;
+    private $pending_domain_unverified_at;
     /**
      * Whether the Page has a custom 404 page.
      */
@@ -37,7 +37,7 @@ final class Page
     /**
      * The process in which the Page will be built.
      */
-    private ?string $build_type = null;
+    private $build_type;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PagesSourceHash::class)
      */
@@ -64,28 +64,28 @@ final class Page
     /**
      * The status of the most recent build of the Page.
      */
-    public function status() : ?string
+    public function status()
     {
         return $this->status;
     }
     /**
      * The Pages site's custom domain
      */
-    public function cname() : ?string
+    public function cname()
     {
         return $this->cname;
     }
     /**
      * The state if the domain is verified
      */
-    public function protected_domain_state() : ?string
+    public function protected_domain_state()
     {
         return $this->protected_domain_state;
     }
     /**
      * The timestamp when a pending domain becomes unverified.
      */
-    public function pending_domain_unverified_at() : ?string
+    public function pending_domain_unverified_at()
     {
         return $this->pending_domain_unverified_at;
     }
@@ -106,7 +106,7 @@ final class Page
     /**
      * The process in which the Page will be built.
      */
-    public function build_type() : ?string
+    public function build_type()
     {
         return $this->build_type;
     }

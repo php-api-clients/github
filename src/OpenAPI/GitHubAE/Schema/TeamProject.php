@@ -13,11 +13,11 @@ final class TeamProject
     private int $id;
     private string $node_id;
     private string $name;
-    private ?string $body = null;
+    private $body;
     private int $number;
     private string $state;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $creator;
@@ -60,7 +60,7 @@ final class TeamProject
     {
         return $this->name;
     }
-    public function body() : ?string
+    public function body()
     {
         return $this->body;
     }
@@ -73,7 +73,7 @@ final class TeamProject
         return $this->state;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser
     {

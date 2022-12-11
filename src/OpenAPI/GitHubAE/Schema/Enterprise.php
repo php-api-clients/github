@@ -5,16 +5,16 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Enterprise
 {
     public const SCHEMA_TITLE = 'Enterprise';
-    public const SCHEMA_DESCRIPTION = 'An enterprise account';
+    public const SCHEMA_DESCRIPTION = 'An enterprise on GitHub.';
     /**
      * A short description of the enterprise.
      */
-    private ?string $description = null;
+    private $description;
     private string $html_url;
     /**
      * The enterprise's website URL.
      */
-    private ?string $website_url = null;
+    private $website_url;
     /**
      * Unique identifier of the enterprise
      */
@@ -28,13 +28,13 @@ final class Enterprise
      * The slug url identifier for the enterprise.
      */
     private string $slug;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private $created_at;
+    private $updated_at;
     private string $avatar_url;
     /**
      * A short description of the enterprise.
      */
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -45,7 +45,7 @@ final class Enterprise
     /**
      * The enterprise's website URL.
      */
-    public function website_url() : ?string
+    public function website_url()
     {
         return $this->website_url;
     }
@@ -74,11 +74,11 @@ final class Enterprise
     {
         return $this->slug;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }

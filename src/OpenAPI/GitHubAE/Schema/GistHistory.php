@@ -6,19 +6,12 @@ final class GistHistory
 {
     public const SCHEMA_TITLE = 'Gist History';
     public const SCHEMA_DESCRIPTION = 'Gist History';
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $user = null;
+    private $user;
     private string $version;
     private string $committed_at;
     private array $change_status = array();
     private string $url;
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

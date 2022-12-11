@@ -6,16 +6,16 @@ final class ListForAuthenticatedUser_
 {
     private const OPERATION_ID = 'codespaces/list-for-authenticated-user';
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**ID of the Repository to filter on**/
-    public int $repository_id;
+    private readonly int $repository_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(int $per_page = 30, int $page = 1, $repository_id)
+    function __construct(int $per_page = 30, int $page = 1, int $repository_id)
     {
         $this->per_page = $per_page;
         $this->page = $page;

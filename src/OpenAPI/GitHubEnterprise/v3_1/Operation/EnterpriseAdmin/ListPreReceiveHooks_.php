@@ -6,13 +6,13 @@ final class ListPreReceiveHooks_
 {
     private const OPERATION_ID = 'enterprise-admin/list-pre-receive-hooks';
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**The property to sort the results by.**/
-    public string $sort;
+    private readonly string $sort;
     public function operationId() : string
     {
         return self::OPERATION_ID;

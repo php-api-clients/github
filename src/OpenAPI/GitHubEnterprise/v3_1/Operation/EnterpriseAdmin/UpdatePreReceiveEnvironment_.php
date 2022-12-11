@@ -6,12 +6,12 @@ final class UpdatePreReceiveEnvironment_
 {
     private const OPERATION_ID = 'enterprise-admin/update-pre-receive-environment';
     /**The unique identifier of the pre-receive environment.**/
-    public int $pre_receive_environment_id;
+    private readonly int $pre_receive_environment_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($pre_receive_environment_id)
+    function __construct(int $pre_receive_environment_id)
     {
         $this->pre_receive_environment_id = $pre_receive_environment_id;
     }

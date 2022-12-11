@@ -6,16 +6,15 @@ final class DownloadTarballArchive_
 {
     private const OPERATION_ID = 'repos/download-tarball-archive';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /****/
-    public string $ref;
+    private readonly string $repo;
+    private readonly string $ref;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $ref)
+    function __construct(string $owner, string $repo, string $ref)
     {
         $this->owner = $owner;
         $this->repo = $repo;

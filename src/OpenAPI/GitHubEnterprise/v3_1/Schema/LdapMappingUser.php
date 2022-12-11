@@ -11,7 +11,7 @@ final class LdapMappingUser
     private int $id;
     private string $node_id;
     private string $avatar_url;
-    private ?string $gravatar_id = null;
+    private $gravatar_id;
     private string $url;
     private string $html_url;
     private string $followers_url;
@@ -25,14 +25,14 @@ final class LdapMappingUser
     private string $received_events_url;
     private string $type;
     private bool $site_admin;
-    private ?string $name = null;
-    private ?string $company = null;
-    private ?string $blog = null;
-    private ?string $location = null;
-    private ?string $email = null;
-    private ?bool $hireable = null;
-    private ?string $bio = null;
-    private ?string $twitter_username = null;
+    private $name;
+    private $company;
+    private $blog;
+    private $location;
+    private $email;
+    private $hireable;
+    private $bio;
+    private $twitter_username;
     private int $public_repos;
     private int $public_gists;
     private int $followers;
@@ -68,7 +68,7 @@ final class LdapMappingUser
     {
         return $this->avatar_url;
     }
-    public function gravatar_id() : ?string
+    public function gravatar_id()
     {
         return $this->gravatar_id;
     }
@@ -124,35 +124,35 @@ final class LdapMappingUser
     {
         return $this->site_admin;
     }
-    public function name() : ?string
+    public function name()
     {
         return $this->name;
     }
-    public function company() : ?string
+    public function company()
     {
         return $this->company;
     }
-    public function blog() : ?string
+    public function blog()
     {
         return $this->blog;
     }
-    public function location() : ?string
+    public function location()
     {
         return $this->location;
     }
-    public function email() : ?string
+    public function email()
     {
         return $this->email;
     }
-    public function hireable() : ?bool
+    public function hireable()
     {
         return $this->hireable;
     }
-    public function bio() : ?string
+    public function bio()
     {
         return $this->bio;
     }
-    public function twitter_username() : ?string
+    public function twitter_username()
     {
         return $this->twitter_username;
     }

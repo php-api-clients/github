@@ -7,21 +7,17 @@ final class ReviewComment
     public const SCHEMA_TITLE = 'Legacy Review Comment';
     public const SCHEMA_DESCRIPTION = 'Legacy Review Comment';
     private string $url;
-    private ?int $pull_request_review_id = null;
+    private $pull_request_review_id;
     private int $id;
     private string $node_id;
     private string $diff_hunk;
     private string $path;
-    private ?int $position = null;
+    private $position;
     private int $original_position;
     private string $commit_id;
     private string $original_commit_id;
     private ?int $in_reply_to_id = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $user = null;
+    private $user;
     private string $body;
     private string $created_at;
     private string $updated_at;
@@ -45,7 +41,7 @@ final class ReviewComment
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    private ?string $start_side = null;
+    private $start_side;
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
@@ -57,16 +53,16 @@ final class ReviewComment
     /**
      * The first line of the range for a multi-line comment.
      */
-    private ?int $start_line = null;
+    private $start_line;
     /**
      * The original first line of the range for a multi-line comment.
      */
-    private ?int $original_start_line = null;
+    private $original_start_line;
     public function url() : string
     {
         return $this->url;
     }
-    public function pull_request_review_id() : ?int
+    public function pull_request_review_id()
     {
         return $this->pull_request_review_id;
     }
@@ -86,7 +82,7 @@ final class ReviewComment
     {
         return $this->path;
     }
-    public function position() : ?int
+    public function position()
     {
         return $this->position;
     }
@@ -106,10 +102,7 @@ final class ReviewComment
     {
         return $this->in_reply_to_id;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }
@@ -166,7 +159,7 @@ final class ReviewComment
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function start_side() : ?string
+    public function start_side()
     {
         return $this->start_side;
     }
@@ -187,14 +180,14 @@ final class ReviewComment
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function start_line() : ?int
+    public function start_line()
     {
         return $this->start_line;
     }
     /**
      * The original first line of the range for a multi-line comment.
      */
-    public function original_start_line() : ?int
+    public function original_start_line()
     {
         return $this->original_start_line;
     }

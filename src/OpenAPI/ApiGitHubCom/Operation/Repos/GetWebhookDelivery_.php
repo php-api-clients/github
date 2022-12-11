@@ -6,18 +6,17 @@ final class GetWebhookDelivery_
 {
     private const OPERATION_ID = 'repos/get-webhook-delivery';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the hook.**/
-    public int $hook_id;
-    /****/
-    public int $delivery_id;
+    private readonly int $hook_id;
+    private readonly int $delivery_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $hook_id, $delivery_id)
+    function __construct(string $owner, string $repo, int $hook_id, int $delivery_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

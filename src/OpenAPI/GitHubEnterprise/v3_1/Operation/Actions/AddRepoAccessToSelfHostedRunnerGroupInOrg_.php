@@ -6,16 +6,16 @@ final class AddRepoAccessToSelfHostedRunnerGroupInOrg_
 {
     private const OPERATION_ID = 'actions/add-repo-access-to-self-hosted-runner-group-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Unique identifier of the self-hosted runner group.**/
-    public int $runner_group_id;
+    private readonly int $runner_group_id;
     /**The unique identifier of the repository.**/
-    public int $repository_id;
+    private readonly int $repository_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $runner_group_id, $repository_id)
+    function __construct(string $org, int $runner_group_id, int $repository_id)
     {
         $this->org = $org;
         $this->runner_group_id = $runner_group_id;

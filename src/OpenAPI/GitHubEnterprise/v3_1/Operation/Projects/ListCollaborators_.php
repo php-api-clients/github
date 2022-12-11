@@ -6,18 +6,18 @@ final class ListCollaborators_
 {
     private const OPERATION_ID = 'projects/list-collaborators';
     /**The unique identifier of the project.**/
-    public int $project_id;
+    private readonly int $project_id;
     /**Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project's organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.**/
-    public string $affiliation;
+    private readonly string $affiliation;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1)
+    function __construct(int $project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1)
     {
         $this->project_id = $project_id;
         $this->affiliation = $affiliation;

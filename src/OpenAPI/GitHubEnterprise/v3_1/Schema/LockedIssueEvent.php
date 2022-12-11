@@ -15,15 +15,11 @@ final class LockedIssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\SimpleUser $actor;
     private string $event;
-    private ?string $commit_id = null;
-    private ?string $commit_url = null;
+    private $commit_id;
+    private $commit_url;
     private string $created_at;
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration $performed_via_github_app = null;
-    private ?string $lock_reason = null;
+    private $performed_via_github_app;
+    private $lock_reason;
     public function id() : int
     {
         return $this->id;
@@ -47,11 +43,11 @@ final class LockedIssueEvent
     {
         return $this->event;
     }
-    public function commit_id() : ?string
+    public function commit_id()
     {
         return $this->commit_id;
     }
-    public function commit_url() : ?string
+    public function commit_url()
     {
         return $this->commit_url;
     }
@@ -59,14 +55,11 @@ final class LockedIssueEvent
     {
         return $this->created_at;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration
+    public function performed_via_github_app()
     {
         return $this->performed_via_github_app;
     }
-    public function lock_reason() : ?string
+    public function lock_reason()
     {
         return $this->lock_reason;
     }

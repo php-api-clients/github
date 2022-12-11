@@ -16,7 +16,7 @@ final class Thread
     private string $reason;
     private bool $unread;
     private string $updated_at;
-    private ?string $last_read_at = null;
+    private $last_read_at;
     private string $url;
     private string $subscription_url;
     public function id() : string
@@ -46,7 +46,7 @@ final class Thread
     {
         return $this->updated_at;
     }
-    public function last_read_at() : ?string
+    public function last_read_at()
     {
         return $this->last_read_at;
     }

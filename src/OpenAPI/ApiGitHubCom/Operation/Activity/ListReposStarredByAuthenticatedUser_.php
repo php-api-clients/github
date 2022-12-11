@@ -6,13 +6,13 @@ final class ListReposStarredByAuthenticatedUser_
 {
     private const OPERATION_ID = 'activity/list-repos-starred-by-authenticated-user';
     /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
-    public string $sort;
+    private readonly string $sort;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;

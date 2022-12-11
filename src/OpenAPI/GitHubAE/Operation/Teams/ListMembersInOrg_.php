@@ -6,20 +6,20 @@ final class ListMembersInOrg_
 {
     private const OPERATION_ID = 'teams/list-members-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The slug of the team name.**/
-    public string $team_slug;
+    private readonly string $team_slug;
     /**Filters members returned by their role in the team.**/
-    public string $role;
+    private readonly string $role;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $team_slug, string $role = 'all', int $per_page = 30, int $page = 1)
+    function __construct(string $org, string $team_slug, string $role = 'all', int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->team_slug = $team_slug;

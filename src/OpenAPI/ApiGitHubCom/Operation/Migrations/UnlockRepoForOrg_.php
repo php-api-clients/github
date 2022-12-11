@@ -6,16 +6,16 @@ final class UnlockRepoForOrg_
 {
     private const OPERATION_ID = 'migrations/unlock-repo-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The unique identifier of the migration.**/
-    public int $migration_id;
+    private readonly int $migration_id;
     /**repo_name parameter**/
-    public string $repo_name;
+    private readonly string $repo_name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $migration_id, $repo_name)
+    function __construct(string $org, int $migration_id, string $repo_name)
     {
         $this->org = $org;
         $this->migration_id = $migration_id;

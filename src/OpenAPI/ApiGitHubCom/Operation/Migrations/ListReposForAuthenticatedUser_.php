@@ -6,16 +6,16 @@ final class ListReposForAuthenticatedUser_
 {
     private const OPERATION_ID = 'migrations/list-repos-for-authenticated-user';
     /**The unique identifier of the migration.**/
-    public int $migration_id;
+    private readonly int $migration_id;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($migration_id, int $per_page = 30, int $page = 1)
+    function __construct(int $migration_id, int $per_page = 30, int $page = 1)
     {
         $this->migration_id = $migration_id;
         $this->per_page = $per_page;

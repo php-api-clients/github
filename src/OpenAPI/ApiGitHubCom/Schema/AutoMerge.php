@@ -7,7 +7,7 @@ final class AutoMerge
     public const SCHEMA_TITLE = 'Auto merge';
     public const SCHEMA_DESCRIPTION = 'The status of auto merging a pull request.';
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $enabled_by;
@@ -24,7 +24,7 @@ final class AutoMerge
      */
     private string $commit_message;
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function enabled_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {

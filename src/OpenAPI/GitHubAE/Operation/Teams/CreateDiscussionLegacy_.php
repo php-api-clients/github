@@ -6,12 +6,12 @@ final class CreateDiscussionLegacy_
 {
     private const OPERATION_ID = 'teams/create-discussion-legacy';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id)
+    function __construct(int $team_id)
     {
         $this->team_id = $team_id;
     }

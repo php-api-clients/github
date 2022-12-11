@@ -6,16 +6,16 @@ final class SetStatusCheckContexts_
 {
     private const OPERATION_ID = 'repos/set-status-check-contexts';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The name of the branch.**/
-    public string $branch;
+    private readonly string $branch;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $branch)
+    function __construct(string $owner, string $repo, string $branch)
     {
         $this->owner = $owner;
         $this->repo = $repo;

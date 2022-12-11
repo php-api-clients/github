@@ -6,14 +6,14 @@ final class DeleteArchiveForOrg_
 {
     private const OPERATION_ID = 'migrations/delete-archive-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The unique identifier of the migration.**/
-    public int $migration_id;
+    private readonly int $migration_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $migration_id)
+    function __construct(string $org, int $migration_id)
     {
         $this->org = $org;
         $this->migration_id = $migration_id;

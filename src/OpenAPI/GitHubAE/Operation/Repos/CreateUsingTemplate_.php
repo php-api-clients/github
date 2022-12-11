@@ -5,15 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos;
 final class CreateUsingTemplate_
 {
     private const OPERATION_ID = 'repos/create-using-template';
-    /****/
-    public string $template_owner;
-    /****/
-    public string $template_repo;
+    private readonly string $template_owner;
+    private readonly string $template_repo;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($template_owner, $template_repo)
+    function __construct(string $template_owner, string $template_repo)
     {
         $this->template_owner = $template_owner;
         $this->template_repo = $template_repo;

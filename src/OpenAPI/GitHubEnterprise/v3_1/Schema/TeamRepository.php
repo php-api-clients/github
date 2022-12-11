@@ -16,24 +16,16 @@ final class TeamRepository
      */
     private string $name;
     private string $full_name;
-    /**
-     * License Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple $license = null;
+    private $license;
     private int $forks;
     private array $permissions = array();
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $owner = null;
+    private $owner;
     /**
      * Whether the repository is private or public.
      */
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -74,11 +66,11 @@ final class TeamRepository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private ?string $homepage = null;
-    private ?string $language = null;
+    private $homepage;
+    private $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
@@ -122,18 +114,14 @@ final class TeamRepository
      * The repository visibility: public, private, or internal.
      */
     private ?string $visibility = null;
-    private ?string $pushed_at = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private $pushed_at;
+    private $created_at;
+    private $updated_at;
     /**
      * Whether to allow rebase merges for pull requests.
      */
     private ?bool $allow_rebase_merge = null;
-    /**
-     * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableRepository::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableRepository $template_repository = null;
+    private $template_repository;
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -178,10 +166,7 @@ final class TeamRepository
     {
         return $this->full_name;
     }
-    /**
-     * License Simple
-     */
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple
+    public function license()
     {
         return $this->license;
     }
@@ -193,10 +178,7 @@ final class TeamRepository
     {
         return $this->permissions;
     }
-    /**
-     * Simple User
-     */
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function owner()
     {
         return $this->owner;
     }
@@ -211,7 +193,7 @@ final class TeamRepository
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -375,7 +357,7 @@ final class TeamRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -387,11 +369,11 @@ final class TeamRepository
     {
         return $this->svn_url;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -486,15 +468,15 @@ final class TeamRepository
     {
         return $this->visibility;
     }
-    public function pushed_at() : ?string
+    public function pushed_at()
     {
         return $this->pushed_at;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }
@@ -505,10 +487,7 @@ final class TeamRepository
     {
         return $this->allow_rebase_merge;
     }
-    /**
-     * A git repository
-     */
-    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableRepository
+    public function template_repository()
     {
         return $this->template_repository;
     }

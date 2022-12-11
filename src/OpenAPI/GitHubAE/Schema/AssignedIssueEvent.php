@@ -10,13 +10,13 @@ final class AssignedIssueEvent
     private string $node_id;
     private string $url;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $actor;
     private string $event;
-    private ?string $commit_id = null;
-    private ?string $commit_url = null;
+    private $commit_id;
+    private $commit_url;
     private string $created_at;
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -24,12 +24,12 @@ final class AssignedIssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration $performed_via_github_app;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $assignee;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $assigner;
@@ -46,7 +46,7 @@ final class AssignedIssueEvent
         return $this->url;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function actor() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser
     {
@@ -56,11 +56,11 @@ final class AssignedIssueEvent
     {
         return $this->event;
     }
-    public function commit_id() : ?string
+    public function commit_id()
     {
         return $this->commit_id;
     }
-    public function commit_url() : ?string
+    public function commit_url()
     {
         return $this->commit_url;
     }
@@ -76,14 +76,14 @@ final class AssignedIssueEvent
         return $this->performed_via_github_app;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function assignee() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser
     {
         return $this->assignee;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function assigner() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser
     {

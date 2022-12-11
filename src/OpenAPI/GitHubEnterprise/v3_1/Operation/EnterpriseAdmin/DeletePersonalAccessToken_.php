@@ -6,12 +6,12 @@ final class DeletePersonalAccessToken_
 {
     private const OPERATION_ID = 'enterprise-admin/delete-personal-access-token';
     /**The unique identifier of the token.**/
-    public int $token_id;
+    private readonly int $token_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($token_id)
+    function __construct(int $token_id)
     {
         $this->token_id = $token_id;
     }

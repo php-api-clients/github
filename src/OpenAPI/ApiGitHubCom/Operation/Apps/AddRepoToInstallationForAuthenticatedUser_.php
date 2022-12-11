@@ -6,14 +6,14 @@ final class AddRepoToInstallationForAuthenticatedUser_
 {
     private const OPERATION_ID = 'apps/add-repo-to-installation-for-authenticated-user';
     /**The unique identifier of the installation.**/
-    public int $installation_id;
+    private readonly int $installation_id;
     /**The unique identifier of the repository.**/
-    public int $repository_id;
+    private readonly int $repository_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($installation_id, $repository_id)
+    function __construct(int $installation_id, int $repository_id)
     {
         $this->installation_id = $installation_id;
         $this->repository_id = $repository_id;

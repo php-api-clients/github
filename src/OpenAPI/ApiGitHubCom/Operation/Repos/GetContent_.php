@@ -6,18 +6,18 @@ final class GetContent_
 {
     private const OPERATION_ID = 'repos/get-content';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**path parameter**/
-    public string $path;
+    private readonly string $path;
     /**The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)**/
-    public string $ref;
+    private readonly string $ref;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $path, $ref)
+    function __construct(string $owner, string $repo, string $path, string $ref)
     {
         $this->owner = $owner;
         $this->repo = $repo;

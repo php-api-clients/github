@@ -6,12 +6,12 @@ final class UpdateLdapMappingForTeam_
 {
     private const OPERATION_ID = 'enterprise-admin/update-ldap-mapping-for-team';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id)
+    function __construct(int $team_id)
     {
         $this->team_id = $team_id;
     }

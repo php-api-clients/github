@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity;
 final class GetThread_
 {
     private const OPERATION_ID = 'activity/get-thread';
-    /**The unique identifier of the thread.**/
-    public int $thread_id;
+    /**The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user)).**/
+    private readonly int $thread_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($thread_id)
+    function __construct(int $thread_id)
     {
         $this->thread_id = $thread_id;
     }

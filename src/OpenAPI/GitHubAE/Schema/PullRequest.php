@@ -31,48 +31,24 @@ final class PullRequest
      * The title of the pull request.
      */
     private string $title;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $user = null;
-    private ?string $body = null;
+    private $user;
+    private $body;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequest\Labels>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequest\Labels::class)
      */
     private array $labels = array();
-    /**
-     * A collection of related issues and pull requests.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableMilestone::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableMilestone $milestone = null;
-    private ?string $active_lock_reason = null;
+    private $milestone;
+    private $active_lock_reason;
     private string $created_at;
     private string $updated_at;
-    private ?string $closed_at = null;
-    private ?string $merged_at = null;
-    private ?string $merge_commit_sha = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $assignee = null;
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
-     */
-    private array $assignees = array();
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
-     */
-    private array $requested_reviewers = array();
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TeamSimple>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TeamSimple::class)
-     */
-    private array $requested_teams = array();
+    private $closed_at;
+    private $merged_at;
+    private $merge_commit_sha;
+    private $assignee;
+    private $assignees;
+    private $requested_reviewers;
+    private $requested_teams;
     private array $head = array();
     private array $base = array();
     private array $_links = array();
@@ -82,22 +58,17 @@ final class PullRequest
     private string $author_association;
     /**
      * The status of auto merging a pull request.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AutoMerge::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AutoMerge $auto_merge = null;
+    private $auto_merge;
     /**
      * Indicates whether or not the pull request is a draft.
      */
     private ?bool $draft = null;
     private bool $merged;
-    private ?bool $mergeable = null;
-    private ?bool $rebaseable = null;
+    private $mergeable;
+    private $rebaseable;
     private string $mergeable_state;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $merged_by = null;
+    private $merged_by;
     private int $comments;
     private int $review_comments;
     /**
@@ -181,14 +152,11 @@ final class PullRequest
     {
         return $this->title;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }
-    public function body() : ?string
+    public function body()
     {
         return $this->body;
     }
@@ -199,14 +167,11 @@ final class PullRequest
     {
         return $this->labels;
     }
-    /**
-     * A collection of related issues and pull requests.
-     */
-    public function milestone() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableMilestone
+    public function milestone()
     {
         return $this->milestone;
     }
-    public function active_lock_reason() : ?string
+    public function active_lock_reason()
     {
         return $this->active_lock_reason;
     }
@@ -218,43 +183,31 @@ final class PullRequest
     {
         return $this->updated_at;
     }
-    public function closed_at() : ?string
+    public function closed_at()
     {
         return $this->closed_at;
     }
-    public function merged_at() : ?string
+    public function merged_at()
     {
         return $this->merged_at;
     }
-    public function merge_commit_sha() : ?string
+    public function merge_commit_sha()
     {
         return $this->merge_commit_sha;
     }
-    /**
-     * Simple User
-     */
-    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function assignee()
     {
         return $this->assignee;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
-     */
-    public function assignees() : array
+    public function assignees()
     {
         return $this->assignees;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
-     */
-    public function requested_reviewers() : array
+    public function requested_reviewers()
     {
         return $this->requested_reviewers;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TeamSimple>
-     */
-    public function requested_teams() : array
+    public function requested_teams()
     {
         return $this->requested_teams;
     }
@@ -280,7 +233,7 @@ final class PullRequest
     /**
      * The status of auto merging a pull request.
      */
-    public function auto_merge() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AutoMerge
+    public function auto_merge()
     {
         return $this->auto_merge;
     }
@@ -295,11 +248,11 @@ final class PullRequest
     {
         return $this->merged;
     }
-    public function mergeable() : ?bool
+    public function mergeable()
     {
         return $this->mergeable;
     }
-    public function rebaseable() : ?bool
+    public function rebaseable()
     {
         return $this->rebaseable;
     }
@@ -307,10 +260,7 @@ final class PullRequest
     {
         return $this->mergeable_state;
     }
-    /**
-     * Simple User
-     */
-    public function merged_by() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function merged_by()
     {
         return $this->merged_by;
     }

@@ -21,7 +21,7 @@ final class TeamFull
      */
     private string $name;
     private string $slug;
-    private ?string $description = null;
+    private $description;
     /**
      * The level of privacy this team should have
      */
@@ -32,11 +32,7 @@ final class TeamFull
     private string $permission;
     private string $members_url;
     private string $repositories_url;
-    /**
-     * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableTeamSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableTeamSimple $parent = null;
+    private $parent;
     private int $members_count;
     private int $repos_count;
     private string $created_at;
@@ -83,7 +79,7 @@ final class TeamFull
     {
         return $this->slug;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -109,10 +105,7 @@ final class TeamFull
     {
         return $this->repositories_url;
     }
-    /**
-     * Groups of organization members that gives permissions on specified repositories.
-     */
-    public function parent() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableTeamSimple
+    public function parent()
     {
         return $this->parent;
     }

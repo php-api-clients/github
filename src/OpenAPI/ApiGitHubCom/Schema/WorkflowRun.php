@@ -13,7 +13,7 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    private ?string $name = null;
+    private $name;
     private string $node_id;
     /**
      * The ID of the associated check suite.
@@ -23,7 +23,7 @@ final class WorkflowRun
      * The node ID of the associated check suite.
      */
     private ?string $check_suite_node_id = null;
-    private ?string $head_branch = null;
+    private $head_branch;
     /**
      * The SHA of the head commit that points to the version of the workflow being run.
      */
@@ -40,14 +40,10 @@ final class WorkflowRun
      * Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
      */
     private ?int $run_attempt = null;
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow::class)
-     */
-    private array $referenced_workflows = array();
+    private $referenced_workflows;
     private string $event;
-    private ?string $status = null;
-    private ?string $conclusion = null;
+    private $status;
+    private $conclusion;
     /**
      * The ID of the parent workflow.
      */
@@ -57,20 +53,16 @@ final class WorkflowRun
      */
     private string $url;
     private string $html_url;
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal::class)
-     */
-    private array $pull_requests = array();
+    private $pull_requests;
     private string $created_at;
     private string $updated_at;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor = null;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $triggering_actor = null;
@@ -105,16 +97,12 @@ final class WorkflowRun
     /**
      * The URL to the previous attempted run of this workflow, if one exists.
      */
-    private ?string $previous_attempt_url = null;
+    private $previous_attempt_url;
     /**
      * The URL to the workflow.
      */
     private string $workflow_url;
-    /**
-     * Simple Commit
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleCommit::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleCommit $head_commit = null;
+    private $head_commit;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
@@ -127,6 +115,10 @@ final class WorkflowRun
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $head_repository;
     private ?int $head_repository_id = null;
     /**
+     * The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
+     */
+    private string $display_title;
+    /**
      * The ID of the workflow run.
      */
     public function id() : int
@@ -136,7 +128,7 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    public function name() : ?string
+    public function name()
     {
         return $this->name;
     }
@@ -158,7 +150,7 @@ final class WorkflowRun
     {
         return $this->check_suite_node_id;
     }
-    public function head_branch() : ?string
+    public function head_branch()
     {
         return $this->head_branch;
     }
@@ -190,10 +182,7 @@ final class WorkflowRun
     {
         return $this->run_attempt;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow>
-     */
-    public function referenced_workflows() : array
+    public function referenced_workflows()
     {
         return $this->referenced_workflows;
     }
@@ -201,11 +190,11 @@ final class WorkflowRun
     {
         return $this->event;
     }
-    public function status() : ?string
+    public function status()
     {
         return $this->status;
     }
-    public function conclusion() : ?string
+    public function conclusion()
     {
         return $this->conclusion;
     }
@@ -227,10 +216,7 @@ final class WorkflowRun
     {
         return $this->html_url;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
-     */
-    public function pull_requests() : array
+    public function pull_requests()
     {
         return $this->pull_requests;
     }
@@ -243,14 +229,14 @@ final class WorkflowRun
         return $this->updated_at;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function actor() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->actor;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function triggering_actor() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -308,7 +294,7 @@ final class WorkflowRun
     /**
      * The URL to the previous attempted run of this workflow, if one exists.
      */
-    public function previous_attempt_url() : ?string
+    public function previous_attempt_url()
     {
         return $this->previous_attempt_url;
     }
@@ -319,10 +305,7 @@ final class WorkflowRun
     {
         return $this->workflow_url;
     }
-    /**
-     * Simple Commit
-     */
-    public function head_commit() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleCommit
+    public function head_commit()
     {
         return $this->head_commit;
     }
@@ -343,5 +326,12 @@ final class WorkflowRun
     public function head_repository_id() : ?int
     {
         return $this->head_repository_id;
+    }
+    /**
+     * The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
+     */
+    public function display_title() : string
+    {
+        return $this->display_title;
     }
 }

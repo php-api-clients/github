@@ -6,16 +6,15 @@ final class AddSelectedRepoToOrgSecret_
 {
     private const OPERATION_ID = 'actions/add-selected-repo-to-org-secret';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The name of the secret.**/
-    public string $secret_name;
-    /****/
-    public int $repository_id;
+    private readonly string $secret_name;
+    private readonly int $repository_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $secret_name, $repository_id)
+    function __construct(string $org, string $secret_name, int $repository_id)
     {
         $this->org = $org;
         $this->secret_name = $secret_name;

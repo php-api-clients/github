@@ -6,28 +6,28 @@ final class List_
 {
     private const OPERATION_ID = 'pulls/list';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**Either `open`, `closed`, or `all` to filter by state.**/
-    public string $state;
+    private readonly string $state;
     /**Filter pulls by head user or head organization and branch name in the format of `user:ref-name` or `organization:ref-name`. For example: `github:new-script-format` or `octocat:test-branch`.**/
-    public string $head;
+    private readonly string $head;
     /**Filter pulls by base branch name. Example: `gh-pages`.**/
-    public string $base;
+    private readonly string $base;
     /**What to sort results by. Can be either `created`, `updated`, `popularity` (comment count) or `long-running` (age, filtering by pulls updated in the last month).**/
-    public string $sort;
+    private readonly string $sort;
     /**The direction of the sort. Can be either `asc` or `desc`. Default: `desc` when sort is `created` or sort is not specified, otherwise `asc`.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, string $state = 'open', $head, $base, string $sort = 'created', $direction, int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $state = 'open', string $head, string $base, string $sort = 'created', string $direction, int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

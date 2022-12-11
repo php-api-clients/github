@@ -13,7 +13,7 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    private ?string $name = null;
+    private $name;
     private string $node_id;
     /**
      * The ID of the associated check suite.
@@ -23,7 +23,7 @@ final class WorkflowRun
      * The node ID of the associated check suite.
      */
     private ?string $check_suite_node_id = null;
-    private ?string $head_branch = null;
+    private $head_branch;
     /**
      * The SHA of the head commit that points to the version of the workflow being run.
      */
@@ -33,8 +33,8 @@ final class WorkflowRun
      */
     private int $run_number;
     private string $event;
-    private ?string $status = null;
-    private ?string $conclusion = null;
+    private $status;
+    private $conclusion;
     /**
      * The ID of the parent workflow.
      */
@@ -44,11 +44,7 @@ final class WorkflowRun
      */
     private string $url;
     private string $html_url;
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal::class)
-     */
-    private array $pull_requests = array();
+    private $pull_requests;
     private string $created_at;
     private string $updated_at;
     /**
@@ -79,11 +75,7 @@ final class WorkflowRun
      * The URL to the workflow.
      */
     private string $workflow_url;
-    /**
-     * Simple Commit
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleCommit::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleCommit $head_commit = null;
+    private $head_commit;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MinimalRepository::class)
@@ -105,7 +97,7 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    public function name() : ?string
+    public function name()
     {
         return $this->name;
     }
@@ -127,7 +119,7 @@ final class WorkflowRun
     {
         return $this->check_suite_node_id;
     }
-    public function head_branch() : ?string
+    public function head_branch()
     {
         return $this->head_branch;
     }
@@ -149,11 +141,11 @@ final class WorkflowRun
     {
         return $this->event;
     }
-    public function status() : ?string
+    public function status()
     {
         return $this->status;
     }
-    public function conclusion() : ?string
+    public function conclusion()
     {
         return $this->conclusion;
     }
@@ -175,10 +167,7 @@ final class WorkflowRun
     {
         return $this->html_url;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal>
-     */
-    public function pull_requests() : array
+    public function pull_requests()
     {
         return $this->pull_requests;
     }
@@ -239,10 +228,7 @@ final class WorkflowRun
     {
         return $this->workflow_url;
     }
-    /**
-     * Simple Commit
-     */
-    public function head_commit() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleCommit
+    public function head_commit()
     {
         return $this->head_commit;
     }

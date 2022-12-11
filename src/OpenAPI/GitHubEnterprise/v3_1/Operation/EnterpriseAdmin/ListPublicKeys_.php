@@ -6,20 +6,19 @@ final class ListPublicKeys_
 {
     private const OPERATION_ID = 'enterprise-admin/list-public-keys';
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**The direction to sort the results by.**/
-    public string $direction;
-    /****/
-    public string $sort;
+    private readonly string $direction;
+    private readonly string $sort;
     /**Only show public keys accessed after the given time.**/
-    public string $since;
+    private readonly string $since;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created', $since)
+    function __construct(int $per_page = 30, int $page = 1, string $direction = 'desc', string $sort = 'created', string $since)
     {
         $this->per_page = $per_page;
         $this->page = $page;

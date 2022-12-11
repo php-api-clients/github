@@ -6,16 +6,15 @@ final class GetEvent_
 {
     private const OPERATION_ID = 'issues/get-event';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /****/
-    public int $event_id;
+    private readonly string $repo;
+    private readonly int $event_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $event_id)
+    function __construct(string $owner, string $repo, int $event_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

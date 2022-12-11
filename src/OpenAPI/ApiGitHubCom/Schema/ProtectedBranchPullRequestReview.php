@@ -15,6 +15,10 @@ final class ProtectedBranchPullRequestReview
     private bool $dismiss_stale_reviews;
     private bool $require_code_owner_reviews;
     private ?int $required_approving_review_count = null;
+    /**
+     * Whether the most recent push must be approved by someone other than the person who pushed it.
+     */
+    private ?bool $require_last_push_approval = null;
     public function url() : ?string
     {
         return $this->url;
@@ -41,5 +45,12 @@ final class ProtectedBranchPullRequestReview
     public function required_approving_review_count() : ?int
     {
         return $this->required_approving_review_count;
+    }
+    /**
+     * Whether the most recent push must be approved by someone other than the person who pushed it.
+     */
+    public function require_last_push_approval() : ?bool
+    {
+        return $this->require_last_push_approval;
     }
 }

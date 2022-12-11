@@ -9,7 +9,7 @@ final class CodeOfConductSimple
     private string $url;
     private string $key;
     private string $name;
-    private ?string $html_url = null;
+    private $html_url;
     public function url() : string
     {
         return $this->url;
@@ -22,7 +22,7 @@ final class CodeOfConductSimple
     {
         return $this->name;
     }
-    public function html_url() : ?string
+    public function html_url()
     {
         return $this->html_url;
     }

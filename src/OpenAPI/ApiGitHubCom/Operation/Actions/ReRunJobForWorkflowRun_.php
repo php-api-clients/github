@@ -6,16 +6,16 @@ final class ReRunJobForWorkflowRun_
 {
     private const OPERATION_ID = 'actions/re-run-job-for-workflow-run';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the job.**/
-    public int $job_id;
+    private readonly int $job_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $job_id)
+    function __construct(string $owner, string $repo, int $job_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

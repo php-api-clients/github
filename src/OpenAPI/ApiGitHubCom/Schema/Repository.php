@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class Repository
 {
     public const SCHEMA_TITLE = 'Repository';
-    public const SCHEMA_DESCRIPTION = 'A git repository';
+    public const SCHEMA_DESCRIPTION = 'A repository on GitHub.';
     /**
      * Unique identifier of the repository
      */
@@ -16,20 +16,12 @@ final class Repository
      */
     private string $name;
     private string $full_name;
-    /**
-     * License Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple $license = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $organization = null;
+    private $license;
+    private $organization;
     private int $forks;
     private array $permissions = array();
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
@@ -38,7 +30,7 @@ final class Repository
      */
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -79,14 +71,17 @@ final class Repository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private ?string $homepage = null;
-    private ?string $language = null;
+    private $homepage;
+    private $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     private int $size;
     /**
      * The default branch of the repository.
@@ -116,6 +111,10 @@ final class Repository
      */
     private bool $has_downloads;
     /**
+     * Whether discussions are enabled.
+     */
+    private ?bool $has_discussions = null;
+    /**
      * Whether the repository is archived.
      */
     private bool $archived;
@@ -127,14 +126,14 @@ final class Repository
      * The repository visibility: public, private, or internal.
      */
     private ?string $visibility = null;
-    private ?string $pushed_at = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private $pushed_at;
+    private $created_at;
+    private $updated_at;
     /**
      * Whether to allow rebase merges for pull requests.
      */
     private ?bool $allow_rebase_merge = null;
-    private array $template_repository = array();
+    private $template_repository;
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -149,6 +148,44 @@ final class Repository
      */
     private ?bool $delete_branch_on_merge = null;
     /**
+     * Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
+     */
+    private ?bool $allow_update_branch = null;
+    /**
+     * Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+     */
+    private ?bool $use_squash_pr_title_as_default = null;
+    /**
+    * The default value for a squash merge commit title:
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+    */
+    private ?string $squash_merge_commit_title = null;
+    /**
+    * The default value for a squash merge commit message:
+    
+    - `PR_BODY` - default to the pull request's body.
+    - `COMMIT_MESSAGES` - default to the branch's commit messages.
+    - `BLANK` - default to a blank commit message.
+    */
+    private ?string $squash_merge_commit_message = null;
+    /**
+    * The default value for a merge commit title.
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+    */
+    private ?string $merge_commit_title = null;
+    /**
+    * The default value for a merge commit message.
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `PR_BODY` - default to the pull request's body.
+    - `BLANK` - default to a blank commit message.
+    */
+    private ?string $merge_commit_message = null;
+    /**
      * Whether to allow merge commits for pull requests.
      */
     private ?bool $allow_merge_commit = null;
@@ -156,12 +193,20 @@ final class Repository
      * Whether to allow forking this repo
      */
     private ?bool $allow_forking = null;
+    /**
+     * Whether to require contributors to sign off on web-based commits
+     */
+    private ?bool $web_commit_signoff_required = null;
     private ?int $subscribers_count = null;
     private ?int $network_count = null;
     private int $open_issues;
     private int $watchers;
     private ?string $master_branch = null;
     private ?string $starred_at = null;
+    /**
+     * Whether anonymous git access is enabled for this repository
+     */
+    private ?bool $anonymous_access_enabled = null;
     /**
      * Unique identifier of the repository
      */
@@ -184,17 +229,11 @@ final class Repository
     {
         return $this->full_name;
     }
-    /**
-     * License Simple
-     */
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple
+    public function license()
     {
         return $this->license;
     }
-    /**
-     * Simple User
-     */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function organization()
     {
         return $this->organization;
     }
@@ -207,7 +246,7 @@ final class Repository
         return $this->permissions;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -224,7 +263,7 @@ final class Repository
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -388,7 +427,7 @@ final class Repository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -400,11 +439,11 @@ final class Repository
     {
         return $this->svn_url;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -420,6 +459,9 @@ final class Repository
     {
         return $this->watchers_count;
     }
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     public function size() : int
     {
         return $this->size;
@@ -479,6 +521,13 @@ final class Repository
         return $this->has_downloads;
     }
     /**
+     * Whether discussions are enabled.
+     */
+    public function has_discussions() : ?bool
+    {
+        return $this->has_discussions;
+    }
+    /**
      * Whether the repository is archived.
      */
     public function archived() : bool
@@ -499,15 +548,15 @@ final class Repository
     {
         return $this->visibility;
     }
-    public function pushed_at() : ?string
+    public function pushed_at()
     {
         return $this->pushed_at;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }
@@ -518,7 +567,7 @@ final class Repository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : array
+    public function template_repository()
     {
         return $this->template_repository;
     }
@@ -548,6 +597,62 @@ final class Repository
         return $this->delete_branch_on_merge;
     }
     /**
+     * Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
+     */
+    public function allow_update_branch() : ?bool
+    {
+        return $this->allow_update_branch;
+    }
+    /**
+     * Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+     */
+    public function use_squash_pr_title_as_default() : ?bool
+    {
+        return $this->use_squash_pr_title_as_default;
+    }
+    /**
+    * The default value for a squash merge commit title:
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+    */
+    public function squash_merge_commit_title() : ?string
+    {
+        return $this->squash_merge_commit_title;
+    }
+    /**
+    * The default value for a squash merge commit message:
+    
+    - `PR_BODY` - default to the pull request's body.
+    - `COMMIT_MESSAGES` - default to the branch's commit messages.
+    - `BLANK` - default to a blank commit message.
+    */
+    public function squash_merge_commit_message() : ?string
+    {
+        return $this->squash_merge_commit_message;
+    }
+    /**
+    * The default value for a merge commit title.
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+    */
+    public function merge_commit_title() : ?string
+    {
+        return $this->merge_commit_title;
+    }
+    /**
+    * The default value for a merge commit message.
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `PR_BODY` - default to the pull request's body.
+    - `BLANK` - default to a blank commit message.
+    */
+    public function merge_commit_message() : ?string
+    {
+        return $this->merge_commit_message;
+    }
+    /**
      * Whether to allow merge commits for pull requests.
      */
     public function allow_merge_commit() : ?bool
@@ -560,6 +665,13 @@ final class Repository
     public function allow_forking() : ?bool
     {
         return $this->allow_forking;
+    }
+    /**
+     * Whether to require contributors to sign off on web-based commits
+     */
+    public function web_commit_signoff_required() : ?bool
+    {
+        return $this->web_commit_signoff_required;
     }
     public function subscribers_count() : ?int
     {
@@ -584,5 +696,12 @@ final class Repository
     public function starred_at() : ?string
     {
         return $this->starred_at;
+    }
+    /**
+     * Whether anonymous git access is enabled for this repository
+     */
+    public function anonymous_access_enabled() : ?bool
+    {
+        return $this->anonymous_access_enabled;
     }
 }

@@ -6,18 +6,18 @@ final class GetPackageVersionForOrganization_
 {
     private const OPERATION_ID = 'packages/get-package-version-for-organization';
     /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.**/
-    public string $package_type;
+    private readonly string $package_type;
     /**The name of the package.**/
-    public string $package_name;
+    private readonly string $package_name;
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Unique identifier of the package version.**/
-    public int $package_version_id;
+    private readonly int $package_version_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($package_type, $package_name, $org, $package_version_id)
+    function __construct(string $package_type, string $package_name, string $org, int $package_version_id)
     {
         $this->package_type = $package_type;
         $this->package_name = $package_name;

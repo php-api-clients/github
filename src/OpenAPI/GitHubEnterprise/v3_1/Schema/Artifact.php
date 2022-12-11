@@ -22,10 +22,10 @@ final class Artifact
      * Whether or not the artifact has expired.
      */
     private bool $expired;
-    private ?string $created_at = null;
-    private ?string $expires_at = null;
-    private ?string $updated_at = null;
-    private array $workflow_run = array();
+    private $created_at;
+    private $expires_at;
+    private $updated_at;
+    private $workflow_run;
     public function id() : int
     {
         return $this->id;
@@ -63,19 +63,19 @@ final class Artifact
     {
         return $this->expired;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function expires_at() : ?string
+    public function expires_at()
     {
         return $this->expires_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }
-    public function workflow_run() : array
+    public function workflow_run()
     {
         return $this->workflow_run;
     }

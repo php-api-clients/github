@@ -6,18 +6,18 @@ final class ListExternalIdpGroupsForOrg_
 {
     private const OPERATION_ID = 'teams/list-external-idp-groups-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page token**/
-    public int $page;
+    private readonly int $page;
     /**Limits the list to groups containing the text in the group name**/
-    public string $display_name;
+    private readonly string $display_name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, int $per_page = 30, $page, $display_name)
+    function __construct(string $org, int $per_page = 30, int $page, string $display_name)
     {
         $this->org = $org;
         $this->per_page = $per_page;

@@ -6,28 +6,28 @@ final class ListForOrg_
 {
     private const OPERATION_ID = 'issues/list-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Indicates which sorts of issues to return. `assigned` means issues assigned to you. `created` means issues created by you. `mentioned` means issues mentioning you. `subscribed` means issues you're subscribed to updates for. `all` or `repos` means all issues you can see, regardless of participation or creation.**/
-    public string $filter;
-    /**Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.**/
-    public string $state;
+    private readonly string $filter;
+    /**Indicates the state of the issues to return.**/
+    private readonly string $state;
     /**A list of comma separated label names. Example: `bug,ui,@high`**/
-    public string $labels;
-    /**What to sort results by. Can be either `created`, `updated`, `comments`.**/
-    public string $sort;
+    private readonly string $labels;
+    /**What to sort results by.**/
+    private readonly string $sort;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
+    private readonly string $since;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, string $filter = 'assigned', string $state = 'open', $labels, string $sort = 'created', string $direction = 'desc', $since, int $per_page = 30, int $page = 1)
+    function __construct(string $org, string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->filter = $filter;

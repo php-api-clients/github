@@ -6,22 +6,22 @@ final class ListDiscussionCommentsInOrg_
 {
     private const OPERATION_ID = 'teams/list-discussion-comments-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The slug of the team name.**/
-    public string $team_slug;
+    private readonly string $team_slug;
     /**The number that identifies the discussion.**/
-    public int $discussion_number;
+    private readonly int $discussion_number;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $team_slug, $discussion_number, string $direction = 'desc', int $per_page = 30, int $page = 1)
+    function __construct(string $org, string $team_slug, int $discussion_number, string $direction = 'desc', int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->team_slug = $team_slug;

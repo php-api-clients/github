@@ -4,8 +4,8 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class ContentSubmodule
 {
-    public const SCHEMA_TITLE = 'Symlink Content';
-    public const SCHEMA_DESCRIPTION = 'An object describing a symlink';
+    public const SCHEMA_TITLE = 'Submodule Content';
+    public const SCHEMA_DESCRIPTION = 'An object describing a submodule';
     private string $type;
     private string $submodule_git_url;
     private int $size;
@@ -13,9 +13,9 @@ final class ContentSubmodule
     private string $path;
     private string $sha;
     private string $url;
-    private ?string $git_url = null;
-    private ?string $html_url = null;
-    private ?string $download_url = null;
+    private $git_url;
+    private $html_url;
+    private $download_url;
     private array $_links = array();
     public function type() : string
     {
@@ -45,15 +45,15 @@ final class ContentSubmodule
     {
         return $this->url;
     }
-    public function git_url() : ?string
+    public function git_url()
     {
         return $this->git_url;
     }
-    public function html_url() : ?string
+    public function html_url()
     {
         return $this->html_url;
     }
-    public function download_url() : ?string
+    public function download_url()
     {
         return $this->download_url;
     }

@@ -13,11 +13,7 @@ final class GistComment
      * The comment text.
      */
     private string $body;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $user = null;
+    private $user;
     private string $created_at;
     private string $updated_at;
     /**
@@ -43,10 +39,7 @@ final class GistComment
     {
         return $this->body;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

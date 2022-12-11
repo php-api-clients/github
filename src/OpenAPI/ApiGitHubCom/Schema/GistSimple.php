@@ -6,20 +6,12 @@ final class GistSimple
 {
     public const SCHEMA_TITLE = 'Gist Simple';
     public const SCHEMA_DESCRIPTION = 'Gist Simple';
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks::class)
-     */
-    private array $forks = array();
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory::class)
-     */
-    private array $history = array();
+    private $forks;
+    private $history;
     /**
      * Gist
      */
-    private array $fork_of = array();
+    private $fork_of;
     private string $url;
     private string $forks_url;
     private string $commits_url;
@@ -32,34 +24,28 @@ final class GistSimple
     private bool $public;
     private string $created_at;
     private string $updated_at;
-    private ?string $description = null;
+    private $description;
     private int $comments;
-    private ?string $user = null;
+    private $user;
     private string $comments_url;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     private bool $truncated;
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks>
-     */
-    public function forks() : array
+    public function forks()
     {
         return $this->forks;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory>
-     */
-    public function history() : array
+    public function history()
     {
         return $this->history;
     }
     /**
      * Gist
      */
-    public function fork_of() : array
+    public function fork_of()
     {
         return $this->fork_of;
     }
@@ -111,7 +97,7 @@ final class GistSimple
     {
         return $this->updated_at;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -119,7 +105,7 @@ final class GistSimple
     {
         return $this->comments;
     }
-    public function user() : ?string
+    public function user()
     {
         return $this->user;
     }
@@ -128,7 +114,7 @@ final class GistSimple
         return $this->comments_url;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {

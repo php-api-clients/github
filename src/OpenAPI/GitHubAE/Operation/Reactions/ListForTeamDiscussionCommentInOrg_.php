@@ -6,24 +6,24 @@ final class ListForTeamDiscussionCommentInOrg_
 {
     private const OPERATION_ID = 'reactions/list-for-team-discussion-comment-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The slug of the team name.**/
-    public string $team_slug;
+    private readonly string $team_slug;
     /**The number that identifies the discussion.**/
-    public int $discussion_number;
+    private readonly int $discussion_number;
     /**The number that identifies the comment.**/
-    public int $comment_number;
+    private readonly int $comment_number;
     /**Returns a single [reaction type](https://docs.github.com/github-ae@latest/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion comment.**/
-    public string $content;
+    private readonly string $content;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $team_slug, $discussion_number, $comment_number, $content, int $per_page = 30, int $page = 1)
+    function __construct(string $org, string $team_slug, int $discussion_number, int $comment_number, string $content, int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->team_slug = $team_slug;

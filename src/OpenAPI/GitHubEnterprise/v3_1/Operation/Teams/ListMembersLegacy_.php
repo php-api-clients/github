@@ -6,18 +6,18 @@ final class ListMembersLegacy_
 {
     private const OPERATION_ID = 'teams/list-members-legacy';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     /**Filters members returned by their role in the team.**/
-    public string $role;
+    private readonly string $role;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id, string $role = 'all', int $per_page = 30, int $page = 1)
+    function __construct(int $team_id, string $role = 'all', int $per_page = 30, int $page = 1)
     {
         $this->team_id = $team_id;
         $this->role = $role;

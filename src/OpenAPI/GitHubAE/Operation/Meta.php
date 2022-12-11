@@ -12,7 +12,7 @@ final class Meta
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Meta\Get_();
     }
-    public function getOctocat_($s) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Meta\GetOctocat_
+    public function getOctocat_(string $s) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Meta\GetOctocat_
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Meta\GetOctocat_($s);
     }

@@ -6,14 +6,13 @@ final class GetOrCreateAuthorizationForAppAndFingerprint_
 {
     private const OPERATION_ID = 'oauth-authorizations/get-or-create-authorization-for-app-and-fingerprint';
     /**The client ID of the GitHub app.**/
-    public string $client_id;
-    /****/
-    public string $fingerprint;
+    private readonly string $client_id;
+    private readonly string $fingerprint;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($client_id, $fingerprint)
+    function __construct(string $client_id, string $fingerprint)
     {
         $this->client_id = $client_id;
         $this->fingerprint = $fingerprint;

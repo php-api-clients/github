@@ -11,16 +11,8 @@ final class CommitSearchResultItem
     private string $html_url;
     private string $comments_url;
     private array $commit = array();
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $author = null;
-    /**
-     * Metaproperties for Git author/committer information.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableGitUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableGitUser $committer = null;
+    private $author;
+    private $committer;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Parents>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Parents::class)
@@ -58,17 +50,11 @@ final class CommitSearchResultItem
     {
         return $this->commit;
     }
-    /**
-     * Simple User
-     */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function author()
     {
         return $this->author;
     }
-    /**
-     * Metaproperties for Git author/committer information.
-     */
-    public function committer() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableGitUser
+    public function committer()
     {
         return $this->committer;
     }

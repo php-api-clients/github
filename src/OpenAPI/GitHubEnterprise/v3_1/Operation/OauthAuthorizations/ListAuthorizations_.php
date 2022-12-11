@@ -6,16 +6,16 @@ final class ListAuthorizations_
 {
     private const OPERATION_ID = 'oauth-authorizations/list-authorizations';
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**The client ID of your GitHub app.**/
-    public string $client_id;
+    private readonly string $client_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(int $per_page = 30, int $page = 1, $client_id)
+    function __construct(int $per_page = 30, int $page = 1, string $client_id)
     {
         $this->per_page = $per_page;
         $this->page = $page;

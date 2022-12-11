@@ -6,26 +6,26 @@ final class GetAuditLog_
 {
     private const OPERATION_ID = 'orgs/get-audit-log';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**A search phrase. For more information, see [Searching the audit log](https://docs.github.com/github-ae@latest/github/setting-up-and-managing-organizations-and-teams/reviewing-the-audit-log-for-your-organization#searching-the-audit-log).**/
-    public string $phrase;
+    private readonly string $phrase;
     /**A cursor, as given in the [Link header](https://docs.github.com/github-ae@latest/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor.**/
-    public string $after;
+    private readonly string $after;
     /**A cursor, as given in the [Link header](https://docs.github.com/github-ae@latest/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor.**/
-    public string $before;
+    private readonly string $before;
     /**The order of audit log events. To list newest events first, specify `desc`. To list oldest events first, specify `asc`.
     
     The default is `desc`.**/
-    public string $order;
+    private readonly string $order;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $phrase, $after, $before, $order, int $per_page = 30, int $page = 1)
+    function __construct(string $org, string $phrase, string $after, string $before, string $order, int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->phrase = $phrase;

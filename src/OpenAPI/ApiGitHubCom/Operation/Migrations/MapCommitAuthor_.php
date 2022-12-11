@@ -6,16 +6,15 @@ final class MapCommitAuthor_
 {
     private const OPERATION_ID = 'migrations/map-commit-author';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /****/
-    public int $author_id;
+    private readonly string $repo;
+    private readonly int $author_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $author_id)
+    function __construct(string $owner, string $repo, int $author_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

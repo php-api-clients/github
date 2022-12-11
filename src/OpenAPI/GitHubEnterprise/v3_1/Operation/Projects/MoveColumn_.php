@@ -6,12 +6,12 @@ final class MoveColumn_
 {
     private const OPERATION_ID = 'projects/move-column';
     /**The unique identifier of the column.**/
-    public int $column_id;
+    private readonly int $column_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($column_id)
+    function __construct(int $column_id)
     {
         $this->column_id = $column_id;
     }

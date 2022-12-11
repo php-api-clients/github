@@ -6,20 +6,20 @@ final class ListCollaborators_
 {
     private const OPERATION_ID = 'repos/list-collaborators';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**Filter collaborators returned by their affiliation. `outside` means all outside collaborators of an organization-owned repository. `direct` means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. `all` means all collaborators the authenticated user can see.**/
-    public string $affiliation;
+    private readonly string $affiliation;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, string $affiliation = 'all', int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $affiliation = 'all', int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

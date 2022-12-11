@@ -8,8 +8,8 @@ final class PreReceiveEnvironmentDownloadStatus
     public const SCHEMA_DESCRIPTION = '';
     private string $url;
     private string $state;
-    private ?string $downloaded_at = null;
-    private ?string $message = null;
+    private $downloaded_at;
+    private $message;
     public function url() : string
     {
         return $this->url;
@@ -18,11 +18,11 @@ final class PreReceiveEnvironmentDownloadStatus
     {
         return $this->state;
     }
-    public function downloaded_at() : ?string
+    public function downloaded_at()
     {
         return $this->downloaded_at;
     }
-    public function message() : ?string
+    public function message()
     {
         return $this->message;
     }

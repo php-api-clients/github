@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class SimpleCommit
 {
     public const SCHEMA_TITLE = 'Simple Commit';
-    public const SCHEMA_DESCRIPTION = 'Simple Commit';
+    public const SCHEMA_DESCRIPTION = 'A commit.';
     private string $id;
     private string $tree_id;
     private string $message;
     private string $timestamp;
-    private array $author = array();
-    private array $committer = array();
+    private $author;
+    private $committer;
     public function id() : string
     {
         return $this->id;
@@ -28,11 +28,11 @@ final class SimpleCommit
     {
         return $this->timestamp;
     }
-    public function author() : array
+    public function author()
     {
         return $this->author;
     }
-    public function committer() : array
+    public function committer()
     {
         return $this->committer;
     }

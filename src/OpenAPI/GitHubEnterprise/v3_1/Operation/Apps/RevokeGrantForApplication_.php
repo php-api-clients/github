@@ -6,14 +6,13 @@ final class RevokeGrantForApplication_
 {
     private const OPERATION_ID = 'apps/revoke-grant-for-application';
     /**The client ID of the GitHub app.**/
-    public string $client_id;
-    /****/
-    public string $access_token;
+    private readonly string $client_id;
+    private readonly string $access_token;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($client_id, $access_token)
+    function __construct(string $client_id, string $access_token)
     {
         $this->client_id = $client_id;
         $this->access_token = $access_token;

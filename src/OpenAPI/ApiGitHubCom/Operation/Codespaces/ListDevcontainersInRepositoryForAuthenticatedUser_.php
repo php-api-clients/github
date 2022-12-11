@@ -6,18 +6,18 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser_
 {
     private const OPERATION_ID = 'codespaces/list-devcontainers-in-repository-for-authenticated-user';
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(int $per_page = 30, int $page = 1, $owner, $repo)
+    function __construct(int $per_page = 30, int $page = 1, string $owner, string $repo)
     {
         $this->per_page = $per_page;
         $this->page = $page;

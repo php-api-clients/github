@@ -11,8 +11,8 @@ final class MarketplacePurchase
     private int $id;
     private string $login;
     private ?string $organization_billing_email = null;
-    private ?string $email = null;
-    private array $marketplace_pending_change = array();
+    private $email;
+    private $marketplace_pending_change;
     private array $marketplace_purchase = array();
     public function url() : string
     {
@@ -34,11 +34,11 @@ final class MarketplacePurchase
     {
         return $this->organization_billing_email;
     }
-    public function email() : ?string
+    public function email()
     {
         return $this->email;
     }
-    public function marketplace_pending_change() : array
+    public function marketplace_pending_change()
     {
         return $this->marketplace_pending_change;
     }

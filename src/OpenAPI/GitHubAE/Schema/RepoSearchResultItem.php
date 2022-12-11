@@ -10,24 +10,20 @@ final class RepoSearchResultItem
     private string $node_id;
     private string $name;
     private string $full_name;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $owner = null;
+    private $owner;
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $created_at;
     private string $updated_at;
     private string $pushed_at;
-    private ?string $homepage = null;
+    private $homepage;
     private int $size;
     private int $stargazers_count;
     private int $watchers_count;
-    private ?string $language = null;
+    private $language;
     private int $forks_count;
     private int $open_issues_count;
     private ?string $master_branch = null;
@@ -77,12 +73,13 @@ final class RepoSearchResultItem
     private int $open_issues;
     private int $watchers;
     private array $topics = array();
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private bool $has_issues;
     private bool $has_projects;
     private bool $has_pages;
     private bool $has_wiki;
     private bool $has_downloads;
+    private ?bool $has_discussions = null;
     private bool $archived;
     /**
      * Returns whether or not this repository disabled.
@@ -92,11 +89,7 @@ final class RepoSearchResultItem
      * The repository visibility: public, private, or internal.
      */
     private ?string $visibility = null;
-    /**
-     * License Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableLicenseSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableLicenseSimple $license = null;
+    private $license;
     private array $permissions = array();
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\TextMatches>
@@ -111,6 +104,7 @@ final class RepoSearchResultItem
     private ?bool $delete_branch_on_merge = null;
     private ?bool $allow_forking = null;
     private ?bool $is_template = null;
+    private ?bool $web_commit_signoff_required = null;
     public function id() : int
     {
         return $this->id;
@@ -127,10 +121,7 @@ final class RepoSearchResultItem
     {
         return $this->full_name;
     }
-    /**
-     * Simple User
-     */
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function owner()
     {
         return $this->owner;
     }
@@ -142,7 +133,7 @@ final class RepoSearchResultItem
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -166,7 +157,7 @@ final class RepoSearchResultItem
     {
         return $this->pushed_at;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
@@ -182,7 +173,7 @@ final class RepoSearchResultItem
     {
         return $this->watchers_count;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -382,7 +373,7 @@ final class RepoSearchResultItem
     {
         return $this->topics;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -406,6 +397,10 @@ final class RepoSearchResultItem
     {
         return $this->has_downloads;
     }
+    public function has_discussions() : ?bool
+    {
+        return $this->has_discussions;
+    }
     public function archived() : bool
     {
         return $this->archived;
@@ -424,10 +419,7 @@ final class RepoSearchResultItem
     {
         return $this->visibility;
     }
-    /**
-     * License Simple
-     */
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableLicenseSimple
+    public function license()
     {
         return $this->license;
     }
@@ -473,5 +465,9 @@ final class RepoSearchResultItem
     public function is_template() : ?bool
     {
         return $this->is_template;
+    }
+    public function web_commit_signoff_required() : ?bool
+    {
+        return $this->web_commit_signoff_required;
     }
 }

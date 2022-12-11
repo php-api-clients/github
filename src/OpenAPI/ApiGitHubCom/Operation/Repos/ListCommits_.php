@@ -6,28 +6,28 @@ final class ListCommits_
 {
     private const OPERATION_ID = 'repos/list-commits';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**SHA or branch to start listing commits from. Default: the repository’s default branch (usually `master`).**/
-    public string $sha;
+    private readonly string $sha;
     /**Only commits containing this file path will be returned.**/
-    public string $path;
+    private readonly string $path;
     /**GitHub login or email address by which to filter by commit author.**/
-    public string $author;
+    private readonly string $author;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
+    private readonly string $since;
     /**Only commits before this date will be returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $until;
+    private readonly string $until;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $sha, $path, $author, $since, $until, int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $sha, string $path, string $author, string $since, string $until, int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

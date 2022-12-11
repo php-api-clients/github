@@ -6,14 +6,14 @@ final class ListPublic_
 {
     private const OPERATION_ID = 'repos/list-public';
     /**A repository ID. Only return repositories with an ID greater than this ID.**/
-    public int $since;
+    private readonly int $since;
     /**Specifies the types of repositories to return. This endpoint will only list repositories available to all users on the enterprise.**/
-    public string $visibility;
+    private readonly string $visibility;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($since, string $visibility = 'public')
+    function __construct(int $since, string $visibility = 'public')
     {
         $this->since = $since;
         $this->visibility = $visibility;

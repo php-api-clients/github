@@ -6,14 +6,13 @@ final class CheckFollowingForUser_
 {
     private const OPERATION_ID = 'users/check-following-for-user';
     /**The handle for the GitHub user account.**/
-    public string $username;
-    /****/
-    public string $target_user;
+    private readonly string $username;
+    private readonly string $target_user;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($username, $target_user)
+    function __construct(string $username, string $target_user)
     {
         $this->username = $username;
         $this->target_user = $target_user;

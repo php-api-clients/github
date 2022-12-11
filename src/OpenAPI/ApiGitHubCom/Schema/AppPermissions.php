@@ -51,6 +51,10 @@ final class AppPermissions
      */
     private string $pull_requests;
     /**
+     * The level of permission to grant the access token to view and manage announcement banners for a repository.
+     */
+    private string $repository_announcement_banners;
+    /**
      * The level of permission to grant the access token to manage the post-receive hooks for a repository.
      */
     private string $repository_hooks;
@@ -94,6 +98,14 @@ final class AppPermissions
      * The level of permission to grant the access token to manage access to an organization.
      */
     private string $organization_administration;
+    /**
+     * The level of permission to grant the access token for custom roles management. This property is in beta and is subject to change.
+     */
+    private string $organization_custom_roles;
+    /**
+     * The level of permission to grant the access token to view and manage announcement banners for an organization.
+     */
+    private string $organization_announcement_banners;
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for an organization.
      */
@@ -204,6 +216,13 @@ final class AppPermissions
         return $this->pull_requests;
     }
     /**
+     * The level of permission to grant the access token to view and manage announcement banners for a repository.
+     */
+    public function repository_announcement_banners() : string
+    {
+        return $this->repository_announcement_banners;
+    }
+    /**
      * The level of permission to grant the access token to manage the post-receive hooks for a repository.
      */
     public function repository_hooks() : string
@@ -279,6 +298,20 @@ final class AppPermissions
     public function organization_administration() : string
     {
         return $this->organization_administration;
+    }
+    /**
+     * The level of permission to grant the access token for custom roles management. This property is in beta and is subject to change.
+     */
+    public function organization_custom_roles() : string
+    {
+        return $this->organization_custom_roles;
+    }
+    /**
+     * The level of permission to grant the access token to view and manage announcement banners for an organization.
+     */
+    public function organization_announcement_banners() : string
+    {
+        return $this->organization_announcement_banners;
     }
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for an organization.

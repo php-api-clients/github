@@ -6,16 +6,16 @@ final class RerequestSuite_
 {
     private const OPERATION_ID = 'checks/rerequest-suite';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the check suite.**/
-    public int $check_suite_id;
+    private readonly int $check_suite_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $check_suite_id)
+    function __construct(string $owner, string $repo, int $check_suite_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

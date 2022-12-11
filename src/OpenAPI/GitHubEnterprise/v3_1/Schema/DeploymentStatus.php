@@ -13,11 +13,7 @@ final class DeploymentStatus
      * The state of the status.
      */
     private string $state;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $creator = null;
+    private $creator;
     /**
      * A short description of the status.
      */
@@ -42,11 +38,7 @@ final class DeploymentStatus
      * The URL to associate with this status.
      */
     private ?string $log_url = null;
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration $performed_via_github_app = null;
+    private $performed_via_github_app;
     public function url() : string
     {
         return $this->url;
@@ -66,10 +58,7 @@ final class DeploymentStatus
     {
         return $this->state;
     }
-    /**
-     * Simple User
-     */
-    public function creator() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function creator()
     {
         return $this->creator;
     }
@@ -124,10 +113,7 @@ final class DeploymentStatus
     {
         return $this->log_url;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration
+    public function performed_via_github_app()
     {
         return $this->performed_via_github_app;
     }

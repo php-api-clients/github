@@ -6,12 +6,12 @@ final class DeletePublicKey_
 {
     private const OPERATION_ID = 'enterprise-admin/delete-public-key';
     /**The unique identifier of the key.**/
-    public string $key_ids;
+    private readonly string $key_ids;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($key_ids)
+    function __construct(string $key_ids)
     {
         $this->key_ids = $key_ids;
     }

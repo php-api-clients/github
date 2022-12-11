@@ -6,14 +6,14 @@ final class GetGlobalWebhook_
 {
     private const OPERATION_ID = 'enterprise-admin/get-global-webhook';
     /**This API is under preview and subject to change.**/
-    public string $accept;
+    private readonly string $accept;
     /**The unique identifier of the hook.**/
-    public int $hook_id;
+    private readonly int $hook_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $accept = 'application/vnd.github.superpro-preview+json', $hook_id)
+    function __construct(string $accept = 'application/vnd.github.superpro-preview+json', int $hook_id)
     {
         $this->accept = $accept;
         $this->hook_id = $hook_id;

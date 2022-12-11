@@ -8,11 +8,7 @@ final class RepositoryCollaboratorPermission
     public const SCHEMA_DESCRIPTION = 'Repository Collaborator Permission';
     private string $permission;
     private string $role_name;
-    /**
-     * Collaborator
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableCollaborator::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableCollaborator $user = null;
+    private $user;
     public function permission() : string
     {
         return $this->permission;
@@ -21,10 +17,7 @@ final class RepositoryCollaboratorPermission
     {
         return $this->role_name;
     }
-    /**
-     * Collaborator
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableCollaborator
+    public function user()
     {
         return $this->user;
     }

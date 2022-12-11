@@ -12,10 +12,6 @@ final class Client
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps();
     }
-    public function oauthAuthorizations() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\OauthAuthorizations();
-    }
     public function codesOfConduct() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct();
@@ -31,6 +27,14 @@ final class Client
     public function actions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions();
+    }
+    public function codeScanning() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning();
+    }
+    public function dependabot() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot();
     }
     public function secretScanning() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning
     {
@@ -68,17 +72,13 @@ final class Client
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs();
     }
-    public function codeScanning() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning
+    public function oidc() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Oidc
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning();
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Oidc();
     }
-    public function dependabot() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot
+    public function codespaces() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot();
-    }
-    public function teams() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams();
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces();
     }
     public function interactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions
     {
@@ -100,6 +100,10 @@ final class Client
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos();
     }
+    public function teams() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams();
+    }
     public function reactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions();
@@ -112,10 +116,6 @@ final class Client
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks();
     }
-    public function codespaces() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces();
-    }
     public function dependencyGraph() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\DependencyGraph
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\DependencyGraph();
@@ -127,10 +127,6 @@ final class Client
     public function pulls() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls();
-    }
-    public function scim() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Scim();
     }
     public function search() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search
     {

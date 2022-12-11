@@ -6,11 +6,7 @@ final class TeamDiscussion
 {
     public const SCHEMA_TITLE = 'Team Discussion';
     public const SCHEMA_DESCRIPTION = 'A team discussion is a persistent record of a free-form conversation within a team.';
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $author = null;
+    private $author;
     /**
      * The main text of the discussion.
      */
@@ -23,7 +19,7 @@ final class TeamDiscussion
     private int $comments_count;
     private string $comments_url;
     private string $created_at;
-    private ?string $last_edited_at = null;
+    private $last_edited_at;
     private string $html_url;
     private string $node_id;
     /**
@@ -49,10 +45,7 @@ final class TeamDiscussion
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ReactionRollup::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ReactionRollup $reactions = null;
-    /**
-     * Simple User
-     */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function author()
     {
         return $this->author;
     }
@@ -86,7 +79,7 @@ final class TeamDiscussion
     {
         return $this->created_at;
     }
-    public function last_edited_at() : ?string
+    public function last_edited_at()
     {
         return $this->last_edited_at;
     }

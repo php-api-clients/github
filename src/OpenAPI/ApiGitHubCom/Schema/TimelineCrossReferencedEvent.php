@@ -8,7 +8,7 @@ final class TimelineCrossReferencedEvent
     public const SCHEMA_DESCRIPTION = 'Timeline Cross Referenced Event';
     private string $event;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor = null;
@@ -20,7 +20,7 @@ final class TimelineCrossReferencedEvent
         return $this->event;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function actor() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {

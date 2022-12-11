@@ -5,13 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
 final class GetBySlug_
 {
     private const OPERATION_ID = 'apps/get-by-slug';
-    /****/
-    public string $app_slug;
+    private readonly string $app_slug;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($app_slug)
+    function __construct(string $app_slug)
     {
         $this->app_slug = $app_slug;
     }

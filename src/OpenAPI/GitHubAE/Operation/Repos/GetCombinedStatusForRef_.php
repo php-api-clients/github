@@ -6,20 +6,20 @@ final class GetCombinedStatusForRef_
 {
     private const OPERATION_ID = 'repos/get-combined-status-for-ref';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**ref parameter**/
-    public string $ref;
+    private readonly string $ref;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $ref, int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $ref, int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

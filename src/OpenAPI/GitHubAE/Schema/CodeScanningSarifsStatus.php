@@ -13,11 +13,11 @@ final class CodeScanningSarifsStatus
     /**
      * The REST API URL for getting the analyses associated with the upload.
      */
-    private ?string $analyses_url = null;
+    private $analyses_url;
     /**
      * Any errors that ocurred during processing of the delivery.
      */
-    private array $errors = array();
+    private $errors;
     /**
      * `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
      */
@@ -28,14 +28,14 @@ final class CodeScanningSarifsStatus
     /**
      * The REST API URL for getting the analyses associated with the upload.
      */
-    public function analyses_url() : ?string
+    public function analyses_url()
     {
         return $this->analyses_url;
     }
     /**
      * Any errors that ocurred during processing of the delivery.
      */
-    public function errors() : array
+    public function errors()
     {
         return $this->errors;
     }

@@ -11,13 +11,13 @@ final class FullRepository
     private string $name;
     private string $full_name;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -58,14 +58,17 @@ final class FullRepository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private ?string $homepage = null;
-    private ?string $language = null;
+    private $homepage;
+    private $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     private int $size;
     private string $default_branch;
     private int $open_issues_count;
@@ -76,6 +79,7 @@ final class FullRepository
     private bool $has_wiki;
     private bool $has_pages;
     private bool $has_downloads;
+    private bool $has_discussions;
     private bool $archived;
     /**
      * Returns whether or not this repository disabled.
@@ -90,36 +94,57 @@ final class FullRepository
     private string $updated_at;
     private array $permissions = array();
     private ?bool $allow_rebase_merge = null;
-    /**
-     * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository $template_repository = null;
-    private ?string $temp_clone_token = null;
+    private $template_repository;
+    private $temp_clone_token;
     private ?bool $allow_squash_merge = null;
     private ?bool $allow_auto_merge = null;
     private ?bool $delete_branch_on_merge = null;
     private ?bool $allow_merge_commit = null;
+    private ?bool $allow_update_branch = null;
+    private ?bool $use_squash_pr_title_as_default = null;
+    /**
+    * The default value for a squash merge commit title:
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+    */
+    private ?string $squash_merge_commit_title = null;
+    /**
+    * The default value for a squash merge commit message:
+    
+    - `PR_BODY` - default to the pull request's body.
+    - `COMMIT_MESSAGES` - default to the branch's commit messages.
+    - `BLANK` - default to a blank commit message.
+    */
+    private ?string $squash_merge_commit_message = null;
+    /**
+    * The default value for a merge commit title.
+    
+     - `PR_TITLE` - default to the pull request's title.
+     - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+    */
+    private ?string $merge_commit_title = null;
+    /**
+    * The default value for a merge commit message.
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `PR_BODY` - default to the pull request's body.
+    - `BLANK` - default to a blank commit message.
+    */
+    private ?string $merge_commit_message = null;
     private ?bool $allow_forking = null;
+    private ?bool $web_commit_signoff_required = null;
     private int $subscribers_count;
     private int $network_count;
+    private $license;
+    private $organization;
     /**
-     * License Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple $license = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $organization = null;
-    /**
-     * A git repository
+     * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $parent = null;
     /**
-     * A git repository
+     * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $source = null;
@@ -136,7 +161,7 @@ final class FullRepository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple $code_of_conduct = null;
-    private array $security_and_analysis = array();
+    private $security_and_analysis;
     public function id() : int
     {
         return $this->id;
@@ -154,7 +179,7 @@ final class FullRepository
         return $this->full_name;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -168,7 +193,7 @@ final class FullRepository
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -332,7 +357,7 @@ final class FullRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -344,11 +369,11 @@ final class FullRepository
     {
         return $this->svn_url;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -364,6 +389,9 @@ final class FullRepository
     {
         return $this->watchers_count;
     }
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     public function size() : int
     {
         return $this->size;
@@ -404,6 +432,10 @@ final class FullRepository
     {
         return $this->has_downloads;
     }
+    public function has_discussions() : bool
+    {
+        return $this->has_discussions;
+    }
     public function archived() : bool
     {
         return $this->archived;
@@ -442,14 +474,11 @@ final class FullRepository
     {
         return $this->allow_rebase_merge;
     }
-    /**
-     * A git repository
-     */
-    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableRepository
+    public function template_repository()
     {
         return $this->template_repository;
     }
-    public function temp_clone_token() : ?string
+    public function temp_clone_token()
     {
         return $this->temp_clone_token;
     }
@@ -469,9 +498,63 @@ final class FullRepository
     {
         return $this->allow_merge_commit;
     }
+    public function allow_update_branch() : ?bool
+    {
+        return $this->allow_update_branch;
+    }
+    public function use_squash_pr_title_as_default() : ?bool
+    {
+        return $this->use_squash_pr_title_as_default;
+    }
+    /**
+    * The default value for a squash merge commit title:
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+    */
+    public function squash_merge_commit_title() : ?string
+    {
+        return $this->squash_merge_commit_title;
+    }
+    /**
+    * The default value for a squash merge commit message:
+    
+    - `PR_BODY` - default to the pull request's body.
+    - `COMMIT_MESSAGES` - default to the branch's commit messages.
+    - `BLANK` - default to a blank commit message.
+    */
+    public function squash_merge_commit_message() : ?string
+    {
+        return $this->squash_merge_commit_message;
+    }
+    /**
+    * The default value for a merge commit title.
+    
+     - `PR_TITLE` - default to the pull request's title.
+     - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+    */
+    public function merge_commit_title() : ?string
+    {
+        return $this->merge_commit_title;
+    }
+    /**
+    * The default value for a merge commit message.
+    
+    - `PR_TITLE` - default to the pull request's title.
+    - `PR_BODY` - default to the pull request's body.
+    - `BLANK` - default to a blank commit message.
+    */
+    public function merge_commit_message() : ?string
+    {
+        return $this->merge_commit_message;
+    }
     public function allow_forking() : ?bool
     {
         return $this->allow_forking;
+    }
+    public function web_commit_signoff_required() : ?bool
+    {
+        return $this->web_commit_signoff_required;
     }
     public function subscribers_count() : int
     {
@@ -481,29 +564,23 @@ final class FullRepository
     {
         return $this->network_count;
     }
-    /**
-     * License Simple
-     */
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableLicenseSimple
+    public function license()
     {
         return $this->license;
     }
-    /**
-     * Simple User
-     */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function organization()
     {
         return $this->organization;
     }
     /**
-     * A git repository
+     * A repository on GitHub.
      */
     public function parent() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
         return $this->parent;
     }
     /**
-     * A git repository
+     * A repository on GitHub.
      */
     public function source() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
     {
@@ -539,7 +616,7 @@ final class FullRepository
     {
         return $this->code_of_conduct;
     }
-    public function security_and_analysis() : array
+    public function security_and_analysis()
     {
         return $this->security_and_analysis;
     }

@@ -6,16 +6,16 @@ final class ListColumns_
 {
     private const OPERATION_ID = 'projects/list-columns';
     /**The unique identifier of the project.**/
-    public int $project_id;
+    private readonly int $project_id;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($project_id, int $per_page = 30, int $page = 1)
+    function __construct(int $project_id, int $per_page = 30, int $page = 1)
     {
         $this->project_id = $project_id;
         $this->per_page = $per_page;

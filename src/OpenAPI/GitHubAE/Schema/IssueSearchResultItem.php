@@ -17,38 +17,22 @@ final class IssueSearchResultItem
     private int $number;
     private string $title;
     private bool $locked;
-    private ?string $active_lock_reason = null;
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
-     */
-    private array $assignees = array();
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $user = null;
+    private $active_lock_reason;
+    private $assignees;
+    private $user;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueSearchResultItem\Labels>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueSearchResultItem\Labels::class)
      */
     private array $labels = array();
     private string $state;
-    private ?string $state_reason = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $assignee = null;
-    /**
-     * A collection of related issues and pull requests.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableMilestone::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableMilestone $milestone = null;
+    private $state_reason;
+    private $assignee;
+    private $milestone;
     private int $comments;
     private string $created_at;
     private string $updated_at;
-    private ?string $closed_at = null;
+    private $closed_at;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueSearchResultItem\TextMatches::class)
@@ -63,18 +47,14 @@ final class IssueSearchResultItem
     private string $author_association;
     private ?bool $draft = null;
     /**
-     * A git repository
+     * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository $repository = null;
     private ?string $body_html = null;
     private ?string $body_text = null;
     private ?string $timeline_url = null;
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration $performed_via_github_app = null;
+    private $performed_via_github_app;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReactionRollup::class)
      */
@@ -123,21 +103,15 @@ final class IssueSearchResultItem
     {
         return $this->locked;
     }
-    public function active_lock_reason() : ?string
+    public function active_lock_reason()
     {
         return $this->active_lock_reason;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser>
-     */
-    public function assignees() : array
+    public function assignees()
     {
         return $this->assignees;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }
@@ -152,21 +126,15 @@ final class IssueSearchResultItem
     {
         return $this->state;
     }
-    public function state_reason() : ?string
+    public function state_reason()
     {
         return $this->state_reason;
     }
-    /**
-     * Simple User
-     */
-    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function assignee()
     {
         return $this->assignee;
     }
-    /**
-     * A collection of related issues and pull requests.
-     */
-    public function milestone() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableMilestone
+    public function milestone()
     {
         return $this->milestone;
     }
@@ -182,7 +150,7 @@ final class IssueSearchResultItem
     {
         return $this->updated_at;
     }
-    public function closed_at() : ?string
+    public function closed_at()
     {
         return $this->closed_at;
     }
@@ -217,7 +185,7 @@ final class IssueSearchResultItem
         return $this->draft;
     }
     /**
-     * A git repository
+     * A repository on GitHub.
      */
     public function repository() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository
     {
@@ -235,10 +203,7 @@ final class IssueSearchResultItem
     {
         return $this->timeline_url;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration
+    public function performed_via_github_app()
     {
         return $this->performed_via_github_app;
     }

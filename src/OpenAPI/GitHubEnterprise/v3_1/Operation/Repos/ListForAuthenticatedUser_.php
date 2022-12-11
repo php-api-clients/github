@@ -6,31 +6,31 @@ final class ListForAuthenticatedUser_
 {
     private const OPERATION_ID = 'repos/list-for-authenticated-user';
     /**Limit results to repositories with the specified visibility.**/
-    public string $visibility;
+    private readonly string $visibility;
     /**Comma-separated list of values. Can include:  
     \* `owner`: Repositories that are owned by the authenticated user.  
     \* `collaborator`: Repositories that the user has been added to as a collaborator.  
     \* `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.**/
-    public string $affiliation;
+    private readonly string $affiliation;
     /**Limit results to repositories of the specified type. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.**/
-    public string $type;
+    private readonly string $type;
     /**The property to sort the results by.**/
-    public string $sort;
+    private readonly string $sort;
     /**The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
+    private readonly string $since;
     /**Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $before;
+    private readonly string $before;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $visibility = 'all', string $affiliation = 'owner,collaborator,organization_member', string $type = 'all', string $sort = 'full_name', $direction, int $per_page = 30, int $page = 1, $since, $before)
+    function __construct(string $visibility = 'all', string $affiliation = 'owner,collaborator,organization_member', string $type = 'all', string $sort = 'full_name', string $direction, int $per_page = 30, int $page = 1, string $since, string $before)
     {
         $this->visibility = $visibility;
         $this->affiliation = $affiliation;

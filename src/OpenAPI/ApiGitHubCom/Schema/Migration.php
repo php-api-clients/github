@@ -7,11 +7,7 @@ final class Migration
     public const SCHEMA_TITLE = 'Migration';
     public const SCHEMA_DESCRIPTION = 'A migration.';
     private int $id;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $owner = null;
+    private $owner;
     private string $guid;
     private string $state;
     private bool $lock_repositories;
@@ -36,10 +32,7 @@ final class Migration
     {
         return $this->id;
     }
-    /**
-     * Simple User
-     */
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function owner()
     {
         return $this->owner;
     }

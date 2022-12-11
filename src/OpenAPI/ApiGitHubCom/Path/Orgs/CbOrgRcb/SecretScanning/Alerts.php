@@ -4,8 +4,8 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Secre
 
 final class Alerts
 {
-    function get($org, $state, $secret_type, $resolution, int $page = 1, int $per_page = 30) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForOrg
+    function get($org, $state, $secret_type, $resolution, string $sort = 'created', string $direction = 'desc', int $page = 1, int $per_page = 30, $before, $after) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForOrg($org, $state, $secret_type, $resolution, $page, $per_page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForOrg($org, $state, $secret_type, $resolution, $sort, $direction, $page, $per_page, $before, $after);
     }
 }

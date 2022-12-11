@@ -6,21 +6,14 @@ final class ContributorActivity
 {
     public const SCHEMA_TITLE = 'Contributor Activity';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $author = null;
+    private $author;
     private int $total;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Weeks>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Weeks::class)
      */
     private array $weeks = array();
-    /**
-     * Simple User
-     */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function author()
     {
         return $this->author;
     }

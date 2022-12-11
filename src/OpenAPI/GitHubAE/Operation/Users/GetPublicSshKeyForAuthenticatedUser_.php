@@ -6,12 +6,12 @@ final class GetPublicSshKeyForAuthenticatedUser_
 {
     private const OPERATION_ID = 'users/get-public-ssh-key-for-authenticated-user';
     /**The unique identifier of the key.**/
-    public int $key_id;
+    private readonly int $key_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($key_id)
+    function __construct(int $key_id)
     {
         $this->key_id = $key_id;
     }

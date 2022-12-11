@@ -6,16 +6,16 @@ final class DeleteFile_
 {
     private const OPERATION_ID = 'repos/delete-file';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**path parameter**/
-    public string $path;
+    private readonly string $path;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $path)
+    function __construct(string $owner, string $repo, string $path)
     {
         $this->owner = $owner;
         $this->repo = $repo;

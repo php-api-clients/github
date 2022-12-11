@@ -6,16 +6,16 @@ final class CreateContentAttachment_
 {
     private const OPERATION_ID = 'apps/create-content-attachment';
     /**The owner of the repository. Determined from the `repository` `full_name` of the `content_reference` event.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. Determined from the `repository` `full_name` of the `content_reference` event.**/
-    public string $repo;
+    private readonly string $repo;
     /**The `id` of the `content_reference` event.**/
-    public int $content_reference_id;
+    private readonly int $content_reference_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $content_reference_id)
+    function __construct(string $owner, string $repo, int $content_reference_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

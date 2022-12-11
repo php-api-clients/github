@@ -6,12 +6,12 @@ final class CreateComment_
 {
     private const OPERATION_ID = 'gists/create-comment';
     /**The unique identifier of the gist.**/
-    public string $gist_id;
+    private readonly string $gist_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($gist_id)
+    function __construct(string $gist_id)
     {
         $this->gist_id = $gist_id;
     }

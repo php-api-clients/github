@@ -14,10 +14,7 @@ final class SecretScanningAlert
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
     private string $created_at;
-    /**
-     * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    private string $updated_at;
+    private $updated_at;
     /**
      * The REST API URL of the alert resource.
      */
@@ -31,22 +28,22 @@ final class SecretScanningAlert
      */
     private string $locations_url;
     /**
-     * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
+     * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
      */
     private string $state;
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    private ?string $resolution = null;
+    private $resolution;
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $resolved_at = null;
+    private $resolved_at;
+    private $resolved_by;
     /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
+     * An optional comment to resolve an alert.
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $resolved_by = null;
+    private $resolution_comment;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -69,10 +66,7 @@ final class SecretScanningAlert
     {
         return $this->created_at;
     }
-    /**
-     * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function updated_at() : string
+    public function updated_at()
     {
         return $this->updated_at;
     }
@@ -98,7 +92,7 @@ final class SecretScanningAlert
         return $this->locations_url;
     }
     /**
-     * Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
+     * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
      */
     public function state() : string
     {
@@ -107,23 +101,27 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    public function resolution() : ?string
+    public function resolution()
     {
         return $this->resolution;
     }
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function resolved_at() : ?string
+    public function resolved_at()
     {
         return $this->resolved_at;
     }
-    /**
-     * Simple User
-     */
-    public function resolved_by() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function resolved_by()
     {
         return $this->resolved_by;
+    }
+    /**
+     * An optional comment to resolve an alert.
+     */
+    public function resolution_comment()
+    {
+        return $this->resolution_comment;
     }
     /**
      * The type of secret that secret scanning detected.

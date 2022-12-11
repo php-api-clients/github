@@ -6,14 +6,14 @@ final class CreateDiscussionInOrg_
 {
     private const OPERATION_ID = 'teams/create-discussion-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The slug of the team name.**/
-    public string $team_slug;
+    private readonly string $team_slug;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $team_slug)
+    function __construct(string $org, string $team_slug)
     {
         $this->org = $org;
         $this->team_slug = $team_slug;

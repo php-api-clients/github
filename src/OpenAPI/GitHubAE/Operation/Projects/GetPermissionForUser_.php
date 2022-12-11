@@ -6,14 +6,14 @@ final class GetPermissionForUser_
 {
     private const OPERATION_ID = 'projects/get-permission-for-user';
     /**The unique identifier of the project.**/
-    public int $project_id;
+    private readonly int $project_id;
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($project_id, $username)
+    function __construct(int $project_id, string $username)
     {
         $this->project_id = $project_id;
         $this->username = $username;

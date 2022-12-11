@@ -6,16 +6,16 @@ final class GetStatusForOrg_
 {
     private const OPERATION_ID = 'migrations/get-status-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The unique identifier of the migration.**/
-    public int $migration_id;
+    private readonly int $migration_id;
     /**Exclude attributes from the API response to improve performance**/
-    public array $exclude;
+    private readonly array $exclude;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $migration_id, $exclude)
+    function __construct(string $org, int $migration_id, array $exclude)
     {
         $this->org = $org;
         $this->migration_id = $migration_id;

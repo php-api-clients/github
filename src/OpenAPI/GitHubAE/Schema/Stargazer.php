@@ -7,19 +7,12 @@ final class Stargazer
     public const SCHEMA_TITLE = 'Stargazer';
     public const SCHEMA_DESCRIPTION = 'Stargazer';
     private string $starred_at;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $user = null;
+    private $user;
     public function starred_at() : string
     {
         return $this->starred_at;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

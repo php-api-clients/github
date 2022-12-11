@@ -10,13 +10,13 @@ final class ConvertedNoteToIssueIssueEvent
     private string $node_id;
     private string $url;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     private string $event;
-    private ?string $commit_id = null;
-    private ?string $commit_url = null;
+    private $commit_id;
+    private $commit_url;
     private string $created_at;
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -37,7 +37,7 @@ final class ConvertedNoteToIssueIssueEvent
         return $this->url;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function actor() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -47,11 +47,11 @@ final class ConvertedNoteToIssueIssueEvent
     {
         return $this->event;
     }
-    public function commit_id() : ?string
+    public function commit_id()
     {
         return $this->commit_id;
     }
-    public function commit_url() : ?string
+    public function commit_url()
     {
         return $this->commit_url;
     }

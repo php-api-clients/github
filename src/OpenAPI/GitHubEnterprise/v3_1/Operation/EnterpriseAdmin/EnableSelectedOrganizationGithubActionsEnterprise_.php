@@ -6,14 +6,14 @@ final class EnableSelectedOrganizationGithubActionsEnterprise_
 {
     private const OPERATION_ID = 'enterprise-admin/enable-selected-organization-github-actions-enterprise';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
-    public string $enterprise;
+    private readonly string $enterprise;
     /**The unique identifier of the organization.**/
-    public int $org_id;
+    private readonly int $org_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($enterprise, $org_id)
+    function __construct(string $enterprise, int $org_id)
     {
         $this->enterprise = $enterprise;
         $this->org_id = $org_id;

@@ -6,16 +6,16 @@ final class RemoveCustomLabelFromSelfHostedRunnerForEnterprise_
 {
     private const OPERATION_ID = 'enterprise-admin/remove-custom-label-from-self-hosted-runner-for-enterprise';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
-    public string $enterprise;
+    private readonly string $enterprise;
     /**Unique identifier of the self-hosted runner.**/
-    public int $runner_id;
+    private readonly int $runner_id;
     /**The name of a self-hosted runner's custom label.**/
-    public string $name;
+    private readonly string $name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($enterprise, $runner_id, $name)
+    function __construct(string $enterprise, int $runner_id, string $name)
     {
         $this->enterprise = $enterprise;
         $this->runner_id = $runner_id;

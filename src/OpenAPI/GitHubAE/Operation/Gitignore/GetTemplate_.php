@@ -5,13 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Gitignore;
 final class GetTemplate_
 {
     private const OPERATION_ID = 'gitignore/get-template';
-    /****/
-    public string $name;
+    private readonly string $name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($name)
+    function __construct(string $name)
     {
         $this->name = $name;
     }

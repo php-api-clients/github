@@ -6,14 +6,14 @@ final class GetExportDetailsForAuthenticatedUser_
 {
     private const OPERATION_ID = 'codespaces/get-export-details-for-authenticated-user';
     /**The name of the codespace.**/
-    public string $codespace_name;
+    private readonly string $codespace_name;
     /**The ID of the export operation, or `latest`. Currently only `latest` is currently supported.**/
-    public string $export_id;
+    private readonly string $export_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($codespace_name, $export_id)
+    function __construct(string $codespace_name, string $export_id)
     {
         $this->codespace_name = $codespace_name;
         $this->export_id = $export_id;

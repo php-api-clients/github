@@ -6,14 +6,14 @@ final class GetSelfHostedRunnerForOrg_
 {
     private const OPERATION_ID = 'actions/get-self-hosted-runner-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Unique identifier of the self-hosted runner.**/
-    public int $runner_id;
+    private readonly int $runner_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $runner_id)
+    function __construct(string $org, int $runner_id)
     {
         $this->org = $org;
         $this->runner_id = $runner_id;

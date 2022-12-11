@@ -6,20 +6,20 @@ final class ListLocationsForAlert_
 {
     private const OPERATION_ID = 'secret-scanning/list-locations-for-alert';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.**/
-    public int $alert_number;
+    private readonly int $alert_number;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $alert_number, int $page = 1, int $per_page = 30)
+    function __construct(string $owner, string $repo, int $alert_number, int $page = 1, int $per_page = 30)
     {
         $this->owner = $owner;
         $this->repo = $repo;

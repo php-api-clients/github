@@ -5,13 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Apps;
 final class GetWebhookDelivery_
 {
     private const OPERATION_ID = 'apps/get-webhook-delivery';
-    /****/
-    public int $delivery_id;
+    private readonly int $delivery_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($delivery_id)
+    function __construct(int $delivery_id)
     {
         $this->delivery_id = $delivery_id;
     }

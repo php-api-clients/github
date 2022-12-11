@@ -6,16 +6,15 @@ final class GetTag_
 {
     private const OPERATION_ID = 'git/get-tag';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /****/
-    public string $tag_sha;
+    private readonly string $repo;
+    private readonly string $tag_sha;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $tag_sha)
+    function __construct(string $owner, string $repo, string $tag_sha)
     {
         $this->owner = $owner;
         $this->repo = $repo;

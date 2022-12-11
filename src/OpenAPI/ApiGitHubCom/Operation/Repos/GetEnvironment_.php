@@ -6,16 +6,16 @@ final class GetEnvironment_
 {
     private const OPERATION_ID = 'repos/get-environment';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /**The name of the environment**/
-    public string $environment_name;
+    private readonly string $repo;
+    /**The name of the environment.**/
+    private readonly string $environment_name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $environment_name)
+    function __construct(string $owner, string $repo, string $environment_name)
     {
         $this->owner = $owner;
         $this->repo = $repo;

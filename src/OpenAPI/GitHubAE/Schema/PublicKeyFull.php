@@ -8,14 +8,13 @@ final class PublicKeyFull
     public const SCHEMA_DESCRIPTION = '';
     private int $id;
     private string $key;
-    private ?int $user_id = null;
-    private ?int $repository_id = null;
+    private $user_id;
+    private $repository_id;
     private string $url;
     private string $title;
     private bool $read_only;
     private bool $verified;
     private string $created_at;
-    private ?string $last_used = null;
     public function id() : int
     {
         return $this->id;
@@ -24,11 +23,11 @@ final class PublicKeyFull
     {
         return $this->key;
     }
-    public function user_id() : ?int
+    public function user_id()
     {
         return $this->user_id;
     }
-    public function repository_id() : ?int
+    public function repository_id()
     {
         return $this->repository_id;
     }
@@ -51,9 +50,5 @@ final class PublicKeyFull
     public function created_at() : string
     {
         return $this->created_at;
-    }
-    public function last_used() : ?string
-    {
-        return $this->last_used;
     }
 }

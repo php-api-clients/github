@@ -15,16 +15,8 @@ final class RepositoryInvitation
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository $repository;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $invitee = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $inviter = null;
+    private $invitee;
+    private $inviter;
     /**
      * The permission associated with the invitation.
      */
@@ -54,17 +46,11 @@ final class RepositoryInvitation
     {
         return $this->repository;
     }
-    /**
-     * Simple User
-     */
-    public function invitee() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function invitee()
     {
         return $this->invitee;
     }
-    /**
-     * Simple User
-     */
-    public function inviter() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function inviter()
     {
         return $this->inviter;
     }

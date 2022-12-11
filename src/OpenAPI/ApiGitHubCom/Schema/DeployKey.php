@@ -13,6 +13,8 @@ final class DeployKey
     private bool $verified;
     private string $created_at;
     private bool $read_only;
+    private $added_by;
+    private $last_used;
     public function id() : int
     {
         return $this->id;
@@ -40,5 +42,13 @@ final class DeployKey
     public function read_only() : bool
     {
         return $this->read_only;
+    }
+    public function added_by()
+    {
+        return $this->added_by;
+    }
+    public function last_used()
+    {
+        return $this->last_used;
     }
 }

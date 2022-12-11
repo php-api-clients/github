@@ -6,18 +6,18 @@ final class DeleteForRelease_
 {
     private const OPERATION_ID = 'reactions/delete-for-release';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the release.**/
-    public int $release_id;
+    private readonly int $release_id;
     /**The unique identifier of the reaction.**/
-    public int $reaction_id;
+    private readonly int $reaction_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $release_id, $reaction_id)
+    function __construct(string $owner, string $repo, int $release_id, int $reaction_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

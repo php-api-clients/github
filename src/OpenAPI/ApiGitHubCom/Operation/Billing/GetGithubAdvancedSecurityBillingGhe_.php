@@ -6,16 +6,16 @@ final class GetGithubAdvancedSecurityBillingGhe_
 {
     private const OPERATION_ID = 'billing/get-github-advanced-security-billing-ghe';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
-    public string $enterprise;
+    private readonly string $enterprise;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($enterprise, int $per_page = 30, int $page = 1)
+    function __construct(string $enterprise, int $per_page = 30, int $page = 1)
     {
         $this->enterprise = $enterprise;
         $this->per_page = $per_page;

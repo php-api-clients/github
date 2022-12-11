@@ -37,16 +37,12 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    private ?string $resolution = null;
+    private $resolution;
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $resolved_at = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $resolved_by = null;
+    private $resolved_at;
+    private $resolved_by;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -107,21 +103,18 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    public function resolution() : ?string
+    public function resolution()
     {
         return $this->resolution;
     }
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function resolved_at() : ?string
+    public function resolved_at()
     {
         return $this->resolved_at;
     }
-    /**
-     * Simple User
-     */
-    public function resolved_by() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function resolved_by()
     {
         return $this->resolved_by;
     }

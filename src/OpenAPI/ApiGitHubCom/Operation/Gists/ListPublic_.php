@@ -6,16 +6,16 @@ final class ListPublic_
 {
     private const OPERATION_ID = 'gists/list-public';
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
+    private readonly string $since;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($since, int $per_page = 30, int $page = 1)
+    function __construct(string $since, int $per_page = 30, int $page = 1)
     {
         $this->since = $since;
         $this->per_page = $per_page;

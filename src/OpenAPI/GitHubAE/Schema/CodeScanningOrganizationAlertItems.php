@@ -1,0 +1,160 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
+
+final class CodeScanningOrganizationAlertItems
+{
+    public const SCHEMA_TITLE = 'code-scanning-organization-alert-items';
+    public const SCHEMA_DESCRIPTION = '';
+    /**
+     * The security alert number.
+     */
+    private int $number;
+    /**
+     * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    private string $created_at;
+    /**
+     * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    private ?string $updated_at = null;
+    /**
+     * The REST API URL of the alert resource.
+     */
+    private string $url;
+    /**
+     * The GitHub URL of the alert resource.
+     */
+    private string $html_url;
+    /**
+     * The REST API URL for fetching the list of instances for an alert.
+     */
+    private string $instances_url;
+    /**
+     * State of a code scanning alert.
+     */
+    private string $state;
+    /**
+     * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    private $fixed_at;
+    private $dismissed_by;
+    /**
+     * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    private $dismissed_at;
+    /**
+     * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
+     */
+    private $dismissed_reason;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAlertRule::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAlertRule $rule;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAnalysisTool::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAnalysisTool $tool;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAlertInstance::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAlertInstance $most_recent_instance;
+    /**
+     * A GitHub repository.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleRepository::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleRepository $repository;
+    /**
+     * The security alert number.
+     */
+    public function number() : int
+    {
+        return $this->number;
+    }
+    /**
+     * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    public function created_at() : string
+    {
+        return $this->created_at;
+    }
+    /**
+     * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    public function updated_at() : ?string
+    {
+        return $this->updated_at;
+    }
+    /**
+     * The REST API URL of the alert resource.
+     */
+    public function url() : string
+    {
+        return $this->url;
+    }
+    /**
+     * The GitHub URL of the alert resource.
+     */
+    public function html_url() : string
+    {
+        return $this->html_url;
+    }
+    /**
+     * The REST API URL for fetching the list of instances for an alert.
+     */
+    public function instances_url() : string
+    {
+        return $this->instances_url;
+    }
+    /**
+     * State of a code scanning alert.
+     */
+    public function state() : string
+    {
+        return $this->state;
+    }
+    /**
+     * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    public function fixed_at()
+    {
+        return $this->fixed_at;
+    }
+    public function dismissed_by()
+    {
+        return $this->dismissed_by;
+    }
+    /**
+     * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     */
+    public function dismissed_at()
+    {
+        return $this->dismissed_at;
+    }
+    /**
+     * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
+     */
+    public function dismissed_reason()
+    {
+        return $this->dismissed_reason;
+    }
+    public function rule() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAlertRule
+    {
+        return $this->rule;
+    }
+    public function tool() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAnalysisTool
+    {
+        return $this->tool;
+    }
+    public function most_recent_instance() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAlertInstance
+    {
+        return $this->most_recent_instance;
+    }
+    /**
+     * A GitHub repository.
+     */
+    public function repository() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleRepository
+    {
+        return $this->repository;
+    }
+}

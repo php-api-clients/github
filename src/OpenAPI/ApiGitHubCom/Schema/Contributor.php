@@ -10,7 +10,7 @@ final class Contributor
     private ?int $id = null;
     private ?string $node_id = null;
     private ?string $avatar_url = null;
-    private ?string $gravatar_id = null;
+    private $gravatar_id;
     private ?string $url = null;
     private ?string $html_url = null;
     private ?string $followers_url = null;
@@ -43,7 +43,7 @@ final class Contributor
     {
         return $this->avatar_url;
     }
-    public function gravatar_id() : ?string
+    public function gravatar_id()
     {
         return $this->gravatar_id;
     }

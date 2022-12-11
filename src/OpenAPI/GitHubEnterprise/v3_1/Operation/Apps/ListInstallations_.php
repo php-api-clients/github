@@ -6,18 +6,17 @@ final class ListInstallations_
 {
     private const OPERATION_ID = 'apps/list-installations';
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
-    /****/
-    public string $outdated;
+    private readonly string $since;
+    private readonly string $outdated;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct(int $per_page = 30, int $page = 1, $since, $outdated)
+    function __construct(int $per_page = 30, int $page = 1, string $since, string $outdated)
     {
         $this->per_page = $per_page;
         $this->page = $page;

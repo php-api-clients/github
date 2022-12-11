@@ -6,16 +6,16 @@ final class AddOrUpdateMembershipForUserInOrg_
 {
     private const OPERATION_ID = 'teams/add-or-update-membership-for-user-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The slug of the team name.**/
-    public string $team_slug;
+    private readonly string $team_slug;
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $team_slug, $username)
+    function __construct(string $org, string $team_slug, string $username)
     {
         $this->org = $org;
         $this->team_slug = $team_slug;

@@ -11,13 +11,13 @@ final class MinimalRepository
     private string $name;
     private string $full_name;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $owner;
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -58,14 +58,17 @@ final class MinimalRepository
     private string $teams_url;
     private string $trees_url;
     private ?string $clone_url = null;
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private string $hooks_url;
     private ?string $svn_url = null;
-    private ?string $homepage = null;
-    private ?string $language = null;
+    private $homepage;
+    private $language;
     private ?int $forks_count = null;
     private ?int $stargazers_count = null;
     private ?int $watchers_count = null;
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     private ?int $size = null;
     private ?string $default_branch = null;
     private ?int $open_issues_count = null;
@@ -76,19 +79,15 @@ final class MinimalRepository
     private ?bool $has_wiki = null;
     private ?bool $has_pages = null;
     private ?bool $has_downloads = null;
+    private ?bool $has_discussions = null;
     private ?bool $archived = null;
     private ?bool $disabled = null;
     private ?string $visibility = null;
-    private ?string $pushed_at = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private $pushed_at;
+    private $created_at;
+    private $updated_at;
     private array $permissions = array();
     private ?string $role_name = null;
-    /**
-     * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableRepository::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableRepository $template_repository = null;
     private ?string $temp_clone_token = null;
     private ?bool $delete_branch_on_merge = null;
     private ?int $subscribers_count = null;
@@ -98,11 +97,12 @@ final class MinimalRepository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeOfConduct::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeOfConduct $code_of_conduct = null;
-    private array $license = array();
+    private $license;
     private ?int $forks = null;
     private ?int $open_issues = null;
     private ?int $watchers = null;
     private ?bool $allow_forking = null;
+    private ?bool $web_commit_signoff_required = null;
     public function id() : int
     {
         return $this->id;
@@ -120,7 +120,7 @@ final class MinimalRepository
         return $this->full_name;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser
     {
@@ -134,7 +134,7 @@ final class MinimalRepository
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -298,7 +298,7 @@ final class MinimalRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -310,11 +310,11 @@ final class MinimalRepository
     {
         return $this->svn_url;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -330,6 +330,9 @@ final class MinimalRepository
     {
         return $this->watchers_count;
     }
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     public function size() : ?int
     {
         return $this->size;
@@ -370,6 +373,10 @@ final class MinimalRepository
     {
         return $this->has_downloads;
     }
+    public function has_discussions() : ?bool
+    {
+        return $this->has_discussions;
+    }
     public function archived() : ?bool
     {
         return $this->archived;
@@ -382,15 +389,15 @@ final class MinimalRepository
     {
         return $this->visibility;
     }
-    public function pushed_at() : ?string
+    public function pushed_at()
     {
         return $this->pushed_at;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }
@@ -401,13 +408,6 @@ final class MinimalRepository
     public function role_name() : ?string
     {
         return $this->role_name;
-    }
-    /**
-     * A git repository
-     */
-    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableRepository
-    {
-        return $this->template_repository;
     }
     public function temp_clone_token() : ?string
     {
@@ -432,7 +432,7 @@ final class MinimalRepository
     {
         return $this->code_of_conduct;
     }
-    public function license() : array
+    public function license()
     {
         return $this->license;
     }
@@ -451,5 +451,9 @@ final class MinimalRepository
     public function allow_forking() : ?bool
     {
         return $this->allow_forking;
+    }
+    public function web_commit_signoff_required() : ?bool
+    {
+        return $this->web_commit_signoff_required;
     }
 }

@@ -6,12 +6,12 @@ final class DeleteAuthorization_
 {
     private const OPERATION_ID = 'oauth-authorizations/delete-authorization';
     /**The unique identifier of the authorization.**/
-    public int $authorization_id;
+    private readonly int $authorization_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($authorization_id)
+    function __construct(int $authorization_id)
     {
         $this->authorization_id = $authorization_id;
     }

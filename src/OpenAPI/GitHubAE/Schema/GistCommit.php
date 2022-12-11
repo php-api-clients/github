@@ -8,11 +8,7 @@ final class GistCommit
     public const SCHEMA_DESCRIPTION = 'Gist Commit';
     private string $url;
     private string $version;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $user = null;
+    private $user;
     private array $change_status = array();
     private string $committed_at;
     public function url() : string
@@ -23,10 +19,7 @@ final class GistCommit
     {
         return $this->version;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

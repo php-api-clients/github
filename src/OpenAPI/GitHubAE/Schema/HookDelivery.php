@@ -41,15 +41,15 @@ final class HookDelivery
     /**
      * The type of activity for the event that triggered the delivery.
      */
-    private ?string $action = null;
+    private $action;
     /**
      * The id of the GitHub App installation associated with this event.
      */
-    private ?int $installation_id = null;
+    private $installation_id;
     /**
      * The id of the repository associated with this event.
      */
-    private ?int $repository_id = null;
+    private $repository_id;
     /**
      * The URL target of the delivery.
      */
@@ -115,21 +115,21 @@ final class HookDelivery
     /**
      * The type of activity for the event that triggered the delivery.
      */
-    public function action() : ?string
+    public function action()
     {
         return $this->action;
     }
     /**
      * The id of the GitHub App installation associated with this event.
      */
-    public function installation_id() : ?int
+    public function installation_id()
     {
         return $this->installation_id;
     }
     /**
      * The id of the repository associated with this event.
      */
-    public function repository_id() : ?int
+    public function repository_id()
     {
         return $this->repository_id;
     }

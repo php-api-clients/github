@@ -6,20 +6,20 @@ final class GetWorkflowRunAttempt_
 {
     private const OPERATION_ID = 'actions/get-workflow-run-attempt';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the workflow run.**/
-    public int $run_id;
+    private readonly int $run_id;
     /**The attempt number of the workflow run.**/
-    public int $attempt_number;
+    private readonly int $attempt_number;
     /**If `true` pull requests are omitted from the response (empty array).**/
-    public bool $exclude_pull_requests;
+    private readonly bool $exclude_pull_requests;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $run_id, $attempt_number, bool $exclude_pull_requests = false)
+    function __construct(string $owner, string $repo, int $run_id, int $attempt_number, bool $exclude_pull_requests = false)
     {
         $this->owner = $owner;
         $this->repo = $repo;

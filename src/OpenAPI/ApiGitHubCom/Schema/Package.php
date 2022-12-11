@@ -22,16 +22,8 @@ final class Package
      */
     private int $version_count;
     private string $visibility;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $owner = null;
-    /**
-     * Minimal Repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableMinimalRepository::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableMinimalRepository $repository = null;
+    private $owner;
+    private $repository;
     private string $created_at;
     private string $updated_at;
     /**
@@ -71,17 +63,11 @@ final class Package
     {
         return $this->visibility;
     }
-    /**
-     * Simple User
-     */
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function owner()
     {
         return $this->owner;
     }
-    /**
-     * Minimal Repository
-     */
-    public function repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableMinimalRepository
+    public function repository()
     {
         return $this->repository;
     }

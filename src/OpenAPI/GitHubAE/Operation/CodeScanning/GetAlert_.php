@@ -6,16 +6,16 @@ final class GetAlert_
 {
     private const OPERATION_ID = 'code-scanning/get-alert';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.**/
-    public int $alert_number;
+    private readonly int $alert_number;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $alert_number)
+    function __construct(string $owner, string $repo, int $alert_number)
     {
         $this->owner = $owner;
         $this->repo = $repo;

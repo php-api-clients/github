@@ -14,7 +14,7 @@ final class ReleaseAsset
      * The file name of the asset.
      */
     private string $name;
-    private ?string $label = null;
+    private $label;
     /**
      * State of the release asset.
      */
@@ -24,11 +24,7 @@ final class ReleaseAsset
     private int $download_count;
     private string $created_at;
     private string $updated_at;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $uploader = null;
+    private $uploader;
     public function url() : string
     {
         return $this->url;
@@ -52,7 +48,7 @@ final class ReleaseAsset
     {
         return $this->name;
     }
-    public function label() : ?string
+    public function label()
     {
         return $this->label;
     }
@@ -83,10 +79,7 @@ final class ReleaseAsset
     {
         return $this->updated_at;
     }
-    /**
-     * Simple User
-     */
-    public function uploader() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function uploader()
     {
         return $this->uploader;
     }

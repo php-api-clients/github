@@ -21,7 +21,7 @@ final class AuthenticationToken
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private array $repositories = array();
-    private ?string $single_file = null;
+    private $single_file;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -52,7 +52,7 @@ final class AuthenticationToken
     {
         return $this->repositories;
     }
-    public function single_file() : ?string
+    public function single_file()
     {
         return $this->single_file;
     }

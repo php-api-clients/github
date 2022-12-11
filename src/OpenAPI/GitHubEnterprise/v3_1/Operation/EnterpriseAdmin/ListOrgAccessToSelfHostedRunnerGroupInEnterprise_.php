@@ -6,18 +6,18 @@ final class ListOrgAccessToSelfHostedRunnerGroupInEnterprise_
 {
     private const OPERATION_ID = 'enterprise-admin/list-org-access-to-self-hosted-runner-group-in-enterprise';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
-    public string $enterprise;
+    private readonly string $enterprise;
     /**Unique identifier of the self-hosted runner group.**/
-    public int $runner_group_id;
+    private readonly int $runner_group_id;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($enterprise, $runner_group_id, int $per_page = 30, int $page = 1)
+    function __construct(string $enterprise, int $runner_group_id, int $per_page = 30, int $page = 1)
     {
         $this->enterprise = $enterprise;
         $this->runner_group_id = $runner_group_id;

@@ -6,16 +6,16 @@ final class GetContextForUser_
 {
     private const OPERATION_ID = 'users/get-context-for-user';
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     /**Identifies which additional information you'd like to receive about the person's hovercard. Can be `organization`, `repository`, `issue`, `pull_request`. **Required** when using `subject_id`.**/
-    public string $subject_type;
+    private readonly string $subject_type;
     /**Uses the ID for the `subject_type` you specified. **Required** when using `subject_type`.**/
-    public string $subject_id;
+    private readonly string $subject_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($username, $subject_type, $subject_id)
+    function __construct(string $username, string $subject_type, string $subject_id)
     {
         $this->username = $username;
         $this->subject_type = $subject_type;

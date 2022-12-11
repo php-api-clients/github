@@ -6,7 +6,7 @@ final class CreateGlobalWebhook_
 {
     private const OPERATION_ID = 'enterprise-admin/create-global-webhook';
     /**This API is under preview and subject to change.**/
-    public string $accept;
+    private readonly string $accept;
     public function operationId() : string
     {
         return self::OPERATION_ID;

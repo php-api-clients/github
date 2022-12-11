@@ -6,28 +6,27 @@ final class ListForRef_
 {
     private const OPERATION_ID = 'checks/list-for-ref';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**ref parameter**/
-    public string $ref;
+    private readonly string $ref;
     /**Returns check runs with the specified `name`.**/
-    public string $check_name;
+    private readonly string $check_name;
     /**Returns check runs with the specified `status`.**/
-    public string $status;
+    private readonly string $status;
     /**Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.**/
-    public string $filter;
+    private readonly string $filter;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
-    /****/
-    public int $app_id;
+    private readonly int $page;
+    private readonly int $app_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $ref, $check_name, $status, string $filter = 'latest', int $per_page = 30, int $page = 1, $app_id)
+    function __construct(string $owner, string $repo, string $ref, string $check_name, string $status, string $filter = 'latest', int $per_page = 30, int $page = 1, int $app_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

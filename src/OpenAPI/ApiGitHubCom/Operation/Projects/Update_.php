@@ -6,12 +6,12 @@ final class Update_
 {
     private const OPERATION_ID = 'projects/update';
     /**The unique identifier of the project.**/
-    public int $project_id;
+    private readonly int $project_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($project_id)
+    function __construct(int $project_id)
     {
         $this->project_id = $project_id;
     }

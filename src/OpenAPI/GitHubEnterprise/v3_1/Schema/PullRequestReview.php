@@ -11,11 +11,7 @@ final class PullRequestReview
      */
     private int $id;
     private string $node_id;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $user = null;
+    private $user;
     /**
      * The text of the review.
      */
@@ -46,10 +42,7 @@ final class PullRequestReview
     {
         return $this->node_id;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

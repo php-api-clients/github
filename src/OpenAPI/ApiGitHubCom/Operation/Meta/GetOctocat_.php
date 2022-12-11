@@ -6,12 +6,12 @@ final class GetOctocat_
 {
     private const OPERATION_ID = 'meta/get-octocat';
     /**The words to show in Octocat's speech bubble**/
-    public string $s;
+    private readonly string $s;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($s)
+    function __construct(string $s)
     {
         $this->s = $s;
     }

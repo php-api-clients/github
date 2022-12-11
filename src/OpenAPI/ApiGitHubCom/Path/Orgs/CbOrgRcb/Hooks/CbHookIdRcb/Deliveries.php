@@ -4,8 +4,8 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Path\Orgs\CbOrgRcb\Hooks
 
 final class Deliveries
 {
-    function get($org, $hook_id, int $per_page = 30, $cursor) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListWebhookDeliveries
+    function get($org, $hook_id, int $per_page = 30, $cursor, $redelivery) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListWebhookDeliveries
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListWebhookDeliveries($org, $hook_id, $per_page, $cursor);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListWebhookDeliveries($org, $hook_id, $per_page, $cursor, $redelivery);
     }
 }

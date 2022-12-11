@@ -6,12 +6,12 @@ final class DeleteArchiveForAuthenticatedUser_
 {
     private const OPERATION_ID = 'migrations/delete-archive-for-authenticated-user';
     /**The unique identifier of the migration.**/
-    public int $migration_id;
+    private readonly int $migration_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($migration_id)
+    function __construct(int $migration_id)
     {
         $this->migration_id = $migration_id;
     }

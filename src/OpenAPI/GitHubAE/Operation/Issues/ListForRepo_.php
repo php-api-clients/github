@@ -6,36 +6,36 @@ final class ListForRepo_
 {
     private const OPERATION_ID = 'issues/list-for-repo';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**If an `integer` is passed, it should refer to a milestone by its `number` field. If the string `*` is passed, issues with any milestone are accepted. If the string `none` is passed, issues without milestones are returned.**/
-    public string $milestone;
-    /**Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.**/
-    public string $state;
+    private readonly string $milestone;
+    /**Indicates the state of the issues to return.**/
+    private readonly string $state;
     /**Can be the name of a user. Pass in `none` for issues with no assigned user, and `*` for issues assigned to any user.**/
-    public string $assignee;
+    private readonly string $assignee;
     /**The user that created the issue.**/
-    public string $creator;
+    private readonly string $creator;
     /**A user that's mentioned in the issue.**/
-    public string $mentioned;
+    private readonly string $mentioned;
     /**A list of comma separated label names. Example: `bug,ui,@high`**/
-    public string $labels;
-    /**What to sort results by. Can be either `created`, `updated`, `comments`.**/
-    public string $sort;
+    private readonly string $labels;
+    /**What to sort results by.**/
+    private readonly string $sort;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
+    private readonly string $since;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $milestone, string $state = 'open', $assignee, $creator, $mentioned, $labels, string $sort = 'created', string $direction = 'desc', $since, int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $milestone, string $state = 'open', string $assignee, string $creator, string $mentioned, string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

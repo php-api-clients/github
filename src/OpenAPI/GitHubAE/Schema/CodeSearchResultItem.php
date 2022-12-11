@@ -19,7 +19,7 @@ final class CodeSearchResultItem
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository $repository;
     private int $score;
     private ?int $file_size = null;
-    private ?string $language = null;
+    private $language;
     private ?string $last_modified_at = null;
     private array $line_numbers = array();
     /**
@@ -66,7 +66,7 @@ final class CodeSearchResultItem
     {
         return $this->file_size;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }

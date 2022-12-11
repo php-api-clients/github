@@ -6,16 +6,15 @@ final class DeleteLabel_
 {
     private const OPERATION_ID = 'issues/delete-label';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /****/
-    public string $name;
+    private readonly string $repo;
+    private readonly string $name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $name)
+    function __construct(string $owner, string $repo, string $name)
     {
         $this->owner = $owner;
         $this->repo = $repo;

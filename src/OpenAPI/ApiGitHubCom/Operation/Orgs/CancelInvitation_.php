@@ -6,14 +6,14 @@ final class CancelInvitation_
 {
     private const OPERATION_ID = 'orgs/cancel-invitation';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The unique identifier of the invitation.**/
-    public int $invitation_id;
+    private readonly int $invitation_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $invitation_id)
+    function __construct(string $org, int $invitation_id)
     {
         $this->org = $org;
         $this->invitation_id = $invitation_id;

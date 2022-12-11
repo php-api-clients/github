@@ -6,12 +6,12 @@ final class DeleteLegacy_
 {
     private const OPERATION_ID = 'reactions/delete-legacy';
     /**The unique identifier of the reaction.**/
-    public int $reaction_id;
+    private readonly int $reaction_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($reaction_id)
+    function __construct(int $reaction_id)
     {
         $this->reaction_id = $reaction_id;
     }

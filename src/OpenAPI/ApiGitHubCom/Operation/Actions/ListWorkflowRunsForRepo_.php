@@ -6,32 +6,34 @@ final class ListWorkflowRunsForRepo_
 {
     private const OPERATION_ID = 'actions/list-workflow-runs-for-repo';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.**/
-    public string $actor;
+    private readonly string $actor;
     /**Returns workflow runs associated with a branch. Use the name of the branch of the `push`.**/
-    public string $branch;
-    /**Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."**/
-    public string $event;
-    /**Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`. For a list of the possible `status` and `conclusion` options, see "[Create a check run](https://docs.github.com/rest/reference/checks#create-a-check-run)."**/
-    public string $status;
+    private readonly string $branch;
+    /**Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."**/
+    private readonly string $event;
+    /**Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.**/
+    private readonly string $status;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."**/
-    public string $created;
+    private readonly string $created;
     /**If `true` pull requests are omitted from the response (empty array).**/
-    public bool $exclude_pull_requests;
+    private readonly bool $exclude_pull_requests;
     /**Returns workflow runs with the `check_suite_id` that you specify.**/
-    public int $check_suite_id;
+    private readonly int $check_suite_id;
+    /**Only returns workflow runs that are associated with the specified `head_sha`.**/
+    private readonly string $head_sha;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $actor, $branch, $event, $status, int $per_page = 30, int $page = 1, $created, bool $exclude_pull_requests = false, $check_suite_id)
+    function __construct(string $owner, string $repo, string $actor, string $branch, string $event, string $status, int $per_page = 30, int $page = 1, string $created, bool $exclude_pull_requests = false, int $check_suite_id, string $head_sha)
     {
         $this->owner = $owner;
         $this->repo = $repo;
@@ -44,10 +46,11 @@ final class ListWorkflowRunsForRepo_
         $this->created = $created;
         $this->exclude_pull_requests = $exclude_pull_requests;
         $this->check_suite_id = $check_suite_id;
+        $this->head_sha = $head_sha;
     }
     function createRequest() : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}', '{exclude_pull_requests}', '{check_suite_id}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created, $this->exclude_pull_requests, $this->check_suite_id), '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}&exclude_pull_requests={exclude_pull_requests}&check_suite_id={check_suite_id}'));
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}', '{exclude_pull_requests}', '{check_suite_id}', '{head_sha}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created, $this->exclude_pull_requests, $this->check_suite_id, $this->head_sha), '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}&exclude_pull_requests={exclude_pull_requests}&check_suite_id={check_suite_id}&head_sha={head_sha}'));
     }
     function validateResponse()
     {

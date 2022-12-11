@@ -6,26 +6,26 @@ final class ListDeployments_
 {
     private const OPERATION_ID = 'repos/list-deployments';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The SHA recorded at creation time.**/
-    public string $sha;
+    private readonly string $sha;
     /**The name of the ref. This can be a branch, tag, or SHA.**/
-    public string $ref;
+    private readonly string $ref;
     /**The name of the task for the deployment (e.g., `deploy` or `deploy:migrations`).**/
-    public string $task;
+    private readonly string $task;
     /**The name of the environment that was deployed to (e.g., `staging` or `production`).**/
-    public string $environment;
+    private readonly string|null $environment;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, string $sha = 'none', string $ref = 'none', string $task = 'none', string $environment = 'none', int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $sha = 'none', string $ref = 'none', string $task = 'none', string|null $environment = 'none', int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

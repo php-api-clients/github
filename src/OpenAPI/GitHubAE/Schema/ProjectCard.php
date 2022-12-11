@@ -12,12 +12,8 @@ final class ProjectCard
      */
     private int $id;
     private string $node_id;
-    private ?string $note = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $creator = null;
+    private $note;
+    private $creator;
     private string $created_at;
     private string $updated_at;
     /**
@@ -44,14 +40,11 @@ final class ProjectCard
     {
         return $this->node_id;
     }
-    public function note() : ?string
+    public function note()
     {
         return $this->note;
     }
-    /**
-     * Simple User
-     */
-    public function creator() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function creator()
     {
         return $this->creator;
     }

@@ -6,9 +6,9 @@ final class ListSecretsForAuthenticatedUser_
 {
     private const OPERATION_ID = 'codespaces/list-secrets-for-authenticated-user';
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;

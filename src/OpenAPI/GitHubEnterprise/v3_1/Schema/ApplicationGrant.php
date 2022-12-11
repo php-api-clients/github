@@ -12,11 +12,7 @@ final class ApplicationGrant
     private string $created_at;
     private string $updated_at;
     private array $scopes = array();
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $user = null;
+    private $user;
     public function id() : int
     {
         return $this->id;
@@ -41,10 +37,7 @@ final class ApplicationGrant
     {
         return $this->scopes;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

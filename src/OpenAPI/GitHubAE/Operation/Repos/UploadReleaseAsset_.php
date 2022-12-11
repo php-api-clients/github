@@ -6,20 +6,18 @@ final class UploadReleaseAsset_
 {
     private const OPERATION_ID = 'repos/upload-release-asset';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the release.**/
-    public int $release_id;
-    /****/
-    public string $name;
-    /****/
-    public string $label;
+    private readonly int $release_id;
+    private readonly string $name;
+    private readonly string $label;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $release_id, $name, $label)
+    function __construct(string $owner, string $repo, int $release_id, string $name, string $label)
     {
         $this->owner = $owner;
         $this->repo = $repo;

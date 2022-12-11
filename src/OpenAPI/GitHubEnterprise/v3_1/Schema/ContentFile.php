@@ -14,9 +14,9 @@ final class ContentFile
     private string $content;
     private string $sha;
     private string $url;
-    private ?string $git_url = null;
-    private ?string $html_url = null;
-    private ?string $download_url = null;
+    private $git_url;
+    private $html_url;
+    private $download_url;
     private array $_links = array();
     private ?string $target = null;
     private ?string $submodule_git_url = null;
@@ -52,15 +52,15 @@ final class ContentFile
     {
         return $this->url;
     }
-    public function git_url() : ?string
+    public function git_url()
     {
         return $this->git_url;
     }
-    public function html_url() : ?string
+    public function html_url()
     {
         return $this->html_url;
     }
-    public function download_url() : ?string
+    public function download_url()
     {
         return $this->download_url;
     }

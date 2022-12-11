@@ -6,22 +6,22 @@ final class ListForOrg_
 {
     private const OPERATION_ID = 'repos/list-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Specifies the types of repositories you want returned. The `internal` value is not yet supported when a GitHub App calls this API with an installation access token.**/
-    public string $type;
+    private readonly string $type;
     /**The property to sort the results by.**/
-    public string $sort;
+    private readonly string $sort;
     /**The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $type, string $sort = 'created', $direction, int $per_page = 30, int $page = 1)
+    function __construct(string $org, string $type, string $sort = 'created', string $direction, int $per_page = 30, int $page = 1)
     {
         $this->org = $org;
         $this->type = $type;

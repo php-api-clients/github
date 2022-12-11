@@ -16,7 +16,7 @@ final class MarketplaceListingPlan
     private int $yearly_price_in_cents;
     private string $price_model;
     private bool $has_free_trial;
-    private ?string $unit_name = null;
+    private $unit_name;
     private string $state;
     private array $bullets = array();
     public function url() : string
@@ -59,7 +59,7 @@ final class MarketplaceListingPlan
     {
         return $this->has_free_trial;
     }
-    public function unit_name() : ?string
+    public function unit_name()
     {
         return $this->unit_name;
     }

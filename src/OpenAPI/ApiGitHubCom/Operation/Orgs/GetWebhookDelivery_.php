@@ -6,16 +6,15 @@ final class GetWebhookDelivery_
 {
     private const OPERATION_ID = 'orgs/get-webhook-delivery';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The unique identifier of the hook.**/
-    public int $hook_id;
-    /****/
-    public int $delivery_id;
+    private readonly int $hook_id;
+    private readonly int $delivery_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $hook_id, $delivery_id)
+    function __construct(string $org, int $hook_id, int $delivery_id)
     {
         $this->org = $org;
         $this->hook_id = $hook_id;

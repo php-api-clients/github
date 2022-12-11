@@ -6,18 +6,18 @@ final class ListSelectedReposForOrgSecret_
 {
     private const OPERATION_ID = 'actions/list-selected-repos-for-org-secret';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The name of the secret.**/
-    public string $secret_name;
+    private readonly string $secret_name;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $secret_name, int $page = 1, int $per_page = 30)
+    function __construct(string $org, string $secret_name, int $page = 1, int $per_page = 30)
     {
         $this->org = $org;
         $this->secret_name = $secret_name;

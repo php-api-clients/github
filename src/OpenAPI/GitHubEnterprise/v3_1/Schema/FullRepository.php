@@ -17,7 +17,7 @@ final class FullRepository
     private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\SimpleUser $owner;
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -58,11 +58,11 @@ final class FullRepository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private ?string $homepage = null;
-    private ?string $language = null;
+    private $homepage;
+    private $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
@@ -90,28 +90,17 @@ final class FullRepository
     private string $updated_at;
     private array $permissions = array();
     private ?bool $allow_rebase_merge = null;
-    /**
-     * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableRepository::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableRepository $template_repository = null;
-    private ?string $temp_clone_token = null;
+    private $template_repository;
+    private $temp_clone_token;
     private ?bool $allow_squash_merge = null;
     private ?bool $delete_branch_on_merge = null;
     private ?bool $allow_merge_commit = null;
+    private ?bool $allow_update_branch = null;
     private ?bool $allow_forking = null;
     private int $subscribers_count;
     private int $network_count;
-    /**
-     * License Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple $license = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $organization = null;
+    private $license;
+    private $organization;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Repository::class)
@@ -166,7 +155,7 @@ final class FullRepository
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -330,7 +319,7 @@ final class FullRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -342,11 +331,11 @@ final class FullRepository
     {
         return $this->svn_url;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -440,14 +429,11 @@ final class FullRepository
     {
         return $this->allow_rebase_merge;
     }
-    /**
-     * A git repository
-     */
-    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableRepository
+    public function template_repository()
     {
         return $this->template_repository;
     }
-    public function temp_clone_token() : ?string
+    public function temp_clone_token()
     {
         return $this->temp_clone_token;
     }
@@ -463,6 +449,10 @@ final class FullRepository
     {
         return $this->allow_merge_commit;
     }
+    public function allow_update_branch() : ?bool
+    {
+        return $this->allow_update_branch;
+    }
     public function allow_forking() : ?bool
     {
         return $this->allow_forking;
@@ -475,17 +465,11 @@ final class FullRepository
     {
         return $this->network_count;
     }
-    /**
-     * License Simple
-     */
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple
+    public function license()
     {
         return $this->license;
     }
-    /**
-     * Simple User
-     */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function organization()
     {
         return $this->organization;
     }

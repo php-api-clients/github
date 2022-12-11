@@ -6,14 +6,14 @@ final class List_
 {
     private const OPERATION_ID = 'orgs/list';
     /**An organization ID. Only return organizations with an ID greater than this ID.**/
-    public int $since;
+    private readonly int $since;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($since, int $per_page = 30)
+    function __construct(int $since, int $per_page = 30)
     {
         $this->since = $since;
         $this->per_page = $per_page;

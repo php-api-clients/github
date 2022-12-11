@@ -11,26 +11,19 @@ final class Authorization
     /**
      * A list of scopes that this authorization is in.
      */
-    private array $scopes = array();
+    private $scopes;
     private string $token;
-    private ?string $token_last_eight = null;
-    private ?string $hashed_token = null;
+    private $token_last_eight;
+    private $hashed_token;
     private array $app = array();
-    private ?string $note = null;
-    private ?string $note_url = null;
+    private $note;
+    private $note_url;
     private string $updated_at;
     private string $created_at;
-    private ?string $fingerprint = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $user = null;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableScopedInstallation::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableScopedInstallation $installation = null;
-    private ?string $expires_at = null;
+    private $fingerprint;
+    private $user;
+    private $installation;
+    private $expires_at;
     public function id() : int
     {
         return $this->id;
@@ -42,7 +35,7 @@ final class Authorization
     /**
      * A list of scopes that this authorization is in.
      */
-    public function scopes() : array
+    public function scopes()
     {
         return $this->scopes;
     }
@@ -50,11 +43,11 @@ final class Authorization
     {
         return $this->token;
     }
-    public function token_last_eight() : ?string
+    public function token_last_eight()
     {
         return $this->token_last_eight;
     }
-    public function hashed_token() : ?string
+    public function hashed_token()
     {
         return $this->hashed_token;
     }
@@ -62,11 +55,11 @@ final class Authorization
     {
         return $this->app;
     }
-    public function note() : ?string
+    public function note()
     {
         return $this->note;
     }
-    public function note_url() : ?string
+    public function note_url()
     {
         return $this->note_url;
     }
@@ -78,22 +71,19 @@ final class Authorization
     {
         return $this->created_at;
     }
-    public function fingerprint() : ?string
+    public function fingerprint()
     {
         return $this->fingerprint;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }
-    public function installation() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableScopedInstallation
+    public function installation()
     {
         return $this->installation;
     }
-    public function expires_at() : ?string
+    public function expires_at()
     {
         return $this->expires_at;
     }

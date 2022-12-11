@@ -6,22 +6,22 @@ final class ListForUser_
 {
     private const OPERATION_ID = 'repos/list-for-user';
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     /**Limit results to repositories of the specified type.**/
-    public string $type;
+    private readonly string $type;
     /**The property to sort the results by.**/
-    public string $sort;
+    private readonly string $sort;
     /**The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($username, string $type = 'owner', string $sort = 'full_name', $direction, int $per_page = 30, int $page = 1)
+    function __construct(string $username, string $type = 'owner', string $sort = 'full_name', string $direction, int $per_page = 30, int $page = 1)
     {
         $this->username = $username;
         $this->type = $type;

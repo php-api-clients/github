@@ -6,20 +6,20 @@ final class ListBranches_
 {
     private const OPERATION_ID = 'repos/list-branches';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**Setting to `true` returns only protected branches. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.**/
-    public bool $protected;
+    private readonly bool $protected;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $protected, int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, bool $protected, int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

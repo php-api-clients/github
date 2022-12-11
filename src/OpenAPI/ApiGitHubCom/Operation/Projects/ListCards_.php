@@ -6,18 +6,18 @@ final class ListCards_
 {
     private const OPERATION_ID = 'projects/list-cards';
     /**The unique identifier of the column.**/
-    public int $column_id;
+    private readonly int $column_id;
     /**Filters the project cards that are returned by the card's state.**/
-    public string $archived_state;
+    private readonly string $archived_state;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($column_id, string $archived_state = 'not_archived', int $per_page = 30, int $page = 1)
+    function __construct(int $column_id, string $archived_state = 'not_archived', int $per_page = 30, int $page = 1)
     {
         $this->column_id = $column_id;
         $this->archived_state = $archived_state;

@@ -24,6 +24,10 @@ final class Client
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Emojis();
     }
+    public function secretScanning() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\SecretScanning
+    {
+        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\SecretScanning();
+    }
     public function activity() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Activity();
@@ -56,6 +60,10 @@ final class Client
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions();
     }
+    public function codeScanning() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\CodeScanning
+    {
+        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\CodeScanning();
+    }
     public function teams() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams();
@@ -84,10 +92,6 @@ final class Client
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Checks();
     }
-    public function codeScanning() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\CodeScanning
-    {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\CodeScanning();
-    }
     public function git() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Git
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Git();
@@ -95,10 +99,6 @@ final class Client
     public function pulls() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Pulls();
-    }
-    public function secretScanning() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\SecretScanning
-    {
-        return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\SecretScanning();
     }
     public function search() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Search
     {

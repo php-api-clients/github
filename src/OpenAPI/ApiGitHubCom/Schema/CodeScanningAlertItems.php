@@ -37,24 +37,20 @@ final class CodeScanningAlertItems
     /**
      * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $fixed_at = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $dismissed_by = null;
+    private $fixed_at;
+    private $dismissed_by;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $dismissed_at = null;
+    private $dismissed_at;
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
-    private ?string $dismissed_reason = null;
+    private $dismissed_reason;
     /**
      * The dismissal comment associated with the dismissal of the alert.
      */
-    private ?string $dismissed_comment = null;
+    private $dismissed_comment;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRuleSummary::class)
      */
@@ -119,35 +115,32 @@ final class CodeScanningAlertItems
     /**
      * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function fixed_at() : ?string
+    public function fixed_at()
     {
         return $this->fixed_at;
     }
-    /**
-     * Simple User
-     */
-    public function dismissed_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function dismissed_by()
     {
         return $this->dismissed_by;
     }
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function dismissed_at() : ?string
+    public function dismissed_at()
     {
         return $this->dismissed_at;
     }
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
-    public function dismissed_reason() : ?string
+    public function dismissed_reason()
     {
         return $this->dismissed_reason;
     }
     /**
      * The dismissal comment associated with the dismissal of the alert.
      */
-    public function dismissed_comment() : ?string
+    public function dismissed_comment()
     {
         return $this->dismissed_comment;
     }

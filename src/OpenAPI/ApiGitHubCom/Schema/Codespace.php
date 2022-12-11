@@ -14,18 +14,18 @@ final class Codespace
     /**
      * Display name for this codespace.
      */
-    private ?string $display_name = null;
+    private $display_name;
     /**
      * UUID identifying this codespace's environment.
      */
-    private ?string $environment_id = null;
+    private $environment_id;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $billable_owner;
@@ -34,19 +34,15 @@ final class Codespace
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
-    /**
-     * A description of the machine powering a codespace.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableCodespaceMachine::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableCodespaceMachine $machine = null;
+    private $machine;
     /**
      * Path to devcontainer.json from repo root used to create Codespace.
      */
-    private ?string $devcontainer_path = null;
+    private $devcontainer_path;
     /**
      * Whether the codespace was created from a prebuild.
      */
-    private ?bool $prebuild = null;
+    private $prebuild;
     private string $created_at;
     private string $updated_at;
     /**
@@ -72,7 +68,7 @@ final class Codespace
     /**
      * The number of minutes of inactivity after which this codespace will be automatically stopped.
      */
-    private ?int $idle_timeout_minutes = null;
+    private $idle_timeout_minutes;
     /**
      * URL to access this codespace on the web.
      */
@@ -92,21 +88,33 @@ final class Codespace
     /**
      * API URL for the Pull Request associated with this codespace, if any.
      */
-    private ?string $pulls_url = null;
+    private $pulls_url;
     private array $recent_folders = array();
     private array $runtime_constraints = array();
     /**
      * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
      */
-    private ?bool $pending_operation = null;
+    private $pending_operation;
     /**
      * Text to show user when codespace is disabled by a pending operation
      */
-    private ?string $pending_operation_disabled_reason = null;
+    private $pending_operation_disabled_reason;
     /**
      * Text to show user when codespace idle timeout minutes has been overriden by an organization policy
      */
-    private ?string $idle_timeout_notice = null;
+    private $idle_timeout_notice;
+    /**
+     * Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+     */
+    private $retention_period_minutes;
+    /**
+     * When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
+     */
+    private $retention_expires_at;
+    /**
+     * The text to display to a user when a codespace has been stopped for a potentially actionable reason.
+     */
+    private $last_known_stop_notice;
     public function id() : int
     {
         return $this->id;
@@ -121,26 +129,26 @@ final class Codespace
     /**
      * Display name for this codespace.
      */
-    public function display_name() : ?string
+    public function display_name()
     {
         return $this->display_name;
     }
     /**
      * UUID identifying this codespace's environment.
      */
-    public function environment_id() : ?string
+    public function environment_id()
     {
         return $this->environment_id;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
         return $this->owner;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function billable_owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -153,24 +161,21 @@ final class Codespace
     {
         return $this->repository;
     }
-    /**
-     * A description of the machine powering a codespace.
-     */
-    public function machine() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableCodespaceMachine
+    public function machine()
     {
         return $this->machine;
     }
     /**
      * Path to devcontainer.json from repo root used to create Codespace.
      */
-    public function devcontainer_path() : ?string
+    public function devcontainer_path()
     {
         return $this->devcontainer_path;
     }
     /**
      * Whether the codespace was created from a prebuild.
      */
-    public function prebuild() : ?bool
+    public function prebuild()
     {
         return $this->prebuild;
     }
@@ -220,7 +225,7 @@ final class Codespace
     /**
      * The number of minutes of inactivity after which this codespace will be automatically stopped.
      */
-    public function idle_timeout_minutes() : ?int
+    public function idle_timeout_minutes()
     {
         return $this->idle_timeout_minutes;
     }
@@ -255,7 +260,7 @@ final class Codespace
     /**
      * API URL for the Pull Request associated with this codespace, if any.
      */
-    public function pulls_url() : ?string
+    public function pulls_url()
     {
         return $this->pulls_url;
     }
@@ -270,22 +275,43 @@ final class Codespace
     /**
      * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
      */
-    public function pending_operation() : ?bool
+    public function pending_operation()
     {
         return $this->pending_operation;
     }
     /**
      * Text to show user when codespace is disabled by a pending operation
      */
-    public function pending_operation_disabled_reason() : ?string
+    public function pending_operation_disabled_reason()
     {
         return $this->pending_operation_disabled_reason;
     }
     /**
      * Text to show user when codespace idle timeout minutes has been overriden by an organization policy
      */
-    public function idle_timeout_notice() : ?string
+    public function idle_timeout_notice()
     {
         return $this->idle_timeout_notice;
+    }
+    /**
+     * Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+     */
+    public function retention_period_minutes()
+    {
+        return $this->retention_period_minutes;
+    }
+    /**
+     * When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
+     */
+    public function retention_expires_at()
+    {
+        return $this->retention_expires_at;
+    }
+    /**
+     * The text to display to a user when a codespace has been stopped for a potentially actionable reason.
+     */
+    public function last_known_stop_notice()
+    {
+        return $this->last_known_stop_notice;
     }
 }

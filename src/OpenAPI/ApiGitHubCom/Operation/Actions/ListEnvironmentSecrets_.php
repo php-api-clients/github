@@ -6,18 +6,18 @@ final class ListEnvironmentSecrets_
 {
     private const OPERATION_ID = 'actions/list-environment-secrets';
     /**The unique identifier of the repository.**/
-    public int $repository_id;
-    /**The name of the environment**/
-    public string $environment_name;
+    private readonly int $repository_id;
+    /**The name of the environment.**/
+    private readonly string $environment_name;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($repository_id, $environment_name, int $per_page = 30, int $page = 1)
+    function __construct(int $repository_id, string $environment_name, int $per_page = 30, int $page = 1)
     {
         $this->repository_id = $repository_id;
         $this->environment_name = $environment_name;

@@ -6,22 +6,22 @@ final class ListJobsForWorkflowRun_
 {
     private const OPERATION_ID = 'actions/list-jobs-for-workflow-run';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the workflow run.**/
-    public int $run_id;
+    private readonly int $run_id;
     /**Filters jobs by their `completed_at` timestamp. `latest` returns jobs from the most recent execution of the workflow run. `all` returns all jobs for a workflow run, including from old executions of the workflow run.**/
-    public string $filter;
+    private readonly string $filter;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $run_id, string $filter = 'latest', int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, int $run_id, string $filter = 'latest', int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

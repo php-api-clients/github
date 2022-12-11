@@ -15,6 +15,10 @@ final class Autolink
      * A template for the target URL that is generated if a key was found.
      */
     private string $url_template;
+    /**
+     * Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.
+     */
+    private bool $is_alphanumeric;
     public function id() : int
     {
         return $this->id;
@@ -32,5 +36,12 @@ final class Autolink
     public function url_template() : string
     {
         return $this->url_template;
+    }
+    /**
+     * Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.
+     */
+    public function is_alphanumeric() : bool
+    {
+        return $this->is_alphanumeric;
     }
 }

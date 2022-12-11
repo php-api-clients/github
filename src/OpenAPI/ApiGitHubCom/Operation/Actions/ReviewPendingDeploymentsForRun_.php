@@ -6,16 +6,16 @@ final class ReviewPendingDeploymentsForRun_
 {
     private const OPERATION_ID = 'actions/review-pending-deployments-for-run';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the workflow run.**/
-    public int $run_id;
+    private readonly int $run_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $run_id)
+    function __construct(string $owner, string $repo, int $run_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

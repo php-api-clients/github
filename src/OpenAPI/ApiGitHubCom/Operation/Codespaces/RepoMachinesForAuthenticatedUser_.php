@@ -6,18 +6,18 @@ final class RepoMachinesForAuthenticatedUser_
 {
     private const OPERATION_ID = 'codespaces/repo-machines-for-authenticated-user';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The location to check for available machines. Assigned by IP if not provided.**/
-    public string $location;
+    private readonly string $location;
     /**IP for location auto-detection when proxying a request**/
-    public string $client_ip;
+    private readonly string $client_ip;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $location, $client_ip)
+    function __construct(string $owner, string $repo, string $location, string $client_ip)
     {
         $this->owner = $owner;
         $this->repo = $repo;

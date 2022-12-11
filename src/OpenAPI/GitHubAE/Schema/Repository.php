@@ -5,7 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 final class Repository
 {
     public const SCHEMA_TITLE = 'Repository';
-    public const SCHEMA_DESCRIPTION = 'A git repository';
+    public const SCHEMA_DESCRIPTION = 'A repository on GitHub.';
     /**
      * Unique identifier of the repository
      */
@@ -16,20 +16,12 @@ final class Repository
      */
     private string $name;
     private string $full_name;
-    /**
-     * License Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableLicenseSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableLicenseSimple $license = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $organization = null;
+    private $license;
+    private $organization;
     private int $forks;
     private array $permissions = array();
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $owner;
@@ -38,7 +30,7 @@ final class Repository
      */
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -79,14 +71,17 @@ final class Repository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private ?string $homepage = null;
-    private ?string $language = null;
+    private $homepage;
+    private $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     private int $size;
     /**
      * The default branch of the repository.
@@ -127,14 +122,14 @@ final class Repository
      * The repository visibility: public, private, or internal.
      */
     private ?string $visibility = null;
-    private ?string $pushed_at = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private $pushed_at;
+    private $created_at;
+    private $updated_at;
     /**
      * Whether to allow rebase merges for pull requests.
      */
     private ?bool $allow_rebase_merge = null;
-    private array $template_repository = array();
+    private $template_repository;
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -149,6 +144,10 @@ final class Repository
      */
     private ?bool $delete_branch_on_merge = null;
     /**
+     * Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
+     */
+    private ?bool $allow_update_branch = null;
+    /**
      * Whether to allow merge commits for pull requests.
      */
     private ?bool $allow_merge_commit = null;
@@ -156,12 +155,20 @@ final class Repository
      * Whether to allow forking this repo
      */
     private ?bool $allow_forking = null;
+    /**
+     * Whether to require contributors to sign off on web-based commits
+     */
+    private ?bool $web_commit_signoff_required = null;
     private ?int $subscribers_count = null;
     private ?int $network_count = null;
     private int $open_issues;
     private int $watchers;
     private ?string $master_branch = null;
     private ?string $starred_at = null;
+    /**
+     * Whether anonymous git access is enabled for this repository
+     */
+    private ?bool $anonymous_access_enabled = null;
     /**
      * Unique identifier of the repository
      */
@@ -184,17 +191,11 @@ final class Repository
     {
         return $this->full_name;
     }
-    /**
-     * License Simple
-     */
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableLicenseSimple
+    public function license()
     {
         return $this->license;
     }
-    /**
-     * Simple User
-     */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function organization()
     {
         return $this->organization;
     }
@@ -207,7 +208,7 @@ final class Repository
         return $this->permissions;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser
     {
@@ -224,7 +225,7 @@ final class Repository
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -388,7 +389,7 @@ final class Repository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -400,11 +401,11 @@ final class Repository
     {
         return $this->svn_url;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -420,6 +421,9 @@ final class Repository
     {
         return $this->watchers_count;
     }
+    /**
+     * The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     */
     public function size() : int
     {
         return $this->size;
@@ -499,15 +503,15 @@ final class Repository
     {
         return $this->visibility;
     }
-    public function pushed_at() : ?string
+    public function pushed_at()
     {
         return $this->pushed_at;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }
@@ -518,7 +522,7 @@ final class Repository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : array
+    public function template_repository()
     {
         return $this->template_repository;
     }
@@ -548,6 +552,13 @@ final class Repository
         return $this->delete_branch_on_merge;
     }
     /**
+     * Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
+     */
+    public function allow_update_branch() : ?bool
+    {
+        return $this->allow_update_branch;
+    }
+    /**
      * Whether to allow merge commits for pull requests.
      */
     public function allow_merge_commit() : ?bool
@@ -560,6 +571,13 @@ final class Repository
     public function allow_forking() : ?bool
     {
         return $this->allow_forking;
+    }
+    /**
+     * Whether to require contributors to sign off on web-based commits
+     */
+    public function web_commit_signoff_required() : ?bool
+    {
+        return $this->web_commit_signoff_required;
     }
     public function subscribers_count() : ?int
     {
@@ -584,5 +602,12 @@ final class Repository
     public function starred_at() : ?string
     {
         return $this->starred_at;
+    }
+    /**
+     * Whether anonymous git access is enabled for this repository
+     */
+    public function anonymous_access_enabled() : ?bool
+    {
+        return $this->anonymous_access_enabled;
     }
 }

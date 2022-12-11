@@ -6,26 +6,26 @@ final class ListRepoNotificationsForAuthenticatedUser_
 {
     private const OPERATION_ID = 'activity/list-repo-notifications-for-authenticated-user';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**If `true`, show notifications marked as read.**/
-    public bool $all;
+    private readonly bool $all;
     /**If `true`, only shows notifications in which the user is directly participating or mentioned.**/
-    public bool $participating;
+    private readonly bool $participating;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $since;
+    private readonly string $since;
     /**Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    public string $before;
+    private readonly string $before;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, bool $all = false, bool $participating = false, $since, $before, int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, bool $all = false, bool $participating = false, string $since, string $before, int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

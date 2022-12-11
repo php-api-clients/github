@@ -6,16 +6,16 @@ final class DeleteTagProtection_
 {
     private const OPERATION_ID = 'repos/delete-tag-protection';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the tag protection.**/
-    public int $tag_protection_id;
+    private readonly int $tag_protection_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $tag_protection_id)
+    function __construct(string $owner, string $repo, int $tag_protection_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

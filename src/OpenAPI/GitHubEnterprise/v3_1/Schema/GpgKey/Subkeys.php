@@ -17,8 +17,8 @@ final class Subkeys
     private bool $can_encrypt_storage;
     private bool $can_certify;
     private string $created_at;
-    private ?string $expires_at = null;
-    private ?string $raw_key = null;
+    private $expires_at;
+    private $raw_key;
     public function id() : int
     {
         return $this->id;
@@ -63,11 +63,11 @@ final class Subkeys
     {
         return $this->created_at;
     }
-    public function expires_at() : ?string
+    public function expires_at()
     {
         return $this->expires_at;
     }
-    public function raw_key() : ?string
+    public function raw_key()
     {
         return $this->raw_key;
     }

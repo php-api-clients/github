@@ -6,18 +6,17 @@ final class DownloadArtifact_
 {
     private const OPERATION_ID = 'actions/download-artifact';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the artifact.**/
-    public int $artifact_id;
-    /****/
-    public string $archive_format;
+    private readonly int $artifact_id;
+    private readonly string $archive_format;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $artifact_id, $archive_format)
+    function __construct(string $owner, string $repo, int $artifact_id, string $archive_format)
     {
         $this->owner = $owner;
         $this->repo = $repo;

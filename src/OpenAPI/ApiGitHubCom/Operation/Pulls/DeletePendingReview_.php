@@ -6,18 +6,18 @@ final class DeletePendingReview_
 {
     private const OPERATION_ID = 'pulls/delete-pending-review';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The number that identifies the pull request.**/
-    public int $pull_number;
+    private readonly int $pull_number;
     /**The unique identifier of the review.**/
-    public int $review_id;
+    private readonly int $review_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $pull_number, $review_id)
+    function __construct(string $owner, string $repo, int $pull_number, int $review_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

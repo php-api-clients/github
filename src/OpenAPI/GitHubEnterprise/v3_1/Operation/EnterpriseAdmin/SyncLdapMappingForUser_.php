@@ -6,12 +6,12 @@ final class SyncLdapMappingForUser_
 {
     private const OPERATION_ID = 'enterprise-admin/sync-ldap-mapping-for-user';
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($username)
+    function __construct(string $username)
     {
         $this->username = $username;
     }

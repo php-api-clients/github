@@ -6,16 +6,16 @@ final class CreateForTeamDiscussionCommentLegacy_
 {
     private const OPERATION_ID = 'reactions/create-for-team-discussion-comment-legacy';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     /**The number that identifies the discussion.**/
-    public int $discussion_number;
+    private readonly int $discussion_number;
     /**The number that identifies the comment.**/
-    public int $comment_number;
+    private readonly int $comment_number;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id, $discussion_number, $comment_number)
+    function __construct(int $team_id, int $discussion_number, int $comment_number)
     {
         $this->team_id = $team_id;
         $this->discussion_number = $discussion_number;

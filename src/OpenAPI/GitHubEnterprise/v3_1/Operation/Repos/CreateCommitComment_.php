@@ -6,16 +6,16 @@ final class CreateCommitComment_
 {
     private const OPERATION_ID = 'repos/create-commit-comment';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The SHA of the commit.**/
-    public string $commit_sha;
+    private readonly string $commit_sha;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $commit_sha)
+    function __construct(string $owner, string $repo, string $commit_sha)
     {
         $this->owner = $owner;
         $this->repo = $repo;

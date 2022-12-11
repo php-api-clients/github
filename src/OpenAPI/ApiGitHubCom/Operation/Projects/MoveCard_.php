@@ -6,12 +6,12 @@ final class MoveCard_
 {
     private const OPERATION_ID = 'projects/move-card';
     /**The unique identifier of the card.**/
-    public int $card_id;
+    private readonly int $card_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($card_id)
+    function __construct(int $card_id)
     {
         $this->card_id = $card_id;
     }

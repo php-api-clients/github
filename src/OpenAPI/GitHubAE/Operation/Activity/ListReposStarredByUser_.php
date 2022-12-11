@@ -6,20 +6,20 @@ final class ListReposStarredByUser_
 {
     private const OPERATION_ID = 'activity/list-repos-starred-by-user';
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
-    public string $sort;
+    private readonly string $sort;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($username, string $sort = 'created', string $direction = 'desc', int $per_page = 30, int $page = 1)
+    function __construct(string $username, string $sort = 'created', string $direction = 'desc', int $per_page = 30, int $page = 1)
     {
         $this->username = $username;
         $this->sort = $sort;

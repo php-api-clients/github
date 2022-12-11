@@ -11,11 +11,7 @@ final class PullRequestReview
      */
     private int $id;
     private string $node_id;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser $user = null;
+    private $user;
     /**
      * The text of the review.
      */
@@ -26,9 +22,9 @@ final class PullRequestReview
     private array $_links = array();
     private ?string $submitted_at = null;
     /**
-     * A commit SHA for the review.
+     * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
      */
-    private string $commit_id;
+    private $commit_id;
     private ?string $body_html = null;
     private ?string $body_text = null;
     /**
@@ -46,10 +42,7 @@ final class PullRequestReview
     {
         return $this->node_id;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }
@@ -81,9 +74,9 @@ final class PullRequestReview
         return $this->submitted_at;
     }
     /**
-     * A commit SHA for the review.
+     * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
      */
-    public function commit_id() : string
+    public function commit_id()
     {
         return $this->commit_id;
     }

@@ -6,12 +6,12 @@ final class SetRepositoriesForSecretForAuthenticatedUser_
 {
     private const OPERATION_ID = 'codespaces/set-repositories-for-secret-for-authenticated-user';
     /**The name of the secret.**/
-    public string $secret_name;
+    private readonly string $secret_name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($secret_name)
+    function __construct(string $secret_name)
     {
         $this->secret_name = $secret_name;
     }

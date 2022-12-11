@@ -17,13 +17,13 @@ final class OrganizationFull
     private string $members_url;
     private string $public_members_url;
     private string $avatar_url;
-    private ?string $description = null;
+    private $description;
     private ?string $name = null;
     private ?string $company = null;
     private ?string $blog = null;
     private ?string $location = null;
     private ?string $email = null;
-    private ?string $twitter_username = null;
+    private $twitter_username;
     private ?bool $is_verified = null;
     private bool $has_organization_projects;
     private bool $has_repository_projects;
@@ -36,14 +36,14 @@ final class OrganizationFull
     private string $type;
     private ?int $total_private_repos = null;
     private ?int $owned_private_repos = null;
-    private ?int $private_gists = null;
-    private ?int $disk_usage = null;
-    private ?int $collaborators = null;
-    private ?string $billing_email = null;
+    private $private_gists;
+    private $disk_usage;
+    private $collaborators;
+    private $billing_email;
     private array $plan = array();
-    private ?string $default_repository_permission = null;
-    private ?bool $members_can_create_repositories = null;
-    private ?bool $two_factor_requirement_enabled = null;
+    private $default_repository_permission;
+    private $members_can_create_repositories;
+    private $two_factor_requirement_enabled;
     private ?string $members_allowed_repository_creation_type = null;
     private ?bool $members_can_create_public_repositories = null;
     private ?bool $members_can_create_private_repositories = null;
@@ -96,7 +96,7 @@ final class OrganizationFull
     {
         return $this->avatar_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -120,7 +120,7 @@ final class OrganizationFull
     {
         return $this->email;
     }
-    public function twitter_username() : ?string
+    public function twitter_username()
     {
         return $this->twitter_username;
     }
@@ -172,19 +172,19 @@ final class OrganizationFull
     {
         return $this->owned_private_repos;
     }
-    public function private_gists() : ?int
+    public function private_gists()
     {
         return $this->private_gists;
     }
-    public function disk_usage() : ?int
+    public function disk_usage()
     {
         return $this->disk_usage;
     }
-    public function collaborators() : ?int
+    public function collaborators()
     {
         return $this->collaborators;
     }
-    public function billing_email() : ?string
+    public function billing_email()
     {
         return $this->billing_email;
     }
@@ -192,15 +192,15 @@ final class OrganizationFull
     {
         return $this->plan;
     }
-    public function default_repository_permission() : ?string
+    public function default_repository_permission()
     {
         return $this->default_repository_permission;
     }
-    public function members_can_create_repositories() : ?bool
+    public function members_can_create_repositories()
     {
         return $this->members_can_create_repositories;
     }
-    public function two_factor_requirement_enabled() : ?bool
+    public function two_factor_requirement_enabled()
     {
         return $this->two_factor_requirement_enabled;
     }

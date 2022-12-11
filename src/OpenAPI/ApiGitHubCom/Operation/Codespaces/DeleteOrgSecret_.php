@@ -1,0 +1,28 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces;
+
+final class DeleteOrgSecret_
+{
+    private const OPERATION_ID = 'codespaces/delete-org-secret';
+    /**The organization name. The name is not case sensitive.**/
+    private readonly string $org;
+    /**The name of the secret.**/
+    private readonly string $secret_name;
+    public function operationId() : string
+    {
+        return self::OPERATION_ID;
+    }
+    function __construct(string $org, string $secret_name)
+    {
+        $this->org = $org;
+        $this->secret_name = $secret_name;
+    }
+    function createRequest() : \Psr\Http\Message\RequestInterface
+    {
+        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{secret_name}'), array($this->org, $this->secret_name), '/orgs/{org}/codespaces/secrets/{secret_name}'));
+    }
+    function validateResponse()
+    {
+    }
+}

@@ -5,13 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Codes
 final class GetConductCode_
 {
     private const OPERATION_ID = 'codes-of-conduct/get-conduct-code';
-    /****/
-    public string $key;
+    private readonly string $key;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($key)
+    function __construct(string $key)
     {
         $this->key = $key;
     }

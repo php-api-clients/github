@@ -10,8 +10,8 @@ final class Release
     private string $html_url;
     private string $assets_url;
     private string $upload_url;
-    private ?string $tarball_url = null;
-    private ?string $zipball_url = null;
+    private $tarball_url;
+    private $zipball_url;
     private int $id;
     private string $node_id;
     /**
@@ -22,8 +22,8 @@ final class Release
      * Specifies the commitish value that determines where the Git tag is created from.
      */
     private string $target_commitish;
-    private ?string $name = null;
-    private ?string $body = null;
+    private $name;
+    private $body;
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
@@ -33,9 +33,9 @@ final class Release
      */
     private bool $prerelease;
     private string $created_at;
-    private ?string $published_at = null;
+    private $published_at;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author;
@@ -71,11 +71,11 @@ final class Release
     {
         return $this->upload_url;
     }
-    public function tarball_url() : ?string
+    public function tarball_url()
     {
         return $this->tarball_url;
     }
-    public function zipball_url() : ?string
+    public function zipball_url()
     {
         return $this->zipball_url;
     }
@@ -101,11 +101,11 @@ final class Release
     {
         return $this->target_commitish;
     }
-    public function name() : ?string
+    public function name()
     {
         return $this->name;
     }
-    public function body() : ?string
+    public function body()
     {
         return $this->body;
     }
@@ -127,12 +127,12 @@ final class Release
     {
         return $this->created_at;
     }
-    public function published_at() : ?string
+    public function published_at()
     {
         return $this->published_at;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {

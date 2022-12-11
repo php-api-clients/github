@@ -16,16 +16,8 @@ final class Repository
      */
     private string $name;
     private string $full_name;
-    /**
-     * License Simple
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple $license = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $organization = null;
+    private $license;
+    private $organization;
     private int $forks;
     private array $permissions = array();
     /**
@@ -38,7 +30,7 @@ final class Repository
      */
     private bool $private;
     private string $html_url;
-    private ?string $description = null;
+    private $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -79,11 +71,11 @@ final class Repository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private ?string $mirror_url = null;
+    private $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private ?string $homepage = null;
-    private ?string $language = null;
+    private $homepage;
+    private $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
@@ -127,14 +119,14 @@ final class Repository
      * The repository visibility: public, private, or internal.
      */
     private ?string $visibility = null;
-    private ?string $pushed_at = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private $pushed_at;
+    private $created_at;
+    private $updated_at;
     /**
      * Whether to allow rebase merges for pull requests.
      */
     private ?bool $allow_rebase_merge = null;
-    private array $template_repository = array();
+    private $template_repository;
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -144,6 +136,10 @@ final class Repository
      * Whether to delete head branches when pull requests are merged
      */
     private ?bool $delete_branch_on_merge = null;
+    /**
+     * Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
+     */
+    private ?bool $allow_update_branch = null;
     /**
      * Whether to allow merge commits for pull requests.
      */
@@ -180,17 +176,11 @@ final class Repository
     {
         return $this->full_name;
     }
-    /**
-     * License Simple
-     */
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableLicenseSimple
+    public function license()
     {
         return $this->license;
     }
-    /**
-     * Simple User
-     */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function organization()
     {
         return $this->organization;
     }
@@ -220,7 +210,7 @@ final class Repository
     {
         return $this->html_url;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -384,7 +374,7 @@ final class Repository
     {
         return $this->clone_url;
     }
-    public function mirror_url() : ?string
+    public function mirror_url()
     {
         return $this->mirror_url;
     }
@@ -396,11 +386,11 @@ final class Repository
     {
         return $this->svn_url;
     }
-    public function homepage() : ?string
+    public function homepage()
     {
         return $this->homepage;
     }
-    public function language() : ?string
+    public function language()
     {
         return $this->language;
     }
@@ -495,15 +485,15 @@ final class Repository
     {
         return $this->visibility;
     }
-    public function pushed_at() : ?string
+    public function pushed_at()
     {
         return $this->pushed_at;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }
@@ -514,7 +504,7 @@ final class Repository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : array
+    public function template_repository()
     {
         return $this->template_repository;
     }
@@ -535,6 +525,13 @@ final class Repository
     public function delete_branch_on_merge() : ?bool
     {
         return $this->delete_branch_on_merge;
+    }
+    /**
+     * Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
+     */
+    public function allow_update_branch() : ?bool
+    {
+        return $this->allow_update_branch;
     }
     /**
      * Whether to allow merge commits for pull requests.

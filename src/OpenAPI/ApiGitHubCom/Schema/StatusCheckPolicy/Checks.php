@@ -7,12 +7,12 @@ final class Checks
     public const SCHEMA_TITLE = 'status-check-policy::checks';
     public const SCHEMA_DESCRIPTION = '';
     private string $context;
-    private ?int $app_id = null;
+    private $app_id;
     public function context() : string
     {
         return $this->context;
     }
-    public function app_id() : ?int
+    public function app_id()
     {
         return $this->app_id;
     }

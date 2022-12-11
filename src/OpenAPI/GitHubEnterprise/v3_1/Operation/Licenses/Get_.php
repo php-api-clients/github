@@ -5,13 +5,12 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Licen
 final class Get_
 {
     private const OPERATION_ID = 'licenses/get';
-    /****/
-    public string $license;
+    private readonly string $license;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($license)
+    function __construct(string $license)
     {
         $this->license = $license;
     }

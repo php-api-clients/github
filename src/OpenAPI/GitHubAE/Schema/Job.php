@@ -25,7 +25,7 @@ final class Job
      */
     private string $head_sha;
     private string $url;
-    private ?string $html_url = null;
+    private $html_url;
     /**
      * The phase of the lifecycle that the job is currently in.
      */
@@ -33,7 +33,7 @@ final class Job
     /**
      * The outcome of the job.
      */
-    private ?string $conclusion = null;
+    private $conclusion;
     /**
      * The time that the job started, in ISO 8601 format.
      */
@@ -41,7 +41,7 @@ final class Job
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    private ?string $completed_at = null;
+    private $completed_at;
     /**
      * The name of the job.
      */
@@ -60,19 +60,19 @@ final class Job
     /**
      * The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?int $runner_id = null;
+    private $runner_id;
     /**
      * The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?string $runner_name = null;
+    private $runner_name;
     /**
      * The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?int $runner_group_id = null;
+    private $runner_group_id;
     /**
      * The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?string $runner_group_name = null;
+    private $runner_group_name;
     /**
      * The id of the job.
      */
@@ -113,7 +113,7 @@ final class Job
     {
         return $this->url;
     }
-    public function html_url() : ?string
+    public function html_url()
     {
         return $this->html_url;
     }
@@ -127,7 +127,7 @@ final class Job
     /**
      * The outcome of the job.
      */
-    public function conclusion() : ?string
+    public function conclusion()
     {
         return $this->conclusion;
     }
@@ -141,7 +141,7 @@ final class Job
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    public function completed_at() : ?string
+    public function completed_at()
     {
         return $this->completed_at;
     }
@@ -174,28 +174,28 @@ final class Job
     /**
      * The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_id() : ?int
+    public function runner_id()
     {
         return $this->runner_id;
     }
     /**
      * The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_name() : ?string
+    public function runner_name()
     {
         return $this->runner_name;
     }
     /**
      * The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_group_id() : ?int
+    public function runner_group_id()
     {
         return $this->runner_group_id;
     }
     /**
      * The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_group_name() : ?string
+    public function runner_group_name()
     {
         return $this->runner_group_name;
     }

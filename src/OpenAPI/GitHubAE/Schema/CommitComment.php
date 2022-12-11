@@ -11,15 +11,11 @@ final class CommitComment
     private int $id;
     private string $node_id;
     private string $body;
-    private ?string $path = null;
-    private ?int $position = null;
-    private ?int $line = null;
+    private $path;
+    private $position;
+    private $line;
     private string $commit_id;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $user = null;
+    private $user;
     private string $created_at;
     private string $updated_at;
     /**
@@ -50,15 +46,15 @@ final class CommitComment
     {
         return $this->body;
     }
-    public function path() : ?string
+    public function path()
     {
         return $this->path;
     }
-    public function position() : ?int
+    public function position()
     {
         return $this->position;
     }
-    public function line() : ?int
+    public function line()
     {
         return $this->line;
     }
@@ -66,10 +62,7 @@ final class CommitComment
     {
         return $this->commit_id;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

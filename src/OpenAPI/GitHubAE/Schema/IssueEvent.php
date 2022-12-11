@@ -9,45 +9,21 @@ final class IssueEvent
     private int $id;
     private string $node_id;
     private string $url;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $actor = null;
+    private $actor;
     private string $event;
-    private ?string $commit_id = null;
-    private ?string $commit_url = null;
+    private $commit_id;
+    private $commit_url;
     private string $created_at;
-    /**
-     * Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIssue::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIssue $issue = null;
+    private $issue;
     /**
      * Issue Event Label
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueEventLabel::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\IssueEventLabel $label = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $assignee = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $assigner = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $review_requester = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $requested_reviewer = null;
+    private $assignee;
+    private $assigner;
+    private $review_requester;
+    private $requested_reviewer;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Team::class)
@@ -76,12 +52,8 @@ final class IssueEvent
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private ?string $lock_reason = null;
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration $performed_via_github_app = null;
+    private $lock_reason;
+    private $performed_via_github_app;
     public function id() : int
     {
         return $this->id;
@@ -94,10 +66,7 @@ final class IssueEvent
     {
         return $this->url;
     }
-    /**
-     * Simple User
-     */
-    public function actor() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function actor()
     {
         return $this->actor;
     }
@@ -105,11 +74,11 @@ final class IssueEvent
     {
         return $this->event;
     }
-    public function commit_id() : ?string
+    public function commit_id()
     {
         return $this->commit_id;
     }
-    public function commit_url() : ?string
+    public function commit_url()
     {
         return $this->commit_url;
     }
@@ -117,10 +86,7 @@ final class IssueEvent
     {
         return $this->created_at;
     }
-    /**
-     * Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
-     */
-    public function issue() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIssue
+    public function issue()
     {
         return $this->issue;
     }
@@ -131,31 +97,19 @@ final class IssueEvent
     {
         return $this->label;
     }
-    /**
-     * Simple User
-     */
-    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function assignee()
     {
         return $this->assignee;
     }
-    /**
-     * Simple User
-     */
-    public function assigner() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function assigner()
     {
         return $this->assigner;
     }
-    /**
-     * Simple User
-     */
-    public function review_requester() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function review_requester()
     {
         return $this->review_requester;
     }
-    /**
-     * Simple User
-     */
-    public function requested_reviewer() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function requested_reviewer()
     {
         return $this->requested_reviewer;
     }
@@ -198,14 +152,11 @@ final class IssueEvent
     {
         return $this->author_association;
     }
-    public function lock_reason() : ?string
+    public function lock_reason()
     {
         return $this->lock_reason;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration
+    public function performed_via_github_app()
     {
         return $this->performed_via_github_app;
     }

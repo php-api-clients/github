@@ -23,18 +23,14 @@ final class Milestone
      * The title of the milestone.
      */
     private string $title;
-    private ?string $description = null;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $creator = null;
+    private $description;
+    private $creator;
     private int $open_issues;
     private int $closed_issues;
     private string $created_at;
     private string $updated_at;
-    private ?string $closed_at = null;
-    private ?string $due_on = null;
+    private $closed_at;
+    private $due_on;
     public function url() : string
     {
         return $this->url;
@@ -76,14 +72,11 @@ final class Milestone
     {
         return $this->title;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
-    /**
-     * Simple User
-     */
-    public function creator() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function creator()
     {
         return $this->creator;
     }
@@ -103,11 +96,11 @@ final class Milestone
     {
         return $this->updated_at;
     }
-    public function closed_at() : ?string
+    public function closed_at()
     {
         return $this->closed_at;
     }
-    public function due_on() : ?string
+    public function due_on()
     {
         return $this->due_on;
     }

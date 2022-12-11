@@ -6,14 +6,14 @@ final class AddMemberLegacy_
 {
     private const OPERATION_ID = 'teams/add-member-legacy';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id, $username)
+    function __construct(int $team_id, string $username)
     {
         $this->team_id = $team_id;
         $this->username = $username;

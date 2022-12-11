@@ -27,6 +27,8 @@ final class AuditLogEvent
     private array $actor_location = array();
     private array $data = array();
     private int $org_id;
+    private int $user_id;
+    private int $business_id;
     /**
      * The username of the account being blocked.
      */
@@ -43,6 +45,7 @@ final class AuditLogEvent
      */
     private array $config_was = array();
     private string $content_type;
+    private string $operation_type;
     /**
      * The time the audit log event was recorded, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
      */
@@ -149,6 +152,14 @@ final class AuditLogEvent
     {
         return $this->org_id;
     }
+    public function user_id() : int
+    {
+        return $this->user_id;
+    }
+    public function business_id() : int
+    {
+        return $this->business_id;
+    }
     /**
      * The username of the account being blocked.
      */
@@ -177,6 +188,10 @@ final class AuditLogEvent
     public function content_type() : string
     {
         return $this->content_type;
+    }
+    public function operation_type() : string
+    {
+        return $this->operation_type;
     }
     /**
      * The time the audit log event was recorded, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).

@@ -5,13 +5,13 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Activ
 final class MarkThreadAsRead_
 {
     private const OPERATION_ID = 'activity/mark-thread-as-read';
-    /**The unique identifier of the thread.**/
-    public int $thread_id;
+    /**The unique identifier of the pull request thread.**/
+    private readonly int $thread_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($thread_id)
+    function __construct(int $thread_id)
     {
         $this->thread_id = $thread_id;
     }

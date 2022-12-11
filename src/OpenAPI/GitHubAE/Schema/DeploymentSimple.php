@@ -21,7 +21,7 @@ final class DeploymentSimple
      * Name for the target deployment environment.
      */
     private string $environment;
-    private ?string $description = null;
+    private $description;
     private string $created_at;
     private string $updated_at;
     private string $statuses_url;
@@ -34,11 +34,7 @@ final class DeploymentSimple
      * Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
     private ?bool $production_environment = null;
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration $performed_via_github_app = null;
+    private $performed_via_github_app;
     public function url() : string
     {
         return $this->url;
@@ -72,7 +68,7 @@ final class DeploymentSimple
     {
         return $this->environment;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -106,10 +102,7 @@ final class DeploymentSimple
     {
         return $this->production_environment;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration
+    public function performed_via_github_app()
     {
         return $this->performed_via_github_app;
     }

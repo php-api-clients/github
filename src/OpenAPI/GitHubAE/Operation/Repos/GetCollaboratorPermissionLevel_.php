@@ -6,16 +6,16 @@ final class GetCollaboratorPermissionLevel_
 {
     private const OPERATION_ID = 'repos/get-collaborator-permission-level';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The handle for the GitHub user account.**/
-    public string $username;
+    private readonly string $username;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $username)
+    function __construct(string $owner, string $repo, string $username)
     {
         $this->owner = $owner;
         $this->repo = $repo;

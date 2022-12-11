@@ -4,28 +4,33 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class DeploymentBranchPolicy
 {
-    public const SCHEMA_TITLE = 'deployment_branch_policy';
-    public const SCHEMA_DESCRIPTION = 'The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.';
+    public const SCHEMA_TITLE = 'Deployment branch policy';
+    public const SCHEMA_DESCRIPTION = 'Details of a deployment branch policy.';
     /**
-     * Whether only branches with branch protection rules can deploy to this environment. If `protected_branches` is `true`, `custom_branch_policies` must be `false`; if `protected_branches` is `false`, `custom_branch_policies` must be `true`.
+     * The unique identifier of the branch policy.
      */
-    private bool $protected_branches;
+    private int $id;
+    private string $node_id;
     /**
-     * Whether only branches that match the specified name patterns can deploy to this environment.  If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.
+     * The name pattern that branches must match in order to deploy to the environment.
      */
-    private bool $custom_branch_policies;
+    private string $name;
     /**
-     * Whether only branches with branch protection rules can deploy to this environment. If `protected_branches` is `true`, `custom_branch_policies` must be `false`; if `protected_branches` is `false`, `custom_branch_policies` must be `true`.
+     * The unique identifier of the branch policy.
      */
-    public function protected_branches() : bool
+    public function id() : int
     {
-        return $this->protected_branches;
+        return $this->id;
+    }
+    public function node_id() : string
+    {
+        return $this->node_id;
     }
     /**
-     * Whether only branches that match the specified name patterns can deploy to this environment.  If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.
+     * The name pattern that branches must match in order to deploy to the environment.
      */
-    public function custom_branch_policies() : bool
+    public function name() : string
     {
-        return $this->custom_branch_policies;
+        return $this->name;
     }
 }

@@ -14,6 +14,14 @@ final class Feed
     private ?string $current_user_organization_url = null;
     private array $current_user_organization_urls = array();
     private ?string $security_advisories_url = null;
+    /**
+     * A feed of discussions for a given repository.
+     */
+    private ?string $repository_discussions_url = null;
+    /**
+     * A feed of discussions for a given repository and category.
+     */
+    private ?string $repository_discussions_category_url = null;
     private array $_links = array();
     public function timeline_url() : string
     {
@@ -46,6 +54,20 @@ final class Feed
     public function security_advisories_url() : ?string
     {
         return $this->security_advisories_url;
+    }
+    /**
+     * A feed of discussions for a given repository.
+     */
+    public function repository_discussions_url() : ?string
+    {
+        return $this->repository_discussions_url;
+    }
+    /**
+     * A feed of discussions for a given repository and category.
+     */
+    public function repository_discussions_category_url() : ?string
+    {
+        return $this->repository_discussions_category_url;
     }
     public function _links() : array
     {

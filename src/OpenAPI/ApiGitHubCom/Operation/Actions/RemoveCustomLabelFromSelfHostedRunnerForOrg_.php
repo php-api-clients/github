@@ -6,16 +6,16 @@ final class RemoveCustomLabelFromSelfHostedRunnerForOrg_
 {
     private const OPERATION_ID = 'actions/remove-custom-label-from-self-hosted-runner-for-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**Unique identifier of the self-hosted runner.**/
-    public int $runner_id;
+    private readonly int $runner_id;
     /**The name of a self-hosted runner's custom label.**/
-    public string $name;
+    private readonly string $name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $runner_id, $name)
+    function __construct(string $org, int $runner_id, string $name)
     {
         $this->org = $org;
         $this->runner_id = $runner_id;

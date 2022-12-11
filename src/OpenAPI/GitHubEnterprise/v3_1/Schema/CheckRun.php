@@ -15,28 +15,24 @@ final class CheckRun
      */
     private string $head_sha;
     private string $node_id;
-    private ?string $external_id = null;
+    private $external_id;
     private string $url;
-    private ?string $html_url = null;
-    private ?string $details_url = null;
+    private $html_url;
+    private $details_url;
     /**
      * The phase of the lifecycle that the check is currently in.
      */
     private string $status;
-    private ?string $conclusion = null;
-    private ?string $started_at = null;
-    private ?string $completed_at = null;
+    private $conclusion;
+    private $started_at;
+    private $completed_at;
     private array $output = array();
     /**
      * The name of the check.
      */
     private string $name;
-    private array $check_suite = array();
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration $app = null;
+    private $check_suite;
+    private $app;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal::class)
@@ -65,7 +61,7 @@ final class CheckRun
     {
         return $this->node_id;
     }
-    public function external_id() : ?string
+    public function external_id()
     {
         return $this->external_id;
     }
@@ -73,11 +69,11 @@ final class CheckRun
     {
         return $this->url;
     }
-    public function html_url() : ?string
+    public function html_url()
     {
         return $this->html_url;
     }
-    public function details_url() : ?string
+    public function details_url()
     {
         return $this->details_url;
     }
@@ -88,15 +84,15 @@ final class CheckRun
     {
         return $this->status;
     }
-    public function conclusion() : ?string
+    public function conclusion()
     {
         return $this->conclusion;
     }
-    public function started_at() : ?string
+    public function started_at()
     {
         return $this->started_at;
     }
-    public function completed_at() : ?string
+    public function completed_at()
     {
         return $this->completed_at;
     }
@@ -111,14 +107,11 @@ final class CheckRun
     {
         return $this->name;
     }
-    public function check_suite() : array
+    public function check_suite()
     {
         return $this->check_suite;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function app() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableIntegration
+    public function app()
     {
         return $this->app;
     }

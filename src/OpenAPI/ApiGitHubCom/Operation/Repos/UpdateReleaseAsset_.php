@@ -6,16 +6,16 @@ final class UpdateReleaseAsset_
 {
     private const OPERATION_ID = 'repos/update-release-asset';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the asset.**/
-    public int $asset_id;
+    private readonly int $asset_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $asset_id)
+    function __construct(string $owner, string $repo, int $asset_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

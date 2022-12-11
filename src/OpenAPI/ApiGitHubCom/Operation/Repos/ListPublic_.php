@@ -6,12 +6,12 @@ final class ListPublic_
 {
     private const OPERATION_ID = 'repos/list-public';
     /**A repository ID. Only return repositories with an ID greater than this ID.**/
-    public int $since;
+    private readonly int $since;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($since)
+    function __construct(int $since)
     {
         $this->since = $since;
     }

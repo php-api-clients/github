@@ -6,20 +6,20 @@ final class ListForTeamDiscussionLegacy_
 {
     private const OPERATION_ID = 'reactions/list-for-team-discussion-legacy';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     /**The number that identifies the discussion.**/
-    public int $discussion_number;
+    private readonly int $discussion_number;
     /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion.**/
-    public string $content;
+    private readonly string $content;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id, $discussion_number, $content, int $per_page = 30, int $page = 1)
+    function __construct(int $team_id, int $discussion_number, string $content, int $per_page = 30, int $page = 1)
     {
         $this->team_id = $team_id;
         $this->discussion_number = $discussion_number;

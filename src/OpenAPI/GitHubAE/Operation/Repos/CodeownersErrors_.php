@@ -6,16 +6,16 @@ final class CodeownersErrors_
 {
     private const OPERATION_ID = 'repos/codeowners-errors';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**A branch, tag or commit name used to determine which version of the CODEOWNERS file to use. Default: the repository's default branch (e.g. `main`)**/
-    public string $ref;
+    private readonly string $ref;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $ref)
+    function __construct(string $owner, string $repo, string $ref)
     {
         $this->owner = $owner;
         $this->repo = $repo;

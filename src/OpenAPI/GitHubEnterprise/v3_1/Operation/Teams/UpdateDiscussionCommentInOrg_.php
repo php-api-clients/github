@@ -6,18 +6,18 @@ final class UpdateDiscussionCommentInOrg_
 {
     private const OPERATION_ID = 'teams/update-discussion-comment-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The slug of the team name.**/
-    public string $team_slug;
+    private readonly string $team_slug;
     /**The number that identifies the discussion.**/
-    public int $discussion_number;
+    private readonly int $discussion_number;
     /**The number that identifies the comment.**/
-    public int $comment_number;
+    private readonly int $comment_number;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $team_slug, $discussion_number, $comment_number)
+    function __construct(string $org, string $team_slug, int $discussion_number, int $comment_number)
     {
         $this->org = $org;
         $this->team_slug = $team_slug;

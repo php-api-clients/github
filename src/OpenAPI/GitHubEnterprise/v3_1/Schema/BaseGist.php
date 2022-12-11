@@ -18,13 +18,9 @@ final class BaseGist
     private bool $public;
     private string $created_at;
     private string $updated_at;
-    private ?string $description = null;
+    private $description;
     private int $comments;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $user = null;
+    private $user;
     private string $comments_url;
     /**
      * Simple User
@@ -82,7 +78,7 @@ final class BaseGist
     {
         return $this->updated_at;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -90,10 +86,7 @@ final class BaseGist
     {
         return $this->comments;
     }
-    /**
-     * Simple User
-     */
-    public function user() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function user()
     {
         return $this->user;
     }

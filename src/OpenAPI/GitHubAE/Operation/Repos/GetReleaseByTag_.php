@@ -6,16 +6,16 @@ final class GetReleaseByTag_
 {
     private const OPERATION_ID = 'repos/get-release-by-tag';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**tag parameter**/
-    public string $tag;
+    private readonly string $tag;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $tag)
+    function __construct(string $owner, string $repo, string $tag)
     {
         $this->owner = $owner;
         $this->repo = $repo;

@@ -4,15 +4,15 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation;
 
 final class Migrations
 {
-    public function listForOrg_($org, int $per_page = 30, int $page = 1, $exclude) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\ListForOrg_
+    public function listForOrg_(string $org, int $per_page = 30, int $page = 1, array $exclude) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\ListForOrg_
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\ListForOrg_($org, $per_page, $page, $exclude);
     }
-    public function startForOrg_($org) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\StartForOrg_
+    public function startForOrg_(string $org) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\StartForOrg_
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\StartForOrg_($org);
     }
-    public function getStatusForOrg_($org, $migration_id, $exclude) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\GetStatusForOrg_
+    public function getStatusForOrg_(string $org, int $migration_id, array $exclude) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\GetStatusForOrg_
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\GetStatusForOrg_($org, $migration_id, $exclude);
     }
@@ -24,11 +24,11 @@ final class Migrations
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\StartForAuthenticatedUser_();
     }
-    public function getArchiveForAuthenticatedUser_($migration_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\GetArchiveForAuthenticatedUser_
+    public function getArchiveForAuthenticatedUser_(int $migration_id) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\GetArchiveForAuthenticatedUser_
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\GetArchiveForAuthenticatedUser_($migration_id);
     }
-    public function listReposForAuthenticatedUser_($migration_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\ListReposForAuthenticatedUser_
+    public function listReposForAuthenticatedUser_(int $migration_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\ListReposForAuthenticatedUser_
     {
         return new \ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations\ListReposForAuthenticatedUser_($migration_id, $per_page, $page);
     }

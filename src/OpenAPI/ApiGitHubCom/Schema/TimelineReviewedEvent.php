@@ -13,14 +13,14 @@ final class TimelineReviewedEvent
     private int $id;
     private string $node_id;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
     /**
      * The text of the review.
      */
-    private ?string $body = null;
+    private $body;
     private string $state;
     private string $html_url;
     private string $pull_request_url;
@@ -52,7 +52,7 @@ final class TimelineReviewedEvent
         return $this->node_id;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -61,7 +61,7 @@ final class TimelineReviewedEvent
     /**
      * The text of the review.
      */
-    public function body() : ?string
+    public function body()
     {
         return $this->body;
     }

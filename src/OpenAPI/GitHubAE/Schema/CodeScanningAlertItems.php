@@ -30,19 +30,15 @@ final class CodeScanningAlertItems
      * State of a code scanning alert.
      */
     private string $state;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $dismissed_by = null;
+    private $dismissed_by;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $dismissed_at = null;
+    private $dismissed_at;
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
-    private ?string $dismissed_reason = null;
+    private $dismissed_reason;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CodeScanningAlertRuleSummary::class)
      */
@@ -97,24 +93,21 @@ final class CodeScanningAlertItems
     {
         return $this->state;
     }
-    /**
-     * Simple User
-     */
-    public function dismissed_by() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function dismissed_by()
     {
         return $this->dismissed_by;
     }
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function dismissed_at() : ?string
+    public function dismissed_at()
     {
         return $this->dismissed_at;
     }
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
-    public function dismissed_reason() : ?string
+    public function dismissed_reason()
     {
         return $this->dismissed_reason;
     }

@@ -8,35 +8,27 @@ final class CheckSuite
     public const SCHEMA_DESCRIPTION = 'A suite of checks performed on the code of a given code change';
     private int $id;
     private string $node_id;
-    private ?string $head_branch = null;
+    private $head_branch;
     /**
      * The SHA of the head commit that is being checked.
      */
     private string $head_sha;
-    private ?string $status = null;
-    private ?string $conclusion = null;
-    private ?string $url = null;
-    private ?string $before = null;
-    private ?string $after = null;
-    /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal::class)
-     */
-    private array $pull_requests = array();
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration $app = null;
+    private $status;
+    private $conclusion;
+    private $url;
+    private $before;
+    private $after;
+    private $pull_requests;
+    private $app;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository $repository;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
+    private $created_at;
+    private $updated_at;
     /**
-     * Simple Commit
+     * A commit.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleCommit::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleCommit $head_commit;
@@ -52,7 +44,7 @@ final class CheckSuite
     {
         return $this->node_id;
     }
-    public function head_branch() : ?string
+    public function head_branch()
     {
         return $this->head_branch;
     }
@@ -63,37 +55,31 @@ final class CheckSuite
     {
         return $this->head_sha;
     }
-    public function status() : ?string
+    public function status()
     {
         return $this->status;
     }
-    public function conclusion() : ?string
+    public function conclusion()
     {
         return $this->conclusion;
     }
-    public function url() : ?string
+    public function url()
     {
         return $this->url;
     }
-    public function before() : ?string
+    public function before()
     {
         return $this->before;
     }
-    public function after() : ?string
+    public function after()
     {
         return $this->after;
     }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal>
-     */
-    public function pull_requests() : array
+    public function pull_requests()
     {
         return $this->pull_requests;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function app() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableIntegration
+    public function app()
     {
         return $this->app;
     }
@@ -104,16 +90,16 @@ final class CheckSuite
     {
         return $this->repository;
     }
-    public function created_at() : ?string
+    public function created_at()
     {
         return $this->created_at;
     }
-    public function updated_at() : ?string
+    public function updated_at()
     {
         return $this->updated_at;
     }
     /**
-     * Simple Commit
+     * A commit.
      */
     public function head_commit() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleCommit
     {

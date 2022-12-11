@@ -9,7 +9,7 @@ final class Actor
     private int $id;
     private string $login;
     private ?string $display_login = null;
-    private ?string $gravatar_id = null;
+    private $gravatar_id;
     private string $url;
     private string $avatar_url;
     public function id() : int
@@ -24,7 +24,7 @@ final class Actor
     {
         return $this->display_login;
     }
-    public function gravatar_id() : ?string
+    public function gravatar_id()
     {
         return $this->gravatar_id;
     }

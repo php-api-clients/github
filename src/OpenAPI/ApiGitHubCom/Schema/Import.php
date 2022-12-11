@@ -6,7 +6,7 @@ final class Import
 {
     public const SCHEMA_TITLE = 'Import';
     public const SCHEMA_DESCRIPTION = 'A repository import from an external source.';
-    private ?string $vcs = null;
+    private $vcs;
     private ?bool $use_lfs = null;
     /**
      * The URL of the originating repository.
@@ -15,12 +15,12 @@ final class Import
     private ?string $svc_root = null;
     private ?string $tfvc_project = null;
     private string $status;
-    private ?string $status_text = null;
-    private ?string $failed_step = null;
-    private ?string $error_message = null;
-    private ?int $import_percent = null;
-    private ?int $commit_count = null;
-    private ?int $push_percent = null;
+    private $status_text;
+    private $failed_step;
+    private $error_message;
+    private $import_percent;
+    private $commit_count;
+    private $push_percent;
     private ?bool $has_large_files = null;
     private ?int $large_files_size = null;
     private ?int $large_files_count = null;
@@ -30,13 +30,13 @@ final class Import
      */
     private array $project_choices = array();
     private ?string $message = null;
-    private ?int $authors_count = null;
+    private $authors_count;
     private string $url;
     private string $html_url;
     private string $authors_url;
     private string $repository_url;
     private ?string $svn_root = null;
-    public function vcs() : ?string
+    public function vcs()
     {
         return $this->vcs;
     }
@@ -63,27 +63,27 @@ final class Import
     {
         return $this->status;
     }
-    public function status_text() : ?string
+    public function status_text()
     {
         return $this->status_text;
     }
-    public function failed_step() : ?string
+    public function failed_step()
     {
         return $this->failed_step;
     }
-    public function error_message() : ?string
+    public function error_message()
     {
         return $this->error_message;
     }
-    public function import_percent() : ?int
+    public function import_percent()
     {
         return $this->import_percent;
     }
-    public function commit_count() : ?int
+    public function commit_count()
     {
         return $this->commit_count;
     }
-    public function push_percent() : ?int
+    public function push_percent()
     {
         return $this->push_percent;
     }
@@ -110,7 +110,7 @@ final class Import
     {
         return $this->message;
     }
-    public function authors_count() : ?int
+    public function authors_count()
     {
         return $this->authors_count;
     }

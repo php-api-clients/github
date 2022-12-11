@@ -6,12 +6,12 @@ final class DeleteAuthorization_
 {
     private const OPERATION_ID = 'apps/delete-authorization';
     /**The client ID of the GitHub app.**/
-    public string $client_id;
+    private readonly string $client_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($client_id)
+    function __construct(string $client_id)
     {
         $this->client_id = $client_id;
     }

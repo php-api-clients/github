@@ -6,14 +6,14 @@ final class DeleteOrgSecret_
 {
     private const OPERATION_ID = 'dependabot/delete-org-secret';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The name of the secret.**/
-    public string $secret_name;
+    private readonly string $secret_name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $secret_name)
+    function __construct(string $org, string $secret_name)
     {
         $this->org = $org;
         $this->secret_name = $secret_name;

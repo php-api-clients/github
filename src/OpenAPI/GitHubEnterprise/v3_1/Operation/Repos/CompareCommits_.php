@@ -6,16 +6,16 @@ final class CompareCommits_
 {
     private const OPERATION_ID = 'repos/compare-commits';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The base branch and head branch to compare. This parameter expects the format `{base}...{head}`.**/
-    public string $basehead;
+    private readonly string $basehead;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $basehead)
+    function __construct(string $owner, string $repo, string $basehead)
     {
         $this->owner = $owner;
         $this->repo = $repo;

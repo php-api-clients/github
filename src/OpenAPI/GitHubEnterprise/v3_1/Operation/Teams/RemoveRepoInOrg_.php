@@ -6,18 +6,18 @@ final class RemoveRepoInOrg_
 {
     private const OPERATION_ID = 'teams/remove-repo-in-org';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The slug of the team name.**/
-    public string $team_slug;
+    private readonly string $team_slug;
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $team_slug, $owner, $repo)
+    function __construct(string $org, string $team_slug, string $owner, string $repo)
     {
         $this->org = $org;
         $this->team_slug = $team_slug;

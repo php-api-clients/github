@@ -6,12 +6,12 @@ final class CodespaceMachinesForAuthenticatedUser_
 {
     private const OPERATION_ID = 'codespaces/codespace-machines-for-authenticated-user';
     /**The name of the codespace.**/
-    public string $codespace_name;
+    private readonly string $codespace_name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($codespace_name)
+    function __construct(string $codespace_name)
     {
         $this->codespace_name = $codespace_name;
     }

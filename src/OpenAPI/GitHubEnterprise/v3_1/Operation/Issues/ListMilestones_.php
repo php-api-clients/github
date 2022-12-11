@@ -6,24 +6,24 @@ final class ListMilestones_
 {
     private const OPERATION_ID = 'issues/list-milestones';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The state of the milestone. Either `open`, `closed`, or `all`.**/
-    public string $state;
+    private readonly string $state;
     /**What to sort results by. Either `due_on` or `completeness`.**/
-    public string $sort;
+    private readonly string $sort;
     /**The direction of the sort. Either `asc` or `desc`.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, string $state = 'open', string $sort = 'due_on', string $direction = 'asc', int $per_page = 30, int $page = 1)
+    function __construct(string $owner, string $repo, string $state = 'open', string $sort = 'due_on', string $direction = 'asc', int $per_page = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;

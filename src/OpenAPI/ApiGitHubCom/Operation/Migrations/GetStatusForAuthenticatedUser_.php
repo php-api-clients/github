@@ -6,14 +6,13 @@ final class GetStatusForAuthenticatedUser_
 {
     private const OPERATION_ID = 'migrations/get-status-for-authenticated-user';
     /**The unique identifier of the migration.**/
-    public int $migration_id;
-    /****/
-    public array $exclude;
+    private readonly int $migration_id;
+    private readonly array $exclude;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($migration_id, $exclude)
+    function __construct(int $migration_id, array $exclude)
     {
         $this->migration_id = $migration_id;
         $this->exclude = $exclude;

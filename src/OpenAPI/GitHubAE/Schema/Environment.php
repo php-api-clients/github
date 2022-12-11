@@ -28,9 +28,8 @@ final class Environment
     private array $protection_rules = array();
     /**
      * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DeploymentBranchPolicy::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DeploymentBranchPolicy $deployment_branch_policy = null;
+    private $deployment_branch_policy;
     /**
      * The id of the environment.
      */
@@ -78,7 +77,7 @@ final class Environment
     /**
      * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
-    public function deployment_branch_policy() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DeploymentBranchPolicy
+    public function deployment_branch_policy()
     {
         return $this->deployment_branch_policy;
     }

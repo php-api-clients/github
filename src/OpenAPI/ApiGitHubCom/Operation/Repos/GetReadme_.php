@@ -6,16 +6,16 @@ final class GetReadme_
 {
     private const OPERATION_ID = 'repos/get-readme';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)**/
-    public string $ref;
+    private readonly string $ref;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $ref)
+    function __construct(string $owner, string $repo, string $ref)
     {
         $this->owner = $owner;
         $this->repo = $repo;

@@ -6,16 +6,16 @@ final class UpdatePreReceiveHookEnforcementForRepo_
 {
     private const OPERATION_ID = 'enterprise-admin/update-pre-receive-hook-enforcement-for-repo';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the pre-receive hook.**/
-    public int $pre_receive_hook_id;
+    private readonly int $pre_receive_hook_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $pre_receive_hook_id)
+    function __construct(string $owner, string $repo, int $pre_receive_hook_id)
     {
         $this->owner = $owner;
         $this->repo = $repo;

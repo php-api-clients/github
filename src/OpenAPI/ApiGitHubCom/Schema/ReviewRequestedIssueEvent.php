@@ -10,21 +10,17 @@ final class ReviewRequestedIssueEvent
     private string $node_id;
     private string $url;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     private string $event;
-    private ?string $commit_id = null;
-    private ?string $commit_url = null;
+    private $commit_id;
+    private $commit_url;
     private string $created_at;
+    private $performed_via_github_app;
     /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableIntegration::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableIntegration $performed_via_github_app = null;
-    /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $review_requester;
@@ -34,7 +30,7 @@ final class ReviewRequestedIssueEvent
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team $requested_team = null;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $requested_reviewer = null;
@@ -51,7 +47,7 @@ final class ReviewRequestedIssueEvent
         return $this->url;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function actor() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -61,11 +57,11 @@ final class ReviewRequestedIssueEvent
     {
         return $this->event;
     }
-    public function commit_id() : ?string
+    public function commit_id()
     {
         return $this->commit_id;
     }
-    public function commit_url() : ?string
+    public function commit_url()
     {
         return $this->commit_url;
     }
@@ -73,15 +69,12 @@ final class ReviewRequestedIssueEvent
     {
         return $this->created_at;
     }
-    /**
-     * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     */
-    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NullableIntegration
+    public function performed_via_github_app()
     {
         return $this->performed_via_github_app;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function review_requester() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {
@@ -95,7 +88,7 @@ final class ReviewRequestedIssueEvent
         return $this->requested_team;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function requested_reviewer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {

@@ -6,18 +6,18 @@ final class GetReadmeInDirectory_
 {
     private const OPERATION_ID = 'repos/get-readme-in-directory';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The alternate path to look for a README file**/
-    public string $dir;
+    private readonly string $dir;
     /**The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)**/
-    public string $ref;
+    private readonly string $ref;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $dir, $ref)
+    function __construct(string $owner, string $repo, string $dir, string $ref)
     {
         $this->owner = $owner;
         $this->repo = $repo;

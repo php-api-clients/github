@@ -6,16 +6,16 @@ final class UpdateStatusCheckProtection_
 {
     private const OPERATION_ID = 'repos/update-status-check-protection';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
-    /**The name of the branch.**/
-    public string $branch;
+    private readonly string $repo;
+    /**The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).**/
+    private readonly string $branch;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $branch)
+    function __construct(string $owner, string $repo, string $branch)
     {
         $this->owner = $owner;
         $this->repo = $repo;

@@ -1,0 +1,37 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Repos;
+
+final class ListDeploymentBranchPolicies_
+{
+    private const OPERATION_ID = 'repos/list-deployment-branch-policies';
+    /**The account owner of the repository. The name is not case sensitive.**/
+    private readonly string $owner;
+    /**The name of the repository. The name is not case sensitive.**/
+    private readonly string $repo;
+    /**The name of the environment.**/
+    private readonly string $environment_name;
+    /**The number of results per page (max 100).**/
+    private readonly int $per_page;
+    /**Page number of the results to fetch.**/
+    private readonly int $page;
+    public function operationId() : string
+    {
+        return self::OPERATION_ID;
+    }
+    function __construct(string $owner, string $repo, string $environment_name, int $per_page = 30, int $page = 1)
+    {
+        $this->owner = $owner;
+        $this->repo = $repo;
+        $this->environment_name = $environment_name;
+        $this->per_page = $per_page;
+        $this->page = $page;
+    }
+    function createRequest() : \Psr\Http\Message\RequestInterface
+    {
+        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{environment_name}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->environment_name, $this->per_page, $this->page), '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies?per_page={per_page}&page={page}'));
+    }
+    function validateResponse()
+    {
+    }
+}

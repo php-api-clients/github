@@ -6,18 +6,18 @@ final class ListDiscussionsLegacy_
 {
     private const OPERATION_ID = 'teams/list-discussions-legacy';
     /**The unique identifier of the team.**/
-    public int $team_id;
+    private readonly int $team_id;
     /**The direction to sort the results by.**/
-    public string $direction;
+    private readonly string $direction;
     /**The number of results per page (max 100).**/
-    public int $per_page;
+    private readonly int $per_page;
     /**Page number of the results to fetch.**/
-    public int $page;
+    private readonly int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($team_id, string $direction = 'desc', int $per_page = 30, int $page = 1)
+    function __construct(int $team_id, string $direction = 'desc', int $per_page = 30, int $page = 1)
     {
         $this->team_id = $team_id;
         $this->direction = $direction;

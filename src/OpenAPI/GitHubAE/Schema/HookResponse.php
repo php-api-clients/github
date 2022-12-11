@@ -6,18 +6,18 @@ final class HookResponse
 {
     public const SCHEMA_TITLE = 'Hook Response';
     public const SCHEMA_DESCRIPTION = '';
-    private ?int $code = null;
-    private ?string $status = null;
-    private ?string $message = null;
-    public function code() : ?int
+    private $code;
+    private $status;
+    private $message;
+    public function code()
     {
         return $this->code;
     }
-    public function status() : ?string
+    public function status()
     {
         return $this->status;
     }
-    public function message() : ?string
+    public function message()
     {
         return $this->message;
     }

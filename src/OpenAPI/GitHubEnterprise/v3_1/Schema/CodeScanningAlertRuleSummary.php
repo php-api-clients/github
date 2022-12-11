@@ -9,7 +9,7 @@ final class CodeScanningAlertRuleSummary
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private ?string $id = null;
+    private $id;
     /**
      * The name of the rule used to detect the alert.
      */
@@ -17,7 +17,7 @@ final class CodeScanningAlertRuleSummary
     /**
      * The severity of the alert.
      */
-    private ?string $severity = null;
+    private $severity;
     /**
      * A short description of the rule used to detect the alert.
      */
@@ -25,7 +25,7 @@ final class CodeScanningAlertRuleSummary
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    public function id() : ?string
+    public function id()
     {
         return $this->id;
     }
@@ -39,7 +39,7 @@ final class CodeScanningAlertRuleSummary
     /**
      * The severity of the alert.
      */
-    public function severity() : ?string
+    public function severity()
     {
         return $this->severity;
     }

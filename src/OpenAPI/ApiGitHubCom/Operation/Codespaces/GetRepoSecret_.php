@@ -6,16 +6,16 @@ final class GetRepoSecret_
 {
     private const OPERATION_ID = 'codespaces/get-repo-secret';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The name of the secret.**/
-    public string $secret_name;
+    private readonly string $secret_name;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $secret_name)
+    function __construct(string $owner, string $repo, string $secret_name)
     {
         $this->owner = $owner;
         $this->repo = $repo;

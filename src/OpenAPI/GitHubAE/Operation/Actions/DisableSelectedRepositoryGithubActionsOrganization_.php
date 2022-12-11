@@ -6,14 +6,14 @@ final class DisableSelectedRepositoryGithubActionsOrganization_
 {
     private const OPERATION_ID = 'actions/disable-selected-repository-github-actions-organization';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     /**The unique identifier of the repository.**/
-    public int $repository_id;
+    private readonly int $repository_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org, $repository_id)
+    function __construct(string $org, int $repository_id)
     {
         $this->org = $org;
         $this->repository_id = $repository_id;

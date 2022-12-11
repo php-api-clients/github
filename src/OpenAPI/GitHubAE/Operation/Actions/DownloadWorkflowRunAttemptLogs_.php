@@ -6,18 +6,18 @@ final class DownloadWorkflowRunAttemptLogs_
 {
     private const OPERATION_ID = 'actions/download-workflow-run-attempt-logs';
     /**The account owner of the repository. The name is not case sensitive.**/
-    public string $owner;
+    private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    public string $repo;
+    private readonly string $repo;
     /**The unique identifier of the workflow run.**/
-    public int $run_id;
+    private readonly int $run_id;
     /**The attempt number of the workflow run.**/
-    public int $attempt_number;
+    private readonly int $attempt_number;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($owner, $repo, $run_id, $attempt_number)
+    function __construct(string $owner, string $repo, int $run_id, int $attempt_number)
     {
         $this->owner = $owner;
         $this->repo = $repo;

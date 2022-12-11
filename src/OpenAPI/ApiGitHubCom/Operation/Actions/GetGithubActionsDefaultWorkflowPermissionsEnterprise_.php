@@ -6,12 +6,12 @@ final class GetGithubActionsDefaultWorkflowPermissionsEnterprise_
 {
     private const OPERATION_ID = 'actions/get-github-actions-default-workflow-permissions-enterprise';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
-    public string $enterprise;
+    private readonly string $enterprise;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($enterprise)
+    function __construct(string $enterprise)
     {
         $this->enterprise = $enterprise;
     }

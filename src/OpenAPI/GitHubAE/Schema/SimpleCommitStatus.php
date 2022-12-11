@@ -6,18 +6,18 @@ final class SimpleCommitStatus
 {
     public const SCHEMA_TITLE = 'Simple Commit Status';
     public const SCHEMA_DESCRIPTION = '';
-    private ?string $description = null;
+    private $description;
     private int $id;
     private string $node_id;
     private string $state;
     private string $context;
-    private string $target_url;
-    private ?bool $required = null;
-    private ?string $avatar_url = null;
+    private $target_url;
+    private $required;
+    private $avatar_url;
     private string $url;
     private string $created_at;
     private string $updated_at;
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -37,15 +37,15 @@ final class SimpleCommitStatus
     {
         return $this->context;
     }
-    public function target_url() : string
+    public function target_url()
     {
         return $this->target_url;
     }
-    public function required() : ?bool
+    public function required()
     {
         return $this->required;
     }
-    public function avatar_url() : ?string
+    public function avatar_url()
     {
         return $this->avatar_url;
     }

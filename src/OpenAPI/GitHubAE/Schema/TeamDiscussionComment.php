@@ -6,11 +6,7 @@ final class TeamDiscussionComment
 {
     public const SCHEMA_TITLE = 'Team Discussion Comment';
     public const SCHEMA_DESCRIPTION = 'A reply to a discussion within a team.';
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser $author = null;
+    private $author;
     /**
      * The main text of the comment.
      */
@@ -21,7 +17,7 @@ final class TeamDiscussionComment
      */
     private string $body_version;
     private string $created_at;
-    private ?string $last_edited_at = null;
+    private $last_edited_at;
     private string $discussion_url;
     private string $html_url;
     private string $node_id;
@@ -35,10 +31,7 @@ final class TeamDiscussionComment
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReactionRollup::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReactionRollup $reactions = null;
-    /**
-     * Simple User
-     */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\NullableSimpleUser
+    public function author()
     {
         return $this->author;
     }
@@ -64,7 +57,7 @@ final class TeamDiscussionComment
     {
         return $this->created_at;
     }
-    public function last_edited_at() : ?string
+    public function last_edited_at()
     {
         return $this->last_edited_at;
     }

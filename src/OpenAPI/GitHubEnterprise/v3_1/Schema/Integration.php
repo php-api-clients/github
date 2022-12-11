@@ -15,16 +15,12 @@ final class Integration
      */
     private ?string $slug = null;
     private string $node_id;
-    /**
-     * Simple User
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser $owner = null;
+    private $owner;
     /**
      * The name of the GitHub app
      */
     private string $name;
-    private ?string $description = null;
+    private $description;
     private string $external_url;
     private string $html_url;
     private string $created_at;
@@ -43,7 +39,7 @@ final class Integration
     private ?int $installations_count = null;
     private ?string $client_id = null;
     private ?string $client_secret = null;
-    private ?string $webhook_secret = null;
+    private $webhook_secret;
     private ?string $pem = null;
     /**
      * Unique identifier of the GitHub app
@@ -63,10 +59,7 @@ final class Integration
     {
         return $this->node_id;
     }
-    /**
-     * Simple User
-     */
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\NullableSimpleUser
+    public function owner()
     {
         return $this->owner;
     }
@@ -77,7 +70,7 @@ final class Integration
     {
         return $this->name;
     }
-    public function description() : ?string
+    public function description()
     {
         return $this->description;
     }
@@ -126,7 +119,7 @@ final class Integration
     {
         return $this->client_secret;
     }
-    public function webhook_secret() : ?string
+    public function webhook_secret()
     {
         return $this->webhook_secret;
     }

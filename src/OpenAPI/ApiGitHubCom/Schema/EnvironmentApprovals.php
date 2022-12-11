@@ -17,7 +17,7 @@ final class EnvironmentApprovals
      */
     private string $state;
     /**
-     * Simple User
+     * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
@@ -41,7 +41,7 @@ final class EnvironmentApprovals
         return $this->state;
     }
     /**
-     * Simple User
+     * A GitHub user.
      */
     public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
     {

@@ -6,12 +6,12 @@ final class Create_
 {
     private const OPERATION_ID = 'teams/create';
     /**The organization name. The name is not case sensitive.**/
-    public string $org;
+    private readonly string $org;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    function __construct($org)
+    function __construct(string $org)
     {
         $this->org = $org;
     }

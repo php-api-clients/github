@@ -10,7 +10,7 @@ final class UserSearchResultItem
     private int $id;
     private string $node_id;
     private string $avatar_url;
-    private ?string $gravatar_id = null;
+    private $gravatar_id;
     private string $url;
     private string $html_url;
     private string $followers_url;
@@ -30,20 +30,20 @@ final class UserSearchResultItem
     private ?int $following = null;
     private ?string $created_at = null;
     private ?string $updated_at = null;
-    private ?string $name = null;
-    private ?string $bio = null;
-    private ?string $email = null;
-    private ?string $location = null;
+    private $name;
+    private $bio;
+    private $email;
+    private $location;
     private bool $site_admin;
-    private ?bool $hireable = null;
+    private $hireable;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserSearchResultItem\TextMatches::class)
      */
     private array $text_matches = array();
-    private ?string $blog = null;
-    private ?string $company = null;
-    private ?string $suspended_at = null;
+    private $blog;
+    private $company;
+    private $suspended_at;
     public function login() : string
     {
         return $this->login;
@@ -60,7 +60,7 @@ final class UserSearchResultItem
     {
         return $this->avatar_url;
     }
-    public function gravatar_id() : ?string
+    public function gravatar_id()
     {
         return $this->gravatar_id;
     }
@@ -140,19 +140,19 @@ final class UserSearchResultItem
     {
         return $this->updated_at;
     }
-    public function name() : ?string
+    public function name()
     {
         return $this->name;
     }
-    public function bio() : ?string
+    public function bio()
     {
         return $this->bio;
     }
-    public function email() : ?string
+    public function email()
     {
         return $this->email;
     }
-    public function location() : ?string
+    public function location()
     {
         return $this->location;
     }
@@ -160,7 +160,7 @@ final class UserSearchResultItem
     {
         return $this->site_admin;
     }
-    public function hireable() : ?bool
+    public function hireable()
     {
         return $this->hireable;
     }
@@ -171,15 +171,15 @@ final class UserSearchResultItem
     {
         return $this->text_matches;
     }
-    public function blog() : ?string
+    public function blog()
     {
         return $this->blog;
     }
-    public function company() : ?string
+    public function company()
     {
         return $this->company;
     }
-    public function suspended_at() : ?string
+    public function suspended_at()
     {
         return $this->suspended_at;
     }
