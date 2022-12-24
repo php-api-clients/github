@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot;
 final class ListAlertsForEnterprise_
 {
     private const OPERATION_ID = 'dependabot/list-alerts-for-enterprise';
+    public const OPERATION_MATCH = 'GET /enterprises/{enterprise}/dependabot/alerts';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
     private readonly string $enterprise;
     /**A comma-separated list of states. If specified, only alerts with these states will be returned.
@@ -47,8 +50,10 @@ final class ListAlertsForEnterprise_
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $sort = 'created', string $direction = 'desc', string $before, string $after, int $first = 30, int $last, int $per_page = 30)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $sort = 'created', string $direction = 'desc', string $before, string $after, int $first = 30, int $last, int $per_page = 30)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->enterprise = $enterprise;
         $this->state = $state;
         $this->severity = $severity;
@@ -63,11 +68,54 @@ final class ListAlertsForEnterprise_
         $this->last = $last;
         $this->per_page = $per_page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}', '{state}', '{severity}', '{ecosystem}', '{package}', '{scope}', '{sort}', '{direction}', '{before}', '{after}', '{first}', '{last}', '{per_page}'), array($this->enterprise, $this->state, $this->severity, $this->ecosystem, $this->package, $this->scope, $this->sort, $this->direction, $this->before, $this->after, $this->first, $this->last, $this->per_page), '/enterprises/{enterprise}/dependabot/alerts?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&scope={scope}&sort={sort}&direction={direction}&before={before}&after={after}&first={first}&last={last}&per_page={per_page}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe3Dabb9C272759Fc560De14Ac7712B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /**Response**/
+            case 200:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe3Dabb9C272759Fc560De14Ac7712B1::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CDe3Dabb9C272759Fc560De14Ac7712B1', $body);
+                }
+                break;
+            /**Not modified**/
+            case 304:
+                switch ($contentType) {
+                }
+                break;
+            /**Forbidden**/
+            case 403:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Resource not found**/
+            case 404:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Validation failed, or the endpoint has been spammed.**/
+            case 422:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationErrorSimple', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

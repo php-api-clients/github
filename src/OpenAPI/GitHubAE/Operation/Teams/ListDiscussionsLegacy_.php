@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams;
 final class ListDiscussionsLegacy_
 {
     private const OPERATION_ID = 'teams/list-discussions-legacy';
+    public const OPERATION_MATCH = 'GET /teams/{team_id}/discussions';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The unique identifier of the team.**/
     private readonly int $team_id;
     /**The direction to sort the results by.**/
@@ -17,18 +20,34 @@ final class ListDiscussionsLegacy_
     {
         return self::OPERATION_ID;
     }
-    function __construct(int $team_id, string $direction = 'desc', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, int $team_id, string $direction = 'desc', int $per_page = 30, int $page = 1)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->team_id = $team_id;
         $this->direction = $direction;
         $this->per_page = $per_page;
         $this->page = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{team_id}', '{direction}', '{per_page}', '{page}'), array($this->team_id, $this->direction, $this->per_page, $this->page), '/teams/{team_id}/discussions?direction={direction}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C48C27F99490Bb9F6F3Fe1Ca3B71E7D81
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /**Response**/
+            case 200:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C48C27F99490Bb9F6F3Fe1Ca3B71E7D81::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\Unknown\\C48C27F99490Bb9F6F3Fe1Ca3B71E7D81', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

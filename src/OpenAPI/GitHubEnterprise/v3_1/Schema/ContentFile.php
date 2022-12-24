@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class ContentFile
 {
+    public const SCHEMA_JSON = '{"title":"Content File","required":["_links","git_url","html_url","download_url","name","path","sha","size","type","url","content","encoding"],"type":"object","properties":{"type":{"type":"string"},"encoding":{"type":"string"},"size":{"type":"integer"},"name":{"type":"string"},"path":{"type":"string"},"content":{"type":"string"},"sha":{"type":"string"},"url":{"type":"string","format":"uri"},"git_url":{"type":["string","null"],"format":"uri"},"html_url":{"type":["string","null"],"format":"uri"},"download_url":{"type":["string","null"],"format":"uri"},"_links":{"required":["git","html","self"],"type":"object","properties":{"git":{"type":["string","null"],"format":"uri"},"html":{"type":["string","null"],"format":"uri"},"self":{"type":"string","format":"uri"}}},"target":{"type":"string","examples":["\\"actual\\/actual.md\\""]},"submodule_git_url":{"type":"string","examples":["\\"git:\\/\\/example.com\\/defunkt\\/dotjs.git\\""]}},"description":"Content File"}';
     public const SCHEMA_TITLE = 'Content File';
     public const SCHEMA_DESCRIPTION = 'Content File';
     private string $type;
@@ -17,7 +18,10 @@ final class ContentFile
     private $git_url;
     private $html_url;
     private $download_url;
-    private array $_links = array();
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af $_links;
     private ?string $target = null;
     private ?string $submodule_git_url = null;
     public function type() : string
@@ -64,7 +68,7 @@ final class ContentFile
     {
         return $this->download_url;
     }
-    public function _links() : array
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af
     {
         return $this->_links;
     }

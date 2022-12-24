@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class PreReceiveEnvironmentDownloadStatus
 {
+    public const SCHEMA_JSON = '{"type":"object","properties":{"url":{"type":"string"},"state":{"type":"string"},"downloaded_at":{"type":["string","null"]},"message":{"type":["string","null"]}}}';
     public const SCHEMA_TITLE = 'pre-receive-environment-download-status';
     public const SCHEMA_DESCRIPTION = '';
     private string $url;

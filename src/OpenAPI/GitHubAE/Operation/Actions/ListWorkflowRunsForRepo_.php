@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Actions;
 final class ListWorkflowRunsForRepo_
 {
     private const OPERATION_ID = 'actions/list-workflow-runs-for-repo';
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The account owner of the repository. The name is not case sensitive.**/
     private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -29,8 +32,10 @@ final class ListWorkflowRunsForRepo_
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $owner, string $repo, string $actor, string $branch, string $event, string $status, int $per_page = 30, int $page = 1, string $created, bool $exclude_pull_requests = false)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $owner, string $repo, string $actor, string $branch, string $event, string $status, int $per_page = 30, int $page = 1, string $created, bool $exclude_pull_requests = false)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->owner = $owner;
         $this->repo = $repo;
         $this->actor = $actor;
@@ -42,11 +47,25 @@ final class ListWorkflowRunsForRepo_
         $this->created = $created;
         $this->exclude_pull_requests = $exclude_pull_requests;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}', '{exclude_pull_requests}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created, $this->exclude_pull_requests), '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}&exclude_pull_requests={exclude_pull_requests}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD7329Ab973781212826444Ceb224858F
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /**Response**/
+            case 200:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD7329Ab973781212826444Ceb224858F::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\Unknown\\CD7329Ab973781212826444Ceb224858F', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

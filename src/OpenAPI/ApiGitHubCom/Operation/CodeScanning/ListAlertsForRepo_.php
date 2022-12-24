@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning;
 final class ListAlertsForRepo_
 {
     private const OPERATION_ID = 'code-scanning/list-alerts-for-repo';
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/alerts';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The account owner of the repository. The name is not case sensitive.**/
     private readonly string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -31,8 +34,10 @@ final class ListAlertsForRepo_
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $owner, string $repo, string $tool_name, string|null $tool_guid, int $page = 1, int $per_page = 30, string $ref, string $direction = 'desc', string $sort = 'created', string $state, string $severity)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $owner, string $repo, string $tool_name, string|null $tool_guid, int $page = 1, int $per_page = 30, string $ref, string $direction = 'desc', string $sort = 'created', string $state, string $severity)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->owner = $owner;
         $this->repo = $repo;
         $this->tool_name = $tool_name;
@@ -45,11 +50,54 @@ final class ListAlertsForRepo_
         $this->state = $state;
         $this->severity = $severity;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{page}', '{per_page}', '{ref}', '{direction}', '{sort}', '{state}', '{severity}'), array($this->owner, $this->repo, $this->tool_name, $this->tool_guid, $this->page, $this->per_page, $this->ref, $this->direction, $this->sort, $this->state, $this->severity), '/repos/{owner}/{repo}/code-scanning/alerts?tool_name={tool_name}&tool_guid={tool_guid}&page={page}&per_page={per_page}&ref={ref}&direction={direction}&sort={sort}&state={state}&severity={severity}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBc37E871E17Fe903B1C649F1083B8F2A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /**Response**/
+            case 200:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBc37E871E17Fe903B1C649F1083B8F2A::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CBc37E871E17Fe903B1C649F1083B8F2A', $body);
+                }
+                break;
+            /**Not modified**/
+            case 304:
+                switch ($contentType) {
+                }
+                break;
+            /**Response if GitHub Advanced Security is not enabled for this repository**/
+            case 403:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Resource not found**/
+            case 404:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Service unavailable**/
+            case 503:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CC04A13C6627Df95Bf0Cb989A4326F2F0', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

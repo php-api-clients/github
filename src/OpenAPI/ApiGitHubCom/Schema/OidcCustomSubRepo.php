@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class OidcCustomSubRepo
 {
+    public const SCHEMA_JSON = '{"title":"Actions OIDC subject customization for a repository","required":["use_default"],"type":"object","properties":{"use_default":{"type":"boolean","description":"Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored."},"include_claim_keys":{"type":"array","items":{"type":"string"},"description":"Array of unique strings. Each claim key can only contain alphanumeric characters and underscores."}},"description":"Actions OIDC subject customization for a repository"}';
     public const SCHEMA_TITLE = 'Actions OIDC subject customization for a repository';
     public const SCHEMA_DESCRIPTION = 'Actions OIDC subject customization for a repository';
     /**
@@ -12,6 +13,8 @@ final class OidcCustomSubRepo
     private bool $use_default;
     /**
      * Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
      */
     private array $include_claim_keys = array();
     /**
@@ -23,6 +26,7 @@ final class OidcCustomSubRepo
     }
     /**
      * Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
      */
     public function include_claim_keys() : array
     {

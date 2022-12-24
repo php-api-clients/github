@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Migrations;
 final class GetStatusForOrg_
 {
     private const OPERATION_ID = 'migrations/get-status-for-org';
+    public const OPERATION_MATCH = 'GET /orgs/{org}/migrations/{migration_id}';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The organization name. The name is not case sensitive.**/
     private readonly string $org;
     /**The unique identifier of the migration.**/
@@ -15,17 +18,44 @@ final class GetStatusForOrg_
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $org, int $migration_id, array $exclude)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $org, int $migration_id, array $exclude)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->org = $org;
         $this->migration_id = $migration_id;
         $this->exclude = $exclude;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{migration_id}', '{exclude}'), array($this->org, $this->migration_id, $this->exclude), '/orgs/{org}/migrations/{migration_id}?exclude={exclude}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Migration|\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BasicError
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /***   `pending`, which means the migration hasn't started yet.
+            *   `exporting`, which means the migration is in progress.
+            *   `exported`, which means the migration finished successfully.
+            *   `failed`, which means the migration failed.**/
+            case 200:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Migration::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\Migration', $body);
+                }
+                break;
+            /**Resource not found**/
+            case 404:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\BasicError', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

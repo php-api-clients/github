@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class EnterpriseOrganizationOverview
 {
+    public const SCHEMA_JSON = '{"title":"Enterprise Organization Stats","required":["total_orgs","disabled_orgs","total_teams","total_team_members"],"type":"object","properties":{"total_orgs":{"type":"integer"},"disabled_orgs":{"type":"integer"},"total_teams":{"type":"integer"},"total_team_members":{"type":"integer"}}}';
     public const SCHEMA_TITLE = 'Enterprise Organization Stats';
     public const SCHEMA_DESCRIPTION = '';
     private int $total_orgs;

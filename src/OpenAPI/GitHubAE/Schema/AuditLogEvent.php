@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class AuditLogEvent
 {
+    public const SCHEMA_JSON = '{"type":"object","properties":{"@timestamp":{"type":"integer","description":"The time the audit log event occurred, given as a [Unix timestamp](http:\\/\\/en.wikipedia.org\\/wiki\\/Unix_time)."},"action":{"type":"string","description":"The name of the action that was performed, for example `user.login` or `repo.create`."},"active":{"type":"boolean"},"active_was":{"type":"boolean"},"actor":{"type":"string","description":"The actor who performed the action."},"actor_id":{"type":"integer","description":"The id of the actor who performed the action."},"actor_location":{"type":"object","properties":{"country_name":{"type":"string"}}},"data":{"type":"object","additionalProperties":true},"org_id":{"type":"integer"},"user_id":{"type":"integer"},"business_id":{"type":"integer"},"blocked_user":{"type":"string","description":"The username of the account being blocked."},"business":{"type":"string"},"config":{"type":"array","items":{"type":"object"}},"config_was":{"type":"array","items":{"type":"object"}},"content_type":{"type":"string"},"operation_type":{"type":"string"},"created_at":{"type":"integer","description":"The time the audit log event was recorded, given as a [Unix timestamp](http:\\/\\/en.wikipedia.org\\/wiki\\/Unix_time)."},"deploy_key_fingerprint":{"type":"string"},"_document_id":{"type":"string","description":"A unique identifier for an audit event."},"emoji":{"type":"string"},"events":{"type":"array","items":{"type":"object"}},"events_were":{"type":"array","items":{"type":"object"}},"explanation":{"type":"string"},"fingerprint":{"type":"string"},"hook_id":{"type":"integer"},"limited_availability":{"type":"boolean"},"message":{"type":"string"},"name":{"type":"string"},"old_user":{"type":"string"},"openssh_public_key":{"type":"string"},"org":{"type":"string"},"previous_visibility":{"type":"string"},"read_only":{"type":"boolean"},"repo":{"type":"string","description":"The name of the repository."},"repository":{"type":"string","description":"The name of the repository."},"repository_public":{"type":"boolean"},"target_login":{"type":"string"},"team":{"type":"string"},"transport_protocol":{"type":"integer","description":"The type of protocol (for example, HTTP or SSH) used to transfer Git data."},"transport_protocol_name":{"type":"string","description":"A human readable name for the protocol (for example, HTTP or SSH) used to transfer Git data."},"user":{"type":"string","description":"The user that was affected by the action performed (if available)."},"visibility":{"type":"string","description":"The repository visibility, for example `public` or `private`."}}}';
     public const SCHEMA_TITLE = 'audit-log-event';
     public const SCHEMA_DESCRIPTION = '';
     /**
@@ -24,8 +25,14 @@ final class AuditLogEvent
      * The id of the actor who performed the action.
      */
     private int $actor_id;
-    private array $actor_location = array();
-    private array $data = array();
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C47Dddb1F2Febc3Aaa7B811Efb70B408F::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C47Dddb1F2Febc3Aaa7B811Efb70B408F $actor_location;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634 $data;
     private int $org_id;
     private int $user_id;
     private int $business_id;
@@ -35,13 +42,13 @@ final class AuditLogEvent
     private string $blocked_user;
     private string $business;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Config>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Config::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
      */
     private array $config = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ConfigWas>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ConfigWas::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
      */
     private array $config_was = array();
     private string $content_type;
@@ -57,13 +64,13 @@ final class AuditLogEvent
     private string $_document_id;
     private string $emoji;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Events>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Events::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
      */
     private array $events = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\EventsWere>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\EventsWere::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
      */
     private array $events_were = array();
     private string $explanation;
@@ -140,11 +147,11 @@ final class AuditLogEvent
     {
         return $this->actor_id;
     }
-    public function actor_location() : array
+    public function actor_location() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C47Dddb1F2Febc3Aaa7B811Efb70B408F
     {
         return $this->actor_location;
     }
-    public function data() : array
+    public function data() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634
     {
         return $this->data;
     }
@@ -172,14 +179,14 @@ final class AuditLogEvent
         return $this->business;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Config>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
      */
     public function config() : array
     {
         return $this->config;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ConfigWas>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
      */
     public function config_was() : array
     {
@@ -216,14 +223,14 @@ final class AuditLogEvent
         return $this->emoji;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Events>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
      */
     public function events() : array
     {
         return $this->events;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\EventsWere>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
      */
     public function events_were() : array
     {

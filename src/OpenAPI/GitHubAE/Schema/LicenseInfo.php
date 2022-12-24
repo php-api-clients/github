@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class LicenseInfo
 {
+    public const SCHEMA_JSON = '{"type":"object","properties":{"seats":{"oneOf":[{"type":"string"},{"type":"integer"}]},"seats_used":{"type":"integer"},"seats_available":{"oneOf":[{"type":"string"},{"type":"integer"}]},"kind":{"type":"string"},"days_until_expiration":{"type":"integer"},"expire_at":{"type":"string"}}}';
     public const SCHEMA_TITLE = 'license-info';
     public const SCHEMA_DESCRIPTION = '';
     private $seats;

@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\Teams;
 final class ListDiscussionCommentsInOrg_
 {
     private const OPERATION_ID = 'teams/list-discussion-comments-in-org';
+    public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The organization name. The name is not case sensitive.**/
     private readonly string $org;
     /**The slug of the team name.**/
@@ -21,8 +24,10 @@ final class ListDiscussionCommentsInOrg_
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $org, string $team_slug, int $discussion_number, string $direction = 'desc', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $org, string $team_slug, int $discussion_number, string $direction = 'desc', int $per_page = 30, int $page = 1)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->org = $org;
         $this->team_slug = $team_slug;
         $this->discussion_number = $discussion_number;
@@ -30,11 +35,25 @@ final class ListDiscussionCommentsInOrg_
         $this->per_page = $per_page;
         $this->page = $page;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{team_slug}', '{discussion_number}', '{direction}', '{per_page}', '{page}'), array($this->org, $this->team_slug, $this->discussion_number, $this->direction, $this->per_page, $this->page), '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments?direction={direction}&per_page={per_page}&page={page}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5730D3B2Ef04C7A9B60Fe46C96Fa0B20
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /**Response**/
+            case 200:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5730D3B2Ef04C7A9B60Fe46C96Fa0B20::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\Unknown\\C5730D3B2Ef04C7A9B60Fe46C96Fa0B20', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class Actor
 {
+    public const SCHEMA_JSON = '{"title":"Actor","required":["id","login","gravatar_id","url","avatar_url"],"type":"object","properties":{"id":{"type":"integer"},"login":{"type":"string"},"display_login":{"type":"string"},"gravatar_id":{"type":["string","null"]},"url":{"type":"string","format":"uri"},"avatar_url":{"type":"string","format":"uri"}},"description":"Actor"}';
     public const SCHEMA_TITLE = 'Actor';
     public const SCHEMA_DESCRIPTION = 'Actor';
     private int $id;

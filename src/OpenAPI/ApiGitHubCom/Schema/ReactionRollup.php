@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class ReactionRollup
 {
+    public const SCHEMA_JSON = '{"title":"Reaction Rollup","required":["url","total_count","+1","-1","laugh","confused","heart","hooray","eyes","rocket"],"type":"object","properties":{"url":{"type":"string","format":"uri"},"total_count":{"type":"integer"},"+1":{"type":"integer"},"-1":{"type":"integer"},"laugh":{"type":"integer"},"confused":{"type":"integer"},"heart":{"type":"integer"},"hooray":{"type":"integer"},"eyes":{"type":"integer"},"rocket":{"type":"integer"}}}';
     public const SCHEMA_TITLE = 'Reaction Rollup';
     public const SCHEMA_DESCRIPTION = '';
     private string $url;

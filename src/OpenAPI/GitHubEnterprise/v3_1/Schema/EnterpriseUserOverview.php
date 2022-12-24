@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class EnterpriseUserOverview
 {
+    public const SCHEMA_JSON = '{"title":"Enterprise User Stats","required":["total_users","admin_users","suspended_users"],"type":"object","properties":{"total_users":{"type":"integer"},"admin_users":{"type":"integer"},"suspended_users":{"type":"integer"}}}';
     public const SCHEMA_TITLE = 'Enterprise User Stats';
     public const SCHEMA_DESCRIPTION = '';
     private int $total_users;

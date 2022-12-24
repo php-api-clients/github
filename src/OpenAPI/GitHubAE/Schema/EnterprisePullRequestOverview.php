@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class EnterprisePullRequestOverview
 {
+    public const SCHEMA_JSON = '{"title":"Enterprise Pull Request Stats","required":["total_pulls","merged_pulls","mergeable_pulls","unmergeable_pulls"],"type":"object","properties":{"total_pulls":{"type":"integer"},"merged_pulls":{"type":"integer"},"mergeable_pulls":{"type":"integer"},"unmergeable_pulls":{"type":"integer"}}}';
     public const SCHEMA_TITLE = 'Enterprise Pull Request Stats';
     public const SCHEMA_DESCRIPTION = '';
     private int $total_pulls;

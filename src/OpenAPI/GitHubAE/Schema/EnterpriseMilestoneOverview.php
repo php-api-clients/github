@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Schema;
 
 final class EnterpriseMilestoneOverview
 {
+    public const SCHEMA_JSON = '{"title":"Enterprise Milestone Stats","required":["total_milestones","open_milestones","closed_milestones"],"type":"object","properties":{"total_milestones":{"type":"integer"},"open_milestones":{"type":"integer"},"closed_milestones":{"type":"integer"}}}';
     public const SCHEMA_TITLE = 'Enterprise Milestone Stats';
     public const SCHEMA_DESCRIPTION = '';
     private int $total_milestones;

@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubAE\Operation\SecretScanning;
 final class ListAlertsForEnterprise_
 {
     private const OPERATION_ID = 'secret-scanning/list-alerts-for-enterprise';
+    public const OPERATION_MATCH = 'GET /enterprises/{enterprise}/secret-scanning/alerts';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
     private readonly string $enterprise;
     /**Set to `open` or `resolved` to only list secret scanning alerts in a specific state.**/
@@ -29,8 +32,10 @@ final class ListAlertsForEnterprise_
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $enterprise, string $state, string $secret_type, string $resolution, string $sort = 'created', string $direction = 'desc', int $per_page = 30, string $before, string $after)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $enterprise, string $state, string $secret_type, string $resolution, string $sort = 'created', string $direction = 'desc', int $per_page = 30, string $before, string $after)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->enterprise = $enterprise;
         $this->state = $state;
         $this->secret_type = $secret_type;
@@ -41,11 +46,41 @@ final class ListAlertsForEnterprise_
         $this->before = $before;
         $this->after = $after;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}', '{state}', '{secret_type}', '{resolution}', '{sort}', '{direction}', '{per_page}', '{before}', '{after}'), array($this->enterprise, $this->state, $this->secret_type, $this->resolution, $this->sort, $this->direction, $this->per_page, $this->before, $this->after), '/enterprises/{enterprise}/secret-scanning/alerts?state={state}&secret_type={secret_type}&resolution={resolution}&sort={sort}&direction={direction}&per_page={per_page}&before={before}&after={after}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C53409250E408491504Dd8C9F172Eedc9|\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /**Response**/
+            case 200:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C53409250E408491504Dd8C9F172Eedc9::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\Unknown\\C53409250E408491504Dd8C9F172Eedc9', $body);
+                }
+                break;
+            /**Resource not found**/
+            case 404:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Service unavailable**/
+            case 503:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\GitHubAE\\Schema\\Unknown\\CC04A13C6627Df95Bf0Cb989A4326F2F0', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

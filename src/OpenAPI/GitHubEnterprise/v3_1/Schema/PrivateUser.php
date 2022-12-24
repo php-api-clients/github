@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class PrivateUser
 {
+    public const SCHEMA_JSON = '{"title":"Private User","required":["avatar_url","events_url","followers_url","following_url","gists_url","gravatar_id","html_url","id","node_id","login","organizations_url","received_events_url","repos_url","site_admin","starred_url","subscriptions_url","type","url","bio","blog","company","email","followers","following","hireable","location","name","public_gists","public_repos","created_at","updated_at","collaborators","disk_usage","owned_private_repos","private_gists","total_private_repos","two_factor_authentication"],"type":"object","properties":{"login":{"type":"string","examples":["octocat"]},"id":{"type":"integer","examples":[1]},"node_id":{"type":"string","examples":["MDQ6VXNlcjE="]},"avatar_url":{"type":"string","format":"uri","examples":["https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif"]},"gravatar_id":{"type":["string","null"],"examples":["41d064eb2195891e12d0413f63227ea7"]},"url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/users\\/octocat"]},"html_url":{"type":"string","format":"uri","examples":["https:\\/\\/github.com\\/octocat"]},"followers_url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/followers"]},"following_url":{"type":"string","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}"]},"gists_url":{"type":"string","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}"]},"starred_url":{"type":"string","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}"]},"subscriptions_url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions"]},"organizations_url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/orgs"]},"repos_url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/repos"]},"events_url":{"type":"string","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}"]},"received_events_url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/users\\/octocat\\/received_events"]},"type":{"type":"string","examples":["User"]},"site_admin":{"type":"boolean"},"name":{"type":["string","null"],"examples":["monalisa octocat"]},"company":{"type":["string","null"],"examples":["GitHub"]},"blog":{"type":["string","null"],"examples":["https:\\/\\/github.com\\/blog"]},"location":{"type":["string","null"],"examples":["San Francisco"]},"email":{"type":["string","null"],"format":"email","examples":["octocat@github.com"]},"hireable":{"type":["boolean","null"]},"bio":{"type":["string","null"],"examples":["There once was..."]},"twitter_username":{"type":["string","null"],"examples":["monalisa"]},"public_repos":{"type":"integer","examples":[2]},"public_gists":{"type":"integer","examples":[1]},"followers":{"type":"integer","examples":[20]},"following":{"type":"integer","examples":[0]},"created_at":{"type":"string","format":"date-time","examples":["2008-01-14T04:33:35Z"]},"updated_at":{"type":"string","format":"date-time","examples":["2008-01-14T04:33:35Z"]},"private_gists":{"type":"integer","examples":[81]},"total_private_repos":{"type":"integer","examples":[100]},"owned_private_repos":{"type":"integer","examples":[100]},"disk_usage":{"type":"integer","examples":[10000]},"collaborators":{"type":"integer","examples":[8]},"two_factor_authentication":{"type":"boolean","examples":[true]},"plan":{"required":["collaborators","name","space","private_repos"],"type":"object","properties":{"collaborators":{"type":"integer"},"name":{"type":"string"},"space":{"type":"integer"},"private_repos":{"type":"integer"}}},"suspended_at":{"type":["string","null"],"format":"date-time"},"business_plus":{"type":"boolean"},"ldap_dn":{"type":"string"}},"description":"Private User"}';
     public const SCHEMA_TITLE = 'Private User';
     public const SCHEMA_DESCRIPTION = 'Private User';
     private string $login;
@@ -44,7 +45,10 @@ final class PrivateUser
     private int $disk_usage;
     private int $collaborators;
     private bool $two_factor_authentication;
-    private array $plan = array();
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A $plan = null;
     private $suspended_at;
     private ?bool $business_plus = null;
     private ?string $ldap_dn = null;
@@ -200,7 +204,7 @@ final class PrivateUser
     {
         return $this->two_factor_authentication;
     }
-    public function plan() : array
+    public function plan() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A
     {
         return $this->plan;
     }

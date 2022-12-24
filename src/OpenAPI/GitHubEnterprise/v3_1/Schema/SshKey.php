@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class SshKey
 {
+    public const SCHEMA_JSON = '{"type":"object","properties":{"key":{"type":"string"},"pretty-print":{"type":"string"}}}';
     public const SCHEMA_TITLE = 'ssh-key';
     public const SCHEMA_DESCRIPTION = '';
     private string $key;

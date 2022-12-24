@@ -5,6 +5,9 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Operation\Actio
 final class AddSelectedRepoToOrgSecret_
 {
     private const OPERATION_ID = 'actions/add-selected-repo-to-org-secret';
+    public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The organization name. The name is not case sensitive.**/
     private readonly string $org;
     /**The name of the secret.**/
@@ -14,17 +17,35 @@ final class AddSelectedRepoToOrgSecret_
     {
         return self::OPERATION_ID;
     }
-    function __construct(string $org, string $secret_name, int $repository_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $org, string $secret_name, int $repository_id)
     {
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->responseSchemaValidator = $responseSchemaValidator;
         $this->org = $org;
         $this->secret_name = $secret_name;
         $this->repository_id = $repository_id;
     }
-    function createRequest() : \Psr\Http\Message\RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secret_name, $this->repository_id), '/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}'));
     }
-    function validateResponse()
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
+        switch ($response->getStatusCode()) {
+            /**No Content when repository was added to the selected list**/
+            case 204:
+                switch ($contentType) {
+                }
+                break;
+            /**Conflict when visibility type is not set to selected**/
+            case 409:
+                switch ($contentType) {
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching reponse code and content type');
     }
 }

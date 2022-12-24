@@ -4,10 +4,14 @@ namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema;
 
 final class Tag
 {
+    public const SCHEMA_JSON = '{"title":"Tag","required":["name","node_id","commit","zipball_url","tarball_url"],"type":"object","properties":{"name":{"type":"string","examples":["v0.1"]},"commit":{"required":["sha","url"],"type":"object","properties":{"sha":{"type":"string"},"url":{"type":"string","format":"uri"}}},"zipball_url":{"type":"string","format":"uri","examples":["https:\\/\\/github.com\\/octocat\\/Hello-World\\/zipball\\/v0.1"]},"tarball_url":{"type":"string","format":"uri","examples":["https:\\/\\/github.com\\/octocat\\/Hello-World\\/tarball\\/v0.1"]},"node_id":{"type":"string"}},"description":"Tag"}';
     public const SCHEMA_TITLE = 'Tag';
     public const SCHEMA_DESCRIPTION = 'Tag';
     private string $name;
-    private array $commit = array();
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506 $commit;
     private string $zipball_url;
     private string $tarball_url;
     private string $node_id;
@@ -15,7 +19,7 @@ final class Tag
     {
         return $this->name;
     }
-    public function commit() : array
+    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506
     {
         return $this->commit;
     }

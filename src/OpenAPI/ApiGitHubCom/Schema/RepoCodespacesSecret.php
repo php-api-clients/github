@@ -4,6 +4,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
 final class RepoCodespacesSecret
 {
+    public const SCHEMA_JSON = '{"title":"Codespaces Secret","required":["name","created_at","updated_at"],"type":"object","properties":{"name":{"type":"string","description":"The name of the secret.","examples":["SECRET_TOKEN"]},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"description":"Set repository secrets for GitHub Codespaces."}';
     public const SCHEMA_TITLE = 'Codespaces Secret';
     public const SCHEMA_DESCRIPTION = 'Set repository secrets for GitHub Codespaces.';
     /**
