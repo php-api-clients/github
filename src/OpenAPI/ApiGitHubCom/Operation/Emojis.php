@@ -11,8 +11,8 @@ final class Emojis
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function get_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get_
+    public function get() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
 }

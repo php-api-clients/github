@@ -11,56 +11,56 @@ final class Git
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function createBlob_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateBlob_
+    public function createBlob(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateBlob
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateBlob_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateBlob($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function getBlob_(string $owner, string $repo, string $file_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetBlob_
+    public function getBlob(string $owner, string $repo, string $file_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetBlob
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetBlob_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $file_sha);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetBlob($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $file_sha);
     }
-    public function createCommit_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateCommit_
+    public function createCommit(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateCommit
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateCommit_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateCommit($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function getCommit_(string $owner, string $repo, string $commit_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetCommit_
+    public function getCommit(string $owner, string $repo, string $commit_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetCommit
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetCommit_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $commit_sha);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetCommit($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $commit_sha);
     }
-    public function listMatchingRefs_(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\ListMatchingRefs_
+    public function listMatchingRefs(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\ListMatchingRefs
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\ListMatchingRefs_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\ListMatchingRefs($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
     }
-    public function getRef_(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetRef_
+    public function getRef(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetRef
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetRef_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetRef($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
     }
-    public function createRef_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateRef_
+    public function createRef(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateRef
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateRef_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function deleteRef_(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\DeleteRef_
+    public function deleteRef(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\DeleteRef
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\DeleteRef_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\DeleteRef($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
     }
-    public function updateRef_(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\UpdateRef_
+    public function updateRef(string $owner, string $repo, string $ref) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\UpdateRef
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\UpdateRef_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\UpdateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref);
     }
-    public function createTag_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTag_
+    public function createTag(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTag
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTag_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTag($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function getTag_(string $owner, string $repo, string $tag_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTag_
+    public function getTag(string $owner, string $repo, string $tag_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTag
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTag_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $tag_sha);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTag($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $tag_sha);
     }
-    public function createTree_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTree_
+    public function createTree(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTree
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTree_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\CreateTree($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function getTree_(string $owner, string $repo, string $tree_sha, string $recursive) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTree_
+    public function getTree(string $owner, string $repo, string $tree_sha, string $recursive) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTree
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTree_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $tree_sha, $recursive);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\GetTree($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $tree_sha, $recursive);
     }
 }

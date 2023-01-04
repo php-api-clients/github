@@ -11,16 +11,16 @@ final class Licenses
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function getAllCommonlyUsed_(bool $featured, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetAllCommonlyUsed_
+    public function getAllCommonlyUsed(bool $featured, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetAllCommonlyUsed
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetAllCommonlyUsed_($this->requestSchemaValidator, $this->responseSchemaValidator, $featured, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetAllCommonlyUsed($this->requestSchemaValidator, $this->responseSchemaValidator, $featured, $per_page, $page);
     }
-    public function get_(string $license) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\Get_
+    public function get(string $license) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\Get_($this->requestSchemaValidator, $this->responseSchemaValidator, $license);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\Get($this->requestSchemaValidator, $this->responseSchemaValidator, $license);
     }
-    public function getForRepo_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetForRepo_
+    public function getForRepo(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetForRepo_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
 }

@@ -11,84 +11,84 @@ final class Gists
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function list_(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List_
+    public function list(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List_($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
     }
-    public function create_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Create_
+    public function create() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Create
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Create_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Create($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
-    public function listPublic_(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListPublic_
+    public function listPublic(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListPublic
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListPublic_($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListPublic($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
     }
-    public function listStarred_(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListStarred_
+    public function listStarred(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListStarred
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListStarred_($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListStarred($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
     }
-    public function get_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Get_
+    public function get(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Get_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Get($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function delete_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Delete_
+    public function delete(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Delete
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Delete_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Delete($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function update_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Update_
+    public function update(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Update
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Update_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function listComments_(string $gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListComments_
+    public function listComments(string $gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListComments
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListComments_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListComments($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $per_page, $page);
     }
-    public function createComment_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CreateComment_
+    public function createComment(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CreateComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CreateComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CreateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function getComment_(string $gist_id, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetComment_
+    public function getComment(string $gist_id, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $comment_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetComment($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $comment_id);
     }
-    public function deleteComment_(string $gist_id, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\DeleteComment_
+    public function deleteComment(string $gist_id, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\DeleteComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\DeleteComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $comment_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\DeleteComment($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $comment_id);
     }
-    public function updateComment_(string $gist_id, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\UpdateComment_
+    public function updateComment(string $gist_id, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\UpdateComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\UpdateComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $comment_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\UpdateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $comment_id);
     }
-    public function listCommits_(string $gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListCommits_
+    public function listCommits(string $gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListCommits
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListCommits_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListCommits($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $per_page, $page);
     }
-    public function listForks_(string $gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks_
+    public function listForks(string $gist_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $per_page, $page);
     }
-    public function fork_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Fork_
+    public function fork(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Fork
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Fork_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Fork($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function checkIsStarred_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred_
+    public function checkIsStarred(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function star_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Star_
+    public function star(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Star
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Star_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Star($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function unstar_(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Unstar_
+    public function unstar(string $gist_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Unstar
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Unstar_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Unstar($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id);
     }
-    public function getRevision_(string $gist_id, string $sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetRevision_
+    public function getRevision(string $gist_id, string $sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetRevision
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetRevision_($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $sha);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetRevision($this->requestSchemaValidator, $this->responseSchemaValidator, $gist_id, $sha);
     }
-    public function listForUser_(string $username, string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForUser_
+    public function listForUser(string $username, string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForUser
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForUser_($this->requestSchemaValidator, $this->responseSchemaValidator, $username, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForUser($this->requestSchemaValidator, $this->responseSchemaValidator, $username, $since, $per_page, $page);
     }
 }

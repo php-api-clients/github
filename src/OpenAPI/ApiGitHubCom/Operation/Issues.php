@@ -11,160 +11,160 @@ final class Issues
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function list_(string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\List_
+    public function list(string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\List
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\List_($this->requestSchemaValidator, $this->responseSchemaValidator, $filter, $state, $labels, $sort, $direction, $since, $collab, $orgs, $owned, $pulls, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\List($this->requestSchemaValidator, $this->responseSchemaValidator, $filter, $state, $labels, $sort, $direction, $since, $collab, $orgs, $owned, $pulls, $per_page, $page);
     }
-    public function listForOrg_(string $org, string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForOrg_
+    public function listForOrg(string $org, string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForOrg_($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $filter, $state, $labels, $sort, $direction, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $filter, $state, $labels, $sort, $direction, $since, $per_page, $page);
     }
-    public function listAssignees_(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListAssignees_
+    public function listAssignees(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListAssignees
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListAssignees_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListAssignees($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
     }
-    public function checkUserCanBeAssigned_(string $owner, string $repo, string $assignee) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CheckUserCanBeAssigned_
+    public function checkUserCanBeAssigned(string $owner, string $repo, string $assignee) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CheckUserCanBeAssigned
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CheckUserCanBeAssigned_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $assignee);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CheckUserCanBeAssigned($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $assignee);
     }
-    public function listForRepo_(string $owner, string $repo, string $milestone, string $state = 'open', string $assignee, string $creator, string $mentioned, string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo_
+    public function listForRepo(string $owner, string $repo, string $milestone, string $state = 'open', string $assignee, string $creator, string $mentioned, string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone, $state, $assignee, $creator, $mentioned, $labels, $sort, $direction, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone, $state, $assignee, $creator, $mentioned, $labels, $sort, $direction, $since, $per_page, $page);
     }
-    public function create_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create_
+    public function create(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function listCommentsForRepo_(string $owner, string $repo, string $sort = 'created', string $direction, string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListCommentsForRepo_
+    public function listCommentsForRepo(string $owner, string $repo, string $sort = 'created', string $direction, string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListCommentsForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListCommentsForRepo_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $sort, $direction, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListCommentsForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $sort, $direction, $since, $per_page, $page);
     }
-    public function getComment_(string $owner, string $repo, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetComment_
+    public function getComment(string $owner, string $repo, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $comment_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetComment($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $comment_id);
     }
-    public function deleteComment_(string $owner, string $repo, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteComment_
+    public function deleteComment(string $owner, string $repo, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $comment_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteComment($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $comment_id);
     }
-    public function updateComment_(string $owner, string $repo, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateComment_
+    public function updateComment(string $owner, string $repo, int $comment_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $comment_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $comment_id);
     }
-    public function listEventsForRepo_(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForRepo_
+    public function listEventsForRepo(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForRepo_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
     }
-    public function getEvent_(string $owner, string $repo, int $event_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetEvent_
+    public function getEvent(string $owner, string $repo, int $event_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetEvent
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetEvent_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $event_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetEvent($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $event_id);
     }
-    public function get_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Get_
+    public function get(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Get_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Get($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function update_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update_
+    public function update(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function addAssignees_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddAssignees_
+    public function addAssignees(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddAssignees
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddAssignees_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddAssignees($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function removeAssignees_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAssignees_
+    public function removeAssignees(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAssignees
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAssignees_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAssignees($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function listComments_(string $owner, string $repo, int $issue_number, string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListComments_
+    public function listComments(string $owner, string $repo, int $issue_number, string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListComments
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListComments_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListComments($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $since, $per_page, $page);
     }
-    public function createComment_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateComment_
+    public function createComment(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateComment
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateComment_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function listEvents_(string $owner, string $repo, int $issue_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEvents_
+    public function listEvents(string $owner, string $repo, int $issue_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEvents
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEvents_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEvents($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $per_page, $page);
     }
-    public function listLabelsOnIssue_(string $owner, string $repo, int $issue_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue_
+    public function listLabelsOnIssue(string $owner, string $repo, int $issue_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $per_page, $page);
     }
-    public function setLabels_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels_
+    public function setLabels(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function addLabels_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels_
+    public function addLabels(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function removeAllLabels_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAllLabels_
+    public function removeAllLabels(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAllLabels
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAllLabels_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAllLabels($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function removeLabel_(string $owner, string $repo, int $issue_number, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabel_
+    public function removeLabel(string $owner, string $repo, int $issue_number, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabel
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabel_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $name);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabel($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $name);
     }
-    public function lock_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Lock_
+    public function lock(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Lock
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Lock_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Lock($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function unlock_(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Unlock_
+    public function unlock(string $owner, string $repo, int $issue_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Unlock
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Unlock_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Unlock($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
-    public function listEventsForTimeline_(string $owner, string $repo, int $issue_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForTimeline_
+    public function listEventsForTimeline(string $owner, string $repo, int $issue_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForTimeline
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForTimeline_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForTimeline($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $per_page, $page);
     }
-    public function listLabelsForRepo_(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForRepo_
+    public function listLabelsForRepo(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForRepo_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
     }
-    public function createLabel_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateLabel_
+    public function createLabel(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateLabel
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateLabel_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateLabel($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function getLabel_(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetLabel_
+    public function getLabel(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetLabel
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetLabel_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetLabel($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
     }
-    public function deleteLabel_(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteLabel_
+    public function deleteLabel(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteLabel
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteLabel_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteLabel($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
     }
-    public function updateLabel_(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateLabel_
+    public function updateLabel(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateLabel
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateLabel_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateLabel($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
     }
-    public function listMilestones_(string $owner, string $repo, string $state = 'open', string $sort = 'due_on', string $direction = 'asc', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestones_
+    public function listMilestones(string $owner, string $repo, string $state = 'open', string $sort = 'due_on', string $direction = 'asc', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestones
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestones_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $state, $sort, $direction, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestones($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $state, $sort, $direction, $per_page, $page);
     }
-    public function createMilestone_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateMilestone_
+    public function createMilestone(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateMilestone
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateMilestone_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CreateMilestone($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function getMilestone_(string $owner, string $repo, int $milestone_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetMilestone_
+    public function getMilestone(string $owner, string $repo, int $milestone_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetMilestone
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetMilestone_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\GetMilestone($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number);
     }
-    public function deleteMilestone_(string $owner, string $repo, int $milestone_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteMilestone_
+    public function deleteMilestone(string $owner, string $repo, int $milestone_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteMilestone
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteMilestone_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\DeleteMilestone($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number);
     }
-    public function updateMilestone_(string $owner, string $repo, int $milestone_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateMilestone_
+    public function updateMilestone(string $owner, string $repo, int $milestone_number) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateMilestone
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateMilestone_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\UpdateMilestone($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number);
     }
-    public function listLabelsForMilestone_(string $owner, string $repo, int $milestone_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForMilestone_
+    public function listLabelsForMilestone(string $owner, string $repo, int $milestone_number, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForMilestone
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForMilestone_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForMilestone($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $milestone_number, $per_page, $page);
     }
-    public function listForAuthenticatedUser_(string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForAuthenticatedUser_
+    public function listForAuthenticatedUser(string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForAuthenticatedUser
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForAuthenticatedUser_($this->requestSchemaValidator, $this->responseSchemaValidator, $filter, $state, $labels, $sort, $direction, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $filter, $state, $labels, $sort, $direction, $since, $per_page, $page);
     }
 }

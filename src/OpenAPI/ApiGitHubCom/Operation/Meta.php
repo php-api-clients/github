@@ -11,24 +11,24 @@ final class Meta
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function root_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root_
+    public function root() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
-    public function get_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Get_
+    public function get() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Get_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Get($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
-    public function getOctocat_(string $s) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetOctocat_
+    public function getOctocat(string $s) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetOctocat
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetOctocat_($this->requestSchemaValidator, $this->responseSchemaValidator, $s);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetOctocat($this->requestSchemaValidator, $this->responseSchemaValidator, $s);
     }
-    public function getAllVersions_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetAllVersions_
+    public function getAllVersions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetAllVersions
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetAllVersions_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetAllVersions($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
-    public function getZen_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen_
+    public function getZen() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
 }

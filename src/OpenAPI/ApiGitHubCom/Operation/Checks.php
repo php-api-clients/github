@@ -11,52 +11,52 @@ final class Checks
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function create_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Create_
+    public function create(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Create
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Create_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function get_(string $owner, string $repo, int $check_run_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Get_
+    public function get(string $owner, string $repo, int $check_run_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Get_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Get($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id);
     }
-    public function update_(string $owner, string $repo, int $check_run_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Update_
+    public function update(string $owner, string $repo, int $check_run_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Update
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Update_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id);
     }
-    public function listAnnotations_(string $owner, string $repo, int $check_run_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListAnnotations_
+    public function listAnnotations(string $owner, string $repo, int $check_run_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListAnnotations
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListAnnotations_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListAnnotations($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id, $per_page, $page);
     }
-    public function rerequestRun_(string $owner, string $repo, int $check_run_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestRun_
+    public function rerequestRun(string $owner, string $repo, int $check_run_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestRun
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestRun_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestRun($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_run_id);
     }
-    public function createSuite_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\CreateSuite_
+    public function createSuite(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\CreateSuite
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\CreateSuite_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\CreateSuite($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function setSuitesPreferences_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\SetSuitesPreferences_
+    public function setSuitesPreferences(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\SetSuitesPreferences
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\SetSuitesPreferences_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\SetSuitesPreferences($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function getSuite_(string $owner, string $repo, int $check_suite_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\GetSuite_
+    public function getSuite(string $owner, string $repo, int $check_suite_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\GetSuite
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\GetSuite_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_suite_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\GetSuite($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_suite_id);
     }
-    public function listForSuite_(string $owner, string $repo, int $check_suite_id, string $check_name, string $status, string $filter = 'latest', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForSuite_
+    public function listForSuite(string $owner, string $repo, int $check_suite_id, string $check_name, string $status, string $filter = 'latest', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForSuite
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForSuite_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_suite_id, $check_name, $status, $filter, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForSuite($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_suite_id, $check_name, $status, $filter, $per_page, $page);
     }
-    public function rerequestSuite_(string $owner, string $repo, int $check_suite_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestSuite_
+    public function rerequestSuite(string $owner, string $repo, int $check_suite_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestSuite
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestSuite_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_suite_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\RerequestSuite($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $check_suite_id);
     }
-    public function listForRef_(string $owner, string $repo, string $ref, string $check_name, string $status, string $filter = 'latest', int $per_page = 30, int $page = 1, int $app_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForRef_
+    public function listForRef(string $owner, string $repo, string $ref, string $check_name, string $status, string $filter = 'latest', int $per_page = 30, int $page = 1, int $app_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForRef
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForRef_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref, $check_name, $status, $filter, $per_page, $page, $app_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForRef($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref, $check_name, $status, $filter, $per_page, $page, $app_id);
     }
-    public function listSuitesForRef_(string $owner, string $repo, string $ref, int $app_id, string $check_name, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListSuitesForRef_
+    public function listSuitesForRef(string $owner, string $repo, string $ref, int $app_id, string $check_name, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListSuitesForRef
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListSuitesForRef_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref, $app_id, $check_name, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListSuitesForRef($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $ref, $app_id, $check_name, $per_page, $page);
     }
 }

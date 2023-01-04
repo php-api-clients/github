@@ -11,8 +11,8 @@ final class RateLimit
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function get_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\RateLimit\Get_
+    public function get() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\RateLimit\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\RateLimit\Get_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\RateLimit\Get($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
 }

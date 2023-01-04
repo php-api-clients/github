@@ -11,12 +11,12 @@ final class Markdown
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function render_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\Render_
+    public function render() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\Render
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\Render_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\Render($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
-    public function renderRaw_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw_
+    public function renderRaw() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
 }

@@ -11,104 +11,104 @@ final class Projects
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function listForOrg_(string $org, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg_
+    public function listForOrg(string $org, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg_($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $state, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $state, $per_page, $page);
     }
-    public function createForOrg_(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForOrg_
+    public function createForOrg(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForOrg
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForOrg_($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
     }
-    public function getCard_(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetCard_
+    public function getCard(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetCard
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetCard_($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetCard($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
     }
-    public function deleteCard_(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard_
+    public function deleteCard(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard_($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
     }
-    public function updateCard_(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateCard_
+    public function updateCard(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateCard
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateCard_($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateCard($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
     }
-    public function moveCard_(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard_
+    public function moveCard(int $card_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard_($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard($this->requestSchemaValidator, $this->responseSchemaValidator, $card_id);
     }
-    public function getColumn_(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetColumn_
+    public function getColumn(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetColumn
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetColumn_($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
     }
-    public function deleteColumn_(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteColumn_
+    public function deleteColumn(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteColumn
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteColumn_($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
     }
-    public function updateColumn_(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateColumn_
+    public function updateColumn(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateColumn
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateColumn_($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\UpdateColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
     }
-    public function listCards_(int $column_id, string $archived_state = 'not_archived', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards_
+    public function listCards(int $column_id, string $archived_state = 'not_archived', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards_($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id, $archived_state, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id, $archived_state, $per_page, $page);
     }
-    public function createCard_(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard_
+    public function createCard(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard_($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
     }
-    public function moveColumn_(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveColumn_
+    public function moveColumn(int $column_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveColumn
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveColumn_($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $column_id);
     }
-    public function get_(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Get_
+    public function get(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Get
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Get_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Get($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
     }
-    public function delete_(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Delete_
+    public function delete(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Delete
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Delete_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Delete($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
     }
-    public function update_(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Update_
+    public function update(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Update
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Update_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
     }
-    public function listCollaborators_(int $project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCollaborators_
+    public function listCollaborators(int $project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCollaborators
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCollaborators_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $affiliation, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCollaborators($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $affiliation, $per_page, $page);
     }
-    public function addCollaborator_(int $project_id, string $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\AddCollaborator_
+    public function addCollaborator(int $project_id, string $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\AddCollaborator
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\AddCollaborator_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\AddCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $username);
     }
-    public function removeCollaborator_(int $project_id, string $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\RemoveCollaborator_
+    public function removeCollaborator(int $project_id, string $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\RemoveCollaborator
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\RemoveCollaborator_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\RemoveCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $username);
     }
-    public function getPermissionForUser_(int $project_id, string $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetPermissionForUser_
+    public function getPermissionForUser(int $project_id, string $username) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetPermissionForUser
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetPermissionForUser_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $username);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\GetPermissionForUser($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $username);
     }
-    public function listColumns_(int $project_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListColumns_
+    public function listColumns(int $project_id, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListColumns
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListColumns_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListColumns($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id, $per_page, $page);
     }
-    public function createColumn_(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateColumn_
+    public function createColumn(int $project_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateColumn
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateColumn_($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $project_id);
     }
-    public function listForRepo_(string $owner, string $repo, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo_
+    public function listForRepo(string $owner, string $repo, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $state, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $state, $per_page, $page);
     }
-    public function createForRepo_(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForRepo_
+    public function createForRepo(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForRepo
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForRepo_($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
     }
-    public function createForAuthenticatedUser_() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForAuthenticatedUser_
+    public function createForAuthenticatedUser() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForAuthenticatedUser
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForAuthenticatedUser_($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
-    public function listForUser_(string $username, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForUser_
+    public function listForUser(string $username, string $state = 'open', int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForUser
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForUser_($this->requestSchemaValidator, $this->responseSchemaValidator, $username, $state, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForUser($this->requestSchemaValidator, $this->responseSchemaValidator, $username, $state, $per_page, $page);
     }
 }
