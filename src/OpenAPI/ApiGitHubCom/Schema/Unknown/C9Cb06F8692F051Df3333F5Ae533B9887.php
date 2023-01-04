@@ -9,13 +9,13 @@ final class C9Cb06F8692F051Df3333F5Ae533B9887
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Email addresses associated with the GitHub user account.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D1Ceee71166798302Ffb9922209C44B>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D1Ceee71166798302Ffb9922209C44B::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9Cb06F8692F051Df3333F5Ae533B9887\Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9Cb06F8692F051Df3333F5Ae533B9887\Emails::class)
      */
     private array $emails = array();
     /**
      * Email addresses associated with the GitHub user account.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D1Ceee71166798302Ffb9922209C44B>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9Cb06F8692F051Df3333F5Ae533B9887\Emails>
      */
     public function emails() : array
     {

@@ -36,9 +36,9 @@ final class WebhookMembershipAdded
     private $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Team::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A $team;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Team $team;
     public function action() : string
     {
         return $this->action;
@@ -89,7 +89,7 @@ final class WebhookMembershipAdded
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A
+    public function team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Team
     {
         return $this->team;
     }

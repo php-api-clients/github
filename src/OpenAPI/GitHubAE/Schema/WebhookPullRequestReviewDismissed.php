@@ -24,9 +24,9 @@ final class WebhookPullRequestReviewDismissed
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C02Acd6Adf743F11C6Eed686Aaaf0Ede0::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewDismissed\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C02Acd6Adf743F11C6Eed686Aaaf0Ede0 $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewDismissed\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -34,9 +34,9 @@ final class WebhookPullRequestReviewDismissed
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository $repository;
     /**
      * The review that was affected.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB021592142E431Ef8C3B5232Afa65090::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewDismissed\Review::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB021592142E431Ef8C3B5232Afa65090 $review;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewDismissed\Review $review;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
@@ -67,7 +67,7 @@ final class WebhookPullRequestReviewDismissed
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C02Acd6Adf743F11C6Eed686Aaaf0Ede0
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewDismissed\PullRequest
     {
         return $this->pull_request;
     }
@@ -81,7 +81,7 @@ final class WebhookPullRequestReviewDismissed
     /**
      * The review that was affected.
      */
-    public function review() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB021592142E431Ef8C3B5232Afa65090
+    public function review() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewDismissed\Review
     {
         return $this->review;
     }

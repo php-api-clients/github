@@ -10,13 +10,13 @@ final class GistCommit
     private string $url;
     private string $version;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GistCommit\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GistCommit\User $user;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C9417525559973F8De4020312C4Bdb422::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GistCommit\ChangeStatus::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C9417525559973F8De4020312C4Bdb422 $change_status;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GistCommit\ChangeStatus $change_status;
     private string $committed_at;
     public function url() : string
     {
@@ -26,11 +26,11 @@ final class GistCommit
     {
         return $this->version;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GistCommit\User
     {
         return $this->user;
     }
-    public function change_status() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C9417525559973F8De4020312C4Bdb422
+    public function change_status() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GistCommit\ChangeStatus
     {
         return $this->change_status;
     }

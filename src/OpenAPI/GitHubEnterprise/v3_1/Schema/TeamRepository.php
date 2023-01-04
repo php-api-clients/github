@@ -18,18 +18,18 @@ final class TeamRepository
     private string $name;
     private string $full_name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\License::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $license;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\License $license;
     private int $forks;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C70F737A88657D2D34F5D00484Da29806::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Permissions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C70F737A88657D2D34F5D00484Da29806 $permissions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Permissions $permissions = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Owner::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $owner;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Owner $owner;
     /**
      * Whether the repository is private or public.
      */
@@ -95,8 +95,8 @@ final class TeamRepository
      */
     private ?bool $is_template = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Topics>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Topics::class)
      */
     private array $topics = array();
     /**
@@ -136,9 +136,9 @@ final class TeamRepository
      */
     private ?bool $allow_rebase_merge = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\TemplateRepository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $template_repository;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\TemplateRepository $template_repository;
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -183,7 +183,7 @@ final class TeamRepository
     {
         return $this->full_name;
     }
-    public function license() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function license() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\License
     {
         return $this->license;
     }
@@ -191,11 +191,11 @@ final class TeamRepository
     {
         return $this->forks;
     }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C70F737A88657D2D34F5D00484Da29806
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Permissions
     {
         return $this->permissions;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Owner
     {
         return $this->owner;
     }
@@ -429,7 +429,7 @@ final class TeamRepository
         return $this->is_template;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\Topics>
      */
     public function topics() : array
     {
@@ -507,7 +507,7 @@ final class TeamRepository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function template_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamRepository\TemplateRepository
     {
         return $this->template_repository;
     }

@@ -9,13 +9,13 @@ final class CC8Df3A876C1B9479Cff4Dd932212B5D7
     public const SCHEMA_DESCRIPTION = '';
     /**
      * List of organization IDs to enable for GitHub Actions.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CC8Df3A876C1B9479Cff4Dd932212B5D7\SelectedOrganizationIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CC8Df3A876C1B9479Cff4Dd932212B5D7\SelectedOrganizationIds::class)
      */
     private array $selected_organization_ids = array();
     /**
      * List of organization IDs to enable for GitHub Actions.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CC8Df3A876C1B9479Cff4Dd932212B5D7\SelectedOrganizationIds>
      */
     public function selected_organization_ids() : array
     {

@@ -9,9 +9,9 @@ final class WebhookIssuesTransferred
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C89B4318Ec186720C1A5Dd6Ffbdf73Be3::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesTransferred\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C89B4318Ec186720C1A5Dd6Ffbdf73Be3 $changes;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesTransferred\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -24,9 +24,9 @@ final class WebhookIssuesTransferred
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFb9A9Ce51A4333B36B249Dfc9Aeaa179::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesTransferred\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFb9A9Ce51A4333B36B249Dfc9Aeaa179 $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesTransferred\Issue $issue;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -46,7 +46,7 @@ final class WebhookIssuesTransferred
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C89B4318Ec186720C1A5Dd6Ffbdf73Be3
+    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesTransferred\Changes
     {
         return $this->changes;
     }
@@ -67,7 +67,7 @@ final class WebhookIssuesTransferred
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFb9A9Ce51A4333B36B249Dfc9Aeaa179
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesTransferred\Issue
     {
         return $this->issue;
     }

@@ -10,13 +10,13 @@ final class ProtectedBranchRequiredStatusCheck
     private ?string $url = null;
     private ?string $enforcement_level = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchRequiredStatusCheck\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchRequiredStatusCheck\Contexts::class)
      */
     private array $contexts = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8B05373236F5C3Ff2611Aea2Ab7F0603>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8B05373236F5C3Ff2611Aea2Ab7F0603::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchRequiredStatusCheck\Checks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchRequiredStatusCheck\Checks::class)
      */
     private array $checks = array();
     private ?string $contexts_url = null;
@@ -30,14 +30,14 @@ final class ProtectedBranchRequiredStatusCheck
         return $this->enforcement_level;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchRequiredStatusCheck\Contexts>
      */
     public function contexts() : array
     {
         return $this->contexts;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8B05373236F5C3Ff2611Aea2Ab7F0603>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchRequiredStatusCheck\Checks>
      */
     public function checks() : array
     {

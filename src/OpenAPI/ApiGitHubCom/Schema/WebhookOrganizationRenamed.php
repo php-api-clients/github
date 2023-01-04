@@ -9,9 +9,9 @@ final class WebhookOrganizationRenamed
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD25487865D9B27E3560Ff7D8Cad30756::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationRenamed\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD25487865D9B27E3560Ff7D8Cad30756 $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationRenamed\Changes $changes = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -24,9 +24,9 @@ final class WebhookOrganizationRenamed
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E163C9A9Bbd373B3Bd5D0269A2269Ab::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationRenamed\Membership::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E163C9A9Bbd373B3Bd5D0269A2269Ab $membership = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationRenamed\Membership $membership = null;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -46,7 +46,7 @@ final class WebhookOrganizationRenamed
     {
         return $this->action;
     }
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD25487865D9B27E3560Ff7D8Cad30756
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationRenamed\Changes
     {
         return $this->changes;
     }
@@ -67,7 +67,7 @@ final class WebhookOrganizationRenamed
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
      */
-    public function membership() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E163C9A9Bbd373B3Bd5D0269A2269Ab
+    public function membership() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationRenamed\Membership
     {
         return $this->membership;
     }

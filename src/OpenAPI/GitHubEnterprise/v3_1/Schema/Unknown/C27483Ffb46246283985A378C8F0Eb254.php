@@ -13,9 +13,9 @@ final class C27483Ffb46246283985A378C8F0Eb254
     private string $ref;
     /**
      * Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAb6Cef176B7Eaf1709C09Dbb52D307B2::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27483Ffb46246283985A378C8F0Eb254\Inputs::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAb6Cef176B7Eaf1709C09Dbb52D307B2 $inputs = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27483Ffb46246283985A378C8F0Eb254\Inputs $inputs = null;
     /**
      * The git reference for the workflow. The reference can be a branch or tag name.
      */
@@ -26,7 +26,7 @@ final class C27483Ffb46246283985A378C8F0Eb254
     /**
      * Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
      */
-    public function inputs() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAb6Cef176B7Eaf1709C09Dbb52D307B2
+    public function inputs() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27483Ffb46246283985A378C8F0Eb254\Inputs
     {
         return $this->inputs;
     }

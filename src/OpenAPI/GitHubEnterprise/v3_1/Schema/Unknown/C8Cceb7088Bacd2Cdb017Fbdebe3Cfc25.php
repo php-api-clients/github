@@ -9,8 +9,8 @@ final class C8Cceb7088Bacd2Cdb017Fbdebe3Cfc25
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C038Fd7Caf1Dd5F0C7579D1Da065Cd792>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C038Fd7Caf1Dd5F0C7579D1Da065Cd792::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C8Cceb7088Bacd2Cdb017Fbdebe3Cfc25\Tree>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C8Cceb7088Bacd2Cdb017Fbdebe3Cfc25\Tree::class)
      */
     private array $tree = array();
     /**
@@ -20,7 +20,7 @@ final class C8Cceb7088Bacd2Cdb017Fbdebe3Cfc25
     private ?string $base_tree = null;
     /**
      * Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C038Fd7Caf1Dd5F0C7579D1Da065Cd792>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C8Cceb7088Bacd2Cdb017Fbdebe3Cfc25\Tree>
      */
     public function tree() : array
     {

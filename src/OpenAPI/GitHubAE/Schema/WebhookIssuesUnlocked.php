@@ -19,9 +19,9 @@ final class WebhookIssuesUnlocked
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C26Cd808Ca2Dbe696Ef2783B6B4A2348A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlocked\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C26Cd808Ca2Dbe696Ef2783B6B4A2348A $issue;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlocked\Issue $issue;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
@@ -55,7 +55,7 @@ final class WebhookIssuesUnlocked
     {
         return $this->installation;
     }
-    public function issue() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C26Cd808Ca2Dbe696Ef2783B6B4A2348A
+    public function issue() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlocked\Issue
     {
         return $this->issue;
     }

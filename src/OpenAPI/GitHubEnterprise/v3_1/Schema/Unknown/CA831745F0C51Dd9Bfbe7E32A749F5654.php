@@ -9,13 +9,13 @@ final class CA831745F0C51Dd9Bfbe7E32A749F5654
     public const SCHEMA_DESCRIPTION = 'The source branch and directory used to publish your Pages site.';
     /**
      * The source branch and directory used to publish your Pages site.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CDb630B3Ae9E2E7562Ddd316Be333F74B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA831745F0C51Dd9Bfbe7E32A749F5654\Source::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CDb630B3Ae9E2E7562Ddd316Be333F74B $source;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA831745F0C51Dd9Bfbe7E32A749F5654\Source $source;
     /**
      * The source branch and directory used to publish your Pages site.
      */
-    public function source() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CDb630B3Ae9E2E7562Ddd316Be333F74B
+    public function source() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA831745F0C51Dd9Bfbe7E32A749F5654\Source
     {
         return $this->source;
     }

@@ -13,13 +13,13 @@ final class C27D0672A6995168E56568Eb9Bf2816Db
     private string $name;
     /**
      * Key/value pairs to provide settings for this webhook.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAa4E2E6D280C96D6030De699041A5C8A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27D0672A6995168E56568Eb9Bf2816Db\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAa4E2E6D280C96D6030De699041A5C8A $config;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27D0672A6995168E56568Eb9Bf2816Db\Config $config;
     /**
      * The [events](https://docs.github.com/enterprise-server@3.1/webhooks/event-payloads) that trigger this webhook. A global webhook can be triggered by `user` and `organization` events. Default: `user` and `organization`.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27D0672A6995168E56568Eb9Bf2816Db\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27D0672A6995168E56568Eb9Bf2816Db\Events::class)
      */
     private array $events = array();
     /**
@@ -36,13 +36,13 @@ final class C27D0672A6995168E56568Eb9Bf2816Db
     /**
      * Key/value pairs to provide settings for this webhook.
      */
-    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAa4E2E6D280C96D6030De699041A5C8A
+    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27D0672A6995168E56568Eb9Bf2816Db\Config
     {
         return $this->config;
     }
     /**
      * The [events](https://docs.github.com/enterprise-server@3.1/webhooks/event-payloads) that trigger this webhook. A global webhook can be triggered by `user` and `organization` events. Default: `user` and `organization`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C27D0672A6995168E56568Eb9Bf2816Db\Events>
      */
     public function events() : array
     {

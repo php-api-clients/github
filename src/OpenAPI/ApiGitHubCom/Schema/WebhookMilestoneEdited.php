@@ -10,9 +10,9 @@ final class WebhookMilestoneEdited
     private string $action;
     /**
      * The changes to the milestone if the action was `edited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Fb594Abd2B77283E856Dee7A9B6836C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Fb594Abd2B77283E856Dee7A9B6836C $changes;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -25,9 +25,9 @@ final class WebhookMilestoneEdited
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * A collection of related issues and pull requests.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4Fbf546A72C5Bbb5Df19093225B04Bee::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneEdited\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4Fbf546A72C5Bbb5Df19093225B04Bee $milestone;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneEdited\Milestone $milestone;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -50,7 +50,7 @@ final class WebhookMilestoneEdited
     /**
      * The changes to the milestone if the action was `edited`.
      */
-    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Fb594Abd2B77283E856Dee7A9B6836C
+    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneEdited\Changes
     {
         return $this->changes;
     }
@@ -71,7 +71,7 @@ final class WebhookMilestoneEdited
     /**
      * A collection of related issues and pull requests.
      */
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4Fbf546A72C5Bbb5Df19093225B04Bee
+    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneEdited\Milestone
     {
         return $this->milestone;
     }

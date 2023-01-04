@@ -12,18 +12,18 @@ final class BranchRestrictionPolicy
     private string $teams_url;
     private string $apps_url;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CE98507D8F41Ea699Aac5Dbb4Fcfecf7D>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CE98507D8F41Ea699Aac5Dbb4Fcfecf7D::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Users>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Users::class)
      */
     private array $users = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CFa6C0A5C6340998F0E29337Aa33B0043>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CFa6C0A5C6340998F0E29337Aa33B0043::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Teams>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Teams::class)
      */
     private array $teams = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CBbde9F81Cae960Ce6E1A96Bf82E95170>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CBbde9F81Cae960Ce6E1A96Bf82E95170::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Apps>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Apps::class)
      */
     private array $apps = array();
     public function url() : string
@@ -43,21 +43,21 @@ final class BranchRestrictionPolicy
         return $this->apps_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CE98507D8F41Ea699Aac5Dbb4Fcfecf7D>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Users>
      */
     public function users() : array
     {
         return $this->users;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CFa6C0A5C6340998F0E29337Aa33B0043>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Teams>
      */
     public function teams() : array
     {
         return $this->teams;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CBbde9F81Cae960Ce6E1A96Bf82E95170>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy\Apps>
      */
     public function apps() : array
     {

@@ -34,8 +34,8 @@ final class Installation
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AppPermissions $permissions;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\Events::class)
      */
     private array $events = array();
     private string $created_at;
@@ -43,15 +43,15 @@ final class Installation
     private $single_file_name;
     private ?bool $has_multiple_single_files = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\SingleFilePaths>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\SingleFilePaths::class)
      */
     private array $single_file_paths = array();
     private string $app_slug;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\SuspendedBy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $suspended_by;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\SuspendedBy $suspended_by;
     private $suspended_at;
     private $contact_email;
     /**
@@ -107,7 +107,7 @@ final class Installation
         return $this->permissions;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\Events>
      */
     public function events() : array
     {
@@ -130,7 +130,7 @@ final class Installation
         return $this->has_multiple_single_files;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\SingleFilePaths>
      */
     public function single_file_paths() : array
     {
@@ -140,7 +140,7 @@ final class Installation
     {
         return $this->app_slug;
     }
-    public function suspended_by() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function suspended_by() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Installation\SuspendedBy
     {
         return $this->suspended_by;
     }

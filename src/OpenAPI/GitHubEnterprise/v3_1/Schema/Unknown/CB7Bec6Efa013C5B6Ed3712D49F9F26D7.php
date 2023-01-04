@@ -9,13 +9,13 @@ final class CB7Bec6Efa013C5B6Ed3712D49F9F26D7
     public const SCHEMA_DESCRIPTION = '';
     /**
      * contexts parameter
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CB7Bec6Efa013C5B6Ed3712D49F9F26D7\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CB7Bec6Efa013C5B6Ed3712D49F9F26D7\Contexts::class)
      */
     private array $contexts = array();
     /**
      * contexts parameter
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CB7Bec6Efa013C5B6Ed3712D49F9F26D7\Contexts>
      */
     public function contexts() : array
     {

@@ -25,9 +25,9 @@ final class WebhookTeamCreated
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamCreated\Repository::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D $repository = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamCreated\Repository $repository = null;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
@@ -35,9 +35,9 @@ final class WebhookTeamCreated
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamCreated\Team::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A $team;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamCreated\Team $team;
     public function action() : string
     {
         return $this->action;
@@ -66,7 +66,7 @@ final class WebhookTeamCreated
     /**
      * A git repository
      */
-    public function repository() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D
+    public function repository() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamCreated\Repository
     {
         return $this->repository;
     }
@@ -80,7 +80,7 @@ final class WebhookTeamCreated
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function team() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A
+    public function team() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamCreated\Team
     {
         return $this->team;
     }

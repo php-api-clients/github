@@ -9,25 +9,25 @@ final class C9Ea9895923Edeb73E1F2Da64088C26De
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/enterprise-server@3.1/rest/reference/repos#create-hook-config-params).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAb29C236E2A97F0Bc3E87Fe02E713741::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAb29C236E2A97F0Bc3E87Fe02E713741 $config;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\Config $config;
     /**
      * Determines what [events](https://docs.github.com/enterprise-server@3.1/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\Events::class)
      */
     private array $events = array();
     /**
      * Determines a list of events to be added to the list of events that the Hook triggers for.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\AddEvents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\AddEvents::class)
      */
     private array $add_events = array();
     /**
      * Determines a list of events to be removed from the list of events that the Hook triggers for.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\RemoveEvents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\RemoveEvents::class)
      */
     private array $remove_events = array();
     /**
@@ -37,13 +37,13 @@ final class C9Ea9895923Edeb73E1F2Da64088C26De
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/enterprise-server@3.1/rest/reference/repos#create-hook-config-params).
      */
-    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAb29C236E2A97F0Bc3E87Fe02E713741
+    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\Config
     {
         return $this->config;
     }
     /**
      * Determines what [events](https://docs.github.com/enterprise-server@3.1/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\Events>
      */
     public function events() : array
     {
@@ -51,7 +51,7 @@ final class C9Ea9895923Edeb73E1F2Da64088C26De
     }
     /**
      * Determines a list of events to be added to the list of events that the Hook triggers for.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\AddEvents>
      */
     public function add_events() : array
     {
@@ -59,7 +59,7 @@ final class C9Ea9895923Edeb73E1F2Da64088C26De
     }
     /**
      * Determines a list of events to be removed from the list of events that the Hook triggers for.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9Ea9895923Edeb73E1F2Da64088C26De\RemoveEvents>
      */
     public function remove_events() : array
     {

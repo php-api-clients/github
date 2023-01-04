@@ -9,9 +9,9 @@ final class WebhookIssuesOpened
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB430B86E3Cfd00Cfbe6C9472A19625Cd::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesOpened\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB430B86E3Cfd00Cfbe6C9472A19625Cd $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesOpened\Changes $changes = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -24,9 +24,9 @@ final class WebhookIssuesOpened
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE2Dc1F1A68B5C9Abab6D07Dc20Ffd738::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesOpened\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE2Dc1F1A68B5C9Abab6D07Dc20Ffd738 $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesOpened\Issue $issue;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -46,7 +46,7 @@ final class WebhookIssuesOpened
     {
         return $this->action;
     }
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB430B86E3Cfd00Cfbe6C9472A19625Cd
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesOpened\Changes
     {
         return $this->changes;
     }
@@ -67,7 +67,7 @@ final class WebhookIssuesOpened
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE2Dc1F1A68B5C9Abab6D07Dc20Ffd738
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesOpened\Issue
     {
         return $this->issue;
     }

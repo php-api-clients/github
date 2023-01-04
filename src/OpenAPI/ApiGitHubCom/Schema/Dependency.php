@@ -26,8 +26,8 @@ final class Dependency
     private string $scope;
     /**
      * Array of package-url (PURLs) of direct child dependencies.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies::class)
      */
     private array $dependencies = array();
     /**
@@ -60,7 +60,7 @@ final class Dependency
     }
     /**
      * Array of package-url (PURLs) of direct child dependencies.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies>
      */
     public function dependencies() : array
     {

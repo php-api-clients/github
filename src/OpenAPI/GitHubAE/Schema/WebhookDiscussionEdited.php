@@ -9,13 +9,13 @@ final class WebhookDiscussionEdited
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C45Ec862Cfa5211Be47A703Ed28Bddde9::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionEdited\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C45Ec862Cfa5211Be47A703Ed28Bddde9 $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionEdited\Changes $changes = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionEdited\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388 $discussion;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionEdited\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -45,11 +45,11 @@ final class WebhookDiscussionEdited
     {
         return $this->action;
     }
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C45Ec862Cfa5211Be47A703Ed28Bddde9
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionEdited\Changes
     {
         return $this->changes;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionEdited\Discussion
     {
         return $this->discussion;
     }

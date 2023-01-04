@@ -9,14 +9,14 @@ final class Stargazer
     public const SCHEMA_DESCRIPTION = 'Stargazer';
     private string $starred_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Stargazer\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Stargazer\User $user;
     public function starred_at() : string
     {
         return $this->starred_at;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Stargazer\User
     {
         return $this->user;
     }

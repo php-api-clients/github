@@ -10,9 +10,9 @@ final class WebhookBranchProtectionRuleEdited
     private string $action;
     /**
      * If the action was `edited`, the changes to the rule.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF16C731B303279F97D0Ccd5E2Dd1C4B9::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookBranchProtectionRuleEdited\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF16C731B303279F97D0Ccd5E2Dd1C4B9 $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookBranchProtectionRuleEdited\Changes $changes = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -35,9 +35,9 @@ final class WebhookBranchProtectionRuleEdited
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC418Ea20Bfd7035B02C672E3C3E7A65E::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookBranchProtectionRuleEdited\Rule::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC418Ea20Bfd7035B02C672E3C3E7A65E $rule;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookBranchProtectionRuleEdited\Rule $rule;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -50,7 +50,7 @@ final class WebhookBranchProtectionRuleEdited
     /**
      * If the action was `edited`, the changes to the rule.
      */
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF16C731B303279F97D0Ccd5E2Dd1C4B9
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookBranchProtectionRuleEdited\Changes
     {
         return $this->changes;
     }
@@ -85,7 +85,7 @@ final class WebhookBranchProtectionRuleEdited
     /**
      * The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
      */
-    public function rule() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC418Ea20Bfd7035B02C672E3C3E7A65E
+    public function rule() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookBranchProtectionRuleEdited\Rule
     {
         return $this->rule;
     }

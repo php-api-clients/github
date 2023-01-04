@@ -30,14 +30,14 @@ final class C958D4Fe06219E11E77B36A4610982263
     private $milestone;
     /**
      * Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB7B30056611D2Cd25Cd2642Fd50D8151>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB7B30056611D2Cd25Cd2642Fd50D8151::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C958D4Fe06219E11E77B36A4610982263\Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C958D4Fe06219E11E77B36A4610982263\Labels::class)
      */
     private array $labels = array();
     /**
      * Logins for Users to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this Issue. Send an empty array (`[]`) to clear all assignees from the Issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C958D4Fe06219E11E77B36A4610982263\Assignees>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C958D4Fe06219E11E77B36A4610982263\Assignees::class)
      */
     private array $assignees = array();
     /**
@@ -81,7 +81,7 @@ final class C958D4Fe06219E11E77B36A4610982263
     }
     /**
      * Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB7B30056611D2Cd25Cd2642Fd50D8151>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C958D4Fe06219E11E77B36A4610982263\Labels>
      */
     public function labels() : array
     {
@@ -89,7 +89,7 @@ final class C958D4Fe06219E11E77B36A4610982263
     }
     /**
      * Logins for Users to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this Issue. Send an empty array (`[]`) to clear all assignees from the Issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C958D4Fe06219E11E77B36A4610982263\Assignees>
      */
     public function assignees() : array
     {

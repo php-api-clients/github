@@ -46,9 +46,9 @@ final class PrivateUser
     private int $collaborators;
     private bool $two_factor_authentication;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PrivateUser\Plan::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A $plan = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PrivateUser\Plan $plan = null;
     private $suspended_at;
     private ?bool $business_plus = null;
     private ?string $ldap_dn = null;
@@ -204,7 +204,7 @@ final class PrivateUser
     {
         return $this->two_factor_authentication;
     }
-    public function plan() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A
+    public function plan() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PrivateUser\Plan
     {
         return $this->plan;
     }

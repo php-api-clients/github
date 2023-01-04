@@ -20,9 +20,9 @@ final class WebhookDeployKeyDeleted
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The [`deploy key`](https://docs.github.com/rest/reference/deployments#get-a-deploy-key) resource.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8E3C936860930746B69D40B5E98B8Fda::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeployKeyDeleted\Key::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8E3C936860930746B69D40B5E98B8Fda $key;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeployKeyDeleted\Key $key;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -59,7 +59,7 @@ final class WebhookDeployKeyDeleted
     /**
      * The [`deploy key`](https://docs.github.com/rest/reference/deployments#get-a-deploy-key) resource.
      */
-    public function key() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8E3C936860930746B69D40B5E98B8Fda
+    public function key() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeployKeyDeleted\Key
     {
         return $this->key;
     }

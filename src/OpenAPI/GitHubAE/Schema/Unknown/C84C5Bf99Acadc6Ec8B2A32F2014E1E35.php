@@ -11,8 +11,8 @@ final class C84C5Bf99Acadc6Ec8B2A32F2014E1E35
     private string $message;
     private string $documentation_url;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8463F37Da64144Ef1Bf426F5247A222A>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8463F37Da64144Ef1Bf426F5247A222A::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C84C5Bf99Acadc6Ec8B2A32F2014E1E35\Errors>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C84C5Bf99Acadc6Ec8B2A32F2014E1E35\Errors::class)
      */
     private array $errors = array();
     public function code() : string
@@ -28,7 +28,7 @@ final class C84C5Bf99Acadc6Ec8B2A32F2014E1E35
         return $this->documentation_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8463F37Da64144Ef1Bf426F5247A222A>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C84C5Bf99Acadc6Ec8B2A32F2014E1E35\Errors>
      */
     public function errors() : array
     {

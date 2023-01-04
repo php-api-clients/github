@@ -24,19 +24,19 @@ final class PullRequestSimple
     private bool $locked;
     private string $title;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\User $user;
     private $body;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7969289864C02D36Ee1E127E0Ac6Bbff>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7969289864C02D36Ee1E127E0Ac6Bbff::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Labels::class)
      */
     private array $labels = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $milestone;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Milestone $milestone;
     private $active_lock_reason;
     private string $created_at;
     private string $updated_at;
@@ -44,24 +44,24 @@ final class PullRequestSimple
     private $merged_at;
     private $merge_commit_sha;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Assignee::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $assignee;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Assignee $assignee;
     private $assignees;
     private $requested_reviewers;
     private $requested_teams;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBd2D21959957620434A1Dc0Adbd0C29F::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Head::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBd2D21959957620434A1Dc0Adbd0C29F $head;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Head $head;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBd2D21959957620434A1Dc0Adbd0C29F::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Base::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBd2D21959957620434A1Dc0Adbd0C29F $base;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Base $base;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7041333D2B9B5Cd76273Fdfd58068E3B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7041333D2B9B5Cd76273Fdfd58068E3B $_links;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Links $_links;
     /**
      * How the author is associated with the repository.
      */
@@ -138,7 +138,7 @@ final class PullRequestSimple
     {
         return $this->title;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\User
     {
         return $this->user;
     }
@@ -147,13 +147,13 @@ final class PullRequestSimple
         return $this->body;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7969289864C02D36Ee1E127E0Ac6Bbff>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Labels>
      */
     public function labels() : array
     {
         return $this->labels;
     }
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function milestone() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Milestone
     {
         return $this->milestone;
     }
@@ -181,7 +181,7 @@ final class PullRequestSimple
     {
         return $this->merge_commit_sha;
     }
-    public function assignee() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function assignee() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Assignee
     {
         return $this->assignee;
     }
@@ -197,15 +197,15 @@ final class PullRequestSimple
     {
         return $this->requested_teams;
     }
-    public function head() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBd2D21959957620434A1Dc0Adbd0C29F
+    public function head() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Head
     {
         return $this->head;
     }
-    public function base() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBd2D21959957620434A1Dc0Adbd0C29F
+    public function base() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Base
     {
         return $this->base;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7041333D2B9B5Cd76273Fdfd58068E3B
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestSimple\Links
     {
         return $this->_links;
     }

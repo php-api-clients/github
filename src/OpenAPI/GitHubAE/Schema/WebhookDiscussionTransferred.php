@@ -9,13 +9,13 @@ final class WebhookDiscussionTransferred
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C844E4E4Cfd73A074E1C6C7E1Ea1Ba538::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionTransferred\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C844E4E4Cfd73A074E1C6C7E1Ea1Ba538 $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionTransferred\Changes $changes;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionTransferred\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388 $discussion;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionTransferred\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -45,11 +45,11 @@ final class WebhookDiscussionTransferred
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C844E4E4Cfd73A074E1C6C7E1Ea1Ba538
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionTransferred\Changes
     {
         return $this->changes;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionTransferred\Discussion
     {
         return $this->discussion;
     }

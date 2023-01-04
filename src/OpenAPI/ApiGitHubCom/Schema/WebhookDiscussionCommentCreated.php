@@ -9,13 +9,13 @@ final class WebhookDiscussionCommentCreated
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentCreated\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987 $comment;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentCreated\Comment $comment;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentCreated\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf $discussion;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentCreated\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -45,11 +45,11 @@ final class WebhookDiscussionCommentCreated
     {
         return $this->action;
     }
-    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987
+    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentCreated\Comment
     {
         return $this->comment;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentCreated\Discussion
     {
         return $this->discussion;
     }

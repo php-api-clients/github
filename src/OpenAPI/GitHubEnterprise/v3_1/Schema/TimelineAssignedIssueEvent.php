@@ -20,9 +20,9 @@ final class TimelineAssignedIssueEvent
     private $commit_url;
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TimelineAssignedIssueEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TimelineAssignedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     /**
      * Simple User
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\SimpleUser::class)
@@ -63,7 +63,7 @@ final class TimelineAssignedIssueEvent
     {
         return $this->created_at;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TimelineAssignedIssueEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

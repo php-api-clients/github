@@ -10,8 +10,8 @@ final class MaintenanceStatus
     private string $status;
     private string $scheduled_time;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C11396351181Cdb950961De2231Fe7742>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C11396351181Cdb950961De2231Fe7742::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MaintenanceStatus\ConnectionServices>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MaintenanceStatus\ConnectionServices::class)
      */
     private array $connection_services = array();
     public function status() : string
@@ -23,7 +23,7 @@ final class MaintenanceStatus
         return $this->scheduled_time;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C11396351181Cdb950961De2231Fe7742>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MaintenanceStatus\ConnectionServices>
      */
     public function connection_services() : array
     {

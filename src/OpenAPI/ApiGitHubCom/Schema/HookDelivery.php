@@ -56,13 +56,13 @@ final class HookDelivery
      */
     private ?string $url = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C355A0E2B6B4056313Ac28E07Ba36B9B2::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Request::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C355A0E2B6B4056313Ac28E07Ba36B9B2 $request;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Request $request;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C049A702D068D049Ed1D4C5206Ea62Cd4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Response::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C049A702D068D049Ed1D4C5206Ea62Cd4 $response;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Response $response;
     /**
      * Unique identifier of the delivery.
      */
@@ -147,11 +147,11 @@ final class HookDelivery
     {
         return $this->url;
     }
-    public function request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C355A0E2B6B4056313Ac28E07Ba36B9B2
+    public function request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Request
     {
         return $this->request;
     }
-    public function response() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C049A702D068D049Ed1D4C5206Ea62Cd4
+    public function response() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Response
     {
         return $this->response;
     }

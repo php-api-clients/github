@@ -9,13 +9,13 @@ final class CC79644Fe8Bb824D95Ad9Fea5420743Fc
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Key/value pairs to provide settings for this webhook.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCd42C6B31A5C6854Db6D2E2B67Dc4F56::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CC79644Fe8Bb824D95Ad9Fea5420743Fc\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCd42C6B31A5C6854Db6D2E2B67Dc4F56 $config;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CC79644Fe8Bb824D95Ad9Fea5420743Fc\Config $config;
     /**
      * The [events](https://docs.github.com/github-ae@latest/webhooks/event-payloads) that trigger this webhook. A global webhook can be triggered by `user` and `organization` events. Default: `user` and `organization`.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CC79644Fe8Bb824D95Ad9Fea5420743Fc\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CC79644Fe8Bb824D95Ad9Fea5420743Fc\Events::class)
      */
     private array $events = array();
     /**
@@ -25,13 +25,13 @@ final class CC79644Fe8Bb824D95Ad9Fea5420743Fc
     /**
      * Key/value pairs to provide settings for this webhook.
      */
-    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCd42C6B31A5C6854Db6D2E2B67Dc4F56
+    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CC79644Fe8Bb824D95Ad9Fea5420743Fc\Config
     {
         return $this->config;
     }
     /**
      * The [events](https://docs.github.com/github-ae@latest/webhooks/event-payloads) that trigger this webhook. A global webhook can be triggered by `user` and `organization` events. Default: `user` and `organization`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CC79644Fe8Bb824D95Ad9Fea5420743Fc\Events>
      */
     public function events() : array
     {

@@ -18,8 +18,8 @@ final class WebhookPush
     private string $before;
     /**
      * An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 20 commits. If necessary, you can use the [Commits API](https://docs.github.com/github-ae@latest/rest/reference/repos#commits) to fetch additional commits. This limit is applied to timeline events only and isn't applied to webhook deliveries.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1288Fb5Be04A9E65B171956Ae70Ceed6>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1288Fb5Be04A9E65B171956Ae70Ceed6::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Commits>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Commits::class)
      */
     private array $commits = array();
     /**
@@ -56,18 +56,18 @@ final class WebhookPush
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
      * Metaproperties for Git author/committer information.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7D6Cb727373223A19B029C6A4Ff32226::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Pusher::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7D6Cb727373223A19B029C6A4Ff32226 $pusher;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Pusher $pusher;
     /**
      * The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
      */
     private string $ref;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0974F8A2C4E2Bc2668B9Fd34172D517C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0974F8A2C4E2Bc2668B9Fd34172D517C $repository;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Repository $repository;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
@@ -93,7 +93,7 @@ final class WebhookPush
     }
     /**
      * An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 20 commits. If necessary, you can use the [Commits API](https://docs.github.com/github-ae@latest/rest/reference/repos#commits) to fetch additional commits. This limit is applied to timeline events only and isn't applied to webhook deliveries.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1288Fb5Be04A9E65B171956Ae70Ceed6>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Commits>
      */
     public function commits() : array
     {
@@ -155,7 +155,7 @@ final class WebhookPush
     /**
      * Metaproperties for Git author/committer information.
      */
-    public function pusher() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7D6Cb727373223A19B029C6A4Ff32226
+    public function pusher() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Pusher
     {
         return $this->pusher;
     }
@@ -169,7 +169,7 @@ final class WebhookPush
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0974F8A2C4E2Bc2668B9Fd34172D517C
+    public function repository() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPush\Repository
     {
         return $this->repository;
     }

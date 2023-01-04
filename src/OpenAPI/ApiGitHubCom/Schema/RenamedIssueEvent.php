@@ -20,13 +20,13 @@ final class RenamedIssueEvent
     private $commit_url;
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2De76Df4A9F8B254019C27978B8E9B61::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\Rename::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2De76Df4A9F8B254019C27978B8E9B61 $rename;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\Rename $rename;
     public function id() : int
     {
         return $this->id;
@@ -62,11 +62,11 @@ final class RenamedIssueEvent
     {
         return $this->created_at;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }
-    public function rename() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2De76Df4A9F8B254019C27978B8E9B61
+    public function rename() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\Rename
     {
         return $this->rename;
     }

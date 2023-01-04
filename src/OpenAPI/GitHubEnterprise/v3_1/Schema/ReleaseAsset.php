@@ -26,9 +26,9 @@ final class ReleaseAsset
     private string $created_at;
     private string $updated_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ReleaseAsset\Uploader::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $uploader;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ReleaseAsset\Uploader $uploader;
     public function url() : string
     {
         return $this->url;
@@ -83,7 +83,7 @@ final class ReleaseAsset
     {
         return $this->updated_at;
     }
-    public function uploader() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function uploader() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ReleaseAsset\Uploader
     {
         return $this->uploader;
     }

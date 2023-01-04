@@ -9,13 +9,13 @@ final class C1Ba9C32E1C56A638D3808926898E651A
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/github-ae@latest/rest/reference/orgs#update-hook-config-params).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA894B517Be6C0D49C3534F9Dc83E9173::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C1Ba9C32E1C56A638D3808926898E651A\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA894B517Be6C0D49C3534F9Dc83E9173 $config;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C1Ba9C32E1C56A638D3808926898E651A\Config $config;
     /**
      * Determines what [events](https://docs.github.com/github-ae@latest/webhooks/event-payloads) the hook is triggered for.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C1Ba9C32E1C56A638D3808926898E651A\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C1Ba9C32E1C56A638D3808926898E651A\Events::class)
      */
     private array $events = array();
     /**
@@ -26,13 +26,13 @@ final class C1Ba9C32E1C56A638D3808926898E651A
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/github-ae@latest/rest/reference/orgs#update-hook-config-params).
      */
-    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA894B517Be6C0D49C3534F9Dc83E9173
+    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C1Ba9C32E1C56A638D3808926898E651A\Config
     {
         return $this->config;
     }
     /**
      * Determines what [events](https://docs.github.com/github-ae@latest/webhooks/event-payloads) the hook is triggered for.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C1Ba9C32E1C56A638D3808926898E651A\Events>
      */
     public function events() : array
     {

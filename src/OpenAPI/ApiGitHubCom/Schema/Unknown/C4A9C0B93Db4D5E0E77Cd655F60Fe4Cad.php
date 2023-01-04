@@ -9,8 +9,8 @@ final class C4A9C0B93Db4D5E0E77Cd655F60Fe4Cad
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The list of environment ids to approve or reject
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C92B2Cb9Ef1Ed73Ad5D2F519Ca3Ba91Ec>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C92B2Cb9Ef1Ed73Ad5D2F519Ca3Ba91Ec::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4A9C0B93Db4D5E0E77Cd655F60Fe4Cad\EnvironmentIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4A9C0B93Db4D5E0E77Cd655F60Fe4Cad\EnvironmentIds::class)
      */
     private array $environment_ids = array();
     /**
@@ -23,7 +23,7 @@ final class C4A9C0B93Db4D5E0E77Cd655F60Fe4Cad
     private string $comment;
     /**
      * The list of environment ids to approve or reject
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C92B2Cb9Ef1Ed73Ad5D2F519Ca3Ba91Ec>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4A9C0B93Db4D5E0E77Cd655F60Fe4Cad\EnvironmentIds>
      */
     public function environment_ids() : array
     {

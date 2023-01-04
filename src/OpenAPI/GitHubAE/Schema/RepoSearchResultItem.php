@@ -12,9 +12,9 @@ final class RepoSearchResultItem
     private string $name;
     private string $full_name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Owner::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $owner;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Owner $owner;
     private bool $private;
     private string $html_url;
     private $description;
@@ -77,8 +77,8 @@ final class RepoSearchResultItem
     private int $open_issues;
     private int $watchers;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Topics>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Topics::class)
      */
     private array $topics = array();
     private $mirror_url;
@@ -98,16 +98,16 @@ final class RepoSearchResultItem
      */
     private ?string $visibility = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\License::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $license;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\License $license;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C205818De09Bc5C97De84B773Be223C26::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Permissions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C205818De09Bc5C97De84B773Be223C26 $permissions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Permissions $permissions = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\TextMatches::class)
      */
     private array $text_matches = array();
     private ?string $temp_clone_token = null;
@@ -135,7 +135,7 @@ final class RepoSearchResultItem
     {
         return $this->full_name;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Owner
     {
         return $this->owner;
     }
@@ -384,7 +384,7 @@ final class RepoSearchResultItem
         return $this->watchers;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Topics>
      */
     public function topics() : array
     {
@@ -436,16 +436,16 @@ final class RepoSearchResultItem
     {
         return $this->visibility;
     }
-    public function license() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function license() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\License
     {
         return $this->license;
     }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C205818De09Bc5C97De84B773Be223C26
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\Permissions
     {
         return $this->permissions;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\RepoSearchResultItem\TextMatches>
      */
     public function text_matches() : array
     {

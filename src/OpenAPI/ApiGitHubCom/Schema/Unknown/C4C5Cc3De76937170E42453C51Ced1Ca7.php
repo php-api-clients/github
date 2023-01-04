@@ -21,14 +21,14 @@ final class C4C5Cc3De76937170E42453C51Ced1Ca7
     private ?int $target_id = null;
     /**
      * The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD3821C5Cb1069D0D7C54Eaa003187006>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD3821C5Cb1069D0D7C54Eaa003187006::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4C5Cc3De76937170E42453C51Ced1Ca7\Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4C5Cc3De76937170E42453C51Ced1Ca7\Repositories::class)
      */
     private array $repositories = array();
     /**
      * The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4C5Cc3De76937170E42453C51Ced1Ca7\RepositoryIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4C5Cc3De76937170E42453C51Ced1Ca7\RepositoryIds::class)
      */
     private array $repository_ids = array();
     /**
@@ -59,7 +59,7 @@ final class C4C5Cc3De76937170E42453C51Ced1Ca7
     }
     /**
      * The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD3821C5Cb1069D0D7C54Eaa003187006>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4C5Cc3De76937170E42453C51Ced1Ca7\Repositories>
      */
     public function repositories() : array
     {
@@ -67,7 +67,7 @@ final class C4C5Cc3De76937170E42453C51Ced1Ca7
     }
     /**
      * The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C4C5Cc3De76937170E42453C51Ced1Ca7\RepositoryIds>
      */
     public function repository_ids() : array
     {

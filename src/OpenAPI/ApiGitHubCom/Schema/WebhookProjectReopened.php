@@ -24,9 +24,9 @@ final class WebhookProjectReopened
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectReopened\Project::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205 $project;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectReopened\Project $project;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -62,7 +62,7 @@ final class WebhookProjectReopened
     {
         return $this->organization;
     }
-    public function project() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205
+    public function project() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectReopened\Project
     {
         return $this->project;
     }

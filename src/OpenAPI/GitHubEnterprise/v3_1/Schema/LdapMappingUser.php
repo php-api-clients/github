@@ -47,9 +47,9 @@ final class LdapMappingUser
     private int $collaborators;
     private bool $two_factor_authentication;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\LdapMappingUser\Plan::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A $plan = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\LdapMappingUser\Plan $plan = null;
     private ?string $suspended_at = null;
     private ?bool $business_plus = null;
     public function ldap_dn() : ?string
@@ -208,7 +208,7 @@ final class LdapMappingUser
     {
         return $this->two_factor_authentication;
     }
-    public function plan() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A
+    public function plan() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\LdapMappingUser\Plan
     {
         return $this->plan;
     }

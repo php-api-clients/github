@@ -75,9 +75,9 @@ final class PullRequestReviewComment
      */
     private string $author_association;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Edbbf627F27Ba1965C72353F2D9C7Ce::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Edbbf627F27Ba1965C72353F2D9C7Ce $_links;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment\Links $_links;
     /**
      * The first line of the range for a multi-line comment.
      */
@@ -228,7 +228,7 @@ final class PullRequestReviewComment
     {
         return $this->author_association;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Edbbf627F27Ba1965C72353F2D9C7Ce
+    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment\Links
     {
         return $this->_links;
     }

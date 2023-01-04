@@ -20,13 +20,13 @@ final class WebhookIssuesUnlabeled
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
      * The [issue](https://docs.github.com/github-ae@latest/rest/reference/issues) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3A79826824122Bdbfbeb0Ae9083F4695::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlabeled\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3A79826824122Bdbfbeb0Ae9083F4695 $issue;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlabeled\Issue $issue;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlabeled\Label::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46 $label = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlabeled\Label $label = null;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
@@ -63,11 +63,11 @@ final class WebhookIssuesUnlabeled
     /**
      * The [issue](https://docs.github.com/github-ae@latest/rest/reference/issues) itself.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3A79826824122Bdbfbeb0Ae9083F4695
+    public function issue() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlabeled\Issue
     {
         return $this->issue;
     }
-    public function label() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46
+    public function label() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookIssuesUnlabeled\Label
     {
         return $this->label;
     }

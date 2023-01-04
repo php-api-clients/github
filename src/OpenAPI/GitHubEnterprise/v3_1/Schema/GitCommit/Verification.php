@@ -1,0 +1,30 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit;
+
+final class Verification
+{
+    public const SCHEMA_JSON = '{"required":["verified","reason","signature","payload"],"type":"object","properties":{"verified":{"type":"boolean"},"reason":{"type":"string"},"signature":{"type":["string","null"]},"payload":{"type":["string","null"]}}}';
+    public const SCHEMA_TITLE = 'GitCommit\\Verification';
+    public const SCHEMA_DESCRIPTION = '';
+    private bool $verified;
+    private string $reason;
+    private $signature;
+    private $payload;
+    public function verified() : bool
+    {
+        return $this->verified;
+    }
+    public function reason() : string
+    {
+        return $this->reason;
+    }
+    public function signature()
+    {
+        return $this->signature;
+    }
+    public function payload()
+    {
+        return $this->payload;
+    }
+}

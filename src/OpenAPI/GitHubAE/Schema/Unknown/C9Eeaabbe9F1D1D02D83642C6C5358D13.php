@@ -24,9 +24,9 @@ final class C9Eeaabbe9F1D1D02D83642C6C5358D13
      */
     private string $build_type;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5F5Bfedf5175A0A84Ff037C1A19E79Af::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C9Eeaabbe9F1D1D02D83642C6C5358D13\Source::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5F5Bfedf5175A0A84Ff037C1A19E79Af $source;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C9Eeaabbe9F1D1D02D83642C6C5358D13\Source $source;
     /**
      * Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/github-ae@latest/articles/using-a-custom-domain-with-github-pages/)."
      */
@@ -55,7 +55,7 @@ final class C9Eeaabbe9F1D1D02D83642C6C5358D13
     {
         return $this->build_type;
     }
-    public function source() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5F5Bfedf5175A0A84Ff037C1A19E79Af
+    public function source() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C9Eeaabbe9F1D1D02D83642C6C5358D13\Source
     {
         return $this->source;
     }

@@ -25,9 +25,9 @@ final class ConvertedNoteToIssueIssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration $performed_via_github_app;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C209D04E127A5F89885Df3848973B280A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ConvertedNoteToIssueIssueEvent\ProjectCard::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C209D04E127A5F89885Df3848973B280A $project_card = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ConvertedNoteToIssueIssueEvent\ProjectCard $project_card = null;
     public function id() : int
     {
         return $this->id;
@@ -70,7 +70,7 @@ final class ConvertedNoteToIssueIssueEvent
     {
         return $this->performed_via_github_app;
     }
-    public function project_card() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C209D04E127A5F89885Df3848973B280A
+    public function project_card() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ConvertedNoteToIssueIssueEvent\ProjectCard
     {
         return $this->project_card;
     }

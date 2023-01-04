@@ -15,9 +15,9 @@ final class WebhookMetaDeleted
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
     /**
      * The modified webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1D39425Ec37A46Df24Cf102696Ebeb02::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Hook::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1D39425Ec37A46Df24Cf102696Ebeb02 $hook;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Hook $hook;
     /**
      * The id of the modified webhook.
      */
@@ -33,9 +33,9 @@ final class WebhookMetaDeleted
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Repository $repository;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -55,7 +55,7 @@ final class WebhookMetaDeleted
     /**
      * The modified webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
      */
-    public function hook() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1D39425Ec37A46Df24Cf102696Ebeb02
+    public function hook() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Hook
     {
         return $this->hook;
     }
@@ -80,7 +80,7 @@ final class WebhookMetaDeleted
     {
         return $this->organization;
     }
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Repository
     {
         return $this->repository;
     }

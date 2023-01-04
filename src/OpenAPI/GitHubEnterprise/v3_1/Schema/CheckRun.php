@@ -28,18 +28,18 @@ final class CheckRun
     private $started_at;
     private $completed_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CDd0031A1A96C40Def9Afdd59Cf0D0Bb6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CheckRun\Output::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CDd0031A1A96C40Def9Afdd59Cf0D0Bb6 $output;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CheckRun\Output $output;
     /**
      * The name of the check.
      */
     private string $name;
     private $check_suite;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CheckRun\App::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CheckRun\App $app;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PullRequestMinimal::class)
@@ -103,7 +103,7 @@ final class CheckRun
     {
         return $this->completed_at;
     }
-    public function output() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CDd0031A1A96C40Def9Afdd59Cf0D0Bb6
+    public function output() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CheckRun\Output
     {
         return $this->output;
     }
@@ -118,7 +118,7 @@ final class CheckRun
     {
         return $this->check_suite;
     }
-    public function app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CheckRun\App
     {
         return $this->app;
     }

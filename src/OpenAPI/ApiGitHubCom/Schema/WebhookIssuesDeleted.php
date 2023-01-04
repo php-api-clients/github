@@ -20,9 +20,9 @@ final class WebhookIssuesDeleted
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C762C2Bc5A97A7E78D5D2B26166084490::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesDeleted\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C762C2Bc5A97A7E78D5D2B26166084490 $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesDeleted\Issue $issue;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -59,7 +59,7 @@ final class WebhookIssuesDeleted
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C762C2Bc5A97A7E78D5D2B26166084490
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesDeleted\Issue
     {
         return $this->issue;
     }

@@ -40,9 +40,9 @@ final class PublicUser
     private string $created_at;
     private string $updated_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A $plan = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan $plan = null;
     private $suspended_at;
     private ?int $private_gists = null;
     private ?int $total_private_repos = null;
@@ -177,7 +177,7 @@ final class PublicUser
     {
         return $this->updated_at;
     }
-    public function plan() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A
+    public function plan() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan
     {
         return $this->plan;
     }

@@ -16,9 +16,9 @@ final class OrganizationSecretScanningAlert
      */
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\UpdatedAt::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $updated_at;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\UpdatedAt $updated_at;
     /**
      * The REST API URL of the alert resource.
      */
@@ -44,9 +44,9 @@ final class OrganizationSecretScanningAlert
      */
     private $resolved_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\ResolvedBy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $resolved_by;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\ResolvedBy $resolved_by;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -70,9 +70,9 @@ final class OrganizationSecretScanningAlert
      */
     private $push_protection_bypassed;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\PushProtectionBypassedBy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $push_protection_bypassed_by;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\PushProtectionBypassedBy $push_protection_bypassed_by;
     /**
      * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -95,7 +95,7 @@ final class OrganizationSecretScanningAlert
     {
         return $this->created_at;
     }
-    public function updated_at() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function updated_at() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\UpdatedAt
     {
         return $this->updated_at;
     }
@@ -141,7 +141,7 @@ final class OrganizationSecretScanningAlert
     {
         return $this->resolved_at;
     }
-    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\ResolvedBy
     {
         return $this->resolved_by;
     }
@@ -181,7 +181,7 @@ final class OrganizationSecretScanningAlert
     {
         return $this->push_protection_bypassed;
     }
-    public function push_protection_bypassed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function push_protection_bypassed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert\PushProtectionBypassedBy
     {
         return $this->push_protection_bypassed_by;
     }

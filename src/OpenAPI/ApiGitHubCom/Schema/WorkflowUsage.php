@@ -8,10 +8,10 @@ final class WorkflowUsage
     public const SCHEMA_TITLE = 'Workflow Usage';
     public const SCHEMA_DESCRIPTION = 'Workflow Usage';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C65640C10C370843Cddf19D045337972A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage\Billable::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C65640C10C370843Cddf19D045337972A $billable;
-    public function billable() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C65640C10C370843Cddf19D045337972A
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage\Billable $billable;
+    public function billable() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage\Billable
     {
         return $this->billable;
     }

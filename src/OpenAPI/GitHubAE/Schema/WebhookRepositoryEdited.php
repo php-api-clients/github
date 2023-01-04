@@ -9,9 +9,9 @@ final class WebhookRepositoryEdited
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0D13854C6E5067C000A1215C4918Bbfd::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookRepositoryEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0D13854C6E5067C000A1215C4918Bbfd $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookRepositoryEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -41,7 +41,7 @@ final class WebhookRepositoryEdited
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0D13854C6E5067C000A1215C4918Bbfd
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookRepositoryEdited\Changes
     {
         return $this->changes;
     }

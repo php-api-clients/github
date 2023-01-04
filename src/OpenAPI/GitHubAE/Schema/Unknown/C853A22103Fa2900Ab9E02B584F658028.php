@@ -21,8 +21,8 @@ final class C853A22103Fa2900Ab9E02B584F658028
     private string $visibility;
     /**
      * An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/github-ae@latest/rest/reference/actions#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/github-ae@latest/rest/reference/actions#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/github-ae@latest/rest/reference/actions#remove-selected-repository-from-an-organization-secret) endpoints.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C853A22103Fa2900Ab9E02B584F658028\SelectedRepositoryIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C853A22103Fa2900Ab9E02B584F658028\SelectedRepositoryIds::class)
      */
     private array $selected_repository_ids = array();
     /**
@@ -48,7 +48,7 @@ final class C853A22103Fa2900Ab9E02B584F658028
     }
     /**
      * An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/github-ae@latest/rest/reference/actions#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/github-ae@latest/rest/reference/actions#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/github-ae@latest/rest/reference/actions#remove-selected-repository-from-an-organization-secret) endpoints.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C853A22103Fa2900Ab9E02B584F658028\SelectedRepositoryIds>
      */
     public function selected_repository_ids() : array
     {

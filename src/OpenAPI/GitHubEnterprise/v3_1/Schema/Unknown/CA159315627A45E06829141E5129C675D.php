@@ -13,14 +13,14 @@ final class CA159315627A45E06829141E5129C675D
     private $scopes;
     /**
      * A list of scopes to add to this authorization.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA159315627A45E06829141E5129C675D\AddScopes>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA159315627A45E06829141E5129C675D\AddScopes::class)
      */
     private array $add_scopes = array();
     /**
      * A list of scopes to remove from this authorization.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA159315627A45E06829141E5129C675D\RemoveScopes>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA159315627A45E06829141E5129C675D\RemoveScopes::class)
      */
     private array $remove_scopes = array();
     /**
@@ -44,7 +44,7 @@ final class CA159315627A45E06829141E5129C675D
     }
     /**
      * A list of scopes to add to this authorization.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA159315627A45E06829141E5129C675D\AddScopes>
      */
     public function add_scopes() : array
     {
@@ -52,7 +52,7 @@ final class CA159315627A45E06829141E5129C675D
     }
     /**
      * A list of scopes to remove from this authorization.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CA159315627A45E06829141E5129C675D\RemoveScopes>
      */
     public function remove_scopes() : array
     {

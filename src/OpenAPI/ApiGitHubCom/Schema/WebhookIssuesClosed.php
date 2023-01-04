@@ -23,9 +23,9 @@ final class WebhookIssuesClosed
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE90F618Bf2B9F6A7A1Cbb06D8E1E3C1E::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesClosed\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE90F618Bf2B9F6A7A1Cbb06D8E1E3C1E $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesClosed\Issue $issue;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -65,7 +65,7 @@ final class WebhookIssuesClosed
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE90F618Bf2B9F6A7A1Cbb06D8E1E3C1E
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesClosed\Issue
     {
         return $this->issue;
     }

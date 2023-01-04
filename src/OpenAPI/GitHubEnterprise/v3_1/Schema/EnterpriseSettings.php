@@ -8,20 +8,20 @@ final class EnterpriseSettings
     public const SCHEMA_TITLE = 'enterprise-settings';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CD59Cbce9D9A10620Eeadbcc7Df43Da03::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\EnterpriseSettings\Enterprise::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CD59Cbce9D9A10620Eeadbcc7Df43Da03 $enterprise;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\EnterpriseSettings\Enterprise $enterprise;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\EnterpriseSettings\RunList>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\EnterpriseSettings\RunList::class)
      */
     private array $run_list = array();
-    public function enterprise() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CD59Cbce9D9A10620Eeadbcc7Df43Da03
+    public function enterprise() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\EnterpriseSettings\Enterprise
     {
         return $this->enterprise;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\EnterpriseSettings\RunList>
      */
     public function run_list() : array
     {

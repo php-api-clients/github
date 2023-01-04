@@ -38,13 +38,13 @@ final class C170Fd9Ba0Aea2906F3D6C7755Da19B95
     private string $completed_at;
     /**
      * Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run. See the [`output` object](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#output-object-1) description.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C45Fb264A60D424821D32C1Be2E115Cb5::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C170Fd9Ba0Aea2906F3D6C7755Da19B95\Output::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C45Fb264A60D424821D32C1Be2E115Cb5 $output;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C170Fd9Ba0Aea2906F3D6C7755Da19B95\Output $output;
     /**
      * Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#check-runs-and-requested-actions)."
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2669D512B3E1915Ca7A5B92E0B91B77E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2669D512B3E1915Ca7A5B92E0B91B77E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C170Fd9Ba0Aea2906F3D6C7755Da19B95\Actions>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C170Fd9Ba0Aea2906F3D6C7755Da19B95\Actions::class)
      */
     private array $actions = array();
     /**
@@ -100,13 +100,13 @@ final class C170Fd9Ba0Aea2906F3D6C7755Da19B95
     /**
      * Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run. See the [`output` object](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#output-object-1) description.
      */
-    public function output() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C45Fb264A60D424821D32C1Be2E115Cb5
+    public function output() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C170Fd9Ba0Aea2906F3D6C7755Da19B95\Output
     {
         return $this->output;
     }
     /**
      * Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#check-runs-and-requested-actions)."
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2669D512B3E1915Ca7A5B92E0B91B77E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C170Fd9Ba0Aea2906F3D6C7755Da19B95\Actions>
      */
     public function actions() : array
     {

@@ -24,9 +24,9 @@ final class WebhookProjectCardCreated
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Fd9288686560C9Ba2735Af6Bd65F6Ae::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardCreated\ProjectCard::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Fd9288686560C9Ba2735Af6Bd65F6Ae $project_card;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardCreated\ProjectCard $project_card;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -62,7 +62,7 @@ final class WebhookProjectCardCreated
     {
         return $this->organization;
     }
-    public function project_card() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3Fd9288686560C9Ba2735Af6Bd65F6Ae
+    public function project_card() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardCreated\ProjectCard
     {
         return $this->project_card;
     }

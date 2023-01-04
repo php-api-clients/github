@@ -12,9 +12,9 @@ final class PreReceiveHook
     private string $enforcement;
     private string $script;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0F3D1Ff2A33Bab803D59466756Cb70Cd::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PreReceiveHook\ScriptRepository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0F3D1Ff2A33Bab803D59466756Cb70Cd $script_repository;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PreReceiveHook\ScriptRepository $script_repository;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PreReceiveEnvironment::class)
      */
@@ -36,7 +36,7 @@ final class PreReceiveHook
     {
         return $this->script;
     }
-    public function script_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0F3D1Ff2A33Bab803D59466756Cb70Cd
+    public function script_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\PreReceiveHook\ScriptRepository
     {
         return $this->script_repository;
     }

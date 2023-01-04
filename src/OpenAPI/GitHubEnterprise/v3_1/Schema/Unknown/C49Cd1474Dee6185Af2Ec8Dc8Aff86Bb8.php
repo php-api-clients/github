@@ -25,14 +25,14 @@ final class C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8
     private ?string $branch = null;
     /**
      * The person that committed the file. Default: the authenticated user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C40217C8C42Aca715366169572Ecee613::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8\Committer::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C40217C8C42Aca715366169572Ecee613 $committer = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8\Committer $committer = null;
     /**
      * The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CC659E06Fc7787C5770A94338E9216970::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8\Author::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CC659E06Fc7787C5770A94338E9216970 $author = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8\Author $author = null;
     /**
      * The commit message.
      */
@@ -64,14 +64,14 @@ final class C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8
     /**
      * The person that committed the file. Default: the authenticated user.
      */
-    public function committer() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C40217C8C42Aca715366169572Ecee613
+    public function committer() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8\Committer
     {
         return $this->committer;
     }
     /**
      * The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
      */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CC659E06Fc7787C5770A94338E9216970
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C49Cd1474Dee6185Af2Ec8Dc8Aff86Bb8\Author
     {
         return $this->author;
     }

@@ -9,17 +9,17 @@ final class WebhookDiscussionCommentEdited
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CDabd25Dbe752Aa69Ddcd662B1C166E58::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CDabd25Dbe752Aa69Ddcd662B1C166E58 $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Changes $changes;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987 $comment;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Comment $comment;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf $discussion;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -49,15 +49,15 @@ final class WebhookDiscussionCommentEdited
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CDabd25Dbe752Aa69Ddcd662B1C166E58
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Changes
     {
         return $this->changes;
     }
-    public function comment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987
+    public function comment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Comment
     {
         return $this->comment;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionCommentEdited\Discussion
     {
         return $this->discussion;
     }

@@ -15,31 +15,31 @@ final class GitCommit
     private string $url;
     /**
      * Identifying information for the git-user
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8125B6C0A3A7C028A198F12278Baff69::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Author::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8125B6C0A3A7C028A198F12278Baff69 $author;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Author $author;
     /**
      * Identifying information for the git-user
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8125B6C0A3A7C028A198F12278Baff69::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Committer::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8125B6C0A3A7C028A198F12278Baff69 $committer;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Committer $committer;
     /**
      * Message describing the purpose of the commit
      */
     private string $message;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CC4E7Fc3911Cb7379F21F84C0104418A5::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Tree::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CC4E7Fc3911Cb7379F21F84C0104418A5 $tree;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Tree $tree;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB84D28B17786E0453136B62E5Df48315>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB84D28B17786E0453136B62E5Df48315::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Parents::class)
      */
     private array $parents = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C015670A01383Ee50883D61E694035Ac2::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Verification::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C015670A01383Ee50883D61E694035Ac2 $verification;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Verification $verification;
     private string $html_url;
     /**
      * SHA for the commit
@@ -59,14 +59,14 @@ final class GitCommit
     /**
      * Identifying information for the git-user
      */
-    public function author() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8125B6C0A3A7C028A198F12278Baff69
+    public function author() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Author
     {
         return $this->author;
     }
     /**
      * Identifying information for the git-user
      */
-    public function committer() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8125B6C0A3A7C028A198F12278Baff69
+    public function committer() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Committer
     {
         return $this->committer;
     }
@@ -77,18 +77,18 @@ final class GitCommit
     {
         return $this->message;
     }
-    public function tree() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CC4E7Fc3911Cb7379F21F84C0104418A5
+    public function tree() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Tree
     {
         return $this->tree;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB84D28B17786E0453136B62E5Df48315>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Parents>
      */
     public function parents() : array
     {
         return $this->parents;
     }
-    public function verification() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C015670A01383Ee50883D61E694035Ac2
+    public function verification() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitCommit\Verification
     {
         return $this->verification;
     }

@@ -21,14 +21,14 @@ final class ExternalGroup
     private ?string $updated_at = null;
     /**
      * An array of teams linked to this group
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CEa0Ac2B71A431158B928B09F2Edd1C36>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CEa0Ac2B71A431158B928B09F2Edd1C36::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ExternalGroup\Teams>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ExternalGroup\Teams::class)
      */
     private array $teams = array();
     /**
      * An array of external members linked to this group
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0B2D1Df77E9Ca174B45112A0521A9Df5>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0B2D1Df77E9Ca174B45112A0521A9Df5::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ExternalGroup\Members>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ExternalGroup\Members::class)
      */
     private array $members = array();
     /**
@@ -54,7 +54,7 @@ final class ExternalGroup
     }
     /**
      * An array of teams linked to this group
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CEa0Ac2B71A431158B928B09F2Edd1C36>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ExternalGroup\Teams>
      */
     public function teams() : array
     {
@@ -62,7 +62,7 @@ final class ExternalGroup
     }
     /**
      * An array of external members linked to this group
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0B2D1Df77E9Ca174B45112A0521A9Df5>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ExternalGroup\Members>
      */
     public function members() : array
     {

@@ -13,9 +13,9 @@ final class C22Cee88Bbae3203Ecd3Ca919892413C3
     private string $build_type;
     /**
      * The source branch and directory used to publish your Pages site.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb630B3Ae9E2E7562Ddd316Be333F74B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C22Cee88Bbae3203Ecd3Ca919892413C3\Source::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb630B3Ae9E2E7562Ddd316Be333F74B $source;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C22Cee88Bbae3203Ecd3Ca919892413C3\Source $source;
     /**
      * The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
      */
@@ -26,7 +26,7 @@ final class C22Cee88Bbae3203Ecd3Ca919892413C3
     /**
      * The source branch and directory used to publish your Pages site.
      */
-    public function source() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb630B3Ae9E2E7562Ddd316Be333F74B
+    public function source() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C22Cee88Bbae3203Ecd3Ca919892413C3\Source
     {
         return $this->source;
     }

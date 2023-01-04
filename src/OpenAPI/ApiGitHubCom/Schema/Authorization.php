@@ -17,22 +17,22 @@ final class Authorization
     private $token_last_eight;
     private $hashed_token;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCf79D07045B13F3369845610A1A801Fb::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\App::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCf79D07045B13F3369845610A1A801Fb $app;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\App $app;
     private $note;
     private $note_url;
     private string $updated_at;
     private string $created_at;
     private $fingerprint;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\User $user;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\Installation::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $installation;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\Installation $installation;
     private $expires_at;
     public function id() : int
     {
@@ -61,7 +61,7 @@ final class Authorization
     {
         return $this->hashed_token;
     }
-    public function app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCf79D07045B13F3369845610A1A801Fb
+    public function app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\App
     {
         return $this->app;
     }
@@ -85,11 +85,11 @@ final class Authorization
     {
         return $this->fingerprint;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\User
     {
         return $this->user;
     }
-    public function installation() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function installation() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\Installation
     {
         return $this->installation;
     }

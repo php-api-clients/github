@@ -13,9 +13,9 @@ final class C7Ccb4653982C0C806242F61E2F6Baf9B
     private string $description;
     /**
      * Names of files to be updated
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAc2Cb485Ca7C1Ca3Cc5Cd54E0Da157D2::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C7Ccb4653982C0C806242F61E2F6Baf9B\Files::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAc2Cb485Ca7C1Ca3Cc5Cd54E0Da157D2 $files;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C7Ccb4653982C0C806242F61E2F6Baf9B\Files $files;
     /**
      * Description of the gist
      */
@@ -26,7 +26,7 @@ final class C7Ccb4653982C0C806242F61E2F6Baf9B
     /**
      * Names of files to be updated
      */
-    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAc2Cb485Ca7C1Ca3Cc5Cd54E0Da157D2
+    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C7Ccb4653982C0C806242F61E2F6Baf9B\Files
     {
         return $this->files;
     }

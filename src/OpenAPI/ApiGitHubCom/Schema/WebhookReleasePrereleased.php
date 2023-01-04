@@ -24,9 +24,9 @@ final class WebhookReleasePrereleased
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdec58Cd2C3Ad441Be5E063Bd28Eeaf6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleasePrereleased\Release::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdec58Cd2C3Ad441Be5E063Bd28Eeaf6 $release;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleasePrereleased\Release $release;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -62,7 +62,7 @@ final class WebhookReleasePrereleased
     {
         return $this->organization;
     }
-    public function release() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdec58Cd2C3Ad441Be5E063Bd28Eeaf6
+    public function release() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleasePrereleased\Release
     {
         return $this->release;
     }

@@ -19,9 +19,9 @@ final class WebhookPullRequestUnlabeled
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestUnlabeled\Label::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46 $label = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestUnlabeled\Label $label = null;
     /**
      * The pull request number.
      */
@@ -32,9 +32,9 @@ final class WebhookPullRequestUnlabeled
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8475B04A38871984968467Bbb2720Ce6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestUnlabeled\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8475B04A38871984968467Bbb2720Ce6 $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestUnlabeled\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -63,7 +63,7 @@ final class WebhookPullRequestUnlabeled
     {
         return $this->installation;
     }
-    public function label() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46
+    public function label() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestUnlabeled\Label
     {
         return $this->label;
     }
@@ -81,7 +81,7 @@ final class WebhookPullRequestUnlabeled
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8475B04A38871984968467Bbb2720Ce6
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestUnlabeled\PullRequest
     {
         return $this->pull_request;
     }

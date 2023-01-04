@@ -72,8 +72,8 @@ final class FullRepository
     private int $open_issues_count;
     private ?bool $is_template = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Topics>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Topics::class)
      */
     private array $topics = array();
     private bool $has_issues;
@@ -94,14 +94,14 @@ final class FullRepository
     private string $created_at;
     private string $updated_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C205818De09Bc5C97De84B773Be223C26::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Permissions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C205818De09Bc5C97De84B773Be223C26 $permissions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Permissions $permissions = null;
     private ?bool $allow_rebase_merge = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\TemplateRepository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $template_repository;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\TemplateRepository $template_repository;
     private $temp_clone_token;
     private ?bool $allow_squash_merge = null;
     private ?bool $delete_branch_on_merge = null;
@@ -111,13 +111,13 @@ final class FullRepository
     private int $subscribers_count;
     private int $network_count;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\License::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $license;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\License $license;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Organization::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $organization;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Organization $organization;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Repository::class)
@@ -385,7 +385,7 @@ final class FullRepository
         return $this->is_template;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Topics>
      */
     public function topics() : array
     {
@@ -441,7 +441,7 @@ final class FullRepository
     {
         return $this->updated_at;
     }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C205818De09Bc5C97De84B773Be223C26
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Permissions
     {
         return $this->permissions;
     }
@@ -449,7 +449,7 @@ final class FullRepository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function template_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\TemplateRepository
     {
         return $this->template_repository;
     }
@@ -485,11 +485,11 @@ final class FullRepository
     {
         return $this->network_count;
     }
-    public function license() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function license() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\License
     {
         return $this->license;
     }
-    public function organization() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function organization() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FullRepository\Organization
     {
         return $this->organization;
     }

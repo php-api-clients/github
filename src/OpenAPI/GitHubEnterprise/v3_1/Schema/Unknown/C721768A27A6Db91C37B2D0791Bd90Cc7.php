@@ -9,19 +9,19 @@ final class C721768A27A6Db91C37B2D0791Bd90Cc7
     public const SCHEMA_DESCRIPTION = '';
     /**
      * An array of user `login`s that will be removed.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C721768A27A6Db91C37B2D0791Bd90Cc7\Reviewers>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C721768A27A6Db91C37B2D0791Bd90Cc7\Reviewers::class)
      */
     private array $reviewers = array();
     /**
      * An array of team `slug`s that will be removed.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C721768A27A6Db91C37B2D0791Bd90Cc7\TeamReviewers>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C721768A27A6Db91C37B2D0791Bd90Cc7\TeamReviewers::class)
      */
     private array $team_reviewers = array();
     /**
      * An array of user `login`s that will be removed.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C721768A27A6Db91C37B2D0791Bd90Cc7\Reviewers>
      */
     public function reviewers() : array
     {
@@ -29,7 +29,7 @@ final class C721768A27A6Db91C37B2D0791Bd90Cc7
     }
     /**
      * An array of team `slug`s that will be removed.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C721768A27A6Db91C37B2D0791Bd90Cc7\TeamReviewers>
      */
     public function team_reviewers() : array
     {

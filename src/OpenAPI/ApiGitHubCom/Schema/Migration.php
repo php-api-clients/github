@@ -9,9 +9,9 @@ final class Migration
     public const SCHEMA_DESCRIPTION = 'A migration.';
     private int $id;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Owner::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $owner;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Owner $owner;
     private string $guid;
     private string $state;
     private bool $lock_repositories;
@@ -32,15 +32,15 @@ final class Migration
     private string $node_id;
     private ?string $archive_url = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Exclude>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Exclude::class)
      */
     private array $exclude = array();
     public function id() : int
     {
         return $this->id;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Owner
     {
         return $this->owner;
     }
@@ -108,7 +108,7 @@ final class Migration
         return $this->archive_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Exclude>
      */
     public function exclude() : array
     {

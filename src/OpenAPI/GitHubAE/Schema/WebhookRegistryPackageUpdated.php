@@ -24,9 +24,9 @@ final class WebhookRegistryPackageUpdated
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD0E91053D13D6A777689E3D95E1066B8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookRegistryPackageUpdated\RegistryPackage::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD0E91053D13D6A777689E3D95E1066B8 $registry_package;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookRegistryPackageUpdated\RegistryPackage $registry_package;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -62,7 +62,7 @@ final class WebhookRegistryPackageUpdated
     {
         return $this->organization;
     }
-    public function registry_package() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD0E91053D13D6A777689E3D95E1066B8
+    public function registry_package() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookRegistryPackageUpdated\RegistryPackage
     {
         return $this->registry_package;
     }

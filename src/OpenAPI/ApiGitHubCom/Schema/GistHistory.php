@@ -8,17 +8,17 @@ final class GistHistory
     public const SCHEMA_TITLE = 'Gist History';
     public const SCHEMA_DESCRIPTION = 'Gist History';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\User $user;
     private string $version;
     private string $committed_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9417525559973F8De4020312C4Bdb422::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\ChangeStatus::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9417525559973F8De4020312C4Bdb422 $change_status;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\ChangeStatus $change_status;
     private string $url;
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\User
     {
         return $this->user;
     }
@@ -30,7 +30,7 @@ final class GistHistory
     {
         return $this->committed_at;
     }
-    public function change_status() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9417525559973F8De4020312C4Bdb422
+    public function change_status() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\ChangeStatus
     {
         return $this->change_status;
     }

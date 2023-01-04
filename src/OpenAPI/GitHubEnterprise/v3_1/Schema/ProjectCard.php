@@ -15,9 +15,9 @@ final class ProjectCard
     private string $node_id;
     private $note;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProjectCard\Creator::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $creator;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProjectCard\Creator $creator;
     private string $created_at;
     private string $updated_at;
     /**
@@ -48,7 +48,7 @@ final class ProjectCard
     {
         return $this->note;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProjectCard\Creator
     {
         return $this->creator;
     }

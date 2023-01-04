@@ -25,9 +25,9 @@ final class CAcc5C4B53878399C87398F2E64543523
     private string $type;
     /**
      * An object with information about the individual creating the tag.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CE09D0B68276E88E96A36D68Cddf04D58::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CAcc5C4B53878399C87398F2E64543523\Tagger::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CE09D0B68276E88E96A36D68Cddf04D58 $tagger = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CAcc5C4B53878399C87398F2E64543523\Tagger $tagger = null;
     /**
      * The tag's name. This is typically a version (e.g., "v0.0.1").
      */
@@ -59,7 +59,7 @@ final class CAcc5C4B53878399C87398F2E64543523
     /**
      * An object with information about the individual creating the tag.
      */
-    public function tagger() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CE09D0B68276E88E96A36D68Cddf04D58
+    public function tagger() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CAcc5C4B53878399C87398F2E64543523\Tagger
     {
         return $this->tagger;
     }

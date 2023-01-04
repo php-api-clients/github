@@ -49,15 +49,15 @@ final class Job
     private string $name;
     /**
      * Steps in this job.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1D83C8699Ba8906Fe0F191591Da08Daa>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1D83C8699Ba8906Fe0F191591Da08Daa::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Job\Steps>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Job\Steps::class)
      */
     private array $steps = array();
     private string $check_run_url;
     /**
      * Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Job\Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Job\Labels::class)
      */
     private array $labels = array();
     /**
@@ -165,7 +165,7 @@ final class Job
     }
     /**
      * Steps in this job.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1D83C8699Ba8906Fe0F191591Da08Daa>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Job\Steps>
      */
     public function steps() : array
     {
@@ -177,7 +177,7 @@ final class Job
     }
     /**
      * Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Job\Labels>
      */
     public function labels() : array
     {

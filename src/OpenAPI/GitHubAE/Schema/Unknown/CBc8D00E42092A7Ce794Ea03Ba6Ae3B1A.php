@@ -9,13 +9,13 @@ final class CBc8D00E42092A7Ce794Ea03Ba6Ae3B1A
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBc8D00E42092A7Ce794Ea03Ba6Ae3B1A\Apps>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBc8D00E42092A7Ce794Ea03Ba6Ae3B1A\Apps::class)
      */
     private array $apps = array();
     /**
      * The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBc8D00E42092A7Ce794Ea03Ba6Ae3B1A\Apps>
      */
     public function apps() : array
     {

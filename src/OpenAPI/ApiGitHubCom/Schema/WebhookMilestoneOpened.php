@@ -20,9 +20,9 @@ final class WebhookMilestoneOpened
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * A collection of related issues and pull requests.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C70A66881324Dd8285Ac65377E88645D2::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneOpened\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C70A66881324Dd8285Ac65377E88645D2 $milestone;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneOpened\Milestone $milestone;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -59,7 +59,7 @@ final class WebhookMilestoneOpened
     /**
      * A collection of related issues and pull requests.
      */
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C70A66881324Dd8285Ac65377E88645D2
+    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMilestoneOpened\Milestone
     {
         return $this->milestone;
     }

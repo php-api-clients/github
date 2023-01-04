@@ -16,9 +16,9 @@ final class TimelineCrossReferencedEvent
     private string $created_at;
     private string $updated_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CEe1Ce634677E4668Db925Ea6D6B566Cc::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TimelineCrossReferencedEvent\Source::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CEe1Ce634677E4668Db925Ea6D6B566Cc $source;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TimelineCrossReferencedEvent\Source $source;
     public function event() : string
     {
         return $this->event;
@@ -38,7 +38,7 @@ final class TimelineCrossReferencedEvent
     {
         return $this->updated_at;
     }
-    public function source() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CEe1Ce634677E4668Db925Ea6D6B566Cc
+    public function source() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TimelineCrossReferencedEvent\Source
     {
         return $this->source;
     }

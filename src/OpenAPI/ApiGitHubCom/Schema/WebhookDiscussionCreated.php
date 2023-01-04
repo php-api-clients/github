@@ -9,9 +9,9 @@ final class WebhookDiscussionCreated
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCreated\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf $discussion;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCreated\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -41,7 +41,7 @@ final class WebhookDiscussionCreated
     {
         return $this->action;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCreated\Discussion
     {
         return $this->discussion;
     }

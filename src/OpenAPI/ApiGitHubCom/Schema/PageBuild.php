@@ -10,13 +10,13 @@ final class PageBuild
     private string $url;
     private string $status;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C64B7D8F9B1B1693D6F7Eb3E92C64727B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Error::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C64B7D8F9B1B1693D6F7Eb3E92C64727B $error;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Error $error;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Pusher::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $pusher;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Pusher $pusher;
     private string $commit;
     private int $duration;
     private string $created_at;
@@ -29,11 +29,11 @@ final class PageBuild
     {
         return $this->status;
     }
-    public function error() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C64B7D8F9B1B1693D6F7Eb3E92C64727B
+    public function error() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Error
     {
         return $this->error;
     }
-    public function pusher() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function pusher() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Pusher
     {
         return $this->pusher;
     }

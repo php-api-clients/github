@@ -9,9 +9,9 @@ final class WebhookProjectColumnEdited
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C82A9A70828E250Ac7Dce3893C3C2E126::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectColumnEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C82A9A70828E250Ac7Dce3893C3C2E126 $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectColumnEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -28,9 +28,9 @@ final class WebhookProjectColumnEdited
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectColumnEdited\ProjectColumn::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285 $project_column;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectColumnEdited\ProjectColumn $project_column;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -45,7 +45,7 @@ final class WebhookProjectColumnEdited
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C82A9A70828E250Ac7Dce3893C3C2E126
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectColumnEdited\Changes
     {
         return $this->changes;
     }
@@ -70,7 +70,7 @@ final class WebhookProjectColumnEdited
     {
         return $this->organization;
     }
-    public function project_column() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285
+    public function project_column() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectColumnEdited\ProjectColumn
     {
         return $this->project_column;
     }

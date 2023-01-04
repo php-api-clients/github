@@ -18,9 +18,9 @@ final class Status
     private string $created_at;
     private string $updated_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status\Creator::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $creator;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status\Creator $creator;
     public function url() : string
     {
         return $this->url;
@@ -61,7 +61,7 @@ final class Status
     {
         return $this->updated_at;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function creator() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status\Creator
     {
         return $this->creator;
     }

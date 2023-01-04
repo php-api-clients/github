@@ -28,9 +28,9 @@ final class Collaborator
     private string $type;
     private bool $site_admin;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CAae3689E528E07547B10Ebfece50De20::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Collaborator\Permissions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CAae3689E528E07547B10Ebfece50De20 $permissions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Collaborator\Permissions $permissions = null;
     private ?string $role_name = null;
     public function login() : string
     {
@@ -112,7 +112,7 @@ final class Collaborator
     {
         return $this->site_admin;
     }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CAae3689E528E07547B10Ebfece50De20
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Collaborator\Permissions
     {
         return $this->permissions;
     }

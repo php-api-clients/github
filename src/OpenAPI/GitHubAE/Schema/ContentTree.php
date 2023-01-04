@@ -17,14 +17,14 @@ final class ContentTree
     private $html_url;
     private $download_url;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C60960B4Edf03118Ce1512B4Cec63F6C4>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C60960B4Edf03118Ce1512B4Cec63F6C4::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentTree\Entries>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentTree\Entries::class)
      */
     private array $entries = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentTree\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af $_links;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentTree\Links $_links;
     public function type() : string
     {
         return $this->type;
@@ -62,13 +62,13 @@ final class ContentTree
         return $this->download_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C60960B4Edf03118Ce1512B4Cec63F6C4>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentTree\Entries>
      */
     public function entries() : array
     {
         return $this->entries;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentTree\Links
     {
         return $this->_links;
     }

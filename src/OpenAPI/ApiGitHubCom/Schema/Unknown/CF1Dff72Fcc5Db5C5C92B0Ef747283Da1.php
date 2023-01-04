@@ -28,9 +28,9 @@ final class CF1Dff72Fcc5Db5C5C92B0Ef747283Da1
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFab93Ddb67Aa9F6Cf5102De4C5Dd049F::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CF1Dff72Fcc5Db5C5C92B0Ef747283Da1\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFab93Ddb67Aa9F6Cf5102De4C5Dd049F $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CF1Dff72Fcc5Db5C5C92B0Ef747283Da1\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -38,9 +38,9 @@ final class CF1Dff72Fcc5Db5C5C92B0Ef747283Da1
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CF1Dff72Fcc5Db5C5C92B0Ef747283Da1\RequestedTeam::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A $requested_team;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CF1Dff72Fcc5Db5C5C92B0Ef747283Da1\RequestedTeam $requested_team;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -78,7 +78,7 @@ final class CF1Dff72Fcc5Db5C5C92B0Ef747283Da1
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFab93Ddb67Aa9F6Cf5102De4C5Dd049F
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CF1Dff72Fcc5Db5C5C92B0Ef747283Da1\PullRequest
     {
         return $this->pull_request;
     }
@@ -92,7 +92,7 @@ final class CF1Dff72Fcc5Db5C5C92B0Ef747283Da1
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function requested_team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A
+    public function requested_team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CF1Dff72Fcc5Db5C5C92B0Ef747283Da1\RequestedTeam
     {
         return $this->requested_team;
     }

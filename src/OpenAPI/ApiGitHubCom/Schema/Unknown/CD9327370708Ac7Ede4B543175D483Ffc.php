@@ -38,13 +38,13 @@ final class CD9327370708Ac7Ede4B543175D483Ffc
     private string $completed_at;
     /**
      * Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Fd9Bc2Fb6Df4904A8039Fe175154Cf0::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CD9327370708Ac7Ede4B543175D483Ffc\Output::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Fd9Bc2Fb6Df4904A8039Fe175154Cf0 $output;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CD9327370708Ac7Ede4B543175D483Ffc\Output $output;
     /**
      * Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://docs.github.com/rest/reference/checks#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/reference/checks#check-runs-and-requested-actions)."
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2669D512B3E1915Ca7A5B92E0B91B77E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2669D512B3E1915Ca7A5B92E0B91B77E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CD9327370708Ac7Ede4B543175D483Ffc\Actions>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CD9327370708Ac7Ede4B543175D483Ffc\Actions::class)
      */
     private array $actions = array();
     /**
@@ -100,13 +100,13 @@ final class CD9327370708Ac7Ede4B543175D483Ffc
     /**
      * Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
      */
-    public function output() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Fd9Bc2Fb6Df4904A8039Fe175154Cf0
+    public function output() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CD9327370708Ac7Ede4B543175D483Ffc\Output
     {
         return $this->output;
     }
     /**
      * Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://docs.github.com/rest/reference/checks#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/reference/checks#check-runs-and-requested-actions)."
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2669D512B3E1915Ca7A5B92E0B91B77E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CD9327370708Ac7Ede4B543175D483Ffc\Actions>
      */
     public function actions() : array
     {

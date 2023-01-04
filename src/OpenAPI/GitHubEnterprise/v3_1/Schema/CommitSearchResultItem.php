@@ -12,20 +12,20 @@ final class CommitSearchResultItem
     private string $html_url;
     private string $comments_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C529A69Ca6042Fcce4Fdefba945Ea5042::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Commit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C529A69Ca6042Fcce4Fdefba945Ea5042 $commit;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Commit $commit;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Author::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $author;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Author $author;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Committer::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $committer;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Committer $committer;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8249B116F3B5B0976B3D07C41D00D525>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8249B116F3B5B0976B3D07C41D00D525::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Parents::class)
      */
     private array $parents = array();
     /**
@@ -36,8 +36,8 @@ final class CommitSearchResultItem
     private int $score;
     private string $node_id;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\TextMatches::class)
      */
     private array $text_matches = array();
     public function url() : string
@@ -56,20 +56,20 @@ final class CommitSearchResultItem
     {
         return $this->comments_url;
     }
-    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C529A69Ca6042Fcce4Fdefba945Ea5042
+    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Commit
     {
         return $this->commit;
     }
-    public function author() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function author() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Author
     {
         return $this->author;
     }
-    public function committer() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function committer() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Committer
     {
         return $this->committer;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C8249B116F3B5B0976B3D07C41D00D525>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\Parents>
      */
     public function parents() : array
     {
@@ -91,7 +91,7 @@ final class CommitSearchResultItem
         return $this->node_id;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CommitSearchResultItem\TextMatches>
      */
     public function text_matches() : array
     {

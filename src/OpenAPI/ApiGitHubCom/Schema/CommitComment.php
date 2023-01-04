@@ -17,9 +17,9 @@ final class CommitComment
     private $line;
     private string $commit_id;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment\User $user;
     private string $created_at;
     private string $updated_at;
     /**
@@ -66,7 +66,7 @@ final class CommitComment
     {
         return $this->commit_id;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment\User
     {
         return $this->user;
     }

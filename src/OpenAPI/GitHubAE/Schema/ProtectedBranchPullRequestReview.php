@@ -9,14 +9,14 @@ final class ProtectedBranchPullRequestReview
     public const SCHEMA_DESCRIPTION = 'Protected Branch Pull Request Review';
     private ?string $url = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8Eb5Ae8F89Fb9A924Ff65Be03692Dffb::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8Eb5Ae8F89Fb9A924Ff65Be03692Dffb $dismissal_restrictions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions $dismissal_restrictions = null;
     /**
      * Allow specific users, teams, or apps to bypass pull request requirements.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8F79C8246369B776Bea1B0Bb9F7E8A36::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8F79C8246369B776Bea1B0Bb9F7E8A36 $bypass_pull_request_allowances = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances $bypass_pull_request_allowances = null;
     private bool $dismiss_stale_reviews;
     private bool $require_code_owner_reviews;
     private ?int $required_approving_review_count = null;
@@ -24,14 +24,14 @@ final class ProtectedBranchPullRequestReview
     {
         return $this->url;
     }
-    public function dismissal_restrictions() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8Eb5Ae8F89Fb9A924Ff65Be03692Dffb
+    public function dismissal_restrictions() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions
     {
         return $this->dismissal_restrictions;
     }
     /**
      * Allow specific users, teams, or apps to bypass pull request requirements.
      */
-    public function bypass_pull_request_allowances() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8F79C8246369B776Bea1B0Bb9F7E8A36
+    public function bypass_pull_request_allowances() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances
     {
         return $this->bypass_pull_request_allowances;
     }

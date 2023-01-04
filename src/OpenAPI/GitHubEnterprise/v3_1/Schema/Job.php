@@ -45,8 +45,8 @@ final class Job
     private string $name;
     /**
      * Steps in this job.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C1D83C8699Ba8906Fe0F191591Da08Daa>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C1D83C8699Ba8906Fe0F191591Da08Daa::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Job\Steps>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Job\Steps::class)
      */
     private array $steps = array();
     private string $check_run_url;
@@ -124,7 +124,7 @@ final class Job
     }
     /**
      * Steps in this job.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C1D83C8699Ba8906Fe0F191591Da08Daa>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Job\Steps>
      */
     public function steps() : array
     {

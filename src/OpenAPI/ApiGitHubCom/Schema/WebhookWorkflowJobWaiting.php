@@ -34,9 +34,9 @@ final class WebhookWorkflowJobWaiting
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C407B8Ddcdeb138554D50B02F41E44Ed4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowJobWaiting\WorkflowJob::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C407B8Ddcdeb138554D50B02F41E44Ed4 $workflow_job;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowJobWaiting\WorkflowJob $workflow_job;
     /**
      * A request for a specific ref(branch,sha,tag) to be deployed
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment::class)
@@ -81,7 +81,7 @@ final class WebhookWorkflowJobWaiting
     {
         return $this->sender;
     }
-    public function workflow_job() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C407B8Ddcdeb138554D50B02F41E44Ed4
+    public function workflow_job() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowJobWaiting\WorkflowJob
     {
         return $this->workflow_job;
     }

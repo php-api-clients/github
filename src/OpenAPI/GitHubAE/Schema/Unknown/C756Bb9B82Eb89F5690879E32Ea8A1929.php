@@ -22,14 +22,14 @@ final class C756Bb9B82Eb89F5690879E32Ea8A1929
     private $milestone;
     /**
      * Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB7B30056611D2Cd25Cd2642Fd50D8151>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB7B30056611D2Cd25Cd2642Fd50D8151::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C756Bb9B82Eb89F5690879E32Ea8A1929\Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C756Bb9B82Eb89F5690879E32Ea8A1929\Labels::class)
      */
     private array $labels = array();
     /**
      * Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C756Bb9B82Eb89F5690879E32Ea8A1929\Assignees>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C756Bb9B82Eb89F5690879E32Ea8A1929\Assignees::class)
      */
     private array $assignees = array();
     /**
@@ -59,7 +59,7 @@ final class C756Bb9B82Eb89F5690879E32Ea8A1929
     }
     /**
      * Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB7B30056611D2Cd25Cd2642Fd50D8151>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C756Bb9B82Eb89F5690879E32Ea8A1929\Labels>
      */
     public function labels() : array
     {
@@ -67,7 +67,7 @@ final class C756Bb9B82Eb89F5690879E32Ea8A1929
     }
     /**
      * Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C756Bb9B82Eb89F5690879E32Ea8A1929\Assignees>
      */
     public function assignees() : array
     {

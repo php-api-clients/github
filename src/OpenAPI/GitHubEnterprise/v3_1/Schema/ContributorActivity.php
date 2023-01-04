@@ -8,16 +8,16 @@ final class ContributorActivity
     public const SCHEMA_TITLE = 'Contributor Activity';
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Author::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $author;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Author $author;
     private int $total;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CD34D75E52Cbb02Ac0Db24547A2Ecf64D>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CD34D75E52Cbb02Ac0Db24547A2Ecf64D::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Weeks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Weeks::class)
      */
     private array $weeks = array();
-    public function author() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function author() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Author
     {
         return $this->author;
     }
@@ -26,7 +26,7 @@ final class ContributorActivity
         return $this->total;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CD34D75E52Cbb02Ac0Db24547A2Ecf64D>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContributorActivity\Weeks>
      */
     public function weeks() : array
     {

@@ -13,9 +13,9 @@ final class WebhookCommitCommentCreated
     private string $action;
     /**
      * The [commit comment](https://docs.github.com/rest/reference/repos#get-a-commit-comment) resource.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA7Cff4789431755078A7205C18Ce38C8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCommitCommentCreated\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA7Cff4789431755078A7205C18Ce38C8 $comment;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCommitCommentCreated\Comment $comment;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -51,7 +51,7 @@ final class WebhookCommitCommentCreated
     /**
      * The [commit comment](https://docs.github.com/rest/reference/repos#get-a-commit-comment) resource.
      */
-    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA7Cff4789431755078A7205C18Ce38C8
+    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCommitCommentCreated\Comment
     {
         return $this->comment;
     }

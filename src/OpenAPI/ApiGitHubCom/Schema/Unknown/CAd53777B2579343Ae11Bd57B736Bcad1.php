@@ -9,13 +9,13 @@ final class CAd53777B2579343Ae11Bd57B736Bcad1
     public const SCHEMA_DESCRIPTION = '';
     /**
      * List of repository IDs to enable for GitHub Actions.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CAd53777B2579343Ae11Bd57B736Bcad1\SelectedRepositoryIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CAd53777B2579343Ae11Bd57B736Bcad1\SelectedRepositoryIds::class)
      */
     private array $selected_repository_ids = array();
     /**
      * List of repository IDs to enable for GitHub Actions.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CAd53777B2579343Ae11Bd57B736Bcad1\SelectedRepositoryIds>
      */
     public function selected_repository_ids() : array
     {

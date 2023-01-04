@@ -26,9 +26,9 @@ final class TimelineReviewedEvent
     private string $html_url;
     private string $pull_request_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C07Dcb36B91F472Daa9474Ac97F1Ce862::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineReviewedEvent\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C07Dcb36B91F472Daa9474Ac97F1Ce862 $_links;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineReviewedEvent\Links $_links;
     private ?string $submitted_at = null;
     /**
      * A commit SHA for the review.
@@ -81,7 +81,7 @@ final class TimelineReviewedEvent
     {
         return $this->pull_request_url;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C07Dcb36B91F472Daa9474Ac97F1Ce862
+    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineReviewedEvent\Links
     {
         return $this->_links;
     }

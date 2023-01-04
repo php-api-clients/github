@@ -10,9 +10,9 @@ final class WebhookIssueCommentDeleted
     private string $action;
     /**
      * The [comment](https://docs.github.com/rest/reference/issues#comments) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9772114Ec397Dd2E1A42F37F99Abeb1::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9772114Ec397Dd2E1A42F37F99Abeb1 $comment;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Comment $comment;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -25,9 +25,9 @@ final class WebhookIssueCommentDeleted
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) the comment belongs to.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA8A87834B68B36E941Ace4F0Cd3C85E0::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA8A87834B68B36E941Ace4F0Cd3C85E0 $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Issue $issue;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -50,7 +50,7 @@ final class WebhookIssueCommentDeleted
     /**
      * The [comment](https://docs.github.com/rest/reference/issues#comments) itself.
      */
-    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9772114Ec397Dd2E1A42F37F99Abeb1
+    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Comment
     {
         return $this->comment;
     }
@@ -71,7 +71,7 @@ final class WebhookIssueCommentDeleted
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) the comment belongs to.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA8A87834B68B36E941Ace4F0Cd3C85E0
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Issue
     {
         return $this->issue;
     }

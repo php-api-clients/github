@@ -9,9 +9,9 @@ final class Tag
     public const SCHEMA_DESCRIPTION = 'Tag';
     private string $name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Tag\Commit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506 $commit;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Tag\Commit $commit;
     private string $zipball_url;
     private string $tarball_url;
     private string $node_id;
@@ -19,7 +19,7 @@ final class Tag
     {
         return $this->name;
     }
-    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506
+    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Tag\Commit
     {
         return $this->commit;
     }

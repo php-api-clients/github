@@ -9,9 +9,9 @@ final class WebhookReleaseEdited
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1D49D3Ed1Ab4276Cb584Df5Ce55A241A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleaseEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1D49D3Ed1Ab4276Cb584Df5Ce55A241A $changes;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleaseEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -29,9 +29,9 @@ final class WebhookReleaseEdited
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
      * The [release](https://docs.github.com/rest/reference/repos/#get-a-release) object.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdec58Cd2C3Ad441Be5E063Bd28Eeaf6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleaseEdited\Release::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdec58Cd2C3Ad441Be5E063Bd28Eeaf6 $release;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleaseEdited\Release $release;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -46,7 +46,7 @@ final class WebhookReleaseEdited
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1D49D3Ed1Ab4276Cb584Df5Ce55A241A
+    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleaseEdited\Changes
     {
         return $this->changes;
     }
@@ -74,7 +74,7 @@ final class WebhookReleaseEdited
     /**
      * The [release](https://docs.github.com/rest/reference/repos/#get-a-release) object.
      */
-    public function release() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdec58Cd2C3Ad441Be5E063Bd28Eeaf6
+    public function release() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookReleaseEdited\Release
     {
         return $this->release;
     }

@@ -11,13 +11,13 @@ final class PullRequestMinimal
     private int $number;
     private string $url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C650E46F6982C8A8A4228F05E17A996F3::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal\Head::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C650E46F6982C8A8A4228F05E17A996F3 $head;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal\Head $head;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C650E46F6982C8A8A4228F05E17A996F3::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal\Base::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C650E46F6982C8A8A4228F05E17A996F3 $base;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal\Base $base;
     public function id() : int
     {
         return $this->id;
@@ -30,11 +30,11 @@ final class PullRequestMinimal
     {
         return $this->url;
     }
-    public function head() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C650E46F6982C8A8A4228F05E17A996F3
+    public function head() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal\Head
     {
         return $this->head;
     }
-    public function base() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C650E46F6982C8A8A4228F05E17A996F3
+    public function base() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal\Base
     {
         return $this->base;
     }

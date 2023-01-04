@@ -10,14 +10,14 @@ final class WebhookIssueCommentEdited
     private string $action;
     /**
      * The changes to the comment.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD40F0Da1F52E16339644A5F8E59F6Ea8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD40F0Da1F52E16339644A5F8E59F6Ea8 $changes;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Changes $changes;
     /**
      * The [comment](https://docs.github.com/rest/reference/issues#comments) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9772114Ec397Dd2E1A42F37F99Abeb1::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9772114Ec397Dd2E1A42F37F99Abeb1 $comment;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Comment $comment;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -30,9 +30,9 @@ final class WebhookIssueCommentEdited
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) the comment belongs to.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAd19Ac80D0035C49Ebdf66D2A515E3D7::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAd19Ac80D0035C49Ebdf66D2A515E3D7 $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Issue $issue;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -55,14 +55,14 @@ final class WebhookIssueCommentEdited
     /**
      * The changes to the comment.
      */
-    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD40F0Da1F52E16339644A5F8E59F6Ea8
+    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Changes
     {
         return $this->changes;
     }
     /**
      * The [comment](https://docs.github.com/rest/reference/issues#comments) itself.
      */
-    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9772114Ec397Dd2E1A42F37F99Abeb1
+    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Comment
     {
         return $this->comment;
     }
@@ -83,7 +83,7 @@ final class WebhookIssueCommentEdited
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) the comment belongs to.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAd19Ac80D0035C49Ebdf66D2A515E3D7
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentEdited\Issue
     {
         return $this->issue;
     }

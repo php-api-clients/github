@@ -42,9 +42,9 @@ final class TimelineCommentEvent
      */
     private string $author_association;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TimelineCommentEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TimelineCommentEvent\PerformedViaGithubApp $performed_via_github_app;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReactionRollup::class)
      */
@@ -123,7 +123,7 @@ final class TimelineCommentEvent
     {
         return $this->author_association;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TimelineCommentEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

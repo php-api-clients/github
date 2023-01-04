@@ -13,9 +13,9 @@ final class CE0664706E299A3B44709A7547A65156A
     private string $event_type;
     /**
      * JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C134027149885Ad744D113B7E29Efdbc5::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CE0664706E299A3B44709A7547A65156A\ClientPayload::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C134027149885Ad744D113B7E29Efdbc5 $client_payload = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CE0664706E299A3B44709A7547A65156A\ClientPayload $client_payload = null;
     /**
      * A custom webhook event name. Must be 100 characters or fewer.
      */
@@ -26,7 +26,7 @@ final class CE0664706E299A3B44709A7547A65156A
     /**
      * JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
      */
-    public function client_payload() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C134027149885Ad744D113B7E29Efdbc5
+    public function client_payload() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CE0664706E299A3B44709A7547A65156A\ClientPayload
     {
         return $this->client_payload;
     }

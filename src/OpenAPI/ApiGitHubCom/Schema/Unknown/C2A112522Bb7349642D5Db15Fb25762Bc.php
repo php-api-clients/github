@@ -21,8 +21,8 @@ final class C2A112522Bb7349642D5Db15Fb25762Bc
     private string $base_role;
     /**
      * A list of additional permissions included in this role.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C2A112522Bb7349642D5Db15Fb25762Bc\Permissions>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C2A112522Bb7349642D5Db15Fb25762Bc\Permissions::class)
      */
     private array $permissions = array();
     /**
@@ -48,7 +48,7 @@ final class C2A112522Bb7349642D5Db15Fb25762Bc
     }
     /**
      * A list of additional permissions included in this role.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C2A112522Bb7349642D5Db15Fb25762Bc\Permissions>
      */
     public function permissions() : array
     {

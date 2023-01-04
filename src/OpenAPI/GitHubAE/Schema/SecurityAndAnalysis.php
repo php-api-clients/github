@@ -8,26 +8,26 @@ final class SecurityAndAnalysis
     public const SCHEMA_TITLE = 'security-and-analysis';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\AdvancedSecurity::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B $advanced_security;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\AdvancedSecurity $advanced_security;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\SecretScanning::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B $secret_scanning;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\SecretScanning $secret_scanning;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\SecretScanningPushProtection::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B $secret_scanning_push_protection;
-    public function advanced_security() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\SecretScanningPushProtection $secret_scanning_push_protection;
+    public function advanced_security() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\AdvancedSecurity
     {
         return $this->advanced_security;
     }
-    public function secret_scanning() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B
+    public function secret_scanning() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\SecretScanning
     {
         return $this->secret_scanning;
     }
-    public function secret_scanning_push_protection() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBb00E1D05E9A25B294F90620Ec1A306B
+    public function secret_scanning_push_protection() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecurityAndAnalysis\SecretScanningPushProtection
     {
         return $this->secret_scanning_push_protection;
     }

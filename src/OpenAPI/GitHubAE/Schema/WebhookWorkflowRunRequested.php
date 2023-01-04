@@ -35,9 +35,9 @@ final class WebhookWorkflowRunRequested
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender;
     private $workflow;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CE9F034Aa927C7Bcd8473419Aa4Dc8Afd::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookWorkflowRunRequested\WorkflowRun::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CE9F034Aa927C7Bcd8473419Aa4Dc8Afd $workflow_run;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookWorkflowRunRequested\WorkflowRun $workflow_run;
     public function action() : string
     {
         return $this->action;
@@ -81,7 +81,7 @@ final class WebhookWorkflowRunRequested
     {
         return $this->workflow;
     }
-    public function workflow_run() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CE9F034Aa927C7Bcd8473419Aa4Dc8Afd
+    public function workflow_run() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookWorkflowRunRequested\WorkflowRun
     {
         return $this->workflow_run;
     }

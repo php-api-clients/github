@@ -24,8 +24,8 @@ final class WebhookGollum
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
      * The pages that were updated.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C9817A33D50Ec770449929D244Bd03138>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C9817A33D50Ec770449929D244Bd03138::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookGollum\Pages>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookGollum\Pages::class)
      */
     private array $pages = array();
     /**
@@ -61,7 +61,7 @@ final class WebhookGollum
     }
     /**
      * The pages that were updated.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C9817A33D50Ec770449929D244Bd03138>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookGollum\Pages>
      */
     public function pages() : array
     {

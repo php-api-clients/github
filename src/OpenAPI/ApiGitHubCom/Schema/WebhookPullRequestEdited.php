@@ -10,9 +10,9 @@ final class WebhookPullRequestEdited
     private string $action;
     /**
      * The changes to the comment if the action was `edited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C155D8Bb7383Ea99Fc8F6Bd65B489A85B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C155D8Bb7383Ea99Fc8F6Bd65B489A85B $changes;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -33,9 +33,9 @@ final class WebhookPullRequestEdited
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEd31042Eff96F740C22085F05B7951Ca::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestEdited\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEd31042Eff96F740C22085F05B7951Ca $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestEdited\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -53,7 +53,7 @@ final class WebhookPullRequestEdited
     /**
      * The changes to the comment if the action was `edited`.
      */
-    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C155D8Bb7383Ea99Fc8F6Bd65B489A85B
+    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestEdited\Changes
     {
         return $this->changes;
     }
@@ -85,7 +85,7 @@ final class WebhookPullRequestEdited
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEd31042Eff96F740C22085F05B7951Ca
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestEdited\PullRequest
     {
         return $this->pull_request;
     }

@@ -14,52 +14,52 @@ final class ProtectedBranch
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy $required_status_checks = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1077C4B1C4Ecf845D0F733C9Cd2Eea4A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredPullRequestReviews::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1077C4B1C4Ecf845D0F733C9Cd2Eea4A $required_pull_request_reviews = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredPullRequestReviews $required_pull_request_reviews = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredSignatures::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942 $required_signatures = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredSignatures $required_signatures = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEf81F9A4Ec6Cfcf741B136Fc3E42042B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\EnforceAdmins::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEf81F9A4Ec6Cfcf741B136Fc3E42042B $enforce_admins = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\EnforceAdmins $enforce_admins = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredLinearHistory::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $required_linear_history = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredLinearHistory $required_linear_history = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForcePushes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $allow_force_pushes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForcePushes $allow_force_pushes = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowDeletions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $allow_deletions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowDeletions $allow_deletions = null;
     /**
      * Branch Restriction Policy
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy $restrictions = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA014Af90C211D3Ab896Edc5Ed1Bcea6D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredConversationResolution::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA014Af90C211D3Ab896Edc5Ed1Bcea6D $required_conversation_resolution = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredConversationResolution $required_conversation_resolution = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\BlockCreations::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $block_creations = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\BlockCreations $block_creations = null;
     /**
      * Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD3916143648Eab814F66Cfeae70B31D6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\LockBranch::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD3916143648Eab814F66Cfeae70B31D6 $lock_branch = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\LockBranch $lock_branch = null;
     /**
      * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc79Fee822E0Ce26F47Ff9311Bb5A564::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForkSyncing::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc79Fee822E0Ce26F47Ff9311Bb5A564 $allow_fork_syncing = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForkSyncing $allow_fork_syncing = null;
     public function url() : string
     {
         return $this->url;
@@ -71,27 +71,27 @@ final class ProtectedBranch
     {
         return $this->required_status_checks;
     }
-    public function required_pull_request_reviews() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1077C4B1C4Ecf845D0F733C9Cd2Eea4A
+    public function required_pull_request_reviews() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredPullRequestReviews
     {
         return $this->required_pull_request_reviews;
     }
-    public function required_signatures() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942
+    public function required_signatures() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredSignatures
     {
         return $this->required_signatures;
     }
-    public function enforce_admins() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEf81F9A4Ec6Cfcf741B136Fc3E42042B
+    public function enforce_admins() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\EnforceAdmins
     {
         return $this->enforce_admins;
     }
-    public function required_linear_history() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function required_linear_history() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredLinearHistory
     {
         return $this->required_linear_history;
     }
-    public function allow_force_pushes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function allow_force_pushes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForcePushes
     {
         return $this->allow_force_pushes;
     }
-    public function allow_deletions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function allow_deletions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowDeletions
     {
         return $this->allow_deletions;
     }
@@ -102,25 +102,25 @@ final class ProtectedBranch
     {
         return $this->restrictions;
     }
-    public function required_conversation_resolution() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA014Af90C211D3Ab896Edc5Ed1Bcea6D
+    public function required_conversation_resolution() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredConversationResolution
     {
         return $this->required_conversation_resolution;
     }
-    public function block_creations() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function block_creations() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\BlockCreations
     {
         return $this->block_creations;
     }
     /**
      * Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
      */
-    public function lock_branch() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD3916143648Eab814F66Cfeae70B31D6
+    public function lock_branch() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\LockBranch
     {
         return $this->lock_branch;
     }
     /**
      * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
      */
-    public function allow_fork_syncing() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc79Fee822E0Ce26F47Ff9311Bb5A564
+    public function allow_fork_syncing() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForkSyncing
     {
         return $this->allow_fork_syncing;
     }

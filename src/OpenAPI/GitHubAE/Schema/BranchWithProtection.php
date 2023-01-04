@@ -14,9 +14,9 @@ final class BranchWithProtection
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Commit $commit;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6E155A196821C939Ff0387A8086B0F68::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BranchWithProtection\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6E155A196821C939Ff0387A8086B0F68 $_links;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BranchWithProtection\Links $_links;
     private bool $protected;
     /**
      * Branch Protection
@@ -37,7 +37,7 @@ final class BranchWithProtection
     {
         return $this->commit;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6E155A196821C939Ff0387A8086B0F68
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BranchWithProtection\Links
     {
         return $this->_links;
     }

@@ -26,8 +26,8 @@ final class Import
     private ?int $large_files_size = null;
     private ?int $large_files_count = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEab5Cf1A67957Daaeca2Dda9F630Cb15>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEab5Cf1A67957Daaeca2Dda9F630Cb15::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices::class)
      */
     private array $project_choices = array();
     private ?string $message = null;
@@ -101,7 +101,7 @@ final class Import
         return $this->large_files_count;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEab5Cf1A67957Daaeca2Dda9F630Cb15>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import\ProjectChoices>
      */
     public function project_choices() : array
     {

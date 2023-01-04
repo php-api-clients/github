@@ -28,9 +28,9 @@ final class WebhookPullRequestReviewRequestRemoved
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5319B5Ccbd6B921Bdb4D860C220D4457::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewRequestRemoved\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5319B5Ccbd6B921Bdb4D860C220D4457 $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewRequestRemoved\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -74,7 +74,7 @@ final class WebhookPullRequestReviewRequestRemoved
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5319B5Ccbd6B921Bdb4D860C220D4457
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewRequestRemoved\PullRequest
     {
         return $this->pull_request;
     }

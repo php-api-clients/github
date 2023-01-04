@@ -13,15 +13,15 @@ final class OrgHook
     private ?string $deliveries_url = null;
     private string $name;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Events::class)
      */
     private array $events = array();
     private bool $active;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C80F502D54326362C80D40A924Faa3365::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C80F502D54326362C80D40A924Faa3365 $config;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Config $config;
     private string $updated_at;
     private string $created_at;
     private string $type;
@@ -46,7 +46,7 @@ final class OrgHook
         return $this->name;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Events>
      */
     public function events() : array
     {
@@ -56,7 +56,7 @@ final class OrgHook
     {
         return $this->active;
     }
-    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C80F502D54326362C80D40A924Faa3365
+    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Config
     {
         return $this->config;
     }

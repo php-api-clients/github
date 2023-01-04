@@ -8,11 +8,11 @@ final class WorkflowRunUsage
     public const SCHEMA_TITLE = 'Workflow Run Usage';
     public const SCHEMA_DESCRIPTION = 'Workflow Run Usage';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC68B02D19E1Bab00Da18F8A820Ab9F9D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WorkflowRunUsage\Billable::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC68B02D19E1Bab00Da18F8A820Ab9F9D $billable;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WorkflowRunUsage\Billable $billable;
     private ?int $run_duration_ms = null;
-    public function billable() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC68B02D19E1Bab00Da18F8A820Ab9F9D
+    public function billable() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WorkflowRunUsage\Billable
     {
         return $this->billable;
     }

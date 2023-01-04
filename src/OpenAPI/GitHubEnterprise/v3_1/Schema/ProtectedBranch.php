@@ -14,42 +14,42 @@ final class ProtectedBranch
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\StatusCheckPolicy $required_status_checks = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF073Ffc99Cad2427Ce00D8Aa08Fb72Df::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredPullRequestReviews::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF073Ffc99Cad2427Ce00D8Aa08Fb72Df $required_pull_request_reviews = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredPullRequestReviews $required_pull_request_reviews = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredSignatures::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942 $required_signatures = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredSignatures $required_signatures = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CEf81F9A4Ec6Cfcf741B136Fc3E42042B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\EnforceAdmins::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CEf81F9A4Ec6Cfcf741B136Fc3E42042B $enforce_admins = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\EnforceAdmins $enforce_admins = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredLinearHistory::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $required_linear_history = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredLinearHistory $required_linear_history = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\AllowForcePushes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $allow_force_pushes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\AllowForcePushes $allow_force_pushes = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\AllowDeletions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $allow_deletions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\AllowDeletions $allow_deletions = null;
     /**
      * Branch Restriction Policy
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy $restrictions = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA014Af90C211D3Ab896Edc5Ed1Bcea6D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredConversationResolution::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA014Af90C211D3Ab896Edc5Ed1Bcea6D $required_conversation_resolution = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredConversationResolution $required_conversation_resolution = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\BlockCreations::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4 $block_creations = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\BlockCreations $block_creations = null;
     public function url() : string
     {
         return $this->url;
@@ -61,27 +61,27 @@ final class ProtectedBranch
     {
         return $this->required_status_checks;
     }
-    public function required_pull_request_reviews() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF073Ffc99Cad2427Ce00D8Aa08Fb72Df
+    public function required_pull_request_reviews() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredPullRequestReviews
     {
         return $this->required_pull_request_reviews;
     }
-    public function required_signatures() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942
+    public function required_signatures() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredSignatures
     {
         return $this->required_signatures;
     }
-    public function enforce_admins() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CEf81F9A4Ec6Cfcf741B136Fc3E42042B
+    public function enforce_admins() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\EnforceAdmins
     {
         return $this->enforce_admins;
     }
-    public function required_linear_history() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function required_linear_history() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredLinearHistory
     {
         return $this->required_linear_history;
     }
-    public function allow_force_pushes() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function allow_force_pushes() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\AllowForcePushes
     {
         return $this->allow_force_pushes;
     }
-    public function allow_deletions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function allow_deletions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\AllowDeletions
     {
         return $this->allow_deletions;
     }
@@ -92,11 +92,11 @@ final class ProtectedBranch
     {
         return $this->restrictions;
     }
-    public function required_conversation_resolution() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA014Af90C211D3Ab896Edc5Ed1Bcea6D
+    public function required_conversation_resolution() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\RequiredConversationResolution
     {
         return $this->required_conversation_resolution;
     }
-    public function block_creations() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAea81627D9F257C8586483E5737De0E4
+    public function block_creations() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranch\BlockCreations
     {
         return $this->block_creations;
     }

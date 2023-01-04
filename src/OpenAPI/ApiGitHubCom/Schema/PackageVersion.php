@@ -24,9 +24,9 @@ final class PackageVersion
     private string $updated_at;
     private ?string $deleted_at = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F0E57890D8735D644Ecc5997705B22A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Metadata::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F0E57890D8735D644Ecc5997705B22A $metadata = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Metadata $metadata = null;
     /**
      * Unique identifier of the package version.
      */
@@ -73,7 +73,7 @@ final class PackageVersion
     {
         return $this->deleted_at;
     }
-    public function metadata() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F0E57890D8735D644Ecc5997705B22A
+    public function metadata() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Metadata
     {
         return $this->metadata;
     }

@@ -9,9 +9,9 @@ final class WebhookSecretScanningAlertResolved
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C545B8Dd2D91403F787Ab21A254A80C8F::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecretScanningAlertResolved\Alert::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C545B8Dd2D91403F787Ab21A254A80C8F $alert;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecretScanningAlertResolved\Alert $alert;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -41,7 +41,7 @@ final class WebhookSecretScanningAlertResolved
     {
         return $this->action;
     }
-    public function alert() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C545B8Dd2D91403F787Ab21A254A80C8F
+    public function alert() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecretScanningAlertResolved\Alert
     {
         return $this->alert;
     }

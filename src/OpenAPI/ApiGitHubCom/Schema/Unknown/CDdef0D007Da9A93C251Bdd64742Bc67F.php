@@ -9,13 +9,13 @@ final class CDdef0D007Da9A93C251Bdd64742Bc67F
     public const SCHEMA_DESCRIPTION = '';
     /**
      * List of organization IDs that can access the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CDdef0D007Da9A93C251Bdd64742Bc67F\SelectedOrganizationIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CDdef0D007Da9A93C251Bdd64742Bc67F\SelectedOrganizationIds::class)
      */
     private array $selected_organization_ids = array();
     /**
      * List of organization IDs that can access the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CDdef0D007Da9A93C251Bdd64742Bc67F\SelectedOrganizationIds>
      */
     public function selected_organization_ids() : array
     {

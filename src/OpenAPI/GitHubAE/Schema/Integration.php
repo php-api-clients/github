@@ -17,9 +17,9 @@ final class Integration
     private ?string $slug = null;
     private string $node_id;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Owner::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $owner;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Owner $owner;
     /**
      * The name of the GitHub app
      */
@@ -31,13 +31,13 @@ final class Integration
     private string $updated_at;
     /**
      * The set of permissions for the GitHub app
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8733E483F8F0565888D07C5E61D7100F::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Permissions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8733E483F8F0565888D07C5E61D7100F $permissions;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Permissions $permissions;
     /**
      * The list of events for the GitHub app
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Events::class)
      */
     private array $events = array();
     /**
@@ -66,7 +66,7 @@ final class Integration
     {
         return $this->node_id;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function owner() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Owner
     {
         return $this->owner;
     }
@@ -100,13 +100,13 @@ final class Integration
     /**
      * The set of permissions for the GitHub app
      */
-    public function permissions() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8733E483F8F0565888D07C5E61D7100F
+    public function permissions() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Permissions
     {
         return $this->permissions;
     }
     /**
      * The list of events for the GitHub app
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Integration\Events>
      */
     public function events() : array
     {

@@ -9,9 +9,9 @@ final class WebhookSponsorshipPendingTierChange
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1E2225325480B0238780De84D352E3Ca::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipPendingTierChange\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1E2225325480B0238780De84D352E3Ca $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipPendingTierChange\Changes $changes;
     /**
      * The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
      */
@@ -42,14 +42,14 @@ final class WebhookSponsorshipPendingTierChange
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipPendingTierChange\Sponsorship::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4 $sponsorship;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipPendingTierChange\Sponsorship $sponsorship;
     public function action() : string
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1E2225325480B0238780De84D352E3Ca
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipPendingTierChange\Changes
     {
         return $this->changes;
     }
@@ -95,7 +95,7 @@ final class WebhookSponsorshipPendingTierChange
     {
         return $this->sender;
     }
-    public function sponsorship() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4
+    public function sponsorship() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipPendingTierChange\Sponsorship
     {
         return $this->sponsorship;
     }

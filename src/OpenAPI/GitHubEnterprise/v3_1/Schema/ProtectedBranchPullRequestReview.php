@@ -9,9 +9,9 @@ final class ProtectedBranchPullRequestReview
     public const SCHEMA_DESCRIPTION = 'Protected Branch Pull Request Review';
     private ?string $url = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CFeaf1C0E3D36763Ae3Dd7A98Ac542056::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CFeaf1C0E3D36763Ae3Dd7A98Ac542056 $dismissal_restrictions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions $dismissal_restrictions = null;
     private bool $dismiss_stale_reviews;
     private bool $require_code_owner_reviews;
     private ?int $required_approving_review_count = null;
@@ -19,7 +19,7 @@ final class ProtectedBranchPullRequestReview
     {
         return $this->url;
     }
-    public function dismissal_restrictions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CFeaf1C0E3D36763Ae3Dd7A98Ac542056
+    public function dismissal_restrictions() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions
     {
         return $this->dismissal_restrictions;
     }

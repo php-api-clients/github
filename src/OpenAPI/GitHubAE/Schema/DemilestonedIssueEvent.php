@@ -20,13 +20,13 @@ final class DemilestonedIssueEvent
     private $commit_url;
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DemilestonedIssueEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DemilestonedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C359Aa3A38E01C5Fafdca314F344F71Dc::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DemilestonedIssueEvent\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C359Aa3A38E01C5Fafdca314F344F71Dc $milestone;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DemilestonedIssueEvent\Milestone $milestone;
     public function id() : int
     {
         return $this->id;
@@ -62,11 +62,11 @@ final class DemilestonedIssueEvent
     {
         return $this->created_at;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DemilestonedIssueEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C359Aa3A38E01C5Fafdca314F344F71Dc
+    public function milestone() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DemilestonedIssueEvent\Milestone
     {
         return $this->milestone;
     }

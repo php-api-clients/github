@@ -33,9 +33,9 @@ final class TeamProject
      */
     private ?bool $private = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB8B0062275Ac8Fcd83D38889Dda5Afce::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamProject\Permissions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB8B0062275Ac8Fcd83D38889Dda5Afce $permissions;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamProject\Permissions $permissions;
     public function owner_url() : string
     {
         return $this->owner_url;
@@ -105,7 +105,7 @@ final class TeamProject
     {
         return $this->private;
     }
-    public function permissions() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB8B0062275Ac8Fcd83D38889Dda5Afce
+    public function permissions() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\TeamProject\Permissions
     {
         return $this->permissions;
     }

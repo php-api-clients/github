@@ -37,13 +37,13 @@ final class C05C9447987Ae914466A385Adc87F4067
     private ?bool $org_metadata_only = null;
     /**
      * Exclude attributes from the API response to improve performance
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C259209F4A4A76Fdb66057Bc645D8A08D>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C259209F4A4A76Fdb66057Bc645D8A08D::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C05C9447987Ae914466A385Adc87F4067\Exclude>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C05C9447987Ae914466A385Adc87F4067\Exclude::class)
      */
     private array $exclude = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C167C51647D2Ff4Aa36Df0718650E8362>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C167C51647D2Ff4Aa36Df0718650E8362::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C05C9447987Ae914466A385Adc87F4067\Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C05C9447987Ae914466A385Adc87F4067\Repositories::class)
      */
     private array $repositories = array();
     /**
@@ -97,14 +97,14 @@ final class C05C9447987Ae914466A385Adc87F4067
     }
     /**
      * Exclude attributes from the API response to improve performance
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C259209F4A4A76Fdb66057Bc645D8A08D>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C05C9447987Ae914466A385Adc87F4067\Exclude>
      */
     public function exclude() : array
     {
         return $this->exclude;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C167C51647D2Ff4Aa36Df0718650E8362>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C05C9447987Ae914466A385Adc87F4067\Repositories>
      */
     public function repositories() : array
     {

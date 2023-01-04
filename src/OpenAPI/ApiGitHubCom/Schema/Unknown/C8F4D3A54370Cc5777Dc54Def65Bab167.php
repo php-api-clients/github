@@ -9,13 +9,13 @@ final class C8F4D3A54370Cc5777Dc54Def65Bab167
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The name of the status checks
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8F4D3A54370Cc5777Dc54Def65Bab167\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8F4D3A54370Cc5777Dc54Def65Bab167\Contexts::class)
      */
     private array $contexts = array();
     /**
      * The name of the status checks
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8F4D3A54370Cc5777Dc54Def65Bab167\Contexts>
      */
     public function contexts() : array
     {

@@ -20,13 +20,13 @@ final class ReviewDismissedIssueEvent
     private $commit_url;
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewDismissedIssueEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewDismissedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf7De048Dfcc5C32741A2870D3E90Cb0::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewDismissedIssueEvent\DismissedReview::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf7De048Dfcc5C32741A2870D3E90Cb0 $dismissed_review;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewDismissedIssueEvent\DismissedReview $dismissed_review;
     public function id() : int
     {
         return $this->id;
@@ -62,11 +62,11 @@ final class ReviewDismissedIssueEvent
     {
         return $this->created_at;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewDismissedIssueEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }
-    public function dismissed_review() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf7De048Dfcc5C32741A2870D3E90Cb0
+    public function dismissed_review() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewDismissedIssueEvent\DismissedReview
     {
         return $this->dismissed_review;
     }

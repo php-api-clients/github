@@ -19,14 +19,14 @@ final class WebhookIssuesMilestoned
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb472Bd0B41Cf3C5Ba689Cded8C1Aa0E::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesMilestoned\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb472Bd0B41Cf3C5Ba689Cded8C1Aa0E $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesMilestoned\Issue $issue;
     /**
      * A collection of related issues and pull requests.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4Fbf546A72C5Bbb5Df19093225B04Bee::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesMilestoned\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4Fbf546A72C5Bbb5Df19093225B04Bee $milestone;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesMilestoned\Milestone $milestone;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -60,14 +60,14 @@ final class WebhookIssuesMilestoned
     {
         return $this->installation;
     }
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb472Bd0B41Cf3C5Ba689Cded8C1Aa0E
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesMilestoned\Issue
     {
         return $this->issue;
     }
     /**
      * A collection of related issues and pull requests.
      */
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4Fbf546A72C5Bbb5Df19093225B04Bee
+    public function milestone() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesMilestoned\Milestone
     {
         return $this->milestone;
     }

@@ -9,13 +9,13 @@ final class CAa4771Fb44D1A2Da15E712Ae4F7D95F9
     public const SCHEMA_DESCRIPTION = '';
     /**
      * List of repository IDs that can access the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CAa4771Fb44D1A2Da15E712Ae4F7D95F9\SelectedRepositoryIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CAa4771Fb44D1A2Da15E712Ae4F7D95F9\SelectedRepositoryIds::class)
      */
     private array $selected_repository_ids = array();
     /**
      * List of repository IDs that can access the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CAa4771Fb44D1A2Da15E712Ae4F7D95F9\SelectedRepositoryIds>
      */
     public function selected_repository_ids() : array
     {

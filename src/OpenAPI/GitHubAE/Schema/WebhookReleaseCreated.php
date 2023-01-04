@@ -25,9 +25,9 @@ final class WebhookReleaseCreated
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
      * The [release](https://docs.github.com/github-ae@latest/rest/reference/repos/#get-a-release) object.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C59Ec692B5Db71635C3Bb306C092A7502::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookReleaseCreated\Release::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C59Ec692B5Db71635C3Bb306C092A7502 $release;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookReleaseCreated\Release $release;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -66,7 +66,7 @@ final class WebhookReleaseCreated
     /**
      * The [release](https://docs.github.com/github-ae@latest/rest/reference/repos/#get-a-release) object.
      */
-    public function release() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C59Ec692B5Db71635C3Bb306C092A7502
+    public function release() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookReleaseCreated\Release
     {
         return $this->release;
     }

@@ -10,9 +10,9 @@ final class WebhookLabelEdited
     private string $action;
     /**
      * The changes to the label if the action was `edited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CE24Fca991Cd6C2Ca1F491Ec54Ff067D3::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookLabelEdited\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CE24Fca991Cd6C2Ca1F491Ec54Ff067D3 $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookLabelEdited\Changes $changes = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -24,9 +24,9 @@ final class WebhookLabelEdited
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookLabelEdited\Label::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46 $label;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookLabelEdited\Label $label;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
@@ -49,7 +49,7 @@ final class WebhookLabelEdited
     /**
      * The changes to the label if the action was `edited`.
      */
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CE24Fca991Cd6C2Ca1F491Ec54Ff067D3
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookLabelEdited\Changes
     {
         return $this->changes;
     }
@@ -67,7 +67,7 @@ final class WebhookLabelEdited
     {
         return $this->installation;
     }
-    public function label() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46
+    public function label() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookLabelEdited\Label
     {
         return $this->label;
     }

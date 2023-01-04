@@ -9,9 +9,9 @@ final class C964146D447D86D674Fcf720C678889D7
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C7D758Bfeebb2998255D896Ddb656904B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C964146D447D86D674Fcf720C678889D7\DismissalRestrictions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C7D758Bfeebb2998255D896Ddb656904B $dismissal_restrictions;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C964146D447D86D674Fcf720C678889D7\DismissalRestrictions $dismissal_restrictions;
     /**
      * Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
      */
@@ -27,7 +27,7 @@ final class C964146D447D86D674Fcf720C678889D7
     /**
      * Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
      */
-    public function dismissal_restrictions() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C7D758Bfeebb2998255D896Ddb656904B
+    public function dismissal_restrictions() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C964146D447D86D674Fcf720C678889D7\DismissalRestrictions
     {
         return $this->dismissal_restrictions;
     }

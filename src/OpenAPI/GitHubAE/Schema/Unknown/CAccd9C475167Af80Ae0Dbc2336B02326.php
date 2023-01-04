@@ -9,13 +9,13 @@ final class CAccd9C475167Af80Ae0Dbc2336B02326
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C19Fc24E6Bd06706De12De44E72Db0Ce4>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C19Fc24E6Bd06706De12De44E72Db0Ce4::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CAccd9C475167Af80Ae0Dbc2336B02326\AutoTriggerChecks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CAccd9C475167Af80Ae0Dbc2336B02326\AutoTriggerChecks::class)
      */
     private array $auto_trigger_checks = array();
     /**
      * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C19Fc24E6Bd06706De12De44E72Db0Ce4>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CAccd9C475167Af80Ae0Dbc2336B02326\AutoTriggerChecks>
      */
     public function auto_trigger_checks() : array
     {

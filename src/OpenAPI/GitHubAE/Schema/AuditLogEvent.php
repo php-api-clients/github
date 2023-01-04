@@ -26,13 +26,13 @@ final class AuditLogEvent
      */
     private int $actor_id;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C47Dddb1F2Febc3Aaa7B811Efb70B408F::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ActorLocation::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C47Dddb1F2Febc3Aaa7B811Efb70B408F $actor_location;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ActorLocation $actor_location;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Data::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634 $data;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Data $data;
     private int $org_id;
     private int $user_id;
     private int $business_id;
@@ -42,13 +42,13 @@ final class AuditLogEvent
     private string $blocked_user;
     private string $business;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Config>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Config::class)
      */
     private array $config = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ConfigWas>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ConfigWas::class)
      */
     private array $config_was = array();
     private string $content_type;
@@ -64,13 +64,13 @@ final class AuditLogEvent
     private string $_document_id;
     private string $emoji;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Events::class)
      */
     private array $events = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\EventsWere>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\EventsWere::class)
      */
     private array $events_were = array();
     private string $explanation;
@@ -147,11 +147,11 @@ final class AuditLogEvent
     {
         return $this->actor_id;
     }
-    public function actor_location() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C47Dddb1F2Febc3Aaa7B811Efb70B408F
+    public function actor_location() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ActorLocation
     {
         return $this->actor_location;
     }
-    public function data() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634
+    public function data() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Data
     {
         return $this->data;
     }
@@ -179,14 +179,14 @@ final class AuditLogEvent
         return $this->business;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Config>
      */
     public function config() : array
     {
         return $this->config;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\ConfigWas>
      */
     public function config_was() : array
     {
@@ -223,14 +223,14 @@ final class AuditLogEvent
         return $this->emoji;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\Events>
      */
     public function events() : array
     {
         return $this->events;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AuditLogEvent\EventsWere>
      */
     public function events_were() : array
     {

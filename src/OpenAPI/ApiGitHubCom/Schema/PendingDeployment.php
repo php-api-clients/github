@@ -8,9 +8,9 @@ final class PendingDeployment
     public const SCHEMA_TITLE = 'Pending Deployment';
     public const SCHEMA_DESCRIPTION = 'Details of a deployment that is waiting for protection rules to pass';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4F8C2E7C4C026105A7E1E0049836B0B8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Environment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4F8C2E7C4C026105A7E1E0049836B0B8 $environment;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Environment $environment;
     /**
      * The set duration of the wait timer
      */
@@ -25,11 +25,11 @@ final class PendingDeployment
     private bool $current_user_can_approve;
     /**
      * The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA53A32F6E5318Ba4Dc1D35C40Ad014Aa>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA53A32F6E5318Ba4Dc1D35C40Ad014Aa::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Reviewers>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Reviewers::class)
      */
     private array $reviewers = array();
-    public function environment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4F8C2E7C4C026105A7E1E0049836B0B8
+    public function environment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Environment
     {
         return $this->environment;
     }
@@ -56,7 +56,7 @@ final class PendingDeployment
     }
     /**
      * The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA53A32F6E5318Ba4Dc1D35C40Ad014Aa>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Reviewers>
      */
     public function reviewers() : array
     {

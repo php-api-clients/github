@@ -20,18 +20,18 @@ final class WebhookMarketplacePurchaseChanged
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB8723F665958F165Ebb4D40Cffd41F70::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseChanged\MarketplacePurchase::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB8723F665958F165Ebb4D40Cffd41F70 $marketplace_purchase;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseChanged\MarketplacePurchase $marketplace_purchase;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB60318590D212Fc6C23B99F96042B2C6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB60318590D212Fc6C23B99F96042B2C6 $previous_marketplace_purchase = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase $previous_marketplace_purchase = null;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -64,7 +64,7 @@ final class WebhookMarketplacePurchaseChanged
     {
         return $this->installation;
     }
-    public function marketplace_purchase() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB8723F665958F165Ebb4D40Cffd41F70
+    public function marketplace_purchase() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseChanged\MarketplacePurchase
     {
         return $this->marketplace_purchase;
     }
@@ -75,7 +75,7 @@ final class WebhookMarketplacePurchaseChanged
     {
         return $this->organization;
     }
-    public function previous_marketplace_purchase() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB60318590D212Fc6C23B99F96042B2C6
+    public function previous_marketplace_purchase() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase
     {
         return $this->previous_marketplace_purchase;
     }

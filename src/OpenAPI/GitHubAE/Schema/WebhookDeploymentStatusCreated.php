@@ -11,14 +11,14 @@ final class WebhookDeploymentStatusCreated
     private $check_run;
     /**
      * The [deployment](https://docs.github.com/github-ae@latest/rest/reference/deployments#list-deployments).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC3Ab07F5300Aa3E092C573B1C97C8A8D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentStatusCreated\Deployment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC3Ab07F5300Aa3E092C573B1C97C8A8D $deployment;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentStatusCreated\Deployment $deployment;
     /**
      * The [deployment status](https://docs.github.com/github-ae@latest/rest/reference/deployments#list-deployment-statuses).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3201B35E0B86D0B87470D509Beca078C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentStatusCreated\DeploymentStatus::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3201B35E0B86D0B87470D509Beca078C $deployment_status;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deployment_status;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -57,14 +57,14 @@ final class WebhookDeploymentStatusCreated
     /**
      * The [deployment](https://docs.github.com/github-ae@latest/rest/reference/deployments#list-deployments).
      */
-    public function deployment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC3Ab07F5300Aa3E092C573B1C97C8A8D
+    public function deployment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentStatusCreated\Deployment
     {
         return $this->deployment;
     }
     /**
      * The [deployment status](https://docs.github.com/github-ae@latest/rest/reference/deployments#list-deployment-statuses).
      */
-    public function deployment_status() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3201B35E0B86D0B87470D509Beca078C
+    public function deployment_status() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentStatusCreated\DeploymentStatus
     {
         return $this->deployment_status;
     }

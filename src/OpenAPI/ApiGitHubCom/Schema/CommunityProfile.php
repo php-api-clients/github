@@ -11,9 +11,9 @@ final class CommunityProfile
     private $description;
     private $documentation;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C607A4661F332E24Bd65554162290877C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile\Files::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C607A4661F332E24Bd65554162290877C $files;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile\Files $files;
     private $updated_at;
     private ?bool $content_reports_enabled = null;
     public function health_percentage() : int
@@ -28,7 +28,7 @@ final class CommunityProfile
     {
         return $this->documentation;
     }
-    public function files() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C607A4661F332E24Bd65554162290877C
+    public function files() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile\Files
     {
         return $this->files;
     }

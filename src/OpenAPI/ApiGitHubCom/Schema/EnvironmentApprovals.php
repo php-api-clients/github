@@ -9,8 +9,8 @@ final class EnvironmentApprovals
     public const SCHEMA_DESCRIPTION = 'An entry in the reviews log for environment deployments';
     /**
      * The list of environments that were approved or rejected
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C71139748Dc8B1B2D9506Ba9129664165>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C71139748Dc8B1B2D9506Ba9129664165::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments::class)
      */
     private array $environments = array();
     /**
@@ -28,7 +28,7 @@ final class EnvironmentApprovals
     private string $comment;
     /**
      * The list of environments that were approved or rejected
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C71139748Dc8B1B2D9506Ba9129664165>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments>
      */
     public function environments() : array
     {

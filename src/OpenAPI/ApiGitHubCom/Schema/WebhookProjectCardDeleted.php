@@ -24,13 +24,13 @@ final class WebhookProjectCardDeleted
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC456A5627F485761B4E43519445Db940::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\ProjectCard::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC456A5627F485761B4E43519445Db940 $project_card;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\ProjectCard $project_card;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\Repository $repository;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -61,11 +61,11 @@ final class WebhookProjectCardDeleted
     {
         return $this->organization;
     }
-    public function project_card() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC456A5627F485761B4E43519445Db940
+    public function project_card() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\ProjectCard
     {
         return $this->project_card;
     }
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\Repository
     {
         return $this->repository;
     }

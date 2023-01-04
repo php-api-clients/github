@@ -20,9 +20,9 @@ final class WebhookDeployKeyCreated
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
      * The [`deploy key`](https://docs.github.com/github-ae@latest/rest/reference/deployments#get-a-deploy-key) resource.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD3470C77F10F907C22620E8B8Eb96E8E::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeployKeyCreated\Key::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD3470C77F10F907C22620E8B8Eb96E8E $key;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeployKeyCreated\Key $key;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
@@ -59,7 +59,7 @@ final class WebhookDeployKeyCreated
     /**
      * The [`deploy key`](https://docs.github.com/github-ae@latest/rest/reference/deployments#get-a-deploy-key) resource.
      */
-    public function key() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD3470C77F10F907C22620E8B8Eb96E8E
+    public function key() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeployKeyCreated\Key
     {
         return $this->key;
     }

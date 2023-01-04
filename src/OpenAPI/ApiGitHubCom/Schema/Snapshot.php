@@ -12,9 +12,9 @@ final class Snapshot
      */
     private int $version;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf389B1F81457D55Df907F4B3Ff8Fa85::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf389B1F81457D55Df907F4B3Ff8Fa85 $job;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job $job;
     /**
      * The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
      */
@@ -25,9 +25,9 @@ final class Snapshot
     private string $ref;
     /**
      * A description of the detector used.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA5Bac1A5B045E8D67B8F63B5E59477A2::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA5Bac1A5B045E8D67B8F63B5E59477A2 $detector;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector $detector;
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata::class)
@@ -35,9 +35,9 @@ final class Snapshot
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata = null;
     /**
      * A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA46C2Ae3A00Ed50C10D0B24542E8Ce59::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA46C2Ae3A00Ed50C10D0B24542E8Ce59 $manifests = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests $manifests = null;
     /**
      * The time at which the snapshot was scanned.
      */
@@ -49,7 +49,7 @@ final class Snapshot
     {
         return $this->version;
     }
-    public function job() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf389B1F81457D55Df907F4B3Ff8Fa85
+    public function job() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job
     {
         return $this->job;
     }
@@ -70,7 +70,7 @@ final class Snapshot
     /**
      * A description of the detector used.
      */
-    public function detector() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA5Bac1A5B045E8D67B8F63B5E59477A2
+    public function detector() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector
     {
         return $this->detector;
     }
@@ -84,7 +84,7 @@ final class Snapshot
     /**
      * A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
      */
-    public function manifests() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA46C2Ae3A00Ed50C10D0B24542E8Ce59
+    public function manifests() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests
     {
         return $this->manifests;
     }

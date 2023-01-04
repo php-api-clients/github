@@ -9,13 +9,13 @@ final class WebhookDiscussionCommentDeleted
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentDeleted\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987 $comment;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentDeleted\Comment $comment;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentDeleted\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388 $discussion;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentDeleted\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -45,11 +45,11 @@ final class WebhookDiscussionCommentDeleted
     {
         return $this->action;
     }
-    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C785599E10A126896Aa4A35890Ec30987
+    public function comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentDeleted\Comment
     {
         return $this->comment;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionCommentDeleted\Discussion
     {
         return $this->discussion;
     }

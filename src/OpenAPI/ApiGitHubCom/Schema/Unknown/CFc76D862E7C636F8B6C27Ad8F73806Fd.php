@@ -9,8 +9,8 @@ final class CFc76D862E7C636F8B6C27Ad8F73806Fd
     public const SCHEMA_DESCRIPTION = '';
     /**
      * A list of arrays indicating which repositories should be migrated.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc76D862E7C636F8B6C27Ad8F73806Fd\Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc76D862E7C636F8B6C27Ad8F73806Fd\Repositories::class)
      */
     private array $repositories = array();
     /**
@@ -43,13 +43,13 @@ final class CFc76D862E7C636F8B6C27Ad8F73806Fd
     private ?bool $org_metadata_only = null;
     /**
      * Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C49D9Ebfd04F3918C3Fca7F6Dcfa7A409>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C49D9Ebfd04F3918C3Fca7F6Dcfa7A409::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc76D862E7C636F8B6C27Ad8F73806Fd\Exclude>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc76D862E7C636F8B6C27Ad8F73806Fd\Exclude::class)
      */
     private array $exclude = array();
     /**
      * A list of arrays indicating which repositories should be migrated.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc76D862E7C636F8B6C27Ad8F73806Fd\Repositories>
      */
     public function repositories() : array
     {
@@ -106,7 +106,7 @@ final class CFc76D862E7C636F8B6C27Ad8F73806Fd
     }
     /**
      * Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C49D9Ebfd04F3918C3Fca7F6Dcfa7A409>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc76D862E7C636F8B6C27Ad8F73806Fd\Exclude>
      */
     public function exclude() : array
     {

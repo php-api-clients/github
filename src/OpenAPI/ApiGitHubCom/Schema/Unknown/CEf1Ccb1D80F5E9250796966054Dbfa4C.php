@@ -9,9 +9,9 @@ final class CEf1Ccb1D80F5E9250796966054Dbfa4C
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7D758Bfeebb2998255D896Ddb656904B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CEf1Ccb1D80F5E9250796966054Dbfa4C\DismissalRestrictions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7D758Bfeebb2998255D896Ddb656904B $dismissal_restrictions;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CEf1Ccb1D80F5E9250796966054Dbfa4C\DismissalRestrictions $dismissal_restrictions;
     /**
      * Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
      */
@@ -30,13 +30,13 @@ final class CEf1Ccb1D80F5E9250796966054Dbfa4C
     private bool $require_last_push_approval;
     /**
      * Allow specific users, teams, or apps to bypass pull request requirements.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB77Ec278E010F5A97Dca924923Fe6Cb4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CEf1Ccb1D80F5E9250796966054Dbfa4C\BypassPullRequestAllowances::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB77Ec278E010F5A97Dca924923Fe6Cb4 $bypass_pull_request_allowances;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CEf1Ccb1D80F5E9250796966054Dbfa4C\BypassPullRequestAllowances $bypass_pull_request_allowances;
     /**
      * Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
      */
-    public function dismissal_restrictions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7D758Bfeebb2998255D896Ddb656904B
+    public function dismissal_restrictions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CEf1Ccb1D80F5E9250796966054Dbfa4C\DismissalRestrictions
     {
         return $this->dismissal_restrictions;
     }
@@ -71,7 +71,7 @@ final class CEf1Ccb1D80F5E9250796966054Dbfa4C
     /**
      * Allow specific users, teams, or apps to bypass pull request requirements.
      */
-    public function bypass_pull_request_allowances() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB77Ec278E010F5A97Dca924923Fe6Cb4
+    public function bypass_pull_request_allowances() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CEf1Ccb1D80F5E9250796966054Dbfa4C\BypassPullRequestAllowances
     {
         return $this->bypass_pull_request_allowances;
     }

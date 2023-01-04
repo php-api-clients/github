@@ -20,18 +20,18 @@ final class WebhookMarketplacePurchasePendingChangeCancelled
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0609077747F05B8025F0545B779F0B4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0609077747F05B8025F0545B779F0B4 $marketplace_purchase;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase $marketplace_purchase;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0609077747F05B8025F0545B779F0B4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePendingChangeCancelled\PreviousMarketplacePurchase::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0609077747F05B8025F0545B779F0B4 $previous_marketplace_purchase = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePendingChangeCancelled\PreviousMarketplacePurchase $previous_marketplace_purchase = null;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -64,7 +64,7 @@ final class WebhookMarketplacePurchasePendingChangeCancelled
     {
         return $this->installation;
     }
-    public function marketplace_purchase() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0609077747F05B8025F0545B779F0B4
+    public function marketplace_purchase() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase
     {
         return $this->marketplace_purchase;
     }
@@ -75,7 +75,7 @@ final class WebhookMarketplacePurchasePendingChangeCancelled
     {
         return $this->organization;
     }
-    public function previous_marketplace_purchase() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0609077747F05B8025F0545B779F0B4
+    public function previous_marketplace_purchase() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePendingChangeCancelled\PreviousMarketplacePurchase
     {
         return $this->previous_marketplace_purchase;
     }

@@ -13,14 +13,14 @@ final class CC4618C8566A72E572Eae27E543Ac7Cfa
     private bool $strict;
     /**
      * **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CC4618C8566A72E572Eae27E543Ac7Cfa\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CC4618C8566A72E572Eae27E543Ac7Cfa\Contexts::class)
      */
     private array $contexts = array();
     /**
      * The list of status checks to require in order to merge into this branch.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA2C954Bd83B0A41Ba51276C7E8583A84>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA2C954Bd83B0A41Ba51276C7E8583A84::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CC4618C8566A72E572Eae27E543Ac7Cfa\Checks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CC4618C8566A72E572Eae27E543Ac7Cfa\Checks::class)
      */
     private array $checks = array();
     /**
@@ -32,7 +32,7 @@ final class CC4618C8566A72E572Eae27E543Ac7Cfa
     }
     /**
      * **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CC4618C8566A72E572Eae27E543Ac7Cfa\Contexts>
      */
     public function contexts() : array
     {
@@ -40,7 +40,7 @@ final class CC4618C8566A72E572Eae27E543Ac7Cfa
     }
     /**
      * The list of status checks to require in order to merge into this branch.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA2C954Bd83B0A41Ba51276C7E8583A84>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CC4618C8566A72E572Eae27E543Ac7Cfa\Checks>
      */
     public function checks() : array
     {

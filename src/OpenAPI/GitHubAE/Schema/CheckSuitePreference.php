@@ -8,15 +8,15 @@ final class CheckSuitePreference
     public const SCHEMA_TITLE = 'Check Suite Preference';
     public const SCHEMA_DESCRIPTION = 'Check suite configuration preferences for a repository.';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CF9B37D8D31B17908A8738838663E8A27::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckSuitePreference\Preferences::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CF9B37D8D31B17908A8738838663E8A27 $preferences;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckSuitePreference\Preferences $preferences;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository $repository;
-    public function preferences() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CF9B37D8D31B17908A8738838663E8A27
+    public function preferences() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckSuitePreference\Preferences
     {
         return $this->preferences;
     }

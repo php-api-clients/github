@@ -36,9 +36,9 @@ final class Codespace
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\Machine::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $machine;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\Machine $machine;
     /**
      * Path to devcontainer.json from repo root used to create Codespace.
      */
@@ -63,9 +63,9 @@ final class Codespace
     private string $url;
     /**
      * Details about the codespace's git repository.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C142001D17E3Ea0E82E5552Eedbd699D1::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\GitStatus::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C142001D17E3Ea0E82E5552Eedbd699D1 $git_status;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\GitStatus $git_status;
     /**
      * The Azure region where this codespace is located.
      */
@@ -95,14 +95,14 @@ final class Codespace
      */
     private $pulls_url;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RecentFolders>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RecentFolders::class)
      */
     private array $recent_folders = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD34F4F2E4Fff1066Aa7Cd8F52Cc7E7E7::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RuntimeConstraints::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD34F4F2E4Fff1066Aa7Cd8F52Cc7E7E7 $runtime_constraints = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RuntimeConstraints $runtime_constraints = null;
     /**
      * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
      */
@@ -173,7 +173,7 @@ final class Codespace
     {
         return $this->repository;
     }
-    public function machine() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function machine() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\Machine
     {
         return $this->machine;
     }
@@ -223,7 +223,7 @@ final class Codespace
     /**
      * Details about the codespace's git repository.
      */
-    public function git_status() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C142001D17E3Ea0E82E5552Eedbd699D1
+    public function git_status() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\GitStatus
     {
         return $this->git_status;
     }
@@ -277,13 +277,13 @@ final class Codespace
         return $this->pulls_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RecentFolders>
      */
     public function recent_folders() : array
     {
         return $this->recent_folders;
     }
-    public function runtime_constraints() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD34F4F2E4Fff1066Aa7Cd8F52Cc7E7E7
+    public function runtime_constraints() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RuntimeConstraints
     {
         return $this->runtime_constraints;
     }

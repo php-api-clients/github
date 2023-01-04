@@ -10,14 +10,14 @@ final class WebhookStatus
     private $avatar_url;
     /**
      * An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C90Ec71Dd7534Dbbf98Ea8920D3F4Fae9>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C90Ec71Dd7534Dbbf98Ea8920D3F4Fae9::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Branches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Branches::class)
      */
     private array $branches = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C19A8F9D1D9F97Ef382C8968C839Cc9A5::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Commit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C19A8F9D1D9F97Ef382C8968C839Cc9A5 $commit;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Commit $commit;
     private string $context;
     private string $created_at;
     /**
@@ -73,13 +73,13 @@ final class WebhookStatus
     }
     /**
      * An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C90Ec71Dd7534Dbbf98Ea8920D3F4Fae9>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Branches>
      */
     public function branches() : array
     {
         return $this->branches;
     }
-    public function commit() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C19A8F9D1D9F97Ef382C8968C839Cc9A5
+    public function commit() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Commit
     {
         return $this->commit;
     }

@@ -21,8 +21,8 @@ final class C58879D73Fe643528Eab333Ca4A0595Ed
     private ?bool $auto_merge = null;
     /**
      * The [status](https://docs.github.com/github-ae@latest/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C58879D73Fe643528Eab333Ca4A0595Ed\RequiredContexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C58879D73Fe643528Eab333Ca4A0595Ed\RequiredContexts::class)
      */
     private array $required_contexts = array();
     private $payload;
@@ -65,7 +65,7 @@ final class C58879D73Fe643528Eab333Ca4A0595Ed
     }
     /**
      * The [status](https://docs.github.com/github-ae@latest/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C58879D73Fe643528Eab333Ca4A0595Ed\RequiredContexts>
      */
     public function required_contexts() : array
     {

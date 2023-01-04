@@ -28,9 +28,9 @@ final class WebhookPullRequestReopened
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Bd217E0A548861244E60938De88Ea09::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReopened\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Bd217E0A548861244E60938De88Ea09 $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReopened\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -73,7 +73,7 @@ final class WebhookPullRequestReopened
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Bd217E0A548861244E60938De88Ea09
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReopened\PullRequest
     {
         return $this->pull_request;
     }

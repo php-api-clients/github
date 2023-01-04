@@ -24,9 +24,9 @@ final class WebhookProjectColumnMoved
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnMoved\ProjectColumn::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285 $project_column;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnMoved\ProjectColumn $project_column;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -62,7 +62,7 @@ final class WebhookProjectColumnMoved
     {
         return $this->organization;
     }
-    public function project_column() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285
+    public function project_column() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnMoved\ProjectColumn
     {
         return $this->project_column;
     }

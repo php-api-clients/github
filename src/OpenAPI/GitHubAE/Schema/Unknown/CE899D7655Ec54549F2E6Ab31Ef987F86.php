@@ -17,14 +17,14 @@ final class CE899D7655Ec54549F2E6Ab31Ef987F86
     private ?string $visibility = null;
     /**
      * List of repository IDs that can access the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CE899D7655Ec54549F2E6Ab31Ef987F86\SelectedRepositoryIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CE899D7655Ec54549F2E6Ab31Ef987F86\SelectedRepositoryIds::class)
      */
     private array $selected_repository_ids = array();
     /**
      * List of runner IDs to add to the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CE899D7655Ec54549F2E6Ab31Ef987F86\Runners>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CE899D7655Ec54549F2E6Ab31Ef987F86\Runners::class)
      */
     private array $runners = array();
     /**
@@ -47,7 +47,7 @@ final class CE899D7655Ec54549F2E6Ab31Ef987F86
     }
     /**
      * List of repository IDs that can access the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4765428C44Cf511223D18E3Fdc80A0D6>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CE899D7655Ec54549F2E6Ab31Ef987F86\SelectedRepositoryIds>
      */
     public function selected_repository_ids() : array
     {
@@ -55,7 +55,7 @@ final class CE899D7655Ec54549F2E6Ab31Ef987F86
     }
     /**
      * List of runner IDs to add to the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CE899D7655Ec54549F2E6Ab31Ef987F86\Runners>
      */
     public function runners() : array
     {

@@ -19,13 +19,13 @@ final class LicenseContent
     private string $content;
     private string $encoding;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af $_links;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\Links $_links;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\License::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $license;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\License $license;
     public function name() : string
     {
         return $this->name;
@@ -70,11 +70,11 @@ final class LicenseContent
     {
         return $this->encoding;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af
+    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\Links
     {
         return $this->_links;
     }
-    public function license() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function license() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\License
     {
         return $this->license;
     }

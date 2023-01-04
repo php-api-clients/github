@@ -9,15 +9,15 @@ final class BranchShort
     public const SCHEMA_DESCRIPTION = 'Branch Short';
     private string $name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf2B0C9F3076Dbb9A119C999B1595Cde::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BranchShort\Commit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf2B0C9F3076Dbb9A119C999B1595Cde $commit;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BranchShort\Commit $commit;
     private bool $protected;
     public function name() : string
     {
         return $this->name;
     }
-    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf2B0C9F3076Dbb9A119C999B1595Cde
+    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BranchShort\Commit
     {
         return $this->commit;
     }

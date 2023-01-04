@@ -9,8 +9,8 @@ final class CB0962D50Ed9A137436E89Ffb414475Ff
     public const SCHEMA_DESCRIPTION = '';
     private string $message;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6Ad9D3603354Ca4081307Cab441Abd7E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6Ad9D3603354Ca4081307Cab441Abd7E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CB0962D50Ed9A137436E89Ffb414475Ff\Errors>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CB0962D50Ed9A137436E89Ffb414475Ff\Errors::class)
      */
     private array $errors = array();
     public function message() : string
@@ -18,7 +18,7 @@ final class CB0962D50Ed9A137436E89Ffb414475Ff
         return $this->message;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6Ad9D3603354Ca4081307Cab441Abd7E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CB0962D50Ed9A137436E89Ffb414475Ff\Errors>
      */
     public function errors() : array
     {

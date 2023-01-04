@@ -75,8 +75,8 @@ final class MinimalRepository
     private ?int $open_issues_count = null;
     private ?bool $is_template = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Topics>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Topics::class)
      */
     private array $topics = array();
     private ?bool $has_issues = null;
@@ -92,9 +92,9 @@ final class MinimalRepository
     private $created_at;
     private $updated_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D4265E3514E6Ba6C4D32F0E80494F2C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Permissions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D4265E3514E6Ba6C4D32F0E80494F2C $permissions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Permissions $permissions = null;
     private ?string $role_name = null;
     private ?string $temp_clone_token = null;
     private ?bool $delete_branch_on_merge = null;
@@ -359,7 +359,7 @@ final class MinimalRepository
         return $this->is_template;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Topics>
      */
     public function topics() : array
     {
@@ -413,7 +413,7 @@ final class MinimalRepository
     {
         return $this->updated_at;
     }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D4265E3514E6Ba6C4D32F0E80494F2C
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Permissions
     {
         return $this->permissions;
     }

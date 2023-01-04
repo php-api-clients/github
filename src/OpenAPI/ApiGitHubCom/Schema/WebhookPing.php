@@ -9,9 +9,9 @@ final class WebhookPing
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The webhook that is being pinged
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Ca42Ae7Fc0Fc5163A07Dc42632B7F02::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Ca42Ae7Fc0Fc5163A07Dc42632B7F02 $hook;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook $hook;
     /**
      * The ID of the webhook that triggered the ping.
      */
@@ -38,7 +38,7 @@ final class WebhookPing
     /**
      * The webhook that is being pinged
      */
-    public function hook() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Ca42Ae7Fc0Fc5163A07Dc42632B7F02
+    public function hook() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook
     {
         return $this->hook;
     }

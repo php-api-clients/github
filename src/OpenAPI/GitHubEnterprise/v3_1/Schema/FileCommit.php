@@ -9,14 +9,14 @@ final class FileCommit
     public const SCHEMA_DESCRIPTION = 'File Commit';
     private $content;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C58F050Cd0C91C1D4A0F0F280E1F3E625::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FileCommit\Commit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C58F050Cd0C91C1D4A0F0F280E1F3E625 $commit;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FileCommit\Commit $commit;
     public function content()
     {
         return $this->content;
     }
-    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C58F050Cd0C91C1D4A0F0F280E1F3E625
+    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\FileCommit\Commit
     {
         return $this->commit;
     }

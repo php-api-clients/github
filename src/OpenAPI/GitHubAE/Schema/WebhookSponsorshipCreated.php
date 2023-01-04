@@ -34,9 +34,9 @@ final class WebhookSponsorshipCreated
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipCreated\Sponsorship::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4 $sponsorship;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipCreated\Sponsorship $sponsorship;
     public function action() : string
     {
         return $this->action;
@@ -76,7 +76,7 @@ final class WebhookSponsorshipCreated
     {
         return $this->sender;
     }
-    public function sponsorship() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4
+    public function sponsorship() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipCreated\Sponsorship
     {
         return $this->sponsorship;
     }

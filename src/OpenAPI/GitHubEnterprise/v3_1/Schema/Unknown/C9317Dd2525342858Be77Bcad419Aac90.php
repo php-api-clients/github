@@ -9,13 +9,13 @@ final class C9317Dd2525342858Be77Bcad419Aac90
     public const SCHEMA_DESCRIPTION = '';
     /**
      * teams parameter
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9317Dd2525342858Be77Bcad419Aac90\Teams>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9317Dd2525342858Be77Bcad419Aac90\Teams::class)
      */
     private array $teams = array();
     /**
      * teams parameter
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9317Dd2525342858Be77Bcad419Aac90\Teams>
      */
     public function teams() : array
     {

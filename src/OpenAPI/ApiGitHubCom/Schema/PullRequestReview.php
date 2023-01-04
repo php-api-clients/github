@@ -13,9 +13,9 @@ final class PullRequestReview
     private int $id;
     private string $node_id;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User $user;
     /**
      * The text of the review.
      */
@@ -24,9 +24,9 @@ final class PullRequestReview
     private string $html_url;
     private string $pull_request_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C07Dcb36B91F472Daa9474Ac97F1Ce862::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C07Dcb36B91F472Daa9474Ac97F1Ce862 $_links;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links $_links;
     private ?string $submitted_at = null;
     /**
      * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
@@ -49,7 +49,7 @@ final class PullRequestReview
     {
         return $this->node_id;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User
     {
         return $this->user;
     }
@@ -72,7 +72,7 @@ final class PullRequestReview
     {
         return $this->pull_request_url;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C07Dcb36B91F472Daa9474Ac97F1Ce862
+    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links
     {
         return $this->_links;
     }

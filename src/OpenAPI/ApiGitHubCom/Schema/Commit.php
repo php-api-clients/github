@@ -13,26 +13,26 @@ final class Commit
     private string $html_url;
     private string $comments_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C44Ba88C5Af56C4958Bf1693A104Cb2Db::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Commit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C44Ba88C5Af56C4958Bf1693A104Cb2Db $commit;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Commit $commit;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $author;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author $author;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $committer;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer $committer;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD1B7991D2E05Ca3E4Ec5504E1C18531D>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD1B7991D2E05Ca3E4Ec5504E1C18531D::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents::class)
      */
     private array $parents = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB6C548Eab5E6E0949E40De256103C287::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Stats::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB6C548Eab5E6E0949E40De256103C287 $stats = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Stats $stats = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry::class)
@@ -58,26 +58,26 @@ final class Commit
     {
         return $this->comments_url;
     }
-    public function commit() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C44Ba88C5Af56C4958Bf1693A104Cb2Db
+    public function commit() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Commit
     {
         return $this->commit;
     }
-    public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author
     {
         return $this->author;
     }
-    public function committer() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function committer() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer
     {
         return $this->committer;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD1B7991D2E05Ca3E4Ec5504E1C18531D>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents>
      */
     public function parents() : array
     {
         return $this->parents;
     }
-    public function stats() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB6C548Eab5E6E0949E40De256103C287
+    public function stats() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Stats
     {
         return $this->stats;
     }

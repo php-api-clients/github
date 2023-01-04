@@ -27,8 +27,8 @@ final class Environment
      */
     private string $updated_at;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB26315454B20A1B212Ee879Ac1C0Ae22>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB26315454B20A1B212Ee879Ac1C0Ae22::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Environment\ProtectionRules>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Environment\ProtectionRules::class)
      */
     private array $protection_rules = array();
     /**
@@ -76,7 +76,7 @@ final class Environment
         return $this->updated_at;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB26315454B20A1B212Ee879Ac1C0Ae22>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Environment\ProtectionRules>
      */
     public function protection_rules() : array
     {

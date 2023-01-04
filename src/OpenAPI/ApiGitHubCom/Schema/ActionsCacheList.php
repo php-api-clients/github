@@ -13,8 +13,8 @@ final class ActionsCacheList
     private int $total_count;
     /**
      * Array of caches
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C480B5Bdc17827754C1Cd26D66Aed1426>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C480B5Bdc17827754C1Cd26D66Aed1426::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList\ActionsCaches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList\ActionsCaches::class)
      */
     private array $actions_caches = array();
     /**
@@ -26,7 +26,7 @@ final class ActionsCacheList
     }
     /**
      * Array of caches
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C480B5Bdc17827754C1Cd26D66Aed1426>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList\ActionsCaches>
      */
     public function actions_caches() : array
     {

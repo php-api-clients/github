@@ -10,9 +10,9 @@ final class WebhookCodeScanningAlertReopenedByUser
     private string $action;
     /**
      * The code scanning alert involved in the event.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC1Ae7B012382665C1C5Affc507Cec197::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCodeScanningAlertReopenedByUser\Alert::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC1Ae7B012382665C1C5Affc507Cec197 $alert;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCodeScanningAlertReopenedByUser\Alert $alert;
     /**
      * The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
@@ -53,7 +53,7 @@ final class WebhookCodeScanningAlertReopenedByUser
     /**
      * The code scanning alert involved in the event.
      */
-    public function alert() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC1Ae7B012382665C1C5Affc507Cec197
+    public function alert() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCodeScanningAlertReopenedByUser\Alert
     {
         return $this->alert;
     }

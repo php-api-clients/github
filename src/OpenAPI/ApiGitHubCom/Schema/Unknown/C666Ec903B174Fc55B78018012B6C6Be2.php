@@ -9,13 +9,13 @@ final class C666Ec903B174Fc55B78018012B6C6Be2
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The username for users
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C666Ec903B174Fc55B78018012B6C6Be2\Users>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C666Ec903B174Fc55B78018012B6C6Be2\Users::class)
      */
     private array $users = array();
     /**
      * The username for users
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C666Ec903B174Fc55B78018012B6C6Be2\Users>
      */
     public function users() : array
     {

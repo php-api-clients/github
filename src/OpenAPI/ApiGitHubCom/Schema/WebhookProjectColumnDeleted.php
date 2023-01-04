@@ -24,13 +24,13 @@ final class WebhookProjectColumnDeleted
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\ProjectColumn::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285 $project_column;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\ProjectColumn $project_column;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\Repository $repository;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -61,11 +61,11 @@ final class WebhookProjectColumnDeleted
     {
         return $this->organization;
     }
-    public function project_column() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E03D84B0584B5F3708D9E30A68A0285
+    public function project_column() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\ProjectColumn
     {
         return $this->project_column;
     }
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\Repository
     {
         return $this->repository;
     }

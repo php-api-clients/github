@@ -12,8 +12,8 @@ final class GitTree
     private bool $truncated;
     /**
      * Objects specifying a tree structure
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA145A4Ec5E869E4D119B433648C3Ba75>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA145A4Ec5E869E4D119B433648C3Ba75::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree\Tree>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree\Tree::class)
      */
     private array $tree = array();
     public function sha() : string
@@ -30,7 +30,7 @@ final class GitTree
     }
     /**
      * Objects specifying a tree structure
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA145A4Ec5E869E4D119B433648C3Ba75>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree\Tree>
      */
     public function tree() : array
     {

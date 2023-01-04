@@ -38,8 +38,8 @@ final class UserSearchResultItem
     private bool $site_admin;
     private $hireable;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\UserSearchResultItem\TextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\UserSearchResultItem\TextMatches::class)
      */
     private array $text_matches = array();
     private $blog;
@@ -166,7 +166,7 @@ final class UserSearchResultItem
         return $this->hireable;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C6F1C6Cb8872D75271C982D10D0301D02>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\UserSearchResultItem\TextMatches>
      */
     public function text_matches() : array
     {

@@ -9,9 +9,9 @@ final class WebhookProjectsV2ItemConverted
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C00Ee749B45E43D3941F98000Cd4D7965::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectsV2ItemConverted\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C00Ee749B45E43D3941F98000Cd4D7965 $changes;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectsV2ItemConverted\Changes $changes;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
@@ -36,7 +36,7 @@ final class WebhookProjectsV2ItemConverted
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C00Ee749B45E43D3941F98000Cd4D7965
+    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectsV2ItemConverted\Changes
     {
         return $this->changes;
     }

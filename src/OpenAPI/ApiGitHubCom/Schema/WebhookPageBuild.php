@@ -9,9 +9,9 @@ final class WebhookPageBuild
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The [List GitHub Pages builds](https://docs.github.com/rest/reference/repos#list-github-pages-builds) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8E800Fc112B767Ebb4517281Aa3Fb124::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPageBuild\Build::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8E800Fc112B767Ebb4517281Aa3Fb124 $build;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPageBuild\Build $build;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -41,7 +41,7 @@ final class WebhookPageBuild
     /**
      * The [List GitHub Pages builds](https://docs.github.com/rest/reference/repos#list-github-pages-builds) itself.
      */
-    public function build() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8E800Fc112B767Ebb4517281Aa3Fb124
+    public function build() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPageBuild\Build
     {
         return $this->build;
     }

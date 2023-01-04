@@ -10,9 +10,9 @@ final class WebhookProjectEdited
     private string $action;
     /**
      * The changes to the project if the action was `edited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA3492Cd3C6790A9Deda16C613A3C6Daa::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectEdited\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA3492Cd3C6790A9Deda16C613A3C6Daa $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectEdited\Changes $changes = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -29,9 +29,9 @@ final class WebhookProjectEdited
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectEdited\Project::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205 $project;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectEdited\Project $project;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -49,7 +49,7 @@ final class WebhookProjectEdited
     /**
      * The changes to the project if the action was `edited`.
      */
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA3492Cd3C6790A9Deda16C613A3C6Daa
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectEdited\Changes
     {
         return $this->changes;
     }
@@ -74,7 +74,7 @@ final class WebhookProjectEdited
     {
         return $this->organization;
     }
-    public function project() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205
+    public function project() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookProjectEdited\Project
     {
         return $this->project;
     }

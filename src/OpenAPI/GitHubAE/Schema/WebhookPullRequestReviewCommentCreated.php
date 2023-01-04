@@ -10,9 +10,9 @@ final class WebhookPullRequestReviewCommentCreated
     private string $action;
     /**
      * The [comment](https://docs.github.com/github-ae@latest/rest/reference/pulls#comments) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2Cb0E4202F3A2A87A1F73782995251E7::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentCreated\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2Cb0E4202F3A2A87A1F73782995251E7 $comment;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentCreated\Comment $comment;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -29,9 +29,9 @@ final class WebhookPullRequestReviewCommentCreated
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C18E46Bc92D5E11D3Ee74B3Ed62D6F7Af::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentCreated\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C18E46Bc92D5E11D3Ee74B3Ed62D6F7Af $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentCreated\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -49,7 +49,7 @@ final class WebhookPullRequestReviewCommentCreated
     /**
      * The [comment](https://docs.github.com/github-ae@latest/rest/reference/pulls#comments) itself.
      */
-    public function comment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2Cb0E4202F3A2A87A1F73782995251E7
+    public function comment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentCreated\Comment
     {
         return $this->comment;
     }
@@ -74,7 +74,7 @@ final class WebhookPullRequestReviewCommentCreated
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C18E46Bc92D5E11D3Ee74B3Ed62D6F7Af
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentCreated\PullRequest
     {
         return $this->pull_request;
     }

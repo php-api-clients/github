@@ -44,9 +44,9 @@ final class SecretScanningAlert
      */
     private $resolved_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\SecretScanningAlert\ResolvedBy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $resolved_by;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\SecretScanningAlert\ResolvedBy $resolved_by;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -118,7 +118,7 @@ final class SecretScanningAlert
     {
         return $this->resolved_at;
     }
-    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\SecretScanningAlert\ResolvedBy
     {
         return $this->resolved_by;
     }

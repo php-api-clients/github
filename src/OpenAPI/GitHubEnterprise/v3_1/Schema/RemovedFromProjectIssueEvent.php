@@ -20,13 +20,13 @@ final class RemovedFromProjectIssueEvent
     private $commit_url;
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RemovedFromProjectIssueEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RemovedFromProjectIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C209D04E127A5F89885Df3848973B280A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RemovedFromProjectIssueEvent\ProjectCard::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C209D04E127A5F89885Df3848973B280A $project_card = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RemovedFromProjectIssueEvent\ProjectCard $project_card = null;
     public function id() : int
     {
         return $this->id;
@@ -62,11 +62,11 @@ final class RemovedFromProjectIssueEvent
     {
         return $this->created_at;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RemovedFromProjectIssueEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }
-    public function project_card() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C209D04E127A5F89885Df3848973B280A
+    public function project_card() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RemovedFromProjectIssueEvent\ProjectCard
     {
         return $this->project_card;
     }

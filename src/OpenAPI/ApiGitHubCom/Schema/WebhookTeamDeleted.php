@@ -25,9 +25,9 @@ final class WebhookTeamDeleted
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamDeleted\Repository::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D $repository = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamDeleted\Repository $repository = null;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -35,9 +35,9 @@ final class WebhookTeamDeleted
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender = null;
     /**
      * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamDeleted\Team::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A $team;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamDeleted\Team $team;
     public function action() : string
     {
         return $this->action;
@@ -66,7 +66,7 @@ final class WebhookTeamDeleted
     /**
      * A git repository
      */
-    public function repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D
+    public function repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamDeleted\Repository
     {
         return $this->repository;
     }
@@ -80,7 +80,7 @@ final class WebhookTeamDeleted
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A
+    public function team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamDeleted\Team
     {
         return $this->team;
     }

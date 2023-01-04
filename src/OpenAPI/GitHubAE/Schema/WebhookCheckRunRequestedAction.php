@@ -30,9 +30,9 @@ final class WebhookCheckRunRequestedAction
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository $repository;
     /**
      * The action requested by the user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C96E6D394Fd4F6544Bd699A1F193Bea0B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookCheckRunRequestedAction\RequestedAction::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C96E6D394Fd4F6544Bd699A1F193Bea0B $requested_action = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookCheckRunRequestedAction\RequestedAction $requested_action = null;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
@@ -73,7 +73,7 @@ final class WebhookCheckRunRequestedAction
     /**
      * The action requested by the user.
      */
-    public function requested_action() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C96E6D394Fd4F6544Bd699A1F193Bea0B
+    public function requested_action() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookCheckRunRequestedAction\RequestedAction
     {
         return $this->requested_action;
     }

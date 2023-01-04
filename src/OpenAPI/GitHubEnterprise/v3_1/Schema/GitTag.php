@@ -22,13 +22,13 @@ final class GitTag
      */
     private string $message;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C7693C96457F53641C1E4F2Fa226Fcecf::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitTag\Tagger::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C7693C96457F53641C1E4F2Fa226Fcecf $tagger;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitTag\Tagger $tagger;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C25C3010718A41B7B34Fb1583D304C69D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitTag\Object::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C25C3010718A41B7B34Fb1583D304C69D $object;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitTag\Object $object;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Verification::class)
      */
@@ -62,11 +62,11 @@ final class GitTag
     {
         return $this->message;
     }
-    public function tagger() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C7693C96457F53641C1E4F2Fa226Fcecf
+    public function tagger() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitTag\Tagger
     {
         return $this->tagger;
     }
-    public function object() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C25C3010718A41B7B34Fb1583D304C69D
+    public function object() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\GitTag\Object
     {
         return $this->object;
     }

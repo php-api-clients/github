@@ -19,9 +19,9 @@ final class WebhookPullRequestLabeled
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestLabeled\Label::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46 $label = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestLabeled\Label $label = null;
     /**
      * The pull request number.
      */
@@ -32,9 +32,9 @@ final class WebhookPullRequestLabeled
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6439Ea942C7D42B4A074F18Aa48223A1::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestLabeled\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6439Ea942C7D42B4A074F18Aa48223A1 $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestLabeled\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -63,7 +63,7 @@ final class WebhookPullRequestLabeled
     {
         return $this->installation;
     }
-    public function label() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46
+    public function label() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestLabeled\Label
     {
         return $this->label;
     }
@@ -81,7 +81,7 @@ final class WebhookPullRequestLabeled
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6439Ea942C7D42B4A074F18Aa48223A1
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestLabeled\PullRequest
     {
         return $this->pull_request;
     }

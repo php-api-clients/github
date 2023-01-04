@@ -13,8 +13,8 @@ final class C040502Ee17Ebcce6Fce8Be052169A6D5
     private string $visibility;
     /**
      * The usernames of the organization members who should be granted access to codespaces in the organization. Required when `visibility` is `selected_members`.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C040502Ee17Ebcce6Fce8Be052169A6D5\SelectedUsernames>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C040502Ee17Ebcce6Fce8Be052169A6D5\SelectedUsernames::class)
      */
     private array $selected_usernames = array();
     /**
@@ -26,7 +26,7 @@ final class C040502Ee17Ebcce6Fce8Be052169A6D5
     }
     /**
      * The usernames of the organization members who should be granted access to codespaces in the organization. Required when `visibility` is `selected_members`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C040502Ee17Ebcce6Fce8Be052169A6D5\SelectedUsernames>
      */
     public function selected_usernames() : array
     {

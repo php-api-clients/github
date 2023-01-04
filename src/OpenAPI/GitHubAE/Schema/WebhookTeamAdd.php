@@ -34,9 +34,9 @@ final class WebhookTeamAdd
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamAdd\Team::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A $team;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamAdd\Team $team;
     /**
      * An enterprise on GitHub.
      */
@@ -75,7 +75,7 @@ final class WebhookTeamAdd
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function team() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A
+    public function team() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookTeamAdd\Team
     {
         return $this->team;
     }

@@ -17,14 +17,14 @@ final class C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E
     private ?string $description = null;
     /**
      * List GitHub IDs for organization members who will become team maintainers.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E\Maintainers>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E\Maintainers::class)
      */
     private array $maintainers = array();
     /**
      * The full name (e.g., "organization-name/repository-name") of repositories to add the team to.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E\RepoNames>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E\RepoNames::class)
      */
     private array $repo_names = array();
     /**
@@ -66,7 +66,7 @@ final class C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E
     }
     /**
      * List GitHub IDs for organization members who will become team maintainers.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E\Maintainers>
      */
     public function maintainers() : array
     {
@@ -74,7 +74,7 @@ final class C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E
     }
     /**
      * The full name (e.g., "organization-name/repository-name") of repositories to add the team to.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C4Dfb1Ae8Fab659Ab0Ec866Fe0129392E\RepoNames>
      */
     public function repo_names() : array
     {

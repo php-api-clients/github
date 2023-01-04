@@ -16,9 +16,9 @@ final class SecretScanningAlert
      */
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecretScanningAlert\UpdatedAt::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $updated_at;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecretScanningAlert\UpdatedAt $updated_at;
     /**
      * The REST API URL of the alert resource.
      */
@@ -44,9 +44,9 @@ final class SecretScanningAlert
      */
     private $resolved_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecretScanningAlert\ResolvedBy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $resolved_by;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecretScanningAlert\ResolvedBy $resolved_by;
     /**
      * An optional comment to resolve an alert.
      */
@@ -73,7 +73,7 @@ final class SecretScanningAlert
     {
         return $this->created_at;
     }
-    public function updated_at() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function updated_at() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecretScanningAlert\UpdatedAt
     {
         return $this->updated_at;
     }
@@ -119,7 +119,7 @@ final class SecretScanningAlert
     {
         return $this->resolved_at;
     }
-    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SecretScanningAlert\ResolvedBy
     {
         return $this->resolved_by;
     }

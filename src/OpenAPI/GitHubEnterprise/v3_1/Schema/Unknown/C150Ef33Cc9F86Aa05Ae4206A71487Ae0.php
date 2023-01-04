@@ -13,8 +13,8 @@ final class C150Ef33Cc9F86Aa05Ae4206A71487Ae0
     private bool $strict;
     /**
      * The list of status checks to require in order to merge into this branch
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C150Ef33Cc9F86Aa05Ae4206A71487Ae0\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C150Ef33Cc9F86Aa05Ae4206A71487Ae0\Contexts::class)
      */
     private array $contexts = array();
     /**
@@ -26,7 +26,7 @@ final class C150Ef33Cc9F86Aa05Ae4206A71487Ae0
     }
     /**
      * The list of status checks to require in order to merge into this branch
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C150Ef33Cc9F86Aa05Ae4206A71487Ae0\Contexts>
      */
     public function contexts() : array
     {

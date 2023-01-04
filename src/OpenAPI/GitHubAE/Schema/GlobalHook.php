@@ -12,14 +12,14 @@ final class GlobalHook
     private string $name;
     private bool $active;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GlobalHook\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GlobalHook\Events::class)
      */
     private array $events = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8Adac9Ae0Ba077Bf065E33F54154157C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GlobalHook\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8Adac9Ae0Ba077Bf065E33F54154157C $config;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GlobalHook\Config $config;
     private string $updated_at;
     private string $created_at;
     private string $url;
@@ -41,13 +41,13 @@ final class GlobalHook
         return $this->active;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GlobalHook\Events>
      */
     public function events() : array
     {
         return $this->events;
     }
-    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C8Adac9Ae0Ba077Bf065E33F54154157C
+    public function config() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GlobalHook\Config
     {
         return $this->config;
     }

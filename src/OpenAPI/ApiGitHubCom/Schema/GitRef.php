@@ -11,9 +11,9 @@ final class GitRef
     private string $node_id;
     private string $url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdd208D35D703001Ff634C64Cd72C6E1::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef\Object::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdd208D35D703001Ff634C64Cd72C6E1 $object;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef\Object $object;
     public function ref() : string
     {
         return $this->ref;
@@ -26,7 +26,7 @@ final class GitRef
     {
         return $this->url;
     }
-    public function object() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEdd208D35D703001Ff634C64Cd72C6E1
+    public function object() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef\Object
     {
         return $this->object;
     }

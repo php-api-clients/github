@@ -10,20 +10,20 @@ final class ApplicationGrant
     private int $id;
     private string $url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CCf79D07045B13F3369845610A1A801Fb::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\App::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CCf79D07045B13F3369845610A1A801Fb $app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\App $app;
     private string $created_at;
     private string $updated_at;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\Scopes>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\Scopes::class)
      */
     private array $scopes = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\User $user;
     public function id() : int
     {
         return $this->id;
@@ -32,7 +32,7 @@ final class ApplicationGrant
     {
         return $this->url;
     }
-    public function app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CCf79D07045B13F3369845610A1A801Fb
+    public function app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\App
     {
         return $this->app;
     }
@@ -45,13 +45,13 @@ final class ApplicationGrant
         return $this->updated_at;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\Scopes>
      */
     public function scopes() : array
     {
         return $this->scopes;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ApplicationGrant\User
     {
         return $this->user;
     }

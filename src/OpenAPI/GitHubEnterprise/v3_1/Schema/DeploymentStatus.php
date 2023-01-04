@@ -15,9 +15,9 @@ final class DeploymentStatus
      */
     private string $state;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\DeploymentStatus\Creator::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $creator;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\DeploymentStatus\Creator $creator;
     /**
      * A short description of the status.
      */
@@ -43,9 +43,9 @@ final class DeploymentStatus
      */
     private ?string $log_url = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\DeploymentStatus\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\DeploymentStatus\PerformedViaGithubApp $performed_via_github_app;
     public function url() : string
     {
         return $this->url;
@@ -65,7 +65,7 @@ final class DeploymentStatus
     {
         return $this->state;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\DeploymentStatus\Creator
     {
         return $this->creator;
     }
@@ -120,7 +120,7 @@ final class DeploymentStatus
     {
         return $this->log_url;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\DeploymentStatus\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

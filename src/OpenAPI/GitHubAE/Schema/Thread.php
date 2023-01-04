@@ -14,9 +14,9 @@ final class Thread
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\MinimalRepository $repository;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C448A90C9447259B677E6763A86E4Adbd::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Thread\Subject::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C448A90C9447259B677E6763A86E4Adbd $subject;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Thread\Subject $subject;
     private string $reason;
     private bool $unread;
     private string $updated_at;
@@ -34,7 +34,7 @@ final class Thread
     {
         return $this->repository;
     }
-    public function subject() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C448A90C9447259B677E6763A86E4Adbd
+    public function subject() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Thread\Subject
     {
         return $this->subject;
     }

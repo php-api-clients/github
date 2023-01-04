@@ -8,14 +8,14 @@ final class WebhookInstallationTargetRenamed
     public const SCHEMA_TITLE = 'webhook-installation-target-renamed';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC12775471735C98C9953Bb97379Aa918::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookInstallationTargetRenamed\Account::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC12775471735C98C9953Bb97379Aa918 $account;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookInstallationTargetRenamed\Account $account;
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6086B7F1Fc365Eabd155Cdf132D95A08::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookInstallationTargetRenamed\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6086B7F1Fc365Eabd155Cdf132D95A08 $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookInstallationTargetRenamed\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -42,7 +42,7 @@ final class WebhookInstallationTargetRenamed
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender = null;
     private string $target_type;
-    public function account() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC12775471735C98C9953Bb97379Aa918
+    public function account() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookInstallationTargetRenamed\Account
     {
         return $this->account;
     }
@@ -50,7 +50,7 @@ final class WebhookInstallationTargetRenamed
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C6086B7F1Fc365Eabd155Cdf132D95A08
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookInstallationTargetRenamed\Changes
     {
         return $this->changes;
     }

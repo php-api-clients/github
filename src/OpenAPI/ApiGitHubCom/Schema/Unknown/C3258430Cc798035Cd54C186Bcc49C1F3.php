@@ -9,8 +9,8 @@ final class C3258430Cc798035Cd54C186Bcc49C1F3
     public const SCHEMA_DESCRIPTION = '';
     private int $total_count;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9C219Bec7Dc320C2Be347F8C28925D5>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9C219Bec7Dc320C2Be347F8C28925D5::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3258430Cc798035Cd54C186Bcc49C1F3\Devcontainers>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3258430Cc798035Cd54C186Bcc49C1F3\Devcontainers::class)
      */
     private array $devcontainers = array();
     public function total_count() : int
@@ -18,7 +18,7 @@ final class C3258430Cc798035Cd54C186Bcc49C1F3
         return $this->total_count;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA9C219Bec7Dc320C2Be347F8C28925D5>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3258430Cc798035Cd54C186Bcc49C1F3\Devcontainers>
      */
     public function devcontainers() : array
     {

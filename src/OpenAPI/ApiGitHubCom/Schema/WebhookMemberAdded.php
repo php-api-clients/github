@@ -9,9 +9,9 @@ final class WebhookMemberAdded
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBbd623A0Dccdcc9363038F722A42F355::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberAdded\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBbd623A0Dccdcc9363038F722A42F355 $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberAdded\Changes $changes = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -42,7 +42,7 @@ final class WebhookMemberAdded
     {
         return $this->action;
     }
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBbd623A0Dccdcc9363038F722A42F355
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberAdded\Changes
     {
         return $this->changes;
     }

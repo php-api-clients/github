@@ -9,9 +9,9 @@ final class ShortBranch
     public const SCHEMA_DESCRIPTION = 'Short Branch';
     private string $name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ShortBranch\Commit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506 $commit;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ShortBranch\Commit $commit;
     private bool $protected;
     /**
      * Branch Protection
@@ -23,7 +23,7 @@ final class ShortBranch
     {
         return $this->name;
     }
-    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C35C6300C6Fc8417Ed1Dc9061517F1506
+    public function commit() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ShortBranch\Commit
     {
         return $this->commit;
     }

@@ -8,9 +8,9 @@ final class WebhookSecurityAndAnalysis
     public const SCHEMA_TITLE = 'security_and_analysis event';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7Ae319025559A907772Af95152F324C5::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSecurityAndAnalysis\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7Ae319025559A907772Af95152F324C5 $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSecurityAndAnalysis\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -36,7 +36,7 @@ final class WebhookSecurityAndAnalysis
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender = null;
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C7Ae319025559A907772Af95152F324C5
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSecurityAndAnalysis\Changes
     {
         return $this->changes;
     }

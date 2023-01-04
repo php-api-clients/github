@@ -17,14 +17,14 @@ final class CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304
     private string $script;
     /**
      * The GitHub repository where the script is kept.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0551F5C939349Ae1D321A60707Cd10Ba::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304\ScriptRepository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0551F5C939349Ae1D321A60707Cd10Ba $script_repository;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304\ScriptRepository $script_repository;
     /**
      * The pre-receive environment where the script is executed.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4Af3593D617Cf0Baa84C19D8D7B65952::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304\Environment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4Af3593D617Cf0Baa84C19D8D7B65952 $environment;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304\Environment $environment;
     /**
      * The state of enforcement for this hook.
      */
@@ -50,14 +50,14 @@ final class CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304
     /**
      * The GitHub repository where the script is kept.
      */
-    public function script_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0551F5C939349Ae1D321A60707Cd10Ba
+    public function script_repository() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304\ScriptRepository
     {
         return $this->script_repository;
     }
     /**
      * The pre-receive environment where the script is executed.
      */
-    public function environment() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4Af3593D617Cf0Baa84C19D8D7B65952
+    public function environment() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEbe24Eb3F80Ba3Bd1A94E6C8A3Abf304\Environment
     {
         return $this->environment;
     }

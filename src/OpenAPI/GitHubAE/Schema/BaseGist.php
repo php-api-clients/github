@@ -16,18 +16,18 @@ final class BaseGist
     private string $git_push_url;
     private string $html_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD335746C406Ede4Fc95Be99Fc8083F83::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\Files::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD335746C406Ede4Fc95Be99Fc8083F83 $files;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\Files $files;
     private bool $public;
     private string $created_at;
     private string $updated_at;
     private $description;
     private int $comments;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\User $user;
     private string $comments_url;
     /**
      * A GitHub user.
@@ -36,13 +36,13 @@ final class BaseGist
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $owner = null;
     private ?bool $truncated = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\Forks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\Forks::class)
      */
     private array $forks = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\History>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\History::class)
      */
     private array $history = array();
     public function url() : string
@@ -77,7 +77,7 @@ final class BaseGist
     {
         return $this->html_url;
     }
-    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD335746C406Ede4Fc95Be99Fc8083F83
+    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\Files
     {
         return $this->files;
     }
@@ -101,7 +101,7 @@ final class BaseGist
     {
         return $this->comments;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\User
     {
         return $this->user;
     }
@@ -121,14 +121,14 @@ final class BaseGist
         return $this->truncated;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\Forks>
      */
     public function forks() : array
     {
         return $this->forks;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C99914B932Bd37A50B983C5E7C90Ae93B>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\BaseGist\History>
      */
     public function history() : array
     {

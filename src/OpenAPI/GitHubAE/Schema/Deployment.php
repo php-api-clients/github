@@ -30,9 +30,9 @@ final class Deployment
     private string $environment;
     private $description;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Deployment\Creator::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $creator;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Deployment\Creator $creator;
     private string $created_at;
     private string $updated_at;
     private string $statuses_url;
@@ -46,9 +46,9 @@ final class Deployment
      */
     private ?bool $production_environment = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Deployment\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Deployment\PerformedViaGithubApp $performed_via_github_app;
     public function url() : string
     {
         return $this->url;
@@ -101,7 +101,7 @@ final class Deployment
     {
         return $this->description;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Deployment\Creator
     {
         return $this->creator;
     }
@@ -135,7 +135,7 @@ final class Deployment
     {
         return $this->production_environment;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Deployment\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

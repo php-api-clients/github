@@ -35,25 +35,25 @@ final class DependabotAlertSecurityAdvisory
     private string $severity;
     /**
      * Details for the advisory pertaining to the Common Vulnerability Scoring System.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA59E28F0Be3379F32C745A03A3C91F58::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Cvss::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA59E28F0Be3379F32C745A03A3C91F58 $cvss;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Cvss $cvss;
     /**
      * Details for the advisory pertaining to Common Weakness Enumeration.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC436C18Ac3B87495864A89Cff01Dd296>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC436C18Ac3B87495864A89Cff01Dd296::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Cwes>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Cwes::class)
      */
     private array $cwes = array();
     /**
      * Values that identify this advisory among security information sources.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C10571A0E4A400420F34B8Ee1B2Dfcf42>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C10571A0E4A400420F34B8Ee1B2Dfcf42::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Identifiers>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Identifiers::class)
      */
     private array $identifiers = array();
     /**
      * Links to additional advisory information.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C58D971F237032E9Cca58520262E9Ca3E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C58D971F237032E9Cca58520262E9Ca3E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\References>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\References::class)
      */
     private array $references = array();
     /**
@@ -114,13 +114,13 @@ final class DependabotAlertSecurityAdvisory
     /**
      * Details for the advisory pertaining to the Common Vulnerability Scoring System.
      */
-    public function cvss() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA59E28F0Be3379F32C745A03A3C91F58
+    public function cvss() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Cvss
     {
         return $this->cvss;
     }
     /**
      * Details for the advisory pertaining to Common Weakness Enumeration.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC436C18Ac3B87495864A89Cff01Dd296>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Cwes>
      */
     public function cwes() : array
     {
@@ -128,7 +128,7 @@ final class DependabotAlertSecurityAdvisory
     }
     /**
      * Values that identify this advisory among security information sources.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C10571A0E4A400420F34B8Ee1B2Dfcf42>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\Identifiers>
      */
     public function identifiers() : array
     {
@@ -136,7 +136,7 @@ final class DependabotAlertSecurityAdvisory
     }
     /**
      * Links to additional advisory information.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C58D971F237032E9Cca58520262E9Ca3E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\DependabotAlertSecurityAdvisory\References>
      */
     public function references() : array
     {

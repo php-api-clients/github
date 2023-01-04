@@ -13,9 +13,9 @@ final class CCcc0635D124A784F4D147Ac937A3535A
     private string $event_type;
     /**
      * JSON payload with extra information about the webhook event that your action or worklow may use.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA7Eae0Ac343Bf10Ae0C5D5B75309417E::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CCcc0635D124A784F4D147Ac937A3535A\ClientPayload::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA7Eae0Ac343Bf10Ae0C5D5B75309417E $client_payload = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CCcc0635D124A784F4D147Ac937A3535A\ClientPayload $client_payload = null;
     /**
      * A custom webhook event name. Must be 100 characters or fewer.
      */
@@ -26,7 +26,7 @@ final class CCcc0635D124A784F4D147Ac937A3535A
     /**
      * JSON payload with extra information about the webhook event that your action or worklow may use.
      */
-    public function client_payload() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA7Eae0Ac343Bf10Ae0C5D5B75309417E
+    public function client_payload() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CCcc0635D124A784F4D147Ac937A3535A\ClientPayload
     {
         return $this->client_payload;
     }

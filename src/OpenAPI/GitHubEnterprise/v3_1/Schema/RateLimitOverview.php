@@ -8,14 +8,14 @@ final class RateLimitOverview
     public const SCHEMA_TITLE = 'Rate Limit Overview';
     public const SCHEMA_DESCRIPTION = 'Rate Limit Overview';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAe5E4A184D9988123B427F8F789F1A02::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RateLimitOverview\Resources::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAe5E4A184D9988123B427F8F789F1A02 $resources;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RateLimitOverview\Resources $resources;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RateLimit::class)
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RateLimit $rate;
-    public function resources() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CAe5E4A184D9988123B427F8F789F1A02
+    public function resources() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RateLimitOverview\Resources
     {
         return $this->resources;
     }

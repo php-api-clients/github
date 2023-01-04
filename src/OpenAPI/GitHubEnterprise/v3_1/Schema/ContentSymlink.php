@@ -18,9 +18,9 @@ final class ContentSymlink
     private $html_url;
     private $download_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContentSymlink\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af $_links;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContentSymlink\Links $_links;
     public function type() : string
     {
         return $this->type;
@@ -61,7 +61,7 @@ final class ContentSymlink
     {
         return $this->download_url;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ContentSymlink\Links
     {
         return $this->_links;
     }

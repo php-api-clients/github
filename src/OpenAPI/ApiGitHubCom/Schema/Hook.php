@@ -22,14 +22,14 @@ final class Hook
     private bool $active;
     /**
      * Determines what events the hook is triggered for. Default: ['push'].
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Events::class)
      */
     private array $events = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8769B205A3755C98971220Ac71F7Cf75::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8769B205A3755C98971220Ac71F7Cf75 $config;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Config $config;
     private string $updated_at;
     private string $created_at;
     private string $url;
@@ -67,13 +67,13 @@ final class Hook
     }
     /**
      * Determines what events the hook is triggered for. Default: ['push'].
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Events>
      */
     public function events() : array
     {
         return $this->events;
     }
-    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8769B205A3755C98971220Ac71F7Cf75
+    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Config
     {
         return $this->config;
     }

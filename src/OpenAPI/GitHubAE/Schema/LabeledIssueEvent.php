@@ -20,13 +20,13 @@ final class LabeledIssueEvent
     private $commit_url;
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\LabeledIssueEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\LabeledIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C89D46Ec0Ee21A22863Fbe55465D1C42C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\LabeledIssueEvent\Label::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C89D46Ec0Ee21A22863Fbe55465D1C42C $label;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\LabeledIssueEvent\Label $label;
     public function id() : int
     {
         return $this->id;
@@ -62,11 +62,11 @@ final class LabeledIssueEvent
     {
         return $this->created_at;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\LabeledIssueEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }
-    public function label() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C89D46Ec0Ee21A22863Fbe55465D1C42C
+    public function label() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\LabeledIssueEvent\Label
     {
         return $this->label;
     }

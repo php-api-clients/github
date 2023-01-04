@@ -15,18 +15,18 @@ final class Event
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Actor $actor;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB6Dc6291D04B900B3566510E62Cce799::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Event\Repo::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB6Dc6291D04B900B3566510E62Cce799 $repo;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Event\Repo $repo;
     /**
      * Actor
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Actor::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Actor $org = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C42704Fdf0E17E21Be0D57Df4Cccfe089::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Event\Payload::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C42704Fdf0E17E21Be0D57Df4Cccfe089 $payload;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Event\Payload $payload;
     private bool $public;
     private $created_at;
     public function id() : string
@@ -44,7 +44,7 @@ final class Event
     {
         return $this->actor;
     }
-    public function repo() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB6Dc6291D04B900B3566510E62Cce799
+    public function repo() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Event\Repo
     {
         return $this->repo;
     }
@@ -55,7 +55,7 @@ final class Event
     {
         return $this->org;
     }
-    public function payload() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C42704Fdf0E17E21Be0D57Df4Cccfe089
+    public function payload() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Event\Payload
     {
         return $this->payload;
     }

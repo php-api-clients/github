@@ -9,13 +9,13 @@ final class C07C60C7D390546D47A28C4861746Df23
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D1Ceee71166798302Ffb9922209C44B>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D1Ceee71166798302Ffb9922209C44B::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C07C60C7D390546D47A28C4861746Df23\Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C07C60C7D390546D47A28C4861746Df23\Emails::class)
      */
     private array $emails = array();
     /**
      * Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D1Ceee71166798302Ffb9922209C44B>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C07C60C7D390546D47A28C4861746Df23\Emails>
      */
     public function emails() : array
     {

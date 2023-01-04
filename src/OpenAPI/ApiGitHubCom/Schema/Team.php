@@ -15,17 +15,17 @@ final class Team
     private ?string $privacy = null;
     private string $permission;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0Cb51C69E939Ab7Bd52C4E0A05A5E968::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Permissions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0Cb51C69E939Ab7Bd52C4E0A05A5E968 $permissions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Permissions $permissions = null;
     private string $url;
     private string $html_url;
     private string $members_url;
     private string $repositories_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Parent::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $parent;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Parent $parent;
     public function id() : int
     {
         return $this->id;
@@ -54,7 +54,7 @@ final class Team
     {
         return $this->permission;
     }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0Cb51C69E939Ab7Bd52C4E0A05A5E968
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Permissions
     {
         return $this->permissions;
     }
@@ -74,7 +74,7 @@ final class Team
     {
         return $this->repositories_url;
     }
-    public function parent() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function parent() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Parent
     {
         return $this->parent;
     }

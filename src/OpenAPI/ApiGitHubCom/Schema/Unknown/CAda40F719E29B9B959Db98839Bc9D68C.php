@@ -17,8 +17,8 @@ final class CAda40F719E29B9B959Db98839Bc9D68C
     private ?string $new_name = null;
     /**
      * ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CAda40F719E29B9B959Db98839Bc9D68C\TeamIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CAda40F719E29B9B959Db98839Bc9D68C\TeamIds::class)
      */
     private array $team_ids = array();
     /**
@@ -37,7 +37,7 @@ final class CAda40F719E29B9B959Db98839Bc9D68C
     }
     /**
      * ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CAda40F719E29B9B959Db98839Bc9D68C\TeamIds>
      */
     public function team_ids() : array
     {

@@ -10,9 +10,9 @@ final class WebhookTeamEdited
     private string $action;
     /**
      * The changes to the team if the action was `edited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C00Cade1C6A827A24567A3Cebba3Ae226::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C00Cade1C6A827A24567A3Cebba3Ae226 $changes;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -30,9 +30,9 @@ final class WebhookTeamEdited
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Repository::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D $repository = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Repository $repository = null;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -40,9 +40,9 @@ final class WebhookTeamEdited
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Team::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A $team;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Team $team;
     public function action() : string
     {
         return $this->action;
@@ -50,7 +50,7 @@ final class WebhookTeamEdited
     /**
      * The changes to the team if the action was `edited`.
      */
-    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C00Cade1C6A827A24567A3Cebba3Ae226
+    public function changes() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Changes
     {
         return $this->changes;
     }
@@ -78,7 +78,7 @@ final class WebhookTeamEdited
     /**
      * A git repository
      */
-    public function repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82D1D5905Cf04E1D3B3E57B4Becf942D
+    public function repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Repository
     {
         return $this->repository;
     }
@@ -92,7 +92,7 @@ final class WebhookTeamEdited
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1C1A84A641F746F2C07C2Deb51D9106A
+    public function team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamEdited\Team
     {
         return $this->team;
     }

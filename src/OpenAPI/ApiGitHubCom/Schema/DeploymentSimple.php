@@ -36,9 +36,9 @@ final class DeploymentSimple
      */
     private ?bool $production_environment = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple\PerformedViaGithubApp $performed_via_github_app;
     public function url() : string
     {
         return $this->url;
@@ -106,7 +106,7 @@ final class DeploymentSimple
     {
         return $this->production_environment;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

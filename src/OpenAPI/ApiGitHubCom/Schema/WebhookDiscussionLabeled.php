@@ -9,9 +9,9 @@ final class WebhookDiscussionLabeled
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionLabeled\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf $discussion;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionLabeled\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -23,9 +23,9 @@ final class WebhookDiscussionLabeled
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionLabeled\Label::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46 $label;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionLabeled\Label $label;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -45,7 +45,7 @@ final class WebhookDiscussionLabeled
     {
         return $this->action;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDd1Dbaf333Dd8A64C7B63743E3A9Facf
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionLabeled\Discussion
     {
         return $this->discussion;
     }
@@ -63,7 +63,7 @@ final class WebhookDiscussionLabeled
     {
         return $this->installation;
     }
-    public function label() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46
+    public function label() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionLabeled\Label
     {
         return $this->label;
     }

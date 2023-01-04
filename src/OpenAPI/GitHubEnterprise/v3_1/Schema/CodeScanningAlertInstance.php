@@ -30,9 +30,9 @@ final class CodeScanningAlertInstance
     private string $state;
     private string $commit_sha;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0317Cee1B8Fb65D06Fc68Dd1Fe0B93B4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CodeScanningAlertInstance\Message::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0317Cee1B8Fb65D06Fc68Dd1Fe0B93B4 $message;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CodeScanningAlertInstance\Message $message;
     /**
      * Describe a region within a file for the alert.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CodeScanningAlertLocation::class)
@@ -86,7 +86,7 @@ final class CodeScanningAlertInstance
     {
         return $this->commit_sha;
     }
-    public function message() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0317Cee1B8Fb65D06Fc68Dd1Fe0B93B4
+    public function message() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CodeScanningAlertInstance\Message
     {
         return $this->message;
     }

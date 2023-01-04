@@ -19,9 +19,9 @@ final class WebhookLabelCreated
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookLabelCreated\Label::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46 $label;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookLabelCreated\Label $label;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -55,7 +55,7 @@ final class WebhookLabelCreated
     {
         return $this->installation;
     }
-    public function label() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCbfbc5Da410A0D57B65A397E98165A46
+    public function label() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookLabelCreated\Label
     {
         return $this->label;
     }

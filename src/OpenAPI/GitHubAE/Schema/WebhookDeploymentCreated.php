@@ -10,9 +10,9 @@ final class WebhookDeploymentCreated
     private string $action;
     /**
      * The [deployment](https://docs.github.com/github-ae@latest/rest/reference/deployments#list-deployments).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA4B45861Ac6669Adb77F57D9B999Fb4B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentCreated\Deployment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA4B45861Ac6669Adb77F57D9B999Fb4B $deployment;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentCreated\Deployment $deployment;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -47,7 +47,7 @@ final class WebhookDeploymentCreated
     /**
      * The [deployment](https://docs.github.com/github-ae@latest/rest/reference/deployments#list-deployments).
      */
-    public function deployment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CA4B45861Ac6669Adb77F57D9B999Fb4B
+    public function deployment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDeploymentCreated\Deployment
     {
         return $this->deployment;
     }

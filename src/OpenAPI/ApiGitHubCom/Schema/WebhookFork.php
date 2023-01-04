@@ -14,9 +14,9 @@ final class WebhookFork
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
     /**
      * The created [`repository`](https://docs.github.com/rest/reference/repos#get-a-repository) resource.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3304C616B74F54B264F265F998171Fb8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookFork\Forkee::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3304C616B74F54B264F265F998171Fb8 $forkee;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookFork\Forkee $forkee;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
@@ -47,7 +47,7 @@ final class WebhookFork
     /**
      * The created [`repository`](https://docs.github.com/rest/reference/repos#get-a-repository) resource.
      */
-    public function forkee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3304C616B74F54B264F265F998171Fb8
+    public function forkee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookFork\Forkee
     {
         return $this->forkee;
     }

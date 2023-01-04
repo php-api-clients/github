@@ -9,8 +9,8 @@ final class ConfigurationStatus
     public const SCHEMA_DESCRIPTION = '';
     private string $status;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C71588500593B587713Dbffad67D40783>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C71588500593B587713Dbffad67D40783::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ConfigurationStatus\Progress>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ConfigurationStatus\Progress::class)
      */
     private array $progress = array();
     public function status() : string
@@ -18,7 +18,7 @@ final class ConfigurationStatus
         return $this->status;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C71588500593B587713Dbffad67D40783>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ConfigurationStatus\Progress>
      */
     public function progress() : array
     {

@@ -9,9 +9,9 @@ final class WebhookDiscussionUnanswered
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionUnanswered\Discussion::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388 $discussion;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionUnanswered\Discussion $discussion;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -23,9 +23,9 @@ final class WebhookDiscussionUnanswered
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf05E95Ec6Cecf6682A80669A89302Ed::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionUnanswered\OldAnswer::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf05E95Ec6Cecf6682A80669A89302Ed $old_answer;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionUnanswered\OldAnswer $old_answer;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
@@ -45,7 +45,7 @@ final class WebhookDiscussionUnanswered
     {
         return $this->action;
     }
-    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1B57820F61248E43F02D49A2122E5388
+    public function discussion() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionUnanswered\Discussion
     {
         return $this->discussion;
     }
@@ -63,7 +63,7 @@ final class WebhookDiscussionUnanswered
     {
         return $this->installation;
     }
-    public function old_answer() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFf05E95Ec6Cecf6682A80669A89302Ed
+    public function old_answer() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookDiscussionUnanswered\OldAnswer
     {
         return $this->old_answer;
     }

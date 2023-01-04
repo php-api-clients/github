@@ -29,8 +29,8 @@ final class RunnerGroupsOrg
     private ?bool $restricted_to_workflows = null;
     /**
      * List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE95Ac0C900B4E9276301A4Fccf93714A>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE95Ac0C900B4E9276301A4Fccf93714A::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg\SelectedWorkflows>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg\SelectedWorkflows::class)
      */
     private array $selected_workflows = array();
     public function id() : int
@@ -88,7 +88,7 @@ final class RunnerGroupsOrg
     }
     /**
      * List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE95Ac0C900B4E9276301A4Fccf93714A>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg\SelectedWorkflows>
      */
     public function selected_workflows() : array
     {

@@ -15,18 +15,18 @@ final class Event
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $actor;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB6Dc6291D04B900B3566510E62Cce799::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Repo::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB6Dc6291D04B900B3566510E62Cce799 $repo;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Repo $repo;
     /**
      * Actor
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF832248448F6Fd2C5634F19F984E33Ab::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Payload::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF832248448F6Fd2C5634F19F984E33Ab $payload;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Payload $payload;
     private bool $public;
     private $created_at;
     public function id() : string
@@ -44,7 +44,7 @@ final class Event
     {
         return $this->actor;
     }
-    public function repo() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB6Dc6291D04B900B3566510E62Cce799
+    public function repo() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Repo
     {
         return $this->repo;
     }
@@ -55,7 +55,7 @@ final class Event
     {
         return $this->org;
     }
-    public function payload() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF832248448F6Fd2C5634F19F984E33Ab
+    public function payload() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Payload
     {
         return $this->payload;
     }

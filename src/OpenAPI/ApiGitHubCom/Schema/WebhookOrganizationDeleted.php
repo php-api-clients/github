@@ -20,9 +20,9 @@ final class WebhookOrganizationDeleted
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E163C9A9Bbd373B3Bd5D0269A2269Ab::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationDeleted\Membership::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E163C9A9Bbd373B3Bd5D0269A2269Ab $membership = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationDeleted\Membership $membership = null;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -59,7 +59,7 @@ final class WebhookOrganizationDeleted
     /**
      * The membership between the user and the organization. Not present when the action is `member_invited`.
      */
-    public function membership() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E163C9A9Bbd373B3Bd5D0269A2269Ab
+    public function membership() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationDeleted\Membership
     {
         return $this->membership;
     }

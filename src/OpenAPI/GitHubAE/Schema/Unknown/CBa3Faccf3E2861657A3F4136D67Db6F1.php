@@ -16,9 +16,9 @@ final class CBa3Faccf3E2861657A3F4136D67Db6F1
     (including extension) of the targeted gist file. For example: `hello.py`.
     
     To delete a file, set the whole file to null. For example: `hello.py : null`.
-    * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFa1F5016C613E4772588854C56E7C8D8::class)
+    * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBa3Faccf3E2861657A3F4136D67Db6F1\Files::class)
     */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFa1F5016C613E4772588854C56E7C8D8 $files;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBa3Faccf3E2861657A3F4136D67Db6F1\Files $files;
     /**
      * The description of the gist.
      */
@@ -32,7 +32,7 @@ final class CBa3Faccf3E2861657A3F4136D67Db6F1
     
     To delete a file, set the whole file to null. For example: `hello.py : null`.
     */
-    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CFa1F5016C613E4772588854C56E7C8D8
+    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBa3Faccf3E2861657A3F4136D67Db6F1\Files
     {
         return $this->files;
     }

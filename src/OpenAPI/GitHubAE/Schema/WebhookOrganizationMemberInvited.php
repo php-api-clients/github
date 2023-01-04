@@ -20,9 +20,9 @@ final class WebhookOrganizationMemberInvited
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
      * The invitation for the user or email if the action is `member_invited`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C9068Fe7159181C2B20A49C7B4A44157B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookOrganizationMemberInvited\Invitation::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C9068Fe7159181C2B20A49C7B4A44157B $invitation;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookOrganizationMemberInvited\Invitation $invitation;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
@@ -60,7 +60,7 @@ final class WebhookOrganizationMemberInvited
     /**
      * The invitation for the user or email if the action is `member_invited`.
      */
-    public function invitation() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C9068Fe7159181C2B20A49C7B4A44157B
+    public function invitation() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookOrganizationMemberInvited\Invitation
     {
         return $this->invitation;
     }

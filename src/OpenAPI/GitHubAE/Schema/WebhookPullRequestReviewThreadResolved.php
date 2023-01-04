@@ -24,9 +24,9 @@ final class WebhookPullRequestReviewThreadResolved
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0678Dba2A050Cf59F463D7F83C85997A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewThreadResolved\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0678Dba2A050Cf59F463D7F83C85997A $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewThreadResolved\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -38,9 +38,9 @@ final class WebhookPullRequestReviewThreadResolved
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C541Efb1588C522Ae3720069E7E61D0Fc::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewThreadResolved\Thread::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C541Efb1588C522Ae3720069E7E61D0Fc $thread;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewThreadResolved\Thread $thread;
     public function action() : string
     {
         return $this->action;
@@ -66,7 +66,7 @@ final class WebhookPullRequestReviewThreadResolved
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0678Dba2A050Cf59F463D7F83C85997A
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewThreadResolved\PullRequest
     {
         return $this->pull_request;
     }
@@ -84,7 +84,7 @@ final class WebhookPullRequestReviewThreadResolved
     {
         return $this->sender;
     }
-    public function thread() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C541Efb1588C522Ae3720069E7E61D0Fc
+    public function thread() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewThreadResolved\Thread
     {
         return $this->thread;
     }

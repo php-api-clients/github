@@ -10,14 +10,14 @@ final class WebhookPullRequestReviewCommentEdited
     private string $action;
     /**
      * The changes to the comment.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD40F0Da1F52E16339644A5F8E59F6Ea8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD40F0Da1F52E16339644A5F8E59F6Ea8 $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\Changes $changes;
     /**
      * The [comment](https://docs.github.com/github-ae@latest/rest/reference/pulls#comments) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C55E192127E6C72F0Dd88963E3Dd27A62::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\Comment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C55E192127E6C72F0Dd88963E3Dd27A62 $comment;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\Comment $comment;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -34,9 +34,9 @@ final class WebhookPullRequestReviewCommentEdited
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1F982814Bb335C824C743E773Dd4C4Ea::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1F982814Bb335C824C743E773Dd4C4Ea $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Repository::class)
@@ -54,14 +54,14 @@ final class WebhookPullRequestReviewCommentEdited
     /**
      * The changes to the comment.
      */
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD40F0Da1F52E16339644A5F8E59F6Ea8
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\Changes
     {
         return $this->changes;
     }
     /**
      * The [comment](https://docs.github.com/github-ae@latest/rest/reference/pulls#comments) itself.
      */
-    public function comment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C55E192127E6C72F0Dd88963E3Dd27A62
+    public function comment() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\Comment
     {
         return $this->comment;
     }
@@ -86,7 +86,7 @@ final class WebhookPullRequestReviewCommentEdited
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1F982814Bb335C824C743E773Dd4C4Ea
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestReviewCommentEdited\PullRequest
     {
         return $this->pull_request;
     }

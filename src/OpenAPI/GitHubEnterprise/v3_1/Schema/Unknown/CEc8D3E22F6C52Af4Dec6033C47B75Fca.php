@@ -45,8 +45,8 @@ final class CEc8D3E22F6C52Af4Dec6033C47B75Fca
     private ?bool $required_conversation_resolution = null;
     /**
      * The list of status checks to require in order to merge into this branch.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEc8D3E22F6C52Af4Dec6033C47B75Fca\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEc8D3E22F6C52Af4Dec6033C47B75Fca\Contexts::class)
      */
     private array $contexts = array();
     /**
@@ -114,7 +114,7 @@ final class CEc8D3E22F6C52Af4Dec6033C47B75Fca
     }
     /**
      * The list of status checks to require in order to merge into this branch.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CEc8D3E22F6C52Af4Dec6033C47B75Fca\Contexts>
      */
     public function contexts() : array
     {

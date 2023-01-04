@@ -20,9 +20,9 @@ final class ActionsBillingUsage
      */
     private int $included_minutes;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C585073601042Bb09034Df0Cfd5E1D9A6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C585073601042Bb09034Df0Cfd5E1D9A6 $minutes_used_breakdown;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutes_used_breakdown;
     /**
      * The sum of the free and paid GitHub Actions minutes used.
      */
@@ -44,7 +44,7 @@ final class ActionsBillingUsage
     {
         return $this->included_minutes;
     }
-    public function minutes_used_breakdown() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C585073601042Bb09034Df0Cfd5E1D9A6
+    public function minutes_used_breakdown() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown
     {
         return $this->minutes_used_breakdown;
     }

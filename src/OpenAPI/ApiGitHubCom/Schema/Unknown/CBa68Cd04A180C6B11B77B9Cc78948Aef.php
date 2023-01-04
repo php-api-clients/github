@@ -24,8 +24,8 @@ final class CBa68Cd04A180C6B11B77B9Cc78948Aef
     private string $role;
     /**
      * Specify IDs for the teams you want to invite new members to.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CBa68Cd04A180C6B11B77B9Cc78948Aef\TeamIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CBa68Cd04A180C6B11B77B9Cc78948Aef\TeamIds::class)
      */
     private array $team_ids = array();
     /**
@@ -54,7 +54,7 @@ final class CBa68Cd04A180C6B11B77B9Cc78948Aef
     }
     /**
      * Specify IDs for the teams you want to invite new members to.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CBa68Cd04A180C6B11B77B9Cc78948Aef\TeamIds>
      */
     public function team_ids() : array
     {

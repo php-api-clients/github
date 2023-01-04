@@ -46,9 +46,9 @@ final class CFa9375D5B4Dfa8F391595615Bd0Addf4
     private int $collaborators;
     private bool $two_factor_authentication;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa9375D5B4Dfa8F391595615Bd0Addf4\Plan::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A $plan = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa9375D5B4Dfa8F391595615Bd0Addf4\Plan $plan = null;
     private $suspended_at;
     private ?bool $business_plus = null;
     private ?string $ldap_dn = null;
@@ -204,7 +204,7 @@ final class CFa9375D5B4Dfa8F391595615Bd0Addf4
     {
         return $this->two_factor_authentication;
     }
-    public function plan() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3D775F5Cc5097624A99A13A4E24C2E4A
+    public function plan() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa9375D5B4Dfa8F391595615Bd0Addf4\Plan
     {
         return $this->plan;
     }

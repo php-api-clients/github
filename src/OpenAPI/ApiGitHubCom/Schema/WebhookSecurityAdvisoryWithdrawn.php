@@ -30,9 +30,9 @@ final class WebhookSecurityAdvisoryWithdrawn
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository = null;
     /**
      * The details of the security advisory, including summary, description, and severity.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7D56Dd01B8339Cc042B504B37973Cd3C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7D56Dd01B8339Cc042B504B37973Cd3C $security_advisory;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory $security_advisory;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -73,7 +73,7 @@ final class WebhookSecurityAdvisoryWithdrawn
     /**
      * The details of the security advisory, including summary, description, and severity.
      */
-    public function security_advisory() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7D56Dd01B8339Cc042B504B37973Cd3C
+    public function security_advisory() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory
     {
         return $this->security_advisory;
     }

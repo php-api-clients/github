@@ -15,9 +15,9 @@ final class MarketplacePurchase
     private $email;
     private $marketplace_pending_change;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE9250B631C6C92Da4B5F18461Df927F1::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePurchase::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE9250B631C6C92Da4B5F18461Df927F1 $marketplace_purchase;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePurchase $marketplace_purchase;
     public function url() : string
     {
         return $this->url;
@@ -46,7 +46,7 @@ final class MarketplacePurchase
     {
         return $this->marketplace_pending_change;
     }
-    public function marketplace_purchase() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE9250B631C6C92Da4B5F18461Df927F1
+    public function marketplace_purchase() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePurchase
     {
         return $this->marketplace_purchase;
     }

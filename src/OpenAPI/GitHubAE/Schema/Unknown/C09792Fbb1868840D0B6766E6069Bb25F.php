@@ -13,9 +13,9 @@ final class C09792Fbb1868840D0B6766E6069Bb25F
     private ?string $description = null;
     /**
      * Names and content for the files that make up the gist
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C19E035D6196F3263A51B991Ef298D0Fd::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C09792Fbb1868840D0B6766E6069Bb25F\Files::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C19E035D6196F3263A51B991Ef298D0Fd $files;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C09792Fbb1868840D0B6766E6069Bb25F\Files $files;
     private $public;
     /**
      * Description of the gist
@@ -27,7 +27,7 @@ final class C09792Fbb1868840D0B6766E6069Bb25F
     /**
      * Names and content for the files that make up the gist
      */
-    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C19E035D6196F3263A51B991Ef298D0Fd
+    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C09792Fbb1868840D0B6766E6069Bb25F\Files
     {
         return $this->files;
     }

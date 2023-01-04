@@ -17,13 +17,13 @@ final class RepositoryInvitation
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MinimalRepository $repository;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RepositoryInvitation\Invitee::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $invitee;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RepositoryInvitation\Invitee $invitee;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RepositoryInvitation\Inviter::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $inviter;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RepositoryInvitation\Inviter $inviter;
     /**
      * The permission associated with the invitation.
      */
@@ -53,11 +53,11 @@ final class RepositoryInvitation
     {
         return $this->repository;
     }
-    public function invitee() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function invitee() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RepositoryInvitation\Invitee
     {
         return $this->invitee;
     }
-    public function inviter() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function inviter() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\RepositoryInvitation\Inviter
     {
         return $this->inviter;
     }

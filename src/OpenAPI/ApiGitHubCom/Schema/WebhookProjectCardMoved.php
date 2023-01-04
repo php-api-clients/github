@@ -9,9 +9,9 @@ final class WebhookProjectCardMoved
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C127Bafd461E44Ae0Ca3Da7812764Ef2B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardMoved\Changes::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C127Bafd461E44Ae0Ca3Da7812764Ef2B $changes = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardMoved\Changes $changes = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -28,9 +28,9 @@ final class WebhookProjectCardMoved
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C27281D03A94B616F57C35F56F6B6E757::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardMoved\ProjectCard::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C27281D03A94B616F57C35F56F6B6E757 $project_card;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardMoved\ProjectCard $project_card;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -45,7 +45,7 @@ final class WebhookProjectCardMoved
     {
         return $this->action;
     }
-    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C127Bafd461E44Ae0Ca3Da7812764Ef2B
+    public function changes() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardMoved\Changes
     {
         return $this->changes;
     }
@@ -70,7 +70,7 @@ final class WebhookProjectCardMoved
     {
         return $this->organization;
     }
-    public function project_card() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C27281D03A94B616F57C35F56F6B6E757
+    public function project_card() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardMoved\ProjectCard
     {
         return $this->project_card;
     }

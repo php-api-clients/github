@@ -9,9 +9,9 @@ final class WebhookSponsorshipEdited
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5E48F9E4C304B12587A34F8Db4687956::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipEdited\Changes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5E48F9E4C304B12587A34F8Db4687956 $changes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -38,14 +38,14 @@ final class WebhookSponsorshipEdited
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleUser $sender;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipEdited\Sponsorship::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4 $sponsorship;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipEdited\Sponsorship $sponsorship;
     public function action() : string
     {
         return $this->action;
     }
-    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5E48F9E4C304B12587A34F8Db4687956
+    public function changes() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipEdited\Changes
     {
         return $this->changes;
     }
@@ -84,7 +84,7 @@ final class WebhookSponsorshipEdited
     {
         return $this->sender;
     }
-    public function sponsorship() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4Fed2708B62E94A21C4Dd3E1767869D4
+    public function sponsorship() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookSponsorshipEdited\Sponsorship
     {
         return $this->sponsorship;
     }

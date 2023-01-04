@@ -10,13 +10,13 @@ final class StatusCheckPolicy
     private string $url;
     private bool $strict;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Contexts::class)
      */
     private array $contexts = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C83A83626Dbd415Bd4B1449A549D7F9C6>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C83A83626Dbd415Bd4B1449A549D7F9C6::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Checks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Checks::class)
      */
     private array $checks = array();
     private string $contexts_url;
@@ -29,14 +29,14 @@ final class StatusCheckPolicy
         return $this->strict;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Contexts>
      */
     public function contexts() : array
     {
         return $this->contexts;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C83A83626Dbd415Bd4B1449A549D7F9C6>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy\Checks>
      */
     public function checks() : array
     {

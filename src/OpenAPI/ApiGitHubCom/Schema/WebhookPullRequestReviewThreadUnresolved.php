@@ -24,9 +24,9 @@ final class WebhookPullRequestReviewThreadUnresolved
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C984A0E7107Aa5D1563F0D98Fee3913A0::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C984A0E7107Aa5D1563F0D98Fee3913A0 $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -38,9 +38,9 @@ final class WebhookPullRequestReviewThreadUnresolved
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C63C545A0D6Edb7B6650C5292Fd680Dfc::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadUnresolved\Thread::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C63C545A0D6Edb7B6650C5292Fd680Dfc $thread;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadUnresolved\Thread $thread;
     public function action() : string
     {
         return $this->action;
@@ -66,7 +66,7 @@ final class WebhookPullRequestReviewThreadUnresolved
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C984A0E7107Aa5D1563F0D98Fee3913A0
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest
     {
         return $this->pull_request;
     }
@@ -84,7 +84,7 @@ final class WebhookPullRequestReviewThreadUnresolved
     {
         return $this->sender;
     }
-    public function thread() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C63C545A0D6Edb7B6650C5292Fd680Dfc
+    public function thread() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadUnresolved\Thread
     {
         return $this->thread;
     }

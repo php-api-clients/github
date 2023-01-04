@@ -11,38 +11,38 @@ final class IssueEvent
     private string $node_id;
     private string $url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Actor::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $actor;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Actor $actor;
     private string $event;
     private $commit_id;
     private $commit_url;
     private string $created_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Issue $issue;
     /**
      * Issue Event Label
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel $label = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assignee::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $assignee;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assignee $assignee;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assigner::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $assigner;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assigner $assigner;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\ReviewRequester::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $review_requester;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\ReviewRequester $review_requester;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\RequestedReviewer::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $requested_reviewer;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\RequestedReviewer $requested_reviewer;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team::class)
@@ -73,9 +73,9 @@ final class IssueEvent
     private ?string $author_association = null;
     private $lock_reason;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\PerformedViaGithubApp $performed_via_github_app;
     public function id() : int
     {
         return $this->id;
@@ -88,7 +88,7 @@ final class IssueEvent
     {
         return $this->url;
     }
-    public function actor() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function actor() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Actor
     {
         return $this->actor;
     }
@@ -108,7 +108,7 @@ final class IssueEvent
     {
         return $this->created_at;
     }
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Issue
     {
         return $this->issue;
     }
@@ -119,19 +119,19 @@ final class IssueEvent
     {
         return $this->label;
     }
-    public function assignee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function assignee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assignee
     {
         return $this->assignee;
     }
-    public function assigner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function assigner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assigner
     {
         return $this->assigner;
     }
-    public function review_requester() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function review_requester() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\ReviewRequester
     {
         return $this->review_requester;
     }
-    public function requested_reviewer() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function requested_reviewer() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\RequestedReviewer
     {
         return $this->requested_reviewer;
     }
@@ -178,7 +178,7 @@ final class IssueEvent
     {
         return $this->lock_reason;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

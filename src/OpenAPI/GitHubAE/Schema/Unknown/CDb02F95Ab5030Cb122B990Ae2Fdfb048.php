@@ -21,14 +21,14 @@ final class CDb02F95Ab5030Cb122B990Ae2Fdfb048
     private ?string $branch = null;
     /**
      * object containing information about the committer.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbf7359D0E6Afd5E5Fb1B1A23028397B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CDb02F95Ab5030Cb122B990Ae2Fdfb048\Committer::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbf7359D0E6Afd5E5Fb1B1A23028397B $committer = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CDb02F95Ab5030Cb122B990Ae2Fdfb048\Committer $committer = null;
     /**
      * object containing information about the author.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5Dcdebb4D990B5488C870F90A53D4B55::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CDb02F95Ab5030Cb122B990Ae2Fdfb048\Author::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5Dcdebb4D990B5488C870F90A53D4B55 $author = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CDb02F95Ab5030Cb122B990Ae2Fdfb048\Author $author = null;
     /**
      * The commit message.
      */
@@ -53,14 +53,14 @@ final class CDb02F95Ab5030Cb122B990Ae2Fdfb048
     /**
      * object containing information about the committer.
      */
-    public function committer() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CCbf7359D0E6Afd5E5Fb1B1A23028397B
+    public function committer() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CDb02F95Ab5030Cb122B990Ae2Fdfb048\Committer
     {
         return $this->committer;
     }
     /**
      * object containing information about the author.
      */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C5Dcdebb4D990B5488C870F90A53D4B55
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CDb02F95Ab5030Cb122B990Ae2Fdfb048\Author
     {
         return $this->author;
     }

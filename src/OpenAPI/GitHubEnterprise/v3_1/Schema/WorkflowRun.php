@@ -77,9 +77,9 @@ final class WorkflowRun
      */
     private string $workflow_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\WorkflowRun\HeadCommit::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $head_commit;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\WorkflowRun\HeadCommit $head_commit;
     /**
      * Minimal Repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\MinimalRepository::class)
@@ -232,7 +232,7 @@ final class WorkflowRun
     {
         return $this->workflow_url;
     }
-    public function head_commit() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function head_commit() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\WorkflowRun\HeadCommit
     {
         return $this->head_commit;
     }

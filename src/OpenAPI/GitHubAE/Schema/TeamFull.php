@@ -34,9 +34,9 @@ final class TeamFull
     private string $members_url;
     private string $repositories_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TeamFull\Parent::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $parent;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TeamFull\Parent $parent;
     private int $members_count;
     private int $repos_count;
     private string $created_at;
@@ -109,7 +109,7 @@ final class TeamFull
     {
         return $this->repositories_url;
     }
-    public function parent() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function parent() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\TeamFull\Parent
     {
         return $this->parent;
     }

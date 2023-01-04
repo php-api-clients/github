@@ -17,8 +17,8 @@ final class CDd5408Ca7Ccdac96E5C3833941D799A3
     private string $display_name;
     /**
      * Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CDd5408Ca7Ccdac96E5C3833941D799A3\RecentFolders>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CDd5408Ca7Ccdac96E5C3833941D799A3\RecentFolders::class)
      */
     private array $recent_folders = array();
     /**
@@ -37,7 +37,7 @@ final class CDd5408Ca7Ccdac96E5C3833941D799A3
     }
     /**
      * Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CDd5408Ca7Ccdac96E5C3833941D799A3\RecentFolders>
      */
     public function recent_folders() : array
     {

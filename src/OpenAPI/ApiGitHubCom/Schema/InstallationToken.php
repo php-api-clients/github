@@ -23,8 +23,8 @@ final class InstallationToken
     private ?string $single_file = null;
     private ?bool $has_multiple_single_files = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken\SingleFilePaths>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken\SingleFilePaths::class)
      */
     private array $single_file_paths = array();
     public function token() : string
@@ -62,7 +62,7 @@ final class InstallationToken
         return $this->has_multiple_single_files;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken\SingleFilePaths>
      */
     public function single_file_paths() : array
     {

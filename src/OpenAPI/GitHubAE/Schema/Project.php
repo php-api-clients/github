@@ -27,9 +27,9 @@ final class Project
      */
     private string $state;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Project\Creator::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $creator;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Project\Creator $creator;
     private string $created_at;
     private string $updated_at;
     /**
@@ -89,7 +89,7 @@ final class Project
     {
         return $this->state;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Project\Creator
     {
         return $this->creator;
     }

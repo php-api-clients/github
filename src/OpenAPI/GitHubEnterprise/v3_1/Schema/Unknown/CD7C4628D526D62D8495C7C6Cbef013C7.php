@@ -8,12 +8,12 @@ final class CD7C4628D526D62D8495C7C6Cbef013C7
     public const SCHEMA_TITLE = 'c_d7c4628d526d62d8495c7c6cbef013c7';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C23E339Dcf4098929A160Fe0Ec8D26Cc7::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CD7C4628D526D62D8495C7C6Cbef013C7\Block::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C23E339Dcf4098929A160Fe0Ec8D26Cc7 $block;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CD7C4628D526D62D8495C7C6Cbef013C7\Block $block;
     private string $message;
     private string $documentation_url;
-    public function block() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C23E339Dcf4098929A160Fe0Ec8D26Cc7
+    public function block() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\CD7C4628D526D62D8495C7C6Cbef013C7\Block
     {
         return $this->block;
     }

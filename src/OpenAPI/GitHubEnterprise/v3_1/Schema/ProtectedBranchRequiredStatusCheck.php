@@ -10,8 +10,8 @@ final class ProtectedBranchRequiredStatusCheck
     private ?string $url = null;
     private ?string $enforcement_level = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchRequiredStatusCheck\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchRequiredStatusCheck\Contexts::class)
      */
     private array $contexts = array();
     private ?string $contexts_url = null;
@@ -25,7 +25,7 @@ final class ProtectedBranchRequiredStatusCheck
         return $this->enforcement_level;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\ProtectedBranchRequiredStatusCheck\Contexts>
      */
     public function contexts() : array
     {

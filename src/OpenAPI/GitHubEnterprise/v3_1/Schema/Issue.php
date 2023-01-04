@@ -39,39 +39,39 @@ final class Issue
      */
     private $body;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\User $user;
     /**
      * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA2D3660A65D0Be1E2Ae914Af2E234Ed5>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA2D3660A65D0Be1E2Ae914Af2E234Ed5::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Labels>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Labels::class)
      */
     private array $labels = array();
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Assignee::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $assignee;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Assignee $assignee;
     private $assignees;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Milestone::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $milestone;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Milestone $milestone;
     private bool $locked;
     private $active_lock_reason;
     private int $comments;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0B6D51559712C7F96Bf726935B5B145C::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\PullRequest::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0B6D51559712C7F96Bf726935B5B145C $pull_request = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\PullRequest $pull_request = null;
     private $closed_at;
     private string $created_at;
     private string $updated_at;
     private ?bool $draft = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\ClosedBy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $closed_by;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\ClosedBy $closed_by;
     private ?string $body_html = null;
     private ?string $body_text = null;
     private ?string $timeline_url = null;
@@ -81,9 +81,9 @@ final class Issue
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Repository $repository = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\PerformedViaGithubApp::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $performed_via_github_app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\PerformedViaGithubApp $performed_via_github_app;
     /**
      * How the author is associated with the repository.
      */
@@ -162,19 +162,19 @@ final class Issue
     {
         return $this->body;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\User
     {
         return $this->user;
     }
     /**
      * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CA2D3660A65D0Be1E2Ae914Af2E234Ed5>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Labels>
      */
     public function labels() : array
     {
         return $this->labels;
     }
-    public function assignee() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function assignee() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Assignee
     {
         return $this->assignee;
     }
@@ -182,7 +182,7 @@ final class Issue
     {
         return $this->assignees;
     }
-    public function milestone() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function milestone() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\Milestone
     {
         return $this->milestone;
     }
@@ -198,7 +198,7 @@ final class Issue
     {
         return $this->comments;
     }
-    public function pull_request() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C0B6D51559712C7F96Bf726935B5B145C
+    public function pull_request() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\PullRequest
     {
         return $this->pull_request;
     }
@@ -218,7 +218,7 @@ final class Issue
     {
         return $this->draft;
     }
-    public function closed_by() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function closed_by() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\ClosedBy
     {
         return $this->closed_by;
     }
@@ -241,7 +241,7 @@ final class Issue
     {
         return $this->repository;
     }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Issue\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

@@ -12,9 +12,9 @@ final class Manifest
      */
     private string $name;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDaca71E314A0Fffbd131Fa3F4A3E4Acf::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDaca71E314A0Fffbd131Fa3F4A3E4Acf $file = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File $file = null;
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata::class)
@@ -22,9 +22,9 @@ final class Manifest
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata = null;
     /**
      * A collection of resolved package dependencies.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5B03F1779Ea2B01Dc40Ca1Ce33Af4137::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5B03F1779Ea2B01Dc40Ca1Ce33Af4137 $resolved = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved $resolved = null;
     /**
      * The name of the manifest.
      */
@@ -32,7 +32,7 @@ final class Manifest
     {
         return $this->name;
     }
-    public function file() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDaca71E314A0Fffbd131Fa3F4A3E4Acf
+    public function file() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File
     {
         return $this->file;
     }
@@ -46,7 +46,7 @@ final class Manifest
     /**
      * A collection of resolved package dependencies.
      */
-    public function resolved() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5B03F1779Ea2B01Dc40Ca1Ce33Af4137
+    public function resolved() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved
     {
         return $this->resolved;
     }

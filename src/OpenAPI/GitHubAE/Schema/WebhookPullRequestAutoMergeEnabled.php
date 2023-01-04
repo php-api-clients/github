@@ -25,9 +25,9 @@ final class WebhookPullRequestAutoMergeEnabled
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C149D3Ee68Ac3Fd6014Fe006222322D2A::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestAutoMergeEnabled\PullRequest::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C149D3Ee68Ac3Fd6014Fe006222322D2A $pull_request;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestAutoMergeEnabled\PullRequest $pull_request;
     private ?string $reason = null;
     /**
      * A repository on GitHub.
@@ -68,7 +68,7 @@ final class WebhookPullRequestAutoMergeEnabled
     {
         return $this->organization;
     }
-    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C149D3Ee68Ac3Fd6014Fe006222322D2A
+    public function pull_request() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookPullRequestAutoMergeEnabled\PullRequest
     {
         return $this->pull_request;
     }

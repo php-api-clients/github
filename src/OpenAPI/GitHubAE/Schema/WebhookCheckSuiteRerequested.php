@@ -11,9 +11,9 @@ final class WebhookCheckSuiteRerequested
     private $actions_meta;
     /**
      * The [check_suite](https://docs.github.com/github-ae@latest/rest/reference/checks#suites).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC1E30Aadd46D7A9D2039B10D298Ab1Bd::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookCheckSuiteRerequested\CheckSuite::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC1E30Aadd46D7A9D2039B10D298Ab1Bd $check_suite;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookCheckSuiteRerequested\CheckSuite $check_suite;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Enterprise::class)
@@ -50,7 +50,7 @@ final class WebhookCheckSuiteRerequested
     /**
      * The [check_suite](https://docs.github.com/github-ae@latest/rest/reference/checks#suites).
      */
-    public function check_suite() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CC1E30Aadd46D7A9D2039B10D298Ab1Bd
+    public function check_suite() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookCheckSuiteRerequested\CheckSuite
     {
         return $this->check_suite;
     }

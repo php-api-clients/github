@@ -8,11 +8,11 @@ final class PagesHealthCheck
     public const SCHEMA_TITLE = 'Pages Health Check Status';
     public const SCHEMA_DESCRIPTION = 'Pages Health Check Status';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc33A6E57A654A852Ed05B51A3B68D69::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc33A6E57A654A852Ed05B51A3B68D69 $domain;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain $domain;
     private $alt_domain;
-    public function domain() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc33A6E57A654A852Ed05B51A3B68D69
+    public function domain() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain
     {
         return $this->domain;
     }

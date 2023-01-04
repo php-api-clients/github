@@ -21,8 +21,8 @@ final class C681149299F597Daabec8Fab34Cd772Ac
     private string $event;
     /**
      * Use the following table to specify the location, destination, and contents of the draft review comment.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C9246Ed4Fb5E2E3Fd0F7Ef6C6Ae1265B7>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C9246Ed4Fb5E2E3Fd0F7Ef6C6Ae1265B7::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C681149299F597Daabec8Fab34Cd772Ac\Comments>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C681149299F597Daabec8Fab34Cd772Ac\Comments::class)
      */
     private array $comments = array();
     /**
@@ -48,7 +48,7 @@ final class C681149299F597Daabec8Fab34Cd772Ac
     }
     /**
      * Use the following table to specify the location, destination, and contents of the draft review comment.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C9246Ed4Fb5E2E3Fd0F7Ef6C6Ae1265B7>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C681149299F597Daabec8Fab34Cd772Ac\Comments>
      */
     public function comments() : array
     {

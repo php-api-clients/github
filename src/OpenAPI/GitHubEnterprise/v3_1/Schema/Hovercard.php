@@ -8,12 +8,12 @@ final class Hovercard
     public const SCHEMA_TITLE = 'Hovercard';
     public const SCHEMA_DESCRIPTION = 'Hovercard';
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C86Ce3A61C7F9D96662C77119E0F89F84>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C86Ce3A61C7F9D96662C77119E0F89F84::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Hovercard\Contexts>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Hovercard\Contexts::class)
      */
     private array $contexts = array();
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C86Ce3A61C7F9D96662C77119E0F89F84>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Hovercard\Contexts>
      */
     public function contexts() : array
     {

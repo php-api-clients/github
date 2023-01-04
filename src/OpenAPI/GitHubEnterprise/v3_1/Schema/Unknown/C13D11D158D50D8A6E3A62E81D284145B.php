@@ -21,14 +21,14 @@ final class C13D11D158D50D8A6E3A62E81D284145B
     private ?string $branch = null;
     /**
      * object containing information about the committer.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CCbf7359D0E6Afd5E5Fb1B1A23028397B::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C13D11D158D50D8A6E3A62E81D284145B\Committer::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CCbf7359D0E6Afd5E5Fb1B1A23028397B $committer = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C13D11D158D50D8A6E3A62E81D284145B\Committer $committer = null;
     /**
      * object containing information about the author.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C5Dcdebb4D990B5488C870F90A53D4B55::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C13D11D158D50D8A6E3A62E81D284145B\Author::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C5Dcdebb4D990B5488C870F90A53D4B55 $author = null;
+    private ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C13D11D158D50D8A6E3A62E81D284145B\Author $author = null;
     /**
      * The commit message.
      */
@@ -53,14 +53,14 @@ final class C13D11D158D50D8A6E3A62E81D284145B
     /**
      * object containing information about the committer.
      */
-    public function committer() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CCbf7359D0E6Afd5E5Fb1B1A23028397B
+    public function committer() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C13D11D158D50D8A6E3A62E81D284145B\Committer
     {
         return $this->committer;
     }
     /**
      * object containing information about the author.
      */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C5Dcdebb4D990B5488C870F90A53D4B55
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C13D11D158D50D8A6E3A62E81D284145B\Author
     {
         return $this->author;
     }

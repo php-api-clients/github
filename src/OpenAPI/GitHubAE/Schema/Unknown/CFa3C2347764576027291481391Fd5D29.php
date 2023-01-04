@@ -9,14 +9,14 @@ final class CFa3C2347764576027291481391Fd5D29
     public const SCHEMA_DESCRIPTION = '';
     /**
      * List of repository names that the token should have access to
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD3821C5Cb1069D0D7C54Eaa003187006>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD3821C5Cb1069D0D7C54Eaa003187006::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa3C2347764576027291481391Fd5D29\Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa3C2347764576027291481391Fd5D29\Repositories::class)
      */
     private array $repositories = array();
     /**
      * List of repository IDs that the token should have access to
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa3C2347764576027291481391Fd5D29\RepositoryIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa3C2347764576027291481391Fd5D29\RepositoryIds::class)
      */
     private array $repository_ids = array();
     /**
@@ -26,7 +26,7 @@ final class CFa3C2347764576027291481391Fd5D29
     private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\AppPermissions $permissions;
     /**
      * List of repository names that the token should have access to
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD3821C5Cb1069D0D7C54Eaa003187006>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa3C2347764576027291481391Fd5D29\Repositories>
      */
     public function repositories() : array
     {
@@ -34,7 +34,7 @@ final class CFa3C2347764576027291481391Fd5D29
     }
     /**
      * List of repository IDs that the token should have access to
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C987434F426A7002Fc01406E2Ac533C03>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CFa3C2347764576027291481391Fd5D29\RepositoryIds>
      */
     public function repository_ids() : array
     {

@@ -9,13 +9,13 @@ final class C9B74D0274E40516A6E86E12Ac2D2A12F
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default. See the [`auto_trigger_checks` object](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#auto_trigger_checks-object) description for details.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C19Fc24E6Bd06706De12De44E72Db0Ce4>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C19Fc24E6Bd06706De12De44E72Db0Ce4::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9B74D0274E40516A6E86E12Ac2D2A12F\AutoTriggerChecks>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9B74D0274E40516A6E86E12Ac2D2A12F\AutoTriggerChecks::class)
      */
     private array $auto_trigger_checks = array();
     /**
      * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default. See the [`auto_trigger_checks` object](https://docs.github.com/enterprise-server@3.1/rest/reference/checks#auto_trigger_checks-object) description for details.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C19Fc24E6Bd06706De12De44E72Db0Ce4>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\C9B74D0274E40516A6E86E12Ac2D2A12F\AutoTriggerChecks>
      */
     public function auto_trigger_checks() : array
     {

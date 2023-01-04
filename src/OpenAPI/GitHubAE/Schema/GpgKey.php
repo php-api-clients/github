@@ -12,13 +12,13 @@ final class GpgKey
     private string $key_id;
     private string $public_key;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0Fce66A671Ecc1B1C3D362Cad6E970B8>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0Fce66A671Ecc1B1C3D362Cad6E970B8::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GpgKey\Emails>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GpgKey\Emails::class)
      */
     private array $emails = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1Fccfd7De3C315Ea67924144Dbf13Ed6>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1Fccfd7De3C315Ea67924144Dbf13Ed6::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GpgKey\Subkeys>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GpgKey\Subkeys::class)
      */
     private array $subkeys = array();
     private bool $can_sign;
@@ -45,14 +45,14 @@ final class GpgKey
         return $this->public_key;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C0Fce66A671Ecc1B1C3D362Cad6E970B8>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GpgKey\Emails>
      */
     public function emails() : array
     {
         return $this->emails;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1Fccfd7De3C315Ea67924144Dbf13Ed6>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GpgKey\Subkeys>
      */
     public function subkeys() : array
     {

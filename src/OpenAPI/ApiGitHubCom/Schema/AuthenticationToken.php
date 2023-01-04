@@ -16,9 +16,9 @@ final class AuthenticationToken
      */
     private string $expires_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Ca7Cba03999576Fb67855B675049341::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Ca7Cba03999576Fb67855B675049341 $permissions = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions $permissions = null;
     /**
      * The repositories this token has access to
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
@@ -44,7 +44,7 @@ final class AuthenticationToken
     {
         return $this->expires_at;
     }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Ca7Cba03999576Fb67855B675049341
+    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions
     {
         return $this->permissions;
     }

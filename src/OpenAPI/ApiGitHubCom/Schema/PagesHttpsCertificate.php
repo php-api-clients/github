@@ -11,8 +11,8 @@ final class PagesHttpsCertificate
     private string $description;
     /**
      * Array of the domain set and its alternate name (if it is configured)
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate\Domains>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate\Domains::class)
      */
     private array $domains = array();
     private ?string $expires_at = null;
@@ -26,7 +26,7 @@ final class PagesHttpsCertificate
     }
     /**
      * Array of the domain set and its alternate name (if it is configured)
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate\Domains>
      */
     public function domains() : array
     {

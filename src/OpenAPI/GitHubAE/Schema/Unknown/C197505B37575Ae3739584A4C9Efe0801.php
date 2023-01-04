@@ -10,8 +10,8 @@ final class C197505B37575Ae3739584A4C9Efe0801
     private string $message;
     private string $documentation_url;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1034255Eaabf67825C1C5604A5B6C773>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1034255Eaabf67825C1C5604A5B6C773::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C197505B37575Ae3739584A4C9Efe0801\Errors>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C197505B37575Ae3739584A4C9Efe0801\Errors::class)
      */
     private array $errors = array();
     public function message() : string
@@ -23,7 +23,7 @@ final class C197505B37575Ae3739584A4C9Efe0801
         return $this->documentation_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1034255Eaabf67825C1C5604A5B6C773>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C197505B37575Ae3739584A4C9Efe0801\Errors>
      */
     public function errors() : array
     {

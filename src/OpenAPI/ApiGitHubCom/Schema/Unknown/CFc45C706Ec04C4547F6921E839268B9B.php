@@ -13,9 +13,9 @@ final class CFc45C706Ec04C4547F6921E839268B9B
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $billable_owner;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Bb4B53Eca3A75410A70003Cbef3B209::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc45C706Ec04C4547F6921E839268B9B\Defaults::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Bb4B53Eca3A75410A70003Cbef3B209 $defaults;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc45C706Ec04C4547F6921E839268B9B\Defaults $defaults;
     /**
      * A GitHub user.
      */
@@ -23,7 +23,7 @@ final class CFc45C706Ec04C4547F6921E839268B9B
     {
         return $this->billable_owner;
     }
-    public function defaults() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Bb4B53Eca3A75410A70003Cbef3B209
+    public function defaults() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CFc45C706Ec04C4547F6921E839268B9B\Defaults
     {
         return $this->defaults;
     }

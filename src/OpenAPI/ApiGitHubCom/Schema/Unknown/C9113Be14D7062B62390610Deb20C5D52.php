@@ -17,14 +17,14 @@ final class C9113Be14D7062B62390610Deb20C5D52
     private ?string $visibility = null;
     /**
      * List of organization IDs that can access the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\SelectedOrganizationIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\SelectedOrganizationIds::class)
      */
     private array $selected_organization_ids = array();
     /**
      * List of runner IDs to add to the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\Runners>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\Runners::class)
      */
     private array $runners = array();
     /**
@@ -37,8 +37,8 @@ final class C9113Be14D7062B62390610Deb20C5D52
     private ?bool $restricted_to_workflows = null;
     /**
      * List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE95Ac0C900B4E9276301A4Fccf93714A>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE95Ac0C900B4E9276301A4Fccf93714A::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\SelectedWorkflows>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\SelectedWorkflows::class)
      */
     private array $selected_workflows = array();
     /**
@@ -57,7 +57,7 @@ final class C9113Be14D7062B62390610Deb20C5D52
     }
     /**
      * List of organization IDs that can access the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\SelectedOrganizationIds>
      */
     public function selected_organization_ids() : array
     {
@@ -65,7 +65,7 @@ final class C9113Be14D7062B62390610Deb20C5D52
     }
     /**
      * List of runner IDs to add to the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\Runners>
      */
     public function runners() : array
     {
@@ -87,7 +87,7 @@ final class C9113Be14D7062B62390610Deb20C5D52
     }
     /**
      * List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE95Ac0C900B4E9276301A4Fccf93714A>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C9113Be14D7062B62390610Deb20C5D52\SelectedWorkflows>
      */
     public function selected_workflows() : array
     {

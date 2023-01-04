@@ -26,9 +26,9 @@ final class Milestone
     private string $title;
     private $description;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Milestone\Creator::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $creator;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Milestone\Creator $creator;
     private int $open_issues;
     private int $closed_issues;
     private string $created_at;
@@ -80,7 +80,7 @@ final class Milestone
     {
         return $this->description;
     }
-    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function creator() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Milestone\Creator
     {
         return $this->creator;
     }

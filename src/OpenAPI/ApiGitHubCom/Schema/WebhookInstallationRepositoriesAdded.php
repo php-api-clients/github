@@ -25,14 +25,14 @@ final class WebhookInstallationRepositoriesAdded
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
      * An array of repository objects, which were added to the installation.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2E0Ba6D50526Abe6815D358Bdd2Cef24>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2E0Ba6D50526Abe6815D358Bdd2Cef24::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesAdded\RepositoriesAdded>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesAdded\RepositoriesAdded::class)
      */
     private array $repositories_added = array();
     /**
      * An array of repository objects, which were removed from the installation.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF311D3373Bdf63F18606Fb824A02B2C7>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF311D3373Bdf63F18606Fb824A02B2C7::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesAdded\RepositoriesRemoved>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesAdded\RepositoriesRemoved::class)
      */
     private array $repositories_removed = array();
     /**
@@ -77,7 +77,7 @@ final class WebhookInstallationRepositoriesAdded
     }
     /**
      * An array of repository objects, which were added to the installation.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2E0Ba6D50526Abe6815D358Bdd2Cef24>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesAdded\RepositoriesAdded>
      */
     public function repositories_added() : array
     {
@@ -85,7 +85,7 @@ final class WebhookInstallationRepositoriesAdded
     }
     /**
      * An array of repository objects, which were removed from the installation.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF311D3373Bdf63F18606Fb824A02B2C7>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesAdded\RepositoriesRemoved>
      */
     public function repositories_removed() : array
     {

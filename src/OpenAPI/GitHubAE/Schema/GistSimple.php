@@ -22,9 +22,9 @@ final class GistSimple
     private string $git_push_url;
     private string $html_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CF0E36E18Df0B463A4A7Adc494Eaed3B9::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GistSimple\Files::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CF0E36E18Df0B463A4A7Adc494Eaed3B9 $files;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GistSimple\Files $files;
     private bool $public;
     private string $created_at;
     private string $updated_at;
@@ -85,7 +85,7 @@ final class GistSimple
     {
         return $this->html_url;
     }
-    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CF0E36E18Df0B463A4A7Adc494Eaed3B9
+    public function files() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\GistSimple\Files
     {
         return $this->files;
     }

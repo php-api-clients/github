@@ -8,9 +8,9 @@ final class CheckRunWithSimpleCheckSuite
     public const SCHEMA_TITLE = 'CheckRun';
     public const SCHEMA_DESCRIPTION = 'A check performed on the code of a given code change';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckRunWithSimpleCheckSuite\App::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $app;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckRunWithSimpleCheckSuite\App $app;
     /**
      * A suite of checks performed on the code of a given code change
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleCheckSuite::class)
@@ -40,9 +40,9 @@ final class CheckRunWithSimpleCheckSuite
     private string $name;
     private string $node_id;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C443E4026D4005C937Bd3509Cf8Cd8Faf::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckRunWithSimpleCheckSuite\Output::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C443E4026D4005C937Bd3509Cf8Cd8Faf $output;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckRunWithSimpleCheckSuite\Output $output;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\PullRequestMinimal::class)
@@ -54,7 +54,7 @@ final class CheckRunWithSimpleCheckSuite
      */
     private string $status;
     private string $url;
-    public function app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function app() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckRunWithSimpleCheckSuite\App
     {
         return $this->app;
     }
@@ -117,7 +117,7 @@ final class CheckRunWithSimpleCheckSuite
     {
         return $this->node_id;
     }
-    public function output() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C443E4026D4005C937Bd3509Cf8Cd8Faf
+    public function output() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CheckRunWithSimpleCheckSuite\Output
     {
         return $this->output;
     }

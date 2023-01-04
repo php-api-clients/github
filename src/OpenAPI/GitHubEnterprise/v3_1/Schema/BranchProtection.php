@@ -30,31 +30,31 @@ final class BranchProtection
      */
     private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchRestrictionPolicy $restrictions;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredLinearHistory::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8 $required_linear_history;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredLinearHistory $required_linear_history;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\AllowForcePushes::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8 $allow_force_pushes;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\AllowForcePushes $allow_force_pushes;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\AllowDeletions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8 $allow_deletions;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\AllowDeletions $allow_deletions;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\BlockCreations::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8 $block_creations;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\BlockCreations $block_creations;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredConversationResolution::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8 $required_conversation_resolution;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredConversationResolution $required_conversation_resolution;
     private string $name;
     private string $protection_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredSignatures::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942 $required_signatures;
+    private \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredSignatures $required_signatures;
     public function url() : string
     {
         return $this->url;
@@ -91,23 +91,23 @@ final class BranchProtection
     {
         return $this->restrictions;
     }
-    public function required_linear_history() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8
+    public function required_linear_history() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredLinearHistory
     {
         return $this->required_linear_history;
     }
-    public function allow_force_pushes() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8
+    public function allow_force_pushes() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\AllowForcePushes
     {
         return $this->allow_force_pushes;
     }
-    public function allow_deletions() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8
+    public function allow_deletions() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\AllowDeletions
     {
         return $this->allow_deletions;
     }
-    public function block_creations() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8
+    public function block_creations() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\BlockCreations
     {
         return $this->block_creations;
     }
-    public function required_conversation_resolution() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\C47C5Efdd650C68E60F894B5D312F53C8
+    public function required_conversation_resolution() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredConversationResolution
     {
         return $this->required_conversation_resolution;
     }
@@ -119,7 +119,7 @@ final class BranchProtection
     {
         return $this->protection_url;
     }
-    public function required_signatures() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\Unknown\CF50Ed86844C35399Ef6Ae62851A21942
+    public function required_signatures() : \ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1\Schema\BranchProtection\RequiredSignatures
     {
         return $this->required_signatures;
     }

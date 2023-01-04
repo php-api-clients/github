@@ -19,9 +19,9 @@ final class ReviewComment
     private string $original_commit_id;
     private ?int $in_reply_to_id = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewComment\User::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $user;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewComment\User $user;
     private string $body;
     private string $created_at;
     private string $updated_at;
@@ -32,9 +32,9 @@ final class ReviewComment
      */
     private string $author_association;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3647E86E9016Cd88A93C7A61B94268D4::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewComment\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3647E86E9016Cd88A93C7A61B94268D4 $_links;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewComment\Links $_links;
     private ?string $body_text = null;
     private ?string $body_html = null;
     /**
@@ -109,7 +109,7 @@ final class ReviewComment
     {
         return $this->in_reply_to_id;
     }
-    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function user() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewComment\User
     {
         return $this->user;
     }
@@ -140,7 +140,7 @@ final class ReviewComment
     {
         return $this->author_association;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C3647E86E9016Cd88A93C7A61B94268D4
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ReviewComment\Links
     {
         return $this->_links;
     }

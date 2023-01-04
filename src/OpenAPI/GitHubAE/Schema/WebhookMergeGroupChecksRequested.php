@@ -14,9 +14,9 @@ final class WebhookMergeGroupChecksRequested
      */
     private ?\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\SimpleInstallation $installation = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C485D0A47F35465Af3259B750Efade60E::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookMergeGroupChecksRequested\MergeGroup::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C485D0A47F35465Af3259B750Efade60E $merge_group;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookMergeGroupChecksRequested\MergeGroup $merge_group;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\OrganizationSimple::class)
@@ -43,7 +43,7 @@ final class WebhookMergeGroupChecksRequested
     {
         return $this->installation;
     }
-    public function merge_group() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C485D0A47F35465Af3259B750Efade60E
+    public function merge_group() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\WebhookMergeGroupChecksRequested\MergeGroup
     {
         return $this->merge_group;
     }

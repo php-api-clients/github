@@ -24,13 +24,13 @@ final class Package
     private int $version_count;
     private string $visibility;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $owner;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner $owner;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository $repository;
     private string $created_at;
     private string $updated_at;
     /**
@@ -70,11 +70,11 @@ final class Package
     {
         return $this->visibility;
     }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner
     {
         return $this->owner;
     }
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository
     {
         return $this->repository;
     }

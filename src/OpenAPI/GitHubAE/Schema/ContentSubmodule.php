@@ -18,9 +18,9 @@ final class ContentSubmodule
     private $html_url;
     private $download_url;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentSubmodule\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af $_links;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentSubmodule\Links $_links;
     public function type() : string
     {
         return $this->type;
@@ -61,7 +61,7 @@ final class ContentSubmodule
     {
         return $this->download_url;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB382E06B8099E759Ef95167A295E84Af
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ContentSubmodule\Links
     {
         return $this->_links;
     }

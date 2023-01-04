@@ -42,9 +42,9 @@ final class TeamOrganization
     private $collaborators;
     private $billing_email;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE87428107B8Ae220Ecd4D320D87356F6::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization\Plan::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE87428107B8Ae220Ecd4D320D87356F6 $plan = null;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization\Plan $plan = null;
     private $default_repository_permission;
     private $members_can_create_repositories;
     private $two_factor_requirement_enabled;
@@ -194,7 +194,7 @@ final class TeamOrganization
     {
         return $this->billing_email;
     }
-    public function plan() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE87428107B8Ae220Ecd4D320D87356F6
+    public function plan() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization\Plan
     {
         return $this->plan;
     }

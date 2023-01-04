@@ -17,9 +17,9 @@ final class DependabotAlert
     private string $state;
     /**
      * Details for the vulnerable dependency.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Bf61F22D40E495Cd2Dcd6B69D8D9B32::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\Dependency::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Bf61F22D40E495Cd2Dcd6B69D8D9B32 $dependency;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\Dependency $dependency;
     /**
      * Details for the GitHub Security Advisory.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory::class)
@@ -51,9 +51,9 @@ final class DependabotAlert
      */
     private $dismissed_at;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\DismissedBy::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $dismissed_by;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\DismissedBy $dismissed_by;
     /**
      * The reason that the alert was dismissed.
      */
@@ -83,7 +83,7 @@ final class DependabotAlert
     /**
      * Details for the vulnerable dependency.
      */
-    public function dependency() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Bf61F22D40E495Cd2Dcd6B69D8D9B32
+    public function dependency() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\Dependency
     {
         return $this->dependency;
     }
@@ -136,7 +136,7 @@ final class DependabotAlert
     {
         return $this->dismissed_at;
     }
-    public function dismissed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function dismissed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\DismissedBy
     {
         return $this->dismissed_by;
     }

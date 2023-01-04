@@ -17,14 +17,14 @@ final class C14D389A53182E0Adac5Bb11097854Bad
     private ?string $visibility = null;
     /**
      * List of organization IDs that can access the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C14D389A53182E0Adac5Bb11097854Bad\SelectedOrganizationIds>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C14D389A53182E0Adac5Bb11097854Bad\SelectedOrganizationIds::class)
      */
     private array $selected_organization_ids = array();
     /**
      * List of runner IDs to add to the runner group.
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C14D389A53182E0Adac5Bb11097854Bad\Runners>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C14D389A53182E0Adac5Bb11097854Bad\Runners::class)
      */
     private array $runners = array();
     /**
@@ -47,7 +47,7 @@ final class C14D389A53182E0Adac5Bb11097854Bad
     }
     /**
      * List of organization IDs that can access the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C95Bd6D3529904930285164C639Dd255E>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C14D389A53182E0Adac5Bb11097854Bad\SelectedOrganizationIds>
      */
     public function selected_organization_ids() : array
     {
@@ -55,7 +55,7 @@ final class C14D389A53182E0Adac5Bb11097854Bad
     }
     /**
      * List of runner IDs to add to the runner group.
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CD9Babd07186876224Bd7E5177Cc2A806>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\C14D389A53182E0Adac5Bb11097854Bad\Runners>
      */
     public function runners() : array
     {

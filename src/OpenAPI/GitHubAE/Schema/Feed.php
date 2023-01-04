@@ -14,8 +14,8 @@ final class Feed
     private ?string $current_user_actor_url = null;
     private ?string $current_user_organization_url = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB45Cb2B03E859506B06Ce45320A49Aa9>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB45Cb2B03E859506B06Ce45320A49Aa9::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Feed\CurrentUserOrganizationUrls>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Feed\CurrentUserOrganizationUrls::class)
      */
     private array $current_user_organization_urls = array();
     private ?string $security_advisories_url = null;
@@ -28,9 +28,9 @@ final class Feed
      */
     private ?string $repository_discussions_category_url = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBe07Bb444D912Fbdb88Df9D2385C2661::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Feed\Links::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBe07Bb444D912Fbdb88Df9D2385C2661 $_links;
+    private \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Feed\Links $_links;
     public function timeline_url() : string
     {
         return $this->timeline_url;
@@ -56,7 +56,7 @@ final class Feed
         return $this->current_user_organization_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CB45Cb2B03E859506B06Ce45320A49Aa9>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Feed\CurrentUserOrganizationUrls>
      */
     public function current_user_organization_urls() : array
     {
@@ -80,7 +80,7 @@ final class Feed
     {
         return $this->repository_discussions_category_url;
     }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\CBe07Bb444D912Fbdb88Df9D2385C2661
+    public function _links() : \ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Feed\Links
     {
         return $this->_links;
     }

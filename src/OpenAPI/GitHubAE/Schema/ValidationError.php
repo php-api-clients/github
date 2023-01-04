@@ -10,8 +10,8 @@ final class ValidationError
     private string $message;
     private string $documentation_url;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1034255Eaabf67825C1C5604A5B6C773>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1034255Eaabf67825C1C5604A5B6C773::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ValidationError\Errors>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ValidationError\Errors::class)
      */
     private array $errors = array();
     public function message() : string
@@ -23,7 +23,7 @@ final class ValidationError
         return $this->documentation_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C1034255Eaabf67825C1C5604A5B6C773>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\ValidationError\Errors>
      */
     public function errors() : array
     {

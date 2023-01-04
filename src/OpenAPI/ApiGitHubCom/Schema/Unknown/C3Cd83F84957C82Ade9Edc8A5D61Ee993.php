@@ -13,13 +13,13 @@ final class C3Cd83F84957C82Ade9Edc8A5D61Ee993
     private string $name;
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/orgs#create-hook-config-params).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82F0A5Ccd50Ba1Cacae03Bf27Edc69F7::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3Cd83F84957C82Ade9Edc8A5D61Ee993\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82F0A5Ccd50Ba1Cacae03Bf27Edc69F7 $config;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3Cd83F84957C82Ade9Edc8A5D61Ee993\Config $config;
     /**
      * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3Cd83F84957C82Ade9Edc8A5D61Ee993\Events>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3Cd83F84957C82Ade9Edc8A5D61Ee993\Events::class)
      */
     private array $events = array();
     /**
@@ -36,13 +36,13 @@ final class C3Cd83F84957C82Ade9Edc8A5D61Ee993
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/orgs#create-hook-config-params).
      */
-    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C82F0A5Ccd50Ba1Cacae03Bf27Edc69F7
+    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3Cd83F84957C82Ade9Edc8A5D61Ee993\Config
     {
         return $this->config;
     }
     /**
      * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C3Cd83F84957C82Ade9Edc8A5D61Ee993\Events>
      */
     public function events() : array
     {

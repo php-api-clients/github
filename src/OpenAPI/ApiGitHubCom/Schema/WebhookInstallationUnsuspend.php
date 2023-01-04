@@ -25,8 +25,8 @@ final class WebhookInstallationUnsuspend
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
      * An array of repository objects that the installation can access.
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2E0Ba6D50526Abe6815D358Bdd2Cef24>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2E0Ba6D50526Abe6815D358Bdd2Cef24::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationUnsuspend\Repositories>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationUnsuspend\Repositories::class)
      */
     private array $repositories = array();
     /**
@@ -67,7 +67,7 @@ final class WebhookInstallationUnsuspend
     }
     /**
      * An array of repository objects that the installation can access.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2E0Ba6D50526Abe6815D358Bdd2Cef24>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationUnsuspend\Repositories>
      */
     public function repositories() : array
     {

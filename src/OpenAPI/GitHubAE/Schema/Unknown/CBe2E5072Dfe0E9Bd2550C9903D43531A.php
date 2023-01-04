@@ -9,13 +9,13 @@ final class CBe2E5072Dfe0E9Bd2550C9903D43531A
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The slug values for teams
-     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBe2E5072Dfe0E9Bd2550C9903D43531A\Teams>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBe2E5072Dfe0E9Bd2550C9903D43531A\Teams::class)
      */
     private array $teams = array();
     /**
      * The slug values for teams
-     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd>
+     * @return array<\ApiClients\Client\Github\OpenAPI\GitHubAE\Schema\CBe2E5072Dfe0E9Bd2550C9903D43531A\Teams>
      */
     public function teams() : array
     {

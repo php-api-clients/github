@@ -25,9 +25,9 @@ final class WebhookPackagePublished
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
      * Information about the package.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C62Ee7C6625F903F8836427C59A353C71::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPackagePublished\Package::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C62Ee7C6625F903F8836427C59A353C71 $package;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPackagePublished\Package $package;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -66,7 +66,7 @@ final class WebhookPackagePublished
     /**
      * Information about the package.
      */
-    public function package() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C62Ee7C6625F903F8836427C59A353C71
+    public function package() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPackagePublished\Package
     {
         return $this->package;
     }

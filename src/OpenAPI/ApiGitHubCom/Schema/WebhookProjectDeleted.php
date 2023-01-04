@@ -24,13 +24,13 @@ final class WebhookProjectDeleted
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectDeleted\Project::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205 $project;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectDeleted\Project $project;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectDeleted\Repository::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217 $repository;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectDeleted\Repository $repository;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -61,11 +61,11 @@ final class WebhookProjectDeleted
     {
         return $this->organization;
     }
-    public function project() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66B3C0Ecb8A403D51E8A0A3980E5E205
+    public function project() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectDeleted\Project
     {
         return $this->project;
     }
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4D5B98B02A5Afea165Db4Daaee5D7217
+    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectDeleted\Repository
     {
         return $this->repository;
     }
