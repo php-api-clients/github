@@ -8,7 +8,10 @@ final class WebhookCheckSuiteRerequested
     public const SCHEMA_TITLE = 'check_suite rerequested event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $actions_meta;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteRerequested\ActionsMeta::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteRerequested\ActionsMeta $actions_meta = null;
     /**
      * The [check_suite](https://docs.github.com/rest/reference/checks#suites).
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteRerequested\CheckSuite::class)
@@ -43,7 +46,7 @@ final class WebhookCheckSuiteRerequested
     {
         return $this->action;
     }
-    public function actions_meta()
+    public function actions_meta() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteRerequested\ActionsMeta
     {
         return $this->actions_meta;
     }

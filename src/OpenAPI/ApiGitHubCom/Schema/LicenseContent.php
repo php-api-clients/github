@@ -12,9 +12,9 @@ final class LicenseContent
     private string $sha;
     private int $size;
     private string $url;
-    private $html_url;
-    private $git_url;
-    private $download_url;
+    private ?string $html_url;
+    private ?string $git_url;
+    private ?string $download_url;
     private string $type;
     private string $content;
     private string $encoding;
@@ -46,15 +46,15 @@ final class LicenseContent
     {
         return $this->url;
     }
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function git_url()
+    public function git_url() : ?string
     {
         return $this->git_url;
     }
-    public function download_url()
+    public function download_url() : ?string
     {
         return $this->download_url;
     }

@@ -12,9 +12,9 @@ final class CommitComment
     private int $id;
     private string $node_id;
     private string $body;
-    private $path;
-    private $position;
-    private $line;
+    private ?string $path;
+    private ?int $position;
+    private ?int $line;
     private string $commit_id;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment\User::class)
@@ -50,15 +50,15 @@ final class CommitComment
     {
         return $this->body;
     }
-    public function path()
+    public function path() : ?string
     {
         return $this->path;
     }
-    public function position()
+    public function position() : ?int
     {
         return $this->position;
     }
-    public function line()
+    public function line() : ?int
     {
         return $this->line;
     }

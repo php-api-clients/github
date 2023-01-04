@@ -14,19 +14,19 @@ final class Page
     /**
      * The status of the most recent build of the Page.
      */
-    private $status;
+    private ?string $status;
     /**
      * The Pages site's custom domain
      */
-    private $cname;
+    private ?string $cname;
     /**
      * The state if the domain is verified
      */
-    private $protected_domain_state;
+    private ?string $protected_domain_state = null;
     /**
      * The timestamp when a pending domain becomes unverified.
      */
-    private $pending_domain_unverified_at;
+    private ?string $pending_domain_unverified_at = null;
     /**
      * Whether the Page has a custom 404 page.
      */
@@ -38,7 +38,7 @@ final class Page
     /**
      * The process in which the Page will be built.
      */
-    private $build_type;
+    private ?string $build_type = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash::class)
      */
@@ -65,28 +65,28 @@ final class Page
     /**
      * The status of the most recent build of the Page.
      */
-    public function status()
+    public function status() : ?string
     {
         return $this->status;
     }
     /**
      * The Pages site's custom domain
      */
-    public function cname()
+    public function cname() : ?string
     {
         return $this->cname;
     }
     /**
      * The state if the domain is verified
      */
-    public function protected_domain_state()
+    public function protected_domain_state() : ?string
     {
         return $this->protected_domain_state;
     }
     /**
      * The timestamp when a pending domain becomes unverified.
      */
-    public function pending_domain_unverified_at()
+    public function pending_domain_unverified_at() : ?string
     {
         return $this->pending_domain_unverified_at;
     }
@@ -107,7 +107,7 @@ final class Page
     /**
      * The process in which the Page will be built.
      */
-    public function build_type()
+    public function build_type() : ?string
     {
         return $this->build_type;
     }

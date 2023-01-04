@@ -18,7 +18,7 @@ final class FullRepository
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     private bool $private;
     private string $html_url;
-    private $description;
+    private ?string $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -59,11 +59,11 @@ final class FullRepository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private $mirror_url;
+    private ?string $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private $homepage;
-    private $language;
+    private ?string $homepage;
+    private ?string $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
@@ -106,7 +106,7 @@ final class FullRepository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository\TemplateRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository\TemplateRepository $template_repository;
-    private $temp_clone_token;
+    private ?string $temp_clone_token = null;
     private ?bool $allow_squash_merge = null;
     private ?bool $allow_auto_merge = null;
     private ?bool $delete_branch_on_merge = null;
@@ -178,7 +178,10 @@ final class FullRepository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConductSimple $code_of_conduct = null;
-    private $security_and_analysis;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis $security_and_analysis = null;
     public function id() : int
     {
         return $this->id;
@@ -210,7 +213,7 @@ final class FullRepository
     {
         return $this->html_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -374,7 +377,7 @@ final class FullRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url()
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -386,11 +389,11 @@ final class FullRepository
     {
         return $this->svn_url;
     }
-    public function homepage()
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
-    public function language()
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -498,7 +501,7 @@ final class FullRepository
     {
         return $this->template_repository;
     }
-    public function temp_clone_token()
+    public function temp_clone_token() : ?string
     {
         return $this->temp_clone_token;
     }
@@ -636,7 +639,7 @@ final class FullRepository
     {
         return $this->code_of_conduct;
     }
-    public function security_and_analysis()
+    public function security_and_analysis() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis
     {
         return $this->security_and_analysis;
     }

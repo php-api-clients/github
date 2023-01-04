@@ -8,11 +8,11 @@ final class UserMarketplacePurchase
     public const SCHEMA_TITLE = 'User Marketplace Purchase';
     public const SCHEMA_DESCRIPTION = 'User Marketplace Purchase';
     private string $billing_cycle;
-    private $next_billing_date;
-    private $unit_count;
+    private ?string $next_billing_date;
+    private ?int $unit_count;
     private bool $on_free_trial;
-    private $free_trial_ends_on;
-    private $updated_at;
+    private ?string $free_trial_ends_on;
+    private ?string $updated_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceAccount::class)
      */
@@ -26,11 +26,11 @@ final class UserMarketplacePurchase
     {
         return $this->billing_cycle;
     }
-    public function next_billing_date()
+    public function next_billing_date() : ?string
     {
         return $this->next_billing_date;
     }
-    public function unit_count()
+    public function unit_count() : ?int
     {
         return $this->unit_count;
     }
@@ -38,11 +38,11 @@ final class UserMarketplacePurchase
     {
         return $this->on_free_trial;
     }
-    public function free_trial_ends_on()
+    public function free_trial_ends_on() : ?string
     {
         return $this->free_trial_ends_on;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

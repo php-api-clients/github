@@ -22,7 +22,7 @@ final class TeamFull
      */
     private string $name;
     private string $slug;
-    private $description;
+    private ?string $description;
     /**
      * The level of privacy this team should have
      */
@@ -83,7 +83,7 @@ final class TeamFull
     {
         return $this->slug;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

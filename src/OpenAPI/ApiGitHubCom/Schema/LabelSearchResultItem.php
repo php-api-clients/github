@@ -13,7 +13,7 @@ final class LabelSearchResultItem
     private string $name;
     private string $color;
     private bool $default;
-    private $description;
+    private ?string $description;
     private int $score;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches>
@@ -44,7 +44,7 @@ final class LabelSearchResultItem
     {
         return $this->default;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

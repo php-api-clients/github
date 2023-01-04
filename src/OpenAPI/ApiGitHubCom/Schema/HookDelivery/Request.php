@@ -9,23 +9,25 @@ final class Request
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The request headers sent with the webhook delivery.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Headers::class)
      */
-    private $headers;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Headers $headers;
     /**
      * The webhook payload.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Payload::class)
      */
-    private $payload;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Payload $payload;
     /**
      * The request headers sent with the webhook delivery.
      */
-    public function headers()
+    public function headers() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Headers
     {
         return $this->headers;
     }
     /**
      * The webhook payload.
      */
-    public function payload()
+    public function payload() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Payload
     {
         return $this->payload;
     }

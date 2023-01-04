@@ -8,8 +8,8 @@ final class GpgKey
     public const SCHEMA_TITLE = 'GPG Key';
     public const SCHEMA_DESCRIPTION = 'A unique encryption key';
     private int $id;
-    private $name;
-    private $primary_key_id;
+    private ?string $name = null;
+    private ?int $primary_key_id;
     private string $key_id;
     private string $public_key;
     /**
@@ -27,18 +27,18 @@ final class GpgKey
     private bool $can_encrypt_storage;
     private bool $can_certify;
     private string $created_at;
-    private $expires_at;
+    private ?string $expires_at;
     private bool $revoked;
-    private $raw_key;
+    private ?string $raw_key;
     public function id() : int
     {
         return $this->id;
     }
-    public function name()
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function primary_key_id()
+    public function primary_key_id() : ?int
     {
         return $this->primary_key_id;
     }
@@ -84,7 +84,7 @@ final class GpgKey
     {
         return $this->created_at;
     }
-    public function expires_at()
+    public function expires_at() : ?string
     {
         return $this->expires_at;
     }
@@ -92,7 +92,7 @@ final class GpgKey
     {
         return $this->revoked;
     }
-    public function raw_key()
+    public function raw_key() : ?string
     {
         return $this->raw_key;
     }

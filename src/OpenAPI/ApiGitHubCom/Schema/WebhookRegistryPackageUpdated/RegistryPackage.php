@@ -23,7 +23,10 @@ final class RegistryPackage
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\PackageVersion::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\PackageVersion $package_version;
-    private $registry;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\Registry::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\Registry $registry;
     private string $updated_at;
     public function created_at() : string
     {
@@ -65,7 +68,7 @@ final class RegistryPackage
     {
         return $this->package_version;
     }
-    public function registry()
+    public function registry() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\Registry
     {
         return $this->registry;
     }

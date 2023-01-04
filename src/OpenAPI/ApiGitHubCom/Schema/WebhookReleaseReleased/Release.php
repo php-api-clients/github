@@ -13,9 +13,12 @@ final class Release
      */
     private array $assets = array();
     private string $assets_url;
-    private $author;
-    private $body;
-    private $created_at;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Author::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Author $author;
+    private ?string $body;
+    private ?string $created_at;
     private ?string $discussion_url = null;
     /**
      * Whether the release is a draft or published
@@ -23,13 +26,13 @@ final class Release
     private bool $draft;
     private string $html_url;
     private int $id;
-    private $name;
+    private ?string $name;
     private string $node_id;
     /**
      * Whether the release is identified as a prerelease or a full release.
      */
     private bool $prerelease;
-    private $published_at;
+    private ?string $published_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Reactions::class)
      */
@@ -38,14 +41,14 @@ final class Release
      * The name of the tag.
      */
     private string $tag_name;
-    private $tarball_url;
+    private ?string $tarball_url;
     /**
      * Specifies the commitish value that determines where the Git tag is created from.
      */
     private string $target_commitish;
     private string $upload_url;
     private string $url;
-    private $zipball_url;
+    private ?string $zipball_url;
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Assets>
      */
@@ -57,15 +60,15 @@ final class Release
     {
         return $this->assets_url;
     }
-    public function author()
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Author
     {
         return $this->author;
     }
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
@@ -88,7 +91,7 @@ final class Release
     {
         return $this->id;
     }
-    public function name()
+    public function name() : ?string
     {
         return $this->name;
     }
@@ -103,7 +106,7 @@ final class Release
     {
         return $this->prerelease;
     }
-    public function published_at()
+    public function published_at() : ?string
     {
         return $this->published_at;
     }
@@ -118,7 +121,7 @@ final class Release
     {
         return $this->tag_name;
     }
-    public function tarball_url()
+    public function tarball_url() : ?string
     {
         return $this->tarball_url;
     }
@@ -137,7 +140,7 @@ final class Release
     {
         return $this->url;
     }
-    public function zipball_url()
+    public function zipball_url() : ?string
     {
         return $this->zipball_url;
     }

@@ -11,7 +11,7 @@ final class RequestedTeam
     /**
      * Description of the team
      */
-    private $description;
+    private ?string $description;
     private string $html_url;
     /**
      * Unique identifier of the team
@@ -23,7 +23,10 @@ final class RequestedTeam
      */
     private string $name;
     private string $node_id;
-    private $parent;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequestedTeam\Parent::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequestedTeam\Parent $parent = null;
     /**
      * Permission that the team will have for its repositories
      */
@@ -42,7 +45,7 @@ final class RequestedTeam
     /**
      * Description of the team
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -72,7 +75,7 @@ final class RequestedTeam
     {
         return $this->node_id;
     }
-    public function parent()
+    public function parent() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequestedTeam\Parent
     {
         return $this->parent;
     }

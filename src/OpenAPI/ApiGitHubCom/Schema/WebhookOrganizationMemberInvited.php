@@ -38,7 +38,10 @@ final class WebhookOrganizationMemberInvited
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationMemberInvited\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationMemberInvited\User $user = null;
     public function action() : string
     {
         return $this->action;
@@ -85,7 +88,7 @@ final class WebhookOrganizationMemberInvited
     {
         return $this->sender;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrganizationMemberInvited\User
     {
         return $this->user;
     }

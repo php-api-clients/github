@@ -18,7 +18,7 @@ final class MinimalRepository
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     private bool $private;
     private string $html_url;
-    private $description;
+    private ?string $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -59,11 +59,11 @@ final class MinimalRepository
     private string $teams_url;
     private string $trees_url;
     private ?string $clone_url = null;
-    private $mirror_url;
+    private ?string $mirror_url = null;
     private string $hooks_url;
     private ?string $svn_url = null;
-    private $homepage;
-    private $language;
+    private ?string $homepage = null;
+    private ?string $language = null;
     private ?int $forks_count = null;
     private ?int $stargazers_count = null;
     private ?int $watchers_count = null;
@@ -88,9 +88,9 @@ final class MinimalRepository
     private ?bool $archived = null;
     private ?bool $disabled = null;
     private ?string $visibility = null;
-    private $pushed_at;
-    private $created_at;
-    private $updated_at;
+    private ?string $pushed_at = null;
+    private ?string $created_at = null;
+    private ?string $updated_at = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Permissions::class)
      */
@@ -105,13 +105,19 @@ final class MinimalRepository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct $code_of_conduct = null;
-    private $license;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\License::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\License $license = null;
     private ?int $forks = null;
     private ?int $open_issues = null;
     private ?int $watchers = null;
     private ?bool $allow_forking = null;
     private ?bool $web_commit_signoff_required = null;
-    private $security_and_analysis;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis $security_and_analysis = null;
     public function id() : int
     {
         return $this->id;
@@ -143,7 +149,7 @@ final class MinimalRepository
     {
         return $this->html_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -307,7 +313,7 @@ final class MinimalRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url()
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -319,11 +325,11 @@ final class MinimalRepository
     {
         return $this->svn_url;
     }
-    public function homepage()
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
-    public function language()
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -401,15 +407,15 @@ final class MinimalRepository
     {
         return $this->visibility;
     }
-    public function pushed_at()
+    public function pushed_at() : ?string
     {
         return $this->pushed_at;
     }
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
@@ -444,7 +450,7 @@ final class MinimalRepository
     {
         return $this->code_of_conduct;
     }
-    public function license()
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\License
     {
         return $this->license;
     }
@@ -468,7 +474,7 @@ final class MinimalRepository
     {
         return $this->web_commit_signoff_required;
     }
-    public function security_and_analysis()
+    public function security_and_analysis() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis
     {
         return $this->security_and_analysis;
     }

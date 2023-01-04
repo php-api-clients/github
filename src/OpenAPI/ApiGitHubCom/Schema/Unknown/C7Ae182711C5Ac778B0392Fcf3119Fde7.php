@@ -10,7 +10,7 @@ final class C7Ae182711C5Ac778B0392Fcf3119Fde7
     /**
      * Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
      */
-    private $cname;
+    private ?string $cname;
     /**
      * Specify whether HTTPS should be enforced for the repository.
      */
@@ -30,7 +30,7 @@ final class C7Ae182711C5Ac778B0392Fcf3119Fde7
     /**
      * Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
      */
-    public function cname()
+    public function cname() : ?string
     {
         return $this->cname;
     }

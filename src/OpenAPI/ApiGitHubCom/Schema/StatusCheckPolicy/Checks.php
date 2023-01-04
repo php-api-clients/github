@@ -8,12 +8,12 @@ final class Checks
     public const SCHEMA_TITLE = 'StatusCheckPolicy\\Checks';
     public const SCHEMA_DESCRIPTION = '';
     private string $context;
-    private $app_id;
+    private ?int $app_id;
     public function context() : string
     {
         return $this->context;
     }
-    public function app_id()
+    public function app_id() : ?int
     {
         return $this->app_id;
     }

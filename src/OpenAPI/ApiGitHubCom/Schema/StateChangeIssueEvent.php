@@ -16,14 +16,14 @@ final class StateChangeIssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     private string $event;
-    private $commit_id;
-    private $commit_url;
+    private ?string $commit_id;
+    private ?string $commit_url;
     private string $created_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StateChangeIssueEvent\PerformedViaGithubApp::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StateChangeIssueEvent\PerformedViaGithubApp $performed_via_github_app;
-    private $state_reason;
+    private ?string $state_reason = null;
     public function id() : int
     {
         return $this->id;
@@ -47,11 +47,11 @@ final class StateChangeIssueEvent
     {
         return $this->event;
     }
-    public function commit_id()
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
-    public function commit_url()
+    public function commit_url() : ?string
     {
         return $this->commit_url;
     }
@@ -63,7 +63,7 @@ final class StateChangeIssueEvent
     {
         return $this->performed_via_github_app;
     }
-    public function state_reason()
+    public function state_reason() : ?string
     {
         return $this->state_reason;
     }

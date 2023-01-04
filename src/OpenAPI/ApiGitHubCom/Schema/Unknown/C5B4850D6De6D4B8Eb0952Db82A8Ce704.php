@@ -16,11 +16,11 @@ final class C5B4850D6De6D4B8Eb0952Db82A8Ce704
     For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:  
     `http://ci.example.com/user/repo/build/sha`
     */
-    private $target_url;
+    private ?string $target_url = null;
     /**
      * A short description of the status.
      */
-    private $description;
+    private ?string $description = null;
     /**
      * A string label to differentiate this status from the status of other systems. This field is case-insensitive.
      */
@@ -37,14 +37,14 @@ final class C5B4850D6De6D4B8Eb0952Db82A8Ce704
     For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:  
     `http://ci.example.com/user/repo/build/sha`
     */
-    public function target_url()
+    public function target_url() : ?string
     {
         return $this->target_url;
     }
     /**
      * A short description of the status.
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

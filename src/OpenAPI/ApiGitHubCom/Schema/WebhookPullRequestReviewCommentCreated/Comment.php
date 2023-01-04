@@ -43,7 +43,7 @@ final class Comment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    private $line;
+    private ?int $line;
     /**
      * The node ID of the pull request review comment.
      */
@@ -55,7 +55,7 @@ final class Comment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    private $original_line;
+    private ?int $original_line;
     /**
      * The index of the original line in the diff to which the comment applies.
      */
@@ -63,7 +63,7 @@ final class Comment
     /**
      * The first line of the range for a multi-line comment.
      */
-    private $original_start_line;
+    private ?int $original_start_line;
     /**
      * The relative path of the file to which the comment applies.
      */
@@ -71,11 +71,11 @@ final class Comment
     /**
      * The line index in the diff to which the comment applies.
      */
-    private $position;
+    private ?int $position;
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    private $pull_request_review_id;
+    private ?int $pull_request_review_id;
     /**
      * URL for the pull request that the review comment belongs to.
      */
@@ -91,17 +91,20 @@ final class Comment
     /**
      * The first line of the range for a multi-line comment.
      */
-    private $start_line;
+    private ?int $start_line;
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    private $start_side;
+    private ?string $start_side;
     private string $updated_at;
     /**
      * URL for the pull request review comment
      */
     private string $url;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user;
     public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Links
     {
         return $this->_links;
@@ -162,7 +165,7 @@ final class Comment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function line()
+    public function line() : ?int
     {
         return $this->line;
     }
@@ -183,7 +186,7 @@ final class Comment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function original_line()
+    public function original_line() : ?int
     {
         return $this->original_line;
     }
@@ -197,7 +200,7 @@ final class Comment
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function original_start_line()
+    public function original_start_line() : ?int
     {
         return $this->original_start_line;
     }
@@ -211,14 +214,14 @@ final class Comment
     /**
      * The line index in the diff to which the comment applies.
      */
-    public function position()
+    public function position() : ?int
     {
         return $this->position;
     }
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    public function pull_request_review_id()
+    public function pull_request_review_id() : ?int
     {
         return $this->pull_request_review_id;
     }
@@ -243,14 +246,14 @@ final class Comment
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function start_line()
+    public function start_line() : ?int
     {
         return $this->start_line;
     }
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function start_side()
+    public function start_side() : ?string
     {
         return $this->start_side;
     }
@@ -265,7 +268,7 @@ final class Comment
     {
         return $this->url;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User
     {
         return $this->user;
     }

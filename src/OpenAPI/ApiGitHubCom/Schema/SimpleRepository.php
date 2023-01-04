@@ -39,7 +39,7 @@ final class SimpleRepository
     /**
      * The repository description.
      */
-    private $description;
+    private ?string $description;
     /**
      * Whether the repository is a fork.
      */
@@ -244,7 +244,7 @@ final class SimpleRepository
     /**
      * The repository description.
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

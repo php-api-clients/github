@@ -14,7 +14,7 @@ final class Cvss
     /**
      * The full CVSS vector string for the advisory.
      */
-    private $vector_string;
+    private ?string $vector_string;
     /**
      * The overall CVSS score of the advisory.
      */
@@ -25,7 +25,7 @@ final class Cvss
     /**
      * The full CVSS vector string for the advisory.
      */
-    public function vector_string()
+    public function vector_string() : ?string
     {
         return $this->vector_string;
     }

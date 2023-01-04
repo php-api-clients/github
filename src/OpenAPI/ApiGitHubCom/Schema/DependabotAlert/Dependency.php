@@ -19,7 +19,7 @@ final class Dependency
     /**
      * The execution scope of the vulnerable dependency.
      */
-    private $scope;
+    private ?string $scope;
     /**
      * Details for the vulnerable package.
      */
@@ -37,7 +37,7 @@ final class Dependency
     /**
      * The execution scope of the vulnerable dependency.
      */
-    public function scope()
+    public function scope() : ?string
     {
         return $this->scope;
     }

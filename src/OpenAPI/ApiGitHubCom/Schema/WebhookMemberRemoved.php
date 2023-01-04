@@ -18,7 +18,10 @@ final class WebhookMemberRemoved
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
-    private $member;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberRemoved\Member::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberRemoved\Member $member;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -52,7 +55,7 @@ final class WebhookMemberRemoved
     {
         return $this->installation;
     }
-    public function member()
+    public function member() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberRemoved\Member
     {
         return $this->member;
     }

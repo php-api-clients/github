@@ -9,7 +9,7 @@ final class Assignees
     public const SCHEMA_DESCRIPTION = '';
     private ?string $avatar_url = null;
     private ?bool $deleted = null;
-    private $email;
+    private ?string $email = null;
     private ?string $events_url = null;
     private ?string $followers_url = null;
     private ?string $following_url = null;
@@ -36,7 +36,7 @@ final class Assignees
     {
         return $this->deleted;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }

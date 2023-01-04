@@ -11,8 +11,11 @@ final class PullRequest
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Links::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Links $_links;
-    private $active_lock_reason;
-    private $assignee;
+    private ?string $active_lock_reason;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Assignee::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Assignee $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Assignees>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Assignees::class)
@@ -24,14 +27,15 @@ final class PullRequest
     private string $author_association;
     /**
      * The status of auto merging a pull request.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\AutoMerge::class)
      */
-    private $auto_merge;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\AutoMerge $auto_merge = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Base::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Base $base;
-    private $body;
-    private $closed_at;
+    private ?string $body;
+    private ?string $closed_at;
     private string $comments_url;
     private string $commits_url;
     private string $created_at;
@@ -50,12 +54,13 @@ final class PullRequest
      */
     private array $labels = array();
     private bool $locked;
-    private $merge_commit_sha;
-    private $merged_at;
+    private ?string $merge_commit_sha;
+    private ?string $merged_at;
     /**
      * A collection of related issues and pull requests.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Milestone::class)
      */
-    private $milestone;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Milestone $milestone;
     private string $node_id;
     private int $number;
     private string $patch_url;
@@ -76,16 +81,19 @@ final class PullRequest
     private string $title;
     private string $updated_at;
     private string $url;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\User $user;
     public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Links
     {
         return $this->_links;
     }
-    public function active_lock_reason()
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
-    public function assignee()
+    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Assignee
     {
         return $this->assignee;
     }
@@ -106,7 +114,7 @@ final class PullRequest
     /**
      * The status of auto merging a pull request.
      */
-    public function auto_merge()
+    public function auto_merge() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\AutoMerge
     {
         return $this->auto_merge;
     }
@@ -114,11 +122,11 @@ final class PullRequest
     {
         return $this->base;
     }
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
-    public function closed_at()
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
@@ -169,18 +177,18 @@ final class PullRequest
     {
         return $this->locked;
     }
-    public function merge_commit_sha()
+    public function merge_commit_sha() : ?string
     {
         return $this->merge_commit_sha;
     }
-    public function merged_at()
+    public function merged_at() : ?string
     {
         return $this->merged_at;
     }
     /**
      * A collection of related issues and pull requests.
      */
-    public function milestone()
+    public function milestone() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Milestone
     {
         return $this->milestone;
     }
@@ -238,7 +246,7 @@ final class PullRequest
     {
         return $this->url;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\User
     {
         return $this->user;
     }

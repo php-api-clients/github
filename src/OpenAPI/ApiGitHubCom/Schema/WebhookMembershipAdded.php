@@ -18,7 +18,10 @@ final class WebhookMembershipAdded
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
-    private $member;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Member::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Member $member;
     /**
      * A GitHub organization.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
@@ -33,7 +36,10 @@ final class WebhookMembershipAdded
      * The scope of the membership. Currently, can only be `team`.
      */
     private string $scope;
-    private $sender;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Sender::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Sender $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Team::class)
@@ -57,7 +63,7 @@ final class WebhookMembershipAdded
     {
         return $this->installation;
     }
-    public function member()
+    public function member() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Member
     {
         return $this->member;
     }
@@ -82,7 +88,7 @@ final class WebhookMembershipAdded
     {
         return $this->scope;
     }
-    public function sender()
+    public function sender() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Sender
     {
         return $this->sender;
     }

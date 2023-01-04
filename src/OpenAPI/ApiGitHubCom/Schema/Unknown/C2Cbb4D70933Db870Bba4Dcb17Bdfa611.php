@@ -37,8 +37,9 @@ final class C2Cbb4D70933Db870Bba4Dcb17Bdfa611
     `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.
     
     You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
+    * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C2Cbb4D70933Db870Bba4Dcb17Bdfa611\SecurityAndAnalysis::class)
     */
-    private $security_and_analysis;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C2Cbb4D70933Db870Bba4Dcb17Bdfa611\SecurityAndAnalysis $security_and_analysis;
     /**
      * Either `true` to enable issues for this repository or `false` to disable them.
      */
@@ -175,7 +176,7 @@ final class C2Cbb4D70933Db870Bba4Dcb17Bdfa611
     
     You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
     */
-    public function security_and_analysis()
+    public function security_and_analysis() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C2Cbb4D70933Db870Bba4Dcb17Bdfa611\SecurityAndAnalysis
     {
         return $this->security_and_analysis;
     }

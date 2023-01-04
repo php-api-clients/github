@@ -25,7 +25,10 @@ final class OldAnswer
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OldAnswer\Reactions $reactions = null;
     private string $repository_url;
     private string $updated_at;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OldAnswer\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OldAnswer\User $user;
     /**
      * How the author is associated with the repository.
      */
@@ -77,7 +80,7 @@ final class OldAnswer
     {
         return $this->updated_at;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OldAnswer\User
     {
         return $this->user;
     }

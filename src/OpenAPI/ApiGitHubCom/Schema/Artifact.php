@@ -23,10 +23,13 @@ final class Artifact
      * Whether or not the artifact has expired.
      */
     private bool $expired;
-    private $created_at;
-    private $expires_at;
-    private $updated_at;
-    private $workflow_run;
+    private ?string $created_at;
+    private ?string $expires_at;
+    private ?string $updated_at;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact\WorkflowRun::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact\WorkflowRun $workflow_run = null;
     public function id() : int
     {
         return $this->id;
@@ -64,19 +67,19 @@ final class Artifact
     {
         return $this->expired;
     }
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function expires_at()
+    public function expires_at() : ?string
     {
         return $this->expires_at;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
-    public function workflow_run()
+    public function workflow_run() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact\WorkflowRun
     {
         return $this->workflow_run;
     }

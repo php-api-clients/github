@@ -8,7 +8,10 @@ final class WebhookDeploymentStatusCreated
     public const SCHEMA_TITLE = 'deployment_status created event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $check_run;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\CheckRun::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\CheckRun $check_run = null;
     /**
      * The [deployment](https://docs.github.com/rest/reference/deployments#list-deployments).
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Deployment::class)
@@ -44,13 +47,19 @@ final class WebhookDeploymentStatusCreated
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    private $workflow;
-    private $workflow_run;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Workflow::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Workflow $workflow = null;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\WorkflowRun::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\WorkflowRun $workflow_run = null;
     public function action() : string
     {
         return $this->action;
     }
-    public function check_run()
+    public function check_run() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\CheckRun
     {
         return $this->check_run;
     }
@@ -103,11 +112,11 @@ final class WebhookDeploymentStatusCreated
     {
         return $this->sender;
     }
-    public function workflow()
+    public function workflow() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Workflow
     {
         return $this->workflow;
     }
-    public function workflow_run()
+    public function workflow_run() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\WorkflowRun
     {
         return $this->workflow_run;
     }

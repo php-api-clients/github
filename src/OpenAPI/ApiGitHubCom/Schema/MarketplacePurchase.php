@@ -12,8 +12,11 @@ final class MarketplacePurchase
     private int $id;
     private string $login;
     private ?string $organization_billing_email = null;
-    private $email;
-    private $marketplace_pending_change;
+    private ?string $email = null;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePendingChange::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePendingChange $marketplace_pending_change = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePurchase::class)
      */
@@ -38,11 +41,11 @@ final class MarketplacePurchase
     {
         return $this->organization_billing_email;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function marketplace_pending_change()
+    public function marketplace_pending_change() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePendingChange
     {
         return $this->marketplace_pending_change;
     }

@@ -8,8 +8,8 @@ final class WorkflowJob
     public const SCHEMA_TITLE = 'WebhookWorkflowJobWaiting\\WorkflowJob';
     public const SCHEMA_DESCRIPTION = '';
     private string $check_run_url;
-    private $completed_at;
-    private $conclusion;
+    private ?string $completed_at;
+    private ?string $conclusion;
     private string $head_sha;
     private string $html_url;
     private int $id;
@@ -23,19 +23,19 @@ final class WorkflowJob
     private int $run_attempt;
     private int $run_id;
     private string $run_url;
-    private $runner_group_id;
-    private $runner_group_name;
-    private $runner_id;
-    private $runner_name;
+    private ?int $runner_group_id;
+    private ?string $runner_group_name;
+    private ?int $runner_id;
+    private ?string $runner_name;
     private string $started_at;
     /**
      * The name of the current branch.
      */
-    private $head_branch;
+    private ?string $head_branch;
     /**
      * The name of the workflow.
      */
-    private $workflow_name;
+    private ?string $workflow_name;
     private string $status;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowJob\Steps>
@@ -47,11 +47,11 @@ final class WorkflowJob
     {
         return $this->check_run_url;
     }
-    public function completed_at()
+    public function completed_at() : ?string
     {
         return $this->completed_at;
     }
-    public function conclusion()
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
@@ -94,19 +94,19 @@ final class WorkflowJob
     {
         return $this->run_url;
     }
-    public function runner_group_id()
+    public function runner_group_id() : ?int
     {
         return $this->runner_group_id;
     }
-    public function runner_group_name()
+    public function runner_group_name() : ?string
     {
         return $this->runner_group_name;
     }
-    public function runner_id()
+    public function runner_id() : ?int
     {
         return $this->runner_id;
     }
-    public function runner_name()
+    public function runner_name() : ?string
     {
         return $this->runner_name;
     }
@@ -117,14 +117,14 @@ final class WorkflowJob
     /**
      * The name of the current branch.
      */
-    public function head_branch()
+    public function head_branch() : ?string
     {
         return $this->head_branch;
     }
     /**
      * The name of the workflow.
      */
-    public function workflow_name()
+    public function workflow_name() : ?string
     {
         return $this->workflow_name;
     }

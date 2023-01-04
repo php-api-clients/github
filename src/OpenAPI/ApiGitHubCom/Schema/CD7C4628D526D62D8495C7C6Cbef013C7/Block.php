@@ -9,7 +9,7 @@ final class Block
     public const SCHEMA_DESCRIPTION = '';
     private string $reason;
     private string $created_at;
-    private $html_url;
+    private ?string $html_url;
     public function reason() : string
     {
         return $this->reason;
@@ -18,7 +18,7 @@ final class Block
     {
         return $this->created_at;
     }
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

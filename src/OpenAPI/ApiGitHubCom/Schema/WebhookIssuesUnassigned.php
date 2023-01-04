@@ -11,7 +11,10 @@ final class WebhookIssuesUnassigned
      * The action that was performed.
      */
     private string $action;
-    private $assignee;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesUnassigned\Assignee::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesUnassigned\Assignee $assignee = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -49,7 +52,7 @@ final class WebhookIssuesUnassigned
     {
         return $this->action;
     }
-    public function assignee()
+    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesUnassigned\Assignee
     {
         return $this->assignee;
     }

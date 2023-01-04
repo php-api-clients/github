@@ -33,7 +33,7 @@ final class C671013E2Accf252672C161A3Ebe7B010
     /**
      * Short description of the deployment.
      */
-    private $description;
+    private ?string $description = null;
     /**
      * Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
      */
@@ -85,7 +85,7 @@ final class C671013E2Accf252672C161A3Ebe7B010
     /**
      * Short description of the deployment.
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

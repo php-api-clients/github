@@ -8,12 +8,12 @@ final class Defaults
     public const SCHEMA_TITLE = 'CFc45C706Ec04C4547F6921E839268B9B\\Defaults';
     public const SCHEMA_DESCRIPTION = '';
     private string $location;
-    private $devcontainer_path;
+    private ?string $devcontainer_path;
     public function location() : string
     {
         return $this->location;
     }
-    public function devcontainer_path()
+    public function devcontainer_path() : ?string
     {
         return $this->devcontainer_path;
     }

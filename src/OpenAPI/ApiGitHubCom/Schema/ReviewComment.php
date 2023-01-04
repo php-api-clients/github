@@ -8,12 +8,12 @@ final class ReviewComment
     public const SCHEMA_TITLE = 'Legacy Review Comment';
     public const SCHEMA_DESCRIPTION = 'Legacy Review Comment';
     private string $url;
-    private $pull_request_review_id;
+    private ?int $pull_request_review_id;
     private int $id;
     private string $node_id;
     private string $diff_hunk;
     private string $path;
-    private $position;
+    private ?int $position;
     private int $original_position;
     private string $commit_id;
     private string $original_commit_id;
@@ -48,7 +48,7 @@ final class ReviewComment
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    private $start_side;
+    private ?string $start_side = null;
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
@@ -60,16 +60,16 @@ final class ReviewComment
     /**
      * The first line of the range for a multi-line comment.
      */
-    private $start_line;
+    private ?int $start_line = null;
     /**
      * The original first line of the range for a multi-line comment.
      */
-    private $original_start_line;
+    private ?int $original_start_line = null;
     public function url() : string
     {
         return $this->url;
     }
-    public function pull_request_review_id()
+    public function pull_request_review_id() : ?int
     {
         return $this->pull_request_review_id;
     }
@@ -89,7 +89,7 @@ final class ReviewComment
     {
         return $this->path;
     }
-    public function position()
+    public function position() : ?int
     {
         return $this->position;
     }
@@ -166,7 +166,7 @@ final class ReviewComment
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function start_side()
+    public function start_side() : ?string
     {
         return $this->start_side;
     }
@@ -187,14 +187,14 @@ final class ReviewComment
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function start_line()
+    public function start_line() : ?int
     {
         return $this->start_line;
     }
     /**
      * The original first line of the range for a multi-line comment.
      */
-    public function original_start_line()
+    public function original_start_line() : ?int
     {
         return $this->original_start_line;
     }

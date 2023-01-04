@@ -25,7 +25,10 @@ final class Answer
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Answer\Reactions $reactions = null;
     private string $repository_url;
     private string $updated_at;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Answer\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Answer\User $user;
     /**
      * How the author is associated with the repository.
      */
@@ -77,7 +80,7 @@ final class Answer
     {
         return $this->updated_at;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Answer\User
     {
         return $this->user;
     }

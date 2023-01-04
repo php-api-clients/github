@@ -10,7 +10,7 @@ final class Account
     private int $id;
     private string $login;
     private string $node_id;
-    private $organization_billing_email;
+    private ?string $organization_billing_email;
     private string $type;
     public function id() : int
     {
@@ -24,7 +24,7 @@ final class Account
     {
         return $this->node_id;
     }
-    public function organization_billing_email()
+    public function organization_billing_email() : ?string
     {
         return $this->organization_billing_email;
     }

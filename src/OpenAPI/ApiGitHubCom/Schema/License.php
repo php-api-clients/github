@@ -9,8 +9,8 @@ final class License
     public const SCHEMA_DESCRIPTION = 'License';
     private string $key;
     private string $name;
-    private $spdx_id;
-    private $url;
+    private ?string $spdx_id;
+    private ?string $url;
     private string $node_id;
     private string $html_url;
     private string $description;
@@ -40,11 +40,11 @@ final class License
     {
         return $this->name;
     }
-    public function spdx_id()
+    public function spdx_id() : ?string
     {
         return $this->spdx_id;
     }
-    public function url()
+    public function url() : ?string
     {
         return $this->url;
     }

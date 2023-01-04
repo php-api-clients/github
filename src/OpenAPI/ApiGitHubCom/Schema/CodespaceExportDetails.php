@@ -10,19 +10,19 @@ final class CodespaceExportDetails
     /**
      * State of the latest export
      */
-    private $state;
+    private ?string $state;
     /**
      * Completion time of the last export operation
      */
-    private $completed_at;
+    private ?string $completed_at;
     /**
      * Name of the exported branch
      */
-    private $branch;
+    private ?string $branch;
     /**
      * Git commit SHA of the exported branch
      */
-    private $sha;
+    private ?string $sha;
     /**
      * Id for the export details
      */
@@ -34,32 +34,32 @@ final class CodespaceExportDetails
     /**
      * Web url for the exported branch
      */
-    private $html_url;
+    private ?string $html_url;
     /**
      * State of the latest export
      */
-    public function state()
+    public function state() : ?string
     {
         return $this->state;
     }
     /**
      * Completion time of the last export operation
      */
-    public function completed_at()
+    public function completed_at() : ?string
     {
         return $this->completed_at;
     }
     /**
      * Name of the exported branch
      */
-    public function branch()
+    public function branch() : ?string
     {
         return $this->branch;
     }
     /**
      * Git commit SHA of the exported branch
      */
-    public function sha()
+    public function sha() : ?string
     {
         return $this->sha;
     }
@@ -80,7 +80,7 @@ final class CodespaceExportDetails
     /**
      * Web url for the exported branch
      */
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

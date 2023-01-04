@@ -8,11 +8,11 @@ final class MarketplacePurchase
     public const SCHEMA_TITLE = 'MarketplacePurchase\\MarketplacePurchase';
     public const SCHEMA_DESCRIPTION = '';
     private string $billing_cycle;
-    private $next_billing_date;
+    private ?string $next_billing_date;
     private bool $is_installed;
-    private $unit_count;
+    private ?int $unit_count;
     private bool $on_free_trial;
-    private $free_trial_ends_on;
+    private ?string $free_trial_ends_on;
     private string $updated_at;
     /**
      * Marketplace Listing Plan
@@ -23,7 +23,7 @@ final class MarketplacePurchase
     {
         return $this->billing_cycle;
     }
-    public function next_billing_date()
+    public function next_billing_date() : ?string
     {
         return $this->next_billing_date;
     }
@@ -31,7 +31,7 @@ final class MarketplacePurchase
     {
         return $this->is_installed;
     }
-    public function unit_count()
+    public function unit_count() : ?int
     {
         return $this->unit_count;
     }
@@ -39,7 +39,7 @@ final class MarketplacePurchase
     {
         return $this->on_free_trial;
     }
-    public function free_trial_ends_on()
+    public function free_trial_ends_on() : ?string
     {
         return $this->free_trial_ends_on;
     }

@@ -14,7 +14,7 @@ final class DependabotAlertSecurityAdvisory
     /**
      * The unique CVE ID assigned to the advisory.
      */
-    private $cve_id;
+    private ?string $cve_id;
     /**
      * A short, plain text summary of the advisory.
      */
@@ -67,7 +67,7 @@ final class DependabotAlertSecurityAdvisory
     /**
      * The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private $withdrawn_at;
+    private ?string $withdrawn_at;
     /**
      * The unique GitHub Security Advisory ID assigned to the advisory.
      */
@@ -78,7 +78,7 @@ final class DependabotAlertSecurityAdvisory
     /**
      * The unique CVE ID assigned to the advisory.
      */
-    public function cve_id()
+    public function cve_id() : ?string
     {
         return $this->cve_id;
     }
@@ -159,7 +159,7 @@ final class DependabotAlertSecurityAdvisory
     /**
      * The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function withdrawn_at()
+    public function withdrawn_at() : ?string
     {
         return $this->withdrawn_at;
     }

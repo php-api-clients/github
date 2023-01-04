@@ -16,17 +16,17 @@ final class CheckRun
      */
     private string $head_sha;
     private string $node_id;
-    private $external_id;
+    private ?string $external_id;
     private string $url;
-    private $html_url;
-    private $details_url;
+    private ?string $html_url;
+    private ?string $details_url;
     /**
      * The phase of the lifecycle that the check is currently in.
      */
     private string $status;
-    private $conclusion;
-    private $started_at;
-    private $completed_at;
+    private ?string $conclusion;
+    private ?string $started_at;
+    private ?string $completed_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\Output::class)
      */
@@ -35,7 +35,10 @@ final class CheckRun
      * The name of the check.
      */
     private string $name;
-    private $check_suite;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite $check_suite;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\App::class)
      */
@@ -68,7 +71,7 @@ final class CheckRun
     {
         return $this->node_id;
     }
-    public function external_id()
+    public function external_id() : ?string
     {
         return $this->external_id;
     }
@@ -76,11 +79,11 @@ final class CheckRun
     {
         return $this->url;
     }
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function details_url()
+    public function details_url() : ?string
     {
         return $this->details_url;
     }
@@ -91,15 +94,15 @@ final class CheckRun
     {
         return $this->status;
     }
-    public function conclusion()
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
-    public function started_at()
+    public function started_at() : ?string
     {
         return $this->started_at;
     }
-    public function completed_at()
+    public function completed_at() : ?string
     {
         return $this->completed_at;
     }
@@ -114,7 +117,7 @@ final class CheckRun
     {
         return $this->name;
     }
-    public function check_suite()
+    public function check_suite() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite
     {
         return $this->check_suite;
     }

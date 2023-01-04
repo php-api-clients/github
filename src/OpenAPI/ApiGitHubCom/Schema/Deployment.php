@@ -28,7 +28,7 @@ final class Deployment
      * Name for the target deployment environment.
      */
     private string $environment;
-    private $description;
+    private ?string $description;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\Creator::class)
      */
@@ -97,7 +97,7 @@ final class Deployment
     {
         return $this->environment;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

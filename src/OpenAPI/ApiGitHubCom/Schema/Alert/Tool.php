@@ -14,7 +14,7 @@ final class Tool
     /**
      * The version of the tool used to detect the alert.
      */
-    private $version;
+    private ?string $version;
     /**
      * The name of the tool used to generate the code scanning analysis alert.
      */
@@ -25,7 +25,7 @@ final class Tool
     /**
      * The version of the tool used to detect the alert.
      */
-    public function version()
+    public function version() : ?string
     {
         return $this->version;
     }

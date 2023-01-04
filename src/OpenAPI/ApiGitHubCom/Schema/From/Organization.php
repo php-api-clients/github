@@ -8,7 +8,7 @@ final class Organization
     public const SCHEMA_TITLE = 'Organization';
     public const SCHEMA_DESCRIPTION = '';
     private string $avatar_url;
-    private $description;
+    private ?string $description;
     private string $events_url;
     private string $hooks_url;
     private ?string $html_url = null;
@@ -24,7 +24,7 @@ final class Organization
     {
         return $this->avatar_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

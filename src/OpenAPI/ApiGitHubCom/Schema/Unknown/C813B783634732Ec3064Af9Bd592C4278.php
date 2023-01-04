@@ -36,7 +36,10 @@ final class C813B783634732Ec3064Af9Bd592C4278
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    private $requested_reviewer;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C813B783634732Ec3064Af9Bd592C4278\RequestedReviewer::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C813B783634732Ec3064Af9Bd592C4278\RequestedReviewer $requested_reviewer;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -85,7 +88,7 @@ final class C813B783634732Ec3064Af9Bd592C4278
     {
         return $this->repository;
     }
-    public function requested_reviewer()
+    public function requested_reviewer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C813B783634732Ec3064Af9Bd592C4278\RequestedReviewer
     {
         return $this->requested_reviewer;
     }

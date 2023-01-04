@@ -14,11 +14,11 @@ final class CC9C1F0E9A9Aa74978Ac1D364440C6D6A
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
-    private $dismissed_reason;
+    private ?string $dismissed_reason = null;
     /**
      * The dismissal comment associated with the dismissal of the alert.
      */
-    private $dismissed_comment;
+    private ?string $dismissed_comment = null;
     /**
      * Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
      */
@@ -29,14 +29,14 @@ final class CC9C1F0E9A9Aa74978Ac1D364440C6D6A
     /**
      * **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      */
-    public function dismissed_reason()
+    public function dismissed_reason() : ?string
     {
         return $this->dismissed_reason;
     }
     /**
      * The dismissal comment associated with the dismissal of the alert.
      */
-    public function dismissed_comment()
+    public function dismissed_comment() : ?string
     {
         return $this->dismissed_comment;
     }

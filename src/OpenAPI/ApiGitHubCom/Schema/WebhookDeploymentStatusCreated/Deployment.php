@@ -8,8 +8,11 @@ final class Deployment
     public const SCHEMA_TITLE = 'Deployment';
     public const SCHEMA_DESCRIPTION = 'The [deployment](https://docs.github.com/rest/reference/deployments#list-deployments).';
     private string $created_at;
-    private $creator;
-    private $description;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\Creator::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\Creator $creator;
+    private ?string $description;
     private string $environment;
     private int $id;
     private string $node_id;
@@ -17,8 +20,9 @@ final class Deployment
     private $payload;
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\PerformedViaGithubApp::class)
      */
-    private $performed_via_github_app;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\PerformedViaGithubApp $performed_via_github_app = null;
     private ?bool $production_environment = null;
     private string $ref;
     private string $repository_url;
@@ -32,11 +36,11 @@ final class Deployment
     {
         return $this->created_at;
     }
-    public function creator()
+    public function creator() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\Creator
     {
         return $this->creator;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -63,7 +67,7 @@ final class Deployment
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public function performed_via_github_app()
+    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

@@ -11,9 +11,9 @@ final class PackageFiles
     private string $created_at;
     private string $download_url;
     private int $id;
-    private $md5;
+    private ?string $md5;
     private string $name;
-    private $sha1;
+    private ?string $sha1;
     private string $sha256;
     private int $size;
     private string $state;
@@ -34,7 +34,7 @@ final class PackageFiles
     {
         return $this->id;
     }
-    public function md5()
+    public function md5() : ?string
     {
         return $this->md5;
     }
@@ -42,7 +42,7 @@ final class PackageFiles
     {
         return $this->name;
     }
-    public function sha1()
+    public function sha1() : ?string
     {
         return $this->sha1;
     }

@@ -7,18 +7,18 @@ final class SimpleCommitStatus
     public const SCHEMA_JSON = '{"title":"Simple Commit Status","required":["description","id","node_id","state","context","target_url","avatar_url","url","created_at","updated_at"],"type":"object","properties":{"description":{"type":["string","null"]},"id":{"type":"integer"},"node_id":{"type":"string"},"state":{"type":"string"},"context":{"type":"string"},"target_url":{"type":["string","null"],"format":"uri"},"required":{"type":["boolean","null"]},"avatar_url":{"type":["string","null"],"format":"uri"},"url":{"type":"string","format":"uri"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}}}';
     public const SCHEMA_TITLE = 'Simple Commit Status';
     public const SCHEMA_DESCRIPTION = '';
-    private $description;
+    private ?string $description;
     private int $id;
     private string $node_id;
     private string $state;
     private string $context;
-    private $target_url;
-    private $required;
-    private $avatar_url;
+    private ?string $target_url;
+    private ?bool $required = null;
+    private ?string $avatar_url;
     private string $url;
     private string $created_at;
     private string $updated_at;
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -38,15 +38,15 @@ final class SimpleCommitStatus
     {
         return $this->context;
     }
-    public function target_url()
+    public function target_url() : ?string
     {
         return $this->target_url;
     }
-    public function required()
+    public function required() : ?bool
     {
         return $this->required;
     }
-    public function avatar_url()
+    public function avatar_url() : ?string
     {
         return $this->avatar_url;
     }

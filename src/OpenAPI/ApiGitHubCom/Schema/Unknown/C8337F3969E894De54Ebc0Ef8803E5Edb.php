@@ -9,20 +9,23 @@ final class C8337F3969E894De54Ebc0Ef8803E5Edb
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Require status checks to pass before merging. Set to `null` to disable.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\RequiredStatusChecks::class)
      */
-    private $required_status_checks;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\RequiredStatusChecks $required_status_checks;
     /**
      * Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
      */
-    private $enforce_admins;
+    private ?bool $enforce_admins;
     /**
      * Require at least one approving review on a pull request, before merging. Set to `null` to disable.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\RequiredPullRequestReviews::class)
      */
-    private $required_pull_request_reviews;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\RequiredPullRequestReviews $required_pull_request_reviews;
     /**
      * Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\Restrictions::class)
      */
-    private $restrictions;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\Restrictions $restrictions;
     /**
      * Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
      */
@@ -30,7 +33,7 @@ final class C8337F3969E894De54Ebc0Ef8803E5Edb
     /**
      * Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
      */
-    private $allow_force_pushes;
+    private ?bool $allow_force_pushes = null;
     /**
      * Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
      */
@@ -54,28 +57,28 @@ final class C8337F3969E894De54Ebc0Ef8803E5Edb
     /**
      * Require status checks to pass before merging. Set to `null` to disable.
      */
-    public function required_status_checks()
+    public function required_status_checks() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\RequiredStatusChecks
     {
         return $this->required_status_checks;
     }
     /**
      * Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
      */
-    public function enforce_admins()
+    public function enforce_admins() : ?bool
     {
         return $this->enforce_admins;
     }
     /**
      * Require at least one approving review on a pull request, before merging. Set to `null` to disable.
      */
-    public function required_pull_request_reviews()
+    public function required_pull_request_reviews() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\RequiredPullRequestReviews
     {
         return $this->required_pull_request_reviews;
     }
     /**
      * Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
      */
-    public function restrictions()
+    public function restrictions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\C8337F3969E894De54Ebc0Ef8803E5Edb\Restrictions
     {
         return $this->restrictions;
     }
@@ -89,7 +92,7 @@ final class C8337F3969E894De54Ebc0Ef8803E5Edb
     /**
      * Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
      */
-    public function allow_force_pushes()
+    public function allow_force_pushes() : ?bool
     {
         return $this->allow_force_pushes;
     }

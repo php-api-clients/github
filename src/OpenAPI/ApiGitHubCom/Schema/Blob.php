@@ -11,7 +11,7 @@ final class Blob
     private string $encoding;
     private string $url;
     private string $sha;
-    private $size;
+    private ?int $size;
     private string $node_id;
     private ?string $highlighted_content = null;
     public function content() : string
@@ -30,7 +30,7 @@ final class Blob
     {
         return $this->sha;
     }
-    public function size()
+    public function size() : ?int
     {
         return $this->size;
     }

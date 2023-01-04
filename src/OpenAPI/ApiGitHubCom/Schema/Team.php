@@ -11,7 +11,7 @@ final class Team
     private string $node_id;
     private string $name;
     private string $slug;
-    private $description;
+    private ?string $description;
     private ?string $privacy = null;
     private string $permission;
     /**
@@ -42,7 +42,7 @@ final class Team
     {
         return $this->slug;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

@@ -10,12 +10,13 @@ final class WebhookCodeScanningAlertReopened
     private string $action;
     /**
      * The code scanning alert involved in the event.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCodeScanningAlertReopened\Alert::class)
      */
-    private $alert;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCodeScanningAlertReopened\Alert $alert;
     /**
      * The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    private $commit_oid;
+    private ?string $commit_oid;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -34,7 +35,7 @@ final class WebhookCodeScanningAlertReopened
     /**
      * The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    private $ref;
+    private ?string $ref;
     /**
      * A repository on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
@@ -52,14 +53,14 @@ final class WebhookCodeScanningAlertReopened
     /**
      * The code scanning alert involved in the event.
      */
-    public function alert()
+    public function alert() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCodeScanningAlertReopened\Alert
     {
         return $this->alert;
     }
     /**
      * The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    public function commit_oid()
+    public function commit_oid() : ?string
     {
         return $this->commit_oid;
     }
@@ -87,7 +88,7 @@ final class WebhookCodeScanningAlertReopened
     /**
      * The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
      */
-    public function ref()
+    public function ref() : ?string
     {
         return $this->ref;
     }

@@ -12,7 +12,7 @@ final class Assets
     private string $created_at;
     private int $download_count;
     private int $id;
-    private $label;
+    private ?string $label;
     /**
      * The file name of the asset.
      */
@@ -24,7 +24,10 @@ final class Assets
      */
     private string $state;
     private string $updated_at;
-    private $uploader;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Assets\Uploader::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Assets\Uploader $uploader = null;
     private string $url;
     public function browser_download_url() : string
     {
@@ -46,7 +49,7 @@ final class Assets
     {
         return $this->id;
     }
-    public function label()
+    public function label() : ?string
     {
         return $this->label;
     }
@@ -76,7 +79,7 @@ final class Assets
     {
         return $this->updated_at;
     }
-    public function uploader()
+    public function uploader() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Assets\Uploader
     {
         return $this->uploader;
     }

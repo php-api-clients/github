@@ -33,7 +33,10 @@ final class WebhookWorkflowRunCompleted
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    private $workflow;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunCompleted\Workflow::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunCompleted\Workflow $workflow;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunCompleted\WorkflowRun::class)
      */
@@ -77,7 +80,7 @@ final class WebhookWorkflowRunCompleted
     {
         return $this->sender;
     }
-    public function workflow()
+    public function workflow() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunCompleted\Workflow
     {
         return $this->workflow;
     }

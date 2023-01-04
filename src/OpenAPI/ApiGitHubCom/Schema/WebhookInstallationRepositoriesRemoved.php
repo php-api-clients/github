@@ -44,7 +44,10 @@ final class WebhookInstallationRepositoriesRemoved
      * Describe whether all repositories have been selected or there's a selection involved
      */
     private string $repository_selection;
-    private $requester;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesRemoved\Requester::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesRemoved\Requester $requester;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -105,7 +108,7 @@ final class WebhookInstallationRepositoriesRemoved
     {
         return $this->repository_selection;
     }
-    public function requester()
+    public function requester() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesRemoved\Requester
     {
         return $this->requester;
     }

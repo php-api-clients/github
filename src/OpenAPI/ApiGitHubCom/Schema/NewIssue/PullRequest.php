@@ -9,7 +9,7 @@ final class PullRequest
     public const SCHEMA_DESCRIPTION = '';
     private string $diff_url;
     private string $html_url;
-    private $merged_at;
+    private ?string $merged_at;
     private string $patch_url;
     private string $url;
     public function diff_url() : string
@@ -20,7 +20,7 @@ final class PullRequest
     {
         return $this->html_url;
     }
-    public function merged_at()
+    public function merged_at() : ?string
     {
         return $this->merged_at;
     }

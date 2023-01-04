@@ -22,7 +22,7 @@ final class C0F7483D30662Eb0B80F8Ce568Ea08A3E
     /**
      * The new Twitter username of the user.
      */
-    private $twitter_username;
+    private ?string $twitter_username;
     /**
      * The new company of the user.
      */
@@ -63,7 +63,7 @@ final class C0F7483D30662Eb0B80F8Ce568Ea08A3E
     /**
      * The new Twitter username of the user.
      */
-    public function twitter_username()
+    public function twitter_username() : ?string
     {
         return $this->twitter_username;
     }

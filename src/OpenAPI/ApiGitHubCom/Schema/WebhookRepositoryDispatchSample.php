@@ -9,7 +9,10 @@ final class WebhookRepositoryDispatchSample
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
     private string $branch;
-    private $client_payload;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookRepositoryDispatchSample\ClientPayload::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookRepositoryDispatchSample\ClientPayload $client_payload;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -43,7 +46,7 @@ final class WebhookRepositoryDispatchSample
     {
         return $this->branch;
     }
-    public function client_payload()
+    public function client_payload() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookRepositoryDispatchSample\ClientPayload
     {
         return $this->client_payload;
     }

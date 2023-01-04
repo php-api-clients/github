@@ -18,7 +18,7 @@ final class C756Bb9B82Eb89F5690879E32Ea8A1929
     /**
      * Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is deprecated.**_
      */
-    private $assignee;
+    private ?string $assignee = null;
     private $milestone;
     /**
      * Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
@@ -49,7 +49,7 @@ final class C756Bb9B82Eb89F5690879E32Ea8A1929
     /**
      * Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is deprecated.**_
      */
-    public function assignee()
+    public function assignee() : ?string
     {
         return $this->assignee;
     }

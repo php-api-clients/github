@@ -14,8 +14,14 @@ final class Sponsorship
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Maintainer $maintainer = null;
     private string $node_id;
     private string $privacy_level;
-    private $sponsor;
-    private $sponsorable;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsor::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsor $sponsor;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsorable::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsorable $sponsorable;
     /**
      * The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Tier::class)
@@ -37,11 +43,11 @@ final class Sponsorship
     {
         return $this->privacy_level;
     }
-    public function sponsor()
+    public function sponsor() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsor
     {
         return $this->sponsor;
     }
-    public function sponsorable()
+    public function sponsorable() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsorable
     {
         return $this->sponsorable;
     }

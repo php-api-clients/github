@@ -34,7 +34,10 @@ final class WebhookInstallationCreated
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository = null;
-    private $requester;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationCreated\Requester::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationCreated\Requester $requester = null;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -80,7 +83,7 @@ final class WebhookInstallationCreated
     {
         return $this->repository;
     }
-    public function requester()
+    public function requester() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationCreated\Requester
     {
         return $this->requester;
     }

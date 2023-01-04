@@ -11,12 +11,15 @@ final class From
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\Organization::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\Organization $organization;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\User $user;
     public function organization() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\Organization
     {
         return $this->organization;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\User
     {
         return $this->user;
     }

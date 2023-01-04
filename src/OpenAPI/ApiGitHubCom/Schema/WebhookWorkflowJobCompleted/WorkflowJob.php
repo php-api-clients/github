@@ -8,8 +8,8 @@ final class WorkflowJob
     public const SCHEMA_TITLE = 'Workflow Job';
     public const SCHEMA_DESCRIPTION = 'The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a [`check_run`](#check_run) object.';
     private string $check_run_url;
-    private $completed_at;
-    private $conclusion;
+    private ?string $completed_at;
+    private ?string $conclusion;
     private string $head_sha;
     private string $html_url;
     private int $id;
@@ -27,19 +27,19 @@ final class WorkflowJob
     /**
      * The ID of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    private $runner_group_id;
+    private ?int $runner_group_id;
     /**
      * The name of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    private $runner_group_name;
+    private ?string $runner_group_name;
     /**
      * The ID of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    private $runner_id;
+    private ?int $runner_id;
     /**
      * The name of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    private $runner_name;
+    private ?string $runner_name;
     private string $started_at;
     /**
      * The current status of the job. Can be `queued`, `in_progress`, or `completed`.
@@ -48,11 +48,11 @@ final class WorkflowJob
     /**
      * The name of the current branch.
      */
-    private $head_branch;
+    private ?string $head_branch;
     /**
      * The name of the workflow.
      */
-    private $workflow_name;
+    private ?string $workflow_name;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowJob\Steps>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowJob\Steps::class)
@@ -63,11 +63,11 @@ final class WorkflowJob
     {
         return $this->check_run_url;
     }
-    public function completed_at()
+    public function completed_at() : ?string
     {
         return $this->completed_at;
     }
-    public function conclusion()
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
@@ -114,28 +114,28 @@ final class WorkflowJob
     /**
      * The ID of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    public function runner_group_id()
+    public function runner_group_id() : ?int
     {
         return $this->runner_group_id;
     }
     /**
      * The name of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    public function runner_group_name()
+    public function runner_group_name() : ?string
     {
         return $this->runner_group_name;
     }
     /**
      * The ID of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    public function runner_id()
+    public function runner_id() : ?int
     {
         return $this->runner_id;
     }
     /**
      * The name of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      */
-    public function runner_name()
+    public function runner_name() : ?string
     {
         return $this->runner_name;
     }
@@ -153,14 +153,14 @@ final class WorkflowJob
     /**
      * The name of the current branch.
      */
-    public function head_branch()
+    public function head_branch() : ?string
     {
         return $this->head_branch;
     }
     /**
      * The name of the workflow.
      */
-    public function workflow_name()
+    public function workflow_name() : ?string
     {
         return $this->workflow_name;
     }

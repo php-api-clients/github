@@ -14,7 +14,7 @@ final class TeamProject
     private int $id;
     private string $node_id;
     private string $name;
-    private $body;
+    private ?string $body;
     private int $number;
     private string $state;
     /**
@@ -64,7 +64,7 @@ final class TeamProject
     {
         return $this->name;
     }
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }

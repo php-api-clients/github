@@ -23,7 +23,7 @@ final class CDd946Ef8473Bf4Fdc49F7C175Ea6Fe38
     * The URL that will be displayed to contributors who are blocked from pushing a secret. For more information, see "[Protecting pushes with secret scanning](https://docs.github.com/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
     To disable this functionality, set this field to `null`.
     */
-    private $secret_scanning_push_protection_custom_link;
+    private ?string $secret_scanning_push_protection_custom_link;
     /**
      * Whether GitHub Advanced Security is automatically enabled for new repositories. For more information, see "[About GitHub Advanced Security](https://docs.github.com/get-started/learning-about-github/about-github-advanced-security)."
      */
@@ -49,7 +49,7 @@ final class CDd946Ef8473Bf4Fdc49F7C175Ea6Fe38
     * The URL that will be displayed to contributors who are blocked from pushing a secret. For more information, see "[Protecting pushes with secret scanning](https://docs.github.com/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
     To disable this functionality, set this field to `null`.
     */
-    public function secret_scanning_push_protection_custom_link()
+    public function secret_scanning_push_protection_custom_link() : ?string
     {
         return $this->secret_scanning_push_protection_custom_link;
     }

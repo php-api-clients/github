@@ -24,7 +24,7 @@ final class Milestone
      * The title of the milestone.
      */
     private string $title;
-    private $description;
+    private ?string $description;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone\Creator::class)
      */
@@ -33,8 +33,8 @@ final class Milestone
     private int $closed_issues;
     private string $created_at;
     private string $updated_at;
-    private $closed_at;
-    private $due_on;
+    private ?string $closed_at;
+    private ?string $due_on;
     public function url() : string
     {
         return $this->url;
@@ -76,7 +76,7 @@ final class Milestone
     {
         return $this->title;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -100,11 +100,11 @@ final class Milestone
     {
         return $this->updated_at;
     }
-    public function closed_at()
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
-    public function due_on()
+    public function due_on() : ?string
     {
         return $this->due_on;
     }

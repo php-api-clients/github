@@ -13,9 +13,9 @@ final class ContentTree
     private string $path;
     private string $sha;
     private string $url;
-    private $git_url;
-    private $html_url;
-    private $download_url;
+    private ?string $git_url;
+    private ?string $html_url;
+    private ?string $download_url;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries::class)
@@ -49,15 +49,15 @@ final class ContentTree
     {
         return $this->url;
     }
-    public function git_url()
+    public function git_url() : ?string
     {
         return $this->git_url;
     }
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function download_url()
+    public function download_url() : ?string
     {
         return $this->download_url;
     }

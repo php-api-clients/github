@@ -31,7 +31,7 @@ final class PullRequestReview
     /**
      * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
      */
-    private $commit_id;
+    private ?string $commit_id;
     private ?string $body_html = null;
     private ?string $body_text = null;
     /**
@@ -83,7 +83,7 @@ final class PullRequestReview
     /**
      * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
      */
-    public function commit_id()
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }

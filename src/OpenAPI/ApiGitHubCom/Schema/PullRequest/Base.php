@@ -15,7 +15,10 @@ final class Base
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\Repo $repo;
     private string $sha;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\User $user;
     public function label() : string
     {
         return $this->label;
@@ -35,7 +38,7 @@ final class Base
     {
         return $this->sha;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\User
     {
         return $this->user;
     }

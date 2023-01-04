@@ -36,7 +36,10 @@ final class WebhookPullRequestReviewRequestRemoved
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    private $requested_reviewer;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewRequestRemoved\RequestedReviewer::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewRequestRemoved\RequestedReviewer $requested_reviewer;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -85,7 +88,7 @@ final class WebhookPullRequestReviewRequestRemoved
     {
         return $this->repository;
     }
-    public function requested_reviewer()
+    public function requested_reviewer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewRequestRemoved\RequestedReviewer
     {
         return $this->requested_reviewer;
     }

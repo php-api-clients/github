@@ -14,7 +14,7 @@ final class PullRequestReviewComment
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    private $pull_request_review_id;
+    private ?int $pull_request_review_id;
     /**
      * The ID of the pull request review comment.
      */
@@ -81,15 +81,15 @@ final class PullRequestReviewComment
     /**
      * The first line of the range for a multi-line comment.
      */
-    private $start_line;
+    private ?int $start_line = null;
     /**
      * The first line of the range for a multi-line comment.
      */
-    private $original_start_line;
+    private ?int $original_start_line = null;
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    private $start_side;
+    private ?string $start_side = null;
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
@@ -118,7 +118,7 @@ final class PullRequestReviewComment
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    public function pull_request_review_id()
+    public function pull_request_review_id() : ?int
     {
         return $this->pull_request_review_id;
     }
@@ -235,21 +235,21 @@ final class PullRequestReviewComment
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function start_line()
+    public function start_line() : ?int
     {
         return $this->start_line;
     }
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function original_start_line()
+    public function original_start_line() : ?int
     {
         return $this->original_start_line;
     }
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function start_side()
+    public function start_side() : ?string
     {
         return $this->start_side;
     }

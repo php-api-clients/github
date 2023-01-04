@@ -38,8 +38,14 @@ final class WebhookDeploymentCreated
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    private $workflow;
-    private $workflow_run;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\Workflow::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\Workflow $workflow;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\WorkflowRun::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\WorkflowRun $workflow_run;
     public function action() : string
     {
         return $this->action;
@@ -86,11 +92,11 @@ final class WebhookDeploymentCreated
     {
         return $this->sender;
     }
-    public function workflow()
+    public function workflow() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\Workflow
     {
         return $this->workflow;
     }
-    public function workflow_run()
+    public function workflow_run() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\WorkflowRun
     {
         return $this->workflow_run;
     }

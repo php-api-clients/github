@@ -11,12 +11,15 @@ final class PagesHealthCheck
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain $domain;
-    private $alt_domain;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\AltDomain::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\AltDomain $alt_domain;
     public function domain() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain
     {
         return $this->domain;
     }
-    public function alt_domain()
+    public function alt_domain() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\AltDomain
     {
         return $this->alt_domain;
     }

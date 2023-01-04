@@ -53,7 +53,7 @@ final class Forkee
      */
     private ?bool $delete_branch_on_merge = null;
     private string $deployments_url;
-    private $description;
+    private ?string $description;
     /**
      * Returns whether or not this repository is disabled.
      */
@@ -86,7 +86,7 @@ final class Forkee
      * Whether the wiki is enabled.
      */
     private bool $has_wiki;
-    private $homepage;
+    private ?string $homepage;
     private string $hooks_url;
     private string $html_url;
     /**
@@ -99,13 +99,16 @@ final class Forkee
     private string $issues_url;
     private string $keys_url;
     private string $labels_url;
-    private $language;
+    private ?string $language;
     private string $languages_url;
-    private $license;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\License::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\License $license;
     private ?string $master_branch = null;
     private string $merges_url;
     private string $milestones_url;
-    private $mirror_url;
+    private ?string $mirror_url;
     /**
      * The name of the repository.
      */
@@ -115,7 +118,10 @@ final class Forkee
     private int $open_issues;
     private int $open_issues_count;
     private ?string $organization = null;
-    private $owner;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Owner::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Owner $owner;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Permissions::class)
      */
@@ -128,7 +134,7 @@ final class Forkee
     private string $pulls_url;
     private $pushed_at;
     private string $releases_url;
-    private $role_name;
+    private ?string $role_name = null;
     private int $size;
     private string $ssh_url;
     private ?int $stargazers = null;
@@ -267,7 +273,7 @@ final class Forkee
     {
         return $this->deployments_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -354,7 +360,7 @@ final class Forkee
     {
         return $this->has_wiki;
     }
-    public function homepage()
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
@@ -397,7 +403,7 @@ final class Forkee
     {
         return $this->labels_url;
     }
-    public function language()
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -405,7 +411,7 @@ final class Forkee
     {
         return $this->languages_url;
     }
-    public function license()
+    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\License
     {
         return $this->license;
     }
@@ -421,7 +427,7 @@ final class Forkee
     {
         return $this->milestones_url;
     }
-    public function mirror_url()
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -452,7 +458,7 @@ final class Forkee
     {
         return $this->organization;
     }
-    public function owner()
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Owner
     {
         return $this->owner;
     }
@@ -483,7 +489,7 @@ final class Forkee
     {
         return $this->releases_url;
     }
-    public function role_name()
+    public function role_name() : ?string
     {
         return $this->role_name;
     }

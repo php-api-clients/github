@@ -25,7 +25,7 @@ final class EnterpriseSecurityAnalysisSettings
     /**
      * An optional URL string to display to contributors who are blocked from pushing a secret.
      */
-    private $secret_scanning_push_protection_custom_link;
+    private ?string $secret_scanning_push_protection_custom_link = null;
     /**
     * Whether GitHub advanced security is automatically enabled for new repositories and repositories transferred to
     this enterprise.
@@ -53,7 +53,7 @@ final class EnterpriseSecurityAnalysisSettings
     /**
      * An optional URL string to display to contributors who are blocked from pushing a secret.
      */
-    public function secret_scanning_push_protection_custom_link()
+    public function secret_scanning_push_protection_custom_link() : ?string
     {
         return $this->secret_scanning_push_protection_custom_link;
     }

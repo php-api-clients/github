@@ -8,7 +8,10 @@ final class WebhookCheckSuiteCompleted
     public const SCHEMA_TITLE = 'check_suite completed event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $actions_meta;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteCompleted\ActionsMeta::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteCompleted\ActionsMeta $actions_meta = null;
     /**
      * The [check_suite](https://docs.github.com/rest/reference/checks#suites).
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteCompleted\CheckSuite::class)
@@ -43,7 +46,7 @@ final class WebhookCheckSuiteCompleted
     {
         return $this->action;
     }
-    public function actions_meta()
+    public function actions_meta() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteCompleted\ActionsMeta
     {
         return $this->actions_meta;
     }

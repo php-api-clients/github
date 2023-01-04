@@ -36,7 +36,7 @@ final class WebhookStarCreated
     /**
      * The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
      */
-    private $starred_at;
+    private ?string $starred_at;
     public function action() : string
     {
         return $this->action;
@@ -79,7 +79,7 @@ final class WebhookStarCreated
     /**
      * The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
      */
-    public function starred_at()
+    public function starred_at() : ?string
     {
         return $this->starred_at;
     }

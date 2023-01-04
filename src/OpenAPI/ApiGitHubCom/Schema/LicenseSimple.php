@@ -9,8 +9,8 @@ final class LicenseSimple
     public const SCHEMA_DESCRIPTION = 'License Simple';
     private string $key;
     private string $name;
-    private $url;
-    private $spdx_id;
+    private ?string $url;
+    private ?string $spdx_id;
     private string $node_id;
     private ?string $html_url = null;
     public function key() : string
@@ -21,11 +21,11 @@ final class LicenseSimple
     {
         return $this->name;
     }
-    public function url()
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function spdx_id()
+    public function spdx_id() : ?string
     {
         return $this->spdx_id;
     }

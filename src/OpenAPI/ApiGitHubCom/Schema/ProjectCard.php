@@ -13,7 +13,7 @@ final class ProjectCard
      */
     private int $id;
     private string $node_id;
-    private $note;
+    private ?string $note;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard\Creator::class)
      */
@@ -44,7 +44,7 @@ final class ProjectCard
     {
         return $this->node_id;
     }
-    public function note()
+    public function note() : ?string
     {
         return $this->note;
     }

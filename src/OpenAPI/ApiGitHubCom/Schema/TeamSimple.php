@@ -24,7 +24,7 @@ final class TeamSimple
     /**
      * Description of the team
      */
-    private $description;
+    private ?string $description;
     /**
      * Permission that the team will have for its repositories
      */
@@ -72,7 +72,7 @@ final class TeamSimple
     /**
      * Description of the team
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

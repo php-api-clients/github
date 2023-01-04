@@ -18,7 +18,7 @@ final class Rule
     /**
      * The severity of the alert.
      */
-    private $severity;
+    private ?string $severity;
     /**
      * A short description of the rule used to detect the alert.
      */
@@ -36,7 +36,7 @@ final class Rule
     /**
      * The severity of the alert.
      */
-    public function severity()
+    public function severity() : ?string
     {
         return $this->severity;
     }

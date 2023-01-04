@@ -24,7 +24,7 @@ final class Integration
      * The name of the GitHub app
      */
     private string $name;
-    private $description;
+    private ?string $description;
     private string $external_url;
     private string $html_url;
     private string $created_at;
@@ -46,7 +46,7 @@ final class Integration
     private ?int $installations_count = null;
     private ?string $client_id = null;
     private ?string $client_secret = null;
-    private $webhook_secret;
+    private ?string $webhook_secret = null;
     private ?string $pem = null;
     /**
      * Unique identifier of the GitHub app
@@ -77,7 +77,7 @@ final class Integration
     {
         return $this->name;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -127,7 +127,7 @@ final class Integration
     {
         return $this->client_secret;
     }
-    public function webhook_secret()
+    public function webhook_secret() : ?string
     {
         return $this->webhook_secret;
     }

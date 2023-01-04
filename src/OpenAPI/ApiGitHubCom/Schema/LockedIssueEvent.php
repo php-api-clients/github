@@ -16,14 +16,14 @@ final class LockedIssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     private string $event;
-    private $commit_id;
-    private $commit_url;
+    private ?string $commit_id;
+    private ?string $commit_url;
     private string $created_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LockedIssueEvent\PerformedViaGithubApp::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LockedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
-    private $lock_reason;
+    private ?string $lock_reason;
     public function id() : int
     {
         return $this->id;
@@ -47,11 +47,11 @@ final class LockedIssueEvent
     {
         return $this->event;
     }
-    public function commit_id()
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
-    public function commit_url()
+    public function commit_url() : ?string
     {
         return $this->commit_url;
     }
@@ -63,7 +63,7 @@ final class LockedIssueEvent
     {
         return $this->performed_via_github_app;
     }
-    public function lock_reason()
+    public function lock_reason() : ?string
     {
         return $this->lock_reason;
     }

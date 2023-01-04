@@ -13,12 +13,12 @@ final class Teams
     private string $html_url;
     private string $name;
     private string $slug;
-    private $description;
+    private ?string $description;
     private string $privacy;
     private string $permission;
     private string $members_url;
     private string $repositories_url;
-    private $parent;
+    private ?string $parent;
     public function id() : int
     {
         return $this->id;
@@ -43,7 +43,7 @@ final class Teams
     {
         return $this->slug;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -63,7 +63,7 @@ final class Teams
     {
         return $this->repositories_url;
     }
-    public function parent()
+    public function parent() : ?string
     {
         return $this->parent;
     }

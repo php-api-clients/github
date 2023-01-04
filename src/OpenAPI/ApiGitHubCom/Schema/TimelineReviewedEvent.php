@@ -21,7 +21,7 @@ final class TimelineReviewedEvent
     /**
      * The text of the review.
      */
-    private $body;
+    private ?string $body;
     private string $state;
     private string $html_url;
     private string $pull_request_url;
@@ -65,7 +65,7 @@ final class TimelineReviewedEvent
     /**
      * The text of the review.
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }

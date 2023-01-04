@@ -12,7 +12,10 @@ final class WebhookWorkflowDispatch
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
-    private $inputs;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDispatch\Inputs::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDispatch\Inputs $inputs;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
@@ -42,7 +45,7 @@ final class WebhookWorkflowDispatch
     {
         return $this->enterprise;
     }
-    public function inputs()
+    public function inputs() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDispatch\Inputs
     {
         return $this->inputs;
     }

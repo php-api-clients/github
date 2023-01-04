@@ -10,11 +10,11 @@ final class C616F5E87864841Ebe8D2Daa2C2Fc1015
     /**
      * The project card's note
      */
-    private $note;
+    private ?string $note;
     /**
      * The project card's note
      */
-    public function note()
+    public function note() : ?string
     {
         return $this->note;
     }

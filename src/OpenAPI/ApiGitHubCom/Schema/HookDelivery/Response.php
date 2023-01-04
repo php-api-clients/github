@@ -9,23 +9,24 @@ final class Response
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The response headers received when the delivery was made.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Response\Headers::class)
      */
-    private $headers;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Response\Headers $headers;
     /**
      * The response payload received.
      */
-    private $payload;
+    private ?string $payload;
     /**
      * The response headers received when the delivery was made.
      */
-    public function headers()
+    public function headers() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Response\Headers
     {
         return $this->headers;
     }
     /**
      * The response payload received.
      */
-    public function payload()
+    public function payload() : ?string
     {
         return $this->payload;
     }

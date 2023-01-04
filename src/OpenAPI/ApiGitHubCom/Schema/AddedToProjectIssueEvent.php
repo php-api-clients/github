@@ -16,8 +16,8 @@ final class AddedToProjectIssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     private string $event;
-    private $commit_id;
-    private $commit_url;
+    private ?string $commit_id;
+    private ?string $commit_url;
     private string $created_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AddedToProjectIssueEvent\PerformedViaGithubApp::class)
@@ -50,11 +50,11 @@ final class AddedToProjectIssueEvent
     {
         return $this->event;
     }
-    public function commit_id()
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
-    public function commit_url()
+    public function commit_url() : ?string
     {
         return $this->commit_url;
     }

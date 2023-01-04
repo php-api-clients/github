@@ -14,7 +14,7 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    private $name;
+    private ?string $name = null;
     private string $node_id;
     /**
      * The ID of the associated check suite.
@@ -24,7 +24,7 @@ final class WorkflowRun
      * The node ID of the associated check suite.
      */
     private ?string $check_suite_node_id = null;
-    private $head_branch;
+    private ?string $head_branch;
     /**
      * The SHA of the head commit that points to the version of the workflow being run.
      */
@@ -41,10 +41,14 @@ final class WorkflowRun
      * Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
      */
     private ?int $run_attempt = null;
-    private $referenced_workflows;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow::class)
+     */
+    private array $referenced_workflows = array();
     private string $event;
-    private $status;
-    private $conclusion;
+    private ?string $status;
+    private ?string $conclusion;
     /**
      * The ID of the parent workflow.
      */
@@ -54,7 +58,11 @@ final class WorkflowRun
      */
     private string $url;
     private string $html_url;
-    private $pull_requests;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal::class)
+     */
+    private array $pull_requests = array();
     private string $created_at;
     private string $updated_at;
     /**
@@ -98,7 +106,7 @@ final class WorkflowRun
     /**
      * The URL to the previous attempted run of this workflow, if one exists.
      */
-    private $previous_attempt_url;
+    private ?string $previous_attempt_url = null;
     /**
      * The URL to the workflow.
      */
@@ -132,7 +140,7 @@ final class WorkflowRun
     /**
      * The name of the workflow run.
      */
-    public function name()
+    public function name() : ?string
     {
         return $this->name;
     }
@@ -154,7 +162,7 @@ final class WorkflowRun
     {
         return $this->check_suite_node_id;
     }
-    public function head_branch()
+    public function head_branch() : ?string
     {
         return $this->head_branch;
     }
@@ -186,7 +194,10 @@ final class WorkflowRun
     {
         return $this->run_attempt;
     }
-    public function referenced_workflows()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow>
+     */
+    public function referenced_workflows() : array
     {
         return $this->referenced_workflows;
     }
@@ -194,11 +205,11 @@ final class WorkflowRun
     {
         return $this->event;
     }
-    public function status()
+    public function status() : ?string
     {
         return $this->status;
     }
-    public function conclusion()
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
@@ -220,7 +231,10 @@ final class WorkflowRun
     {
         return $this->html_url;
     }
-    public function pull_requests()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
+     */
+    public function pull_requests() : array
     {
         return $this->pull_requests;
     }
@@ -298,7 +312,7 @@ final class WorkflowRun
     /**
      * The URL to the previous attempted run of this workflow, if one exists.
      */
-    public function previous_attempt_url()
+    public function previous_attempt_url() : ?string
     {
         return $this->previous_attempt_url;
     }

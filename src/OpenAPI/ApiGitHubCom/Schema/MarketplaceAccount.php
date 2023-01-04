@@ -12,8 +12,8 @@ final class MarketplaceAccount
     private string $type;
     private ?string $node_id = null;
     private string $login;
-    private $email;
-    private $organization_billing_email;
+    private ?string $email = null;
+    private ?string $organization_billing_email = null;
     public function url() : string
     {
         return $this->url;
@@ -34,11 +34,11 @@ final class MarketplaceAccount
     {
         return $this->login;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function organization_billing_email()
+    public function organization_billing_email() : ?string
     {
         return $this->organization_billing_email;
     }

@@ -10,7 +10,7 @@ final class WebhookCreate
     /**
      * The repository's current description.
      */
-    private $description;
+    private ?string $description;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -55,7 +55,7 @@ final class WebhookCreate
     /**
      * The repository's current description.
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

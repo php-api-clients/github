@@ -15,11 +15,11 @@ final class Codespace
     /**
      * Display name for this codespace.
      */
-    private $display_name;
+    private ?string $display_name = null;
     /**
      * UUID identifying this codespace's environment.
      */
-    private $environment_id;
+    private ?string $environment_id;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -42,11 +42,11 @@ final class Codespace
     /**
      * Path to devcontainer.json from repo root used to create Codespace.
      */
-    private $devcontainer_path;
+    private ?string $devcontainer_path = null;
     /**
      * Whether the codespace was created from a prebuild.
      */
-    private $prebuild;
+    private ?bool $prebuild;
     private string $created_at;
     private string $updated_at;
     /**
@@ -73,7 +73,7 @@ final class Codespace
     /**
      * The number of minutes of inactivity after which this codespace will be automatically stopped.
      */
-    private $idle_timeout_minutes;
+    private ?int $idle_timeout_minutes;
     /**
      * URL to access this codespace on the web.
      */
@@ -93,7 +93,7 @@ final class Codespace
     /**
      * API URL for the Pull Request associated with this codespace, if any.
      */
-    private $pulls_url;
+    private ?string $pulls_url;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RecentFolders>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace\RecentFolders::class)
@@ -106,27 +106,27 @@ final class Codespace
     /**
      * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
      */
-    private $pending_operation;
+    private ?bool $pending_operation = null;
     /**
      * Text to show user when codespace is disabled by a pending operation
      */
-    private $pending_operation_disabled_reason;
+    private ?string $pending_operation_disabled_reason = null;
     /**
      * Text to show user when codespace idle timeout minutes has been overriden by an organization policy
      */
-    private $idle_timeout_notice;
+    private ?string $idle_timeout_notice = null;
     /**
      * Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
      */
-    private $retention_period_minutes;
+    private ?int $retention_period_minutes = null;
     /**
      * When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
      */
-    private $retention_expires_at;
+    private ?string $retention_expires_at = null;
     /**
      * The text to display to a user when a codespace has been stopped for a potentially actionable reason.
      */
-    private $last_known_stop_notice;
+    private ?string $last_known_stop_notice = null;
     public function id() : int
     {
         return $this->id;
@@ -141,14 +141,14 @@ final class Codespace
     /**
      * Display name for this codespace.
      */
-    public function display_name()
+    public function display_name() : ?string
     {
         return $this->display_name;
     }
     /**
      * UUID identifying this codespace's environment.
      */
-    public function environment_id()
+    public function environment_id() : ?string
     {
         return $this->environment_id;
     }
@@ -180,14 +180,14 @@ final class Codespace
     /**
      * Path to devcontainer.json from repo root used to create Codespace.
      */
-    public function devcontainer_path()
+    public function devcontainer_path() : ?string
     {
         return $this->devcontainer_path;
     }
     /**
      * Whether the codespace was created from a prebuild.
      */
-    public function prebuild()
+    public function prebuild() : ?bool
     {
         return $this->prebuild;
     }
@@ -237,7 +237,7 @@ final class Codespace
     /**
      * The number of minutes of inactivity after which this codespace will be automatically stopped.
      */
-    public function idle_timeout_minutes()
+    public function idle_timeout_minutes() : ?int
     {
         return $this->idle_timeout_minutes;
     }
@@ -272,7 +272,7 @@ final class Codespace
     /**
      * API URL for the Pull Request associated with this codespace, if any.
      */
-    public function pulls_url()
+    public function pulls_url() : ?string
     {
         return $this->pulls_url;
     }
@@ -290,42 +290,42 @@ final class Codespace
     /**
      * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
      */
-    public function pending_operation()
+    public function pending_operation() : ?bool
     {
         return $this->pending_operation;
     }
     /**
      * Text to show user when codespace is disabled by a pending operation
      */
-    public function pending_operation_disabled_reason()
+    public function pending_operation_disabled_reason() : ?string
     {
         return $this->pending_operation_disabled_reason;
     }
     /**
      * Text to show user when codespace idle timeout minutes has been overriden by an organization policy
      */
-    public function idle_timeout_notice()
+    public function idle_timeout_notice() : ?string
     {
         return $this->idle_timeout_notice;
     }
     /**
      * Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
      */
-    public function retention_period_minutes()
+    public function retention_period_minutes() : ?int
     {
         return $this->retention_period_minutes;
     }
     /**
      * When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
      */
-    public function retention_expires_at()
+    public function retention_expires_at() : ?string
     {
         return $this->retention_expires_at;
     }
     /**
      * The text to display to a user when a codespace has been stopped for a potentially actionable reason.
      */
-    public function last_known_stop_notice()
+    public function last_known_stop_notice() : ?string
     {
         return $this->last_known_stop_notice;
     }

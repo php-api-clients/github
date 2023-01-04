@@ -17,17 +17,17 @@ final class RepoSearchResultItem
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\Owner $owner;
     private bool $private;
     private string $html_url;
-    private $description;
+    private ?string $description;
     private bool $fork;
     private string $url;
     private string $created_at;
     private string $updated_at;
     private string $pushed_at;
-    private $homepage;
+    private ?string $homepage;
     private int $size;
     private int $stargazers_count;
     private int $watchers_count;
-    private $language;
+    private ?string $language;
     private int $forks_count;
     private int $open_issues_count;
     private ?string $master_branch = null;
@@ -81,7 +81,7 @@ final class RepoSearchResultItem
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\Topics::class)
      */
     private array $topics = array();
-    private $mirror_url;
+    private ?string $mirror_url;
     private bool $has_issues;
     private bool $has_projects;
     private bool $has_pages;
@@ -147,7 +147,7 @@ final class RepoSearchResultItem
     {
         return $this->html_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -171,7 +171,7 @@ final class RepoSearchResultItem
     {
         return $this->pushed_at;
     }
-    public function homepage()
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
@@ -187,7 +187,7 @@ final class RepoSearchResultItem
     {
         return $this->watchers_count;
     }
-    public function language()
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -390,7 +390,7 @@ final class RepoSearchResultItem
     {
         return $this->topics;
     }
-    public function mirror_url()
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }

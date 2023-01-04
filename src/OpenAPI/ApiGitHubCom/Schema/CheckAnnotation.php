@@ -10,12 +10,12 @@ final class CheckAnnotation
     private string $path;
     private int $start_line;
     private int $end_line;
-    private $start_column;
-    private $end_column;
-    private $annotation_level;
-    private $title;
-    private $message;
-    private $raw_details;
+    private ?int $start_column;
+    private ?int $end_column;
+    private ?string $annotation_level;
+    private ?string $title;
+    private ?string $message;
+    private ?string $raw_details;
     private string $blob_href;
     public function path() : string
     {
@@ -29,27 +29,27 @@ final class CheckAnnotation
     {
         return $this->end_line;
     }
-    public function start_column()
+    public function start_column() : ?int
     {
         return $this->start_column;
     }
-    public function end_column()
+    public function end_column() : ?int
     {
         return $this->end_column;
     }
-    public function annotation_level()
+    public function annotation_level() : ?string
     {
         return $this->annotation_level;
     }
-    public function title()
+    public function title() : ?string
     {
         return $this->title;
     }
-    public function message()
+    public function message() : ?string
     {
         return $this->message;
     }
-    public function raw_details()
+    public function raw_details() : ?string
     {
         return $this->raw_details;
     }

@@ -8,7 +8,10 @@ final class DeploymentStatus
     public const SCHEMA_TITLE = 'WebhookDeploymentStatusCreated\\DeploymentStatus';
     public const SCHEMA_DESCRIPTION = 'The [deployment status](https://docs.github.com/rest/reference/deployments#list-deployment-statuses).';
     private string $created_at;
-    private $creator;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\Creator::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\Creator $creator;
     private string $deployment_url;
     /**
      * The optional human-readable description added to the status.
@@ -21,8 +24,9 @@ final class DeploymentStatus
     private string $node_id;
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\PerformedViaGithubApp::class)
      */
-    private $performed_via_github_app;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\PerformedViaGithubApp $performed_via_github_app = null;
     private string $repository_url;
     /**
      * The new state. Can be `pending`, `success`, `failure`, or `error`.
@@ -38,7 +42,7 @@ final class DeploymentStatus
     {
         return $this->created_at;
     }
-    public function creator()
+    public function creator() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\Creator
     {
         return $this->creator;
     }
@@ -76,7 +80,7 @@ final class DeploymentStatus
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public function performed_via_github_app()
+    public function performed_via_github_app() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\PerformedViaGithubApp
     {
         return $this->performed_via_github_app;
     }

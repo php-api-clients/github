@@ -31,7 +31,7 @@ final class CAc231C68A69F111Dfd2332104414713C
     /**
      * The ID of a team to set as the parent team.
      */
-    private $parent_team_id;
+    private ?int $parent_team_id;
     /**
      * The name of the team.
      */
@@ -68,7 +68,7 @@ final class CAc231C68A69F111Dfd2332104414713C
     /**
      * The ID of a team to set as the parent team.
      */
-    public function parent_team_id()
+    public function parent_team_id() : ?int
     {
         return $this->parent_team_id;
     }

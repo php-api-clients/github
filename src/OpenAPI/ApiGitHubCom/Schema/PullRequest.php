@@ -36,7 +36,7 @@ final class PullRequest
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\User::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\User $user;
-    private $body;
+    private ?string $body;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Labels>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Labels::class)
@@ -46,19 +46,31 @@ final class PullRequest
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Milestone::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Milestone $milestone;
-    private $active_lock_reason;
+    private ?string $active_lock_reason = null;
     private string $created_at;
     private string $updated_at;
-    private $closed_at;
-    private $merged_at;
-    private $merge_commit_sha;
+    private ?string $closed_at;
+    private ?string $merged_at;
+    private ?string $merge_commit_sha;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Assignee::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Assignee $assignee;
-    private $assignees;
-    private $requested_reviewers;
-    private $requested_teams;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private array $assignees = array();
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private array $requested_reviewers = array();
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple::class)
+     */
+    private array $requested_teams = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Head::class)
      */
@@ -77,15 +89,16 @@ final class PullRequest
     private string $author_association;
     /**
      * The status of auto merging a pull request.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge::class)
      */
-    private $auto_merge;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge $auto_merge;
     /**
      * Indicates whether or not the pull request is a draft.
      */
     private ?bool $draft = null;
     private bool $merged;
-    private $mergeable;
-    private $rebaseable;
+    private ?bool $mergeable;
+    private ?bool $rebaseable = null;
     private string $mergeable_state;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\MergedBy::class)
@@ -178,7 +191,7 @@ final class PullRequest
     {
         return $this->user;
     }
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -193,7 +206,7 @@ final class PullRequest
     {
         return $this->milestone;
     }
-    public function active_lock_reason()
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
@@ -205,15 +218,15 @@ final class PullRequest
     {
         return $this->updated_at;
     }
-    public function closed_at()
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }
-    public function merged_at()
+    public function merged_at() : ?string
     {
         return $this->merged_at;
     }
-    public function merge_commit_sha()
+    public function merge_commit_sha() : ?string
     {
         return $this->merge_commit_sha;
     }
@@ -221,15 +234,24 @@ final class PullRequest
     {
         return $this->assignee;
     }
-    public function assignees()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
+    public function assignees() : array
     {
         return $this->assignees;
     }
-    public function requested_reviewers()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
+    public function requested_reviewers() : array
     {
         return $this->requested_reviewers;
     }
-    public function requested_teams()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
+     */
+    public function requested_teams() : array
     {
         return $this->requested_teams;
     }
@@ -255,7 +277,7 @@ final class PullRequest
     /**
      * The status of auto merging a pull request.
      */
-    public function auto_merge()
+    public function auto_merge() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge
     {
         return $this->auto_merge;
     }
@@ -270,11 +292,11 @@ final class PullRequest
     {
         return $this->merged;
     }
-    public function mergeable()
+    public function mergeable() : ?bool
     {
         return $this->mergeable;
     }
-    public function rebaseable()
+    public function rebaseable() : ?bool
     {
         return $this->rebaseable;
     }

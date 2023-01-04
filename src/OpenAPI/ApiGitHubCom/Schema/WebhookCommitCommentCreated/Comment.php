@@ -28,7 +28,7 @@ final class Comment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    private $line;
+    private ?int $line;
     /**
      * The node ID of the commit comment.
      */
@@ -36,18 +36,21 @@ final class Comment
     /**
      * The relative path of the file to which the comment applies.
      */
-    private $path;
+    private ?string $path;
     /**
      * The line index in the diff to which the comment applies.
      */
-    private $position;
+    private ?int $position;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Reactions::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Reactions $reactions = null;
     private string $updated_at;
     private string $url;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user;
     /**
      * How the author is associated with the repository.
      */
@@ -87,7 +90,7 @@ final class Comment
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function line()
+    public function line() : ?int
     {
         return $this->line;
     }
@@ -101,14 +104,14 @@ final class Comment
     /**
      * The relative path of the file to which the comment applies.
      */
-    public function path()
+    public function path() : ?string
     {
         return $this->path;
     }
     /**
      * The line index in the diff to which the comment applies.
      */
-    public function position()
+    public function position() : ?int
     {
         return $this->position;
     }
@@ -124,7 +127,7 @@ final class Comment
     {
         return $this->url;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User
     {
         return $this->user;
     }

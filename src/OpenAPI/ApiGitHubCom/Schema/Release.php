@@ -11,8 +11,8 @@ final class Release
     private string $html_url;
     private string $assets_url;
     private string $upload_url;
-    private $tarball_url;
-    private $zipball_url;
+    private ?string $tarball_url;
+    private ?string $zipball_url;
     private int $id;
     private string $node_id;
     /**
@@ -23,8 +23,8 @@ final class Release
      * Specifies the commitish value that determines where the Git tag is created from.
      */
     private string $target_commitish;
-    private $name;
-    private $body;
+    private ?string $name;
+    private ?string $body = null;
     /**
      * true to create a draft (unpublished) release, false to create a published one.
      */
@@ -34,7 +34,7 @@ final class Release
      */
     private bool $prerelease;
     private string $created_at;
-    private $published_at;
+    private ?string $published_at;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -72,11 +72,11 @@ final class Release
     {
         return $this->upload_url;
     }
-    public function tarball_url()
+    public function tarball_url() : ?string
     {
         return $this->tarball_url;
     }
-    public function zipball_url()
+    public function zipball_url() : ?string
     {
         return $this->zipball_url;
     }
@@ -102,11 +102,11 @@ final class Release
     {
         return $this->target_commitish;
     }
-    public function name()
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -128,7 +128,7 @@ final class Release
     {
         return $this->created_at;
     }
-    public function published_at()
+    public function published_at() : ?string
     {
         return $this->published_at;
     }

@@ -18,7 +18,7 @@ final class Plan
     private int $monthly_price_in_cents;
     private string $name;
     private string $price_model;
-    private $unit_name;
+    private ?string $unit_name;
     private int $yearly_price_in_cents;
     /**
      * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Plan\Bullets>
@@ -51,7 +51,7 @@ final class Plan
     {
         return $this->price_model;
     }
-    public function unit_name()
+    public function unit_name() : ?string
     {
         return $this->unit_name;
     }

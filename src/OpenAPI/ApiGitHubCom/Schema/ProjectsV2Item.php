@@ -22,7 +22,7 @@ final class ProjectsV2Item
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator = null;
     private string $created_at;
     private string $updated_at;
-    private $archived_at;
+    private ?string $archived_at;
     public function id() : int
     {
         return $this->id;
@@ -61,7 +61,7 @@ final class ProjectsV2Item
     {
         return $this->updated_at;
     }
-    public function archived_at()
+    public function archived_at() : ?string
     {
         return $this->archived_at;
     }

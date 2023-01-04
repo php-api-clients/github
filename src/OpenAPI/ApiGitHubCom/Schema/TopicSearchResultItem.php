@@ -8,46 +8,54 @@ final class TopicSearchResultItem
     public const SCHEMA_TITLE = 'Topic Search Result Item';
     public const SCHEMA_DESCRIPTION = 'Topic Search Result Item';
     private string $name;
-    private $display_name;
-    private $short_description;
-    private $description;
-    private $created_by;
-    private $released;
+    private ?string $display_name;
+    private ?string $short_description;
+    private ?string $description;
+    private ?string $created_by;
+    private ?string $released;
     private string $created_at;
     private string $updated_at;
     private bool $featured;
     private bool $curated;
     private int $score;
-    private $repository_count;
-    private $logo_url;
+    private ?int $repository_count = null;
+    private ?string $logo_url = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches::class)
      */
     private array $text_matches = array();
-    private $related;
-    private $aliases;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Related>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Related::class)
+     */
+    private array $related = array();
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Aliases>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Aliases::class)
+     */
+    private array $aliases = array();
     public function name() : string
     {
         return $this->name;
     }
-    public function display_name()
+    public function display_name() : ?string
     {
         return $this->display_name;
     }
-    public function short_description()
+    public function short_description() : ?string
     {
         return $this->short_description;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
-    public function created_by()
+    public function created_by() : ?string
     {
         return $this->created_by;
     }
-    public function released()
+    public function released() : ?string
     {
         return $this->released;
     }
@@ -71,11 +79,11 @@ final class TopicSearchResultItem
     {
         return $this->score;
     }
-    public function repository_count()
+    public function repository_count() : ?int
     {
         return $this->repository_count;
     }
-    public function logo_url()
+    public function logo_url() : ?string
     {
         return $this->logo_url;
     }
@@ -86,11 +94,17 @@ final class TopicSearchResultItem
     {
         return $this->text_matches;
     }
-    public function related()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Related>
+     */
+    public function related() : array
     {
         return $this->related;
     }
-    public function aliases()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\Aliases>
+     */
+    public function aliases() : array
     {
         return $this->aliases;
     }

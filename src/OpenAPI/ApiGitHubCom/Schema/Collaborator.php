@@ -9,11 +9,11 @@ final class Collaborator
     public const SCHEMA_DESCRIPTION = 'Collaborator';
     private string $login;
     private int $id;
-    private $email;
-    private $name;
+    private ?string $email = null;
+    private ?string $name = null;
     private string $node_id;
     private string $avatar_url;
-    private $gravatar_id;
+    private ?string $gravatar_id;
     private string $url;
     private string $html_url;
     private string $followers_url;
@@ -40,11 +40,11 @@ final class Collaborator
     {
         return $this->id;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function name()
+    public function name() : ?string
     {
         return $this->name;
     }
@@ -56,7 +56,7 @@ final class Collaborator
     {
         return $this->avatar_url;
     }
-    public function gravatar_id()
+    public function gravatar_id() : ?string
     {
         return $this->gravatar_id;
     }

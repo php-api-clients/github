@@ -8,7 +8,10 @@ final class WebhookOrgBlockBlocked
     public const SCHEMA_TITLE = 'org_block blocked event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $blocked_user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrgBlockBlocked\BlockedUser::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrgBlockBlocked\BlockedUser $blocked_user;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -38,7 +41,7 @@ final class WebhookOrgBlockBlocked
     {
         return $this->action;
     }
-    public function blocked_user()
+    public function blocked_user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookOrgBlockBlocked\BlockedUser
     {
         return $this->blocked_user;
     }

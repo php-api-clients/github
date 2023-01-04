@@ -24,7 +24,10 @@ final class Alert
      * The GitHub URL of the alert resource.
      */
     private string $html_url;
-    private $most_recent_instance;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance $most_recent_instance = null;
     /**
      * The code scanning alert number.
      */
@@ -74,7 +77,7 @@ final class Alert
     {
         return $this->html_url;
     }
-    public function most_recent_instance()
+    public function most_recent_instance() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance
     {
         return $this->most_recent_instance;
     }

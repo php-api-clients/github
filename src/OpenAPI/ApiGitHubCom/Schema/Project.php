@@ -20,7 +20,7 @@ final class Project
     /**
      * Body of the project
      */
-    private $body;
+    private ?string $body;
     private int $number;
     /**
      * State of the project; either 'open' or 'closed'
@@ -74,7 +74,7 @@ final class Project
     /**
      * Body of the project
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }

@@ -8,12 +8,12 @@ final class OrganizationInvitation
     public const SCHEMA_TITLE = 'Organization Invitation';
     public const SCHEMA_DESCRIPTION = 'Organization Invitation';
     private int $id;
-    private $login;
-    private $email;
+    private ?string $login;
+    private ?string $email;
     private string $role;
     private string $created_at;
-    private $failed_at;
-    private $failed_reason;
+    private ?string $failed_at = null;
+    private ?string $failed_reason = null;
     /**
      * A GitHub user.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
@@ -26,11 +26,11 @@ final class OrganizationInvitation
     {
         return $this->id;
     }
-    public function login()
+    public function login() : ?string
     {
         return $this->login;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }
@@ -42,11 +42,11 @@ final class OrganizationInvitation
     {
         return $this->created_at;
     }
-    public function failed_at()
+    public function failed_at() : ?string
     {
         return $this->failed_at;
     }
-    public function failed_reason()
+    public function failed_reason() : ?string
     {
         return $this->failed_reason;
     }

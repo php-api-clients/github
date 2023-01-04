@@ -22,7 +22,7 @@ final class BaseGist
     private bool $public;
     private string $created_at;
     private string $updated_at;
-    private $description;
+    private ?string $description;
     private int $comments;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist\User::class)
@@ -93,7 +93,7 @@ final class BaseGist
     {
         return $this->updated_at;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

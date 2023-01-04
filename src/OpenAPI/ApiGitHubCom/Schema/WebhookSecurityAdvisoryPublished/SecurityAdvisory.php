@@ -37,7 +37,7 @@ final class SecurityAdvisory
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAdvisory\Vulnerabilities::class)
      */
     private array $vulnerabilities = array();
-    private $withdrawn_at;
+    private ?string $withdrawn_at;
     public function cvss() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAdvisory\Cvss
     {
         return $this->cvss;
@@ -94,7 +94,7 @@ final class SecurityAdvisory
     {
         return $this->vulnerabilities;
     }
-    public function withdrawn_at()
+    public function withdrawn_at() : ?string
     {
         return $this->withdrawn_at;
     }

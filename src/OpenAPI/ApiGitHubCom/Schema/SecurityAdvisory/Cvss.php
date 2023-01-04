@@ -8,12 +8,12 @@ final class Cvss
     public const SCHEMA_TITLE = 'SecurityAdvisory\\Cvss';
     public const SCHEMA_DESCRIPTION = '';
     private int $score;
-    private $vector_string;
+    private ?string $vector_string;
     public function score() : int
     {
         return $this->score;
     }
-    public function vector_string()
+    public function vector_string() : ?string
     {
         return $this->vector_string;
     }

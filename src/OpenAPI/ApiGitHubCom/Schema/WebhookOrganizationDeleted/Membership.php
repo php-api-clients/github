@@ -11,7 +11,10 @@ final class Membership
     private string $role;
     private string $state;
     private string $url;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Membership\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Membership\User $user;
     public function organization_url() : string
     {
         return $this->organization_url;
@@ -28,7 +31,7 @@ final class Membership
     {
         return $this->url;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Membership\User
     {
         return $this->user;
     }

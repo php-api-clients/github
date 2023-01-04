@@ -14,11 +14,11 @@ final class CodeScanningAnalysisTool
     /**
      * The version of the tool used to generate the code scanning analysis.
      */
-    private $version;
+    private ?string $version;
     /**
      * The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
      */
-    private $guid;
+    private ?string $guid;
     /**
      * The name of the tool used to generate the code scanning analysis.
      */
@@ -29,14 +29,14 @@ final class CodeScanningAnalysisTool
     /**
      * The version of the tool used to generate the code scanning analysis.
      */
-    public function version()
+    public function version() : ?string
     {
         return $this->version;
     }
     /**
      * The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
      */
-    public function guid()
+    public function guid() : ?string
     {
         return $this->guid;
     }

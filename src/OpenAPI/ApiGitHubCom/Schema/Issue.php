@@ -29,7 +29,7 @@ final class Issue
     /**
      * The reason for the current state
      */
-    private $state_reason;
+    private ?string $state_reason = null;
     /**
      * Title of the issue
      */
@@ -37,7 +37,7 @@ final class Issue
     /**
      * Contents of the issue
      */
-    private $body;
+    private ?string $body = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\User::class)
      */
@@ -52,19 +52,23 @@ final class Issue
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Assignee::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Assignee $assignee;
-    private $assignees;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private array $assignees = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Milestone::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Milestone $milestone;
     private bool $locked;
-    private $active_lock_reason;
+    private ?string $active_lock_reason = null;
     private int $comments;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\PullRequest::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\PullRequest $pull_request = null;
-    private $closed_at;
+    private ?string $closed_at;
     private string $created_at;
     private string $updated_at;
     private ?bool $draft = null;
@@ -144,7 +148,7 @@ final class Issue
     /**
      * The reason for the current state
      */
-    public function state_reason()
+    public function state_reason() : ?string
     {
         return $this->state_reason;
     }
@@ -158,7 +162,7 @@ final class Issue
     /**
      * Contents of the issue
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -178,7 +182,10 @@ final class Issue
     {
         return $this->assignee;
     }
-    public function assignees()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
+    public function assignees() : array
     {
         return $this->assignees;
     }
@@ -190,7 +197,7 @@ final class Issue
     {
         return $this->locked;
     }
-    public function active_lock_reason()
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
@@ -202,7 +209,7 @@ final class Issue
     {
         return $this->pull_request;
     }
-    public function closed_at()
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }

@@ -9,8 +9,9 @@ final class Changes
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\OldIssue::class)
      */
-    private $old_issue;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\OldIssue $old_issue;
     /**
      * A git repository
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\OldRepository::class)
@@ -19,7 +20,7 @@ final class Changes
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
      */
-    public function old_issue()
+    public function old_issue() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\OldIssue
     {
         return $this->old_issue;
     }

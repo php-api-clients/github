@@ -14,11 +14,11 @@ final class C1346050D15B3D4692D3Bfd9D9751847C
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    private $resolution;
+    private ?string $resolution = null;
     /**
      * An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
      */
-    private $resolution_comment;
+    private ?string $resolution_comment = null;
     /**
      * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
      */
@@ -29,14 +29,14 @@ final class C1346050D15B3D4692D3Bfd9D9751847C
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    public function resolution()
+    public function resolution() : ?string
     {
         return $this->resolution;
     }
     /**
      * An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
      */
-    public function resolution_comment()
+    public function resolution_comment() : ?string
     {
         return $this->resolution_comment;
     }

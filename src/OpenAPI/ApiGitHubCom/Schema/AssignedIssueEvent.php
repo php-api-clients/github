@@ -16,8 +16,8 @@ final class AssignedIssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     private string $event;
-    private $commit_id;
-    private $commit_url;
+    private ?string $commit_id;
+    private ?string $commit_url;
     private string $created_at;
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -57,11 +57,11 @@ final class AssignedIssueEvent
     {
         return $this->event;
     }
-    public function commit_id()
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
-    public function commit_url()
+    public function commit_url() : ?string
     {
         return $this->commit_url;
     }

@@ -7,7 +7,7 @@ final class Import
     public const SCHEMA_JSON = '{"title":"Import","required":["vcs","vcs_url","status","url","repository_url","html_url","authors_url"],"type":"object","properties":{"vcs":{"type":["string","null"]},"use_lfs":{"type":"boolean"},"vcs_url":{"type":"string","description":"The URL of the originating repository."},"svc_root":{"type":"string"},"tfvc_project":{"type":"string"},"status":{"enum":["auth","error","none","detecting","choose","auth_failed","importing","mapping","waiting_to_push","pushing","complete","setup","unknown","detection_found_multiple","detection_found_nothing","detection_needs_auth"],"type":"string"},"status_text":{"type":["string","null"]},"failed_step":{"type":["string","null"]},"error_message":{"type":["string","null"]},"import_percent":{"type":["integer","null"]},"commit_count":{"type":["integer","null"]},"push_percent":{"type":["integer","null"]},"has_large_files":{"type":"boolean"},"large_files_size":{"type":"integer"},"large_files_count":{"type":"integer"},"project_choices":{"type":"array","items":{"type":"object","properties":{"vcs":{"type":"string"},"tfvc_project":{"type":"string"},"human_name":{"type":"string"}}}},"message":{"type":"string"},"authors_count":{"type":["integer","null"]},"url":{"type":"string","format":"uri"},"html_url":{"type":"string","format":"uri"},"authors_url":{"type":"string","format":"uri"},"repository_url":{"type":"string","format":"uri"},"svn_root":{"type":"string"}},"description":"A repository import from an external source."}';
     public const SCHEMA_TITLE = 'Import';
     public const SCHEMA_DESCRIPTION = 'A repository import from an external source.';
-    private $vcs;
+    private ?string $vcs;
     private ?bool $use_lfs = null;
     /**
      * The URL of the originating repository.
@@ -16,12 +16,12 @@ final class Import
     private ?string $svc_root = null;
     private ?string $tfvc_project = null;
     private string $status;
-    private $status_text;
-    private $failed_step;
-    private $error_message;
-    private $import_percent;
-    private $commit_count;
-    private $push_percent;
+    private ?string $status_text = null;
+    private ?string $failed_step = null;
+    private ?string $error_message = null;
+    private ?int $import_percent = null;
+    private ?int $commit_count = null;
+    private ?int $push_percent = null;
     private ?bool $has_large_files = null;
     private ?int $large_files_size = null;
     private ?int $large_files_count = null;
@@ -31,13 +31,13 @@ final class Import
      */
     private array $project_choices = array();
     private ?string $message = null;
-    private $authors_count;
+    private ?int $authors_count = null;
     private string $url;
     private string $html_url;
     private string $authors_url;
     private string $repository_url;
     private ?string $svn_root = null;
-    public function vcs()
+    public function vcs() : ?string
     {
         return $this->vcs;
     }
@@ -64,27 +64,27 @@ final class Import
     {
         return $this->status;
     }
-    public function status_text()
+    public function status_text() : ?string
     {
         return $this->status_text;
     }
-    public function failed_step()
+    public function failed_step() : ?string
     {
         return $this->failed_step;
     }
-    public function error_message()
+    public function error_message() : ?string
     {
         return $this->error_message;
     }
-    public function import_percent()
+    public function import_percent() : ?int
     {
         return $this->import_percent;
     }
-    public function commit_count()
+    public function commit_count() : ?int
     {
         return $this->commit_count;
     }
-    public function push_percent()
+    public function push_percent() : ?int
     {
         return $this->push_percent;
     }
@@ -111,7 +111,7 @@ final class Import
     {
         return $this->message;
     }
-    public function authors_count()
+    public function authors_count() : ?int
     {
         return $this->authors_count;
     }

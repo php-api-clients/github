@@ -14,11 +14,11 @@ final class C958D4Fe06219E11E77B36A4610982263
     /**
      * The contents of the issue.
      */
-    private $body;
+    private ?string $body;
     /**
      * Login for the user that this issue should be assigned to. **This field is deprecated.**
      */
-    private $assignee;
+    private ?string $assignee;
     /**
      * State of the issue. Either `open` or `closed`.
      */
@@ -26,7 +26,7 @@ final class C958D4Fe06219E11E77B36A4610982263
     /**
      * The reason for the current state
      */
-    private $state_reason;
+    private ?string $state_reason;
     private $milestone;
     /**
      * Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
@@ -50,14 +50,14 @@ final class C958D4Fe06219E11E77B36A4610982263
     /**
      * The contents of the issue.
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
     /**
      * Login for the user that this issue should be assigned to. **This field is deprecated.**
      */
-    public function assignee()
+    public function assignee() : ?string
     {
         return $this->assignee;
     }
@@ -71,7 +71,7 @@ final class C958D4Fe06219E11E77B36A4610982263
     /**
      * The reason for the current state
      */
-    public function state_reason()
+    public function state_reason() : ?string
     {
         return $this->state_reason;
     }

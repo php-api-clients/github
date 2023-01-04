@@ -18,7 +18,7 @@ final class Review
     /**
      * The text of the review.
      */
-    private $body;
+    private ?string $body;
     /**
      * A commit SHA for the review.
      */
@@ -31,8 +31,11 @@ final class Review
     private string $node_id;
     private string $pull_request_url;
     private string $state;
-    private $submitted_at;
-    private $user;
+    private ?string $submitted_at;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Review\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Review\User $user;
     public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Review\Links
     {
         return $this->_links;
@@ -47,7 +50,7 @@ final class Review
     /**
      * The text of the review.
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -81,11 +84,11 @@ final class Review
     {
         return $this->state;
     }
-    public function submitted_at()
+    public function submitted_at() : ?string
     {
         return $this->submitted_at;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Review\User
     {
         return $this->user;
     }

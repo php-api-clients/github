@@ -14,9 +14,9 @@ final class Entries
     private ?string $content = null;
     private string $sha;
     private string $url;
-    private $git_url;
-    private $html_url;
-    private $download_url;
+    private ?string $git_url;
+    private ?string $html_url;
+    private ?string $download_url;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Entries\Links::class)
      */
@@ -49,15 +49,15 @@ final class Entries
     {
         return $this->url;
     }
-    public function git_url()
+    public function git_url() : ?string
     {
         return $this->git_url;
     }
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
-    public function download_url()
+    public function download_url() : ?string
     {
         return $this->download_url;
     }

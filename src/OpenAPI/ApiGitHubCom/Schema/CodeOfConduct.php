@@ -11,7 +11,7 @@ final class CodeOfConduct
     private string $name;
     private string $url;
     private ?string $body = null;
-    private $html_url;
+    private ?string $html_url;
     public function key() : string
     {
         return $this->key;
@@ -28,7 +28,7 @@ final class CodeOfConduct
     {
         return $this->body;
     }
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }

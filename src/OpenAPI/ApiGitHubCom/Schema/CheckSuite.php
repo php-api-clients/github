@@ -9,17 +9,21 @@ final class CheckSuite
     public const SCHEMA_DESCRIPTION = 'A suite of checks performed on the code of a given code change';
     private int $id;
     private string $node_id;
-    private $head_branch;
+    private ?string $head_branch;
     /**
      * The SHA of the head commit that is being checked.
      */
     private string $head_sha;
-    private $status;
-    private $conclusion;
-    private $url;
-    private $before;
-    private $after;
-    private $pull_requests;
+    private ?string $status;
+    private ?string $conclusion;
+    private ?string $url;
+    private ?string $before;
+    private ?string $after;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal::class)
+     */
+    private array $pull_requests = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite\App::class)
      */
@@ -29,8 +33,8 @@ final class CheckSuite
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
-    private $created_at;
-    private $updated_at;
+    private ?string $created_at;
+    private ?string $updated_at;
     /**
      * A commit.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit::class)
@@ -48,7 +52,7 @@ final class CheckSuite
     {
         return $this->node_id;
     }
-    public function head_branch()
+    public function head_branch() : ?string
     {
         return $this->head_branch;
     }
@@ -59,27 +63,30 @@ final class CheckSuite
     {
         return $this->head_sha;
     }
-    public function status()
+    public function status() : ?string
     {
         return $this->status;
     }
-    public function conclusion()
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
-    public function url()
+    public function url() : ?string
     {
         return $this->url;
     }
-    public function before()
+    public function before() : ?string
     {
         return $this->before;
     }
-    public function after()
+    public function after() : ?string
     {
         return $this->after;
     }
-    public function pull_requests()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
+     */
+    public function pull_requests() : array
     {
         return $this->pull_requests;
     }
@@ -94,11 +101,11 @@ final class CheckSuite
     {
         return $this->repository;
     }
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

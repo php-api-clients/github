@@ -14,7 +14,7 @@ final class C2437Cc4E34F628Ef0Fddbd88037B333D
     /**
      * Body of the project
      */
-    private $body;
+    private ?string $body;
     /**
      * State of the project; either 'open' or 'closed'
      */
@@ -37,7 +37,7 @@ final class C2437Cc4E34F628Ef0Fddbd88037B333D
     /**
      * Body of the project
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }

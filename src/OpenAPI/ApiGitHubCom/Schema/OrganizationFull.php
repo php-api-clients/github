@@ -18,13 +18,13 @@ final class OrganizationFull
     private string $members_url;
     private string $public_members_url;
     private string $avatar_url;
-    private $description;
+    private ?string $description;
     private ?string $name = null;
     private ?string $company = null;
     private ?string $blog = null;
     private ?string $location = null;
     private ?string $email = null;
-    private $twitter_username;
+    private ?string $twitter_username = null;
     private ?bool $is_verified = null;
     private bool $has_organization_projects;
     private bool $has_repository_projects;
@@ -37,17 +37,17 @@ final class OrganizationFull
     private string $type;
     private ?int $total_private_repos = null;
     private ?int $owned_private_repos = null;
-    private $private_gists;
-    private $disk_usage;
-    private $collaborators;
-    private $billing_email;
+    private ?int $private_gists = null;
+    private ?int $disk_usage = null;
+    private ?int $collaborators = null;
+    private ?string $billing_email = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull\Plan::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull\Plan $plan = null;
-    private $default_repository_permission;
-    private $members_can_create_repositories;
-    private $two_factor_requirement_enabled;
+    private ?string $default_repository_permission = null;
+    private ?bool $members_can_create_repositories = null;
+    private ?bool $two_factor_requirement_enabled = null;
     private ?string $members_allowed_repository_creation_type = null;
     private ?bool $members_can_create_public_repositories = null;
     private ?bool $members_can_create_private_repositories = null;
@@ -55,7 +55,7 @@ final class OrganizationFull
     private ?bool $members_can_create_pages = null;
     private ?bool $members_can_create_public_pages = null;
     private ?bool $members_can_create_private_pages = null;
-    private $members_can_fork_private_repositories;
+    private ?bool $members_can_fork_private_repositories = null;
     private ?bool $web_commit_signoff_required = null;
     private string $updated_at;
     /**
@@ -106,7 +106,7 @@ final class OrganizationFull
     /**
      * An optional URL string to display to contributors who are blocked from pushing a secret.
      */
-    private $secret_scanning_push_protection_custom_link;
+    private ?string $secret_scanning_push_protection_custom_link = null;
     public function login() : string
     {
         return $this->login;
@@ -151,7 +151,7 @@ final class OrganizationFull
     {
         return $this->avatar_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -175,7 +175,7 @@ final class OrganizationFull
     {
         return $this->email;
     }
-    public function twitter_username()
+    public function twitter_username() : ?string
     {
         return $this->twitter_username;
     }
@@ -227,19 +227,19 @@ final class OrganizationFull
     {
         return $this->owned_private_repos;
     }
-    public function private_gists()
+    public function private_gists() : ?int
     {
         return $this->private_gists;
     }
-    public function disk_usage()
+    public function disk_usage() : ?int
     {
         return $this->disk_usage;
     }
-    public function collaborators()
+    public function collaborators() : ?int
     {
         return $this->collaborators;
     }
-    public function billing_email()
+    public function billing_email() : ?string
     {
         return $this->billing_email;
     }
@@ -247,15 +247,15 @@ final class OrganizationFull
     {
         return $this->plan;
     }
-    public function default_repository_permission()
+    public function default_repository_permission() : ?string
     {
         return $this->default_repository_permission;
     }
-    public function members_can_create_repositories()
+    public function members_can_create_repositories() : ?bool
     {
         return $this->members_can_create_repositories;
     }
-    public function two_factor_requirement_enabled()
+    public function two_factor_requirement_enabled() : ?bool
     {
         return $this->two_factor_requirement_enabled;
     }
@@ -287,7 +287,7 @@ final class OrganizationFull
     {
         return $this->members_can_create_private_pages;
     }
-    public function members_can_fork_private_repositories()
+    public function members_can_fork_private_repositories() : ?bool
     {
         return $this->members_can_fork_private_repositories;
     }
@@ -368,7 +368,7 @@ final class OrganizationFull
     /**
      * An optional URL string to display to contributors who are blocked from pushing a secret.
      */
-    public function secret_scanning_push_protection_custom_link()
+    public function secret_scanning_push_protection_custom_link() : ?string
     {
         return $this->secret_scanning_push_protection_custom_link;
     }

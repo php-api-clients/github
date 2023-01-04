@@ -18,7 +18,7 @@ final class OrganizationSimple
     private string $members_url;
     private string $public_members_url;
     private string $avatar_url;
-    private $description;
+    private ?string $description;
     public function login() : string
     {
         return $this->login;
@@ -63,7 +63,7 @@ final class OrganizationSimple
     {
         return $this->avatar_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

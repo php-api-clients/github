@@ -10,7 +10,7 @@ final class Alert
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
      */
-    private $created_at;
+    private ?string $created_at;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -19,7 +19,7 @@ final class Alert
     /**
      * The dismissal comment associated with the dismissal of the alert.
      */
-    private $dismissed_comment;
+    private ?string $dismissed_comment = null;
     /**
      * The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
@@ -30,7 +30,10 @@ final class Alert
      */
     private string $html_url;
     private ?string $instances_url = null;
-    private $most_recent_instance;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance $most_recent_instance = null;
     /**
      * The code scanning alert number.
      */
@@ -43,13 +46,16 @@ final class Alert
      * State of a code scanning alert.
      */
     private string $state;
-    private $tool;
-    private $updated_at;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\Tool::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\Tool $tool;
+    private ?string $updated_at = null;
     private string $url;
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
      */
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
@@ -67,7 +73,7 @@ final class Alert
     /**
      * The dismissal comment associated with the dismissal of the alert.
      */
-    public function dismissed_comment()
+    public function dismissed_comment() : ?string
     {
         return $this->dismissed_comment;
     }
@@ -93,7 +99,7 @@ final class Alert
     {
         return $this->instances_url;
     }
-    public function most_recent_instance()
+    public function most_recent_instance() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance
     {
         return $this->most_recent_instance;
     }
@@ -115,11 +121,11 @@ final class Alert
     {
         return $this->state;
     }
-    public function tool()
+    public function tool() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\Tool
     {
         return $this->tool;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

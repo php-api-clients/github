@@ -13,7 +13,7 @@ final class PreviousMarketplacePurchase
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PreviousMarketplacePurchase\Account $account;
     private string $billing_cycle;
     private $free_trial_ends_on;
-    private $next_billing_date;
+    private ?string $next_billing_date = null;
     private bool $on_free_trial;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PreviousMarketplacePurchase\Plan::class)
@@ -32,7 +32,7 @@ final class PreviousMarketplacePurchase
     {
         return $this->free_trial_ends_on;
     }
-    public function next_billing_date()
+    public function next_billing_date() : ?string
     {
         return $this->next_billing_date;
     }

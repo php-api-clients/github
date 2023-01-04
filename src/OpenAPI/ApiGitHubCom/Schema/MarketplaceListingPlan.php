@@ -17,7 +17,7 @@ final class MarketplaceListingPlan
     private int $yearly_price_in_cents;
     private string $price_model;
     private bool $has_free_trial;
-    private $unit_name;
+    private ?string $unit_name;
     private string $state;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan\Bullets>
@@ -64,7 +64,7 @@ final class MarketplaceListingPlan
     {
         return $this->has_free_trial;
     }
-    public function unit_name()
+    public function unit_name() : ?string
     {
         return $this->unit_name;
     }

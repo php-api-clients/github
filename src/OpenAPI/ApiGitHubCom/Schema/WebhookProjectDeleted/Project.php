@@ -10,10 +10,13 @@ final class Project
     /**
      * Body of the project
      */
-    private $body;
+    private ?string $body;
     private string $columns_url;
     private string $created_at;
-    private $creator;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project\Creator::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project\Creator $creator;
     private string $html_url;
     private int $id;
     /**
@@ -32,7 +35,7 @@ final class Project
     /**
      * Body of the project
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }
@@ -44,7 +47,7 @@ final class Project
     {
         return $this->created_at;
     }
-    public function creator()
+    public function creator() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project\Creator
     {
         return $this->creator;
     }

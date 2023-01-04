@@ -21,7 +21,7 @@ final class TeamDiscussionComment
      */
     private string $body_version;
     private string $created_at;
-    private $last_edited_at;
+    private ?string $last_edited_at;
     private string $discussion_url;
     private string $html_url;
     private string $node_id;
@@ -61,7 +61,7 @@ final class TeamDiscussionComment
     {
         return $this->created_at;
     }
-    public function last_edited_at()
+    public function last_edited_at() : ?string
     {
         return $this->last_edited_at;
     }

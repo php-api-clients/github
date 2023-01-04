@@ -10,7 +10,7 @@ final class C0937235B2D8Feadec00C262F7Ab50B1B
     /**
      * The project card's note
      */
-    private $note;
+    private ?string $note;
     /**
      * Whether or not the card is archived
      */
@@ -18,7 +18,7 @@ final class C0937235B2D8Feadec00C262F7Ab50B1B
     /**
      * The project card's note
      */
-    public function note()
+    public function note() : ?string
     {
         return $this->note;
     }

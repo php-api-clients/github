@@ -10,7 +10,7 @@ final class CodeScanningAlertRule
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private $id;
+    private ?string $id;
     /**
      * The name of the rule used to detect the alert.
      */
@@ -18,11 +18,11 @@ final class CodeScanningAlertRule
     /**
      * The severity of the alert.
      */
-    private $severity;
+    private ?string $severity;
     /**
      * The security severity of the alert.
      */
-    private $security_severity_level;
+    private ?string $security_severity_level;
     /**
      * A short description of the rule used to detect the alert.
      */
@@ -33,20 +33,22 @@ final class CodeScanningAlertRule
     private string $full_description;
     /**
      * A set of tags applicable for the rule.
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule\Tags>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule\Tags::class)
      */
-    private $tags;
+    private array $tags = array();
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    private $help;
+    private ?string $help;
     /**
      * A link to the documentation for the rule used to detect the alert.
      */
-    private $help_uri;
+    private ?string $help_uri;
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    public function id()
+    public function id() : ?string
     {
         return $this->id;
     }
@@ -60,14 +62,14 @@ final class CodeScanningAlertRule
     /**
      * The severity of the alert.
      */
-    public function severity()
+    public function severity() : ?string
     {
         return $this->severity;
     }
     /**
      * The security severity of the alert.
      */
-    public function security_severity_level()
+    public function security_severity_level() : ?string
     {
         return $this->security_severity_level;
     }
@@ -87,22 +89,23 @@ final class CodeScanningAlertRule
     }
     /**
      * A set of tags applicable for the rule.
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule\Tags>
      */
-    public function tags()
+    public function tags() : array
     {
         return $this->tags;
     }
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    public function help()
+    public function help() : ?string
     {
         return $this->help;
     }
     /**
      * A link to the documentation for the rule used to detect the alert.
      */
-    public function help_uri()
+    public function help_uri() : ?string
     {
         return $this->help_uri;
     }

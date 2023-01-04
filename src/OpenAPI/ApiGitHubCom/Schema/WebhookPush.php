@@ -11,7 +11,7 @@ final class WebhookPush
      * The SHA of the most recent commit on `ref` after the push.
      */
     private string $after;
-    private $base_ref;
+    private ?string $base_ref;
     /**
      * The SHA of the most recent commit on `ref` before the push.
      */
@@ -43,7 +43,10 @@ final class WebhookPush
      * Whether this push was a force push of the `ref`.
      */
     private bool $forced;
-    private $head_commit;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit $head_commit;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
@@ -80,7 +83,7 @@ final class WebhookPush
     {
         return $this->after;
     }
-    public function base_ref()
+    public function base_ref() : ?string
     {
         return $this->base_ref;
     }
@@ -134,7 +137,7 @@ final class WebhookPush
     {
         return $this->forced;
     }
-    public function head_commit()
+    public function head_commit() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit
     {
         return $this->head_commit;
     }

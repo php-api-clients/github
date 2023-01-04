@@ -9,8 +9,8 @@ final class Verification
     public const SCHEMA_DESCRIPTION = '';
     private bool $verified;
     private string $reason;
-    private $signature;
-    private $payload;
+    private ?string $signature;
+    private ?string $payload;
     public function verified() : bool
     {
         return $this->verified;
@@ -19,11 +19,11 @@ final class Verification
     {
         return $this->reason;
     }
-    public function signature()
+    public function signature() : ?string
     {
         return $this->signature;
     }
-    public function payload()
+    public function payload() : ?string
     {
         return $this->payload;
     }

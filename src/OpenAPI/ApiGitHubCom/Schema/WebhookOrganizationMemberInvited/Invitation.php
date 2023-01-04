@@ -8,13 +8,16 @@ final class Invitation
     public const SCHEMA_TITLE = 'WebhookOrganizationMemberInvited\\Invitation';
     public const SCHEMA_DESCRIPTION = 'The invitation for the user or email if the action is `member_invited`.';
     private string $created_at;
-    private $email;
-    private $failed_at;
-    private $failed_reason;
+    private ?string $email;
+    private ?string $failed_at;
+    private ?string $failed_reason;
     private int $id;
     private string $invitation_teams_url;
-    private $inviter;
-    private $login;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Invitation\Inviter::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Invitation\Inviter $inviter;
+    private ?string $login;
     private string $node_id;
     private string $role;
     private int $team_count;
@@ -22,15 +25,15 @@ final class Invitation
     {
         return $this->created_at;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function failed_at()
+    public function failed_at() : ?string
     {
         return $this->failed_at;
     }
-    public function failed_reason()
+    public function failed_reason() : ?string
     {
         return $this->failed_reason;
     }
@@ -42,11 +45,11 @@ final class Invitation
     {
         return $this->invitation_teams_url;
     }
-    public function inviter()
+    public function inviter() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Invitation\Inviter
     {
         return $this->inviter;
     }
-    public function login()
+    public function login() : ?string
     {
         return $this->login;
     }

@@ -36,7 +36,7 @@ final class TeamRepository
      */
     private bool $private;
     private string $html_url;
-    private $description;
+    private ?string $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -77,11 +77,11 @@ final class TeamRepository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private $mirror_url;
+    private ?string $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private $homepage;
-    private $language;
+    private ?string $homepage;
+    private ?string $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
@@ -129,9 +129,9 @@ final class TeamRepository
      * The repository visibility: public, private, or internal.
      */
     private ?string $visibility = null;
-    private $pushed_at;
-    private $created_at;
-    private $updated_at;
+    private ?string $pushed_at;
+    private ?string $created_at;
+    private ?string $updated_at;
     /**
      * Whether to allow rebase merges for pull requests.
      */
@@ -223,7 +223,7 @@ final class TeamRepository
     {
         return $this->html_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -387,7 +387,7 @@ final class TeamRepository
     {
         return $this->clone_url;
     }
-    public function mirror_url()
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -399,11 +399,11 @@ final class TeamRepository
     {
         return $this->svn_url;
     }
-    public function homepage()
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
-    public function language()
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -501,15 +501,15 @@ final class TeamRepository
     {
         return $this->visibility;
     }
-    public function pushed_at()
+    public function pushed_at() : ?string
     {
         return $this->pushed_at;
     }
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

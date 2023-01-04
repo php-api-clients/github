@@ -13,8 +13,9 @@ final class Installation
     private int $id;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Account::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account;
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Account $account;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -40,7 +41,7 @@ final class Installation
     private array $events = array();
     private string $created_at;
     private string $updated_at;
-    private $single_file_name;
+    private ?string $single_file_name;
     private ?bool $has_multiple_single_files = null;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SingleFilePaths>
@@ -52,8 +53,8 @@ final class Installation
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SuspendedBy::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SuspendedBy $suspended_by;
-    private $suspended_at;
-    private $contact_email;
+    private ?string $suspended_at;
+    private ?string $contact_email = null;
     /**
      * The ID of the installation.
      */
@@ -61,7 +62,7 @@ final class Installation
     {
         return $this->id;
     }
-    public function account() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public function account() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Account
     {
         return $this->account;
     }
@@ -121,7 +122,7 @@ final class Installation
     {
         return $this->updated_at;
     }
-    public function single_file_name()
+    public function single_file_name() : ?string
     {
         return $this->single_file_name;
     }
@@ -144,11 +145,11 @@ final class Installation
     {
         return $this->suspended_by;
     }
-    public function suspended_at()
+    public function suspended_at() : ?string
     {
         return $this->suspended_at;
     }
-    public function contact_email()
+    public function contact_email() : ?string
     {
         return $this->contact_email;
     }

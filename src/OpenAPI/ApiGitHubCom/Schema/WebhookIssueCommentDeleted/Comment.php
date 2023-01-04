@@ -36,7 +36,10 @@ final class Comment
      * URL for the issue comment
      */
     private string $url;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user;
     /**
      * How the author is associated with the repository.
      */
@@ -93,7 +96,7 @@ final class Comment
     {
         return $this->url;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User
     {
         return $this->user;
     }

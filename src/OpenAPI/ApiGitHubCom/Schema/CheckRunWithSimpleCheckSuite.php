@@ -16,8 +16,8 @@ final class CheckRunWithSimpleCheckSuite
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCheckSuite::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCheckSuite $check_suite;
-    private $completed_at;
-    private $conclusion;
+    private ?string $completed_at;
+    private ?string $conclusion;
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple::class)
@@ -65,11 +65,11 @@ final class CheckRunWithSimpleCheckSuite
     {
         return $this->check_suite;
     }
-    public function completed_at()
+    public function completed_at() : ?string
     {
         return $this->completed_at;
     }
-    public function conclusion()
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }

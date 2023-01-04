@@ -8,25 +8,31 @@ final class Package
     public const SCHEMA_TITLE = 'WebhookPackageUpdated\\Package';
     public const SCHEMA_DESCRIPTION = 'Information about the package.';
     private string $created_at;
-    private $description;
+    private ?string $description;
     private string $ecosystem;
     private string $html_url;
     private int $id;
     private string $name;
     private string $namespace;
-    private $owner;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner $owner;
     private string $package_type;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\PackageVersion::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\PackageVersion $package_version;
-    private $registry;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Registry::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Registry $registry;
     private string $updated_at;
     public function created_at() : string
     {
         return $this->created_at;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -50,7 +56,7 @@ final class Package
     {
         return $this->namespace;
     }
-    public function owner()
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner
     {
         return $this->owner;
     }
@@ -62,7 +68,7 @@ final class Package
     {
         return $this->package_version;
     }
-    public function registry()
+    public function registry() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Registry
     {
         return $this->registry;
     }

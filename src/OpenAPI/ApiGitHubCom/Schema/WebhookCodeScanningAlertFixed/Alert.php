@@ -14,18 +14,24 @@ final class Alert
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private $dismissed_at;
-    private $dismissed_by;
+    private ?string $dismissed_at;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\DismissedBy::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\DismissedBy $dismissed_by;
     /**
      * The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
-    private $dismissed_reason;
+    private ?string $dismissed_reason;
     /**
      * The GitHub URL of the alert resource.
      */
     private string $html_url;
     private ?string $instances_url = null;
-    private $most_recent_instance;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance $most_recent_instance = null;
     /**
      * The code scanning alert number.
      */
@@ -53,18 +59,18 @@ final class Alert
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function dismissed_at()
+    public function dismissed_at() : ?string
     {
         return $this->dismissed_at;
     }
-    public function dismissed_by()
+    public function dismissed_by() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\DismissedBy
     {
         return $this->dismissed_by;
     }
     /**
      * The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
      */
-    public function dismissed_reason()
+    public function dismissed_reason() : ?string
     {
         return $this->dismissed_reason;
     }
@@ -79,7 +85,7 @@ final class Alert
     {
         return $this->instances_url;
     }
-    public function most_recent_instance()
+    public function most_recent_instance() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance
     {
         return $this->most_recent_instance;
     }

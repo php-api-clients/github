@@ -18,14 +18,17 @@ final class Comment
     private string $html_url;
     private int $id;
     private string $node_id;
-    private $parent_id;
+    private ?int $parent_id;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Reactions::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Reactions $reactions;
     private string $repository_url;
     private string $updated_at;
-    private $user;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user;
     /**
      * How the author is associated with the repository.
      */
@@ -61,7 +64,7 @@ final class Comment
     {
         return $this->node_id;
     }
-    public function parent_id()
+    public function parent_id() : ?int
     {
         return $this->parent_id;
     }
@@ -77,7 +80,7 @@ final class Comment
     {
         return $this->updated_at;
     }
-    public function user()
+    public function user() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User
     {
         return $this->user;
     }

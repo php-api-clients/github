@@ -15,7 +15,7 @@ final class ReleaseAsset
      * The file name of the asset.
      */
     private string $name;
-    private $label;
+    private ?string $label;
     /**
      * State of the release asset.
      */
@@ -52,7 +52,7 @@ final class ReleaseAsset
     {
         return $this->name;
     }
-    public function label()
+    public function label() : ?string
     {
         return $this->label;
     }

@@ -7,20 +7,20 @@ final class Output
     public const SCHEMA_JSON = '{"required":["title","summary","text","annotations_count","annotations_url"],"type":"object","properties":{"title":{"type":["string","null"]},"summary":{"type":["string","null"]},"text":{"type":["string","null"]},"annotations_count":{"type":"integer"},"annotations_url":{"type":"string","format":"uri"}}}';
     public const SCHEMA_TITLE = 'CheckRun\\Output';
     public const SCHEMA_DESCRIPTION = '';
-    private $title;
-    private $summary;
-    private $text;
+    private ?string $title;
+    private ?string $summary;
+    private ?string $text;
     private int $annotations_count;
     private string $annotations_url;
-    public function title()
+    public function title() : ?string
     {
         return $this->title;
     }
-    public function summary()
+    public function summary() : ?string
     {
         return $this->summary;
     }
-    public function text()
+    public function text() : ?string
     {
         return $this->text;
     }

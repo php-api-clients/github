@@ -8,7 +8,7 @@ final class TextMatches
     public const SCHEMA_TITLE = 'UserSearchResultItem\\TextMatches';
     public const SCHEMA_DESCRIPTION = '';
     private string $object_url;
-    private $object_type;
+    private ?string $object_type;
     private string $property;
     private string $fragment;
     /**
@@ -20,7 +20,7 @@ final class TextMatches
     {
         return $this->object_url;
     }
-    public function object_type()
+    public function object_type() : ?string
     {
         return $this->object_type;
     }

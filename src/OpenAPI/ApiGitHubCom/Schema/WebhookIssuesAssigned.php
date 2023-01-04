@@ -11,7 +11,10 @@ final class WebhookIssuesAssigned
      * The action that was performed.
      */
     private string $action;
-    private $assignee;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesAssigned\Assignee::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesAssigned\Assignee $assignee = null;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -49,7 +52,7 @@ final class WebhookIssuesAssigned
     {
         return $this->action;
     }
-    public function assignee()
+    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesAssigned\Assignee
     {
         return $this->assignee;
     }

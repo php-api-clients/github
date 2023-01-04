@@ -11,30 +11,30 @@ final class Domain
     private string $uri;
     private string $nameservers;
     private bool $dns_resolves;
-    private $is_proxied;
-    private $is_cloudflare_ip;
-    private $is_fastly_ip;
-    private $is_old_ip_address;
-    private $is_a_record;
-    private $has_cname_record;
-    private $has_mx_records_present;
+    private ?bool $is_proxied;
+    private ?bool $is_cloudflare_ip;
+    private ?bool $is_fastly_ip;
+    private ?bool $is_old_ip_address;
+    private ?bool $is_a_record;
+    private ?bool $has_cname_record;
+    private ?bool $has_mx_records_present;
     private bool $is_valid_domain;
     private bool $is_apex_domain;
-    private $should_be_a_record;
-    private $is_cname_to_github_user_domain;
-    private $is_cname_to_pages_dot_github_dot_com;
-    private $is_cname_to_fastly;
-    private $is_pointed_to_github_pages_ip;
-    private $is_non_github_pages_ip_present;
+    private ?bool $should_be_a_record;
+    private ?bool $is_cname_to_github_user_domain;
+    private ?bool $is_cname_to_pages_dot_github_dot_com;
+    private ?bool $is_cname_to_fastly;
+    private ?bool $is_pointed_to_github_pages_ip;
+    private ?bool $is_non_github_pages_ip_present;
     private bool $is_pages_domain;
-    private $is_served_by_pages;
+    private ?bool $is_served_by_pages;
     private bool $is_valid;
-    private $reason;
+    private ?string $reason;
     private bool $responds_to_https;
     private bool $enforces_https;
-    private $https_error;
-    private $is_https_eligible;
-    private $caa_error;
+    private ?string $https_error;
+    private ?bool $is_https_eligible;
+    private ?string $caa_error;
     public function host() : string
     {
         return $this->host;
@@ -51,31 +51,31 @@ final class Domain
     {
         return $this->dns_resolves;
     }
-    public function is_proxied()
+    public function is_proxied() : ?bool
     {
         return $this->is_proxied;
     }
-    public function is_cloudflare_ip()
+    public function is_cloudflare_ip() : ?bool
     {
         return $this->is_cloudflare_ip;
     }
-    public function is_fastly_ip()
+    public function is_fastly_ip() : ?bool
     {
         return $this->is_fastly_ip;
     }
-    public function is_old_ip_address()
+    public function is_old_ip_address() : ?bool
     {
         return $this->is_old_ip_address;
     }
-    public function is_a_record()
+    public function is_a_record() : ?bool
     {
         return $this->is_a_record;
     }
-    public function has_cname_record()
+    public function has_cname_record() : ?bool
     {
         return $this->has_cname_record;
     }
-    public function has_mx_records_present()
+    public function has_mx_records_present() : ?bool
     {
         return $this->has_mx_records_present;
     }
@@ -87,27 +87,27 @@ final class Domain
     {
         return $this->is_apex_domain;
     }
-    public function should_be_a_record()
+    public function should_be_a_record() : ?bool
     {
         return $this->should_be_a_record;
     }
-    public function is_cname_to_github_user_domain()
+    public function is_cname_to_github_user_domain() : ?bool
     {
         return $this->is_cname_to_github_user_domain;
     }
-    public function is_cname_to_pages_dot_github_dot_com()
+    public function is_cname_to_pages_dot_github_dot_com() : ?bool
     {
         return $this->is_cname_to_pages_dot_github_dot_com;
     }
-    public function is_cname_to_fastly()
+    public function is_cname_to_fastly() : ?bool
     {
         return $this->is_cname_to_fastly;
     }
-    public function is_pointed_to_github_pages_ip()
+    public function is_pointed_to_github_pages_ip() : ?bool
     {
         return $this->is_pointed_to_github_pages_ip;
     }
-    public function is_non_github_pages_ip_present()
+    public function is_non_github_pages_ip_present() : ?bool
     {
         return $this->is_non_github_pages_ip_present;
     }
@@ -115,7 +115,7 @@ final class Domain
     {
         return $this->is_pages_domain;
     }
-    public function is_served_by_pages()
+    public function is_served_by_pages() : ?bool
     {
         return $this->is_served_by_pages;
     }
@@ -123,7 +123,7 @@ final class Domain
     {
         return $this->is_valid;
     }
-    public function reason()
+    public function reason() : ?string
     {
         return $this->reason;
     }
@@ -135,15 +135,15 @@ final class Domain
     {
         return $this->enforces_https;
     }
-    public function https_error()
+    public function https_error() : ?string
     {
         return $this->https_error;
     }
-    public function is_https_eligible()
+    public function is_https_eligible() : ?bool
     {
         return $this->is_https_eligible;
     }
-    public function caa_error()
+    public function caa_error() : ?string
     {
         return $this->caa_error;
     }

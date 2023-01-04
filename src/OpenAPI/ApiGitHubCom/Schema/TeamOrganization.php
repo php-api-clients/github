@@ -18,13 +18,13 @@ final class TeamOrganization
     private string $members_url;
     private string $public_members_url;
     private string $avatar_url;
-    private $description;
+    private ?string $description;
     private ?string $name = null;
     private ?string $company = null;
     private ?string $blog = null;
     private ?string $location = null;
     private ?string $email = null;
-    private $twitter_username;
+    private ?string $twitter_username = null;
     private ?bool $is_verified = null;
     private bool $has_organization_projects;
     private bool $has_repository_projects;
@@ -37,17 +37,17 @@ final class TeamOrganization
     private string $type;
     private ?int $total_private_repos = null;
     private ?int $owned_private_repos = null;
-    private $private_gists;
-    private $disk_usage;
-    private $collaborators;
-    private $billing_email;
+    private ?int $private_gists = null;
+    private ?int $disk_usage = null;
+    private ?int $collaborators = null;
+    private ?string $billing_email = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization\Plan::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization\Plan $plan = null;
-    private $default_repository_permission;
-    private $members_can_create_repositories;
-    private $two_factor_requirement_enabled;
+    private ?string $default_repository_permission = null;
+    private ?bool $members_can_create_repositories = null;
+    private ?bool $two_factor_requirement_enabled = null;
     private ?string $members_allowed_repository_creation_type = null;
     private ?bool $members_can_create_public_repositories = null;
     private ?bool $members_can_create_private_repositories = null;
@@ -55,7 +55,7 @@ final class TeamOrganization
     private ?bool $members_can_create_pages = null;
     private ?bool $members_can_create_public_pages = null;
     private ?bool $members_can_create_private_pages = null;
-    private $members_can_fork_private_repositories;
+    private ?bool $members_can_fork_private_repositories = null;
     private ?bool $web_commit_signoff_required = null;
     private string $updated_at;
     public function login() : string
@@ -102,7 +102,7 @@ final class TeamOrganization
     {
         return $this->avatar_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -126,7 +126,7 @@ final class TeamOrganization
     {
         return $this->email;
     }
-    public function twitter_username()
+    public function twitter_username() : ?string
     {
         return $this->twitter_username;
     }
@@ -178,19 +178,19 @@ final class TeamOrganization
     {
         return $this->owned_private_repos;
     }
-    public function private_gists()
+    public function private_gists() : ?int
     {
         return $this->private_gists;
     }
-    public function disk_usage()
+    public function disk_usage() : ?int
     {
         return $this->disk_usage;
     }
-    public function collaborators()
+    public function collaborators() : ?int
     {
         return $this->collaborators;
     }
-    public function billing_email()
+    public function billing_email() : ?string
     {
         return $this->billing_email;
     }
@@ -198,15 +198,15 @@ final class TeamOrganization
     {
         return $this->plan;
     }
-    public function default_repository_permission()
+    public function default_repository_permission() : ?string
     {
         return $this->default_repository_permission;
     }
-    public function members_can_create_repositories()
+    public function members_can_create_repositories() : ?bool
     {
         return $this->members_can_create_repositories;
     }
-    public function two_factor_requirement_enabled()
+    public function two_factor_requirement_enabled() : ?bool
     {
         return $this->two_factor_requirement_enabled;
     }
@@ -238,7 +238,7 @@ final class TeamOrganization
     {
         return $this->members_can_create_private_pages;
     }
-    public function members_can_fork_private_repositories()
+    public function members_can_fork_private_repositories() : ?bool
     {
         return $this->members_can_fork_private_repositories;
     }

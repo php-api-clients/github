@@ -26,7 +26,7 @@ final class Job
      */
     private string $head_sha;
     private string $url;
-    private $html_url;
+    private ?string $html_url;
     /**
      * The phase of the lifecycle that the job is currently in.
      */
@@ -34,7 +34,7 @@ final class Job
     /**
      * The outcome of the job.
      */
-    private $conclusion;
+    private ?string $conclusion;
     /**
      * The time that the job started, in ISO 8601 format.
      */
@@ -42,7 +42,7 @@ final class Job
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    private $completed_at;
+    private ?string $completed_at;
     /**
      * The name of the job.
      */
@@ -63,27 +63,27 @@ final class Job
     /**
      * The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private $runner_id;
+    private ?int $runner_id;
     /**
      * The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private $runner_name;
+    private ?string $runner_name;
     /**
      * The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private $runner_group_id;
+    private ?int $runner_group_id;
     /**
      * The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private $runner_group_name;
+    private ?string $runner_group_name;
     /**
      * The name of the workflow.
      */
-    private $workflow_name;
+    private ?string $workflow_name;
     /**
      * The name of the current branch.
      */
-    private $head_branch;
+    private ?string $head_branch;
     /**
      * The id of the job.
      */
@@ -124,7 +124,7 @@ final class Job
     {
         return $this->url;
     }
-    public function html_url()
+    public function html_url() : ?string
     {
         return $this->html_url;
     }
@@ -138,7 +138,7 @@ final class Job
     /**
      * The outcome of the job.
      */
-    public function conclusion()
+    public function conclusion() : ?string
     {
         return $this->conclusion;
     }
@@ -152,7 +152,7 @@ final class Job
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    public function completed_at()
+    public function completed_at() : ?string
     {
         return $this->completed_at;
     }
@@ -186,42 +186,42 @@ final class Job
     /**
      * The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_id()
+    public function runner_id() : ?int
     {
         return $this->runner_id;
     }
     /**
      * The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_name()
+    public function runner_name() : ?string
     {
         return $this->runner_name;
     }
     /**
      * The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_group_id()
+    public function runner_group_id() : ?int
     {
         return $this->runner_group_id;
     }
     /**
      * The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    public function runner_group_name()
+    public function runner_group_name() : ?string
     {
         return $this->runner_group_name;
     }
     /**
      * The name of the workflow.
      */
-    public function workflow_name()
+    public function workflow_name() : ?string
     {
         return $this->workflow_name;
     }
     /**
      * The name of the current branch.
      */
-    public function head_branch()
+    public function head_branch() : ?string
     {
         return $this->head_branch;
     }

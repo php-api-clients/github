@@ -18,7 +18,7 @@ final class HeadRepository
     private string $contents_url;
     private string $contributors_url;
     private string $deployments_url;
-    private $description;
+    private ?string $description;
     private string $downloads_url;
     private string $events_url;
     private bool $fork;
@@ -47,7 +47,10 @@ final class HeadRepository
     private string $name;
     private string $node_id;
     private string $notifications_url;
-    private $owner;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadRepository\Owner::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadRepository\Owner $owner;
     /**
      * Whether the repository is private or public.
      */
@@ -106,7 +109,7 @@ final class HeadRepository
     {
         return $this->deployments_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -204,7 +207,7 @@ final class HeadRepository
     {
         return $this->notifications_url;
     }
-    public function owner()
+    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadRepository\Owner
     {
         return $this->owner;
     }

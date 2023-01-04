@@ -23,7 +23,7 @@ final class TeamDiscussion
     private int $comments_count;
     private string $comments_url;
     private string $created_at;
-    private $last_edited_at;
+    private ?string $last_edited_at;
     private string $html_url;
     private string $node_id;
     /**
@@ -83,7 +83,7 @@ final class TeamDiscussion
     {
         return $this->created_at;
     }
-    public function last_edited_at()
+    public function last_edited_at() : ?string
     {
         return $this->last_edited_at;
     }

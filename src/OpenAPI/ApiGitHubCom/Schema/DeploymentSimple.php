@@ -22,7 +22,7 @@ final class DeploymentSimple
      * Name for the target deployment environment.
      */
     private string $environment;
-    private $description;
+    private ?string $description;
     private string $created_at;
     private string $updated_at;
     private string $statuses_url;
@@ -72,7 +72,7 @@ final class DeploymentSimple
     {
         return $this->environment;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

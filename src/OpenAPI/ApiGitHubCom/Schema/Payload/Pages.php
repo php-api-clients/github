@@ -9,7 +9,7 @@ final class Pages
     public const SCHEMA_DESCRIPTION = '';
     private string $page_name;
     private string $title;
-    private $summary;
+    private ?string $summary;
     private string $action;
     private string $sha;
     private string $html_url;
@@ -21,7 +21,7 @@ final class Pages
     {
         return $this->title;
     }
-    public function summary()
+    public function summary() : ?string
     {
         return $this->summary;
     }

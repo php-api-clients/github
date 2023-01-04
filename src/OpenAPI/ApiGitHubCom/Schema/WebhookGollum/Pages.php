@@ -23,7 +23,7 @@ final class Pages
      * The latest commit SHA of the page.
      */
     private string $sha;
-    private $summary;
+    private ?string $summary;
     /**
      * The current page title.
      */
@@ -56,7 +56,7 @@ final class Pages
     {
         return $this->sha;
     }
-    public function summary()
+    public function summary() : ?string
     {
         return $this->summary;
     }

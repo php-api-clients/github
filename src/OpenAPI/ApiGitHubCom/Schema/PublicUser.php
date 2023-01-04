@@ -11,7 +11,7 @@ final class PublicUser
     private int $id;
     private string $node_id;
     private string $avatar_url;
-    private $gravatar_id;
+    private ?string $gravatar_id;
     private string $url;
     private string $html_url;
     private string $followers_url;
@@ -25,14 +25,14 @@ final class PublicUser
     private string $received_events_url;
     private string $type;
     private bool $site_admin;
-    private $name;
-    private $company;
-    private $blog;
-    private $location;
-    private $email;
-    private $hireable;
-    private $bio;
-    private $twitter_username;
+    private ?string $name;
+    private ?string $company;
+    private ?string $blog;
+    private ?string $location;
+    private ?string $email;
+    private ?bool $hireable;
+    private ?string $bio;
+    private ?string $twitter_username = null;
     private int $public_repos;
     private int $public_gists;
     private int $followers;
@@ -43,7 +43,7 @@ final class PublicUser
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan::class)
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan $plan = null;
-    private $suspended_at;
+    private ?string $suspended_at = null;
     private ?int $private_gists = null;
     private ?int $total_private_repos = null;
     private ?int $owned_private_repos = null;
@@ -65,7 +65,7 @@ final class PublicUser
     {
         return $this->avatar_url;
     }
-    public function gravatar_id()
+    public function gravatar_id() : ?string
     {
         return $this->gravatar_id;
     }
@@ -121,35 +121,35 @@ final class PublicUser
     {
         return $this->site_admin;
     }
-    public function name()
+    public function name() : ?string
     {
         return $this->name;
     }
-    public function company()
+    public function company() : ?string
     {
         return $this->company;
     }
-    public function blog()
+    public function blog() : ?string
     {
         return $this->blog;
     }
-    public function location()
+    public function location() : ?string
     {
         return $this->location;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }
-    public function hireable()
+    public function hireable() : ?bool
     {
         return $this->hireable;
     }
-    public function bio()
+    public function bio() : ?string
     {
         return $this->bio;
     }
-    public function twitter_username()
+    public function twitter_username() : ?string
     {
         return $this->twitter_username;
     }
@@ -181,7 +181,7 @@ final class PublicUser
     {
         return $this->plan;
     }
-    public function suspended_at()
+    public function suspended_at() : ?string
     {
         return $this->suspended_at;
     }

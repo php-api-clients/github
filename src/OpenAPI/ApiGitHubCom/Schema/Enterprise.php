@@ -10,12 +10,12 @@ final class Enterprise
     /**
      * A short description of the enterprise.
      */
-    private $description;
+    private ?string $description = null;
     private string $html_url;
     /**
      * The enterprise's website URL.
      */
-    private $website_url;
+    private ?string $website_url = null;
     /**
      * Unique identifier of the enterprise
      */
@@ -29,13 +29,13 @@ final class Enterprise
      * The slug url identifier for the enterprise.
      */
     private string $slug;
-    private $created_at;
-    private $updated_at;
+    private ?string $created_at;
+    private ?string $updated_at;
     private string $avatar_url;
     /**
      * A short description of the enterprise.
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -46,7 +46,7 @@ final class Enterprise
     /**
      * The enterprise's website URL.
      */
-    public function website_url()
+    public function website_url() : ?string
     {
         return $this->website_url;
     }
@@ -75,11 +75,11 @@ final class Enterprise
     {
         return $this->slug;
     }
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }

@@ -15,8 +15,8 @@ final class IssueEvent
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Actor $actor;
     private string $event;
-    private $commit_id;
-    private $commit_url;
+    private ?string $commit_id;
+    private ?string $commit_url;
     private string $created_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Issue::class)
@@ -71,7 +71,7 @@ final class IssueEvent
      * How the author is associated with the repository.
      */
     private ?string $author_association = null;
-    private $lock_reason;
+    private ?string $lock_reason = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\PerformedViaGithubApp::class)
      */
@@ -96,11 +96,11 @@ final class IssueEvent
     {
         return $this->event;
     }
-    public function commit_id()
+    public function commit_id() : ?string
     {
         return $this->commit_id;
     }
-    public function commit_url()
+    public function commit_url() : ?string
     {
         return $this->commit_url;
     }
@@ -174,7 +174,7 @@ final class IssueEvent
     {
         return $this->author_association;
     }
-    public function lock_reason()
+    public function lock_reason() : ?string
     {
         return $this->lock_reason;
     }

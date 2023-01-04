@@ -18,7 +18,7 @@ final class OrganizationCustomRepositoryRole
     /**
      * A short description about who this role is for or what permissions it grants.
      */
-    private $description;
+    private ?string $description = null;
     /**
      * The system role from which this role inherits permissions.
      */
@@ -53,7 +53,7 @@ final class OrganizationCustomRepositoryRole
     /**
      * A short description about who this role is for or what permissions it grants.
      */
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }

@@ -9,9 +9,9 @@ final class Output
     public const SCHEMA_DESCRIPTION = '';
     private int $annotations_count;
     private string $annotations_url;
-    private $summary;
-    private $text;
-    private $title;
+    private ?string $summary;
+    private ?string $text;
+    private ?string $title;
     public function annotations_count() : int
     {
         return $this->annotations_count;
@@ -20,15 +20,15 @@ final class Output
     {
         return $this->annotations_url;
     }
-    public function summary()
+    public function summary() : ?string
     {
         return $this->summary;
     }
-    public function text()
+    public function text() : ?string
     {
         return $this->text;
     }
-    public function title()
+    public function title() : ?string
     {
         return $this->title;
     }

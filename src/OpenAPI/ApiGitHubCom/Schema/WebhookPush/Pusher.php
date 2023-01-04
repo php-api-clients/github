@@ -8,7 +8,7 @@ final class Pusher
     public const SCHEMA_TITLE = 'Committer';
     public const SCHEMA_DESCRIPTION = 'Metaproperties for Git author/committer information.';
     private ?string $date = null;
-    private $email;
+    private ?string $email = null;
     /**
      * The git author's name.
      */
@@ -18,7 +18,7 @@ final class Pusher
     {
         return $this->date;
     }
-    public function email()
+    public function email() : ?string
     {
         return $this->email;
     }

@@ -8,7 +8,10 @@ final class WebhookPullRequestAssigned
     public const SCHEMA_TITLE = 'pull_request assigned event';
     public const SCHEMA_DESCRIPTION = '';
     private string $action;
-    private $assignee;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestAssigned\Assignee::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestAssigned\Assignee $assignee;
     /**
      * An enterprise on GitHub.
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
@@ -46,7 +49,7 @@ final class WebhookPullRequestAssigned
     {
         return $this->action;
     }
-    public function assignee()
+    public function assignee() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestAssigned\Assignee
     {
         return $this->assignee;
     }

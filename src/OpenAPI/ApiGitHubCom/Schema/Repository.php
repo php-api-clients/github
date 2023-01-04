@@ -40,7 +40,7 @@ final class Repository
      */
     private bool $private;
     private string $html_url;
-    private $description;
+    private ?string $description;
     private bool $fork;
     private string $url;
     private string $archive_url;
@@ -81,11 +81,11 @@ final class Repository
     private string $teams_url;
     private string $trees_url;
     private string $clone_url;
-    private $mirror_url;
+    private ?string $mirror_url;
     private string $hooks_url;
     private string $svn_url;
-    private $homepage;
-    private $language;
+    private ?string $homepage;
+    private ?string $language;
     private int $forks_count;
     private int $stargazers_count;
     private int $watchers_count;
@@ -140,14 +140,17 @@ final class Repository
      * The repository visibility: public, private, or internal.
      */
     private ?string $visibility = null;
-    private $pushed_at;
-    private $created_at;
-    private $updated_at;
+    private ?string $pushed_at;
+    private ?string $created_at;
+    private ?string $updated_at;
     /**
      * Whether to allow rebase merges for pull requests.
      */
     private ?bool $allow_rebase_merge = null;
-    private $template_repository;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\TemplateRepository::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\TemplateRepository $template_repository = null;
     private ?string $temp_clone_token = null;
     /**
      * Whether to allow squash merges for pull requests.
@@ -277,7 +280,7 @@ final class Repository
     {
         return $this->html_url;
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->description;
     }
@@ -441,7 +444,7 @@ final class Repository
     {
         return $this->clone_url;
     }
-    public function mirror_url()
+    public function mirror_url() : ?string
     {
         return $this->mirror_url;
     }
@@ -453,11 +456,11 @@ final class Repository
     {
         return $this->svn_url;
     }
-    public function homepage()
+    public function homepage() : ?string
     {
         return $this->homepage;
     }
-    public function language()
+    public function language() : ?string
     {
         return $this->language;
     }
@@ -565,15 +568,15 @@ final class Repository
     {
         return $this->visibility;
     }
-    public function pushed_at()
+    public function pushed_at() : ?string
     {
         return $this->pushed_at;
     }
-    public function created_at()
+    public function created_at() : ?string
     {
         return $this->created_at;
     }
-    public function updated_at()
+    public function updated_at() : ?string
     {
         return $this->updated_at;
     }
@@ -584,7 +587,7 @@ final class Repository
     {
         return $this->allow_rebase_merge;
     }
-    public function template_repository()
+    public function template_repository() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\TemplateRepository
     {
         return $this->template_repository;
     }

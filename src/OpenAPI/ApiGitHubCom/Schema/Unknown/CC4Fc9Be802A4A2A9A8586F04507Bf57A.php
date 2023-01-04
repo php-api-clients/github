@@ -14,7 +14,7 @@ final class CC4Fc9Be802A4A2A9A8586F04507Bf57A
     /**
      * Body of the project
      */
-    private $body;
+    private ?string $body = null;
     /**
      * Name of the project
      */
@@ -25,7 +25,7 @@ final class CC4Fc9Be802A4A2A9A8586F04507Bf57A
     /**
      * Body of the project
      */
-    public function body()
+    public function body() : ?string
     {
         return $this->body;
     }

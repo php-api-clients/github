@@ -18,7 +18,7 @@ final class PendingDeployment
     /**
      * The time that the wait timer began.
      */
-    private $wait_timer_started_at;
+    private ?string $wait_timer_started_at;
     /**
      * Whether the currently authenticated user can approve the deployment
      */
@@ -43,7 +43,7 @@ final class PendingDeployment
     /**
      * The time that the wait timer began.
      */
-    public function wait_timer_started_at()
+    public function wait_timer_started_at() : ?string
     {
         return $this->wait_timer_started_at;
     }

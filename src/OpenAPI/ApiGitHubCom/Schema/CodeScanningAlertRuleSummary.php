@@ -10,19 +10,21 @@ final class CodeScanningAlertRuleSummary
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private $id;
+    private ?string $id;
     /**
      * The name of the rule used to detect the alert.
      */
     private string $name;
     /**
      * A set of tags applicable for the rule.
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRuleSummary\Tags>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRuleSummary\Tags::class)
      */
-    private $tags;
+    private array $tags = array();
     /**
      * The severity of the alert.
      */
-    private $severity;
+    private ?string $severity;
     /**
      * A short description of the rule used to detect the alert.
      */
@@ -30,7 +32,7 @@ final class CodeScanningAlertRuleSummary
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    public function id()
+    public function id() : ?string
     {
         return $this->id;
     }
@@ -43,15 +45,16 @@ final class CodeScanningAlertRuleSummary
     }
     /**
      * A set of tags applicable for the rule.
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRuleSummary\Tags>
      */
-    public function tags()
+    public function tags() : array
     {
         return $this->tags;
     }
     /**
      * The severity of the alert.
      */
-    public function severity()
+    public function severity() : ?string
     {
         return $this->severity;
     }

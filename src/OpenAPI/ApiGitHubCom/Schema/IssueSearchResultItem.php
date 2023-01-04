@@ -18,8 +18,12 @@ final class IssueSearchResultItem
     private int $number;
     private string $title;
     private bool $locked;
-    private $active_lock_reason;
-    private $assignees;
+    private ?string $active_lock_reason = null;
+    /**
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
+     */
+    private array $assignees = array();
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\User::class)
      */
@@ -30,7 +34,7 @@ final class IssueSearchResultItem
      */
     private array $labels = array();
     private string $state;
-    private $state_reason;
+    private ?string $state_reason = null;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\Assignee::class)
      */
@@ -42,7 +46,7 @@ final class IssueSearchResultItem
     private int $comments;
     private string $created_at;
     private string $updated_at;
-    private $closed_at;
+    private ?string $closed_at;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches>
      * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\TextMatches::class)
@@ -119,11 +123,14 @@ final class IssueSearchResultItem
     {
         return $this->locked;
     }
-    public function active_lock_reason()
+    public function active_lock_reason() : ?string
     {
         return $this->active_lock_reason;
     }
-    public function assignees()
+    /**
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     */
+    public function assignees() : array
     {
         return $this->assignees;
     }
@@ -142,7 +149,7 @@ final class IssueSearchResultItem
     {
         return $this->state;
     }
-    public function state_reason()
+    public function state_reason() : ?string
     {
         return $this->state_reason;
     }
@@ -166,7 +173,7 @@ final class IssueSearchResultItem
     {
         return $this->updated_at;
     }
-    public function closed_at()
+    public function closed_at() : ?string
     {
         return $this->closed_at;
     }

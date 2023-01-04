@@ -11,8 +11,14 @@ final class SimpleCommit
     private string $tree_id;
     private string $message;
     private string $timestamp;
-    private $author;
-    private $committer;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Author::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Author $author;
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Committer::class)
+     */
+    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Committer $committer;
     public function id() : string
     {
         return $this->id;
@@ -29,11 +35,11 @@ final class SimpleCommit
     {
         return $this->timestamp;
     }
-    public function author()
+    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Author
     {
         return $this->author;
     }
-    public function committer()
+    public function committer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Committer
     {
         return $this->committer;
     }

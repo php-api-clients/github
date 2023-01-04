@@ -38,11 +38,11 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    private $resolution;
+    private ?string $resolution;
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private $resolved_at;
+    private ?string $resolved_at;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\ResolvedBy::class)
      */
@@ -50,7 +50,7 @@ final class SecretScanningAlert
     /**
      * An optional comment to resolve an alert.
      */
-    private $resolution_comment;
+    private ?string $resolution_comment;
     /**
      * The type of secret that secret scanning detected.
      */
@@ -67,7 +67,7 @@ final class SecretScanningAlert
     /**
      * Whether push protection was bypassed for the detected secret.
      */
-    private $push_protection_bypassed;
+    private ?bool $push_protection_bypassed;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\PushProtectionBypassedBy::class)
      */
@@ -75,7 +75,7 @@ final class SecretScanningAlert
     /**
      * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private $push_protection_bypassed_at;
+    private ?string $push_protection_bypassed_at;
     /**
      * The security alert number.
      */
@@ -125,14 +125,14 @@ final class SecretScanningAlert
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    public function resolution()
+    public function resolution() : ?string
     {
         return $this->resolution;
     }
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function resolved_at()
+    public function resolved_at() : ?string
     {
         return $this->resolved_at;
     }
@@ -143,7 +143,7 @@ final class SecretScanningAlert
     /**
      * An optional comment to resolve an alert.
      */
-    public function resolution_comment()
+    public function resolution_comment() : ?string
     {
         return $this->resolution_comment;
     }
@@ -172,7 +172,7 @@ final class SecretScanningAlert
     /**
      * Whether push protection was bypassed for the detected secret.
      */
-    public function push_protection_bypassed()
+    public function push_protection_bypassed() : ?bool
     {
         return $this->push_protection_bypassed;
     }
@@ -183,7 +183,7 @@ final class SecretScanningAlert
     /**
      * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function push_protection_bypassed_at()
+    public function push_protection_bypassed_at() : ?string
     {
         return $this->push_protection_bypassed_at;
     }
