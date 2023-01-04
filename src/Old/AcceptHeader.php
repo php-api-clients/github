@@ -30,7 +30,7 @@ final class AcceptHeader
     public const LICENSE = 'application/vnd.github.drax-preview+json';
 
     // Topics on repository object: https://developer.github.com/v3/repos/#repositories
-    public const TOPICS  = 'application/vnd.github.mercy-preview+json';
+    public const TOPICS = 'application/vnd.github.mercy-preview+json';
 
     // Topics on repository object: https://developer.github.com/v3/repos/#repositories
     public const CHECK_RUNS = 'application/vnd.github.antiope-preview+json';

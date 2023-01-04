@@ -1,3 +1,0 @@
-spec: https://raw.githubusercontent.com/github/rest-api-description/main/descriptions-next/ghes-3.1/ghes-3.1.yaml
-namespace: ApiClients\Client\Github\OpenAPI\GitHubEnterprise\v3_1
-destination: src/OpenAPI/GitHubEnterprise/v3_1
