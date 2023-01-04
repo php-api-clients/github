@@ -4,103 +4,71 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest;
 
 final class Links
 {
-    public const SCHEMA_JSON = '{"required":["comments","commits","statuses","html","issue","review_comments","review_comment","self"],"type":"object","properties":{"comments":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"commits":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"statuses":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"html":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"issue":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"review_comments":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"review_comment":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"self":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"}}}';
+    public const SCHEMA_JSON = '{"required":["self","html","issue","comments","review_comments","review_comment","commits","statuses"],"type":"object","properties":{"comments":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}},"commits":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}},"html":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}},"issue":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}},"review_comment":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}},"review_comments":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}},"self":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}},"statuses":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string","format":"uri-template"}}}}}';
     public const SCHEMA_TITLE = 'PullRequest\\Links';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Comments::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $comments;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Comments $comments;
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Commits::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $commits;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Commits $commits;
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $statuses;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html $html;
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Issue::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $html;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Issue $issue;
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComment::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $issue;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComment $review_comment;
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComments::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $review_comments;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComments $review_comments;
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $review_comment;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self $self;
     /**
-     * Hypermedia Link
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Statuses::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $self;
-    /**
-     * Hypermedia Link
-     */
-    public function comments() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Statuses $statuses;
+    public function comments() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Comments
     {
         return $this->comments;
     }
-    /**
-     * Hypermedia Link
-     */
-    public function commits() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
+    public function commits() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Commits
     {
         return $this->commits;
     }
-    /**
-     * Hypermedia Link
-     */
-    public function statuses() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
-    {
-        return $this->statuses;
-    }
-    /**
-     * Hypermedia Link
-     */
-    public function html() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
+    public function html() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html
     {
         return $this->html;
     }
-    /**
-     * Hypermedia Link
-     */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
+    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Issue
     {
         return $this->issue;
     }
-    /**
-     * Hypermedia Link
-     */
-    public function review_comments() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
-    {
-        return $this->review_comments;
-    }
-    /**
-     * Hypermedia Link
-     */
-    public function review_comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
+    public function review_comment() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComment
     {
         return $this->review_comment;
     }
-    /**
-     * Hypermedia Link
-     */
-    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link
+    public function review_comments() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComments
+    {
+        return $this->review_comments;
+    }
+    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self
     {
         return $this->self;
+    }
+    public function statuses() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Statuses
+    {
+        return $this->statuses;
     }
 }

@@ -4,32 +4,15 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository;
 
 final class Permissions
 {
-    public const SCHEMA_JSON = '{"required":["admin","pull","push"],"type":"object","properties":{"admin":{"type":"boolean"},"pull":{"type":"boolean"},"triage":{"type":"boolean"},"push":{"type":"boolean"},"maintain":{"type":"boolean"}}}';
+    public const SCHEMA_JSON = '{"required":["from"],"type":"object","properties":{"from":{"type":"object","properties":{"admin":{"type":"boolean","description":"The previous version of the team member\'s `admin` permission on a repository, if the action was `edited`."},"pull":{"type":"boolean","description":"The previous version of the team member\'s `pull` permission on a repository, if the action was `edited`."},"push":{"type":"boolean","description":"The previous version of the team member\'s `push` permission on a repository, if the action was `edited`."}}}}}';
     public const SCHEMA_TITLE = 'Repository\\Permissions';
     public const SCHEMA_DESCRIPTION = '';
-    private bool $admin;
-    private bool $pull;
-    private ?bool $triage = null;
-    private bool $push;
-    private ?bool $maintain = null;
-    public function admin() : bool
+    /**
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Permissions\From::class)
+     */
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Permissions\From $from;
+    public function from() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Permissions\From
     {
-        return $this->admin;
-    }
-    public function pull() : bool
-    {
-        return $this->pull;
-    }
-    public function triage() : ?bool
-    {
-        return $this->triage;
-    }
-    public function push() : bool
-    {
-        return $this->push;
-    }
-    public function maintain() : ?bool
-    {
-        return $this->maintain;
+        return $this->from;
     }
 }
