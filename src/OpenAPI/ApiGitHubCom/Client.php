@@ -7,9 +7,9 @@ final class Client
     private readonly \React\Http\Browser $browser;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    public function __construct()
+    public function __construct(\React\Http\Browser $browser)
     {
-        $this->browser = new \React\Http\Browser();
+        $this->browser = $browser;
         $this->requestSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_REQUEST);
         $this->responseSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_RESPONSE);
     }
