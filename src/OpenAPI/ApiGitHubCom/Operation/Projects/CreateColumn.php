@@ -22,7 +22,7 @@ final class CreateColumn
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDad93C9644Ea9290C426850Ce15D7C55::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateColumn\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
         return new \RingCentral\Psr7\Request('post', \str_replace(array('{project_id}'), array($this->project_id), '/projects/{project_id}/columns'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple

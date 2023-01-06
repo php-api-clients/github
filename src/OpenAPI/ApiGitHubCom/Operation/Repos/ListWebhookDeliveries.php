@@ -38,7 +38,7 @@ final class ListWebhookDeliveries
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{hook_id}', '{per_page}', '{cursor}', '{redelivery}'), array($this->owner, $this->repo, $this->hook_id, $this->per_page, $this->cursor, $this->redelivery), '/repos/{owner}/{repo}/hooks/{hook_id}/deliveries?per_page={per_page}&cursor={cursor}&redelivery={redelivery}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0E8E1845F1Bc82Ea0E7B36D0Bb6E996D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListWebhookDeliveries\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -48,8 +48,8 @@ final class ListWebhookDeliveries
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0E8E1845F1Bc82Ea0E7B36D0Bb6E996D::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\C0E8E1845F1Bc82Ea0E7B36D0Bb6E996D', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListWebhookDeliveries\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListWebhookDeliveries\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Bad Request**/

@@ -33,7 +33,7 @@ final class ListReposStarredByAuthenticatedUser
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{sort}', '{direction}', '{per_page}', '{page}'), array($this->sort, $this->direction, $this->per_page, $this->page), '/user/starred?sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAf9Ce4Aef95F91Ba5Bb8937E005A4Bf1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCa3B5A6Ea5F1333A83F449A6Fd97Dc6D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListReposStarredByAuthenticatedUser\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListReposStarredByAuthenticatedUser\Response\Application\VndGithubV3StarPlusJson\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -43,11 +43,11 @@ final class ListReposStarredByAuthenticatedUser
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAf9Ce4Aef95F91Ba5Bb8937E005A4Bf1::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CAf9Ce4Aef95F91Ba5Bb8937E005A4Bf1', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListReposStarredByAuthenticatedUser\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListReposStarredByAuthenticatedUser\\Response\\Application\\Json\\H200', $body);
                     case 'application/vnd.github.v3.star+json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCa3B5A6Ea5F1333A83F449A6Fd97Dc6D::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CCa3B5A6Ea5F1333A83F449A6Fd97Dc6D', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListReposStarredByAuthenticatedUser\Response\Application\VndGithubV3StarPlusJson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListReposStarredByAuthenticatedUser\\Response\\Application\\VndGithubV3StarPlusJson\\H200', $body);
                 }
                 break;
             /**Not modified**/

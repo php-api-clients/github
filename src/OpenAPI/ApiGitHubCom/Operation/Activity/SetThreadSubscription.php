@@ -22,7 +22,7 @@ final class SetThreadSubscription
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE02B27508Db6014678Eba0F187C6Bfe7::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SetThreadSubscription\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
         return new \RingCentral\Psr7\Request('put', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}/subscription'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError

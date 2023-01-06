@@ -33,7 +33,7 @@ final class ListSelectedReposForOrgSecret
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{secret_name}', '{page}', '{per_page}'), array($this->org, $this->secret_name, $this->page, $this->per_page), '/orgs/{org}/codespaces/secrets/{secret_name}/repositories?page={page}&per_page={per_page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf642215E2806C848A16Ef294379Be7A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListSelectedReposForOrgSecret\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -43,8 +43,8 @@ final class ListSelectedReposForOrgSecret
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf642215E2806C848A16Ef294379Be7A::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CDf642215E2806C848A16Ef294379Be7A', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListSelectedReposForOrgSecret\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListSelectedReposForOrgSecret\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Resource not found**/

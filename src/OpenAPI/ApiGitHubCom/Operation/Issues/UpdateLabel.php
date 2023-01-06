@@ -27,7 +27,7 @@ final class UpdateLabel
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C4055664386B671E6806C045626Eb5E4E::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UpdateLabel\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
         return new \RingCentral\Psr7\Request('patch', \str_replace(array('{owner}', '{repo}', '{name}'), array($this->owner, $this->repo, $this->name), '/repos/{owner}/{repo}/labels/{name}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label

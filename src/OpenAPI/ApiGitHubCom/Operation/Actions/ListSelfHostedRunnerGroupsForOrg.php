@@ -33,7 +33,7 @@ final class ListSelfHostedRunnerGroupsForOrg
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{per_page}', '{page}', '{visible_to_repository}'), array($this->org, $this->per_page, $this->page, $this->visible_to_repository), '/orgs/{org}/actions/runner-groups?per_page={per_page}&page={page}&visible_to_repository={visible_to_repository}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C11Bbc0C404E1Dacac67952032Beda7Ae
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListSelfHostedRunnerGroupsForOrg\Response\Application\Json\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -43,8 +43,8 @@ final class ListSelfHostedRunnerGroupsForOrg
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C11Bbc0C404E1Dacac67952032Beda7Ae::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\C11Bbc0C404E1Dacac67952032Beda7Ae', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListSelfHostedRunnerGroupsForOrg\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListSelfHostedRunnerGroupsForOrg\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
         }

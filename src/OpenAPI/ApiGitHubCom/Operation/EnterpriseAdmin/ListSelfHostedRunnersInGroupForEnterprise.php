@@ -33,7 +33,7 @@ final class ListSelfHostedRunnersInGroupForEnterprise
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{enterprise}', '{runner_group_id}', '{per_page}', '{page}'), array($this->enterprise, $this->runner_group_id, $this->per_page, $this->page), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners?per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F3B5341Fe53998B5Bf27243A42Db029
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListSelfHostedRunnersInGroupForEnterprise\Response\Application\Json\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -43,8 +43,8 @@ final class ListSelfHostedRunnersInGroupForEnterprise
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F3B5341Fe53998B5Bf27243A42Db029::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\C5F3B5341Fe53998B5Bf27243A42Db029', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListSelfHostedRunnersInGroupForEnterprise\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListSelfHostedRunnersInGroupForEnterprise\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
         }

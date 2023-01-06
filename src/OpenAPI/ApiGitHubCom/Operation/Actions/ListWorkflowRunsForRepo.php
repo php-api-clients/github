@@ -57,7 +57,7 @@ final class ListWorkflowRunsForRepo
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}', '{exclude_pull_requests}', '{check_suite_id}', '{head_sha}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created, $this->exclude_pull_requests, $this->check_suite_id, $this->head_sha), '/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}&exclude_pull_requests={exclude_pull_requests}&check_suite_id={check_suite_id}&head_sha={head_sha}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3F96264280F4E42Bbb4A3Def4C7Bc4E1
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListWorkflowRunsForRepo\Response\Application\Json\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -67,8 +67,8 @@ final class ListWorkflowRunsForRepo
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3F96264280F4E42Bbb4A3Def4C7Bc4E1::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\C3F96264280F4E42Bbb4A3Def4C7Bc4E1', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListWorkflowRunsForRepo\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListWorkflowRunsForRepo\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
         }

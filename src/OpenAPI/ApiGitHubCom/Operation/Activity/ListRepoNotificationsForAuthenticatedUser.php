@@ -45,7 +45,7 @@ final class ListRepoNotificationsForAuthenticatedUser
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{all}', '{participating}', '{since}', '{before}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->all, $this->participating, $this->since, $this->before, $this->per_page, $this->page), '/repos/{owner}/{repo}/notifications?all={all}&participating={participating}&since={since}&before={before}&per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC0Fbffa58E240B1E3B02B30C16Ca715A
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListRepoNotificationsForAuthenticatedUser\Response\Application\Json\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -55,8 +55,8 @@ final class ListRepoNotificationsForAuthenticatedUser
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC0Fbffa58E240B1E3B02B30C16Ca715A::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CC0Fbffa58E240B1E3B02B30C16Ca715A', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListRepoNotificationsForAuthenticatedUser\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListRepoNotificationsForAuthenticatedUser\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
         }

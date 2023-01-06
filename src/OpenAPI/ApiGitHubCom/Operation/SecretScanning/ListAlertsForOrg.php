@@ -53,7 +53,7 @@ final class ListAlertsForOrg
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{state}', '{secret_type}', '{resolution}', '{sort}', '{direction}', '{page}', '{per_page}', '{before}', '{after}'), array($this->org, $this->state, $this->secret_type, $this->resolution, $this->sort, $this->direction, $this->page, $this->per_page, $this->before, $this->after), '/orgs/{org}/secret-scanning/alerts?state={state}&secret_type={secret_type}&resolution={resolution}&sort={sort}&direction={direction}&page={page}&per_page={per_page}&before={before}&after={after}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFd814D7C5E2Ff25C0Eb53A2330D6Ae5C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListAlertsForOrg\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListAlertsForOrg\Response\Application\Json\H503
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -63,8 +63,8 @@ final class ListAlertsForOrg
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFd814D7C5E2Ff25C0Eb53A2330D6Ae5C::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CFd814D7C5E2Ff25C0Eb53A2330D6Ae5C', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListAlertsForOrg\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListAlertsForOrg\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Resource not found**/
@@ -79,8 +79,8 @@ final class ListAlertsForOrg
             case 503:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CC04A13C6627Df95Bf0Cb989A4326F2F0', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListAlertsForOrg\Response\Application\Json\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListAlertsForOrg\\Response\\Application\\Json\\H503', $body);
                 }
                 break;
         }

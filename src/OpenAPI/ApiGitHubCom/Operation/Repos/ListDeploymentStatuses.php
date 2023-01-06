@@ -36,7 +36,7 @@ final class ListDeploymentStatuses
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{deployment_id}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->deployment_id, $this->per_page, $this->page), '/repos/{owner}/{repo}/deployments/{deployment_id}/statuses?per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C75F4Dcd10Cf090Fdc9118C43Cb1F9Acb|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListDeploymentStatuses\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -46,8 +46,8 @@ final class ListDeploymentStatuses
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C75F4Dcd10Cf090Fdc9118C43Cb1F9Acb::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\C75F4Dcd10Cf090Fdc9118C43Cb1F9Acb', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListDeploymentStatuses\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListDeploymentStatuses\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Resource not found**/

@@ -1,0 +1,21 @@
+<?php
+
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateCard;
+
+final class Request
+{
+    public const SCHEMA_JSON = '{"oneOf":[{"required":["note"],"type":"object","properties":{"note":{"type":["string","null"],"description":"The project card\'s note","examples":["Update all gems"]}}},{"required":["content_id","content_type"],"type":"object","properties":{"content_id":{"type":"integer","description":"The unique identifier of the content associated with the card","examples":[42]},"content_type":{"type":"string","description":"The piece of content associated with the card","examples":["PullRequest"]}}}]}';
+    public const SCHEMA_TITLE = 'CreateCard\\Request';
+    public const SCHEMA_DESCRIPTION = '';
+    /**
+     * The project card's note
+     */
+    private ?string $note;
+    /**
+     * The project card's note
+     */
+    public function note() : ?string
+    {
+        return $this->note;
+    }
+}

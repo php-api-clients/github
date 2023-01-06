@@ -11,7 +11,7 @@ final class Client
     public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\AuthenticationInterface $authentication, \React\Http\Browser $browser)
     {
         $this->authentication = $authentication;
-        $this->browser = $browser;
+        $this->browser = new \React\Http\Browser();
         $this->requestSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_REQUEST);
         $this->responseSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_RESPONSE);
     }
@@ -148,7 +148,7 @@ final class Client
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
     /**
-     * @return \React\Promise\PromiseInterface<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77490811Ec6Aee423Cd64C22A2B5B5E5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C437E8818Bedc1D1C6A8A7E209Db56381|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0E8E1845F1Bc82Ea0E7B36D0Bb6E996D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C46B4Faf08De395E78Aaa4B63456Ddd07|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C63C9C8546093Eddc0F7344B17E26F896|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCc2Fa361959F5C2Ebcc542Ddf2E3A261|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C85Daf15E4Fca630425Ab45E2Aba40600|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe13F0F1A91E8C86F2C1D90E147490E2|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc27Dba3202C5D416335209B147A39D5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9A3B6Ded8E470Eab041E356Ef497Aeec|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C143D8483Bf88427Ecdccf31C4B84Df34|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C79A542C60Fea0A939B2Ff6241Fc22Cd9|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ServerStatistics|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsEnterprisePermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Ccdeb8D72C56F2084Ef071E7F398831|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB4Cf212608E86Be945Cb26F0Ee883938|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F3B5341Fe53998B5Bf27243A42Db029|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C70992A2B1985E0F30Bf3Dc67Ba7A9E62|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C948655Af6C42D69A42F49158Df1C3402|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageOrgEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsGetDefaultWorkflowPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA766240607F2714081157433E87Abe14|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsOrganizationPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD86C4818976F8F12B2C9B0E896F6291C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C11Bbc0C404E1Dacac67952032Beda7Ae|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD14Fa06Dcf5B5738F5504197E7609Eb5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0601E51Fc03Ef9031D3Dad84Cee821B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6Fd51E546F4Dbe120D78A3534B76Ce0E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf642215E2806C848A16Ef294379Be7A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1A91B16Fbf38476A7587Bb22E0507C4B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageByRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsRepositoryPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsWorkflowAccessToRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3F96264280F4E42Bbb4A3Def4C7Bc4E1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRun|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C80B828E2203976Fb215Dd2159A745230|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB20125C2E2C4A492F2Eb5Ef9E4F52Eb8|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C59Fc918Ad52E8Aa18611814E35E7Da47|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6C1Be1B26A14C84Ab35C32Ee2E0Fcd2A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C58E2D92A7Aba442Fdb0A439Eb965962E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE25F066E8D67A0F40D61Cb64Df1Cebf6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Workflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66C0E6C0739Ea290Bab603396Ea44C1C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBc37E871E17Fe903B1C649F1083B8F2A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC78B9C183723A3Bb5Ac53690424C6377|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAa25296392E3D9Ad52Fb8E4Fe1451324|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5615C8F18C6A5Dde87A6B6Ce3B6B4Bdd|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseSecurityAnalysisSettings|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFd814D7C5E2Ff25C0Eb53A2330D6Ae5C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCb085D9Ebc5899512C96124178Febdda|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C454A8B9E7Fb48Afa72B1Fe7B69Cb356F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe3Dabb9C272759Fc560De14Ac7712B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD473A10774432Df37Acb22F4Ded22Ffb|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationDependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C85584C8E40Be29Bdd8560E2B325Bf492|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7895A235Cda3D308743D24C28426Bd8D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AdvancedSecurityActiveCommitters|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC0Fbffa58E240B1E3B02B30C16Ca715A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7B1F87F42Ca7F4E6F27Ed1Bcbfcee301|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA5445A08E16D224F94859Ebaf785C18A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF19Ab2103D1Cee92F695Dd9D475183C0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAf9Ce4Aef95F91Ba5Bb8937E005A4Bf1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCa3B5A6Ea5F1333A83F449A6Fd97Dc6D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0C798Ad00F8D3C55Cbd869Ea186B67D0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C43F872E018E0D7Ee6Ab48Ae6B947F23A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD7C4628D526D62D8495C7C6Cbef013C7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9589B48D06725Dd205Dd68F2Cb85C975|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C43Aae5Cfe9D6C3E12Bb4133Ab827C5B9|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0B3930309F9C72E778A65961Ebbc74Ef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE1799B925032A0F88Bb3139534B34Fe7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD98264Cbbbcfb6B301Bd754C28B7483E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBabf466417Ca3993Bac6Dc221711A46E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Ddbb99E798Ea46E16037A3B2A8616D6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C91F9Dffd45F76F907A2408Dfb98A8958|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3E04B60Abe35C284A39A331B5A490Adf|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Be59A7A1Ee94D23Bf8E81Fd9Bf53239|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6875E80E7A2F2A7E54Face53445Dd736|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7E88818B96F4B827A88Bdffeb546E221|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD8C95C094316027Eaa26C6Eaf9500Ad8|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD25549Cde7Ef111A37D0A59E619F994A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C19Eb4036F8A42F3C5B379E759Ef04C69|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C197505B37575Ae3739584A4C9Efe0801|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationCustomRepositoryRole|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C292Eea0D3E06B707B2B60E9Fa544B678|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1A135545778A6D3F051B1125A78Fd35C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8C7417Cb08B593A169C0D2A998Ca13C8|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C378515F7728150Fe48B2Fa76970A57B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Eb9Ad2993C99C60Bc995556Bf16C836|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDfc9Ce9066Fbb36Ecf1129974E678B26|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99A344Bb924Dc8320E4Bc765919868F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE2D72762D5496B28A74Db5Be33944579|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesOrgSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3258430Cc798035Cd54C186Bcc49C1F3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDcad5E8F2Eec4De5B5Cb16Bffb04Ba48|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFc45C706Ec04C4547F6921E839268B9B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C28C9367Cd9884680C4B3F55F87F3Dfd1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoCodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C60C051Ca0D5D3B740Bd08E439D5315E1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesUserPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFa125E0Ae31E9C155F33Bc899Ee2A17F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C48B3C8D5Bb6D982Db53C27240Ef5E5B4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF937F3514A781A237E7E511Bc6974285|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC2674569Ad4Aaeb221366Afde4669340|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF3D5Dbb128F908794438D8455A198Be4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C20F464Eb74B57Bb1070Bc9803667E3C3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAb0747A9430Dc79D395Cf3A981F7F590|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF694556E3Cc88993A89F1Ed7Afdf4E13|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2F32Ad791Ebef4439Dfb273837Ce0D99|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C84C5Bf99Acadc6Ec8B2A32F2014E1E35|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C802A2Aa52727B9F7C501777Ea4F9E4A3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C338B4411A0Be86E1C6C9A568915F6984|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C17C7343Ca9Be26E0B6160460Fc53E98B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF51Df0E3Ba8C9D41Aff6C2Dae92F8477|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchAdminEnforced|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C81C377Bf6B21Ffcf535B9A46Dc81E5F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8Cfb8Cb2505342C5Aa9B51775D830635|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb6974Aa7Ac26B1Fccca8566752Cd2D3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C844E23F82575A50855510A97A1C68898|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C44F966765547C3442B15293D242E13E2|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Afdcb273A556616D8867Fd50A161738|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Ac05Dc4833Fe01C300C8C2729Df70Ad|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C96Bca9F5F23C9286Db2F0596100Bc507|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA7Ca0Fcacca5Fd9Bfaa0D26Cc7352Dca|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C75F4Dcd10Cf090Fdc9118C43Cb1F9Acb|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3502Cc2A1Ef0B1884Bcdfcf828660Ec4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAb60B6A9C2C98408237190D09Ed58803|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E5961982487E4570Ac7Cd969C273Cdd|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF20275E051D790E6Ec04687F05E98F03|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE8D2B89E98E676346A45560E7E331E0A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Language|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Page|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D863E2F1F1Ab47D84D0Ed073F49Df30|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuildStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageDeployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentFile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD0C2695E7C5F50Ea337C2965Ffe11E6D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseNotesContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0Db7312560Abfd79A4Bfefef0A3Baef7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Bf7717E69D86Ca1B138987Fdb5033B6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C06431446E4E9E28A63Fd6A22436F7D82|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0B4Ef1B3E0499Cc08F846Cd359C05D76|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc94E54447F15Bea9F91Abe39Ef7B5F6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE85527Aa1D6903Db89F29Ddfaed8F90F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CloneTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Fe03Fbd1Bce5975C0731D749A144878|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0637F403D979870Da0B4B4832D880Aa4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ViewTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C48C27F99490Bb9F6F3Fe1Ca3B71E7D81|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5730D3B2Ef04C7A9B60Fe46C96Fa0B20|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C039E6Cf714Fc77Af55Cad65Fde5A5718|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C45206B806A9565Db2Ebe89Ea38D6Dc95|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C33D2984B495081F1F782F0Bdbed8A0E5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuitePreference|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C60F581B56E9Cea5Bd326503D1C6D1B0F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFbc8Dc67261Ec91736E48C1Cf35B8429|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraphDiff|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8638D96643Fcf5Ffcb917886B51C84Eb|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBlob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Blob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C313800Aa2E76Bd5B3C9753E9E9Ae9Ee3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF89C208Bbcc1Fa8Cdfabfebbde8Ab772|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBd10796Debc7920F91B5617Afd47F727|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9808Acb55D1D6De88353B547A6D24167|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFb4596C0Fc740434Cef2371747A626Ed|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEba9Ffad53Bf3D07A128329D2F082D34|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1866497B9C15615Ec03A90Fac4282D1B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Ad43Aedc57E80Fd3A21B0Feba475487|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3D0B1A33D0E21B9449553352Ee4C6C9D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB71A98Bede90C5E5046C1Ef70586Ae6F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C050Dfd1E0C4A60Cde55137Ec4864C709|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC9971B26A226492E08644Fd99C1917A6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFa9375D5B4Dfa8F391595615Bd0Addf4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD51E01Cc5874C6066A75A0Fc85B55D9B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0F67251Be1Ebeacdc9100Fcc0Bd1D93E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8569D1C942B35A48Ce04Dca29B28Fb71|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C015E31Db5815A354C246A2918708Fa5E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5C26E46Afe4Dc8D40051D9776F160A55>
+     * @return \React\Promise\PromiseInterface<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Meta\Response\Application\OctocatStream\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Meta\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Meta\Response\Text\Plain\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodesOfConduct\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Emojis\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ServerStatistics|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsEnterprisePermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageOrgEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsGetDefaultWorkflowPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsOrganizationPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageByRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsRepositoryPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsWorkflowAccessToRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRun|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Workflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\JsonPlusSarif\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseSecurityAnalysisSettings|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationDependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AdvancedSecurityActiveCommitters|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\VndGithubV3StarPlusJson\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H404|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gitignore\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Licenses\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Markdown\Response\Text\Html\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationCustomRepositoryRole|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesOrgSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoCodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesUserPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Interactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migrations\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Packages\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchAdminEnforced|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Language|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Page|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuildStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageDeployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentFile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseNotesContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CloneTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ViewTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Checks\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuitePreference|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraphDiff|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraph\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBlob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Blob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Git\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H405|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H409|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard>
      */
     public function call(string $call, array $params = array())
     {
@@ -170,21 +170,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetOctocat::OPERATION_MATCH:
                 $operation = $this->meta()->getOctocat($params['s']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Meta\Response\Application\OctocatStream\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetAllVersions::OPERATION_MATCH:
                 $operation = $this->meta()->getAllVersions();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77490811Ec6Aee423Cd64C22A2B5B5E5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Meta\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\GetZen::OPERATION_MATCH:
                 $operation = $this->meta()->getZen();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Meta\Response\Text\Plain\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -198,7 +198,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\CreateFromManifest::OPERATION_MATCH:
                 $operation = $this->apps()->createFromManifest($params['code']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C437E8818Bedc1D1C6A8A7E209Db56381|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -219,7 +219,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListWebhookDeliveries::OPERATION_MATCH:
                 $operation = $this->apps()->listWebhookDeliveries($params['per_page'], $params['cursor'], $params['redelivery']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0E8E1845F1Bc82Ea0E7B36D0Bb6E996D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -233,14 +233,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\RedeliverWebhookDelivery::OPERATION_MATCH:
                 $operation = $this->apps()->redeliverWebhookDelivery($params['delivery_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListInstallations::OPERATION_MATCH:
                 $operation = $this->apps()->listInstallations($params['per_page'], $params['page'], $params['since'], $params['outdated']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C46B4Faf08De395E78Aaa4B63456Ddd07 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -324,7 +324,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListReposAccessibleToInstallation::OPERATION_MATCH:
                 $operation = $this->apps()->listReposAccessibleToInstallation($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C63C9C8546093Eddc0F7344B17E26F896|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -345,14 +345,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListPlans::OPERATION_MATCH:
                 $operation = $this->apps()->listPlans($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCc2Fa361959F5C2Ebcc542Ddf2E3A261|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListAccountsForPlan::OPERATION_MATCH:
                 $operation = $this->apps()->listAccountsForPlan($params['plan_id'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C85Daf15E4Fca630425Ab45E2Aba40600|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -366,14 +366,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListPlansStubbed::OPERATION_MATCH:
                 $operation = $this->apps()->listPlansStubbed($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCc2Fa361959F5C2Ebcc542Ddf2E3A261|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListAccountsForPlanStubbed::OPERATION_MATCH:
                 $operation = $this->apps()->listAccountsForPlanStubbed($params['plan_id'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C85Daf15E4Fca630425Ab45E2Aba40600|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -394,14 +394,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListInstallationsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->apps()->listInstallationsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe13F0F1A91E8C86F2C1D90E147490E2|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListInstallationReposForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->apps()->listInstallationReposForAuthenticatedUser($params['installation_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc27Dba3202C5D416335209B147A39D5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -422,14 +422,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListSubscriptionsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->apps()->listSubscriptionsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9A3B6Ded8E470Eab041E356Ef497Aeec|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps\ListSubscriptionsForAuthenticatedUserStubbed::OPERATION_MATCH:
                 $operation = $this->apps()->listSubscriptionsForAuthenticatedUserStubbed($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9A3B6Ded8E470Eab041E356Ef497Aeec|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -443,7 +443,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct\GetAllCodesOfConduct::OPERATION_MATCH:
                 $operation = $this->codesOfConduct()->getAllCodesOfConduct();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C143D8483Bf88427Ecdccf31C4B84Df34 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodesOfConduct\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -457,7 +457,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis\Get::OPERATION_MATCH:
                 $operation = $this->emojis()->get();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C79A542C60Fea0A939B2Ff6241Fc22Cd9 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Emojis\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -485,7 +485,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListSelectedOrganizationsEnabledGithubActionsEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->listSelectedOrganizationsEnabledGithubActionsEnterprise($params['enterprise'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Ccdeb8D72C56F2084Ef071E7F398831 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -527,7 +527,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListSelfHostedRunnerGroupsForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->listSelfHostedRunnerGroupsForEnterprise($params['enterprise'], $params['per_page'], $params['page'], $params['visible_to_organization']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB4Cf212608E86Be945Cb26F0Ee883938 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -562,7 +562,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListOrgAccessToSelfHostedRunnerGroupInEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->listOrgAccessToSelfHostedRunnerGroupInEnterprise($params['enterprise'], $params['runner_group_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Ccdeb8D72C56F2084Ef071E7F398831 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -590,7 +590,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListSelfHostedRunnersInGroupForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->listSelfHostedRunnersInGroupForEnterprise($params['enterprise'], $params['runner_group_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F3B5341Fe53998B5Bf27243A42Db029 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -618,14 +618,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListSelfHostedRunnersForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->listSelfHostedRunnersForEnterprise($params['enterprise'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C70992A2B1985E0F30Bf3Dc67Ba7A9E62 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListRunnerApplicationsForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->listRunnerApplicationsForEnterprise($params['enterprise']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C948655Af6C42D69A42F49158Df1C3402 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -660,35 +660,35 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListLabelsForSelfHostedRunnerForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->listLabelsForSelfHostedRunnerForEnterprise($params['enterprise'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\SetCustomLabelsForSelfHostedRunnerForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->setCustomLabelsForSelfHostedRunnerForEnterprise($params['enterprise'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\AddCustomLabelsToSelfHostedRunnerForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->addCustomLabelsToSelfHostedRunnerForEnterprise($params['enterprise'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\RemoveAllCustomLabelsFromSelfHostedRunnerForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->removeAllCustomLabelsFromSelfHostedRunnerForEnterprise($params['enterprise'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\RemoveCustomLabelFromSelfHostedRunnerForEnterprise::OPERATION_MATCH:
                 $operation = $this->enterpriseAdmin()->removeCustomLabelFromSelfHostedRunnerForEnterprise($params['enterprise'], $params['runner_id'], $params['name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -723,7 +723,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetActionsCacheUsageByRepoForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->getActionsCacheUsageByRepoForOrg($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA766240607F2714081157433E87Abe14 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -744,7 +744,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization::OPERATION_MATCH:
                 $operation = $this->actions()->listSelectedRepositoriesEnabledGithubActionsOrganization($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD86C4818976F8F12B2C9B0E896F6291C {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -800,7 +800,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnerGroupsForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->listSelfHostedRunnerGroupsForOrg($params['org'], $params['per_page'], $params['page'], $params['visible_to_repository']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C11Bbc0C404E1Dacac67952032Beda7Ae {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -835,7 +835,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg::OPERATION_MATCH:
                 $operation = $this->actions()->listRepoAccessToSelfHostedRunnerGroupInOrg($params['org'], $params['runner_group_id'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD14Fa06Dcf5B5738F5504197E7609Eb5 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -856,7 +856,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersInGroupForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->listSelfHostedRunnersInGroupForOrg($params['org'], $params['runner_group_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5F3B5341Fe53998B5Bf27243A42Db029 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -884,14 +884,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->listSelfHostedRunnersForOrg($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0601E51Fc03Ef9031D3Dad84Cee821B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRunnerApplicationsForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->listRunnerApplicationsForOrg($params['org']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C948655Af6C42D69A42F49158Df1C3402 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -926,42 +926,42 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListLabelsForSelfHostedRunnerForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->listLabelsForSelfHostedRunnerForOrg($params['org'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetCustomLabelsForSelfHostedRunnerForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->setCustomLabelsForSelfHostedRunnerForOrg($params['org'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddCustomLabelsToSelfHostedRunnerForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->addCustomLabelsToSelfHostedRunnerForOrg($params['org'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->removeAllCustomLabelsFromSelfHostedRunnerForOrg($params['org'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveCustomLabelFromSelfHostedRunnerForOrg::OPERATION_MATCH:
                 $operation = $this->actions()->removeCustomLabelFromSelfHostedRunnerForOrg($params['org'], $params['runner_id'], $params['name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListOrgSecrets::OPERATION_MATCH:
                 $operation = $this->actions()->listOrgSecrets($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6Fd51E546F4Dbe120D78A3534B76Ce0E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -996,7 +996,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelectedReposForOrgSecret::OPERATION_MATCH:
                 $operation = $this->actions()->listSelectedReposForOrgSecret($params['org'], $params['secret_name'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf642215E2806C848A16Ef294379Be7A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1024,7 +1024,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListArtifactsForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->listArtifactsForRepo($params['owner'], $params['repo'], $params['per_page'], $params['page'], $params['name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1A91B16Fbf38476A7587Bb22E0507C4B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1171,14 +1171,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->listSelfHostedRunnersForRepo($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB0601E51Fc03Ef9031D3Dad84Cee821B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRunnerApplicationsForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->listRunnerApplicationsForRepo($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C948655Af6C42D69A42F49158Df1C3402 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1213,42 +1213,42 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListLabelsForSelfHostedRunnerForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->listLabelsForSelfHostedRunnerForRepo($params['owner'], $params['repo'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetCustomLabelsForSelfHostedRunnerForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->setCustomLabelsForSelfHostedRunnerForRepo($params['owner'], $params['repo'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddCustomLabelsToSelfHostedRunnerForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->addCustomLabelsToSelfHostedRunnerForRepo($params['owner'], $params['repo'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->removeAllCustomLabelsFromSelfHostedRunnerForRepo($params['owner'], $params['repo'], $params['runner_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveCustomLabelFromSelfHostedRunnerForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->removeCustomLabelFromSelfHostedRunnerForRepo($params['owner'], $params['repo'], $params['runner_id'], $params['name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C465Ffe2283692C35B7E35Cd3F31B8C6B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListWorkflowRunsForRepo::OPERATION_MATCH:
                 $operation = $this->actions()->listWorkflowRunsForRepo($params['owner'], $params['repo'], $params['actor'], $params['branch'], $params['event'], $params['status'], $params['per_page'], $params['page'], $params['created'], $params['exclude_pull_requests'], $params['check_suite_id'], $params['head_sha']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3F96264280F4E42Bbb4A3Def4C7Bc4E1 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1269,7 +1269,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetReviewsForRun::OPERATION_MATCH:
                 $operation = $this->actions()->getReviewsForRun($params['owner'], $params['repo'], $params['run_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C80B828E2203976Fb215Dd2159A745230 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1283,7 +1283,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListWorkflowRunArtifacts::OPERATION_MATCH:
                 $operation = $this->actions()->listWorkflowRunArtifacts($params['owner'], $params['repo'], $params['run_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1A91B16Fbf38476A7587Bb22E0507C4B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1297,7 +1297,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListJobsForWorkflowRunAttempt::OPERATION_MATCH:
                 $operation = $this->actions()->listJobsForWorkflowRunAttempt($params['owner'], $params['repo'], $params['run_id'], $params['attempt_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB20125C2E2C4A492F2Eb5Ef9E4F52Eb8|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1318,7 +1318,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListJobsForWorkflowRun::OPERATION_MATCH:
                 $operation = $this->actions()->listJobsForWorkflowRun($params['owner'], $params['repo'], $params['run_id'], $params['filter'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB20125C2E2C4A492F2Eb5Ef9E4F52Eb8 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1339,14 +1339,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetPendingDeploymentsForRun::OPERATION_MATCH:
                 $operation = $this->actions()->getPendingDeploymentsForRun($params['owner'], $params['repo'], $params['run_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C59Fc918Ad52E8Aa18611814E35E7Da47 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ReviewPendingDeploymentsForRun::OPERATION_MATCH:
                 $operation = $this->actions()->reviewPendingDeploymentsForRun($params['owner'], $params['repo'], $params['run_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6C1Be1B26A14C84Ab35C32Ee2E0Fcd2A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1374,7 +1374,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoSecrets::OPERATION_MATCH:
                 $operation = $this->actions()->listRepoSecrets($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C58E2D92A7Aba442Fdb0A439Eb965962E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1409,7 +1409,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoWorkflows::OPERATION_MATCH:
                 $operation = $this->actions()->listRepoWorkflows($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE25F066E8D67A0F40D61Cb64Df1Cebf6 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1444,7 +1444,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListWorkflowRuns::OPERATION_MATCH:
                 $operation = $this->actions()->listWorkflowRuns($params['owner'], $params['repo'], $params['workflow_id'], $params['actor'], $params['branch'], $params['event'], $params['status'], $params['per_page'], $params['page'], $params['created'], $params['exclude_pull_requests'], $params['check_suite_id'], $params['head_sha']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3F96264280F4E42Bbb4A3Def4C7Bc4E1 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1458,7 +1458,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListEnvironmentSecrets::OPERATION_MATCH:
                 $operation = $this->actions()->listEnvironmentSecrets($params['repository_id'], $params['environment_name'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C58E2D92A7Aba442Fdb0A439Eb965962E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1493,91 +1493,91 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertsForEnterprise::OPERATION_MATCH:
                 $operation = $this->codeScanning()->listAlertsForEnterprise($params['enterprise'], $params['tool_name'], $params['tool_guid'], $params['before'], $params['after'], $params['page'], $params['per_page'], $params['direction'], $params['state'], $params['sort']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66C0E6C0739Ea290Bab603396Ea44C1C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertsForOrg::OPERATION_MATCH:
                 $operation = $this->codeScanning()->listAlertsForOrg($params['org'], $params['tool_name'], $params['tool_guid'], $params['before'], $params['after'], $params['page'], $params['per_page'], $params['direction'], $params['state'], $params['sort'], $params['severity']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C66C0E6C0739Ea290Bab603396Ea44C1C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertsForRepo::OPERATION_MATCH:
                 $operation = $this->codeScanning()->listAlertsForRepo($params['owner'], $params['repo'], $params['tool_name'], $params['tool_guid'], $params['page'], $params['per_page'], $params['ref'], $params['direction'], $params['sort'], $params['state'], $params['severity']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBc37E871E17Fe903B1C649F1083B8F2A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\GetAlert::OPERATION_MATCH:
                 $operation = $this->codeScanning()->getAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\UpdateAlert::OPERATION_MATCH:
                 $operation = $this->codeScanning()->updateAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertInstances::OPERATION_MATCH:
                 $operation = $this->codeScanning()->listAlertInstances($params['owner'], $params['repo'], $params['alert_number'], $params['page'], $params['per_page'], $params['ref']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC78B9C183723A3Bb5Ac53690424C6377|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListRecentAnalyses::OPERATION_MATCH:
                 $operation = $this->codeScanning()->listRecentAnalyses($params['owner'], $params['repo'], $params['tool_name'], $params['tool_guid'], $params['page'], $params['per_page'], $params['ref'], $params['sarif_id'], $params['direction'], $params['sort']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAa25296392E3D9Ad52Fb8E4Fe1451324|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\GetAnalysis::OPERATION_MATCH:
                 $operation = $this->codeScanning()->getAnalysis($params['owner'], $params['repo'], $params['analysis_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2F9C313De3F7Bfd4586Bcc096B11A634|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\JsonPlusSarif\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\DeleteAnalysis::OPERATION_MATCH:
                 $operation = $this->codeScanning()->deleteAnalysis($params['owner'], $params['repo'], $params['analysis_id'], $params['confirm_delete']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListCodeqlDatabases::OPERATION_MATCH:
                 $operation = $this->codeScanning()->listCodeqlDatabases($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5615C8F18C6A5Dde87A6B6Ce3B6B4Bdd|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\GetCodeqlDatabase::OPERATION_MATCH:
                 $operation = $this->codeScanning()->getCodeqlDatabase($params['owner'], $params['repo'], $params['language']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\UploadSarif::OPERATION_MATCH:
                 $operation = $this->codeScanning()->uploadSarif($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\GetSarif::OPERATION_MATCH:
                 $operation = $this->codeScanning()->getSarif($params['owner'], $params['repo'], $params['sarif_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1598,7 +1598,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForEnterprise::OPERATION_MATCH:
                 $operation = $this->secretScanning()->listAlertsForEnterprise($params['enterprise'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['per_page'], $params['before'], $params['after']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFd814D7C5E2Ff25C0Eb53A2330D6Ae5C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1612,56 +1612,56 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForOrg::OPERATION_MATCH:
                 $operation = $this->secretScanning()->listAlertsForOrg($params['org'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFd814D7C5E2Ff25C0Eb53A2330D6Ae5C|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForRepo::OPERATION_MATCH:
                 $operation = $this->secretScanning()->listAlertsForRepo($params['owner'], $params['repo'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCb085D9Ebc5899512C96124178Febdda|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\GetAlert::OPERATION_MATCH:
                 $operation = $this->secretScanning()->getAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\UpdateAlert::OPERATION_MATCH:
                 $operation = $this->secretScanning()->updateAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListLocationsForAlert::OPERATION_MATCH:
                 $operation = $this->secretScanning()->listLocationsForAlert($params['owner'], $params['repo'], $params['alert_number'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C454A8B9E7Fb48Afa72B1Fe7B69Cb356F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot\ListAlertsForEnterprise::OPERATION_MATCH:
                 $operation = $this->dependabot()->listAlertsForEnterprise($params['enterprise'], $params['state'], $params['severity'], $params['ecosystem'], $params['package'], $params['scope'], $params['sort'], $params['direction'], $params['before'], $params['after'], $params['first'], $params['last'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe3Dabb9C272759Fc560De14Ac7712B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH:
                 $operation = $this->dependabot()->listAlertsForOrg($params['org'], $params['state'], $params['severity'], $params['ecosystem'], $params['package'], $params['scope'], $params['sort'], $params['direction'], $params['before'], $params['after'], $params['first'], $params['last'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe3Dabb9C272759Fc560De14Ac7712B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot\ListOrgSecrets::OPERATION_MATCH:
                 $operation = $this->dependabot()->listOrgSecrets($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD473A10774432Df37Acb22F4Ded22Ffb {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependabot\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1696,7 +1696,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot\ListSelectedReposForOrgSecret::OPERATION_MATCH:
                 $operation = $this->dependabot()->listSelectedReposForOrgSecret($params['org'], $params['secret_name'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf642215E2806C848A16Ef294379Be7A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependabot\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1724,7 +1724,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot\ListAlertsForRepo::OPERATION_MATCH:
                 $operation = $this->dependabot()->listAlertsForRepo($params['owner'], $params['repo'], $params['state'], $params['severity'], $params['ecosystem'], $params['package'], $params['manifest'], $params['scope'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after'], $params['first'], $params['last']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C85584C8E40Be29Bdd8560E2B325Bf492|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1745,7 +1745,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot\ListRepoSecrets::OPERATION_MATCH:
                 $operation = $this->dependabot()->listRepoSecrets($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7895A235Cda3D308743D24C28426Bd8D {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependabot\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1836,7 +1836,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListPublicEvents::OPERATION_MATCH:
                 $operation = $this->activity()->listPublicEvents($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1850,21 +1850,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListPublicEventsForRepoNetwork::OPERATION_MATCH:
                 $operation = $this->activity()->listPublicEventsForRepoNetwork($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListNotificationsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->activity()->listNotificationsForAuthenticatedUser($params['all'], $params['participating'], $params['since'], $params['before'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC0Fbffa58E240B1E3B02B30C16Ca715A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\MarkNotificationsAsRead::OPERATION_MATCH:
                 $operation = $this->activity()->markNotificationsAsRead();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7B1F87F42Ca7F4E6F27Ed1Bcbfcee301|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1906,42 +1906,42 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListPublicOrgEvents::OPERATION_MATCH:
                 $operation = $this->activity()->listPublicOrgEvents($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListRepoEvents::OPERATION_MATCH:
                 $operation = $this->activity()->listRepoEvents($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListRepoNotificationsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->activity()->listRepoNotificationsForAuthenticatedUser($params['owner'], $params['repo'], $params['all'], $params['participating'], $params['since'], $params['before'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC0Fbffa58E240B1E3B02B30C16Ca715A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\MarkRepoNotificationsAsRead::OPERATION_MATCH:
                 $operation = $this->activity()->markRepoNotificationsAsRead($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA5445A08E16D224F94859Ebaf785C18A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H202 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListStargazersForRepo::OPERATION_MATCH:
                 $operation = $this->activity()->listStargazersForRepo($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF19Ab2103D1Cee92F695Dd9D475183C0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListWatchersForRepo::OPERATION_MATCH:
                 $operation = $this->activity()->listWatchersForRepo($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1969,7 +1969,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListReposStarredByAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->activity()->listReposStarredByAuthenticatedUser($params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAf9Ce4Aef95F91Ba5Bb8937E005A4Bf1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCa3B5A6Ea5F1333A83F449A6Fd97Dc6D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\VndGithubV3StarPlusJson\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1997,63 +1997,63 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListWatchedReposForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->activity()->listWatchedReposForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListEventsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->activity()->listEventsForAuthenticatedUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListOrgEventsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->activity()->listOrgEventsForAuthenticatedUser($params['username'], $params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListPublicEventsForUser::OPERATION_MATCH:
                 $operation = $this->activity()->listPublicEventsForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListReceivedEventsForUser::OPERATION_MATCH:
                 $operation = $this->activity()->listReceivedEventsForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListReceivedPublicEventsForUser::OPERATION_MATCH:
                 $operation = $this->activity()->listReceivedPublicEventsForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C77B6F7F3Cbae57A68282612C955E918E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListReposStarredByUser::OPERATION_MATCH:
                 $operation = $this->activity()->listReposStarredByUser($params['username'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0C798Ad00F8D3C55Cbd869Ea186B67D0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity\ListReposWatchedByUser::OPERATION_MATCH:
                 $operation = $this->activity()->listReposWatchedByUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List::OPERATION_MATCH:
                 $operation = $this->gists()->list($params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C43F872E018E0D7Ee6Ab48Ae6B947F23A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2067,21 +2067,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListPublic::OPERATION_MATCH:
                 $operation = $this->gists()->listPublic($params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C43F872E018E0D7Ee6Ab48Ae6B947F23A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListStarred::OPERATION_MATCH:
                 $operation = $this->gists()->listStarred($params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C43F872E018E0D7Ee6Ab48Ae6B947F23A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Get::OPERATION_MATCH:
                 $operation = $this->gists()->get($params['gist_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD7C4628D526D62D8495C7C6Cbef013C7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2102,7 +2102,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListComments::OPERATION_MATCH:
                 $operation = $this->gists()->listComments($params['gist_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9589B48D06725Dd205Dd68F2Cb85C975|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2116,7 +2116,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\GetComment::OPERATION_MATCH:
                 $operation = $this->gists()->getComment($params['gist_id'], $params['comment_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD7C4628D526D62D8495C7C6Cbef013C7 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H403 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2137,14 +2137,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListCommits::OPERATION_MATCH:
                 $operation = $this->gists()->listCommits($params['gist_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C43Aae5Cfe9D6C3E12Bb4133Ab827C5B9|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForks::OPERATION_MATCH:
                 $operation = $this->gists()->listForks($params['gist_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0B3930309F9C72E778A65961Ebbc74Ef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2158,7 +2158,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\CheckIsStarred::OPERATION_MATCH:
                 $operation = $this->gists()->checkIsStarred($params['gist_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE1799B925032A0F88Bb3139534B34Fe7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H404|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2186,14 +2186,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\ListForUser::OPERATION_MATCH:
                 $operation = $this->gists()->listForUser($params['username'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C43F872E018E0D7Ee6Ab48Ae6B947F23A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gists\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gitignore\GetAllTemplates::OPERATION_MATCH:
                 $operation = $this->gitignore()->getAllTemplates();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD98264Cbbbcfb6B301Bd754C28B7483E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Gitignore\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2207,21 +2207,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\List::OPERATION_MATCH:
                 $operation = $this->issues()->list($params['filter'], $params['state'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['collab'], $params['orgs'], $params['owned'], $params['pulls'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBabf466417Ca3993Bac6Dc221711A46E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForOrg::OPERATION_MATCH:
                 $operation = $this->issues()->listForOrg($params['org'], $params['filter'], $params['state'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBabf466417Ca3993Bac6Dc221711A46E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListAssignees::OPERATION_MATCH:
                 $operation = $this->issues()->listAssignees($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2235,21 +2235,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForRepo::OPERATION_MATCH:
                 $operation = $this->issues()->listForRepo($params['owner'], $params['repo'], $params['milestone'], $params['state'], $params['assignee'], $params['creator'], $params['mentioned'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBabf466417Ca3993Bac6Dc221711A46E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Create::OPERATION_MATCH:
                 $operation = $this->issues()->create($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListCommentsForRepo::OPERATION_MATCH:
                 $operation = $this->issues()->listCommentsForRepo($params['owner'], $params['repo'], $params['sort'], $params['direction'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Ddbb99E798Ea46E16037A3B2A8616D6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2277,7 +2277,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForRepo::OPERATION_MATCH:
                 $operation = $this->issues()->listEventsForRepo($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C91F9Dffd45F76F907A2408Dfb98A8958|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2298,7 +2298,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\Update::OPERATION_MATCH:
                 $operation = $this->issues()->update($params['owner'], $params['repo'], $params['issue_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2319,7 +2319,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListComments::OPERATION_MATCH:
                 $operation = $this->issues()->listComments($params['owner'], $params['repo'], $params['issue_number'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Ddbb99E798Ea46E16037A3B2A8616D6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2333,28 +2333,28 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEvents::OPERATION_MATCH:
                 $operation = $this->issues()->listEvents($params['owner'], $params['repo'], $params['issue_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3E04B60Abe35C284A39A331B5A490Adf|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH:
                 $operation = $this->issues()->listLabelsOnIssue($params['owner'], $params['repo'], $params['issue_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Be59A7A1Ee94D23Bf8E81Fd9Bf53239|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\SetLabels::OPERATION_MATCH:
                 $operation = $this->issues()->setLabels($params['owner'], $params['repo'], $params['issue_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Be59A7A1Ee94D23Bf8E81Fd9Bf53239|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\AddLabels::OPERATION_MATCH:
                 $operation = $this->issues()->addLabels($params['owner'], $params['repo'], $params['issue_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Be59A7A1Ee94D23Bf8E81Fd9Bf53239|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2368,7 +2368,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveLabel::OPERATION_MATCH:
                 $operation = $this->issues()->removeLabel($params['owner'], $params['repo'], $params['issue_number'], $params['name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Be59A7A1Ee94D23Bf8E81Fd9Bf53239|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2389,14 +2389,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListEventsForTimeline::OPERATION_MATCH:
                 $operation = $this->issues()->listEventsForTimeline($params['owner'], $params['repo'], $params['issue_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6875E80E7A2F2A7E54Face53445Dd736|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForRepo::OPERATION_MATCH:
                 $operation = $this->issues()->listLabelsForRepo($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Be59A7A1Ee94D23Bf8E81Fd9Bf53239|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2431,7 +2431,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListMilestones::OPERATION_MATCH:
                 $operation = $this->issues()->listMilestones($params['owner'], $params['repo'], $params['state'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7E88818B96F4B827A88Bdffeb546E221|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2466,21 +2466,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListLabelsForMilestone::OPERATION_MATCH:
                 $operation = $this->issues()->listLabelsForMilestone($params['owner'], $params['repo'], $params['milestone_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Be59A7A1Ee94D23Bf8E81Fd9Bf53239 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->issues()->listForAuthenticatedUser($params['filter'], $params['state'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBabf466417Ca3993Bac6Dc221711A46E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issues\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses\GetAllCommonlyUsed::OPERATION_MATCH:
                 $operation = $this->licenses()->getAllCommonlyUsed($params['featured'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD8C95C094316027Eaa26C6Eaf9500Ad8 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Licenses\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2501,28 +2501,28 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\Render::OPERATION_MATCH:
                 $operation = $this->markdown()->render();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Markdown\Response\Text\Html\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown\RenderRaw::OPERATION_MATCH:
                 $operation = $this->markdown()->renderRaw();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2809284B6E54D0D34017715Ffe5636Bd {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Markdown\Response\Text\Html\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\List::OPERATION_MATCH:
                 $operation = $this->orgs()->list($params['since'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD25549Cde7Ef111A37D0A59E619F994A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListCustomRoles::OPERATION_MATCH:
                 $operation = $this->orgs()->listCustomRoles($params['organization_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C19Eb4036F8A42F3C5B379E759Ef04C69 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2536,14 +2536,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Update::OPERATION_MATCH:
                 $operation = $this->orgs()->update($params['org']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C197505B37575Ae3739584A4C9Efe0801|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListBlockedUsers::OPERATION_MATCH:
                 $operation = $this->orgs()->listBlockedUsers($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2599,21 +2599,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFailedInvitations::OPERATION_MATCH:
                 $operation = $this->orgs()->listFailedInvitations($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C292Eea0D3E06B707B2B60E9Fa544B678|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFineGrainedPermissions::OPERATION_MATCH:
                 $operation = $this->orgs()->listFineGrainedPermissions($params['org']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1A135545778A6D3F051B1125A78Fd35C {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListWebhooks::OPERATION_MATCH:
                 $operation = $this->orgs()->listWebhooks($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8C7417Cb08B593A169C0D2A998Ca13C8|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2662,7 +2662,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListWebhookDeliveries::OPERATION_MATCH:
                 $operation = $this->orgs()->listWebhookDeliveries($params['org'], $params['hook_id'], $params['per_page'], $params['cursor'], $params['redelivery']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0E8E1845F1Bc82Ea0E7B36D0Bb6E996D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2676,7 +2676,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RedeliverWebhookDelivery::OPERATION_MATCH:
                 $operation = $this->orgs()->redeliverWebhookDelivery($params['org'], $params['hook_id'], $params['delivery_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2690,14 +2690,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListAppInstallations::OPERATION_MATCH:
                 $operation = $this->orgs()->listAppInstallations($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDe13F0F1A91E8C86F2C1D90E147490E2 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitations::OPERATION_MATCH:
                 $operation = $this->orgs()->listPendingInvitations($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C292Eea0D3E06B707B2B60E9Fa544B678|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2718,14 +2718,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListInvitationTeams::OPERATION_MATCH:
                 $operation = $this->orgs()->listInvitationTeams($params['org'], $params['invitation_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListMembers::OPERATION_MATCH:
                 $operation = $this->orgs()->listMembers($params['org'], $params['filter'], $params['role'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2767,28 +2767,28 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListOutsideCollaborators::OPERATION_MATCH:
                 $operation = $this->orgs()->listOutsideCollaborators($params['org'], $params['filter'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ConvertMemberToOutsideCollaborator::OPERATION_MATCH:
                 $operation = $this->orgs()->convertMemberToOutsideCollaborator($params['org'], $params['username']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE1799B925032A0F88Bb3139534B34Fe7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\RemoveOutsideCollaborator::OPERATION_MATCH:
                 $operation = $this->orgs()->removeOutsideCollaborator($params['org'], $params['username']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C378515F7728150Fe48B2Fa76970A57B1 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H422 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPublicMembers::OPERATION_MATCH:
                 $operation = $this->orgs()->listPublicMembers($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2816,7 +2816,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListSecurityManagerTeams::OPERATION_MATCH:
                 $operation = $this->orgs()->listSecurityManagerTeams($params['org']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7Eb9Ad2993C99C60Bc995556Bf16C836 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2844,7 +2844,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListMembershipsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->orgs()->listMembershipsForAuthenticatedUser($params['state'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDfc9Ce9066Fbb36Ecf1129974E678B26|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2865,14 +2865,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->orgs()->listForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD25549Cde7Ef111A37D0A59E619F994A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListForUser::OPERATION_MATCH:
                 $operation = $this->orgs()->listForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD25549Cde7Ef111A37D0A59E619F994A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Orgs\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2893,7 +2893,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListInOrganization::OPERATION_MATCH:
                 $operation = $this->codespaces()->listInOrganization($params['per_page'], $params['page'], $params['org']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99A344Bb924Dc8320E4Bc765919868F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2907,7 +2907,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListOrgSecrets::OPERATION_MATCH:
                 $operation = $this->codespaces()->listOrgSecrets($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE2D72762D5496B28A74Db5Be33944579 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2942,7 +2942,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListSelectedReposForOrgSecret::OPERATION_MATCH:
                 $operation = $this->codespaces()->listSelectedReposForOrgSecret($params['org'], $params['secret_name'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf642215E2806C848A16Ef294379Be7A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2970,14 +2970,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\GetCodespacesForUserInOrg::OPERATION_MATCH:
                 $operation = $this->codespaces()->getCodespacesForUserInOrg($params['per_page'], $params['page'], $params['org'], $params['username']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99A344Bb924Dc8320E4Bc765919868F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\DeleteFromOrganization::OPERATION_MATCH:
                 $operation = $this->codespaces()->deleteFromOrganization($params['org'], $params['username'], $params['codespace_name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2991,42 +2991,42 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListInRepositoryForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->listInRepositoryForAuthenticatedUser($params['per_page'], $params['page'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99A344Bb924Dc8320E4Bc765919868F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\CreateWithRepoForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->createWithRepoForAuthenticatedUser($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->listDevcontainersInRepositoryForAuthenticatedUser($params['per_page'], $params['page'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3258430Cc798035Cd54C186Bcc49C1F3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\RepoMachinesForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->repoMachinesForAuthenticatedUser($params['owner'], $params['repo'], $params['location'], $params['client_ip']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDcad5E8F2Eec4De5B5Cb16Bffb04Ba48|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\PreFlightWithRepoForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->preFlightWithRepoForAuthenticatedUser($params['owner'], $params['repo'], $params['ref'], $params['client_ip']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFc45C706Ec04C4547F6921E839268B9B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListRepoSecrets::OPERATION_MATCH:
                 $operation = $this->codespaces()->listRepoSecrets($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C28C9367Cd9884680C4B3F55F87F3Dfd1 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3061,28 +3061,28 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\CreateWithPrForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->createWithPrForAuthenticatedUser($params['owner'], $params['repo'], $params['pull_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->listForAuthenticatedUser($params['per_page'], $params['page'], $params['repository_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C99A344Bb924Dc8320E4Bc765919868F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\CreateForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->createForAuthenticatedUser();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListSecretsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->listSecretsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C60C051Ca0D5D3B740Bd08E439D5315E1 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3117,7 +3117,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\ListRepositoriesForSecretForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->listRepositoriesForSecretForAuthenticatedUser($params['secret_name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDf642215E2806C848A16Ef294379Be7A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3152,7 +3152,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\DeleteForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->deleteForAuthenticatedUser($params['codespace_name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3180,7 +3180,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\CodespaceMachinesForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->codespaces()->codespaceMachinesForAuthenticatedUser($params['codespace_name']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDcad5E8F2Eec4De5B5Cb16Bffb04Ba48|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3201,7 +3201,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForOrg::OPERATION_MATCH:
                 $operation = $this->interactions()->getRestrictionsForOrg($params['org']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFa125E0Ae31E9C155F33Bc899Ee2A17F {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Interactions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3222,7 +3222,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForRepo::OPERATION_MATCH:
                 $operation = $this->interactions()->getRestrictionsForRepo($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFa125E0Ae31E9C155F33Bc899Ee2A17F {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Interactions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3243,7 +3243,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions\GetRestrictionsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->interactions()->getRestrictionsForAuthenticatedUser();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFa125E0Ae31E9C155F33Bc899Ee2A17F {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Interactions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3264,7 +3264,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListForOrg::OPERATION_MATCH:
                 $operation = $this->migrations()->listForOrg($params['org'], $params['per_page'], $params['page'], $params['exclude']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C48B3C8D5Bb6D982Db53C27240Ef5E5B4 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migrations\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3306,7 +3306,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListReposForOrg::OPERATION_MATCH:
                 $operation = $this->migrations()->listReposForOrg($params['org'], $params['migration_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migrations\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3341,7 +3341,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetCommitAuthors::OPERATION_MATCH:
                 $operation = $this->migrations()->getCommitAuthors($params['owner'], $params['repo'], $params['since']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF937F3514A781A237E7E511Bc6974285|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migrations\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3355,7 +3355,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\GetLargeFiles::OPERATION_MATCH:
                 $operation = $this->migrations()->getLargeFiles($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC2674569Ad4Aaeb221366Afde4669340|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migrations\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3369,7 +3369,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->migrations()->listForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C48B3C8D5Bb6D982Db53C27240Ef5E5B4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migrations\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3411,14 +3411,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations\ListReposForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->migrations()->listReposForAuthenticatedUser($params['migration_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migrations\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\ListPackagesForOrganization::OPERATION_MATCH:
                 $operation = $this->packages()->listPackagesForOrganization($params['package_type'], $params['org'], $params['visibility']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF3D5Dbb128F908794438D8455A198Be4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Packages\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3446,7 +3446,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH:
                 $operation = $this->packages()->getAllPackageVersionsForPackageOwnedByOrg($params['package_type'], $params['package_name'], $params['org'], $params['page'], $params['per_page'], $params['state']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C20F464Eb74B57Bb1070Bc9803667E3C3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Packages\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3474,7 +3474,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\ListPackagesForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->packages()->listPackagesForAuthenticatedUser($params['package_type'], $params['visibility']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF3D5Dbb128F908794438D8455A198Be4 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Packages\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3502,7 +3502,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->packages()->getAllPackageVersionsForPackageOwnedByAuthenticatedUser($params['package_type'], $params['package_name'], $params['page'], $params['per_page'], $params['state']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C20F464Eb74B57Bb1070Bc9803667E3C3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Packages\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3530,7 +3530,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\ListPackagesForUser::OPERATION_MATCH:
                 $operation = $this->packages()->listPackagesForUser($params['package_type'], $params['visibility'], $params['username']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF3D5Dbb128F908794438D8455A198Be4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Packages\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3558,7 +3558,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages\GetAllPackageVersionsForPackageOwnedByUser::OPERATION_MATCH:
                 $operation = $this->packages()->getAllPackageVersionsForPackageOwnedByUser($params['package_type'], $params['package_name'], $params['username']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C20F464Eb74B57Bb1070Bc9803667E3C3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Packages\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3586,7 +3586,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForOrg::OPERATION_MATCH:
                 $operation = $this->projects()->listForOrg($params['org'], $params['state'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAb0747A9430Dc79D395Cf3A981F7F590|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3607,7 +3607,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\DeleteCard::OPERATION_MATCH:
                 $operation = $this->projects()->deleteCard($params['card_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF694556E3Cc88993A89F1Ed7Afdf4E13|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3621,7 +3621,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveCard::OPERATION_MATCH:
                 $operation = $this->projects()->moveCard($params['card_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE1799B925032A0F88Bb3139534B34Fe7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2F32Ad791Ebef4439Dfb273837Ce0D99|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C84C5Bf99Acadc6Ec8B2A32F2014E1E35|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3649,21 +3649,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCards::OPERATION_MATCH:
                 $operation = $this->projects()->listCards($params['column_id'], $params['archived_state'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C802A2Aa52727B9F7C501777Ea4F9E4A3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\CreateCard::OPERATION_MATCH:
                 $operation = $this->projects()->createCard($params['column_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C197505B37575Ae3739584A4C9Efe0801|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C84C5Bf99Acadc6Ec8B2A32F2014E1E35 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\MoveColumn::OPERATION_MATCH:
                 $operation = $this->projects()->moveColumn($params['column_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE1799B925032A0F88Bb3139534B34Fe7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3677,21 +3677,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Delete::OPERATION_MATCH:
                 $operation = $this->projects()->delete($params['project_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF694556E3Cc88993A89F1Ed7Afdf4E13|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\Update::OPERATION_MATCH:
                 $operation = $this->projects()->update($params['project_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF694556E3Cc88993A89F1Ed7Afdf4E13|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListCollaborators::OPERATION_MATCH:
                 $operation = $this->projects()->listCollaborators($params['project_id'], $params['affiliation'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3719,7 +3719,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListColumns::OPERATION_MATCH:
                 $operation = $this->projects()->listColumns($params['project_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C338B4411A0Be86E1C6C9A568915F6984|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3733,7 +3733,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForRepo::OPERATION_MATCH:
                 $operation = $this->projects()->listForRepo($params['owner'], $params['repo'], $params['state'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAb0747A9430Dc79D395Cf3A981F7F590|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3754,14 +3754,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects\ListForUser::OPERATION_MATCH:
                 $operation = $this->projects()->listForUser($params['username'], $params['state'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAb0747A9430Dc79D395Cf3A981F7F590|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Projects\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListForOrg::OPERATION_MATCH:
                 $operation = $this->repos()->listForOrg($params['org'], $params['type'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3782,7 +3782,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\Delete::OPERATION_MATCH:
                 $operation = $this->repos()->delete($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C378515F7728150Fe48B2Fa76970A57B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3796,7 +3796,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListAutolinks::OPERATION_MATCH:
                 $operation = $this->repos()->listAutolinks($params['owner'], $params['repo'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C17C7343Ca9Be26E0B6160460Fc53E98B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3838,7 +3838,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListBranches::OPERATION_MATCH:
                 $operation = $this->repos()->listBranches($params['owner'], $params['repo'], $params['protected'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF51Df0E3Ba8C9D41Aff6C2Dae92F8477|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3957,28 +3957,28 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAllStatusCheckContexts::OPERATION_MATCH:
                 $operation = $this->repos()->getAllStatusCheckContexts($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD98264Cbbbcfb6B301Bd754C28B7483E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetStatusCheckContexts::OPERATION_MATCH:
                 $operation = $this->repos()->setStatusCheckContexts($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD98264Cbbbcfb6B301Bd754C28B7483E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddStatusCheckContexts::OPERATION_MATCH:
                 $operation = $this->repos()->addStatusCheckContexts($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD98264Cbbbcfb6B301Bd754C28B7483E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveStatusCheckContexts::OPERATION_MATCH:
                 $operation = $this->repos()->removeStatusCheckContexts($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD98264Cbbbcfb6B301Bd754C28B7483E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3999,84 +3999,84 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAppsWithAccessToProtectedBranch::OPERATION_MATCH:
                 $operation = $this->repos()->getAppsWithAccessToProtectedBranch($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C81C377Bf6B21Ffcf535B9A46Dc81E5F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetAppAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->setAppAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C81C377Bf6B21Ffcf535B9A46Dc81E5F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddAppAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->addAppAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C81C377Bf6B21Ffcf535B9A46Dc81E5F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveAppAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->removeAppAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C81C377Bf6B21Ffcf535B9A46Dc81E5F5|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetTeamsWithAccessToProtectedBranch::OPERATION_MATCH:
                 $operation = $this->repos()->getTeamsWithAccessToProtectedBranch($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetTeamAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->setTeamAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddTeamAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->addTeamAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveTeamAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->removeTeamAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetUsersWithAccessToProtectedBranch::OPERATION_MATCH:
                 $operation = $this->repos()->getUsersWithAccessToProtectedBranch($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\SetUserAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->setUserAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\AddUserAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->addUserAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RemoveUserAccessRestrictions::OPERATION_MATCH:
                 $operation = $this->repos()->removeUserAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4097,7 +4097,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCollaborators::OPERATION_MATCH:
                 $operation = $this->repos()->listCollaborators($params['owner'], $params['repo'], $params['affiliation'], $params['permission'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8Cfb8Cb2505342C5Aa9B51775D830635|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4132,7 +4132,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCommitCommentsForRepo::OPERATION_MATCH:
                 $operation = $this->repos()->listCommitCommentsForRepo($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb6974Aa7Ac26B1Fccca8566752Cd2D3 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4160,21 +4160,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCommits::OPERATION_MATCH:
                 $operation = $this->repos()->listCommits($params['owner'], $params['repo'], $params['sha'], $params['path'], $params['author'], $params['since'], $params['until'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C844E23F82575A50855510A97A1C68898|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListBranchesForHeadCommit::OPERATION_MATCH:
                 $operation = $this->repos()->listBranchesForHeadCommit($params['owner'], $params['repo'], $params['commit_sha']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C44F966765547C3442B15293D242E13E2|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCommentsForCommit::OPERATION_MATCH:
                 $operation = $this->repos()->listCommentsForCommit($params['owner'], $params['repo'], $params['commit_sha'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CDb6974Aa7Ac26B1Fccca8566752Cd2D3 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4188,14 +4188,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPullRequestsAssociatedWithCommit::OPERATION_MATCH:
                 $operation = $this->repos()->listPullRequestsAssociatedWithCommit($params['owner'], $params['repo'], $params['commit_sha'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Afdcb273A556616D8867Fd50A161738 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetCommit::OPERATION_MATCH:
                 $operation = $this->repos()->getCommit($params['owner'], $params['repo'], $params['page'], $params['per_page'], $params['ref']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4209,7 +4209,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListCommitStatusesForRef::OPERATION_MATCH:
                 $operation = $this->repos()->listCommitStatusesForRef($params['owner'], $params['repo'], $params['ref'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1Ac05Dc4833Fe01C300C8C2729Df70Ad|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4223,14 +4223,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CompareCommits::OPERATION_MATCH:
                 $operation = $this->repos()->compareCommits($params['owner'], $params['repo'], $params['page'], $params['per_page'], $params['basehead']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetContent::OPERATION_MATCH:
                 $operation = $this->repos()->getContent($params['owner'], $params['repo'], $params['path'], $params['ref']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C96Bca9F5F23C9286Db2F0596100Bc507|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4244,28 +4244,28 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\DeleteFile::OPERATION_MATCH:
                 $operation = $this->repos()->deleteFile($params['owner'], $params['repo'], $params['path']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListContributors::OPERATION_MATCH:
                 $operation = $this->repos()->listContributors($params['owner'], $params['repo'], $params['anon'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA7Ca0Fcacca5Fd9Bfaa0D26Cc7352Dca|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListDeployments::OPERATION_MATCH:
                 $operation = $this->repos()->listDeployments($params['owner'], $params['repo'], $params['sha'], $params['ref'], $params['task'], $params['environment'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6C1Be1B26A14C84Ab35C32Ee2E0Fcd2A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\CreateDeployment::OPERATION_MATCH:
                 $operation = $this->repos()->createDeployment($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C7B1F87F42Ca7F4E6F27Ed1Bcbfcee301|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4286,7 +4286,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListDeploymentStatuses::OPERATION_MATCH:
                 $operation = $this->repos()->listDeploymentStatuses($params['owner'], $params['repo'], $params['deployment_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C75F4Dcd10Cf090Fdc9118C43Cb1F9Acb|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4314,7 +4314,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetAllEnvironments::OPERATION_MATCH:
                 $operation = $this->repos()->getAllEnvironments($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3502Cc2A1Ef0B1884Bcdfcf828660Ec4 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4342,7 +4342,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListDeploymentBranchPolicies::OPERATION_MATCH:
                 $operation = $this->repos()->listDeploymentBranchPolicies($params['owner'], $params['repo'], $params['environment_name'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAb60B6A9C2C98408237190D09Ed58803 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4377,7 +4377,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListForks::OPERATION_MATCH:
                 $operation = $this->repos()->listForks($params['owner'], $params['repo'], $params['sort'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4391,7 +4391,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListWebhooks::OPERATION_MATCH:
                 $operation = $this->repos()->listWebhooks($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6E5961982487E4570Ac7Cd969C273Cdd|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4440,7 +4440,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListWebhookDeliveries::OPERATION_MATCH:
                 $operation = $this->repos()->listWebhookDeliveries($params['owner'], $params['repo'], $params['hook_id'], $params['per_page'], $params['cursor'], $params['redelivery']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0E8E1845F1Bc82Ea0E7B36D0Bb6E996D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4454,7 +4454,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\RedeliverWebhookDelivery::OPERATION_MATCH:
                 $operation = $this->repos()->redeliverWebhookDelivery($params['owner'], $params['repo'], $params['hook_id'], $params['delivery_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4475,7 +4475,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListInvitations::OPERATION_MATCH:
                 $operation = $this->repos()->listInvitations($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF20275E051D790E6Ec04687F05E98F03 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4496,7 +4496,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListDeployKeys::OPERATION_MATCH:
                 $operation = $this->repos()->listDeployKeys($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE8D2B89E98E676346A45560E7E331E0A {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4531,7 +4531,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\EnableLfsForRepo::OPERATION_MATCH:
                 $operation = $this->repos()->enableLfsForRepo($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H202 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4587,7 +4587,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPagesBuilds::OPERATION_MATCH:
                 $operation = $this->repos()->listPagesBuilds($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C6D863E2F1F1Ab47D84D0Ed073F49Df30 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4643,7 +4643,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListReleases::OPERATION_MATCH:
                 $operation = $this->repos()->listReleases($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD0C2695E7C5F50Ea337C2965Ffe11E6D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4720,7 +4720,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListReleaseAssets::OPERATION_MATCH:
                 $operation = $this->repos()->listReleaseAssets($params['owner'], $params['repo'], $params['release_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0Db7312560Abfd79A4Bfefef0A3Baef7 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4734,21 +4734,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetCodeFrequencyStats::OPERATION_MATCH:
                 $operation = $this->repos()->getCodeFrequencyStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Bf7717E69D86Ca1B138987Fdb5033B6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H202 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetCommitActivityStats::OPERATION_MATCH:
                 $operation = $this->repos()->getCommitActivityStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C06431446E4E9E28A63Fd6A22436F7D82|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H202 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetContributorsStats::OPERATION_MATCH:
                 $operation = $this->repos()->getContributorsStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0B4Ef1B3E0499Cc08F846Cd359C05D76|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C01Fc056Eed58C88Fe1C507Fcd84Dd4B7 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H202 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4762,7 +4762,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetPunchCardStats::OPERATION_MATCH:
                 $operation = $this->repos()->getPunchCardStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9Bf7717E69D86Ca1B138987Fdb5033B6 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4776,14 +4776,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListTags::OPERATION_MATCH:
                 $operation = $this->repos()->listTags($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEc94E54447F15Bea9F91Abe39Ef7B5F6 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListTagProtection::OPERATION_MATCH:
                 $operation = $this->repos()->listTagProtection($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE85527Aa1D6903Db89F29Ddfaed8F90F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4811,7 +4811,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListTeams::OPERATION_MATCH:
                 $operation = $this->repos()->listTeams($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4839,14 +4839,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetTopPaths::OPERATION_MATCH:
                 $operation = $this->repos()->getTopPaths($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Fe03Fbd1Bce5975C0731D749A144878|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\GetTopReferrers::OPERATION_MATCH:
                 $operation = $this->repos()->getTopReferrers($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0637F403D979870Da0B4B4832D880Aa4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4902,14 +4902,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListPublic::OPERATION_MATCH:
                 $operation = $this->repos()->listPublic($params['since']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->repos()->listForAuthenticatedUser($params['visibility'], $params['affiliation'], $params['type'], $params['sort'], $params['direction'], $params['per_page'], $params['page'], $params['since'], $params['before']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CAf9Ce4Aef95F91Ba5Bb8937E005A4Bf1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4923,7 +4923,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListInvitationsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->repos()->listInvitationsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF20275E051D790E6Ec04687F05E98F03|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4944,14 +4944,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos\ListForUser::OPERATION_MATCH:
                 $operation = $this->repos()->listForUser($params['username'], $params['type'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repos\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\List::OPERATION_MATCH:
                 $operation = $this->teams()->list($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4986,7 +4986,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListDiscussionsInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->listDiscussionsInOrg($params['org'], $params['team_slug'], $params['direction'], $params['per_page'], $params['page'], $params['pinned']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C48C27F99490Bb9F6F3Fe1Ca3B71E7D81 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5021,7 +5021,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListDiscussionCommentsInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->listDiscussionCommentsInOrg($params['org'], $params['team_slug'], $params['discussion_number'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5730D3B2Ef04C7A9B60Fe46C96Fa0B20 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5056,14 +5056,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListPendingInvitationsInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->listPendingInvitationsInOrg($params['org'], $params['team_slug'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C292Eea0D3E06B707B2B60E9Fa544B678 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListMembersInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->listMembersInOrg($params['org'], $params['team_slug'], $params['role'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5091,7 +5091,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListProjectsInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->listProjectsInOrg($params['org'], $params['team_slug'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C039E6Cf714Fc77Af55Cad65Fde5A5718 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5105,7 +5105,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\AddOrUpdateProjectPermissionsInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->addOrUpdateProjectPermissionsInOrg($params['org'], $params['team_slug'], $params['project_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C378515F7728150Fe48B2Fa76970A57B1 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H403 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5119,7 +5119,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListReposInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->listReposInOrg($params['org'], $params['team_slug'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5147,7 +5147,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListChildInOrg::OPERATION_MATCH:
                 $operation = $this->teams()->listChildInOrg($params['org'], $params['team_slug'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5175,7 +5175,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListDiscussionsLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->listDiscussionsLegacy($params['team_id'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C48C27F99490Bb9F6F3Fe1Ca3B71E7D81 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5210,7 +5210,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListDiscussionCommentsLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->listDiscussionCommentsLegacy($params['team_id'], $params['discussion_number'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5730D3B2Ef04C7A9B60Fe46C96Fa0B20 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5245,14 +5245,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListPendingInvitationsLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->listPendingInvitationsLegacy($params['team_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C292Eea0D3E06B707B2B60E9Fa544B678 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListMembersLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->listMembersLegacy($params['team_id'], $params['role'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5301,7 +5301,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListProjectsLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->listProjectsLegacy($params['team_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C039E6Cf714Fc77Af55Cad65Fde5A5718|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5315,7 +5315,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\AddOrUpdateProjectPermissionsLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->addOrUpdateProjectPermissionsLegacy($params['team_id'], $params['project_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C378515F7728150Fe48B2Fa76970A57B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5329,7 +5329,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListReposLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->listReposLegacy($params['team_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CCd764B09345F726F6916Da17C8289460|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5357,21 +5357,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListChildLegacy::OPERATION_MATCH:
                 $operation = $this->teams()->listChildLegacy($params['team_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CE11926Db2C7F041Ef537Eab6D400701B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\ListForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->teams()->listForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C45206B806A9565Db2Ebe89Ea38D6Dc95|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Teams\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForTeamDiscussionCommentInOrg::OPERATION_MATCH:
                 $operation = $this->reactions()->listForTeamDiscussionCommentInOrg($params['org'], $params['team_slug'], $params['discussion_number'], $params['comment_number'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5392,7 +5392,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForTeamDiscussionInOrg::OPERATION_MATCH:
                 $operation = $this->reactions()->listForTeamDiscussionInOrg($params['org'], $params['team_slug'], $params['discussion_number'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5413,7 +5413,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForCommitComment::OPERATION_MATCH:
                 $operation = $this->reactions()->listForCommitComment($params['owner'], $params['repo'], $params['comment_id'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5434,7 +5434,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForIssueComment::OPERATION_MATCH:
                 $operation = $this->reactions()->listForIssueComment($params['owner'], $params['repo'], $params['comment_id'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5455,7 +5455,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForIssue::OPERATION_MATCH:
                 $operation = $this->reactions()->listForIssue($params['owner'], $params['repo'], $params['issue_number'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5476,7 +5476,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForPullRequestReviewComment::OPERATION_MATCH:
                 $operation = $this->reactions()->listForPullRequestReviewComment($params['owner'], $params['repo'], $params['comment_id'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5497,7 +5497,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForRelease::OPERATION_MATCH:
                 $operation = $this->reactions()->listForRelease($params['owner'], $params['repo'], $params['release_id'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5518,7 +5518,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForTeamDiscussionCommentLegacy::OPERATION_MATCH:
                 $operation = $this->reactions()->listForTeamDiscussionCommentLegacy($params['team_id'], $params['discussion_number'], $params['comment_number'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5532,7 +5532,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions\ListForTeamDiscussionLegacy::OPERATION_MATCH:
                 $operation = $this->reactions()->listForTeamDiscussionLegacy($params['team_id'], $params['discussion_number'], $params['content'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Ac0Dd25322B6Ad19Ba645Bbaf8B0C36 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reactions\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5574,7 +5574,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListAnnotations::OPERATION_MATCH:
                 $operation = $this->checks()->listAnnotations($params['owner'], $params['repo'], $params['check_run_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C33D2984B495081F1F782F0Bdbed8A0E5 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Checks\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5609,7 +5609,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForSuite::OPERATION_MATCH:
                 $operation = $this->checks()->listForSuite($params['owner'], $params['repo'], $params['check_suite_id'], $params['check_name'], $params['status'], $params['filter'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C60F581B56E9Cea5Bd326503D1C6D1B0F {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Checks\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5623,14 +5623,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListForRef::OPERATION_MATCH:
                 $operation = $this->checks()->listForRef($params['owner'], $params['repo'], $params['ref'], $params['check_name'], $params['status'], $params['filter'], $params['per_page'], $params['page'], $params['app_id']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C60F581B56E9Cea5Bd326503D1C6D1B0F {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Checks\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks\ListSuitesForRef::OPERATION_MATCH:
                 $operation = $this->checks()->listSuitesForRef($params['owner'], $params['repo'], $params['ref'], $params['app_id'], $params['check_name'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFbc8Dc67261Ec91736E48C1Cf35B8429 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Checks\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5644,7 +5644,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\DependencyGraph\CreateRepositorySnapshot::OPERATION_MATCH:
                 $operation = $this->dependencyGraph()->createRepositorySnapshot($params['owner'], $params['repo']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8638D96643Fcf5Ffcb917886B51C84Eb {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraph\Response\Application\Json\H201 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5679,7 +5679,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git\ListMatchingRefs::OPERATION_MATCH:
                 $operation = $this->git()->listMatchingRefs($params['owner'], $params['repo'], $params['ref']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C313800Aa2E76Bd5B3C9753E9E9Ae9Ee3 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Git\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5742,7 +5742,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\List::OPERATION_MATCH:
                 $operation = $this->pulls()->list($params['owner'], $params['repo'], $params['state'], $params['head'], $params['base'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5Afdcb273A556616D8867Fd50A161738|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5756,7 +5756,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListReviewCommentsForRepo::OPERATION_MATCH:
                 $operation = $this->pulls()->listReviewCommentsForRepo($params['owner'], $params['repo'], $params['sort'], $params['direction'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF89C208Bbcc1Fa8Cdfabfebbde8Ab772 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5784,7 +5784,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\Get::OPERATION_MATCH:
                 $operation = $this->pulls()->get($params['owner'], $params['repo'], $params['pull_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5798,7 +5798,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListReviewComments::OPERATION_MATCH:
                 $operation = $this->pulls()->listReviewComments($params['owner'], $params['repo'], $params['pull_number'], $params['sort'], $params['direction'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CF89C208Bbcc1Fa8Cdfabfebbde8Ab772 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5819,14 +5819,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListCommits::OPERATION_MATCH:
                 $operation = $this->pulls()->listCommits($params['owner'], $params['repo'], $params['pull_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C844E23F82575A50855510A97A1C68898 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListFiles::OPERATION_MATCH:
                 $operation = $this->pulls()->listFiles($params['owner'], $params['repo'], $params['pull_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBd10796Debc7920F91B5617Afd47F727|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5840,7 +5840,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\Merge::OPERATION_MATCH:
                 $operation = $this->pulls()->merge($params['owner'], $params['repo'], $params['pull_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C378515F7728150Fe48B2Fa76970A57B1|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H405|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H409|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5868,7 +5868,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListReviews::OPERATION_MATCH:
                 $operation = $this->pulls()->listReviews($params['owner'], $params['repo'], $params['pull_number'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C9808Acb55D1D6De88353B547A6D24167 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5903,7 +5903,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\ListCommentsForReview::OPERATION_MATCH:
                 $operation = $this->pulls()->listCommentsForReview($params['owner'], $params['repo'], $params['pull_number'], $params['review_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFb4596C0Fc740434Cef2371747A626Ed|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5924,63 +5924,63 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\UpdateBranch::OPERATION_MATCH:
                 $operation = $this->pulls()->updateBranch($params['owner'], $params['repo'], $params['pull_number']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CA5445A08E16D224F94859Ebaf785C18A|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search\Code::OPERATION_MATCH:
                 $operation = $this->search()->code($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CEba9Ffad53Bf3D07A128329D2F082D34|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search\Commits::OPERATION_MATCH:
                 $operation = $this->search()->commits($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C1866497B9C15615Ec03A90Fac4282D1B {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search\IssuesAndPullRequests::OPERATION_MATCH:
                 $operation = $this->search()->issuesAndPullRequests($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C2Ad43Aedc57E80Fd3A21B0Feba475487|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search\Labels::OPERATION_MATCH:
                 $operation = $this->search()->labels($params['repository_id'], $params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C3D0B1A33D0E21B9449553352Ee4C6C9D|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search\Repos::OPERATION_MATCH:
                 $operation = $this->search()->repos($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CB71A98Bede90C5E5046C1Ef70586Ae6F|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search\Topics::OPERATION_MATCH:
                 $operation = $this->search()->topics($params['q'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C050Dfd1E0C4A60Cde55137Ec4864C709 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search\Users::OPERATION_MATCH:
                 $operation = $this->search()->users($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC9971B26A226492E08644Fd99C1917A6|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CC04A13C6627Df95Bf0Cb989A4326F2F0|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\GetAuthenticated::OPERATION_MATCH:
                 $operation = $this->users()->getAuthenticated();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFa9375D5B4Dfa8F391595615Bd0Addf4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5994,7 +5994,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListBlockedByAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listBlockedByAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6022,21 +6022,21 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\SetPrimaryEmailVisibilityForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->setPrimaryEmailVisibilityForAuthenticatedUser();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD51E01Cc5874C6066A75A0Fc85B55D9B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListEmailsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listEmailsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD51E01Cc5874C6066A75A0Fc85B55D9B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\AddEmailForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->addEmailForAuthenticatedUser();
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD51E01Cc5874C6066A75A0Fc85B55D9B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6050,14 +6050,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListFollowersForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listFollowersForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListFollowedByAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listFollowedByAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6085,7 +6085,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListGpgKeysForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listGpgKeysForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0F67251Be1Ebeacdc9100Fcc0Bd1D93E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6113,7 +6113,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicSshKeysForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listPublicSshKeysForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C8569D1C942B35A48Ce04Dca29B28Fb71|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6141,14 +6141,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicEmailsForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listPublicEmailsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CD51E01Cc5874C6066A75A0Fc85B55D9B|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListSshSigningKeysForAuthenticatedUser::OPERATION_MATCH:
                 $operation = $this->users()->listSshSigningKeysForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C015E31Db5815A354C246A2918708Fa5E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6176,28 +6176,28 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\List::OPERATION_MATCH:
                 $operation = $this->users()->list($params['since'], $params['per_page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\GetByUsername::OPERATION_MATCH:
                 $operation = $this->users()->getByUsername($params['username']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CFa9375D5B4Dfa8F391595615Bd0Addf4|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListFollowersForUser::OPERATION_MATCH:
                 $operation = $this->users()->listFollowersForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListFollowingForUser::OPERATION_MATCH:
                 $operation = $this->users()->listFollowingForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C34568Fbad6459B5C1F84F7D986317072 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6211,7 +6211,7 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListGpgKeysForUser::OPERATION_MATCH:
                 $operation = $this->users()->listGpgKeysForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C0F67251Be1Ebeacdc9100Fcc0Bd1D93E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6225,14 +6225,14 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListPublicKeysForUser::OPERATION_MATCH:
                 $operation = $this->users()->listPublicKeysForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C5C26E46Afe4Dc8D40051D9776F160A55 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\ListSshSigningKeysForUser::OPERATION_MATCH:
                 $operation = $this->users()->listSshSigningKeysForUser($params['username'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest();
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C015E31Db5815A354C246A2918708Fa5E {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Users\Response\Application\Json\H200 {
                     return $operation->createResponse($response);
                 });
                 break;

@@ -16,9 +16,9 @@ final class Links
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\PullRequest $pull_request;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_ $self;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self $self;
     public function html() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html
     {
         return $this->html;
@@ -27,7 +27,7 @@ final class Links
     {
         return $this->pull_request;
     }
-    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_
+    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self
     {
         return $this->self;
     }

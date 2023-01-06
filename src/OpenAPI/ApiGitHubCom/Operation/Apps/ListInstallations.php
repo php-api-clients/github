@@ -32,7 +32,7 @@ final class ListInstallations
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{per_page}', '{page}', '{since}', '{outdated}'), array($this->per_page, $this->page, $this->since, $this->outdated), '/app/installations?per_page={per_page}&page={page}&since={since}&outdated={outdated}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C46B4Faf08De395E78Aaa4B63456Ddd07
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListInstallations\Response\Application\Json\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -42,8 +42,8 @@ final class ListInstallations
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C46B4Faf08De395E78Aaa4B63456Ddd07::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\C46B4Faf08De395E78Aaa4B63456Ddd07', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListInstallations\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListInstallations\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
         }

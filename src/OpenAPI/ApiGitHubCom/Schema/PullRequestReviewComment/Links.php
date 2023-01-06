@@ -8,9 +8,9 @@ final class Links
     public const SCHEMA_TITLE = 'PullRequestReviewComment\\Links';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_ $self;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self $self;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html::class)
      */
@@ -19,7 +19,7 @@ final class Links
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\PullRequest::class)
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\PullRequest $pull_request;
-    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_
+    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self
     {
         return $this->self;
     }

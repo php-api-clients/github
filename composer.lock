@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "5c28cce22b178c4b86b1a0d63eadd537eac356db"
+                "reference": "7bac3f416c3e48663a34d52d82fbf369b864c981"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/5c28cce22b178c4b86b1a0d63eadd537eac356db",
-                "reference": "5c28cce22b178c4b86b1a0d63eadd537eac356db",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/7bac3f416c3e48663a34d52d82fbf369b864c981",
+                "reference": "7bac3f416c3e48663a34d52d82fbf369b864c981",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2023-01-05T15:27:08+00:00"
+            "time": "2023-01-06T16:21:48+00:00"
         },
         {
             "name": "cebe/php-openapi",
@@ -6025,6 +6025,91 @@
             "time": "2022-12-08T20:46:14+00:00"
         },
         {
+            "name": "nette/utils",
+            "version": "v3.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/utils.git",
+                "reference": "02a54c4c872b99e4ec05c4aec54b5a06eb0f6368"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/utils/zipball/02a54c4c872b99e4ec05c4aec54b5a06eb0f6368",
+                "reference": "02a54c4c872b99e4ec05c4aec54b5a06eb0f6368",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2 <8.3"
+            },
+            "conflict": {
+                "nette/di": "<3.0.6"
+            },
+            "require-dev": {
+                "nette/tester": "~2.0",
+                "phpstan/phpstan": "^1.0",
+                "tracy/tracy": "^2.3"
+            },
+            "suggest": {
+                "ext-gd": "to use Image",
+                "ext-iconv": "to use Strings::webalize(), toAscii(), chr() and reverse()",
+                "ext-intl": "to use Strings::webalize(), toAscii(), normalize() and compare()",
+                "ext-json": "to use Nette\\Utils\\Json",
+                "ext-mbstring": "to use Strings::lower() etc...",
+                "ext-tokenizer": "to use Nette\\Utils\\Reflection::getUseStatements()",
+                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0-only",
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "🛠  Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
+            "homepage": "https://nette.org",
+            "keywords": [
+                "array",
+                "core",
+                "datetime",
+                "images",
+                "json",
+                "nette",
+                "paginator",
+                "password",
+                "slugify",
+                "string",
+                "unicode",
+                "utf-8",
+                "utility",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/nette/utils/issues",
+                "source": "https://github.com/nette/utils/tree/v3.2.8"
+            },
+            "time": "2022-09-12T23:36:20+00:00"
+        },
+        {
             "name": "nikolaposa/version",
             "version": "4.1.0",
             "source": {
@@ -6315,16 +6400,16 @@
         },
         {
             "name": "orklah/psalm-insane-comparison",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orklah/psalm-insane-comparison.git",
-                "reference": "cb0e968ed75be66224a0a282d25be8cd20c67892"
+                "reference": "f0e44bf31678d189c8ee4556598d0ad6e3f853c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orklah/psalm-insane-comparison/zipball/cb0e968ed75be66224a0a282d25be8cd20c67892",
-                "reference": "cb0e968ed75be66224a0a282d25be8cd20c67892",
+                "url": "https://api.github.com/repos/orklah/psalm-insane-comparison/zipball/f0e44bf31678d189c8ee4556598d0ad6e3f853c9",
+                "reference": "f0e44bf31678d189c8ee4556598d0ad6e3f853c9",
                 "shasum": ""
             },
             "require": {
@@ -6363,9 +6448,9 @@
             "description": "Detects possible insane comparison (\"string\" == 0) to help migrate to PHP8",
             "support": {
                 "issues": "https://github.com/orklah/psalm-insane-comparison/issues",
-                "source": "https://github.com/orklah/psalm-insane-comparison/tree/v2.1.0"
+                "source": "https://github.com/orklah/psalm-insane-comparison/tree/v2.2.0"
             },
-            "time": "2022-12-05T19:41:08+00:00"
+            "time": "2023-01-06T09:06:11+00:00"
         },
         {
             "name": "pepakriz/phpstan-exception-rules",
@@ -11627,6 +11712,59 @@
             "time": "2021-07-28T10:34:58+00:00"
         },
         {
+            "name": "tomasvotruba/cognitive-complexity",
+            "version": "0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TomasVotruba/cognitive-complexity.git",
+                "reference": "d14c2619ba8e932e82d941792198e0f9ce41001f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TomasVotruba/cognitive-complexity/zipball/d14c2619ba8e932e82d941792198e0f9ce41001f",
+                "reference": "d14c2619ba8e932e82d941792198e0f9ce41001f",
+                "shasum": ""
+            },
+            "require": {
+                "nette/utils": "^3.2",
+                "php": "^8.1",
+                "phpstan/phpstan": "^1.9.3"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "phpstan/extension-installer": "^1.2",
+                "phpunit/phpunit": "^9.5",
+                "rector/rector": "^0.15.1",
+                "symplify/easy-coding-standard": "^11.1",
+                "symplify/monorepo-builder": "^11.1",
+                "tomasvotruba/type-coverage": "^0.0.5",
+                "tracy/tracy": "^2.9"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "config/extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TomasVotruba\\CognitiveComplexity\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan rules to measure cognitive complexity of your classes and methods",
+            "support": {
+                "issues": "https://github.com/TomasVotruba/cognitive-complexity/issues",
+                "source": "https://github.com/TomasVotruba/cognitive-complexity/tree/0.0.5"
+            },
+            "time": "2022-12-29T13:35:06+00:00"
+        },
+        {
             "name": "vimeo/psalm",
             "version": "5.4.0",
             "source": {
@@ -11782,25 +11920,25 @@
         },
         {
             "name": "wyrihaximus/async-test-utilities",
-            "version": "5.0.23",
+            "version": "5.0.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-async-test-utilities.git",
-                "reference": "ea578476ebfc3371c2db02c82f7beed18328dbbe"
+                "reference": "fc814ea60ff7a0b81fc4f580cdbd387f524be7b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-async-test-utilities/zipball/ea578476ebfc3371c2db02c82f7beed18328dbbe",
-                "reference": "ea578476ebfc3371c2db02c82f7beed18328dbbe",
+                "url": "https://api.github.com/repos/WyriHaximus/php-async-test-utilities/zipball/fc814ea60ff7a0b81fc4f580cdbd387f524be7b0",
+                "reference": "fc814ea60ff7a0b81fc4f580cdbd387f524be7b0",
                 "shasum": ""
             },
             "require": {
                 "clue/block-react": "^1.5.",
                 "php": "^8",
-                "phpunit/phpunit": "^9.5.21",
+                "phpunit/phpunit": "^9.5.27",
                 "react/event-loop": "^1.3.0",
                 "react/promise": "^2.9.",
-                "wyrihaximus/test-utilities": "^5.2.0"
+                "wyrihaximus/test-utilities": "^5.2.3"
             },
             "require-dev": {
                 "wyrihaximus/iterator-or-array-to-array": "^1.2"
@@ -11824,7 +11962,7 @@
             "description": "Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-async-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-async-test-utilities/tree/5.0.23"
+                "source": "https://github.com/WyriHaximus/php-async-test-utilities/tree/5.0.24"
             },
             "funding": [
                 {
@@ -11832,7 +11970,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-04T13:45:16+00:00"
+            "time": "2023-01-05T23:29:07+00:00"
         },
         {
             "name": "wyrihaximus/coding-standard",
@@ -11875,16 +12013,16 @@
         },
         {
             "name": "wyrihaximus/phpstan-rules-wrapper",
-            "version": "2.7.1",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper.git",
-                "reference": "d67744362efe7a85e595347f3d6453443ee905c1"
+                "reference": "73e6c542aae0311cc78b5221b693e7da12a7c267"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-phpstan-rules-wrapper/zipball/d67744362efe7a85e595347f3d6453443ee905c1",
-                "reference": "d67744362efe7a85e595347f3d6453443ee905c1",
+                "url": "https://api.github.com/repos/WyriHaximus/php-phpstan-rules-wrapper/zipball/73e6c542aae0311cc78b5221b693e7da12a7c267",
+                "reference": "73e6c542aae0311cc78b5221b693e7da12a7c267",
                 "shasum": ""
             },
             "require": {
@@ -11897,7 +12035,8 @@
                 "phpstan/phpstan-phpunit": "^1.3",
                 "phpstan/phpstan-strict-rules": "^1.4",
                 "thecodingmachine/phpstan-safe-rule": "^1.2",
-                "thecodingmachine/phpstan-strict-rules": "^1.0"
+                "thecodingmachine/phpstan-strict-rules": "^1.0",
+                "tomasvotruba/cognitive-complexity": "^0.0.5"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -11913,7 +12052,7 @@
             "description": "🌯 PHPStan rules wrapper",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper/issues",
-                "source": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper/tree/2.7.1"
+                "source": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper/tree/2.8.0"
             },
             "funding": [
                 {
@@ -11921,30 +12060,30 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-23T18:20:25+00:00"
+            "time": "2023-01-05T22:18:12+00:00"
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "5.2.2",
+            "version": "5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "b1f663388efab1c6c7e8273ed34e543dd04b85ce"
+                "reference": "0c666a0f7937f195c8333741acd47ce6013dfd96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/b1f663388efab1c6c7e8273ed34e543dd04b85ce",
-                "reference": "b1f663388efab1c6c7e8273ed34e543dd04b85ce",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/0c666a0f7937f195c8333741acd47ce6013dfd96",
+                "reference": "0c666a0f7937f195c8333741acd47ce6013dfd96",
                 "shasum": ""
             },
             "require": {
                 "ergebnis/composer-normalize": "^2.29.0",
-                "icanhazstring/composer-unused": "^0.8.4",
+                "icanhazstring/composer-unused": "^0.8.5",
                 "infection/infection": "^0.26.5",
                 "jakobbuis/simple-slow-test-reporter": "^1.0",
-                "maglnet/composer-require-checker": "^4.2.0",
-                "nunomaduro/collision": "^6.3.1",
-                "orklah/psalm-insane-comparison": "^2.0.0",
+                "maglnet/composer-require-checker": "^4.4.0",
+                "nunomaduro/collision": "^6.4.0",
+                "orklah/psalm-insane-comparison": "^2.1.0",
                 "php": "^8",
                 "php-coveralls/php-coveralls": "^2.5.3",
                 "php-parallel-lint/php-console-highlighter": "^1.0",
@@ -11953,15 +12092,15 @@
                 "phpspec/prophecy": "^1.16",
                 "phpspec/prophecy-phpunit": "^2.0.1",
                 "phpstan/phpstan": "^1.9.2",
-                "phpunit/phpunit": "^9.5.26",
-                "psalm/plugin-phpunit": "^0.18.3",
+                "phpunit/phpunit": "^9.5.27",
+                "psalm/plugin-phpunit": "^0.18.4",
                 "roave/backward-compatibility-check": "^7.1.0",
                 "roave/infection-static-analysis-plugin": "^1.25.0",
                 "squizlabs/php_codesniffer": "^3.7.1",
                 "thecodingmachine/safe": "^2.4.0",
                 "vimeo/psalm": "^5 || ^4.30",
                 "wyrihaximus/coding-standard": "^2.11.0",
-                "wyrihaximus/phpstan-rules-wrapper": "^2.7.0"
+                "wyrihaximus/phpstan-rules-wrapper": "^2.8.0"
             },
             "conflict": {
                 "symfony/dependency-injection": "<5.0.0"
@@ -12005,7 +12144,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.2.2"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.2.3"
             },
             "funding": [
                 {
@@ -12013,7 +12152,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-17T20:45:10+00:00"
+            "time": "2023-01-05T23:14:51+00:00"
         }
     ],
     "aliases": [

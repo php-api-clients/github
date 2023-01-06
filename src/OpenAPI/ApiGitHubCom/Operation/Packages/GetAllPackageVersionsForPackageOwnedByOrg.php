@@ -39,7 +39,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrg
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{package_type}', '{package_name}', '{org}', '{page}', '{per_page}', '{state}'), array($this->package_type, $this->package_name, $this->org, $this->page, $this->per_page, $this->state), '/orgs/{org}/packages/{package_type}/{package_name}/versions?page={page}&per_page={per_page}&state={state}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C20F464Eb74B57Bb1070Bc9803667E3C3|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GetAllPackageVersionsForPackageOwnedByOrg\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +49,8 @@ final class GetAllPackageVersionsForPackageOwnedByOrg
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\C20F464Eb74B57Bb1070Bc9803667E3C3::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\C20F464Eb74B57Bb1070Bc9803667E3C3', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GetAllPackageVersionsForPackageOwnedByOrg\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\GetAllPackageVersionsForPackageOwnedByOrg\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Resource not found**/

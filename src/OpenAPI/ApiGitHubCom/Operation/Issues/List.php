@@ -53,7 +53,7 @@ final class List
     {
         return new \RingCentral\Psr7\Request('get', \str_replace(array('{filter}', '{state}', '{labels}', '{sort}', '{direction}', '{since}', '{collab}', '{orgs}', '{owned}', '{pulls}', '{per_page}', '{page}'), array($this->filter, $this->state, $this->labels, $this->sort, $this->direction, $this->since, $this->collab, $this->orgs, $this->owned, $this->pulls, $this->per_page, $this->page), '/issues?filter={filter}&state={state}&labels={labels}&sort={sort}&direction={direction}&since={since}&collab={collab}&orgs={orgs}&owned={owned}&pulls={pulls}&per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBabf466417Ca3993Bac6Dc221711A46E|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\List\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -63,8 +63,8 @@ final class List
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Unknown\CBabf466417Ca3993Bac6Dc221711A46E::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Unknown\\CBabf466417Ca3993Bac6Dc221711A46E', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\List\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\List\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Validation failed, or the endpoint has been spammed.**/

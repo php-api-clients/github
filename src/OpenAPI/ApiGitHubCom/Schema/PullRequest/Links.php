@@ -32,9 +32,9 @@ final class Links
      */
     private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComments $review_comments;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_::class)
+     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_ $self;
+    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self $self;
     /**
      * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Statuses::class)
      */
@@ -63,7 +63,7 @@ final class Links
     {
         return $this->review_comments;
     }
-    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_
+    public function self() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self
     {
         return $this->self;
     }
