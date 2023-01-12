@@ -32,8 +32,11 @@ final class UpdateDeploymentBranchPolicy
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicyNamePattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{owner}', '{repo}', '{environment_name}', '{branch_policy_id}'), array($this->owner, $this->repo, $this->environment_name, $this->branch_policy_id), '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}'), array('Content-Type' => 'application/json'), json_encode($data));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{owner}', '{repo}', '{environment_name}', '{branch_policy_id}'), array($this->owner, $this->repo, $this->environment_name, $this->branch_policy_id), '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy
     {
         $contentType = $response->getHeaderLine('Content-Type');

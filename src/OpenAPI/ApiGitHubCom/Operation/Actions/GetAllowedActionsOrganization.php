@@ -22,8 +22,11 @@ final class GetAllowedActionsOrganization
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/permissions/selected-actions'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/permissions/selected-actions'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions
     {
         $contentType = $response->getHeaderLine('Content-Type');

@@ -75,6 +75,10 @@ final class Issues
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\RemoveAssignees($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number);
     }
+    public function checkUserCanBeAssignedToIssue(string $owner, string $repo, int $issue_number, string $assignee) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CheckUserCanBeAssignedToIssue
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\CheckUserCanBeAssignedToIssue($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $assignee);
+    }
     public function listComments(string $owner, string $repo, int $issue_number, string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListComments
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\ListComments($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $issue_number, $since, $per_page, $page);

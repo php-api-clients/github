@@ -25,9 +25,12 @@ final class CreateSuite
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateSuite\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/check-suites'), array('Content-Type' => 'application/json'), json_encode($data));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateSuite\Request\Application\Json::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/check-suites'), array('Content-Type' => 'application/json'), json_encode($data));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite
     {
         $contentType = $response->getHeaderLine('Content-Type');

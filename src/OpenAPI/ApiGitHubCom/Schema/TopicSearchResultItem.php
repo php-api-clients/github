@@ -21,8 +21,8 @@ final class TopicSearchResultItem
     private ?int $repository_count = null;
     private ?string $logo_url = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches::class)
      */
     private array $text_matches = array();
     /**
@@ -88,7 +88,7 @@ final class TopicSearchResultItem
         return $this->logo_url;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TopicSearchResultItem\TextMatches>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
      */
     public function text_matches() : array
     {

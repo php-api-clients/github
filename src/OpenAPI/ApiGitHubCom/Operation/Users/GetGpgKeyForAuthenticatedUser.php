@@ -22,8 +22,11 @@ final class GetGpgKeyForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{gpg_key_id}'), array($this->gpg_key_id), '/user/gpg_keys/{gpg_key_id}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{gpg_key_id}'), array($this->gpg_key_id), '/user/gpg_keys/{gpg_key_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

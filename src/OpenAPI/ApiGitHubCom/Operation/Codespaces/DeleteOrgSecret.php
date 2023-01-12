@@ -25,8 +25,11 @@ final class DeleteOrgSecret
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{secret_name}'), array($this->org, $this->secret_name), '/orgs/{org}/codespaces/secrets/{secret_name}'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{secret_name}'), array($this->org, $this->secret_name), '/orgs/{org}/codespaces/secrets/{secret_name}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

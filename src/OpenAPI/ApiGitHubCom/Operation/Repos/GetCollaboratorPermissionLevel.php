@@ -28,8 +28,11 @@ final class GetCollaboratorPermissionLevel
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{username}'), array($this->owner, $this->repo, $this->username), '/repos/{owner}/{repo}/collaborators/{username}/permission'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{username}'), array($this->owner, $this->repo, $this->username), '/repos/{owner}/{repo}/collaborators/{username}/permission'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

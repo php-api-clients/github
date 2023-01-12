@@ -28,8 +28,11 @@ final class EnableWorkflow
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{owner}', '{repo}', '{workflow_id}'), array($this->owner, $this->repo, $this->workflow_id), '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable'));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{owner}', '{repo}', '{workflow_id}'), array($this->owner, $this->repo, $this->workflow_id), '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

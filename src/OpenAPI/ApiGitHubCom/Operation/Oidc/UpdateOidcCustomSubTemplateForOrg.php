@@ -23,8 +23,11 @@ final class UpdateOidcCustomSubTemplateForOrg
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/oidc/customization/sub'), array('Content-Type' => 'application/json'), json_encode($data));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/oidc/customization/sub'), array('Content-Type' => 'application/json'), json_encode($data));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

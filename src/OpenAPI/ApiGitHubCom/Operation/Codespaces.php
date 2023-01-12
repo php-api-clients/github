@@ -179,6 +179,10 @@ final class Codespaces
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\CodespaceMachinesForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $codespace_name);
     }
+    public function publishForAuthenticatedUser(string $codespace_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\PublishForAuthenticatedUser
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\PublishForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $codespace_name);
+    }
     public function startForAuthenticatedUser(string $codespace_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\StartForAuthenticatedUser
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\StartForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $codespace_name);

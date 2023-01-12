@@ -8,24 +8,24 @@ final class ParticipationStats
     public const SCHEMA_TITLE = 'Participation Stats';
     public const SCHEMA_DESCRIPTION = '';
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats\All>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats\All::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
     private array $all = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats\Owner>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats\Owner::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
     private array $owner = array();
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats\All>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
      */
     public function all() : array
     {
         return $this->all;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats\Owner>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
      */
     public function owner() : array
     {

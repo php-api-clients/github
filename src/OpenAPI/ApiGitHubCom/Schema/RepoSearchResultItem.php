@@ -106,8 +106,8 @@ final class RepoSearchResultItem
      */
     private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\Permissions $permissions = null;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches::class)
      */
     private array $text_matches = array();
     private ?string $temp_clone_token = null;
@@ -445,7 +445,7 @@ final class RepoSearchResultItem
         return $this->permissions;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoSearchResultItem\TextMatches>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
      */
     public function text_matches() : array
     {

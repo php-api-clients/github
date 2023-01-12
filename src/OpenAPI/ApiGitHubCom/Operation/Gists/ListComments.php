@@ -28,9 +28,12 @@ final class ListComments
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{gist_id}', '{per_page}', '{page}'), array($this->gist_id, $this->per_page, $this->page), '/gists/{gist_id}/comments?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{gist_id}', '{per_page}', '{page}'), array($this->gist_id, $this->per_page, $this->page), '/gists/{gist_id}/comments?per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListComments\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    /**
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,8 +43,10 @@ final class ListComments
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListComments\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListComments\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) use($hydrator) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment {
+                            return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\GistComment', $body);
+                        });
                 }
                 break;
             /**Not modified**/

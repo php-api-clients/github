@@ -25,10 +25,13 @@ final class ConvertMemberToOutsideCollaborator
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ConvertMemberToOutsideCollaborator\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}', '{username}'), array($this->org, $this->username), '/orgs/{org}/outside_collaborators/{username}'), array('Content-Type' => 'application/json'), json_encode($data));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ConvertMemberToOutsideCollaborator\Request\Application\Json::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}', '{username}'), array($this->org, $this->username), '/orgs/{org}/outside_collaborators/{username}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ConvertMemberToOutsideCollaborator\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ConvertMemberToOutsideCollaborator\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ConvertMemberToOutsideCollaborator\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,8 +41,8 @@ final class ConvertMemberToOutsideCollaborator
             case 202:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ConvertMemberToOutsideCollaborator\Response\Application\Json\H202::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ConvertMemberToOutsideCollaborator\\Response\\Application\\Json\\H202', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ConvertMemberToOutsideCollaborator\Response\Application\Json\H202::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\ConvertMemberToOutsideCollaborator\\Response\\Application\\Json\\H202', $body);
                 }
                 break;
             /**User was converted**/
@@ -47,7 +50,7 @@ final class ConvertMemberToOutsideCollaborator
                 switch ($contentType) {
                 }
                 break;
-            /**Forbidden if user is the last owner of the organization, not a member of the organization, or if the enterprise enforces a policy for inviting outside collaborators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."**/
+            /**Forbidden if user is the last owner of the organization, not a member of the organization, or if the enterprise enforces a policy for inviting outside collaborators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."**/
             case 403:
                 switch ($contentType) {
                 }

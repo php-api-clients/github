@@ -22,8 +22,11 @@ final class MarkThreadAsRead
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}'));
+        return new \RingCentral\Psr7\Request('PATCH', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

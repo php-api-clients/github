@@ -22,9 +22,12 @@ final class SetGithubActionsPermissionsOrganization
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SetGithubActionsPermissionsOrganization\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/permissions'), array('Content-Type' => 'application/json'), json_encode($data));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SetGithubActionsPermissionsOrganization\Request\Application\Json::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/permissions'), array('Content-Type' => 'application/json'), json_encode($data));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

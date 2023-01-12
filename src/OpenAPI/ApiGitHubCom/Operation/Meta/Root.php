@@ -19,8 +19,11 @@ final class Root
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array(), array(), '/'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root
     {
         $contentType = $response->getHeaderLine('Content-Type');

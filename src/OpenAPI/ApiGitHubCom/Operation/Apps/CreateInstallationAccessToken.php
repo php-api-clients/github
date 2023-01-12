@@ -22,9 +22,12 @@ final class CreateInstallationAccessToken
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateInstallationAccessToken\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{installation_id}'), array($this->installation_id), '/app/installations/{installation_id}/access_tokens'), array('Content-Type' => 'application/json'), json_encode($data));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateInstallationAccessToken\Request\Application\Json::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{installation_id}'), array($this->installation_id), '/app/installations/{installation_id}/access_tokens'), array('Content-Type' => 'application/json'), json_encode($data));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');

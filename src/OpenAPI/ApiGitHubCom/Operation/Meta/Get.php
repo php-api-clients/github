@@ -19,8 +19,11 @@ final class Get
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/meta'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array(), array(), '/meta'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview
     {
         $contentType = $response->getHeaderLine('Content-Type');

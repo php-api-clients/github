@@ -22,8 +22,11 @@ final class GetSshSigningKeyForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{ssh_signing_key_id}'), array($this->ssh_signing_key_id), '/user/ssh_signing_keys/{ssh_signing_key_id}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{ssh_signing_key_id}'), array($this->ssh_signing_key_id), '/user/ssh_signing_keys/{ssh_signing_key_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

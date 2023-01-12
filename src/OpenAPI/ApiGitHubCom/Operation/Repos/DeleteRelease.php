@@ -28,8 +28,11 @@ final class DeleteRelease
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{release_id}'), array($this->owner, $this->repo, $this->release_id), '/repos/{owner}/{repo}/releases/{release_id}'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{owner}', '{repo}', '{release_id}'), array($this->owner, $this->repo, $this->release_id), '/repos/{owner}/{repo}/releases/{release_id}'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

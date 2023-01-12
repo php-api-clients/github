@@ -25,10 +25,13 @@ final class AddOrUpdateProjectPermissionsLegacy
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AddOrUpdateProjectPermissionsLegacy\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{team_id}', '{project_id}'), array($this->team_id, $this->project_id), '/teams/{team_id}/projects/{project_id}'), array('Content-Type' => 'application/json'), json_encode($data));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AddOrUpdateProjectPermissionsLegacy\Request\Application\Json::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{team_id}', '{project_id}'), array($this->team_id, $this->project_id), '/teams/{team_id}/projects/{project_id}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AddOrUpdateProjectPermissionsLegacy\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\AddOrUpdateProjectPermissionsLegacy\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\AddOrUpdateProjectPermissionsLegacy\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -43,8 +46,8 @@ final class AddOrUpdateProjectPermissionsLegacy
             case 403:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AddOrUpdateProjectPermissionsLegacy\Response\Application\Json\H403::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\AddOrUpdateProjectPermissionsLegacy\\Response\\Application\\Json\\H403', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\AddOrUpdateProjectPermissionsLegacy\Response\Application\Json\H403::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\AddOrUpdateProjectPermissionsLegacy\\Response\\Application\\Json\\H403', $body);
                 }
                 break;
             /**Resource not found**/

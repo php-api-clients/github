@@ -30,9 +30,12 @@ final class ListInstallations
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{per_page}', '{page}', '{since}', '{outdated}'), array($this->per_page, $this->page, $this->since, $this->outdated), '/app/installations?per_page={per_page}&page={page}&since={since}&outdated={outdated}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{per_page}', '{page}', '{since}', '{outdated}'), array($this->per_page, $this->page, $this->since, $this->outdated), '/app/installations?per_page={per_page}&page={page}&since={since}&outdated={outdated}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListInstallations\Response\Application\Json\H200
+    /**
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation>
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -42,8 +45,10 @@ final class ListInstallations
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListInstallations\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListInstallations\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) use($hydrator) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation {
+                            return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Installation', $body);
+                        });
                 }
                 break;
         }

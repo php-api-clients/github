@@ -19,8 +19,11 @@ final class GetFeeds
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/feeds'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array(), array(), '/feeds'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed
     {
         $contentType = $response->getHeaderLine('Content-Type');

@@ -24,8 +24,11 @@ final class CheckFollowingForUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{username}', '{target_user}'), array($this->username, $this->target_user), '/users/{username}/following/{target_user}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{username}', '{target_user}'), array($this->username, $this->target_user), '/users/{username}/following/{target_user}'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

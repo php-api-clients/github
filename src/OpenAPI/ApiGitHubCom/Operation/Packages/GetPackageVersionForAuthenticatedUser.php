@@ -28,8 +28,11 @@ final class GetPackageVersionForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{package_type}', '{package_name}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->package_version_id), '/user/packages/{package_type}/{package_name}/versions/{package_version_id}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{package_type}', '{package_name}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->package_version_id), '/user/packages/{package_type}/{package_name}/versions/{package_version_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion
     {
         $contentType = $response->getHeaderLine('Content-Type');

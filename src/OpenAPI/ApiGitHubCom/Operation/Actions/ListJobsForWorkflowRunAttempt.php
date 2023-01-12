@@ -37,9 +37,12 @@ final class ListJobsForWorkflowRunAttempt
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{run_id}', '{attempt_number}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->run_id, $this->attempt_number, $this->per_page, $this->page), '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{run_id}', '{attempt_number}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->run_id, $this->attempt_number, $this->per_page, $this->page), '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs?per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListJobsForWorkflowRunAttempt\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListJobsForWorkflowRunAttempt\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListJobsForWorkflowRunAttempt\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +52,8 @@ final class ListJobsForWorkflowRunAttempt
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListJobsForWorkflowRunAttempt\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListJobsForWorkflowRunAttempt\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListJobsForWorkflowRunAttempt\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\ListJobsForWorkflowRunAttempt\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Resource not found**/

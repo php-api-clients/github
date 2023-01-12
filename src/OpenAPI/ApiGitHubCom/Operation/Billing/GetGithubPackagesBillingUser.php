@@ -22,8 +22,11 @@ final class GetGithubPackagesBillingUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{username}'), array($this->username), '/users/{username}/settings/billing/packages'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{username}'), array($this->username), '/users/{username}/settings/billing/packages'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage
     {
         $contentType = $response->getHeaderLine('Content-Type');

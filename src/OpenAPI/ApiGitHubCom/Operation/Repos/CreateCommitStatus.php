@@ -27,9 +27,12 @@ final class CreateCommitStatus
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateCommitStatus\Request::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{owner}', '{repo}', '{sha}'), array($this->owner, $this->repo, $this->sha), '/repos/{owner}/{repo}/statuses/{sha}'), array('Content-Type' => 'application/json'), json_encode($data));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CreateCommitStatus\Request\Application\Json::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{owner}', '{repo}', '{sha}'), array($this->owner, $this->repo, $this->sha), '/repos/{owner}/{repo}/statuses/{sha}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status
     {
         $contentType = $response->getHeaderLine('Content-Type');

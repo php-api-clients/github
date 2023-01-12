@@ -22,8 +22,11 @@ final class Star
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{gist_id}'), array($this->gist_id), '/gists/{gist_id}/star'));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{gist_id}'), array($this->gist_id), '/gists/{gist_id}/star'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

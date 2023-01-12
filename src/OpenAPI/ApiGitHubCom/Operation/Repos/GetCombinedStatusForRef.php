@@ -34,8 +34,11 @@ final class GetCombinedStatusForRef
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{ref}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->ref, $this->per_page, $this->page), '/repos/{owner}/{repo}/commits/{ref}/status?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{ref}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->ref, $this->per_page, $this->page), '/repos/{owner}/{repo}/commits/{ref}/status?per_page={per_page}&page={page}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

@@ -28,8 +28,8 @@ final class CodeSearchResultItem
      */
     private array $line_numbers = array();
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches::class)
      */
     private array $text_matches = array();
     public function name() : string
@@ -87,7 +87,7 @@ final class CodeSearchResultItem
         return $this->line_numbers;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\TextMatches>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
      */
     public function text_matches() : array
     {

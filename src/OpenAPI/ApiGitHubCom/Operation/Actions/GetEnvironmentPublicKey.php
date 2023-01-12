@@ -25,8 +25,11 @@ final class GetEnvironmentPublicKey
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{repository_id}', '{environment_name}'), array($this->repository_id, $this->environment_name), '/repositories/{repository_id}/environments/{environment_name}/secrets/public-key'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{repository_id}', '{environment_name}'), array($this->repository_id, $this->environment_name), '/repositories/{repository_id}/environments/{environment_name}/secrets/public-key'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey
     {
         $contentType = $response->getHeaderLine('Content-Type');

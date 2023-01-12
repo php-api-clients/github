@@ -25,8 +25,11 @@ final class DeleteSelfHostedRunnerFromEnterprise
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{enterprise}', '{runner_id}'), array($this->enterprise, $this->runner_id), '/enterprises/{enterprise}/actions/runners/{runner_id}'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{enterprise}', '{runner_id}'), array($this->enterprise, $this->runner_id), '/enterprises/{enterprise}/actions/runners/{runner_id}'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

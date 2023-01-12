@@ -11,18 +11,6 @@ final class Actions
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function getActionsCacheUsageForEnterprise(string $enterprise) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetActionsCacheUsageForEnterprise
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetActionsCacheUsageForEnterprise($this->requestSchemaValidator, $this->responseSchemaValidator, $enterprise);
-    }
-    public function getGithubActionsDefaultWorkflowPermissionsEnterprise(string $enterprise) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetGithubActionsDefaultWorkflowPermissionsEnterprise
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetGithubActionsDefaultWorkflowPermissionsEnterprise($this->requestSchemaValidator, $this->responseSchemaValidator, $enterprise);
-    }
-    public function setGithubActionsDefaultWorkflowPermissionsEnterprise(string $enterprise) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsEnterprise
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsEnterprise($this->requestSchemaValidator, $this->responseSchemaValidator, $enterprise);
-    }
     public function getActionsCacheUsageForOrg(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetActionsCacheUsageForOrg
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetActionsCacheUsageForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
@@ -70,6 +58,42 @@ final class Actions
     public function setGithubActionsDefaultWorkflowPermissionsOrganization(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsOrganization
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsOrganization($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
+    }
+    public function listRequiredWorkflows(string $org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRequiredWorkflows
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRequiredWorkflows($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $per_page, $page);
+    }
+    public function createRequiredWorkflow(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
+    }
+    public function getRequiredWorkflow(string $org, int $required_workflow_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $required_workflow_id);
+    }
+    public function deleteRequiredWorkflow(string $org, int $required_workflow_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $required_workflow_id);
+    }
+    public function updateRequiredWorkflow(string $org, int $required_workflow_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $required_workflow_id);
+    }
+    public function listSelectedRepositoriesRequiredWorkflow(string $org, int $required_workflow_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelectedRepositoriesRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelectedRepositoriesRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $required_workflow_id);
+    }
+    public function setSelectedReposToRequiredWorkflow(string $org, int $required_workflow_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelectedReposToRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelectedReposToRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $required_workflow_id);
+    }
+    public function addSelectedRepoToRequiredWorkflow(string $org, int $required_workflow_id, int $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelectedRepoToRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelectedRepoToRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $required_workflow_id, $repository_id);
+    }
+    public function removeSelectedRepoFromRequiredWorkflow(string $org, int $required_workflow_id, int $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $required_workflow_id, $repository_id);
     }
     public function listSelfHostedRunnerGroupsForOrg(string $org, int $per_page = 30, int $page = 1, string $visible_to_repository) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnerGroupsForOrg
     {
@@ -199,6 +223,54 @@ final class Actions
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromOrgSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $secret_name, $repository_id);
     }
+    public function listOrgVariables(string $org, int $per_page = 10, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListOrgVariables
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListOrgVariables($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $per_page, $page);
+    }
+    public function createOrgVariable(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
+    }
+    public function getOrgVariable(string $org, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $name);
+    }
+    public function deleteOrgVariable(string $org, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $name);
+    }
+    public function updateOrgVariable(string $org, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $name);
+    }
+    public function listSelectedReposForOrgVariable(string $org, string $name, int $page = 1, int $per_page = 30) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelectedReposForOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelectedReposForOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $name, $page, $per_page);
+    }
+    public function setSelectedReposForOrgVariable(string $org, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelectedReposForOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelectedReposForOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $name);
+    }
+    public function addSelectedRepoToOrgVariable(string $org, string $name, int $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelectedRepoToOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelectedRepoToOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $name, $repository_id);
+    }
+    public function removeSelectedRepoFromOrgVariable(string $org, string $name, int $repository_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromOrgVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelectedRepoFromOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $name, $repository_id);
+    }
+    public function listRepoRequiredWorkflows(string $org, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoRequiredWorkflows
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoRequiredWorkflows($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $repo, $per_page, $page);
+    }
+    public function getRepoRequiredWorkflow(string $org, string $repo, int $required_workflow_id_for_repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoRequiredWorkflow
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoRequiredWorkflow($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $repo, $required_workflow_id_for_repo);
+    }
+    public function getRepoRequiredWorkflowUsage(string $org, string $repo, int $required_workflow_id_for_repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoRequiredWorkflowUsage
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoRequiredWorkflowUsage($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $repo, $required_workflow_id_for_repo);
+    }
     public function listArtifactsForRepo(string $owner, string $repo, int $per_page = 30, int $page = 1, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListArtifactsForRepo
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListArtifactsForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page, $name);
@@ -282,6 +354,10 @@ final class Actions
     public function setGithubActionsDefaultWorkflowPermissionsRepository(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsRepository
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsRepository($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+    }
+    public function listRequiredWorkflowRuns(string $owner, string $repo, int $required_workflow_id_for_repo, string $actor, string $branch, string $event, string $status, int $per_page = 30, int $page = 1, string $created, bool $exclude_pull_requests = false, int $check_suite_id, string $head_sha) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRequiredWorkflowRuns
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRequiredWorkflowRuns($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $required_workflow_id_for_repo, $actor, $branch, $event, $status, $per_page, $page, $created, $exclude_pull_requests, $check_suite_id, $head_sha);
     }
     public function listSelfHostedRunnersForRepo(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersForRepo
     {
@@ -419,6 +495,26 @@ final class Actions
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteRepoSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $secret_name);
     }
+    public function listRepoVariables(string $owner, string $repo, int $per_page = 10, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoVariables
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoVariables($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
+    }
+    public function createRepoVariable(string $owner, string $repo) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateRepoVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateRepoVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo);
+    }
+    public function getRepoVariable(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetRepoVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
+    }
+    public function deleteRepoVariable(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteRepoVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteRepoVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
+    }
+    public function updateRepoVariable(string $owner, string $repo, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateRepoVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateRepoVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $name);
+    }
     public function listRepoWorkflows(string $owner, string $repo, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoWorkflows
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoWorkflows($this->requestSchemaValidator, $this->responseSchemaValidator, $owner, $repo, $per_page, $page);
@@ -466,5 +562,25 @@ final class Actions
     public function deleteEnvironmentSecret(int $repository_id, string $environment_name, string $secret_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentSecret
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $repository_id, $environment_name, $secret_name);
+    }
+    public function listEnvironmentVariables(int $repository_id, string $environment_name, int $per_page = 10, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListEnvironmentVariables
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListEnvironmentVariables($this->requestSchemaValidator, $this->responseSchemaValidator, $repository_id, $environment_name, $per_page, $page);
+    }
+    public function createEnvironmentVariable(int $repository_id, string $environment_name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateEnvironmentVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateEnvironmentVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $repository_id, $environment_name);
+    }
+    public function getEnvironmentVariable(int $repository_id, string $environment_name, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetEnvironmentVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetEnvironmentVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $repository_id, $environment_name, $name);
+    }
+    public function deleteEnvironmentVariable(int $repository_id, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $repository_id, $name);
+    }
+    public function updateEnvironmentVariable(int $repository_id, string $name) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateEnvironmentVariable
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateEnvironmentVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $repository_id, $name);
     }
 }

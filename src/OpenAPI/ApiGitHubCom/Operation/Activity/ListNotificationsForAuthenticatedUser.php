@@ -37,9 +37,12 @@ final class ListNotificationsForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{all}', '{participating}', '{since}', '{before}', '{page}', '{per_page}'), array($this->all, $this->participating, $this->since, $this->before, $this->page, $this->per_page), '/notifications?all={all}&participating={participating}&since={since}&before={before}&page={page}&per_page={per_page}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{all}', '{participating}', '{since}', '{before}', '{page}', '{per_page}'), array($this->all, $this->participating, $this->since, $this->before, $this->page, $this->per_page), '/notifications?all={all}&participating={participating}&since={since}&before={before}&page={page}&per_page={per_page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListNotificationsForAuthenticatedUser\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+    /**
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +52,10 @@ final class ListNotificationsForAuthenticatedUser
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListNotificationsForAuthenticatedUser\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListNotificationsForAuthenticatedUser\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) use($hydrator) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread {
+                            return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Thread', $body);
+                        });
                 }
                 break;
             /**Not modified**/

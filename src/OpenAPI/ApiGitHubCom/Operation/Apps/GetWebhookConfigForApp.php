@@ -19,8 +19,11 @@ final class GetWebhookConfigForApp
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array(), array(), '/app/hook/config'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array(), array(), '/app/hook/config'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig
     {
         $contentType = $response->getHeaderLine('Content-Type');

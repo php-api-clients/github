@@ -16,8 +16,8 @@ final class LabelSearchResultItem
     private ?string $description;
     private int $score;
     /**
-     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches::class)
+     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
+     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches::class)
      */
     private array $text_matches = array();
     public function id() : int
@@ -53,7 +53,7 @@ final class LabelSearchResultItem
         return $this->score;
     }
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LabelSearchResultItem\TextMatches>
+     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
      */
     public function text_matches() : array
     {

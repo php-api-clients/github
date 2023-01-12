@@ -21,8 +21,11 @@ final class GetTemplate
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{name}'), array($this->name), '/gitignore/templates/{name}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{name}'), array($this->name), '/gitignore/templates/{name}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate
     {
         $contentType = $response->getHeaderLine('Content-Type');

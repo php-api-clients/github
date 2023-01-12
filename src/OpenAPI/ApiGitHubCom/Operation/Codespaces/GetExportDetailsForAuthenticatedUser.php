@@ -25,8 +25,11 @@ final class GetExportDetailsForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespace_name, $this->export_id), '/user/codespaces/{codespace_name}/exports/{export_id}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespace_name, $this->export_id), '/user/codespaces/{codespace_name}/exports/{export_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

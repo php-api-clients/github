@@ -28,8 +28,11 @@ final class AddOrgAccessToSelfHostedRunnerGroupInEnterprise
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{enterprise}', '{runner_group_id}', '{org_id}'), array($this->enterprise, $this->runner_group_id, $this->org_id), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}'));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{enterprise}', '{runner_group_id}', '{org_id}'), array($this->enterprise, $this->runner_group_id, $this->org_id), '/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

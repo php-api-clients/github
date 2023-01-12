@@ -43,8 +43,11 @@ final class GetActionsCacheList
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{per_page}', '{page}', '{ref}', '{key}', '{sort}', '{direction}'), array($this->owner, $this->repo, $this->per_page, $this->page, $this->ref, $this->key, $this->sort, $this->direction), '/repos/{owner}/{repo}/actions/caches?per_page={per_page}&page={page}&ref={ref}&key={key}&sort={sort}&direction={direction}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{per_page}', '{page}', '{ref}', '{key}', '{sort}', '{direction}'), array($this->owner, $this->repo, $this->per_page, $this->page, $this->ref, $this->key, $this->sort, $this->direction), '/repos/{owner}/{repo}/actions/caches?per_page={per_page}&page={page}&ref={ref}&key={key}&sort={sort}&direction={direction}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList
     {
         $contentType = $response->getHeaderLine('Content-Type');

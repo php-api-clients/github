@@ -31,8 +31,11 @@ final class DeleteActionsCacheByKey
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{key}', '{ref}'), array($this->owner, $this->repo, $this->key, $this->ref), '/repos/{owner}/{repo}/actions/caches?key={key}&ref={ref}'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{owner}', '{repo}', '{key}', '{ref}'), array($this->owner, $this->repo, $this->key, $this->ref), '/repos/{owner}/{repo}/actions/caches?key={key}&ref={ref}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList
     {
         $contentType = $response->getHeaderLine('Content-Type');

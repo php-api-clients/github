@@ -25,8 +25,11 @@ final class GetPackageForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{package_type}', '{package_name}'), array($this->package_type, $this->package_name), '/user/packages/{package_type}/{package_name}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{package_type}', '{package_name}'), array($this->package_type, $this->package_name), '/user/packages/{package_type}/{package_name}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package
     {
         $contentType = $response->getHeaderLine('Content-Type');

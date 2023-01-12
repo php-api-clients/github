@@ -31,8 +31,11 @@ final class PostSecurityProductEnablementForEnterprise
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{enterprise}', '{security_product}', '{enablement}'), array($this->enterprise, $this->security_product, $this->enablement), '/enterprises/{enterprise}/{security_product}/{enablement}'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{enterprise}', '{security_product}', '{enablement}'), array($this->enterprise, $this->security_product, $this->enablement), '/enterprises/{enterprise}/{security_product}/{enablement}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

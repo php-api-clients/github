@@ -24,8 +24,11 @@ final class AddRepositoryForSecretForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('put', \str_replace(array('{secret_name}', '{repository_id}'), array($this->secret_name, $this->repository_id), '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}'));
+        return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{secret_name}', '{repository_id}'), array($this->secret_name, $this->repository_id), '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

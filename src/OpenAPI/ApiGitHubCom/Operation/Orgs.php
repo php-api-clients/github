@@ -15,10 +15,6 @@ final class Orgs
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\List($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page);
     }
-    public function listCustomRoles(string $organization_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListCustomRoles
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListCustomRoles($this->requestSchemaValidator, $this->responseSchemaValidator, $organization_id);
-    }
     public function get(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Get
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\Get($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
@@ -43,29 +39,9 @@ final class Orgs
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UnblockUser($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $username);
     }
-    public function createCustomRole(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CreateCustomRole
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CreateCustomRole($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
-    }
-    public function getCustomRole(string $org, int $role_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\GetCustomRole
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\GetCustomRole($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $role_id);
-    }
-    public function deleteCustomRole(string $org, int $role_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\DeleteCustomRole
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\DeleteCustomRole($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $role_id);
-    }
-    public function updateCustomRole(string $org, int $role_id) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UpdateCustomRole
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\UpdateCustomRole($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $role_id);
-    }
     public function listFailedInvitations(string $org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFailedInvitations
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFailedInvitations($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $per_page, $page);
-    }
-    public function listFineGrainedPermissions(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFineGrainedPermissions
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListFineGrainedPermissions($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
     }
     public function listWebhooks(string $org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListWebhooks
     {

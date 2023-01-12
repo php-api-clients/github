@@ -28,8 +28,11 @@ final class RemoveSelfHostedRunnerFromGroupForOrg
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{org}', '{runner_group_id}', '{runner_id}'), array($this->org, $this->runner_group_id, $this->runner_id), '/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{runner_group_id}', '{runner_id}'), array($this->org, $this->runner_group_id, $this->runner_id), '/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

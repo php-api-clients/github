@@ -22,8 +22,11 @@ final class StopForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}/stop'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{codespace_name}'), array($this->codespace_name), '/user/codespaces/{codespace_name}/stop'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

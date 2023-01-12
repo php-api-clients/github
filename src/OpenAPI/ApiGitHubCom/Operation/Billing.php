@@ -11,17 +11,9 @@ final class Billing
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function getGithubAdvancedSecurityBillingGhe(string $enterprise, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubAdvancedSecurityBillingGhe
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubAdvancedSecurityBillingGhe($this->requestSchemaValidator, $this->responseSchemaValidator, $enterprise, $per_page, $page);
-    }
     public function getGithubActionsBillingOrg(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubActionsBillingOrg
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubActionsBillingOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $org);
-    }
-    public function getGithubAdvancedSecurityBillingOrg(string $org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubAdvancedSecurityBillingOrg
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubAdvancedSecurityBillingOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $per_page, $page);
     }
     public function getGithubPackagesBillingOrg(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing\GetGithubPackagesBillingOrg
     {

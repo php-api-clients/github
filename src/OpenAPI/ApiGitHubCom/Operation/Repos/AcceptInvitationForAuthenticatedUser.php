@@ -22,8 +22,11 @@ final class AcceptInvitationForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('patch', \str_replace(array('{invitation_id}'), array($this->invitation_id), '/user/repository_invitations/{invitation_id}'));
+        return new \RingCentral\Psr7\Request('PATCH', \str_replace(array('{invitation_id}'), array($this->invitation_id), '/user/repository_invitations/{invitation_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

@@ -31,8 +31,11 @@ final class DeletePackageVersionForOrg
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{package_type}', '{package_name}', '{org}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->org, $this->package_version_id), '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{package_type}', '{package_name}', '{org}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->org, $this->package_version_id), '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

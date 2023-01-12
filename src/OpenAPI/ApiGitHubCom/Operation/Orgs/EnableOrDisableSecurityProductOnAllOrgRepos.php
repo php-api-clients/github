@@ -31,8 +31,11 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{org}', '{security_product}', '{enablement}'), array($this->org, $this->security_product, $this->enablement), '/orgs/{org}/{security_product}/{enablement}'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{org}', '{security_product}', '{enablement}'), array($this->org, $this->security_product, $this->enablement), '/orgs/{org}/{security_product}/{enablement}'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

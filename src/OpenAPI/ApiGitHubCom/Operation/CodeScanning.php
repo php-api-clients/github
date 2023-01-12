@@ -11,10 +11,6 @@ final class CodeScanning
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function listAlertsForEnterprise(string $enterprise, string $tool_name, string|null $tool_guid, string $before, string $after, int $page = 1, int $per_page = 30, string $direction = 'desc', string $state, string $sort = 'created') : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertsForEnterprise
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertsForEnterprise($this->requestSchemaValidator, $this->responseSchemaValidator, $enterprise, $tool_name, $tool_guid, $before, $after, $page, $per_page, $direction, $state, $sort);
-    }
     public function listAlertsForOrg(string $org, string $tool_name, string|null $tool_guid, string $before, string $after, int $page = 1, int $per_page = 30, string $direction = 'desc', string $state, string $sort = 'created', string $severity) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertsForOrg
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning\ListAlertsForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $org, $tool_name, $tool_guid, $before, $after, $page, $per_page, $direction, $state, $sort, $severity);

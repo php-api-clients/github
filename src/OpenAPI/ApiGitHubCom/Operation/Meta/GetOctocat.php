@@ -22,9 +22,12 @@ final class GetOctocat
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{s}'), array($this->s), '/octocat?s={s}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{s}'), array($this->s), '/octocat?s={s}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GetOctocat\Response\Application\OctocatStream\H200
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetOctocat\Response\Application\OctocatStream\H200
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetOctocat\Response\Application\OctocatStream\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -34,8 +37,8 @@ final class GetOctocat
             case 200:
                 switch ($contentType) {
                     case 'application/octocat-stream':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GetOctocat\Response\Application\OctocatStream\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\GetOctocat\\Response\\Application\\OctocatStream\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetOctocat\Response\Application\OctocatStream\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\GetOctocat\\Response\\Application\\OctocatStream\\H200', $body);
                 }
                 break;
         }

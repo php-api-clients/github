@@ -10,7 +10,7 @@ final class ListForOrg
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     /**The organization name. The name is not case sensitive.**/
     private readonly string $org;
-    /**Specifies the types of repositories you want returned. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `type` can also be `internal`. However, the `internal` value is not yet supported when a GitHub App calls this API with an installation access token.**/
+    /**Specifies the types of repositories you want returned.**/
     private readonly string $type;
     /**The property to sort the results by.**/
     private readonly string $sort;
@@ -37,9 +37,12 @@ final class ListForOrg
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{org}', '{type}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->org, $this->type, $this->sort, $this->direction, $this->per_page, $this->page), '/orgs/{org}/repos?type={type}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{type}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->org, $this->type, $this->sort, $this->direction, $this->per_page, $this->page), '/orgs/{org}/repos?type={type}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListForOrg\Response\Application\Json\H200
+    /**
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository>
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +52,10 @@ final class ListForOrg
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListForOrg\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListForOrg\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) use($hydrator) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository {
+                            return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\MinimalRepository', $body);
+                        });
                 }
                 break;
         }

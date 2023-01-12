@@ -22,8 +22,11 @@ final class GetUserInstallation
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{username}'), array($this->username), '/users/{username}/installation'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{username}'), array($this->username), '/users/{username}/installation'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation
     {
         $contentType = $response->getHeaderLine('Content-Type');

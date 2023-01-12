@@ -19,8 +19,11 @@ final class RemoveRestrictionsForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array(), array(), '/user/interaction-limits'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array(), array(), '/user/interaction-limits'));
     }
+    /**
+     * @return 
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
     {
         $contentType = $response->getHeaderLine('Content-Type');

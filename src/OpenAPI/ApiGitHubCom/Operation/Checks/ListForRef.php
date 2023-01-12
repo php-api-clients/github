@@ -45,9 +45,12 @@ final class ListForRef
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('get', \str_replace(array('{owner}', '{repo}', '{ref}', '{check_name}', '{status}', '{filter}', '{per_page}', '{page}', '{app_id}'), array($this->owner, $this->repo, $this->ref, $this->check_name, $this->status, $this->filter, $this->per_page, $this->page, $this->app_id), '/repos/{owner}/{repo}/commits/{ref}/check-runs?check_name={check_name}&status={status}&filter={filter}&per_page={per_page}&page={page}&app_id={app_id}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{ref}', '{check_name}', '{status}', '{filter}', '{per_page}', '{page}', '{app_id}'), array($this->owner, $this->repo, $this->ref, $this->check_name, $this->status, $this->filter, $this->per_page, $this->page, $this->app_id), '/repos/{owner}/{repo}/commits/{ref}/check-runs?check_name={check_name}&status={status}&filter={filter}&per_page={per_page}&page={page}&app_id={app_id}'));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListForRef\Response\Application\Json\H200
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListForRef\Response\Application\Json\H200
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListForRef\Response\Application\Json\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -57,8 +60,8 @@ final class ListForRef
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ListForRef\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ListForRef\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListForRef\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\ListForRef\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
         }

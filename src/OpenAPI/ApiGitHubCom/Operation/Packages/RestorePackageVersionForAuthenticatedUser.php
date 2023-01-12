@@ -28,8 +28,11 @@ final class RestorePackageVersionForAuthenticatedUser
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{package_type}', '{package_name}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->package_version_id), '/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{package_type}', '{package_name}', '{package_version_id}'), array($this->package_type, $this->package_name, $this->package_version_id), '/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

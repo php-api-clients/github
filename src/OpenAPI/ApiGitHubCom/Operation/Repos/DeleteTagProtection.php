@@ -28,8 +28,11 @@ final class DeleteTagProtection
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('delete', \str_replace(array('{owner}', '{repo}', '{tag_protection_id}'), array($this->owner, $this->repo, $this->tag_protection_id), '/repos/{owner}/{repo}/tags/protection/{tag_protection_id}'));
+        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{owner}', '{repo}', '{tag_protection_id}'), array($this->owner, $this->repo, $this->tag_protection_id), '/repos/{owner}/{repo}/tags/protection/{tag_protection_id}'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');

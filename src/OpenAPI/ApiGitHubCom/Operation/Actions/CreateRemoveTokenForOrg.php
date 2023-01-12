@@ -22,8 +22,11 @@ final class CreateRemoveTokenForOrg
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('post', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/runners/remove-token'));
+        return new \RingCentral\Psr7\Request('POST', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/runners/remove-token'));
     }
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken
+     */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken
     {
         $contentType = $response->getHeaderLine('Content-Type');
