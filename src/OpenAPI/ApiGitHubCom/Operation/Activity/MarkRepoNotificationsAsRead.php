@@ -29,9 +29,9 @@ final class MarkRepoNotificationsAsRead
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/notifications'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\MarkRepoNotificationsAsRead\Response\Application\Json\H202
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\MarkRepoNotificationsAsRead\Response\Application\Json\H202|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\MarkRepoNotificationsAsRead\Response\Application\Json\H202
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\MarkRepoNotificationsAsRead\Response\Application\Json\H202|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -47,8 +47,7 @@ final class MarkRepoNotificationsAsRead
                 break;
             /**Reset Content**/
             case 205:
-                switch ($contentType) {
-                }
+                return 205;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

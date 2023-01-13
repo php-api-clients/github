@@ -29,9 +29,9 @@ final class Merge
         return new \RingCentral\Psr7\Request('POST', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/merges'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -47,18 +47,15 @@ final class Merge
                 break;
             /**Response when already merged**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Not Found when the base or head does not exist**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
             /**Conflict when there is a merge conflict**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
             /**Forbidden**/
             case 403:

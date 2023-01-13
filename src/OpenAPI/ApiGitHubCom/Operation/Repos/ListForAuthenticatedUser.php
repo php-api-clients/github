@@ -11,9 +11,9 @@ final class ListForAuthenticatedUser
     /**Limit results to repositories with the specified visibility.**/
     private readonly string $visibility;
     /**Comma-separated list of values. Can include:  
-    \* `owner`: Repositories that are owned by the authenticated user.  
-    \* `collaborator`: Repositories that the user has been added to as a collaborator.  
-    \* `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.**/
+     * `owner`: Repositories that are owned by the authenticated user.  
+     * `collaborator`: Repositories that the user has been added to as a collaborator.  
+     * `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.**/
     private readonly string $affiliation;
     /**Limit results to repositories of the specified type. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.**/
     private readonly string $type;
@@ -52,9 +52,9 @@ final class ListForAuthenticatedUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{visibility}', '{affiliation}', '{type}', '{sort}', '{direction}', '{per_page}', '{page}', '{since}', '{before}'), array($this->visibility, $this->affiliation, $this->type, $this->sort, $this->direction, $this->per_page, $this->page, $this->since, $this->before), '/user/repos?visibility={visibility}&affiliation={affiliation}&type={type}&sort={sort}&direction={direction}&per_page={per_page}&page={page}&since={since}&before={before}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -80,8 +80,7 @@ final class ListForAuthenticatedUser
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Forbidden**/
             case 403:

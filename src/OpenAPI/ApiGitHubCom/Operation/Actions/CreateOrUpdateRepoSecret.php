@@ -32,9 +32,9 @@ final class CreateOrUpdateRepoSecret
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{owner}', '{repo}', '{secret_name}'), array($this->owner, $this->repo, $this->secret_name), '/repos/{owner}/{repo}/actions/secrets/{secret_name}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -50,8 +50,7 @@ final class CreateOrUpdateRepoSecret
                 break;
             /**Response when updating a secret**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

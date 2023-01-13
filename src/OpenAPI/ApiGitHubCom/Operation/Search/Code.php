@@ -37,9 +37,9 @@ final class Code
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{q}', '{sort}', '{order}', '{per_page}', '{page}'), array($this->q, $this->sort, $this->order, $this->per_page, $this->page), '/search/code?q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Code\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -55,8 +55,7 @@ final class Code
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Service unavailable**/
             case 503:

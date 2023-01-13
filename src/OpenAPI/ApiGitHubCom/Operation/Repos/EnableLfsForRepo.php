@@ -28,9 +28,9 @@ final class EnableLfsForRepo
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/lfs'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnableLfsForRepo\Response\Application\Json\H202
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnableLfsForRepo\Response\Application\Json\H202|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnableLfsForRepo\Response\Application\Json\H202
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnableLfsForRepo\Response\Application\Json\H202|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -50,8 +50,7 @@ final class EnableLfsForRepo
             - Git LFS support not enabled because Git LFS is disabled for the root repository in the network.
             - Git LFS support not enabled because Git LFS is disabled for <owner>.**/
             case 403:
-                switch ($contentType) {
-                }
+                return 403;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

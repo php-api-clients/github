@@ -28,9 +28,9 @@ final class GetPunchCardStats
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/stats/punch_card'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetPunchCardStats\Response\Application\Json\H200>
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetPunchCardStats\Response\Application\Json\H200>|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -48,8 +48,7 @@ final class GetPunchCardStats
                 break;
             /**A header with no content is returned.**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

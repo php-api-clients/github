@@ -35,9 +35,9 @@ final class AddOrUpdateRepoPermissionsInOrg
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}', '{team_slug}', '{owner}', '{repo}'), array($this->org, $this->team_slug, $this->owner, $this->repo), '/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -45,8 +45,7 @@ final class AddOrUpdateRepoPermissionsInOrg
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

@@ -46,9 +46,9 @@ final class ListForAuthenticatedUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{filter}', '{state}', '{labels}', '{sort}', '{direction}', '{since}', '{per_page}', '{page}'), array($this->filter, $this->state, $this->labels, $this->sort, $this->direction, $this->since, $this->per_page, $this->page), '/user/issues?filter={filter}&state={state}&labels={labels}&sort={sort}&direction={direction}&since={since}&per_page={per_page}&page={page}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -74,8 +74,7 @@ final class ListForAuthenticatedUser
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

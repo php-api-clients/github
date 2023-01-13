@@ -31,9 +31,9 @@ final class CheckCollaborator
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{username}'), array($this->owner, $this->repo, $this->username), '/repos/{owner}/{repo}/collaborators/{username}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -41,13 +41,11 @@ final class CheckCollaborator
         switch ($response->getStatusCode()) {
             /**Response if user is a collaborator**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Not Found if user is not a collaborator**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

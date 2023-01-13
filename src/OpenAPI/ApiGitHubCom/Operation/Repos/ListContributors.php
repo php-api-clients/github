@@ -37,9 +37,9 @@ final class ListContributors
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{anon}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->anon, $this->per_page, $this->page), '/repos/{owner}/{repo}/contributors?anon={anon}&per_page={per_page}&page={page}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Contributor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Contributor>|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -57,8 +57,7 @@ final class ListContributors
                 break;
             /**Response if repository is empty**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Forbidden**/
             case 403:

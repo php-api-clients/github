@@ -31,9 +31,9 @@ final class ListInOrganization
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{per_page}', '{page}', '{org}'), array($this->per_page, $this->page, $this->org), '/orgs/{org}/codespaces?per_page={per_page}&page={page}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListInOrganization\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListInOrganization\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListInOrganization\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListInOrganization\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +49,7 @@ final class ListInOrganization
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Internal Error**/
             case 500:

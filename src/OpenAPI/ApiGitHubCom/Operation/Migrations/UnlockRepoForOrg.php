@@ -31,9 +31,9 @@ final class UnlockRepoForOrg
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{migration_id}', '{repo_name}'), array($this->org, $this->migration_id, $this->repo_name), '/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -41,8 +41,7 @@ final class UnlockRepoForOrg
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Resource not found**/
             case 404:

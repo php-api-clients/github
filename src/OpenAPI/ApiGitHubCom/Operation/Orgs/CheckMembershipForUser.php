@@ -28,9 +28,9 @@ final class CheckMembershipForUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{username}'), array($this->org, $this->username), '/orgs/{org}/members/{username}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,18 +38,15 @@ final class CheckMembershipForUser
         switch ($response->getStatusCode()) {
             /**Response if requester is an organization member and user is a member**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Response if requester is not an organization member**/
             case 302:
-                switch ($contentType) {
-                }
+                return 302;
                 break;
             /**Not Found if requester is an organization member and user is not a member**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

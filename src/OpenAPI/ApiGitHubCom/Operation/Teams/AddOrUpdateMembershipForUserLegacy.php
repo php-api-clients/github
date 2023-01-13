@@ -29,9 +29,9 @@ final class AddOrUpdateMembershipForUserLegacy
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{team_id}', '{username}'), array($this->team_id, $this->username), '/teams/{team_id}/memberships/{username}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -47,13 +47,11 @@ final class AddOrUpdateMembershipForUserLegacy
                 break;
             /**Forbidden if team synchronization is set up**/
             case 403:
-                switch ($contentType) {
-                }
+                return 403;
                 break;
             /**Unprocessable Entity if you attempt to add an organization to a team**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
             /**Resource not found**/
             case 404:

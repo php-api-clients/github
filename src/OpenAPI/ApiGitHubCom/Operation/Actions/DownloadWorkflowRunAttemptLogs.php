@@ -34,9 +34,9 @@ final class DownloadWorkflowRunAttemptLogs
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{run_id}', '{attempt_number}'), array($this->owner, $this->repo, $this->run_id, $this->attempt_number), '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -44,8 +44,7 @@ final class DownloadWorkflowRunAttemptLogs
         switch ($response->getStatusCode()) {
             /**Response**/
             case 302:
-                switch ($contentType) {
-                }
+                return 302;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

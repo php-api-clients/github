@@ -28,9 +28,9 @@ final class RemoveMemberLegacy
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{team_id}', '{username}'), array($this->team_id, $this->username), '/teams/{team_id}/members/{username}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,13 +38,11 @@ final class RemoveMemberLegacy
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Not Found if team synchronization is setup**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

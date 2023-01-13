@@ -22,9 +22,9 @@ final class GetRestrictionsForAuthenticatedUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array(), array(), '/user/interaction-limits'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetRestrictionsForAuthenticatedUser\Response\Application\Json\H200
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetRestrictionsForAuthenticatedUser\Response\Application\Json\H200|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetRestrictionsForAuthenticatedUser\Response\Application\Json\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetRestrictionsForAuthenticatedUser\Response\Application\Json\H200|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,8 +40,7 @@ final class GetRestrictionsForAuthenticatedUser
                 break;
             /**Response when there are no restrictions**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

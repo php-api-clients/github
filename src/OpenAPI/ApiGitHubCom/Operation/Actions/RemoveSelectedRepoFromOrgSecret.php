@@ -30,9 +30,9 @@ final class RemoveSelectedRepoFromOrgSecret
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secret_name, $this->repository_id), '/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,13 +40,11 @@ final class RemoveSelectedRepoFromOrgSecret
         switch ($response->getStatusCode()) {
             /**Response when repository was removed from the selected list**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Conflict when visibility type not set to selected**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

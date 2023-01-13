@@ -22,9 +22,9 @@ final class GetAllTemplates
         return new \RingCentral\Psr7\Request('GET', \str_replace(array(), array(), '/gitignore/templates'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetAllTemplates\Response\Application\Json\H200>
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetAllTemplates\Response\Application\Json\H200>|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -42,8 +42,7 @@ final class GetAllTemplates
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

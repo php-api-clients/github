@@ -30,9 +30,9 @@ final class CheckUserCanBeAssigned
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{assignee}'), array($this->owner, $this->repo, $this->assignee), '/repos/{owner}/{repo}/assignees/{assignee}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,8 +40,7 @@ final class CheckUserCanBeAssigned
         switch ($response->getStatusCode()) {
             /**If the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Otherwise a `404` status code is returned.**/
             case 404:

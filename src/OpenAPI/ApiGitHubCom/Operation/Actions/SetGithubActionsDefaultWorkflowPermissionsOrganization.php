@@ -26,9 +26,9 @@ final class SetGithubActionsDefaultWorkflowPermissionsOrganization
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/permissions/workflow'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -36,13 +36,11 @@ final class SetGithubActionsDefaultWorkflowPermissionsOrganization
         switch ($response->getStatusCode()) {
             /**Success response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Conflict response when changing a setting is prevented by the owning enterprise**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

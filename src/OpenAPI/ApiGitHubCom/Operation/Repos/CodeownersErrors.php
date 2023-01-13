@@ -31,9 +31,9 @@ final class CodeownersErrors
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{ref}'), array($this->owner, $this->repo, $this->ref), '/repos/{owner}/{repo}/codeowners/errors?ref={ref}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +49,7 @@ final class CodeownersErrors
                 break;
             /**Resource not found**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

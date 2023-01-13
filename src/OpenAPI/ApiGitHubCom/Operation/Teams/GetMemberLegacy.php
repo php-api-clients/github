@@ -28,9 +28,9 @@ final class GetMemberLegacy
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{team_id}', '{username}'), array($this->team_id, $this->username), '/teams/{team_id}/members/{username}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,13 +38,11 @@ final class GetMemberLegacy
         switch ($response->getStatusCode()) {
             /**if user is a member**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**if user is not a member**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

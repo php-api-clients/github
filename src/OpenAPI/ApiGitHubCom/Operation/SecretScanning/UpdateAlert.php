@@ -32,9 +32,9 @@ final class UpdateAlert
         return new \RingCentral\Psr7\Request('PATCH', \str_replace(array('{owner}', '{repo}', '{alert_number}'), array($this->owner, $this->repo, $this->alert_number), '/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\UpdateAlert\Response\Application\Json\H503
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\UpdateAlert\Response\Application\Json\H503
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\UpdateAlert\Response\Application\Json\H503
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\UpdateAlert\Response\Application\Json\H503
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -50,18 +50,15 @@ final class UpdateAlert
                 break;
             /**Bad request, resolution comment is invalid or the resolution was not changed.**/
             case 400:
-                switch ($contentType) {
-                }
+                return 400;
                 break;
             /**Repository is public, or secret scanning is disabled for the repository, or the resource is not found**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
             /**State does not match the resolution or resolution comment**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
             /**Service unavailable**/
             case 503:

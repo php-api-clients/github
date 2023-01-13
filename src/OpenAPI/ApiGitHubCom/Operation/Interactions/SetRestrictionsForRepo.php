@@ -29,9 +29,9 @@ final class SetRestrictionsForRepo
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/interaction-limits'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -47,8 +47,7 @@ final class SetRestrictionsForRepo
                 break;
             /**Response**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

@@ -34,9 +34,9 @@ final class RepoMachinesForAuthenticatedUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{location}', '{client_ip}'), array($this->owner, $this->repo, $this->location, $this->client_ip), '/repos/{owner}/{repo}/codespaces/machines?location={location}&client_ip={client_ip}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RepoMachinesForAuthenticatedUser\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RepoMachinesForAuthenticatedUser\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RepoMachinesForAuthenticatedUser\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RepoMachinesForAuthenticatedUser\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -52,8 +52,7 @@ final class RepoMachinesForAuthenticatedUser
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Internal Error**/
             case 500:

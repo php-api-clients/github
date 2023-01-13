@@ -26,9 +26,9 @@ final class PatchSecurityAnalysisSettingsForEnterprise
         return new \RingCentral\Psr7\Request('PATCH', \str_replace(array('{enterprise}'), array($this->enterprise), '/enterprises/{enterprise}/code_security_and_analysis'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -36,13 +36,11 @@ final class PatchSecurityAnalysisSettingsForEnterprise
         switch ($response->getStatusCode()) {
             /**Action started**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**The action could not be taken due to an in progress enablement, or a policy is preventing enablement**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
             /**Resource not found**/
             case 404:

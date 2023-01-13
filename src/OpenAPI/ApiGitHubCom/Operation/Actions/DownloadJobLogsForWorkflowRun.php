@@ -31,9 +31,9 @@ final class DownloadJobLogsForWorkflowRun
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{job_id}'), array($this->owner, $this->repo, $this->job_id), '/repos/{owner}/{repo}/actions/jobs/{job_id}/logs'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -41,8 +41,7 @@ final class DownloadJobLogsForWorkflowRun
         switch ($response->getStatusCode()) {
             /**Response**/
             case 302:
-                switch ($contentType) {
-                }
+                return 302;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

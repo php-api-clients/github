@@ -28,9 +28,9 @@ final class DeleteEnvironmentVariable
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{repository_id}', '{name}'), array($this->repository_id, $this->name), '/repositories/{repository_id}/environments/{environment_name}/variables/{name}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,8 +38,7 @@ final class DeleteEnvironmentVariable
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

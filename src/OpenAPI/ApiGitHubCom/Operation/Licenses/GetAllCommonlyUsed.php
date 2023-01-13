@@ -30,9 +30,9 @@ final class GetAllCommonlyUsed
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{featured}', '{per_page}', '{page}'), array($this->featured, $this->per_page, $this->page), '/licenses?featured={featured}&per_page={per_page}&page={page}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple>
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple>|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -50,8 +50,7 @@ final class GetAllCommonlyUsed
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

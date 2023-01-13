@@ -30,9 +30,9 @@ final class RemoveSelectedRepoFromOrgSecret
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secret_name, $this->repository_id), '/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,8 +40,7 @@ final class RemoveSelectedRepoFromOrgSecret
         switch ($response->getStatusCode()) {
             /**Response when repository was removed from the selected list**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Resource not found**/
             case 404:
@@ -53,8 +52,7 @@ final class RemoveSelectedRepoFromOrgSecret
                 break;
             /**Conflict when visibility type not set to selected**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
             /**Validation failed, or the endpoint has been spammed.**/
             case 422:

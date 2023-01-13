@@ -26,9 +26,9 @@ final class SetCodespacesBilling
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/codespaces/billing'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -36,18 +36,15 @@ final class SetCodespacesBilling
         switch ($response->getStatusCode()) {
             /**Response when successfully modifying permissions.**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Users are neither members nor collaborators of this organization.**/
             case 400:
-                switch ($contentType) {
-                }
+                return 400;
                 break;
             /**Resource not found**/
             case 404:

@@ -33,9 +33,9 @@ final class CheckUserCanBeAssignedToIssue
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{issue_number}', '{assignee}'), array($this->owner, $this->repo, $this->issue_number, $this->assignee), '/repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -43,8 +43,7 @@ final class CheckUserCanBeAssignedToIssue
         switch ($response->getStatusCode()) {
             /**Response if `assignee` can be assigned to `issue_number`**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Response if `assignee` can not be assigned to `issue_number`**/
             case 404:

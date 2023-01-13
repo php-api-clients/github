@@ -25,9 +25,9 @@ final class CheckPersonIsFollowedByAuthenticated
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{username}'), array($this->username), '/user/following/{username}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -35,8 +35,7 @@ final class CheckPersonIsFollowedByAuthenticated
         switch ($response->getStatusCode()) {
             /**if the person is followed by the authenticated user**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**if the person is not followed by the authenticated user**/
             case 404:
@@ -48,8 +47,7 @@ final class CheckPersonIsFollowedByAuthenticated
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Forbidden**/
             case 403:

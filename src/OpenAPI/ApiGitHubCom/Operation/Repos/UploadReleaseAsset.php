@@ -36,9 +36,9 @@ final class UploadReleaseAsset
         return new \RingCentral\Psr7\Request('POST', \str_replace(array('{owner}', '{repo}', '{release_id}', '{name}', '{label}'), array($this->owner, $this->repo, $this->release_id, $this->name, $this->label), '/repos/{owner}/{repo}/releases/{release_id}/assets?name={name}&label={label}'), array('Content-Type' => '*/*'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -54,8 +54,7 @@ final class UploadReleaseAsset
                 break;
             /**Response if you upload an asset with the same filename as another uploaded asset**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

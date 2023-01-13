@@ -28,9 +28,9 @@ final class CheckPublicMembershipForUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{username}'), array($this->org, $this->username), '/orgs/{org}/public_members/{username}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,13 +38,11 @@ final class CheckPublicMembershipForUser
         switch ($response->getStatusCode()) {
             /**Response if user is a public member**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Not Found if user is not a public member**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

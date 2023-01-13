@@ -31,9 +31,9 @@ final class CheckIfMerged
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{pull_number}'), array($this->owner, $this->repo, $this->pull_number), '/repos/{owner}/{repo}/pulls/{pull_number}/merge'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -41,13 +41,11 @@ final class CheckIfMerged
         switch ($response->getStatusCode()) {
             /**Response if pull request has been merged**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Not Found if pull request has not been merged**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

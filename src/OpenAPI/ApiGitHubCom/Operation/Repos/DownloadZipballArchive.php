@@ -30,9 +30,9 @@ final class DownloadZipballArchive
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{ref}'), array($this->owner, $this->repo, $this->ref), '/repos/{owner}/{repo}/zipball/{ref}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,8 +40,7 @@ final class DownloadZipballArchive
         switch ($response->getStatusCode()) {
             /**Response**/
             case 302:
-                switch ($contentType) {
-                }
+                return 302;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

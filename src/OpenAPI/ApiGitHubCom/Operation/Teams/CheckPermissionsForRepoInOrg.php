@@ -34,9 +34,9 @@ final class CheckPermissionsForRepoInOrg
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{team_slug}', '{owner}', '{repo}'), array($this->org, $this->team_slug, $this->owner, $this->repo), '/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -52,13 +52,11 @@ final class CheckPermissionsForRepoInOrg
                 break;
             /**Response if team has permission for the repository. This is the response when the repository media type hasn't been provded in the Accept header.**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Not Found if team does not have permission for the repository**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

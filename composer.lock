@@ -4,34 +4,76 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1626409f548f5ad8a2afe61f182b5e0c",
+    "content-hash": "2052e45a8e786243832736daa04477b3",
     "packages": [
+        {
+            "name": "api-clients/contracts",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/contracts.git",
+                "reference": "8da5e2581c5ca36c9d04e3d85d82fc65bc0112f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/contracts/zipball/8da5e2581c5ca36c9d04e3d85d82fc65bc0112f9",
+                "reference": "8da5e2581c5ca36c9d04e3d85d82fc65bc0112f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Contracts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "PHP API Clients wide contracts",
+            "support": {
+                "issues": "https://github.com/php-api-clients/contracts/issues",
+                "source": "https://github.com/php-api-clients/contracts/tree/main"
+            },
+            "time": "2023-01-12T21:32:54+00:00"
+        },
         {
             "name": "api-clients/openapi-client-generator",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "f8051eb49c2e9b1e4c5dcf1f8a344d33e544a522"
+                "reference": "3413a613d12db2eef5a6f865af9be1e33efd5111"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/f8051eb49c2e9b1e4c5dcf1f8a344d33e544a522",
-                "reference": "f8051eb49c2e9b1e4c5dcf1f8a344d33e544a522",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/3413a613d12db2eef5a6f865af9be1e33efd5111",
+                "reference": "3413a613d12db2eef5a6f865af9be1e33efd5111",
                 "shasum": ""
             },
             "require": {
+                "api-clients/contracts": "dev-main",
                 "cebe/php-openapi": "dev-openapi-31 as 1.6.0",
-                "jawira/case-converter": "^3.4",
+                "jawira/case-converter": "^3.5",
                 "league/openapi-psr7-validator": "^0.16",
-                "nikic/php-parser": "^4.8",
-                "php": "^8.1",
+                "nikic/php-parser": "^4.15",
+                "php": "^8.2",
                 "psr/http-message": "^1.0",
                 "react/http": "^1.8",
                 "reactivex/rxphp": "^2.0",
                 "ringcentral/psr7": "^1.3",
-                "symfony/yaml": "^5.2",
-                "twig/twig": "^3.0",
+                "symfony/yaml": "^5.4",
+                "twig/twig": "^3.5",
                 "wyrihaximus/composer-update-bin-autoload-path": "^1 || ^1.0.1",
                 "wyrihaximus/hydrator": "dev-master"
             },
@@ -49,8 +91,9 @@
             },
             "autoload": {
                 "files": [
-                    "external_files/cebe/SpecBaseObject.php",
-                    "external_files/cebe/Schema.php",
+                    "external_files/cebe/JsonReference.php",
+                    "external_files/cebe/Paths.php",
+                    "external_files/cebe/Responses.php",
                     "external_files/thephpleague/SchemaValidator.php",
                     "external_files/thephpleague/Type.php"
                 ],
@@ -73,7 +116,7 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2023-01-11T15:04:06+00:00"
+            "time": "2023-01-13T17:30:22+00:00"
         },
         {
             "name": "cebe/php-openapi",
@@ -12082,16 +12125,16 @@
         },
         {
             "name": "wyrihaximus/phpstan-rules-wrapper",
-            "version": "2.8.0",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper.git",
-                "reference": "73e6c542aae0311cc78b5221b693e7da12a7c267"
+                "reference": "6192ab7a7d8501787c8c3d42334adadd9f599312"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-phpstan-rules-wrapper/zipball/73e6c542aae0311cc78b5221b693e7da12a7c267",
-                "reference": "73e6c542aae0311cc78b5221b693e7da12a7c267",
+                "url": "https://api.github.com/repos/WyriHaximus/php-phpstan-rules-wrapper/zipball/6192ab7a7d8501787c8c3d42334adadd9f599312",
+                "reference": "6192ab7a7d8501787c8c3d42334adadd9f599312",
                 "shasum": ""
             },
             "require": {
@@ -12121,7 +12164,7 @@
             "description": "🌯 PHPStan rules wrapper",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper/issues",
-                "source": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper/tree/2.8.0"
+                "source": "https://github.com/WyriHaximus/php-phpstan-rules-wrapper/tree/2.9.0"
             },
             "funding": [
                 {
@@ -12129,45 +12172,45 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-05T22:18:12+00:00"
+            "time": "2023-01-12T19:52:35+00:00"
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "5.2.4",
+            "version": "5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "1a63e5dfcf650f16477104a5e54fe63c28a0cde0"
+                "reference": "e7cd52317425be73010641c6680636e82bd322c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/1a63e5dfcf650f16477104a5e54fe63c28a0cde0",
-                "reference": "1a63e5dfcf650f16477104a5e54fe63c28a0cde0",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/e7cd52317425be73010641c6680636e82bd322c5",
+                "reference": "e7cd52317425be73010641c6680636e82bd322c5",
                 "shasum": ""
             },
             "require": {
                 "ergebnis/composer-normalize": "^2.29.0",
                 "icanhazstring/composer-unused": "^0.8.5",
-                "infection/infection": "^0.26.5",
+                "infection/infection": "^0.26.16",
                 "jakobbuis/simple-slow-test-reporter": "^1.0",
-                "maglnet/composer-require-checker": "^4.4.0",
+                "maglnet/composer-require-checker": "^4.5.0",
                 "nunomaduro/collision": "^6.4.0",
                 "orklah/psalm-insane-comparison": "^2.2.0",
-                "php": "^8",
+                "php": "^8.2",
                 "php-coveralls/php-coveralls": "^2.5.3",
                 "php-parallel-lint/php-console-highlighter": "^1.0",
                 "php-parallel-lint/php-parallel-lint": "^1.3.2",
-                "php-standard-library/psalm-plugin": "^1.1",
+                "php-standard-library/psalm-plugin": "^1.1.5",
                 "phpspec/prophecy": "^1.16",
                 "phpspec/prophecy-phpunit": "^2.0.1",
                 "phpstan/phpstan": "^1.9.2",
                 "phpunit/phpunit": "^9.5.27",
                 "psalm/plugin-phpunit": "^0.18.4",
-                "roave/backward-compatibility-check": "^7.1.0",
-                "roave/infection-static-analysis-plugin": "^1.25.0",
+                "roave/backward-compatibility-check": "^7.4.0",
+                "roave/infection-static-analysis-plugin": "^1.28.0",
                 "squizlabs/php_codesniffer": "^3.7.1",
                 "thecodingmachine/safe": "^2.4.0",
-                "vimeo/psalm": "^5 || ^4.30",
+                "vimeo/psalm": "^5.4.0",
                 "wyrihaximus/coding-standard": "^2.11.0",
                 "wyrihaximus/phpstan-rules-wrapper": "^2.8.0"
             },
@@ -12179,18 +12222,20 @@
                 "unused": [
                     "ergebnis/composer-normalize",
                     "icanhazstring/composer-unused",
+                    "infection/infection",
                     "jakobbuis/simple-slow-test-reporter",
                     "maglnet/composer-require-checker",
                     "nunomaduro/collision",
                     "orklah/psalm-insane-comparison",
                     "php-coveralls/php-coveralls",
-                    "php-parallel-lint/php-console-highlighter",
                     "php-parallel-lint/php-parallel-lint",
                     "php-standard-library/psalm-plugin",
                     "phpstan/phpstan",
                     "psalm/plugin-phpunit",
                     "roave/backward-compatibility-check",
                     "roave/infection-static-analysis-plugin",
+                    "squizlabs/php_codesniffer",
+                    "vimeo/psalm",
                     "wyrihaximus/coding-standard",
                     "wyrihaximus/phpstan-rules-wrapper"
                 ]
@@ -12213,7 +12258,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.2.4"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.3.1"
             },
             "funding": [
                 {
@@ -12221,7 +12266,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-07T21:34:04+00:00"
+            "time": "2023-01-08T10:01:47+00:00"
         }
     ],
     "aliases": [
@@ -12234,6 +12279,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "api-clients/contracts": 20,
         "api-clients/openapi-client-generator": 20,
         "cebe/php-openapi": 20,
         "wyrihaximus/hydrator": 20
@@ -12241,11 +12287,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1"
+        "php": "^8.2"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.1.13"
+        "php": "8.2.13"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

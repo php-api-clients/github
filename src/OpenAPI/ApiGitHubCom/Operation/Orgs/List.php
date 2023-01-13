@@ -28,9 +28,9 @@ final class List
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{since}', '{per_page}'), array($this->since, $this->per_page), '/organizations?since={since}&per_page={per_page}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple>
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple>|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -48,8 +48,7 @@ final class List
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

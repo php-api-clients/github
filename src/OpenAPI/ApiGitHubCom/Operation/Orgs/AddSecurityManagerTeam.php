@@ -28,9 +28,9 @@ final class AddSecurityManagerTeam
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}', '{team_slug}'), array($this->org, $this->team_slug), '/orgs/{org}/security-managers/teams/{team_slug}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,13 +38,11 @@ final class AddSecurityManagerTeam
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**The organization has reached the maximum number of security manager teams.**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

@@ -25,9 +25,9 @@ final class GetPublicSshKeyForAuthenticatedUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{key_id}'), array($this->key_id), '/user/keys/{key_id}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -51,8 +51,7 @@ final class GetPublicSshKeyForAuthenticatedUser
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Forbidden**/
             case 403:

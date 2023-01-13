@@ -34,9 +34,9 @@ final class RestorePackageForOrg
         return new \RingCentral\Psr7\Request('POST', \str_replace(array('{package_type}', '{package_name}', '{org}', '{token}'), array($this->package_type, $this->package_name, $this->org, $this->token), '/orgs/{org}/packages/{package_type}/{package_name}/restore?token={token}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -44,8 +44,7 @@ final class RestorePackageForOrg
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Resource not found**/
             case 404:

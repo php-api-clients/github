@@ -28,9 +28,9 @@ final class ListSelectedRepositoriesRequiredWorkflow
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{required_workflow_id}'), array($this->org, $this->required_workflow_id), '/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListSelectedRepositoriesRequiredWorkflow\Response\Application\Json\H200
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListSelectedRepositoriesRequiredWorkflow\Response\Application\Json\H200|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListSelectedRepositoriesRequiredWorkflow\Response\Application\Json\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListSelectedRepositoriesRequiredWorkflow\Response\Application\Json\H200|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -46,8 +46,7 @@ final class ListSelectedRepositoriesRequiredWorkflow
                 break;
             /**Resource Not Found**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

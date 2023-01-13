@@ -28,9 +28,9 @@ final class GetCommitActivityStats
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/stats/commit_activity'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitActivity>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetCommitActivityStats\Response\Application\Json\H202
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitActivity>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetCommitActivityStats\Response\Application\Json\H202|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetCommitActivityStats\Response\Application\Json\H202
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetCommitActivityStats\Response\Application\Json\H202|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -56,8 +56,7 @@ final class GetCommitActivityStats
                 break;
             /**A header with no content is returned.**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

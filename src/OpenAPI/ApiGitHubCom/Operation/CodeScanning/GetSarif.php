@@ -31,9 +31,9 @@ final class GetSarif
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{sarif_id}'), array($this->owner, $this->repo, $this->sarif_id), '/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetSarif\Response\Application\Json\H503
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetSarif\Response\Application\Json\H503
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetSarif\Response\Application\Json\H503
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\GetSarif\Response\Application\Json\H503
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -57,8 +57,7 @@ final class GetSarif
                 break;
             /**Not Found if the sarif id does not match any upload**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
             /**Service unavailable**/
             case 503:

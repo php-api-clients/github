@@ -34,9 +34,9 @@ final class PostSecurityProductEnablementForEnterprise
         return new \RingCentral\Psr7\Request('POST', \str_replace(array('{enterprise}', '{security_product}', '{enablement}'), array($this->enterprise, $this->security_product, $this->enablement), '/enterprises/{enterprise}/{security_product}/{enablement}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -44,13 +44,11 @@ final class PostSecurityProductEnablementForEnterprise
         switch ($response->getStatusCode()) {
             /**Action started**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**The action could not be taken due to an in progress enablement, or a policy is preventing enablement**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
             /**Resource not found**/
             case 404:

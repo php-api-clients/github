@@ -32,9 +32,9 @@ final class CreateDeploymentBranchPolicy
         return new \RingCentral\Psr7\Request('POST', \str_replace(array('{owner}', '{repo}', '{environment_name}'), array($this->owner, $this->repo, $this->environment_name), '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -50,13 +50,11 @@ final class CreateDeploymentBranchPolicy
                 break;
             /**Not Found or `deployment_branch_policy.custom_branch_policies` property for the environment is set to false**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
             /**Response if the same branch name pattern already exists**/
             case 303:
-                switch ($contentType) {
-                }
+                return 303;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

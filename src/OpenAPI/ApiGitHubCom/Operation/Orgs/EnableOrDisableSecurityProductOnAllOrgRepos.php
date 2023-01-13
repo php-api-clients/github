@@ -34,9 +34,9 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
         return new \RingCentral\Psr7\Request('POST', \str_replace(array('{org}', '{security_product}', '{enablement}'), array($this->org, $this->security_product, $this->enablement), '/orgs/{org}/{security_product}/{enablement}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -44,13 +44,11 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
         switch ($response->getStatusCode()) {
             /**Action started**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**The action could not be taken due to an in progress enablement, or a policy is preventing enablement**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

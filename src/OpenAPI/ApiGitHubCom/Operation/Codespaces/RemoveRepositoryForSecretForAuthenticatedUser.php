@@ -27,9 +27,9 @@ final class RemoveRepositoryForSecretForAuthenticatedUser
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{secret_name}', '{repository_id}'), array($this->secret_name, $this->repository_id), '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -37,8 +37,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUser
         switch ($response->getStatusCode()) {
             /**No Content when repository was removed from the selected list**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Requires authentication**/
             case 401:

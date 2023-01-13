@@ -28,9 +28,9 @@ final class RemoveOutsideCollaborator
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{username}'), array($this->org, $this->username), '/orgs/{org}/outside_collaborators/{username}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RemoveOutsideCollaborator\Response\Application\Json\H422
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RemoveOutsideCollaborator\Response\Application\Json\H422
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RemoveOutsideCollaborator\Response\Application\Json\H422
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RemoveOutsideCollaborator\Response\Application\Json\H422
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,8 +38,7 @@ final class RemoveOutsideCollaborator
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Unprocessable Entity if user is a member of the organization**/
             case 422:

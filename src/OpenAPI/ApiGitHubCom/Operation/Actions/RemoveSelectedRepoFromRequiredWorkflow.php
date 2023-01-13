@@ -31,9 +31,9 @@ final class RemoveSelectedRepoFromRequiredWorkflow
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{required_workflow_id}', '{repository_id}'), array($this->org, $this->required_workflow_id, $this->repository_id), '/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -41,18 +41,15 @@ final class RemoveSelectedRepoFromRequiredWorkflow
         switch ($response->getStatusCode()) {
             /**Success**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Resource Not Found**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
             /**Validation Error**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

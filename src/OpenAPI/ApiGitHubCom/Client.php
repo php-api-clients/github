@@ -4,11 +4,11 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom;
 
 final class Client
 {
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\AuthenticationInterface $authentication;
+    private readonly \ApiClients\Contracts\HTTP\Headers\AuthenticationInterface $authentication;
     private readonly \React\Http\Browser $browser;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\AuthenticationInterface $authentication, \React\Http\Browser $browser)
+    public function __construct(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface $authentication, \React\Http\Browser $browser)
     {
         $this->authentication = $authentication;
         $this->browser = new \React\Http\Browser();
@@ -148,9 +148,9 @@ final class Client
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users($this->requestSchemaValidator, $this->responseSchemaValidator);
     }
     /**
-     * @return \React\Promise\PromiseInterface<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\OctocatStream\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Text\Plain\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDeliveryItem>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserMarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Emojis\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseSecurityAnalysisSettings|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningLocation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationDependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotSecret|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StarredRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H404|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gitignore\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Issues\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventForIssue>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineIssueEvents>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H422|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageOrgEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsOrganizationPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsGetDefaultWorkflowPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredWorkflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerApplication>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoRequiredWorkflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageByRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsRepositoryPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsWorkflowAccessToRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Workflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningOrganizationAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\JsonPlusSarif\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesOrgSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoCodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesUserPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Interactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterLargeFile>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBranch>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchAdminEnforced|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Collaborator>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchShort>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Contributor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Language|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Page|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuildStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageDeployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentFile|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseNotesContent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitActivity>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tag>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CloneTraffic|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTraffic>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferrerTraffic>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ViewTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckAnnotation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuitePreference|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Checks\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraphDiff>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\DependencyGraph\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBlob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Blob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H405|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H409|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Email>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\KeySimple>>
+     * @return \React\Promise\PromiseInterface<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\OctocatStream\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Text\Plain\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDeliveryItem>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserMarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Emojis\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseSecurityAnalysisSettings|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningLocation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationDependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotSecret|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StarredRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H404|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gitignore\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Issues\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventForIssue>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineIssueEvents>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H422|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageOrgEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsOrganizationPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsGetDefaultWorkflowPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredWorkflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerApplication>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoRequiredWorkflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageByRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsRepositoryPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsWorkflowAccessToRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Workflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningOrganizationAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\JsonPlusSarif\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesOrgSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoCodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesUserPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Interactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterLargeFile>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBranch>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchAdminEnforced|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Collaborator>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchShort>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Contributor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Language|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Page|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuildStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageDeployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentFile|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseNotesContent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitActivity>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tag>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CloneTraffic|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTraffic>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferrerTraffic>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ViewTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckAnnotation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuitePreference|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Checks\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraphDiff>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\DependencyGraph\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBlob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Blob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H405|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H409|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Email>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\KeySimple>>
      */
-    public function call(string $call, array $params = array())
+    public function call(string $call, array $params = array()) : \React\Promise\PromiseInterface
     {
         switch ($call) {
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta\Root::OPERATION_MATCH:
@@ -175,7 +175,7 @@ final class Client
                 }
                 $operation = $this->meta()->get();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -344,7 +344,7 @@ final class Client
                 }
                 $operation = $this->apps()->deleteInstallation($params['installation_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -370,7 +370,7 @@ final class Client
                 }
                 $operation = $this->apps()->suspendInstallation($params['installation_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -383,7 +383,7 @@ final class Client
                 }
                 $operation = $this->apps()->unsuspendInstallation($params['installation_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -396,7 +396,7 @@ final class Client
                 }
                 $operation = $this->apps()->deleteAuthorization($params['client_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -422,7 +422,7 @@ final class Client
                 }
                 $operation = $this->apps()->deleteToken($params['client_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -474,7 +474,7 @@ final class Client
                 }
                 $operation = $this->apps()->listReposAccessibleToInstallation($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -487,7 +487,7 @@ final class Client
                 }
                 $operation = $this->apps()->revokeInstallationAccessToken();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -539,7 +539,7 @@ final class Client
                 }
                 $operation = $this->apps()->getSubscriptionPlanForAccountStubbed($params['account_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -604,7 +604,7 @@ final class Client
                 }
                 $operation = $this->apps()->listInstallationsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -617,7 +617,7 @@ final class Client
                 }
                 $operation = $this->apps()->listInstallationReposForAuthenticatedUser($params['installation_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -630,7 +630,7 @@ final class Client
                 }
                 $operation = $this->apps()->addRepoToInstallationForAuthenticatedUser($params['installation_id'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -643,7 +643,7 @@ final class Client
                 }
                 $operation = $this->apps()->removeRepoFromInstallationForAuthenticatedUser($params['installation_id'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -656,7 +656,7 @@ final class Client
                 }
                 $operation = $this->apps()->listSubscriptionsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -669,7 +669,7 @@ final class Client
                 }
                 $operation = $this->apps()->listSubscriptionsForAuthenticatedUserStubbed($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -695,7 +695,7 @@ final class Client
                 }
                 $operation = $this->codesOfConduct()->getAllCodesOfConduct();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -708,7 +708,7 @@ final class Client
                 }
                 $operation = $this->codesOfConduct()->getConductCode($params['key']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -721,7 +721,7 @@ final class Client
                 }
                 $operation = $this->emojis()->get();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Emojis\Response\Application\Json\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Emojis\Response\Application\Json\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -734,7 +734,7 @@ final class Client
                 }
                 $operation = $this->enterpriseAdmin()->enableSelectedOrganizationGithubActionsEnterprise($params['enterprise'], $params['org_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -786,7 +786,7 @@ final class Client
                 }
                 $operation = $this->enterpriseAdmin()->addOrgAccessToSelfHostedRunnerGroupInEnterprise($params['enterprise'], $params['runner_group_id'], $params['org_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -799,7 +799,7 @@ final class Client
                 }
                 $operation = $this->enterpriseAdmin()->removeSelfHostedRunnerFromGroupForEnterprise($params['enterprise'], $params['runner_group_id'], $params['runner_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -812,7 +812,7 @@ final class Client
                 }
                 $operation = $this->enterpriseAdmin()->deleteSelfHostedRunnerFromEnterprise($params['enterprise'], $params['runner_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -864,7 +864,7 @@ final class Client
                 }
                 $operation = $this->secretScanning()->patchSecurityAnalysisSettingsForEnterprise($params['enterprise']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -890,7 +890,7 @@ final class Client
                 }
                 $operation = $this->secretScanning()->postSecurityProductEnablementForEnterprise($params['enterprise'], $params['security_product'], $params['enablement']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -916,7 +916,7 @@ final class Client
                 }
                 $operation = $this->secretScanning()->listAlertsForRepo($params['owner'], $params['repo'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -929,7 +929,7 @@ final class Client
                 }
                 $operation = $this->secretScanning()->getAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -942,7 +942,7 @@ final class Client
                 }
                 $operation = $this->secretScanning()->updateAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -955,7 +955,7 @@ final class Client
                 }
                 $operation = $this->secretScanning()->listLocationsForAlert($params['owner'], $params['repo'], $params['alert_number'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -968,7 +968,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->listAlertsForEnterprise($params['enterprise'], $params['state'], $params['severity'], $params['ecosystem'], $params['package'], $params['scope'], $params['sort'], $params['direction'], $params['before'], $params['after'], $params['first'], $params['last'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -981,7 +981,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->listAlertsForOrg($params['org'], $params['state'], $params['severity'], $params['ecosystem'], $params['package'], $params['scope'], $params['sort'], $params['direction'], $params['before'], $params['after'], $params['first'], $params['last'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1033,7 +1033,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->createOrUpdateOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1046,7 +1046,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->deleteOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1072,7 +1072,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->setSelectedReposForOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1085,7 +1085,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->addSelectedRepoToOrgSecret($params['org'], $params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1098,7 +1098,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->removeSelectedRepoFromOrgSecret($params['org'], $params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1111,7 +1111,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->listAlertsForRepo($params['owner'], $params['repo'], $params['state'], $params['severity'], $params['ecosystem'], $params['package'], $params['manifest'], $params['scope'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after'], $params['first'], $params['last']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1124,7 +1124,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->getAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1189,7 +1189,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->createOrUpdateRepoSecret($params['owner'], $params['repo'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1202,7 +1202,7 @@ final class Client
                 }
                 $operation = $this->dependabot()->deleteRepoSecret($params['owner'], $params['repo'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1215,7 +1215,7 @@ final class Client
                 }
                 $operation = $this->activity()->listPublicEvents($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1241,7 +1241,7 @@ final class Client
                 }
                 $operation = $this->activity()->listPublicEventsForRepoNetwork($params['owner'], $params['repo'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1254,7 +1254,7 @@ final class Client
                 }
                 $operation = $this->activity()->listNotificationsForAuthenticatedUser($params['all'], $params['participating'], $params['since'], $params['before'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1267,7 +1267,7 @@ final class Client
                 }
                 $operation = $this->activity()->markNotificationsAsRead();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1280,7 +1280,7 @@ final class Client
                 }
                 $operation = $this->activity()->getThread($params['thread_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1293,7 +1293,7 @@ final class Client
                 }
                 $operation = $this->activity()->markThreadAsRead($params['thread_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1306,7 +1306,7 @@ final class Client
                 }
                 $operation = $this->activity()->getThreadSubscriptionForAuthenticatedUser($params['thread_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1319,7 +1319,7 @@ final class Client
                 }
                 $operation = $this->activity()->setThreadSubscription($params['thread_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1332,7 +1332,7 @@ final class Client
                 }
                 $operation = $this->activity()->deleteThreadSubscription($params['thread_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1384,7 +1384,7 @@ final class Client
                 }
                 $operation = $this->activity()->markRepoNotificationsAsRead($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1423,7 +1423,7 @@ final class Client
                 }
                 $operation = $this->activity()->getRepoSubscription($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1449,7 +1449,7 @@ final class Client
                 }
                 $operation = $this->activity()->deleteRepoSubscription($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1462,7 +1462,7 @@ final class Client
                 }
                 $operation = $this->activity()->listReposStarredByAuthenticatedUser($params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1475,7 +1475,7 @@ final class Client
                 }
                 $operation = $this->activity()->checkRepoIsStarredByAuthenticatedUser($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1488,7 +1488,7 @@ final class Client
                 }
                 $operation = $this->activity()->starRepoForAuthenticatedUser($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1501,7 +1501,7 @@ final class Client
                 }
                 $operation = $this->activity()->unstarRepoForAuthenticatedUser($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1514,7 +1514,7 @@ final class Client
                 }
                 $operation = $this->activity()->listWatchedReposForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1618,7 +1618,7 @@ final class Client
                 }
                 $operation = $this->gists()->list($params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1631,7 +1631,7 @@ final class Client
                 }
                 $operation = $this->gists()->create();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1644,7 +1644,7 @@ final class Client
                 }
                 $operation = $this->gists()->listPublic($params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1657,7 +1657,7 @@ final class Client
                 }
                 $operation = $this->gists()->listStarred($params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1670,7 +1670,7 @@ final class Client
                 }
                 $operation = $this->gists()->get($params['gist_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1683,7 +1683,7 @@ final class Client
                 }
                 $operation = $this->gists()->delete($params['gist_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1709,7 +1709,7 @@ final class Client
                 }
                 $operation = $this->gists()->listComments($params['gist_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1722,7 +1722,7 @@ final class Client
                 }
                 $operation = $this->gists()->createComment($params['gist_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1735,7 +1735,7 @@ final class Client
                 }
                 $operation = $this->gists()->getComment($params['gist_id'], $params['comment_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1748,7 +1748,7 @@ final class Client
                 }
                 $operation = $this->gists()->deleteComment($params['gist_id'], $params['comment_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1774,7 +1774,7 @@ final class Client
                 }
                 $operation = $this->gists()->listCommits($params['gist_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1787,7 +1787,7 @@ final class Client
                 }
                 $operation = $this->gists()->listForks($params['gist_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1800,7 +1800,7 @@ final class Client
                 }
                 $operation = $this->gists()->fork($params['gist_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1813,7 +1813,7 @@ final class Client
                 }
                 $operation = $this->gists()->checkIsStarred($params['gist_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H404|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H404|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1826,7 +1826,7 @@ final class Client
                 }
                 $operation = $this->gists()->star($params['gist_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1839,7 +1839,7 @@ final class Client
                 }
                 $operation = $this->gists()->unstar($params['gist_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1878,7 +1878,7 @@ final class Client
                 }
                 $operation = $this->gitignore()->getAllTemplates();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1891,7 +1891,7 @@ final class Client
                 }
                 $operation = $this->gitignore()->getTemplate($params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1904,7 +1904,7 @@ final class Client
                 }
                 $operation = $this->issues()->list($params['filter'], $params['state'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['collab'], $params['orgs'], $params['owned'], $params['pulls'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -1943,7 +1943,7 @@ final class Client
                 }
                 $operation = $this->issues()->checkUserCanBeAssigned($params['owner'], $params['repo'], $params['assignee']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2008,7 +2008,7 @@ final class Client
                 }
                 $operation = $this->issues()->deleteComment($params['owner'], $params['repo'], $params['comment_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2060,7 +2060,7 @@ final class Client
                 }
                 $operation = $this->issues()->get($params['owner'], $params['repo'], $params['issue_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2112,7 +2112,7 @@ final class Client
                 }
                 $operation = $this->issues()->checkUserCanBeAssignedToIssue($params['owner'], $params['repo'], $params['issue_number'], $params['assignee']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2203,7 +2203,7 @@ final class Client
                 }
                 $operation = $this->issues()->removeAllLabels($params['owner'], $params['repo'], $params['issue_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2229,7 +2229,7 @@ final class Client
                 }
                 $operation = $this->issues()->lock($params['owner'], $params['repo'], $params['issue_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2242,7 +2242,7 @@ final class Client
                 }
                 $operation = $this->issues()->unlock($params['owner'], $params['repo'], $params['issue_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2307,7 +2307,7 @@ final class Client
                 }
                 $operation = $this->issues()->deleteLabel($params['owner'], $params['repo'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2372,7 +2372,7 @@ final class Client
                 }
                 $operation = $this->issues()->deleteMilestone($params['owner'], $params['repo'], $params['milestone_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2411,7 +2411,7 @@ final class Client
                 }
                 $operation = $this->issues()->listForAuthenticatedUser($params['filter'], $params['state'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2424,7 +2424,7 @@ final class Client
                 }
                 $operation = $this->licenses()->getAllCommonlyUsed($params['featured'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2437,7 +2437,7 @@ final class Client
                 }
                 $operation = $this->licenses()->get($params['license']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2463,7 +2463,7 @@ final class Client
                 }
                 $operation = $this->markdown()->render();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2476,7 +2476,7 @@ final class Client
                 }
                 $operation = $this->markdown()->renderRaw();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2489,7 +2489,7 @@ final class Client
                 }
                 $operation = $this->orgs()->list($params['since'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2541,7 +2541,7 @@ final class Client
                 }
                 $operation = $this->orgs()->checkBlockedUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2554,7 +2554,7 @@ final class Client
                 }
                 $operation = $this->orgs()->blockUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2567,7 +2567,7 @@ final class Client
                 }
                 $operation = $this->orgs()->unblockUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2632,7 +2632,7 @@ final class Client
                 }
                 $operation = $this->orgs()->deleteWebhook($params['org'], $params['hook_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2723,7 +2723,7 @@ final class Client
                 }
                 $operation = $this->orgs()->pingWebhook($params['org'], $params['hook_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2775,7 +2775,7 @@ final class Client
                 }
                 $operation = $this->orgs()->cancelInvitation($params['org'], $params['invitation_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2814,7 +2814,7 @@ final class Client
                 }
                 $operation = $this->orgs()->checkMembershipForUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2827,7 +2827,7 @@ final class Client
                 }
                 $operation = $this->orgs()->removeMember($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2866,7 +2866,7 @@ final class Client
                 }
                 $operation = $this->orgs()->removeMembershipForUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2892,7 +2892,7 @@ final class Client
                 }
                 $operation = $this->orgs()->convertMemberToOutsideCollaborator($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H202|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2905,7 +2905,7 @@ final class Client
                 }
                 $operation = $this->orgs()->removeOutsideCollaborator($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H422 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H422 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2931,7 +2931,7 @@ final class Client
                 }
                 $operation = $this->orgs()->checkPublicMembershipForUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2944,7 +2944,7 @@ final class Client
                 }
                 $operation = $this->orgs()->setPublicMembershipForAuthenticatedUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2957,7 +2957,7 @@ final class Client
                 }
                 $operation = $this->orgs()->removePublicMembershipForAuthenticatedUser($params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2983,7 +2983,7 @@ final class Client
                 }
                 $operation = $this->orgs()->addSecurityManagerTeam($params['org'], $params['team_slug']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -2996,7 +2996,7 @@ final class Client
                 }
                 $operation = $this->orgs()->removeSecurityManagerTeam($params['org'], $params['team_slug']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3009,7 +3009,7 @@ final class Client
                 }
                 $operation = $this->orgs()->enableOrDisableSecurityProductOnAllOrgRepos($params['org'], $params['security_product'], $params['enablement']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3022,7 +3022,7 @@ final class Client
                 }
                 $operation = $this->orgs()->listMembershipsForAuthenticatedUser($params['state'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3061,7 +3061,7 @@ final class Client
                 }
                 $operation = $this->orgs()->listForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3126,7 +3126,7 @@ final class Client
                 }
                 $operation = $this->actions()->setGithubActionsPermissionsOrganization($params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3152,7 +3152,7 @@ final class Client
                 }
                 $operation = $this->actions()->setSelectedRepositoriesEnabledGithubActionsOrganization($params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3165,7 +3165,7 @@ final class Client
                 }
                 $operation = $this->actions()->enableSelectedRepositoryGithubActionsOrganization($params['org'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3178,7 +3178,7 @@ final class Client
                 }
                 $operation = $this->actions()->disableSelectedRepositoryGithubActionsOrganization($params['org'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3204,7 +3204,7 @@ final class Client
                 }
                 $operation = $this->actions()->setAllowedActionsOrganization($params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3230,7 +3230,7 @@ final class Client
                 }
                 $operation = $this->actions()->setGithubActionsDefaultWorkflowPermissionsOrganization($params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3282,7 +3282,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteRequiredWorkflow($params['org'], $params['required_workflow_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3308,7 +3308,7 @@ final class Client
                 }
                 $operation = $this->actions()->listSelectedRepositoriesRequiredWorkflow($params['org'], $params['required_workflow_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3321,7 +3321,7 @@ final class Client
                 }
                 $operation = $this->actions()->setSelectedReposToRequiredWorkflow($params['org'], $params['required_workflow_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3334,7 +3334,7 @@ final class Client
                 }
                 $operation = $this->actions()->addSelectedRepoToRequiredWorkflow($params['org'], $params['required_workflow_id'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3347,7 +3347,7 @@ final class Client
                 }
                 $operation = $this->actions()->removeSelectedRepoFromRequiredWorkflow($params['org'], $params['required_workflow_id'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3399,7 +3399,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteSelfHostedRunnerGroupFromOrg($params['org'], $params['runner_group_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3438,7 +3438,7 @@ final class Client
                 }
                 $operation = $this->actions()->setRepoAccessToSelfHostedRunnerGroupInOrg($params['org'], $params['runner_group_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3451,7 +3451,7 @@ final class Client
                 }
                 $operation = $this->actions()->removeRepoAccessToSelfHostedRunnerGroupInOrg($params['org'], $params['runner_group_id'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3477,7 +3477,7 @@ final class Client
                 }
                 $operation = $this->actions()->setSelfHostedRunnersInGroupForOrg($params['org'], $params['runner_group_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3490,7 +3490,7 @@ final class Client
                 }
                 $operation = $this->actions()->addSelfHostedRunnerToGroupForOrg($params['org'], $params['runner_group_id'], $params['runner_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3503,7 +3503,7 @@ final class Client
                 }
                 $operation = $this->actions()->removeSelfHostedRunnerFromGroupForOrg($params['org'], $params['runner_group_id'], $params['runner_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3581,7 +3581,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteSelfHostedRunnerFromOrg($params['org'], $params['runner_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3698,7 +3698,7 @@ final class Client
                 }
                 $operation = $this->actions()->createOrUpdateOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3711,7 +3711,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3737,7 +3737,7 @@ final class Client
                 }
                 $operation = $this->actions()->setSelectedReposForOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3750,7 +3750,7 @@ final class Client
                 }
                 $operation = $this->actions()->addSelectedRepoToOrgSecret($params['org'], $params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3763,7 +3763,7 @@ final class Client
                 }
                 $operation = $this->actions()->removeSelectedRepoFromOrgSecret($params['org'], $params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3815,7 +3815,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteOrgVariable($params['org'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3828,7 +3828,7 @@ final class Client
                 }
                 $operation = $this->actions()->updateOrgVariable($params['org'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3841,7 +3841,7 @@ final class Client
                 }
                 $operation = $this->actions()->listSelectedReposForOrgVariable($params['org'], $params['name'], $params['page'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3854,7 +3854,7 @@ final class Client
                 }
                 $operation = $this->actions()->setSelectedReposForOrgVariable($params['org'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3867,7 +3867,7 @@ final class Client
                 }
                 $operation = $this->actions()->addSelectedRepoToOrgVariable($params['org'], $params['name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3880,7 +3880,7 @@ final class Client
                 }
                 $operation = $this->actions()->removeSelectedRepoFromOrgVariable($params['org'], $params['name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3958,7 +3958,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteArtifact($params['owner'], $params['repo'], $params['artifact_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3971,7 +3971,7 @@ final class Client
                 }
                 $operation = $this->actions()->downloadArtifact($params['owner'], $params['repo'], $params['artifact_id'], $params['archive_format']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4023,7 +4023,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteActionsCacheById($params['owner'], $params['repo'], $params['cache_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4049,7 +4049,7 @@ final class Client
                 }
                 $operation = $this->actions()->downloadJobLogsForWorkflowRun($params['owner'], $params['repo'], $params['job_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4114,7 +4114,7 @@ final class Client
                 }
                 $operation = $this->actions()->setGithubActionsPermissionsRepository($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4140,7 +4140,7 @@ final class Client
                 }
                 $operation = $this->actions()->setWorkflowAccessToRepository($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4166,7 +4166,7 @@ final class Client
                 }
                 $operation = $this->actions()->setAllowedActionsRepository($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4192,7 +4192,7 @@ final class Client
                 }
                 $operation = $this->actions()->setGithubActionsDefaultWorkflowPermissionsRepository($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4283,7 +4283,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteSelfHostedRunnerFromRepo($params['owner'], $params['repo'], $params['runner_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4387,7 +4387,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteWorkflowRun($params['owner'], $params['repo'], $params['run_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4465,7 +4465,7 @@ final class Client
                 }
                 $operation = $this->actions()->downloadWorkflowRunAttemptLogs($params['owner'], $params['repo'], $params['run_id'], $params['attempt_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4504,7 +4504,7 @@ final class Client
                 }
                 $operation = $this->actions()->downloadWorkflowRunLogs($params['owner'], $params['repo'], $params['run_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4517,7 +4517,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteWorkflowRunLogs($params['owner'], $params['repo'], $params['run_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4634,7 +4634,7 @@ final class Client
                 }
                 $operation = $this->actions()->createOrUpdateRepoSecret($params['owner'], $params['repo'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4647,7 +4647,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteRepoSecret($params['owner'], $params['repo'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4699,7 +4699,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteRepoVariable($params['owner'], $params['repo'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4712,7 +4712,7 @@ final class Client
                 }
                 $operation = $this->actions()->updateRepoVariable($params['owner'], $params['repo'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4751,7 +4751,7 @@ final class Client
                 }
                 $operation = $this->actions()->disableWorkflow($params['owner'], $params['repo'], $params['workflow_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4764,7 +4764,7 @@ final class Client
                 }
                 $operation = $this->actions()->createWorkflowDispatch($params['owner'], $params['repo'], $params['workflow_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4777,7 +4777,7 @@ final class Client
                 }
                 $operation = $this->actions()->enableWorkflow($params['owner'], $params['repo'], $params['workflow_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4855,7 +4855,7 @@ final class Client
                 }
                 $operation = $this->actions()->createOrUpdateEnvironmentSecret($params['repository_id'], $params['environment_name'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4868,7 +4868,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteEnvironmentSecret($params['repository_id'], $params['environment_name'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4920,7 +4920,7 @@ final class Client
                 }
                 $operation = $this->actions()->deleteEnvironmentVariable($params['repository_id'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4933,7 +4933,7 @@ final class Client
                 }
                 $operation = $this->actions()->updateEnvironmentVariable($params['repository_id'], $params['name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4985,7 +4985,7 @@ final class Client
                 }
                 $operation = $this->codeScanning()->listAlertsForRepo($params['owner'], $params['repo'], $params['tool_name'], $params['tool_guid'], $params['page'], $params['per_page'], $params['ref'], $params['direction'], $params['sort'], $params['state'], $params['severity']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -4998,7 +4998,7 @@ final class Client
                 }
                 $operation = $this->codeScanning()->getAlert($params['owner'], $params['repo'], $params['alert_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5089,7 +5089,7 @@ final class Client
                 }
                 $operation = $this->codeScanning()->getCodeqlDatabase($params['owner'], $params['repo'], $params['language']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5102,7 +5102,7 @@ final class Client
                 }
                 $operation = $this->codeScanning()->uploadSarif($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5115,7 +5115,7 @@ final class Client
                 }
                 $operation = $this->codeScanning()->getSarif($params['owner'], $params['repo'], $params['sarif_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5128,7 +5128,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->listInOrganization($params['per_page'], $params['page'], $params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5141,7 +5141,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->setCodespacesBilling($params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5193,7 +5193,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->createOrUpdateOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5206,7 +5206,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->deleteOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5232,7 +5232,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->setSelectedReposForOrgSecret($params['org'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5245,7 +5245,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->addSelectedRepoToOrgSecret($params['org'], $params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5258,7 +5258,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->removeSelectedRepoFromOrgSecret($params['org'], $params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5271,7 +5271,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->getCodespacesForUserInOrg($params['per_page'], $params['page'], $params['org'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5284,7 +5284,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->deleteFromOrganization($params['org'], $params['username'], $params['codespace_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5297,7 +5297,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->stopInOrganization($params['org'], $params['username'], $params['codespace_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5349,7 +5349,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->repoMachinesForAuthenticatedUser($params['owner'], $params['repo'], $params['location'], $params['client_ip']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5414,7 +5414,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->createOrUpdateRepoSecret($params['owner'], $params['repo'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5427,7 +5427,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->deleteRepoSecret($params['owner'], $params['repo'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5453,7 +5453,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->listForAuthenticatedUser($params['per_page'], $params['page'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5518,7 +5518,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->createOrUpdateSecretForAuthenticatedUser($params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5531,7 +5531,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->deleteSecretForAuthenticatedUser($params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5557,7 +5557,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->setRepositoriesForSecretForAuthenticatedUser($params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5570,7 +5570,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->addRepositoryForSecretForAuthenticatedUser($params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5583,7 +5583,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->removeRepositoryForSecretForAuthenticatedUser($params['secret_name'], $params['repository_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5596,7 +5596,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->getForAuthenticatedUser($params['codespace_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5609,7 +5609,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->deleteForAuthenticatedUser($params['codespace_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5661,7 +5661,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->codespaceMachinesForAuthenticatedUser($params['codespace_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5687,7 +5687,7 @@ final class Client
                 }
                 $operation = $this->codespaces()->startForAuthenticatedUser($params['codespace_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5739,7 +5739,7 @@ final class Client
                 }
                 $operation = $this->interactions()->removeRestrictionsForOrg($params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5765,7 +5765,7 @@ final class Client
                 }
                 $operation = $this->interactions()->setRestrictionsForRepo($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5778,7 +5778,7 @@ final class Client
                 }
                 $operation = $this->interactions()->removeRestrictionsForRepo($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5791,7 +5791,7 @@ final class Client
                 }
                 $operation = $this->interactions()->getRestrictionsForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Interactions\Response\Application\Json\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Interactions\Response\Application\Json\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5817,7 +5817,7 @@ final class Client
                 }
                 $operation = $this->interactions()->removeRestrictionsForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5869,7 +5869,7 @@ final class Client
                 }
                 $operation = $this->migrations()->downloadArchiveForOrg($params['org'], $params['migration_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5882,7 +5882,7 @@ final class Client
                 }
                 $operation = $this->migrations()->deleteArchiveForOrg($params['org'], $params['migration_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5895,7 +5895,7 @@ final class Client
                 }
                 $operation = $this->migrations()->unlockRepoForOrg($params['org'], $params['migration_id'], $params['repo_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -5947,7 +5947,7 @@ final class Client
                 }
                 $operation = $this->migrations()->cancelImport($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6025,7 +6025,7 @@ final class Client
                 }
                 $operation = $this->migrations()->listForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6038,7 +6038,7 @@ final class Client
                 }
                 $operation = $this->migrations()->startForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6051,7 +6051,7 @@ final class Client
                 }
                 $operation = $this->migrations()->getStatusForAuthenticatedUser($params['migration_id'], $params['exclude']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6064,7 +6064,7 @@ final class Client
                 }
                 $operation = $this->migrations()->getArchiveForAuthenticatedUser($params['migration_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6077,7 +6077,7 @@ final class Client
                 }
                 $operation = $this->migrations()->deleteArchiveForAuthenticatedUser($params['migration_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6090,7 +6090,7 @@ final class Client
                 }
                 $operation = $this->migrations()->unlockRepoForAuthenticatedUser($params['migration_id'], $params['repo_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6142,7 +6142,7 @@ final class Client
                 }
                 $operation = $this->packages()->deletePackageForOrg($params['package_type'], $params['package_name'], $params['org']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6155,7 +6155,7 @@ final class Client
                 }
                 $operation = $this->packages()->restorePackageForOrg($params['package_type'], $params['package_name'], $params['org'], $params['token']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6194,7 +6194,7 @@ final class Client
                 }
                 $operation = $this->packages()->deletePackageVersionForOrg($params['package_type'], $params['package_name'], $params['org'], $params['package_version_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6207,7 +6207,7 @@ final class Client
                 }
                 $operation = $this->packages()->restorePackageVersionForOrg($params['package_type'], $params['package_name'], $params['org'], $params['package_version_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6246,7 +6246,7 @@ final class Client
                 }
                 $operation = $this->packages()->deletePackageForAuthenticatedUser($params['package_type'], $params['package_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6259,7 +6259,7 @@ final class Client
                 }
                 $operation = $this->packages()->restorePackageForAuthenticatedUser($params['package_type'], $params['package_name'], $params['token']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6298,7 +6298,7 @@ final class Client
                 }
                 $operation = $this->packages()->deletePackageVersionForAuthenticatedUser($params['package_type'], $params['package_name'], $params['package_version_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6311,7 +6311,7 @@ final class Client
                 }
                 $operation = $this->packages()->restorePackageVersionForAuthenticatedUser($params['package_type'], $params['package_name'], $params['package_version_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6350,7 +6350,7 @@ final class Client
                 }
                 $operation = $this->packages()->deletePackageForUser($params['package_type'], $params['package_name'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6363,7 +6363,7 @@ final class Client
                 }
                 $operation = $this->packages()->restorePackageForUser($params['package_type'], $params['package_name'], $params['username'], $params['token']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6402,7 +6402,7 @@ final class Client
                 }
                 $operation = $this->packages()->deletePackageVersionForUser($params['package_type'], $params['package_name'], $params['username'], $params['package_version_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6415,7 +6415,7 @@ final class Client
                 }
                 $operation = $this->packages()->restorePackageVersionForUser($params['package_type'], $params['package_name'], $params['username'], $params['package_version_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6454,7 +6454,7 @@ final class Client
                 }
                 $operation = $this->projects()->getCard($params['card_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6467,7 +6467,7 @@ final class Client
                 }
                 $operation = $this->projects()->deleteCard($params['card_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6480,7 +6480,7 @@ final class Client
                 }
                 $operation = $this->projects()->updateCard($params['card_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6493,7 +6493,7 @@ final class Client
                 }
                 $operation = $this->projects()->moveCard($params['card_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6506,7 +6506,7 @@ final class Client
                 }
                 $operation = $this->projects()->getColumn($params['column_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6519,7 +6519,7 @@ final class Client
                 }
                 $operation = $this->projects()->deleteColumn($params['column_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6532,7 +6532,7 @@ final class Client
                 }
                 $operation = $this->projects()->updateColumn($params['column_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6545,7 +6545,7 @@ final class Client
                 }
                 $operation = $this->projects()->listCards($params['column_id'], $params['archived_state'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6558,7 +6558,7 @@ final class Client
                 }
                 $operation = $this->projects()->createCard($params['column_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6571,7 +6571,7 @@ final class Client
                 }
                 $operation = $this->projects()->moveColumn($params['column_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6584,7 +6584,7 @@ final class Client
                 }
                 $operation = $this->projects()->get($params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6597,7 +6597,7 @@ final class Client
                 }
                 $operation = $this->projects()->delete($params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6610,7 +6610,7 @@ final class Client
                 }
                 $operation = $this->projects()->update($params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6623,7 +6623,7 @@ final class Client
                 }
                 $operation = $this->projects()->listCollaborators($params['project_id'], $params['affiliation'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6636,7 +6636,7 @@ final class Client
                 }
                 $operation = $this->projects()->addCollaborator($params['project_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6649,7 +6649,7 @@ final class Client
                 }
                 $operation = $this->projects()->removeCollaborator($params['project_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6662,7 +6662,7 @@ final class Client
                 }
                 $operation = $this->projects()->getPermissionForUser($params['project_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6675,7 +6675,7 @@ final class Client
                 }
                 $operation = $this->projects()->listColumns($params['project_id'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6688,7 +6688,7 @@ final class Client
                 }
                 $operation = $this->projects()->createColumn($params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6727,7 +6727,7 @@ final class Client
                 }
                 $operation = $this->projects()->createForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6792,7 +6792,7 @@ final class Client
                 }
                 $operation = $this->repos()->delete($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6857,7 +6857,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteAutolink($params['owner'], $params['repo'], $params['autolink_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6870,7 +6870,7 @@ final class Client
                 }
                 $operation = $this->repos()->enableAutomatedSecurityFixes($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6883,7 +6883,7 @@ final class Client
                 }
                 $operation = $this->repos()->disableAutomatedSecurityFixes($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6948,7 +6948,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteBranchProtection($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -6987,7 +6987,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteAdminBranchProtection($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7013,7 +7013,7 @@ final class Client
                 }
                 $operation = $this->repos()->deletePullRequestReviewProtection($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7065,7 +7065,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteCommitSignatureProtection($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7091,7 +7091,7 @@ final class Client
                 }
                 $operation = $this->repos()->removeStatusCheckProtection($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7182,7 +7182,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteAccessRestrictions($params['owner'], $params['repo'], $params['branch']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7364,7 +7364,7 @@ final class Client
                 }
                 $operation = $this->repos()->codeownersErrors($params['owner'], $params['repo'], $params['ref']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7390,7 +7390,7 @@ final class Client
                 }
                 $operation = $this->repos()->checkCollaborator($params['owner'], $params['repo'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7403,7 +7403,7 @@ final class Client
                 }
                 $operation = $this->repos()->addCollaborator($params['owner'], $params['repo'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7416,7 +7416,7 @@ final class Client
                 }
                 $operation = $this->repos()->removeCollaborator($params['owner'], $params['repo'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7468,7 +7468,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteCommitComment($params['owner'], $params['repo'], $params['comment_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7624,7 +7624,7 @@ final class Client
                 }
                 $operation = $this->repos()->getContent($params['owner'], $params['repo'], $params['path'], $params['ref']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7663,7 +7663,7 @@ final class Client
                 }
                 $operation = $this->repos()->listContributors($params['owner'], $params['repo'], $params['anon'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7689,7 +7689,7 @@ final class Client
                 }
                 $operation = $this->repos()->createDeployment($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7715,7 +7715,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteDeployment($params['owner'], $params['repo'], $params['deployment_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7767,7 +7767,7 @@ final class Client
                 }
                 $operation = $this->repos()->createDispatchEvent($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7819,7 +7819,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteAnEnvironment($params['owner'], $params['repo'], $params['environment_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7845,7 +7845,7 @@ final class Client
                 }
                 $operation = $this->repos()->createDeploymentBranchPolicy($params['owner'], $params['repo'], $params['environment_name']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7884,7 +7884,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteDeploymentBranchPolicy($params['owner'], $params['repo'], $params['environment_name'], $params['branch_policy_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -7962,7 +7962,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteWebhook($params['owner'], $params['repo'], $params['hook_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8053,7 +8053,7 @@ final class Client
                 }
                 $operation = $this->repos()->pingWebhook($params['owner'], $params['repo'], $params['hook_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8066,7 +8066,7 @@ final class Client
                 }
                 $operation = $this->repos()->testPushWebhook($params['owner'], $params['repo'], $params['hook_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8092,7 +8092,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteInvitation($params['owner'], $params['repo'], $params['invitation_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8157,7 +8157,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteDeployKey($params['owner'], $params['repo'], $params['key_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8183,7 +8183,7 @@ final class Client
                 }
                 $operation = $this->repos()->enableLfsForRepo($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8196,7 +8196,7 @@ final class Client
                 }
                 $operation = $this->repos()->disableLfsForRepo($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8209,7 +8209,7 @@ final class Client
                 }
                 $operation = $this->repos()->mergeUpstream($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8222,7 +8222,7 @@ final class Client
                 }
                 $operation = $this->repos()->merge($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8248,7 +8248,7 @@ final class Client
                 }
                 $operation = $this->repos()->updateInformationAboutPagesSite($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8274,7 +8274,7 @@ final class Client
                 }
                 $operation = $this->repos()->deletePagesSite($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8352,7 +8352,7 @@ final class Client
                 }
                 $operation = $this->repos()->getPagesHealthCheck($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8417,7 +8417,7 @@ final class Client
                 }
                 $operation = $this->repos()->getReleaseAsset($params['owner'], $params['repo'], $params['asset_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8430,7 +8430,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteReleaseAsset($params['owner'], $params['repo'], $params['asset_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8508,7 +8508,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteRelease($params['owner'], $params['repo'], $params['release_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8547,7 +8547,7 @@ final class Client
                 }
                 $operation = $this->repos()->uploadReleaseAsset($params['owner'], $params['repo'], $params['release_id'], $params['name'], $params['label']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8560,7 +8560,7 @@ final class Client
                 }
                 $operation = $this->repos()->getCodeFrequencyStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8573,7 +8573,7 @@ final class Client
                 }
                 $operation = $this->repos()->getCommitActivityStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8586,7 +8586,7 @@ final class Client
                 }
                 $operation = $this->repos()->getContributorsStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8612,7 +8612,7 @@ final class Client
                 }
                 $operation = $this->repos()->getPunchCardStats($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8677,7 +8677,7 @@ final class Client
                 }
                 $operation = $this->repos()->deleteTagProtection($params['owner'], $params['repo'], $params['tag_protection_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8690,7 +8690,7 @@ final class Client
                 }
                 $operation = $this->repos()->downloadTarballArchive($params['owner'], $params['repo'], $params['ref']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8807,7 +8807,7 @@ final class Client
                 }
                 $operation = $this->repos()->checkVulnerabilityAlerts($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8820,7 +8820,7 @@ final class Client
                 }
                 $operation = $this->repos()->enableVulnerabilityAlerts($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8833,7 +8833,7 @@ final class Client
                 }
                 $operation = $this->repos()->disableVulnerabilityAlerts($params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8846,7 +8846,7 @@ final class Client
                 }
                 $operation = $this->repos()->downloadZipballArchive($params['owner'], $params['repo'], $params['ref']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8872,7 +8872,7 @@ final class Client
                 }
                 $operation = $this->repos()->listPublic($params['since']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8885,7 +8885,7 @@ final class Client
                 }
                 $operation = $this->repos()->listForAuthenticatedUser($params['visibility'], $params['affiliation'], $params['type'], $params['sort'], $params['direction'], $params['per_page'], $params['page'], $params['since'], $params['before']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8898,7 +8898,7 @@ final class Client
                 }
                 $operation = $this->repos()->createForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8911,7 +8911,7 @@ final class Client
                 }
                 $operation = $this->repos()->listInvitationsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8924,7 +8924,7 @@ final class Client
                 }
                 $operation = $this->repos()->declineInvitationForAuthenticatedUser($params['invitation_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -8937,7 +8937,7 @@ final class Client
                 }
                 $operation = $this->repos()->acceptInvitationForAuthenticatedUser($params['invitation_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9080,7 +9080,7 @@ final class Client
                 }
                 $operation = $this->teams()->deleteInOrg($params['org'], $params['team_slug']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9145,7 +9145,7 @@ final class Client
                 }
                 $operation = $this->teams()->deleteDiscussionInOrg($params['org'], $params['team_slug'], $params['discussion_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9210,7 +9210,7 @@ final class Client
                 }
                 $operation = $this->teams()->deleteDiscussionCommentInOrg($params['org'], $params['team_slug'], $params['discussion_number'], $params['comment_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9262,7 +9262,7 @@ final class Client
                 }
                 $operation = $this->teams()->getMembershipForUserInOrg($params['org'], $params['team_slug'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9275,7 +9275,7 @@ final class Client
                 }
                 $operation = $this->teams()->addOrUpdateMembershipForUserInOrg($params['org'], $params['team_slug'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9288,7 +9288,7 @@ final class Client
                 }
                 $operation = $this->teams()->removeMembershipForUserInOrg($params['org'], $params['team_slug'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9314,7 +9314,7 @@ final class Client
                 }
                 $operation = $this->teams()->checkPermissionsForProjectInOrg($params['org'], $params['team_slug'], $params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9327,7 +9327,7 @@ final class Client
                 }
                 $operation = $this->teams()->addOrUpdateProjectPermissionsInOrg($params['org'], $params['team_slug'], $params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9340,7 +9340,7 @@ final class Client
                 }
                 $operation = $this->teams()->removeProjectInOrg($params['org'], $params['team_slug'], $params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9366,7 +9366,7 @@ final class Client
                 }
                 $operation = $this->teams()->checkPermissionsForRepoInOrg($params['org'], $params['team_slug'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9379,7 +9379,7 @@ final class Client
                 }
                 $operation = $this->teams()->addOrUpdateRepoPermissionsInOrg($params['org'], $params['team_slug'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9392,7 +9392,7 @@ final class Client
                 }
                 $operation = $this->teams()->removeRepoInOrg($params['org'], $params['team_slug'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9431,7 +9431,7 @@ final class Client
                 }
                 $operation = $this->teams()->deleteLegacy($params['team_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9496,7 +9496,7 @@ final class Client
                 }
                 $operation = $this->teams()->deleteDiscussionLegacy($params['team_id'], $params['discussion_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9561,7 +9561,7 @@ final class Client
                 }
                 $operation = $this->teams()->deleteDiscussionCommentLegacy($params['team_id'], $params['discussion_number'], $params['comment_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9613,7 +9613,7 @@ final class Client
                 }
                 $operation = $this->teams()->getMemberLegacy($params['team_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9626,7 +9626,7 @@ final class Client
                 }
                 $operation = $this->teams()->addMemberLegacy($params['team_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9639,7 +9639,7 @@ final class Client
                 }
                 $operation = $this->teams()->removeMemberLegacy($params['team_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9665,7 +9665,7 @@ final class Client
                 }
                 $operation = $this->teams()->addOrUpdateMembershipForUserLegacy($params['team_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9678,7 +9678,7 @@ final class Client
                 }
                 $operation = $this->teams()->removeMembershipForUserLegacy($params['team_id'], $params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9704,7 +9704,7 @@ final class Client
                 }
                 $operation = $this->teams()->checkPermissionsForProjectLegacy($params['team_id'], $params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9717,7 +9717,7 @@ final class Client
                 }
                 $operation = $this->teams()->addOrUpdateProjectPermissionsLegacy($params['team_id'], $params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9730,7 +9730,7 @@ final class Client
                 }
                 $operation = $this->teams()->removeProjectLegacy($params['team_id'], $params['project_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9756,7 +9756,7 @@ final class Client
                 }
                 $operation = $this->teams()->checkPermissionsForRepoLegacy($params['team_id'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9769,7 +9769,7 @@ final class Client
                 }
                 $operation = $this->teams()->addOrUpdateRepoPermissionsLegacy($params['team_id'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9782,7 +9782,7 @@ final class Client
                 }
                 $operation = $this->teams()->removeRepoLegacy($params['team_id'], $params['owner'], $params['repo']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9808,7 +9808,7 @@ final class Client
                 }
                 $operation = $this->teams()->listForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9847,7 +9847,7 @@ final class Client
                 }
                 $operation = $this->reactions()->deleteForTeamDiscussionComment($params['org'], $params['team_slug'], $params['discussion_number'], $params['comment_number'], $params['reaction_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9886,7 +9886,7 @@ final class Client
                 }
                 $operation = $this->reactions()->deleteForTeamDiscussion($params['org'], $params['team_slug'], $params['discussion_number'], $params['reaction_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9925,7 +9925,7 @@ final class Client
                 }
                 $operation = $this->reactions()->deleteForCommitComment($params['owner'], $params['repo'], $params['comment_id'], $params['reaction_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -9964,7 +9964,7 @@ final class Client
                 }
                 $operation = $this->reactions()->deleteForIssueComment($params['owner'], $params['repo'], $params['comment_id'], $params['reaction_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10003,7 +10003,7 @@ final class Client
                 }
                 $operation = $this->reactions()->deleteForIssue($params['owner'], $params['repo'], $params['issue_number'], $params['reaction_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10042,7 +10042,7 @@ final class Client
                 }
                 $operation = $this->reactions()->deleteForPullRequestComment($params['owner'], $params['repo'], $params['comment_id'], $params['reaction_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10081,7 +10081,7 @@ final class Client
                 }
                 $operation = $this->reactions()->deleteForRelease($params['owner'], $params['repo'], $params['release_id'], $params['reaction_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10146,7 +10146,7 @@ final class Client
                 }
                 $operation = $this->rateLimit()->get();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10432,7 +10432,7 @@ final class Client
                 }
                 $operation = $this->git()->deleteRef($params['owner'], $params['repo'], $params['ref']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10510,7 +10510,7 @@ final class Client
                 }
                 $operation = $this->pulls()->list($params['owner'], $params['repo'], $params['state'], $params['head'], $params['base'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10562,7 +10562,7 @@ final class Client
                 }
                 $operation = $this->pulls()->deleteReviewComment($params['owner'], $params['repo'], $params['comment_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10588,7 +10588,7 @@ final class Client
                 }
                 $operation = $this->pulls()->get($params['owner'], $params['repo'], $params['pull_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H503 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10679,7 +10679,7 @@ final class Client
                 }
                 $operation = $this->pulls()->checkIfMerged($params['owner'], $params['repo'], $params['pull_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10718,7 +10718,7 @@ final class Client
                 }
                 $operation = $this->pulls()->requestReviewers($params['owner'], $params['repo'], $params['pull_number']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10861,7 +10861,7 @@ final class Client
                 }
                 $operation = $this->search()->code($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10874,7 +10874,7 @@ final class Client
                 }
                 $operation = $this->search()->commits($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10887,7 +10887,7 @@ final class Client
                 }
                 $operation = $this->search()->issuesAndPullRequests($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10900,7 +10900,7 @@ final class Client
                 }
                 $operation = $this->search()->labels($params['repository_id'], $params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10913,7 +10913,7 @@ final class Client
                 }
                 $operation = $this->search()->repos($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10926,7 +10926,7 @@ final class Client
                 }
                 $operation = $this->search()->topics($params['q'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200 {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10939,7 +10939,7 @@ final class Client
                 }
                 $operation = $this->search()->users($params['q'], $params['sort'], $params['order'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10952,7 +10952,7 @@ final class Client
                 }
                 $operation = $this->users()->getAuthenticated();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Users\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10965,7 +10965,7 @@ final class Client
                 }
                 $operation = $this->users()->updateAuthenticated();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10978,7 +10978,7 @@ final class Client
                 }
                 $operation = $this->users()->listBlockedByAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -10991,7 +10991,7 @@ final class Client
                 }
                 $operation = $this->users()->checkBlocked($params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11004,7 +11004,7 @@ final class Client
                 }
                 $operation = $this->users()->block($params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11017,7 +11017,7 @@ final class Client
                 }
                 $operation = $this->users()->unblock($params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11030,7 +11030,7 @@ final class Client
                 }
                 $operation = $this->users()->setPrimaryEmailVisibilityForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11043,7 +11043,7 @@ final class Client
                 }
                 $operation = $this->users()->listEmailsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11056,7 +11056,7 @@ final class Client
                 }
                 $operation = $this->users()->addEmailForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11069,7 +11069,7 @@ final class Client
                 }
                 $operation = $this->users()->deleteEmailForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11082,7 +11082,7 @@ final class Client
                 }
                 $operation = $this->users()->listFollowersForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11095,7 +11095,7 @@ final class Client
                 }
                 $operation = $this->users()->listFollowedByAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11108,7 +11108,7 @@ final class Client
                 }
                 $operation = $this->users()->checkPersonIsFollowedByAuthenticated($params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11121,7 +11121,7 @@ final class Client
                 }
                 $operation = $this->users()->follow($params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11134,7 +11134,7 @@ final class Client
                 }
                 $operation = $this->users()->unfollow($params['username']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11147,7 +11147,7 @@ final class Client
                 }
                 $operation = $this->users()->listGpgKeysForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11160,7 +11160,7 @@ final class Client
                 }
                 $operation = $this->users()->createGpgKeyForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11173,7 +11173,7 @@ final class Client
                 }
                 $operation = $this->users()->getGpgKeyForAuthenticatedUser($params['gpg_key_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11186,7 +11186,7 @@ final class Client
                 }
                 $operation = $this->users()->deleteGpgKeyForAuthenticatedUser($params['gpg_key_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11199,7 +11199,7 @@ final class Client
                 }
                 $operation = $this->users()->listPublicSshKeysForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11212,7 +11212,7 @@ final class Client
                 }
                 $operation = $this->users()->createPublicSshKeyForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11225,7 +11225,7 @@ final class Client
                 }
                 $operation = $this->users()->getPublicSshKeyForAuthenticatedUser($params['key_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11238,7 +11238,7 @@ final class Client
                 }
                 $operation = $this->users()->deletePublicSshKeyForAuthenticatedUser($params['key_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11251,7 +11251,7 @@ final class Client
                 }
                 $operation = $this->users()->listPublicEmailsForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11264,7 +11264,7 @@ final class Client
                 }
                 $operation = $this->users()->listSshSigningKeysForAuthenticatedUser($params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11277,7 +11277,7 @@ final class Client
                 }
                 $operation = $this->users()->createSshSigningKeyForAuthenticatedUser();
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11290,7 +11290,7 @@ final class Client
                 }
                 $operation = $this->users()->getSshSigningKeyForAuthenticatedUser($params['ssh_signing_key_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11303,7 +11303,7 @@ final class Client
                 }
                 $operation = $this->users()->deleteSshSigningKeyForAuthenticatedUser($params['ssh_signing_key_id']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11316,7 +11316,7 @@ final class Client
                 }
                 $operation = $this->users()->list($params['since'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -11368,7 +11368,7 @@ final class Client
                 }
                 $operation = $this->users()->checkFollowingForUser($params['username'], $params['target_user']);
                 $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) {
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
                 });
                 break;

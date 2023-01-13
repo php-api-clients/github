@@ -25,9 +25,9 @@ final class MarkThreadAsRead
         return new \RingCentral\Psr7\Request('PATCH', \str_replace(array('{thread_id}'), array($this->thread_id), '/notifications/threads/{thread_id}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -35,13 +35,11 @@ final class MarkThreadAsRead
         switch ($response->getStatusCode()) {
             /**Reset Content**/
             case 205:
-                switch ($contentType) {
-                }
+                return 205;
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Forbidden**/
             case 403:

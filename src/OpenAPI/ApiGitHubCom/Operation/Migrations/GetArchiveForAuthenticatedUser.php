@@ -25,9 +25,9 @@ final class GetArchiveForAuthenticatedUser
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{migration_id}'), array($this->migration_id), '/user/migrations/{migration_id}/archive'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -35,13 +35,11 @@ final class GetArchiveForAuthenticatedUser
         switch ($response->getStatusCode()) {
             /**Response**/
             case 302:
-                switch ($contentType) {
-                }
+                return 302;
                 break;
             /**Not modified**/
             case 304:
-                switch ($contentType) {
-                }
+                return 304;
                 break;
             /**Forbidden**/
             case 403:

@@ -37,9 +37,9 @@ final class ListLocationsForAlert
         return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{alert_number}', '{page}', '{per_page}'), array($this->owner, $this->repo, $this->alert_number, $this->page, $this->per_page), '/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations?page={page}&per_page={per_page}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningLocation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListLocationsForAlert\Response\Application\Json\H503
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningLocation>|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListLocationsForAlert\Response\Application\Json\H503
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListLocationsForAlert\Response\Application\Json\H503
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListLocationsForAlert\Response\Application\Json\H503
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -57,8 +57,7 @@ final class ListLocationsForAlert
                 break;
             /**Repository is public, or secret scanning is disabled for the repository, or the resource is not found**/
             case 404:
-                switch ($contentType) {
-                }
+                return 404;
                 break;
             /**Service unavailable**/
             case 503:

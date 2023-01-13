@@ -30,9 +30,9 @@ final class RemoveSelectedRepoFromOrgVariable
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{name}', '{repository_id}'), array($this->org, $this->name, $this->repository_id), '/orgs/{org}/actions/variables/{name}/repositories/{repository_id}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,13 +40,11 @@ final class RemoveSelectedRepoFromOrgVariable
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Response when the visibility of the variable is not set to `selected`**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

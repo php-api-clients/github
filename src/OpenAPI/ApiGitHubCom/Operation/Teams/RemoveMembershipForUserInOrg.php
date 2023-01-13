@@ -31,9 +31,9 @@ final class RemoveMembershipForUserInOrg
         return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{org}', '{team_slug}', '{username}'), array($this->org, $this->team_slug, $this->username), '/orgs/{org}/teams/{team_slug}/memberships/{username}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -41,13 +41,11 @@ final class RemoveMembershipForUserInOrg
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
             /**Forbidden if team synchronization is set up**/
             case 403:
-                switch ($contentType) {
-                }
+                return 403;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

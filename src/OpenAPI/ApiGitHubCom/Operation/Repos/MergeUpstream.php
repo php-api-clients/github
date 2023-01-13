@@ -29,9 +29,9 @@ final class MergeUpstream
         return new \RingCentral\Psr7\Request('POST', \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), '/repos/{owner}/{repo}/merge-upstream'), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -47,13 +47,11 @@ final class MergeUpstream
                 break;
             /**The branch could not be synced because of a merge conflict**/
             case 409:
-                switch ($contentType) {
-                }
+                return 409;
                 break;
             /**The branch could not be synced for some other reason**/
             case 422:
-                switch ($contentType) {
-                }
+                return 422;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');

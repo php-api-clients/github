@@ -28,9 +28,9 @@ final class EnableSelectedRepositoryGithubActionsOrganization
         return new \RingCentral\Psr7\Request('PUT', \str_replace(array('{org}', '{repository_id}'), array($this->org, $this->repository_id), '/orgs/{org}/actions/permissions/repositories/{repository_id}'));
     }
     /**
-     * @return 
+     * @return int
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : 
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,8 +38,7 @@ final class EnableSelectedRepositoryGithubActionsOrganization
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
-                switch ($contentType) {
-                }
+                return 204;
                 break;
         }
         throw new \RuntimeException('Unable to find matching reponse code and content type');
