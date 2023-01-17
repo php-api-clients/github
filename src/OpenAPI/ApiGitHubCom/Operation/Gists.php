@@ -11,9 +11,9 @@ final class Gists
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
     }
-    public function list(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List
+    public function list_(string $since, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List_
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List_($this->requestSchemaValidator, $this->responseSchemaValidator, $since, $per_page, $page);
     }
     public function create() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\Create
     {

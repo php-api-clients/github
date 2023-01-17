@@ -1609,14 +1609,14 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List::OPERATION_MATCH:
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists\List_::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
                     if (\in_array($param, array('since', 'per_page', 'page')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->gists()->list($params['since'], $params['per_page'], $params['page']);
+                $operation = $this->gists()->list_($params['since'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
@@ -1895,14 +1895,14 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\List::OPERATION_MATCH:
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues\List_::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
                     if (\in_array($param, array('filter', 'state', 'labels', 'sort', 'direction', 'since', 'collab', 'orgs', 'owned', 'pulls', 'per_page', 'page')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->issues()->list($params['filter'], $params['state'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['collab'], $params['orgs'], $params['owned'], $params['pulls'], $params['per_page'], $params['page']);
+                $operation = $this->issues()->list_($params['filter'], $params['state'], $params['labels'], $params['sort'], $params['direction'], $params['since'], $params['collab'], $params['orgs'], $params['owned'], $params['pulls'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
@@ -2480,14 +2480,14 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\List::OPERATION_MATCH:
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\List_::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
                     if (\in_array($param, array('since', 'per_page')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->orgs()->list($params['since'], $params['per_page']);
+                $operation = $this->orgs()->list_($params['since'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
@@ -9032,14 +9032,14 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\List::OPERATION_MATCH:
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams\List_::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
                     if (\in_array($param, array('org', 'per_page', 'page')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->teams()->list($params['org'], $params['per_page'], $params['page']);
+                $operation = $this->teams()->list_($params['org'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
@@ -10501,14 +10501,14 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\List::OPERATION_MATCH:
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls\List_::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
                     if (\in_array($param, array('owner', 'repo', 'state', 'head', 'base', 'sort', 'direction', 'per_page', 'page')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->pulls()->list($params['owner'], $params['repo'], $params['state'], $params['head'], $params['base'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
+                $operation = $this->pulls()->list_($params['owner'], $params['repo'], $params['state'], $params['head'], $params['base'], $params['sort'], $params['direction'], $params['per_page'], $params['page']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);
@@ -11307,14 +11307,14 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\List::OPERATION_MATCH:
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users\List_::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
                     if (\in_array($param, array('since', 'per_page')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->users()->list($params['since'], $params['per_page']);
+                $operation = $this->users()->list_($params['since'], $params['per_page']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int {
                     return $operation->createResponse($response);
