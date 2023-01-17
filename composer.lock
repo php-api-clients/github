@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "18cec037de19fd5b8f1b1802af64ad7357d9ca48"
+                "reference": "72f80eea9a41643342ee2be8cc782341231acc54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/18cec037de19fd5b8f1b1802af64ad7357d9ca48",
-                "reference": "18cec037de19fd5b8f1b1802af64ad7357d9ca48",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/72f80eea9a41643342ee2be8cc782341231acc54",
+                "reference": "72f80eea9a41643342ee2be8cc782341231acc54",
                 "shasum": ""
             },
             "require": {
@@ -94,6 +94,7 @@
                     "external_files/cebe/JsonReference.php",
                     "external_files/cebe/Paths.php",
                     "external_files/cebe/Responses.php",
+                    "external_files/cebe/SpecBaseObject.php",
                     "external_files/thephpleague/SchemaValidator.php",
                     "external_files/thephpleague/Type.php"
                 ],
@@ -116,7 +117,7 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2023-01-17T07:24:51+00:00"
+            "time": "2023-01-17T08:01:28+00:00"
         },
         {
             "name": "cebe/php-openapi",
