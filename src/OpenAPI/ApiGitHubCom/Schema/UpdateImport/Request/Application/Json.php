@@ -10,45 +10,24 @@ final class Json
     /**
      * The username to provide to the originating repository.
      */
-    private string $vcs_username;
+    public readonly string $vcs_username;
     /**
      * The password to provide to the originating repository.
      */
-    private string $vcs_password;
+    public readonly string $vcs_password;
     /**
      * The type of version control system you are migrating from.
      */
-    private string $vcs;
+    public readonly string $vcs;
     /**
      * For a tfvc import, the name of the project that is being imported.
      */
-    private string $tfvc_project;
-    /**
-     * The username to provide to the originating repository.
-     */
-    public function vcs_username() : string
+    public readonly string $tfvc_project;
+    public function __construct(string $vcs_username, string $vcs_password, string $vcs, string $tfvc_project)
     {
-        return $this->vcs_username;
-    }
-    /**
-     * The password to provide to the originating repository.
-     */
-    public function vcs_password() : string
-    {
-        return $this->vcs_password;
-    }
-    /**
-     * The type of version control system you are migrating from.
-     */
-    public function vcs() : string
-    {
-        return $this->vcs;
-    }
-    /**
-     * For a tfvc import, the name of the project that is being imported.
-     */
-    public function tfvc_project() : string
-    {
-        return $this->tfvc_project;
+        $this->vcs_username = $vcs_username;
+        $this->vcs_password = $vcs_password;
+        $this->vcs = $vcs;
+        $this->tfvc_project = $tfvc_project;
     }
 }

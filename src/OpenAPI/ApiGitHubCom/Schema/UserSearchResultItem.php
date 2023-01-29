@@ -7,181 +7,81 @@ final class UserSearchResultItem
     public const SCHEMA_JSON = '{"title":"User Search Result Item","required":["avatar_url","events_url","followers_url","following_url","gists_url","gravatar_id","html_url","id","node_id","login","organizations_url","received_events_url","repos_url","site_admin","starred_url","subscriptions_url","type","url","score"],"type":"object","properties":{"login":{"type":"string"},"id":{"type":"integer"},"node_id":{"type":"string"},"avatar_url":{"type":"string","format":"uri"},"gravatar_id":{"type":["string","null"]},"url":{"type":"string","format":"uri"},"html_url":{"type":"string","format":"uri"},"followers_url":{"type":"string","format":"uri"},"subscriptions_url":{"type":"string","format":"uri"},"organizations_url":{"type":"string","format":"uri"},"repos_url":{"type":"string","format":"uri"},"received_events_url":{"type":"string","format":"uri"},"type":{"type":"string"},"score":{"type":"number"},"following_url":{"type":"string"},"gists_url":{"type":"string"},"starred_url":{"type":"string"},"events_url":{"type":"string"},"public_repos":{"type":"integer"},"public_gists":{"type":"integer"},"followers":{"type":"integer"},"following":{"type":"integer"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"},"name":{"type":["string","null"]},"bio":{"type":["string","null"]},"email":{"type":["string","null"],"format":"email"},"location":{"type":["string","null"]},"site_admin":{"type":"boolean"},"hireable":{"type":["boolean","null"]},"text_matches":{"title":"Search Result Text Matches","type":"array","items":{"type":"object","properties":{"object_url":{"type":"string"},"object_type":{"type":["string","null"]},"property":{"type":"string"},"fragment":{"type":"string"},"matches":{"type":"array","items":{"type":"object","properties":{"text":{"type":"string"},"indices":{"type":"array","items":{"type":"integer"}}}}}}}},"blog":{"type":["string","null"]},"company":{"type":["string","null"]},"suspended_at":{"type":["string","null"],"format":"date-time"}},"description":"User Search Result Item"}';
     public const SCHEMA_TITLE = 'User Search Result Item';
     public const SCHEMA_DESCRIPTION = 'User Search Result Item';
-    private string $login;
-    private int $id;
-    private string $node_id;
-    private string $avatar_url;
-    private ?string $gravatar_id;
-    private string $url;
-    private string $html_url;
-    private string $followers_url;
-    private string $subscriptions_url;
-    private string $organizations_url;
-    private string $repos_url;
-    private string $received_events_url;
-    private string $type;
-    private int $score;
-    private string $following_url;
-    private string $gists_url;
-    private string $starred_url;
-    private string $events_url;
-    private ?int $public_repos = null;
-    private ?int $public_gists = null;
-    private ?int $followers = null;
-    private ?int $following = null;
-    private ?string $created_at = null;
-    private ?string $updated_at = null;
-    private ?string $name = null;
-    private ?string $bio = null;
-    private ?string $email = null;
-    private ?string $location = null;
-    private bool $site_admin;
-    private ?bool $hireable = null;
+    public readonly string $login;
+    public readonly int $id;
+    public readonly string $node_id;
+    public readonly string $avatar_url;
+    public readonly ?string $gravatar_id;
+    public readonly string $url;
+    public readonly string $html_url;
+    public readonly string $followers_url;
+    public readonly string $subscriptions_url;
+    public readonly string $organizations_url;
+    public readonly string $repos_url;
+    public readonly string $received_events_url;
+    public readonly string $type;
+    public readonly int $score;
+    public readonly string $following_url;
+    public readonly string $gists_url;
+    public readonly string $starred_url;
+    public readonly string $events_url;
+    public readonly ?int $public_repos;
+    public readonly ?int $public_gists;
+    public readonly ?int $followers;
+    public readonly ?int $following;
+    public readonly ?string $created_at;
+    public readonly ?string $updated_at;
+    public readonly ?string $name;
+    public readonly ?string $bio;
+    public readonly ?string $email;
+    public readonly ?string $location;
+    public readonly bool $site_admin;
+    public readonly ?bool $hireable;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches::class)
      */
-    private array $text_matches = array();
-    private ?string $blog = null;
-    private ?string $company = null;
-    private ?string $suspended_at = null;
-    public function login() : string
-    {
-        return $this->login;
-    }
-    public function id() : int
-    {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    public function avatar_url() : string
-    {
-        return $this->avatar_url;
-    }
-    public function gravatar_id() : ?string
-    {
-        return $this->gravatar_id;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function followers_url() : string
-    {
-        return $this->followers_url;
-    }
-    public function subscriptions_url() : string
-    {
-        return $this->subscriptions_url;
-    }
-    public function organizations_url() : string
-    {
-        return $this->organizations_url;
-    }
-    public function repos_url() : string
-    {
-        return $this->repos_url;
-    }
-    public function received_events_url() : string
-    {
-        return $this->received_events_url;
-    }
-    public function type() : string
-    {
-        return $this->type;
-    }
-    public function score() : int
-    {
-        return $this->score;
-    }
-    public function following_url() : string
-    {
-        return $this->following_url;
-    }
-    public function gists_url() : string
-    {
-        return $this->gists_url;
-    }
-    public function starred_url() : string
-    {
-        return $this->starred_url;
-    }
-    public function events_url() : string
-    {
-        return $this->events_url;
-    }
-    public function public_repos() : ?int
-    {
-        return $this->public_repos;
-    }
-    public function public_gists() : ?int
-    {
-        return $this->public_gists;
-    }
-    public function followers() : ?int
-    {
-        return $this->followers;
-    }
-    public function following() : ?int
-    {
-        return $this->following;
-    }
-    public function created_at() : ?string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : ?string
-    {
-        return $this->updated_at;
-    }
-    public function name() : ?string
-    {
-        return $this->name;
-    }
-    public function bio() : ?string
-    {
-        return $this->bio;
-    }
-    public function email() : ?string
-    {
-        return $this->email;
-    }
-    public function location() : ?string
-    {
-        return $this->location;
-    }
-    public function site_admin() : bool
-    {
-        return $this->site_admin;
-    }
-    public function hireable() : ?bool
-    {
-        return $this->hireable;
-    }
+    public readonly array $text_matches;
+    public readonly ?string $blog;
+    public readonly ?string $company;
+    public readonly ?string $suspended_at;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches> $text_matches
      */
-    public function text_matches() : array
+    public function __construct(string $login, int $id, string $node_id, string $avatar_url, string $gravatar_id, string $url, string $html_url, string $followers_url, string $subscriptions_url, string $organizations_url, string $repos_url, string $received_events_url, string $type, int $score, string $following_url, string $gists_url, string $starred_url, string $events_url, int $public_repos, int $public_gists, int $followers, int $following, string $created_at, string $updated_at, string $name, string $bio, string $email, string $location, bool $site_admin, bool $hireable, array $text_matches, string $blog, string $company, string $suspended_at)
     {
-        return $this->text_matches;
-    }
-    public function blog() : ?string
-    {
-        return $this->blog;
-    }
-    public function company() : ?string
-    {
-        return $this->company;
-    }
-    public function suspended_at() : ?string
-    {
-        return $this->suspended_at;
+        $this->login = $login;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->avatar_url = $avatar_url;
+        $this->gravatar_id = $gravatar_id;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->followers_url = $followers_url;
+        $this->subscriptions_url = $subscriptions_url;
+        $this->organizations_url = $organizations_url;
+        $this->repos_url = $repos_url;
+        $this->received_events_url = $received_events_url;
+        $this->type = $type;
+        $this->score = $score;
+        $this->following_url = $following_url;
+        $this->gists_url = $gists_url;
+        $this->starred_url = $starred_url;
+        $this->events_url = $events_url;
+        $this->public_repos = $public_repos;
+        $this->public_gists = $public_gists;
+        $this->followers = $followers;
+        $this->following = $following;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->name = $name;
+        $this->bio = $bio;
+        $this->email = $email;
+        $this->location = $location;
+        $this->site_admin = $site_admin;
+        $this->hireable = $hireable;
+        $this->text_matches = $text_matches;
+        $this->blog = $blog;
+        $this->company = $company;
+        $this->suspended_at = $suspended_at;
     }
 }

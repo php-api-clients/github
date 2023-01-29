@@ -10,43 +10,22 @@ final class CodespacesPublicKey
     /**
      * The identifier for the key.
      */
-    private string $key_id;
+    public readonly string $key_id;
     /**
      * The Base64 encoded public key.
      */
-    private string $key;
-    private ?int $id = null;
-    private ?string $url = null;
-    private ?string $title = null;
-    private ?string $created_at = null;
-    /**
-     * The identifier for the key.
-     */
-    public function key_id() : string
+    public readonly string $key;
+    public readonly ?int $id;
+    public readonly ?string $url;
+    public readonly ?string $title;
+    public readonly ?string $created_at;
+    public function __construct(string $key_id, string $key, int $id, string $url, string $title, string $created_at)
     {
-        return $this->key_id;
-    }
-    /**
-     * The Base64 encoded public key.
-     */
-    public function key() : string
-    {
-        return $this->key;
-    }
-    public function id() : ?int
-    {
-        return $this->id;
-    }
-    public function url() : ?string
-    {
-        return $this->url;
-    }
-    public function title() : ?string
-    {
-        return $this->title;
-    }
-    public function created_at() : ?string
-    {
-        return $this->created_at;
+        $this->key_id = $key_id;
+        $this->key = $key;
+        $this->id = $id;
+        $this->url = $url;
+        $this->title = $title;
+        $this->created_at = $created_at;
     }
 }

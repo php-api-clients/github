@@ -10,24 +10,14 @@ final class Json
     /**
      * A custom webhook event name. Must be 100 characters or fewer.
      */
-    private string $event_type;
-    /**
-     * JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\ClientPayload::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\ClientPayload $client_payload = null;
-    /**
-     * A custom webhook event name. Must be 100 characters or fewer.
-     */
-    public function event_type() : string
-    {
-        return $this->event_type;
-    }
+    public readonly string $event_type;
     /**
      * JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
      */
-    public function client_payload() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\ClientPayload
+    public readonly array $client_payload;
+    public function __construct(string $event_type, array $client_payload)
     {
-        return $this->client_payload;
+        $this->event_type = $event_type;
+        $this->client_payload = $client_payload;
     }
 }

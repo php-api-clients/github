@@ -10,24 +10,17 @@ final class H200
     /**
      * The number of environments in this repository
      */
-    private int $total_count;
+    public readonly int $total_count;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment::class)
      */
-    private array $environments = array();
+    public readonly array $environments;
     /**
-     * The number of environments in this repository
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment> $environments
      */
-    public function total_count() : int
+    public function __construct(int $total_count, array $environments)
     {
-        return $this->total_count;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment>
-     */
-    public function environments() : array
-    {
-        return $this->environments;
+        $this->total_count = $total_count;
+        $this->environments = $environments;
     }
 }

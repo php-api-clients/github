@@ -10,29 +10,20 @@ final class Json
     /**
      * An array of user `login`s that will be requested.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers::class)
      */
-    private array $reviewers = array();
+    public readonly array $reviewers;
     /**
      * An array of team `slug`s that will be requested.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\TeamReviewers>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\TeamReviewers::class)
      */
-    private array $team_reviewers = array();
+    public readonly array $team_reviewers;
     /**
-     * An array of user `login`s that will be requested.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers> $reviewers
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\TeamReviewers> $team_reviewers
      */
-    public function reviewers() : array
+    public function __construct(array $reviewers, array $team_reviewers)
     {
-        return $this->reviewers;
-    }
-    /**
-     * An array of team `slug`s that will be requested.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\TeamReviewers>
-     */
-    public function team_reviewers() : array
-    {
-        return $this->team_reviewers;
+        $this->reviewers = $reviewers;
+        $this->team_reviewers = $team_reviewers;
     }
 }

@@ -10,15 +10,13 @@ final class Json
     /**
      * Email addresses associated with the GitHub user account.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Emails>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Emails::class)
      */
-    private array $emails = array();
+    public readonly array $emails;
     /**
-     * Email addresses associated with the GitHub user account.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Emails>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Emails> $emails
      */
-    public function emails() : array
+    public function __construct(array $emails)
     {
-        return $this->emails;
+        $this->emails = $emails;
     }
 }

@@ -10,12 +10,9 @@ final class Json
     /**
      * An optional glob pattern to match against when enforcing tag protection.
      */
-    private string $pattern;
-    /**
-     * An optional glob pattern to match against when enforcing tag protection.
-     */
-    public function pattern() : string
+    public readonly string $pattern;
+    public function __construct(string $pattern)
     {
-        return $this->pattern;
+        $this->pattern = $pattern;
     }
 }

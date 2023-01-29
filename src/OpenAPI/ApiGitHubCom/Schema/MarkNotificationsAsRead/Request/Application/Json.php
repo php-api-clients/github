@@ -10,23 +10,14 @@ final class Json
     /**
      * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
      */
-    private string $last_read_at;
+    public readonly string $last_read_at;
     /**
      * Whether the notification has been read.
      */
-    private bool $read;
-    /**
-     * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
-     */
-    public function last_read_at() : string
+    public readonly bool $read;
+    public function __construct(string $last_read_at, bool $read)
     {
-        return $this->last_read_at;
-    }
-    /**
-     * Whether the notification has been read.
-     */
-    public function read() : bool
-    {
-        return $this->read;
+        $this->last_read_at = $last_read_at;
+        $this->read = $read;
     }
 }

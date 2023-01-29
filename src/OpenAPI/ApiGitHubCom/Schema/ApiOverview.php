@@ -7,137 +7,73 @@ final class ApiOverview
     public const SCHEMA_JSON = '{"title":"Api Overview","required":["verifiable_password_authentication"],"type":"object","properties":{"verifiable_password_authentication":{"type":"boolean","examples":[true]},"ssh_key_fingerprints":{"type":"object","properties":{"SHA256_RSA":{"type":"string"},"SHA256_DSA":{"type":"string"},"SHA256_ECDSA":{"type":"string"},"SHA256_ED25519":{"type":"string"}}},"ssh_keys":{"type":"array","items":{"type":"string"},"examples":["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl"]},"hooks":{"type":"array","items":{"type":"string"},"examples":["127.0.0.1\\/32"]},"web":{"type":"array","items":{"type":"string"},"examples":["127.0.0.1\\/32"]},"api":{"type":"array","items":{"type":"string"},"examples":["127.0.0.1\\/32"]},"git":{"type":"array","items":{"type":"string"},"examples":["127.0.0.1\\/32"]},"packages":{"type":"array","items":{"type":"string"},"examples":["13.65.0.0\\/16","157.55.204.33\\/32","2a01:111:f403:f90c::\\/62"]},"pages":{"type":"array","items":{"type":"string"},"examples":["192.30.252.153\\/32","192.30.252.154\\/32"]},"importer":{"type":"array","items":{"type":"string"},"examples":["54.158.161.132","54.226.70.38"]},"actions":{"type":"array","items":{"type":"string"},"examples":["13.64.0.0\\/16","13.65.0.0\\/16"]},"dependabot":{"type":"array","items":{"type":"string"},"examples":["192.168.7.15\\/32","192.168.7.16\\/32"]}},"description":"Api Overview"}';
     public const SCHEMA_TITLE = 'Api Overview';
     public const SCHEMA_DESCRIPTION = 'Api Overview';
-    private bool $verifiable_password_authentication;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeyFingerprints::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeyFingerprints $ssh_key_fingerprints = null;
+    public readonly bool $verifiable_password_authentication;
+    public readonly array $ssh_key_fingerprints;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeys>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeys::class)
      */
-    private array $ssh_keys = array();
+    public readonly array $ssh_keys;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Hooks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Hooks::class)
      */
-    private array $hooks = array();
+    public readonly array $hooks;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Web>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Web::class)
      */
-    private array $web = array();
+    public readonly array $web;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Api>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Api::class)
      */
-    private array $api = array();
+    public readonly array $api;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Git>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Git::class)
      */
-    private array $git = array();
+    public readonly array $git;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Packages>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Packages::class)
      */
-    private array $packages = array();
+    public readonly array $packages;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Pages>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Pages::class)
      */
-    private array $pages = array();
+    public readonly array $pages;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Importer>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Importer::class)
      */
-    private array $importer = array();
+    public readonly array $importer;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Actions>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Actions::class)
      */
-    private array $actions = array();
+    public readonly array $actions;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Dependabot>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Dependabot::class)
      */
-    private array $dependabot = array();
-    public function verifiable_password_authentication() : bool
-    {
-        return $this->verifiable_password_authentication;
-    }
-    public function ssh_key_fingerprints() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeyFingerprints
-    {
-        return $this->ssh_key_fingerprints;
-    }
+    public readonly array $dependabot;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeys>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeys> $ssh_keys
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Hooks> $hooks
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Web> $web
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Api> $api
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Git> $git
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Packages> $packages
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Pages> $pages
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Importer> $importer
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Actions> $actions
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Dependabot> $dependabot
      */
-    public function ssh_keys() : array
+    public function __construct(bool $verifiable_password_authentication, array $ssh_key_fingerprints, array $ssh_keys, array $hooks, array $web, array $api, array $git, array $packages, array $pages, array $importer, array $actions, array $dependabot)
     {
-        return $this->ssh_keys;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Hooks>
-     */
-    public function hooks() : array
-    {
-        return $this->hooks;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Web>
-     */
-    public function web() : array
-    {
-        return $this->web;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Api>
-     */
-    public function api() : array
-    {
-        return $this->api;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Git>
-     */
-    public function git() : array
-    {
-        return $this->git;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Packages>
-     */
-    public function packages() : array
-    {
-        return $this->packages;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Pages>
-     */
-    public function pages() : array
-    {
-        return $this->pages;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Importer>
-     */
-    public function importer() : array
-    {
-        return $this->importer;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Actions>
-     */
-    public function actions() : array
-    {
-        return $this->actions;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Dependabot>
-     */
-    public function dependabot() : array
-    {
-        return $this->dependabot;
+        $this->verifiable_password_authentication = $verifiable_password_authentication;
+        $this->ssh_key_fingerprints = $ssh_key_fingerprints;
+        $this->ssh_keys = $ssh_keys;
+        $this->hooks = $hooks;
+        $this->web = $web;
+        $this->api = $api;
+        $this->git = $git;
+        $this->packages = $packages;
+        $this->pages = $pages;
+        $this->importer = $importer;
+        $this->actions = $actions;
+        $this->dependabot = $dependabot;
     }
 }

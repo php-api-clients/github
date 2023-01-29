@@ -10,45 +10,24 @@ final class ActionsOrganizationPermissions
     /**
      * The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
      */
-    private string $enabled_repositories;
+    public readonly string $enabled_repositories;
     /**
      * The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.
      */
-    private ?string $selected_repositories_url = null;
+    public readonly ?string $selected_repositories_url;
     /**
      * The permissions policy that controls the actions and reusable workflows that are allowed to run.
      */
-    private ?string $allowed_actions = null;
+    public readonly ?string $allowed_actions;
     /**
      * The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    private ?string $selected_actions_url = null;
-    /**
-     * The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
-     */
-    public function enabled_repositories() : string
+    public readonly ?string $selected_actions_url;
+    public function __construct(string $enabled_repositories, string $selected_repositories_url, string $allowed_actions, string $selected_actions_url)
     {
-        return $this->enabled_repositories;
-    }
-    /**
-     * The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.
-     */
-    public function selected_repositories_url() : ?string
-    {
-        return $this->selected_repositories_url;
-    }
-    /**
-     * The permissions policy that controls the actions and reusable workflows that are allowed to run.
-     */
-    public function allowed_actions() : ?string
-    {
-        return $this->allowed_actions;
-    }
-    /**
-     * The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
-     */
-    public function selected_actions_url() : ?string
-    {
-        return $this->selected_actions_url;
+        $this->enabled_repositories = $enabled_repositories;
+        $this->selected_repositories_url = $selected_repositories_url;
+        $this->allowed_actions = $allowed_actions;
+        $this->selected_actions_url = $selected_actions_url;
     }
 }

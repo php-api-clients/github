@@ -7,36 +7,23 @@ final class SearchResultTextMatches
     public const SCHEMA_JSON = '{"title":"Search Result Text Matches","type":"array","items":{"type":"object","properties":{"object_url":{"type":"string"},"object_type":{"type":["string","null"]},"property":{"type":"string"},"fragment":{"type":"string"},"matches":{"type":"array","items":{"type":"object","properties":{"text":{"type":"string"},"indices":{"type":"array","items":{"type":"integer"}}}}}}}}';
     public const SCHEMA_TITLE = 'search-result-text-matches';
     public const SCHEMA_DESCRIPTION = '';
-    private string $object_url;
-    private ?string $object_type;
-    private string $property;
-    private string $fragment;
+    public readonly string $object_url;
+    public readonly ?string $object_type;
+    public readonly string $property;
+    public readonly string $fragment;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches\Matches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches\Matches::class)
      */
-    private array $matches = array();
-    public function object_url() : string
-    {
-        return $this->object_url;
-    }
-    public function object_type() : ?string
-    {
-        return $this->object_type;
-    }
-    public function property() : string
-    {
-        return $this->property;
-    }
-    public function fragment() : string
-    {
-        return $this->fragment;
-    }
+    public readonly array $matches;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches\Matches>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches\Matches> $matches
      */
-    public function matches() : array
+    public function __construct(string $object_url, string $object_type, string $property, string $fragment, array $matches)
     {
-        return $this->matches;
+        $this->object_url = $object_url;
+        $this->object_type = $object_type;
+        $this->property = $property;
+        $this->fragment = $fragment;
+        $this->matches = $matches;
     }
 }

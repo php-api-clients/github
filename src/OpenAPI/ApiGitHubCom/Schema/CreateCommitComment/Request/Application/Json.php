@@ -10,45 +10,24 @@ final class Json
     /**
      * The contents of the comment.
      */
-    private string $body;
+    public readonly string $body;
     /**
      * Relative path of the file to comment on.
      */
-    private ?string $path = null;
+    public readonly ?string $path;
     /**
      * Line index in the diff to comment on.
      */
-    private ?int $position = null;
+    public readonly ?int $position;
     /**
      * **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
      */
-    private ?int $line = null;
-    /**
-     * The contents of the comment.
-     */
-    public function body() : string
+    public readonly ?int $line;
+    public function __construct(string $body, string $path, int $position, int $line)
     {
-        return $this->body;
-    }
-    /**
-     * Relative path of the file to comment on.
-     */
-    public function path() : ?string
-    {
-        return $this->path;
-    }
-    /**
-     * Line index in the diff to comment on.
-     */
-    public function position() : ?int
-    {
-        return $this->position;
-    }
-    /**
-     * **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
-     */
-    public function line() : ?int
-    {
-        return $this->line;
+        $this->body = $body;
+        $this->path = $path;
+        $this->position = $position;
+        $this->line = $line;
     }
 }

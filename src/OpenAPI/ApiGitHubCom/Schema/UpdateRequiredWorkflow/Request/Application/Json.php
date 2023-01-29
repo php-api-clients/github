@@ -10,48 +10,28 @@ final class Json
     /**
      * Path of the workflow file to be configured as a required workflow.
      */
-    private string $workflow_file_path;
+    public readonly string $workflow_file_path;
     /**
      * The ID of the repository that contains the workflow file.
      */
-    private string $repository_id;
+    public readonly string $repository_id;
     /**
      * Enable the required workflow for all repositories or selected repositories in the organization.
      */
-    private string $scope;
+    public readonly string $scope;
     /**
      * A list of repository IDs where you want to enable the required workflow. A list of repository IDs where you want to enable the required workflow. You can only provide a list of repository ids when the `scope` is set to `selected`.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds::class)
      */
-    private array $selected_repository_ids = array();
+    public readonly array $selected_repository_ids;
     /**
-     * Path of the workflow file to be configured as a required workflow.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds> $selected_repository_ids
      */
-    public function workflow_file_path() : string
+    public function __construct(string $workflow_file_path, string $repository_id, string $scope, array $selected_repository_ids)
     {
-        return $this->workflow_file_path;
-    }
-    /**
-     * The ID of the repository that contains the workflow file.
-     */
-    public function repository_id() : string
-    {
-        return $this->repository_id;
-    }
-    /**
-     * Enable the required workflow for all repositories or selected repositories in the organization.
-     */
-    public function scope() : string
-    {
-        return $this->scope;
-    }
-    /**
-     * A list of repository IDs where you want to enable the required workflow. A list of repository IDs where you want to enable the required workflow. You can only provide a list of repository ids when the `scope` is set to `selected`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds>
-     */
-    public function selected_repository_ids() : array
-    {
-        return $this->selected_repository_ids;
+        $this->workflow_file_path = $workflow_file_path;
+        $this->repository_id = $repository_id;
+        $this->scope = $scope;
+        $this->selected_repository_ids = $selected_repository_ids;
     }
 }

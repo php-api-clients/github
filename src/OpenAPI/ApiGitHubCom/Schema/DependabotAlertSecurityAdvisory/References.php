@@ -10,12 +10,9 @@ final class References
     /**
      * The URL of the reference.
      */
-    private string $url;
-    /**
-     * The URL of the reference.
-     */
-    public function url() : string
+    public readonly string $url;
+    public function __construct(string $url)
     {
-        return $this->url;
+        $this->url = $url;
     }
 }

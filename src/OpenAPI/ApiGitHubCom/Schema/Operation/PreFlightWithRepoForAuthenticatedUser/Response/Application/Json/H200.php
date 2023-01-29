@@ -9,22 +9,12 @@ final class H200
     public const SCHEMA_DESCRIPTION = '';
     /**
      * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $billable_owner;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Defaults::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Defaults $defaults;
-    /**
-     * A GitHub user.
-     */
-    public function billable_owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $billable_owner;
+    public readonly array $defaults;
+    public function __construct(array $billable_owner, array $defaults)
     {
-        return $this->billable_owner;
-    }
-    public function defaults() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Defaults
-    {
-        return $this->defaults;
+        $this->billable_owner = $billable_owner;
+        $this->defaults = $defaults;
     }
 }

@@ -10,48 +10,28 @@ final class Json
     /**
      * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/reference/dependabot#get-an-organization-public-key) endpoint.
      */
-    private ?string $encrypted_value = null;
+    public readonly ?string $encrypted_value;
     /**
      * ID of the key you used to encrypt the secret.
      */
-    private ?string $key_id = null;
+    public readonly ?string $key_id;
     /**
      * Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
      */
-    private string $visibility;
+    public readonly string $visibility;
     /**
      * An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/reference/dependabot#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/reference/dependabot#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/reference/dependabot#remove-selected-repository-from-an-organization-secret) endpoints.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds::class)
      */
-    private array $selected_repository_ids = array();
+    public readonly array $selected_repository_ids;
     /**
-     * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/reference/dependabot#get-an-organization-public-key) endpoint.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds> $selected_repository_ids
      */
-    public function encrypted_value() : ?string
+    public function __construct(string $encrypted_value, string $key_id, string $visibility, array $selected_repository_ids)
     {
-        return $this->encrypted_value;
-    }
-    /**
-     * ID of the key you used to encrypt the secret.
-     */
-    public function key_id() : ?string
-    {
-        return $this->key_id;
-    }
-    /**
-     * Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
-     */
-    public function visibility() : string
-    {
-        return $this->visibility;
-    }
-    /**
-     * An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/reference/dependabot#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/reference/dependabot#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/reference/dependabot#remove-selected-repository-from-an-organization-secret) endpoints.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds>
-     */
-    public function selected_repository_ids() : array
-    {
-        return $this->selected_repository_ids;
+        $this->encrypted_value = $encrypted_value;
+        $this->key_id = $key_id;
+        $this->visibility = $visibility;
+        $this->selected_repository_ids = $selected_repository_ids;
     }
 }

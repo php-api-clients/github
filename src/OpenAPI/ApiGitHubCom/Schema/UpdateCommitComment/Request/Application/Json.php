@@ -10,12 +10,9 @@ final class Json
     /**
      * The contents of the comment
      */
-    private string $body;
-    /**
-     * The contents of the comment
-     */
-    public function body() : string
+    public readonly string $body;
+    public function __construct(string $body)
     {
-        return $this->body;
+        $this->body = $body;
     }
 }

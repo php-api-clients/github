@@ -10,58 +10,29 @@ final class Json
     /**
      * The commit message.
      */
-    private string $message;
+    public readonly string $message;
     /**
      * The blob SHA of the file being deleted.
      */
-    private string $sha;
+    public readonly string $sha;
     /**
      * The branch name. Default: the repository’s default branch (usually `master`)
      */
-    private ?string $branch = null;
-    /**
-     * object containing information about the committer.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer $committer = null;
-    /**
-     * object containing information about the author.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author = null;
-    /**
-     * The commit message.
-     */
-    public function message() : string
-    {
-        return $this->message;
-    }
-    /**
-     * The blob SHA of the file being deleted.
-     */
-    public function sha() : string
-    {
-        return $this->sha;
-    }
-    /**
-     * The branch name. Default: the repository’s default branch (usually `master`)
-     */
-    public function branch() : ?string
-    {
-        return $this->branch;
-    }
+    public readonly ?string $branch;
     /**
      * object containing information about the committer.
      */
-    public function committer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer
-    {
-        return $this->committer;
-    }
+    public readonly array $committer;
     /**
      * object containing information about the author.
      */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author
+    public readonly array $author;
+    public function __construct(string $message, string $sha, string $branch, array $committer, array $author)
     {
-        return $this->author;
+        $this->message = $message;
+        $this->sha = $sha;
+        $this->branch = $branch;
+        $this->committer = $committer;
+        $this->author = $author;
     }
 }

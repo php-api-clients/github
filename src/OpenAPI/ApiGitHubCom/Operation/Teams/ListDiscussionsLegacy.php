@@ -8,22 +8,24 @@ final class ListDiscussionsLegacy
     public const OPERATION_MATCH = 'GET /teams/{team_id}/discussions';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The unique identifier of the team.**/
-    private readonly int $team_id;
+    private int $team_id;
     /**The direction to sort the results by.**/
-    private readonly string $direction;
+    private string $direction;
     /**The number of results per page (max 100).**/
-    private readonly int $per_page;
+    private int $per_page;
     /**Page number of the results to fetch.**/
-    private readonly int $page;
+    private int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, int $team_id, string $direction = 'desc', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, int $team_id, string $direction = 'desc', int $per_page = 30, int $page = 1)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->team_id = $team_id;
         $this->direction = $direction;
         $this->per_page = $per_page;
@@ -40,15 +42,14 @@ final class ListDiscussionsLegacy
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) use($hydrator) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion {
-                            return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\TeamDiscussion', $body);
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion {
+                            return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\TeamDiscussion', $body);
                         });
                 }
                 break;

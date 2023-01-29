@@ -10,45 +10,24 @@ final class Json
     /**
      * The title of the milestone.
      */
-    private string $title;
+    public readonly string $title;
     /**
      * The state of the milestone. Either `open` or `closed`.
      */
-    private ?string $state = null;
+    public readonly ?string $state;
     /**
      * A description of the milestone.
      */
-    private ?string $description = null;
+    public readonly ?string $description;
     /**
      * The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $due_on = null;
-    /**
-     * The title of the milestone.
-     */
-    public function title() : string
+    public readonly ?string $due_on;
+    public function __construct(string $title, string $state, string $description, string $due_on)
     {
-        return $this->title;
-    }
-    /**
-     * The state of the milestone. Either `open` or `closed`.
-     */
-    public function state() : ?string
-    {
-        return $this->state;
-    }
-    /**
-     * A description of the milestone.
-     */
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    /**
-     * The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function due_on() : ?string
-    {
-        return $this->due_on;
+        $this->title = $title;
+        $this->state = $state;
+        $this->description = $description;
+        $this->due_on = $due_on;
     }
 }

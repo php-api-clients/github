@@ -10,41 +10,25 @@ final class Json
     /**
      * List of repository names that the token should have access to
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories::class)
      */
-    private array $repositories = array();
+    public readonly array $repositories;
     /**
      * List of repository IDs that the token should have access to
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $repository_ids = array();
-    /**
-     * The permissions granted to the user-to-server access token.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions;
-    /**
-     * List of repository names that the token should have access to
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories>
-     */
-    public function repositories() : array
-    {
-        return $this->repositories;
-    }
-    /**
-     * List of repository IDs that the token should have access to
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     */
-    public function repository_ids() : array
-    {
-        return $this->repository_ids;
-    }
+    public readonly array $repository_ids;
     /**
      * The permissions granted to the user-to-server access token.
      */
-    public function permissions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions
+    public readonly array $permissions;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories> $repositories
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $repository_ids
+     */
+    public function __construct(array $repositories, array $repository_ids, array $permissions)
     {
-        return $this->permissions;
+        $this->repositories = $repositories;
+        $this->repository_ids = $repository_ids;
+        $this->permissions = $permissions;
     }
 }

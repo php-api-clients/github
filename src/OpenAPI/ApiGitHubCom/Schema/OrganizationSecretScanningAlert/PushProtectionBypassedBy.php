@@ -7,4 +7,7 @@ final class PushProtectionBypassedBy
     public const SCHEMA_JSON = '{"type":"null"}';
     public const SCHEMA_TITLE = 'OrganizationSecretScanningAlert\\PushProtectionBypassedBy';
     public const SCHEMA_DESCRIPTION = '';
+    public function __construct()
+    {
+    }
 }

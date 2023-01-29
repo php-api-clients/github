@@ -10,12 +10,9 @@ final class Json
     /**
      * The name of the branch which should be updated to match upstream.
      */
-    private string $branch;
-    /**
-     * The name of the branch which should be updated to match upstream.
-     */
-    public function branch() : string
+    public readonly string $branch;
+    public function __construct(string $branch)
     {
-        return $this->branch;
+        $this->branch = $branch;
     }
 }

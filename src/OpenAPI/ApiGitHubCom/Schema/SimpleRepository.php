@@ -10,508 +10,234 @@ final class SimpleRepository
     /**
      * A unique identifier of the repository.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The GraphQL identifier of the repository.
      */
-    private string $node_id;
+    public readonly string $node_id;
     /**
      * The name of the repository.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The full, globally unique, name of the repository.
      */
-    private string $full_name;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
-    /**
-     * Whether the repository is private.
-     */
-    private bool $private;
-    /**
-     * The URL to view the repository on GitHub.com.
-     */
-    private string $html_url;
-    /**
-     * The repository description.
-     */
-    private ?string $description;
-    /**
-     * Whether the repository is a fork.
-     */
-    private bool $fork;
-    /**
-     * The URL to get more information about the repository from the GitHub API.
-     */
-    private string $url;
-    /**
-     * A template for the API URL to download the repository as an archive.
-     */
-    private string $archive_url;
-    /**
-     * A template for the API URL to list the available assignees for issues in the repository.
-     */
-    private string $assignees_url;
-    /**
-     * A template for the API URL to create or retrieve a raw Git blob in the repository.
-     */
-    private string $blobs_url;
-    /**
-     * A template for the API URL to get information about branches in the repository.
-     */
-    private string $branches_url;
-    /**
-     * A template for the API URL to get information about collaborators of the repository.
-     */
-    private string $collaborators_url;
-    /**
-     * A template for the API URL to get information about comments on the repository.
-     */
-    private string $comments_url;
-    /**
-     * A template for the API URL to get information about commits on the repository.
-     */
-    private string $commits_url;
-    /**
-     * A template for the API URL to compare two commits or refs.
-     */
-    private string $compare_url;
-    /**
-     * A template for the API URL to get the contents of the repository.
-     */
-    private string $contents_url;
-    /**
-     * A template for the API URL to list the contributors to the repository.
-     */
-    private string $contributors_url;
-    /**
-     * The API URL to list the deployments of the repository.
-     */
-    private string $deployments_url;
-    /**
-     * The API URL to list the downloads on the repository.
-     */
-    private string $downloads_url;
-    /**
-     * The API URL to list the events of the repository.
-     */
-    private string $events_url;
-    /**
-     * The API URL to list the forks of the repository.
-     */
-    private string $forks_url;
-    /**
-     * A template for the API URL to get information about Git commits of the repository.
-     */
-    private string $git_commits_url;
-    /**
-     * A template for the API URL to get information about Git refs of the repository.
-     */
-    private string $git_refs_url;
-    /**
-     * A template for the API URL to get information about Git tags of the repository.
-     */
-    private string $git_tags_url;
-    /**
-     * A template for the API URL to get information about issue comments on the repository.
-     */
-    private string $issue_comment_url;
-    /**
-     * A template for the API URL to get information about issue events on the repository.
-     */
-    private string $issue_events_url;
-    /**
-     * A template for the API URL to get information about issues on the repository.
-     */
-    private string $issues_url;
-    /**
-     * A template for the API URL to get information about deploy keys on the repository.
-     */
-    private string $keys_url;
-    /**
-     * A template for the API URL to get information about labels of the repository.
-     */
-    private string $labels_url;
-    /**
-     * The API URL to get information about the languages of the repository.
-     */
-    private string $languages_url;
-    /**
-     * The API URL to merge branches in the repository.
-     */
-    private string $merges_url;
-    /**
-     * A template for the API URL to get information about milestones of the repository.
-     */
-    private string $milestones_url;
-    /**
-     * A template for the API URL to get information about notifications on the repository.
-     */
-    private string $notifications_url;
-    /**
-     * A template for the API URL to get information about pull requests on the repository.
-     */
-    private string $pulls_url;
-    /**
-     * A template for the API URL to get information about releases on the repository.
-     */
-    private string $releases_url;
-    /**
-     * The API URL to list the stargazers on the repository.
-     */
-    private string $stargazers_url;
-    /**
-     * A template for the API URL to get information about statuses of a commit.
-     */
-    private string $statuses_url;
-    /**
-     * The API URL to list the subscribers on the repository.
-     */
-    private string $subscribers_url;
-    /**
-     * The API URL to subscribe to notifications for this repository.
-     */
-    private string $subscription_url;
-    /**
-     * The API URL to get information about tags on the repository.
-     */
-    private string $tags_url;
-    /**
-     * The API URL to list the teams on the repository.
-     */
-    private string $teams_url;
-    /**
-     * A template for the API URL to create or retrieve a raw Git tree of the repository.
-     */
-    private string $trees_url;
-    /**
-     * The API URL to list the hooks on the repository.
-     */
-    private string $hooks_url;
-    /**
-     * A unique identifier of the repository.
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    /**
-     * The GraphQL identifier of the repository.
-     */
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * The name of the repository.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * The full, globally unique, name of the repository.
-     */
-    public function full_name() : string
-    {
-        return $this->full_name;
-    }
+    public readonly string $full_name;
     /**
      * A GitHub user.
      */
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
-    {
-        return $this->owner;
-    }
+    public readonly array $owner;
     /**
      * Whether the repository is private.
      */
-    public function private() : bool
-    {
-        return $this->private;
-    }
+    public readonly bool $private;
     /**
      * The URL to view the repository on GitHub.com.
      */
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
+    public readonly string $html_url;
     /**
      * The repository description.
      */
-    public function description() : ?string
-    {
-        return $this->description;
-    }
+    public readonly ?string $description;
     /**
      * Whether the repository is a fork.
      */
-    public function fork() : bool
-    {
-        return $this->fork;
-    }
+    public readonly bool $fork;
     /**
      * The URL to get more information about the repository from the GitHub API.
      */
-    public function url() : string
-    {
-        return $this->url;
-    }
+    public readonly string $url;
     /**
      * A template for the API URL to download the repository as an archive.
      */
-    public function archive_url() : string
-    {
-        return $this->archive_url;
-    }
+    public readonly string $archive_url;
     /**
      * A template for the API URL to list the available assignees for issues in the repository.
      */
-    public function assignees_url() : string
-    {
-        return $this->assignees_url;
-    }
+    public readonly string $assignees_url;
     /**
      * A template for the API URL to create or retrieve a raw Git blob in the repository.
      */
-    public function blobs_url() : string
-    {
-        return $this->blobs_url;
-    }
+    public readonly string $blobs_url;
     /**
      * A template for the API URL to get information about branches in the repository.
      */
-    public function branches_url() : string
-    {
-        return $this->branches_url;
-    }
+    public readonly string $branches_url;
     /**
      * A template for the API URL to get information about collaborators of the repository.
      */
-    public function collaborators_url() : string
-    {
-        return $this->collaborators_url;
-    }
+    public readonly string $collaborators_url;
     /**
      * A template for the API URL to get information about comments on the repository.
      */
-    public function comments_url() : string
-    {
-        return $this->comments_url;
-    }
+    public readonly string $comments_url;
     /**
      * A template for the API URL to get information about commits on the repository.
      */
-    public function commits_url() : string
-    {
-        return $this->commits_url;
-    }
+    public readonly string $commits_url;
     /**
      * A template for the API URL to compare two commits or refs.
      */
-    public function compare_url() : string
-    {
-        return $this->compare_url;
-    }
+    public readonly string $compare_url;
     /**
      * A template for the API URL to get the contents of the repository.
      */
-    public function contents_url() : string
-    {
-        return $this->contents_url;
-    }
+    public readonly string $contents_url;
     /**
      * A template for the API URL to list the contributors to the repository.
      */
-    public function contributors_url() : string
-    {
-        return $this->contributors_url;
-    }
+    public readonly string $contributors_url;
     /**
      * The API URL to list the deployments of the repository.
      */
-    public function deployments_url() : string
-    {
-        return $this->deployments_url;
-    }
+    public readonly string $deployments_url;
     /**
      * The API URL to list the downloads on the repository.
      */
-    public function downloads_url() : string
-    {
-        return $this->downloads_url;
-    }
+    public readonly string $downloads_url;
     /**
      * The API URL to list the events of the repository.
      */
-    public function events_url() : string
-    {
-        return $this->events_url;
-    }
+    public readonly string $events_url;
     /**
      * The API URL to list the forks of the repository.
      */
-    public function forks_url() : string
-    {
-        return $this->forks_url;
-    }
+    public readonly string $forks_url;
     /**
      * A template for the API URL to get information about Git commits of the repository.
      */
-    public function git_commits_url() : string
-    {
-        return $this->git_commits_url;
-    }
+    public readonly string $git_commits_url;
     /**
      * A template for the API URL to get information about Git refs of the repository.
      */
-    public function git_refs_url() : string
-    {
-        return $this->git_refs_url;
-    }
+    public readonly string $git_refs_url;
     /**
      * A template for the API URL to get information about Git tags of the repository.
      */
-    public function git_tags_url() : string
-    {
-        return $this->git_tags_url;
-    }
+    public readonly string $git_tags_url;
     /**
      * A template for the API URL to get information about issue comments on the repository.
      */
-    public function issue_comment_url() : string
-    {
-        return $this->issue_comment_url;
-    }
+    public readonly string $issue_comment_url;
     /**
      * A template for the API URL to get information about issue events on the repository.
      */
-    public function issue_events_url() : string
-    {
-        return $this->issue_events_url;
-    }
+    public readonly string $issue_events_url;
     /**
      * A template for the API URL to get information about issues on the repository.
      */
-    public function issues_url() : string
-    {
-        return $this->issues_url;
-    }
+    public readonly string $issues_url;
     /**
      * A template for the API URL to get information about deploy keys on the repository.
      */
-    public function keys_url() : string
-    {
-        return $this->keys_url;
-    }
+    public readonly string $keys_url;
     /**
      * A template for the API URL to get information about labels of the repository.
      */
-    public function labels_url() : string
-    {
-        return $this->labels_url;
-    }
+    public readonly string $labels_url;
     /**
      * The API URL to get information about the languages of the repository.
      */
-    public function languages_url() : string
-    {
-        return $this->languages_url;
-    }
+    public readonly string $languages_url;
     /**
      * The API URL to merge branches in the repository.
      */
-    public function merges_url() : string
-    {
-        return $this->merges_url;
-    }
+    public readonly string $merges_url;
     /**
      * A template for the API URL to get information about milestones of the repository.
      */
-    public function milestones_url() : string
-    {
-        return $this->milestones_url;
-    }
+    public readonly string $milestones_url;
     /**
      * A template for the API URL to get information about notifications on the repository.
      */
-    public function notifications_url() : string
-    {
-        return $this->notifications_url;
-    }
+    public readonly string $notifications_url;
     /**
      * A template for the API URL to get information about pull requests on the repository.
      */
-    public function pulls_url() : string
-    {
-        return $this->pulls_url;
-    }
+    public readonly string $pulls_url;
     /**
      * A template for the API URL to get information about releases on the repository.
      */
-    public function releases_url() : string
-    {
-        return $this->releases_url;
-    }
+    public readonly string $releases_url;
     /**
      * The API URL to list the stargazers on the repository.
      */
-    public function stargazers_url() : string
-    {
-        return $this->stargazers_url;
-    }
+    public readonly string $stargazers_url;
     /**
      * A template for the API URL to get information about statuses of a commit.
      */
-    public function statuses_url() : string
-    {
-        return $this->statuses_url;
-    }
+    public readonly string $statuses_url;
     /**
      * The API URL to list the subscribers on the repository.
      */
-    public function subscribers_url() : string
-    {
-        return $this->subscribers_url;
-    }
+    public readonly string $subscribers_url;
     /**
      * The API URL to subscribe to notifications for this repository.
      */
-    public function subscription_url() : string
-    {
-        return $this->subscription_url;
-    }
+    public readonly string $subscription_url;
     /**
      * The API URL to get information about tags on the repository.
      */
-    public function tags_url() : string
-    {
-        return $this->tags_url;
-    }
+    public readonly string $tags_url;
     /**
      * The API URL to list the teams on the repository.
      */
-    public function teams_url() : string
-    {
-        return $this->teams_url;
-    }
+    public readonly string $teams_url;
     /**
      * A template for the API URL to create or retrieve a raw Git tree of the repository.
      */
-    public function trees_url() : string
-    {
-        return $this->trees_url;
-    }
+    public readonly string $trees_url;
     /**
      * The API URL to list the hooks on the repository.
      */
-    public function hooks_url() : string
+    public readonly string $hooks_url;
+    public function __construct(int $id, string $node_id, string $name, string $full_name, array $owner, bool $private, string $html_url, string $description, bool $fork, string $url, string $archive_url, string $assignees_url, string $blobs_url, string $branches_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, string $deployments_url, string $downloads_url, string $events_url, string $forks_url, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $languages_url, string $merges_url, string $milestones_url, string $notifications_url, string $pulls_url, string $releases_url, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $tags_url, string $teams_url, string $trees_url, string $hooks_url)
     {
-        return $this->hooks_url;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->name = $name;
+        $this->full_name = $full_name;
+        $this->owner = $owner;
+        $this->private = $private;
+        $this->html_url = $html_url;
+        $this->description = $description;
+        $this->fork = $fork;
+        $this->url = $url;
+        $this->archive_url = $archive_url;
+        $this->assignees_url = $assignees_url;
+        $this->blobs_url = $blobs_url;
+        $this->branches_url = $branches_url;
+        $this->collaborators_url = $collaborators_url;
+        $this->comments_url = $comments_url;
+        $this->commits_url = $commits_url;
+        $this->compare_url = $compare_url;
+        $this->contents_url = $contents_url;
+        $this->contributors_url = $contributors_url;
+        $this->deployments_url = $deployments_url;
+        $this->downloads_url = $downloads_url;
+        $this->events_url = $events_url;
+        $this->forks_url = $forks_url;
+        $this->git_commits_url = $git_commits_url;
+        $this->git_refs_url = $git_refs_url;
+        $this->git_tags_url = $git_tags_url;
+        $this->issue_comment_url = $issue_comment_url;
+        $this->issue_events_url = $issue_events_url;
+        $this->issues_url = $issues_url;
+        $this->keys_url = $keys_url;
+        $this->labels_url = $labels_url;
+        $this->languages_url = $languages_url;
+        $this->merges_url = $merges_url;
+        $this->milestones_url = $milestones_url;
+        $this->notifications_url = $notifications_url;
+        $this->pulls_url = $pulls_url;
+        $this->releases_url = $releases_url;
+        $this->stargazers_url = $stargazers_url;
+        $this->statuses_url = $statuses_url;
+        $this->subscribers_url = $subscribers_url;
+        $this->subscription_url = $subscription_url;
+        $this->tags_url = $tags_url;
+        $this->teams_url = $teams_url;
+        $this->trees_url = $trees_url;
+        $this->hooks_url = $hooks_url;
     }
 }

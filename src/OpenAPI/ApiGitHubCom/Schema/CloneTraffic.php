@@ -7,26 +7,19 @@ final class CloneTraffic
     public const SCHEMA_JSON = '{"title":"Clone Traffic","required":["uniques","count","clones"],"type":"object","properties":{"count":{"type":"integer","examples":[173]},"uniques":{"type":"integer","examples":[128]},"clones":{"type":"array","items":{"title":"Traffic","required":["timestamp","uniques","count"],"type":"object","properties":{"timestamp":{"type":"string","format":"date-time"},"uniques":{"type":"integer"},"count":{"type":"integer"}}}}},"description":"Clone Traffic"}';
     public const SCHEMA_TITLE = 'Clone Traffic';
     public const SCHEMA_DESCRIPTION = 'Clone Traffic';
-    private int $count;
-    private int $uniques;
+    public readonly int $count;
+    public readonly int $uniques;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic::class)
      */
-    private array $clones = array();
-    public function count() : int
-    {
-        return $this->count;
-    }
-    public function uniques() : int
-    {
-        return $this->uniques;
-    }
+    public readonly array $clones;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Traffic> $clones
      */
-    public function clones() : array
+    public function __construct(int $count, int $uniques, array $clones)
     {
-        return $this->clones;
+        $this->count = $count;
+        $this->uniques = $uniques;
+        $this->clones = $clones;
     }
 }

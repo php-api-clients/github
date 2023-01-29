@@ -10,34 +10,19 @@ final class Json
     /**
      * The Markdown text to render in HTML.
      */
-    private string $text;
+    public readonly string $text;
     /**
      * The rendering mode.
      */
-    private ?string $mode = null;
+    public readonly ?string $mode;
     /**
      * The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
      */
-    private ?string $context = null;
-    /**
-     * The Markdown text to render in HTML.
-     */
-    public function text() : string
+    public readonly ?string $context;
+    public function __construct(string $text, string $mode, string $context)
     {
-        return $this->text;
-    }
-    /**
-     * The rendering mode.
-     */
-    public function mode() : ?string
-    {
-        return $this->mode;
-    }
-    /**
-     * The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
-     */
-    public function context() : ?string
-    {
-        return $this->context;
+        $this->text = $text;
+        $this->mode = $mode;
+        $this->context = $context;
     }
 }

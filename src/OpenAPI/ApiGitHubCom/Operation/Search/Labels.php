@@ -8,26 +8,28 @@ final class Labels
     public const OPERATION_MATCH = 'GET /search/labels';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The id of the repository.**/
-    private readonly int $repository_id;
+    private int $repository_id;
     /**The search keywords. This endpoint does not accept qualifiers in the query. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query).**/
-    private readonly string $q;
+    private string $q;
     /**Sorts the results of your query by when the label was `created` or `updated`. Default: [best match](https://docs.github.com/rest/reference/search#ranking-search-results)**/
-    private readonly string $sort;
+    private string $sort;
     /**Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.**/
-    private readonly string $order;
+    private string $order;
     /**The number of results per page (max 100).**/
-    private readonly int $per_page;
+    private int $per_page;
     /**Page number of the results to fetch.**/
-    private readonly int $page;
+    private int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, int $repository_id, string $q, string $sort, string $order = 'desc', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, int $repository_id, string $q, string $sort, string $order = 'desc', int $per_page = 30, int $page = 1)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->repository_id = $repository_id;
         $this->q = $q;
         $this->sort = $sort;
@@ -46,14 +48,13 @@ final class Labels
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Labels\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\Labels\\Response\\Application\\Json\\H200', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\Labels\\Response\\Application\\Json\\H200', $body);
                 }
                 break;
             /**Not modified**/
@@ -65,7 +66,7 @@ final class Labels
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
             /**Forbidden**/
@@ -73,7 +74,7 @@ final class Labels
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
             /**Validation failed, or the endpoint has been spammed.**/
@@ -81,7 +82,7 @@ final class Labels
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationError', $body);
                 }
                 break;
         }

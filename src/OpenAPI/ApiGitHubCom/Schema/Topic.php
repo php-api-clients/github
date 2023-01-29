@@ -9,14 +9,13 @@ final class Topic
     public const SCHEMA_DESCRIPTION = 'A topic aggregates entities that are related to a subject.';
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic\Names>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic\Names::class)
      */
-    private array $names = array();
+    public readonly array $names;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic\Names>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic\Names> $names
      */
-    public function names() : array
+    public function __construct(array $names)
     {
-        return $this->names;
+        $this->names = $names;
     }
 }

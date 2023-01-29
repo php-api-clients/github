@@ -10,28 +10,16 @@ final class DeploymentBranchPolicy
     /**
      * The unique identifier of the branch policy.
      */
-    private int $id;
-    private string $node_id;
+    public readonly int $id;
+    public readonly string $node_id;
     /**
      * The name pattern that branches must match in order to deploy to the environment.
      */
-    private string $name;
-    /**
-     * The unique identifier of the branch policy.
-     */
-    public function id() : int
+    public readonly string $name;
+    public function __construct(int $id, string $node_id, string $name)
     {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * The name pattern that branches must match in order to deploy to the environment.
-     */
-    public function name() : string
-    {
-        return $this->name;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->name = $name;
     }
 }

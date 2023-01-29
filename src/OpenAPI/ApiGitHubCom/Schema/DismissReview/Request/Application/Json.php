@@ -10,17 +10,11 @@ final class Json
     /**
      * The message for the pull request review dismissal
      */
-    private string $message;
-    private ?string $event = null;
-    /**
-     * The message for the pull request review dismissal
-     */
-    public function message() : string
+    public readonly string $message;
+    public readonly ?string $event;
+    public function __construct(string $message, string $event)
     {
-        return $this->message;
-    }
-    public function event() : ?string
-    {
-        return $this->event;
+        $this->message = $message;
+        $this->event = $event;
     }
 }

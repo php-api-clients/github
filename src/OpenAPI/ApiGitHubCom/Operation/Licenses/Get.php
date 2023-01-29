@@ -8,15 +8,17 @@ final class Get
     public const OPERATION_MATCH = 'GET /licenses/{license}';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly string $license;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
+    private string $license;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $license)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, string $license)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->license = $license;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
@@ -30,14 +32,13 @@ final class Get
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\License', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\License', $body);
                 }
                 break;
             /**Forbidden**/
@@ -45,7 +46,7 @@ final class Get
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
             /**Resource not found**/
@@ -53,7 +54,7 @@ final class Get
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
             /**Not modified**/

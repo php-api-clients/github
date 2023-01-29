@@ -9,70 +9,35 @@ final class Json
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\DismissalRestrictions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\DismissalRestrictions $dismissal_restrictions;
+    public readonly array $dismissal_restrictions;
     /**
      * Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
      */
-    private bool $dismiss_stale_reviews;
+    public readonly bool $dismiss_stale_reviews;
     /**
      * Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) have reviewed.
      */
-    private bool $require_code_owner_reviews;
+    public readonly bool $require_code_owner_reviews;
     /**
      * Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
      */
-    private int $required_approving_review_count;
+    public readonly int $required_approving_review_count;
     /**
      * Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`
      */
-    private bool $require_last_push_approval;
-    /**
-     * Allow specific users, teams, or apps to bypass pull request requirements.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\BypassPullRequestAllowances::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\BypassPullRequestAllowances $bypass_pull_request_allowances;
-    /**
-     * Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
-     */
-    public function dismissal_restrictions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\DismissalRestrictions
-    {
-        return $this->dismissal_restrictions;
-    }
-    /**
-     * Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
-     */
-    public function dismiss_stale_reviews() : bool
-    {
-        return $this->dismiss_stale_reviews;
-    }
-    /**
-     * Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) have reviewed.
-     */
-    public function require_code_owner_reviews() : bool
-    {
-        return $this->require_code_owner_reviews;
-    }
-    /**
-     * Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
-     */
-    public function required_approving_review_count() : int
-    {
-        return $this->required_approving_review_count;
-    }
-    /**
-     * Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`
-     */
-    public function require_last_push_approval() : bool
-    {
-        return $this->require_last_push_approval;
-    }
+    public readonly bool $require_last_push_approval;
     /**
      * Allow specific users, teams, or apps to bypass pull request requirements.
      */
-    public function bypass_pull_request_allowances() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\BypassPullRequestAllowances
+    public readonly array $bypass_pull_request_allowances;
+    public function __construct(array $dismissal_restrictions, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval, array $bypass_pull_request_allowances)
     {
-        return $this->bypass_pull_request_allowances;
+        $this->dismissal_restrictions = $dismissal_restrictions;
+        $this->dismiss_stale_reviews = $dismiss_stale_reviews;
+        $this->require_code_owner_reviews = $require_code_owner_reviews;
+        $this->required_approving_review_count = $required_approving_review_count;
+        $this->require_last_push_approval = $require_last_push_approval;
+        $this->bypass_pull_request_allowances = $bypass_pull_request_allowances;
     }
 }

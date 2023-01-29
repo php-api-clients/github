@@ -7,14 +7,11 @@ final class IssueEventLabel
     public const SCHEMA_JSON = '{"title":"Issue Event Label","required":["name","color"],"type":"object","properties":{"name":{"type":["string","null"]},"color":{"type":["string","null"]}},"description":"Issue Event Label"}';
     public const SCHEMA_TITLE = 'Issue Event Label';
     public const SCHEMA_DESCRIPTION = 'Issue Event Label';
-    private ?string $name;
-    private ?string $color;
-    public function name() : ?string
+    public readonly ?string $name;
+    public readonly ?string $color;
+    public function __construct(string $name, string $color)
     {
-        return $this->name;
-    }
-    public function color() : ?string
-    {
-        return $this->color;
+        $this->name = $name;
+        $this->color = $color;
     }
 }

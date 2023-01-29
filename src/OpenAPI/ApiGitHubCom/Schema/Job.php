@@ -10,219 +10,105 @@ final class Job
     /**
      * The id of the job.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The id of the associated workflow run.
      */
-    private int $run_id;
-    private string $run_url;
+    public readonly int $run_id;
+    public readonly string $run_url;
     /**
      * Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.
      */
-    private ?int $run_attempt = null;
-    private string $node_id;
+    public readonly ?int $run_attempt;
+    public readonly string $node_id;
     /**
      * The SHA of the commit that is being run.
      */
-    private string $head_sha;
-    private string $url;
-    private ?string $html_url;
+    public readonly string $head_sha;
+    public readonly string $url;
+    public readonly ?string $html_url;
     /**
      * The phase of the lifecycle that the job is currently in.
      */
-    private string $status;
+    public readonly string $status;
     /**
      * The outcome of the job.
      */
-    private ?string $conclusion;
+    public readonly ?string $conclusion;
     /**
      * The time that the job started, in ISO 8601 format.
      */
-    private string $started_at;
+    public readonly string $started_at;
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    private ?string $completed_at;
+    public readonly ?string $completed_at;
     /**
      * The name of the job.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * Steps in this job.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps::class)
      */
-    private array $steps = array();
-    private string $check_run_url;
+    public readonly array $steps;
+    public readonly string $check_run_url;
     /**
      * Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Labels>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Labels::class)
      */
-    private array $labels = array();
+    public readonly array $labels;
     /**
      * The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?int $runner_id;
+    public readonly ?int $runner_id;
     /**
      * The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?string $runner_name;
+    public readonly ?string $runner_name;
     /**
      * The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?int $runner_group_id;
+    public readonly ?int $runner_group_id;
     /**
      * The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      */
-    private ?string $runner_group_name;
+    public readonly ?string $runner_group_name;
     /**
      * The name of the workflow.
      */
-    private ?string $workflow_name;
+    public readonly ?string $workflow_name;
     /**
      * The name of the current branch.
      */
-    private ?string $head_branch;
+    public readonly ?string $head_branch;
     /**
-     * The id of the job.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps> $steps
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Labels> $labels
      */
-    public function id() : int
+    public function __construct(int $id, int $run_id, string $run_url, int $run_attempt, string $node_id, string $head_sha, string $url, string $html_url, string $status, string $conclusion, string $started_at, string $completed_at, string $name, array $steps, string $check_run_url, array $labels, int $runner_id, string $runner_name, int $runner_group_id, string $runner_group_name, string $workflow_name, string $head_branch)
     {
-        return $this->id;
-    }
-    /**
-     * The id of the associated workflow run.
-     */
-    public function run_id() : int
-    {
-        return $this->run_id;
-    }
-    public function run_url() : string
-    {
-        return $this->run_url;
-    }
-    /**
-     * Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.
-     */
-    public function run_attempt() : ?int
-    {
-        return $this->run_attempt;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * The SHA of the commit that is being run.
-     */
-    public function head_sha() : string
-    {
-        return $this->head_sha;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function html_url() : ?string
-    {
-        return $this->html_url;
-    }
-    /**
-     * The phase of the lifecycle that the job is currently in.
-     */
-    public function status() : string
-    {
-        return $this->status;
-    }
-    /**
-     * The outcome of the job.
-     */
-    public function conclusion() : ?string
-    {
-        return $this->conclusion;
-    }
-    /**
-     * The time that the job started, in ISO 8601 format.
-     */
-    public function started_at() : string
-    {
-        return $this->started_at;
-    }
-    /**
-     * The time that the job finished, in ISO 8601 format.
-     */
-    public function completed_at() : ?string
-    {
-        return $this->completed_at;
-    }
-    /**
-     * The name of the job.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * Steps in this job.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Steps>
-     */
-    public function steps() : array
-    {
-        return $this->steps;
-    }
-    public function check_run_url() : string
-    {
-        return $this->check_run_url;
-    }
-    /**
-     * Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job\Labels>
-     */
-    public function labels() : array
-    {
-        return $this->labels;
-    }
-    /**
-     * The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
-     */
-    public function runner_id() : ?int
-    {
-        return $this->runner_id;
-    }
-    /**
-     * The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
-     */
-    public function runner_name() : ?string
-    {
-        return $this->runner_name;
-    }
-    /**
-     * The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
-     */
-    public function runner_group_id() : ?int
-    {
-        return $this->runner_group_id;
-    }
-    /**
-     * The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
-     */
-    public function runner_group_name() : ?string
-    {
-        return $this->runner_group_name;
-    }
-    /**
-     * The name of the workflow.
-     */
-    public function workflow_name() : ?string
-    {
-        return $this->workflow_name;
-    }
-    /**
-     * The name of the current branch.
-     */
-    public function head_branch() : ?string
-    {
-        return $this->head_branch;
+        $this->id = $id;
+        $this->run_id = $run_id;
+        $this->run_url = $run_url;
+        $this->run_attempt = $run_attempt;
+        $this->node_id = $node_id;
+        $this->head_sha = $head_sha;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->status = $status;
+        $this->conclusion = $conclusion;
+        $this->started_at = $started_at;
+        $this->completed_at = $completed_at;
+        $this->name = $name;
+        $this->steps = $steps;
+        $this->check_run_url = $check_run_url;
+        $this->labels = $labels;
+        $this->runner_id = $runner_id;
+        $this->runner_name = $runner_name;
+        $this->runner_group_id = $runner_group_id;
+        $this->runner_group_name = $runner_group_name;
+        $this->workflow_name = $workflow_name;
+        $this->head_branch = $head_branch;
     }
 }

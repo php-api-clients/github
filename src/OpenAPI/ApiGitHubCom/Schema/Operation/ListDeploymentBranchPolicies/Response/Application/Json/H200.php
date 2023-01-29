@@ -10,24 +10,17 @@ final class H200
     /**
      * The number of deployment branch policies for the environment.
      */
-    private int $total_count;
+    public readonly int $total_count;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy::class)
      */
-    private array $branch_policies = array();
+    public readonly array $branch_policies;
     /**
-     * The number of deployment branch policies for the environment.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy> $branch_policies
      */
-    public function total_count() : int
+    public function __construct(int $total_count, array $branch_policies)
     {
-        return $this->total_count;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy>
-     */
-    public function branch_policies() : array
-    {
-        return $this->branch_policies;
+        $this->total_count = $total_count;
+        $this->branch_policies = $branch_policies;
     }
 }

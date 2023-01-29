@@ -10,44 +10,21 @@ final class Manifest
     /**
      * The name of the manifest.
      */
-    private string $name;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File $file = null;
-    /**
-     * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata = null;
-    /**
-     * A collection of resolved package dependencies.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved $resolved = null;
-    /**
-     * The name of the manifest.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function file() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File
-    {
-        return $this->file;
-    }
+    public readonly string $name;
+    public readonly array $file;
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      */
-    public function metadata() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata
-    {
-        return $this->metadata;
-    }
+    public readonly array $metadata;
     /**
      * A collection of resolved package dependencies.
      */
-    public function resolved() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved
+    public readonly array $resolved;
+    public function __construct(string $name, array $file, array $metadata, array $resolved)
     {
-        return $this->resolved;
+        $this->name = $name;
+        $this->file = $file;
+        $this->metadata = $metadata;
+        $this->resolved = $resolved;
     }
 }

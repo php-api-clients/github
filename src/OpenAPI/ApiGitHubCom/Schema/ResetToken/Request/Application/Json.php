@@ -10,12 +10,9 @@ final class Json
     /**
      * The access_token of the OAuth application.
      */
-    private string $access_token;
-    /**
-     * The access_token of the OAuth application.
-     */
-    public function access_token() : string
+    public readonly string $access_token;
+    public function __construct(string $access_token)
     {
-        return $this->access_token;
+        $this->access_token = $access_token;
     }
 }

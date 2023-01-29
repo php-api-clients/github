@@ -7,202 +7,85 @@ final class PublicUser
     public const SCHEMA_JSON = '{"title":"Public User","required":["avatar_url","events_url","followers_url","following_url","gists_url","gravatar_id","html_url","id","node_id","login","organizations_url","received_events_url","repos_url","site_admin","starred_url","subscriptions_url","type","url","bio","blog","company","email","followers","following","hireable","location","name","public_gists","public_repos","created_at","updated_at"],"type":"object","properties":{"login":{"type":"string"},"id":{"type":"integer"},"node_id":{"type":"string"},"avatar_url":{"type":"string","format":"uri"},"gravatar_id":{"type":["string","null"]},"url":{"type":"string","format":"uri"},"html_url":{"type":"string","format":"uri"},"followers_url":{"type":"string","format":"uri"},"following_url":{"type":"string"},"gists_url":{"type":"string"},"starred_url":{"type":"string"},"subscriptions_url":{"type":"string","format":"uri"},"organizations_url":{"type":"string","format":"uri"},"repos_url":{"type":"string","format":"uri"},"events_url":{"type":"string"},"received_events_url":{"type":"string","format":"uri"},"type":{"type":"string"},"site_admin":{"type":"boolean"},"name":{"type":["string","null"]},"company":{"type":["string","null"]},"blog":{"type":["string","null"]},"location":{"type":["string","null"]},"email":{"type":["string","null"],"format":"email"},"hireable":{"type":["boolean","null"]},"bio":{"type":["string","null"]},"twitter_username":{"type":["string","null"]},"public_repos":{"type":"integer"},"public_gists":{"type":"integer"},"followers":{"type":"integer"},"following":{"type":"integer"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"},"plan":{"required":["collaborators","name","space","private_repos"],"type":"object","properties":{"collaborators":{"type":"integer"},"name":{"type":"string"},"space":{"type":"integer"},"private_repos":{"type":"integer"}}},"suspended_at":{"type":["string","null"],"format":"date-time"},"private_gists":{"type":"integer","examples":[1]},"total_private_repos":{"type":"integer","examples":[2]},"owned_private_repos":{"type":"integer","examples":[2]},"disk_usage":{"type":"integer","examples":[1]},"collaborators":{"type":"integer","examples":[3]}},"description":"Public User","additionalProperties":false}';
     public const SCHEMA_TITLE = 'Public User';
     public const SCHEMA_DESCRIPTION = 'Public User';
-    private string $login;
-    private int $id;
-    private string $node_id;
-    private string $avatar_url;
-    private ?string $gravatar_id;
-    private string $url;
-    private string $html_url;
-    private string $followers_url;
-    private string $following_url;
-    private string $gists_url;
-    private string $starred_url;
-    private string $subscriptions_url;
-    private string $organizations_url;
-    private string $repos_url;
-    private string $events_url;
-    private string $received_events_url;
-    private string $type;
-    private bool $site_admin;
-    private ?string $name;
-    private ?string $company;
-    private ?string $blog;
-    private ?string $location;
-    private ?string $email;
-    private ?bool $hireable;
-    private ?string $bio;
-    private ?string $twitter_username = null;
-    private int $public_repos;
-    private int $public_gists;
-    private int $followers;
-    private int $following;
-    private string $created_at;
-    private string $updated_at;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan $plan = null;
-    private ?string $suspended_at = null;
-    private ?int $private_gists = null;
-    private ?int $total_private_repos = null;
-    private ?int $owned_private_repos = null;
-    private ?int $disk_usage = null;
-    private ?int $collaborators = null;
-    public function login() : string
+    public readonly string $login;
+    public readonly int $id;
+    public readonly string $node_id;
+    public readonly string $avatar_url;
+    public readonly ?string $gravatar_id;
+    public readonly string $url;
+    public readonly string $html_url;
+    public readonly string $followers_url;
+    public readonly string $following_url;
+    public readonly string $gists_url;
+    public readonly string $starred_url;
+    public readonly string $subscriptions_url;
+    public readonly string $organizations_url;
+    public readonly string $repos_url;
+    public readonly string $events_url;
+    public readonly string $received_events_url;
+    public readonly string $type;
+    public readonly bool $site_admin;
+    public readonly ?string $name;
+    public readonly ?string $company;
+    public readonly ?string $blog;
+    public readonly ?string $location;
+    public readonly ?string $email;
+    public readonly ?bool $hireable;
+    public readonly ?string $bio;
+    public readonly ?string $twitter_username;
+    public readonly int $public_repos;
+    public readonly int $public_gists;
+    public readonly int $followers;
+    public readonly int $following;
+    public readonly string $created_at;
+    public readonly string $updated_at;
+    public readonly array $plan;
+    public readonly ?string $suspended_at;
+    public readonly ?int $private_gists;
+    public readonly ?int $total_private_repos;
+    public readonly ?int $owned_private_repos;
+    public readonly ?int $disk_usage;
+    public readonly ?int $collaborators;
+    public function __construct(string $login, int $id, string $node_id, string $avatar_url, string $gravatar_id, string $url, string $html_url, string $followers_url, string $following_url, string $gists_url, string $starred_url, string $subscriptions_url, string $organizations_url, string $repos_url, string $events_url, string $received_events_url, string $type, bool $site_admin, string $name, string $company, string $blog, string $location, string $email, bool $hireable, string $bio, string $twitter_username, int $public_repos, int $public_gists, int $followers, int $following, string $created_at, string $updated_at, array $plan, string $suspended_at, int $private_gists, int $total_private_repos, int $owned_private_repos, int $disk_usage, int $collaborators)
     {
-        return $this->login;
-    }
-    public function id() : int
-    {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    public function avatar_url() : string
-    {
-        return $this->avatar_url;
-    }
-    public function gravatar_id() : ?string
-    {
-        return $this->gravatar_id;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function followers_url() : string
-    {
-        return $this->followers_url;
-    }
-    public function following_url() : string
-    {
-        return $this->following_url;
-    }
-    public function gists_url() : string
-    {
-        return $this->gists_url;
-    }
-    public function starred_url() : string
-    {
-        return $this->starred_url;
-    }
-    public function subscriptions_url() : string
-    {
-        return $this->subscriptions_url;
-    }
-    public function organizations_url() : string
-    {
-        return $this->organizations_url;
-    }
-    public function repos_url() : string
-    {
-        return $this->repos_url;
-    }
-    public function events_url() : string
-    {
-        return $this->events_url;
-    }
-    public function received_events_url() : string
-    {
-        return $this->received_events_url;
-    }
-    public function type() : string
-    {
-        return $this->type;
-    }
-    public function site_admin() : bool
-    {
-        return $this->site_admin;
-    }
-    public function name() : ?string
-    {
-        return $this->name;
-    }
-    public function company() : ?string
-    {
-        return $this->company;
-    }
-    public function blog() : ?string
-    {
-        return $this->blog;
-    }
-    public function location() : ?string
-    {
-        return $this->location;
-    }
-    public function email() : ?string
-    {
-        return $this->email;
-    }
-    public function hireable() : ?bool
-    {
-        return $this->hireable;
-    }
-    public function bio() : ?string
-    {
-        return $this->bio;
-    }
-    public function twitter_username() : ?string
-    {
-        return $this->twitter_username;
-    }
-    public function public_repos() : int
-    {
-        return $this->public_repos;
-    }
-    public function public_gists() : int
-    {
-        return $this->public_gists;
-    }
-    public function followers() : int
-    {
-        return $this->followers;
-    }
-    public function following() : int
-    {
-        return $this->following;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    public function plan() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser\Plan
-    {
-        return $this->plan;
-    }
-    public function suspended_at() : ?string
-    {
-        return $this->suspended_at;
-    }
-    public function private_gists() : ?int
-    {
-        return $this->private_gists;
-    }
-    public function total_private_repos() : ?int
-    {
-        return $this->total_private_repos;
-    }
-    public function owned_private_repos() : ?int
-    {
-        return $this->owned_private_repos;
-    }
-    public function disk_usage() : ?int
-    {
-        return $this->disk_usage;
-    }
-    public function collaborators() : ?int
-    {
-        return $this->collaborators;
+        $this->login = $login;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->avatar_url = $avatar_url;
+        $this->gravatar_id = $gravatar_id;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->followers_url = $followers_url;
+        $this->following_url = $following_url;
+        $this->gists_url = $gists_url;
+        $this->starred_url = $starred_url;
+        $this->subscriptions_url = $subscriptions_url;
+        $this->organizations_url = $organizations_url;
+        $this->repos_url = $repos_url;
+        $this->events_url = $events_url;
+        $this->received_events_url = $received_events_url;
+        $this->type = $type;
+        $this->site_admin = $site_admin;
+        $this->name = $name;
+        $this->company = $company;
+        $this->blog = $blog;
+        $this->location = $location;
+        $this->email = $email;
+        $this->hireable = $hireable;
+        $this->bio = $bio;
+        $this->twitter_username = $twitter_username;
+        $this->public_repos = $public_repos;
+        $this->public_gists = $public_gists;
+        $this->followers = $followers;
+        $this->following = $following;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->plan = $plan;
+        $this->suspended_at = $suspended_at;
+        $this->private_gists = $private_gists;
+        $this->total_private_repos = $total_private_repos;
+        $this->owned_private_repos = $owned_private_repos;
+        $this->disk_usage = $disk_usage;
+        $this->collaborators = $collaborators;
     }
 }

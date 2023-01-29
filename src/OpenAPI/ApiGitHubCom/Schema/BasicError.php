@@ -7,24 +7,15 @@ final class BasicError
     public const SCHEMA_JSON = '{"title":"Basic Error","type":"object","properties":{"message":{"type":"string"},"documentation_url":{"type":"string"},"url":{"type":"string"},"status":{"type":"string"}},"description":"Basic Error"}';
     public const SCHEMA_TITLE = 'Basic Error';
     public const SCHEMA_DESCRIPTION = 'Basic Error';
-    private string $message;
-    private string $documentation_url;
-    private string $url;
-    private string $status;
-    public function message() : string
+    public readonly string $message;
+    public readonly string $documentation_url;
+    public readonly string $url;
+    public readonly string $status;
+    public function __construct(string $message, string $documentation_url, string $url, string $status)
     {
-        return $this->message;
-    }
-    public function documentation_url() : string
-    {
-        return $this->documentation_url;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function status() : string
-    {
-        return $this->status;
+        $this->message = $message;
+        $this->documentation_url = $documentation_url;
+        $this->url = $url;
+        $this->status = $status;
     }
 }

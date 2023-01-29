@@ -8,22 +8,24 @@ final class DeleteForIssueComment
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The account owner of the repository. The name is not case sensitive.**/
-    private readonly string $owner;
+    private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    private readonly string $repo;
+    private string $repo;
     /**The unique identifier of the comment.**/
-    private readonly int $comment_id;
+    private int $comment_id;
     /**The unique identifier of the reaction.**/
-    private readonly int $reaction_id;
+    private int $reaction_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $owner, string $repo, int $comment_id, int $reaction_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, string $owner, string $repo, int $comment_id, int $reaction_id)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->owner = $owner;
         $this->repo = $repo;
         $this->comment_id = $comment_id;
@@ -40,7 +42,6 @@ final class DeleteForIssueComment
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:

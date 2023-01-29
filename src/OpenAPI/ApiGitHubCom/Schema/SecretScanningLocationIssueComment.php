@@ -10,12 +10,9 @@ final class SecretScanningLocationIssueComment
     /**
      * The API URL to get the issue comment where the secret was detected.
      */
-    private string $issue_comment_url;
-    /**
-     * The API URL to get the issue comment where the secret was detected.
-     */
-    public function issue_comment_url() : string
+    public readonly string $issue_comment_url;
+    public function __construct(string $issue_comment_url)
     {
-        return $this->issue_comment_url;
+        $this->issue_comment_url = $issue_comment_url;
     }
 }

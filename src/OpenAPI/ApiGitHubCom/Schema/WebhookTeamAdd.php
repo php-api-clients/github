@@ -9,74 +9,35 @@ final class WebhookTeamAdd
     public const SCHEMA_DESCRIPTION = '';
     /**
      * An enterprise on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
-    /**
-     * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
-    /**
-     * A GitHub organization.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
-    /**
-     * A repository on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    /**
-     * Groups of organization members that gives permissions on specified repositories.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamAdd\Team::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamAdd\Team $team;
-    /**
-     * An enterprise on GitHub.
-     */
-    public function enterprise() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise
-    {
-        return $this->enterprise;
-    }
+    public readonly array $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public function installation() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation
-    {
-        return $this->installation;
-    }
+    public readonly array $installation;
     /**
      * A GitHub organization.
      */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
-    {
-        return $this->organization;
-    }
+    public readonly array $organization;
     /**
      * A repository on GitHub.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
-    {
-        return $this->repository;
-    }
+    public readonly array $repository;
     /**
      * A GitHub user.
      */
-    public function sender() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
-    {
-        return $this->sender;
-    }
+    public readonly array $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public function team() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamAdd\Team
+    public readonly array $team;
+    public function __construct(array $enterprise, array $installation, array $organization, array $repository, array $sender, array $team)
     {
-        return $this->team;
+        $this->enterprise = $enterprise;
+        $this->installation = $installation;
+        $this->organization = $organization;
+        $this->repository = $repository;
+        $this->sender = $sender;
+        $this->team = $team;
     }
 }

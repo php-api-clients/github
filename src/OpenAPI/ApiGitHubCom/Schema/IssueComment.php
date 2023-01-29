@@ -10,104 +10,44 @@ final class IssueComment
     /**
      * Unique identifier of the issue comment
      */
-    private int $id;
-    private string $node_id;
+    public readonly int $id;
+    public readonly string $node_id;
     /**
      * URL for the issue comment
      */
-    private string $url;
+    public readonly string $url;
     /**
      * Contents of the issue comment
      */
-    private ?string $body = null;
-    private ?string $body_text = null;
-    private ?string $body_html = null;
-    private string $html_url;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\User $user;
-    private string $created_at;
-    private string $updated_at;
-    private string $issue_url;
+    public readonly ?string $body;
+    public readonly ?string $body_text;
+    public readonly ?string $body_html;
+    public readonly string $html_url;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\User $user;
+    public readonly string $created_at;
+    public readonly string $updated_at;
+    public readonly string $issue_url;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\PerformedViaGithubApp::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\PerformedViaGithubApp $performed_via_github_app;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
-    /**
-     * Unique identifier of the issue comment
-     */
-    public function id() : int
+    public readonly string $author_association;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\PerformedViaGithubApp $performed_via_github_app;
+    public readonly array $reactions;
+    public function __construct(int $id, string $node_id, string $url, string $body, string $body_text, string $body_html, string $html_url, mixed $user, string $created_at, string $updated_at, string $issue_url, string $author_association, mixed $performed_via_github_app, array $reactions)
     {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * URL for the issue comment
-     */
-    public function url() : string
-    {
-        return $this->url;
-    }
-    /**
-     * Contents of the issue comment
-     */
-    public function body() : ?string
-    {
-        return $this->body;
-    }
-    public function body_text() : ?string
-    {
-        return $this->body_text;
-    }
-    public function body_html() : ?string
-    {
-        return $this->body_html;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\User
-    {
-        return $this->user;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    public function issue_url() : string
-    {
-        return $this->issue_url;
-    }
-    /**
-     * How the author is associated with the repository.
-     */
-    public function author_association() : string
-    {
-        return $this->author_association;
-    }
-    public function performed_via_github_app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\PerformedViaGithubApp
-    {
-        return $this->performed_via_github_app;
-    }
-    public function reactions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
-    {
-        return $this->reactions;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->url = $url;
+        $this->body = $body;
+        $this->body_text = $body_text;
+        $this->body_html = $body_html;
+        $this->html_url = $html_url;
+        $this->user = $user;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->issue_url = $issue_url;
+        $this->author_association = $author_association;
+        $this->performed_via_github_app = $performed_via_github_app;
+        $this->reactions = $reactions;
     }
 }

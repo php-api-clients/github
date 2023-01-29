@@ -8,18 +8,20 @@ final class AddOrUpdateProjectPermissionsLegacy
     public const OPERATION_MATCH = 'PUT /teams/{team_id}/projects/{project_id}';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The unique identifier of the team.**/
-    private readonly int $team_id;
+    private int $team_id;
     /**The unique identifier of the project.**/
-    private readonly int $project_id;
+    private int $project_id;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, int $team_id, int $project_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, int $team_id, int $project_id)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->team_id = $team_id;
         $this->project_id = $project_id;
     }
@@ -35,7 +37,6 @@ final class AddOrUpdateProjectPermissionsLegacy
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:
@@ -46,7 +47,7 @@ final class AddOrUpdateProjectPermissionsLegacy
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\AddOrUpdateProjectPermissionsLegacy\Response\Application\Json\H403::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\AddOrUpdateProjectPermissionsLegacy\\Response\\Application\\Json\\H403', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\AddOrUpdateProjectPermissionsLegacy\\Response\\Application\\Json\\H403', $body);
                 }
                 break;
             /**Resource not found**/
@@ -54,7 +55,7 @@ final class AddOrUpdateProjectPermissionsLegacy
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
             /**Validation failed, or the endpoint has been spammed.**/
@@ -62,7 +63,7 @@ final class AddOrUpdateProjectPermissionsLegacy
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationError', $body);
                 }
                 break;
         }

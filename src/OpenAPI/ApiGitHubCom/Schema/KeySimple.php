@@ -7,14 +7,11 @@ final class KeySimple
     public const SCHEMA_JSON = '{"title":"Key Simple","required":["key","id"],"type":"object","properties":{"id":{"type":"integer"},"key":{"type":"string"}},"description":"Key Simple"}';
     public const SCHEMA_TITLE = 'Key Simple';
     public const SCHEMA_DESCRIPTION = 'Key Simple';
-    private int $id;
-    private string $key;
-    public function id() : int
+    public readonly int $id;
+    public readonly string $key;
+    public function __construct(int $id, string $key)
     {
-        return $this->id;
-    }
-    public function key() : string
-    {
-        return $this->key;
+        $this->id = $id;
+        $this->key = $key;
     }
 }

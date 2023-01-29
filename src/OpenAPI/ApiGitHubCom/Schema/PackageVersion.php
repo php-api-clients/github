@@ -10,71 +10,32 @@ final class PackageVersion
     /**
      * Unique identifier of the package version.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The name of the package version.
      */
-    private string $name;
-    private string $url;
-    private string $package_html_url;
-    private ?string $html_url = null;
-    private ?string $license = null;
-    private ?string $description = null;
-    private string $created_at;
-    private string $updated_at;
-    private ?string $deleted_at = null;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Metadata::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Metadata $metadata = null;
-    /**
-     * Unique identifier of the package version.
-     */
-    public function id() : int
+    public readonly string $name;
+    public readonly string $url;
+    public readonly string $package_html_url;
+    public readonly ?string $html_url;
+    public readonly ?string $license;
+    public readonly ?string $description;
+    public readonly string $created_at;
+    public readonly string $updated_at;
+    public readonly ?string $deleted_at;
+    public readonly array $metadata;
+    public function __construct(int $id, string $name, string $url, string $package_html_url, string $html_url, string $license, string $description, string $created_at, string $updated_at, string $deleted_at, array $metadata)
     {
-        return $this->id;
-    }
-    /**
-     * The name of the package version.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function package_html_url() : string
-    {
-        return $this->package_html_url;
-    }
-    public function html_url() : ?string
-    {
-        return $this->html_url;
-    }
-    public function license() : ?string
-    {
-        return $this->license;
-    }
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    public function deleted_at() : ?string
-    {
-        return $this->deleted_at;
-    }
-    public function metadata() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Metadata
-    {
-        return $this->metadata;
+        $this->id = $id;
+        $this->name = $name;
+        $this->url = $url;
+        $this->package_html_url = $package_html_url;
+        $this->html_url = $html_url;
+        $this->license = $license;
+        $this->description = $description;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->deleted_at = $deleted_at;
+        $this->metadata = $metadata;
     }
 }

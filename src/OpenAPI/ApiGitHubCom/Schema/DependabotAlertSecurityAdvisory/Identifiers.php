@@ -10,23 +10,14 @@ final class Identifiers
     /**
      * The type of advisory identifier.
      */
-    private string $type;
+    public readonly string $type;
     /**
      * The value of the advisory identifer.
      */
-    private string $value;
-    /**
-     * The type of advisory identifier.
-     */
-    public function type() : string
+    public readonly string $value;
+    public function __construct(string $type, string $value)
     {
-        return $this->type;
-    }
-    /**
-     * The value of the advisory identifer.
-     */
-    public function value() : string
-    {
-        return $this->value;
+        $this->type = $type;
+        $this->value = $value;
     }
 }

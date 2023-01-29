@@ -10,34 +10,19 @@ final class ActionsRepositoryPermissions
     /**
      * Whether GitHub Actions is enabled on the repository.
      */
-    private bool $enabled;
+    public readonly bool $enabled;
     /**
      * The permissions policy that controls the actions and reusable workflows that are allowed to run.
      */
-    private ?string $allowed_actions = null;
+    public readonly ?string $allowed_actions;
     /**
      * The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    private ?string $selected_actions_url = null;
-    /**
-     * Whether GitHub Actions is enabled on the repository.
-     */
-    public function enabled() : bool
+    public readonly ?string $selected_actions_url;
+    public function __construct(bool $enabled, string $allowed_actions, string $selected_actions_url)
     {
-        return $this->enabled;
-    }
-    /**
-     * The permissions policy that controls the actions and reusable workflows that are allowed to run.
-     */
-    public function allowed_actions() : ?string
-    {
-        return $this->allowed_actions;
-    }
-    /**
-     * The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
-     */
-    public function selected_actions_url() : ?string
-    {
-        return $this->selected_actions_url;
+        $this->enabled = $enabled;
+        $this->allowed_actions = $allowed_actions;
+        $this->selected_actions_url = $selected_actions_url;
     }
 }

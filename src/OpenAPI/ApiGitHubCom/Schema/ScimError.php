@@ -7,41 +7,25 @@ final class ScimError
     public const SCHEMA_JSON = '{"title":"Scim Error","type":"object","properties":{"message":{"type":["string","null"]},"documentation_url":{"type":["string","null"]},"detail":{"type":["string","null"]},"status":{"type":"integer"},"scimType":{"type":["string","null"]},"schemas":{"type":"array","items":{"type":"string"}}},"description":"Scim Error"}';
     public const SCHEMA_TITLE = 'Scim Error';
     public const SCHEMA_DESCRIPTION = 'Scim Error';
-    private ?string $message;
-    private ?string $documentation_url;
-    private ?string $detail;
-    private int $status;
-    private ?string $scimType;
+    public readonly ?string $message;
+    public readonly ?string $documentation_url;
+    public readonly ?string $detail;
+    public readonly int $status;
+    public readonly ?string $scimType;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError\Schemas>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError\Schemas::class)
      */
-    private array $schemas = array();
-    public function message() : ?string
-    {
-        return $this->message;
-    }
-    public function documentation_url() : ?string
-    {
-        return $this->documentation_url;
-    }
-    public function detail() : ?string
-    {
-        return $this->detail;
-    }
-    public function status() : int
-    {
-        return $this->status;
-    }
-    public function scimType() : ?string
-    {
-        return $this->scimType;
-    }
+    public readonly array $schemas;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError\Schemas>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError\Schemas> $schemas
      */
-    public function schemas() : array
+    public function __construct(string $message, string $documentation_url, string $detail, int $status, string $scimType, array $schemas)
     {
-        return $this->schemas;
+        $this->message = $message;
+        $this->documentation_url = $documentation_url;
+        $this->detail = $detail;
+        $this->status = $status;
+        $this->scimType = $scimType;
+        $this->schemas = $schemas;
     }
 }

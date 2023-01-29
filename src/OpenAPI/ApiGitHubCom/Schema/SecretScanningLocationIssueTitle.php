@@ -10,12 +10,9 @@ final class SecretScanningLocationIssueTitle
     /**
      * The API URL to get the issue where the secret was detected.
      */
-    private string $issue_title_url;
-    /**
-     * The API URL to get the issue where the secret was detected.
-     */
-    public function issue_title_url() : string
+    public readonly string $issue_title_url;
+    public function __construct(string $issue_title_url)
     {
-        return $this->issue_title_url;
+        $this->issue_title_url = $issue_title_url;
     }
 }

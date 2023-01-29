@@ -10,122 +10,59 @@ final class HookDeliveryItem
     /**
      * Unique identifier of the webhook delivery.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).
      */
-    private string $guid;
+    public readonly string $guid;
     /**
      * Time when the webhook delivery occurred.
      */
-    private string $delivered_at;
+    public readonly string $delivered_at;
     /**
      * Whether the webhook delivery is a redelivery.
      */
-    private bool $redelivery;
+    public readonly bool $redelivery;
     /**
      * Time spent delivering.
      */
-    private int $duration;
+    public readonly int $duration;
     /**
      * Describes the response returned after attempting the delivery.
      */
-    private string $status;
+    public readonly string $status;
     /**
      * Status code received when delivery was made.
      */
-    private int $status_code;
+    public readonly int $status_code;
     /**
      * The event that triggered the delivery.
      */
-    private string $event;
+    public readonly string $event;
     /**
      * The type of activity for the event that triggered the delivery.
      */
-    private ?string $action;
+    public readonly ?string $action;
     /**
      * The id of the GitHub App installation associated with this event.
      */
-    private ?int $installation_id;
+    public readonly ?int $installation_id;
     /**
      * The id of the repository associated with this event.
      */
-    private ?int $repository_id;
-    /**
-     * Unique identifier of the webhook delivery.
-     */
-    public function id() : int
+    public readonly ?int $repository_id;
+    public function __construct(int $id, string $guid, string $delivered_at, bool $redelivery, int $duration, string $status, int $status_code, string $event, string $action, int $installation_id, int $repository_id)
     {
-        return $this->id;
-    }
-    /**
-     * Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).
-     */
-    public function guid() : string
-    {
-        return $this->guid;
-    }
-    /**
-     * Time when the webhook delivery occurred.
-     */
-    public function delivered_at() : string
-    {
-        return $this->delivered_at;
-    }
-    /**
-     * Whether the webhook delivery is a redelivery.
-     */
-    public function redelivery() : bool
-    {
-        return $this->redelivery;
-    }
-    /**
-     * Time spent delivering.
-     */
-    public function duration() : int
-    {
-        return $this->duration;
-    }
-    /**
-     * Describes the response returned after attempting the delivery.
-     */
-    public function status() : string
-    {
-        return $this->status;
-    }
-    /**
-     * Status code received when delivery was made.
-     */
-    public function status_code() : int
-    {
-        return $this->status_code;
-    }
-    /**
-     * The event that triggered the delivery.
-     */
-    public function event() : string
-    {
-        return $this->event;
-    }
-    /**
-     * The type of activity for the event that triggered the delivery.
-     */
-    public function action() : ?string
-    {
-        return $this->action;
-    }
-    /**
-     * The id of the GitHub App installation associated with this event.
-     */
-    public function installation_id() : ?int
-    {
-        return $this->installation_id;
-    }
-    /**
-     * The id of the repository associated with this event.
-     */
-    public function repository_id() : ?int
-    {
-        return $this->repository_id;
+        $this->id = $id;
+        $this->guid = $guid;
+        $this->delivered_at = $delivered_at;
+        $this->redelivery = $redelivery;
+        $this->duration = $duration;
+        $this->status = $status;
+        $this->status_code = $status_code;
+        $this->event = $event;
+        $this->action = $action;
+        $this->installation_id = $installation_id;
+        $this->repository_id = $repository_id;
     }
 }

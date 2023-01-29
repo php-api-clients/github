@@ -9,72 +9,35 @@ final class WebhookPing
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The webhook that is being pinged
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook $hook;
+    public readonly array $hook;
     /**
      * The ID of the webhook that triggered the ping.
      */
-    private int $hook_id;
-    /**
-     * A GitHub organization.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
-    /**
-     * A repository on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    /**
-     * Random string of GitHub zen.
-     */
-    private string $zen;
-    /**
-     * The webhook that is being pinged
-     */
-    public function hook() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook
-    {
-        return $this->hook;
-    }
-    /**
-     * The ID of the webhook that triggered the ping.
-     */
-    public function hook_id() : int
-    {
-        return $this->hook_id;
-    }
+    public readonly int $hook_id;
     /**
      * A GitHub organization.
      */
-    public function organization() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
-    {
-        return $this->organization;
-    }
+    public readonly array $organization;
     /**
      * A repository on GitHub.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
-    {
-        return $this->repository;
-    }
+    public readonly array $repository;
     /**
      * A GitHub user.
      */
-    public function sender() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
-    {
-        return $this->sender;
-    }
+    public readonly array $sender;
     /**
      * Random string of GitHub zen.
      */
-    public function zen() : string
+    public readonly string $zen;
+    public function __construct(array $hook, int $hook_id, array $organization, array $repository, array $sender, string $zen)
     {
-        return $this->zen;
+        $this->hook = $hook;
+        $this->hook_id = $hook_id;
+        $this->organization = $organization;
+        $this->repository = $repository;
+        $this->sender = $sender;
+        $this->zen = $zen;
     }
 }

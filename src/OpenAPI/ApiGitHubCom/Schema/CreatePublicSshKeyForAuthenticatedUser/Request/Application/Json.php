@@ -10,23 +10,14 @@ final class Json
     /**
      * A descriptive name for the new key.
      */
-    private ?string $title = null;
+    public readonly ?string $title;
     /**
      * The public SSH key to add to your GitHub account.
      */
-    private string $key;
-    /**
-     * A descriptive name for the new key.
-     */
-    public function title() : ?string
+    public readonly string $key;
+    public function __construct(string $title, string $key)
     {
-        return $this->title;
-    }
-    /**
-     * The public SSH key to add to your GitHub account.
-     */
-    public function key() : string
-    {
-        return $this->key;
+        $this->title = $title;
+        $this->key = $key;
     }
 }

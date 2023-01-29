@@ -10,48 +10,28 @@ final class Json
     /**
      * The name of the variable.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The value of the variable.
      */
-    private string $value;
+    public readonly string $value;
     /**
      * The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
      */
-    private string $visibility;
+    public readonly string $visibility;
     /**
      * An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $selected_repository_ids = array();
+    public readonly array $selected_repository_ids;
     /**
-     * The name of the variable.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $selected_repository_ids
      */
-    public function name() : string
+    public function __construct(string $name, string $value, string $visibility, array $selected_repository_ids)
     {
-        return $this->name;
-    }
-    /**
-     * The value of the variable.
-     */
-    public function value() : string
-    {
-        return $this->value;
-    }
-    /**
-     * The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-     */
-    public function visibility() : string
-    {
-        return $this->visibility;
-    }
-    /**
-     * An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     */
-    public function selected_repository_ids() : array
-    {
-        return $this->selected_repository_ids;
+        $this->name = $name;
+        $this->value = $value;
+        $this->visibility = $visibility;
+        $this->selected_repository_ids = $selected_repository_ids;
     }
 }

@@ -10,23 +10,14 @@ final class Json
     /**
      * A name for the new repository.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * Whether the new repository should be private.
      */
-    private bool $private;
-    /**
-     * A name for the new repository.
-     */
-    public function name() : string
+    public readonly bool $private;
+    public function __construct(string $name, bool $private)
     {
-        return $this->name;
-    }
-    /**
-     * Whether the new repository should be private.
-     */
-    public function private() : bool
-    {
-        return $this->private;
+        $this->name = $name;
+        $this->private = $private;
     }
 }

@@ -10,28 +10,16 @@ final class Json
     /**
      * The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
      */
-    private string $ref;
+    public readonly string $ref;
     /**
      * The SHA1 value for this reference.
      */
-    private string $sha;
-    private ?string $key = null;
-    /**
-     * The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
-     */
-    public function ref() : string
+    public readonly string $sha;
+    public readonly ?string $key;
+    public function __construct(string $ref, string $sha, string $key)
     {
-        return $this->ref;
-    }
-    /**
-     * The SHA1 value for this reference.
-     */
-    public function sha() : string
-    {
-        return $this->sha;
-    }
-    public function key() : ?string
-    {
-        return $this->key;
+        $this->ref = $ref;
+        $this->sha = $sha;
+        $this->key = $key;
     }
 }

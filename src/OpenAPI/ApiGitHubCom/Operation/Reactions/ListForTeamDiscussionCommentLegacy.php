@@ -8,26 +8,28 @@ final class ListForTeamDiscussionCommentLegacy
     public const OPERATION_MATCH = 'GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The unique identifier of the team.**/
-    private readonly int $team_id;
+    private int $team_id;
     /**The number that identifies the discussion.**/
-    private readonly int $discussion_number;
+    private int $discussion_number;
     /**The number that identifies the comment.**/
-    private readonly int $comment_number;
+    private int $comment_number;
     /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion comment.**/
-    private readonly string $content;
+    private string $content;
     /**The number of results per page (max 100).**/
-    private readonly int $per_page;
+    private int $per_page;
     /**Page number of the results to fetch.**/
-    private readonly int $page;
+    private int $page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, int $team_id, int $discussion_number, int $comment_number, string $content, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, int $team_id, int $discussion_number, int $comment_number, string $content, int $per_page = 30, int $page = 1)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->team_id = $team_id;
         $this->discussion_number = $discussion_number;
         $this->comment_number = $comment_number;
@@ -46,15 +48,14 @@ final class ListForTeamDiscussionCommentLegacy
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) use($hydrator) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction {
-                            return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Reaction', $body);
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction {
+                            return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Reaction', $body);
                         });
                 }
                 break;

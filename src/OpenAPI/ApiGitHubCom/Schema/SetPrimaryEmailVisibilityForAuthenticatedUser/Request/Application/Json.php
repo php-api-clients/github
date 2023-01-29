@@ -10,12 +10,9 @@ final class Json
     /**
      * Denotes whether an email is publicly visible.
      */
-    private string $visibility;
-    /**
-     * Denotes whether an email is publicly visible.
-     */
-    public function visibility() : string
+    public readonly string $visibility;
+    public function __construct(string $visibility)
     {
-        return $this->visibility;
+        $this->visibility = $visibility;
     }
 }

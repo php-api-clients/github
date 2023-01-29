@@ -10,34 +10,19 @@ final class CodeScanningAnalysisTool
     /**
      * The name of the tool used to generate the code scanning analysis.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The version of the tool used to generate the code scanning analysis.
      */
-    private ?string $version;
+    public readonly ?string $version;
     /**
      * The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
      */
-    private ?string $guid;
-    /**
-     * The name of the tool used to generate the code scanning analysis.
-     */
-    public function name() : string
+    public readonly ?string $guid;
+    public function __construct(string $name, string $version, string $guid)
     {
-        return $this->name;
-    }
-    /**
-     * The version of the tool used to generate the code scanning analysis.
-     */
-    public function version() : ?string
-    {
-        return $this->version;
-    }
-    /**
-     * The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
-     */
-    public function guid() : ?string
-    {
-        return $this->guid;
+        $this->name = $name;
+        $this->version = $version;
+        $this->guid = $guid;
     }
 }

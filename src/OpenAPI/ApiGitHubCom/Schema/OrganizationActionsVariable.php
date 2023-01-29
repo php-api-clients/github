@@ -10,61 +10,31 @@ final class OrganizationActionsVariable
     /**
      * The name of the variable.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The value of the variable.
      */
-    private string $value;
+    public readonly string $value;
     /**
      * The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      */
-    private string $created_at;
+    public readonly string $created_at;
     /**
      * The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      */
-    private string $updated_at;
+    public readonly string $updated_at;
     /**
      * Visibility of a variable
      */
-    private string $visibility;
-    private ?string $selected_repositories_url = null;
-    /**
-     * The name of the variable.
-     */
-    public function name() : string
+    public readonly string $visibility;
+    public readonly ?string $selected_repositories_url;
+    public function __construct(string $name, string $value, string $created_at, string $updated_at, string $visibility, string $selected_repositories_url)
     {
-        return $this->name;
-    }
-    /**
-     * The value of the variable.
-     */
-    public function value() : string
-    {
-        return $this->value;
-    }
-    /**
-     * The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-     */
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    /**
-     * The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-     */
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    /**
-     * Visibility of a variable
-     */
-    public function visibility() : string
-    {
-        return $this->visibility;
-    }
-    public function selected_repositories_url() : ?string
-    {
-        return $this->selected_repositories_url;
+        $this->name = $name;
+        $this->value = $value;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->visibility = $visibility;
+        $this->selected_repositories_url = $selected_repositories_url;
     }
 }

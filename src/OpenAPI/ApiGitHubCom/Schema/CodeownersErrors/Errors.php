@@ -10,78 +10,39 @@ final class Errors
     /**
      * The line number where this errors occurs.
      */
-    private int $line;
+    public readonly int $line;
     /**
      * The column number where this errors occurs.
      */
-    private int $column;
+    public readonly int $column;
     /**
      * The contents of the line where the error occurs.
      */
-    private ?string $source = null;
+    public readonly ?string $source;
     /**
      * The type of error.
      */
-    private string $kind;
+    public readonly string $kind;
     /**
      * Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.
      */
-    private ?string $suggestion = null;
+    public readonly ?string $suggestion;
     /**
      * A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).
      */
-    private string $message;
+    public readonly string $message;
     /**
      * The path of the file where the error occured.
      */
-    private string $path;
-    /**
-     * The line number where this errors occurs.
-     */
-    public function line() : int
+    public readonly string $path;
+    public function __construct(int $line, int $column, string $source, string $kind, string $suggestion, string $message, string $path)
     {
-        return $this->line;
-    }
-    /**
-     * The column number where this errors occurs.
-     */
-    public function column() : int
-    {
-        return $this->column;
-    }
-    /**
-     * The contents of the line where the error occurs.
-     */
-    public function source() : ?string
-    {
-        return $this->source;
-    }
-    /**
-     * The type of error.
-     */
-    public function kind() : string
-    {
-        return $this->kind;
-    }
-    /**
-     * Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.
-     */
-    public function suggestion() : ?string
-    {
-        return $this->suggestion;
-    }
-    /**
-     * A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).
-     */
-    public function message() : string
-    {
-        return $this->message;
-    }
-    /**
-     * The path of the file where the error occured.
-     */
-    public function path() : string
-    {
-        return $this->path;
+        $this->line = $line;
+        $this->column = $column;
+        $this->source = $source;
+        $this->kind = $kind;
+        $this->suggestion = $suggestion;
+        $this->message = $message;
+        $this->path = $path;
     }
 }

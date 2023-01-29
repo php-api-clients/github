@@ -10,49 +10,28 @@ final class EnvironmentApprovals
     /**
      * The list of environments that were approved or rejected
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments::class)
      */
-    private array $environments = array();
+    public readonly array $environments;
     /**
      * Whether deployment to the environment(s) was approved or rejected
      */
-    private string $state;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
-    /**
-     * The comment submitted with the deployment review
-     */
-    private string $comment;
-    /**
-     * The list of environments that were approved or rejected
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments>
-     */
-    public function environments() : array
-    {
-        return $this->environments;
-    }
-    /**
-     * Whether deployment to the environment(s) was approved or rejected
-     */
-    public function state() : string
-    {
-        return $this->state;
-    }
+    public readonly string $state;
     /**
      * A GitHub user.
      */
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
-    {
-        return $this->user;
-    }
+    public readonly array $user;
     /**
      * The comment submitted with the deployment review
      */
-    public function comment() : string
+    public readonly string $comment;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments> $environments
+     */
+    public function __construct(array $environments, string $state, array $user, string $comment)
     {
-        return $this->comment;
+        $this->environments = $environments;
+        $this->state = $state;
+        $this->user = $user;
+        $this->comment = $comment;
     }
 }

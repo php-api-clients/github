@@ -10,12 +10,9 @@ final class WebhookPingFormEncoded
     /**
      * A URL-encoded string of the ping JSON payload. The decoded payload is a JSON object.
      */
-    private string $payload;
-    /**
-     * A URL-encoded string of the ping JSON payload. The decoded payload is a JSON object.
-     */
-    public function payload() : string
+    public readonly string $payload;
+    public function __construct(string $payload)
     {
-        return $this->payload;
+        $this->payload = $payload;
     }
 }

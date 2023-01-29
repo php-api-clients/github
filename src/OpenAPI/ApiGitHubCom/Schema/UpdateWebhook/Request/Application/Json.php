@@ -9,67 +9,38 @@ final class Json
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config $config;
+    public readonly array $config;
     /**
      * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events::class)
      */
-    private array $events = array();
+    public readonly array $events;
     /**
      * Determines a list of events to be added to the list of events that the Hook triggers for.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AddEvents>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AddEvents::class)
      */
-    private array $add_events = array();
+    public readonly array $add_events;
     /**
      * Determines a list of events to be removed from the list of events that the Hook triggers for.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RemoveEvents>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RemoveEvents::class)
      */
-    private array $remove_events = array();
+    public readonly array $remove_events;
     /**
      * Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
      */
-    private bool $active;
+    public readonly bool $active;
     /**
-     * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events> $events
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AddEvents> $add_events
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RemoveEvents> $remove_events
      */
-    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config
+    public function __construct(array $config, array $events, array $add_events, array $remove_events, bool $active)
     {
-        return $this->config;
-    }
-    /**
-     * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events>
-     */
-    public function events() : array
-    {
-        return $this->events;
-    }
-    /**
-     * Determines a list of events to be added to the list of events that the Hook triggers for.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AddEvents>
-     */
-    public function add_events() : array
-    {
-        return $this->add_events;
-    }
-    /**
-     * Determines a list of events to be removed from the list of events that the Hook triggers for.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RemoveEvents>
-     */
-    public function remove_events() : array
-    {
-        return $this->remove_events;
-    }
-    /**
-     * Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
-     */
-    public function active() : bool
-    {
-        return $this->active;
+        $this->config = $config;
+        $this->events = $events;
+        $this->add_events = $add_events;
+        $this->remove_events = $remove_events;
+        $this->active = $active;
     }
 }

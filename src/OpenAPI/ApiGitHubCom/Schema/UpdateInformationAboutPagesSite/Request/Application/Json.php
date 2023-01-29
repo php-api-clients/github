@@ -10,42 +10,21 @@ final class Json
     /**
      * Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
      */
-    private ?string $cname;
+    public readonly ?string $cname;
     /**
      * Specify whether HTTPS should be enforced for the repository.
      */
-    private bool $https_enforced;
+    public readonly bool $https_enforced;
     /**
      * The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
      */
-    private string $build_type;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source $source;
-    /**
-     * Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
-     */
-    public function cname() : ?string
+    public readonly string $build_type;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source $source;
+    public function __construct(string $cname, bool $https_enforced, string $build_type, mixed $source)
     {
-        return $this->cname;
-    }
-    /**
-     * Specify whether HTTPS should be enforced for the repository.
-     */
-    public function https_enforced() : bool
-    {
-        return $this->https_enforced;
-    }
-    /**
-     * The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
-     */
-    public function build_type() : string
-    {
-        return $this->build_type;
-    }
-    public function source() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source
-    {
-        return $this->source;
+        $this->cname = $cname;
+        $this->https_enforced = $https_enforced;
+        $this->build_type = $build_type;
+        $this->source = $source;
     }
 }

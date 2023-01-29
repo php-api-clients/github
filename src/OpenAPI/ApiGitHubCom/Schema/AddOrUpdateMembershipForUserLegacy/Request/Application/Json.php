@@ -10,12 +10,9 @@ final class Json
     /**
      * The role that this user should have in the team.
      */
-    private string $role;
-    /**
-     * The role that this user should have in the team.
-     */
-    public function role() : string
+    public readonly string $role;
+    public function __construct(string $role)
     {
-        return $this->role;
+        $this->role = $role;
     }
 }

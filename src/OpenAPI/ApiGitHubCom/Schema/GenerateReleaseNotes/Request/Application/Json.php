@@ -10,45 +10,24 @@ final class Json
     /**
      * The tag name for the release. This can be an existing tag or a new one.
      */
-    private string $tag_name;
+    public readonly string $tag_name;
     /**
      * Specifies the commitish value that will be the target for the release's tag. Required if the supplied tag_name does not reference an existing tag. Ignored if the tag_name already exists.
      */
-    private ?string $target_commitish = null;
+    public readonly ?string $target_commitish;
     /**
      * The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release.
      */
-    private ?string $previous_tag_name = null;
+    public readonly ?string $previous_tag_name;
     /**
      * Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
      */
-    private ?string $configuration_file_path = null;
-    /**
-     * The tag name for the release. This can be an existing tag or a new one.
-     */
-    public function tag_name() : string
+    public readonly ?string $configuration_file_path;
+    public function __construct(string $tag_name, string $target_commitish, string $previous_tag_name, string $configuration_file_path)
     {
-        return $this->tag_name;
-    }
-    /**
-     * Specifies the commitish value that will be the target for the release's tag. Required if the supplied tag_name does not reference an existing tag. Ignored if the tag_name already exists.
-     */
-    public function target_commitish() : ?string
-    {
-        return $this->target_commitish;
-    }
-    /**
-     * The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release.
-     */
-    public function previous_tag_name() : ?string
-    {
-        return $this->previous_tag_name;
-    }
-    /**
-     * Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
-     */
-    public function configuration_file_path() : ?string
-    {
-        return $this->configuration_file_path;
+        $this->tag_name = $tag_name;
+        $this->target_commitish = $target_commitish;
+        $this->previous_tag_name = $previous_tag_name;
+        $this->configuration_file_path = $configuration_file_path;
     }
 }

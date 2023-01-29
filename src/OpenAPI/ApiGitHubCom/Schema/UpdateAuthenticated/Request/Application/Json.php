@@ -10,89 +10,44 @@ final class Json
     /**
      * The new name of the user.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The publicly visible email address of the user.
      */
-    private string $email;
+    public readonly string $email;
     /**
      * The new blog URL of the user.
      */
-    private string $blog;
+    public readonly string $blog;
     /**
      * The new Twitter username of the user.
      */
-    private ?string $twitter_username;
+    public readonly ?string $twitter_username;
     /**
      * The new company of the user.
      */
-    private string $company;
+    public readonly string $company;
     /**
      * The new location of the user.
      */
-    private string $location;
+    public readonly string $location;
     /**
      * The new hiring availability of the user.
      */
-    private bool $hireable;
+    public readonly bool $hireable;
     /**
      * The new short biography of the user.
      */
-    private string $bio;
-    /**
-     * The new name of the user.
-     */
-    public function name() : string
+    public readonly string $bio;
+    public function __construct(string $name, string $email, string $blog, string $twitter_username, string $company, string $location, bool $hireable, string $bio)
     {
-        return $this->name;
-    }
-    /**
-     * The publicly visible email address of the user.
-     */
-    public function email() : string
-    {
-        return $this->email;
-    }
-    /**
-     * The new blog URL of the user.
-     */
-    public function blog() : string
-    {
-        return $this->blog;
-    }
-    /**
-     * The new Twitter username of the user.
-     */
-    public function twitter_username() : ?string
-    {
-        return $this->twitter_username;
-    }
-    /**
-     * The new company of the user.
-     */
-    public function company() : string
-    {
-        return $this->company;
-    }
-    /**
-     * The new location of the user.
-     */
-    public function location() : string
-    {
-        return $this->location;
-    }
-    /**
-     * The new hiring availability of the user.
-     */
-    public function hireable() : bool
-    {
-        return $this->hireable;
-    }
-    /**
-     * The new short biography of the user.
-     */
-    public function bio() : string
-    {
-        return $this->bio;
+        $this->name = $name;
+        $this->email = $email;
+        $this->blog = $blog;
+        $this->twitter_username = $twitter_username;
+        $this->company = $company;
+        $this->location = $location;
+        $this->hireable = $hireable;
+        $this->bio = $bio;
     }
 }

@@ -10,54 +10,31 @@ final class Json
     /**
      * **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
      */
-    private int $invitee_id;
+    public readonly int $invitee_id;
     /**
      * **Required unless you provide `invitee_id`**. Email address of the person you are inviting, which can be an existing GitHub user.
      */
-    private string $email;
+    public readonly string $email;
     /**
      * The role for the new member. 
      * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  
      * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  
      * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
      */
-    private string $role;
+    public readonly string $role;
     /**
      * Specify IDs for the teams you want to invite new members to.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $team_ids = array();
+    public readonly array $team_ids;
     /**
-     * **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $team_ids
      */
-    public function invitee_id() : int
+    public function __construct(int $invitee_id, string $email, string $role, array $team_ids)
     {
-        return $this->invitee_id;
-    }
-    /**
-     * **Required unless you provide `invitee_id`**. Email address of the person you are inviting, which can be an existing GitHub user.
-     */
-    public function email() : string
-    {
-        return $this->email;
-    }
-    /**
-     * The role for the new member. 
-     * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  
-     * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  
-     * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
-     */
-    public function role() : string
-    {
-        return $this->role;
-    }
-    /**
-     * Specify IDs for the teams you want to invite new members to.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     */
-    public function team_ids() : array
-    {
-        return $this->team_ids;
+        $this->invitee_id = $invitee_id;
+        $this->email = $email;
+        $this->role = $role;
+        $this->team_ids = $team_ids;
     }
 }

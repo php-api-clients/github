@@ -10,88 +10,39 @@ final class RepositoryInvitation
     /**
      * Unique identifier of the repository invitation.
      */
-    private int $id;
-    /**
-     * Minimal Repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Invitee::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Invitee $invitee;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Inviter::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Inviter $inviter;
-    /**
-     * The permission associated with the invitation.
-     */
-    private string $permissions;
-    private string $created_at;
-    /**
-     * Whether or not the invitation has expired
-     */
-    private ?bool $expired = null;
-    /**
-     * URL for the repository invitation
-     */
-    private string $url;
-    private string $html_url;
-    private string $node_id;
-    /**
-     * Unique identifier of the repository invitation.
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
+    public readonly int $id;
     /**
      * Minimal Repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository
-    {
-        return $this->repository;
-    }
-    public function invitee() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Invitee
-    {
-        return $this->invitee;
-    }
-    public function inviter() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Inviter
-    {
-        return $this->inviter;
-    }
+    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Invitee $invitee;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Inviter $inviter;
     /**
      * The permission associated with the invitation.
      */
-    public function permissions() : string
-    {
-        return $this->permissions;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
+    public readonly string $permissions;
+    public readonly string $created_at;
     /**
      * Whether or not the invitation has expired
      */
-    public function expired() : ?bool
-    {
-        return $this->expired;
-    }
+    public readonly ?bool $expired;
     /**
      * URL for the repository invitation
      */
-    public function url() : string
+    public readonly string $url;
+    public readonly string $html_url;
+    public readonly string $node_id;
+    public function __construct(int $id, array $repository, mixed $invitee, mixed $inviter, string $permissions, string $created_at, bool $expired, string $url, string $html_url, string $node_id)
     {
-        return $this->url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
+        $this->id = $id;
+        $this->repository = $repository;
+        $this->invitee = $invitee;
+        $this->inviter = $inviter;
+        $this->permissions = $permissions;
+        $this->created_at = $created_at;
+        $this->expired = $expired;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->node_id = $node_id;
     }
 }

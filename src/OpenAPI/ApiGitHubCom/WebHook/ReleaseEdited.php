@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHook;
 
-final class ReleaseEdited implements \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHookInterface
+final class ReleaseEdited implements \ApiClients\Contracts\OpenAPI\WebHookInterface
 {
     public function resolve(array $data) : string
     {

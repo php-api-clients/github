@@ -10,56 +10,29 @@ final class Json
     /**
      * The URL of the originating repository.
      */
-    private string $vcs_url;
+    public readonly string $vcs_url;
     /**
      * The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
      */
-    private ?string $vcs = null;
+    public readonly ?string $vcs;
     /**
      * If authentication is required, the username to provide to `vcs_url`.
      */
-    private ?string $vcs_username = null;
+    public readonly ?string $vcs_username;
     /**
      * If authentication is required, the password to provide to `vcs_url`.
      */
-    private ?string $vcs_password = null;
+    public readonly ?string $vcs_password;
     /**
      * For a tfvc import, the name of the project that is being imported.
      */
-    private ?string $tfvc_project = null;
-    /**
-     * The URL of the originating repository.
-     */
-    public function vcs_url() : string
+    public readonly ?string $tfvc_project;
+    public function __construct(string $vcs_url, string $vcs, string $vcs_username, string $vcs_password, string $tfvc_project)
     {
-        return $this->vcs_url;
-    }
-    /**
-     * The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
-     */
-    public function vcs() : ?string
-    {
-        return $this->vcs;
-    }
-    /**
-     * If authentication is required, the username to provide to `vcs_url`.
-     */
-    public function vcs_username() : ?string
-    {
-        return $this->vcs_username;
-    }
-    /**
-     * If authentication is required, the password to provide to `vcs_url`.
-     */
-    public function vcs_password() : ?string
-    {
-        return $this->vcs_password;
-    }
-    /**
-     * For a tfvc import, the name of the project that is being imported.
-     */
-    public function tfvc_project() : ?string
-    {
-        return $this->tfvc_project;
+        $this->vcs_url = $vcs_url;
+        $this->vcs = $vcs;
+        $this->vcs_username = $vcs_username;
+        $this->vcs_password = $vcs_password;
+        $this->tfvc_project = $tfvc_project;
     }
 }

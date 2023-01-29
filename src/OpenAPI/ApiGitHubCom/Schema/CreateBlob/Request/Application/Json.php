@@ -10,23 +10,14 @@ final class Json
     /**
      * The new blob's content.
      */
-    private string $content;
+    public readonly string $content;
     /**
      * The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
      */
-    private ?string $encoding = null;
-    /**
-     * The new blob's content.
-     */
-    public function content() : string
+    public readonly ?string $encoding;
+    public function __construct(string $content, string $encoding)
     {
-        return $this->content;
-    }
-    /**
-     * The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
-     */
-    public function encoding() : ?string
-    {
-        return $this->encoding;
+        $this->content = $content;
+        $this->encoding = $encoding;
     }
 }

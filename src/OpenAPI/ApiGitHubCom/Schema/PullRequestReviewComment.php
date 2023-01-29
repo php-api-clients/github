@@ -10,280 +10,126 @@ final class PullRequestReviewComment
     /**
      * URL for the pull request review comment
      */
-    private string $url;
+    public readonly string $url;
     /**
      * The ID of the pull request review to which the comment belongs.
      */
-    private ?int $pull_request_review_id;
+    public readonly ?int $pull_request_review_id;
     /**
      * The ID of the pull request review comment.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The node ID of the pull request review comment.
      */
-    private string $node_id;
+    public readonly string $node_id;
     /**
      * The diff of the line that the comment refers to.
      */
-    private string $diff_hunk;
+    public readonly string $diff_hunk;
     /**
      * The relative path of the file to which the comment applies.
      */
-    private string $path;
+    public readonly string $path;
     /**
      * The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
      */
-    private int $position;
+    public readonly int $position;
     /**
      * The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
      */
-    private int $original_position;
+    public readonly int $original_position;
     /**
      * The SHA of the commit to which the comment applies.
      */
-    private string $commit_id;
+    public readonly string $commit_id;
     /**
      * The SHA of the original commit to which the comment applies.
      */
-    private string $original_commit_id;
+    public readonly string $original_commit_id;
     /**
      * The comment ID to reply to.
      */
-    private ?int $in_reply_to_id = null;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
-    /**
-     * The text of the comment.
-     */
-    private string $body;
-    private string $created_at;
-    private string $updated_at;
-    /**
-     * HTML URL for the pull request review comment.
-     */
-    private string $html_url;
-    /**
-     * URL for the pull request that the review comment belongs to.
-     */
-    private string $pull_request_url;
-    /**
-     * How the author is associated with the repository.
-     */
-    private string $author_association;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment\Links::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment\Links $_links;
-    /**
-     * The first line of the range for a multi-line comment.
-     */
-    private ?int $start_line = null;
-    /**
-     * The first line of the range for a multi-line comment.
-     */
-    private ?int $original_start_line = null;
-    /**
-     * The side of the first line of the range for a multi-line comment.
-     */
-    private ?string $start_side = null;
-    /**
-     * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
-     */
-    private ?int $line = null;
-    /**
-     * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
-     */
-    private ?int $original_line = null;
-    /**
-     * The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
-     */
-    private ?string $side = null;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions = null;
-    private ?string $body_html = null;
-    private ?string $body_text = null;
-    /**
-     * URL for the pull request review comment
-     */
-    public function url() : string
-    {
-        return $this->url;
-    }
-    /**
-     * The ID of the pull request review to which the comment belongs.
-     */
-    public function pull_request_review_id() : ?int
-    {
-        return $this->pull_request_review_id;
-    }
-    /**
-     * The ID of the pull request review comment.
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    /**
-     * The node ID of the pull request review comment.
-     */
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * The diff of the line that the comment refers to.
-     */
-    public function diff_hunk() : string
-    {
-        return $this->diff_hunk;
-    }
-    /**
-     * The relative path of the file to which the comment applies.
-     */
-    public function path() : string
-    {
-        return $this->path;
-    }
-    /**
-     * The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
-     */
-    public function position() : int
-    {
-        return $this->position;
-    }
-    /**
-     * The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
-     */
-    public function original_position() : int
-    {
-        return $this->original_position;
-    }
-    /**
-     * The SHA of the commit to which the comment applies.
-     */
-    public function commit_id() : string
-    {
-        return $this->commit_id;
-    }
-    /**
-     * The SHA of the original commit to which the comment applies.
-     */
-    public function original_commit_id() : string
-    {
-        return $this->original_commit_id;
-    }
-    /**
-     * The comment ID to reply to.
-     */
-    public function in_reply_to_id() : ?int
-    {
-        return $this->in_reply_to_id;
-    }
+    public readonly ?int $in_reply_to_id;
     /**
      * A GitHub user.
      */
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
-    {
-        return $this->user;
-    }
+    public readonly array $user;
     /**
      * The text of the comment.
      */
-    public function body() : string
-    {
-        return $this->body;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
+    public readonly string $body;
+    public readonly string $created_at;
+    public readonly string $updated_at;
     /**
      * HTML URL for the pull request review comment.
      */
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
+    public readonly string $html_url;
     /**
      * URL for the pull request that the review comment belongs to.
      */
-    public function pull_request_url() : string
-    {
-        return $this->pull_request_url;
-    }
+    public readonly string $pull_request_url;
     /**
      * How the author is associated with the repository.
      */
-    public function author_association() : string
-    {
-        return $this->author_association;
-    }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment\Links
-    {
-        return $this->_links;
-    }
+    public readonly string $author_association;
+    public readonly array $_links;
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function start_line() : ?int
-    {
-        return $this->start_line;
-    }
+    public readonly ?int $start_line;
     /**
      * The first line of the range for a multi-line comment.
      */
-    public function original_start_line() : ?int
-    {
-        return $this->original_start_line;
-    }
+    public readonly ?int $original_start_line;
     /**
      * The side of the first line of the range for a multi-line comment.
      */
-    public function start_side() : ?string
-    {
-        return $this->start_side;
-    }
+    public readonly ?string $start_side;
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function line() : ?int
-    {
-        return $this->line;
-    }
+    public readonly ?int $line;
     /**
      * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
      */
-    public function original_line() : ?int
-    {
-        return $this->original_line;
-    }
+    public readonly ?int $original_line;
     /**
      * The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
      */
-    public function side() : ?string
+    public readonly ?string $side;
+    public readonly array $reactions;
+    public readonly ?string $body_html;
+    public readonly ?string $body_text;
+    public function __construct(string $url, int $pull_request_review_id, int $id, string $node_id, string $diff_hunk, string $path, int $position, int $original_position, string $commit_id, string $original_commit_id, int $in_reply_to_id, array $user, string $body, string $created_at, string $updated_at, string $html_url, string $pull_request_url, string $author_association, array $_links, int $start_line, int $original_start_line, string $start_side, int $line, int $original_line, string $side, array $reactions, string $body_html, string $body_text)
     {
-        return $this->side;
-    }
-    public function reactions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup
-    {
-        return $this->reactions;
-    }
-    public function body_html() : ?string
-    {
-        return $this->body_html;
-    }
-    public function body_text() : ?string
-    {
-        return $this->body_text;
+        $this->url = $url;
+        $this->pull_request_review_id = $pull_request_review_id;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->diff_hunk = $diff_hunk;
+        $this->path = $path;
+        $this->position = $position;
+        $this->original_position = $original_position;
+        $this->commit_id = $commit_id;
+        $this->original_commit_id = $original_commit_id;
+        $this->in_reply_to_id = $in_reply_to_id;
+        $this->user = $user;
+        $this->body = $body;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->html_url = $html_url;
+        $this->pull_request_url = $pull_request_url;
+        $this->author_association = $author_association;
+        $this->_links = $_links;
+        $this->start_line = $start_line;
+        $this->original_start_line = $original_start_line;
+        $this->start_side = $start_side;
+        $this->line = $line;
+        $this->original_line = $original_line;
+        $this->side = $side;
+        $this->reactions = $reactions;
+        $this->body_html = $body_html;
+        $this->body_text = $body_text;
     }
 }

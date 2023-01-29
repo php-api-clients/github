@@ -10,103 +10,49 @@ final class TeamSimple
     /**
      * Unique identifier of the team
      */
-    private int $id;
-    private string $node_id;
+    public readonly int $id;
+    public readonly string $node_id;
     /**
      * URL for the team
      */
-    private string $url;
-    private string $members_url;
+    public readonly string $url;
+    public readonly string $members_url;
     /**
      * Name of the team
      */
-    private string $name;
+    public readonly string $name;
     /**
      * Description of the team
      */
-    private ?string $description;
+    public readonly ?string $description;
     /**
      * Permission that the team will have for its repositories
      */
-    private string $permission;
+    public readonly string $permission;
     /**
      * The level of privacy this team should have
      */
-    private ?string $privacy = null;
-    private string $html_url;
-    private string $repositories_url;
-    private string $slug;
+    public readonly ?string $privacy;
+    public readonly string $html_url;
+    public readonly string $repositories_url;
+    public readonly string $slug;
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
-    private ?string $ldap_dn = null;
-    /**
-     * Unique identifier of the team
-     */
-    public function id() : int
+    public readonly ?string $ldap_dn;
+    public function __construct(int $id, string $node_id, string $url, string $members_url, string $name, string $description, string $permission, string $privacy, string $html_url, string $repositories_url, string $slug, string $ldap_dn)
     {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * URL for the team
-     */
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function members_url() : string
-    {
-        return $this->members_url;
-    }
-    /**
-     * Name of the team
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * Description of the team
-     */
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    /**
-     * Permission that the team will have for its repositories
-     */
-    public function permission() : string
-    {
-        return $this->permission;
-    }
-    /**
-     * The level of privacy this team should have
-     */
-    public function privacy() : ?string
-    {
-        return $this->privacy;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function repositories_url() : string
-    {
-        return $this->repositories_url;
-    }
-    public function slug() : string
-    {
-        return $this->slug;
-    }
-    /**
-     * Distinguished Name (DN) that team maps to within LDAP environment
-     */
-    public function ldap_dn() : ?string
-    {
-        return $this->ldap_dn;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->url = $url;
+        $this->members_url = $members_url;
+        $this->name = $name;
+        $this->description = $description;
+        $this->permission = $permission;
+        $this->privacy = $privacy;
+        $this->html_url = $html_url;
+        $this->repositories_url = $repositories_url;
+        $this->slug = $slug;
+        $this->ldap_dn = $ldap_dn;
     }
 }

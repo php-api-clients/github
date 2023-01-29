@@ -10,24 +10,14 @@ final class Json
     /**
      * The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
      */
-    private string $build_type;
-    /**
-     * The source branch and directory used to publish your Pages site.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source $source;
-    /**
-     * The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
-     */
-    public function build_type() : string
-    {
-        return $this->build_type;
-    }
+    public readonly string $build_type;
     /**
      * The source branch and directory used to publish your Pages site.
      */
-    public function source() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source
+    public readonly array $source;
+    public function __construct(string $build_type, array $source)
     {
-        return $this->source;
+        $this->build_type = $build_type;
+        $this->source = $source;
     }
 }

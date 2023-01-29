@@ -10,23 +10,14 @@ final class Json
     /**
      * A descriptive name for the new key.
      */
-    private ?string $name = null;
+    public readonly ?string $name;
     /**
      * A GPG key in ASCII-armored format.
      */
-    private string $armored_public_key;
-    /**
-     * A descriptive name for the new key.
-     */
-    public function name() : ?string
+    public readonly string $armored_public_key;
+    public function __construct(string $name, string $armored_public_key)
     {
-        return $this->name;
-    }
-    /**
-     * A GPG key in ASCII-armored format.
-     */
-    public function armored_public_key() : string
-    {
-        return $this->armored_public_key;
+        $this->name = $name;
+        $this->armored_public_key = $armored_public_key;
     }
 }

@@ -9,126 +9,60 @@ final class Json
     public const SCHEMA_DESCRIPTION = '';
     /**
      * Require status checks to pass before merging. Set to `null` to disable.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredStatusChecks::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredStatusChecks $required_status_checks;
+    public readonly array $required_status_checks;
     /**
      * Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
      */
-    private ?bool $enforce_admins;
-    /**
-     * Require at least one approving review on a pull request, before merging. Set to `null` to disable.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredPullRequestReviews::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredPullRequestReviews $required_pull_request_reviews;
-    /**
-     * Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Restrictions::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Restrictions $restrictions;
-    /**
-     * Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
-     */
-    private ?bool $required_linear_history = null;
-    /**
-     * Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
-     */
-    private ?bool $allow_force_pushes = null;
-    /**
-     * Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
-     */
-    private ?bool $allow_deletions = null;
-    /**
-     * If set to `true`, the `restrictions` branch protection settings which limits who can push will also block pushes which create new branches, unless the push is initiated by a user, team, or app which has the ability to push. Set to `true` to restrict new branch creation. Default: `false`.
-     */
-    private ?bool $block_creations = null;
-    /**
-     * Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to `false` to disable. Default: `false`.
-     */
-    private ?bool $required_conversation_resolution = null;
-    /**
-     * Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
-     */
-    private ?bool $lock_branch = null;
-    /**
-     * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
-     */
-    private ?bool $allow_fork_syncing = null;
-    /**
-     * Require status checks to pass before merging. Set to `null` to disable.
-     */
-    public function required_status_checks() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredStatusChecks
-    {
-        return $this->required_status_checks;
-    }
-    /**
-     * Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
-     */
-    public function enforce_admins() : ?bool
-    {
-        return $this->enforce_admins;
-    }
+    public readonly ?bool $enforce_admins;
     /**
      * Require at least one approving review on a pull request, before merging. Set to `null` to disable.
      */
-    public function required_pull_request_reviews() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredPullRequestReviews
-    {
-        return $this->required_pull_request_reviews;
-    }
+    public readonly array $required_pull_request_reviews;
     /**
      * Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
      */
-    public function restrictions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Restrictions
-    {
-        return $this->restrictions;
-    }
+    public readonly array $restrictions;
     /**
      * Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
      */
-    public function required_linear_history() : ?bool
-    {
-        return $this->required_linear_history;
-    }
+    public readonly ?bool $required_linear_history;
     /**
      * Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
      */
-    public function allow_force_pushes() : ?bool
-    {
-        return $this->allow_force_pushes;
-    }
+    public readonly ?bool $allow_force_pushes;
     /**
      * Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
      */
-    public function allow_deletions() : ?bool
-    {
-        return $this->allow_deletions;
-    }
+    public readonly ?bool $allow_deletions;
     /**
      * If set to `true`, the `restrictions` branch protection settings which limits who can push will also block pushes which create new branches, unless the push is initiated by a user, team, or app which has the ability to push. Set to `true` to restrict new branch creation. Default: `false`.
      */
-    public function block_creations() : ?bool
-    {
-        return $this->block_creations;
-    }
+    public readonly ?bool $block_creations;
     /**
      * Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to `false` to disable. Default: `false`.
      */
-    public function required_conversation_resolution() : ?bool
-    {
-        return $this->required_conversation_resolution;
-    }
+    public readonly ?bool $required_conversation_resolution;
     /**
      * Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
      */
-    public function lock_branch() : ?bool
-    {
-        return $this->lock_branch;
-    }
+    public readonly ?bool $lock_branch;
     /**
      * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
      */
-    public function allow_fork_syncing() : ?bool
+    public readonly ?bool $allow_fork_syncing;
+    public function __construct(array $required_status_checks, bool $enforce_admins, array $required_pull_request_reviews, array $restrictions, bool $required_linear_history, bool $allow_force_pushes, bool $allow_deletions, bool $block_creations, bool $required_conversation_resolution, bool $lock_branch, bool $allow_fork_syncing)
     {
-        return $this->allow_fork_syncing;
+        $this->required_status_checks = $required_status_checks;
+        $this->enforce_admins = $enforce_admins;
+        $this->required_pull_request_reviews = $required_pull_request_reviews;
+        $this->restrictions = $restrictions;
+        $this->required_linear_history = $required_linear_history;
+        $this->allow_force_pushes = $allow_force_pushes;
+        $this->allow_deletions = $allow_deletions;
+        $this->block_creations = $block_creations;
+        $this->required_conversation_resolution = $required_conversation_resolution;
+        $this->lock_branch = $lock_branch;
+        $this->allow_fork_syncing = $allow_fork_syncing;
     }
 }

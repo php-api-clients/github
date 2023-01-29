@@ -7,31 +7,21 @@ final class H503
     public const SCHEMA_JSON = '{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"documentation_url":{"type":"string"},"errors":{"type":"array","items":{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"}}}}}}';
     public const SCHEMA_TITLE = 'Operation\\Projects\\Response\\Application\\Json\\H503';
     public const SCHEMA_DESCRIPTION = '';
-    private string $code;
-    private string $message;
-    private string $documentation_url;
+    public readonly string $code;
+    public readonly string $message;
+    public readonly string $documentation_url;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H503\Errors>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H503\Errors::class)
      */
-    private array $errors = array();
-    public function code() : string
-    {
-        return $this->code;
-    }
-    public function message() : string
-    {
-        return $this->message;
-    }
-    public function documentation_url() : string
-    {
-        return $this->documentation_url;
-    }
+    public readonly array $errors;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H503\Errors>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H503\Errors> $errors
      */
-    public function errors() : array
+    public function __construct(string $code, string $message, string $documentation_url, array $errors)
     {
-        return $this->errors;
+        $this->code = $code;
+        $this->message = $message;
+        $this->documentation_url = $documentation_url;
+        $this->errors = $errors;
     }
 }

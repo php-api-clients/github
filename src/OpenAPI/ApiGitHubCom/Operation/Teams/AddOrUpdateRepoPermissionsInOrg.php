@@ -8,22 +8,24 @@ final class AddOrUpdateRepoPermissionsInOrg
     public const OPERATION_MATCH = 'PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The organization name. The name is not case sensitive.**/
-    private readonly string $org;
+    private string $org;
     /**The slug of the team name.**/
-    private readonly string $team_slug;
+    private string $team_slug;
     /**The account owner of the repository. The name is not case sensitive.**/
-    private readonly string $owner;
+    private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
-    private readonly string $repo;
+    private string $repo;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $org, string $team_slug, string $owner, string $repo)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, string $org, string $team_slug, string $owner, string $repo)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->org = $org;
         $this->team_slug = $team_slug;
         $this->owner = $owner;
@@ -41,7 +43,6 @@ final class AddOrUpdateRepoPermissionsInOrg
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 204:

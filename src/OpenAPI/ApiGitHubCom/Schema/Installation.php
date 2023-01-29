@@ -10,147 +10,66 @@ final class Installation
     /**
      * The ID of the installation.
      */
-    private int $id;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Account::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Account $account;
+    public readonly int $id;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    private string $repository_selection;
-    private string $access_tokens_url;
-    private string $repositories_url;
-    private string $html_url;
-    private int $app_id;
+    public readonly string $repository_selection;
+    public readonly string $access_tokens_url;
+    public readonly string $repositories_url;
+    public readonly string $html_url;
+    public readonly int $app_id;
     /**
      * The ID of the user or organization this token is being scoped to.
      */
-    private int $target_id;
-    private string $target_type;
+    public readonly int $target_id;
+    public readonly string $target_type;
     /**
      * The permissions granted to the user-to-server access token.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions;
+    public readonly array $permissions;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Events>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Events::class)
      */
-    private array $events = array();
-    private string $created_at;
-    private string $updated_at;
-    private ?string $single_file_name;
-    private ?bool $has_multiple_single_files = null;
+    public readonly array $events;
+    public readonly string $created_at;
+    public readonly string $updated_at;
+    public readonly ?string $single_file_name;
+    public readonly ?bool $has_multiple_single_files;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SingleFilePaths>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SingleFilePaths::class)
      */
-    private array $single_file_paths = array();
-    private string $app_slug;
+    public readonly array $single_file_paths;
+    public readonly string $app_slug;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SuspendedBy $suspended_by;
+    public readonly ?string $suspended_at;
+    public readonly ?string $contact_email;
     /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SuspendedBy::class)
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Events> $events
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SingleFilePaths> $single_file_paths
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SuspendedBy $suspended_by;
-    private ?string $suspended_at;
-    private ?string $contact_email = null;
-    /**
-     * The ID of the installation.
-     */
-    public function id() : int
+    public function __construct(int $id, array $account, string $repository_selection, string $access_tokens_url, string $repositories_url, string $html_url, int $app_id, int $target_id, string $target_type, array $permissions, array $events, string $created_at, string $updated_at, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $app_slug, mixed $suspended_by, string $suspended_at, string $contact_email)
     {
-        return $this->id;
-    }
-    public function account() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Account
-    {
-        return $this->account;
-    }
-    /**
-     * Describe whether all repositories have been selected or there's a selection involved
-     */
-    public function repository_selection() : string
-    {
-        return $this->repository_selection;
-    }
-    public function access_tokens_url() : string
-    {
-        return $this->access_tokens_url;
-    }
-    public function repositories_url() : string
-    {
-        return $this->repositories_url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function app_id() : int
-    {
-        return $this->app_id;
-    }
-    /**
-     * The ID of the user or organization this token is being scoped to.
-     */
-    public function target_id() : int
-    {
-        return $this->target_id;
-    }
-    public function target_type() : string
-    {
-        return $this->target_type;
-    }
-    /**
-     * The permissions granted to the user-to-server access token.
-     */
-    public function permissions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions
-    {
-        return $this->permissions;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Events>
-     */
-    public function events() : array
-    {
-        return $this->events;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    public function single_file_name() : ?string
-    {
-        return $this->single_file_name;
-    }
-    public function has_multiple_single_files() : ?bool
-    {
-        return $this->has_multiple_single_files;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SingleFilePaths>
-     */
-    public function single_file_paths() : array
-    {
-        return $this->single_file_paths;
-    }
-    public function app_slug() : string
-    {
-        return $this->app_slug;
-    }
-    public function suspended_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SuspendedBy
-    {
-        return $this->suspended_by;
-    }
-    public function suspended_at() : ?string
-    {
-        return $this->suspended_at;
-    }
-    public function contact_email() : ?string
-    {
-        return $this->contact_email;
+        $this->id = $id;
+        $this->account = $account;
+        $this->repository_selection = $repository_selection;
+        $this->access_tokens_url = $access_tokens_url;
+        $this->repositories_url = $repositories_url;
+        $this->html_url = $html_url;
+        $this->app_id = $app_id;
+        $this->target_id = $target_id;
+        $this->target_type = $target_type;
+        $this->permissions = $permissions;
+        $this->events = $events;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->single_file_name = $single_file_name;
+        $this->has_multiple_single_files = $has_multiple_single_files;
+        $this->single_file_paths = $single_file_paths;
+        $this->app_slug = $app_slug;
+        $this->suspended_by = $suspended_by;
+        $this->suspended_at = $suspended_at;
+        $this->contact_email = $contact_email;
     }
 }

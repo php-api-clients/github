@@ -10,23 +10,14 @@ final class Checks
     /**
      * The name of the required check
      */
-    private string $context;
+    public readonly string $context;
     /**
      * The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
      */
-    private ?int $app_id = null;
-    /**
-     * The name of the required check
-     */
-    public function context() : string
+    public readonly ?int $app_id;
+    public function __construct(string $context, int $app_id)
     {
-        return $this->context;
-    }
-    /**
-     * The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
-     */
-    public function app_id() : ?int
-    {
-        return $this->app_id;
+        $this->context = $context;
+        $this->app_id = $app_id;
     }
 }

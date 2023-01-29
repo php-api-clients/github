@@ -7,54 +7,27 @@ final class ReactionRollup
     public const SCHEMA_JSON = '{"title":"Reaction Rollup","required":["url","total_count","+1","-1","laugh","confused","heart","hooray","eyes","rocket"],"type":"object","properties":{"url":{"type":"string","format":"uri"},"total_count":{"type":"integer"},"+1":{"type":"integer"},"-1":{"type":"integer"},"laugh":{"type":"integer"},"confused":{"type":"integer"},"heart":{"type":"integer"},"hooray":{"type":"integer"},"eyes":{"type":"integer"},"rocket":{"type":"integer"}}}';
     public const SCHEMA_TITLE = 'Reaction Rollup';
     public const SCHEMA_DESCRIPTION = '';
-    private string $url;
-    private int $total_count;
-    private ?int $_PLUSES_1 = null;
-    private ?int $_MINUS_1 = null;
-    private int $laugh;
-    private int $confused;
-    private int $heart;
-    private int $hooray;
-    private int $eyes;
-    private int $rocket;
-    public function url() : string
+    public readonly string $url;
+    public readonly int $total_count;
+    public readonly ?int $_PLUSES_1;
+    public readonly ?int $_MINUS_1;
+    public readonly int $laugh;
+    public readonly int $confused;
+    public readonly int $heart;
+    public readonly int $hooray;
+    public readonly int $eyes;
+    public readonly int $rocket;
+    public function __construct(string $url, int $total_count, int $_PLUSES_1, int $_MINUS_1, int $laugh, int $confused, int $heart, int $hooray, int $eyes, int $rocket)
     {
-        return $this->url;
-    }
-    public function total_count() : int
-    {
-        return $this->total_count;
-    }
-    public function _PLUSES_1() : ?int
-    {
-        return $this->_PLUSES_1;
-    }
-    public function _MINUS_1() : ?int
-    {
-        return $this->_MINUS_1;
-    }
-    public function laugh() : int
-    {
-        return $this->laugh;
-    }
-    public function confused() : int
-    {
-        return $this->confused;
-    }
-    public function heart() : int
-    {
-        return $this->heart;
-    }
-    public function hooray() : int
-    {
-        return $this->hooray;
-    }
-    public function eyes() : int
-    {
-        return $this->eyes;
-    }
-    public function rocket() : int
-    {
-        return $this->rocket;
+        $this->url = $url;
+        $this->total_count = $total_count;
+        $this->_PLUSES_1 = $_PLUSES_1;
+        $this->_MINUS_1 = $_MINUS_1;
+        $this->laugh = $laugh;
+        $this->confused = $confused;
+        $this->heart = $heart;
+        $this->hooray = $hooray;
+        $this->eyes = $eyes;
+        $this->rocket = $rocket;
     }
 }

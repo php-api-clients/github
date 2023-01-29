@@ -10,37 +10,23 @@ final class Json
     /**
      * The username or organization name the repository will be transferred to.
      */
-    private string $new_owner;
+    public readonly string $new_owner;
     /**
      * The new name to be given to the repository.
      */
-    private ?string $new_name = null;
+    public readonly ?string $new_name;
     /**
      * ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $team_ids = array();
+    public readonly array $team_ids;
     /**
-     * The username or organization name the repository will be transferred to.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $team_ids
      */
-    public function new_owner() : string
+    public function __construct(string $new_owner, string $new_name, array $team_ids)
     {
-        return $this->new_owner;
-    }
-    /**
-     * The new name to be given to the repository.
-     */
-    public function new_name() : ?string
-    {
-        return $this->new_name;
-    }
-    /**
-     * ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     */
-    public function team_ids() : array
-    {
-        return $this->team_ids;
+        $this->new_owner = $new_owner;
+        $this->new_name = $new_name;
+        $this->team_ids = $team_ids;
     }
 }

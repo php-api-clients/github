@@ -10,23 +10,14 @@ final class Json
     /**
      * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/reference/dependabot#get-a-repository-public-key) endpoint.
      */
-    private string $encrypted_value;
+    public readonly string $encrypted_value;
     /**
      * ID of the key you used to encrypt the secret.
      */
-    private string $key_id;
-    /**
-     * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/reference/dependabot#get-a-repository-public-key) endpoint.
-     */
-    public function encrypted_value() : string
+    public readonly string $key_id;
+    public function __construct(string $encrypted_value, string $key_id)
     {
-        return $this->encrypted_value;
-    }
-    /**
-     * ID of the key you used to encrypt the secret.
-     */
-    public function key_id() : string
-    {
-        return $this->key_id;
+        $this->encrypted_value = $encrypted_value;
+        $this->key_id = $key_id;
     }
 }

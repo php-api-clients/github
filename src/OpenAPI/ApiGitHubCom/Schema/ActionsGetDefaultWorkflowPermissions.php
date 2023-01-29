@@ -10,23 +10,14 @@ final class ActionsGetDefaultWorkflowPermissions
     /**
      * The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
      */
-    private string $default_workflow_permissions;
+    public readonly string $default_workflow_permissions;
     /**
      * Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
      */
-    private bool $can_approve_pull_request_reviews;
-    /**
-     * The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
-     */
-    public function default_workflow_permissions() : string
+    public readonly bool $can_approve_pull_request_reviews;
+    public function __construct(string $default_workflow_permissions, bool $can_approve_pull_request_reviews)
     {
-        return $this->default_workflow_permissions;
-    }
-    /**
-     * Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
-     */
-    public function can_approve_pull_request_reviews() : bool
-    {
-        return $this->can_approve_pull_request_reviews;
+        $this->default_workflow_permissions = $default_workflow_permissions;
+        $this->can_approve_pull_request_reviews = $can_approve_pull_request_reviews;
     }
 }

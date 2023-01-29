@@ -10,60 +10,31 @@ final class Tree
     /**
      * The file referenced in the tree.
      */
-    private string $path;
+    public readonly string $path;
     /**
      * The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
      */
-    private string $mode;
+    public readonly string $mode;
     /**
      * Either `blob`, `tree`, or `commit`.
      */
-    private string $type;
+    public readonly string $type;
     /**
      * The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.  
      **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
      */
-    private ?string $sha;
+    public readonly ?string $sha;
     /**
      * The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.  
      **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
      */
-    private string $content;
-    /**
-     * The file referenced in the tree.
-     */
-    public function path() : string
+    public readonly string $content;
+    public function __construct(string $path, string $mode, string $type, string $sha, string $content)
     {
-        return $this->path;
-    }
-    /**
-     * The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
-     */
-    public function mode() : string
-    {
-        return $this->mode;
-    }
-    /**
-     * Either `blob`, `tree`, or `commit`.
-     */
-    public function type() : string
-    {
-        return $this->type;
-    }
-    /**
-     * The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.  
-     **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
-     */
-    public function sha() : ?string
-    {
-        return $this->sha;
-    }
-    /**
-     * The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.  
-     **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
-     */
-    public function content() : string
-    {
-        return $this->content;
+        $this->path = $path;
+        $this->mode = $mode;
+        $this->type = $type;
+        $this->sha = $sha;
+        $this->content = $content;
     }
 }

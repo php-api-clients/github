@@ -7,9 +7,9 @@ final class Link
     public const SCHEMA_JSON = '{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"}';
     public const SCHEMA_TITLE = 'Link';
     public const SCHEMA_DESCRIPTION = 'Hypermedia Link';
-    private string $href;
-    public function href() : string
+    public readonly string $href;
+    public function __construct(string $href)
     {
-        return $this->href;
+        $this->href = $href;
     }
 }

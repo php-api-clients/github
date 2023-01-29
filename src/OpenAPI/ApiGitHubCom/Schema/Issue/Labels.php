@@ -10,54 +10,27 @@ final class Labels
     /**
      * 6-character hex code, without the leading #, identifying the color
      */
-    private string $color;
-    private bool $default;
-    private ?string $description;
-    private int $id;
+    public readonly string $color;
+    public readonly bool $default;
+    public readonly ?string $description;
+    public readonly int $id;
     /**
      * The name of the label.
      */
-    private string $name;
-    private string $node_id;
+    public readonly string $name;
+    public readonly string $node_id;
     /**
      * URL for the label
      */
-    private string $url;
-    /**
-     * 6-character hex code, without the leading #, identifying the color
-     */
-    public function color() : string
+    public readonly string $url;
+    public function __construct(string $color, bool $default, string $description, int $id, string $name, string $node_id, string $url)
     {
-        return $this->color;
-    }
-    public function default() : bool
-    {
-        return $this->default;
-    }
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    public function id() : int
-    {
-        return $this->id;
-    }
-    /**
-     * The name of the label.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * URL for the label
-     */
-    public function url() : string
-    {
-        return $this->url;
+        $this->color = $color;
+        $this->default = $default;
+        $this->description = $description;
+        $this->id = $id;
+        $this->name = $name;
+        $this->node_id = $node_id;
+        $this->url = $url;
     }
 }

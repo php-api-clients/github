@@ -10,12 +10,9 @@ final class Json
     /**
      * The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
      */
-    private string $permission;
-    /**
-     * The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
-     */
-    public function permission() : string
+    public readonly string $permission;
+    public function __construct(string $permission)
     {
-        return $this->permission;
+        $this->permission = $permission;
     }
 }

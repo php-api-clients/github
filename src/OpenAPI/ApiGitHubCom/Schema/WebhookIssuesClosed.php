@@ -10,84 +10,39 @@ final class WebhookIssuesClosed
     /**
      * The action that was performed.
      */
-    private string $action;
-    /**
-     * An enterprise on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
-    /**
-     * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
-    /**
-     * The [issue](https://docs.github.com/rest/reference/issues) itself.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesClosed\Issue::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesClosed\Issue $issue;
-    /**
-     * A GitHub organization.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
-    /**
-     * A repository on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    /**
-     * The action that was performed.
-     */
-    public function action() : string
-    {
-        return $this->action;
-    }
+    public readonly string $action;
     /**
      * An enterprise on GitHub.
      */
-    public function enterprise() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise
-    {
-        return $this->enterprise;
-    }
+    public readonly array $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public function installation() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation
-    {
-        return $this->installation;
-    }
+    public readonly array $installation;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) itself.
      */
-    public function issue() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesClosed\Issue
-    {
-        return $this->issue;
-    }
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesClosed\Issue $issue;
     /**
      * A GitHub organization.
      */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
-    {
-        return $this->organization;
-    }
+    public readonly array $organization;
     /**
      * A repository on GitHub.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
-    {
-        return $this->repository;
-    }
+    public readonly array $repository;
     /**
      * A GitHub user.
      */
-    public function sender() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $sender;
+    public function __construct(string $action, array $enterprise, array $installation, mixed $issue, array $organization, array $repository, array $sender)
     {
-        return $this->sender;
+        $this->action = $action;
+        $this->enterprise = $enterprise;
+        $this->installation = $installation;
+        $this->issue = $issue;
+        $this->organization = $organization;
+        $this->repository = $repository;
+        $this->sender = $sender;
     }
 }

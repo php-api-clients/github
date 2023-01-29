@@ -10,61 +10,31 @@ final class Pages
     /**
      * The action that was performed on the page. Can be `created` or `edited`.
      */
-    private string $action;
+    public readonly string $action;
     /**
      * Points to the HTML wiki page.
      */
-    private string $html_url;
+    public readonly string $html_url;
     /**
      * The name of the page.
      */
-    private string $page_name;
+    public readonly string $page_name;
     /**
      * The latest commit SHA of the page.
      */
-    private string $sha;
-    private ?string $summary;
+    public readonly string $sha;
+    public readonly ?string $summary;
     /**
      * The current page title.
      */
-    private string $title;
-    /**
-     * The action that was performed on the page. Can be `created` or `edited`.
-     */
-    public function action() : string
+    public readonly string $title;
+    public function __construct(string $action, string $html_url, string $page_name, string $sha, string $summary, string $title)
     {
-        return $this->action;
-    }
-    /**
-     * Points to the HTML wiki page.
-     */
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    /**
-     * The name of the page.
-     */
-    public function page_name() : string
-    {
-        return $this->page_name;
-    }
-    /**
-     * The latest commit SHA of the page.
-     */
-    public function sha() : string
-    {
-        return $this->sha;
-    }
-    public function summary() : ?string
-    {
-        return $this->summary;
-    }
-    /**
-     * The current page title.
-     */
-    public function title() : string
-    {
-        return $this->title;
+        $this->action = $action;
+        $this->html_url = $html_url;
+        $this->page_name = $page_name;
+        $this->sha = $sha;
+        $this->summary = $summary;
+        $this->title = $title;
     }
 }

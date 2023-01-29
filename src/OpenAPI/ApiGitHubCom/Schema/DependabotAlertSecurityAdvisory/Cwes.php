@@ -10,23 +10,14 @@ final class Cwes
     /**
      * The unique CWE ID.
      */
-    private string $cwe_id;
+    public readonly string $cwe_id;
     /**
      * The short, plain text name of the CWE.
      */
-    private string $name;
-    /**
-     * The unique CWE ID.
-     */
-    public function cwe_id() : string
+    public readonly string $name;
+    public function __construct(string $cwe_id, string $name)
     {
-        return $this->cwe_id;
-    }
-    /**
-     * The short, plain text name of the CWE.
-     */
-    public function name() : string
-    {
-        return $this->name;
+        $this->cwe_id = $cwe_id;
+        $this->name = $name;
     }
 }

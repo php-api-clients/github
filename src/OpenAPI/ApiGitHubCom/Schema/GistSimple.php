@@ -9,138 +9,63 @@ final class GistSimple
     public const SCHEMA_DESCRIPTION = 'Gist Simple';
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks::class)
      */
-    private array $forks = array();
+    public readonly array $forks;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory::class)
      */
-    private array $history = array();
-    /**
-     * Gist
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\ForkOf::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\ForkOf $fork_of;
-    private string $url;
-    private string $forks_url;
-    private string $commits_url;
-    private string $id;
-    private string $node_id;
-    private string $git_pull_url;
-    private string $git_push_url;
-    private string $html_url;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Files::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Files $files;
-    private bool $public;
-    private string $created_at;
-    private string $updated_at;
-    private ?string $description;
-    private int $comments;
-    private ?string $user;
-    private string $comments_url;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
-    private bool $truncated;
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks>
-     */
-    public function forks() : array
-    {
-        return $this->forks;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory>
-     */
-    public function history() : array
-    {
-        return $this->history;
-    }
+    public readonly array $history;
     /**
      * Gist
      */
-    public function fork_of() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\ForkOf
-    {
-        return $this->fork_of;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function forks_url() : string
-    {
-        return $this->forks_url;
-    }
-    public function commits_url() : string
-    {
-        return $this->commits_url;
-    }
-    public function id() : string
-    {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    public function git_pull_url() : string
-    {
-        return $this->git_pull_url;
-    }
-    public function git_push_url() : string
-    {
-        return $this->git_push_url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function files() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Files
-    {
-        return $this->files;
-    }
-    public function public() : bool
-    {
-        return $this->public;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    public function comments() : int
-    {
-        return $this->comments;
-    }
-    public function user() : ?string
-    {
-        return $this->user;
-    }
-    public function comments_url() : string
-    {
-        return $this->comments_url;
-    }
+    public readonly array $fork_of;
+    public readonly string $url;
+    public readonly string $forks_url;
+    public readonly string $commits_url;
+    public readonly string $id;
+    public readonly string $node_id;
+    public readonly string $git_pull_url;
+    public readonly string $git_push_url;
+    public readonly string $html_url;
+    public readonly array $files;
+    public readonly bool $public;
+    public readonly string $created_at;
+    public readonly string $updated_at;
+    public readonly ?string $description;
+    public readonly int $comments;
+    public readonly ?string $user;
+    public readonly string $comments_url;
     /**
      * A GitHub user.
      */
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $owner;
+    public readonly bool $truncated;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks> $forks
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory> $history
+     */
+    public function __construct(array $forks, array $history, array $fork_of, string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, array $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, string $user, string $comments_url, array $owner, bool $truncated)
     {
-        return $this->owner;
-    }
-    public function truncated() : bool
-    {
-        return $this->truncated;
+        $this->forks = $forks;
+        $this->history = $history;
+        $this->fork_of = $fork_of;
+        $this->url = $url;
+        $this->forks_url = $forks_url;
+        $this->commits_url = $commits_url;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->git_pull_url = $git_pull_url;
+        $this->git_push_url = $git_push_url;
+        $this->html_url = $html_url;
+        $this->files = $files;
+        $this->public = $public;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->description = $description;
+        $this->comments = $comments;
+        $this->user = $user;
+        $this->comments_url = $comments_url;
+        $this->owner = $owner;
+        $this->truncated = $truncated;
     }
 }

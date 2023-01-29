@@ -10,12 +10,9 @@ final class Json
     /**
      * The state that the membership should be in. Only `"active"` will be accepted.
      */
-    private string $state;
-    /**
-     * The state that the membership should be in. Only `"active"` will be accepted.
-     */
-    public function state() : string
+    public readonly string $state;
+    public function __construct(string $state)
     {
-        return $this->state;
+        $this->state = $state;
     }
 }

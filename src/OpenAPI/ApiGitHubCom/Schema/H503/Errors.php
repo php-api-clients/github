@@ -7,14 +7,11 @@ final class Errors
     public const SCHEMA_JSON = '{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"}}}';
     public const SCHEMA_TITLE = 'H503\\Errors';
     public const SCHEMA_DESCRIPTION = '';
-    private string $code;
-    private string $message;
-    public function code() : string
+    public readonly string $code;
+    public readonly string $message;
+    public function __construct(string $code, string $message)
     {
-        return $this->code;
-    }
-    public function message() : string
-    {
-        return $this->message;
+        $this->code = $code;
+        $this->message = $message;
     }
 }

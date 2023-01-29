@@ -10,12 +10,9 @@ final class Json
     /**
      * When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.
      */
-    private bool $async;
-    /**
-     * When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.
-     */
-    public function async() : bool
+    public readonly bool $async;
+    public function __construct(bool $async)
     {
-        return $this->async;
+        $this->async = $async;
     }
 }

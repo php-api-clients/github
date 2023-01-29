@@ -10,23 +10,14 @@ final class Json
     /**
      * The SHA1 value to set this reference to
      */
-    private string $sha;
+    public readonly string $sha;
     /**
      * Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
      */
-    private ?bool $force = null;
-    /**
-     * The SHA1 value to set this reference to
-     */
-    public function sha() : string
+    public readonly ?bool $force;
+    public function __construct(string $sha, bool $force)
     {
-        return $this->sha;
-    }
-    /**
-     * Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
-     */
-    public function force() : ?bool
-    {
-        return $this->force;
+        $this->sha = $sha;
+        $this->force = $force;
     }
 }

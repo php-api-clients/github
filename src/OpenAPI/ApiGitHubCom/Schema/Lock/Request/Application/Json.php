@@ -14,16 +14,9 @@ final class Json
      * `resolved`  
      * `spam`
      */
-    private string $lock_reason;
-    /**
-     * The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  
-     * `off-topic`  
-     * `too heated`  
-     * `resolved`  
-     * `spam`
-     */
-    public function lock_reason() : string
+    public readonly string $lock_reason;
+    public function __construct(string $lock_reason)
     {
-        return $this->lock_reason;
+        $this->lock_reason = $lock_reason;
     }
 }

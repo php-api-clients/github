@@ -10,12 +10,9 @@ final class Json
     /**
      * The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits](https://docs.github.com/rest/reference/repos#list-commits)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
      */
-    private string $expected_head_sha;
-    /**
-     * The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits](https://docs.github.com/rest/reference/repos#list-commits)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
-     */
-    public function expected_head_sha() : string
+    public readonly string $expected_head_sha;
+    public function __construct(string $expected_head_sha)
     {
-        return $this->expected_head_sha;
+        $this->expected_head_sha = $expected_head_sha;
     }
 }

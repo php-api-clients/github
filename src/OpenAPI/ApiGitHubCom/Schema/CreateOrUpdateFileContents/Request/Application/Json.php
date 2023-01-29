@@ -10,69 +10,34 @@ final class Json
     /**
      * The commit message.
      */
-    private string $message;
+    public readonly string $message;
     /**
      * The new file content, using Base64 encoding.
      */
-    private string $content;
+    public readonly string $content;
     /**
      * **Required if you are updating a file**. The blob SHA of the file being replaced.
      */
-    private ?string $sha = null;
+    public readonly ?string $sha;
     /**
      * The branch name. Default: the repository’s default branch (usually `master`)
      */
-    private ?string $branch = null;
-    /**
-     * The person that committed the file. Default: the authenticated user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer $committer = null;
-    /**
-     * The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author = null;
-    /**
-     * The commit message.
-     */
-    public function message() : string
-    {
-        return $this->message;
-    }
-    /**
-     * The new file content, using Base64 encoding.
-     */
-    public function content() : string
-    {
-        return $this->content;
-    }
-    /**
-     * **Required if you are updating a file**. The blob SHA of the file being replaced.
-     */
-    public function sha() : ?string
-    {
-        return $this->sha;
-    }
-    /**
-     * The branch name. Default: the repository’s default branch (usually `master`)
-     */
-    public function branch() : ?string
-    {
-        return $this->branch;
-    }
+    public readonly ?string $branch;
     /**
      * The person that committed the file. Default: the authenticated user.
      */
-    public function committer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer
-    {
-        return $this->committer;
-    }
+    public readonly array $committer;
     /**
      * The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
      */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author
+    public readonly array $author;
+    public function __construct(string $message, string $content, string $sha, string $branch, array $committer, array $author)
     {
-        return $this->author;
+        $this->message = $message;
+        $this->content = $content;
+        $this->sha = $sha;
+        $this->branch = $branch;
+        $this->committer = $committer;
+        $this->author = $author;
     }
 }

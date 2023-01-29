@@ -10,12 +10,9 @@ final class Json
     /**
      * The text of the review comment.
      */
-    private string $body;
-    /**
-     * The text of the review comment.
-     */
-    public function body() : string
+    public readonly string $body;
+    public function __construct(string $body)
     {
-        return $this->body;
+        $this->body = $body;
     }
 }

@@ -10,34 +10,19 @@ final class Json
     /**
      * Optional parameter to specify the organization name if forking into an organization.
      */
-    private string $organization;
+    public readonly string $organization;
     /**
      * When forking from an existing repository, a new name for the fork.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * When forking from an existing repository, fork with only the default branch.
      */
-    private bool $default_branch_only;
-    /**
-     * Optional parameter to specify the organization name if forking into an organization.
-     */
-    public function organization() : string
+    public readonly bool $default_branch_only;
+    public function __construct(string $organization, string $name, bool $default_branch_only)
     {
-        return $this->organization;
-    }
-    /**
-     * When forking from an existing repository, a new name for the fork.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * When forking from an existing repository, fork with only the default branch.
-     */
-    public function default_branch_only() : bool
-    {
-        return $this->default_branch_only;
+        $this->organization = $organization;
+        $this->name = $name;
+        $this->default_branch_only = $default_branch_only;
     }
 }

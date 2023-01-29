@@ -10,22 +10,13 @@ final class InteractionLimitResponse
     /**
      * The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
      */
-    private string $limit;
-    private string $origin;
-    private string $expires_at;
-    /**
-     * The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
-     */
-    public function limit() : string
+    public readonly string $limit;
+    public readonly string $origin;
+    public readonly string $expires_at;
+    public function __construct(string $limit, string $origin, string $expires_at)
     {
-        return $this->limit;
-    }
-    public function origin() : string
-    {
-        return $this->origin;
-    }
-    public function expires_at() : string
-    {
-        return $this->expires_at;
+        $this->limit = $limit;
+        $this->origin = $origin;
+        $this->expires_at = $expires_at;
     }
 }

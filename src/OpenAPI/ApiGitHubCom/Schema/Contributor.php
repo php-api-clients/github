@@ -7,109 +7,49 @@ final class Contributor
     public const SCHEMA_JSON = '{"title":"Contributor","required":["contributions","type"],"type":"object","properties":{"login":{"type":"string"},"id":{"type":"integer"},"node_id":{"type":"string"},"avatar_url":{"type":"string","format":"uri"},"gravatar_id":{"type":["string","null"]},"url":{"type":"string","format":"uri"},"html_url":{"type":"string","format":"uri"},"followers_url":{"type":"string","format":"uri"},"following_url":{"type":"string"},"gists_url":{"type":"string"},"starred_url":{"type":"string"},"subscriptions_url":{"type":"string","format":"uri"},"organizations_url":{"type":"string","format":"uri"},"repos_url":{"type":"string","format":"uri"},"events_url":{"type":"string"},"received_events_url":{"type":"string","format":"uri"},"type":{"type":"string"},"site_admin":{"type":"boolean"},"contributions":{"type":"integer"},"email":{"type":"string"},"name":{"type":"string"}},"description":"Contributor"}';
     public const SCHEMA_TITLE = 'Contributor';
     public const SCHEMA_DESCRIPTION = 'Contributor';
-    private ?string $login = null;
-    private ?int $id = null;
-    private ?string $node_id = null;
-    private ?string $avatar_url = null;
-    private ?string $gravatar_id = null;
-    private ?string $url = null;
-    private ?string $html_url = null;
-    private ?string $followers_url = null;
-    private ?string $following_url = null;
-    private ?string $gists_url = null;
-    private ?string $starred_url = null;
-    private ?string $subscriptions_url = null;
-    private ?string $organizations_url = null;
-    private ?string $repos_url = null;
-    private ?string $events_url = null;
-    private ?string $received_events_url = null;
-    private string $type;
-    private ?bool $site_admin = null;
-    private int $contributions;
-    private ?string $email = null;
-    private ?string $name = null;
-    public function login() : ?string
+    public readonly ?string $login;
+    public readonly ?int $id;
+    public readonly ?string $node_id;
+    public readonly ?string $avatar_url;
+    public readonly ?string $gravatar_id;
+    public readonly ?string $url;
+    public readonly ?string $html_url;
+    public readonly ?string $followers_url;
+    public readonly ?string $following_url;
+    public readonly ?string $gists_url;
+    public readonly ?string $starred_url;
+    public readonly ?string $subscriptions_url;
+    public readonly ?string $organizations_url;
+    public readonly ?string $repos_url;
+    public readonly ?string $events_url;
+    public readonly ?string $received_events_url;
+    public readonly string $type;
+    public readonly ?bool $site_admin;
+    public readonly int $contributions;
+    public readonly ?string $email;
+    public readonly ?string $name;
+    public function __construct(string $login, int $id, string $node_id, string $avatar_url, string $gravatar_id, string $url, string $html_url, string $followers_url, string $following_url, string $gists_url, string $starred_url, string $subscriptions_url, string $organizations_url, string $repos_url, string $events_url, string $received_events_url, string $type, bool $site_admin, int $contributions, string $email, string $name)
     {
-        return $this->login;
-    }
-    public function id() : ?int
-    {
-        return $this->id;
-    }
-    public function node_id() : ?string
-    {
-        return $this->node_id;
-    }
-    public function avatar_url() : ?string
-    {
-        return $this->avatar_url;
-    }
-    public function gravatar_id() : ?string
-    {
-        return $this->gravatar_id;
-    }
-    public function url() : ?string
-    {
-        return $this->url;
-    }
-    public function html_url() : ?string
-    {
-        return $this->html_url;
-    }
-    public function followers_url() : ?string
-    {
-        return $this->followers_url;
-    }
-    public function following_url() : ?string
-    {
-        return $this->following_url;
-    }
-    public function gists_url() : ?string
-    {
-        return $this->gists_url;
-    }
-    public function starred_url() : ?string
-    {
-        return $this->starred_url;
-    }
-    public function subscriptions_url() : ?string
-    {
-        return $this->subscriptions_url;
-    }
-    public function organizations_url() : ?string
-    {
-        return $this->organizations_url;
-    }
-    public function repos_url() : ?string
-    {
-        return $this->repos_url;
-    }
-    public function events_url() : ?string
-    {
-        return $this->events_url;
-    }
-    public function received_events_url() : ?string
-    {
-        return $this->received_events_url;
-    }
-    public function type() : string
-    {
-        return $this->type;
-    }
-    public function site_admin() : ?bool
-    {
-        return $this->site_admin;
-    }
-    public function contributions() : int
-    {
-        return $this->contributions;
-    }
-    public function email() : ?string
-    {
-        return $this->email;
-    }
-    public function name() : ?string
-    {
-        return $this->name;
+        $this->login = $login;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->avatar_url = $avatar_url;
+        $this->gravatar_id = $gravatar_id;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->followers_url = $followers_url;
+        $this->following_url = $following_url;
+        $this->gists_url = $gists_url;
+        $this->starred_url = $starred_url;
+        $this->subscriptions_url = $subscriptions_url;
+        $this->organizations_url = $organizations_url;
+        $this->repos_url = $repos_url;
+        $this->events_url = $events_url;
+        $this->received_events_url = $received_events_url;
+        $this->type = $type;
+        $this->site_admin = $site_admin;
+        $this->contributions = $contributions;
+        $this->email = $email;
+        $this->name = $name;
     }
 }

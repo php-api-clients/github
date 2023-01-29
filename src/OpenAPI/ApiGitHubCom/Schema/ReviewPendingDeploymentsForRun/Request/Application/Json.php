@@ -10,37 +10,23 @@ final class Json
     /**
      * The list of environment ids to approve or reject
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\EnvironmentIds>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\EnvironmentIds::class)
      */
-    private array $environment_ids = array();
+    public readonly array $environment_ids;
     /**
      * Whether to approve or reject deployment to the specified environments.
      */
-    private string $state;
+    public readonly string $state;
     /**
      * A comment to accompany the deployment review
      */
-    private string $comment;
+    public readonly string $comment;
     /**
-     * The list of environment ids to approve or reject
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\EnvironmentIds>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\EnvironmentIds> $environment_ids
      */
-    public function environment_ids() : array
+    public function __construct(array $environment_ids, string $state, string $comment)
     {
-        return $this->environment_ids;
-    }
-    /**
-     * Whether to approve or reject deployment to the specified environments.
-     */
-    public function state() : string
-    {
-        return $this->state;
-    }
-    /**
-     * A comment to accompany the deployment review
-     */
-    public function comment() : string
-    {
-        return $this->comment;
+        $this->environment_ids = $environment_ids;
+        $this->state = $state;
+        $this->comment = $comment;
     }
 }

@@ -10,12 +10,9 @@ final class Json
     /**
      * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
      */
-    private string $permissions;
-    /**
-     * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
-     */
-    public function permissions() : string
+    public readonly string $permissions;
+    public function __construct(string $permissions)
     {
-        return $this->permissions;
+        $this->permissions = $permissions;
     }
 }

@@ -10,89 +10,41 @@ final class Snapshot
     /**
      * The version of the repository snapshot submission.
      */
-    private int $version;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job $job;
+    public readonly int $version;
+    public readonly array $job;
     /**
      * The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
      */
-    private string $sha;
+    public readonly string $sha;
     /**
      * The repository branch that triggered this snapshot.
      */
-    private string $ref;
-    /**
-     * A description of the detector used.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector $detector;
-    /**
-     * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata = null;
-    /**
-     * A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests $manifests = null;
-    /**
-     * The time at which the snapshot was scanned.
-     */
-    private string $scanned;
-    /**
-     * The version of the repository snapshot submission.
-     */
-    public function version() : int
-    {
-        return $this->version;
-    }
-    public function job() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job
-    {
-        return $this->job;
-    }
-    /**
-     * The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
-     */
-    public function sha() : string
-    {
-        return $this->sha;
-    }
-    /**
-     * The repository branch that triggered this snapshot.
-     */
-    public function ref() : string
-    {
-        return $this->ref;
-    }
+    public readonly string $ref;
     /**
      * A description of the detector used.
      */
-    public function detector() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector
-    {
-        return $this->detector;
-    }
+    public readonly array $detector;
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      */
-    public function metadata() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata
-    {
-        return $this->metadata;
-    }
+    public readonly array $metadata;
     /**
      * A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
      */
-    public function manifests() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests
-    {
-        return $this->manifests;
-    }
+    public readonly array $manifests;
     /**
      * The time at which the snapshot was scanned.
      */
-    public function scanned() : string
+    public readonly string $scanned;
+    public function __construct(int $version, array $job, string $sha, string $ref, array $detector, array $metadata, array $manifests, string $scanned)
     {
-        return $this->scanned;
+        $this->version = $version;
+        $this->job = $job;
+        $this->sha = $sha;
+        $this->ref = $ref;
+        $this->detector = $detector;
+        $this->metadata = $metadata;
+        $this->manifests = $manifests;
+        $this->scanned = $scanned;
     }
 }

@@ -10,23 +10,14 @@ final class Json
     /**
      * The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
      */
-    private string $enabled_repositories;
+    public readonly string $enabled_repositories;
     /**
      * The permissions policy that controls the actions and reusable workflows that are allowed to run.
      */
-    private ?string $allowed_actions = null;
-    /**
-     * The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
-     */
-    public function enabled_repositories() : string
+    public readonly ?string $allowed_actions;
+    public function __construct(string $enabled_repositories, string $allowed_actions)
     {
-        return $this->enabled_repositories;
-    }
-    /**
-     * The permissions policy that controls the actions and reusable workflows that are allowed to run.
-     */
-    public function allowed_actions() : ?string
-    {
-        return $this->allowed_actions;
+        $this->enabled_repositories = $enabled_repositories;
+        $this->allowed_actions = $allowed_actions;
     }
 }

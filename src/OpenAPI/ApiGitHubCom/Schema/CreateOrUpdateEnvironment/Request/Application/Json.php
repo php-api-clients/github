@@ -10,38 +10,23 @@ final class Json
     /**
      * The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
      */
-    private int $wait_timer;
+    public readonly int $wait_timer;
     /**
      * The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers::class)
      */
-    private array $reviewers = array();
-    /**
-     * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicySettings::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicySettings $deployment_branch_policy;
-    /**
-     * The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
-     */
-    public function wait_timer() : int
-    {
-        return $this->wait_timer;
-    }
-    /**
-     * The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers>
-     */
-    public function reviewers() : array
-    {
-        return $this->reviewers;
-    }
+    public readonly array $reviewers;
     /**
      * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
-    public function deployment_branch_policy() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicySettings
+    public readonly array $deployment_branch_policy;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers> $reviewers
+     */
+    public function __construct(int $wait_timer, array $reviewers, array $deployment_branch_policy)
     {
-        return $this->deployment_branch_policy;
+        $this->wait_timer = $wait_timer;
+        $this->reviewers = $reviewers;
+        $this->deployment_branch_policy = $deployment_branch_policy;
     }
 }

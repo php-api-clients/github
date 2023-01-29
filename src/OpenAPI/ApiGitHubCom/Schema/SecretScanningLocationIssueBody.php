@@ -10,12 +10,9 @@ final class SecretScanningLocationIssueBody
     /**
      * The API URL to get the issue where the secret was detected.
      */
-    private string $issue_body_url;
-    /**
-     * The API URL to get the issue where the secret was detected.
-     */
-    public function issue_body_url() : string
+    public readonly string $issue_body_url;
+    public function __construct(string $issue_body_url)
     {
-        return $this->issue_body_url;
+        $this->issue_body_url = $issue_body_url;
     }
 }

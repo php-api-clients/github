@@ -10,121 +10,61 @@ final class Commits
     /**
      * An array of files added in the commit.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Added>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Added::class)
      */
-    private array $added = array();
+    public readonly array $added;
     /**
      * Metaproperties for Git author/committer information.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Author::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Author $author;
+    public readonly array $author;
     /**
      * Metaproperties for Git author/committer information.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Committer::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Committer $committer;
+    public readonly array $committer;
     /**
      * Whether this commit is distinct from any that have been pushed before.
      */
-    private bool $distinct;
-    private string $id;
+    public readonly bool $distinct;
+    public readonly string $id;
     /**
      * The commit message.
      */
-    private string $message;
+    public readonly string $message;
     /**
      * An array of files modified by the commit.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Modified>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Modified::class)
      */
-    private array $modified = array();
+    public readonly array $modified;
     /**
      * An array of files removed in the commit.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Removed>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Removed::class)
      */
-    private array $removed = array();
+    public readonly array $removed;
     /**
      * The ISO 8601 timestamp of the commit.
      */
-    private string $timestamp;
-    private string $tree_id;
+    public readonly string $timestamp;
+    public readonly string $tree_id;
     /**
      * URL that points to the commit API resource.
      */
-    private string $url;
+    public readonly string $url;
     /**
-     * An array of files added in the commit.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Added>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Added> $added
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Modified> $modified
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Removed> $removed
      */
-    public function added() : array
+    public function __construct(array $added, array $author, array $committer, bool $distinct, string $id, string $message, array $modified, array $removed, string $timestamp, string $tree_id, string $url)
     {
-        return $this->added;
-    }
-    /**
-     * Metaproperties for Git author/committer information.
-     */
-    public function author() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Author
-    {
-        return $this->author;
-    }
-    /**
-     * Metaproperties for Git author/committer information.
-     */
-    public function committer() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Committer
-    {
-        return $this->committer;
-    }
-    /**
-     * Whether this commit is distinct from any that have been pushed before.
-     */
-    public function distinct() : bool
-    {
-        return $this->distinct;
-    }
-    public function id() : string
-    {
-        return $this->id;
-    }
-    /**
-     * The commit message.
-     */
-    public function message() : string
-    {
-        return $this->message;
-    }
-    /**
-     * An array of files modified by the commit.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Modified>
-     */
-    public function modified() : array
-    {
-        return $this->modified;
-    }
-    /**
-     * An array of files removed in the commit.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Removed>
-     */
-    public function removed() : array
-    {
-        return $this->removed;
-    }
-    /**
-     * The ISO 8601 timestamp of the commit.
-     */
-    public function timestamp() : string
-    {
-        return $this->timestamp;
-    }
-    public function tree_id() : string
-    {
-        return $this->tree_id;
-    }
-    /**
-     * URL that points to the commit API resource.
-     */
-    public function url() : string
-    {
-        return $this->url;
+        $this->added = $added;
+        $this->author = $author;
+        $this->committer = $committer;
+        $this->distinct = $distinct;
+        $this->id = $id;
+        $this->message = $message;
+        $this->modified = $modified;
+        $this->removed = $removed;
+        $this->timestamp = $timestamp;
+        $this->tree_id = $tree_id;
+        $this->url = $url;
     }
 }

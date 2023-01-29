@@ -10,101 +10,49 @@ final class CodeScanningCodeqlDatabase
     /**
      * The ID of the CodeQL database.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The name of the CodeQL database.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The language of the CodeQL database.
      */
-    private string $language;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $uploader;
-    /**
-     * The MIME type of the CodeQL database file.
-     */
-    private string $content_type;
-    /**
-     * The size of the CodeQL database file in bytes.
-     */
-    private int $size;
-    /**
-     * The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-     */
-    private string $created_at;
-    /**
-     * The date and time at which the CodeQL database was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-     */
-    private string $updated_at;
-    /**
-     * The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
-     */
-    private string $url;
-    /**
-     * The ID of the CodeQL database.
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    /**
-     * The name of the CodeQL database.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * The language of the CodeQL database.
-     */
-    public function language() : string
-    {
-        return $this->language;
-    }
+    public readonly string $language;
     /**
      * A GitHub user.
      */
-    public function uploader() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
-    {
-        return $this->uploader;
-    }
+    public readonly array $uploader;
     /**
      * The MIME type of the CodeQL database file.
      */
-    public function content_type() : string
-    {
-        return $this->content_type;
-    }
+    public readonly string $content_type;
     /**
      * The size of the CodeQL database file in bytes.
      */
-    public function size() : int
-    {
-        return $this->size;
-    }
+    public readonly int $size;
     /**
      * The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      */
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
+    public readonly string $created_at;
     /**
      * The date and time at which the CodeQL database was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      */
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
+    public readonly string $updated_at;
     /**
      * The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
      */
-    public function url() : string
+    public readonly string $url;
+    public function __construct(int $id, string $name, string $language, array $uploader, string $content_type, int $size, string $created_at, string $updated_at, string $url)
     {
-        return $this->url;
+        $this->id = $id;
+        $this->name = $name;
+        $this->language = $language;
+        $this->uploader = $uploader;
+        $this->content_type = $content_type;
+        $this->size = $size;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->url = $url;
     }
 }

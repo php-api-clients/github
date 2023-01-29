@@ -10,12 +10,9 @@ final class Json
     /**
      * The project card's note
      */
-    private ?string $note;
-    /**
-     * The project card's note
-     */
-    public function note() : ?string
+    public readonly ?string $note;
+    public function __construct(string $note)
     {
-        return $this->note;
+        $this->note = $note;
     }
 }

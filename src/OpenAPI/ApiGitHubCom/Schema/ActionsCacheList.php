@@ -10,26 +10,18 @@ final class ActionsCacheList
     /**
      * Total number of caches
      */
-    private int $total_count;
+    public readonly int $total_count;
     /**
      * Array of caches
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList\ActionsCaches>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList\ActionsCaches::class)
      */
-    private array $actions_caches = array();
+    public readonly array $actions_caches;
     /**
-     * Total number of caches
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList\ActionsCaches> $actions_caches
      */
-    public function total_count() : int
+    public function __construct(int $total_count, array $actions_caches)
     {
-        return $this->total_count;
-    }
-    /**
-     * Array of caches
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList\ActionsCaches>
-     */
-    public function actions_caches() : array
-    {
-        return $this->actions_caches;
+        $this->total_count = $total_count;
+        $this->actions_caches = $actions_caches;
     }
 }

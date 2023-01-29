@@ -10,15 +10,13 @@ final class Json
     /**
      * The slug values for teams
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Teams>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Teams::class)
      */
-    private array $teams = array();
+    public readonly array $teams;
     /**
-     * The slug values for teams
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Teams>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Teams> $teams
      */
-    public function teams() : array
+    public function __construct(array $teams)
     {
-        return $this->teams;
+        $this->teams = $teams;
     }
 }

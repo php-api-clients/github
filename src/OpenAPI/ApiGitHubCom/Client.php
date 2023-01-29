@@ -8,147 +8,145 @@ final class Client
     private readonly \React\Http\Browser $browser;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     public function __construct(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface $authentication, \React\Http\Browser $browser)
     {
         $this->authentication = $authentication;
         $this->browser = new \React\Http\Browser();
         $this->requestSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_REQUEST);
         $this->responseSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_RESPONSE);
+        $this->hydrator = new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper();
     }
     public function meta() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function apps() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function codesOfConduct() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodesOfConduct($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function emojis() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis($this->requestSchemaValidator, $this->responseSchemaValidator);
-    }
-    public function enterpriseAdmin() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin($this->requestSchemaValidator, $this->responseSchemaValidator);
-    }
-    public function secretScanning() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning
-    {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Emojis($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function dependabot() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
+    }
+    public function secretScanning() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning
+    {
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function activity() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function gists() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function gitignore() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gitignore
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gitignore($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Gitignore($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function issues() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function licenses() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function markdown() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Markdown($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function orgs() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function actions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function oidc() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Oidc
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Oidc($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Oidc($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function codeScanning() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function codespaces() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function interactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Interactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function migrations() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Migrations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function packages() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Packages($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function projects() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function repos() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function billing() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Billing($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function teams() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function reactions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function rateLimit() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\RateLimit
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\RateLimit($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\RateLimit($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function checks() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Checks($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function dependencyGraph() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\DependencyGraph
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\DependencyGraph($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\DependencyGraph($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function git() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Git($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function pulls() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function search() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     public function users() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users($this->requestSchemaValidator, $this->responseSchemaValidator);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
     }
     /**
-     * @return \React\Promise\PromiseInterface<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\OctocatStream\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Text\Plain\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDeliveryItem>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserMarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Emojis\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseSecurityAnalysisSettings|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningLocation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationDependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotSecret|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StarredRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H404|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gitignore\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Issues\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventForIssue>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineIssueEvents>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H422|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageOrgEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsOrganizationPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsGetDefaultWorkflowPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredWorkflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerApplication>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoRequiredWorkflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageByRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsRepositoryPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsWorkflowAccessToRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Workflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningOrganizationAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\JsonPlusSarif\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesOrgSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoCodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesUserPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Interactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterLargeFile>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBranch>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchAdminEnforced|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Collaborator>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchShort>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Contributor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Language|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Page|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuildStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageDeployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentFile|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseNotesContent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitActivity>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tag>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CloneTraffic|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTraffic>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferrerTraffic>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ViewTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckAnnotation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuitePreference|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Checks\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraphDiff>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\DependencyGraph\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBlob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Blob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H405|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H409|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Email>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\KeySimple>>
+     * @return \React\Promise\PromiseInterface<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Root|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\OctocatStream\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Meta\Response\Text\Plain\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookConfig|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDeliveryItem>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Apps\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UserMarketplacePurchase>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Emojis\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Dependabot\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationDependabotSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EmptyObject|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotSecret|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningLocation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ThreadSubscription|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Activity\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositorySubscription|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StarredRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Response\Application\Json\H404|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gitignore\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitignoreTemplate|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Issues\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventForIssue>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineIssueEvents>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Label|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\License|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Markdown\Response\Text\Html\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationFull|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H422|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Orgs\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageOrgEnterprise|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsOrganizationPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SelectedActions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsGetDefaultWorkflowPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredWorkflow|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerApplication>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Runner|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoRequiredWorkflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageByRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheList|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Job|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsRepositoryPermissions|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsWorkflowAccessToRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsVariable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Workflow|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningOrganizationAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertItems>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysis|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\CodeScanning\Response\Application\JsonPlusSarif\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisDeletion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsReceipt|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesOrgSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Codespace|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepoCodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesUserPublicKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespacesSecret|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceExportDetails|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Interactions\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InteractionLimitResponse|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Import|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterAuthor|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PorterLargeFile>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Projects\Response\Application\Json\H422|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectColumn>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H403|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Autolink|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBranch>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchAdminEnforced|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Collaborator>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchShort>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedCommitStatus|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComparison|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Contributor>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\Response\Application\Json\H202|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicy|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeployKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Language|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergedUpstream|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Page|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuildStatus|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageDeployment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentFile|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseNotesContent|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitActivity>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ParticipationStats|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tag>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TagProtection|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Topic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CloneTraffic|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTraffic>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferrerTraffic>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ViewTraffic|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackagesBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CombinedBillingUsage|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussion|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamMembership|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Teams\Response\Application\Json\H403|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamRepository|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckAnnotation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuitePreference|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Checks\Response\Application\Json\H200|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraphDiff>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\DependencyGraph\Response\Application\Json\H201|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBlob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Blob|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTree|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H503|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMergeResult|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H405|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H409|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewRequest|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestSimple|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewComment>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Pulls\Response\Application\Json\H202|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Response\Application\Json\H503|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Users\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PrivateUser|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Email>|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GpgKey|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Key|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SshSigningKey|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard|\Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\KeySimple>>
      */
     public function call(string $call, array $params = array()) : \React\Promise\PromiseInterface
     {
@@ -725,240 +723,6 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\EnableSelectedOrganizationGithubActionsEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'org_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->enableSelectedOrganizationGithubActionsEnterprise($params['enterprise'], $params['org_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListSelfHostedRunnerGroupsForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'per_page', 'page', 'visible_to_organization')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->listSelfHostedRunnerGroupsForEnterprise($params['enterprise'], $params['per_page'], $params['page'], $params['visible_to_organization']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnterpriseAdmin\Response\Application\Json\H200 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\CreateSelfHostedRunnerGroupForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->createSelfHostedRunnerGroupForEnterprise($params['enterprise']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsEnterprise {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\GetSelfHostedRunnerGroupForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'runner_group_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->getSelfHostedRunnerGroupForEnterprise($params['enterprise'], $params['runner_group_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsEnterprise {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\AddOrgAccessToSelfHostedRunnerGroupInEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'runner_group_id', 'org_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->addOrgAccessToSelfHostedRunnerGroupInEnterprise($params['enterprise'], $params['runner_group_id'], $params['org_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\RemoveSelfHostedRunnerFromGroupForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'runner_group_id', 'runner_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->removeSelfHostedRunnerFromGroupForEnterprise($params['enterprise'], $params['runner_group_id'], $params['runner_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\DeleteSelfHostedRunnerFromEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'runner_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->deleteSelfHostedRunnerFromEnterprise($params['enterprise'], $params['runner_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\ListLabelsForSelfHostedRunnerForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'runner_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->listLabelsForSelfHostedRunnerForEnterprise($params['enterprise'], $params['runner_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\EnterpriseAdmin\AddCustomLabelsToSelfHostedRunnerForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'runner_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->enterpriseAdmin()->addCustomLabelsToSelfHostedRunnerForEnterprise($params['enterprise'], $params['runner_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\EnterpriseAdmin\Response\Application\Json\H200|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\GetSecurityAnalysisSettingsForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->getSecurityAnalysisSettingsForEnterprise($params['enterprise']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnterpriseSecurityAnalysisSettings|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\PatchSecurityAnalysisSettingsForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->patchSecurityAnalysisSettingsForEnterprise($params['enterprise']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'state', 'secret_type', 'resolution', 'sort', 'direction', 'per_page', 'before', 'after')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->listAlertsForEnterprise($params['enterprise'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['per_page'], $params['before'], $params['after']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\PostSecurityProductEnablementForEnterprise::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('enterprise', 'security_product', 'enablement')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->postSecurityProductEnablementForEnterprise($params['enterprise'], $params['security_product'], $params['enablement']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'state', 'secret_type', 'resolution', 'sort', 'direction', 'page', 'per_page', 'before', 'after')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->listAlertsForOrg($params['org'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForRepo::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('owner', 'repo', 'state', 'secret_type', 'resolution', 'sort', 'direction', 'page', 'per_page', 'before', 'after')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->listAlertsForRepo($params['owner'], $params['repo'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\GetAlert::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('owner', 'repo', 'alert_number')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->getAlert($params['owner'], $params['repo'], $params['alert_number']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\UpdateAlert::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('owner', 'repo', 'alert_number')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->updateAlert($params['owner'], $params['repo'], $params['alert_number']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListLocationsForAlert::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('owner', 'repo', 'alert_number', 'page', 'per_page')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->secretScanning()->listLocationsForAlert($params['owner'], $params['repo'], $params['alert_number'], $params['page'], $params['per_page']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
-                    return $operation->createResponse($response);
-                });
-                break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot\ListAlertsForEnterprise::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
@@ -1203,6 +967,84 @@ final class Client
                 $operation = $this->dependabot()->deleteRepoSecret($params['owner'], $params['repo'], $params['secret_name']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForEnterprise::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('enterprise', 'state', 'secret_type', 'resolution', 'sort', 'direction', 'per_page', 'before', 'after')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->secretScanning()->listAlertsForEnterprise($params['enterprise'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['per_page'], $params['before'], $params['after']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForOrg::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('org', 'state', 'secret_type', 'resolution', 'sort', 'direction', 'page', 'per_page', 'before', 'after')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->secretScanning()->listAlertsForOrg($params['org'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListAlertsForRepo::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('owner', 'repo', 'state', 'secret_type', 'resolution', 'sort', 'direction', 'page', 'per_page', 'before', 'after')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->secretScanning()->listAlertsForRepo($params['owner'], $params['repo'], $params['state'], $params['secret_type'], $params['resolution'], $params['sort'], $params['direction'], $params['page'], $params['per_page'], $params['before'], $params['after']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\GetAlert::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('owner', 'repo', 'alert_number')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->secretScanning()->getAlert($params['owner'], $params['repo'], $params['alert_number']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\UpdateAlert::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('owner', 'repo', 'alert_number')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->secretScanning()->updateAlert($params['owner'], $params['repo'], $params['alert_number']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\SecretScanning\ListLocationsForAlert::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('owner', 'repo', 'alert_number', 'page', 'per_page')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->secretScanning()->listLocationsForAlert($params['owner'], $params['repo'], $params['alert_number'], $params['page'], $params['per_page']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\Response\Application\Json\H503 {
                     return $operation->createResponse($response);
                 });
                 break;
@@ -3351,162 +3193,6 @@ final class Client
                     return $operation->createResponse($response);
                 });
                 break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnerGroupsForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'per_page', 'page', 'visible_to_repository')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->listSelfHostedRunnerGroupsForOrg($params['org'], $params['per_page'], $params['page'], $params['visible_to_repository']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\CreateSelfHostedRunnerGroupForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->createSelfHostedRunnerGroupForOrg($params['org']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\GetSelfHostedRunnerGroupForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->getSelfHostedRunnerGroupForOrg($params['org'], $params['runner_group_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteSelfHostedRunnerGroupFromOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->deleteSelfHostedRunnerGroupFromOrg($params['org'], $params['runner_group_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateSelfHostedRunnerGroupForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->updateSelfHostedRunnerGroupForOrg($params['org'], $params['runner_group_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerGroupsOrg {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id', 'page', 'per_page')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->listRepoAccessToSelfHostedRunnerGroupInOrg($params['org'], $params['runner_group_id'], $params['page'], $params['per_page']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->setRepoAccessToSelfHostedRunnerGroupInOrg($params['org'], $params['runner_group_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveRepoAccessToSelfHostedRunnerGroupInOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id', 'repository_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->removeRepoAccessToSelfHostedRunnerGroupInOrg($params['org'], $params['runner_group_id'], $params['repository_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersInGroupForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id', 'per_page', 'page')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->listSelfHostedRunnersInGroupForOrg($params['org'], $params['runner_group_id'], $params['per_page'], $params['page']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\Response\Application\Json\H200 {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\SetSelfHostedRunnersInGroupForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->setSelfHostedRunnersInGroupForOrg($params['org'], $params['runner_group_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\AddSelfHostedRunnerToGroupForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id', 'runner_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->addSelfHostedRunnerToGroupForOrg($params['org'], $params['runner_group_id'], $params['runner_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
-            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\RemoveSelfHostedRunnerFromGroupForOrg::OPERATION_MATCH:
-                $requestBodyData = array();
-                foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'runner_group_id', 'runner_id')) != false) {
-                        \array_push($requestBodyData, $param);
-                    }
-                }
-                $operation = $this->actions()->removeSelfHostedRunnerFromGroupForOrg($params['org'], $params['runner_group_id'], $params['runner_id']);
-                $request = $operation->createRequest($requestBodyData);
-                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
-                    return $operation->createResponse($response);
-                });
-                break;
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\ListSelfHostedRunnersForOrg::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
@@ -4914,11 +4600,11 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\DeleteEnvironmentVariable::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('repository_id', 'name')) != false) {
+                    if (\in_array($param, array('repository_id', 'name', 'environment_name')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->actions()->deleteEnvironmentVariable($params['repository_id'], $params['name']);
+                $operation = $this->actions()->deleteEnvironmentVariable($params['repository_id'], $params['name'], $params['environment_name']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
@@ -4927,11 +4613,11 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions\UpdateEnvironmentVariable::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('repository_id', 'name')) != false) {
+                    if (\in_array($param, array('repository_id', 'name', 'environment_name')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->actions()->updateEnvironmentVariable($params['repository_id'], $params['name']);
+                $operation = $this->actions()->updateEnvironmentVariable($params['repository_id'], $params['name'], $params['environment_name']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int {
                     return $operation->createResponse($response);
@@ -5140,6 +4826,32 @@ final class Client
                     }
                 }
                 $operation = $this->codespaces()->setCodespacesBilling($params['org']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\SetCodespacesBillingUsers::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('org')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->codespaces()->setCodespacesBillingUsers($params['org']);
+                $request = $operation->createRequest($requestBodyData);
+                return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
+                    return $operation->createResponse($response);
+                });
+                break;
+            case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces\DeleteCodespacesBillingUsers::OPERATION_MATCH:
+                $requestBodyData = array();
+                foreach (\array_keys($params) as $param) {
+                    if (\in_array($param, array('org')) != false) {
+                        \array_push($requestBodyData, $param);
+                    }
+                }
+                $operation = $this->codespaces()->deleteCodespacesBillingUsers($params['org']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError {
                     return $operation->createResponse($response);

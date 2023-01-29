@@ -10,12 +10,9 @@ final class Json
     /**
      * The new name of the branch.
      */
-    private string $new_name;
-    /**
-     * The new name of the branch.
-     */
-    public function new_name() : string
+    public readonly string $new_name;
+    public function __construct(string $new_name)
     {
-        return $this->new_name;
+        $this->new_name = $new_name;
     }
 }

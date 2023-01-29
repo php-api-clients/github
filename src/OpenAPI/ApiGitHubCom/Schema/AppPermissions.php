@@ -10,364 +10,169 @@ final class AppPermissions
     /**
      * The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
      */
-    private string $actions;
+    public readonly string $actions;
     /**
      * The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
      */
-    private string $administration;
+    public readonly string $administration;
     /**
      * The level of permission to grant the access token for checks on code.
      */
-    private string $checks;
+    public readonly string $checks;
     /**
      * The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
      */
-    private string $contents;
+    public readonly string $contents;
     /**
      * The level of permission to grant the access token for deployments and deployment statuses.
      */
-    private string $deployments;
+    public readonly string $deployments;
     /**
      * The level of permission to grant the access token for managing repository environments.
      */
-    private string $environments;
+    public readonly string $environments;
     /**
      * The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
      */
-    private string $issues;
+    public readonly string $issues;
     /**
      * The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
      */
-    private string $metadata;
+    public readonly string $metadata;
     /**
      * The level of permission to grant the access token for packages published to GitHub Packages.
      */
-    private string $packages;
+    public readonly string $packages;
     /**
      * The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
      */
-    private string $pages;
+    public readonly string $pages;
     /**
      * The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
      */
-    private string $pull_requests;
+    public readonly string $pull_requests;
     /**
      * The level of permission to grant the access token to view and manage announcement banners for a repository.
      */
-    private string $repository_announcement_banners;
+    public readonly string $repository_announcement_banners;
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for a repository.
      */
-    private string $repository_hooks;
+    public readonly string $repository_hooks;
     /**
      * The level of permission to grant the access token to manage repository projects, columns, and cards.
      */
-    private string $repository_projects;
+    public readonly string $repository_projects;
     /**
      * The level of permission to grant the access token to view and manage secret scanning alerts.
      */
-    private string $secret_scanning_alerts;
+    public readonly string $secret_scanning_alerts;
     /**
      * The level of permission to grant the access token to manage repository secrets.
      */
-    private string $secrets;
+    public readonly string $secrets;
     /**
      * The level of permission to grant the access token to view and manage security events like code scanning alerts.
      */
-    private string $security_events;
+    public readonly string $security_events;
     /**
      * The level of permission to grant the access token to manage just a single file.
      */
-    private string $single_file;
+    public readonly string $single_file;
     /**
      * The level of permission to grant the access token for commit statuses.
      */
-    private string $statuses;
+    public readonly string $statuses;
     /**
      * The level of permission to grant the access token to manage Dependabot alerts.
      */
-    private string $vulnerability_alerts;
+    public readonly string $vulnerability_alerts;
     /**
      * The level of permission to grant the access token to update GitHub Actions workflow files.
      */
-    private string $workflows;
+    public readonly string $workflows;
     /**
      * The level of permission to grant the access token for organization teams and members.
      */
-    private string $members;
+    public readonly string $members;
     /**
      * The level of permission to grant the access token to manage access to an organization.
      */
-    private string $organization_administration;
+    public readonly string $organization_administration;
     /**
      * The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
      */
-    private string $organization_custom_roles;
+    public readonly string $organization_custom_roles;
     /**
      * The level of permission to grant the access token to view and manage announcement banners for an organization.
      */
-    private string $organization_announcement_banners;
+    public readonly string $organization_announcement_banners;
     /**
      * The level of permission to grant the access token to manage the post-receive hooks for an organization.
      */
-    private string $organization_hooks;
+    public readonly string $organization_hooks;
     /**
      * The level of permission to grant the access token for viewing an organization's plan.
      */
-    private string $organization_plan;
+    public readonly string $organization_plan;
     /**
      * The level of permission to grant the access token to manage organization projects and projects beta (where available).
      */
-    private string $organization_projects;
+    public readonly string $organization_projects;
     /**
      * The level of permission to grant the access token for organization packages published to GitHub Packages.
      */
-    private string $organization_packages;
+    public readonly string $organization_packages;
     /**
      * The level of permission to grant the access token to manage organization secrets.
      */
-    private string $organization_secrets;
+    public readonly string $organization_secrets;
     /**
      * The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
      */
-    private string $organization_self_hosted_runners;
+    public readonly string $organization_self_hosted_runners;
     /**
      * The level of permission to grant the access token to view and manage users blocked by the organization.
      */
-    private string $organization_user_blocking;
+    public readonly string $organization_user_blocking;
     /**
      * The level of permission to grant the access token to manage team discussions and related comments.
      */
-    private string $team_discussions;
-    /**
-     * The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
-     */
-    public function actions() : string
+    public readonly string $team_discussions;
+    public function __construct(string $actions, string $administration, string $checks, string $contents, string $deployments, string $environments, string $issues, string $metadata, string $packages, string $pages, string $pull_requests, string $repository_announcement_banners, string $repository_hooks, string $repository_projects, string $secret_scanning_alerts, string $secrets, string $security_events, string $single_file, string $statuses, string $vulnerability_alerts, string $workflows, string $members, string $organization_administration, string $organization_custom_roles, string $organization_announcement_banners, string $organization_hooks, string $organization_plan, string $organization_projects, string $organization_packages, string $organization_secrets, string $organization_self_hosted_runners, string $organization_user_blocking, string $team_discussions)
     {
-        return $this->actions;
-    }
-    /**
-     * The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
-     */
-    public function administration() : string
-    {
-        return $this->administration;
-    }
-    /**
-     * The level of permission to grant the access token for checks on code.
-     */
-    public function checks() : string
-    {
-        return $this->checks;
-    }
-    /**
-     * The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
-     */
-    public function contents() : string
-    {
-        return $this->contents;
-    }
-    /**
-     * The level of permission to grant the access token for deployments and deployment statuses.
-     */
-    public function deployments() : string
-    {
-        return $this->deployments;
-    }
-    /**
-     * The level of permission to grant the access token for managing repository environments.
-     */
-    public function environments() : string
-    {
-        return $this->environments;
-    }
-    /**
-     * The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
-     */
-    public function issues() : string
-    {
-        return $this->issues;
-    }
-    /**
-     * The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
-     */
-    public function metadata() : string
-    {
-        return $this->metadata;
-    }
-    /**
-     * The level of permission to grant the access token for packages published to GitHub Packages.
-     */
-    public function packages() : string
-    {
-        return $this->packages;
-    }
-    /**
-     * The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
-     */
-    public function pages() : string
-    {
-        return $this->pages;
-    }
-    /**
-     * The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
-     */
-    public function pull_requests() : string
-    {
-        return $this->pull_requests;
-    }
-    /**
-     * The level of permission to grant the access token to view and manage announcement banners for a repository.
-     */
-    public function repository_announcement_banners() : string
-    {
-        return $this->repository_announcement_banners;
-    }
-    /**
-     * The level of permission to grant the access token to manage the post-receive hooks for a repository.
-     */
-    public function repository_hooks() : string
-    {
-        return $this->repository_hooks;
-    }
-    /**
-     * The level of permission to grant the access token to manage repository projects, columns, and cards.
-     */
-    public function repository_projects() : string
-    {
-        return $this->repository_projects;
-    }
-    /**
-     * The level of permission to grant the access token to view and manage secret scanning alerts.
-     */
-    public function secret_scanning_alerts() : string
-    {
-        return $this->secret_scanning_alerts;
-    }
-    /**
-     * The level of permission to grant the access token to manage repository secrets.
-     */
-    public function secrets() : string
-    {
-        return $this->secrets;
-    }
-    /**
-     * The level of permission to grant the access token to view and manage security events like code scanning alerts.
-     */
-    public function security_events() : string
-    {
-        return $this->security_events;
-    }
-    /**
-     * The level of permission to grant the access token to manage just a single file.
-     */
-    public function single_file() : string
-    {
-        return $this->single_file;
-    }
-    /**
-     * The level of permission to grant the access token for commit statuses.
-     */
-    public function statuses() : string
-    {
-        return $this->statuses;
-    }
-    /**
-     * The level of permission to grant the access token to manage Dependabot alerts.
-     */
-    public function vulnerability_alerts() : string
-    {
-        return $this->vulnerability_alerts;
-    }
-    /**
-     * The level of permission to grant the access token to update GitHub Actions workflow files.
-     */
-    public function workflows() : string
-    {
-        return $this->workflows;
-    }
-    /**
-     * The level of permission to grant the access token for organization teams and members.
-     */
-    public function members() : string
-    {
-        return $this->members;
-    }
-    /**
-     * The level of permission to grant the access token to manage access to an organization.
-     */
-    public function organization_administration() : string
-    {
-        return $this->organization_administration;
-    }
-    /**
-     * The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
-     */
-    public function organization_custom_roles() : string
-    {
-        return $this->organization_custom_roles;
-    }
-    /**
-     * The level of permission to grant the access token to view and manage announcement banners for an organization.
-     */
-    public function organization_announcement_banners() : string
-    {
-        return $this->organization_announcement_banners;
-    }
-    /**
-     * The level of permission to grant the access token to manage the post-receive hooks for an organization.
-     */
-    public function organization_hooks() : string
-    {
-        return $this->organization_hooks;
-    }
-    /**
-     * The level of permission to grant the access token for viewing an organization's plan.
-     */
-    public function organization_plan() : string
-    {
-        return $this->organization_plan;
-    }
-    /**
-     * The level of permission to grant the access token to manage organization projects and projects beta (where available).
-     */
-    public function organization_projects() : string
-    {
-        return $this->organization_projects;
-    }
-    /**
-     * The level of permission to grant the access token for organization packages published to GitHub Packages.
-     */
-    public function organization_packages() : string
-    {
-        return $this->organization_packages;
-    }
-    /**
-     * The level of permission to grant the access token to manage organization secrets.
-     */
-    public function organization_secrets() : string
-    {
-        return $this->organization_secrets;
-    }
-    /**
-     * The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
-     */
-    public function organization_self_hosted_runners() : string
-    {
-        return $this->organization_self_hosted_runners;
-    }
-    /**
-     * The level of permission to grant the access token to view and manage users blocked by the organization.
-     */
-    public function organization_user_blocking() : string
-    {
-        return $this->organization_user_blocking;
-    }
-    /**
-     * The level of permission to grant the access token to manage team discussions and related comments.
-     */
-    public function team_discussions() : string
-    {
-        return $this->team_discussions;
+        $this->actions = $actions;
+        $this->administration = $administration;
+        $this->checks = $checks;
+        $this->contents = $contents;
+        $this->deployments = $deployments;
+        $this->environments = $environments;
+        $this->issues = $issues;
+        $this->metadata = $metadata;
+        $this->packages = $packages;
+        $this->pages = $pages;
+        $this->pull_requests = $pull_requests;
+        $this->repository_announcement_banners = $repository_announcement_banners;
+        $this->repository_hooks = $repository_hooks;
+        $this->repository_projects = $repository_projects;
+        $this->secret_scanning_alerts = $secret_scanning_alerts;
+        $this->secrets = $secrets;
+        $this->security_events = $security_events;
+        $this->single_file = $single_file;
+        $this->statuses = $statuses;
+        $this->vulnerability_alerts = $vulnerability_alerts;
+        $this->workflows = $workflows;
+        $this->members = $members;
+        $this->organization_administration = $organization_administration;
+        $this->organization_custom_roles = $organization_custom_roles;
+        $this->organization_announcement_banners = $organization_announcement_banners;
+        $this->organization_hooks = $organization_hooks;
+        $this->organization_plan = $organization_plan;
+        $this->organization_projects = $organization_projects;
+        $this->organization_packages = $organization_packages;
+        $this->organization_secrets = $organization_secrets;
+        $this->organization_self_hosted_runners = $organization_self_hosted_runners;
+        $this->organization_user_blocking = $organization_user_blocking;
+        $this->team_discussions = $team_discussions;
     }
 }

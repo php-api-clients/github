@@ -10,39 +10,21 @@ final class Json
     /**
      * The URL to which the payloads will be delivered.
      */
-    private string $url;
+    public readonly string $url;
     /**
      * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
      */
-    private string $content_type;
+    public readonly string $content_type;
     /**
      * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
      */
-    private string $secret;
-    private $insecure_ssl;
-    /**
-     * The URL to which the payloads will be delivered.
-     */
-    public function url() : string
+    public readonly string $secret;
+    public readonly mixed $insecure_ssl;
+    public function __construct(string $url, string $content_type, string $secret, mixed $insecure_ssl)
     {
-        return $this->url;
-    }
-    /**
-     * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
-     */
-    public function content_type() : string
-    {
-        return $this->content_type;
-    }
-    /**
-     * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
-     */
-    public function secret() : string
-    {
-        return $this->secret;
-    }
-    public function insecure_ssl()
-    {
-        return $this->insecure_ssl;
+        $this->url = $url;
+        $this->content_type = $content_type;
+        $this->secret = $secret;
+        $this->insecure_ssl = $insecure_ssl;
     }
 }

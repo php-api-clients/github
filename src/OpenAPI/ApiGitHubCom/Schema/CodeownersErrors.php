@@ -9,14 +9,13 @@ final class CodeownersErrors
     public const SCHEMA_DESCRIPTION = 'A list of errors found in a repo\'s CODEOWNERS file';
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors\Errors>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors\Errors::class)
      */
-    private array $errors = array();
+    public readonly array $errors;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors\Errors>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeownersErrors\Errors> $errors
      */
-    public function errors() : array
+    public function __construct(array $errors)
     {
-        return $this->errors;
+        $this->errors = $errors;
     }
 }

@@ -9,24 +9,17 @@ final class CommitActivity
     public const SCHEMA_DESCRIPTION = 'Commit Activity';
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $days = array();
-    private int $total;
-    private int $week;
+    public readonly array $days;
+    public readonly int $total;
+    public readonly int $week;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $days
      */
-    public function days() : array
+    public function __construct(array $days, int $total, int $week)
     {
-        return $this->days;
-    }
-    public function total() : int
-    {
-        return $this->total;
-    }
-    public function week() : int
-    {
-        return $this->week;
+        $this->days = $days;
+        $this->total = $total;
+        $this->week = $week;
     }
 }

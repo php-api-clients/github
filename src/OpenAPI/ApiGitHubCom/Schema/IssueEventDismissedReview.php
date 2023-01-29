@@ -7,24 +7,15 @@ final class IssueEventDismissedReview
     public const SCHEMA_JSON = '{"title":"Issue Event Dismissed Review","required":["state","review_id","dismissal_message"],"type":"object","properties":{"state":{"type":"string"},"review_id":{"type":"integer"},"dismissal_message":{"type":["string","null"]},"dismissal_commit_id":{"type":["string","null"]}}}';
     public const SCHEMA_TITLE = 'Issue Event Dismissed Review';
     public const SCHEMA_DESCRIPTION = '';
-    private string $state;
-    private int $review_id;
-    private ?string $dismissal_message;
-    private ?string $dismissal_commit_id = null;
-    public function state() : string
+    public readonly string $state;
+    public readonly int $review_id;
+    public readonly ?string $dismissal_message;
+    public readonly ?string $dismissal_commit_id;
+    public function __construct(string $state, int $review_id, string $dismissal_message, string $dismissal_commit_id)
     {
-        return $this->state;
-    }
-    public function review_id() : int
-    {
-        return $this->review_id;
-    }
-    public function dismissal_message() : ?string
-    {
-        return $this->dismissal_message;
-    }
-    public function dismissal_commit_id() : ?string
-    {
-        return $this->dismissal_commit_id;
+        $this->state = $state;
+        $this->review_id = $review_id;
+        $this->dismissal_message = $dismissal_message;
+        $this->dismissal_commit_id = $dismissal_commit_id;
     }
 }

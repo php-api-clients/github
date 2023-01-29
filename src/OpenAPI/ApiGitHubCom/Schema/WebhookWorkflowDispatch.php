@@ -9,80 +9,36 @@ final class WebhookWorkflowDispatch
     public const SCHEMA_DESCRIPTION = '';
     /**
      * An enterprise on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDispatch\Inputs::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDispatch\Inputs $inputs;
-    /**
-     * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
-    /**
-     * A GitHub organization.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
-    private string $ref;
-    /**
-     * A repository on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    private string $workflow;
-    /**
-     * An enterprise on GitHub.
-     */
-    public function enterprise() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise
-    {
-        return $this->enterprise;
-    }
-    public function inputs() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDispatch\Inputs
-    {
-        return $this->inputs;
-    }
+    public readonly array $enterprise;
+    public readonly array $inputs;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public function installation() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation
-    {
-        return $this->installation;
-    }
+    public readonly array $installation;
     /**
      * A GitHub organization.
      */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
-    {
-        return $this->organization;
-    }
-    public function ref() : string
-    {
-        return $this->ref;
-    }
+    public readonly array $organization;
+    public readonly string $ref;
     /**
      * A repository on GitHub.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
-    {
-        return $this->repository;
-    }
+    public readonly array $repository;
     /**
      * A GitHub user.
      */
-    public function sender() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $sender;
+    public readonly string $workflow;
+    public function __construct(array $enterprise, array $inputs, array $installation, array $organization, string $ref, array $repository, array $sender, string $workflow)
     {
-        return $this->sender;
-    }
-    public function workflow() : string
-    {
-        return $this->workflow;
+        $this->enterprise = $enterprise;
+        $this->inputs = $inputs;
+        $this->installation = $installation;
+        $this->organization = $organization;
+        $this->ref = $ref;
+        $this->repository = $repository;
+        $this->sender = $sender;
+        $this->workflow = $workflow;
     }
 }

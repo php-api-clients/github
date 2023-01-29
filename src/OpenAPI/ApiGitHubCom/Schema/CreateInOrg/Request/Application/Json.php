@@ -10,90 +10,90 @@ final class Json
     /**
      * The name of the repository.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * A short description of the repository.
      */
-    private ?string $description = null;
+    public readonly ?string $description;
     /**
      * A URL with more information about the repository.
      */
-    private ?string $homepage = null;
+    public readonly ?string $homepage;
     /**
      * Whether the repository is private.
      */
-    private ?bool $private = null;
+    public readonly ?bool $private;
     /**
      * The visibility of the repository.
      */
-    private ?string $visibility = null;
+    public readonly ?string $visibility;
     /**
      * Either `true` to enable issues for this repository or `false` to disable them.
      */
-    private ?bool $has_issues = null;
+    public readonly ?bool $has_issues;
     /**
      * Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
      */
-    private ?bool $has_projects = null;
+    public readonly ?bool $has_projects;
     /**
      * Either `true` to enable the wiki for this repository or `false` to disable it.
      */
-    private ?bool $has_wiki = null;
+    public readonly ?bool $has_wiki;
     /**
      * Whether downloads are enabled.
      */
-    private ?bool $has_downloads = null;
+    public readonly ?bool $has_downloads;
     /**
      * Either `true` to make this repo available as a template repository or `false` to prevent it.
      */
-    private ?bool $is_template = null;
+    public readonly ?bool $is_template;
     /**
      * The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
      */
-    private ?int $team_id = null;
+    public readonly ?int $team_id;
     /**
      * Pass `true` to create an initial commit with empty README.
      */
-    private ?bool $auto_init = null;
+    public readonly ?bool $auto_init;
     /**
      * Desired language or platform [.gitignore template](https://github.com/github/gitignore) to apply. Use the name of the template without the extension. For example, "Haskell".
      */
-    private ?string $gitignore_template = null;
+    public readonly ?string $gitignore_template;
     /**
      * Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
      */
-    private ?string $license_template = null;
+    public readonly ?string $license_template;
     /**
      * Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
      */
-    private ?bool $allow_squash_merge = null;
+    public readonly ?bool $allow_squash_merge;
     /**
      * Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
      */
-    private ?bool $allow_merge_commit = null;
+    public readonly ?bool $allow_merge_commit;
     /**
      * Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
      */
-    private ?bool $allow_rebase_merge = null;
+    public readonly ?bool $allow_rebase_merge;
     /**
      * Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
      */
-    private ?bool $allow_auto_merge = null;
+    public readonly ?bool $allow_auto_merge;
     /**
      * Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
      */
-    private ?bool $delete_branch_on_merge = null;
+    public readonly ?bool $delete_branch_on_merge;
     /**
      * Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
      */
-    private ?bool $use_squash_pr_title_as_default = null;
+    public readonly ?bool $use_squash_pr_title_as_default;
     /**
     * The default value for a squash merge commit title:
     
     - `PR_TITLE` - default to the pull request's title.
     - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
     */
-    private ?string $squash_merge_commit_title = null;
+    public readonly ?string $squash_merge_commit_title;
     /**
     * The default value for a squash merge commit message:
     
@@ -101,14 +101,14 @@ final class Json
     - `COMMIT_MESSAGES` - default to the branch's commit messages.
     - `BLANK` - default to a blank commit message.
     */
-    private ?string $squash_merge_commit_message = null;
+    public readonly ?string $squash_merge_commit_message;
     /**
     * The default value for a merge commit title.
     
     - `PR_TITLE` - default to the pull request's title.
     - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
     */
-    private ?string $merge_commit_title = null;
+    public readonly ?string $merge_commit_title;
     /**
     * The default value for a merge commit message.
     
@@ -116,187 +116,32 @@ final class Json
     - `PR_BODY` - default to the pull request's body.
     - `BLANK` - default to a blank commit message.
     */
-    private ?string $merge_commit_message = null;
-    /**
-     * The name of the repository.
-     */
-    public function name() : string
+    public readonly ?string $merge_commit_message;
+    public function __construct(string $name, string $description, string $homepage, bool $private, string $visibility, bool $has_issues, bool $has_projects, bool $has_wiki, bool $has_downloads, bool $is_template, int $team_id, bool $auto_init, string $gitignore_template, string $license_template, bool $allow_squash_merge, bool $allow_merge_commit, bool $allow_rebase_merge, bool $allow_auto_merge, bool $delete_branch_on_merge, bool $use_squash_pr_title_as_default, string $squash_merge_commit_title, string $squash_merge_commit_message, string $merge_commit_title, string $merge_commit_message)
     {
-        return $this->name;
-    }
-    /**
-     * A short description of the repository.
-     */
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    /**
-     * A URL with more information about the repository.
-     */
-    public function homepage() : ?string
-    {
-        return $this->homepage;
-    }
-    /**
-     * Whether the repository is private.
-     */
-    public function private() : ?bool
-    {
-        return $this->private;
-    }
-    /**
-     * The visibility of the repository.
-     */
-    public function visibility() : ?string
-    {
-        return $this->visibility;
-    }
-    /**
-     * Either `true` to enable issues for this repository or `false` to disable them.
-     */
-    public function has_issues() : ?bool
-    {
-        return $this->has_issues;
-    }
-    /**
-     * Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
-     */
-    public function has_projects() : ?bool
-    {
-        return $this->has_projects;
-    }
-    /**
-     * Either `true` to enable the wiki for this repository or `false` to disable it.
-     */
-    public function has_wiki() : ?bool
-    {
-        return $this->has_wiki;
-    }
-    /**
-     * Whether downloads are enabled.
-     */
-    public function has_downloads() : ?bool
-    {
-        return $this->has_downloads;
-    }
-    /**
-     * Either `true` to make this repo available as a template repository or `false` to prevent it.
-     */
-    public function is_template() : ?bool
-    {
-        return $this->is_template;
-    }
-    /**
-     * The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
-     */
-    public function team_id() : ?int
-    {
-        return $this->team_id;
-    }
-    /**
-     * Pass `true` to create an initial commit with empty README.
-     */
-    public function auto_init() : ?bool
-    {
-        return $this->auto_init;
-    }
-    /**
-     * Desired language or platform [.gitignore template](https://github.com/github/gitignore) to apply. Use the name of the template without the extension. For example, "Haskell".
-     */
-    public function gitignore_template() : ?string
-    {
-        return $this->gitignore_template;
-    }
-    /**
-     * Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
-     */
-    public function license_template() : ?string
-    {
-        return $this->license_template;
-    }
-    /**
-     * Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
-     */
-    public function allow_squash_merge() : ?bool
-    {
-        return $this->allow_squash_merge;
-    }
-    /**
-     * Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
-     */
-    public function allow_merge_commit() : ?bool
-    {
-        return $this->allow_merge_commit;
-    }
-    /**
-     * Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
-     */
-    public function allow_rebase_merge() : ?bool
-    {
-        return $this->allow_rebase_merge;
-    }
-    /**
-     * Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
-     */
-    public function allow_auto_merge() : ?bool
-    {
-        return $this->allow_auto_merge;
-    }
-    /**
-     * Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
-     */
-    public function delete_branch_on_merge() : ?bool
-    {
-        return $this->delete_branch_on_merge;
-    }
-    /**
-     * Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
-     */
-    public function use_squash_pr_title_as_default() : ?bool
-    {
-        return $this->use_squash_pr_title_as_default;
-    }
-    /**
-    * The default value for a squash merge commit title:
-    
-    - `PR_TITLE` - default to the pull request's title.
-    - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-    */
-    public function squash_merge_commit_title() : ?string
-    {
-        return $this->squash_merge_commit_title;
-    }
-    /**
-    * The default value for a squash merge commit message:
-    
-    - `PR_BODY` - default to the pull request's body.
-    - `COMMIT_MESSAGES` - default to the branch's commit messages.
-    - `BLANK` - default to a blank commit message.
-    */
-    public function squash_merge_commit_message() : ?string
-    {
-        return $this->squash_merge_commit_message;
-    }
-    /**
-    * The default value for a merge commit title.
-    
-    - `PR_TITLE` - default to the pull request's title.
-    - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-    */
-    public function merge_commit_title() : ?string
-    {
-        return $this->merge_commit_title;
-    }
-    /**
-    * The default value for a merge commit message.
-    
-    - `PR_TITLE` - default to the pull request's title.
-    - `PR_BODY` - default to the pull request's body.
-    - `BLANK` - default to a blank commit message.
-    */
-    public function merge_commit_message() : ?string
-    {
-        return $this->merge_commit_message;
+        $this->name = $name;
+        $this->description = $description;
+        $this->homepage = $homepage;
+        $this->private = $private;
+        $this->visibility = $visibility;
+        $this->has_issues = $has_issues;
+        $this->has_projects = $has_projects;
+        $this->has_wiki = $has_wiki;
+        $this->has_downloads = $has_downloads;
+        $this->is_template = $is_template;
+        $this->team_id = $team_id;
+        $this->auto_init = $auto_init;
+        $this->gitignore_template = $gitignore_template;
+        $this->license_template = $license_template;
+        $this->allow_squash_merge = $allow_squash_merge;
+        $this->allow_merge_commit = $allow_merge_commit;
+        $this->allow_rebase_merge = $allow_rebase_merge;
+        $this->allow_auto_merge = $allow_auto_merge;
+        $this->delete_branch_on_merge = $delete_branch_on_merge;
+        $this->use_squash_pr_title_as_default = $use_squash_pr_title_as_default;
+        $this->squash_merge_commit_title = $squash_merge_commit_title;
+        $this->squash_merge_commit_message = $squash_merge_commit_message;
+        $this->merge_commit_title = $merge_commit_title;
+        $this->merge_commit_message = $merge_commit_message;
     }
 }

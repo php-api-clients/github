@@ -10,34 +10,19 @@ final class Json
     /**
      * The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see "[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)."
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
      */
-    private ?string $color = null;
+    public readonly ?string $color;
     /**
      * A short description of the label. Must be 100 characters or fewer.
      */
-    private ?string $description = null;
-    /**
-     * The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see "[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)."
-     */
-    public function name() : string
+    public readonly ?string $description;
+    public function __construct(string $name, string $color, string $description)
     {
-        return $this->name;
-    }
-    /**
-     * The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
-     */
-    public function color() : ?string
-    {
-        return $this->color;
-    }
-    /**
-     * A short description of the label. Must be 100 characters or fewer.
-     */
-    public function description() : ?string
-    {
-        return $this->description;
+        $this->name = $name;
+        $this->color = $color;
+        $this->description = $description;
     }
 }

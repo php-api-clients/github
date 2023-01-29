@@ -7,4 +7,7 @@ final class H202
     public const SCHEMA_JSON = '{"type":"object","properties":{},"additionalProperties":false}';
     public const SCHEMA_TITLE = 'Operation\\ConvertMemberToOutsideCollaborator\\Response\\Application\\Json\\H202';
     public const SCHEMA_DESCRIPTION = '';
+    public function __construct()
+    {
+    }
 }

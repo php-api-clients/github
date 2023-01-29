@@ -10,97 +10,50 @@ final class Json
     /**
      * The ref to deploy. This can be a branch, tag, or SHA.
      */
-    private string $ref;
+    public readonly string $ref;
     /**
      * Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
      */
-    private ?string $task = null;
+    public readonly ?string $task;
     /**
      * Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
      */
-    private ?bool $auto_merge = null;
+    public readonly ?bool $auto_merge;
     /**
      * The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredContexts>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredContexts::class)
      */
-    private array $required_contexts = array();
-    private $payload;
+    public readonly array $required_contexts;
+    public readonly mixed $payload;
     /**
      * Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
      */
-    private ?string $environment = null;
+    public readonly ?string $environment;
     /**
      * Short description of the deployment.
      */
-    private ?string $description = null;
+    public readonly ?string $description;
     /**
      * Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
      */
-    private ?bool $transient_environment = null;
+    public readonly ?bool $transient_environment;
     /**
      * Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
      */
-    private ?bool $production_environment = null;
+    public readonly ?bool $production_environment;
     /**
-     * The ref to deploy. This can be a branch, tag, or SHA.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredContexts> $required_contexts
      */
-    public function ref() : string
+    public function __construct(string $ref, string $task, bool $auto_merge, array $required_contexts, mixed $payload, string $environment, string $description, bool $transient_environment, bool $production_environment)
     {
-        return $this->ref;
-    }
-    /**
-     * Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
-     */
-    public function task() : ?string
-    {
-        return $this->task;
-    }
-    /**
-     * Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
-     */
-    public function auto_merge() : ?bool
-    {
-        return $this->auto_merge;
-    }
-    /**
-     * The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredContexts>
-     */
-    public function required_contexts() : array
-    {
-        return $this->required_contexts;
-    }
-    public function payload()
-    {
-        return $this->payload;
-    }
-    /**
-     * Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
-     */
-    public function environment() : ?string
-    {
-        return $this->environment;
-    }
-    /**
-     * Short description of the deployment.
-     */
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    /**
-     * Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
-     */
-    public function transient_environment() : ?bool
-    {
-        return $this->transient_environment;
-    }
-    /**
-     * Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
-     */
-    public function production_environment() : ?bool
-    {
-        return $this->production_environment;
+        $this->ref = $ref;
+        $this->task = $task;
+        $this->auto_merge = $auto_merge;
+        $this->required_contexts = $required_contexts;
+        $this->payload = $payload;
+        $this->environment = $environment;
+        $this->description = $description;
+        $this->transient_environment = $transient_environment;
+        $this->production_environment = $production_environment;
     }
 }

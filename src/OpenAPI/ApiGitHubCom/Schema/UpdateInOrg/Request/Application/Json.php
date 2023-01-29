@@ -10,11 +10,11 @@ final class Json
     /**
      * The name of the team.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The description of the team.
      */
-    private string $description;
+    public readonly string $description;
     /**
     * The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:  
     **For a non-nested team:**  
@@ -23,53 +23,21 @@ final class Json
     **For a parent or child team:**  
     * `closed` - visible to all members of this organization.
     */
-    private string $privacy;
+    public readonly string $privacy;
     /**
      * **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
      */
-    private string $permission;
+    public readonly string $permission;
     /**
      * The ID of a team to set as the parent team.
      */
-    private ?int $parent_team_id;
-    /**
-     * The name of the team.
-     */
-    public function name() : string
+    public readonly ?int $parent_team_id;
+    public function __construct(string $name, string $description, string $privacy, string $permission, int $parent_team_id)
     {
-        return $this->name;
-    }
-    /**
-     * The description of the team.
-     */
-    public function description() : string
-    {
-        return $this->description;
-    }
-    /**
-    * The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:  
-    **For a non-nested team:**  
-    * `secret` - only visible to organization owners and members of this team.  
-    * `closed` - visible to all members of this organization.  
-    **For a parent or child team:**  
-    * `closed` - visible to all members of this organization.
-    */
-    public function privacy() : string
-    {
-        return $this->privacy;
-    }
-    /**
-     * **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
-     */
-    public function permission() : string
-    {
-        return $this->permission;
-    }
-    /**
-     * The ID of a team to set as the parent team.
-     */
-    public function parent_team_id() : ?int
-    {
-        return $this->parent_team_id;
+        $this->name = $name;
+        $this->description = $description;
+        $this->privacy = $privacy;
+        $this->permission = $permission;
+        $this->parent_team_id = $parent_team_id;
     }
 }

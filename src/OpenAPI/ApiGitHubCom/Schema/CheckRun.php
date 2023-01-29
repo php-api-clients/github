@@ -10,133 +10,59 @@ final class CheckRun
     /**
      * The id of the check.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The SHA of the commit that is being checked.
      */
-    private string $head_sha;
-    private string $node_id;
-    private ?string $external_id;
-    private string $url;
-    private ?string $html_url;
-    private ?string $details_url;
+    public readonly string $head_sha;
+    public readonly string $node_id;
+    public readonly ?string $external_id;
+    public readonly string $url;
+    public readonly ?string $html_url;
+    public readonly ?string $details_url;
     /**
      * The phase of the lifecycle that the check is currently in.
      */
-    private string $status;
-    private ?string $conclusion;
-    private ?string $started_at;
-    private ?string $completed_at;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\Output::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\Output $output;
+    public readonly string $status;
+    public readonly ?string $conclusion;
+    public readonly ?string $started_at;
+    public readonly ?string $completed_at;
+    public readonly array $output;
     /**
      * The name of the check.
      */
-    private string $name;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite $check_suite;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\App::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\App $app;
+    public readonly string $name;
+    public readonly array $check_suite;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\App $app;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal::class)
      */
-    private array $pull_requests = array();
-    /**
-     * A deployment created as the result of an Actions check run from a workflow that references an environment
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple $deployment = null;
-    /**
-     * The id of the check.
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    /**
-     * The SHA of the commit that is being checked.
-     */
-    public function head_sha() : string
-    {
-        return $this->head_sha;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    public function external_id() : ?string
-    {
-        return $this->external_id;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function html_url() : ?string
-    {
-        return $this->html_url;
-    }
-    public function details_url() : ?string
-    {
-        return $this->details_url;
-    }
-    /**
-     * The phase of the lifecycle that the check is currently in.
-     */
-    public function status() : string
-    {
-        return $this->status;
-    }
-    public function conclusion() : ?string
-    {
-        return $this->conclusion;
-    }
-    public function started_at() : ?string
-    {
-        return $this->started_at;
-    }
-    public function completed_at() : ?string
-    {
-        return $this->completed_at;
-    }
-    public function output() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\Output
-    {
-        return $this->output;
-    }
-    /**
-     * The name of the check.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function check_suite() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite
-    {
-        return $this->check_suite;
-    }
-    public function app() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\App
-    {
-        return $this->app;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
-     */
-    public function pull_requests() : array
-    {
-        return $this->pull_requests;
-    }
+    public readonly array $pull_requests;
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
      */
-    public function deployment() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple
+    public readonly array $deployment;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
+     */
+    public function __construct(int $id, string $head_sha, string $node_id, string $external_id, string $url, string $html_url, string $details_url, string $status, string $conclusion, string $started_at, string $completed_at, array $output, string $name, array $check_suite, mixed $app, array $pull_requests, array $deployment)
     {
-        return $this->deployment;
+        $this->id = $id;
+        $this->head_sha = $head_sha;
+        $this->node_id = $node_id;
+        $this->external_id = $external_id;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->details_url = $details_url;
+        $this->status = $status;
+        $this->conclusion = $conclusion;
+        $this->started_at = $started_at;
+        $this->completed_at = $completed_at;
+        $this->output = $output;
+        $this->name = $name;
+        $this->check_suite = $check_suite;
+        $this->app = $app;
+        $this->pull_requests = $pull_requests;
+        $this->deployment = $deployment;
     }
 }

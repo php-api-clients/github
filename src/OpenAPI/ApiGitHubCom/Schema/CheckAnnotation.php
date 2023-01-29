@@ -7,54 +7,27 @@ final class CheckAnnotation
     public const SCHEMA_JSON = '{"title":"Check Annotation","required":["path","blob_href","start_line","end_line","start_column","end_column","annotation_level","title","message","raw_details"],"type":"object","properties":{"path":{"type":"string","examples":["README.md"]},"start_line":{"type":"integer","examples":[2]},"end_line":{"type":"integer","examples":[2]},"start_column":{"type":["integer","null"],"examples":[5]},"end_column":{"type":["integer","null"],"examples":[10]},"annotation_level":{"type":["string","null"],"examples":["warning"]},"title":{"type":["string","null"],"examples":["Spell Checker"]},"message":{"type":["string","null"],"examples":["Check your spelling for \'banaas\'."]},"raw_details":{"type":["string","null"],"examples":["Do you mean \'bananas\' or \'banana\'?"]},"blob_href":{"type":"string"}},"description":"Check Annotation"}';
     public const SCHEMA_TITLE = 'Check Annotation';
     public const SCHEMA_DESCRIPTION = 'Check Annotation';
-    private string $path;
-    private int $start_line;
-    private int $end_line;
-    private ?int $start_column;
-    private ?int $end_column;
-    private ?string $annotation_level;
-    private ?string $title;
-    private ?string $message;
-    private ?string $raw_details;
-    private string $blob_href;
-    public function path() : string
+    public readonly string $path;
+    public readonly int $start_line;
+    public readonly int $end_line;
+    public readonly ?int $start_column;
+    public readonly ?int $end_column;
+    public readonly ?string $annotation_level;
+    public readonly ?string $title;
+    public readonly ?string $message;
+    public readonly ?string $raw_details;
+    public readonly string $blob_href;
+    public function __construct(string $path, int $start_line, int $end_line, int $start_column, int $end_column, string $annotation_level, string $title, string $message, string $raw_details, string $blob_href)
     {
-        return $this->path;
-    }
-    public function start_line() : int
-    {
-        return $this->start_line;
-    }
-    public function end_line() : int
-    {
-        return $this->end_line;
-    }
-    public function start_column() : ?int
-    {
-        return $this->start_column;
-    }
-    public function end_column() : ?int
-    {
-        return $this->end_column;
-    }
-    public function annotation_level() : ?string
-    {
-        return $this->annotation_level;
-    }
-    public function title() : ?string
-    {
-        return $this->title;
-    }
-    public function message() : ?string
-    {
-        return $this->message;
-    }
-    public function raw_details() : ?string
-    {
-        return $this->raw_details;
-    }
-    public function blob_href() : string
-    {
-        return $this->blob_href;
+        $this->path = $path;
+        $this->start_line = $start_line;
+        $this->end_line = $end_line;
+        $this->start_column = $start_column;
+        $this->end_column = $end_column;
+        $this->annotation_level = $annotation_level;
+        $this->title = $title;
+        $this->message = $message;
+        $this->raw_details = $raw_details;
+        $this->blob_href = $blob_href;
     }
 }

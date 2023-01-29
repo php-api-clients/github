@@ -10,23 +10,14 @@ final class Json
     /**
      * The body text of the pull request review
      */
-    private ?string $body = null;
+    public readonly ?string $body;
     /**
      * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
      */
-    private string $event;
-    /**
-     * The body text of the pull request review
-     */
-    public function body() : ?string
+    public readonly string $event;
+    public function __construct(string $body, string $event)
     {
-        return $this->body;
-    }
-    /**
-     * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
-     */
-    public function event() : string
-    {
-        return $this->event;
+        $this->body = $body;
+        $this->event = $event;
     }
 }

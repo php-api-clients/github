@@ -10,23 +10,14 @@ final class CodeScanningSarifsReceipt
     /**
      * An identifier for the upload.
      */
-    private string $id;
+    public readonly string $id;
     /**
      * The REST API URL for checking the status of the upload.
      */
-    private string $url;
-    /**
-     * An identifier for the upload.
-     */
-    public function id() : string
+    public readonly string $url;
+    public function __construct(string $id, string $url)
     {
-        return $this->id;
-    }
-    /**
-     * The REST API URL for checking the status of the upload.
-     */
-    public function url() : string
-    {
-        return $this->url;
+        $this->id = $id;
+        $this->url = $url;
     }
 }

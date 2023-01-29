@@ -10,23 +10,14 @@ final class AutoTriggerChecks
     /**
      * The `id` of the GitHub App.
      */
-    private int $app_id;
+    public readonly int $app_id;
     /**
      * Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.
      */
-    private bool $setting;
-    /**
-     * The `id` of the GitHub App.
-     */
-    public function app_id() : int
+    public readonly bool $setting;
+    public function __construct(int $app_id, bool $setting)
     {
-        return $this->app_id;
-    }
-    /**
-     * Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.
-     */
-    public function setting() : bool
-    {
-        return $this->setting;
+        $this->app_id = $app_id;
+        $this->setting = $setting;
     }
 }

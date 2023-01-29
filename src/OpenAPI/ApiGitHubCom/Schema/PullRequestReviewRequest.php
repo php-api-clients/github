@@ -9,26 +9,19 @@ final class PullRequestReviewRequest
     public const SCHEMA_DESCRIPTION = 'Pull Request Review Request';
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
      */
-    private array $users = array();
+    public readonly array $users;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team::class)
      */
-    private array $teams = array();
+    public readonly array $teams;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser> $users
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team> $teams
      */
-    public function users() : array
+    public function __construct(array $users, array $teams)
     {
-        return $this->users;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team>
-     */
-    public function teams() : array
-    {
-        return $this->teams;
+        $this->users = $users;
+        $this->teams = $teams;
     }
 }

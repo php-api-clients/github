@@ -10,45 +10,24 @@ final class H201
     /**
      * ID of the created snapshot.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The time at which the snapshot was created.
      */
-    private string $created_at;
+    public readonly string $created_at;
     /**
      * Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was successfully created and the repository's dependencies were updated. "ACCEPTED" indicates that the snapshot was successfully created, but the repository's dependencies were not updated. "INVALID" indicates that the snapshot was malformed.
      */
-    private string $result;
+    public readonly string $result;
     /**
      * A message providing further details about the result, such as why the dependencies were not updated.
      */
-    private string $message;
-    /**
-     * ID of the created snapshot.
-     */
-    public function id() : int
+    public readonly string $message;
+    public function __construct(int $id, string $created_at, string $result, string $message)
     {
-        return $this->id;
-    }
-    /**
-     * The time at which the snapshot was created.
-     */
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    /**
-     * Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was successfully created and the repository's dependencies were updated. "ACCEPTED" indicates that the snapshot was successfully created, but the repository's dependencies were not updated. "INVALID" indicates that the snapshot was malformed.
-     */
-    public function result() : string
-    {
-        return $this->result;
-    }
-    /**
-     * A message providing further details about the result, such as why the dependencies were not updated.
-     */
-    public function message() : string
-    {
-        return $this->message;
+        $this->id = $id;
+        $this->created_at = $created_at;
+        $this->result = $result;
+        $this->message = $message;
     }
 }

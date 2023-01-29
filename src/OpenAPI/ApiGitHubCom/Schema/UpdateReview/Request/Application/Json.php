@@ -10,12 +10,9 @@ final class Json
     /**
      * The body text of the pull request review.
      */
-    private string $body;
-    /**
-     * The body text of the pull request review.
-     */
-    public function body() : string
+    public readonly string $body;
+    public function __construct(string $body)
     {
-        return $this->body;
+        $this->body = $body;
     }
 }

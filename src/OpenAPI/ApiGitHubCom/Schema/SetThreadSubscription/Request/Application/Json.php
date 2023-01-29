@@ -10,12 +10,9 @@ final class Json
     /**
      * Whether to block all notifications from a thread.
      */
-    private bool $ignored;
-    /**
-     * Whether to block all notifications from a thread.
-     */
-    public function ignored() : bool
+    public readonly bool $ignored;
+    public function __construct(bool $ignored)
     {
-        return $this->ignored;
+        $this->ignored = $ignored;
     }
 }

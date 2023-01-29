@@ -11,103 +11,50 @@ final class CodeScanningAlertInstance
     * The full Git reference, formatted as `refs/heads/<branch name>`,
     `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
     */
-    private string $ref;
+    public readonly string $ref;
     /**
      * Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
      */
-    private string $analysis_key;
+    public readonly string $analysis_key;
     /**
      * Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
      */
-    private string $environment;
+    public readonly string $environment;
     /**
      * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
      */
-    private string $category;
+    public readonly string $category;
     /**
      * State of a code scanning alert.
      */
-    private string $state;
-    private string $commit_sha;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance\Message::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance\Message $message;
+    public readonly string $state;
+    public readonly string $commit_sha;
+    public readonly array $message;
     /**
      * Describe a region within a file for the alert.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertLocation::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertLocation $location;
-    private string $html_url;
+    public readonly array $location;
+    public readonly string $html_url;
     /**
     * Classifications that have been applied to the file that triggered the alert.
     For example identifying it as documentation, or a generated file.
     * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification>
-    * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification::class)
     */
-    private array $classifications = array();
+    public readonly array $classifications;
     /**
-    * The full Git reference, formatted as `refs/heads/<branch name>`,
-    `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
-    */
-    public function ref() : string
-    {
-        return $this->ref;
-    }
-    /**
-     * Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification> $classifications
      */
-    public function analysis_key() : string
+    public function __construct(string $ref, string $analysis_key, string $environment, string $category, string $state, string $commit_sha, array $message, array $location, string $html_url, array $classifications)
     {
-        return $this->analysis_key;
-    }
-    /**
-     * Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
-     */
-    public function environment() : string
-    {
-        return $this->environment;
-    }
-    /**
-     * Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
-     */
-    public function category() : string
-    {
-        return $this->category;
-    }
-    /**
-     * State of a code scanning alert.
-     */
-    public function state() : string
-    {
-        return $this->state;
-    }
-    public function commit_sha() : string
-    {
-        return $this->commit_sha;
-    }
-    public function message() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance\Message
-    {
-        return $this->message;
-    }
-    /**
-     * Describe a region within a file for the alert.
-     */
-    public function location() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertLocation
-    {
-        return $this->location;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    /**
-    * Classifications that have been applied to the file that triggered the alert.
-    For example identifying it as documentation, or a generated file.
-    * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification>
-    */
-    public function classifications() : array
-    {
-        return $this->classifications;
+        $this->ref = $ref;
+        $this->analysis_key = $analysis_key;
+        $this->environment = $environment;
+        $this->category = $category;
+        $this->state = $state;
+        $this->commit_sha = $commit_sha;
+        $this->message = $message;
+        $this->location = $location;
+        $this->html_url = $html_url;
+        $this->classifications = $classifications;
     }
 }

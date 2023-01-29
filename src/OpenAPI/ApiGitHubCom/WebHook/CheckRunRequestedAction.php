@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHook;
 
-final class CheckRunRequestedAction implements \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHookInterface
+final class CheckRunRequestedAction implements \ApiClients\Contracts\OpenAPI\WebHookInterface
 {
     public function resolve(array $data) : string
     {

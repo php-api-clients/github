@@ -10,22 +10,13 @@ final class RepoCodespacesSecret
     /**
      * The name of the secret.
      */
-    private string $name;
-    private string $created_at;
-    private string $updated_at;
-    /**
-     * The name of the secret.
-     */
-    public function name() : string
+    public readonly string $name;
+    public readonly string $created_at;
+    public readonly string $updated_at;
+    public function __construct(string $name, string $created_at, string $updated_at)
     {
-        return $this->name;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
+        $this->name = $name;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
     }
 }

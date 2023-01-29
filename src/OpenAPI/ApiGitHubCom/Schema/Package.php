@@ -10,80 +10,35 @@ final class Package
     /**
      * Unique identifier of the package.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The name of the package.
      */
-    private string $name;
-    private string $package_type;
-    private string $url;
-    private string $html_url;
+    public readonly string $name;
+    public readonly string $package_type;
+    public readonly string $url;
+    public readonly string $html_url;
     /**
      * The number of versions of the package.
      */
-    private int $version_count;
-    private string $visibility;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner $owner;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository $repository;
-    private string $created_at;
-    private string $updated_at;
-    /**
-     * Unique identifier of the package.
-     */
-    public function id() : int
+    public readonly int $version_count;
+    public readonly string $visibility;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner $owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository $repository;
+    public readonly string $created_at;
+    public readonly string $updated_at;
+    public function __construct(int $id, string $name, string $package_type, string $url, string $html_url, int $version_count, string $visibility, mixed $owner, mixed $repository, string $created_at, string $updated_at)
     {
-        return $this->id;
-    }
-    /**
-     * The name of the package.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function package_type() : string
-    {
-        return $this->package_type;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    /**
-     * The number of versions of the package.
-     */
-    public function version_count() : int
-    {
-        return $this->version_count;
-    }
-    public function visibility() : string
-    {
-        return $this->visibility;
-    }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner
-    {
-        return $this->owner;
-    }
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository
-    {
-        return $this->repository;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
+        $this->id = $id;
+        $this->name = $name;
+        $this->package_type = $package_type;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->version_count = $version_count;
+        $this->visibility = $visibility;
+        $this->owner = $owner;
+        $this->repository = $repository;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
     }
 }

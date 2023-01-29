@@ -10,181 +10,81 @@ final class SecretScanningAlert
     /**
      * The security alert number.
      */
-    private int $number;
+    public readonly int $number;
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private string $created_at;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\UpdatedAt::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\UpdatedAt $updated_at;
+    public readonly string $created_at;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\UpdatedAt $updated_at;
     /**
      * The REST API URL of the alert resource.
      */
-    private string $url;
+    public readonly string $url;
     /**
      * The GitHub URL of the alert resource.
      */
-    private string $html_url;
+    public readonly string $html_url;
     /**
      * The REST API URL of the code locations for this alert.
      */
-    private string $locations_url;
+    public readonly string $locations_url;
     /**
      * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
      */
-    private string $state;
+    public readonly string $state;
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    private ?string $resolution;
+    public readonly ?string $resolution;
     /**
      * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $resolved_at;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\ResolvedBy::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\ResolvedBy $resolved_by;
+    public readonly ?string $resolved_at;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\ResolvedBy $resolved_by;
     /**
      * An optional comment to resolve an alert.
      */
-    private ?string $resolution_comment;
+    public readonly ?string $resolution_comment;
     /**
      * The type of secret that secret scanning detected.
      */
-    private string $secret_type;
+    public readonly string $secret_type;
     /**
     * User-friendly name for the detected secret, matching the `secret_type`.
     For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
     */
-    private string $secret_type_display_name;
+    public readonly string $secret_type_display_name;
     /**
      * The secret that was detected.
      */
-    private string $secret;
+    public readonly string $secret;
     /**
      * Whether push protection was bypassed for the detected secret.
      */
-    private ?bool $push_protection_bypassed;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\PushProtectionBypassedBy::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\PushProtectionBypassedBy $push_protection_bypassed_by;
+    public readonly ?bool $push_protection_bypassed;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\PushProtectionBypassedBy $push_protection_bypassed_by;
     /**
      * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $push_protection_bypassed_at;
-    /**
-     * The security alert number.
-     */
-    public function number() : int
+    public readonly ?string $push_protection_bypassed_at;
+    public function __construct(int $number, string $created_at, mixed $updated_at, string $url, string $html_url, string $locations_url, string $state, string $resolution, string $resolved_at, mixed $resolved_by, string $resolution_comment, string $secret_type, string $secret_type_display_name, string $secret, bool $push_protection_bypassed, mixed $push_protection_bypassed_by, string $push_protection_bypassed_at)
     {
-        return $this->number;
-    }
-    /**
-     * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\UpdatedAt
-    {
-        return $this->updated_at;
-    }
-    /**
-     * The REST API URL of the alert resource.
-     */
-    public function url() : string
-    {
-        return $this->url;
-    }
-    /**
-     * The GitHub URL of the alert resource.
-     */
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    /**
-     * The REST API URL of the code locations for this alert.
-     */
-    public function locations_url() : string
-    {
-        return $this->locations_url;
-    }
-    /**
-     * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
-     */
-    public function state() : string
-    {
-        return $this->state;
-    }
-    /**
-     * **Required when the `state` is `resolved`.** The reason for resolving the alert.
-     */
-    public function resolution() : ?string
-    {
-        return $this->resolution;
-    }
-    /**
-     * The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function resolved_at() : ?string
-    {
-        return $this->resolved_at;
-    }
-    public function resolved_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\ResolvedBy
-    {
-        return $this->resolved_by;
-    }
-    /**
-     * An optional comment to resolve an alert.
-     */
-    public function resolution_comment() : ?string
-    {
-        return $this->resolution_comment;
-    }
-    /**
-     * The type of secret that secret scanning detected.
-     */
-    public function secret_type() : string
-    {
-        return $this->secret_type;
-    }
-    /**
-    * User-friendly name for the detected secret, matching the `secret_type`.
-    For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
-    */
-    public function secret_type_display_name() : string
-    {
-        return $this->secret_type_display_name;
-    }
-    /**
-     * The secret that was detected.
-     */
-    public function secret() : string
-    {
-        return $this->secret;
-    }
-    /**
-     * Whether push protection was bypassed for the detected secret.
-     */
-    public function push_protection_bypassed() : ?bool
-    {
-        return $this->push_protection_bypassed;
-    }
-    public function push_protection_bypassed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\PushProtectionBypassedBy
-    {
-        return $this->push_protection_bypassed_by;
-    }
-    /**
-     * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function push_protection_bypassed_at() : ?string
-    {
-        return $this->push_protection_bypassed_at;
+        $this->number = $number;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->locations_url = $locations_url;
+        $this->state = $state;
+        $this->resolution = $resolution;
+        $this->resolved_at = $resolved_at;
+        $this->resolved_by = $resolved_by;
+        $this->resolution_comment = $resolution_comment;
+        $this->secret_type = $secret_type;
+        $this->secret_type_display_name = $secret_type_display_name;
+        $this->secret = $secret;
+        $this->push_protection_bypassed = $push_protection_bypassed;
+        $this->push_protection_bypassed_by = $push_protection_bypassed_by;
+        $this->push_protection_bypassed_at = $push_protection_bypassed_at;
     }
 }

@@ -7,26 +7,19 @@ final class ValidationError
     public const SCHEMA_JSON = '{"title":"Validation Error","required":["message","documentation_url"],"type":"object","properties":{"message":{"type":"string"},"documentation_url":{"type":"string"},"errors":{"type":"array","items":{"required":["code"],"type":"object","properties":{"resource":{"type":"string"},"field":{"type":"string"},"message":{"type":"string"},"code":{"type":"string"},"index":{"type":"integer"},"value":{"oneOf":[{"type":["string","null"]},{"type":["integer","null"]},{"type":["array","null"],"items":{"type":"string"}}]}}}}},"description":"Validation Error"}';
     public const SCHEMA_TITLE = 'Validation Error';
     public const SCHEMA_DESCRIPTION = 'Validation Error';
-    private string $message;
-    private string $documentation_url;
+    public readonly string $message;
+    public readonly string $documentation_url;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors::class)
      */
-    private array $errors = array();
-    public function message() : string
-    {
-        return $this->message;
-    }
-    public function documentation_url() : string
-    {
-        return $this->documentation_url;
-    }
+    public readonly array $errors;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError\Errors> $errors
      */
-    public function errors() : array
+    public function __construct(string $message, string $documentation_url, array $errors)
     {
-        return $this->errors;
+        $this->message = $message;
+        $this->documentation_url = $documentation_url;
+        $this->errors = $errors;
     }
 }

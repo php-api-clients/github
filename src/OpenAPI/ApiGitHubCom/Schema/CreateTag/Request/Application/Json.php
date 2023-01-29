@@ -10,57 +10,29 @@ final class Json
     /**
      * The tag's name. This is typically a version (e.g., "v0.0.1").
      */
-    private string $tag;
+    public readonly string $tag;
     /**
      * The tag message.
      */
-    private string $message;
+    public readonly string $message;
     /**
      * The SHA of the git object this is tagging.
      */
-    private string $object;
+    public readonly string $object;
     /**
      * The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
      */
-    private string $type;
-    /**
-     * An object with information about the individual creating the tag.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Tagger::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Tagger $tagger = null;
-    /**
-     * The tag's name. This is typically a version (e.g., "v0.0.1").
-     */
-    public function tag() : string
-    {
-        return $this->tag;
-    }
-    /**
-     * The tag message.
-     */
-    public function message() : string
-    {
-        return $this->message;
-    }
-    /**
-     * The SHA of the git object this is tagging.
-     */
-    public function object() : string
-    {
-        return $this->object;
-    }
-    /**
-     * The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
-     */
-    public function type() : string
-    {
-        return $this->type;
-    }
+    public readonly string $type;
     /**
      * An object with information about the individual creating the tag.
      */
-    public function tagger() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Tagger
+    public readonly array $tagger;
+    public function __construct(string $tag, string $message, string $object, string $type, array $tagger)
     {
-        return $this->tagger;
+        $this->tag = $tag;
+        $this->message = $message;
+        $this->object = $object;
+        $this->type = $type;
+        $this->tagger = $tagger;
     }
 }

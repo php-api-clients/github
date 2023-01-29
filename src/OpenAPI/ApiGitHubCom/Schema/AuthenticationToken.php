@@ -10,61 +10,32 @@ final class AuthenticationToken
     /**
      * The token used for authentication
      */
-    private string $token;
+    public readonly string $token;
     /**
      * The time this token expires
      */
-    private string $expires_at;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions $permissions = null;
+    public readonly string $expires_at;
+    public readonly array $permissions;
     /**
      * The repositories this token has access to
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
      */
-    private array $repositories = array();
-    private ?string $single_file = null;
+    public readonly array $repositories;
+    public readonly ?string $single_file;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    private ?string $repository_selection = null;
+    public readonly ?string $repository_selection;
     /**
-     * The token used for authentication
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository> $repositories
      */
-    public function token() : string
+    public function __construct(string $token, string $expires_at, array $permissions, array $repositories, string $single_file, string $repository_selection)
     {
-        return $this->token;
-    }
-    /**
-     * The time this token expires
-     */
-    public function expires_at() : string
-    {
-        return $this->expires_at;
-    }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions
-    {
-        return $this->permissions;
-    }
-    /**
-     * The repositories this token has access to
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
-     */
-    public function repositories() : array
-    {
-        return $this->repositories;
-    }
-    public function single_file() : ?string
-    {
-        return $this->single_file;
-    }
-    /**
-     * Describe whether all repositories have been selected or there's a selection involved
-     */
-    public function repository_selection() : ?string
-    {
-        return $this->repository_selection;
+        $this->token = $token;
+        $this->expires_at = $expires_at;
+        $this->permissions = $permissions;
+        $this->repositories = $repositories;
+        $this->single_file = $single_file;
+        $this->repository_selection = $repository_selection;
     }
 }

@@ -10,23 +10,14 @@ final class SimpleInstallation
     /**
      * The ID of the installation.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The global node ID of the installation.
      */
-    private string $node_id;
-    /**
-     * The ID of the installation.
-     */
-    public function id() : int
+    public readonly string $node_id;
+    public function __construct(int $id, string $node_id)
     {
-        return $this->id;
-    }
-    /**
-     * The global node ID of the installation.
-     */
-    public function node_id() : string
-    {
-        return $this->node_id;
+        $this->id = $id;
+        $this->node_id = $node_id;
     }
 }

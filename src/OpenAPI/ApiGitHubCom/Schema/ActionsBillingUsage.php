@@ -10,42 +10,21 @@ final class ActionsBillingUsage
     /**
      * The sum of the free and paid GitHub Actions minutes used.
      */
-    private int $total_minutes_used;
+    public readonly int $total_minutes_used;
     /**
      * The total paid GitHub Actions minutes used.
      */
-    private int $total_paid_minutes_used;
+    public readonly int $total_paid_minutes_used;
     /**
      * The amount of free GitHub Actions minutes available.
      */
-    private int $included_minutes;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutes_used_breakdown;
-    /**
-     * The sum of the free and paid GitHub Actions minutes used.
-     */
-    public function total_minutes_used() : int
+    public readonly int $included_minutes;
+    public readonly array $minutes_used_breakdown;
+    public function __construct(int $total_minutes_used, int $total_paid_minutes_used, int $included_minutes, array $minutes_used_breakdown)
     {
-        return $this->total_minutes_used;
-    }
-    /**
-     * The total paid GitHub Actions minutes used.
-     */
-    public function total_paid_minutes_used() : int
-    {
-        return $this->total_paid_minutes_used;
-    }
-    /**
-     * The amount of free GitHub Actions minutes available.
-     */
-    public function included_minutes() : int
-    {
-        return $this->included_minutes;
-    }
-    public function minutes_used_breakdown() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown
-    {
-        return $this->minutes_used_breakdown;
+        $this->total_minutes_used = $total_minutes_used;
+        $this->total_paid_minutes_used = $total_paid_minutes_used;
+        $this->included_minutes = $included_minutes;
+        $this->minutes_used_breakdown = $minutes_used_breakdown;
     }
 }

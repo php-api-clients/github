@@ -8,23 +8,25 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
     public const OPERATION_MATCH = 'POST /orgs/{org}/{security_product}/{enablement}';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The organization name. The name is not case sensitive.**/
-    private readonly string $org;
+    private string $org;
     /**The security feature to enable or disable.**/
-    private readonly string $security_product;
+    private string $security_product;
     /**The action to take.
     
     `enable_all` means to enable the specified security feature for all repositories in the organization.
     `disable_all` means to disable the specified security feature for all repositories in the organization.**/
-    private readonly string $enablement;
+    private string $enablement;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $org, string $security_product, string $enablement)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, string $org, string $security_product, string $enablement)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->org = $org;
         $this->security_product = $security_product;
         $this->enablement = $enablement;
@@ -40,7 +42,6 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Action started**/
             case 204:

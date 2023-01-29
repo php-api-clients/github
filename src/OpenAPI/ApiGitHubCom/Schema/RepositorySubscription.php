@@ -10,43 +10,22 @@ final class RepositorySubscription
     /**
      * Determines if notifications should be received from this repository.
      */
-    private bool $subscribed;
+    public readonly bool $subscribed;
     /**
      * Determines if all notifications should be blocked from this repository.
      */
-    private bool $ignored;
-    private ?string $reason;
-    private string $created_at;
-    private string $url;
-    private string $repository_url;
-    /**
-     * Determines if notifications should be received from this repository.
-     */
-    public function subscribed() : bool
+    public readonly bool $ignored;
+    public readonly ?string $reason;
+    public readonly string $created_at;
+    public readonly string $url;
+    public readonly string $repository_url;
+    public function __construct(bool $subscribed, bool $ignored, string $reason, string $created_at, string $url, string $repository_url)
     {
-        return $this->subscribed;
-    }
-    /**
-     * Determines if all notifications should be blocked from this repository.
-     */
-    public function ignored() : bool
-    {
-        return $this->ignored;
-    }
-    public function reason() : ?string
-    {
-        return $this->reason;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function repository_url() : string
-    {
-        return $this->repository_url;
+        $this->subscribed = $subscribed;
+        $this->ignored = $ignored;
+        $this->reason = $reason;
+        $this->created_at = $created_at;
+        $this->url = $url;
+        $this->repository_url = $repository_url;
     }
 }

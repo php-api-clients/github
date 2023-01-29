@@ -8,52 +8,54 @@ final class ListAlertsForEnterprise
     public const OPERATION_MATCH = 'GET /enterprises/{enterprise}/dependabot/alerts';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id.**/
-    private readonly string $enterprise;
+    private string $enterprise;
     /**A comma-separated list of states. If specified, only alerts with these states will be returned.
     
     Can be: `dismissed`, `fixed`, `open`**/
-    private readonly string $state;
+    private string $state;
     /**A comma-separated list of severities. If specified, only alerts with these severities will be returned.
     
     Can be: `low`, `medium`, `high`, `critical`**/
-    private readonly string $severity;
+    private string $severity;
     /**A comma-separated list of ecosystems. If specified, only alerts for these ecosystems will be returned.
     
     Can be: `composer`, `go`, `maven`, `npm`, `nuget`, `pip`, `pub`, `rubygems`, `rust`**/
-    private readonly string $ecosystem;
+    private string $ecosystem;
     /**A comma-separated list of package names. If specified, only alerts for these packages will be returned.**/
-    private readonly string $package;
+    private string $package;
     /**The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.**/
-    private readonly string $scope;
+    private string $scope;
     /**The property by which to sort the results.
     `created` means when the alert was created.
     `updated` means when the alert's state last changed.**/
-    private readonly string $sort;
+    private string $sort;
     /**The direction to sort the results by.**/
-    private readonly string $direction;
+    private string $direction;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results before this cursor.**/
-    private readonly string $before;
+    private string $before;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results after this cursor.**/
-    private readonly string $after;
+    private string $after;
     /****Deprecated**. The number of results per page (max 100), starting from the first matching result.
     This parameter must not be used in combination with `last`.
     Instead, use `per_page` in combination with `after` to fetch the first page of results.**/
-    private readonly int $first;
+    private int $first;
     /****Deprecated**. The number of results per page (max 100), starting from the last matching result.
     This parameter must not be used in combination with `first`.
     Instead, use `per_page` in combination with `before` to fetch the last page of results.**/
-    private readonly int $last;
+    private int $last;
     /**The number of results per page (max 100).**/
-    private readonly int $per_page;
+    private int $per_page;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $sort = 'created', string $direction = 'desc', string $before, string $after, int $first = 30, int $last, int $per_page = 30)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $sort = 'created', string $direction = 'desc', string $before, string $after, int $first = 30, int $last, int $per_page = 30)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
         $this->enterprise = $enterprise;
         $this->state = $state;
         $this->severity = $severity;
@@ -79,15 +81,14 @@ final class ListAlertsForEnterprise
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
-        $hydrator = new \WyriHaximus\Hydrator\Hydrator();
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) use($hydrator) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository {
-                            return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\DependabotAlertWithRepository', $body);
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository {
+                            return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\DependabotAlertWithRepository', $body);
                         });
                 }
                 break;
@@ -100,7 +101,7 @@ final class ListAlertsForEnterprise
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
             /**Resource not found**/
@@ -108,7 +109,7 @@ final class ListAlertsForEnterprise
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
             /**Validation failed, or the endpoint has been spammed.**/
@@ -116,7 +117,7 @@ final class ListAlertsForEnterprise
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationErrorSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $hydrator->hydrate('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationErrorSimple', $body);
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationErrorSimple', $body);
                 }
                 break;
         }

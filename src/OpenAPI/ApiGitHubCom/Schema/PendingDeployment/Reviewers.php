@@ -10,20 +10,11 @@ final class Reviewers
     /**
      * The type of reviewer.
      */
-    private string $type;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $reviewer;
-    /**
-     * The type of reviewer.
-     */
-    public function type() : string
+    public readonly string $type;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $reviewer;
+    public function __construct(string $type, mixed $reviewer)
     {
-        return $this->type;
-    }
-    public function reviewer() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
-    {
-        return $this->reviewer;
+        $this->type = $type;
+        $this->reviewer = $reviewer;
     }
 }

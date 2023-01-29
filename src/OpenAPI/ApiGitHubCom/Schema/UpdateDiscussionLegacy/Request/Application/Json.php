@@ -10,23 +10,14 @@ final class Json
     /**
      * The discussion post's title.
      */
-    private string $title;
+    public readonly string $title;
     /**
      * The discussion post's body text.
      */
-    private string $body;
-    /**
-     * The discussion post's title.
-     */
-    public function title() : string
+    public readonly string $body;
+    public function __construct(string $title, string $body)
     {
-        return $this->title;
-    }
-    /**
-     * The discussion post's body text.
-     */
-    public function body() : string
-    {
-        return $this->body;
+        $this->title = $title;
+        $this->body = $body;
     }
 }

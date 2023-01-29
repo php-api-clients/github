@@ -10,23 +10,14 @@ final class ActionsCacheUsageOrgEnterprise
     /**
      * The count of active caches across all repositories of an enterprise or an organization.
      */
-    private int $total_active_caches_count;
+    public readonly int $total_active_caches_count;
     /**
      * The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
      */
-    private int $total_active_caches_size_in_bytes;
-    /**
-     * The count of active caches across all repositories of an enterprise or an organization.
-     */
-    public function total_active_caches_count() : int
+    public readonly int $total_active_caches_size_in_bytes;
+    public function __construct(int $total_active_caches_count, int $total_active_caches_size_in_bytes)
     {
-        return $this->total_active_caches_count;
-    }
-    /**
-     * The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
-     */
-    public function total_active_caches_size_in_bytes() : int
-    {
-        return $this->total_active_caches_size_in_bytes;
+        $this->total_active_caches_count = $total_active_caches_count;
+        $this->total_active_caches_size_in_bytes = $total_active_caches_size_in_bytes;
     }
 }

@@ -10,23 +10,14 @@ final class Json
     /**
      * Determines if notifications should be received from this repository.
      */
-    private bool $subscribed;
+    public readonly bool $subscribed;
     /**
      * Determines if all notifications should be blocked from this repository.
      */
-    private bool $ignored;
-    /**
-     * Determines if notifications should be received from this repository.
-     */
-    public function subscribed() : bool
+    public readonly bool $ignored;
+    public function __construct(bool $subscribed, bool $ignored)
     {
-        return $this->subscribed;
-    }
-    /**
-     * Determines if all notifications should be blocked from this repository.
-     */
-    public function ignored() : bool
-    {
-        return $this->ignored;
+        $this->subscribed = $subscribed;
+        $this->ignored = $ignored;
     }
 }

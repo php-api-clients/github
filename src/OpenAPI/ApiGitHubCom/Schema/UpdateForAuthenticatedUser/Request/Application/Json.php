@@ -10,37 +10,23 @@ final class Json
     /**
      * A valid machine to transition this codespace to.
      */
-    private string $machine;
+    public readonly string $machine;
     /**
      * Display name for this codespace
      */
-    private string $display_name;
+    public readonly string $display_name;
     /**
      * Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RecentFolders>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RecentFolders::class)
      */
-    private array $recent_folders = array();
+    public readonly array $recent_folders;
     /**
-     * A valid machine to transition this codespace to.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RecentFolders> $recent_folders
      */
-    public function machine() : string
+    public function __construct(string $machine, string $display_name, array $recent_folders)
     {
-        return $this->machine;
-    }
-    /**
-     * Display name for this codespace
-     */
-    public function display_name() : string
-    {
-        return $this->display_name;
-    }
-    /**
-     * Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RecentFolders>
-     */
-    public function recent_folders() : array
-    {
-        return $this->recent_folders;
+        $this->machine = $machine;
+        $this->display_name = $display_name;
+        $this->recent_folders = $recent_folders;
     }
 }

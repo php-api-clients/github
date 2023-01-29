@@ -10,15 +10,13 @@ final class Json
     /**
      * The name of the status checks
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts::class)
      */
-    private array $contexts = array();
+    public readonly array $contexts;
     /**
-     * The name of the status checks
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts> $contexts
      */
-    public function contexts() : array
+    public function __construct(array $contexts)
     {
-        return $this->contexts;
+        $this->contexts = $contexts;
     }
 }

@@ -7,24 +7,15 @@ final class RateLimit
     public const SCHEMA_JSON = '{"title":"Rate Limit","required":["limit","remaining","reset","used"],"type":"object","properties":{"limit":{"type":"integer"},"remaining":{"type":"integer"},"reset":{"type":"integer"},"used":{"type":"integer"}}}';
     public const SCHEMA_TITLE = 'Rate Limit';
     public const SCHEMA_DESCRIPTION = '';
-    private int $limit;
-    private int $remaining;
-    private int $reset;
-    private int $used;
-    public function limit() : int
+    public readonly int $limit;
+    public readonly int $remaining;
+    public readonly int $reset;
+    public readonly int $used;
+    public function __construct(int $limit, int $remaining, int $reset, int $used)
     {
-        return $this->limit;
-    }
-    public function remaining() : int
-    {
-        return $this->remaining;
-    }
-    public function reset() : int
-    {
-        return $this->reset;
-    }
-    public function used() : int
-    {
-        return $this->used;
+        $this->limit = $limit;
+        $this->remaining = $remaining;
+        $this->reset = $reset;
+        $this->used = $used;
     }
 }

@@ -7,62 +7,29 @@ final class ContentSubmodule
     public const SCHEMA_JSON = '{"title":"Submodule Content","required":["_links","git_url","html_url","download_url","name","path","sha","size","type","url","submodule_git_url"],"type":"object","properties":{"type":{"enum":["submodule"],"type":"string"},"submodule_git_url":{"type":"string","format":"uri"},"size":{"type":"integer"},"name":{"type":"string"},"path":{"type":"string"},"sha":{"type":"string"},"url":{"type":"string","format":"uri"},"git_url":{"type":["string","null"],"format":"uri"},"html_url":{"type":["string","null"],"format":"uri"},"download_url":{"type":["string","null"],"format":"uri"},"_links":{"required":["git","html","self"],"type":"object","properties":{"git":{"type":["string","null"],"format":"uri"},"html":{"type":["string","null"],"format":"uri"},"self":{"type":"string","format":"uri"}}}},"description":"An object describing a submodule"}';
     public const SCHEMA_TITLE = 'Submodule Content';
     public const SCHEMA_DESCRIPTION = 'An object describing a submodule';
-    private string $type;
-    private string $submodule_git_url;
-    private int $size;
-    private string $name;
-    private string $path;
-    private string $sha;
-    private string $url;
-    private ?string $git_url;
-    private ?string $html_url;
-    private ?string $download_url;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentSubmodule\Links::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentSubmodule\Links $_links;
-    public function type() : string
+    public readonly string $type;
+    public readonly string $submodule_git_url;
+    public readonly int $size;
+    public readonly string $name;
+    public readonly string $path;
+    public readonly string $sha;
+    public readonly string $url;
+    public readonly ?string $git_url;
+    public readonly ?string $html_url;
+    public readonly ?string $download_url;
+    public readonly array $_links;
+    public function __construct(string $type, string $submodule_git_url, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, array $_links)
     {
-        return $this->type;
-    }
-    public function submodule_git_url() : string
-    {
-        return $this->submodule_git_url;
-    }
-    public function size() : int
-    {
-        return $this->size;
-    }
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function path() : string
-    {
-        return $this->path;
-    }
-    public function sha() : string
-    {
-        return $this->sha;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function git_url() : ?string
-    {
-        return $this->git_url;
-    }
-    public function html_url() : ?string
-    {
-        return $this->html_url;
-    }
-    public function download_url() : ?string
-    {
-        return $this->download_url;
-    }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentSubmodule\Links
-    {
-        return $this->_links;
+        $this->type = $type;
+        $this->submodule_git_url = $submodule_git_url;
+        $this->size = $size;
+        $this->name = $name;
+        $this->path = $path;
+        $this->sha = $sha;
+        $this->url = $url;
+        $this->git_url = $git_url;
+        $this->html_url = $html_url;
+        $this->download_url = $download_url;
+        $this->_links = $_links;
     }
 }

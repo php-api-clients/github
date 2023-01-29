@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHook;
 
-final class MarketplacePurchasePendingChangeCancelled implements \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHookInterface
+final class MarketplacePurchasePendingChangeCancelled implements \ApiClients\Contracts\OpenAPI\WebHookInterface
 {
     public function resolve(array $data) : string
     {

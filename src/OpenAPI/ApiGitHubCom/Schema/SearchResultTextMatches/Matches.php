@@ -7,21 +7,17 @@ final class Matches
     public const SCHEMA_JSON = '{"type":"object","properties":{"text":{"type":"string"},"indices":{"type":"array","items":{"type":"integer"}}}}';
     public const SCHEMA_TITLE = 'SearchResultTextMatches\\Matches';
     public const SCHEMA_DESCRIPTION = '';
-    private string $text;
+    public readonly string $text;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $indices = array();
-    public function text() : string
-    {
-        return $this->text;
-    }
+    public readonly array $indices;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $indices
      */
-    public function indices() : array
+    public function __construct(string $text, array $indices)
     {
-        return $this->indices;
+        $this->text = $text;
+        $this->indices = $indices;
     }
 }

@@ -10,78 +10,39 @@ final class CodespaceExportDetails
     /**
      * State of the latest export
      */
-    private ?string $state;
+    public readonly ?string $state;
     /**
      * Completion time of the last export operation
      */
-    private ?string $completed_at;
+    public readonly ?string $completed_at;
     /**
      * Name of the exported branch
      */
-    private ?string $branch;
+    public readonly ?string $branch;
     /**
      * Git commit SHA of the exported branch
      */
-    private ?string $sha;
+    public readonly ?string $sha;
     /**
      * Id for the export details
      */
-    private string $id;
+    public readonly string $id;
     /**
      * Url for fetching export details
      */
-    private string $export_url;
+    public readonly string $export_url;
     /**
      * Web url for the exported branch
      */
-    private ?string $html_url;
-    /**
-     * State of the latest export
-     */
-    public function state() : ?string
+    public readonly ?string $html_url;
+    public function __construct(string $state, string $completed_at, string $branch, string $sha, string $id, string $export_url, string $html_url)
     {
-        return $this->state;
-    }
-    /**
-     * Completion time of the last export operation
-     */
-    public function completed_at() : ?string
-    {
-        return $this->completed_at;
-    }
-    /**
-     * Name of the exported branch
-     */
-    public function branch() : ?string
-    {
-        return $this->branch;
-    }
-    /**
-     * Git commit SHA of the exported branch
-     */
-    public function sha() : ?string
-    {
-        return $this->sha;
-    }
-    /**
-     * Id for the export details
-     */
-    public function id() : string
-    {
-        return $this->id;
-    }
-    /**
-     * Url for fetching export details
-     */
-    public function export_url() : string
-    {
-        return $this->export_url;
-    }
-    /**
-     * Web url for the exported branch
-     */
-    public function html_url() : ?string
-    {
-        return $this->html_url;
+        $this->state = $state;
+        $this->completed_at = $completed_at;
+        $this->branch = $branch;
+        $this->sha = $sha;
+        $this->id = $id;
+        $this->export_url = $export_url;
+        $this->html_url = $html_url;
     }
 }

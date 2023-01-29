@@ -10,106 +10,55 @@ final class Json
     /**
      * A list of arrays indicating which repositories should be migrated.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories::class)
      */
-    private array $repositories = array();
+    public readonly array $repositories;
     /**
      * Indicates whether repositories should be locked (to prevent manipulation) while migrating data.
      */
-    private ?bool $lock_repositories = null;
+    public readonly ?bool $lock_repositories;
     /**
      * Indicates whether metadata should be excluded and only git source should be included for the migration.
      */
-    private ?bool $exclude_metadata = null;
+    public readonly ?bool $exclude_metadata;
     /**
      * Indicates whether the repository git data should be excluded from the migration.
      */
-    private ?bool $exclude_git_data = null;
+    public readonly ?bool $exclude_git_data;
     /**
      * Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).
      */
-    private ?bool $exclude_attachments = null;
+    public readonly ?bool $exclude_attachments;
     /**
      * Indicates whether releases should be excluded from the migration (to reduce migration archive file size).
      */
-    private ?bool $exclude_releases = null;
+    public readonly ?bool $exclude_releases;
     /**
      * Indicates whether projects owned by the organization or users should be excluded. from the migration.
      */
-    private ?bool $exclude_owner_projects = null;
+    public readonly ?bool $exclude_owner_projects;
     /**
      * Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
      */
-    private ?bool $org_metadata_only = null;
+    public readonly ?bool $org_metadata_only;
     /**
      * Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Exclude>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Exclude::class)
      */
-    private array $exclude = array();
+    public readonly array $exclude;
     /**
-     * A list of arrays indicating which repositories should be migrated.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories> $repositories
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Exclude> $exclude
      */
-    public function repositories() : array
+    public function __construct(array $repositories, bool $lock_repositories, bool $exclude_metadata, bool $exclude_git_data, bool $exclude_attachments, bool $exclude_releases, bool $exclude_owner_projects, bool $org_metadata_only, array $exclude)
     {
-        return $this->repositories;
-    }
-    /**
-     * Indicates whether repositories should be locked (to prevent manipulation) while migrating data.
-     */
-    public function lock_repositories() : ?bool
-    {
-        return $this->lock_repositories;
-    }
-    /**
-     * Indicates whether metadata should be excluded and only git source should be included for the migration.
-     */
-    public function exclude_metadata() : ?bool
-    {
-        return $this->exclude_metadata;
-    }
-    /**
-     * Indicates whether the repository git data should be excluded from the migration.
-     */
-    public function exclude_git_data() : ?bool
-    {
-        return $this->exclude_git_data;
-    }
-    /**
-     * Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).
-     */
-    public function exclude_attachments() : ?bool
-    {
-        return $this->exclude_attachments;
-    }
-    /**
-     * Indicates whether releases should be excluded from the migration (to reduce migration archive file size).
-     */
-    public function exclude_releases() : ?bool
-    {
-        return $this->exclude_releases;
-    }
-    /**
-     * Indicates whether projects owned by the organization or users should be excluded. from the migration.
-     */
-    public function exclude_owner_projects() : ?bool
-    {
-        return $this->exclude_owner_projects;
-    }
-    /**
-     * Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
-     */
-    public function org_metadata_only() : ?bool
-    {
-        return $this->org_metadata_only;
-    }
-    /**
-     * Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Exclude>
-     */
-    public function exclude() : array
-    {
-        return $this->exclude;
+        $this->repositories = $repositories;
+        $this->lock_repositories = $lock_repositories;
+        $this->exclude_metadata = $exclude_metadata;
+        $this->exclude_git_data = $exclude_git_data;
+        $this->exclude_attachments = $exclude_attachments;
+        $this->exclude_releases = $exclude_releases;
+        $this->exclude_owner_projects = $exclude_owner_projects;
+        $this->org_metadata_only = $org_metadata_only;
+        $this->exclude = $exclude;
     }
 }

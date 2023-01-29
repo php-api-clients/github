@@ -7,4 +7,7 @@ final class Added
     public const SCHEMA_JSON = '{"type":"string"}';
     public const SCHEMA_TITLE = 'Commits\\Added';
     public const SCHEMA_DESCRIPTION = '';
+    public function __construct()
+    {
+    }
 }

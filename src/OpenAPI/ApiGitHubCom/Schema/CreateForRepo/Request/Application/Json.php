@@ -10,23 +10,14 @@ final class Json
     /**
      * The name of the project.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The description of the project.
      */
-    private ?string $body = null;
-    /**
-     * The name of the project.
-     */
-    public function name() : string
+    public readonly ?string $body;
+    public function __construct(string $name, string $body)
     {
-        return $this->name;
-    }
-    /**
-     * The description of the project.
-     */
-    public function body() : ?string
-    {
-        return $this->body;
+        $this->name = $name;
+        $this->body = $body;
     }
 }

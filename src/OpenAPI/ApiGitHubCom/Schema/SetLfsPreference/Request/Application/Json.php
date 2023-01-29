@@ -10,12 +10,9 @@ final class Json
     /**
      * Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
      */
-    private string $use_lfs;
-    /**
-     * Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
-     */
-    public function use_lfs() : string
+    public readonly string $use_lfs;
+    public function __construct(string $use_lfs)
     {
-        return $this->use_lfs;
+        $this->use_lfs = $use_lfs;
     }
 }

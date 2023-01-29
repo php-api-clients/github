@@ -7,48 +7,29 @@ final class ProtectedBranchRequiredStatusCheck
     public const SCHEMA_JSON = '{"title":"Protected Branch Required Status Check","required":["contexts","checks"],"type":"object","properties":{"url":{"type":"string"},"enforcement_level":{"type":"string"},"contexts":{"type":"array","items":{"type":"string"}},"checks":{"type":"array","items":{"required":["context","app_id"],"type":"object","properties":{"context":{"type":"string"},"app_id":{"type":["integer","null"]}}}},"contexts_url":{"type":"string"},"strict":{"type":"boolean"}},"description":"Protected Branch Required Status Check"}';
     public const SCHEMA_TITLE = 'Protected Branch Required Status Check';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Required Status Check';
-    private ?string $url = null;
-    private ?string $enforcement_level = null;
+    public readonly ?string $url;
+    public readonly ?string $enforcement_level;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Contexts>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Contexts::class)
      */
-    private array $contexts = array();
+    public readonly array $contexts;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Checks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Checks::class)
      */
-    private array $checks = array();
-    private ?string $contexts_url = null;
-    private ?bool $strict = null;
-    public function url() : ?string
-    {
-        return $this->url;
-    }
-    public function enforcement_level() : ?string
-    {
-        return $this->enforcement_level;
-    }
+    public readonly array $checks;
+    public readonly ?string $contexts_url;
+    public readonly ?bool $strict;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Contexts>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Contexts> $contexts
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Checks> $checks
      */
-    public function contexts() : array
+    public function __construct(string $url, string $enforcement_level, array $contexts, array $checks, string $contexts_url, bool $strict)
     {
-        return $this->contexts;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchRequiredStatusCheck\Checks>
-     */
-    public function checks() : array
-    {
-        return $this->checks;
-    }
-    public function contexts_url() : ?string
-    {
-        return $this->contexts_url;
-    }
-    public function strict() : ?bool
-    {
-        return $this->strict;
+        $this->url = $url;
+        $this->enforcement_level = $enforcement_level;
+        $this->contexts = $contexts;
+        $this->checks = $checks;
+        $this->contexts_url = $contexts_url;
+        $this->strict = $strict;
     }
 }

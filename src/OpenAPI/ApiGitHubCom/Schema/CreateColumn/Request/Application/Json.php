@@ -10,12 +10,9 @@ final class Json
     /**
      * Name of the project column
      */
-    private string $name;
-    /**
-     * Name of the project column
-     */
-    public function name() : string
+    public readonly string $name;
+    public function __construct(string $name)
     {
-        return $this->name;
+        $this->name = $name;
     }
 }

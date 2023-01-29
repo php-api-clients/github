@@ -10,15 +10,13 @@ final class Json
     /**
      * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AutoTriggerChecks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AutoTriggerChecks::class)
      */
-    private array $auto_trigger_checks = array();
+    public readonly array $auto_trigger_checks;
     /**
-     * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AutoTriggerChecks>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AutoTriggerChecks> $auto_trigger_checks
      */
-    public function auto_trigger_checks() : array
+    public function __construct(array $auto_trigger_checks)
     {
-        return $this->auto_trigger_checks;
+        $this->auto_trigger_checks = $auto_trigger_checks;
     }
 }

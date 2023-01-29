@@ -7,19 +7,13 @@ final class H503
     public const SCHEMA_JSON = '{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"documentation_url":{"type":"string"}}}';
     public const SCHEMA_TITLE = 'Operation\\Get\\Response\\Application\\Json\\H503';
     public const SCHEMA_DESCRIPTION = '';
-    private string $code;
-    private string $message;
-    private string $documentation_url;
-    public function code() : string
+    public readonly string $code;
+    public readonly string $message;
+    public readonly string $documentation_url;
+    public function __construct(string $code, string $message, string $documentation_url)
     {
-        return $this->code;
-    }
-    public function message() : string
-    {
-        return $this->message;
-    }
-    public function documentation_url() : string
-    {
-        return $this->documentation_url;
+        $this->code = $code;
+        $this->message = $message;
+        $this->documentation_url = $documentation_url;
     }
 }

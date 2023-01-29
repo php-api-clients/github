@@ -7,14 +7,11 @@ final class H403
     public const SCHEMA_JSON = '{"type":"object","properties":{"message":{"type":"string"},"documentation_url":{"type":"string"}}}';
     public const SCHEMA_TITLE = 'Operation\\AddOrUpdateProjectPermissionsInOrg\\Response\\Application\\Json\\H403';
     public const SCHEMA_DESCRIPTION = '';
-    private string $message;
-    private string $documentation_url;
-    public function message() : string
+    public readonly string $message;
+    public readonly string $documentation_url;
+    public function __construct(string $message, string $documentation_url)
     {
-        return $this->message;
-    }
-    public function documentation_url() : string
-    {
-        return $this->documentation_url;
+        $this->message = $message;
+        $this->documentation_url = $documentation_url;
     }
 }

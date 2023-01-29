@@ -10,45 +10,24 @@ final class ActionsVariable
     /**
      * The name of the variable.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The value of the variable.
      */
-    private string $value;
+    public readonly string $value;
     /**
      * The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      */
-    private string $created_at;
+    public readonly string $created_at;
     /**
      * The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      */
-    private string $updated_at;
-    /**
-     * The name of the variable.
-     */
-    public function name() : string
+    public readonly string $updated_at;
+    public function __construct(string $name, string $value, string $created_at, string $updated_at)
     {
-        return $this->name;
-    }
-    /**
-     * The value of the variable.
-     */
-    public function value() : string
-    {
-        return $this->value;
-    }
-    /**
-     * The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-     */
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    /**
-     * The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-     */
-    public function updated_at() : string
-    {
-        return $this->updated_at;
+        $this->name = $name;
+        $this->value = $value;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
     }
 }

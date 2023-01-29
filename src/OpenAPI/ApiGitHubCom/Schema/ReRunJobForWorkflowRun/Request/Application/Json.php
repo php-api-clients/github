@@ -10,12 +10,9 @@ final class Json
     /**
      * Whether to enable debug logging for the re-run.
      */
-    private bool $enable_debug_logging;
-    /**
-     * Whether to enable debug logging for the re-run.
-     */
-    public function enable_debug_logging() : bool
+    public readonly bool $enable_debug_logging;
+    public function __construct(bool $enable_debug_logging)
     {
-        return $this->enable_debug_logging;
+        $this->enable_debug_logging = $enable_debug_logging;
     }
 }

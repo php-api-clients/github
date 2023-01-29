@@ -10,96 +10,42 @@ final class PullRequestReview
     /**
      * Unique identifier of the review
      */
-    private int $id;
-    private string $node_id;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User $user;
+    public readonly int $id;
+    public readonly string $node_id;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User $user;
     /**
      * The text of the review.
      */
-    private string $body;
-    private string $state;
-    private string $html_url;
-    private string $pull_request_url;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links $_links;
-    private ?string $submitted_at = null;
+    public readonly string $body;
+    public readonly string $state;
+    public readonly string $html_url;
+    public readonly string $pull_request_url;
+    public readonly array $_links;
+    public readonly ?string $submitted_at;
     /**
      * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
      */
-    private ?string $commit_id;
-    private ?string $body_html = null;
-    private ?string $body_text = null;
+    public readonly ?string $commit_id;
+    public readonly ?string $body_html;
+    public readonly ?string $body_text;
     /**
      * How the author is associated with the repository.
      */
-    private string $author_association;
-    /**
-     * Unique identifier of the review
-     */
-    public function id() : int
+    public readonly string $author_association;
+    public function __construct(int $id, string $node_id, mixed $user, string $body, string $state, string $html_url, string $pull_request_url, array $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
     {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    public function user() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User
-    {
-        return $this->user;
-    }
-    /**
-     * The text of the review.
-     */
-    public function body() : string
-    {
-        return $this->body;
-    }
-    public function state() : string
-    {
-        return $this->state;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function pull_request_url() : string
-    {
-        return $this->pull_request_url;
-    }
-    public function _links() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links
-    {
-        return $this->_links;
-    }
-    public function submitted_at() : ?string
-    {
-        return $this->submitted_at;
-    }
-    /**
-     * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
-     */
-    public function commit_id() : ?string
-    {
-        return $this->commit_id;
-    }
-    public function body_html() : ?string
-    {
-        return $this->body_html;
-    }
-    public function body_text() : ?string
-    {
-        return $this->body_text;
-    }
-    /**
-     * How the author is associated with the repository.
-     */
-    public function author_association() : string
-    {
-        return $this->author_association;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->user = $user;
+        $this->body = $body;
+        $this->state = $state;
+        $this->html_url = $html_url;
+        $this->pull_request_url = $pull_request_url;
+        $this->_links = $_links;
+        $this->submitted_at = $submitted_at;
+        $this->commit_id = $commit_id;
+        $this->body_html = $body_html;
+        $this->body_text = $body_text;
+        $this->author_association = $author_association;
     }
 }

@@ -10,60 +10,33 @@ final class Dependency
     /**
      * Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.
      */
-    private string $package_url;
+    public readonly string $package_url;
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata;
+    public readonly array $metadata;
     /**
      * A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
      */
-    private string $relationship;
+    public readonly string $relationship;
     /**
      * A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
      */
-    private string $scope;
+    public readonly string $scope;
     /**
      * Array of package-url (PURLs) of direct child dependencies.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies::class)
      */
-    private array $dependencies = array();
+    public readonly array $dependencies;
     /**
-     * Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies> $dependencies
      */
-    public function package_url() : string
+    public function __construct(string $package_url, array $metadata, string $relationship, string $scope, array $dependencies)
     {
-        return $this->package_url;
-    }
-    /**
-     * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
-     */
-    public function metadata() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata
-    {
-        return $this->metadata;
-    }
-    /**
-     * A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
-     */
-    public function relationship() : string
-    {
-        return $this->relationship;
-    }
-    /**
-     * A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
-     */
-    public function scope() : string
-    {
-        return $this->scope;
-    }
-    /**
-     * Array of package-url (PURLs) of direct child dependencies.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies>
-     */
-    public function dependencies() : array
-    {
-        return $this->dependencies;
+        $this->package_url = $package_url;
+        $this->metadata = $metadata;
+        $this->relationship = $relationship;
+        $this->scope = $scope;
+        $this->dependencies = $dependencies;
     }
 }

@@ -10,23 +10,14 @@ final class Json
     /**
      * The new Git author email.
      */
-    private string $email;
+    public readonly string $email;
     /**
      * The new Git author name.
      */
-    private string $name;
-    /**
-     * The new Git author email.
-     */
-    public function email() : string
+    public readonly string $name;
+    public function __construct(string $email, string $name)
     {
-        return $this->email;
-    }
-    /**
-     * The new Git author name.
-     */
-    public function name() : string
-    {
-        return $this->name;
+        $this->email = $email;
+        $this->name = $name;
     }
 }

@@ -7,4 +7,7 @@ final class DismissedBy
     public const SCHEMA_JSON = '{"type":"null"}';
     public const SCHEMA_TITLE = 'DependabotAlertWithRepository\\DismissedBy';
     public const SCHEMA_DESCRIPTION = '';
+    public function __construct()
+    {
+    }
 }

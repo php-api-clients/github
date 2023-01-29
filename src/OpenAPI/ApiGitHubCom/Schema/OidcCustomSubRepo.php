@@ -10,26 +10,18 @@ final class OidcCustomSubRepo
     /**
      * Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
      */
-    private bool $use_default;
+    public readonly bool $use_default;
     /**
      * Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo\IncludeClaimKeys>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo\IncludeClaimKeys::class)
      */
-    private array $include_claim_keys = array();
+    public readonly array $include_claim_keys;
     /**
-     * Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo\IncludeClaimKeys> $include_claim_keys
      */
-    public function use_default() : bool
+    public function __construct(bool $use_default, array $include_claim_keys)
     {
-        return $this->use_default;
-    }
-    /**
-     * Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSubRepo\IncludeClaimKeys>
-     */
-    public function include_claim_keys() : array
-    {
-        return $this->include_claim_keys;
+        $this->use_default = $use_default;
+        $this->include_claim_keys = $include_claim_keys;
     }
 }

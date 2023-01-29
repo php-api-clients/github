@@ -10,72 +10,38 @@ final class Json
     /**
      * The commit message
      */
-    private string $message;
+    public readonly string $message;
     /**
      * The SHA of the tree object this commit points to
      */
-    private string $tree;
+    public readonly string $tree;
     /**
      * The SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Parents>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Parents::class)
      */
-    private array $parents = array();
-    /**
-     * Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author = null;
-    /**
-     * Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer $committer = null;
-    /**
-     * The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the commit. GitHub adds the signature to the `gpgsig` header of the created commit. For a commit signature to be verifiable by Git or GitHub, it must be an ASCII-armored detached PGP signature over the string commit as it would be written to the object database. To pass a `signature` parameter, you need to first manually create a valid PGP signature, which can be complicated. You may find it easier to [use the command line](https://git-scm.com/book/id/v2/Git-Tools-Signing-Your-Work) to create signed commits.
-     */
-    private ?string $signature = null;
-    /**
-     * The commit message
-     */
-    public function message() : string
-    {
-        return $this->message;
-    }
-    /**
-     * The SHA of the tree object this commit points to
-     */
-    public function tree() : string
-    {
-        return $this->tree;
-    }
-    /**
-     * The SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Parents>
-     */
-    public function parents() : array
-    {
-        return $this->parents;
-    }
+    public readonly array $parents;
     /**
      * Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
      */
-    public function author() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author
-    {
-        return $this->author;
-    }
+    public readonly array $author;
     /**
      * Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
      */
-    public function committer() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer
-    {
-        return $this->committer;
-    }
+    public readonly array $committer;
     /**
      * The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the commit. GitHub adds the signature to the `gpgsig` header of the created commit. For a commit signature to be verifiable by Git or GitHub, it must be an ASCII-armored detached PGP signature over the string commit as it would be written to the object database. To pass a `signature` parameter, you need to first manually create a valid PGP signature, which can be complicated. You may find it easier to [use the command line](https://git-scm.com/book/id/v2/Git-Tools-Signing-Your-Work) to create signed commits.
      */
-    public function signature() : ?string
+    public readonly ?string $signature;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Parents> $parents
+     */
+    public function __construct(string $message, string $tree, array $parents, array $author, array $committer, string $signature)
     {
-        return $this->signature;
+        $this->message = $message;
+        $this->tree = $tree;
+        $this->parents = $parents;
+        $this->author = $author;
+        $this->committer = $committer;
+        $this->signature = $signature;
     }
 }

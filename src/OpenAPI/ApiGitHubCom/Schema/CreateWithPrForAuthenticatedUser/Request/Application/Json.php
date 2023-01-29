@@ -10,100 +10,49 @@ final class Json
     /**
      * Location for this codespace. Assigned by IP if not provided
      */
-    private string $location;
+    public readonly string $location;
     /**
      * IP for location auto-detection when proxying a request
      */
-    private string $client_ip;
+    public readonly string $client_ip;
     /**
      * Machine type to use for this codespace
      */
-    private string $machine;
+    public readonly string $machine;
     /**
      * Path to devcontainer.json config to use for this codespace
      */
-    private string $devcontainer_path;
+    public readonly string $devcontainer_path;
     /**
      * Whether to authorize requested permissions from devcontainer.json
      */
-    private bool $multi_repo_permissions_opt_out;
+    public readonly bool $multi_repo_permissions_opt_out;
     /**
      * Working directory for this codespace
      */
-    private string $working_directory;
+    public readonly string $working_directory;
     /**
      * Time in minutes before codespace stops from inactivity
      */
-    private int $idle_timeout_minutes;
+    public readonly int $idle_timeout_minutes;
     /**
      * Display name for this codespace
      */
-    private string $display_name;
+    public readonly string $display_name;
     /**
      * Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
      */
-    private int $retention_period_minutes;
-    /**
-     * Location for this codespace. Assigned by IP if not provided
-     */
-    public function location() : string
+    public readonly int $retention_period_minutes;
+    public function __construct(string $location, string $client_ip, string $machine, string $devcontainer_path, bool $multi_repo_permissions_opt_out, string $working_directory, int $idle_timeout_minutes, string $display_name, int $retention_period_minutes)
     {
-        return $this->location;
-    }
-    /**
-     * IP for location auto-detection when proxying a request
-     */
-    public function client_ip() : string
-    {
-        return $this->client_ip;
-    }
-    /**
-     * Machine type to use for this codespace
-     */
-    public function machine() : string
-    {
-        return $this->machine;
-    }
-    /**
-     * Path to devcontainer.json config to use for this codespace
-     */
-    public function devcontainer_path() : string
-    {
-        return $this->devcontainer_path;
-    }
-    /**
-     * Whether to authorize requested permissions from devcontainer.json
-     */
-    public function multi_repo_permissions_opt_out() : bool
-    {
-        return $this->multi_repo_permissions_opt_out;
-    }
-    /**
-     * Working directory for this codespace
-     */
-    public function working_directory() : string
-    {
-        return $this->working_directory;
-    }
-    /**
-     * Time in minutes before codespace stops from inactivity
-     */
-    public function idle_timeout_minutes() : int
-    {
-        return $this->idle_timeout_minutes;
-    }
-    /**
-     * Display name for this codespace
-     */
-    public function display_name() : string
-    {
-        return $this->display_name;
-    }
-    /**
-     * Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
-     */
-    public function retention_period_minutes() : int
-    {
-        return $this->retention_period_minutes;
+        $this->location = $location;
+        $this->client_ip = $client_ip;
+        $this->machine = $machine;
+        $this->devcontainer_path = $devcontainer_path;
+        $this->multi_repo_permissions_opt_out = $multi_repo_permissions_opt_out;
+        $this->working_directory = $working_directory;
+        $this->idle_timeout_minutes = $idle_timeout_minutes;
+        $this->display_name = $display_name;
+        $this->retention_period_minutes = $retention_period_minutes;
     }
 }

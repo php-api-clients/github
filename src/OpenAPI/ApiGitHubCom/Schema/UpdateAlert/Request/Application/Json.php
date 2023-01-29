@@ -10,34 +10,19 @@ final class Json
     /**
      * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
      */
-    private string $state;
+    public readonly string $state;
     /**
      * **Required when the `state` is `resolved`.** The reason for resolving the alert.
      */
-    private ?string $resolution = null;
+    public readonly ?string $resolution;
     /**
      * An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
      */
-    private ?string $resolution_comment = null;
-    /**
-     * Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
-     */
-    public function state() : string
+    public readonly ?string $resolution_comment;
+    public function __construct(string $state, string $resolution, string $resolution_comment)
     {
-        return $this->state;
-    }
-    /**
-     * **Required when the `state` is `resolved`.** The reason for resolving the alert.
-     */
-    public function resolution() : ?string
-    {
-        return $this->resolution;
-    }
-    /**
-     * An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
-     */
-    public function resolution_comment() : ?string
-    {
-        return $this->resolution_comment;
+        $this->state = $state;
+        $this->resolution = $resolution;
+        $this->resolution_comment = $resolution_comment;
     }
 }

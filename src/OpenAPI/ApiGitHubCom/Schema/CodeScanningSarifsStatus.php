@@ -10,37 +10,23 @@ final class CodeScanningSarifsStatus
     /**
      * `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
      */
-    private string $processing_status;
+    public readonly string $processing_status;
     /**
      * The REST API URL for getting the analyses associated with the upload.
      */
-    private ?string $analyses_url;
+    public readonly ?string $analyses_url;
     /**
      * Any errors that ocurred during processing of the delivery.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus\Errors>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus\Errors::class)
      */
-    private array $errors = array();
+    public readonly array $errors;
     /**
-     * `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus\Errors> $errors
      */
-    public function processing_status() : string
+    public function __construct(string $processing_status, string $analyses_url, array $errors)
     {
-        return $this->processing_status;
-    }
-    /**
-     * The REST API URL for getting the analyses associated with the upload.
-     */
-    public function analyses_url() : ?string
-    {
-        return $this->analyses_url;
-    }
-    /**
-     * Any errors that ocurred during processing of the delivery.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningSarifsStatus\Errors>
-     */
-    public function errors() : array
-    {
-        return $this->errors;
+        $this->processing_status = $processing_status;
+        $this->analyses_url = $analyses_url;
+        $this->errors = $errors;
     }
 }

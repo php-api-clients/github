@@ -13,7 +13,7 @@
     "api-clients/contracts": "dev-main",
     "api-clients/openapi-client-generator": "dev-master",
     "cebe/php-openapi": "dev-openapi-31 as 1.6.0",
-    "wyrihaximus/hydrator": "dev-master"
+    "eventsauce/object-hydrator": "^1.1"
   },
   "autoload": {
     "psr-4": {

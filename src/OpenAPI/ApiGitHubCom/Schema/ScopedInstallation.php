@@ -9,64 +9,34 @@ final class ScopedInstallation
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The permissions granted to the user-to-server access token.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions;
+    public readonly array $permissions;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
-    private string $repository_selection;
-    private ?string $single_file_name;
-    private ?bool $has_multiple_single_files = null;
+    public readonly string $repository_selection;
+    public readonly ?string $single_file_name;
+    public readonly ?bool $has_multiple_single_files;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScopedInstallation\SingleFilePaths>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScopedInstallation\SingleFilePaths::class)
      */
-    private array $single_file_paths = array();
-    private string $repositories_url;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account;
-    /**
-     * The permissions granted to the user-to-server access token.
-     */
-    public function permissions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions
-    {
-        return $this->permissions;
-    }
-    /**
-     * Describe whether all repositories have been selected or there's a selection involved
-     */
-    public function repository_selection() : string
-    {
-        return $this->repository_selection;
-    }
-    public function single_file_name() : ?string
-    {
-        return $this->single_file_name;
-    }
-    public function has_multiple_single_files() : ?bool
-    {
-        return $this->has_multiple_single_files;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScopedInstallation\SingleFilePaths>
-     */
-    public function single_file_paths() : array
-    {
-        return $this->single_file_paths;
-    }
-    public function repositories_url() : string
-    {
-        return $this->repositories_url;
-    }
+    public readonly array $single_file_paths;
+    public readonly string $repositories_url;
     /**
      * A GitHub user.
      */
-    public function account() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $account;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScopedInstallation\SingleFilePaths> $single_file_paths
+     */
+    public function __construct(array $permissions, string $repository_selection, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $repositories_url, array $account)
     {
-        return $this->account;
+        $this->permissions = $permissions;
+        $this->repository_selection = $repository_selection;
+        $this->single_file_name = $single_file_name;
+        $this->has_multiple_single_files = $has_multiple_single_files;
+        $this->single_file_paths = $single_file_paths;
+        $this->repositories_url = $repositories_url;
+        $this->account = $account;
     }
 }

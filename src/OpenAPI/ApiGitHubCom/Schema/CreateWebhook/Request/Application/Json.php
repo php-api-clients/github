@@ -10,49 +10,28 @@ final class Json
     /**
      * Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config $config;
+    public readonly array $config;
     /**
      * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events::class)
      */
-    private array $events = array();
+    public readonly array $events;
     /**
      * Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
      */
-    private bool $active;
+    public readonly bool $active;
     /**
-     * Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events> $events
      */
-    public function name() : string
+    public function __construct(string $name, array $config, array $events, bool $active)
     {
-        return $this->name;
-    }
-    /**
-     * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
-     */
-    public function config() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config
-    {
-        return $this->config;
-    }
-    /**
-     * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events>
-     */
-    public function events() : array
-    {
-        return $this->events;
-    }
-    /**
-     * Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
-     */
-    public function active() : bool
-    {
-        return $this->active;
+        $this->name = $name;
+        $this->config = $config;
+        $this->events = $events;
+        $this->active = $active;
     }
 }

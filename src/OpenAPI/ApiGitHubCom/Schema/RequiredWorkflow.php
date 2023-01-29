@@ -10,94 +10,45 @@ final class RequiredWorkflow
     /**
      * Unique identifier for a required workflow
      */
-    private int $id;
+    public readonly int $id;
     /**
      * Name present in the workflow file
      */
-    private string $name;
+    public readonly string $name;
     /**
      * Path of the workflow file
      */
-    private string $path;
+    public readonly string $path;
     /**
      * Scope of the required workflow
      */
-    private string $scope;
+    public readonly string $scope;
     /**
      * Ref at which the workflow file will be selected
      */
-    private string $ref;
+    public readonly string $ref;
     /**
      * State of the required workflow
      */
-    private string $state;
-    private ?string $selected_repositories_url = null;
-    private string $created_at;
-    private string $updated_at;
-    /**
-     * Minimal Repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
-    /**
-     * Unique identifier for a required workflow
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    /**
-     * Name present in the workflow file
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * Path of the workflow file
-     */
-    public function path() : string
-    {
-        return $this->path;
-    }
-    /**
-     * Scope of the required workflow
-     */
-    public function scope() : string
-    {
-        return $this->scope;
-    }
-    /**
-     * Ref at which the workflow file will be selected
-     */
-    public function ref() : string
-    {
-        return $this->ref;
-    }
-    /**
-     * State of the required workflow
-     */
-    public function state() : string
-    {
-        return $this->state;
-    }
-    public function selected_repositories_url() : ?string
-    {
-        return $this->selected_repositories_url;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
+    public readonly string $state;
+    public readonly ?string $selected_repositories_url;
+    public readonly string $created_at;
+    public readonly string $updated_at;
     /**
      * Minimal Repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository
+    public readonly array $repository;
+    public function __construct(int $id, string $name, string $path, string $scope, string $ref, string $state, string $selected_repositories_url, string $created_at, string $updated_at, array $repository)
     {
-        return $this->repository;
+        $this->id = $id;
+        $this->name = $name;
+        $this->path = $path;
+        $this->scope = $scope;
+        $this->ref = $ref;
+        $this->state = $state;
+        $this->selected_repositories_url = $selected_repositories_url;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->repository = $repository;
     }
 }

@@ -10,45 +10,24 @@ final class Json
     /**
      * The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository.
      */
-    private string $artifact_url;
+    public readonly string $artifact_url;
     /**
      * The target environment for this GitHub Pages deployment.
      */
-    private ?string $environment = null;
+    public readonly ?string $environment;
     /**
      * A unique string that represents the version of the build for this deployment.
      */
-    private string $pages_build_version;
+    public readonly string $pages_build_version;
     /**
      * The OIDC token issued by GitHub Actions certifying the origin of the deployment.
      */
-    private string $oidc_token;
-    /**
-     * The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository.
-     */
-    public function artifact_url() : string
+    public readonly string $oidc_token;
+    public function __construct(string $artifact_url, string $environment, string $pages_build_version, string $oidc_token)
     {
-        return $this->artifact_url;
-    }
-    /**
-     * The target environment for this GitHub Pages deployment.
-     */
-    public function environment() : ?string
-    {
-        return $this->environment;
-    }
-    /**
-     * A unique string that represents the version of the build for this deployment.
-     */
-    public function pages_build_version() : string
-    {
-        return $this->pages_build_version;
-    }
-    /**
-     * The OIDC token issued by GitHub Actions certifying the origin of the deployment.
-     */
-    public function oidc_token() : string
-    {
-        return $this->oidc_token;
+        $this->artifact_url = $artifact_url;
+        $this->environment = $environment;
+        $this->pages_build_version = $pages_build_version;
+        $this->oidc_token = $oidc_token;
     }
 }

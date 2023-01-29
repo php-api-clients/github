@@ -10,49 +10,26 @@ final class Json
     /**
      * The state of the status.
      */
-    private string $state;
+    public readonly string $state;
     /**
     * The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status.  
     For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:  
     `http://ci.example.com/user/repo/build/sha`
     */
-    private ?string $target_url = null;
+    public readonly ?string $target_url;
     /**
      * A short description of the status.
      */
-    private ?string $description = null;
+    public readonly ?string $description;
     /**
      * A string label to differentiate this status from the status of other systems. This field is case-insensitive.
      */
-    private ?string $context = null;
-    /**
-     * The state of the status.
-     */
-    public function state() : string
+    public readonly ?string $context;
+    public function __construct(string $state, string $target_url, string $description, string $context)
     {
-        return $this->state;
-    }
-    /**
-    * The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status.  
-    For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:  
-    `http://ci.example.com/user/repo/build/sha`
-    */
-    public function target_url() : ?string
-    {
-        return $this->target_url;
-    }
-    /**
-     * A short description of the status.
-     */
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    /**
-     * A string label to differentiate this status from the status of other systems. This field is case-insensitive.
-     */
-    public function context() : ?string
-    {
-        return $this->context;
+        $this->state = $state;
+        $this->target_url = $target_url;
+        $this->description = $description;
+        $this->context = $context;
     }
 }

@@ -10,15 +10,13 @@ final class Json
     /**
      * The IDs of the repositories that can access the organization variable.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $selected_repository_ids = array();
+    public readonly array $selected_repository_ids;
     /**
-     * The IDs of the repositories that can access the organization variable.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $selected_repository_ids
      */
-    public function selected_repository_ids() : array
+    public function __construct(array $selected_repository_ids)
     {
-        return $this->selected_repository_ids;
+        $this->selected_repository_ids = $selected_repository_ids;
     }
 }

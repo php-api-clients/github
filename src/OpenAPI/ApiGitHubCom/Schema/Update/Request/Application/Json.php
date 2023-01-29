@@ -10,56 +10,29 @@ final class Json
     /**
      * The title of the pull request.
      */
-    private string $title;
+    public readonly string $title;
     /**
      * The contents of the pull request.
      */
-    private string $body;
+    public readonly string $body;
     /**
      * State of this Pull Request. Either `open` or `closed`.
      */
-    private string $state;
+    public readonly string $state;
     /**
      * The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
      */
-    private string $base;
+    public readonly string $base;
     /**
      * Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
      */
-    private bool $maintainer_can_modify;
-    /**
-     * The title of the pull request.
-     */
-    public function title() : string
+    public readonly bool $maintainer_can_modify;
+    public function __construct(string $title, string $body, string $state, string $base, bool $maintainer_can_modify)
     {
-        return $this->title;
-    }
-    /**
-     * The contents of the pull request.
-     */
-    public function body() : string
-    {
-        return $this->body;
-    }
-    /**
-     * State of this Pull Request. Either `open` or `closed`.
-     */
-    public function state() : string
-    {
-        return $this->state;
-    }
-    /**
-     * The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
-     */
-    public function base() : string
-    {
-        return $this->base;
-    }
-    /**
-     * Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
-     */
-    public function maintainer_can_modify() : bool
-    {
-        return $this->maintainer_can_modify;
+        $this->title = $title;
+        $this->body = $body;
+        $this->state = $state;
+        $this->base = $base;
+        $this->maintainer_can_modify = $maintainer_can_modify;
     }
 }

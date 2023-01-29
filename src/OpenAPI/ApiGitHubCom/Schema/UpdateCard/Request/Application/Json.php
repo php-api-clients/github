@@ -10,23 +10,14 @@ final class Json
     /**
      * The project card's note
      */
-    private ?string $note;
+    public readonly ?string $note;
     /**
      * Whether or not the card is archived
      */
-    private bool $archived;
-    /**
-     * The project card's note
-     */
-    public function note() : ?string
+    public readonly bool $archived;
+    public function __construct(string $note, bool $archived)
     {
-        return $this->note;
-    }
-    /**
-     * Whether or not the card is archived
-     */
-    public function archived() : bool
-    {
-        return $this->archived;
+        $this->note = $note;
+        $this->archived = $archived;
     }
 }

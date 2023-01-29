@@ -10,81 +10,39 @@ final class Enterprise
     /**
      * A short description of the enterprise.
      */
-    private ?string $description = null;
-    private string $html_url;
+    public readonly ?string $description;
+    public readonly string $html_url;
     /**
      * The enterprise's website URL.
      */
-    private ?string $website_url = null;
+    public readonly ?string $website_url;
     /**
      * Unique identifier of the enterprise
      */
-    private int $id;
-    private string $node_id;
+    public readonly int $id;
+    public readonly string $node_id;
     /**
      * The name of the enterprise.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The slug url identifier for the enterprise.
      */
-    private string $slug;
-    private ?string $created_at;
-    private ?string $updated_at;
-    private string $avatar_url;
-    /**
-     * A short description of the enterprise.
-     */
-    public function description() : ?string
+    public readonly string $slug;
+    public readonly ?string $created_at;
+    public readonly ?string $updated_at;
+    public readonly string $avatar_url;
+    public function __construct(string $description, string $html_url, string $website_url, int $id, string $node_id, string $name, string $slug, string $created_at, string $updated_at, string $avatar_url)
     {
-        return $this->description;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    /**
-     * The enterprise's website URL.
-     */
-    public function website_url() : ?string
-    {
-        return $this->website_url;
-    }
-    /**
-     * Unique identifier of the enterprise
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * The name of the enterprise.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * The slug url identifier for the enterprise.
-     */
-    public function slug() : string
-    {
-        return $this->slug;
-    }
-    public function created_at() : ?string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : ?string
-    {
-        return $this->updated_at;
-    }
-    public function avatar_url() : string
-    {
-        return $this->avatar_url;
+        $this->description = $description;
+        $this->html_url = $html_url;
+        $this->website_url = $website_url;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->name = $name;
+        $this->slug = $slug;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->avatar_url = $avatar_url;
     }
 }

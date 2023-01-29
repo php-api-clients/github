@@ -10,61 +10,31 @@ final class Steps
     /**
      * The phase of the lifecycle that the job is currently in.
      */
-    private string $status;
+    public readonly string $status;
     /**
      * The outcome of the job.
      */
-    private ?string $conclusion;
+    public readonly ?string $conclusion;
     /**
      * The name of the job.
      */
-    private string $name;
-    private int $number;
+    public readonly string $name;
+    public readonly int $number;
     /**
      * The time that the step started, in ISO 8601 format.
      */
-    private ?string $started_at = null;
+    public readonly ?string $started_at;
     /**
      * The time that the job finished, in ISO 8601 format.
      */
-    private ?string $completed_at = null;
-    /**
-     * The phase of the lifecycle that the job is currently in.
-     */
-    public function status() : string
+    public readonly ?string $completed_at;
+    public function __construct(string $status, string $conclusion, string $name, int $number, string $started_at, string $completed_at)
     {
-        return $this->status;
-    }
-    /**
-     * The outcome of the job.
-     */
-    public function conclusion() : ?string
-    {
-        return $this->conclusion;
-    }
-    /**
-     * The name of the job.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function number() : int
-    {
-        return $this->number;
-    }
-    /**
-     * The time that the step started, in ISO 8601 format.
-     */
-    public function started_at() : ?string
-    {
-        return $this->started_at;
-    }
-    /**
-     * The time that the job finished, in ISO 8601 format.
-     */
-    public function completed_at() : ?string
-    {
-        return $this->completed_at;
+        $this->status = $status;
+        $this->conclusion = $conclusion;
+        $this->name = $name;
+        $this->number = $number;
+        $this->started_at = $started_at;
+        $this->completed_at = $completed_at;
     }
 }

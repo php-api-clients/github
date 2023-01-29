@@ -10,177 +10,82 @@ final class WebhookPush
     /**
      * The SHA of the most recent commit on `ref` after the push.
      */
-    private string $after;
-    private ?string $base_ref;
+    public readonly string $after;
+    public readonly ?string $base_ref;
     /**
      * The SHA of the most recent commit on `ref` before the push.
      */
-    private string $before;
+    public readonly string $before;
     /**
      * An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 20 commits. If necessary, you can use the [Commits API](https://docs.github.com/rest/reference/repos#commits) to fetch additional commits. This limit is applied to timeline events only and isn't applied to webhook deliveries.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Commits>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Commits::class)
      */
-    private array $commits = array();
+    public readonly array $commits;
     /**
      * URL that shows the changes in this `ref` update, from the `before` commit to the `after` commit. For a newly created `ref` that is directly based on the default branch, this is the comparison between the head of the default branch and the `after` commit. Otherwise, this shows all commits until the `after` commit.
      */
-    private string $compare;
+    public readonly string $compare;
     /**
      * Whether this push created the `ref`.
      */
-    private bool $created;
+    public readonly bool $created;
     /**
      * Whether this push deleted the `ref`.
      */
-    private bool $deleted;
-    /**
-     * An enterprise on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
-    /**
-     * Whether this push was a force push of the `ref`.
-     */
-    private bool $forced;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit $head_commit;
-    /**
-     * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
-    /**
-     * A GitHub organization.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
-    /**
-     * Metaproperties for Git author/committer information.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Pusher::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Pusher $pusher;
-    /**
-     * The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
-     */
-    private string $ref;
-    /**
-     * A git repository
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Repository $repository;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender = null;
-    /**
-     * The SHA of the most recent commit on `ref` after the push.
-     */
-    public function after() : string
-    {
-        return $this->after;
-    }
-    public function base_ref() : ?string
-    {
-        return $this->base_ref;
-    }
-    /**
-     * The SHA of the most recent commit on `ref` before the push.
-     */
-    public function before() : string
-    {
-        return $this->before;
-    }
-    /**
-     * An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 20 commits. If necessary, you can use the [Commits API](https://docs.github.com/rest/reference/repos#commits) to fetch additional commits. This limit is applied to timeline events only and isn't applied to webhook deliveries.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Commits>
-     */
-    public function commits() : array
-    {
-        return $this->commits;
-    }
-    /**
-     * URL that shows the changes in this `ref` update, from the `before` commit to the `after` commit. For a newly created `ref` that is directly based on the default branch, this is the comparison between the head of the default branch and the `after` commit. Otherwise, this shows all commits until the `after` commit.
-     */
-    public function compare() : string
-    {
-        return $this->compare;
-    }
-    /**
-     * Whether this push created the `ref`.
-     */
-    public function created() : bool
-    {
-        return $this->created;
-    }
-    /**
-     * Whether this push deleted the `ref`.
-     */
-    public function deleted() : bool
-    {
-        return $this->deleted;
-    }
+    public readonly bool $deleted;
     /**
      * An enterprise on GitHub.
      */
-    public function enterprise() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise
-    {
-        return $this->enterprise;
-    }
+    public readonly array $enterprise;
     /**
      * Whether this push was a force push of the `ref`.
      */
-    public function forced() : bool
-    {
-        return $this->forced;
-    }
-    public function head_commit() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit
-    {
-        return $this->head_commit;
-    }
+    public readonly bool $forced;
+    public readonly array $head_commit;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public function installation() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation
-    {
-        return $this->installation;
-    }
+    public readonly array $installation;
     /**
      * A GitHub organization.
      */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
-    {
-        return $this->organization;
-    }
+    public readonly array $organization;
     /**
      * Metaproperties for Git author/committer information.
      */
-    public function pusher() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Pusher
-    {
-        return $this->pusher;
-    }
+    public readonly array $pusher;
     /**
      * The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
      */
-    public function ref() : string
-    {
-        return $this->ref;
-    }
+    public readonly string $ref;
     /**
      * A git repository
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Repository
-    {
-        return $this->repository;
-    }
+    public readonly array $repository;
     /**
      * A GitHub user.
      */
-    public function sender() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $sender;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Commits> $commits
+     */
+    public function __construct(string $after, string $base_ref, string $before, array $commits, string $compare, bool $created, bool $deleted, array $enterprise, bool $forced, array $head_commit, array $installation, array $organization, array $pusher, string $ref, array $repository, array $sender)
     {
-        return $this->sender;
+        $this->after = $after;
+        $this->base_ref = $base_ref;
+        $this->before = $before;
+        $this->commits = $commits;
+        $this->compare = $compare;
+        $this->created = $created;
+        $this->deleted = $deleted;
+        $this->enterprise = $enterprise;
+        $this->forced = $forced;
+        $this->head_commit = $head_commit;
+        $this->installation = $installation;
+        $this->organization = $organization;
+        $this->pusher = $pusher;
+        $this->ref = $ref;
+        $this->repository = $repository;
+        $this->sender = $sender;
     }
 }

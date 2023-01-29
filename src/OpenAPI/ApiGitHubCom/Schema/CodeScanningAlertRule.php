@@ -10,103 +10,53 @@ final class CodeScanningAlertRule
     /**
      * A unique identifier for the rule used to detect the alert.
      */
-    private ?string $id;
+    public readonly ?string $id;
     /**
      * The name of the rule used to detect the alert.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The severity of the alert.
      */
-    private ?string $severity;
+    public readonly ?string $severity;
     /**
      * The security severity of the alert.
      */
-    private ?string $security_severity_level;
+    public readonly ?string $security_severity_level;
     /**
      * A short description of the rule used to detect the alert.
      */
-    private string $description;
+    public readonly string $description;
     /**
      * description of the rule used to detect the alert.
      */
-    private string $full_description;
+    public readonly string $full_description;
     /**
      * A set of tags applicable for the rule.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule\Tags>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule\Tags::class)
      */
-    private array $tags = array();
+    public readonly array $tags;
     /**
      * Detailed documentation for the rule as GitHub Flavored Markdown.
      */
-    private ?string $help;
+    public readonly ?string $help;
     /**
      * A link to the documentation for the rule used to detect the alert.
      */
-    private ?string $help_uri;
+    public readonly ?string $help_uri;
     /**
-     * A unique identifier for the rule used to detect the alert.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule\Tags> $tags
      */
-    public function id() : ?string
+    public function __construct(string $id, string $name, string $severity, string $security_severity_level, string $description, string $full_description, array $tags, string $help, string $help_uri)
     {
-        return $this->id;
-    }
-    /**
-     * The name of the rule used to detect the alert.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * The severity of the alert.
-     */
-    public function severity() : ?string
-    {
-        return $this->severity;
-    }
-    /**
-     * The security severity of the alert.
-     */
-    public function security_severity_level() : ?string
-    {
-        return $this->security_severity_level;
-    }
-    /**
-     * A short description of the rule used to detect the alert.
-     */
-    public function description() : string
-    {
-        return $this->description;
-    }
-    /**
-     * description of the rule used to detect the alert.
-     */
-    public function full_description() : string
-    {
-        return $this->full_description;
-    }
-    /**
-     * A set of tags applicable for the rule.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule\Tags>
-     */
-    public function tags() : array
-    {
-        return $this->tags;
-    }
-    /**
-     * Detailed documentation for the rule as GitHub Flavored Markdown.
-     */
-    public function help() : ?string
-    {
-        return $this->help;
-    }
-    /**
-     * A link to the documentation for the rule used to detect the alert.
-     */
-    public function help_uri() : ?string
-    {
-        return $this->help_uri;
+        $this->id = $id;
+        $this->name = $name;
+        $this->severity = $severity;
+        $this->security_severity_level = $security_severity_level;
+        $this->description = $description;
+        $this->full_description = $full_description;
+        $this->tags = $tags;
+        $this->help = $help;
+        $this->help_uri = $help_uri;
     }
 }

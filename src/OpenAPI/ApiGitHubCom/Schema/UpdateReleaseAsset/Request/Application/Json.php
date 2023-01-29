@@ -10,28 +10,16 @@ final class Json
     /**
      * The file name of the asset.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * An alternate short description of the asset. Used in place of the filename.
      */
-    private string $label;
-    private string $state;
-    /**
-     * The file name of the asset.
-     */
-    public function name() : string
+    public readonly string $label;
+    public readonly string $state;
+    public function __construct(string $name, string $label, string $state)
     {
-        return $this->name;
-    }
-    /**
-     * An alternate short description of the asset. Used in place of the filename.
-     */
-    public function label() : string
-    {
-        return $this->label;
-    }
-    public function state() : string
-    {
-        return $this->state;
+        $this->name = $name;
+        $this->label = $label;
+        $this->state = $state;
     }
 }

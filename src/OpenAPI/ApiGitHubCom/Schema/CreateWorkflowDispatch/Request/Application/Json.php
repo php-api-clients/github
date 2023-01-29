@@ -10,24 +10,14 @@ final class Json
     /**
      * The git reference for the workflow. The reference can be a branch or tag name.
      */
-    private string $ref;
-    /**
-     * Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Inputs::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Inputs $inputs = null;
-    /**
-     * The git reference for the workflow. The reference can be a branch or tag name.
-     */
-    public function ref() : string
-    {
-        return $this->ref;
-    }
+    public readonly string $ref;
     /**
      * Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
      */
-    public function inputs() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Inputs
+    public readonly array $inputs;
+    public function __construct(string $ref, array $inputs)
     {
-        return $this->inputs;
+        $this->ref = $ref;
+        $this->inputs = $inputs;
     }
 }

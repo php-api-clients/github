@@ -10,48 +10,28 @@ final class Json
     /**
      * The SHA of the commit that needs a review. Not using the latest commit SHA may render your review comment outdated if a subsequent commit modifies the line you specify as the `position`. Defaults to the most recent commit in the pull request when you do not specify a value.
      */
-    private string $commit_id;
+    public readonly string $commit_id;
     /**
      * **Required** when using `REQUEST_CHANGES` or `COMMENT` for the `event` parameter. The body text of the pull request review.
      */
-    private string $body;
+    public readonly string $body;
     /**
      * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls#submit-a-review-for-a-pull-request) when you are ready.
      */
-    private string $event;
+    public readonly string $event;
     /**
      * Use the following table to specify the location, destination, and contents of the draft review comment.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Comments>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Comments::class)
      */
-    private array $comments = array();
+    public readonly array $comments;
     /**
-     * The SHA of the commit that needs a review. Not using the latest commit SHA may render your review comment outdated if a subsequent commit modifies the line you specify as the `position`. Defaults to the most recent commit in the pull request when you do not specify a value.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Comments> $comments
      */
-    public function commit_id() : string
+    public function __construct(string $commit_id, string $body, string $event, array $comments)
     {
-        return $this->commit_id;
-    }
-    /**
-     * **Required** when using `REQUEST_CHANGES` or `COMMENT` for the `event` parameter. The body text of the pull request review.
-     */
-    public function body() : string
-    {
-        return $this->body;
-    }
-    /**
-     * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls#submit-a-review-for-a-pull-request) when you are ready.
-     */
-    public function event() : string
-    {
-        return $this->event;
-    }
-    /**
-     * Use the following table to specify the location, destination, and contents of the draft review comment.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Comments>
-     */
-    public function comments() : array
-    {
-        return $this->comments;
+        $this->commit_id = $commit_id;
+        $this->body = $body;
+        $this->event = $event;
+        $this->comments = $comments;
     }
 }

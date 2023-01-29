@@ -10,12 +10,9 @@ final class Json
     /**
      * The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types) to add to the issue.
      */
-    private string $content;
-    /**
-     * The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types) to add to the issue.
-     */
-    public function content() : string
+    public readonly string $content;
+    public function __construct(string $content)
     {
-        return $this->content;
+        $this->content = $content;
     }
 }

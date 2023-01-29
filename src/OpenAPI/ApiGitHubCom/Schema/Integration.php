@@ -10,129 +10,60 @@ final class Integration
     /**
      * Unique identifier of the GitHub app
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The slug name of the GitHub app
      */
-    private ?string $slug = null;
-    private string $node_id;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Owner::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Owner $owner;
+    public readonly ?string $slug;
+    public readonly string $node_id;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Owner $owner;
     /**
      * The name of the GitHub app
      */
-    private string $name;
-    private ?string $description;
-    private string $external_url;
-    private string $html_url;
-    private string $created_at;
-    private string $updated_at;
+    public readonly string $name;
+    public readonly ?string $description;
+    public readonly string $external_url;
+    public readonly string $html_url;
+    public readonly string $created_at;
+    public readonly string $updated_at;
     /**
      * The set of permissions for the GitHub app
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Permissions::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Permissions $permissions;
+    public readonly array $permissions;
     /**
      * The list of events for the GitHub app
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Events>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Events::class)
      */
-    private array $events = array();
+    public readonly array $events;
     /**
      * The number of installations associated with the GitHub app
      */
-    private ?int $installations_count = null;
-    private ?string $client_id = null;
-    private ?string $client_secret = null;
-    private ?string $webhook_secret = null;
-    private ?string $pem = null;
+    public readonly ?int $installations_count;
+    public readonly ?string $client_id;
+    public readonly ?string $client_secret;
+    public readonly ?string $webhook_secret;
+    public readonly ?string $pem;
     /**
-     * Unique identifier of the GitHub app
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Events> $events
      */
-    public function id() : int
+    public function __construct(int $id, string $slug, string $node_id, mixed $owner, string $name, string $description, string $external_url, string $html_url, string $created_at, string $updated_at, array $permissions, array $events, int $installations_count, string $client_id, string $client_secret, string $webhook_secret, string $pem)
     {
-        return $this->id;
-    }
-    /**
-     * The slug name of the GitHub app
-     */
-    public function slug() : ?string
-    {
-        return $this->slug;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    public function owner() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Owner
-    {
-        return $this->owner;
-    }
-    /**
-     * The name of the GitHub app
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    public function external_url() : string
-    {
-        return $this->external_url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    /**
-     * The set of permissions for the GitHub app
-     */
-    public function permissions() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Permissions
-    {
-        return $this->permissions;
-    }
-    /**
-     * The list of events for the GitHub app
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Events>
-     */
-    public function events() : array
-    {
-        return $this->events;
-    }
-    /**
-     * The number of installations associated with the GitHub app
-     */
-    public function installations_count() : ?int
-    {
-        return $this->installations_count;
-    }
-    public function client_id() : ?string
-    {
-        return $this->client_id;
-    }
-    public function client_secret() : ?string
-    {
-        return $this->client_secret;
-    }
-    public function webhook_secret() : ?string
-    {
-        return $this->webhook_secret;
-    }
-    public function pem() : ?string
-    {
-        return $this->pem;
+        $this->id = $id;
+        $this->slug = $slug;
+        $this->node_id = $node_id;
+        $this->owner = $owner;
+        $this->name = $name;
+        $this->description = $description;
+        $this->external_url = $external_url;
+        $this->html_url = $html_url;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->permissions = $permissions;
+        $this->events = $events;
+        $this->installations_count = $installations_count;
+        $this->client_id = $client_id;
+        $this->client_secret = $client_secret;
+        $this->webhook_secret = $webhook_secret;
+        $this->pem = $pem;
     }
 }

@@ -10,15 +10,13 @@ final class Json
     /**
      * The username for users
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Users>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Users::class)
      */
-    private array $users = array();
+    public readonly array $users;
     /**
-     * The username for users
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Users>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Users> $users
      */
-    public function users() : array
+    public function __construct(array $users)
     {
-        return $this->users;
+        $this->users = $users;
     }
 }

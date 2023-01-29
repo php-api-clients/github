@@ -10,23 +10,14 @@ final class Json
     /**
      * The position of the card in a column. Can be one of: `top`, `bottom`, or `after:<card_id>` to place after the specified card.
      */
-    private string $position;
+    public readonly string $position;
     /**
      * The unique identifier of the column the card should be moved to
      */
-    private ?int $column_id = null;
-    /**
-     * The position of the card in a column. Can be one of: `top`, `bottom`, or `after:<card_id>` to place after the specified card.
-     */
-    public function position() : string
+    public readonly ?int $column_id;
+    public function __construct(string $position, int $column_id)
     {
-        return $this->position;
-    }
-    /**
-     * The unique identifier of the column the card should be moved to
-     */
-    public function column_id() : ?int
-    {
-        return $this->column_id;
+        $this->position = $position;
+        $this->column_id = $column_id;
     }
 }

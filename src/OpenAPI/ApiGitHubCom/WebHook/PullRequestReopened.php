@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHook;
 
-final class PullRequestReopened implements \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHookInterface
+final class PullRequestReopened implements \ApiClients\Contracts\OpenAPI\WebHookInterface
 {
     public function resolve(array $data) : string
     {

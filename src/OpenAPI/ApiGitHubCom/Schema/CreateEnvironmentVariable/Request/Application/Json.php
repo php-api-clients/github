@@ -10,23 +10,14 @@ final class Json
     /**
      * The name of the variable.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The value of the variable.
      */
-    private string $value;
-    /**
-     * The name of the variable.
-     */
-    public function name() : string
+    public readonly string $value;
+    public function __construct(string $name, string $value)
     {
-        return $this->name;
-    }
-    /**
-     * The value of the variable.
-     */
-    public function value() : string
-    {
-        return $this->value;
+        $this->name = $name;
+        $this->value = $value;
     }
 }

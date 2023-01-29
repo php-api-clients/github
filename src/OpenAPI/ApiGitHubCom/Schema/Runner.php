@@ -10,62 +10,34 @@ final class Runner
     /**
      * The id of the runner.
      */
-    private int $id;
+    public readonly int $id;
     /**
      * The name of the runner.
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The Operating System of the runner.
      */
-    private string $os;
+    public readonly string $os;
     /**
      * The status of the runner.
      */
-    private string $status;
-    private bool $busy;
+    public readonly string $status;
+    public readonly bool $busy;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerLabel>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerLabel::class)
      */
-    private array $labels = array();
+    public readonly array $labels;
     /**
-     * The id of the runner.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerLabel> $labels
      */
-    public function id() : int
+    public function __construct(int $id, string $name, string $os, string $status, bool $busy, array $labels)
     {
-        return $this->id;
-    }
-    /**
-     * The name of the runner.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    /**
-     * The Operating System of the runner.
-     */
-    public function os() : string
-    {
-        return $this->os;
-    }
-    /**
-     * The status of the runner.
-     */
-    public function status() : string
-    {
-        return $this->status;
-    }
-    public function busy() : bool
-    {
-        return $this->busy;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RunnerLabel>
-     */
-    public function labels() : array
-    {
-        return $this->labels;
+        $this->id = $id;
+        $this->name = $name;
+        $this->os = $os;
+        $this->status = $status;
+        $this->busy = $busy;
+        $this->labels = $labels;
     }
 }

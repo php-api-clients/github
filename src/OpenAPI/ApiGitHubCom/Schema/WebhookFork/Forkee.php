@@ -10,569 +10,241 @@ final class Forkee
     /**
      * Whether to allow auto-merge for pull requests.
      */
-    private ?bool $allow_auto_merge = null;
+    public readonly ?bool $allow_auto_merge;
     /**
      * Whether to allow private forks
      */
-    private ?bool $allow_forking = null;
+    public readonly ?bool $allow_forking;
     /**
      * Whether to allow merge commits for pull requests.
      */
-    private ?bool $allow_merge_commit = null;
+    public readonly ?bool $allow_merge_commit;
     /**
      * Whether to allow rebase merges for pull requests.
      */
-    private ?bool $allow_rebase_merge = null;
+    public readonly ?bool $allow_rebase_merge;
     /**
      * Whether to allow squash merges for pull requests.
      */
-    private ?bool $allow_squash_merge = null;
-    private ?bool $allow_update_branch = null;
-    private string $archive_url;
+    public readonly ?bool $allow_squash_merge;
+    public readonly ?bool $allow_update_branch;
+    public readonly string $archive_url;
     /**
      * Whether the repository is archived.
      */
-    private bool $archived;
-    private string $assignees_url;
-    private string $blobs_url;
-    private string $branches_url;
-    private string $clone_url;
-    private string $collaborators_url;
-    private string $comments_url;
-    private string $commits_url;
-    private string $compare_url;
-    private string $contents_url;
-    private string $contributors_url;
-    private $created_at;
+    public readonly bool $archived;
+    public readonly string $assignees_url;
+    public readonly string $blobs_url;
+    public readonly string $branches_url;
+    public readonly string $clone_url;
+    public readonly string $collaborators_url;
+    public readonly string $comments_url;
+    public readonly string $commits_url;
+    public readonly string $compare_url;
+    public readonly string $contents_url;
+    public readonly string $contributors_url;
+    public readonly mixed $created_at;
     /**
      * The default branch of the repository.
      */
-    private string $default_branch;
+    public readonly string $default_branch;
     /**
      * Whether to delete head branches when pull requests are merged
      */
-    private ?bool $delete_branch_on_merge = null;
-    private string $deployments_url;
-    private ?string $description;
+    public readonly ?bool $delete_branch_on_merge;
+    public readonly string $deployments_url;
+    public readonly ?string $description;
     /**
      * Returns whether or not this repository is disabled.
      */
-    private ?bool $disabled = null;
-    private string $downloads_url;
-    private string $events_url;
-    private bool $fork;
-    private int $forks;
-    private int $forks_count;
-    private string $forks_url;
-    private string $full_name;
-    private string $git_commits_url;
-    private string $git_refs_url;
-    private string $git_tags_url;
-    private string $git_url;
+    public readonly ?bool $disabled;
+    public readonly string $downloads_url;
+    public readonly string $events_url;
+    public readonly bool $fork;
+    public readonly int $forks;
+    public readonly int $forks_count;
+    public readonly string $forks_url;
+    public readonly string $full_name;
+    public readonly string $git_commits_url;
+    public readonly string $git_refs_url;
+    public readonly string $git_tags_url;
+    public readonly string $git_url;
     /**
      * Whether downloads are enabled.
      */
-    private bool $has_downloads;
+    public readonly bool $has_downloads;
     /**
      * Whether issues are enabled.
      */
-    private bool $has_issues;
-    private bool $has_pages;
+    public readonly bool $has_issues;
+    public readonly bool $has_pages;
     /**
      * Whether projects are enabled.
      */
-    private bool $has_projects;
+    public readonly bool $has_projects;
     /**
      * Whether the wiki is enabled.
      */
-    private bool $has_wiki;
-    private ?string $homepage;
-    private string $hooks_url;
-    private string $html_url;
+    public readonly bool $has_wiki;
+    public readonly ?string $homepage;
+    public readonly string $hooks_url;
+    public readonly string $html_url;
     /**
      * Unique identifier of the repository
      */
-    private int $id;
-    private ?bool $is_template = null;
-    private string $issue_comment_url;
-    private string $issue_events_url;
-    private string $issues_url;
-    private string $keys_url;
-    private string $labels_url;
-    private ?string $language;
-    private string $languages_url;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\License::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\License $license;
-    private ?string $master_branch = null;
-    private string $merges_url;
-    private string $milestones_url;
-    private ?string $mirror_url;
+    public readonly int $id;
+    public readonly ?bool $is_template;
+    public readonly string $issue_comment_url;
+    public readonly string $issue_events_url;
+    public readonly string $issues_url;
+    public readonly string $keys_url;
+    public readonly string $labels_url;
+    public readonly ?string $language;
+    public readonly string $languages_url;
+    public readonly array $license;
+    public readonly ?string $master_branch;
+    public readonly string $merges_url;
+    public readonly string $milestones_url;
+    public readonly ?string $mirror_url;
     /**
      * The name of the repository.
      */
-    private string $name;
-    private string $node_id;
-    private string $notifications_url;
-    private int $open_issues;
-    private int $open_issues_count;
-    private ?string $organization = null;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Owner::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Owner $owner;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Permissions::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Permissions $permissions = null;
+    public readonly string $name;
+    public readonly string $node_id;
+    public readonly string $notifications_url;
+    public readonly int $open_issues;
+    public readonly int $open_issues_count;
+    public readonly ?string $organization;
+    public readonly array $owner;
+    public readonly array $permissions;
     /**
      * Whether the repository is private or public.
      */
-    private bool $private;
-    private ?bool $public = null;
-    private string $pulls_url;
-    private $pushed_at;
-    private string $releases_url;
-    private ?string $role_name = null;
-    private int $size;
-    private string $ssh_url;
-    private ?int $stargazers = null;
-    private int $stargazers_count;
-    private string $stargazers_url;
-    private string $statuses_url;
-    private string $subscribers_url;
-    private string $subscription_url;
-    private string $svn_url;
-    private string $tags_url;
-    private string $teams_url;
+    public readonly bool $private;
+    public readonly ?bool $public;
+    public readonly string $pulls_url;
+    public readonly mixed $pushed_at;
+    public readonly string $releases_url;
+    public readonly ?string $role_name;
+    public readonly int $size;
+    public readonly string $ssh_url;
+    public readonly ?int $stargazers;
+    public readonly int $stargazers_count;
+    public readonly string $stargazers_url;
+    public readonly string $statuses_url;
+    public readonly string $subscribers_url;
+    public readonly string $subscription_url;
+    public readonly string $svn_url;
+    public readonly string $tags_url;
+    public readonly string $teams_url;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Topics>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Topics::class)
      */
-    private array $topics = array();
-    private string $trees_url;
-    private string $updated_at;
-    private string $url;
-    private string $visibility;
-    private int $watchers;
-    private int $watchers_count;
+    public readonly array $topics;
+    public readonly string $trees_url;
+    public readonly string $updated_at;
+    public readonly string $url;
+    public readonly string $visibility;
+    public readonly int $watchers;
+    public readonly int $watchers_count;
     /**
      * Whether to require contributors to sign off on web-based commits
      */
-    private ?bool $web_commit_signoff_required = null;
+    public readonly ?bool $web_commit_signoff_required;
     /**
-     * Whether to allow auto-merge for pull requests.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Topics> $topics
      */
-    public function allow_auto_merge() : ?bool
-    {
-        return $this->allow_auto_merge;
-    }
-    /**
-     * Whether to allow private forks
-     */
-    public function allow_forking() : ?bool
-    {
-        return $this->allow_forking;
-    }
-    /**
-     * Whether to allow merge commits for pull requests.
-     */
-    public function allow_merge_commit() : ?bool
-    {
-        return $this->allow_merge_commit;
-    }
-    /**
-     * Whether to allow rebase merges for pull requests.
-     */
-    public function allow_rebase_merge() : ?bool
-    {
-        return $this->allow_rebase_merge;
-    }
-    /**
-     * Whether to allow squash merges for pull requests.
-     */
-    public function allow_squash_merge() : ?bool
-    {
-        return $this->allow_squash_merge;
-    }
-    public function allow_update_branch() : ?bool
-    {
-        return $this->allow_update_branch;
-    }
-    public function archive_url() : string
-    {
-        return $this->archive_url;
-    }
-    /**
-     * Whether the repository is archived.
-     */
-    public function archived() : bool
-    {
-        return $this->archived;
-    }
-    public function assignees_url() : string
-    {
-        return $this->assignees_url;
-    }
-    public function blobs_url() : string
-    {
-        return $this->blobs_url;
-    }
-    public function branches_url() : string
-    {
-        return $this->branches_url;
-    }
-    public function clone_url() : string
-    {
-        return $this->clone_url;
-    }
-    public function collaborators_url() : string
-    {
-        return $this->collaborators_url;
-    }
-    public function comments_url() : string
-    {
-        return $this->comments_url;
-    }
-    public function commits_url() : string
-    {
-        return $this->commits_url;
-    }
-    public function compare_url() : string
-    {
-        return $this->compare_url;
-    }
-    public function contents_url() : string
-    {
-        return $this->contents_url;
-    }
-    public function contributors_url() : string
-    {
-        return $this->contributors_url;
-    }
-    public function created_at()
-    {
-        return $this->created_at;
-    }
-    /**
-     * The default branch of the repository.
-     */
-    public function default_branch() : string
-    {
-        return $this->default_branch;
-    }
-    /**
-     * Whether to delete head branches when pull requests are merged
-     */
-    public function delete_branch_on_merge() : ?bool
-    {
-        return $this->delete_branch_on_merge;
-    }
-    public function deployments_url() : string
-    {
-        return $this->deployments_url;
-    }
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    /**
-     * Returns whether or not this repository is disabled.
-     */
-    public function disabled() : ?bool
-    {
-        return $this->disabled;
-    }
-    public function downloads_url() : string
-    {
-        return $this->downloads_url;
-    }
-    public function events_url() : string
-    {
-        return $this->events_url;
-    }
-    public function fork() : bool
-    {
-        return $this->fork;
-    }
-    public function forks() : int
-    {
-        return $this->forks;
-    }
-    public function forks_count() : int
-    {
-        return $this->forks_count;
-    }
-    public function forks_url() : string
-    {
-        return $this->forks_url;
-    }
-    public function full_name() : string
-    {
-        return $this->full_name;
-    }
-    public function git_commits_url() : string
-    {
-        return $this->git_commits_url;
-    }
-    public function git_refs_url() : string
-    {
-        return $this->git_refs_url;
-    }
-    public function git_tags_url() : string
-    {
-        return $this->git_tags_url;
-    }
-    public function git_url() : string
-    {
-        return $this->git_url;
-    }
-    /**
-     * Whether downloads are enabled.
-     */
-    public function has_downloads() : bool
-    {
-        return $this->has_downloads;
-    }
-    /**
-     * Whether issues are enabled.
-     */
-    public function has_issues() : bool
-    {
-        return $this->has_issues;
-    }
-    public function has_pages() : bool
-    {
-        return $this->has_pages;
-    }
-    /**
-     * Whether projects are enabled.
-     */
-    public function has_projects() : bool
-    {
-        return $this->has_projects;
-    }
-    /**
-     * Whether the wiki is enabled.
-     */
-    public function has_wiki() : bool
-    {
-        return $this->has_wiki;
-    }
-    public function homepage() : ?string
-    {
-        return $this->homepage;
-    }
-    public function hooks_url() : string
-    {
-        return $this->hooks_url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    /**
-     * Unique identifier of the repository
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    public function is_template() : ?bool
-    {
-        return $this->is_template;
-    }
-    public function issue_comment_url() : string
-    {
-        return $this->issue_comment_url;
-    }
-    public function issue_events_url() : string
-    {
-        return $this->issue_events_url;
-    }
-    public function issues_url() : string
-    {
-        return $this->issues_url;
-    }
-    public function keys_url() : string
-    {
-        return $this->keys_url;
-    }
-    public function labels_url() : string
-    {
-        return $this->labels_url;
-    }
-    public function language() : ?string
-    {
-        return $this->language;
-    }
-    public function languages_url() : string
-    {
-        return $this->languages_url;
-    }
-    public function license() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\License
-    {
-        return $this->license;
-    }
-    public function master_branch() : ?string
-    {
-        return $this->master_branch;
-    }
-    public function merges_url() : string
-    {
-        return $this->merges_url;
-    }
-    public function milestones_url() : string
-    {
-        return $this->milestones_url;
-    }
-    public function mirror_url() : ?string
-    {
-        return $this->mirror_url;
-    }
-    /**
-     * The name of the repository.
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    public function notifications_url() : string
-    {
-        return $this->notifications_url;
-    }
-    public function open_issues() : int
-    {
-        return $this->open_issues;
-    }
-    public function open_issues_count() : int
-    {
-        return $this->open_issues_count;
-    }
-    public function organization() : ?string
-    {
-        return $this->organization;
-    }
-    public function owner() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Owner
-    {
-        return $this->owner;
-    }
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Permissions
-    {
-        return $this->permissions;
-    }
-    /**
-     * Whether the repository is private or public.
-     */
-    public function private() : bool
-    {
-        return $this->private;
-    }
-    public function public() : ?bool
-    {
-        return $this->public;
-    }
-    public function pulls_url() : string
-    {
-        return $this->pulls_url;
-    }
-    public function pushed_at()
-    {
-        return $this->pushed_at;
-    }
-    public function releases_url() : string
-    {
-        return $this->releases_url;
-    }
-    public function role_name() : ?string
-    {
-        return $this->role_name;
-    }
-    public function size() : int
-    {
-        return $this->size;
-    }
-    public function ssh_url() : string
-    {
-        return $this->ssh_url;
-    }
-    public function stargazers() : ?int
-    {
-        return $this->stargazers;
-    }
-    public function stargazers_count() : int
-    {
-        return $this->stargazers_count;
-    }
-    public function stargazers_url() : string
-    {
-        return $this->stargazers_url;
-    }
-    public function statuses_url() : string
-    {
-        return $this->statuses_url;
-    }
-    public function subscribers_url() : string
-    {
-        return $this->subscribers_url;
-    }
-    public function subscription_url() : string
-    {
-        return $this->subscription_url;
-    }
-    public function svn_url() : string
-    {
-        return $this->svn_url;
-    }
-    public function tags_url() : string
-    {
-        return $this->tags_url;
-    }
-    public function teams_url() : string
-    {
-        return $this->teams_url;
-    }
-    /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Topics>
-     */
-    public function topics() : array
-    {
-        return $this->topics;
-    }
-    public function trees_url() : string
-    {
-        return $this->trees_url;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function visibility() : string
-    {
-        return $this->visibility;
-    }
-    public function watchers() : int
-    {
-        return $this->watchers;
-    }
-    public function watchers_count() : int
-    {
-        return $this->watchers_count;
-    }
-    /**
-     * Whether to require contributors to sign off on web-based commits
-     */
-    public function web_commit_signoff_required() : ?bool
-    {
-        return $this->web_commit_signoff_required;
+    public function __construct(bool $allow_auto_merge, bool $allow_forking, bool $allow_merge_commit, bool $allow_rebase_merge, bool $allow_squash_merge, bool $allow_update_branch, string $archive_url, bool $archived, string $assignees_url, string $blobs_url, string $branches_url, string $clone_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, mixed $created_at, string $default_branch, bool $delete_branch_on_merge, string $deployments_url, string $description, bool $disabled, string $downloads_url, string $events_url, bool $fork, int $forks, int $forks_count, string $forks_url, string $full_name, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $git_url, bool $has_downloads, bool $has_issues, bool $has_pages, bool $has_projects, bool $has_wiki, string $homepage, string $hooks_url, string $html_url, int $id, bool $is_template, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $language, string $languages_url, array $license, string $master_branch, string $merges_url, string $milestones_url, string $mirror_url, string $name, string $node_id, string $notifications_url, int $open_issues, int $open_issues_count, string $organization, array $owner, array $permissions, bool $private, bool $public, string $pulls_url, mixed $pushed_at, string $releases_url, string $role_name, int $size, string $ssh_url, int $stargazers, int $stargazers_count, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $svn_url, string $tags_url, string $teams_url, array $topics, string $trees_url, string $updated_at, string $url, string $visibility, int $watchers, int $watchers_count, bool $web_commit_signoff_required)
+    {
+        $this->allow_auto_merge = $allow_auto_merge;
+        $this->allow_forking = $allow_forking;
+        $this->allow_merge_commit = $allow_merge_commit;
+        $this->allow_rebase_merge = $allow_rebase_merge;
+        $this->allow_squash_merge = $allow_squash_merge;
+        $this->allow_update_branch = $allow_update_branch;
+        $this->archive_url = $archive_url;
+        $this->archived = $archived;
+        $this->assignees_url = $assignees_url;
+        $this->blobs_url = $blobs_url;
+        $this->branches_url = $branches_url;
+        $this->clone_url = $clone_url;
+        $this->collaborators_url = $collaborators_url;
+        $this->comments_url = $comments_url;
+        $this->commits_url = $commits_url;
+        $this->compare_url = $compare_url;
+        $this->contents_url = $contents_url;
+        $this->contributors_url = $contributors_url;
+        $this->created_at = $created_at;
+        $this->default_branch = $default_branch;
+        $this->delete_branch_on_merge = $delete_branch_on_merge;
+        $this->deployments_url = $deployments_url;
+        $this->description = $description;
+        $this->disabled = $disabled;
+        $this->downloads_url = $downloads_url;
+        $this->events_url = $events_url;
+        $this->fork = $fork;
+        $this->forks = $forks;
+        $this->forks_count = $forks_count;
+        $this->forks_url = $forks_url;
+        $this->full_name = $full_name;
+        $this->git_commits_url = $git_commits_url;
+        $this->git_refs_url = $git_refs_url;
+        $this->git_tags_url = $git_tags_url;
+        $this->git_url = $git_url;
+        $this->has_downloads = $has_downloads;
+        $this->has_issues = $has_issues;
+        $this->has_pages = $has_pages;
+        $this->has_projects = $has_projects;
+        $this->has_wiki = $has_wiki;
+        $this->homepage = $homepage;
+        $this->hooks_url = $hooks_url;
+        $this->html_url = $html_url;
+        $this->id = $id;
+        $this->is_template = $is_template;
+        $this->issue_comment_url = $issue_comment_url;
+        $this->issue_events_url = $issue_events_url;
+        $this->issues_url = $issues_url;
+        $this->keys_url = $keys_url;
+        $this->labels_url = $labels_url;
+        $this->language = $language;
+        $this->languages_url = $languages_url;
+        $this->license = $license;
+        $this->master_branch = $master_branch;
+        $this->merges_url = $merges_url;
+        $this->milestones_url = $milestones_url;
+        $this->mirror_url = $mirror_url;
+        $this->name = $name;
+        $this->node_id = $node_id;
+        $this->notifications_url = $notifications_url;
+        $this->open_issues = $open_issues;
+        $this->open_issues_count = $open_issues_count;
+        $this->organization = $organization;
+        $this->owner = $owner;
+        $this->permissions = $permissions;
+        $this->private = $private;
+        $this->public = $public;
+        $this->pulls_url = $pulls_url;
+        $this->pushed_at = $pushed_at;
+        $this->releases_url = $releases_url;
+        $this->role_name = $role_name;
+        $this->size = $size;
+        $this->ssh_url = $ssh_url;
+        $this->stargazers = $stargazers;
+        $this->stargazers_count = $stargazers_count;
+        $this->stargazers_url = $stargazers_url;
+        $this->statuses_url = $statuses_url;
+        $this->subscribers_url = $subscribers_url;
+        $this->subscription_url = $subscription_url;
+        $this->svn_url = $svn_url;
+        $this->tags_url = $tags_url;
+        $this->teams_url = $teams_url;
+        $this->topics = $topics;
+        $this->trees_url = $trees_url;
+        $this->updated_at = $updated_at;
+        $this->url = $url;
+        $this->visibility = $visibility;
+        $this->watchers = $watchers;
+        $this->watchers_count = $watchers_count;
+        $this->web_commit_signoff_required = $web_commit_signoff_required;
     }
 }

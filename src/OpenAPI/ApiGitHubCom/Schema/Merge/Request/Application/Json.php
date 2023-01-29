@@ -10,45 +10,24 @@ final class Json
     /**
      * Title for the automatic commit message.
      */
-    private string $commit_title;
+    public readonly string $commit_title;
     /**
      * Extra detail to append to automatic commit message.
      */
-    private string $commit_message;
+    public readonly string $commit_message;
     /**
      * SHA that pull request head must match to allow merge.
      */
-    private string $sha;
+    public readonly string $sha;
     /**
      * The merge method to use.
      */
-    private string $merge_method;
-    /**
-     * Title for the automatic commit message.
-     */
-    public function commit_title() : string
+    public readonly string $merge_method;
+    public function __construct(string $commit_title, string $commit_message, string $sha, string $merge_method)
     {
-        return $this->commit_title;
-    }
-    /**
-     * Extra detail to append to automatic commit message.
-     */
-    public function commit_message() : string
-    {
-        return $this->commit_message;
-    }
-    /**
-     * SHA that pull request head must match to allow merge.
-     */
-    public function sha() : string
-    {
-        return $this->sha;
-    }
-    /**
-     * The merge method to use.
-     */
-    public function merge_method() : string
-    {
-        return $this->merge_method;
+        $this->commit_title = $commit_title;
+        $this->commit_message = $commit_message;
+        $this->sha = $sha;
+        $this->merge_method = $merge_method;
     }
 }

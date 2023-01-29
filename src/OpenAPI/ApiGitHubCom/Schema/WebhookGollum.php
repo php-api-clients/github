@@ -9,76 +9,39 @@ final class WebhookGollum
     public const SCHEMA_DESCRIPTION = '';
     /**
      * An enterprise on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
+    public readonly array $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
+    public readonly array $installation;
     /**
      * A GitHub organization.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
      */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
+    public readonly array $organization;
     /**
      * The pages that were updated.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookGollum\Pages>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookGollum\Pages::class)
      */
-    private array $pages = array();
-    /**
-     * A repository on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    /**
-     * An enterprise on GitHub.
-     */
-    public function enterprise() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise
-    {
-        return $this->enterprise;
-    }
-    /**
-     * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     */
-    public function installation() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation
-    {
-        return $this->installation;
-    }
-    /**
-     * A GitHub organization.
-     */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
-    {
-        return $this->organization;
-    }
-    /**
-     * The pages that were updated.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookGollum\Pages>
-     */
-    public function pages() : array
-    {
-        return $this->pages;
-    }
+    public readonly array $pages;
     /**
      * A repository on GitHub.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
-    {
-        return $this->repository;
-    }
+    public readonly array $repository;
     /**
      * A GitHub user.
      */
-    public function sender() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $sender;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookGollum\Pages> $pages
+     */
+    public function __construct(array $enterprise, array $installation, array $organization, array $pages, array $repository, array $sender)
     {
-        return $this->sender;
+        $this->enterprise = $enterprise;
+        $this->installation = $installation;
+        $this->organization = $organization;
+        $this->pages = $pages;
+        $this->repository = $repository;
+        $this->sender = $sender;
     }
 }

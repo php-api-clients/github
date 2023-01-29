@@ -7,19 +7,13 @@ final class HookResponse
     public const SCHEMA_JSON = '{"title":"Hook Response","required":["code","status","message"],"type":"object","properties":{"code":{"type":["integer","null"]},"status":{"type":["string","null"]},"message":{"type":["string","null"]}}}';
     public const SCHEMA_TITLE = 'Hook Response';
     public const SCHEMA_DESCRIPTION = '';
-    private ?int $code;
-    private ?string $status;
-    private ?string $message;
-    public function code() : ?int
+    public readonly ?int $code;
+    public readonly ?string $status;
+    public readonly ?string $message;
+    public function __construct(int $code, string $status, string $message)
     {
-        return $this->code;
-    }
-    public function status() : ?string
-    {
-        return $this->status;
-    }
-    public function message() : ?string
-    {
-        return $this->message;
+        $this->code = $code;
+        $this->status = $status;
+        $this->message = $message;
     }
 }

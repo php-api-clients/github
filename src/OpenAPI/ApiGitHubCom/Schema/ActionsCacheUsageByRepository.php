@@ -10,34 +10,19 @@ final class ActionsCacheUsageByRepository
     /**
      * The repository owner and name for the cache usage being shown.
      */
-    private string $full_name;
+    public readonly string $full_name;
     /**
      * The sum of the size in bytes of all the active cache items in the repository.
      */
-    private int $active_caches_size_in_bytes;
+    public readonly int $active_caches_size_in_bytes;
     /**
      * The number of active caches in the repository.
      */
-    private int $active_caches_count;
-    /**
-     * The repository owner and name for the cache usage being shown.
-     */
-    public function full_name() : string
+    public readonly int $active_caches_count;
+    public function __construct(string $full_name, int $active_caches_size_in_bytes, int $active_caches_count)
     {
-        return $this->full_name;
-    }
-    /**
-     * The sum of the size in bytes of all the active cache items in the repository.
-     */
-    public function active_caches_size_in_bytes() : int
-    {
-        return $this->active_caches_size_in_bytes;
-    }
-    /**
-     * The number of active caches in the repository.
-     */
-    public function active_caches_count() : int
-    {
-        return $this->active_caches_count;
+        $this->full_name = $full_name;
+        $this->active_caches_size_in_bytes = $active_caches_size_in_bytes;
+        $this->active_caches_count = $active_caches_count;
     }
 }

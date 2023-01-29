@@ -10,23 +10,14 @@ final class DependabotPublicKey
     /**
      * The identifier for the key.
      */
-    private string $key_id;
+    public readonly string $key_id;
     /**
      * The Base64 encoded public key.
      */
-    private string $key;
-    /**
-     * The identifier for the key.
-     */
-    public function key_id() : string
+    public readonly string $key;
+    public function __construct(string $key_id, string $key)
     {
-        return $this->key_id;
-    }
-    /**
-     * The Base64 encoded public key.
-     */
-    public function key() : string
-    {
-        return $this->key;
+        $this->key_id = $key_id;
+        $this->key = $key;
     }
 }

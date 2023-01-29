@@ -10,40 +10,25 @@ final class Json
     /**
      * Require branches to be up to date before merging.
      */
-    private bool $strict;
+    public readonly bool $strict;
     /**
      * **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts::class)
      */
-    private array $contexts = array();
+    public readonly array $contexts;
     /**
      * The list of status checks to require in order to merge into this branch.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Checks>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Checks::class)
      */
-    private array $checks = array();
+    public readonly array $checks;
     /**
-     * Require branches to be up to date before merging.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts> $contexts
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Checks> $checks
      */
-    public function strict() : bool
+    public function __construct(bool $strict, array $contexts, array $checks)
     {
-        return $this->strict;
-    }
-    /**
-     * **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Contexts>
-     */
-    public function contexts() : array
-    {
-        return $this->contexts;
-    }
-    /**
-     * The list of status checks to require in order to merge into this branch.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Checks>
-     */
-    public function checks() : array
-    {
-        return $this->checks;
+        $this->strict = $strict;
+        $this->contexts = $contexts;
+        $this->checks = $checks;
     }
 }

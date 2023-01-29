@@ -10,23 +10,14 @@ final class DependabotAlertPackage
     /**
      * The package's language or package management ecosystem.
      */
-    private string $ecosystem;
+    public readonly string $ecosystem;
     /**
      * The unique package name within its ecosystem.
      */
-    private string $name;
-    /**
-     * The package's language or package management ecosystem.
-     */
-    public function ecosystem() : string
+    public readonly string $name;
+    public function __construct(string $ecosystem, string $name)
     {
-        return $this->ecosystem;
-    }
-    /**
-     * The unique package name within its ecosystem.
-     */
-    public function name() : string
-    {
-        return $this->name;
+        $this->ecosystem = $ecosystem;
+        $this->name = $name;
     }
 }

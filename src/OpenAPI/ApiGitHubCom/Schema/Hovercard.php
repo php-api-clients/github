@@ -9,14 +9,13 @@ final class Hovercard
     public const SCHEMA_DESCRIPTION = 'Hovercard';
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts::class)
      */
-    private array $contexts = array();
+    public readonly array $contexts;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hovercard\Contexts> $contexts
      */
-    public function contexts() : array
+    public function __construct(array $contexts)
     {
-        return $this->contexts;
+        $this->contexts = $contexts;
     }
 }

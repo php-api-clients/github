@@ -10,12 +10,9 @@ final class Json
     /**
      * The OAuth access token used to authenticate to the GitHub API.
      */
-    private string $access_token;
-    /**
-     * The OAuth access token used to authenticate to the GitHub API.
-     */
-    public function access_token() : string
+    public readonly string $access_token;
+    public function __construct(string $access_token)
     {
-        return $this->access_token;
+        $this->access_token = $access_token;
     }
 }

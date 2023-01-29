@@ -7,21 +7,17 @@ final class H200
     public const SCHEMA_JSON = '{"required":["total_count","devcontainers"],"type":"object","properties":{"total_count":{"type":"integer"},"devcontainers":{"type":"array","items":{"required":["path"],"type":"object","properties":{"path":{"type":"string"},"name":{"type":"string"}}}}}}';
     public const SCHEMA_TITLE = 'Operation\\ListDevcontainersInRepositoryForAuthenticatedUser\\Response\\Application\\Json\\H200';
     public const SCHEMA_DESCRIPTION = '';
-    private int $total_count;
+    public readonly int $total_count;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Devcontainers>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Devcontainers::class)
      */
-    private array $devcontainers = array();
-    public function total_count() : int
-    {
-        return $this->total_count;
-    }
+    public readonly array $devcontainers;
     /**
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Devcontainers>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Devcontainers> $devcontainers
      */
-    public function devcontainers() : array
+    public function __construct(int $total_count, array $devcontainers)
     {
-        return $this->devcontainers;
+        $this->total_count = $total_count;
+        $this->devcontainers = $devcontainers;
     }
 }

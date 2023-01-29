@@ -10,167 +10,76 @@ final class DependabotAlertWithRepository
     /**
      * The security alert number.
      */
-    private int $number;
+    public readonly int $number;
     /**
      * The state of the Dependabot alert.
      */
-    private string $state;
-    /**
-     * Details for the vulnerable dependency.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\Dependency::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\Dependency $dependency;
-    /**
-     * Details for the GitHub Security Advisory.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory $security_advisory;
-    /**
-     * Details pertaining to one vulnerable version range for the advisory.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability $security_vulnerability;
-    /**
-     * The REST API URL of the alert resource.
-     */
-    private string $url;
-    /**
-     * The GitHub URL of the alert resource.
-     */
-    private string $html_url;
-    /**
-     * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    private string $created_at;
-    /**
-     * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    private string $updated_at;
-    /**
-     * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    private ?string $dismissed_at;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\DismissedBy::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\DismissedBy $dismissed_by;
-    /**
-     * The reason that the alert was dismissed.
-     */
-    private ?string $dismissed_reason;
-    /**
-     * An optional comment associated with the alert's dismissal.
-     */
-    private ?string $dismissed_comment;
-    /**
-     * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    private ?string $fixed_at;
-    /**
-     * A GitHub repository.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository $repository;
-    /**
-     * The security alert number.
-     */
-    public function number() : int
-    {
-        return $this->number;
-    }
-    /**
-     * The state of the Dependabot alert.
-     */
-    public function state() : string
-    {
-        return $this->state;
-    }
+    public readonly string $state;
     /**
      * Details for the vulnerable dependency.
      */
-    public function dependency() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\Dependency
-    {
-        return $this->dependency;
-    }
+    public readonly array $dependency;
     /**
      * Details for the GitHub Security Advisory.
      */
-    public function security_advisory() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory
-    {
-        return $this->security_advisory;
-    }
+    public readonly array $security_advisory;
     /**
      * Details pertaining to one vulnerable version range for the advisory.
      */
-    public function security_vulnerability() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability
-    {
-        return $this->security_vulnerability;
-    }
+    public readonly array $security_vulnerability;
     /**
      * The REST API URL of the alert resource.
      */
-    public function url() : string
-    {
-        return $this->url;
-    }
+    public readonly string $url;
     /**
      * The GitHub URL of the alert resource.
      */
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
+    public readonly string $html_url;
     /**
      * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
+    public readonly string $created_at;
     /**
      * The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
+    public readonly string $updated_at;
     /**
      * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function dismissed_at() : ?string
-    {
-        return $this->dismissed_at;
-    }
-    public function dismissed_by() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\DismissedBy
-    {
-        return $this->dismissed_by;
-    }
+    public readonly ?string $dismissed_at;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\DismissedBy $dismissed_by;
     /**
      * The reason that the alert was dismissed.
      */
-    public function dismissed_reason() : ?string
-    {
-        return $this->dismissed_reason;
-    }
+    public readonly ?string $dismissed_reason;
     /**
      * An optional comment associated with the alert's dismissal.
      */
-    public function dismissed_comment() : ?string
-    {
-        return $this->dismissed_comment;
-    }
+    public readonly ?string $dismissed_comment;
     /**
      * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function fixed_at() : ?string
-    {
-        return $this->fixed_at;
-    }
+    public readonly ?string $fixed_at;
     /**
      * A GitHub repository.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository
+    public readonly array $repository;
+    public function __construct(int $number, string $state, array $dependency, array $security_advisory, array $security_vulnerability, string $url, string $html_url, string $created_at, string $updated_at, string $dismissed_at, mixed $dismissed_by, string $dismissed_reason, string $dismissed_comment, string $fixed_at, array $repository)
     {
-        return $this->repository;
+        $this->number = $number;
+        $this->state = $state;
+        $this->dependency = $dependency;
+        $this->security_advisory = $security_advisory;
+        $this->security_vulnerability = $security_vulnerability;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->dismissed_at = $dismissed_at;
+        $this->dismissed_by = $dismissed_by;
+        $this->dismissed_reason = $dismissed_reason;
+        $this->dismissed_comment = $dismissed_comment;
+        $this->fixed_at = $fixed_at;
+        $this->repository = $repository;
     }
 }

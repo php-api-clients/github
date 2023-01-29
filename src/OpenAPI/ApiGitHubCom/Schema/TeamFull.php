@@ -10,137 +10,61 @@ final class TeamFull
     /**
      * Unique identifier of the team
      */
-    private int $id;
-    private string $node_id;
+    public readonly int $id;
+    public readonly string $node_id;
     /**
      * URL for the team
      */
-    private string $url;
-    private string $html_url;
+    public readonly string $url;
+    public readonly string $html_url;
     /**
      * Name of the team
      */
-    private string $name;
-    private string $slug;
-    private ?string $description;
+    public readonly string $name;
+    public readonly string $slug;
+    public readonly ?string $description;
     /**
      * The level of privacy this team should have
      */
-    private ?string $privacy = null;
+    public readonly ?string $privacy;
     /**
      * Permission that the team will have for its repositories
      */
-    private string $permission;
-    private string $members_url;
-    private string $repositories_url;
-    /**
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull\Parent::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull\Parent $parent;
-    private int $members_count;
-    private int $repos_count;
-    private string $created_at;
-    private string $updated_at;
-    /**
-     * Team Organization
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization $organization;
-    /**
-     * Distinguished Name (DN) that team maps to within LDAP environment
-     */
-    private ?string $ldap_dn = null;
-    /**
-     * Unique identifier of the team
-     */
-    public function id() : int
-    {
-        return $this->id;
-    }
-    public function node_id() : string
-    {
-        return $this->node_id;
-    }
-    /**
-     * URL for the team
-     */
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
-    }
-    /**
-     * Name of the team
-     */
-    public function name() : string
-    {
-        return $this->name;
-    }
-    public function slug() : string
-    {
-        return $this->slug;
-    }
-    public function description() : ?string
-    {
-        return $this->description;
-    }
-    /**
-     * The level of privacy this team should have
-     */
-    public function privacy() : ?string
-    {
-        return $this->privacy;
-    }
-    /**
-     * Permission that the team will have for its repositories
-     */
-    public function permission() : string
-    {
-        return $this->permission;
-    }
-    public function members_url() : string
-    {
-        return $this->members_url;
-    }
-    public function repositories_url() : string
-    {
-        return $this->repositories_url;
-    }
-    public function parent() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull\Parent
-    {
-        return $this->parent;
-    }
-    public function members_count() : int
-    {
-        return $this->members_count;
-    }
-    public function repos_count() : int
-    {
-        return $this->repos_count;
-    }
-    public function created_at() : string
-    {
-        return $this->created_at;
-    }
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
+    public readonly string $permission;
+    public readonly string $members_url;
+    public readonly string $repositories_url;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamFull\Parent_ $parent;
+    public readonly int $members_count;
+    public readonly int $repos_count;
+    public readonly string $created_at;
+    public readonly string $updated_at;
     /**
      * Team Organization
      */
-    public function organization() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization
-    {
-        return $this->organization;
-    }
+    public readonly array $organization;
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
-    public function ldap_dn() : ?string
+    public readonly ?string $ldap_dn;
+    public function __construct(int $id, string $node_id, string $url, string $html_url, string $name, string $slug, string $description, string $privacy, string $permission, string $members_url, string $repositories_url, mixed $parent, int $members_count, int $repos_count, string $created_at, string $updated_at, array $organization, string $ldap_dn)
     {
-        return $this->ldap_dn;
+        $this->id = $id;
+        $this->node_id = $node_id;
+        $this->url = $url;
+        $this->html_url = $html_url;
+        $this->name = $name;
+        $this->slug = $slug;
+        $this->description = $description;
+        $this->privacy = $privacy;
+        $this->permission = $permission;
+        $this->members_url = $members_url;
+        $this->repositories_url = $repositories_url;
+        $this->parent = $parent;
+        $this->members_count = $members_count;
+        $this->repos_count = $repos_count;
+        $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
+        $this->organization = $organization;
+        $this->ldap_dn = $ldap_dn;
     }
 }

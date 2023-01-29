@@ -10,34 +10,19 @@ final class Json
     /**
      * The discussion post's title.
      */
-    private string $title;
+    public readonly string $title;
     /**
      * The discussion post's body text.
      */
-    private string $body;
+    public readonly string $body;
     /**
      * Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
      */
-    private ?bool $private = null;
-    /**
-     * The discussion post's title.
-     */
-    public function title() : string
+    public readonly ?bool $private;
+    public function __construct(string $title, string $body, bool $private)
     {
-        return $this->title;
-    }
-    /**
-     * The discussion post's body text.
-     */
-    public function body() : string
-    {
-        return $this->body;
-    }
-    /**
-     * Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
-     */
-    public function private() : ?bool
-    {
-        return $this->private;
+        $this->title = $title;
+        $this->body = $body;
+        $this->private = $private;
     }
 }

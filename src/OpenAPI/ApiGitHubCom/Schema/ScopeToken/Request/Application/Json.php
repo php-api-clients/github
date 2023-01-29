@@ -10,74 +10,40 @@ final class Json
     /**
      * The OAuth access token used to authenticate to the GitHub API.
      */
-    private string $access_token;
+    public readonly string $access_token;
     /**
      * The name of the user or organization to scope the user-to-server access token to. **Required** unless `target_id` is specified.
      */
-    private ?string $target = null;
+    public readonly ?string $target;
     /**
      * The ID of the user or organization to scope the user-to-server access token to. **Required** unless `target` is specified.
      */
-    private ?int $target_id = null;
+    public readonly ?int $target_id;
     /**
      * The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories::class)
      */
-    private array $repositories = array();
+    public readonly array $repositories;
     /**
      * The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat::class)
      */
-    private array $repository_ids = array();
-    /**
-     * The permissions granted to the user-to-server access token.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions = null;
-    /**
-     * The OAuth access token used to authenticate to the GitHub API.
-     */
-    public function access_token() : string
-    {
-        return $this->access_token;
-    }
-    /**
-     * The name of the user or organization to scope the user-to-server access token to. **Required** unless `target_id` is specified.
-     */
-    public function target() : ?string
-    {
-        return $this->target;
-    }
-    /**
-     * The ID of the user or organization to scope the user-to-server access token to. **Required** unless `target` is specified.
-     */
-    public function target_id() : ?int
-    {
-        return $this->target_id;
-    }
-    /**
-     * The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories>
-     */
-    public function repositories() : array
-    {
-        return $this->repositories;
-    }
-    /**
-     * The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat>
-     */
-    public function repository_ids() : array
-    {
-        return $this->repository_ids;
-    }
+    public readonly array $repository_ids;
     /**
      * The permissions granted to the user-to-server access token.
      */
-    public function permissions() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions
+    public readonly array $permissions;
+    /**
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories> $repositories
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $repository_ids
+     */
+    public function __construct(string $access_token, string $target, int $target_id, array $repositories, array $repository_ids, array $permissions)
     {
-        return $this->permissions;
+        $this->access_token = $access_token;
+        $this->target = $target;
+        $this->target_id = $target_id;
+        $this->repositories = $repositories;
+        $this->repository_ids = $repository_ids;
+        $this->permissions = $permissions;
     }
 }

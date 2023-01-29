@@ -10,12 +10,9 @@ final class Json
     /**
      * The sha of the head commit.
      */
-    private string $head_sha;
-    /**
-     * The sha of the head commit.
-     */
-    public function head_sha() : string
+    public readonly string $head_sha;
+    public function __construct(string $head_sha)
     {
-        return $this->head_sha;
+        $this->head_sha = $head_sha;
     }
 }

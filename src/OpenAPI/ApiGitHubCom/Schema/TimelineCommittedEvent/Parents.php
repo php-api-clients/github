@@ -10,22 +10,13 @@ final class Parents
     /**
      * SHA for the commit
      */
-    private string $sha;
-    private string $url;
-    private string $html_url;
-    /**
-     * SHA for the commit
-     */
-    public function sha() : string
+    public readonly string $sha;
+    public readonly string $url;
+    public readonly string $html_url;
+    public function __construct(string $sha, string $url, string $html_url)
     {
-        return $this->sha;
-    }
-    public function url() : string
-    {
-        return $this->url;
-    }
-    public function html_url() : string
-    {
-        return $this->html_url;
+        $this->sha = $sha;
+        $this->url = $url;
+        $this->html_url = $html_url;
     }
 }

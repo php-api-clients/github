@@ -10,12 +10,9 @@ final class Json
     /**
      * The position of the column in a project. Can be one of: `first`, `last`, or `after:<column_id>` to place after the specified column.
      */
-    private string $position;
-    /**
-     * The position of the column in a project. Can be one of: `first`, `last`, or `after:<column_id>` to place after the specified column.
-     */
-    public function position() : string
+    public readonly string $position;
+    public function __construct(string $position)
     {
-        return $this->position;
+        $this->position = $position;
     }
 }

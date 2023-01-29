@@ -10,116 +10,54 @@ final class WebhookCreate
     /**
      * The repository's current description.
      */
-    private ?string $description;
-    /**
-     * An enterprise on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise = null;
-    /**
-     * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation = null;
-    /**
-     * The name of the repository's default branch (usually `main`).
-     */
-    private string $master_branch;
-    /**
-     * A GitHub organization.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple::class)
-     */
-    private ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization = null;
-    /**
-     * The pusher type for the event. Can be either `user` or a deploy key.
-     */
-    private string $pusher_type;
-    /**
-     * The [`git ref`](https://docs.github.com/rest/reference/git#get-a-reference) resource.
-     */
-    private string $ref;
-    /**
-     * The type of Git ref object created in the repository.
-     */
-    private string $ref_type;
-    /**
-     * A repository on GitHub.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
-    /**
-     * A GitHub user.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::class)
-     */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    /**
-     * The repository's current description.
-     */
-    public function description() : ?string
-    {
-        return $this->description;
-    }
+    public readonly ?string $description;
     /**
      * An enterprise on GitHub.
      */
-    public function enterprise() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise
-    {
-        return $this->enterprise;
-    }
+    public readonly array $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public function installation() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation
-    {
-        return $this->installation;
-    }
+    public readonly array $installation;
     /**
      * The name of the repository's default branch (usually `main`).
      */
-    public function master_branch() : string
-    {
-        return $this->master_branch;
-    }
+    public readonly string $master_branch;
     /**
      * A GitHub organization.
      */
-    public function organization() : ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple
-    {
-        return $this->organization;
-    }
+    public readonly array $organization;
     /**
      * The pusher type for the event. Can be either `user` or a deploy key.
      */
-    public function pusher_type() : string
-    {
-        return $this->pusher_type;
-    }
+    public readonly string $pusher_type;
     /**
      * The [`git ref`](https://docs.github.com/rest/reference/git#get-a-reference) resource.
      */
-    public function ref() : string
-    {
-        return $this->ref;
-    }
+    public readonly string $ref;
     /**
      * The type of Git ref object created in the repository.
      */
-    public function ref_type() : string
-    {
-        return $this->ref_type;
-    }
+    public readonly string $ref_type;
     /**
      * A repository on GitHub.
      */
-    public function repository() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository
-    {
-        return $this->repository;
-    }
+    public readonly array $repository;
     /**
      * A GitHub user.
      */
-    public function sender() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser
+    public readonly array $sender;
+    public function __construct(string $description, array $enterprise, array $installation, string $master_branch, array $organization, string $pusher_type, string $ref, string $ref_type, array $repository, array $sender)
     {
-        return $this->sender;
+        $this->description = $description;
+        $this->enterprise = $enterprise;
+        $this->installation = $installation;
+        $this->master_branch = $master_branch;
+        $this->organization = $organization;
+        $this->pusher_type = $pusher_type;
+        $this->ref = $ref;
+        $this->ref_type = $ref_type;
+        $this->repository = $repository;
+        $this->sender = $sender;
     }
 }

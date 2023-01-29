@@ -10,15 +10,13 @@ final class Json
     /**
      * List of repository IDs to enable for GitHub Actions.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds::class)
      */
-    private array $selected_repository_ids = array();
+    public readonly array $selected_repository_ids;
     /**
-     * List of repository IDs to enable for GitHub Actions.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\SelectedRepositoryIds> $selected_repository_ids
      */
-    public function selected_repository_ids() : array
+    public function __construct(array $selected_repository_ids)
     {
-        return $this->selected_repository_ids;
+        $this->selected_repository_ids = $selected_repository_ids;
     }
 }

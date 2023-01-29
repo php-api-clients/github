@@ -7,33 +7,22 @@ final class PagesHttpsCertificate
     public const SCHEMA_JSON = '{"title":"Pages Https Certificate","required":["state","description","domains"],"type":"object","properties":{"state":{"enum":["new","authorization_created","authorization_pending","authorized","authorization_revoked","issued","uploaded","approved","errored","bad_authz","destroy_pending","dns_changed"],"type":"string","examples":["approved"]},"description":{"type":"string","examples":["Certificate is approved"]},"domains":{"type":"array","items":{"type":"string"},"description":"Array of the domain set and its alternate name (if it is configured)","examples":["example.com","www.example.com"]},"expires_at":{"type":"string","format":"date"}}}';
     public const SCHEMA_TITLE = 'Pages Https Certificate';
     public const SCHEMA_DESCRIPTION = '';
-    private string $state;
-    private string $description;
+    public readonly string $state;
+    public readonly string $description;
     /**
      * Array of the domain set and its alternate name (if it is configured)
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate\Domains>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate\Domains::class)
      */
-    private array $domains = array();
-    private ?string $expires_at = null;
-    public function state() : string
-    {
-        return $this->state;
-    }
-    public function description() : string
-    {
-        return $this->description;
-    }
+    public readonly array $domains;
+    public readonly ?string $expires_at;
     /**
-     * Array of the domain set and its alternate name (if it is configured)
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate\Domains>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate\Domains> $domains
      */
-    public function domains() : array
+    public function __construct(string $state, string $description, array $domains, string $expires_at)
     {
-        return $this->domains;
-    }
-    public function expires_at() : ?string
-    {
-        return $this->expires_at;
+        $this->state = $state;
+        $this->description = $description;
+        $this->domains = $domains;
+        $this->expires_at = $expires_at;
     }
 }

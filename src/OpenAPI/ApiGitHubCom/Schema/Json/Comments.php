@@ -10,54 +10,27 @@ final class Comments
     /**
      * The relative path to the file that necessitates a review comment.
      */
-    private string $path;
+    public readonly string $path;
     /**
      * The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
      */
-    private ?int $position = null;
+    public readonly ?int $position;
     /**
      * Text of the review comment.
      */
-    private string $body;
-    private ?int $line = null;
-    private ?string $side = null;
-    private ?int $start_line = null;
-    private ?string $start_side = null;
-    /**
-     * The relative path to the file that necessitates a review comment.
-     */
-    public function path() : string
+    public readonly string $body;
+    public readonly ?int $line;
+    public readonly ?string $side;
+    public readonly ?int $start_line;
+    public readonly ?string $start_side;
+    public function __construct(string $path, int $position, string $body, int $line, string $side, int $start_line, string $start_side)
     {
-        return $this->path;
-    }
-    /**
-     * The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
-     */
-    public function position() : ?int
-    {
-        return $this->position;
-    }
-    /**
-     * Text of the review comment.
-     */
-    public function body() : string
-    {
-        return $this->body;
-    }
-    public function line() : ?int
-    {
-        return $this->line;
-    }
-    public function side() : ?string
-    {
-        return $this->side;
-    }
-    public function start_line() : ?int
-    {
-        return $this->start_line;
-    }
-    public function start_side() : ?string
-    {
-        return $this->start_side;
+        $this->path = $path;
+        $this->position = $position;
+        $this->body = $body;
+        $this->line = $line;
+        $this->side = $side;
+        $this->start_line = $start_line;
+        $this->start_side = $start_side;
     }
 }

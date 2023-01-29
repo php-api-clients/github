@@ -71,4 +71,4 @@ help: ## Show this help ###
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[32m%-32s\033[0m %s\n", $$1, $$2}' | tr -d '#'
 
 generate-clients:
-	ls ./etc/clients | xargs -I % ./vendor/bin/openapi-client-generator ./etc/clients/%
+	$(DOCKER_RUN) ls ./etc/clients | xargs -I % php ./vendor/bin/openapi-client-generator ./etc/clients/%

@@ -10,23 +10,14 @@ final class ReleaseNotesContent
     /**
      * The generated name of the release
      */
-    private string $name;
+    public readonly string $name;
     /**
      * The generated body describing the contents of the release supporting markdown formatting
      */
-    private string $body;
-    /**
-     * The generated name of the release
-     */
-    public function name() : string
+    public readonly string $body;
+    public function __construct(string $name, string $body)
     {
-        return $this->name;
-    }
-    /**
-     * The generated body describing the contents of the release supporting markdown formatting
-     */
-    public function body() : string
-    {
-        return $this->body;
+        $this->name = $name;
+        $this->body = $body;
     }
 }

@@ -10,15 +10,13 @@ final class OidcCustomSub
     /**
      * Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub\IncludeClaimKeys>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub\IncludeClaimKeys::class)
      */
-    private array $include_claim_keys = array();
+    public readonly array $include_claim_keys;
     /**
-     * Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub\IncludeClaimKeys>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OidcCustomSub\IncludeClaimKeys> $include_claim_keys
      */
-    public function include_claim_keys() : array
+    public function __construct(array $include_claim_keys)
     {
-        return $this->include_claim_keys;
+        $this->include_claim_keys = $include_claim_keys;
     }
 }

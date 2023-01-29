@@ -10,15 +10,13 @@ final class Json
     /**
      * The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Labels>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Labels::class)
      */
-    private array $labels = array();
+    public readonly array $labels;
     /**
-     * The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Labels>
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Labels> $labels
      */
-    public function labels() : array
+    public function __construct(array $labels)
     {
-        return $this->labels;
+        $this->labels = $labels;
     }
 }

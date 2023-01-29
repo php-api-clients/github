@@ -10,157 +10,79 @@ final class DependabotAlertSecurityAdvisory
     /**
      * The unique GitHub Security Advisory ID assigned to the advisory.
      */
-    private string $ghsa_id;
+    public readonly string $ghsa_id;
     /**
      * The unique CVE ID assigned to the advisory.
      */
-    private ?string $cve_id;
+    public readonly ?string $cve_id;
     /**
      * A short, plain text summary of the advisory.
      */
-    private string $summary;
+    public readonly string $summary;
     /**
      * A long-form Markdown-supported description of the advisory.
      */
-    private string $description;
+    public readonly string $description;
     /**
      * Vulnerable version range information for the advisory.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability::class)
      */
-    private array $vulnerabilities = array();
+    public readonly array $vulnerabilities;
     /**
      * The severity of the advisory.
      */
-    private string $severity;
+    public readonly string $severity;
     /**
      * Details for the advisory pertaining to the Common Vulnerability Scoring System.
-     * @\WyriHaximus\Hydrator\Attribute\Hydrate(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cvss::class)
      */
-    private \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cvss $cvss;
+    public readonly array $cvss;
     /**
      * Details for the advisory pertaining to Common Weakness Enumeration.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cwes>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cwes::class)
      */
-    private array $cwes = array();
+    public readonly array $cwes;
     /**
      * Values that identify this advisory among security information sources.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Identifiers>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Identifiers::class)
      */
-    private array $identifiers = array();
+    public readonly array $identifiers;
     /**
      * Links to additional advisory information.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\References>
-     * @\WyriHaximus\Hydrator\Attribute\HydrateArray(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\References::class)
      */
-    private array $references = array();
+    public readonly array $references;
     /**
      * The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private string $published_at;
+    public readonly string $published_at;
     /**
      * The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private string $updated_at;
+    public readonly string $updated_at;
     /**
      * The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    private ?string $withdrawn_at;
+    public readonly ?string $withdrawn_at;
     /**
-     * The unique GitHub Security Advisory ID assigned to the advisory.
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability> $vulnerabilities
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cwes> $cwes
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Identifiers> $identifiers
+     * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\References> $references
      */
-    public function ghsa_id() : string
+    public function __construct(string $ghsa_id, string $cve_id, string $summary, string $description, array $vulnerabilities, string $severity, array $cvss, array $cwes, array $identifiers, array $references, string $published_at, string $updated_at, string $withdrawn_at)
     {
-        return $this->ghsa_id;
-    }
-    /**
-     * The unique CVE ID assigned to the advisory.
-     */
-    public function cve_id() : ?string
-    {
-        return $this->cve_id;
-    }
-    /**
-     * A short, plain text summary of the advisory.
-     */
-    public function summary() : string
-    {
-        return $this->summary;
-    }
-    /**
-     * A long-form Markdown-supported description of the advisory.
-     */
-    public function description() : string
-    {
-        return $this->description;
-    }
-    /**
-     * Vulnerable version range information for the advisory.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability>
-     */
-    public function vulnerabilities() : array
-    {
-        return $this->vulnerabilities;
-    }
-    /**
-     * The severity of the advisory.
-     */
-    public function severity() : string
-    {
-        return $this->severity;
-    }
-    /**
-     * Details for the advisory pertaining to the Common Vulnerability Scoring System.
-     */
-    public function cvss() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cvss
-    {
-        return $this->cvss;
-    }
-    /**
-     * Details for the advisory pertaining to Common Weakness Enumeration.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cwes>
-     */
-    public function cwes() : array
-    {
-        return $this->cwes;
-    }
-    /**
-     * Values that identify this advisory among security information sources.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Identifiers>
-     */
-    public function identifiers() : array
-    {
-        return $this->identifiers;
-    }
-    /**
-     * Links to additional advisory information.
-     * @return array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\References>
-     */
-    public function references() : array
-    {
-        return $this->references;
-    }
-    /**
-     * The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function published_at() : string
-    {
-        return $this->published_at;
-    }
-    /**
-     * The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function updated_at() : string
-    {
-        return $this->updated_at;
-    }
-    /**
-     * The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     */
-    public function withdrawn_at() : ?string
-    {
-        return $this->withdrawn_at;
+        $this->ghsa_id = $ghsa_id;
+        $this->cve_id = $cve_id;
+        $this->summary = $summary;
+        $this->description = $description;
+        $this->vulnerabilities = $vulnerabilities;
+        $this->severity = $severity;
+        $this->cvss = $cvss;
+        $this->cwes = $cwes;
+        $this->identifiers = $identifiers;
+        $this->references = $references;
+        $this->published_at = $published_at;
+        $this->updated_at = $updated_at;
+        $this->withdrawn_at = $withdrawn_at;
     }
 }
