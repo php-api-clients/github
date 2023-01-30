@@ -11137,5 +11137,10 @@ final class Client
                 });
                 break;
         }
+        throw new \InvalidArgumentException();
+    }
+    public function hydrateObject(string $className, array $data) : object
+    {
+        return $this->hydrator->hydrateObject($className, $data);
     }
 }
