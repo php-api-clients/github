@@ -93,9 +93,9 @@ final class Orgs
     {
         return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListAppInstallations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $per_page, $page);
     }
-    public function listPendingInvitations(string $org, int $per_page = 30, int $page = 1) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitations
+    public function listPendingInvitations(string $org, int $per_page = 30, int $page = 1, string $role = 'all', string $invitation_source = 'all') : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitations
     {
-        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $per_page, $page);
+        return new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $per_page, $page, $role, $invitation_source);
     }
     public function createInvitation(string $org) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\CreateInvitation
     {

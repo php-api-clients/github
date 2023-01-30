@@ -15,11 +15,15 @@ final class ListPendingInvitations
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
+    /**Filter invitations by their member role.**/
+    private string $role;
+    /**Filter invitations by their invitation source.**/
+    private string $invitation_source;
     public function operationId() : string
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, string $org, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, string $org, int $per_page = 30, int $page = 1, string $role = 'all', string $invitation_source = 'all')
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
@@ -27,10 +31,12 @@ final class ListPendingInvitations
         $this->org = $org;
         $this->per_page = $per_page;
         $this->page = $page;
+        $this->role = $role;
+        $this->invitation_source = $invitation_source;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{per_page}', '{page}'), array($this->org, $this->per_page, $this->page), '/orgs/{org}/invitations?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{per_page}', '{page}', '{role}', '{invitation_source}'), array($this->org, $this->per_page, $this->page, $this->role, $this->invitation_source), '/orgs/{org}/invitations?per_page={per_page}&page={page}&role={role}&invitation_source={invitation_source}'));
     }
     /**
      * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError

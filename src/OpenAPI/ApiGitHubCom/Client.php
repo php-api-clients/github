@@ -2,7 +2,7 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom;
 
-final class Client
+final class Client implements ClientInterface
 {
     private readonly \ApiClients\Contracts\HTTP\Headers\AuthenticationInterface $authentication;
     private readonly \React\Http\Browser $browser;
@@ -2585,11 +2585,11 @@ final class Client
             case \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs\ListPendingInvitations::OPERATION_MATCH:
                 $requestBodyData = array();
                 foreach (\array_keys($params) as $param) {
-                    if (\in_array($param, array('org', 'per_page', 'page')) != false) {
+                    if (\in_array($param, array('org', 'per_page', 'page', 'role', 'invitation_source')) != false) {
                         \array_push($requestBodyData, $param);
                     }
                 }
-                $operation = $this->orgs()->listPendingInvitations($params['org'], $params['per_page'], $params['page']);
+                $operation = $this->orgs()->listPendingInvitations($params['org'], $params['per_page'], $params['page'], $params['role'], $params['invitation_source']);
                 $request = $operation->createRequest($requestBodyData);
                 return $this->browser->request($request->getMethod(), $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), $request->getBody())->then(function (\Psr\Http\Message\ResponseInterface $response) use($operation) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError {
                     return $operation->createResponse($response);
