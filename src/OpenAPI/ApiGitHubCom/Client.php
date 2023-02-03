@@ -2,6 +2,9 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom;
 
+/**
+ * @template H
+ */
 final class Client implements ClientInterface
 {
     private readonly \ApiClients\Contracts\HTTP\Headers\AuthenticationInterface $authentication;
@@ -11146,6 +11149,10 @@ final class Client implements ClientInterface
         }
         throw new \InvalidArgumentException();
     }
+    /**
+     * @param class-string<H> $className
+     * @return H
+     */
     public function hydrateObject(string $className, array $data) : object
     {
         return $this->hydrator->hydrateObject($className, $data);
