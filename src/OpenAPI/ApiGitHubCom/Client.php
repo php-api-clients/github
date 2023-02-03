@@ -11,14 +11,14 @@ final class Client implements ClientInterface
     private readonly \React\Http\Browser $browser;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
     public function __construct(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface $authentication, \React\Http\Browser $browser)
     {
         $this->authentication = $authentication;
         $this->browser = new \React\Http\Browser();
         $this->requestSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_REQUEST);
         $this->responseSchemaValidator = new \League\OpenAPIValidation\Schema\SchemaValidator(\League\OpenAPIValidation\Schema\SchemaValidator::VALIDATE_AS_RESPONSE);
-        $this->hydrator = new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper();
+        $this->hydrator = new \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator();
     }
     public function meta() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta
     {

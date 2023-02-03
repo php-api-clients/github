@@ -8,7 +8,7 @@ final class ListNotificationsForAuthenticatedUser
     public const OPERATION_MATCH = 'GET /notifications';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
     /**If `true`, show notifications marked as read.**/
     private bool $all;
     /**If `true`, only shows notifications in which the user is directly participating or mentioned.**/
@@ -25,7 +25,7 @@ final class ListNotificationsForAuthenticatedUser
     {
         return self::OPERATION_ID;
     }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\OptimizedHydratorMapper $hydrator, bool $all = false, bool $participating = false, string $since, string $before, int $page = 1, int $per_page = 50)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, bool $all = false, bool $participating = false, string $since, string $before, int $page = 1, int $per_page = 50)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->responseSchemaValidator = $responseSchemaValidator;
