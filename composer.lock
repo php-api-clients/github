@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "854bab9c8ab08af71666c20ed114d0b328814797"
+                "reference": "8b7e4102e5d39425224cda077d7c7333ecbb5fa9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/854bab9c8ab08af71666c20ed114d0b328814797",
-                "reference": "854bab9c8ab08af71666c20ed114d0b328814797",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/8b7e4102e5d39425224cda077d7c7333ecbb5fa9",
+                "reference": "8b7e4102e5d39425224cda077d7c7333ecbb5fa9",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2023-02-03T22:24:33+00:00"
+            "time": "2023-02-04T20:28:42+00:00"
         },
         {
             "name": "cebe/php-openapi",
@@ -239,16 +239,16 @@
         },
         {
             "name": "eventsauce/object-hydrator",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/ObjectHydrator.git",
-                "reference": "77683528dc3b96a4edfb8c864760748ae7fc0817"
+                "reference": "8bc49df0575df1e848636cc7958e5eb314fece8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/77683528dc3b96a4edfb8c864760748ae7fc0817",
-                "reference": "77683528dc3b96a4edfb8c864760748ae7fc0817",
+                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/8bc49df0575df1e848636cc7958e5eb314fece8f",
+                "reference": "8bc49df0575df1e848636cc7958e5eb314fece8f",
                 "shasum": ""
             },
             "require": {
@@ -291,7 +291,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EventSaucePHP/ObjectHydrator/issues",
-                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.1.0"
+                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.1.1"
             },
             "funding": [
                 {
@@ -299,7 +299,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-29T20:17:25+00:00"
+            "time": "2023-02-04T19:54:57+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -3346,16 +3346,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "923278ad13e1621946eb76ab2882655d2cc396a4"
+                "reference": "c76c013c555160410af47c03a0e173518e3f5796"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/923278ad13e1621946eb76ab2882655d2cc396a4",
-                "reference": "923278ad13e1621946eb76ab2882655d2cc396a4",
+                "url": "https://api.github.com/repos/composer/composer/zipball/c76c013c555160410af47c03a0e173518e3f5796",
+                "reference": "c76c013c555160410af47c03a0e173518e3f5796",
                 "shasum": ""
             },
             "require": {
@@ -3439,7 +3439,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.5.1"
+                "source": "https://github.com/composer/composer/tree/2.5.2"
             },
             "funding": [
                 {
@@ -3455,7 +3455,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-22T14:33:54+00:00"
+            "time": "2023-02-04T13:33:22+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -6598,21 +6598,24 @@
         },
         {
             "name": "php-standard-library/psalm-plugin",
-            "version": "1.1.5",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-standard-library/psalm-plugin.git",
-                "reference": "134176c5e36f0aed80bc791095d9c8e1bde9c1b6"
+                "reference": "068bc7a8fcbe53658c94d54eec65205eb7e6caae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/psalm-plugin/zipball/134176c5e36f0aed80bc791095d9c8e1bde9c1b6",
-                "reference": "134176c5e36f0aed80bc791095d9c8e1bde9c1b6",
+                "url": "https://api.github.com/repos/php-standard-library/psalm-plugin/zipball/068bc7a8fcbe53658c94d54eec65205eb7e6caae",
+                "reference": "068bc7a8fcbe53658c94d54eec65205eb7e6caae",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "vimeo/psalm": "^4.20 || ^5.0"
+                "php": "^8.1",
+                "vimeo/psalm": "^5.0"
+            },
+            "conflict": {
+                "azjezz/psl": "<2.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.18",
@@ -6643,9 +6646,9 @@
             "description": "Psalm plugin for the PHP Standard Library",
             "support": {
                 "issues": "https://github.com/php-standard-library/psalm-plugin/issues",
-                "source": "https://github.com/php-standard-library/psalm-plugin/tree/1.1.5"
+                "source": "https://github.com/php-standard-library/psalm-plugin/tree/2.2.1"
             },
-            "time": "2022-02-27T20:14:21+00:00"
+            "time": "2022-12-06T10:44:56+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -7555,16 +7558,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.1",
+            "version": "9.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9a52e8385f3e432d7e8ecab72c4d211a67223285"
+                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9a52e8385f3e432d7e8ecab72c4d211a67223285",
-                "reference": "9a52e8385f3e432d7e8ecab72c4d211a67223285",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e7b1615e3e887d6c719121c6d4a44b0ab9645555",
+                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555",
                 "shasum": ""
             },
             "require": {
@@ -7637,7 +7640,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.1"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.3"
             },
             "funding": [
                 {
@@ -7653,7 +7656,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-03T19:31:30+00:00"
+            "time": "2023-02-04T13:37:15+00:00"
         },
         {
             "name": "psalm/plugin-phpunit",
@@ -8043,41 +8046,41 @@
         },
         {
             "name": "roave/backward-compatibility-check",
-            "version": "7.4.0",
+            "version": "8.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/BackwardCompatibilityCheck.git",
-                "reference": "670a5cdaa2d60bc07658a5605f57c2154a1ece76"
+                "reference": "9deff3cb411062a56e07dfa8c8f214c09cf9a55d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/BackwardCompatibilityCheck/zipball/670a5cdaa2d60bc07658a5605f57c2154a1ece76",
-                "reference": "670a5cdaa2d60bc07658a5605f57c2154a1ece76",
+                "url": "https://api.github.com/repos/Roave/BackwardCompatibilityCheck/zipball/9deff3cb411062a56e07dfa8c8f214c09cf9a55d",
+                "reference": "9deff3cb411062a56e07dfa8c8f214c09cf9a55d",
                 "shasum": ""
             },
             "require": {
-                "azjezz/psl": "^2.0.4",
+                "azjezz/psl": "^2.3.0",
                 "composer/composer": "^2.4.4",
                 "ext-json": "*",
                 "nikolaposa/version": "^4.1.0",
                 "ocramius/package-versions": "^2.7.0",
                 "php": "~8.1.0 || ~8.2.0",
-                "roave/better-reflection": "^6.3.0",
-                "symfony/console": "^6.1.7"
+                "roave/better-reflection": "^6.5.0",
+                "symfony/console": "^6.2.1"
             },
             "conflict": {
                 "revolt/event-loop": "<0.2.5",
                 "symfony/process": "<5.3.7"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^10.0.0",
-                "php-standard-library/psalm-plugin": "^2.0.2",
-                "phpunit/phpunit": "^9.5.26",
-                "psalm/plugin-phpunit": "^0.17.0",
-                "roave/infection-static-analysis-plugin": "^1.25",
+                "doctrine/coding-standard": "^11.0.0",
+                "php-standard-library/psalm-plugin": "^2.2.1",
+                "phpunit/phpunit": "^9.5.27",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "roave/infection-static-analysis-plugin": "^1.26.0",
                 "roave/security-advisories": "dev-master",
                 "squizlabs/php_codesniffer": "^3.7.1",
-                "vimeo/psalm": "^4.29.0"
+                "vimeo/psalm": "^5.2.0"
             },
             "bin": [
                 "bin/roave-backward-compatibility-check"
@@ -8105,22 +8108,22 @@
             "description": "Tool to compare two revisions of a public API to check for BC breaks",
             "support": {
                 "issues": "https://github.com/Roave/BackwardCompatibilityCheck/issues",
-                "source": "https://github.com/Roave/BackwardCompatibilityCheck/tree/7.4.0"
+                "source": "https://github.com/Roave/BackwardCompatibilityCheck/tree/8.2.1"
             },
-            "time": "2022-10-31T21:48:04+00:00"
+            "time": "2022-12-21T01:16:55+00:00"
         },
         {
             "name": "roave/better-reflection",
-            "version": "6.5.0",
+            "version": "6.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/BetterReflection.git",
-                "reference": "01bfd42c3ce88f378edb4e1a7b063160c3359d5f"
+                "reference": "fb321ecc8e96ee4581ce0248aaa8b20461989f84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/01bfd42c3ce88f378edb4e1a7b063160c3359d5f",
-                "reference": "01bfd42c3ce88f378edb4e1a7b063160c3359d5f",
+                "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/fb321ecc8e96ee4581ce0248aaa8b20461989f84",
+                "reference": "fb321ecc8e96ee4581ce0248aaa8b20461989f84",
                 "shasum": ""
             },
             "require": {
@@ -8134,12 +8137,12 @@
                 "thecodingmachine/safe": "<1.1.3"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^10.0.0",
+                "doctrine/coding-standard": "^11.0.0",
                 "phpstan/phpstan": "^1.8.10",
                 "phpstan/phpstan-phpunit": "^1.2.2",
                 "phpunit/phpunit": "^9.5.25",
                 "roave/infection-static-analysis-plugin": "^1.26.0",
-                "vimeo/psalm": "^5.1.0"
+                "vimeo/psalm": "5.6.0"
             },
             "suggest": {
                 "composer/composer": "Required to use the ComposerSourceLocator"
@@ -8179,9 +8182,9 @@
             "description": "Better Reflection - an improved code reflection API",
             "support": {
                 "issues": "https://github.com/Roave/BetterReflection/issues",
-                "source": "https://github.com/Roave/BetterReflection/tree/6.5.0"
+                "source": "https://github.com/Roave/BetterReflection/tree/6.6.0"
             },
-            "time": "2022-12-12T19:02:33+00:00"
+            "time": "2023-02-04T14:23:26+00:00"
         },
         {
             "name": "roave/infection-static-analysis-plugin",
@@ -11799,21 +11802,21 @@
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "5.3.1",
+            "version": "5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "e7cd52317425be73010641c6680636e82bd322c5"
+                "reference": "2eb0ec3dcdb5cc06548c0d36fb19699220b5958a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/e7cd52317425be73010641c6680636e82bd322c5",
-                "reference": "e7cd52317425be73010641c6680636e82bd322c5",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/2eb0ec3dcdb5cc06548c0d36fb19699220b5958a",
+                "reference": "2eb0ec3dcdb5cc06548c0d36fb19699220b5958a",
                 "shasum": ""
             },
             "require": {
                 "ergebnis/composer-normalize": "^2.29.0",
-                "icanhazstring/composer-unused": "^0.8.5",
+                "icanhazstring/composer-unused": "^0.8.6",
                 "infection/infection": "^0.26.16",
                 "jakobbuis/simple-slow-test-reporter": "^1.0",
                 "maglnet/composer-require-checker": "^4.5.0",
@@ -11823,19 +11826,19 @@
                 "php-coveralls/php-coveralls": "^2.5.3",
                 "php-parallel-lint/php-console-highlighter": "^1.0",
                 "php-parallel-lint/php-parallel-lint": "^1.3.2",
-                "php-standard-library/psalm-plugin": "^1.1.5",
-                "phpspec/prophecy": "^1.16",
+                "php-standard-library/psalm-plugin": "^2.2.1 || ^1.1.5",
+                "phpspec/prophecy": "^1.17",
                 "phpspec/prophecy-phpunit": "^2.0.1",
                 "phpstan/phpstan": "^1.9.2",
-                "phpunit/phpunit": "^9.5.27",
+                "phpunit/phpunit": "^9.6.1",
                 "psalm/plugin-phpunit": "^0.18.4",
-                "roave/backward-compatibility-check": "^7.4.0",
+                "roave/backward-compatibility-check": "^8.2.1",
                 "roave/infection-static-analysis-plugin": "^1.28.0",
                 "squizlabs/php_codesniffer": "^3.7.1",
                 "thecodingmachine/safe": "^2.4.0",
-                "vimeo/psalm": "^5.4.0",
-                "wyrihaximus/coding-standard": "^2.11.0",
-                "wyrihaximus/phpstan-rules-wrapper": "^2.8.0"
+                "vimeo/psalm": "^5.6.0",
+                "wyrihaximus/coding-standard": "^2.12.0",
+                "wyrihaximus/phpstan-rules-wrapper": "^2.9.0"
             },
             "conflict": {
                 "symfony/dependency-injection": "<5.0.0"
@@ -11881,7 +11884,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.3.1"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.4.0"
             },
             "funding": [
                 {
@@ -11889,7 +11892,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-08T10:01:47+00:00"
+            "time": "2023-02-03T23:48:28+00:00"
         }
     ],
     "aliases": [

@@ -2,9 +2,6 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom;
 
-/**
- * @template H
- */
 interface ClientInterface
 {
     public function meta() : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Meta;
@@ -48,6 +45,7 @@ interface ClientInterface
      */
     public function callAsync(string $call, array $params = array());
     /**
+     * @template H
      * @param class-string<H> $className
      * @return H
      */

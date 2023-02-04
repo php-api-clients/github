@@ -2,9 +2,6 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom;
 
-/**
- * @template H
- */
 final class Client implements ClientInterface
 {
     private readonly \ApiClients\Contracts\HTTP\Headers\AuthenticationInterface $authentication;
@@ -11150,6 +11147,7 @@ final class Client implements ClientInterface
         throw new \InvalidArgumentException();
     }
     /**
+     * @template H
      * @param class-string<H> $className
      * @return H
      */
