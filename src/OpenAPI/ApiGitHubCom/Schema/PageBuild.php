@@ -9,13 +9,13 @@ final class PageBuild
     public const SCHEMA_DESCRIPTION = 'Page Build';
     public readonly string $url;
     public readonly string $status;
-    public readonly array $error;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Error $error;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PageBuild\Pusher $pusher;
     public readonly string $commit;
     public readonly int $duration;
     public readonly string $created_at;
     public readonly string $updated_at;
-    public function __construct(string $url, string $status, array $error, mixed $pusher, string $commit, int $duration, string $created_at, string $updated_at)
+    public function __construct(string $url, string $status, object $error, mixed $pusher, string $commit, int $duration, string $created_at, string $updated_at)
     {
         $this->url = $url;
         $this->status = $status;

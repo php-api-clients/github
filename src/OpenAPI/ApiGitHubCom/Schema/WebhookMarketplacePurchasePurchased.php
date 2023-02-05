@@ -12,26 +12,26 @@ final class WebhookMarketplacePurchasePurchased
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePurchased\MarketplacePurchase $marketplace_purchase;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
-    public readonly array $previous_marketplace_purchase;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchasePurchased\PreviousMarketplacePurchase $previous_marketplace_purchase;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, string $effective_date, array $enterprise, array $installation, mixed $marketplace_purchase, array $organization, array $previous_marketplace_purchase, array $repository, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, string $effective_date, object $enterprise, object $installation, mixed $marketplace_purchase, object $organization, object $previous_marketplace_purchase, object $repository, object $sender)
     {
         $this->action = $action;
         $this->effective_date = $effective_date;

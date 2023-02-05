@@ -13,9 +13,9 @@ final class MarketplacePurchase
     public readonly string $login;
     public readonly ?string $organization_billing_email;
     public readonly ?string $email;
-    public readonly array $marketplace_pending_change;
-    public readonly array $marketplace_purchase;
-    public function __construct(string $url, string $type, int $id, string $login, string $organization_billing_email, string $email, array $marketplace_pending_change, array $marketplace_purchase)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePendingChange $marketplace_pending_change;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase\MarketplacePurchase $marketplace_purchase;
+    public function __construct(string $url, string $type, int $id, string $login, string $organization_billing_email, string $email, object $marketplace_pending_change, object $marketplace_purchase)
     {
         $this->url = $url;
         $this->type = $type;

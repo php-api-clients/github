@@ -17,26 +17,26 @@ final class TimelineCommittedEvent
     /**
      * Identifying information for the git-user
      */
-    public readonly array $author;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Author $author;
     /**
      * Identifying information for the git-user
      */
-    public readonly array $committer;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Committer $committer;
     /**
      * Message describing the purpose of the commit
      */
     public readonly string $message;
-    public readonly array $tree;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Tree $tree;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Parents>
      */
     public readonly array $parents;
-    public readonly array $verification;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Verification $verification;
     public readonly string $html_url;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Parents> $parents
      */
-    public function __construct(string $event, string $sha, string $node_id, string $url, array $author, array $committer, string $message, array $tree, array $parents, array $verification, string $html_url)
+    public function __construct(string $event, string $sha, string $node_id, string $url, object $author, object $committer, string $message, object $tree, array $parents, object $verification, string $html_url)
     {
         $this->event = $event;
         $this->sha = $sha;

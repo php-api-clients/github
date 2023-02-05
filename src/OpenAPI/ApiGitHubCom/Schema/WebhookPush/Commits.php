@@ -15,11 +15,11 @@ final class Commits
     /**
      * Metaproperties for Git author/committer information.
      */
-    public readonly array $author;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Author $author;
     /**
      * Metaproperties for Git author/committer information.
      */
-    public readonly array $committer;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Committer $committer;
     /**
      * Whether this commit is distinct from any that have been pushed before.
      */
@@ -53,7 +53,7 @@ final class Commits
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Modified> $modified
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commits\Removed> $removed
      */
-    public function __construct(array $added, array $author, array $committer, bool $distinct, string $id, string $message, array $modified, array $removed, string $timestamp, string $tree_id, string $url)
+    public function __construct(array $added, object $author, object $committer, bool $distinct, string $id, string $message, array $modified, array $removed, string $timestamp, string $tree_id, string $url)
     {
         $this->added = $added;
         $this->author = $author;

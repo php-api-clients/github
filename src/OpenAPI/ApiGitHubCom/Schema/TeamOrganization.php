@@ -41,7 +41,7 @@ final class TeamOrganization
     public readonly ?int $disk_usage;
     public readonly ?int $collaborators;
     public readonly ?string $billing_email;
-    public readonly array $plan;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization\Plan $plan;
     public readonly ?string $default_repository_permission;
     public readonly ?bool $members_can_create_repositories;
     public readonly ?bool $two_factor_requirement_enabled;
@@ -55,7 +55,7 @@ final class TeamOrganization
     public readonly ?bool $members_can_fork_private_repositories;
     public readonly ?bool $web_commit_signoff_required;
     public readonly string $updated_at;
-    public function __construct(string $login, int $id, string $node_id, string $url, string $repos_url, string $events_url, string $hooks_url, string $issues_url, string $members_url, string $public_members_url, string $avatar_url, string $description, string $name, string $company, string $blog, string $location, string $email, string $twitter_username, bool $is_verified, bool $has_organization_projects, bool $has_repository_projects, int $public_repos, int $public_gists, int $followers, int $following, string $html_url, string $created_at, string $type, int $total_private_repos, int $owned_private_repos, int $private_gists, int $disk_usage, int $collaborators, string $billing_email, array $plan, string $default_repository_permission, bool $members_can_create_repositories, bool $two_factor_requirement_enabled, string $members_allowed_repository_creation_type, bool $members_can_create_public_repositories, bool $members_can_create_private_repositories, bool $members_can_create_internal_repositories, bool $members_can_create_pages, bool $members_can_create_public_pages, bool $members_can_create_private_pages, bool $members_can_fork_private_repositories, bool $web_commit_signoff_required, string $updated_at)
+    public function __construct(string $login, int $id, string $node_id, string $url, string $repos_url, string $events_url, string $hooks_url, string $issues_url, string $members_url, string $public_members_url, string $avatar_url, string $description, string $name, string $company, string $blog, string $location, string $email, string $twitter_username, bool $is_verified, bool $has_organization_projects, bool $has_repository_projects, int $public_repos, int $public_gists, int $followers, int $following, string $html_url, string $created_at, string $type, int $total_private_repos, int $owned_private_repos, int $private_gists, int $disk_usage, int $collaborators, string $billing_email, object $plan, string $default_repository_permission, bool $members_can_create_repositories, bool $two_factor_requirement_enabled, string $members_allowed_repository_creation_type, bool $members_can_create_public_repositories, bool $members_can_create_private_repositories, bool $members_can_create_internal_repositories, bool $members_can_create_pages, bool $members_can_create_public_pages, bool $members_can_create_private_pages, bool $members_can_fork_private_repositories, bool $web_commit_signoff_required, string $updated_at)
     {
         $this->login = $login;
         $this->id = $id;

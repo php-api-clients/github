@@ -11,15 +11,15 @@ final class WebhookInstallationRepositoriesRemoved
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * Installation
      */
-    public readonly array $installation;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * An array of repository objects, which were added to the installation.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesRemoved\RepositoriesAdded>
@@ -33,21 +33,21 @@ final class WebhookInstallationRepositoriesRemoved
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
     public readonly string $repository_selection;
-    public readonly array $requester;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesRemoved\Requester $requester;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesRemoved\RepositoriesAdded> $repositories_added
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationRepositoriesRemoved\RepositoriesRemoved> $repositories_removed
      */
-    public function __construct(string $action, array $enterprise, array $installation, array $organization, array $repositories_added, array $repositories_removed, array $repository, string $repository_selection, array $requester, array $sender)
+    public function __construct(string $action, object $enterprise, object $installation, object $organization, array $repositories_added, array $repositories_removed, object $repository, string $repository_selection, object $requester, object $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

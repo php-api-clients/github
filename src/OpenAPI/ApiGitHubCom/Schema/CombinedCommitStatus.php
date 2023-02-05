@@ -17,13 +17,13 @@ final class CombinedCommitStatus
     /**
      * Minimal Repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     public readonly string $commit_url;
     public readonly string $url;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommitStatus> $statuses
      */
-    public function __construct(string $state, array $statuses, string $sha, int $total_count, array $repository, string $commit_url, string $url)
+    public function __construct(string $state, array $statuses, string $sha, int $total_count, object $repository, string $commit_url, string $url)
     {
         $this->state = $state;
         $this->statuses = $statuses;

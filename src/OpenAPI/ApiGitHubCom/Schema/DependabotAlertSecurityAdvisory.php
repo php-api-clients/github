@@ -35,7 +35,7 @@ final class DependabotAlertSecurityAdvisory
     /**
      * Details for the advisory pertaining to the Common Vulnerability Scoring System.
      */
-    public readonly array $cvss;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cvss $cvss;
     /**
      * Details for the advisory pertaining to Common Weakness Enumeration.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Cwes>
@@ -69,7 +69,7 @@ final class DependabotAlertSecurityAdvisory
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\Identifiers> $identifiers
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory\References> $references
      */
-    public function __construct(string $ghsa_id, string $cve_id, string $summary, string $description, array $vulnerabilities, string $severity, array $cvss, array $cwes, array $identifiers, array $references, string $published_at, string $updated_at, string $withdrawn_at)
+    public function __construct(string $ghsa_id, string $cve_id, string $summary, string $description, array $vulnerabilities, string $severity, object $cvss, array $cwes, array $identifiers, array $references, string $published_at, string $updated_at, string $withdrawn_at)
     {
         $this->ghsa_id = $ghsa_id;
         $this->cve_id = $cve_id;

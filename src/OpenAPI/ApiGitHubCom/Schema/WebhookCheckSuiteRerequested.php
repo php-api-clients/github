@@ -8,32 +8,32 @@ final class WebhookCheckSuiteRerequested
     public const SCHEMA_TITLE = 'check_suite rerequested event';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $action;
-    public readonly array $actions_meta;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteRerequested\ActionsMeta $actions_meta;
     /**
      * The [check_suite](https://docs.github.com/rest/reference/checks#suites).
      */
-    public readonly array $check_suite;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuiteRerequested\CheckSuite $check_suite;
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $actions_meta, array $check_suite, array $enterprise, array $installation, array $organization, array $repository, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $actions_meta, object $check_suite, object $enterprise, object $installation, object $organization, object $repository, object $sender)
     {
         $this->action = $action;
         $this->actions_meta = $actions_meta;

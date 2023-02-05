@@ -20,10 +20,10 @@ final class OrgMembership
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership\User $user;
-    public readonly array $permissions;
-    public function __construct(string $url, string $state, string $role, string $organization_url, array $organization, mixed $user, array $permissions)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership\Permissions $permissions;
+    public function __construct(string $url, string $state, string $role, string $organization_url, object $organization, mixed $user, object $permissions)
     {
         $this->url = $url;
         $this->state = $state;

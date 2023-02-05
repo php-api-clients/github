@@ -11,15 +11,15 @@ final class WebhookInstallationDeleted
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * Installation
      */
-    public readonly array $installation;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * An array of repository objects that the installation can access.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationDeleted\Repositories>
@@ -28,16 +28,16 @@ final class WebhookInstallationDeleted
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     public readonly mixed $requester;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationDeleted\Repositories> $repositories
      */
-    public function __construct(string $action, array $enterprise, array $installation, array $organization, array $repositories, array $repository, mixed $requester, array $sender)
+    public function __construct(string $action, object $enterprise, object $installation, object $organization, array $repositories, object $repository, mixed $requester, object $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

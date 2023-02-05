@@ -23,8 +23,8 @@ final class PackageVersion
     public readonly string $created_at;
     public readonly string $updated_at;
     public readonly ?string $deleted_at;
-    public readonly array $metadata;
-    public function __construct(int $id, string $name, string $url, string $package_html_url, string $html_url, string $license, string $description, string $created_at, string $updated_at, string $deleted_at, array $metadata)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Metadata $metadata;
+    public function __construct(int $id, string $name, string $url, string $package_html_url, string $html_url, string $license, string $description, string $created_at, string $updated_at, string $deleted_at, object $metadata)
     {
         $this->id = $id;
         $this->name = $name;

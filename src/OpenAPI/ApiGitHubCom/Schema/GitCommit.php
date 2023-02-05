@@ -16,26 +16,26 @@ final class GitCommit
     /**
      * Identifying information for the git-user
      */
-    public readonly array $author;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Author $author;
     /**
      * Identifying information for the git-user
      */
-    public readonly array $committer;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Committer $committer;
     /**
      * Message describing the purpose of the commit
      */
     public readonly string $message;
-    public readonly array $tree;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Tree $tree;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Parents>
      */
     public readonly array $parents;
-    public readonly array $verification;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Verification $verification;
     public readonly string $html_url;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Parents> $parents
      */
-    public function __construct(string $sha, string $node_id, string $url, array $author, array $committer, string $message, array $tree, array $parents, array $verification, string $html_url)
+    public function __construct(string $sha, string $node_id, string $url, object $author, object $committer, string $message, object $tree, array $parents, object $verification, string $html_url)
     {
         $this->sha = $sha;
         $this->node_id = $node_id;

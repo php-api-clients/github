@@ -8,38 +8,38 @@ final class WebhookDeploymentStatusCreated
     public const SCHEMA_TITLE = 'deployment_status created event';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $action;
-    public readonly array $check_run;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\CheckRun $check_run;
     /**
      * The [deployment](https://docs.github.com/rest/reference/deployments#list-deployments).
      */
-    public readonly array $deployment;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Deployment $deployment;
     /**
      * The [deployment status](https://docs.github.com/rest/reference/deployments#list-deployment-statuses).
      */
-    public readonly array $deployment_status;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deployment_status;
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public readonly array $workflow;
-    public readonly array $workflow_run;
-    public function __construct(string $action, array $check_run, array $deployment, array $deployment_status, array $enterprise, array $installation, array $organization, array $repository, array $sender, array $workflow, array $workflow_run)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Workflow $workflow;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\WorkflowRun $workflow_run;
+    public function __construct(string $action, object $check_run, object $deployment, object $deployment_status, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $workflow, object $workflow_run)
     {
         $this->action = $action;
         $this->check_run = $check_run;

@@ -14,8 +14,8 @@ final class Json
     /**
      * The source branch and directory used to publish your Pages site.
      */
-    public readonly array $source;
-    public function __construct(string $build_type, array $source)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source $source;
+    public function __construct(string $build_type, object $source)
     {
         $this->build_type = $build_type;
         $this->source = $source;

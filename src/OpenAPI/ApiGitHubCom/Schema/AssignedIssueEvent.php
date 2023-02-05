@@ -13,7 +13,7 @@ final class AssignedIssueEvent
     /**
      * A GitHub user.
      */
-    public readonly array $actor;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     public readonly string $event;
     public readonly ?string $commit_id;
     public readonly ?string $commit_url;
@@ -21,16 +21,16 @@ final class AssignedIssueEvent
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public readonly array $performed_via_github_app;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $performed_via_github_app;
     /**
      * A GitHub user.
      */
-    public readonly array $assignee;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee;
     /**
      * A GitHub user.
      */
-    public readonly array $assigner;
-    public function __construct(int $id, string $node_id, string $url, array $actor, string $event, string $commit_id, string $commit_url, string $created_at, array $performed_via_github_app, array $assignee, array $assigner)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assigner;
+    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, object $performed_via_github_app, object $assignee, object $assigner)
     {
         $this->id = $id;
         $this->node_id = $node_id;

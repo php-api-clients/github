@@ -8,9 +8,9 @@ final class BranchShort
     public const SCHEMA_TITLE = 'Branch Short';
     public const SCHEMA_DESCRIPTION = 'Branch Short';
     public readonly string $name;
-    public readonly array $commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchShort\Commit $commit;
     public readonly bool $protected;
-    public function __construct(string $name, array $commit, bool $protected)
+    public function __construct(string $name, object $commit, bool $protected)
     {
         $this->name = $name;
         $this->commit = $commit;

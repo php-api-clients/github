@@ -39,17 +39,17 @@ final class Page
      * The process in which the Page will be built.
      */
     public readonly ?string $build_type;
-    public readonly array $source;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash $source;
     /**
      * Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      */
     public readonly bool $public;
-    public readonly array $https_certificate;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate $https_certificate;
     /**
      * Whether https is enabled on the domain
      */
     public readonly ?bool $https_enforced;
-    public function __construct(string $url, string $status, string $cname, string $protected_domain_state, string $pending_domain_unverified_at, bool $custom_404, string $html_url, string $build_type, array $source, bool $public, array $https_certificate, bool $https_enforced)
+    public function __construct(string $url, string $status, string $cname, string $protected_domain_state, string $pending_domain_unverified_at, bool $custom_404, string $html_url, string $build_type, object $source, bool $public, object $https_certificate, bool $https_enforced)
     {
         $this->url = $url;
         $this->status = $status;

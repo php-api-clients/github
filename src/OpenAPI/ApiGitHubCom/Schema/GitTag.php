@@ -21,10 +21,10 @@ final class GitTag
      * Message describing the purpose of the tag
      */
     public readonly string $message;
-    public readonly array $tagger;
-    public readonly array $object;
-    public readonly array $verification;
-    public function __construct(string $node_id, string $tag, string $sha, string $url, string $message, array $tagger, array $object, array $verification)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag\Tagger $tagger;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag\Object_ $object;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification;
+    public function __construct(string $node_id, string $tag, string $sha, string $url, string $message, object $tagger, object $object, object $verification)
     {
         $this->node_id = $node_id;
         $this->tag = $tag;

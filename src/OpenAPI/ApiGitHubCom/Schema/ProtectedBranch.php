@@ -11,28 +11,28 @@ final class ProtectedBranch
     /**
      * Status Check Policy
      */
-    public readonly array $required_status_checks;
-    public readonly array $required_pull_request_reviews;
-    public readonly array $required_signatures;
-    public readonly array $enforce_admins;
-    public readonly array $required_linear_history;
-    public readonly array $allow_force_pushes;
-    public readonly array $allow_deletions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\StatusCheckPolicy $required_status_checks;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredPullRequestReviews $required_pull_request_reviews;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredSignatures $required_signatures;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\EnforceAdmins $enforce_admins;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredLinearHistory $required_linear_history;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForcePushes $allow_force_pushes;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowDeletions $allow_deletions;
     /**
      * Branch Restriction Policy
      */
-    public readonly array $restrictions;
-    public readonly array $required_conversation_resolution;
-    public readonly array $block_creations;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchRestrictionPolicy $restrictions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\RequiredConversationResolution $required_conversation_resolution;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\BlockCreations $block_creations;
     /**
      * Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
      */
-    public readonly array $lock_branch;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\LockBranch $lock_branch;
     /**
      * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
      */
-    public readonly array $allow_fork_syncing;
-    public function __construct(string $url, array $required_status_checks, array $required_pull_request_reviews, array $required_signatures, array $enforce_admins, array $required_linear_history, array $allow_force_pushes, array $allow_deletions, array $restrictions, array $required_conversation_resolution, array $block_creations, array $lock_branch, array $allow_fork_syncing)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranch\AllowForkSyncing $allow_fork_syncing;
+    public function __construct(string $url, object $required_status_checks, object $required_pull_request_reviews, object $required_signatures, object $enforce_admins, object $required_linear_history, object $allow_force_pushes, object $allow_deletions, object $restrictions, object $required_conversation_resolution, object $block_creations, object $lock_branch, object $allow_fork_syncing)
     {
         $this->url = $url;
         $this->required_status_checks = $required_status_checks;

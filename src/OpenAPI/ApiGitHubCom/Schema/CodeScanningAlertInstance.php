@@ -29,11 +29,11 @@ final class CodeScanningAlertInstance
      */
     public readonly string $state;
     public readonly string $commit_sha;
-    public readonly array $message;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance\Message $message;
     /**
      * Describe a region within a file for the alert.
      */
-    public readonly array $location;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertLocation $location;
     public readonly string $html_url;
     /**
     * Classifications that have been applied to the file that triggered the alert.
@@ -44,7 +44,7 @@ final class CodeScanningAlertInstance
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification> $classifications
      */
-    public function __construct(string $ref, string $analysis_key, string $environment, string $category, string $state, string $commit_sha, array $message, array $location, string $html_url, array $classifications)
+    public function __construct(string $ref, string $analysis_key, string $environment, string $category, string $state, string $commit_sha, object $message, object $location, string $html_url, array $classifications)
     {
         $this->ref = $ref;
         $this->analysis_key = $analysis_key;

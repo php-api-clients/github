@@ -23,7 +23,7 @@ final class RequestedTeams
      */
     public readonly string $name;
     public readonly ?string $node_id;
-    public readonly array $parent;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequestedTeams\Parent_ $parent;
     /**
      * Permission that the team will have for its repositories
      */
@@ -35,7 +35,7 @@ final class RequestedTeams
      * URL for the team
      */
     public readonly ?string $url;
-    public function __construct(bool $deleted, string $description, string $html_url, int $id, string $members_url, string $name, string $node_id, array $parent, string $permission, string $privacy, string $repositories_url, string $slug, string $url)
+    public function __construct(bool $deleted, string $description, string $html_url, int $id, string $members_url, string $name, string $node_id, object $parent, string $permission, string $privacy, string $repositories_url, string $slug, string $url)
     {
         $this->deleted = $deleted;
         $this->description = $description;

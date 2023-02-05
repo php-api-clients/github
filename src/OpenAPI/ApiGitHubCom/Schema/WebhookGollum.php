@@ -10,15 +10,15 @@ final class WebhookGollum
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * The pages that were updated.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookGollum\Pages>
@@ -27,15 +27,15 @@ final class WebhookGollum
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookGollum\Pages> $pages
      */
-    public function __construct(array $enterprise, array $installation, array $organization, array $pages, array $repository, array $sender)
+    public function __construct(object $enterprise, object $installation, object $organization, array $pages, object $repository, object $sender)
     {
         $this->enterprise = $enterprise;
         $this->installation = $installation;

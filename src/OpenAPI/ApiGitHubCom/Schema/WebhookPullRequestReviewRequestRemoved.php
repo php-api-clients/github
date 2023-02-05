@@ -11,11 +11,11 @@ final class WebhookPullRequestReviewRequestRemoved
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * The pull request number.
      */
@@ -23,18 +23,18 @@ final class WebhookPullRequestReviewRequestRemoved
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
-    public readonly array $pull_request;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewRequestRemoved\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
-    public readonly array $requested_reviewer;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewRequestRemoved\RequestedReviewer $requested_reviewer;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $enterprise, array $installation, int $number, array $organization, array $pull_request, array $repository, array $requested_reviewer, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $enterprise, object $installation, int $number, object $organization, object $pull_request, object $repository, object $requested_reviewer, object $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

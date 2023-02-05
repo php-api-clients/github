@@ -11,28 +11,28 @@ final class WebhookCheckRunRequestedAction
     /**
      * A check performed on the code of a given code change
      */
-    public readonly array $check_run;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRunWithSimpleCheckSuite $check_run;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * The action requested by the user.
      */
-    public readonly array $requested_action;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckRunRequestedAction\RequestedAction $requested_action;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $check_run, array $installation, array $organization, array $repository, array $requested_action, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $check_run, object $installation, object $organization, object $repository, object $requested_action, object $sender)
     {
         $this->action = $action;
         $this->check_run = $check_run;

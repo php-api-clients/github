@@ -8,7 +8,7 @@ final class WebhookSponsorshipPendingTierChange
     public const SCHEMA_TITLE = 'sponsorship pending_tier_change event';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $action;
-    public readonly array $changes;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipPendingTierChange\Changes $changes;
     /**
      * The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
      */
@@ -16,25 +16,25 @@ final class WebhookSponsorshipPendingTierChange
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public readonly array $sponsorship;
-    public function __construct(string $action, array $changes, string $effective_date, array $enterprise, array $installation, array $organization, array $repository, array $sender, array $sponsorship)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipPendingTierChange\Sponsorship $sponsorship;
+    public function __construct(string $action, object $changes, string $effective_date, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $sponsorship)
     {
         $this->action = $action;
         $this->changes = $changes;

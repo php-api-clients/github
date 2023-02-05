@@ -27,13 +27,13 @@ final class CheckSuite
     /**
      * Minimal Repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     public readonly ?string $created_at;
     public readonly ?string $updated_at;
     /**
      * A commit.
      */
-    public readonly array $head_commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit $head_commit;
     public readonly int $latest_check_runs_count;
     public readonly string $check_runs_url;
     public readonly ?bool $rerequestable;
@@ -41,7 +41,7 @@ final class CheckSuite
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(int $id, string $node_id, string $head_branch, string $head_sha, string $status, string $conclusion, string $url, string $before, string $after, array $pull_requests, mixed $app, array $repository, string $created_at, string $updated_at, array $head_commit, int $latest_check_runs_count, string $check_runs_url, bool $rerequestable, bool $runs_rerequestable)
+    public function __construct(int $id, string $node_id, string $head_branch, string $head_sha, string $status, string $conclusion, string $url, string $before, string $after, array $pull_requests, mixed $app, object $repository, string $created_at, string $updated_at, object $head_commit, int $latest_check_runs_count, string $check_runs_url, bool $rerequestable, bool $runs_rerequestable)
     {
         $this->id = $id;
         $this->node_id = $node_id;

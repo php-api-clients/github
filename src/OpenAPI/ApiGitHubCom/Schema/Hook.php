@@ -25,18 +25,18 @@ final class Hook
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Events>
      */
     public readonly array $events;
-    public readonly array $config;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Config $config;
     public readonly string $updated_at;
     public readonly string $created_at;
     public readonly string $url;
     public readonly string $test_url;
     public readonly string $ping_url;
     public readonly ?string $deliveries_url;
-    public readonly array $last_response;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse $last_response;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Events> $events
      */
-    public function __construct(string $type, int $id, string $name, bool $active, array $events, array $config, string $updated_at, string $created_at, string $url, string $test_url, string $ping_url, string $deliveries_url, array $last_response)
+    public function __construct(string $type, int $id, string $name, bool $active, array $events, object $config, string $updated_at, string $created_at, string $url, string $test_url, string $ping_url, string $deliveries_url, object $last_response)
     {
         $this->type = $type;
         $this->id = $id;

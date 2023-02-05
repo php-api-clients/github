@@ -8,20 +8,20 @@ final class WebhookProjectsV2ProjectEdited
     public const SCHEMA_TITLE = 'Projects v2 Project Edited Event';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $action;
-    public readonly array $changes;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectsV2ProjectEdited\Changes $changes;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A projects v2 project
      */
-    public readonly array $projects_v2;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectsV2 $projects_v2;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $changes, array $organization, array $projects_v2, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $changes, object $organization, object $projects_v2, object $sender)
     {
         $this->action = $action;
         $this->changes = $changes;

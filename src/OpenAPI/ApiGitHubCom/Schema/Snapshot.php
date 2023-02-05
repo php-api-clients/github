@@ -11,7 +11,7 @@ final class Snapshot
      * The version of the repository snapshot submission.
      */
     public readonly int $version;
-    public readonly array $job;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job $job;
     /**
      * The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
      */
@@ -23,20 +23,20 @@ final class Snapshot
     /**
      * A description of the detector used.
      */
-    public readonly array $detector;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector $detector;
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      */
-    public readonly array $metadata;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata;
     /**
      * A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
      */
-    public readonly array $manifests;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests $manifests;
     /**
      * The time at which the snapshot was scanned.
      */
     public readonly string $scanned;
-    public function __construct(int $version, array $job, string $sha, string $ref, array $detector, array $metadata, array $manifests, string $scanned)
+    public function __construct(int $version, object $job, string $sha, string $ref, object $detector, object $metadata, object $manifests, string $scanned)
     {
         $this->version = $version;
         $this->job = $job;

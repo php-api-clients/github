@@ -15,7 +15,7 @@ final class AuthenticationToken
      * The time this token expires
      */
     public readonly string $expires_at;
-    public readonly array $permissions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions $permissions;
     /**
      * The repositories this token has access to
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository>
@@ -29,7 +29,7 @@ final class AuthenticationToken
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository> $repositories
      */
-    public function __construct(string $token, string $expires_at, array $permissions, array $repositories, string $single_file, string $repository_selection)
+    public function __construct(string $token, string $expires_at, object $permissions, array $repositories, string $single_file, string $repository_selection)
     {
         $this->token = $token;
         $this->expires_at = $expires_at;

@@ -10,7 +10,7 @@ final class Json
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
      */
-    public readonly array $config;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config $config;
     /**
      * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events>
@@ -35,7 +35,7 @@ final class Json
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AddEvents> $add_events
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RemoveEvents> $remove_events
      */
-    public function __construct(array $config, array $events, array $add_events, array $remove_events, bool $active)
+    public function __construct(object $config, array $events, array $add_events, array $remove_events, bool $active)
     {
         $this->config = $config;
         $this->events = $events;

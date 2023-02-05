@@ -23,15 +23,15 @@ final class CodespaceWithFullRepository
     /**
      * A GitHub user.
      */
-    public readonly array $owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     /**
      * A GitHub user.
      */
-    public readonly array $billable_owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $billable_owner;
     /**
      * Full Repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FullRepository $repository;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository\Machine $machine;
     /**
      * Path to devcontainer.json from repo root used to create Codespace.
@@ -58,7 +58,7 @@ final class CodespaceWithFullRepository
     /**
      * Details about the codespace's git repository.
      */
-    public readonly array $git_status;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository\GitStatus $git_status;
     /**
      * The Azure region where this codespace is located.
      */
@@ -95,7 +95,7 @@ final class CodespaceWithFullRepository
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository\RecentFolders>
      */
     public readonly array $recent_folders;
-    public readonly array $runtime_constraints;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository\RuntimeConstraints $runtime_constraints;
     /**
      * Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
      */
@@ -119,7 +119,7 @@ final class CodespaceWithFullRepository
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodespaceWithFullRepository\RecentFolders> $recent_folders
      */
-    public function __construct(int $id, string $name, string $display_name, string $environment_id, array $owner, array $billable_owner, array $repository, mixed $machine, string $devcontainer_path, bool $prebuild, string $created_at, string $updated_at, string $last_used_at, string $state, string $url, array $git_status, string $location, int $idle_timeout_minutes, string $web_url, string $machines_url, string $start_url, string $stop_url, string $publish_url, string $pulls_url, array $recent_folders, array $runtime_constraints, bool $pending_operation, string $pending_operation_disabled_reason, string $idle_timeout_notice, int $retention_period_minutes, string $retention_expires_at)
+    public function __construct(int $id, string $name, string $display_name, string $environment_id, object $owner, object $billable_owner, object $repository, mixed $machine, string $devcontainer_path, bool $prebuild, string $created_at, string $updated_at, string $last_used_at, string $state, string $url, object $git_status, string $location, int $idle_timeout_minutes, string $web_url, string $machines_url, string $start_url, string $stop_url, string $publish_url, string $pulls_url, array $recent_folders, object $runtime_constraints, bool $pending_operation, string $pending_operation_disabled_reason, string $idle_timeout_notice, int $retention_period_minutes, string $retention_expires_at)
     {
         $this->id = $id;
         $this->name = $name;

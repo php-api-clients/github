@@ -10,7 +10,7 @@ final class Json
     /**
      * Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
      */
-    public readonly array $dismissal_restrictions;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\DismissalRestrictions $dismissal_restrictions;
     /**
      * Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
      */
@@ -30,8 +30,8 @@ final class Json
     /**
      * Allow specific users, teams, or apps to bypass pull request requirements.
      */
-    public readonly array $bypass_pull_request_allowances;
-    public function __construct(array $dismissal_restrictions, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval, array $bypass_pull_request_allowances)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\BypassPullRequestAllowances $bypass_pull_request_allowances;
+    public function __construct(object $dismissal_restrictions, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval, object $bypass_pull_request_allowances)
     {
         $this->dismissal_restrictions = $dismissal_restrictions;
         $this->dismiss_stale_reviews = $dismiss_stale_reviews;

@@ -8,29 +8,29 @@ final class WebhookSponsorshipEdited
     public const SCHEMA_TITLE = 'sponsorship edited event';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $action;
-    public readonly array $changes;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipEdited\Changes $changes;
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public readonly array $sponsorship;
-    public function __construct(string $action, array $changes, array $enterprise, array $installation, array $organization, array $repository, array $sender, array $sponsorship)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipEdited\Sponsorship $sponsorship;
+    public function __construct(string $action, object $changes, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $sponsorship)
     {
         $this->action = $action;
         $this->changes = $changes;

@@ -19,7 +19,7 @@ final class IssueEvent
     /**
      * Issue Event Label
      */
-    public readonly array $label;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventLabel $label;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assignee $assignee;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\Assigner $assigner;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\ReviewRequester $review_requester;
@@ -27,27 +27,27 @@ final class IssueEvent
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public readonly array $requested_team;
-    public readonly array $dismissed_review;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team $requested_team;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventDismissedReview $dismissed_review;
     /**
      * Issue Event Milestone
      */
-    public readonly array $milestone;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventMilestone $milestone;
     /**
      * Issue Event Project Card
      */
-    public readonly array $project_card;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventProjectCard $project_card;
     /**
      * Issue Event Rename
      */
-    public readonly array $rename;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEventRename $rename;
     /**
      * How the author is associated with the repository.
      */
     public readonly ?string $author_association;
     public readonly ?string $lock_reason;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueEvent\PerformedViaGithubApp $performed_via_github_app;
-    public function __construct(int $id, string $node_id, string $url, mixed $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $issue, array $label, mixed $assignee, mixed $assigner, mixed $review_requester, mixed $requested_reviewer, array $requested_team, array $dismissed_review, array $milestone, array $project_card, array $rename, string $author_association, string $lock_reason, mixed $performed_via_github_app)
+    public function __construct(int $id, string $node_id, string $url, mixed $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $issue, object $label, mixed $assignee, mixed $assigner, mixed $review_requester, mixed $requested_reviewer, object $requested_team, object $dismissed_review, object $milestone, object $project_card, object $rename, string $author_association, string $lock_reason, mixed $performed_via_github_app)
     {
         $this->id = $id;
         $this->node_id = $node_id;

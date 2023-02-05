@@ -18,9 +18,9 @@ final class LicenseContent
     public readonly string $type;
     public readonly string $content;
     public readonly string $encoding;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\Links $_links;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseContent\License $license;
-    public function __construct(string $name, string $path, string $sha, int $size, string $url, string $html_url, string $git_url, string $download_url, string $type, string $content, string $encoding, array $_links, mixed $license)
+    public function __construct(string $name, string $path, string $sha, int $size, string $url, string $html_url, string $git_url, string $download_url, string $type, string $content, string $encoding, object $_links, mixed $license)
     {
         $this->name = $name;
         $this->path = $path;

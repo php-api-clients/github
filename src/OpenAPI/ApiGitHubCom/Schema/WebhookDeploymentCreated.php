@@ -11,30 +11,30 @@ final class WebhookDeploymentCreated
     /**
      * The [deployment](https://docs.github.com/rest/reference/deployments#list-deployments).
      */
-    public readonly array $deployment;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\Deployment $deployment;
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public readonly array $workflow;
-    public readonly array $workflow_run;
-    public function __construct(string $action, array $deployment, array $enterprise, array $installation, array $organization, array $repository, array $sender, array $workflow, array $workflow_run)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\Workflow $workflow;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\WorkflowRun $workflow_run;
+    public function __construct(string $action, object $deployment, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $workflow, object $workflow_run)
     {
         $this->action = $action;
         $this->deployment = $deployment;

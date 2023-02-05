@@ -101,7 +101,7 @@ final class Forkee
     public readonly string $labels_url;
     public readonly ?string $language;
     public readonly string $languages_url;
-    public readonly array $license;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\License $license;
     public readonly ?string $master_branch;
     public readonly string $merges_url;
     public readonly string $milestones_url;
@@ -115,8 +115,8 @@ final class Forkee
     public readonly int $open_issues;
     public readonly int $open_issues_count;
     public readonly ?string $organization;
-    public readonly array $owner;
-    public readonly array $permissions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Owner $owner;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Permissions $permissions;
     /**
      * Whether the repository is private or public.
      */
@@ -154,7 +154,7 @@ final class Forkee
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Forkee\Topics> $topics
      */
-    public function __construct(bool $allow_auto_merge, bool $allow_forking, bool $allow_merge_commit, bool $allow_rebase_merge, bool $allow_squash_merge, bool $allow_update_branch, string $archive_url, bool $archived, string $assignees_url, string $blobs_url, string $branches_url, string $clone_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, mixed $created_at, string $default_branch, bool $delete_branch_on_merge, string $deployments_url, string $description, bool $disabled, string $downloads_url, string $events_url, bool $fork, int $forks, int $forks_count, string $forks_url, string $full_name, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $git_url, bool $has_downloads, bool $has_issues, bool $has_pages, bool $has_projects, bool $has_wiki, string $homepage, string $hooks_url, string $html_url, int $id, bool $is_template, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $language, string $languages_url, array $license, string $master_branch, string $merges_url, string $milestones_url, string $mirror_url, string $name, string $node_id, string $notifications_url, int $open_issues, int $open_issues_count, string $organization, array $owner, array $permissions, bool $private, bool $public, string $pulls_url, mixed $pushed_at, string $releases_url, string $role_name, int $size, string $ssh_url, int $stargazers, int $stargazers_count, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $svn_url, string $tags_url, string $teams_url, array $topics, string $trees_url, string $updated_at, string $url, string $visibility, int $watchers, int $watchers_count, bool $web_commit_signoff_required)
+    public function __construct(bool $allow_auto_merge, bool $allow_forking, bool $allow_merge_commit, bool $allow_rebase_merge, bool $allow_squash_merge, bool $allow_update_branch, string $archive_url, bool $archived, string $assignees_url, string $blobs_url, string $branches_url, string $clone_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, mixed $created_at, string $default_branch, bool $delete_branch_on_merge, string $deployments_url, string $description, bool $disabled, string $downloads_url, string $events_url, bool $fork, int $forks, int $forks_count, string $forks_url, string $full_name, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $git_url, bool $has_downloads, bool $has_issues, bool $has_pages, bool $has_projects, bool $has_wiki, string $homepage, string $hooks_url, string $html_url, int $id, bool $is_template, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $language, string $languages_url, object $license, string $master_branch, string $merges_url, string $milestones_url, string $mirror_url, string $name, string $node_id, string $notifications_url, int $open_issues, int $open_issues_count, string $organization, object $owner, object $permissions, bool $private, bool $public, string $pulls_url, mixed $pushed_at, string $releases_url, string $role_name, int $size, string $ssh_url, int $stargazers, int $stargazers_count, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $svn_url, string $tags_url, string $teams_url, array $topics, string $trees_url, string $updated_at, string $url, string $visibility, int $watchers, int $watchers_count, bool $web_commit_signoff_required)
     {
         $this->allow_auto_merge = $allow_auto_merge;
         $this->allow_forking = $allow_forking;

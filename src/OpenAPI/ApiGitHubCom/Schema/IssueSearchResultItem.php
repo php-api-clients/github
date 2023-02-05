@@ -40,7 +40,7 @@ final class IssueSearchResultItem
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches>
      */
     public readonly array $text_matches;
-    public readonly array $pull_request;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\PullRequest $pull_request;
     public readonly ?string $body;
     public readonly int $score;
     /**
@@ -51,18 +51,18 @@ final class IssueSearchResultItem
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     public readonly ?string $body_html;
     public readonly ?string $body_text;
     public readonly ?string $timeline_url;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\PerformedViaGithubApp $performed_via_github_app;
-    public readonly array $reactions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser> $assignees
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueSearchResultItem\Labels> $labels
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches> $text_matches
      */
-    public function __construct(string $url, string $repository_url, string $labels_url, string $comments_url, string $events_url, string $html_url, int $id, string $node_id, int $number, string $title, bool $locked, string $active_lock_reason, array $assignees, mixed $user, array $labels, string $state, string $state_reason, mixed $assignee, mixed $milestone, int $comments, string $created_at, string $updated_at, string $closed_at, array $text_matches, array $pull_request, string $body, int $score, string $author_association, bool $draft, array $repository, string $body_html, string $body_text, string $timeline_url, mixed $performed_via_github_app, array $reactions)
+    public function __construct(string $url, string $repository_url, string $labels_url, string $comments_url, string $events_url, string $html_url, int $id, string $node_id, int $number, string $title, bool $locked, string $active_lock_reason, array $assignees, mixed $user, array $labels, string $state, string $state_reason, mixed $assignee, mixed $milestone, int $comments, string $created_at, string $updated_at, string $closed_at, array $text_matches, object $pull_request, string $body, int $score, string $author_association, bool $draft, object $repository, string $body_html, string $body_text, string $timeline_url, mixed $performed_via_github_app, object $reactions)
     {
         $this->url = $url;
         $this->repository_url = $repository_url;

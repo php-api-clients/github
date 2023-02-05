@@ -11,7 +11,7 @@ final class TimelineCommentEvent
     /**
      * A GitHub user.
      */
-    public readonly array $actor;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     /**
      * Unique identifier of the issue comment
      */
@@ -31,7 +31,7 @@ final class TimelineCommentEvent
     /**
      * A GitHub user.
      */
-    public readonly array $user;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
     public readonly string $created_at;
     public readonly string $updated_at;
     public readonly string $issue_url;
@@ -40,8 +40,8 @@ final class TimelineCommentEvent
      */
     public readonly string $author_association;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommentEvent\PerformedViaGithubApp $performed_via_github_app;
-    public readonly array $reactions;
-    public function __construct(string $event, array $actor, int $id, string $node_id, string $url, string $body, string $body_text, string $body_html, string $html_url, array $user, string $created_at, string $updated_at, string $issue_url, string $author_association, mixed $performed_via_github_app, array $reactions)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    public function __construct(string $event, object $actor, int $id, string $node_id, string $url, string $body, string $body_text, string $body_html, string $html_url, object $user, string $created_at, string $updated_at, string $issue_url, string $author_association, mixed $performed_via_github_app, object $reactions)
     {
         $this->event = $event;
         $this->actor = $actor;

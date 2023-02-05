@@ -53,7 +53,7 @@ final class Issue
     public readonly bool $locked;
     public readonly ?string $active_lock_reason;
     public readonly int $comments;
-    public readonly array $pull_request;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\PullRequest $pull_request;
     public readonly ?string $closed_at;
     public readonly string $created_at;
     public readonly string $updated_at;
@@ -65,18 +65,18 @@ final class Issue
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\PerformedViaGithubApp $performed_via_github_app;
     /**
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public readonly array $reactions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Labels> $labels
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser> $assignees
      */
-    public function __construct(int $id, string $node_id, string $url, string $repository_url, string $labels_url, string $comments_url, string $events_url, string $html_url, int $number, string $state, string $state_reason, string $title, string $body, mixed $user, array $labels, mixed $assignee, array $assignees, mixed $milestone, bool $locked, string $active_lock_reason, int $comments, array $pull_request, string $closed_at, string $created_at, string $updated_at, bool $draft, mixed $closed_by, string $body_html, string $body_text, string $timeline_url, array $repository, mixed $performed_via_github_app, string $author_association, array $reactions)
+    public function __construct(int $id, string $node_id, string $url, string $repository_url, string $labels_url, string $comments_url, string $events_url, string $html_url, int $number, string $state, string $state_reason, string $title, string $body, mixed $user, array $labels, mixed $assignee, array $assignees, mixed $milestone, bool $locked, string $active_lock_reason, int $comments, object $pull_request, string $closed_at, string $created_at, string $updated_at, bool $draft, mixed $closed_by, string $body_html, string $body_text, string $timeline_url, object $repository, mixed $performed_via_github_app, string $author_association, object $reactions)
     {
         $this->id = $id;
         $this->node_id = $node_id;

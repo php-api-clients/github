@@ -17,7 +17,7 @@ final class Authorization
     public readonly string $token;
     public readonly ?string $token_last_eight;
     public readonly ?string $hashed_token;
-    public readonly array $app;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\App $app;
     public readonly ?string $note;
     public readonly ?string $note_url;
     public readonly string $updated_at;
@@ -29,7 +29,7 @@ final class Authorization
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\Scopes> $scopes
      */
-    public function __construct(int $id, string $url, array $scopes, string $token, string $token_last_eight, string $hashed_token, array $app, string $note, string $note_url, string $updated_at, string $created_at, string $fingerprint, mixed $user, mixed $installation, string $expires_at)
+    public function __construct(int $id, string $url, array $scopes, string $token, string $token_last_eight, string $hashed_token, object $app, string $note, string $note_url, string $updated_at, string $created_at, string $fingerprint, mixed $user, mixed $installation, string $expires_at)
     {
         $this->id = $id;
         $this->url = $url;

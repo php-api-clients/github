@@ -22,12 +22,12 @@ final class Json
     /**
      * object containing information about the committer.
      */
-    public readonly array $committer;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer $committer;
     /**
      * object containing information about the author.
      */
-    public readonly array $author;
-    public function __construct(string $message, string $sha, string $branch, array $committer, array $author)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author;
+    public function __construct(string $message, string $sha, string $branch, object $committer, object $author)
     {
         $this->message = $message;
         $this->sha = $sha;

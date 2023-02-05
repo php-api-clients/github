@@ -11,13 +11,13 @@ final class CheckRunWithSimpleCheckSuite
     /**
      * A suite of checks performed on the code of a given code change
      */
-    public readonly array $check_suite;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCheckSuite $check_suite;
     public readonly ?string $completed_at;
     public readonly ?string $conclusion;
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
      */
-    public readonly array $deployment;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple $deployment;
     public readonly string $details_url;
     public readonly string $external_id;
     /**
@@ -34,7 +34,7 @@ final class CheckRunWithSimpleCheckSuite
      */
     public readonly string $name;
     public readonly string $node_id;
-    public readonly array $output;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRunWithSimpleCheckSuite\Output $output;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
      */
@@ -48,7 +48,7 @@ final class CheckRunWithSimpleCheckSuite
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(mixed $app, array $check_suite, string $completed_at, string $conclusion, array $deployment, string $details_url, string $external_id, string $head_sha, string $html_url, int $id, string $name, string $node_id, array $output, array $pull_requests, string $started_at, string $status, string $url)
+    public function __construct(mixed $app, object $check_suite, string $completed_at, string $conclusion, object $deployment, string $details_url, string $external_id, string $head_sha, string $html_url, int $id, string $name, string $node_id, object $output, array $pull_requests, string $started_at, string $status, string $url)
     {
         $this->app = $app;
         $this->check_suite = $check_suite;

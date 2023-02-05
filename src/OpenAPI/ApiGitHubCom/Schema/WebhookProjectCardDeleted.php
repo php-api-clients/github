@@ -11,22 +11,22 @@ final class WebhookProjectCardDeleted
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
-    public readonly array $project_card;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\ProjectCard $project_card;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectCardDeleted\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $enterprise, array $installation, array $organization, array $project_card, mixed $repository, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $project_card, mixed $repository, object $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

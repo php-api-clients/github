@@ -37,8 +37,8 @@ final class RequiredWorkflow
     /**
      * Minimal Repository
      */
-    public readonly array $repository;
-    public function __construct(int $id, string $name, string $path, string $scope, string $ref, string $state, string $selected_repositories_url, string $created_at, string $updated_at, array $repository)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
+    public function __construct(int $id, string $name, string $path, string $scope, string $ref, string $state, string $selected_repositories_url, string $created_at, string $updated_at, object $repository)
     {
         $this->id = $id;
         $this->name = $name;

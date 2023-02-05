@@ -10,9 +10,9 @@ final class GistHistory
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\User $user;
     public readonly string $version;
     public readonly string $committed_at;
-    public readonly array $change_status;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory\ChangeStatus $change_status;
     public readonly string $url;
-    public function __construct(mixed $user, string $version, string $committed_at, array $change_status, string $url)
+    public function __construct(mixed $user, string $version, string $committed_at, object $change_status, string $url)
     {
         $this->user = $user;
         $this->version = $version;

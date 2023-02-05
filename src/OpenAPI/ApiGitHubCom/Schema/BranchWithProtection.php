@@ -11,17 +11,17 @@ final class BranchWithProtection
     /**
      * Commit
      */
-    public readonly array $commit;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit $commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection\Links $_links;
     public readonly bool $protected;
     /**
      * Branch Protection
      */
-    public readonly array $protection;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection;
     public readonly string $protection_url;
     public readonly ?string $pattern;
     public readonly ?int $required_approving_review_count;
-    public function __construct(string $name, array $commit, array $_links, bool $protected, array $protection, string $protection_url, string $pattern, int $required_approving_review_count)
+    public function __construct(string $name, object $commit, object $_links, bool $protected, object $protection, string $protection_url, string $pattern, int $required_approving_review_count)
     {
         $this->name = $name;
         $this->commit = $commit;

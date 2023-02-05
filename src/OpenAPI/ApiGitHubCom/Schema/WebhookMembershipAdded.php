@@ -11,30 +11,30 @@ final class WebhookMembershipAdded
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
-    public readonly array $member;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Member $member;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * The scope of the membership. Currently, can only be `team`.
      */
     public readonly string $scope;
-    public readonly array $sender;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Sender $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public readonly array $team;
-    public function __construct(string $action, array $enterprise, array $installation, array $member, array $organization, array $repository, string $scope, array $sender, array $team)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Team $team;
+    public function __construct(string $action, object $enterprise, object $installation, object $member, object $organization, object $repository, string $scope, object $sender, object $team)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

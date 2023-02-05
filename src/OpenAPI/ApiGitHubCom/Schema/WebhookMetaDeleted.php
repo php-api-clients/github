@@ -11,11 +11,11 @@ final class WebhookMetaDeleted
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The modified webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
      */
-    public readonly array $hook;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Hook $hook;
     /**
      * The id of the modified webhook.
      */
@@ -23,17 +23,17 @@ final class WebhookMetaDeleted
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMetaDeleted\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $enterprise, array $hook, int $hook_id, array $installation, array $organization, mixed $repository, array $sender)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $enterprise, object $hook, int $hook_id, object $installation, object $organization, mixed $repository, object $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

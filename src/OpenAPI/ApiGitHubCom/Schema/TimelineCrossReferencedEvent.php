@@ -11,11 +11,11 @@ final class TimelineCrossReferencedEvent
     /**
      * A GitHub user.
      */
-    public readonly array $actor;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     public readonly string $created_at;
     public readonly string $updated_at;
-    public readonly array $source;
-    public function __construct(string $event, array $actor, string $created_at, string $updated_at, array $source)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCrossReferencedEvent\Source $source;
+    public function __construct(string $event, object $actor, string $created_at, string $updated_at, object $source)
     {
         $this->event = $event;
         $this->actor = $actor;

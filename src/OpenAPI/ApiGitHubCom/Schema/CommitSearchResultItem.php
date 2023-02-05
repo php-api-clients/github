@@ -11,7 +11,7 @@ final class CommitSearchResultItem
     public readonly string $sha;
     public readonly string $html_url;
     public readonly string $comments_url;
-    public readonly array $commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Commit $commit;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Author $author;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Committer $committer;
     /**
@@ -21,7 +21,7 @@ final class CommitSearchResultItem
     /**
      * Minimal Repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     public readonly int $score;
     public readonly string $node_id;
     /**
@@ -32,7 +32,7 @@ final class CommitSearchResultItem
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents> $parents
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches> $text_matches
      */
-    public function __construct(string $url, string $sha, string $html_url, string $comments_url, array $commit, mixed $author, mixed $committer, array $parents, array $repository, int $score, string $node_id, array $text_matches)
+    public function __construct(string $url, string $sha, string $html_url, string $comments_url, object $commit, mixed $author, mixed $committer, array $parents, object $repository, int $score, string $node_id, array $text_matches)
     {
         $this->url = $url;
         $this->sha = $sha;

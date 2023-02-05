@@ -20,12 +20,12 @@ final class Json
     /**
      * The permissions granted to the user-to-server access token.
      */
-    public readonly array $permissions;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories> $repositories
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $repository_ids
      */
-    public function __construct(array $repositories, array $repository_ids, array $permissions)
+    public function __construct(array $repositories, array $repository_ids, object $permissions)
     {
         $this->repositories = $repositories;
         $this->repository_ids = $repository_ids;

@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/openapi-client-generator.git",
-                "reference": "8b7e4102e5d39425224cda077d7c7333ecbb5fa9"
+                "reference": "a7cc5bc39f31b74c43b9cb76b9fa47b6d930c77f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/8b7e4102e5d39425224cda077d7c7333ecbb5fa9",
-                "reference": "8b7e4102e5d39425224cda077d7c7333ecbb5fa9",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-generator/zipball/a7cc5bc39f31b74c43b9cb76b9fa47b6d930c77f",
+                "reference": "a7cc5bc39f31b74c43b9cb76b9fa47b6d930c77f",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "issues": "https://github.com/php-api-clients/openapi-client-generator/issues",
                 "source": "https://github.com/php-api-clients/openapi-client-generator/tree/master"
             },
-            "time": "2023-02-04T20:28:42+00:00"
+            "time": "2023-02-05T15:14:16+00:00"
         },
         {
             "name": "cebe/php-openapi",
@@ -239,16 +239,16 @@
         },
         {
             "name": "eventsauce/object-hydrator",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/ObjectHydrator.git",
-                "reference": "8bc49df0575df1e848636cc7958e5eb314fece8f"
+                "reference": "ea3d323c41384f77c0e8eeb5ec882306930ec0c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/8bc49df0575df1e848636cc7958e5eb314fece8f",
-                "reference": "8bc49df0575df1e848636cc7958e5eb314fece8f",
+                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/ea3d323c41384f77c0e8eeb5ec882306930ec0c0",
+                "reference": "ea3d323c41384f77c0e8eeb5ec882306930ec0c0",
                 "shasum": ""
             },
             "require": {
@@ -291,7 +291,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EventSaucePHP/ObjectHydrator/issues",
-                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.1.1"
+                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.1.2"
             },
             "funding": [
                 {
@@ -299,7 +299,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-04T19:54:57+00:00"
+            "time": "2023-02-05T15:06:44+00:00"
         },
         {
             "name": "fig/http-message-util",

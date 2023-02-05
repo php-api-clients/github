@@ -13,14 +13,14 @@ final class RemovedFromProjectIssueEvent
     /**
      * A GitHub user.
      */
-    public readonly array $actor;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     public readonly string $event;
     public readonly ?string $commit_id;
     public readonly ?string $commit_url;
     public readonly string $created_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RemovedFromProjectIssueEvent\PerformedViaGithubApp $performed_via_github_app;
-    public readonly array $project_card;
-    public function __construct(int $id, string $node_id, string $url, array $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, array $project_card)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RemovedFromProjectIssueEvent\ProjectCard $project_card;
+    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, object $project_card)
     {
         $this->id = $id;
         $this->node_id = $node_id;

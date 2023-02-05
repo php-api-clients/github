@@ -53,13 +53,13 @@ final class CodeScanningAnalysis
      * An identifier for the upload.
      */
     public readonly string $sarif_id;
-    public readonly array $tool;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisTool $tool;
     public readonly bool $deletable;
     /**
      * Warning generated when processing the analysis
      */
     public readonly string $warning;
-    public function __construct(string $ref, string $commit_sha, string $analysis_key, string $environment, string $category, string $error, string $created_at, int $results_count, int $rules_count, int $id, string $url, string $sarif_id, array $tool, bool $deletable, string $warning)
+    public function __construct(string $ref, string $commit_sha, string $analysis_key, string $environment, string $category, string $error, string $created_at, int $results_count, int $rules_count, int $id, string $url, string $sarif_id, object $tool, bool $deletable, string $warning)
     {
         $this->ref = $ref;
         $this->commit_sha = $commit_sha;

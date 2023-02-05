@@ -14,7 +14,7 @@ final class MinimalRepository
     /**
      * A GitHub user.
      */
-    public readonly array $owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     public readonly bool $private;
     public readonly string $html_url;
     public readonly ?string $description;
@@ -89,7 +89,7 @@ final class MinimalRepository
     public readonly ?string $pushed_at;
     public readonly ?string $created_at;
     public readonly ?string $updated_at;
-    public readonly array $permissions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Permissions $permissions;
     public readonly ?string $role_name;
     public readonly ?string $temp_clone_token;
     public readonly ?bool $delete_branch_on_merge;
@@ -98,18 +98,18 @@ final class MinimalRepository
     /**
      * Code Of Conduct
      */
-    public readonly array $code_of_conduct;
-    public readonly array $license;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeOfConduct $code_of_conduct;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\License $license;
     public readonly ?int $forks;
     public readonly ?int $open_issues;
     public readonly ?int $watchers;
     public readonly ?bool $allow_forking;
     public readonly ?bool $web_commit_signoff_required;
-    public readonly array $security_and_analysis;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis $security_and_analysis;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository\Topics> $topics
      */
-    public function __construct(int $id, string $node_id, string $name, string $full_name, array $owner, bool $private, string $html_url, string $description, bool $fork, string $url, string $archive_url, string $assignees_url, string $blobs_url, string $branches_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, string $deployments_url, string $downloads_url, string $events_url, string $forks_url, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $git_url, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $languages_url, string $merges_url, string $milestones_url, string $notifications_url, string $pulls_url, string $releases_url, string $ssh_url, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $tags_url, string $teams_url, string $trees_url, string $clone_url, string $mirror_url, string $hooks_url, string $svn_url, string $homepage, string $language, int $forks_count, int $stargazers_count, int $watchers_count, int $size, string $default_branch, int $open_issues_count, bool $is_template, array $topics, bool $has_issues, bool $has_projects, bool $has_wiki, bool $has_pages, bool $has_downloads, bool $has_discussions, bool $archived, bool $disabled, string $visibility, string $pushed_at, string $created_at, string $updated_at, array $permissions, string $role_name, string $temp_clone_token, bool $delete_branch_on_merge, int $subscribers_count, int $network_count, array $code_of_conduct, array $license, int $forks, int $open_issues, int $watchers, bool $allow_forking, bool $web_commit_signoff_required, array $security_and_analysis)
+    public function __construct(int $id, string $node_id, string $name, string $full_name, object $owner, bool $private, string $html_url, string $description, bool $fork, string $url, string $archive_url, string $assignees_url, string $blobs_url, string $branches_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, string $deployments_url, string $downloads_url, string $events_url, string $forks_url, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $git_url, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $languages_url, string $merges_url, string $milestones_url, string $notifications_url, string $pulls_url, string $releases_url, string $ssh_url, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $tags_url, string $teams_url, string $trees_url, string $clone_url, string $mirror_url, string $hooks_url, string $svn_url, string $homepage, string $language, int $forks_count, int $stargazers_count, int $watchers_count, int $size, string $default_branch, int $open_issues_count, bool $is_template, array $topics, bool $has_issues, bool $has_projects, bool $has_wiki, bool $has_pages, bool $has_downloads, bool $has_discussions, bool $archived, bool $disabled, string $visibility, string $pushed_at, string $created_at, string $updated_at, object $permissions, string $role_name, string $temp_clone_token, bool $delete_branch_on_merge, int $subscribers_count, int $network_count, object $code_of_conduct, object $license, int $forks, int $open_issues, int $watchers, bool $allow_forking, bool $web_commit_signoff_required, object $security_and_analysis)
     {
         $this->id = $id;
         $this->node_id = $node_id;

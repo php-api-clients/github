@@ -10,9 +10,9 @@ final class H200
     /**
      * A GitHub user.
      */
-    public readonly array $billable_owner;
-    public readonly array $defaults;
-    public function __construct(array $billable_owner, array $defaults)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $billable_owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H200\Defaults $defaults;
+    public function __construct(object $billable_owner, object $defaults)
     {
         $this->billable_owner = $billable_owner;
         $this->defaults = $defaults;

@@ -13,7 +13,7 @@ final class WebhookStatus
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Branches>
      */
     public readonly array $branches;
-    public readonly array $commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Commit $commit;
     public readonly string $context;
     public readonly string $created_at;
     /**
@@ -23,7 +23,7 @@ final class WebhookStatus
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The unique identifier of the status.
      */
@@ -31,20 +31,20 @@ final class WebhookStatus
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     public readonly string $name;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * The Commit SHA.
      */
@@ -61,7 +61,7 @@ final class WebhookStatus
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Branches> $branches
      */
-    public function __construct(string $avatar_url, array $branches, array $commit, string $context, string $created_at, string $description, array $enterprise, int $id, array $installation, string $name, array $organization, array $repository, array $sender, string $sha, string $state, string $target_url, string $updated_at)
+    public function __construct(string $avatar_url, array $branches, object $commit, string $context, string $created_at, string $description, object $enterprise, int $id, object $installation, string $name, object $organization, object $repository, object $sender, string $sha, string $state, string $target_url, string $updated_at)
     {
         $this->avatar_url = $avatar_url;
         $this->branches = $branches;

@@ -15,13 +15,13 @@ final class RepoRequiredWorkflow
     /**
      * Minimal Repository
      */
-    public readonly array $source_repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $source_repository;
     public readonly string $created_at;
     public readonly string $updated_at;
     public readonly string $url;
     public readonly string $html_url;
     public readonly string $badge_url;
-    public function __construct(int $id, string $node_id, string $name, string $path, string $state, array $source_repository, string $created_at, string $updated_at, string $url, string $html_url, string $badge_url)
+    public function __construct(int $id, string $node_id, string $name, string $path, string $state, object $source_repository, string $created_at, string $updated_at, string $url, string $html_url, string $badge_url)
     {
         $this->id = $id;
         $this->node_id = $node_id;

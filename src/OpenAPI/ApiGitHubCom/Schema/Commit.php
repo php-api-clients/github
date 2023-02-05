@@ -12,14 +12,14 @@ final class Commit
     public readonly string $node_id;
     public readonly string $html_url;
     public readonly string $comments_url;
-    public readonly array $commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Commit $commit;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author $author;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer $committer;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents>
      */
     public readonly array $parents;
-    public readonly array $stats;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Stats $stats;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry>
      */
@@ -28,7 +28,7 @@ final class Commit
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents> $parents
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry> $files
      */
-    public function __construct(string $url, string $sha, string $node_id, string $html_url, string $comments_url, array $commit, mixed $author, mixed $committer, array $parents, array $stats, array $files)
+    public function __construct(string $url, string $sha, string $node_id, string $html_url, string $comments_url, object $commit, mixed $author, mixed $committer, array $parents, object $stats, array $files)
     {
         $this->url = $url;
         $this->sha = $sha;

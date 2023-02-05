@@ -13,7 +13,7 @@ final class ReviewRequestedIssueEvent
     /**
      * A GitHub user.
      */
-    public readonly array $actor;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     public readonly string $event;
     public readonly ?string $commit_id;
     public readonly ?string $commit_url;
@@ -22,16 +22,16 @@ final class ReviewRequestedIssueEvent
     /**
      * A GitHub user.
      */
-    public readonly array $review_requester;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $review_requester;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public readonly array $requested_team;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team $requested_team;
     /**
      * A GitHub user.
      */
-    public readonly array $requested_reviewer;
-    public function __construct(int $id, string $node_id, string $url, array $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, array $review_requester, array $requested_team, array $requested_reviewer)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $requested_reviewer;
+    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, object $review_requester, object $requested_team, object $requested_reviewer)
     {
         $this->id = $id;
         $this->node_id = $node_id;

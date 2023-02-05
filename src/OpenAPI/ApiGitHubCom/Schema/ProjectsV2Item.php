@@ -18,11 +18,11 @@ final class ProjectsV2Item
     /**
      * A GitHub user.
      */
-    public readonly array $creator;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
     public readonly string $created_at;
     public readonly string $updated_at;
     public readonly ?string $archived_at;
-    public function __construct(int $id, string $node_id, string $project_node_id, string $content_node_id, string $content_type, array $creator, string $created_at, string $updated_at, string $archived_at)
+    public function __construct(int $id, string $node_id, string $project_node_id, string $content_node_id, string $content_type, object $creator, string $created_at, string $updated_at, string $archived_at)
     {
         $this->id = $id;
         $this->node_id = $node_id;

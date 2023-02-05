@@ -36,24 +36,24 @@ final class WebhookPush
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * Whether this push was a force push of the `ref`.
      */
     public readonly bool $forced;
-    public readonly array $head_commit;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit $head_commit;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * Metaproperties for Git author/committer information.
      */
-    public readonly array $pusher;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Pusher $pusher;
     /**
      * The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
      */
@@ -61,15 +61,15 @@ final class WebhookPush
     /**
      * A git repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Commits> $commits
      */
-    public function __construct(string $after, string $base_ref, string $before, array $commits, string $compare, bool $created, bool $deleted, array $enterprise, bool $forced, array $head_commit, array $installation, array $organization, array $pusher, string $ref, array $repository, array $sender)
+    public function __construct(string $after, string $base_ref, string $before, array $commits, string $compare, bool $created, bool $deleted, object $enterprise, bool $forced, object $head_commit, object $installation, object $organization, object $pusher, string $ref, object $repository, object $sender)
     {
         $this->after = $after;
         $this->base_ref = $base_ref;

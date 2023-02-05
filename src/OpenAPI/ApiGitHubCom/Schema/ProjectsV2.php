@@ -12,11 +12,11 @@ final class ProjectsV2
     /**
      * A GitHub user.
      */
-    public readonly array $owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     /**
      * A GitHub user.
      */
-    public readonly array $creator;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
     public readonly string $title;
     public readonly ?string $description;
     public readonly bool $public;
@@ -27,7 +27,7 @@ final class ProjectsV2
     public readonly ?string $short_description;
     public readonly ?string $deleted_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectsV2\DeletedBy $deleted_by;
-    public function __construct(int $id, string $node_id, array $owner, array $creator, string $title, string $description, bool $public, string $closed_at, string $created_at, string $updated_at, int $number, string $short_description, string $deleted_at, mixed $deleted_by)
+    public function __construct(int $id, string $node_id, object $owner, object $creator, string $title, string $description, bool $public, string $closed_at, string $created_at, string $updated_at, int $number, string $short_description, string $deleted_at, mixed $deleted_by)
     {
         $this->id = $id;
         $this->node_id = $node_id;

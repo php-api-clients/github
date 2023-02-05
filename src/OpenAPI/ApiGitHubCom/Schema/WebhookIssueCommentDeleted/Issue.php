@@ -8,7 +8,7 @@ final class Issue
     public const SCHEMA_TITLE = 'Issue';
     public const SCHEMA_DESCRIPTION = 'The [issue](https://docs.github.com/rest/reference/issues) itself.';
     public readonly ?string $active_lock_reason;
-    public readonly array $assignee;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Assignee $assignee;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Assignees>
      */
@@ -38,15 +38,15 @@ final class Issue
     /**
      * A collection of related issues and pull requests.
      */
-    public readonly array $milestone;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Milestone $milestone;
     public readonly string $node_id;
     public readonly int $number;
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public readonly array $performed_via_github_app;
-    public readonly array $pull_request;
-    public readonly array $reactions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\PerformedViaGithubApp $performed_via_github_app;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\PullRequest $pull_request;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Reactions $reactions;
     public readonly string $repository_url;
     /**
      * State of the issue; either 'open' or 'closed'
@@ -63,12 +63,12 @@ final class Issue
      * URL for the issue
      */
     public readonly string $url;
-    public readonly array $user;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\User $user;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Assignees> $assignees
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue\Labels> $labels
      */
-    public function __construct(string $active_lock_reason, array $assignee, array $assignees, string $author_association, string $body, string $closed_at, int $comments, string $comments_url, string $created_at, bool $draft, string $events_url, string $html_url, int $id, array $labels, string $labels_url, bool $locked, array $milestone, string $node_id, int $number, array $performed_via_github_app, array $pull_request, array $reactions, string $repository_url, string $state, string $state_reason, string $timeline_url, string $title, string $updated_at, string $url, array $user)
+    public function __construct(string $active_lock_reason, object $assignee, array $assignees, string $author_association, string $body, string $closed_at, int $comments, string $comments_url, string $created_at, bool $draft, string $events_url, string $html_url, int $id, array $labels, string $labels_url, bool $locked, object $milestone, string $node_id, int $number, object $performed_via_github_app, object $pull_request, object $reactions, string $repository_url, string $state, string $state_reason, string $timeline_url, string $title, string $updated_at, string $url, object $user)
     {
         $this->active_lock_reason = $active_lock_reason;
         $this->assignee = $assignee;

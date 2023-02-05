@@ -15,7 +15,7 @@ final class BaseGist
     public readonly string $git_pull_url;
     public readonly string $git_push_url;
     public readonly string $html_url;
-    public readonly array $files;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist\Files $files;
     public readonly bool $public;
     public readonly string $created_at;
     public readonly string $updated_at;
@@ -26,7 +26,7 @@ final class BaseGist
     /**
      * A GitHub user.
      */
-    public readonly array $owner;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     public readonly ?bool $truncated;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist\Forks>
@@ -40,7 +40,7 @@ final class BaseGist
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist\Forks> $forks
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BaseGist\History> $history
      */
-    public function __construct(string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, array $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, mixed $user, string $comments_url, array $owner, bool $truncated, array $forks, array $history)
+    public function __construct(string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, object $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, mixed $user, string $comments_url, object $owner, bool $truncated, array $forks, array $history)
     {
         $this->url = $url;
         $this->forks_url = $forks_url;

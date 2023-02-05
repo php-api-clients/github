@@ -11,9 +11,9 @@ final class SimpleCommit
     public readonly string $tree_id;
     public readonly string $message;
     public readonly string $timestamp;
-    public readonly array $author;
-    public readonly array $committer;
-    public function __construct(string $id, string $tree_id, string $message, string $timestamp, array $author, array $committer)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Author $author;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Committer $committer;
+    public function __construct(string $id, string $tree_id, string $message, string $timestamp, object $author, object $committer)
     {
         $this->id = $id;
         $this->tree_id = $tree_id;

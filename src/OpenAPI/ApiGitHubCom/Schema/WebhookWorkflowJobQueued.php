@@ -11,29 +11,29 @@ final class WebhookWorkflowJobQueued
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public readonly array $workflow_job;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowJobQueued\WorkflowJob $workflow_job;
     /**
      * A request for a specific ref(branch,sha,tag) to be deployed
      */
-    public readonly array $deployment;
-    public function __construct(string $action, array $enterprise, array $installation, array $organization, array $repository, array $sender, array $workflow_job, array $deployment)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment $deployment;
+    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $workflow_job, object $deployment)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

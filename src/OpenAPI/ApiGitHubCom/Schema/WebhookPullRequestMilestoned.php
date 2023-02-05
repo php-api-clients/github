@@ -11,11 +11,11 @@ final class WebhookPullRequestMilestoned
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * A collection of related issues and pull requests.
      */
-    public readonly array $milestone;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone $milestone;
     /**
      * The pull request number.
      */
@@ -23,17 +23,17 @@ final class WebhookPullRequestMilestoned
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
-    public readonly array $pull_request;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestMilestoned\PullRequest $pull_request;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $enterprise, array $milestone, int $number, array $organization, array $pull_request, array $repository, array $sender)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $enterprise, object $milestone, int $number, object $organization, object $pull_request, object $repository, object $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

@@ -19,11 +19,11 @@ final class Json
     /**
      * The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
-    public readonly array $deployment_branch_policy;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicySettings $deployment_branch_policy;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers> $reviewers
      */
-    public function __construct(int $wait_timer, array $reviewers, array $deployment_branch_policy)
+    public function __construct(int $wait_timer, array $reviewers, object $deployment_branch_policy)
     {
         $this->wait_timer = $wait_timer;
         $this->reviewers = $reviewers;

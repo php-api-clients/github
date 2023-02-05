@@ -10,14 +10,14 @@ final class Apps
     public readonly int $id;
     public readonly string $slug;
     public readonly string $node_id;
-    public readonly array $owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Owner $owner;
     public readonly string $name;
     public readonly string $description;
     public readonly string $external_url;
     public readonly string $html_url;
     public readonly string $created_at;
     public readonly string $updated_at;
-    public readonly array $permissions;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Permissions $permissions;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Events>
      */
@@ -25,7 +25,7 @@ final class Apps
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Events> $events
      */
-    public function __construct(int $id, string $slug, string $node_id, array $owner, string $name, string $description, string $external_url, string $html_url, string $created_at, string $updated_at, array $permissions, array $events)
+    public function __construct(int $id, string $slug, string $node_id, object $owner, string $name, string $description, string $external_url, string $html_url, string $created_at, string $updated_at, object $permissions, array $events)
     {
         $this->id = $id;
         $this->slug = $slug;

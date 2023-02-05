@@ -20,7 +20,7 @@ final class TeamProject
     /**
      * A GitHub user.
      */
-    public readonly array $creator;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator;
     public readonly string $created_at;
     public readonly string $updated_at;
     /**
@@ -31,8 +31,8 @@ final class TeamProject
      * Whether the project is private or not. Only present when owner is an organization.
      */
     public readonly ?bool $private;
-    public readonly array $permissions;
-    public function __construct(string $owner_url, string $url, string $html_url, string $columns_url, int $id, string $node_id, string $name, string $body, int $number, string $state, array $creator, string $created_at, string $updated_at, string $organization_permission, bool $private, array $permissions)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject\Permissions $permissions;
+    public function __construct(string $owner_url, string $url, string $html_url, string $columns_url, int $id, string $node_id, string $name, string $body, int $number, string $state, object $creator, string $created_at, string $updated_at, string $organization_permission, bool $private, object $permissions)
     {
         $this->owner_url = $owner_url;
         $this->url = $url;

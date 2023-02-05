@@ -20,11 +20,11 @@ final class Repository
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\License $license;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\Organization $organization;
     public readonly int $forks;
-    public readonly array $permissions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\Permissions $permissions;
     /**
      * A GitHub user.
      */
-    public readonly array $owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     /**
      * Whether the repository is private or public.
      */
@@ -136,7 +136,7 @@ final class Repository
      * Whether to allow rebase merges for pull requests.
      */
     public readonly ?bool $allow_rebase_merge;
-    public readonly array $template_repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\TemplateRepository $template_repository;
     public readonly ?string $temp_clone_token;
     /**
      * Whether to allow squash merges for pull requests.
@@ -213,7 +213,7 @@ final class Repository
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\Topics> $topics
      */
-    public function __construct(int $id, string $node_id, string $name, string $full_name, mixed $license, mixed $organization, int $forks, array $permissions, array $owner, bool $private, string $html_url, string $description, bool $fork, string $url, string $archive_url, string $assignees_url, string $blobs_url, string $branches_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, string $deployments_url, string $downloads_url, string $events_url, string $forks_url, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $git_url, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $languages_url, string $merges_url, string $milestones_url, string $notifications_url, string $pulls_url, string $releases_url, string $ssh_url, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $tags_url, string $teams_url, string $trees_url, string $clone_url, string $mirror_url, string $hooks_url, string $svn_url, string $homepage, string $language, int $forks_count, int $stargazers_count, int $watchers_count, int $size, string $default_branch, int $open_issues_count, bool $is_template, array $topics, bool $has_issues, bool $has_projects, bool $has_wiki, bool $has_pages, bool $has_downloads, bool $has_discussions, bool $archived, bool $disabled, string $visibility, string $pushed_at, string $created_at, string $updated_at, bool $allow_rebase_merge, array $template_repository, string $temp_clone_token, bool $allow_squash_merge, bool $allow_auto_merge, bool $delete_branch_on_merge, bool $allow_update_branch, bool $use_squash_pr_title_as_default, string $squash_merge_commit_title, string $squash_merge_commit_message, string $merge_commit_title, string $merge_commit_message, bool $allow_merge_commit, bool $allow_forking, bool $web_commit_signoff_required, int $subscribers_count, int $network_count, int $open_issues, int $watchers, string $master_branch, string $starred_at, bool $anonymous_access_enabled)
+    public function __construct(int $id, string $node_id, string $name, string $full_name, mixed $license, mixed $organization, int $forks, object $permissions, object $owner, bool $private, string $html_url, string $description, bool $fork, string $url, string $archive_url, string $assignees_url, string $blobs_url, string $branches_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, string $deployments_url, string $downloads_url, string $events_url, string $forks_url, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $git_url, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $languages_url, string $merges_url, string $milestones_url, string $notifications_url, string $pulls_url, string $releases_url, string $ssh_url, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $tags_url, string $teams_url, string $trees_url, string $clone_url, string $mirror_url, string $hooks_url, string $svn_url, string $homepage, string $language, int $forks_count, int $stargazers_count, int $watchers_count, int $size, string $default_branch, int $open_issues_count, bool $is_template, array $topics, bool $has_issues, bool $has_projects, bool $has_wiki, bool $has_pages, bool $has_downloads, bool $has_discussions, bool $archived, bool $disabled, string $visibility, string $pushed_at, string $created_at, string $updated_at, bool $allow_rebase_merge, object $template_repository, string $temp_clone_token, bool $allow_squash_merge, bool $allow_auto_merge, bool $delete_branch_on_merge, bool $allow_update_branch, bool $use_squash_pr_title_as_default, string $squash_merge_commit_title, string $squash_merge_commit_message, string $merge_commit_title, string $merge_commit_message, bool $allow_merge_commit, bool $allow_forking, bool $web_commit_signoff_required, int $subscribers_count, int $network_count, int $open_issues, int $watchers, string $master_branch, string $starred_at, bool $anonymous_access_enabled)
     {
         $this->id = $id;
         $this->node_id = $node_id;

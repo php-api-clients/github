@@ -27,12 +27,12 @@ final class CheckRun
     public readonly ?string $conclusion;
     public readonly ?string $started_at;
     public readonly ?string $completed_at;
-    public readonly array $output;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\Output $output;
     /**
      * The name of the check.
      */
     public readonly string $name;
-    public readonly array $check_suite;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite $check_suite;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\App $app;
     /**
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal>
@@ -41,11 +41,11 @@ final class CheckRun
     /**
      * A deployment created as the result of an Actions check run from a workflow that references an environment
      */
-    public readonly array $deployment;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple $deployment;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(int $id, string $head_sha, string $node_id, string $external_id, string $url, string $html_url, string $details_url, string $status, string $conclusion, string $started_at, string $completed_at, array $output, string $name, array $check_suite, mixed $app, array $pull_requests, array $deployment)
+    public function __construct(int $id, string $head_sha, string $node_id, string $external_id, string $url, string $html_url, string $details_url, string $status, string $conclusion, string $started_at, string $completed_at, object $output, string $name, object $check_suite, mixed $app, array $pull_requests, object $deployment)
     {
         $this->id = $id;
         $this->head_sha = $head_sha;

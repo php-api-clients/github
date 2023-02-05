@@ -58,9 +58,9 @@ final class PullRequest
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple>
      */
     public readonly array $requested_teams;
-    public readonly array $head;
-    public readonly array $base;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Head $head;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Base $base;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequest\Links $_links;
     /**
      * How the author is associated with the repository.
      */
@@ -68,7 +68,7 @@ final class PullRequest
     /**
      * The status of auto merging a pull request.
      */
-    public readonly array $auto_merge;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge $auto_merge;
     /**
      * Indicates whether or not the pull request is a draft.
      */
@@ -94,7 +94,7 @@ final class PullRequest
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser> $requested_reviewers
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamSimple> $requested_teams
      */
-    public function __construct(string $url, int $id, string $node_id, string $html_url, string $diff_url, string $patch_url, string $issue_url, string $commits_url, string $review_comments_url, string $review_comment_url, string $comments_url, string $statuses_url, int $number, string $state, bool $locked, string $title, mixed $user, string $body, array $labels, mixed $milestone, string $active_lock_reason, string $created_at, string $updated_at, string $closed_at, string $merged_at, string $merge_commit_sha, mixed $assignee, array $assignees, array $requested_reviewers, array $requested_teams, array $head, array $base, array $_links, string $author_association, array $auto_merge, bool $draft, bool $merged, bool $mergeable, bool $rebaseable, string $mergeable_state, mixed $merged_by, int $comments, int $review_comments, bool $maintainer_can_modify, int $commits, int $additions, int $deletions, int $changed_files)
+    public function __construct(string $url, int $id, string $node_id, string $html_url, string $diff_url, string $patch_url, string $issue_url, string $commits_url, string $review_comments_url, string $review_comment_url, string $comments_url, string $statuses_url, int $number, string $state, bool $locked, string $title, mixed $user, string $body, array $labels, mixed $milestone, string $active_lock_reason, string $created_at, string $updated_at, string $closed_at, string $merged_at, string $merge_commit_sha, mixed $assignee, array $assignees, array $requested_reviewers, array $requested_teams, object $head, object $base, object $_links, string $author_association, object $auto_merge, bool $draft, bool $merged, bool $mergeable, bool $rebaseable, string $mergeable_state, mixed $merged_by, int $comments, int $review_comments, bool $maintainer_can_modify, int $commits, int $additions, int $deletions, int $changed_files)
     {
         $this->url = $url;
         $this->id = $id;

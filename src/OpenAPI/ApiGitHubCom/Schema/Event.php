@@ -12,16 +12,16 @@ final class Event
     /**
      * Actor
      */
-    public readonly array $actor;
-    public readonly array $repo;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $actor;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Repo $repo;
     /**
      * Actor
      */
-    public readonly array $org;
-    public readonly array $payload;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Payload $payload;
     public readonly bool $public;
     public readonly ?string $created_at;
-    public function __construct(string $id, string $type, array $actor, array $repo, array $org, array $payload, bool $public, string $created_at)
+    public function __construct(string $id, string $type, object $actor, object $repo, object $org, object $payload, bool $public, string $created_at)
     {
         $this->id = $id;
         $this->type = $type;

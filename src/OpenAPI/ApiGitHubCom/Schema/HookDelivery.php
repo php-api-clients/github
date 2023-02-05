@@ -55,9 +55,9 @@ final class HookDelivery
      * The URL target of the delivery.
      */
     public readonly ?string $url;
-    public readonly array $request;
-    public readonly array $response;
-    public function __construct(int $id, string $guid, string $delivered_at, bool $redelivery, int $duration, string $status, int $status_code, string $event, string $action, int $installation_id, int $repository_id, string $url, array $request, array $response)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Request $request;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDelivery\Response $response;
+    public function __construct(int $id, string $guid, string $delivered_at, bool $redelivery, int $duration, string $status, int $status_code, string $event, string $action, int $installation_id, int $repository_id, string $url, object $request, object $response)
     {
         $this->id = $id;
         $this->guid = $guid;

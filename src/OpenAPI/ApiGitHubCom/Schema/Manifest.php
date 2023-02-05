@@ -11,16 +11,16 @@ final class Manifest
      * The name of the manifest.
      */
     public readonly string $name;
-    public readonly array $file;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File $file;
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      */
-    public readonly array $metadata;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata;
     /**
      * A collection of resolved package dependencies.
      */
-    public readonly array $resolved;
-    public function __construct(string $name, array $file, array $metadata, array $resolved)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved $resolved;
+    public function __construct(string $name, object $file, object $metadata, object $resolved)
     {
         $this->name = $name;
         $this->file = $file;

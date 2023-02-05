@@ -27,9 +27,9 @@ final class Collaborator
     public readonly string $received_events_url;
     public readonly string $type;
     public readonly bool $site_admin;
-    public readonly array $permissions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Collaborator\Permissions $permissions;
     public readonly string $role_name;
-    public function __construct(string $login, int $id, string $email, string $name, string $node_id, string $avatar_url, string $gravatar_id, string $url, string $html_url, string $followers_url, string $following_url, string $gists_url, string $starred_url, string $subscriptions_url, string $organizations_url, string $repos_url, string $events_url, string $received_events_url, string $type, bool $site_admin, array $permissions, string $role_name)
+    public function __construct(string $login, int $id, string $email, string $name, string $node_id, string $avatar_url, string $gravatar_id, string $url, string $html_url, string $followers_url, string $following_url, string $gists_url, string $starred_url, string $subscriptions_url, string $organizations_url, string $repos_url, string $events_url, string $received_events_url, string $type, bool $site_admin, object $permissions, string $role_name)
     {
         $this->login = $login;
         $this->id = $id;

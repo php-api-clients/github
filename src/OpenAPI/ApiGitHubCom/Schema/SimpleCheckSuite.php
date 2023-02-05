@@ -11,7 +11,7 @@ final class SimpleCheckSuite
     /**
      * GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public readonly array $app;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $app;
     public readonly ?string $before;
     public readonly ?string $conclusion;
     public readonly string $created_at;
@@ -29,14 +29,14 @@ final class SimpleCheckSuite
     /**
      * Minimal Repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     public readonly string $status;
     public readonly string $updated_at;
     public readonly string $url;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(string $after, array $app, string $before, string $conclusion, string $created_at, string $head_branch, string $head_sha, int $id, string $node_id, array $pull_requests, array $repository, string $status, string $updated_at, string $url)
+    public function __construct(string $after, object $app, string $before, string $conclusion, string $created_at, string $head_branch, string $head_sha, int $id, string $node_id, array $pull_requests, object $repository, string $status, string $updated_at, string $url)
     {
         $this->after = $after;
         $this->app = $app;

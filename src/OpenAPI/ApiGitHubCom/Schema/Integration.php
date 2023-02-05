@@ -29,7 +29,7 @@ final class Integration
     /**
      * The set of permissions for the GitHub app
      */
-    public readonly array $permissions;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Permissions $permissions;
     /**
      * The list of events for the GitHub app
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Events>
@@ -46,7 +46,7 @@ final class Integration
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration\Events> $events
      */
-    public function __construct(int $id, string $slug, string $node_id, mixed $owner, string $name, string $description, string $external_url, string $html_url, string $created_at, string $updated_at, array $permissions, array $events, int $installations_count, string $client_id, string $client_secret, string $webhook_secret, string $pem)
+    public function __construct(int $id, string $slug, string $node_id, mixed $owner, string $name, string $description, string $external_url, string $html_url, string $created_at, string $updated_at, object $permissions, array $events, int $installations_count, string $client_id, string $client_secret, string $webhook_secret, string $pem)
     {
         $this->id = $id;
         $this->slug = $slug;

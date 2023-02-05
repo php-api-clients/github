@@ -11,15 +11,15 @@ final class WebhookIssueCommentDeleted
     /**
      * The [comment](https://docs.github.com/rest/reference/issues#comments) itself.
      */
-    public readonly array $comment;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Comment $comment;
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * The [issue](https://docs.github.com/rest/reference/issues) the comment belongs to.
      */
@@ -27,16 +27,16 @@ final class WebhookIssueCommentDeleted
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $comment, array $enterprise, array $installation, mixed $issue, array $organization, array $repository, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $comment, object $enterprise, object $installation, mixed $issue, object $organization, object $repository, object $sender)
     {
         $this->action = $action;
         $this->comment = $comment;

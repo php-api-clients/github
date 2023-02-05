@@ -19,7 +19,7 @@ final class EnvironmentApprovals
     /**
      * A GitHub user.
      */
-    public readonly array $user;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
     /**
      * The comment submitted with the deployment review
      */
@@ -27,7 +27,7 @@ final class EnvironmentApprovals
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments> $environments
      */
-    public function __construct(array $environments, string $state, array $user, string $comment)
+    public function __construct(array $environments, string $state, object $user, string $comment)
     {
         $this->environments = $environments;
         $this->state = $state;

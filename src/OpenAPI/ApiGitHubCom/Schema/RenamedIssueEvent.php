@@ -13,14 +13,14 @@ final class RenamedIssueEvent
     /**
      * A GitHub user.
      */
-    public readonly array $actor;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     public readonly string $event;
     public readonly ?string $commit_id;
     public readonly ?string $commit_url;
     public readonly string $created_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
-    public readonly array $rename;
-    public function __construct(int $id, string $node_id, string $url, array $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, array $rename)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RenamedIssueEvent\Rename $rename;
+    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, object $rename)
     {
         $this->id = $id;
         $this->node_id = $node_id;

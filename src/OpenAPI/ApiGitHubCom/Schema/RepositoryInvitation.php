@@ -14,7 +14,7 @@ final class RepositoryInvitation
     /**
      * Minimal Repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Invitee $invitee;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryInvitation\Inviter $inviter;
     /**
@@ -32,7 +32,7 @@ final class RepositoryInvitation
     public readonly string $url;
     public readonly string $html_url;
     public readonly string $node_id;
-    public function __construct(int $id, array $repository, mixed $invitee, mixed $inviter, string $permissions, string $created_at, bool $expired, string $url, string $html_url, string $node_id)
+    public function __construct(int $id, object $repository, mixed $invitee, mixed $inviter, string $permissions, string $created_at, bool $expired, string $url, string $html_url, string $node_id)
     {
         $this->id = $id;
         $this->repository = $repository;

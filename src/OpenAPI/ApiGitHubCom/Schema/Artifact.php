@@ -26,8 +26,8 @@ final class Artifact
     public readonly ?string $created_at;
     public readonly ?string $expires_at;
     public readonly ?string $updated_at;
-    public readonly array $workflow_run;
-    public function __construct(int $id, string $node_id, string $name, int $size_in_bytes, string $url, string $archive_download_url, bool $expired, string $created_at, string $expires_at, string $updated_at, array $workflow_run)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Artifact\WorkflowRun $workflow_run;
+    public function __construct(int $id, string $node_id, string $name, int $size_in_bytes, string $url, string $archive_download_url, bool $expired, string $created_at, string $expires_at, string $updated_at, object $workflow_run)
     {
         $this->id = $id;
         $this->node_id = $node_id;

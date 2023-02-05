@@ -14,13 +14,13 @@ final class Team
     public readonly ?string $description;
     public readonly ?string $privacy;
     public readonly string $permission;
-    public readonly array $permissions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Permissions $permissions;
     public readonly string $url;
     public readonly string $html_url;
     public readonly string $members_url;
     public readonly string $repositories_url;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Parent_ $parent;
-    public function __construct(int $id, string $node_id, string $name, string $slug, string $description, string $privacy, string $permission, array $permissions, string $url, string $html_url, string $members_url, string $repositories_url, mixed $parent)
+    public function __construct(int $id, string $node_id, string $name, string $slug, string $description, string $privacy, string $permission, object $permissions, string $url, string $html_url, string $members_url, string $repositories_url, mixed $parent)
     {
         $this->id = $id;
         $this->node_id = $node_id;

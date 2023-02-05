@@ -10,10 +10,10 @@ final class CommunityProfile
     public readonly int $health_percentage;
     public readonly ?string $description;
     public readonly ?string $documentation;
-    public readonly array $files;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile\Files $files;
     public readonly ?string $updated_at;
     public readonly ?bool $content_reports_enabled;
-    public function __construct(int $health_percentage, string $description, string $documentation, array $files, string $updated_at, bool $content_reports_enabled)
+    public function __construct(int $health_percentage, string $description, string $documentation, object $files, string $updated_at, bool $content_reports_enabled)
     {
         $this->health_percentage = $health_percentage;
         $this->description = $description;

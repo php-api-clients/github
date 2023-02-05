@@ -14,7 +14,7 @@ final class Dependency
     /**
      * User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      */
-    public readonly array $metadata;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata;
     /**
      * A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
      */
@@ -31,7 +31,7 @@ final class Dependency
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies> $dependencies
      */
-    public function __construct(string $package_url, array $metadata, string $relationship, string $scope, array $dependencies)
+    public function __construct(string $package_url, object $metadata, string $relationship, string $scope, array $dependencies)
     {
         $this->package_url = $package_url;
         $this->metadata = $metadata;

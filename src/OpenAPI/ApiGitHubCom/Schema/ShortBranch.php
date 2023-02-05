@@ -8,14 +8,14 @@ final class ShortBranch
     public const SCHEMA_TITLE = 'Short Branch';
     public const SCHEMA_DESCRIPTION = 'Short Branch';
     public readonly string $name;
-    public readonly array $commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBranch\Commit $commit;
     public readonly bool $protected;
     /**
      * Branch Protection
      */
-    public readonly array $protection;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection;
     public readonly ?string $protection_url;
-    public function __construct(string $name, array $commit, bool $protected, array $protection, string $protection_url)
+    public function __construct(string $name, object $commit, bool $protected, object $protection, string $protection_url)
     {
         $this->name = $name;
         $this->commit = $commit;

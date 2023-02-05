@@ -8,11 +8,11 @@ final class ProtectedBranchPullRequestReview
     public const SCHEMA_TITLE = 'Protected Branch Pull Request Review';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Pull Request Review';
     public readonly ?string $url;
-    public readonly array $dismissal_restrictions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions $dismissal_restrictions;
     /**
      * Allow specific users, teams, or apps to bypass pull request requirements.
      */
-    public readonly array $bypass_pull_request_allowances;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances $bypass_pull_request_allowances;
     public readonly bool $dismiss_stale_reviews;
     public readonly bool $require_code_owner_reviews;
     public readonly ?int $required_approving_review_count;
@@ -20,7 +20,7 @@ final class ProtectedBranchPullRequestReview
      * Whether the most recent push must be approved by someone other than the person who pushed it.
      */
     public readonly ?bool $require_last_push_approval;
-    public function __construct(string $url, array $dismissal_restrictions, array $bypass_pull_request_allowances, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval)
+    public function __construct(string $url, object $dismissal_restrictions, object $bypass_pull_request_allowances, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval)
     {
         $this->url = $url;
         $this->dismissal_restrictions = $dismissal_restrictions;

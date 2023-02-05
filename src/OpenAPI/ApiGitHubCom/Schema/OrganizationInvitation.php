@@ -17,12 +17,12 @@ final class OrganizationInvitation
     /**
      * A GitHub user.
      */
-    public readonly array $inviter;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $inviter;
     public readonly int $team_count;
     public readonly string $node_id;
     public readonly string $invitation_teams_url;
     public readonly ?string $invitation_source;
-    public function __construct(int $id, string $login, string $email, string $role, string $created_at, string $failed_at, string $failed_reason, array $inviter, int $team_count, string $node_id, string $invitation_teams_url, string $invitation_source)
+    public function __construct(int $id, string $login, string $email, string $role, string $created_at, string $failed_at, string $failed_reason, object $inviter, int $team_count, string $node_id, string $invitation_teams_url, string $invitation_source)
     {
         $this->id = $id;
         $this->login = $login;

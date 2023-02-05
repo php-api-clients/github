@@ -57,7 +57,7 @@ final class OrganizationSecretScanningAlert
     /**
      * A GitHub repository.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository $repository;
     /**
      * Whether push protection was bypassed for the detected secret.
      */
@@ -71,7 +71,7 @@ final class OrganizationSecretScanningAlert
      * The comment that was optionally added when this alert was closed
      */
     public readonly ?string $resolution_comment;
-    public function __construct(int $number, string $created_at, mixed $updated_at, string $url, string $html_url, string $locations_url, string $state, string $resolution, string $resolved_at, mixed $resolved_by, string $secret_type, string $secret_type_display_name, string $secret, array $repository, bool $push_protection_bypassed, mixed $push_protection_bypassed_by, string $push_protection_bypassed_at, string $resolution_comment)
+    public function __construct(int $number, string $created_at, mixed $updated_at, string $url, string $html_url, string $locations_url, string $state, string $resolution, string $resolved_at, mixed $resolved_by, string $secret_type, string $secret_type_display_name, string $secret, object $repository, bool $push_protection_bypassed, mixed $push_protection_bypassed_by, string $push_protection_bypassed_at, string $resolution_comment)
     {
         $this->number = $number;
         $this->created_at = $created_at;

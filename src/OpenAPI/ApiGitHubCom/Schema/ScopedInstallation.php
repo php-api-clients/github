@@ -10,7 +10,7 @@ final class ScopedInstallation
     /**
      * The permissions granted to the user-to-server access token.
      */
-    public readonly array $permissions;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions;
     /**
      * Describe whether all repositories have been selected or there's a selection involved
      */
@@ -25,11 +25,11 @@ final class ScopedInstallation
     /**
      * A GitHub user.
      */
-    public readonly array $account;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScopedInstallation\SingleFilePaths> $single_file_paths
      */
-    public function __construct(array $permissions, string $repository_selection, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $repositories_url, array $account)
+    public function __construct(object $permissions, string $repository_selection, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $repositories_url, object $account)
     {
         $this->permissions = $permissions;
         $this->repository_selection = $repository_selection;

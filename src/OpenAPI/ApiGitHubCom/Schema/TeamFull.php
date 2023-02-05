@@ -41,12 +41,12 @@ final class TeamFull
     /**
      * Team Organization
      */
-    public readonly array $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamOrganization $organization;
     /**
      * Distinguished Name (DN) that team maps to within LDAP environment
      */
     public readonly ?string $ldap_dn;
-    public function __construct(int $id, string $node_id, string $url, string $html_url, string $name, string $slug, string $description, string $privacy, string $permission, string $members_url, string $repositories_url, mixed $parent, int $members_count, int $repos_count, string $created_at, string $updated_at, array $organization, string $ldap_dn)
+    public function __construct(int $id, string $node_id, string $url, string $html_url, string $name, string $slug, string $description, string $privacy, string $permission, string $members_url, string $repositories_url, mixed $parent, int $members_count, int $repos_count, string $created_at, string $updated_at, object $organization, string $ldap_dn)
     {
         $this->id = $id;
         $this->node_id = $node_id;

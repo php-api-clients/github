@@ -23,8 +23,8 @@ final class CommitComment
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public readonly array $reactions;
-    public function __construct(string $html_url, string $url, int $id, string $node_id, string $body, string $path, int $position, int $line, string $commit_id, mixed $user, string $created_at, string $updated_at, string $author_association, array $reactions)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    public function __construct(string $html_url, string $url, int $id, string $node_id, string $body, string $path, int $position, int $line, string $commit_id, mixed $user, string $created_at, string $updated_at, string $author_association, object $reactions)
     {
         $this->html_url = $html_url;
         $this->url = $url;

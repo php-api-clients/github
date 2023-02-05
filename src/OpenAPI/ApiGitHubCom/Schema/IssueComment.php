@@ -32,8 +32,8 @@ final class IssueComment
      */
     public readonly string $author_association;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment\PerformedViaGithubApp $performed_via_github_app;
-    public readonly array $reactions;
-    public function __construct(int $id, string $node_id, string $url, string $body, string $body_text, string $body_html, string $html_url, mixed $user, string $created_at, string $updated_at, string $issue_url, string $author_association, mixed $performed_via_github_app, array $reactions)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
+    public function __construct(int $id, string $node_id, string $url, string $body, string $body_text, string $body_html, string $html_url, mixed $user, string $created_at, string $updated_at, string $issue_url, string $author_association, mixed $performed_via_github_app, object $reactions)
     {
         $this->id = $id;
         $this->node_id = $node_id;

@@ -14,7 +14,7 @@ final class Json
     /**
      * Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
      */
-    public readonly array $config;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config $config;
     /**
      * Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events>
@@ -27,7 +27,7 @@ final class Json
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events> $events
      */
-    public function __construct(string $name, array $config, array $events, bool $active)
+    public function __construct(string $name, object $config, array $events, bool $active)
     {
         $this->name = $name;
         $this->config = $config;

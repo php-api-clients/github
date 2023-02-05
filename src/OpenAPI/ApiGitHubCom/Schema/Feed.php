@@ -26,11 +26,11 @@ final class Feed
      * A feed of discussions for a given repository and category.
      */
     public readonly ?string $repository_discussions_category_url;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed\Links $_links;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed\CurrentUserOrganizationUrls> $current_user_organization_urls
      */
-    public function __construct(string $timeline_url, string $user_url, string $current_user_public_url, string $current_user_url, string $current_user_actor_url, string $current_user_organization_url, array $current_user_organization_urls, string $security_advisories_url, string $repository_discussions_url, string $repository_discussions_category_url, array $_links)
+    public function __construct(string $timeline_url, string $user_url, string $current_user_public_url, string $current_user_url, string $current_user_actor_url, string $current_user_organization_url, array $current_user_organization_urls, string $security_advisories_url, string $repository_discussions_url, string $repository_discussions_category_url, object $_links)
     {
         $this->timeline_url = $timeline_url;
         $this->user_url = $user_url;

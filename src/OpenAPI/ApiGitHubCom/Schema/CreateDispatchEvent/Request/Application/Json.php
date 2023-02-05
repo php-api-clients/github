@@ -14,8 +14,8 @@ final class Json
     /**
      * JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
      */
-    public readonly array $client_payload;
-    public function __construct(string $event_type, array $client_payload)
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\ClientPayload $client_payload;
+    public function __construct(string $event_type, object $client_payload)
     {
         $this->event_type = $event_type;
         $this->client_payload = $client_payload;

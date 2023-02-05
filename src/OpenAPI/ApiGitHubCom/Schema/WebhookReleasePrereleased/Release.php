@@ -12,7 +12,7 @@ final class Release
      */
     public readonly array $assets;
     public readonly string $assets_url;
-    public readonly array $author;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Author $author;
     public readonly ?string $body;
     public readonly ?string $created_at;
     public readonly ?string $discussion_url;
@@ -29,7 +29,7 @@ final class Release
      */
     public readonly bool $prerelease;
     public readonly ?string $published_at;
-    public readonly array $reactions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Reactions $reactions;
     /**
      * The name of the tag.
      */
@@ -45,7 +45,7 @@ final class Release
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Assets> $assets
      */
-    public function __construct(array $assets, string $assets_url, array $author, string $body, string $created_at, string $discussion_url, bool $draft, string $html_url, int $id, string $name, string $node_id, bool $prerelease, string $published_at, array $reactions, string $tag_name, string $tarball_url, string $target_commitish, string $upload_url, string $url, string $zipball_url)
+    public function __construct(array $assets, string $assets_url, object $author, string $body, string $created_at, string $discussion_url, bool $draft, string $html_url, int $id, string $name, string $node_id, bool $prerelease, string $published_at, object $reactions, string $tag_name, string $tarball_url, string $target_commitish, string $upload_url, string $url, string $zipball_url)
     {
         $this->assets = $assets;
         $this->assets_url = $assets_url;

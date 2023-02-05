@@ -20,7 +20,7 @@ final class PullRequestReview
     public readonly string $state;
     public readonly string $html_url;
     public readonly string $pull_request_url;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links $_links;
     public readonly ?string $submitted_at;
     /**
      * A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
@@ -32,7 +32,7 @@ final class PullRequestReview
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public function __construct(int $id, string $node_id, mixed $user, string $body, string $state, string $html_url, string $pull_request_url, array $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
+    public function __construct(int $id, string $node_id, mixed $user, string $body, string $state, string $html_url, string $pull_request_url, object $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
     {
         $this->id = $id;
         $this->node_id = $node_id;

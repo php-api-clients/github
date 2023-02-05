@@ -10,7 +10,7 @@ final class AutoMerge
     /**
      * A GitHub user.
      */
-    public readonly array $enabled_by;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $enabled_by;
     /**
      * The merge method to use.
      */
@@ -23,7 +23,7 @@ final class AutoMerge
      * Commit message for the merge commit.
      */
     public readonly string $commit_message;
-    public function __construct(array $enabled_by, string $merge_method, string $commit_title, string $commit_message)
+    public function __construct(object $enabled_by, string $merge_method, string $commit_title, string $commit_message)
     {
         $this->enabled_by = $enabled_by;
         $this->merge_method = $merge_method;

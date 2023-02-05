@@ -18,10 +18,10 @@ final class ContentFile
     public readonly ?string $git_url;
     public readonly ?string $html_url;
     public readonly ?string $download_url;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentFile\Links $_links;
     public readonly ?string $target;
     public readonly ?string $submodule_git_url;
-    public function __construct(string $type, string $encoding, int $size, string $name, string $path, string $content, string $sha, string $url, string $git_url, string $html_url, string $download_url, array $_links, string $target, string $submodule_git_url)
+    public function __construct(string $type, string $encoding, int $size, string $name, string $path, string $content, string $sha, string $url, string $git_url, string $html_url, string $download_url, object $_links, string $target, string $submodule_git_url)
     {
         $this->type = $type;
         $this->encoding = $encoding;

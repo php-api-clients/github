@@ -20,11 +20,11 @@ final class ContentTree
      * @var array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries>
      */
     public readonly array $entries;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Links $_links;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries> $entries
      */
-    public function __construct(string $type, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, array $entries, array $_links)
+    public function __construct(string $type, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, array $entries, object $_links)
     {
         $this->type = $type;
         $this->size = $size;

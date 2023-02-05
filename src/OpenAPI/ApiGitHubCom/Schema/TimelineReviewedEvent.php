@@ -16,7 +16,7 @@ final class TimelineReviewedEvent
     /**
      * A GitHub user.
      */
-    public readonly array $user;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
     /**
      * The text of the review.
      */
@@ -24,7 +24,7 @@ final class TimelineReviewedEvent
     public readonly string $state;
     public readonly string $html_url;
     public readonly string $pull_request_url;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineReviewedEvent\Links $_links;
     public readonly ?string $submitted_at;
     /**
      * A commit SHA for the review.
@@ -36,7 +36,7 @@ final class TimelineReviewedEvent
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public function __construct(string $event, int $id, string $node_id, array $user, string $body, string $state, string $html_url, string $pull_request_url, array $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
+    public function __construct(string $event, int $id, string $node_id, object $user, string $body, string $state, string $html_url, string $pull_request_url, object $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
     {
         $this->event = $event;
         $this->id = $id;

@@ -10,7 +10,7 @@ final class WebhookPing
     /**
      * The webhook that is being pinged
      */
-    public readonly array $hook;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook $hook;
     /**
      * The ID of the webhook that triggered the ping.
      */
@@ -18,20 +18,20 @@ final class WebhookPing
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * Random string of GitHub zen.
      */
     public readonly string $zen;
-    public function __construct(array $hook, int $hook_id, array $organization, array $repository, array $sender, string $zen)
+    public function __construct(object $hook, int $hook_id, object $organization, object $repository, object $sender, string $zen)
     {
         $this->hook = $hook;
         $this->hook_id = $hook_id;

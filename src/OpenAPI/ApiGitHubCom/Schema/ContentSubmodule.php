@@ -17,8 +17,8 @@ final class ContentSubmodule
     public readonly ?string $git_url;
     public readonly ?string $html_url;
     public readonly ?string $download_url;
-    public readonly array $_links;
-    public function __construct(string $type, string $submodule_git_url, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, array $_links)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentSubmodule\Links $_links;
+    public function __construct(string $type, string $submodule_git_url, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, object $_links)
     {
         $this->type = $type;
         $this->submodule_git_url = $submodule_git_url;

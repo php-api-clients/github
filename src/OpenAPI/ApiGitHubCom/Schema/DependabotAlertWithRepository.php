@@ -18,15 +18,15 @@ final class DependabotAlertWithRepository
     /**
      * Details for the vulnerable dependency.
      */
-    public readonly array $dependency;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertWithRepository\Dependency $dependency;
     /**
      * Details for the GitHub Security Advisory.
      */
-    public readonly array $security_advisory;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory $security_advisory;
     /**
      * Details pertaining to one vulnerable version range for the advisory.
      */
-    public readonly array $security_vulnerability;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability $security_vulnerability;
     /**
      * The REST API URL of the alert resource.
      */
@@ -63,8 +63,8 @@ final class DependabotAlertWithRepository
     /**
      * A GitHub repository.
      */
-    public readonly array $repository;
-    public function __construct(int $number, string $state, array $dependency, array $security_advisory, array $security_vulnerability, string $url, string $html_url, string $created_at, string $updated_at, string $dismissed_at, mixed $dismissed_by, string $dismissed_reason, string $dismissed_comment, string $fixed_at, array $repository)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository $repository;
+    public function __construct(int $number, string $state, object $dependency, object $security_advisory, object $security_vulnerability, string $url, string $html_url, string $created_at, string $updated_at, string $dismissed_at, mixed $dismissed_by, string $dismissed_reason, string $dismissed_comment, string $fixed_at, object $repository)
     {
         $this->number = $number;
         $this->state = $state;

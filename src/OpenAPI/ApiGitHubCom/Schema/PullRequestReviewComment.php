@@ -54,7 +54,7 @@ final class PullRequestReviewComment
     /**
      * A GitHub user.
      */
-    public readonly array $user;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user;
     /**
      * The text of the comment.
      */
@@ -73,7 +73,7 @@ final class PullRequestReviewComment
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public readonly array $_links;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment\Links $_links;
     /**
      * The first line of the range for a multi-line comment.
      */
@@ -98,10 +98,10 @@ final class PullRequestReviewComment
      * The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
      */
     public readonly ?string $side;
-    public readonly array $reactions;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
     public readonly ?string $body_html;
     public readonly ?string $body_text;
-    public function __construct(string $url, int $pull_request_review_id, int $id, string $node_id, string $diff_hunk, string $path, int $position, int $original_position, string $commit_id, string $original_commit_id, int $in_reply_to_id, array $user, string $body, string $created_at, string $updated_at, string $html_url, string $pull_request_url, string $author_association, array $_links, int $start_line, int $original_start_line, string $start_side, int $line, int $original_line, string $side, array $reactions, string $body_html, string $body_text)
+    public function __construct(string $url, int $pull_request_review_id, int $id, string $node_id, string $diff_hunk, string $path, int $position, int $original_position, string $commit_id, string $original_commit_id, int $in_reply_to_id, object $user, string $body, string $created_at, string $updated_at, string $html_url, string $pull_request_url, string $author_association, object $_links, int $start_line, int $original_start_line, string $start_side, int $line, int $original_line, string $side, object $reactions, string $body_html, string $body_text)
     {
         $this->url = $url;
         $this->pull_request_review_id = $pull_request_review_id;

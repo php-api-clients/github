@@ -11,28 +11,28 @@ final class WebhookTeamCreated
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * A git repository
      */
-    public readonly array $repository;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamCreated\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     /**
      * Groups of organization members that gives permissions on specified repositories.
      */
-    public readonly array $team;
-    public function __construct(string $action, array $enterprise, array $installation, array $organization, array $repository, array $sender, array $team)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamCreated\Team $team;
+    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $team)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

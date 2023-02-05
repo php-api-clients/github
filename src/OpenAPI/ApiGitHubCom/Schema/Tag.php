@@ -8,11 +8,11 @@ final class Tag
     public const SCHEMA_TITLE = 'Tag';
     public const SCHEMA_DESCRIPTION = 'Tag';
     public readonly string $name;
-    public readonly array $commit;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tag\Commit $commit;
     public readonly string $zipball_url;
     public readonly string $tarball_url;
     public readonly string $node_id;
-    public function __construct(string $name, array $commit, string $zipball_url, string $tarball_url, string $node_id)
+    public function __construct(string $name, object $commit, string $zipball_url, string $tarball_url, string $node_id)
     {
         $this->name = $name;
         $this->commit = $commit;

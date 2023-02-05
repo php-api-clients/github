@@ -7,8 +7,8 @@ final class WorkflowUsage
     public const SCHEMA_JSON = '{"title":"Workflow Usage","required":["billable"],"type":"object","properties":{"billable":{"type":"object","properties":{"UBUNTU":{"type":"object","properties":{"total_ms":{"type":"integer"}}},"MACOS":{"type":"object","properties":{"total_ms":{"type":"integer"}}},"WINDOWS":{"type":"object","properties":{"total_ms":{"type":"integer"}}}}}},"description":"Workflow Usage"}';
     public const SCHEMA_TITLE = 'Workflow Usage';
     public const SCHEMA_DESCRIPTION = 'Workflow Usage';
-    public readonly array $billable;
-    public function __construct(array $billable)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage\Billable $billable;
+    public function __construct(object $billable)
     {
         $this->billable = $billable;
     }

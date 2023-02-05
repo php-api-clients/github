@@ -18,7 +18,7 @@ final class GistSimple
     /**
      * Gist
      */
-    public readonly array $fork_of;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\ForkOf $fork_of;
     public readonly string $url;
     public readonly string $forks_url;
     public readonly string $commits_url;
@@ -27,7 +27,7 @@ final class GistSimple
     public readonly string $git_pull_url;
     public readonly string $git_push_url;
     public readonly string $html_url;
-    public readonly array $files;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Files $files;
     public readonly bool $public;
     public readonly string $created_at;
     public readonly string $updated_at;
@@ -38,13 +38,13 @@ final class GistSimple
     /**
      * A GitHub user.
      */
-    public readonly array $owner;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner;
     public readonly bool $truncated;
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks> $forks
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory> $history
      */
-    public function __construct(array $forks, array $history, array $fork_of, string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, array $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, string $user, string $comments_url, array $owner, bool $truncated)
+    public function __construct(array $forks, array $history, object $fork_of, string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, object $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, string $user, string $comments_url, object $owner, bool $truncated)
     {
         $this->forks = $forks;
         $this->history = $history;

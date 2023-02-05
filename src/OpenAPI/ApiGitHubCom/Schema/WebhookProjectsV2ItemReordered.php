@@ -8,24 +8,24 @@ final class WebhookProjectsV2ItemReordered
     public const SCHEMA_TITLE = 'Projects v2 Item Reordered Event';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $action;
-    public readonly array $changes;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectsV2ItemReordered\Changes $changes;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * An item belonging to a project
      */
-    public readonly array $projects_v2_item;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectsV2Item $projects_v2_item;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $action, array $changes, array $installation, array $organization, array $projects_v2_item, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $action, object $changes, object $installation, object $organization, object $projects_v2_item, object $sender)
     {
         $this->action = $action;
         $this->changes = $changes;

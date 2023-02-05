@@ -14,11 +14,11 @@ final class WebhookCreate
     /**
      * An enterprise on GitHub.
      */
-    public readonly array $enterprise;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise;
     /**
      * The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      */
-    public readonly array $installation;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation;
     /**
      * The name of the repository's default branch (usually `main`).
      */
@@ -26,7 +26,7 @@ final class WebhookCreate
     /**
      * A GitHub organization.
      */
-    public readonly array $organization;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     /**
      * The pusher type for the event. Can be either `user` or a deploy key.
      */
@@ -42,12 +42,12 @@ final class WebhookCreate
     /**
      * A repository on GitHub.
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository;
     /**
      * A GitHub user.
      */
-    public readonly array $sender;
-    public function __construct(string $description, array $enterprise, array $installation, string $master_branch, array $organization, string $pusher_type, string $ref, string $ref_type, array $repository, array $sender)
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
+    public function __construct(string $description, object $enterprise, object $installation, string $master_branch, object $organization, string $pusher_type, string $ref, string $ref_type, object $repository, object $sender)
     {
         $this->description = $description;
         $this->enterprise = $enterprise;

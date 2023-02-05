@@ -66,11 +66,11 @@ final class WorkflowRun
     /**
      * A GitHub user.
      */
-    public readonly array $actor;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor;
     /**
      * A GitHub user.
      */
-    public readonly array $triggering_actor;
+    public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $triggering_actor;
     /**
      * The start time of the latest run. Resets on re-run.
      */
@@ -111,11 +111,11 @@ final class WorkflowRun
     /**
      * Minimal Repository
      */
-    public readonly array $repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
     /**
      * Minimal Repository
      */
-    public readonly array $head_repository;
+    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $head_repository;
     public readonly ?int $head_repository_id;
     /**
      * The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
@@ -125,7 +125,7 @@ final class WorkflowRun
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReferencedWorkflow> $referenced_workflows
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(int $id, string $name, string $node_id, int $check_suite_id, string $check_suite_node_id, string $head_branch, string $head_sha, string $path, int $run_number, int $run_attempt, array $referenced_workflows, string $event, string $status, string $conclusion, int $workflow_id, string $url, string $html_url, array $pull_requests, string $created_at, string $updated_at, array $actor, array $triggering_actor, string $run_started_at, string $jobs_url, string $logs_url, string $check_suite_url, string $artifacts_url, string $cancel_url, string $rerun_url, string $previous_attempt_url, string $workflow_url, mixed $head_commit, array $repository, array $head_repository, int $head_repository_id, string $display_title)
+    public function __construct(int $id, string $name, string $node_id, int $check_suite_id, string $check_suite_node_id, string $head_branch, string $head_sha, string $path, int $run_number, int $run_attempt, array $referenced_workflows, string $event, string $status, string $conclusion, int $workflow_id, string $url, string $html_url, array $pull_requests, string $created_at, string $updated_at, object $actor, object $triggering_actor, string $run_started_at, string $jobs_url, string $logs_url, string $check_suite_url, string $artifacts_url, string $cancel_url, string $rerun_url, string $previous_attempt_url, string $workflow_url, mixed $head_commit, object $repository, object $head_repository, int $head_repository_id, string $display_title)
     {
         $this->id = $id;
         $this->name = $name;
