@@ -36,7 +36,7 @@ final class SimpleCheckSuite
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(string $after, object $app, string $before, string $conclusion, string $created_at, string $head_branch, string $head_sha, int $id, string $node_id, array $pull_requests, object $repository, string $status, string $updated_at, string $url)
+    public function __construct(string $after, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration $app, string $before, string $conclusion, string $created_at, string $head_branch, string $head_sha, int $id, string $node_id, array $pull_requests, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository, string $status, string $updated_at, string $url)
     {
         $this->after = $after;
         $this->app = $app;

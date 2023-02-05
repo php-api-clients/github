@@ -39,7 +39,7 @@ final class WebhookDeploymentStatusCreated
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Workflow $workflow;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\WorkflowRun $workflow_run;
-    public function __construct(string $action, object $check_run, object $deployment, object $deployment_status, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $workflow, object $workflow_run)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\CheckRun $check_run, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Deployment $deployment, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deployment_status, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\Workflow $workflow, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentStatusCreated\WorkflowRun $workflow_run)
     {
         $this->action = $action;
         $this->check_run = $check_run;

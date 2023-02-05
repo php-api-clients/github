@@ -31,7 +31,7 @@ final class WebhookInstallationTargetRenamed
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     public readonly string $target_type;
-    public function __construct(object $account, string $action, object $changes, object $enterprise, object $installation, object $organization, object $repository, object $sender, string $target_type)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationTargetRenamed\Account $account, string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationTargetRenamed\Changes $changes, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, string $target_type)
     {
         $this->account = $account;
         $this->action = $action;

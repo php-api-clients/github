@@ -96,7 +96,7 @@ final class Comment
      */
     public readonly string $url;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user;
-    public function __construct(object $_links, string $author_association, string $body, string $commit_id, string $created_at, string $diff_hunk, string $html_url, int $id, int $in_reply_to_id, int $line, string $node_id, string $original_commit_id, int $original_line, int $original_position, int $original_start_line, string $path, int $position, int $pull_request_review_id, string $pull_request_url, object $reactions, string $side, int $start_line, string $start_side, string $updated_at, string $url, object $user)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Links $_links, string $author_association, string $body, string $commit_id, string $created_at, string $diff_hunk, string $html_url, int $id, int $in_reply_to_id, int $line, string $node_id, string $original_commit_id, int $original_line, int $original_position, int $original_start_line, string $path, int $position, int $pull_request_review_id, string $pull_request_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Reactions $reactions, string $side, int $start_line, string $start_side, string $updated_at, string $url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user)
     {
         $this->_links = $_links;
         $this->author_association = $author_association;

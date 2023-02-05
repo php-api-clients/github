@@ -28,7 +28,7 @@ final class Deployment
     public readonly ?bool $transient_environment;
     public readonly string $updated_at;
     public readonly string $url;
-    public function __construct(string $created_at, object $creator, string $description, string $environment, int $id, string $node_id, string $original_environment, mixed $payload, object $performed_via_github_app, bool $production_environment, string $ref, string $repository_url, string $sha, string $statuses_url, string $task, bool $transient_environment, string $updated_at, string $url)
+    public function __construct(string $created_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\Creator $creator, string $description, string $environment, int $id, string $node_id, string $original_environment, mixed $payload, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\PerformedViaGithubApp $performed_via_github_app, bool $production_environment, string $ref, string $repository_url, string $sha, string $statuses_url, string $task, bool $transient_environment, string $updated_at, string $url)
     {
         $this->created_at = $created_at;
         $this->creator = $creator;

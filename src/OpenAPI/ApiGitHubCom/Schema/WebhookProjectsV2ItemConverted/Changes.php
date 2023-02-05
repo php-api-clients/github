@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookProjectsV2ItemConverted\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ContentType $content_type;
-    public function __construct(object $content_type)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ContentType $content_type)
     {
         $this->content_type = $content_type;
     }

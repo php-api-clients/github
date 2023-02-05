@@ -56,7 +56,7 @@ final class ReviewComment
      * The original first line of the range for a multi-line comment.
      */
     public readonly ?int $original_start_line;
-    public function __construct(string $url, int $pull_request_review_id, int $id, string $node_id, string $diff_hunk, string $path, int $position, int $original_position, string $commit_id, string $original_commit_id, int $in_reply_to_id, mixed $user, string $body, string $created_at, string $updated_at, string $html_url, string $pull_request_url, string $author_association, object $_links, string $body_text, string $body_html, object $reactions, string $side, string $start_side, int $line, int $original_line, int $start_line, int $original_start_line)
+    public function __construct(string $url, int $pull_request_review_id, int $id, string $node_id, string $diff_hunk, string $path, int $position, int $original_position, string $commit_id, string $original_commit_id, int $in_reply_to_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewComment\User $user, string $body, string $created_at, string $updated_at, string $html_url, string $pull_request_url, string $author_association, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewComment\Links $_links, string $body_text, string $body_html, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions, string $side, string $start_side, int $line, int $original_line, int $start_line, int $original_start_line)
     {
         $this->url = $url;
         $this->pull_request_review_id = $pull_request_review_id;

@@ -9,7 +9,7 @@ final class WorkflowRunUsage
     public const SCHEMA_DESCRIPTION = 'Workflow Run Usage';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage\Billable $billable;
     public readonly ?int $run_duration_ms;
-    public function __construct(object $billable, int $run_duration_ms)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowRunUsage\Billable $billable, int $run_duration_ms)
     {
         $this->billable = $billable;
         $this->run_duration_ms = $run_duration_ms;

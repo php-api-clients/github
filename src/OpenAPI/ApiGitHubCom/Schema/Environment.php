@@ -37,7 +37,7 @@ final class Environment
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Environment\ProtectionRules> $protection_rules
      */
-    public function __construct(int $id, string $node_id, string $name, string $url, string $html_url, string $created_at, string $updated_at, array $protection_rules, object $deployment_branch_policy)
+    public function __construct(int $id, string $node_id, string $name, string $url, string $html_url, string $created_at, string $updated_at, array $protection_rules, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicySettings $deployment_branch_policy)
     {
         $this->id = $id;
         $this->node_id = $node_id;

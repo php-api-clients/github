@@ -51,7 +51,7 @@ final class Json
      * Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
      */
     public readonly ?bool $allow_fork_syncing;
-    public function __construct(object $required_status_checks, bool $enforce_admins, object $required_pull_request_reviews, object $restrictions, bool $required_linear_history, bool $allow_force_pushes, bool $allow_deletions, bool $block_creations, bool $required_conversation_resolution, bool $lock_branch, bool $allow_fork_syncing)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredStatusChecks $required_status_checks, bool $enforce_admins, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RequiredPullRequestReviews $required_pull_request_reviews, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Restrictions $restrictions, bool $required_linear_history, bool $allow_force_pushes, bool $allow_deletions, bool $block_creations, bool $required_conversation_resolution, bool $lock_branch, bool $allow_fork_syncing)
     {
         $this->required_status_checks = $required_status_checks;
         $this->enforce_admins = $enforce_admins;

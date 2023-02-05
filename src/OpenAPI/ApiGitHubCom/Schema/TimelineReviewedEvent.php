@@ -36,7 +36,7 @@ final class TimelineReviewedEvent
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public function __construct(string $event, int $id, string $node_id, object $user, string $body, string $state, string $html_url, string $pull_request_url, object $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
+    public function __construct(string $event, int $id, string $node_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user, string $body, string $state, string $html_url, string $pull_request_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineReviewedEvent\Links $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
     {
         $this->event = $event;
         $this->id = $id;

@@ -33,7 +33,7 @@ final class CodeSearchResultItem
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultItem\LineNumbers> $line_numbers
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches> $text_matches
      */
-    public function __construct(string $name, string $path, string $sha, string $url, string $git_url, string $html_url, object $repository, int $score, int $file_size, string $language, string $last_modified_at, array $line_numbers, array $text_matches)
+    public function __construct(string $name, string $path, string $sha, string $url, string $git_url, string $html_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository, int $score, int $file_size, string $language, string $last_modified_at, array $line_numbers, array $text_matches)
     {
         $this->name = $name;
         $this->path = $path;

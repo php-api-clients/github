@@ -27,7 +27,7 @@ final class Json
      * An object with information about the individual creating the tag.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Tagger $tagger;
-    public function __construct(string $tag, string $message, string $object, string $type, object $tagger)
+    public function __construct(string $tag, string $message, string $object, string $type, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Tagger $tagger)
     {
         $this->tag = $tag;
         $this->message = $message;

@@ -16,7 +16,7 @@ final class Resources
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $actions_runner_registration;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $scim;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $dependency_snapshots;
-    public function __construct(object $core, object $graphql, object $search, object $source_import, object $integration_manifest, object $code_scanning_upload, object $actions_runner_registration, object $scim, object $dependency_snapshots)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $core, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $graphql, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $search, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $source_import, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $integration_manifest, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $code_scanning_upload, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $actions_runner_registration, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $scim, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $dependency_snapshots)
     {
         $this->core = $core;
         $this->graphql = $graphql;

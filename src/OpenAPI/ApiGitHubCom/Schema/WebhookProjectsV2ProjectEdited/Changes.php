@@ -11,7 +11,7 @@ final class Changes
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Public_ $public;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ShortDescription $short_description;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Title $title;
-    public function __construct(object $description, object $public, object $short_description, object $title)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Description $description, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Public_ $public, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ShortDescription $short_description, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Title $title)
     {
         $this->description = $description;
         $this->public = $public;

@@ -15,7 +15,7 @@ final class Forks
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser $user;
     public readonly string $created_at;
     public readonly string $updated_at;
-    public function __construct(string $id, string $url, object $user, string $created_at, string $updated_at)
+    public function __construct(string $id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PublicUser $user, string $created_at, string $updated_at)
     {
         $this->id = $id;
         $this->url = $url;

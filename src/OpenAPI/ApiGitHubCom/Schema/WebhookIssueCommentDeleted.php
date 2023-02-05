@@ -36,7 +36,7 @@ final class WebhookIssueCommentDeleted
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $action, object $comment, object $enterprise, object $installation, mixed $issue, object $organization, object $repository, object $sender)
+    public function __construct(string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Comment $comment, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssueCommentDeleted\Issue $issue, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->comment = $comment;

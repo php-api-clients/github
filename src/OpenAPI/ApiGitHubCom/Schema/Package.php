@@ -27,7 +27,7 @@ final class Package
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository $repository;
     public readonly string $created_at;
     public readonly string $updated_at;
-    public function __construct(int $id, string $name, string $package_type, string $url, string $html_url, int $version_count, string $visibility, mixed $owner, mixed $repository, string $created_at, string $updated_at)
+    public function __construct(int $id, string $name, string $package_type, string $url, string $html_url, int $version_count, string $visibility, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Owner $owner, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Package\Repository $repository, string $created_at, string $updated_at)
     {
         $this->id = $id;
         $this->name = $name;

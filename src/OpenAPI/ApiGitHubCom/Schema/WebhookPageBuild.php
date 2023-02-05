@@ -32,7 +32,7 @@ final class WebhookPageBuild
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(object $build, object $enterprise, int $id, object $installation, object $organization, object $repository, object $sender)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPageBuild\Build $build, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, int $id, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->build = $build;
         $this->enterprise = $enterprise;

@@ -34,7 +34,7 @@ final class WebhookMembershipAdded
      * Groups of organization members that gives permissions on specified repositories.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Team $team;
-    public function __construct(string $action, object $enterprise, object $installation, object $member, object $organization, object $repository, string $scope, object $sender, object $team)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Member $member, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, string $scope, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Sender $sender, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMembershipAdded\Team $team)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

@@ -21,7 +21,7 @@ final class BranchWithProtection
     public readonly string $protection_url;
     public readonly ?string $pattern;
     public readonly ?int $required_approving_review_count;
-    public function __construct(string $name, object $commit, object $_links, bool $protected, object $protection, string $protection_url, string $pattern, int $required_approving_review_count)
+    public function __construct(string $name, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit $commit, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection\Links $_links, bool $protected, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection, string $protection_url, string $pattern, int $required_approving_review_count)
     {
         $this->name = $name;
         $this->commit = $commit;

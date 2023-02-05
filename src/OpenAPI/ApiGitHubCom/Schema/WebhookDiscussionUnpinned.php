@@ -29,7 +29,7 @@ final class WebhookDiscussionUnpinned
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $action, object $discussion, object $enterprise, object $installation, object $organization, object $repository, object $sender)
+    public function __construct(string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionUnpinned\Discussion $discussion, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->discussion = $discussion;

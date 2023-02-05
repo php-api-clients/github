@@ -23,7 +23,7 @@ final class OrgMembership
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership\User $user;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership\Permissions $permissions;
-    public function __construct(string $url, string $state, string $role, string $organization_url, object $organization, mixed $user, object $permissions)
+    public function __construct(string $url, string $state, string $role, string $organization_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership\User $user, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgMembership\Permissions $permissions)
     {
         $this->url = $url;
         $this->state = $state;

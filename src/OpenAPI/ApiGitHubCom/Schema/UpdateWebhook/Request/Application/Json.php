@@ -35,7 +35,7 @@ final class Json
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\AddEvents> $add_events
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\RemoveEvents> $remove_events
      */
-    public function __construct(object $config, array $events, array $add_events, array $remove_events, bool $active)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config $config, array $events, array $add_events, array $remove_events, bool $active)
     {
         $this->config = $config;
         $this->events = $events;

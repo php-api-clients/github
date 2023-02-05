@@ -40,7 +40,7 @@ final class WebhookCodeScanningAlertFixed
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $action, object $alert, string $commit_oid, object $enterprise, object $installation, object $organization, string $ref, object $repository, object $sender)
+    public function __construct(string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCodeScanningAlertFixed\Alert $alert, string $commit_oid, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, string $ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->alert = $alert;

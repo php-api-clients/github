@@ -37,7 +37,7 @@ final class SecurityAdvisory
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAdvisory\References> $references
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAdvisory\Vulnerabilities> $vulnerabilities
      */
-    public function __construct(object $cvss, array $cwes, string $description, string $ghsa_id, array $identifiers, string $published_at, array $references, string $severity, string $summary, string $updated_at, array $vulnerabilities, string $withdrawn_at)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAdvisory\Cvss $cvss, array $cwes, string $description, string $ghsa_id, array $identifiers, string $published_at, array $references, string $severity, string $summary, string $updated_at, array $vulnerabilities, string $withdrawn_at)
     {
         $this->cvss = $cvss;
         $this->cwes = $cwes;

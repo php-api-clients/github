@@ -10,7 +10,7 @@ final class H403
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H403\Block $block;
     public readonly string $message;
     public readonly string $documentation_url;
-    public function __construct(object $block, string $message, string $documentation_url)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H403\Block $block, string $message, string $documentation_url)
     {
         $this->block = $block;
         $this->message = $message;

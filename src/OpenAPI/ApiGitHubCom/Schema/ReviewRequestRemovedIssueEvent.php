@@ -31,7 +31,7 @@ final class ReviewRequestRemovedIssueEvent
      * A GitHub user.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $requested_reviewer;
-    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, object $review_requester, object $requested_team, object $requested_reviewer)
+    public function __construct(int $id, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor, string $event, string $commit_id, string $commit_url, string $created_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewRequestRemovedIssueEvent\PerformedViaGithubApp $performed_via_github_app, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $review_requester, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team $requested_team, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $requested_reviewer)
     {
         $this->id = $id;
         $this->node_id = $node_id;

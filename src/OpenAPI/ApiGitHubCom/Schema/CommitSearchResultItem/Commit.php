@@ -14,7 +14,7 @@ final class Commit
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Tree $tree;
     public readonly string $url;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification;
-    public function __construct(object $author, mixed $committer, int $comment_count, string $message, object $tree, string $url, object $verification)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer $committer, int $comment_count, string $message, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Tree $tree, string $url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification)
     {
         $this->author = $author;
         $this->committer = $committer;

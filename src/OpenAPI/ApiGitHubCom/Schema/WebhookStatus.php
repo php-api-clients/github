@@ -61,7 +61,7 @@ final class WebhookStatus
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Branches> $branches
      */
-    public function __construct(string $avatar_url, array $branches, object $commit, string $context, string $created_at, string $description, object $enterprise, int $id, object $installation, string $name, object $organization, object $repository, object $sender, string $sha, string $state, string $target_url, string $updated_at)
+    public function __construct(string $avatar_url, array $branches, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookStatus\Commit $commit, string $context, string $created_at, string $description, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, int $id, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, string $name, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, string $sha, string $state, string $target_url, string $updated_at)
     {
         $this->avatar_url = $avatar_url;
         $this->branches = $branches;

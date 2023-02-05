@@ -10,7 +10,7 @@ final class BranchShort
     public readonly string $name;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchShort\Commit $commit;
     public readonly bool $protected;
-    public function __construct(string $name, object $commit, bool $protected)
+    public function __construct(string $name, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchShort\Commit $commit, bool $protected)
     {
         $this->name = $name;
         $this->commit = $commit;

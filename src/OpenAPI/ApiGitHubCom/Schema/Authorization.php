@@ -29,7 +29,7 @@ final class Authorization
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\Scopes> $scopes
      */
-    public function __construct(int $id, string $url, array $scopes, string $token, string $token_last_eight, string $hashed_token, object $app, string $note, string $note_url, string $updated_at, string $created_at, string $fingerprint, mixed $user, mixed $installation, string $expires_at)
+    public function __construct(int $id, string $url, array $scopes, string $token, string $token_last_eight, string $hashed_token, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\App $app, string $note, string $note_url, string $updated_at, string $created_at, string $fingerprint, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\User $user, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Authorization\Installation $installation, string $expires_at)
     {
         $this->id = $id;
         $this->url = $url;

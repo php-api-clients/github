@@ -32,7 +32,7 @@ final class PullRequestReview
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public function __construct(int $id, string $node_id, mixed $user, string $body, string $state, string $html_url, string $pull_request_url, object $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
+    public function __construct(int $id, string $node_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\User $user, string $body, string $state, string $html_url, string $pull_request_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReview\Links $_links, string $submitted_at, string $commit_id, string $body_html, string $body_text, string $author_association)
     {
         $this->id = $id;
         $this->node_id = $node_id;

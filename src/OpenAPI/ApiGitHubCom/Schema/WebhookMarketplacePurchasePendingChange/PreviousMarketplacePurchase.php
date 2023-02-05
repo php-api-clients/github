@@ -14,7 +14,7 @@ final class PreviousMarketplacePurchase
     public readonly bool $on_free_trial;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PreviousMarketplacePurchase\Plan $plan;
     public readonly int $unit_count;
-    public function __construct(object $account, string $billing_cycle, string $free_trial_ends_on, string $next_billing_date, bool $on_free_trial, object $plan, int $unit_count)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PreviousMarketplacePurchase\Account $account, string $billing_cycle, string $free_trial_ends_on, string $next_billing_date, bool $on_free_trial, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PreviousMarketplacePurchase\Plan $plan, int $unit_count)
     {
         $this->account = $account;
         $this->billing_cycle = $billing_cycle;

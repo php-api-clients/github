@@ -23,7 +23,7 @@ final class Comment
     public readonly string $repository_url;
     public readonly string $updated_at;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user;
-    public function __construct(string $author_association, string $body, int $child_comment_count, string $created_at, int $discussion_id, string $html_url, int $id, string $node_id, int $parent_id, object $reactions, string $repository_url, string $updated_at, object $user)
+    public function __construct(string $author_association, string $body, int $child_comment_count, string $created_at, int $discussion_id, string $html_url, int $id, string $node_id, int $parent_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Reactions $reactions, string $repository_url, string $updated_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user)
     {
         $this->author_association = $author_association;
         $this->body = $body;

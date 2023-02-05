@@ -40,7 +40,7 @@ final class DeploymentStatus
      */
     public readonly ?string $log_url;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\PerformedViaGithubApp $performed_via_github_app;
-    public function __construct(string $url, int $id, string $node_id, string $state, mixed $creator, string $description, string $environment, string $target_url, string $created_at, string $updated_at, string $deployment_url, string $repository_url, string $environment_url, string $log_url, mixed $performed_via_github_app)
+    public function __construct(string $url, int $id, string $node_id, string $state, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\Creator $creator, string $description, string $environment, string $target_url, string $created_at, string $updated_at, string $deployment_url, string $repository_url, string $environment_url, string $log_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\PerformedViaGithubApp $performed_via_github_app)
     {
         $this->url = $url;
         $this->id = $id;

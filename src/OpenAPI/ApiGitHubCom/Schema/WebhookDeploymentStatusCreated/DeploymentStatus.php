@@ -34,7 +34,7 @@ final class DeploymentStatus
     public readonly string $target_url;
     public readonly string $updated_at;
     public readonly string $url;
-    public function __construct(string $created_at, object $creator, string $deployment_url, string $description, string $environment, string $environment_url, int $id, string $log_url, string $node_id, object $performed_via_github_app, string $repository_url, string $state, string $target_url, string $updated_at, string $url)
+    public function __construct(string $created_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\Creator $creator, string $deployment_url, string $description, string $environment, string $environment_url, int $id, string $log_url, string $node_id, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentStatus\PerformedViaGithubApp $performed_via_github_app, string $repository_url, string $state, string $target_url, string $updated_at, string $url)
     {
         $this->created_at = $created_at;
         $this->creator = $creator;

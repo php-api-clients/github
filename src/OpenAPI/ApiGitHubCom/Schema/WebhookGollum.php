@@ -35,7 +35,7 @@ final class WebhookGollum
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookGollum\Pages> $pages
      */
-    public function __construct(object $enterprise, object $installation, object $organization, array $pages, object $repository, object $sender)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, array $pages, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->enterprise = $enterprise;
         $this->installation = $installation;

@@ -18,7 +18,7 @@ final class Status
     public readonly string $created_at;
     public readonly string $updated_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status\Creator $creator;
-    public function __construct(string $url, string $avatar_url, int $id, string $node_id, string $state, string $description, string $target_url, string $context, string $created_at, string $updated_at, mixed $creator)
+    public function __construct(string $url, string $avatar_url, int $id, string $node_id, string $state, string $description, string $target_url, string $context, string $created_at, string $updated_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Status\Creator $creator)
     {
         $this->url = $url;
         $this->avatar_url = $avatar_url;

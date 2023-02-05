@@ -11,7 +11,7 @@ final class GitRef
     public readonly string $node_id;
     public readonly string $url;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef\Object_ $object;
-    public function __construct(string $ref, string $node_id, string $url, object $object)
+    public function __construct(string $ref, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitRef\Object_ $object)
     {
         $this->ref = $ref;
         $this->node_id = $node_id;

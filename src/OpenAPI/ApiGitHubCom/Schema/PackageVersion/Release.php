@@ -18,7 +18,7 @@ final class Release
     public readonly string $tag_name;
     public readonly string $target_commitish;
     public readonly string $url;
-    public function __construct(object $author, string $created_at, bool $draft, string $html_url, int $id, string $name, bool $prerelease, string $published_at, string $tag_name, string $target_commitish, string $url)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Release\Author $author, string $created_at, bool $draft, string $html_url, int $id, string $name, bool $prerelease, string $published_at, string $tag_name, string $target_commitish, string $url)
     {
         $this->author = $author;
         $this->created_at = $created_at;

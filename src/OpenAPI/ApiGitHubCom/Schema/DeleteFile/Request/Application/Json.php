@@ -27,7 +27,7 @@ final class Json
      * object containing information about the author.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author;
-    public function __construct(string $message, string $sha, string $branch, object $committer, object $author)
+    public function __construct(string $message, string $sha, string $branch, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer $committer, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author)
     {
         $this->message = $message;
         $this->sha = $sha;

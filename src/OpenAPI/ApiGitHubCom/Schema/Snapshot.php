@@ -36,7 +36,7 @@ final class Snapshot
      * The time at which the snapshot was scanned.
      */
     public readonly string $scanned;
-    public function __construct(int $version, object $job, string $sha, string $ref, object $detector, object $metadata, object $manifests, string $scanned)
+    public function __construct(int $version, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Job $job, string $sha, string $ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Detector $detector, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Snapshot\Manifests $manifests, string $scanned)
     {
         $this->version = $version;
         $this->job = $job;

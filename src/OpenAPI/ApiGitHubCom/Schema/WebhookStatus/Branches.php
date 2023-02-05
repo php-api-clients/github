@@ -10,7 +10,7 @@ final class Branches
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Branches\Commit $commit;
     public readonly string $name;
     public readonly bool $protected;
-    public function __construct(object $commit, string $name, bool $protected)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Branches\Commit $commit, string $name, bool $protected)
     {
         $this->commit = $commit;
         $this->name = $name;

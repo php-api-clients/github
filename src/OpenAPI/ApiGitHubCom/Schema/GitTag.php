@@ -24,7 +24,7 @@ final class GitTag
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag\Tagger $tagger;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag\Object_ $object;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification;
-    public function __construct(string $node_id, string $tag, string $sha, string $url, string $message, object $tagger, object $object, object $verification)
+    public function __construct(string $node_id, string $tag, string $sha, string $url, string $message, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag\Tagger $tagger, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitTag\Object_ $object, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Verification $verification)
     {
         $this->node_id = $node_id;
         $this->tag = $tag;

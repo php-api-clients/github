@@ -9,7 +9,7 @@ final class FileCommit
     public const SCHEMA_DESCRIPTION = 'File Commit';
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit\Content $content;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit\Commit $commit;
-    public function __construct(object $content, object $commit)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit\Content $content, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit\Commit $commit)
     {
         $this->content = $content;
         $this->commit = $commit;

@@ -36,7 +36,7 @@ final class CommitComparison
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit> $commits
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry> $files
      */
-    public function __construct(string $url, string $html_url, string $permalink_url, string $diff_url, string $patch_url, object $base_commit, object $merge_base_commit, string $status, int $ahead_by, int $behind_by, int $total_commits, array $commits, array $files)
+    public function __construct(string $url, string $html_url, string $permalink_url, string $diff_url, string $patch_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit $base_commit, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit $merge_base_commit, string $status, int $ahead_by, int $behind_by, int $total_commits, array $commits, array $files)
     {
         $this->url = $url;
         $this->html_url = $html_url;

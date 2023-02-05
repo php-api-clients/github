@@ -37,7 +37,7 @@ final class Project
      * Whether or not this project can be seen by everyone. Only present if owner is an organization.
      */
     public readonly ?bool $private;
-    public function __construct(string $owner_url, string $url, string $html_url, string $columns_url, int $id, string $node_id, string $name, string $body, int $number, string $state, mixed $creator, string $created_at, string $updated_at, string $organization_permission, bool $private)
+    public function __construct(string $owner_url, string $url, string $html_url, string $columns_url, int $id, string $node_id, string $name, string $body, int $number, string $state, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project\Creator $creator, string $created_at, string $updated_at, string $organization_permission, bool $private)
     {
         $this->owner_url = $owner_url;
         $this->url = $url;

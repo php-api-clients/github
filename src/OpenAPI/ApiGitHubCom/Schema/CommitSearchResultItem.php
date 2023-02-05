@@ -32,7 +32,7 @@ final class CommitSearchResultItem
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Parents> $parents
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextMatches> $text_matches
      */
-    public function __construct(string $url, string $sha, string $html_url, string $comments_url, object $commit, mixed $author, mixed $committer, array $parents, object $repository, int $score, string $node_id, array $text_matches)
+    public function __construct(string $url, string $sha, string $html_url, string $comments_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Commit $commit, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResultItem\Committer $committer, array $parents, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository, int $score, string $node_id, array $text_matches)
     {
         $this->url = $url;
         $this->sha = $sha;

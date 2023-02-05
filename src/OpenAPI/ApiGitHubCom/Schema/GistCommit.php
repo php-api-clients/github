@@ -12,7 +12,7 @@ final class GistCommit
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit\User $user;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit\ChangeStatus $change_status;
     public readonly string $committed_at;
-    public function __construct(string $url, string $version, mixed $user, object $change_status, string $committed_at)
+    public function __construct(string $url, string $version, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit\User $user, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistCommit\ChangeStatus $change_status, string $committed_at)
     {
         $this->url = $url;
         $this->version = $version;

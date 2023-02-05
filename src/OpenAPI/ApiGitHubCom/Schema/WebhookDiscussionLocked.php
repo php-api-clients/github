@@ -29,7 +29,7 @@ final class WebhookDiscussionLocked
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $action, mixed $discussion, object $enterprise, object $installation, object $organization, object $repository, object $sender)
+    public function __construct(string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDiscussionLocked\Discussion $discussion, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->discussion = $discussion;

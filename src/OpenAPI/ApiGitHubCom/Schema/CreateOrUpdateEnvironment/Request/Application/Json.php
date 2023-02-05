@@ -23,7 +23,7 @@ final class Json
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Reviewers> $reviewers
      */
-    public function __construct(int $wait_timer, array $reviewers, object $deployment_branch_policy)
+    public function __construct(int $wait_timer, array $reviewers, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentBranchPolicySettings $deployment_branch_policy)
     {
         $this->wait_timer = $wait_timer;
         $this->reviewers = $reviewers;

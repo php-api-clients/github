@@ -20,7 +20,7 @@ final class ActionsBillingUsage
      */
     public readonly int $included_minutes;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutes_used_breakdown;
-    public function __construct(int $total_minutes_used, int $total_paid_minutes_used, int $included_minutes, object $minutes_used_breakdown)
+    public function __construct(int $total_minutes_used, int $total_paid_minutes_used, int $included_minutes, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutes_used_breakdown)
     {
         $this->total_minutes_used = $total_minutes_used;
         $this->total_paid_minutes_used = $total_paid_minutes_used;

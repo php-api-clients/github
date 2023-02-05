@@ -15,7 +15,7 @@ final class TimelineCrossReferencedEvent
     public readonly string $created_at;
     public readonly string $updated_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCrossReferencedEvent\Source $source;
-    public function __construct(string $event, object $actor, string $created_at, string $updated_at, object $source)
+    public function __construct(string $event, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor, string $created_at, string $updated_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCrossReferencedEvent\Source $source)
     {
         $this->event = $event;
         $this->actor = $actor;

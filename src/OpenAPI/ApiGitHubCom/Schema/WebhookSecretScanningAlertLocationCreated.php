@@ -26,7 +26,7 @@ final class WebhookSecretScanningAlertLocationCreated
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $action, object $alert, object $installation, object $location, object $organization, object $repository, object $sender)
+    public function __construct(string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert $alert, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningLocation $location, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->alert = $alert;

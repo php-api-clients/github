@@ -27,7 +27,7 @@ final class UnassignedIssueEvent
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assigner;
-    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, object $assignee, object $assigner)
+    public function __construct(int $id, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor, string $event, string $commit_id, string $commit_url, string $created_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UnassignedIssueEvent\PerformedViaGithubApp $performed_via_github_app, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assignee, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $assigner)
     {
         $this->id = $id;
         $this->node_id = $node_id;

@@ -20,7 +20,7 @@ final class ReviewDismissedIssueEvent
     public readonly string $created_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewDismissedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewDismissedIssueEvent\DismissedReview $dismissed_review;
-    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, object $dismissed_review)
+    public function __construct(int $id, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor, string $event, string $commit_id, string $commit_url, string $created_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewDismissedIssueEvent\PerformedViaGithubApp $performed_via_github_app, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReviewDismissedIssueEvent\DismissedReview $dismissed_review)
     {
         $this->id = $id;
         $this->node_id = $node_id;

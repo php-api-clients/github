@@ -19,7 +19,7 @@ final class Links
      * Hypermedia Link
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $pull_request;
-    public function __construct(object $self, object $html, object $pull_request)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $self, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $html, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $pull_request)
     {
         $this->self = $self;
         $this->html = $html;

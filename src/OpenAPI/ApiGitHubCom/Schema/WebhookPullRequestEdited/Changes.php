@@ -10,7 +10,7 @@ final class Changes
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Base $base;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Body $body;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Title $title;
-    public function __construct(object $base, object $body, object $title)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Base $base, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Body $body, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Title $title)
     {
         $this->base = $base;
         $this->body = $body;

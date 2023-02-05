@@ -37,7 +37,7 @@ final class ForkOf
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ForkOf\Forks> $forks
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ForkOf\History> $history
      */
-    public function __construct(string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, object $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, mixed $user, string $comments_url, mixed $owner, bool $truncated, array $forks, array $history)
+    public function __construct(string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ForkOf\Files $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ForkOf\User $user, string $comments_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ForkOf\Owner $owner, bool $truncated, array $forks, array $history)
     {
         $this->url = $url;
         $this->forks_url = $forks_url;

@@ -59,7 +59,7 @@ final class CodeScanningOrganizationAlertItems
      * A GitHub repository.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository $repository;
-    public function __construct(int $number, string $created_at, string $updated_at, string $url, string $html_url, string $instances_url, string $state, string $fixed_at, mixed $dismissed_by, string $dismissed_at, string $dismissed_reason, string $dismissed_comment, object $rule, object $tool, object $most_recent_instance, object $repository)
+    public function __construct(int $number, string $created_at, string $updated_at, string $url, string $html_url, string $instances_url, string $state, string $fixed_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningOrganizationAlertItems\DismissedBy $dismissed_by, string $dismissed_at, string $dismissed_reason, string $dismissed_comment, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertRule $rule, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisTool $tool, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance $most_recent_instance, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleRepository $repository)
     {
         $this->number = $number;
         $this->created_at = $created_at;

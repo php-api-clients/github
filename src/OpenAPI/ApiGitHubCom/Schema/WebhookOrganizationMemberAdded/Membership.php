@@ -12,7 +12,7 @@ final class Membership
     public readonly string $state;
     public readonly string $url;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Membership\User $user;
-    public function __construct(string $organization_url, string $role, string $state, string $url, object $user)
+    public function __construct(string $organization_url, string $role, string $state, string $url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Membership\User $user)
     {
         $this->organization_url = $organization_url;
         $this->role = $role;

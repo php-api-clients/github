@@ -30,7 +30,7 @@ final class WebhookWorkflowDispatch
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     public readonly string $workflow;
-    public function __construct(object $enterprise, object $inputs, object $installation, object $organization, string $ref, object $repository, object $sender, string $workflow)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDispatch\Inputs $inputs, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, string $ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, string $workflow)
     {
         $this->enterprise = $enterprise;
         $this->inputs = $inputs;

@@ -8,7 +8,7 @@ final class WorkflowUsage
     public const SCHEMA_TITLE = 'Workflow Usage';
     public const SCHEMA_DESCRIPTION = 'Workflow Usage';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage\Billable $billable;
-    public function __construct(object $billable)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WorkflowUsage\Billable $billable)
     {
         $this->billable = $billable;
     }

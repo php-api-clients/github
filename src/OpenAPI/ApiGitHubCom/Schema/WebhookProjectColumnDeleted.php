@@ -26,7 +26,7 @@ final class WebhookProjectColumnDeleted
      * A GitHub user.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $project_column, mixed $repository, object $sender)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\ProjectColumn $project_column, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectColumnDeleted\Repository $repository, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

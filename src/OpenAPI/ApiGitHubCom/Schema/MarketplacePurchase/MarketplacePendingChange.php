@@ -15,7 +15,7 @@ final class MarketplacePendingChange
      * Marketplace Listing Plan
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan $plan;
-    public function __construct(bool $is_installed, string $effective_date, int $unit_count, int $id, object $plan)
+    public function __construct(bool $is_installed, string $effective_date, int $unit_count, int $id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan $plan)
     {
         $this->is_installed = $is_installed;
         $this->effective_date = $effective_date;

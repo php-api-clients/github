@@ -15,7 +15,7 @@ final class ShortBranch
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection;
     public readonly ?string $protection_url;
-    public function __construct(string $name, object $commit, bool $protected, object $protection, string $protection_url)
+    public function __construct(string $name, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ShortBranch\Commit $commit, bool $protected, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection $protection, string $protection_url)
     {
         $this->name = $name;
         $this->commit = $commit;

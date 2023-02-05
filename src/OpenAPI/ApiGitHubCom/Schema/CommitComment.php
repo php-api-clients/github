@@ -24,7 +24,7 @@ final class CommitComment
      */
     public readonly string $author_association;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
-    public function __construct(string $html_url, string $url, int $id, string $node_id, string $body, string $path, int $position, int $line, string $commit_id, mixed $user, string $created_at, string $updated_at, string $author_association, object $reactions)
+    public function __construct(string $html_url, string $url, int $id, string $node_id, string $body, string $path, int $position, int $line, string $commit_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitComment\User $user, string $created_at, string $updated_at, string $author_association, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions)
     {
         $this->html_url = $html_url;
         $this->url = $url;

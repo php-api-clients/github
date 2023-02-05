@@ -38,7 +38,7 @@ final class PerformedViaGithubApp
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PerformedViaGithubApp\Events> $events
      */
-    public function __construct(string $created_at, string $description, array $events, string $external_url, string $html_url, int $id, string $name, string $node_id, object $owner, object $permissions, string $slug, string $updated_at)
+    public function __construct(string $created_at, string $description, array $events, string $external_url, string $html_url, int $id, string $name, string $node_id, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PerformedViaGithubApp\Owner $owner, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PerformedViaGithubApp\Permissions $permissions, string $slug, string $updated_at)
     {
         $this->created_at = $created_at;
         $this->description = $description;

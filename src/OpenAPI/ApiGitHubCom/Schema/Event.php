@@ -21,7 +21,7 @@ final class Event
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Payload $payload;
     public readonly bool $public;
     public readonly ?string $created_at;
-    public function __construct(string $id, string $type, object $actor, object $repo, object $org, object $payload, bool $public, string $created_at)
+    public function __construct(string $id, string $type, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $actor, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Repo $repo, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actor $org, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Event\Payload $payload, bool $public, string $created_at)
     {
         $this->id = $id;
         $this->type = $type;

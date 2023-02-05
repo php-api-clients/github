@@ -50,7 +50,7 @@ final class Links
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType> $current_user_organizations
      */
-    public function __construct(object $timeline, object $user, object $security_advisories, object $current_user, object $current_user_public, object $current_user_actor, object $current_user_organization, array $current_user_organizations, object $repository_discussions, object $repository_discussions_category)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $timeline, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $user, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $security_advisories, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $current_user, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $current_user_public, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $current_user_actor, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $current_user_organization, array $current_user_organizations, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $repository_discussions, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LinkWithType $repository_discussions_category)
     {
         $this->timeline = $timeline;
         $this->user = $user;

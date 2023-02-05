@@ -11,7 +11,7 @@ final class Vulnerabilities
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Vulnerabilities\Package $package;
     public readonly string $severity;
     public readonly string $vulnerable_version_range;
-    public function __construct(object $first_patched_version, object $package, string $severity, string $vulnerable_version_range)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Vulnerabilities\FirstPatchedVersion $first_patched_version, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Vulnerabilities\Package $package, string $severity, string $vulnerable_version_range)
     {
         $this->first_patched_version = $first_patched_version;
         $this->package = $package;

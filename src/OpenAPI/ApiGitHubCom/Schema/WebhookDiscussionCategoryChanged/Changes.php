@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookDiscussionCategoryChanged\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Category $category;
-    public function __construct(object $category)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Category $category)
     {
         $this->category = $category;
     }

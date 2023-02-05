@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookMemberAdded\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Permission $permission;
-    public function __construct(object $permission)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Permission $permission)
     {
         $this->permission = $permission;
     }

@@ -39,7 +39,7 @@ final class Links
      * Hypermedia Link
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $self;
-    public function __construct(object $comments, object $commits, object $statuses, object $html, object $issue, object $review_comments, object $review_comment, object $self)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $comments, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $commits, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $statuses, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $html, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $issue, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $review_comments, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $review_comment, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Link $self)
     {
         $this->comments = $comments;
         $this->commits = $commits;

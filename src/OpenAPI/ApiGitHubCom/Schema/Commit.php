@@ -28,7 +28,7 @@ final class Commit
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents> $parents
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DiffEntry> $files
      */
-    public function __construct(string $url, string $sha, string $node_id, string $html_url, string $comments_url, object $commit, mixed $author, mixed $committer, array $parents, object $stats, array $files)
+    public function __construct(string $url, string $sha, string $node_id, string $html_url, string $comments_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Commit $commit, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer $committer, array $parents, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Stats $stats, array $files)
     {
         $this->url = $url;
         $this->sha = $sha;

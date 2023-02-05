@@ -67,7 +67,7 @@ final class SecretScanningAlert
      * The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
     public readonly ?string $push_protection_bypassed_at;
-    public function __construct(int $number, string $created_at, mixed $updated_at, string $url, string $html_url, string $locations_url, string $state, string $resolution, string $resolved_at, mixed $resolved_by, string $resolution_comment, string $secret_type, string $secret_type_display_name, string $secret, bool $push_protection_bypassed, mixed $push_protection_bypassed_by, string $push_protection_bypassed_at)
+    public function __construct(int $number, string $created_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\UpdatedAt $updated_at, string $url, string $html_url, string $locations_url, string $state, string $resolution, string $resolved_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\ResolvedBy $resolved_by, string $resolution_comment, string $secret_type, string $secret_type_display_name, string $secret, bool $push_protection_bypassed, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecretScanningAlert\PushProtectionBypassedBy $push_protection_bypassed_by, string $push_protection_bypassed_at)
     {
         $this->number = $number;
         $this->created_at = $created_at;

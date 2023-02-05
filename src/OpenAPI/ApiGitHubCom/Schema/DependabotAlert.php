@@ -60,7 +60,7 @@ final class DependabotAlert
      * The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
     public readonly ?string $fixed_at;
-    public function __construct(int $number, string $state, object $dependency, object $security_advisory, object $security_vulnerability, string $url, string $html_url, string $created_at, string $updated_at, string $dismissed_at, mixed $dismissed_by, string $dismissed_reason, string $dismissed_comment, string $fixed_at)
+    public function __construct(int $number, string $state, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\Dependency $dependency, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityAdvisory $security_advisory, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSecurityVulnerability $security_vulnerability, string $url, string $html_url, string $created_at, string $updated_at, string $dismissed_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert\DismissedBy $dismissed_by, string $dismissed_reason, string $dismissed_comment, string $fixed_at)
     {
         $this->number = $number;
         $this->state = $state;

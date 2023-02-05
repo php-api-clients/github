@@ -43,7 +43,7 @@ final class Deployment
      */
     public readonly ?bool $production_environment;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\PerformedViaGithubApp $performed_via_github_app;
-    public function __construct(string $url, int $id, string $node_id, string $sha, string $ref, string $task, mixed $payload, string $original_environment, string $environment, string $description, mixed $creator, string $created_at, string $updated_at, string $statuses_url, string $repository_url, bool $transient_environment, bool $production_environment, mixed $performed_via_github_app)
+    public function __construct(string $url, int $id, string $node_id, string $sha, string $ref, string $task, mixed $payload, string $original_environment, string $environment, string $description, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\Creator $creator, string $created_at, string $updated_at, string $statuses_url, string $repository_url, bool $transient_environment, bool $production_environment, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment\PerformedViaGithubApp $performed_via_github_app)
     {
         $this->url = $url;
         $this->id = $id;

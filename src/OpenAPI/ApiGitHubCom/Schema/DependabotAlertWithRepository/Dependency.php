@@ -19,7 +19,7 @@ final class Dependency
      * The execution scope of the vulnerable dependency.
      */
     public readonly ?string $scope;
-    public function __construct(object $package, string $manifest_path, string $scope)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertPackage $package, string $manifest_path, string $scope)
     {
         $this->package = $package;
         $this->manifest_path = $manifest_path;

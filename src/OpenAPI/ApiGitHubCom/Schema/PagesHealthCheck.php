@@ -9,7 +9,7 @@ final class PagesHealthCheck
     public const SCHEMA_DESCRIPTION = 'Pages Health Check Status';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain $domain;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\AltDomain $alt_domain;
-    public function __construct(object $domain, object $alt_domain)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\Domain $domain, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHealthCheck\AltDomain $alt_domain)
     {
         $this->domain = $domain;
         $this->alt_domain = $alt_domain;

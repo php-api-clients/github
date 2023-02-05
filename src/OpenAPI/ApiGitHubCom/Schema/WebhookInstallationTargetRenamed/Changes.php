@@ -9,7 +9,7 @@ final class Changes
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Login $login;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Slug $slug;
-    public function __construct(object $login, object $slug)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Login $login, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Slug $slug)
     {
         $this->login = $login;
         $this->slug = $slug;

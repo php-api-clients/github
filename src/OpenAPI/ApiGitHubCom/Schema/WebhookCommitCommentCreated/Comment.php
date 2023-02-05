@@ -45,7 +45,7 @@ final class Comment
     public readonly string $updated_at;
     public readonly string $url;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user;
-    public function __construct(string $author_association, string $body, string $commit_id, string $created_at, string $html_url, int $id, int $line, string $node_id, string $path, int $position, object $reactions, string $updated_at, string $url, object $user)
+    public function __construct(string $author_association, string $body, string $commit_id, string $created_at, string $html_url, int $id, int $line, string $node_id, string $path, int $position, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\Reactions $reactions, string $updated_at, string $url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Comment\User $user)
     {
         $this->author_association = $author_association;
         $this->body = $body;

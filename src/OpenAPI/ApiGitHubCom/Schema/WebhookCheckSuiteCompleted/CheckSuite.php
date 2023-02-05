@@ -50,7 +50,7 @@ final class CheckSuite
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite\PullRequests> $pull_requests
      */
-    public function __construct(string $after, object $app, string $before, string $check_runs_url, string $conclusion, string $created_at, string $head_branch, object $head_commit, string $head_sha, int $id, int $latest_check_runs_count, string $node_id, array $pull_requests, bool $rerequestable, bool $runs_rerequestable, string $status, string $updated_at, string $url)
+    public function __construct(string $after, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite\App $app, string $before, string $check_runs_url, string $conclusion, string $created_at, string $head_branch, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite\HeadCommit $head_commit, string $head_sha, int $id, int $latest_check_runs_count, string $node_id, array $pull_requests, bool $rerequestable, bool $runs_rerequestable, string $status, string $updated_at, string $url)
     {
         $this->after = $after;
         $this->app = $app;

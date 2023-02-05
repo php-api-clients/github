@@ -8,7 +8,7 @@ final class Permissions
     public const SCHEMA_TITLE = 'Repository\\Permissions';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Permissions\From $from;
-    public function __construct(object $from)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Permissions\From $from)
     {
         $this->from = $from;
     }

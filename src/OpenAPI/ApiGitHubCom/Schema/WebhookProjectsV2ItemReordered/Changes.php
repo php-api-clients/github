@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookProjectsV2ItemReordered\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\PreviousProjectsV2ItemNodeId $previous_projects_v2_item_node_id;
-    public function __construct(object $previous_projects_v2_item_node_id)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\PreviousProjectsV2ItemNodeId $previous_projects_v2_item_node_id)
     {
         $this->previous_projects_v2_item_node_id = $previous_projects_v2_item_node_id;
     }

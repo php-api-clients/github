@@ -10,7 +10,7 @@ final class RepositoryCollaboratorPermission
     public readonly string $permission;
     public readonly string $role_name;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission\User $user;
-    public function __construct(string $permission, string $role_name, mixed $user)
+    public function __construct(string $permission, string $role_name, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RepositoryCollaboratorPermission\User $user)
     {
         $this->permission = $permission;
         $this->role_name = $role_name;

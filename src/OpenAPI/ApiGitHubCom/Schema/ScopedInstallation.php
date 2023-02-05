@@ -29,7 +29,7 @@ final class ScopedInstallation
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScopedInstallation\SingleFilePaths> $single_file_paths
      */
-    public function __construct(object $permissions, string $repository_selection, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $repositories_url, object $account)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions, string $repository_selection, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $repositories_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $account)
     {
         $this->permissions = $permissions;
         $this->repository_selection = $repository_selection;

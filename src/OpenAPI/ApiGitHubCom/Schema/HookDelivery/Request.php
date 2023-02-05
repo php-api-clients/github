@@ -15,7 +15,7 @@ final class Request
      * The webhook payload.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Payload $payload;
-    public function __construct(object $headers, object $payload)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Headers $headers, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Request\Payload $payload)
     {
         $this->headers = $headers;
         $this->payload = $payload;

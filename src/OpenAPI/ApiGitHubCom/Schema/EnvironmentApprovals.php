@@ -27,7 +27,7 @@ final class EnvironmentApprovals
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\EnvironmentApprovals\Environments> $environments
      */
-    public function __construct(array $environments, string $state, object $user, string $comment)
+    public function __construct(array $environments, string $state, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $user, string $comment)
     {
         $this->environments = $environments;
         $this->state = $state;

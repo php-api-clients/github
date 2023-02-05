@@ -26,7 +26,7 @@ final class Assets
     public readonly string $updated_at;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Assets\Uploader $uploader;
     public readonly string $url;
-    public function __construct(string $browser_download_url, string $content_type, string $created_at, int $download_count, int $id, string $label, string $name, string $node_id, int $size, string $state, string $updated_at, object $uploader, string $url)
+    public function __construct(string $browser_download_url, string $content_type, string $created_at, int $download_count, int $id, string $label, string $name, string $node_id, int $size, string $state, string $updated_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Assets\Uploader $uploader, string $url)
     {
         $this->browser_download_url = $browser_download_url;
         $this->content_type = $content_type;

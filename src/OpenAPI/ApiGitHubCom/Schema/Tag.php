@@ -12,7 +12,7 @@ final class Tag
     public readonly string $zipball_url;
     public readonly string $tarball_url;
     public readonly string $node_id;
-    public function __construct(string $name, object $commit, string $zipball_url, string $tarball_url, string $node_id)
+    public function __construct(string $name, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tag\Commit $commit, string $zipball_url, string $tarball_url, string $node_id)
     {
         $this->name = $name;
         $this->commit = $commit;

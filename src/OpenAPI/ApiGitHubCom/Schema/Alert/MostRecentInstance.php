@@ -33,7 +33,7 @@ final class MostRecentInstance
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MostRecentInstance\Classifications> $classifications
      */
-    public function __construct(string $analysis_key, array $classifications, string $commit_sha, string $environment, object $location, object $message, string $ref, string $state)
+    public function __construct(string $analysis_key, array $classifications, string $commit_sha, string $environment, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MostRecentInstance\Location $location, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MostRecentInstance\Message $message, string $ref, string $state)
     {
         $this->analysis_key = $analysis_key;
         $this->classifications = $classifications;

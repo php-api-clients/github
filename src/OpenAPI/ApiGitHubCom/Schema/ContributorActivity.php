@@ -16,7 +16,7 @@ final class ContributorActivity
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity\Weeks> $weeks
      */
-    public function __construct(mixed $author, int $total, array $weeks)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContributorActivity\Author $author, int $total, array $weeks)
     {
         $this->author = $author;
         $this->total = $total;

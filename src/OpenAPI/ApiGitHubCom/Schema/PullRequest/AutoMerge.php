@@ -20,7 +20,7 @@ final class AutoMerge
      * The merge method to use.
      */
     public readonly string $merge_method;
-    public function __construct(string $commit_message, string $commit_title, object $enabled_by, string $merge_method)
+    public function __construct(string $commit_message, string $commit_title, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AutoMerge\EnabledBy $enabled_by, string $merge_method)
     {
         $this->commit_message = $commit_message;
         $this->commit_title = $commit_title;

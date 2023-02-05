@@ -32,7 +32,7 @@ final class Milestone
     public readonly string $title;
     public readonly string $updated_at;
     public readonly string $url;
-    public function __construct(string $closed_at, int $closed_issues, string $created_at, object $creator, string $description, string $due_on, string $html_url, int $id, string $labels_url, string $node_id, int $number, int $open_issues, string $state, string $title, string $updated_at, string $url)
+    public function __construct(string $closed_at, int $closed_issues, string $created_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Milestone\Creator $creator, string $description, string $due_on, string $html_url, int $id, string $labels_url, string $node_id, int $number, int $open_issues, string $state, string $title, string $updated_at, string $url)
     {
         $this->closed_at = $closed_at;
         $this->closed_issues = $closed_issues;

@@ -17,7 +17,7 @@ final class Sponsorship
      * The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Tier $tier;
-    public function __construct(string $created_at, object $maintainer, string $node_id, string $privacy_level, object $sponsor, object $sponsorable, object $tier)
+    public function __construct(string $created_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Maintainer $maintainer, string $node_id, string $privacy_level, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsor $sponsor, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Sponsorable $sponsorable, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Sponsorship\Tier $tier)
     {
         $this->created_at = $created_at;
         $this->maintainer = $maintainer;

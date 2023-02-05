@@ -19,7 +19,7 @@ final class RegistryPackage
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\PackageVersion $package_version;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\Registry $registry;
     public readonly ?string $updated_at;
-    public function __construct(string $created_at, string $description, string $ecosystem, string $html_url, int $id, string $name, string $namespace, object $owner, string $package_type, object $package_version, object $registry, string $updated_at)
+    public function __construct(string $created_at, string $description, string $ecosystem, string $html_url, int $id, string $name, string $namespace, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\Owner $owner, string $package_type, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\PackageVersion $package_version, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RegistryPackage\Registry $registry, string $updated_at)
     {
         $this->created_at = $created_at;
         $this->description = $description;

@@ -18,7 +18,7 @@ final class ContentSymlink
     public readonly ?string $html_url;
     public readonly ?string $download_url;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentSymlink\Links $_links;
-    public function __construct(string $type, string $target, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, object $_links)
+    public function __construct(string $type, string $target, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentSymlink\Links $_links)
     {
         $this->type = $type;
         $this->target = $target;

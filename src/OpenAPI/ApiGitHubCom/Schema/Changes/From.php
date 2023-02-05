@@ -8,7 +8,7 @@ final class From
     public const SCHEMA_TITLE = 'Changes\\From';
     public const SCHEMA_DESCRIPTION = '';
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis $security_and_analysis;
-    public function __construct(object $security_and_analysis)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis $security_and_analysis)
     {
         $this->security_and_analysis = $security_and_analysis;
     }

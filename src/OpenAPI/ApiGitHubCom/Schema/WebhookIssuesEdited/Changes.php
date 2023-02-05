@@ -9,7 +9,7 @@ final class Changes
     public const SCHEMA_DESCRIPTION = 'The changes to the issue.';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Body $body;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Title $title;
-    public function __construct(object $body, object $title)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Body $body, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Title $title)
     {
         $this->body = $body;
         $this->title = $title;

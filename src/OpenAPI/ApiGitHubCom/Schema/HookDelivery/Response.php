@@ -15,7 +15,7 @@ final class Response
      * The response payload received.
      */
     public readonly ?string $payload;
-    public function __construct(object $headers, string $payload)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Response\Headers $headers, string $payload)
     {
         $this->headers = $headers;
         $this->payload = $payload;

@@ -15,7 +15,7 @@ final class Json
      * Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Inputs $inputs;
-    public function __construct(string $ref, object $inputs)
+    public function __construct(string $ref, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Inputs $inputs)
     {
         $this->ref = $ref;
         $this->inputs = $inputs;

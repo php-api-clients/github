@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookSecurityAndAnalysis\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\From $from;
-    public function __construct(object $from)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\From $from)
     {
         $this->from = $from;
     }

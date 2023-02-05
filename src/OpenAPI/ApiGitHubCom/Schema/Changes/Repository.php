@@ -8,7 +8,7 @@ final class Repository
     public const SCHEMA_TITLE = 'Changes\\Repository';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\Permissions $permissions;
-    public function __construct(object $permissions)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository\Permissions $permissions)
     {
         $this->permissions = $permissions;
     }

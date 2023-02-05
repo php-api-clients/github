@@ -10,7 +10,7 @@ final class Base
     public readonly string $ref;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\Repo $repo;
     public readonly string $sha;
-    public function __construct(string $ref, object $repo, string $sha)
+    public function __construct(string $ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\Repo $repo, string $sha)
     {
         $this->ref = $ref;
         $this->repo = $repo;

@@ -45,7 +45,7 @@ final class CheckRun
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(int $id, string $head_sha, string $node_id, string $external_id, string $url, string $html_url, string $details_url, string $status, string $conclusion, string $started_at, string $completed_at, object $output, string $name, object $check_suite, mixed $app, array $pull_requests, object $deployment)
+    public function __construct(int $id, string $head_sha, string $node_id, string $external_id, string $url, string $html_url, string $details_url, string $status, string $conclusion, string $started_at, string $completed_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\Output $output, string $name, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\CheckSuite $check_suite, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun\App $app, array $pull_requests, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple $deployment)
     {
         $this->id = $id;
         $this->head_sha = $head_sha;

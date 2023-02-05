@@ -9,7 +9,7 @@ final class ProjectCollaboratorPermission
     public const SCHEMA_DESCRIPTION = 'Project Collaborator Permission';
     public readonly string $permission;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission\User $user;
-    public function __construct(string $permission, mixed $user)
+    public function __construct(string $permission, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCollaboratorPermission\User $user)
     {
         $this->permission = $permission;
         $this->user = $user;

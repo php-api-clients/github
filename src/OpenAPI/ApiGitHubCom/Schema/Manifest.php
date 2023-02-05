@@ -20,7 +20,7 @@ final class Manifest
      * A collection of resolved package dependencies.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved $resolved;
-    public function __construct(string $name, object $file, object $metadata, object $resolved)
+    public function __construct(string $name, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\File $file, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Manifest\Resolved $resolved)
     {
         $this->name = $name;
         $this->file = $file;

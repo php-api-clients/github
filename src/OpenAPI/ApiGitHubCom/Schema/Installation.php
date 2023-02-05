@@ -49,7 +49,7 @@ final class Installation
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Events> $events
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SingleFilePaths> $single_file_paths
      */
-    public function __construct(int $id, object $account, string $repository_selection, string $access_tokens_url, string $repositories_url, string $html_url, int $app_id, int $target_id, string $target_type, object $permissions, array $events, string $created_at, string $updated_at, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $app_slug, mixed $suspended_by, string $suspended_at, string $contact_email)
+    public function __construct(int $id, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\Account $account, string $repository_selection, string $access_tokens_url, string $repositories_url, string $html_url, int $app_id, int $target_id, string $target_type, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions, array $events, string $created_at, string $updated_at, string $single_file_name, bool $has_multiple_single_files, array $single_file_paths, string $app_slug, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation\SuspendedBy $suspended_by, string $suspended_at, string $contact_email)
     {
         $this->id = $id;
         $this->account = $account;

@@ -36,7 +36,7 @@ final class Hook
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Events> $events
      */
-    public function __construct(string $type, int $id, string $name, bool $active, array $events, object $config, string $updated_at, string $created_at, string $url, string $test_url, string $ping_url, string $deliveries_url, object $last_response)
+    public function __construct(string $type, int $id, string $name, bool $active, array $events, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Hook\Config $config, string $updated_at, string $created_at, string $url, string $test_url, string $ping_url, string $deliveries_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookResponse $last_response)
     {
         $this->type = $type;
         $this->id = $id;

@@ -43,7 +43,7 @@ final class Alert
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\Tool $tool;
     public readonly ?string $updated_at;
     public readonly string $url;
-    public function __construct(string $created_at, mixed $dismissed_at, mixed $dismissed_by, string $dismissed_comment, mixed $dismissed_reason, mixed $fixed_at, string $html_url, string $instances_url, object $most_recent_instance, int $number, object $rule, string $state, object $tool, string $updated_at, string $url)
+    public function __construct(string $created_at, mixed $dismissed_at, mixed $dismissed_by, string $dismissed_comment, mixed $dismissed_reason, mixed $fixed_at, string $html_url, string $instances_url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\MostRecentInstance $most_recent_instance, int $number, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\Rule $rule, string $state, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\Tool $tool, string $updated_at, string $url)
     {
         $this->created_at = $created_at;
         $this->dismissed_at = $dismissed_at;

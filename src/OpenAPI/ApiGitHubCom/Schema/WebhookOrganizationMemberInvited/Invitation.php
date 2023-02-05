@@ -19,7 +19,7 @@ final class Invitation
     public readonly string $role;
     public readonly int $team_count;
     public readonly ?string $invitation_source;
-    public function __construct(string $created_at, string $email, string $failed_at, string $failed_reason, int $id, string $invitation_teams_url, object $inviter, string $login, string $node_id, string $role, int $team_count, string $invitation_source)
+    public function __construct(string $created_at, string $email, string $failed_at, string $failed_reason, int $id, string $invitation_teams_url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Invitation\Inviter $inviter, string $login, string $node_id, string $role, int $team_count, string $invitation_source)
     {
         $this->created_at = $created_at;
         $this->email = $email;

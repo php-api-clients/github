@@ -9,7 +9,7 @@ final class Changes
     public const SCHEMA_DESCRIPTION = 'The changes to the project if the action was `edited`.';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Body $body;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Name $name;
-    public function __construct(object $body, object $name)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Body $body, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Name $name)
     {
         $this->body = $body;
         $this->name = $name;

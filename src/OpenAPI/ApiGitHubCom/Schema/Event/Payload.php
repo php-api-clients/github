@@ -23,7 +23,7 @@ final class Payload
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Payload\Pages> $pages
      */
-    public function __construct(string $action, object $issue, object $comment, array $pages)
+    public function __construct(string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue $issue, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment $comment, array $pages)
     {
         $this->action = $action;
         $this->issue = $issue;

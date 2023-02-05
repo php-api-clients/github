@@ -12,7 +12,7 @@ final class PullRequestMinimal
     public readonly string $url;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal\Head $head;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal\Base $base;
-    public function __construct(int $id, int $number, string $url, object $head, object $base)
+    public function __construct(int $id, int $number, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal\Head $head, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal\Base $base)
     {
         $this->id = $id;
         $this->number = $number;

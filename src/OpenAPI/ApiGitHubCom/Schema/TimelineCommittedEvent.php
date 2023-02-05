@@ -36,7 +36,7 @@ final class TimelineCommittedEvent
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Parents> $parents
      */
-    public function __construct(string $event, string $sha, string $node_id, string $url, object $author, object $committer, string $message, object $tree, array $parents, object $verification, string $html_url)
+    public function __construct(string $event, string $sha, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Committer $committer, string $message, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Tree $tree, array $parents, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TimelineCommittedEvent\Verification $verification, string $html_url)
     {
         $this->event = $event;
         $this->sha = $sha;

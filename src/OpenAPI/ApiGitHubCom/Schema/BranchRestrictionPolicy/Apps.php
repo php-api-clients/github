@@ -25,7 +25,7 @@ final class Apps
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Events> $events
      */
-    public function __construct(int $id, string $slug, string $node_id, object $owner, string $name, string $description, string $external_url, string $html_url, string $created_at, string $updated_at, object $permissions, array $events)
+    public function __construct(int $id, string $slug, string $node_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Owner $owner, string $name, string $description, string $external_url, string $html_url, string $created_at, string $updated_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Apps\Permissions $permissions, array $events)
     {
         $this->id = $id;
         $this->slug = $slug;

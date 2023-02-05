@@ -26,7 +26,7 @@ final class ReleaseAsset
     public readonly string $created_at;
     public readonly string $updated_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset\Uploader $uploader;
-    public function __construct(string $url, string $browser_download_url, int $id, string $node_id, string $name, string $label, string $state, string $content_type, int $size, int $download_count, string $created_at, string $updated_at, mixed $uploader)
+    public function __construct(string $url, string $browser_download_url, int $id, string $node_id, string $name, string $label, string $state, string $content_type, int $size, int $download_count, string $created_at, string $updated_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset\Uploader $uploader)
     {
         $this->url = $url;
         $this->browser_download_url = $browser_download_url;

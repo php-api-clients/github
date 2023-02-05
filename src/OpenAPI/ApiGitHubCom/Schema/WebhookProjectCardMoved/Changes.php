@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookProjectCardMoved\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ColumnId $column_id;
-    public function __construct(object $column_id)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ColumnId $column_id)
     {
         $this->column_id = $column_id;
     }

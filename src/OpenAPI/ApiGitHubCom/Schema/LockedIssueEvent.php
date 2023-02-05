@@ -20,7 +20,7 @@ final class LockedIssueEvent
     public readonly string $created_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LockedIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     public readonly ?string $lock_reason;
-    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, string $lock_reason)
+    public function __construct(int $id, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor, string $event, string $commit_id, string $commit_url, string $created_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LockedIssueEvent\PerformedViaGithubApp $performed_via_github_app, string $lock_reason)
     {
         $this->id = $id;
         $this->node_id = $node_id;

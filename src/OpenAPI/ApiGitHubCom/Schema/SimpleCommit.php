@@ -13,7 +13,7 @@ final class SimpleCommit
     public readonly string $timestamp;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Author $author;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Committer $committer;
-    public function __construct(string $id, string $tree_id, string $message, string $timestamp, object $author, object $committer)
+    public function __construct(string $id, string $tree_id, string $message, string $timestamp, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Author $author, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit\Committer $committer)
     {
         $this->id = $id;
         $this->tree_id = $tree_id;

@@ -20,7 +20,7 @@ final class Team
     public readonly string $members_url;
     public readonly string $repositories_url;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Parent_ $parent;
-    public function __construct(int $id, string $node_id, string $name, string $slug, string $description, string $privacy, string $permission, object $permissions, string $url, string $html_url, string $members_url, string $repositories_url, mixed $parent)
+    public function __construct(int $id, string $node_id, string $name, string $slug, string $description, string $privacy, string $permission, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Permissions $permissions, string $url, string $html_url, string $members_url, string $repositories_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Team\Parent_ $parent)
     {
         $this->id = $id;
         $this->node_id = $node_id;

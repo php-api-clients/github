@@ -36,7 +36,7 @@ final class Migration
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository> $repositories
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Exclude> $exclude
      */
-    public function __construct(int $id, mixed $owner, string $guid, string $state, bool $lock_repositories, bool $exclude_metadata, bool $exclude_git_data, bool $exclude_attachments, bool $exclude_releases, bool $exclude_owner_projects, bool $org_metadata_only, array $repositories, string $url, string $created_at, string $updated_at, string $node_id, string $archive_url, array $exclude)
+    public function __construct(int $id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Migration\Owner $owner, string $guid, string $state, bool $lock_repositories, bool $exclude_metadata, bool $exclude_git_data, bool $exclude_attachments, bool $exclude_releases, bool $exclude_owner_projects, bool $org_metadata_only, array $repositories, string $url, string $created_at, string $updated_at, string $node_id, string $archive_url, array $exclude)
     {
         $this->id = $id;
         $this->owner = $owner;

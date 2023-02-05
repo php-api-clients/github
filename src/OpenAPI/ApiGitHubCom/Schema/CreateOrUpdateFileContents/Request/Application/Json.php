@@ -31,7 +31,7 @@ final class Json
      * The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author;
-    public function __construct(string $message, string $content, string $sha, string $branch, object $committer, object $author)
+    public function __construct(string $message, string $content, string $sha, string $branch, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer $committer, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author)
     {
         $this->message = $message;
         $this->content = $content;

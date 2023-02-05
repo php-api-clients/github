@@ -29,7 +29,7 @@ final class AuthenticationToken
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository> $repositories
      */
-    public function __construct(string $token, string $expires_at, object $permissions, array $repositories, string $single_file, string $repository_selection)
+    public function __construct(string $token, string $expires_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AuthenticationToken\Permissions $permissions, array $repositories, string $single_file, string $repository_selection)
     {
         $this->token = $token;
         $this->expires_at = $expires_at;

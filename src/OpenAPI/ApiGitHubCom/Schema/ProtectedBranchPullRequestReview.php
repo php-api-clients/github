@@ -20,7 +20,7 @@ final class ProtectedBranchPullRequestReview
      * Whether the most recent push must be approved by someone other than the person who pushed it.
      */
     public readonly ?bool $require_last_push_approval;
-    public function __construct(string $url, object $dismissal_restrictions, object $bypass_pull_request_allowances, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval)
+    public function __construct(string $url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions $dismissal_restrictions, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances $bypass_pull_request_allowances, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval)
     {
         $this->url = $url;
         $this->dismissal_restrictions = $dismissal_restrictions;

@@ -54,7 +54,7 @@ final class Release
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReleaseAsset> $assets
      */
-    public function __construct(string $url, string $html_url, string $assets_url, string $upload_url, string $tarball_url, string $zipball_url, int $id, string $node_id, string $tag_name, string $target_commitish, string $name, string $body, bool $draft, bool $prerelease, string $created_at, string $published_at, object $author, array $assets, string $body_html, string $body_text, int $mentions_count, string $discussion_url, object $reactions)
+    public function __construct(string $url, string $html_url, string $assets_url, string $upload_url, string $tarball_url, string $zipball_url, int $id, string $node_id, string $tag_name, string $target_commitish, string $name, string $body, bool $draft, bool $prerelease, string $created_at, string $published_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $author, array $assets, string $body_html, string $body_text, int $mentions_count, string $discussion_url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions)
     {
         $this->url = $url;
         $this->html_url = $html_url;

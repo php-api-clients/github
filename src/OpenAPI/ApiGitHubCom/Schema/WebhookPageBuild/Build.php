@@ -15,7 +15,7 @@ final class Build
     public readonly string $status;
     public readonly string $updated_at;
     public readonly string $url;
-    public function __construct(string $commit, string $created_at, int $duration, object $error, object $pusher, string $status, string $updated_at, string $url)
+    public function __construct(string $commit, string $created_at, int $duration, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Build\Error $error, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Build\Pusher $pusher, string $status, string $updated_at, string $url)
     {
         $this->commit = $commit;
         $this->created_at = $created_at;

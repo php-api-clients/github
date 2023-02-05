@@ -25,7 +25,7 @@ final class Json
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Repositories> $repositories
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeFrequencyStat> $repository_ids
      */
-    public function __construct(array $repositories, array $repository_ids, object $permissions)
+    public function __construct(array $repositories, array $repository_ids, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions)
     {
         $this->repositories = $repositories;
         $this->repository_ids = $repository_ids;

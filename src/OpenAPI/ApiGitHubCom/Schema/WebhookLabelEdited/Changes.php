@@ -10,7 +10,7 @@ final class Changes
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Color $color;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Description $description;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Name $name;
-    public function __construct(object $color, object $description, object $name)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Color $color, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Description $description, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Name $name)
     {
         $this->color = $color;
         $this->description = $description;

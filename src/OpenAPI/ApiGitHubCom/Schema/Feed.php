@@ -30,7 +30,7 @@ final class Feed
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed\CurrentUserOrganizationUrls> $current_user_organization_urls
      */
-    public function __construct(string $timeline_url, string $user_url, string $current_user_public_url, string $current_user_url, string $current_user_actor_url, string $current_user_organization_url, array $current_user_organization_urls, string $security_advisories_url, string $repository_discussions_url, string $repository_discussions_category_url, object $_links)
+    public function __construct(string $timeline_url, string $user_url, string $current_user_public_url, string $current_user_url, string $current_user_actor_url, string $current_user_organization_url, array $current_user_organization_urls, string $security_advisories_url, string $repository_discussions_url, string $repository_discussions_category_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Feed\Links $_links)
     {
         $this->timeline_url = $timeline_url;
         $this->user_url = $user_url;

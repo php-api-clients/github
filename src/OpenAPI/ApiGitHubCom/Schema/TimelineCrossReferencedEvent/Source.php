@@ -12,7 +12,7 @@ final class Source
      * Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue $issue;
-    public function __construct(string $type, object $issue)
+    public function __construct(string $type, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue $issue)
     {
         $this->type = $type;
         $this->issue = $issue;

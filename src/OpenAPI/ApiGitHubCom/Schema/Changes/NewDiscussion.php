@@ -31,7 +31,7 @@ final class NewDiscussion
     public readonly string $title;
     public readonly string $updated_at;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NewDiscussion\User $user;
-    public function __construct(string $active_lock_reason, string $answer_chosen_at, object $answer_chosen_by, string $answer_html_url, string $author_association, string $body, object $category, int $comments, string $created_at, string $html_url, int $id, bool $locked, string $node_id, int $number, object $reactions, string $repository_url, string $state, string $timeline_url, string $title, string $updated_at, object $user)
+    public function __construct(string $active_lock_reason, string $answer_chosen_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NewDiscussion\AnswerChosenBy $answer_chosen_by, string $answer_html_url, string $author_association, string $body, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NewDiscussion\Category $category, int $comments, string $created_at, string $html_url, int $id, bool $locked, string $node_id, int $number, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NewDiscussion\Reactions $reactions, string $repository_url, string $state, string $timeline_url, string $title, string $updated_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\NewDiscussion\User $user)
     {
         $this->active_lock_reason = $active_lock_reason;
         $this->answer_chosen_at = $answer_chosen_at;

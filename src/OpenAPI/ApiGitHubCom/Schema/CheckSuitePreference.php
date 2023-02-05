@@ -12,7 +12,7 @@ final class CheckSuitePreference
      * Minimal Repository
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository;
-    public function __construct(object $preferences, object $repository)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuitePreference\Preferences $preferences, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository)
     {
         $this->preferences = $preferences;
         $this->repository = $repository;

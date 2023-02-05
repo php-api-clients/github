@@ -44,7 +44,7 @@ final class CodeScanningAlertInstance
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertClassification> $classifications
      */
-    public function __construct(string $ref, string $analysis_key, string $environment, string $category, string $state, string $commit_sha, object $message, object $location, string $html_url, array $classifications)
+    public function __construct(string $ref, string $analysis_key, string $environment, string $category, string $state, string $commit_sha, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertInstance\Message $message, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlertLocation $location, string $html_url, array $classifications)
     {
         $this->ref = $ref;
         $this->analysis_key = $analysis_key;

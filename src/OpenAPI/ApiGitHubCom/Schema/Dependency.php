@@ -31,7 +31,7 @@ final class Dependency
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Dependency\Dependencies> $dependencies
      */
-    public function __construct(string $package_url, object $metadata, string $relationship, string $scope, array $dependencies)
+    public function __construct(string $package_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata $metadata, string $relationship, string $scope, array $dependencies)
     {
         $this->package_url = $package_url;
         $this->metadata = $metadata;

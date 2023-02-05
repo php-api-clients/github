@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookSponsorshipEdited\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\PrivacyLevel $privacy_level;
-    public function __construct(object $privacy_level)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\PrivacyLevel $privacy_level)
     {
         $this->privacy_level = $privacy_level;
     }

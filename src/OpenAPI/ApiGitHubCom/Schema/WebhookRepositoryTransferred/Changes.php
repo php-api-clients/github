@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookRepositoryTransferred\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Owner $owner;
-    public function __construct(object $owner)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Owner $owner)
     {
         $this->owner = $owner;
     }

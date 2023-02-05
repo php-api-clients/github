@@ -12,7 +12,7 @@ final class Reviewers
      */
     public readonly string $type;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $reviewer;
-    public function __construct(string $type, mixed $reviewer)
+    public function __construct(string $type, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $reviewer)
     {
         $this->type = $type;
         $this->reviewer = $reviewer;

@@ -28,7 +28,7 @@ final class PendingDeployment
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Reviewers> $reviewers
      */
-    public function __construct(object $environment, int $wait_timer, string $wait_timer_started_at, bool $current_user_can_approve, array $reviewers)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PendingDeployment\Environment $environment, int $wait_timer, string $wait_timer_started_at, bool $current_user_can_approve, array $reviewers)
     {
         $this->environment = $environment;
         $this->wait_timer = $wait_timer;

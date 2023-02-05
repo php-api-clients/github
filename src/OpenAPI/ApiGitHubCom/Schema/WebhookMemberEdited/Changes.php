@@ -9,7 +9,7 @@ final class Changes
     public const SCHEMA_DESCRIPTION = 'The changes to the collaborator permissions';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\OldPermission $old_permission;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Permission $permission;
-    public function __construct(object $old_permission, object $permission)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\OldPermission $old_permission, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Permission $permission)
     {
         $this->old_permission = $old_permission;
         $this->permission = $permission;

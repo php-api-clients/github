@@ -29,7 +29,7 @@ final class TeamDiscussionComment
     public readonly string $updated_at;
     public readonly string $url;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions;
-    public function __construct(mixed $author, string $body, string $body_html, string $body_version, string $created_at, string $last_edited_at, string $discussion_url, string $html_url, string $node_id, int $number, string $updated_at, string $url, object $reactions)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamDiscussionComment\Author $author, string $body, string $body_html, string $body_version, string $created_at, string $last_edited_at, string $discussion_url, string $html_url, string $node_id, int $number, string $updated_at, string $url, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ReactionRollup $reactions)
     {
         $this->author = $author;
         $this->body = $body;

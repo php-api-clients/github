@@ -8,7 +8,7 @@ final class ActionsMeta
     public const SCHEMA_TITLE = 'WebhookCheckSuiteRerequested\\ActionsMeta';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsMeta\RerunInfo $rerun_info;
-    public function __construct(object $rerun_info)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsMeta\RerunInfo $rerun_info)
     {
         $this->rerun_info = $rerun_info;
     }

@@ -49,7 +49,7 @@ final class Page
      * Whether https is enabled on the domain
      */
     public readonly ?bool $https_enforced;
-    public function __construct(string $url, string $status, string $cname, string $protected_domain_state, string $pending_domain_unverified_at, bool $custom_404, string $html_url, string $build_type, object $source, bool $public, object $https_certificate, bool $https_enforced)
+    public function __construct(string $url, string $status, string $cname, string $protected_domain_state, string $pending_domain_unverified_at, bool $custom_404, string $html_url, string $build_type, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesSourceHash $source, bool $public, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PagesHttpsCertificate $https_certificate, bool $https_enforced)
     {
         $this->url = $url;
         $this->status = $status;

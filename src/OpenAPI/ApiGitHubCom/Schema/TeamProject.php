@@ -32,7 +32,7 @@ final class TeamProject
      */
     public readonly ?bool $private;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject\Permissions $permissions;
-    public function __construct(string $owner_url, string $url, string $html_url, string $columns_url, int $id, string $node_id, string $name, string $body, int $number, string $state, object $creator, string $created_at, string $updated_at, string $organization_permission, bool $private, object $permissions)
+    public function __construct(string $owner_url, string $url, string $html_url, string $columns_url, int $id, string $node_id, string $name, string $body, int $number, string $state, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $creator, string $created_at, string $updated_at, string $organization_permission, bool $private, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject\Permissions $permissions)
     {
         $this->owner_url = $owner_url;
         $this->url = $url;

@@ -33,7 +33,7 @@ final class WebhookSponsorshipPendingCancellation
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipPendingCancellation\Sponsorship $sponsorship;
-    public function __construct(string $action, string $effective_date, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $sponsorship)
+    public function __construct(string $action, string $effective_date, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipPendingCancellation\Sponsorship $sponsorship)
     {
         $this->action = $action;
         $this->effective_date = $effective_date;

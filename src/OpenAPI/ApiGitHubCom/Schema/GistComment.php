@@ -21,7 +21,7 @@ final class GistComment
      * How the author is associated with the repository.
      */
     public readonly string $author_association;
-    public function __construct(int $id, string $node_id, string $url, string $body, mixed $user, string $created_at, string $updated_at, string $author_association)
+    public function __construct(int $id, string $node_id, string $url, string $body, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistComment\User $user, string $created_at, string $updated_at, string $author_association)
     {
         $this->id = $id;
         $this->node_id = $node_id;

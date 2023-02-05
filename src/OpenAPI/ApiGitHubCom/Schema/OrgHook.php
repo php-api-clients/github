@@ -24,7 +24,7 @@ final class OrgHook
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Events> $events
      */
-    public function __construct(int $id, string $url, string $ping_url, string $deliveries_url, string $name, array $events, bool $active, object $config, string $updated_at, string $created_at, string $type)
+    public function __construct(int $id, string $url, string $ping_url, string $deliveries_url, string $name, array $events, bool $active, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrgHook\Config $config, string $updated_at, string $created_at, string $type)
     {
         $this->id = $id;
         $this->url = $url;

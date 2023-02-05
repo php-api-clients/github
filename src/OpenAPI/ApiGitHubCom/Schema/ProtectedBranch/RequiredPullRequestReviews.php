@@ -17,7 +17,7 @@ final class RequiredPullRequestReviews
     public readonly ?bool $require_last_push_approval;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredPullRequestReviews\DismissalRestrictions $dismissal_restrictions;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredPullRequestReviews\BypassPullRequestAllowances $bypass_pull_request_allowances;
-    public function __construct(string $url, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval, object $dismissal_restrictions, object $bypass_pull_request_allowances)
+    public function __construct(string $url, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredPullRequestReviews\DismissalRestrictions $dismissal_restrictions, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RequiredPullRequestReviews\BypassPullRequestAllowances $bypass_pull_request_allowances)
     {
         $this->url = $url;
         $this->dismiss_stale_reviews = $dismiss_stale_reviews;

@@ -70,7 +70,7 @@ final class Alert
      * The REST API URL of the alert resource.
      */
     public readonly string $url;
-    public function __construct(string $created_at, string $html_url, string $locations_url, int $number, bool $push_protection_bypassed, string $push_protection_bypassed_at, mixed $push_protection_bypassed_by, string $resolution, string $resolved_at, mixed $resolved_by, string $resolution_comment, string $secret, string $secret_type, string $secret_type_display_name, string $state, string $updated_at, string $url)
+    public function __construct(string $created_at, string $html_url, string $locations_url, int $number, bool $push_protection_bypassed, string $push_protection_bypassed_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\PushProtectionBypassedBy $push_protection_bypassed_by, string $resolution, string $resolved_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Alert\ResolvedBy $resolved_by, string $resolution_comment, string $secret, string $secret_type, string $secret_type_display_name, string $state, string $updated_at, string $url)
     {
         $this->created_at = $created_at;
         $this->html_url = $html_url;

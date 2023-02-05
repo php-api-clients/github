@@ -53,7 +53,7 @@ final class HeadCommit
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadCommit\Modified> $modified
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadCommit\Removed> $removed
      */
-    public function __construct(array $added, object $author, object $committer, bool $distinct, string $id, string $message, array $modified, array $removed, string $timestamp, string $tree_id, string $url)
+    public function __construct(array $added, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadCommit\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadCommit\Committer $committer, bool $distinct, string $id, string $message, array $modified, array $removed, string $timestamp, string $tree_id, string $url)
     {
         $this->added = $added;
         $this->author = $author;

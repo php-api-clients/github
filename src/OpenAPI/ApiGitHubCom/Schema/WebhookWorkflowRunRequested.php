@@ -30,7 +30,7 @@ final class WebhookWorkflowRunRequested
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunRequested\Workflow $workflow;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunRequested\WorkflowRun $workflow_run;
-    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $workflow, object $workflow_run)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunRequested\Workflow $workflow, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowRunRequested\WorkflowRun $workflow_run)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

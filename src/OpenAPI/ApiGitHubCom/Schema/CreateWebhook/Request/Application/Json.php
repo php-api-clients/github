@@ -27,7 +27,7 @@ final class Json
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Events> $events
      */
-    public function __construct(string $name, object $config, array $events, bool $active)
+    public function __construct(string $name, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Config $config, array $events, bool $active)
     {
         $this->name = $name;
         $this->config = $config;

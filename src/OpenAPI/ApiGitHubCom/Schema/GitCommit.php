@@ -35,7 +35,7 @@ final class GitCommit
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Parents> $parents
      */
-    public function __construct(string $sha, string $node_id, string $url, object $author, object $committer, string $message, object $tree, array $parents, object $verification, string $html_url)
+    public function __construct(string $sha, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Committer $committer, string $message, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Tree $tree, array $parents, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GitCommit\Verification $verification, string $html_url)
     {
         $this->sha = $sha;
         $this->node_id = $node_id;

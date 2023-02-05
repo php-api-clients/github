@@ -37,7 +37,7 @@ final class WebhookInstallationSuspend
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationSuspend\Repositories> $repositories
      */
-    public function __construct(string $action, object $enterprise, object $installation, object $organization, array $repositories, object $repository, mixed $requester, object $sender)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, array $repositories, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, mixed $requester, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

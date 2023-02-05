@@ -31,7 +31,7 @@ final class WebhookMarketplacePurchaseCancelled
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $action, string $effective_date, object $enterprise, object $installation, mixed $marketplace_purchase, object $organization, object $previous_marketplace_purchase, object $repository, object $sender)
+    public function __construct(string $action, string $effective_date, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase $marketplace_purchase, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase $previous_marketplace_purchase, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->effective_date = $effective_date;

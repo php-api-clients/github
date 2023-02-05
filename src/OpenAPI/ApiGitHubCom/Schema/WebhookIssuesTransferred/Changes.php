@@ -15,7 +15,7 @@ final class Changes
      * A git repository
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\NewRepository $new_repository;
-    public function __construct(object $new_issue, object $new_repository)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\NewIssue $new_issue, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\NewRepository $new_repository)
     {
         $this->new_issue = $new_issue;
         $this->new_repository = $new_repository;

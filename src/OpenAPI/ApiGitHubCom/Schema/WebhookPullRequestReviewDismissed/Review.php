@@ -30,7 +30,7 @@ final class Review
     public readonly string $state;
     public readonly string $submitted_at;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Review\User $user;
-    public function __construct(object $_links, string $author_association, string $body, string $commit_id, string $html_url, int $id, string $node_id, string $pull_request_url, string $state, string $submitted_at, object $user)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Review\Links $_links, string $author_association, string $body, string $commit_id, string $html_url, int $id, string $node_id, string $pull_request_url, string $state, string $submitted_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Review\User $user)
     {
         $this->_links = $_links;
         $this->author_association = $author_association;

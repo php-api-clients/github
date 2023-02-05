@@ -9,7 +9,7 @@ final class Base
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\Ref $ref;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\Sha $sha;
-    public function __construct(object $ref, object $sha)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\Ref $ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Base\Sha $sha)
     {
         $this->ref = $ref;
         $this->sha = $sha;

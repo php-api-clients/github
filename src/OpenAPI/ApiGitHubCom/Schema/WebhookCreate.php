@@ -47,7 +47,7 @@ final class WebhookCreate
      * A GitHub user.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
-    public function __construct(string $description, object $enterprise, object $installation, string $master_branch, object $organization, string $pusher_type, string $ref, string $ref_type, object $repository, object $sender)
+    public function __construct(string $description, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, string $master_branch, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, string $pusher_type, string $ref, string $ref_type, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->description = $description;
         $this->enterprise = $enterprise;

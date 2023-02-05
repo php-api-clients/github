@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookProjectCardConverted\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Note $note;
-    public function __construct(object $note)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Note $note)
     {
         $this->note = $note;
     }

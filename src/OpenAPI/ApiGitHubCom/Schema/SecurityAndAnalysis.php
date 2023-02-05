@@ -10,7 +10,7 @@ final class SecurityAndAnalysis
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis\AdvancedSecurity $advanced_security;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis\SecretScanning $secret_scanning;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis\SecretScanningPushProtection $secret_scanning_push_protection;
-    public function __construct(object $advanced_security, object $secret_scanning, object $secret_scanning_push_protection)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis\AdvancedSecurity $advanced_security, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis\SecretScanning $secret_scanning, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis\SecretScanningPushProtection $secret_scanning_push_protection)
     {
         $this->advanced_security = $advanced_security;
         $this->secret_scanning = $secret_scanning;

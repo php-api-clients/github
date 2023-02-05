@@ -15,7 +15,7 @@ final class Links
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComments $review_comments;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_ $self;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Statuses $statuses;
-    public function __construct(object $comments, object $commits, object $html, object $issue, object $review_comment, object $review_comments, object $self, object $statuses)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Comments $comments, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Commits $commits, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html $html, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Issue $issue, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComment $review_comment, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\ReviewComments $review_comments, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_ $self, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Statuses $statuses)
     {
         $this->comments = $comments;
         $this->commits = $commits;

@@ -69,7 +69,7 @@ final class WebhookPush
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Commits> $commits
      */
-    public function __construct(string $after, string $base_ref, string $before, array $commits, string $compare, bool $created, bool $deleted, object $enterprise, bool $forced, object $head_commit, object $installation, object $organization, object $pusher, string $ref, object $repository, object $sender)
+    public function __construct(string $after, string $base_ref, string $before, array $commits, string $compare, bool $created, bool $deleted, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, bool $forced, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\HeadCommit $head_commit, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Pusher $pusher, string $ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPush\Repository $repository, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->after = $after;
         $this->base_ref = $base_ref;

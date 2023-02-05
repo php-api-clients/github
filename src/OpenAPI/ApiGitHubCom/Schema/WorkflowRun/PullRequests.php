@@ -12,7 +12,7 @@ final class PullRequests
     public readonly int $id;
     public readonly int $number;
     public readonly string $url;
-    public function __construct(object $base, object $head, int $id, int $number, string $url)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequests\Base $base, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequests\Head $head, int $id, int $number, string $url)
     {
         $this->base = $base;
         $this->head = $head;

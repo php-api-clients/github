@@ -31,7 +31,7 @@ final class Json
      * Allow specific users, teams, or apps to bypass pull request requirements.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\BypassPullRequestAllowances $bypass_pull_request_allowances;
-    public function __construct(object $dismissal_restrictions, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval, object $bypass_pull_request_allowances)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\DismissalRestrictions $dismissal_restrictions, bool $dismiss_stale_reviews, bool $require_code_owner_reviews, int $required_approving_review_count, bool $require_last_push_approval, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\BypassPullRequestAllowances $bypass_pull_request_allowances)
     {
         $this->dismissal_restrictions = $dismissal_restrictions;
         $this->dismiss_stale_reviews = $dismiss_stale_reviews;

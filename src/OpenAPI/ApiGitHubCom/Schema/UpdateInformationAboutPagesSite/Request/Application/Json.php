@@ -20,7 +20,7 @@ final class Json
      */
     public readonly string $build_type;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source $source;
-    public function __construct(string $cname, bool $https_enforced, string $build_type, mixed $source)
+    public function __construct(string $cname, bool $https_enforced, string $build_type, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Source $source)
     {
         $this->cname = $cname;
         $this->https_enforced = $https_enforced;

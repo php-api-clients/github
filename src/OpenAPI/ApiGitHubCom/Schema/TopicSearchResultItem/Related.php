@@ -8,7 +8,7 @@ final class Related
     public const SCHEMA_TITLE = 'TopicSearchResultItem\\Related';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Related\TopicRelation $topic_relation;
-    public function __construct(object $topic_relation)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Related\TopicRelation $topic_relation)
     {
         $this->topic_relation = $topic_relation;
     }

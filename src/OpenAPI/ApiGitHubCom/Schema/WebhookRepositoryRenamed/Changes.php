@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookRepositoryRenamed\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Repository $repository;
-    public function __construct(object $repository)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Repository $repository)
     {
         $this->repository = $repository;
     }

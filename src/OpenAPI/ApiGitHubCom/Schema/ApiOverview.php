@@ -61,7 +61,7 @@ final class ApiOverview
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Actions> $actions
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\Dependabot> $dependabot
      */
-    public function __construct(bool $verifiable_password_authentication, object $ssh_key_fingerprints, array $ssh_keys, array $hooks, array $web, array $api, array $git, array $packages, array $pages, array $importer, array $actions, array $dependabot)
+    public function __construct(bool $verifiable_password_authentication, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview\SshKeyFingerprints $ssh_key_fingerprints, array $ssh_keys, array $hooks, array $web, array $api, array $git, array $packages, array $pages, array $importer, array $actions, array $dependabot)
     {
         $this->verifiable_password_authentication = $verifiable_password_authentication;
         $this->ssh_key_fingerprints = $ssh_key_fingerprints;

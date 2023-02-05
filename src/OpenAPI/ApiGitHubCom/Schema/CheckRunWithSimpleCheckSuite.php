@@ -48,7 +48,7 @@ final class CheckRunWithSimpleCheckSuite
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(mixed $app, object $check_suite, string $completed_at, string $conclusion, object $deployment, string $details_url, string $external_id, string $head_sha, string $html_url, int $id, string $name, string $node_id, object $output, array $pull_requests, string $started_at, string $status, string $url)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRunWithSimpleCheckSuite\App $app, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCheckSuite $check_suite, string $completed_at, string $conclusion, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DeploymentSimple $deployment, string $details_url, string $external_id, string $head_sha, string $html_url, int $id, string $name, string $node_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRunWithSimpleCheckSuite\Output $output, array $pull_requests, string $started_at, string $status, string $url)
     {
         $this->app = $app;
         $this->check_suite = $check_suite;

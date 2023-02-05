@@ -24,7 +24,7 @@ final class ContentTree
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Entries> $entries
      */
-    public function __construct(string $type, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, array $entries, object $_links)
+    public function __construct(string $type, int $size, string $name, string $path, string $sha, string $url, string $git_url, string $html_url, string $download_url, array $entries, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ContentTree\Links $_links)
     {
         $this->type = $type;
         $this->size = $size;

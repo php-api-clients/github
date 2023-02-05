@@ -50,7 +50,7 @@ final class PackageVersion
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\PackageFiles> $package_files
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\RubygemsMetadata> $rubygems_metadata
      */
-    public function __construct(object $author, string $body, string $body_html, string $created_at, string $description, array $docker_metadata, bool $draft, string $html_url, int $id, string $installation_command, string $manifest, array $metadata, string $name, array $package_files, string $package_url, bool $prerelease, object $release, array $rubygems_metadata, string $source_url, string $summary, string $tag_name, string $target_commitish, string $target_oid, string $updated_at, string $version)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Author $author, string $body, string $body_html, string $created_at, string $description, array $docker_metadata, bool $draft, string $html_url, int $id, string $installation_command, string $manifest, array $metadata, string $name, array $package_files, string $package_url, bool $prerelease, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PackageVersion\Release $release, array $rubygems_metadata, string $source_url, string $summary, string $tag_name, string $target_commitish, string $target_oid, string $updated_at, string $version)
     {
         $this->author = $author;
         $this->body = $body;

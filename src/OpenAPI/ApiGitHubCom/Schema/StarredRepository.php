@@ -12,7 +12,7 @@ final class StarredRepository
      * A repository on GitHub.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repo;
-    public function __construct(string $starred_at, object $repo)
+    public function __construct(string $starred_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repo)
     {
         $this->starred_at = $starred_at;
         $this->repo = $repo;

@@ -30,7 +30,7 @@ final class WebhookPullRequestReviewThreadResolved
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadResolved\Thread $thread;
-    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $pull_request, object $repository, object $sender, object $thread)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadResolved\PullRequest $pull_request, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPullRequestReviewThreadResolved\Thread $thread)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

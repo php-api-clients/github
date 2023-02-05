@@ -9,7 +9,7 @@ final class Stargazer
     public const SCHEMA_DESCRIPTION = 'Stargazer';
     public readonly string $starred_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Stargazer\User $user;
-    public function __construct(string $starred_at, mixed $user)
+    public function __construct(string $starred_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Stargazer\User $user)
     {
         $this->starred_at = $starred_at;
         $this->user = $user;

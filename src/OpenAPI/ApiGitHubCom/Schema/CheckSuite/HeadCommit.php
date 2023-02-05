@@ -19,7 +19,7 @@ final class HeadCommit
     public readonly string $message;
     public readonly string $timestamp;
     public readonly string $tree_id;
-    public function __construct(object $author, object $committer, string $id, string $message, string $timestamp, string $tree_id)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadCommit\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HeadCommit\Committer $committer, string $id, string $message, string $timestamp, string $tree_id)
     {
         $this->author = $author;
         $this->committer = $committer;

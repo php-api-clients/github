@@ -14,7 +14,7 @@ final class Files
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\Readme $readme;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\IssueTemplate $issue_template;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\PullRequestTemplate $pull_request_template;
-    public function __construct(mixed $code_of_conduct, mixed $code_of_conduct_file, mixed $license, mixed $contributing, mixed $readme, mixed $issue_template, mixed $pull_request_template)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\CodeOfConduct $code_of_conduct, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\CodeOfConductFile $code_of_conduct_file, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\License $license, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\Contributing $contributing, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\Readme $readme, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\IssueTemplate $issue_template, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Files\PullRequestTemplate $pull_request_template)
     {
         $this->code_of_conduct = $code_of_conduct;
         $this->code_of_conduct_file = $code_of_conduct_file;

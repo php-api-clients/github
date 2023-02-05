@@ -20,7 +20,7 @@ final class MovedColumnInProjectIssueEvent
     public readonly string $created_at;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MovedColumnInProjectIssueEvent\PerformedViaGithubApp $performed_via_github_app;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MovedColumnInProjectIssueEvent\ProjectCard $project_card;
-    public function __construct(int $id, string $node_id, string $url, object $actor, string $event, string $commit_id, string $commit_url, string $created_at, mixed $performed_via_github_app, object $project_card)
+    public function __construct(int $id, string $node_id, string $url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $actor, string $event, string $commit_id, string $commit_url, string $created_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MovedColumnInProjectIssueEvent\PerformedViaGithubApp $performed_via_github_app, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MovedColumnInProjectIssueEvent\ProjectCard $project_card)
     {
         $this->id = $id;
         $this->node_id = $node_id;

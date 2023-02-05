@@ -22,7 +22,7 @@ final class Commit
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents> $parents
      */
-    public function __construct(object $author, string $comments_url, object $commit, object $committer, string $html_url, string $node_id, array $parents, string $sha, string $url)
+    public function __construct(?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author $author, string $comments_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Commit $commit, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer $committer, string $html_url, string $node_id, array $parents, string $sha, string $url)
     {
         $this->author = $author;
         $this->comments_url = $comments_url;

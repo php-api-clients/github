@@ -15,7 +15,7 @@ final class Reaction
      */
     public readonly string $content;
     public readonly string $created_at;
-    public function __construct(int $id, string $node_id, mixed $user, string $content, string $created_at)
+    public function __construct(int $id, string $node_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction\User $user, string $content, string $created_at)
     {
         $this->id = $id;
         $this->node_id = $node_id;

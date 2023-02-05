@@ -24,7 +24,7 @@ final class MergeGroup
      */
     public readonly string $base_ref;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergeGroup\HeadCommit $head_commit;
-    public function __construct(string $head_sha, string $head_ref, string $base_sha, string $base_ref, object $head_commit)
+    public function __construct(string $head_sha, string $head_ref, string $base_sha, string $base_ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MergeGroup\HeadCommit $head_commit)
     {
         $this->head_sha = $head_sha;
         $this->head_ref = $head_ref;

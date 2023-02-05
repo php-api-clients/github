@@ -26,7 +26,7 @@ final class ProjectCard
     public readonly string $column_url;
     public readonly ?string $content_url;
     public readonly string $project_url;
-    public function __construct(string $url, int $id, string $node_id, string $note, mixed $creator, string $created_at, string $updated_at, bool $archived, string $column_name, string $project_id, string $column_url, string $content_url, string $project_url)
+    public function __construct(string $url, int $id, string $node_id, string $note, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard\Creator $creator, string $created_at, string $updated_at, bool $archived, string $column_name, string $project_id, string $column_url, string $content_url, string $project_url)
     {
         $this->url = $url;
         $this->id = $id;

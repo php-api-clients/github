@@ -13,7 +13,7 @@ final class CommunityProfile
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile\Files $files;
     public readonly ?string $updated_at;
     public readonly ?bool $content_reports_enabled;
-    public function __construct(int $health_percentage, string $description, string $documentation, object $files, string $updated_at, bool $content_reports_enabled)
+    public function __construct(int $health_percentage, string $description, string $documentation, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommunityProfile\Files $files, string $updated_at, bool $content_reports_enabled)
     {
         $this->health_percentage = $health_percentage;
         $this->description = $description;

@@ -9,7 +9,7 @@ final class RateLimitOverview
     public const SCHEMA_DESCRIPTION = 'Rate Limit Overview';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview\Resources $resources;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $rate;
-    public function __construct(object $resources, object $rate)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimitOverview\Resources $resources, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\RateLimit $rate)
     {
         $this->resources = $resources;
         $this->rate = $rate;

@@ -11,7 +11,7 @@ final class Tier
      * The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tier\From $from;
-    public function __construct(object $from)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Tier\From $from)
     {
         $this->from = $from;
     }

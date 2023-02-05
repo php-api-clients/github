@@ -19,7 +19,7 @@ final class Thread
     public readonly ?string $last_read_at;
     public readonly string $url;
     public readonly string $subscription_url;
-    public function __construct(string $id, object $repository, object $subject, string $reason, bool $unread, string $updated_at, string $last_read_at, string $url, string $subscription_url)
+    public function __construct(string $id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread\Subject $subject, string $reason, bool $unread, string $updated_at, string $last_read_at, string $url, string $subscription_url)
     {
         $this->id = $id;
         $this->repository = $repository;

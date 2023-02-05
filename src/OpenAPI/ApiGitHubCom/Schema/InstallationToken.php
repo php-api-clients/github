@@ -28,7 +28,7 @@ final class InstallationToken
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository> $repositories
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\InstallationToken\SingleFilePaths> $single_file_paths
      */
-    public function __construct(string $token, string $expires_at, object $permissions, string $repository_selection, array $repositories, string $single_file, bool $has_multiple_single_files, array $single_file_paths)
+    public function __construct(string $token, string $expires_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AppPermissions $permissions, string $repository_selection, array $repositories, string $single_file, bool $has_multiple_single_files, array $single_file_paths)
     {
         $this->token = $token;
         $this->expires_at = $expires_at;

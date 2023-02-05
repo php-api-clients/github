@@ -37,7 +37,7 @@ final class WebhookInstallationCreated
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationCreated\Repositories> $repositories
      */
-    public function __construct(string $action, object $enterprise, object $installation, object $organization, array $repositories, object $repository, object $requester, object $sender)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Installation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, array $repositories, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookInstallationCreated\Requester $requester, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

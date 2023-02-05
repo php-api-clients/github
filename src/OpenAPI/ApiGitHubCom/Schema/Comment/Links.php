@@ -10,7 +10,7 @@ final class Links
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html $html;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\PullRequest $pull_request;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_ $self;
-    public function __construct(object $html, object $pull_request, object $self)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Html $html, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\PullRequest $pull_request, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Links\Self_ $self)
     {
         $this->html = $html;
         $this->pull_request = $pull_request;

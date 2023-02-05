@@ -29,7 +29,7 @@ final class Project
     public readonly string $state;
     public readonly string $updated_at;
     public readonly string $url;
-    public function __construct(string $body, string $columns_url, string $created_at, object $creator, string $html_url, int $id, string $name, string $node_id, int $number, string $owner_url, string $state, string $updated_at, string $url)
+    public function __construct(string $body, string $columns_url, string $created_at, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Project\Creator $creator, string $html_url, int $id, string $name, string $node_id, int $number, string $owner_url, string $state, string $updated_at, string $url)
     {
         $this->body = $body;
         $this->columns_url = $columns_url;

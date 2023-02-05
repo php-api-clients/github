@@ -14,7 +14,7 @@ final class Changes
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\LinearHistoryRequirementEnforcementLevel $linear_history_requirement_enforcement_level;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\RequiredStatusChecks $required_status_checks;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\RequiredStatusChecksEnforcementLevel $required_status_checks_enforcement_level;
-    public function __construct(object $admin_enforced, object $authorized_actor_names, object $authorized_actors_only, object $authorized_dismissal_actors_only, object $linear_history_requirement_enforcement_level, object $required_status_checks, object $required_status_checks_enforcement_level)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\AdminEnforced $admin_enforced, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\AuthorizedActorNames $authorized_actor_names, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\AuthorizedActorsOnly $authorized_actors_only, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\AuthorizedDismissalActorsOnly $authorized_dismissal_actors_only, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\LinearHistoryRequirementEnforcementLevel $linear_history_requirement_enforcement_level, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\RequiredStatusChecks $required_status_checks, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\RequiredStatusChecksEnforcementLevel $required_status_checks_enforcement_level)
     {
         $this->admin_enforced = $admin_enforced;
         $this->authorized_actor_names = $authorized_actor_names;

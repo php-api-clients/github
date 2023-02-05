@@ -35,7 +35,7 @@ final class Json
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Parents> $parents
      */
-    public function __construct(string $message, string $tree, array $parents, object $author, object $committer, string $signature)
+    public function __construct(string $message, string $tree, array $parents, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Author $author, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Json\Committer $committer, string $signature)
     {
         $this->message = $message;
         $this->tree = $tree;

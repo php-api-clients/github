@@ -17,7 +17,7 @@ final class Content
     public readonly string $download_url;
     public readonly string $type;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Content\Links $_links;
-    public function __construct(string $name, string $path, string $sha, int $size, string $url, string $html_url, string $git_url, string $download_url, string $type, object $_links)
+    public function __construct(string $name, string $path, string $sha, int $size, string $url, string $html_url, string $git_url, string $download_url, string $type, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Content\Links $_links)
     {
         $this->name = $name;
         $this->path = $path;

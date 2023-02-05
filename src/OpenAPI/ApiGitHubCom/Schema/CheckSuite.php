@@ -41,7 +41,7 @@ final class CheckSuite
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestMinimal> $pull_requests
      */
-    public function __construct(int $id, string $node_id, string $head_branch, string $head_sha, string $status, string $conclusion, string $url, string $before, string $after, array $pull_requests, mixed $app, object $repository, string $created_at, string $updated_at, object $head_commit, int $latest_check_runs_count, string $check_runs_url, bool $rerequestable, bool $runs_rerequestable)
+    public function __construct(int $id, string $node_id, string $head_branch, string $head_sha, string $status, string $conclusion, string $url, string $before, string $after, array $pull_requests, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckSuite\App $app, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository, string $created_at, string $updated_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommit $head_commit, int $latest_check_runs_count, string $check_runs_url, bool $rerequestable, bool $runs_rerequestable)
     {
         $this->id = $id;
         $this->node_id = $node_id;

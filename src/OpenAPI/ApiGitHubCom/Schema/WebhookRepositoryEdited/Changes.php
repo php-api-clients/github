@@ -11,7 +11,7 @@ final class Changes
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Description $description;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Homepage $homepage;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Topics $topics;
-    public function __construct(object $default_branch, object $description, object $homepage, object $topics)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\DefaultBranch $default_branch, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Description $description, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Homepage $homepage, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Topics $topics)
     {
         $this->default_branch = $default_branch;
         $this->description = $description;

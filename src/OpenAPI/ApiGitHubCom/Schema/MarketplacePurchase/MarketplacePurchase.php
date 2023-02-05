@@ -18,7 +18,7 @@ final class MarketplacePurchase
      * Marketplace Listing Plan
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan $plan;
-    public function __construct(string $billing_cycle, string $next_billing_date, bool $is_installed, int $unit_count, bool $on_free_trial, string $free_trial_ends_on, string $updated_at, object $plan)
+    public function __construct(string $billing_cycle, string $next_billing_date, bool $is_installed, int $unit_count, bool $on_free_trial, string $free_trial_ends_on, string $updated_at, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplaceListingPlan $plan)
     {
         $this->billing_cycle = $billing_cycle;
         $this->next_billing_date = $next_billing_date;

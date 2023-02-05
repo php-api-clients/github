@@ -8,7 +8,7 @@ final class Changes
     public const SCHEMA_TITLE = 'WebhookSponsorshipTierChanged\\Changes';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Tier $tier;
-    public function __construct(object $tier)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Tier $tier)
     {
         $this->tier = $tier;
     }

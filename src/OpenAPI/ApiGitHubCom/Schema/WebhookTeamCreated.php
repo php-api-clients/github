@@ -32,7 +32,7 @@ final class WebhookTeamCreated
      * Groups of organization members that gives permissions on specified repositories.
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamCreated\Team $team;
-    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $team)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamCreated\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookTeamCreated\Team $team)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

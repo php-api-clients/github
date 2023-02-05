@@ -23,7 +23,7 @@ final class Commit
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Parents> $parents
      */
-    public function __construct(string $sha, string $node_id, string $url, string $html_url, object $author, object $committer, string $message, object $tree, array $parents, object $verification)
+    public function __construct(string $sha, string $node_id, string $url, string $html_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Author $author, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Committer $committer, string $message, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Tree $tree, array $parents, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Commit\Verification $verification)
     {
         $this->sha = $sha;
         $this->node_id = $node_id;

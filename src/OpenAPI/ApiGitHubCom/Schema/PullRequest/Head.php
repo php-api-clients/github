@@ -15,7 +15,7 @@ final class Head
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Head\Repo $repo;
     public readonly string $sha;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Head\User $user;
-    public function __construct(string $label, string $ref, object $repo, string $sha, object $user)
+    public function __construct(string $label, string $ref, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Head\Repo $repo, string $sha, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Head\User $user)
     {
         $this->label = $label;
         $this->ref = $ref;

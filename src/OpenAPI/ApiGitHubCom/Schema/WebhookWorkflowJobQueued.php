@@ -33,7 +33,7 @@ final class WebhookWorkflowJobQueued
      * A request for a specific ref(branch,sha,tag) to be deployed
      */
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment $deployment;
-    public function __construct(string $action, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $workflow_job, object $deployment)
+    public function __construct(string $action, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowJobQueued\WorkflowJob $workflow_job, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Deployment $deployment)
     {
         $this->action = $action;
         $this->enterprise = $enterprise;

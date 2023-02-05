@@ -9,7 +9,7 @@ final class From
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\Organization $organization;
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\User $user;
-    public function __construct(object $organization, object $user)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\Organization $organization, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\From\User $user)
     {
         $this->organization = $organization;
         $this->user = $user;

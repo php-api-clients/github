@@ -34,7 +34,7 @@ final class WebhookSponsorshipPendingTierChange
      */
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipPendingTierChange\Sponsorship $sponsorship;
-    public function __construct(string $action, object $changes, string $effective_date, object $enterprise, object $installation, object $organization, object $repository, object $sender, object $sponsorship)
+    public function __construct(string $action, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipPendingTierChange\Changes $changes, string $effective_date, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Enterprise $enterprise, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleInstallation $installation, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSponsorshipPendingTierChange\Sponsorship $sponsorship)
     {
         $this->action = $action;
         $this->changes = $changes;

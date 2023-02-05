@@ -43,7 +43,7 @@ final class CodeScanningCodeqlDatabase
      * The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
      */
     public readonly string $url;
-    public function __construct(int $id, string $name, string $language, object $uploader, string $content_type, int $size, string $created_at, string $updated_at, string $url)
+    public function __construct(int $id, string $name, string $language, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $uploader, string $content_type, int $size, string $created_at, string $updated_at, string $url)
     {
         $this->id = $id;
         $this->name = $name;

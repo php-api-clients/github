@@ -10,7 +10,7 @@ final class Billable
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Billable\Ubuntu $UBUNTU;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Billable\Macos $MACOS;
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Billable\Windows $WINDOWS;
-    public function __construct(object $UBUNTU, object $MACOS, object $WINDOWS)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Billable\Ubuntu $UBUNTU, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Billable\Macos $MACOS, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Billable\Windows $WINDOWS)
     {
         $this->UBUNTU = $UBUNTU;
         $this->MACOS = $MACOS;

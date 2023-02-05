@@ -31,7 +31,7 @@ final class WebhookPing
      * Random string of GitHub zen.
      */
     public readonly string $zen;
-    public function __construct(object $hook, int $hook_id, object $organization, object $repository, object $sender, string $zen)
+    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookPing\Hook $hook, int $hook_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationSimple $organization, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository $repository, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $sender, string $zen)
     {
         $this->hook = $hook;
         $this->hook_id = $hook_id;

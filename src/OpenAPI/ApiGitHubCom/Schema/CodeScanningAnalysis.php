@@ -59,7 +59,7 @@ final class CodeScanningAnalysis
      * Warning generated when processing the analysis
      */
     public readonly string $warning;
-    public function __construct(string $ref, string $commit_sha, string $analysis_key, string $environment, string $category, string $error, string $created_at, int $results_count, int $rules_count, int $id, string $url, string $sarif_id, object $tool, bool $deletable, string $warning)
+    public function __construct(string $ref, string $commit_sha, string $analysis_key, string $environment, string $category, string $error, string $created_at, int $results_count, int $rules_count, int $id, string $url, string $sarif_id, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAnalysisTool $tool, bool $deletable, string $warning)
     {
         $this->ref = $ref;
         $this->commit_sha = $commit_sha;

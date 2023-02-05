@@ -44,7 +44,7 @@ final class GistSimple
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Forks> $forks
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistHistory> $history
      */
-    public function __construct(array $forks, array $history, object $fork_of, string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, object $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, string $user, string $comments_url, object $owner, bool $truncated)
+    public function __construct(array $forks, array $history, ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\ForkOf $fork_of, string $url, string $forks_url, string $commits_url, string $id, string $node_id, string $git_pull_url, string $git_push_url, string $html_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\GistSimple\Files $files, bool $public, string $created_at, string $updated_at, string $description, int $comments, string $user, string $comments_url, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser $owner, bool $truncated)
     {
         $this->forks = $forks;
         $this->history = $history;

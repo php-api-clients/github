@@ -23,7 +23,7 @@ final class CombinedCommitStatus
     /**
      * @param array<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleCommitStatus> $statuses
      */
-    public function __construct(string $state, array $statuses, string $sha, int $total_count, object $repository, string $commit_url, string $url)
+    public function __construct(string $state, array $statuses, string $sha, int $total_count, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository $repository, string $commit_url, string $url)
     {
         $this->state = $state;
         $this->statuses = $statuses;
