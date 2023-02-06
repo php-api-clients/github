@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CheckRun;
 final class Output
 {
     public const SCHEMA_JSON = '{"required":["title","summary","text","annotations_count","annotations_url"],"type":"object","properties":{"title":{"type":["string","null"]},"summary":{"type":["string","null"]},"text":{"type":["string","null"]},"annotations_count":{"type":"integer"},"annotations_url":{"type":"string","format":"uri"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'CheckRun\\Output';
     public const SCHEMA_DESCRIPTION = '';
     public readonly ?string $title;

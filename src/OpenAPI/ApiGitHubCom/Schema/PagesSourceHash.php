@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class PagesSourceHash
 {
     public const SCHEMA_JSON = '{"title":"Pages Source Hash","required":["branch","path"],"type":"object","properties":{"branch":{"type":"string"},"path":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'Pages Source Hash';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $branch;

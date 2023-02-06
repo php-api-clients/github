@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Metadata;
 final class Docker
 {
     public const SCHEMA_JSON = '{"title":"Docker Metadata","required":["tags"],"type":"object","properties":{"tag":{"type":"array","items":{"type":"string"}}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'Docker Metadata';
     public const SCHEMA_DESCRIPTION = '';
     /**

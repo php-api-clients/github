@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class OidcCustomSubRepo
 {
     public const SCHEMA_JSON = '{"title":"Actions OIDC subject customization for a repository","required":["use_default"],"type":"object","properties":{"use_default":{"type":"boolean","description":"Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored."},"include_claim_keys":{"type":"array","items":{"type":"string"},"description":"Array of unique strings. Each claim key can only contain alphanumeric characters and underscores."}},"description":"Actions OIDC subject customization for a repository"}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'Actions OIDC subject customization for a repository';
     public const SCHEMA_DESCRIPTION = 'Actions OIDC subject customization for a repository';
     /**

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningAlert
 final class Message
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"text":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'CodeScanningAlertInstance\\Message';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $text;

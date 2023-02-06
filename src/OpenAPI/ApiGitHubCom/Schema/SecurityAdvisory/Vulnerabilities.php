@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAdvisory;
 final class Vulnerabilities
 {
     public const SCHEMA_JSON = '{"required":["package","severity","vulnerable_version_range","first_patched_version"],"type":"object","properties":{"first_patched_version":{"required":["identifier"],"type":["object","null"],"properties":{"identifier":{"type":"string"}}},"package":{"required":["ecosystem","name"],"type":"object","properties":{"ecosystem":{"type":"string"},"name":{"type":"string"}}},"severity":{"type":"string"},"vulnerable_version_range":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'SecurityAdvisory\\Vulnerabilities';
     public const SCHEMA_DESCRIPTION = '';
     public readonly ?\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Vulnerabilities\FirstPatchedVersion $first_patched_version;

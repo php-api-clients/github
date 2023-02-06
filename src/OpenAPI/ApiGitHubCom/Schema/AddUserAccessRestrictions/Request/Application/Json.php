@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\AddUserAccessRest
 final class Json
 {
     public const SCHEMA_JSON = '{"oneOf":[{"required":["users"],"type":"object","properties":{"users":{"type":"array","items":{"type":"string"},"description":"The username for users"}},"example":{"users":["mona"]}},{"type":"array","items":{"type":"string"}}]}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'AddUserAccessRestrictions\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

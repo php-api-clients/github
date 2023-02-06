@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResul
 final class Parents
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"url":{"type":"string"},"html_url":{"type":"string"},"sha":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'CommitSearchResultItem\\Parents';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $url;

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookCheckSuite
 final class ActionsMeta
 {
     public const SCHEMA_JSON = '{"type":["object","null"],"properties":{"rerun_info":{"type":"object","properties":{"plan_id":{"type":"string"},"job_ids":{"type":"array","items":{"type":"string"}}}}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'WebhookCheckSuiteRerequested\\ActionsMeta';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsMeta\RerunInfo $rerun_info;

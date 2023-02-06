@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UpdateReviewComme
 final class Json
 {
     public const SCHEMA_JSON = '{"required":["body"],"type":"object","properties":{"body":{"type":"string","description":"The text of the reply to the review comment."}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'UpdateReviewComment\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

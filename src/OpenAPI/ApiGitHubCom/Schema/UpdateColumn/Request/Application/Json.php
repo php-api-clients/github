@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UpdateColumn\Requ
 final class Json
 {
     public const SCHEMA_JSON = '{"required":["name"],"type":"object","properties":{"name":{"type":"string","description":"Name of the project column","examples":["Remaining tasks"]}}}';
+    public const SCHEMA_EXAMPLE = '{"name":"Remaining tasks"}';
     public const SCHEMA_TITLE = 'UpdateColumn\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

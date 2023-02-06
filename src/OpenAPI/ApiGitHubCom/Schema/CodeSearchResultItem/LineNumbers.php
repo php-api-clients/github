@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeSearchResultI
 final class LineNumbers
 {
     public const SCHEMA_JSON = '{"type":"string"}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'CodeSearchResultItem\\LineNumbers';
     public const SCHEMA_DESCRIPTION = '';
     public function __construct()

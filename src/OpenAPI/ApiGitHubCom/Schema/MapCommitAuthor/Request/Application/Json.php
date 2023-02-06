@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MapCommitAuthor\R
 final class Json
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"email":{"type":"string","description":"The new Git author email."},"name":{"type":"string","description":"The new Git author name."}},"additionalProperties":false}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'MapCommitAuthor\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

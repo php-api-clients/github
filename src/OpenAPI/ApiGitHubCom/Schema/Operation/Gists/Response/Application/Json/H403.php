@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\R
 final class H403
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"block":{"type":"object","properties":{"reason":{"type":"string"},"created_at":{"type":"string"},"html_url":{"type":["string","null"]}}},"message":{"type":"string"},"documentation_url":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'Operation\\Gists\\Response\\Application\\Json\\H403';
     public const SCHEMA_DESCRIPTION = '';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\H403\Block $block;

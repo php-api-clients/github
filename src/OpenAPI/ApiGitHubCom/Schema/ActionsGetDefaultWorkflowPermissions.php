@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ActionsGetDefaultWorkflowPermissions
 {
     public const SCHEMA_JSON = '{"required":["default_workflow_permissions","can_approve_pull_request_reviews"],"type":"object","properties":{"default_workflow_permissions":{"enum":["read","write"],"type":"string","description":"The default workflow permissions granted to the GITHUB_TOKEN when running workflows."},"can_approve_pull_request_reviews":{"type":"boolean","description":"Whether GitHub Actions can approve pull requests. Enabling this can be a security risk."}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'actions-get-default-workflow-permissions';
     public const SCHEMA_DESCRIPTION = '';
     /**

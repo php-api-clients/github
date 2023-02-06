@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlertSe
 final class References
 {
     public const SCHEMA_JSON = '{"required":["url"],"type":"object","properties":{"url":{"type":"string","description":"The URL of the reference.","format":"uri","readOnly":true}},"description":"A link to additional advisory information.","readOnly":true,"additionalProperties":false}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'DependabotAlertSecurityAdvisory\\References';
     public const SCHEMA_DESCRIPTION = 'A link to additional advisory information.';
     /**

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DemilestonedIssue
 final class Milestone
 {
     public const SCHEMA_JSON = '{"required":["title"],"type":"object","properties":{"title":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'DemilestonedIssueEvent\\Milestone';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $title;

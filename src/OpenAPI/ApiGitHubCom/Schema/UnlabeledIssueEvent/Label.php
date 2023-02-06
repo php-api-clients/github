@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UnlabeledIssueEve
 final class Label
 {
     public const SCHEMA_JSON = '{"required":["name","color"],"type":"object","properties":{"name":{"type":"string"},"color":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'UnlabeledIssueEvent\\Label';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $name;

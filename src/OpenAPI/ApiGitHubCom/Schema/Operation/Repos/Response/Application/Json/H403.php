@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Repos\R
 final class H403
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"message":{"type":"string"},"documentation_url":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'Operation\\Repos\\Response\\Application\\Json\\H403';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $message;

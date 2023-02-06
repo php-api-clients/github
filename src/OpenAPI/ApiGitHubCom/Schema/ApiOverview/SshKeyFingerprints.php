@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ApiOverview;
 final class SshKeyFingerprints
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"SHA256_RSA":{"type":"string"},"SHA256_DSA":{"type":"string"},"SHA256_ECDSA":{"type":"string"},"SHA256_ED25519":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'ApiOverview\\SshKeyFingerprints';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $SHA256_RSA;

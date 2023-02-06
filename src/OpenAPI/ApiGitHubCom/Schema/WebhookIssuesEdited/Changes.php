@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookIssuesEdit
 final class Changes
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"body":{"required":["from"],"type":"object","properties":{"from":{"type":"string","description":"The previous version of the body."}}},"title":{"required":["from"],"type":"object","properties":{"from":{"type":"string","description":"The previous version of the title."}}}},"description":"The changes to the issue."}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'WebhookIssuesEdited\\Changes';
     public const SCHEMA_DESCRIPTION = 'The changes to the issue.';
     public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Body $body;

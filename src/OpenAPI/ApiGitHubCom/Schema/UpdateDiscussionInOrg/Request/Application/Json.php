@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UpdateDiscussionI
 final class Json
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"title":{"type":"string","description":"The discussion post\'s title."},"body":{"type":"string","description":"The discussion post\'s body text."}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'UpdateDiscussionInOrg\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

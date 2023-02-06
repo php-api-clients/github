@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Merge\R
 final class H409
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"message":{"type":"string"},"documentation_url":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'Operation\\Merge\\Response\\Application\\Json\\H409';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $message;

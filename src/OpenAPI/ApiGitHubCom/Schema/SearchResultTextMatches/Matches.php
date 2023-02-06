@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SearchResultTextM
 final class Matches
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"text":{"type":"string"},"indices":{"type":"array","items":{"type":"integer"}}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'SearchResultTextMatches\\Matches';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $text;

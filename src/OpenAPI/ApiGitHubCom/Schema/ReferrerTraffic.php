@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 final class ReferrerTraffic
 {
     public const SCHEMA_JSON = '{"title":"Referrer Traffic","required":["referrer","uniques","count"],"type":"object","properties":{"referrer":{"type":"string","examples":["Google"]},"count":{"type":"integer","examples":[4]},"uniques":{"type":"integer","examples":[3]}},"description":"Referrer Traffic"}';
+    public const SCHEMA_EXAMPLE = '{"referrer":"Google","count":4,"uniques":3}';
     public const SCHEMA_TITLE = 'Referrer Traffic';
     public const SCHEMA_DESCRIPTION = 'Referrer Traffic';
     public readonly string $referrer;

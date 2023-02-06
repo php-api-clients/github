@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookWorkflowDi
 final class Inputs
 {
     public const SCHEMA_JSON = '{"type":["object","null"],"properties":{"name":{"type":"string"},"number":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'WebhookWorkflowDispatch\\Inputs';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $name;

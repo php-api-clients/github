@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalys
 final class SecretScanningPushProtection
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"status":{"enum":["enabled","disabled"],"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'SecurityAndAnalysis\\SecretScanningPushProtection';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $status;

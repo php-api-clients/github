@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SetTeamAccessRest
 final class Json
 {
     public const SCHEMA_JSON = '{"oneOf":[{"required":["teams"],"type":"object","properties":{"teams":{"type":"array","items":{"type":"string"},"description":"The slug values for teams"}},"example":{"teams":["justice-league"]}},{"type":"array","items":{"type":"string"},"description":"The slug values for teams"}]}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'SetTeamAccessRestrictions\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

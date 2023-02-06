@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListRep
 final class H200
 {
     public const SCHEMA_JSON = '{"required":["total_count","secrets"],"type":"object","properties":{"total_count":{"type":"integer"},"secrets":{"type":"array","items":{"title":"Dependabot Secret","required":["name","created_at","updated_at"],"type":"object","properties":{"name":{"type":"string","description":"The name of the secret.","examples":["MY_ARTIFACTORY_PASSWORD"]},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"description":"Set secrets for Dependabot."}}}}';
+    public const SCHEMA_EXAMPLE = '{"secrets":[{"name":"MY_ARTIFACTORY_PASSWORD"}]}';
     public const SCHEMA_TITLE = 'Operation\\ListRepoSecrets\\Response\\Application\\Json\\H200';
     public const SCHEMA_DESCRIPTION = '';
     public readonly int $total_count;

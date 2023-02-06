@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CommitSearchResul
 final class Committer
 {
     public const SCHEMA_JSON = '{"type":"null"}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'CommitSearchResultItem\\Committer';
     public const SCHEMA_DESCRIPTION = '';
     public function __construct()

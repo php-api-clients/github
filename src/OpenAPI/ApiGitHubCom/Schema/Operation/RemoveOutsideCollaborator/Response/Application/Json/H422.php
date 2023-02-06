@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\RemoveO
 final class H422
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"message":{"type":"string"},"documentation_url":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'Operation\\RemoveOutsideCollaborator\\Response\\Application\\Json\\H422';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $message;

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SetPrimaryEmailVi
 final class Json
 {
     public const SCHEMA_JSON = '{"required":["visibility"],"type":"object","properties":{"visibility":{"enum":["public","private"],"type":"string","description":"Denotes whether an email is publicly visible."}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'SetPrimaryEmailVisibilityForAuthenticatedUser\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UpdateCard\Reques
 final class Json
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"note":{"type":["string","null"],"description":"The project card\'s note","examples":["Update all gems"]},"archived":{"type":"boolean","description":"Whether or not the card is archived","examples":[false]}}}';
+    public const SCHEMA_EXAMPLE = '{"note":"Update all gems","archived":false}';
     public const SCHEMA_TITLE = 'UpdateCard\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

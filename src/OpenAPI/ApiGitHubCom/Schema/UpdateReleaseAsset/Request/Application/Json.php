@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UpdateReleaseAsse
 final class Json
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"name":{"type":"string","description":"The file name of the asset."},"label":{"type":"string","description":"An alternate short description of the asset. Used in place of the filename."},"state":{"type":"string","examples":["\\"uploaded\\""]}}}';
+    public const SCHEMA_EXAMPLE = '{"state":"\\"uploaded\\""}';
     public const SCHEMA_TITLE = 'UpdateReleaseAsset\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**

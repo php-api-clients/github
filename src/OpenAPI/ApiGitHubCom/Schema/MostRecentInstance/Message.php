@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MostRecentInstanc
 final class Message
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"text":{"type":"string"}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'MostRecentInstance\\Message';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $text;

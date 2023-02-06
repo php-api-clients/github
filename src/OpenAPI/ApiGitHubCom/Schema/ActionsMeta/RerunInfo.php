@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsMeta;
 final class RerunInfo
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"plan_id":{"type":"string"},"job_ids":{"type":"array","items":{"type":"string"}}}}';
+    public const SCHEMA_EXAMPLE = '[]';
     public const SCHEMA_TITLE = 'ActionsMeta\\RerunInfo';
     public const SCHEMA_DESCRIPTION = '';
     public readonly string $plan_id;

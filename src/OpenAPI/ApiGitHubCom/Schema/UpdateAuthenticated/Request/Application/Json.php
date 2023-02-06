@@ -5,6 +5,7 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\UpdateAuthenticat
 final class Json
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"name":{"type":"string","description":"The new name of the user.","examples":["Omar Jahandar"]},"email":{"type":"string","description":"The publicly visible email address of the user.","examples":["omar@example.com"]},"blog":{"type":"string","description":"The new blog URL of the user.","examples":["blog.example.com"]},"twitter_username":{"type":["string","null"],"description":"The new Twitter username of the user.","examples":["therealomarj"]},"company":{"type":"string","description":"The new company of the user.","examples":["Acme corporation"]},"location":{"type":"string","description":"The new location of the user.","examples":["Berlin, Germany"]},"hireable":{"type":"boolean","description":"The new hiring availability of the user."},"bio":{"type":"string","description":"The new short biography of the user."}}}';
+    public const SCHEMA_EXAMPLE = '{"name":"Omar Jahandar","email":"omar@example.com","blog":"blog.example.com","twitter_username":"therealomarj","company":"Acme corporation","location":"Berlin, Germany"}';
     public const SCHEMA_TITLE = 'UpdateAuthenticated\\Request\\Application\\Json';
     public const SCHEMA_DESCRIPTION = '';
     /**
