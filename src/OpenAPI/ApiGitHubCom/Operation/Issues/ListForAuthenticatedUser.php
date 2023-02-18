@@ -4,58 +4,54 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues;
 
 final class ListForAuthenticatedUser
 {
-    private const OPERATION_ID = 'issues/list-for-authenticated-user';
+    public const OPERATION_ID = 'issues/list-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/issues';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/user/issues';
+    /**A list of comma separated label names. Example: `bug,ui,@high`**/
+    private string $labels;
+    /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
+    private string $since;
     /**Indicates which sorts of issues to return. `assigned` means issues assigned to you. `created` means issues created by you. `mentioned` means issues mentioning you. `subscribed` means issues you're subscribed to updates for. `all` or `repos` means all issues you can see, regardless of participation or creation.**/
     private string $filter;
     /**Indicates the state of the issues to return.**/
     private string $state;
-    /**A list of comma separated label names. Example: `bug,ui,@high`**/
-    private string $labels;
     /**What to sort results by.**/
     private string $sort;
     /**The direction to sort the results by.**/
     private string $direction;
-    /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
-    private string $since;
     /**The number of results per page (max 100).**/
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\User\Issues $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\User\Issues $hydrator, string $labels, string $since, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $per_page = 30, int $page = 1)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $filter = 'assigned', string $state = 'open', string $labels, string $sort = 'created', string $direction = 'desc', string $since, int $per_page = 30, int $page = 1)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->labels = $labels;
+        $this->since = $since;
         $this->filter = $filter;
         $this->state = $state;
-        $this->labels = $labels;
         $this->sort = $sort;
         $this->direction = $direction;
-        $this->since = $since;
         $this->per_page = $per_page;
         $this->page = $page;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{filter}', '{state}', '{labels}', '{sort}', '{direction}', '{since}', '{per_page}', '{page}'), array($this->filter, $this->state, $this->labels, $this->sort, $this->direction, $this->since, $this->per_page, $this->page), '/user/issues?filter={filter}&state={state}&labels={labels}&sort={sort}&direction={direction}&since={since}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{labels}', '{since}', '{filter}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->labels, $this->since, $this->filter, $this->state, $this->sort, $this->direction, $this->per_page, $this->page), self::PATH . '?labels={labels}&since={since}&filter={filter}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Issue>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|int
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Resource not found**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -73,11 +69,7 @@ final class ListForAuthenticatedUser
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
-            /**Not modified**/
-            case 304:
-                return 304;
-                break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

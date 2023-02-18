@@ -4,37 +4,33 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos;
 
 final class ListPublic
 {
-    private const OPERATION_ID = 'repos/list-public';
+    public const OPERATION_ID = 'repos/list-public';
     public const OPERATION_MATCH = 'GET /repositories';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/repositories';
     /**A repository ID. Only return repositories with an ID greater than this ID.**/
     private int $since;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repositories $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repositories $hydrator, int $since)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $since)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->since = $since;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
-        $this->since = $since;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{since}'), array($this->since), '/repositories?since={since}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}'), array($this->since), self::PATH . '?since={since}'));
     }
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int
+     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MinimalRepository>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,11 +48,7 @@ final class ListPublic
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationError', $body);
                 }
                 break;
-            /**Not modified**/
-            case 304:
-                return 304;
-                break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

@@ -4,11 +4,10 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Reactions;
 
 final class ListForTeamDiscussionInOrg
 {
-    private const OPERATION_ID = 'reactions/list-for-team-discussion-in-org';
+    public const OPERATION_ID = 'reactions/list-for-team-discussion-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions';
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The slug of the team name.**/
@@ -21,25 +20,22 @@ final class ListForTeamDiscussionInOrg
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Discussions\CbDiscussionNumberRcb\Reactions $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Discussions\CbDiscussionNumberRcb\Reactions $hydrator, string $org, string $team_slug, int $discussion_number, string $content, int $per_page = 30, int $page = 1)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $org, string $team_slug, int $discussion_number, string $content, int $per_page = 30, int $page = 1)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->org = $org;
         $this->team_slug = $team_slug;
         $this->discussion_number = $discussion_number;
         $this->content = $content;
         $this->per_page = $per_page;
         $this->page = $page;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{team_slug}', '{discussion_number}', '{content}', '{per_page}', '{page}'), array($this->org, $this->team_slug, $this->discussion_number, $this->content, $this->per_page, $this->page), '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions?content={content}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{team_slug}', '{discussion_number}', '{content}', '{per_page}', '{page}'), array($this->org, $this->team_slug, $this->discussion_number, $this->content, $this->per_page, $this->page), self::PATH . '?content={content}&per_page={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Reaction>
@@ -60,6 +56,6 @@ final class ListForTeamDiscussionInOrg
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

@@ -1,16 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Repository;
 
-final class Permissions
+final readonly class Permissions
 {
-    public const SCHEMA_JSON = '{"required":["from"],"type":"object","properties":{"from":{"type":"object","properties":{"admin":{"type":"boolean","description":"The previous version of the team member\'s `admin` permission on a repository, if the action was `edited`."},"pull":{"type":"boolean","description":"The previous version of the team member\'s `pull` permission on a repository, if the action was `edited`."},"push":{"type":"boolean","description":"The previous version of the team member\'s `push` permission on a repository, if the action was `edited`."}}}}}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'Repository\\Permissions';
+    public const SCHEMA_JSON        = '{"required":["admin","pull","push"],"type":"object","properties":{"admin":{"type":"boolean"},"pull":{"type":"boolean"},"triage":{"type":"boolean"},"push":{"type":"boolean"},"maintain":{"type":"boolean"}}}';
+    public const SCHEMA_TITLE       = '';
     public const SCHEMA_DESCRIPTION = '';
-    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Permissions\From $from;
-    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Permissions\From $from)
+    public ?bool $admin;
+    public ?bool $pull;
+    public bool $triage;
+    public ?bool $push;
+    public bool $maintain;
+
+    public function __construct(bool $admin, bool $pull, bool $triage, bool $push, bool $maintain)
     {
-        $this->from = $from;
+        $this->admin    = $admin;
+        $this->pull     = $pull;
+        $this->triage   = $triage;
+        $this->push     = $push;
+        $this->maintain = $maintain;
     }
 }

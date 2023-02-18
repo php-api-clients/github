@@ -1,86 +1,112 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\MarketplaceListing\Plans\CbPlanIdRcb\Accounts;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function json_decode;
+use function str_replace;
 
 final class ListAccountsForPlan
 {
-    private const OPERATION_ID = 'apps/list-accounts-for-plan';
+    public const OPERATION_ID    = 'apps/list-accounts-for-plan';
     public const OPERATION_MATCH = 'GET /marketplace_listing/plans/{plan_id}/accounts';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/marketplace_listing/plans/{plan_id}/accounts';
     /**The unique identifier of the plan.**/
     private int $plan_id;
-    /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
-    private string $sort;
     /**To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter.**/
     private string $direction;
+    /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
+    private string $sort;
     /**The number of results per page (max 100).**/
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly Accounts $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Accounts $hydrator, int $plan_id, string $direction, string $sort = 'created', int $per_page = 30, int $page = 1)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $plan_id, string $sort = 'created', string $direction, int $per_page = 30, int $page = 1)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->plan_id                 = $plan_id;
+        $this->direction               = $direction;
+        $this->sort                    = $sort;
+        $this->per_page                = $per_page;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->plan_id = $plan_id;
-        $this->sort = $sort;
-        $this->direction = $direction;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{plan_id}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->plan_id, $this->sort, $this->direction, $this->per_page, $this->page), '/marketplace_listing/plans/{plan_id}/accounts?sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{plan_id}', '{direction}', '{sort}', '{per_page}', '{page}'], [$this->plan_id, $this->direction, $this->sort, $this->per_page, $this->page], self::PATH . '?direction={direction}&sort={sort}&per_page={per_page}&page={page}'));
     }
+
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+     * @return Observable<MarketplacePurchase>|BasicError|ValidationError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
+    function createResponse(ResponseInterface $response): Observable|BasicError|ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Requires authentication**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\MarketplacePurchase {
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(MarketplacePurchase::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): MarketplacePurchase {
                             return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\MarketplacePurchase', $body);
                         });
                 }
+
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Requires authentication**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationError', $body);
                 }
+
                 break;
             /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

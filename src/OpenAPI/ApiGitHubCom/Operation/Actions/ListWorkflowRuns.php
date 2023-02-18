@@ -4,11 +4,10 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions;
 
 final class ListWorkflowRuns
 {
-    private const OPERATION_ID = 'actions/list-workflow-runs';
+    public const OPERATION_ID = 'actions/list-workflow-runs';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -23,27 +22,22 @@ final class ListWorkflowRuns
     private string $event;
     /**Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.**/
     private string $status;
-    /**The number of results per page (max 100).**/
-    private int $per_page;
-    /**Page number of the results to fetch.**/
-    private int $page;
     /**Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."**/
     private string $created;
-    /**If `true` pull requests are omitted from the response (empty array).**/
-    private bool $exclude_pull_requests;
     /**Returns workflow runs with the `check_suite_id` that you specify.**/
     private int $check_suite_id;
     /**Only returns workflow runs that are associated with the specified `head_sha`.**/
     private string $head_sha;
-    public function operationId() : string
+    /**The number of results per page (max 100).**/
+    private int $per_page;
+    /**Page number of the results to fetch.**/
+    private int $page;
+    /**If `true` pull requests are omitted from the response (empty array).**/
+    private bool $exclude_pull_requests;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Workflows\CbWorkflowIdRcb\Runs $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Workflows\CbWorkflowIdRcb\Runs $hydrator, string $owner, string $repo, $workflow_id, string $actor, string $branch, string $event, string $status, string $created, int $check_suite_id, string $head_sha, int $per_page = 30, int $page = 1, bool $exclude_pull_requests = false)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $owner, string $repo, $workflow_id, string $actor, string $branch, string $event, string $status, int $per_page = 30, int $page = 1, string $created, bool $exclude_pull_requests = false, int $check_suite_id, string $head_sha)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->owner = $owner;
         $this->repo = $repo;
         $this->workflow_id = $workflow_id;
@@ -51,21 +45,23 @@ final class ListWorkflowRuns
         $this->branch = $branch;
         $this->event = $event;
         $this->status = $status;
-        $this->per_page = $per_page;
-        $this->page = $page;
         $this->created = $created;
-        $this->exclude_pull_requests = $exclude_pull_requests;
         $this->check_suite_id = $check_suite_id;
         $this->head_sha = $head_sha;
+        $this->per_page = $per_page;
+        $this->page = $page;
+        $this->exclude_pull_requests = $exclude_pull_requests;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{workflow_id}', '{actor}', '{branch}', '{event}', '{status}', '{per_page}', '{page}', '{created}', '{exclude_pull_requests}', '{check_suite_id}', '{head_sha}'), array($this->owner, $this->repo, $this->workflow_id, $this->actor, $this->branch, $this->event, $this->status, $this->per_page, $this->page, $this->created, $this->exclude_pull_requests, $this->check_suite_id, $this->head_sha), '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?actor={actor}&branch={branch}&event={event}&status={status}&per_page={per_page}&page={page}&created={created}&exclude_pull_requests={exclude_pull_requests}&check_suite_id={check_suite_id}&head_sha={head_sha}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{workflow_id}', '{actor}', '{branch}', '{event}', '{status}', '{created}', '{check_suite_id}', '{head_sha}', '{per_page}', '{page}', '{exclude_pull_requests}'), array($this->owner, $this->repo, $this->workflow_id, $this->actor, $this->branch, $this->event, $this->status, $this->created, $this->check_suite_id, $this->head_sha, $this->per_page, $this->page, $this->exclude_pull_requests), self::PATH . '?actor={actor}&branch={branch}&event={event}&status={status}&created={created}&check_suite_id={check_suite_id}&head_sha={head_sha}&per_page={per_page}&page={page}&exclude_pull_requests={exclude_pull_requests}'));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListWorkflowRuns\Response\Application\Json\H200
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListWorkflowRuns\Response\Application\Json\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -74,11 +70,11 @@ final class ListWorkflowRuns
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListWorkflowRuns\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\ListWorkflowRuns\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\Actions\\ListRequiredWorkflowRuns\\Response\\Applicationjson\\H200', $body);
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

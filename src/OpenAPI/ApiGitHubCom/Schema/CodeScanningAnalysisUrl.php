@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema;
 
-final class CodeScanningAnalysisUrl
+final readonly class CodeScanningAnalysisUrl
 {
-    public const SCHEMA_JSON = '{"type":"string","description":"The REST API URL of the analysis resource.","format":"uri","readOnly":true}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'code-scanning-analysis-url';
+    public const SCHEMA_JSON        = '{"type":"string","description":"The REST API URL of the analysis resource.","format":"uri","readOnly":true}';
+    public const SCHEMA_TITLE       = '';
     public const SCHEMA_DESCRIPTION = 'The REST API URL of the analysis resource.';
+
     public function __construct()
     {
     }

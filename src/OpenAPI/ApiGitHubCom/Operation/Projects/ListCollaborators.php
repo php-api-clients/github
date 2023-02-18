@@ -1,14 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Projects\CbProjectIdRcb\Collaborators;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function json_decode;
+use function str_replace;
 
 final class ListCollaborators
 {
-    private const OPERATION_ID = 'projects/list-collaborators';
+    public const OPERATION_ID    = 'projects/list-collaborators';
     public const OPERATION_MATCH = 'GET /projects/{project_id}/collaborators';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/projects/{project_id}/collaborators';
     /**The unique identifier of the project.**/
     private int $project_id;
     /**Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project's organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.**/
@@ -17,79 +34,86 @@ final class ListCollaborators
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly Collaborators $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Collaborators $hydrator, int $project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->project_id              = $project_id;
+        $this->affiliation             = $affiliation;
+        $this->per_page                = $per_page;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->project_id = $project_id;
-        $this->affiliation = $affiliation;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{project_id}', '{affiliation}', '{per_page}', '{page}'), array($this->project_id, $this->affiliation, $this->per_page, $this->page), '/projects/{project_id}/collaborators?affiliation={affiliation}&per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{project_id}', '{affiliation}', '{per_page}', '{page}'], [$this->project_id, $this->affiliation, $this->per_page, $this->page], self::PATH . '?affiliation={affiliation}&per_page={per_page}&page={page}'));
     }
+
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int
+     * @return Observable<SimpleUser>|BasicError|ValidationError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError|int
+    function createResponse(ResponseInterface $response): Observable|BasicError|ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Requires authentication**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SimpleUser {
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): SimpleUser {
                             return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\SimpleUser', $body);
                         });
                 }
+
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Requires authentication**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ValidationError', $body);
                 }
+
                 break;
-            /**Not modified**/
-            case 304:
-                return 304;
-                break;
-            /**Forbidden**/
+            /**Requires authentication**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
             /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

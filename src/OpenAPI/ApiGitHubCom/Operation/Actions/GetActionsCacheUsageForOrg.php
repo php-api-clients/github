@@ -4,27 +4,23 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Actions;
 
 final class GetActionsCacheUsageForOrg
 {
-    private const OPERATION_ID = 'actions/get-actions-cache-usage-for-org';
+    public const OPERATION_ID = 'actions/get-actions-cache-usage-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/cache/usage';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/orgs/{org}/actions/cache/usage';
     /**The organization name. The name is not case sensitive.**/
     private string $org;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Cache\Usage $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Cache\Usage $hydrator, string $org)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $org)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->org = $org;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
-        $this->org = $org;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}'), array($this->org), '/orgs/{org}/actions/cache/usage'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}'), array($this->org), self::PATH));
     }
     /**
      * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ActionsCacheUsageOrgEnterprise
@@ -43,6 +39,6 @@ final class GetActionsCacheUsageForOrg
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

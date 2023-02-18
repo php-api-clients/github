@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchProtection;
 
-final class RequiredLinearHistory
+final readonly class RequiredLinearHistory
 {
-    public const SCHEMA_JSON = '{"type":"object","properties":{"enabled":{"type":"boolean"}}}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'BranchProtection\\RequiredLinearHistory';
+    public const SCHEMA_JSON        = '{"type":"object","properties":{"enabled":{"type":"boolean"}}}';
+    public const SCHEMA_TITLE       = '';
     public const SCHEMA_DESCRIPTION = '';
-    public readonly bool $enabled;
+    public ?bool $enabled;
+
     public function __construct(bool $enabled)
     {
         $this->enabled = $enabled;

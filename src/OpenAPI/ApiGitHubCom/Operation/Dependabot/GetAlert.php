@@ -1,14 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Dependabot\Alerts\CbAlertNumberRcb;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function json_decode;
+use function str_replace;
 
 final class GetAlert
 {
-    private const OPERATION_ID = 'dependabot/get-alert';
+    public const OPERATION_ID    = 'dependabot/get-alert';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/repos/{owner}/{repo}/dependabot/alerts/{alert_number}';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -18,60 +32,60 @@ final class GetAlert
     or in `number` fields in the response from the
     `GET /repos/{owner}/{repo}/dependabot/alerts` operation.**/
     private int $alert_number;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly CbAlertNumberRcb $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, CbAlertNumberRcb $hydrator, string $owner, string $repo, int $alert_number)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $owner, string $repo, int $alert_number)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->owner                   = $owner;
+        $this->repo                    = $repo;
+        $this->alert_number            = $alert_number;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->owner = $owner;
-        $this->repo = $repo;
-        $this->alert_number = $alert_number;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{alert_number}'), array($this->owner, $this->repo, $this->alert_number), '/repos/{owner}/{repo}/dependabot/alerts/{alert_number}'));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{alert_number}'], [$this->owner, $this->repo, $this->alert_number], self::PATH));
     }
-    /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+
+    function createResponse(ResponseInterface $response): DependabotAlert|BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Resource not found**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependabotAlert::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(DependabotAlert::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\DependabotAlert', $body);
                 }
+
                 break;
-            /**Not modified**/
-            case 304:
-                return 304;
-                break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
             /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

@@ -2,17 +2,16 @@
 
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration;
 
-final class Permissions
+final readonly class Permissions
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"issues":{"type":"string"},"checks":{"type":"string"},"metadata":{"type":"string"},"contents":{"type":"string"},"deployments":{"type":"string"}},"description":"The set of permissions for the GitHub app","example":{"issues":"read","deployments":"write"},"additionalProperties":{"type":"string"}}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'Integration\\Permissions';
+    public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = 'The set of permissions for the GitHub app';
-    public readonly string $issues;
-    public readonly string $checks;
-    public readonly string $metadata;
-    public readonly string $contents;
-    public readonly string $deployments;
+    public ?string $issues;
+    public ?string $checks;
+    public ?string $metadata;
+    public ?string $contents;
+    public ?string $deployments;
     public function __construct(string $issues, string $checks, string $metadata, string $contents, string $deployments)
     {
         $this->issues = $issues;

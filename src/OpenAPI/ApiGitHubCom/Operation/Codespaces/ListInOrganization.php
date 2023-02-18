@@ -1,90 +1,108 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Codespaces;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Codespaces\ListInOrganization\Response\Applicationjson\H200;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function json_decode;
+use function str_replace;
 
 final class ListInOrganization
 {
-    private const OPERATION_ID = 'codespaces/list-in-organization';
+    public const OPERATION_ID    = 'codespaces/list-in-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/codespaces';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/orgs/{org}/codespaces';
+    /**The organization name. The name is not case sensitive.**/
+    private string $org;
     /**The number of results per page (max 100).**/
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    /**The organization name. The name is not case sensitive.**/
-    private string $org;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly Codespaces $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Codespaces $hydrator, string $org, int $per_page = 30, int $page = 1)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $per_page = 30, int $page = 1, string $org)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->org                     = $org;
+        $this->per_page                = $per_page;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->per_page = $per_page;
-        $this->page = $page;
-        $this->org = $org;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{per_page}', '{page}', '{org}'), array($this->per_page, $this->page, $this->org), '/orgs/{org}/codespaces?per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->per_page, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
-    /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListInOrganization\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListInOrganization\Response\Application\Json\H200|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+
+    function createResponse(ResponseInterface $response): H200|BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Resource not found**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListInOrganization\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\ListInOrganization\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\Codespaces\\ListInOrganization\\Response\\Applicationjson\\H200', $body);
                 }
+
                 break;
-            /**Not modified**/
-            case 304:
-                return 304;
-                break;
-            /**Internal Error**/
+            /**Resource not found**/
             case 500:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
-            /**Requires authentication**/
+            /**Resource not found**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
             /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

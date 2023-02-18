@@ -1,62 +1,78 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Issues;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments\CbCommentIdRcb;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function json_decode;
+use function str_replace;
 
 final class GetComment
 {
-    private const OPERATION_ID = 'issues/get-comment';
+    public const OPERATION_ID    = 'issues/get-comment';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/comments/{comment_id}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/repos/{owner}/{repo}/issues/comments/{comment_id}';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the comment.**/
     private int $comment_id;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly CbCommentIdRcb $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, CbCommentIdRcb $hydrator, string $owner, string $repo, int $comment_id)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $owner, string $repo, int $comment_id)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->owner                   = $owner;
+        $this->repo                    = $repo;
+        $this->comment_id              = $comment_id;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->owner = $owner;
-        $this->repo = $repo;
-        $this->comment_id = $comment_id;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{comment_id}'), array($this->owner, $this->repo, $this->comment_id), '/repos/{owner}/{repo}/issues/comments/{comment_id}'));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{comment_id}'], [$this->owner, $this->repo, $this->comment_id], self::PATH));
     }
-    /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+
+    function createResponse(ResponseInterface $response): IssueComment|BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Resource not found**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\IssueComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(IssueComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\IssueComment', $body);
                 }
+
                 break;
             /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

@@ -1,44 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Codespaces;
+
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class DeleteSecretForAuthenticatedUser
 {
-    private const OPERATION_ID = 'codespaces/delete-secret-for-authenticated-user';
+    public const OPERATION_ID    = 'codespaces/delete-secret-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/codespaces/secrets/{secret_name}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'DELETE';
+    private const PATH           = '/user/codespaces/secrets/{secret_name}';
     /**The name of the secret.**/
     private string $secret_name;
-    public function operationId() : string
+
+    public function __construct(string $secret_name)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $secret_name)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->secret_name = $secret_name;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{secret_name}'), array($this->secret_name), '/user/codespaces/secrets/{secret_name}'));
+        return new Request(self::METHOD, str_replace(['{secret_name}'], [$this->secret_name], self::PATH));
     }
-    /**
-     * @return int
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
+
+    function createResponse(ResponseInterface $response): ResponseInterface
     {
-        $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 204:
-                return 204;
-                break;
-        }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        return $response;
     }
 }

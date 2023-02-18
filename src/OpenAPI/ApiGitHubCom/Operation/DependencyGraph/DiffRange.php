@@ -4,11 +4,10 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\DependencyGrap
 
 final class DiffRange
 {
-    private const OPERATION_ID = 'dependency-graph/diff-range';
+    public const OPERATION_ID = 'dependency-graph/diff-range';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/repos/{owner}/{repo}/dependency-graph/compare/{basehead}';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -17,23 +16,20 @@ final class DiffRange
     private string $basehead;
     /**The full path, relative to the repository root, of the dependency manifest file.**/
     private string $name;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph\Compare\CbBaseheadRcb $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph\Compare\CbBaseheadRcb $hydrator, string $owner, string $repo, string $basehead, string $name)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $owner, string $repo, string $basehead, string $name)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->owner = $owner;
         $this->repo = $repo;
         $this->basehead = $basehead;
         $this->name = $name;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{basehead}', '{name}'), array($this->owner, $this->repo, $this->basehead, $this->name), '/repos/{owner}/{repo}/dependency-graph/compare/{basehead}?name={name}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{basehead}', '{name}'), array($this->owner, $this->repo, $this->basehead, $this->name), self::PATH . '?name={name}'));
     }
     /**
      * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\DependencyGraphDiff>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
@@ -43,7 +39,7 @@ final class DiffRange
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Forbidden**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -53,7 +49,7 @@ final class DiffRange
                         });
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -70,6 +66,6 @@ final class DiffRange
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

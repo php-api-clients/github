@@ -4,41 +4,37 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Repos;
 
 final class ListWebhookDeliveries
 {
-    private const OPERATION_ID = 'repos/list-webhook-deliveries';
+    public const OPERATION_ID = 'repos/list-webhook-deliveries';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/repos/{owner}/{repo}/hooks/{hook_id}/deliveries';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the hook.**/
     private int $hook_id;
-    /**The number of results per page (max 100).**/
-    private int $per_page;
     /**Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.**/
     private string $cursor;
     private bool $redelivery;
-    public function operationId() : string
+    /**The number of results per page (max 100).**/
+    private int $per_page;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb\Deliveries $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb\Deliveries $hydrator, string $owner, string $repo, int $hook_id, string $cursor, bool $redelivery, int $per_page = 30)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $owner, string $repo, int $hook_id, int $per_page = 30, string $cursor, bool $redelivery)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->owner = $owner;
         $this->repo = $repo;
         $this->hook_id = $hook_id;
-        $this->per_page = $per_page;
         $this->cursor = $cursor;
         $this->redelivery = $redelivery;
+        $this->per_page = $per_page;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{hook_id}', '{per_page}', '{cursor}', '{redelivery}'), array($this->owner, $this->repo, $this->hook_id, $this->per_page, $this->cursor, $this->redelivery), '/repos/{owner}/{repo}/hooks/{hook_id}/deliveries?per_page={per_page}&cursor={cursor}&redelivery={redelivery}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{hook_id}', '{cursor}', '{redelivery}', '{per_page}'), array($this->owner, $this->repo, $this->hook_id, $this->cursor, $this->redelivery, $this->per_page), self::PATH . '?cursor={cursor}&redelivery={redelivery}&per_page={per_page}'));
     }
     /**
      * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\HookDeliveryItem>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ScimError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ValidationError
@@ -48,7 +44,7 @@ final class ListWebhookDeliveries
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +54,7 @@ final class ListWebhookDeliveries
                         });
                 }
                 break;
-            /**Bad Request**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':
@@ -78,6 +74,6 @@ final class ListWebhookDeliveries
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

@@ -1,0 +1,110 @@
+<?php
+
+declare(strict_types=1);
+
+namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\WorkflowRun;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner;
+
+final readonly class HeadRepository
+{
+    public const SCHEMA_JSON        = '{"type":"object","properties":{"archive_url":{"type":"string"},"assignees_url":{"type":"string"},"blobs_url":{"type":"string"},"branches_url":{"type":"string"},"collaborators_url":{"type":"string"},"comments_url":{"type":"string"},"commits_url":{"type":"string"},"compare_url":{"type":"string"},"contents_url":{"type":"string"},"contributors_url":{"type":"string"},"deployments_url":{"type":"string"},"description":{"type":["null"]},"downloads_url":{"type":"string"},"events_url":{"type":"string"},"fork":{"type":"boolean"},"forks_url":{"type":"string"},"full_name":{"type":"string"},"git_commits_url":{"type":"string"},"git_refs_url":{"type":"string"},"git_tags_url":{"type":"string"},"hooks_url":{"type":"string"},"html_url":{"type":"string"},"id":{"type":"integer"},"issue_comment_url":{"type":"string"},"issue_events_url":{"type":"string"},"issues_url":{"type":"string"},"keys_url":{"type":"string"},"labels_url":{"type":"string"},"languages_url":{"type":"string"},"merges_url":{"type":"string"},"milestones_url":{"type":"string"},"name":{"type":"string"},"node_id":{"type":"string"},"notifications_url":{"type":"string"},"owner":{"type":"object","properties":{"avatar_url":{"type":"string"},"events_url":{"type":"string"},"followers_url":{"type":"string"},"following_url":{"type":"string"},"gists_url":{"type":"string"},"gravatar_id":{"type":"string"},"html_url":{"type":"string"},"id":{"type":"integer"},"login":{"type":"string"},"node_id":{"type":"string"},"organizations_url":{"type":"string"},"received_events_url":{"type":"string"},"repos_url":{"type":"string"},"site_admin":{"type":"boolean"},"starred_url":{"type":"string"},"subscriptions_url":{"type":"string"},"type":{"type":"string"},"url":{"type":"string"}}},"private":{"type":"boolean"},"pulls_url":{"type":"string"},"releases_url":{"type":"string"},"stargazers_url":{"type":"string"},"statuses_url":{"type":"string"},"subscribers_url":{"type":"string"},"subscription_url":{"type":"string"},"tags_url":{"type":"string"},"teams_url":{"type":"string"},"trees_url":{"type":"string"},"url":{"type":"string"}}}';
+    public const SCHEMA_TITLE       = '';
+    public const SCHEMA_DESCRIPTION = '';
+    public ?string $archive_url;
+    public ?string $assignees_url;
+    public ?string $blobs_url;
+    public ?string $branches_url;
+    public ?string $collaborators_url;
+    public ?string $comments_url;
+    public ?string $commits_url;
+    public ?string $compare_url;
+    public ?string $contents_url;
+    public ?string $contributors_url;
+    public ?string $deployments_url;
+    public mixed $description;
+    public ?string $downloads_url;
+    public ?string $events_url;
+    public ?bool $fork;
+    public ?string $forks_url;
+    public ?string $full_name;
+    public ?string $git_commits_url;
+    public ?string $git_refs_url;
+    public ?string $git_tags_url;
+    public ?string $hooks_url;
+    public ?string $html_url;
+    public ?int $id;
+    public ?string $issue_comment_url;
+    public ?string $issue_events_url;
+    public ?string $issues_url;
+    public ?string $keys_url;
+    public ?string $labels_url;
+    public ?string $languages_url;
+    public ?string $merges_url;
+    public ?string $milestones_url;
+    public ?string $name;
+    public ?string $node_id;
+    public ?string $notifications_url;
+    public ?Owner $owner;
+    public ?bool $private;
+    public ?string $pulls_url;
+    public ?string $releases_url;
+    public ?string $stargazers_url;
+    public ?string $statuses_url;
+    public ?string $subscribers_url;
+    public ?string $subscription_url;
+    public ?string $tags_url;
+    public ?string $teams_url;
+    public ?string $trees_url;
+    public ?string $url;
+
+    public function __construct(string $archive_url, string $assignees_url, string $blobs_url, string $branches_url, string $collaborators_url, string $comments_url, string $commits_url, string $compare_url, string $contents_url, string $contributors_url, string $deployments_url, mixed $description, string $downloads_url, string $events_url, bool $fork, string $forks_url, string $full_name, string $git_commits_url, string $git_refs_url, string $git_tags_url, string $hooks_url, string $html_url, int $id, string $issue_comment_url, string $issue_events_url, string $issues_url, string $keys_url, string $labels_url, string $languages_url, string $merges_url, string $milestones_url, string $name, string $node_id, string $notifications_url, Owner $owner, bool $private, string $pulls_url, string $releases_url, string $stargazers_url, string $statuses_url, string $subscribers_url, string $subscription_url, string $tags_url, string $teams_url, string $trees_url, string $url)
+    {
+        $this->archive_url       = $archive_url;
+        $this->assignees_url     = $assignees_url;
+        $this->blobs_url         = $blobs_url;
+        $this->branches_url      = $branches_url;
+        $this->collaborators_url = $collaborators_url;
+        $this->comments_url      = $comments_url;
+        $this->commits_url       = $commits_url;
+        $this->compare_url       = $compare_url;
+        $this->contents_url      = $contents_url;
+        $this->contributors_url  = $contributors_url;
+        $this->deployments_url   = $deployments_url;
+        $this->description       = $description;
+        $this->downloads_url     = $downloads_url;
+        $this->events_url        = $events_url;
+        $this->fork              = $fork;
+        $this->forks_url         = $forks_url;
+        $this->full_name         = $full_name;
+        $this->git_commits_url   = $git_commits_url;
+        $this->git_refs_url      = $git_refs_url;
+        $this->git_tags_url      = $git_tags_url;
+        $this->hooks_url         = $hooks_url;
+        $this->html_url          = $html_url;
+        $this->id                = $id;
+        $this->issue_comment_url = $issue_comment_url;
+        $this->issue_events_url  = $issue_events_url;
+        $this->issues_url        = $issues_url;
+        $this->keys_url          = $keys_url;
+        $this->labels_url        = $labels_url;
+        $this->languages_url     = $languages_url;
+        $this->merges_url        = $merges_url;
+        $this->milestones_url    = $milestones_url;
+        $this->name              = $name;
+        $this->node_id           = $node_id;
+        $this->notifications_url = $notifications_url;
+        $this->owner             = $owner;
+        $this->private           = $private;
+        $this->pulls_url         = $pulls_url;
+        $this->releases_url      = $releases_url;
+        $this->stargazers_url    = $stargazers_url;
+        $this->statuses_url      = $statuses_url;
+        $this->subscribers_url   = $subscribers_url;
+        $this->subscription_url  = $subscription_url;
+        $this->tags_url          = $tags_url;
+        $this->teams_url         = $teams_url;
+        $this->trees_url         = $trees_url;
+        $this->url               = $url;
+    }
+}

@@ -4,48 +4,44 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Activity;
 
 final class ListRepoNotificationsForAuthenticatedUser
 {
-    private const OPERATION_ID = 'activity/list-repo-notifications-for-authenticated-user';
+    public const OPERATION_ID = 'activity/list-repo-notifications-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/notifications';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/repos/{owner}/{repo}/notifications';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
-    /**If `true`, show notifications marked as read.**/
-    private bool $all;
-    /**If `true`, only shows notifications in which the user is directly participating or mentioned.**/
-    private bool $participating;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
     private string $since;
     /**Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
     private string $before;
+    /**If `true`, show notifications marked as read.**/
+    private bool $all;
+    /**If `true`, only shows notifications in which the user is directly participating or mentioned.**/
+    private bool $participating;
     /**The number of results per page (max 100).**/
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Notifications $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Notifications $hydrator, string $owner, string $repo, string $since, string $before, bool $all = false, bool $participating = false, int $per_page = 30, int $page = 1)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $owner, string $repo, bool $all = false, bool $participating = false, string $since, string $before, int $per_page = 30, int $page = 1)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->all = $all;
-        $this->participating = $participating;
         $this->since = $since;
         $this->before = $before;
+        $this->all = $all;
+        $this->participating = $participating;
         $this->per_page = $per_page;
         $this->page = $page;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{owner}', '{repo}', '{all}', '{participating}', '{since}', '{before}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->all, $this->participating, $this->since, $this->before, $this->per_page, $this->page), '/repos/{owner}/{repo}/notifications?all={all}&participating={participating}&since={since}&before={before}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{since}', '{before}', '{all}', '{participating}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->since, $this->before, $this->all, $this->participating, $this->per_page, $this->page), self::PATH . '?since={since}&before={before}&all={all}&participating={participating}&per_page={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Thread>
@@ -66,6 +62,6 @@ final class ListRepoNotificationsForAuthenticatedUser
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

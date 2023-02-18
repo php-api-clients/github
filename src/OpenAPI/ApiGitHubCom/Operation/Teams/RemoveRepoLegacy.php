@@ -1,50 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams;
+
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class RemoveRepoLegacy
 {
-    private const OPERATION_ID = 'teams/remove-repo-legacy';
+    public const OPERATION_ID    = 'teams/remove-repo-legacy';
     public const OPERATION_MATCH = 'DELETE /teams/{team_id}/repos/{owner}/{repo}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'DELETE';
+    private const PATH           = '/teams/{team_id}/repos/{owner}/{repo}';
     /**The unique identifier of the team.**/
     private int $team_id;
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
-    public function operationId() : string
+
+    public function __construct(int $team_id, string $owner, string $repo)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $team_id, string $owner, string $repo)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->team_id = $team_id;
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner   = $owner;
+        $this->repo    = $repo;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('DELETE', \str_replace(array('{team_id}', '{owner}', '{repo}'), array($this->team_id, $this->owner, $this->repo), '/teams/{team_id}/repos/{owner}/{repo}'));
+        return new Request(self::METHOD, str_replace(['{team_id}', '{owner}', '{repo}'], [$this->team_id, $this->owner, $this->repo], self::PATH));
     }
-    /**
-     * @return int
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
+
+    function createResponse(ResponseInterface $response): ResponseInterface
     {
-        $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 204:
-                return 204;
-                break;
-        }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        return $response;
     }
 }

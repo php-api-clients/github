@@ -1,55 +1,64 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Teams\CbTeamIdRcb\Projects\CbProjectIdRcb;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function json_decode;
+use function str_replace;
 
 final class CheckPermissionsForProjectLegacy
 {
-    private const OPERATION_ID = 'teams/check-permissions-for-project-legacy';
+    public const OPERATION_ID    = 'teams/check-permissions-for-project-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/projects/{project_id}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/teams/{team_id}/projects/{project_id}';
     /**The unique identifier of the team.**/
     private int $team_id;
     /**The unique identifier of the project.**/
     private int $project_id;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly CbProjectIdRcb $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, CbProjectIdRcb $hydrator, int $team_id, int $project_id)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $team_id, int $project_id)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->team_id                 = $team_id;
+        $this->project_id              = $project_id;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->team_id = $team_id;
-        $this->project_id = $project_id;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{team_id}', '{project_id}'), array($this->team_id, $this->project_id), '/teams/{team_id}/projects/{project_id}'));
+        return new Request(self::METHOD, str_replace(['{team_id}', '{project_id}'], [$this->team_id, $this->project_id], self::PATH));
     }
-    /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|int
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject|int
+
+    function createResponse(ResponseInterface $response): TeamProject
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\TeamProject::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(TeamProject::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\TeamProject', $body);
                 }
-                break;
-            /**Not Found if project is not managed by this team**/
-            case 404:
-                return 404;
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

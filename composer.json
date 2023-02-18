@@ -11,7 +11,7 @@
   "require": {
     "php": "^8.2",
     "api-clients/contracts": "dev-main",
-    "api-clients/openapi-client-generator": "dev-master",
+    "api-clients/openapi-client-generator": "dev-introduce-representation-layer-for-reduced-complexity",
     "cebe/php-openapi": "dev-openapi-31 as 1.6.0",
     "eventsauce/object-hydrator": "^1.1",
     "react/async": "^4.0"

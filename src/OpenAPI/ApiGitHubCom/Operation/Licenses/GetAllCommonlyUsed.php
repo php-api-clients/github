@@ -1,59 +1,73 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Licenses;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Licenses;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function json_decode;
+use function str_replace;
 
 final class GetAllCommonlyUsed
 {
-    private const OPERATION_ID = 'licenses/get-all-commonly-used';
+    public const OPERATION_ID    = 'licenses/get-all-commonly-used';
     public const OPERATION_MATCH = 'GET /licenses';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/licenses';
     private bool $featured;
     /**The number of results per page (max 100).**/
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly Licenses $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Licenses $hydrator, bool $featured, int $per_page = 30, int $page = 1)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, bool $featured, int $per_page = 30, int $page = 1)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->featured                = $featured;
+        $this->per_page                = $per_page;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->featured = $featured;
-        $this->per_page = $per_page;
-        $this->page = $page;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{featured}', '{per_page}', '{page}'), array($this->featured, $this->per_page, $this->page), '/licenses?featured={featured}&per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{featured}', '{per_page}', '{page}'], [$this->featured, $this->per_page, $this->page], self::PATH . '?featured={featured}&per_page={per_page}&page={page}'));
     }
+
     /**
-     * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple>|int
+     * @return Observable<LicenseSimple>
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|int
+    function createResponse(ResponseInterface $response): Observable
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\LicenseSimple {
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(LicenseSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): LicenseSimple {
                             return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\LicenseSimple', $body);
                         });
                 }
-                break;
-            /**Not modified**/
-            case 304:
-                return 304;
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

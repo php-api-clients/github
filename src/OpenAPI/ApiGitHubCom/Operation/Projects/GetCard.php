@@ -4,37 +4,33 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Projects;
 
 final class GetCard
 {
-    private const OPERATION_ID = 'projects/get-card';
+    public const OPERATION_ID = 'projects/get-card';
     public const OPERATION_MATCH = 'GET /projects/columns/cards/{card_id}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/projects/columns/cards/{card_id}';
     /**The unique identifier of the card.**/
     private int $card_id;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Projects\Columns\Cards\CbCardIdRcb $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Projects\Columns\Cards\CbCardIdRcb $hydrator, int $card_id)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $card_id)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->card_id = $card_id;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
-        $this->card_id = $card_id;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{card_id}'), array($this->card_id), '/projects/columns/cards/{card_id}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{card_id}'), array($this->card_id), self::PATH));
     }
     /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|int|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\ProjectCard|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Resource not found**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -42,11 +38,7 @@ final class GetCard
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\ProjectCard', $body);
                 }
                 break;
-            /**Not modified**/
-            case 304:
-                return 304;
-                break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -54,7 +46,7 @@ final class GetCard
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Resource not found**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -71,6 +63,6 @@ final class GetCard
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

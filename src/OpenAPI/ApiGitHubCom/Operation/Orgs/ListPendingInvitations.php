@@ -4,11 +4,10 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Orgs;
 
 final class ListPendingInvitations
 {
-    private const OPERATION_ID = 'orgs/list-pending-invitations';
+    public const OPERATION_ID = 'orgs/list-pending-invitations';
     public const OPERATION_MATCH = 'GET /orgs/{org}/invitations';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/orgs/{org}/invitations';
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The number of results per page (max 100).**/
@@ -19,24 +18,21 @@ final class ListPendingInvitations
     private string $role;
     /**Filter invitations by their invitation source.**/
     private string $invitation_source;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Invitations $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Invitations $hydrator, string $org, int $per_page = 30, int $page = 1, string $role = 'all', string $invitation_source = 'all')
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $org, int $per_page = 30, int $page = 1, string $role = 'all', string $invitation_source = 'all')
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
         $this->org = $org;
         $this->per_page = $per_page;
         $this->page = $page;
         $this->role = $role;
         $this->invitation_source = $invitation_source;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{per_page}', '{page}', '{role}', '{invitation_source}'), array($this->org, $this->per_page, $this->page, $this->role, $this->invitation_source), '/orgs/{org}/invitations?per_page={per_page}&page={page}&role={role}&invitation_source={invitation_source}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{per_page}', '{page}', '{role}', '{invitation_source}'), array($this->org, $this->per_page, $this->page, $this->role, $this->invitation_source), self::PATH . '?per_page={per_page}&page={page}&role={role}&invitation_source={invitation_source}'));
     }
     /**
      * @return \Rx\Observable<\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\OrganizationInvitation>|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
@@ -46,7 +42,7 @@ final class ListPendingInvitations
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Resource not found**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -65,6 +61,6 @@ final class ListPendingInvitations
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

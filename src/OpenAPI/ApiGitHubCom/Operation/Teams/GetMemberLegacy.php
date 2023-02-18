@@ -1,51 +1,39 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Teams;
+
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+
+use function str_replace;
 
 final class GetMemberLegacy
 {
-    private const OPERATION_ID = 'teams/get-member-legacy';
+    public const OPERATION_ID    = 'teams/get-member-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/members/{username}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/teams/{team_id}/members/{username}';
     /**The unique identifier of the team.**/
     private int $team_id;
     /**The handle for the GitHub user account.**/
     private string $username;
-    public function operationId() : string
+
+    public function __construct(int $team_id, string $username)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, int $team_id, string $username)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->team_id = $team_id;
+        $this->team_id  = $team_id;
         $this->username = $username;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{team_id}', '{username}'), array($this->team_id, $this->username), '/teams/{team_id}/members/{username}'));
+        return new Request(self::METHOD, str_replace(['{team_id}', '{username}'], [$this->team_id, $this->username], self::PATH));
     }
-    /**
-     * @return int
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : int
+
+    function createResponse(ResponseInterface $response): ResponseInterface
     {
-        $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**if user is a member**/
-            case 204:
-                return 204;
-                break;
-            /**if user is not a member**/
-            case 404:
-                return 404;
-                break;
-        }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        return $response;
     }
 }

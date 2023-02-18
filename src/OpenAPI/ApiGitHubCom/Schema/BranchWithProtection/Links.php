@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BranchWithProtection;
 
-final class Links
+final readonly class Links
 {
-    public const SCHEMA_JSON = '{"required":["html","self"],"type":"object","properties":{"html":{"type":"string"},"self":{"type":"string","format":"uri"}}}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'BranchWithProtection\\Links';
+    public const SCHEMA_JSON        = '{"required":["html","self"],"type":"object","properties":{"html":{"type":"string"},"self":{"type":"string","format":"uri"}}}';
+    public const SCHEMA_TITLE       = '';
     public const SCHEMA_DESCRIPTION = '';
-    public readonly string $html;
-    public readonly string $self;
+    public ?string $html;
+    public ?string $self;
+
     public function __construct(string $html, string $self)
     {
         $this->html = $html;

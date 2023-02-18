@@ -1,14 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Dependabot;
+
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Orgs\CbOrgRcb\Dependabot\Secrets\CbSecretNameRcb\Repositories;
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Actions\ListSelectedReposForOrgSecret\Response\Applicationjson\H200;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function json_decode;
+use function str_replace;
 
 final class ListSelectedReposForOrgSecret
 {
-    private const OPERATION_ID = 'dependabot/list-selected-repos-for-org-secret';
+    public const OPERATION_ID    = 'dependabot/list-selected-repos-for-org-secret';
     public const OPERATION_MATCH = 'GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD         = 'GET';
+    private const PATH           = '/orgs/{org}/dependabot/secrets/{secret_name}/repositories';
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The name of the secret.**/
@@ -17,41 +30,41 @@ final class ListSelectedReposForOrgSecret
     private int $page;
     /**The number of results per page (max 100).**/
     private int $per_page;
-    public function operationId() : string
+    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly Repositories $hydrator;
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Repositories $hydrator, string $org, string $secret_name, int $page = 1, int $per_page = 30)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $org, string $secret_name, int $page = 1, int $per_page = 30)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->org                     = $org;
+        $this->secret_name             = $secret_name;
+        $this->page                    = $page;
+        $this->per_page                = $per_page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
-        $this->org = $org;
-        $this->secret_name = $secret_name;
-        $this->page = $page;
-        $this->per_page = $per_page;
+        $this->hydrator                = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{org}', '{secret_name}', '{page}', '{per_page}'), array($this->org, $this->secret_name, $this->page, $this->per_page), '/orgs/{org}/dependabot/secrets/{secret_name}/repositories?page={page}&per_page={per_page}'));
+        return new Request(self::METHOD, str_replace(['{org}', '{secret_name}', '{page}', '{per_page}'], [$this->org, $this->secret_name, $this->page, $this->per_page], self::PATH . '?page={page}&per_page={per_page}'));
     }
-    /**
-     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListSelectedReposForOrgSecret\Response\Application\Json\H200
-     */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListSelectedReposForOrgSecret\Response\Application\Json\H200
+
+    function createResponse(ResponseInterface $response): H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body = json_decode($response->getBody()->getContents(), true);
+        $body        = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\ListSelectedReposForOrgSecret\Response\Application\Json\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\ListSelectedReposForOrgSecret\\Response\\Application\\Json\\H200', $body);
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\Actions\\ListSelectedReposForOrgSecret\\Response\\Applicationjson\\H200', $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

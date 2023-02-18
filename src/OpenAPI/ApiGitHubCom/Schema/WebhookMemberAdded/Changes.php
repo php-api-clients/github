@@ -1,15 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberAdded;
 
-final class Changes
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookMemberAdded\Changes\Permission;
+
+final readonly class Changes
 {
-    public const SCHEMA_JSON = '{"type":"object","properties":{"permission":{"required":["to"],"type":"object","properties":{"to":{"enum":["write","admin","read"],"type":"string"}}}}}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'WebhookMemberAdded\\Changes';
+    public const SCHEMA_JSON        = '{"type":"object","properties":{"permission":{"required":["to"],"type":"object","properties":{"to":{"enum":["write","admin","read"],"type":"string"}}}}}';
+    public const SCHEMA_TITLE       = '';
     public const SCHEMA_DESCRIPTION = '';
-    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Permission $permission;
-    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\Permission $permission)
+    public ?Permission $permission;
+
+    public function __construct(Permission $permission)
     {
         $this->permission = $permission;
     }

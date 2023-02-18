@@ -17,7 +17,7 @@ endif
 ifeq ("$(IN_DOCKER)","TRUE")
 	DOCKER_RUN=
 else
-	DOCKER_RUN=docker run --rm -it \
+	DOCKER_RUN=docker run --rm -i \
 		-v "`pwd`:`pwd`" \
 		-v "${COMPOSER_CACHE_DIR}:/home/app/.composer/cache" \
 		-w "`pwd`" \
@@ -71,4 +71,5 @@ help: ## Show this help ###
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[32m%-32s\033[0m %s\n", $$1, $$2}' | tr -d '#'
 
 generate-clients:
-	$(DOCKER_RUN) ls ./etc/clients | xargs -I % php ./vendor/bin/openapi-client-generator ./etc/clients/%
+	$(DOCKER_RUN) rm src/OpenAPI -Rf
+	$(DOCKER_RUN) ls ./etc/clients | xargs -I % $(DOCKER_RUN) php ./vendor/bin/openapi-client-generator ./etc/clients/%

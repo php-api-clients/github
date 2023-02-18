@@ -4,26 +4,22 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Apps;
 
 final class GetBySlug
 {
-    private const OPERATION_ID = 'apps/get-by-slug';
+    public const OPERATION_ID = 'apps/get-by-slug';
     public const OPERATION_MATCH = 'GET /apps/{app_slug}';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
-    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator;
+    private const METHOD = 'GET';
+    private const PATH = '/apps/{app_slug}';
     private string $app_slug;
-    public function operationId() : string
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Apps\CbAppSlugRcb $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Apps\CbAppSlugRcb $hydrator, string $app_slug)
     {
-        return self::OPERATION_ID;
-    }
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator $hydrator, string $app_slug)
-    {
-        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->app_slug = $app_slug;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
-        $this->app_slug = $app_slug;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request('GET', \str_replace(array('{app_slug}'), array($this->app_slug), '/apps/{app_slug}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{app_slug}'), array($this->app_slug), self::PATH));
     }
     /**
      * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Integration|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
@@ -33,7 +29,7 @@ final class GetBySlug
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Resource not found**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -41,7 +37,7 @@ final class GetBySlug
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Integration', $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,6 +54,6 @@ final class GetBySlug
                 }
                 break;
         }
-        throw new \RuntimeException('Unable to find matching reponse code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

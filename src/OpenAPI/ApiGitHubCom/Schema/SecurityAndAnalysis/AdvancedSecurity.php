@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\SecurityAndAnalysis;
 
-final class AdvancedSecurity
+final readonly class AdvancedSecurity
 {
-    public const SCHEMA_JSON = '{"type":"object","properties":{"status":{"enum":["enabled","disabled"],"type":"string"}}}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'SecurityAndAnalysis\\AdvancedSecurity';
+    public const SCHEMA_JSON        = '{"type":"object","properties":{"status":{"enum":["enabled","disabled"],"type":"string"}}}';
+    public const SCHEMA_TITLE       = '';
     public const SCHEMA_DESCRIPTION = '';
-    public readonly string $status;
+    public ?string $status;
+
     public function __construct(string $status)
     {
         $this->status = $status;

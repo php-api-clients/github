@@ -1,15 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectsV2ItemArchived;
 
-final class Changes
+use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookProjectsV2ItemArchived\Changes\ArchivedAt;
+
+final readonly class Changes
 {
-    public const SCHEMA_JSON = '{"type":"object","properties":{"archived_at":{"type":"object","properties":{"from":{"type":["string","null"],"format":"date-time"},"to":{"type":["string","null"],"format":"date-time"}}}}}';
-    public const SCHEMA_EXAMPLE = '[]';
-    public const SCHEMA_TITLE = 'WebhookProjectsV2ItemArchived\\Changes';
+    public const SCHEMA_JSON        = '{"type":"object","properties":{"archived_at":{"type":"object","properties":{"from":{"type":["string","null"],"format":"date-time"},"to":{"type":["string","null"],"format":"date-time"}}}}}';
+    public const SCHEMA_TITLE       = '';
     public const SCHEMA_DESCRIPTION = '';
-    public readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ArchivedAt $archived_at;
-    public function __construct(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Changes\ArchivedAt $archived_at)
+    public ?ArchivedAt $archived_at;
+
+    public function __construct(ArchivedAt $archived_at)
     {
         $this->archived_at = $archived_at;
     }
