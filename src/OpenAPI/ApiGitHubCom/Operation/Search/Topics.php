@@ -1,66 +1,51 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Search;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Topics\Response\Applicationjson\H200;
-use cebe\openapi\Reader;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-use RingCentral\Psr7\Request;
-use RuntimeException;
-
-use function json_decode;
-use function str_replace;
 
 final class Topics
 {
-    public const OPERATION_ID    = 'search/topics';
+    public const OPERATION_ID = 'search/topics';
     public const OPERATION_MATCH = 'GET /search/topics';
-    private const METHOD         = 'GET';
-    private const PATH           = '/search/topics';
+    private const METHOD = 'GET';
+    private const PATH = '/search/topics';
     /**The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query).**/
     private string $q;
     /**The number of results per page (max 100).**/
     private int $per_page;
     /**Page number of the results to fetch.**/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Search\Topics $hydrator;
-
-    public function __construct(SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Search\Topics $hydrator, string $q, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Search\Topics $hydrator, string $q, int $per_page = 30, int $page = 1)
     {
-        $this->q                       = $q;
-        $this->per_page                = $per_page;
-        $this->page                    = $page;
+        $this->q = $q;
+        $this->per_page = $per_page;
+        $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->hydrator = $hydrator;
     }
-
-    function createRequest(array $data = []): RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{q}', '{per_page}', '{page}'], [$this->q, $this->per_page, $this->page], self::PATH . '?q={q}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{q}', '{per_page}', '{page}'), array($this->q, $this->per_page, $this->page), self::PATH . '?q={q}&per_page={per_page}&page={page}'));
     }
-
-    function createResponse(ResponseInterface $response): H200
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Topics\Response\Applicationjson\H200
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Topics\Response\Applicationjson\H200
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body        = json_decode($response->getBody()->getContents(), true);
+        $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Search\Topics\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\Search\\Topics\\Response\\Applicationjson\\H200', $body);
                 }
-
                 break;
         }
-
-        throw new RuntimeException('Unable to find matching response code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

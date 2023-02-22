@@ -1,13 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Actions\UpdateRepoVariable\Request;
 
 final readonly class Applicationjson
 {
-    public const SCHEMA_JSON        = '{"type":"object","properties":{"name":{"type":"string","description":"The name of the variable."},"value":{"type":"string","description":"The value of the variable."}}}';
-    public const SCHEMA_TITLE       = '';
+    public const SCHEMA_JSON = '{"type":"object","properties":{"name":{"type":"string","description":"The name of the variable."},"value":{"type":"string","description":"The value of the variable."}}}';
+    public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     /**
      * The name of the variable.
@@ -17,10 +16,9 @@ final readonly class Applicationjson
      * The value of the variable.
      */
     public ?string $value;
-
     public function __construct(string $name, string $value)
     {
-        $this->name  = $name;
+        $this->name = $name;
         $this->value = $value;
     }
 }

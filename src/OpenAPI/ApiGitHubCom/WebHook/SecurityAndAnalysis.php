@@ -1,47 +1,36 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\WebHook;
 
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecurityAndAnalysis;
-use ApiClients\Contracts\OpenAPI\WebHookInterface;
-use cebe\openapi\Reader;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use RuntimeException;
-use Throwable;
-
-final class SecurityAndAnalysis implements WebHookInterface
+/**
+ * @internal
+ */
+final class SecurityAndAnalysis implements \ApiClients\Contracts\OpenAPI\WebHookInterface
 {
-    private readonly SchemaValidator $requestSchemaValidator;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\WebHook\SecurityAndAnalysis $hydrator;
-
-    public function __construct(SchemaValidator $requestSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\WebHook\SecurityAndAnalysis $hydrator)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\WebHook\SecurityAndAnalysis $hydrator)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
     }
-
-    public function resolve(array $headers, array $data): string
+    public function resolve(array $headers, array $data) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecurityAndAnalysis
     {
-        $error = new RuntimeException('No action matching given headers and data');
-        if ($headers['content-type'] === 'application/json') {
+        $error = new \RuntimeException('No action matching given headers and data');
+        if ($headers['content-type'] == 'application/json') {
             try {
-                $this->requestSchemaValidator->validate($headers['User-Agent'], Reader::readFromJson(UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($headers['X-Github-Hook-Id'], Reader::readFromJson(UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($headers['X-Github-Event'], Reader::readFromJson(UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($headers['X-Github-Hook-Installation-Target-Id'], Reader::readFromJson(UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($headers['X-Github-Hook-Installation-Target-Type'], Reader::readFromJson(UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($headers['X-GitHub-Delivery'], Reader::readFromJson(UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($headers['X-Hub-Signature-256'], Reader::readFromJson(UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($data, Reader::readFromJson(WebhookSecurityAndAnalysis::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
-                return '\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\WebhookSecurityAndAnalysis';
-            } catch (Throwable $error) {
+                $this->requestSchemaValidator->validate($headers['user-agent'], \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-id'], \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-event'], \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-id'], \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-delivery'], \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                return $this->hydrator->hydrateObject(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\WebhookSecurityAndAnalysis::class, $data);
+            } catch (\Throwable $error) {
                 goto actions_aaaaa;
             }
         }
-
         actions_aaaaa:
         throw $error;
     }

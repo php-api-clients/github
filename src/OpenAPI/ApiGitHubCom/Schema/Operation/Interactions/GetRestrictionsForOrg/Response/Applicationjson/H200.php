@@ -1,5 +1,6 @@
 <?php
 
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Interactions\GetRestrictionsForOrg\Response\Applicationjson;
 
 final readonly class H200

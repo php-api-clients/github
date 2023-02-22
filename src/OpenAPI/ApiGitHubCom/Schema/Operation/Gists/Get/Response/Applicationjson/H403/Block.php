@@ -1,5 +1,6 @@
 <?php
 
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\Gists\Get\Response\Applicationjson\H403;
 
 final readonly class Block

@@ -1,32 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\Pulls;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Comments\CbCommentIdRcb\Replies;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\CreateReplyForReviewComment\Request\Applicationjson;
-use cebe\openapi\Reader;
-use cebe\openapi\spec\Schema;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-use RingCentral\Psr7\Request;
-use RuntimeException;
-
-use function json_decode;
-use function json_encode;
-use function str_replace;
 
 final class CreateReplyForReviewComment
 {
-    public const OPERATION_ID    = 'pulls/create-reply-for-review-comment';
+    public const OPERATION_ID = 'pulls/create-reply-for-review-comment';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies';
-    private readonly SchemaValidator $requestSchemaValidator;
+    private const METHOD = 'POST';
+    private const PATH = '/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies';
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -35,54 +18,48 @@ final class CreateReplyForReviewComment
     private int $pull_number;
     /**The unique identifier of the comment.**/
     private int $comment_id;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Replies $hydrator;
-
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Replies $hydrator, string $owner, string $repo, int $pull_number, int $comment_id)
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Comments\CbCommentIdRcb\Replies $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Comments\CbCommentIdRcb\Replies $hydrator, string $owner, string $repo, int $pull_number, int $comment_id)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->pull_number             = $pull_number;
-        $this->comment_id              = $comment_id;
+        $this->requestSchemaValidator = $requestSchemaValidator;
+        $this->owner = $owner;
+        $this->repo = $repo;
+        $this->pull_number = $pull_number;
+        $this->comment_id = $comment_id;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->hydrator = $hydrator;
     }
-
-    function createRequest(array $data = []): RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Applicationjson::SCHEMA_JSON, Schema::class));
-
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{pull_number}', '{comment_id}'], [$this->owner, $this->repo, $this->pull_number, $this->comment_id], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Pulls\CreateReplyForReviewComment\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{pull_number}', '{comment_id}'), array($this->owner, $this->repo, $this->pull_number, $this->comment_id), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
     }
-
-    function createResponse(ResponseInterface $response): PullRequestReviewComment|BasicError
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body        = json_decode($response->getBody()->getContents(), true);
+        $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Resource not found**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(PullRequestReviewComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\PullRequestReviewComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\PullRequestReviewComment', $body);
                 }
-
                 break;
             /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
-
                 break;
         }
-
-        throw new RuntimeException('Unable to find matching response code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

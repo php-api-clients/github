@@ -1,99 +1,75 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Operation\CodeScanning;
-
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeScanning\Codeql\Databases\CbLanguageRcb;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase;
-use ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503;
-use cebe\openapi\Reader;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-use RingCentral\Psr7\Request;
-use RuntimeException;
-
-use function json_decode;
-use function str_replace;
 
 final class GetCodeqlDatabase
 {
-    public const OPERATION_ID    = 'code-scanning/get-codeql-database';
+    public const OPERATION_ID = 'code-scanning/get-codeql-database';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
+    private const METHOD = 'GET';
+    private const PATH = '/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The language of the CodeQL database.**/
     private string $language;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly CbLanguageRcb $hydrator;
-
-    public function __construct(SchemaValidator $responseSchemaValidator, CbLanguageRcb $hydrator, string $owner, string $repo, string $language)
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeScanning\Codeql\Databases\CbLanguageRcb $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeScanning\Codeql\Databases\CbLanguageRcb $hydrator, string $owner, string $repo, string $language)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->language                = $language;
+        $this->owner = $owner;
+        $this->repo = $repo;
+        $this->language = $language;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->hydrator = $hydrator;
     }
-
-    function createRequest(array $data = []): RequestInterface
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{language}'], [$this->owner, $this->repo, $this->language], self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{language}'), array($this->owner, $this->repo, $this->language), self::PATH));
     }
-
-    function createResponse(ResponseInterface $response): CodeScanningCodeqlDatabase|BasicError|H503
+    /**
+     * @return \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError|\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
     {
         $contentType = $response->getHeaderLine('Content-Type');
-        $body        = json_decode($response->getBody()->getContents(), true);
+        $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Service unavailable**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(CodeScanningCodeqlDatabase::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\CodeScanningCodeqlDatabase::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\CodeScanningCodeqlDatabase', $body);
                 }
-
                 break;
             /**Service unavailable**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
-
                 break;
             /**Service unavailable**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\BasicError', $body);
                 }
-
                 break;
             /**Service unavailable**/
             case 503:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\OpenAPI\\ApiGitHubCom\\Schema\\Operation\\SecretScanning\\ListAlertsForEnterprise\\Response\\Applicationjson\\H503', $body);
                 }
-
                 break;
         }
-
-        throw new RuntimeException('Unable to find matching response code and content type');
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

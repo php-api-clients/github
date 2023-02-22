@@ -6,119 +6,124 @@ namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Hydrator\Operation;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
-use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
-use EventSauce\ObjectHydrator\PropertySerializers\SerializeDateTime;
-use EventSauce\ObjectHydrator\PropertySerializers\SerializeUuidToString;
 use EventSauce\ObjectHydrator\UnableToHydrateObject;
 use EventSauce\ObjectHydrator\UnableToSerializeObject;
 use Generator;
-use LogicException;
-use Throwable;
 
 class Octocat implements ObjectMapper
 {
     private array $hydrationStack = [];
-
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     /**
-     * @param class-string<T> $className
-     *
-     * @return T
-     *
      * @template T of object
+     * @param class-string<T> $className
+     * @return T
      */
     public function hydrateObject(string $className, array $payload): object
     {
-        return match ($className) {
+        return match($className) {
+            
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
-
+    
+    
+    
     public function serializeObject(object $object): mixed
     {
         try {
-            $className = $object::class;
+            $className = get_class($object);
 
-            return match ($className) {
+            return match($className) {
                 'array' => $this->serializeValuearray($object),
                 'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new \LogicException('No serialization defined for $className'),
             };
-        } catch (Throwable $exception) {
+        } catch (\Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);
         }
     }
-
+    
+    
     private function serializeValuearray(mixed $value): mixed
     {
         static $serializer;
-
+        
         if ($serializer === null) {
-            $serializer = new SerializeArrayItems(...[]);
+            $serializer = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
         }
-
+        
         return $serializer->serialize($value, $this);
     }
+
 
     private function serializeValueRamsey⚡️Uuid⚡️UuidInterface(mixed $value): mixed
     {
         static $serializer;
-
+        
         if ($serializer === null) {
-            $serializer = new SerializeUuidToString(...[]);
+            $serializer = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeUuidToString(...array (
+));
         }
-
+        
         return $serializer->serialize($value, $this);
     }
+
 
     private function serializeValueDateTime(mixed $value): mixed
     {
         static $serializer;
-
+        
         if ($serializer === null) {
-            $serializer = new SerializeDateTime(...[]);
+            $serializer = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeDateTime(...array (
+));
         }
-
+        
         return $serializer->serialize($value, $this);
     }
+
 
     private function serializeValueDateTimeImmutable(mixed $value): mixed
     {
         static $serializer;
-
+        
         if ($serializer === null) {
-            $serializer = new SerializeDateTime(...[]);
+            $serializer = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeDateTime(...array (
+));
         }
-
+        
         return $serializer->serialize($value, $this);
     }
+
 
     private function serializeValueDateTimeInterface(mixed $value): mixed
     {
         static $serializer;
-
+        
         if ($serializer === null) {
-            $serializer = new SerializeDateTime(...[]);
+            $serializer = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeDateTime(...array (
+));
         }
-
+        
         return $serializer->serialize($value, $this);
     }
+    
+    
 
     /**
+     * @template T
+     *
      * @param class-string<T> $className
      * @param iterable<array> $payloads;
      *
      * @return IterableList<T>
      *
      * @throws UnableToHydrateObject
-     *
-     * @template T
      */
     public function hydrateObjects(string $className, iterable $payloads): IterableList
     {
@@ -133,14 +138,14 @@ class Octocat implements ObjectMapper
     }
 
     /**
+     * @template T
+     *
      * @param class-string<T> $className
      * @param iterable<array> $payloads;
      *
      * @return IterableList<T>
      *
      * @throws UnableToSerializeObject
-     *
-     * @template T
      */
     public function serializeObjects(iterable $payloads): IterableList
     {

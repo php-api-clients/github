@@ -13,4 +13,4 @@ parameters:
 			- WyriHaximus\TestUtilities\TestCase
 
 includes:
-	- vendor/wyrihaximus/phpstan-rules-wrapper/wrapper.neon
+	- vendor/wyrihaximus/async-test-utilities/rules.neon

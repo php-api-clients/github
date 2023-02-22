@@ -1,24 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\FileCommit\Commit;
 
 final readonly class Verification
 {
-    public const SCHEMA_JSON        = '{"type":"object","properties":{"verified":{"type":"boolean"},"reason":{"type":"string"},"signature":{"type":["string","null"]},"payload":{"type":["string","null"]}}}';
-    public const SCHEMA_TITLE       = '';
+    public const SCHEMA_JSON = '{"type":"object","properties":{"verified":{"type":"boolean"},"reason":{"type":"string"},"signature":{"type":["string","null"]},"payload":{"type":["string","null"]}}}';
+    public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public ?bool $verified;
     public ?string $reason;
     public ?string $signature;
     public ?string $payload;
-
     public function __construct(bool $verified, string $reason, string $signature, string $payload)
     {
-        $this->verified  = $verified;
-        $this->reason    = $reason;
+        $this->verified = $verified;
+        $this->reason = $reason;
         $this->signature = $signature;
-        $this->payload   = $payload;
+        $this->payload = $payload;
     }
 }

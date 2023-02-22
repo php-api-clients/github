@@ -1,5 +1,6 @@
 <?php
 
+declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom\Schema\Activity\MarkRepoNotificationsAsRead\Request;
 
 final readonly class Applicationjson
