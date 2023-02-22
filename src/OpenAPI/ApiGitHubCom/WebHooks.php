@@ -3,7 +3,7 @@
 declare (strict_types=1);
 namespace ApiClients\Client\Github\OpenAPI\ApiGitHubCom;
 
-final class WebHooks implements \ApiClients\Contracts\OpenAPI\WebHookInterface
+final class WebHooks implements \ApiClients\Contracts\OpenAPI\WebHooksInterface
 {
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     private readonly Hydrators $hydrator;

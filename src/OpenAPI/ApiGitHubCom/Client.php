@@ -13255,7 +13255,7 @@ final class Client implements ClientInterface
         }
         throw new \InvalidArgumentException();
     }
-    public function webHooks() : WebHooks
+    public function webHooks() : \ApiClients\Contracts\OpenAPI\WebHooksInterface
     {
         return $this->webHooks;
     }
