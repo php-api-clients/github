@@ -1,0 +1,69 @@
+<?php
+
+declare (strict_types=1);
+namespace ApiClients\Client\Github\Operation\Users;
+
+final class Block
+{
+    public const OPERATION_ID = 'users/block';
+    public const OPERATION_MATCH = 'PUT /user/blocks/{username}';
+    private const METHOD = 'PUT';
+    private const PATH = '/user/blocks/{username}';
+    /**The handle for the GitHub user account.**/
+    private string $username;
+    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly \ApiClients\Client\Github\Hydrator\Operation\User\Blocks\CbUsernameRcb $hydrator;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, \ApiClients\Client\Github\Hydrator\Operation\User\Blocks\CbUsernameRcb $hydrator, string $username)
+    {
+        $this->username = $username;
+        $this->responseSchemaValidator = $responseSchemaValidator;
+        $this->hydrator = $hydrator;
+    }
+    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    {
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{username}'), array($this->username), self::PATH));
+    }
+    /**
+     * @return \ApiClients\Client\Github\Schema\BasicError|\ApiClients\Client\Github\Schema\ValidationError
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \ApiClients\Client\Github\Schema\BasicError|\ApiClients\Client\Github\Schema\ValidationError
+    {
+        $contentType = $response->getHeaderLine('Content-Type');
+        $body = json_decode($response->getBody()->getContents(), true);
+        switch ($response->getStatusCode()) {
+            /**Validation failed, or the endpoint has been spammed.**/
+            case 404:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Validation failed, or the endpoint has been spammed.**/
+            case 403:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Validation failed, or the endpoint has been spammed.**/
+            case 401:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\Schema\\BasicError', $body);
+                }
+                break;
+            /**Validation failed, or the endpoint has been spammed.**/
+            case 422:
+                switch ($contentType) {
+                    case 'application/json':
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(\ApiClients\Client\Github\Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject('\\ApiClients\\Client\\Github\\Schema\\ValidationError', $body);
+                }
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching response code and content type');
+    }
+}
