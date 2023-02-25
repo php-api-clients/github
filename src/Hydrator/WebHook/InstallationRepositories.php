@@ -23,7 +23,8 @@ class InstallationRepositories implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesRemoved' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesRemoved($payload),
+            'ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesAdded($payload),
+                'ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesRemoved' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesRemoved($payload),
                 'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\Github\Schema\Installation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Installation($payload),
                 'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
@@ -41,6 +42,192 @@ class InstallationRepositories implements ObjectMapper
     }
     
             
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesAdded(array $payload): \ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Installation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repositories_added'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repositories_added';
+                    goto after_repositories_added;
+                }
+
+                $properties['repositories_added'] = $value;
+    
+                after_repositories_added:
+
+                $value = $payload['repositories_removed'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repositories_removed';
+                    goto after_repositories_removed;
+                }
+
+                $properties['repositories_removed'] = $value;
+    
+                after_repositories_removed:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['repository_selection'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository_selection';
+                    goto after_repository_selection;
+                }
+
+                $properties['repository_selection'] = $value;
+    
+                after_repository_selection:
+
+                $value = $payload['requester'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'requester';
+                    goto after_requester;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'requester';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['requester'] = $value;
+    
+                after_requester:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesRemoved(array $payload): \ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesRemoved
         {
             $properties = []; 
@@ -4205,6 +4392,7 @@ class InstallationRepositories implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+                'ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesAdded($object),
                 'ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesRemoved' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesRemoved($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -4276,6 +4464,105 @@ class InstallationRepositories implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookInstallationRepositoriesAdded(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookInstallationRepositoriesAdded);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+
+        if ($installation === null) {
+            goto after_installation;
+        }
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Installation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repositories_added = $object->repositories_added;
+
+        if ($repositories_added === null) {
+            goto after_repositories_added;
+        }
+        static $repositories_addedSerializer0;
+
+        if ($repositories_addedSerializer0 === null) {
+            $repositories_addedSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $repositories_added = $repositories_addedSerializer0->serialize($repositories_added, $this);
+        after_repositories_added:        $result['repositories_added'] = $repositories_added;
+
+        
+        $repositories_removed = $object->repositories_removed;
+
+        if ($repositories_removed === null) {
+            goto after_repositories_removed;
+        }
+        static $repositories_removedSerializer0;
+
+        if ($repositories_removedSerializer0 === null) {
+            $repositories_removedSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $repositories_removed = $repositories_removedSerializer0->serialize($repositories_removed, $this);
+        after_repositories_removed:        $result['repositories_removed'] = $repositories_removed;
+
+        
+        $repository = $object->repository;
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $repository_selection = $object->repository_selection;
+
+        if ($repository_selection === null) {
+            goto after_repository_selection;
+        }
+        after_repository_selection:        $result['repository_selection'] = $repository_selection;
+
+        
+        $requester = $object->requester;
+
+        if ($requester === null) {
+            goto after_requester;
+        }
+        $requester = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($requester);
+        after_requester:        $result['requester'] = $requester;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
     }
 
     

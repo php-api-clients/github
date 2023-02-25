@@ -23,7 +23,8 @@ class Star implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\WebhookStarDeleted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarDeleted($payload),
+            'ApiClients\Client\Github\Schema\WebhookStarCreated' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarCreated($payload),
+                'ApiClients\Client\Github\Schema\WebhookStarDeleted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarDeleted($payload),
                 'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
@@ -38,6 +39,150 @@ class Star implements ObjectMapper
     }
     
             
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarCreated(array $payload): \ApiClients\Client\Github\Schema\WebhookStarCreated
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+                $value = $payload['starred_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'starred_at';
+                    goto after_starred_at;
+                }
+
+                $properties['starred_at'] = $value;
+    
+                after_starred_at:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookStarCreated', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookStarCreated::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookStarCreated(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookStarCreated', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarDeleted(array $payload): \ApiClients\Client\Github\Schema\WebhookStarDeleted
         {
             $properties = []; 
@@ -3284,6 +3429,7 @@ class Star implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+                'ApiClients\Client\Github\Schema\WebhookStarCreated' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarCreated($object),
                 'ApiClients\Client\Github\Schema\WebhookStarDeleted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarDeleted($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -3355,6 +3501,64 @@ class Star implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookStarCreated(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookStarCreated);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+        
+        $starred_at = $object->starred_at;
+
+        if ($starred_at === null) {
+            goto after_starred_at;
+        }
+        after_starred_at:        $result['starred_at'] = $starred_at;
+
+
+        return $result;
     }
 
     

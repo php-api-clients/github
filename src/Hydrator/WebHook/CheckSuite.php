@@ -23,19 +23,26 @@ class CheckSuite implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested($payload),
-                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($payload),
-                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($payload),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($payload),
                 'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\Github\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($payload),
                 'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($payload),
-                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($payload),
                 'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($payload),
                 'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($payload),
                 'ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($payload),
                 'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($payload),
                 'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
@@ -46,6 +53,352 @@ class CheckSuite implements ObjectMapper
     }
     
             
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['actions_meta'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'actions_meta';
+                    goto after_actions_meta;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'actions_meta';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['actions_meta'] = $value;
+    
+                after_actions_meta:
+
+                $value = $payload['check_suite'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'check_suite';
+                    goto after_check_suite;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'check_suite';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['check_suite'] = $value;
+    
+                after_check_suite:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['actions_meta'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'actions_meta';
+                    goto after_actions_meta;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'actions_meta';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['actions_meta'] = $value;
+    
+                after_actions_meta:
+
+                $value = $payload['check_suite'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'check_suite';
+                    goto after_check_suite;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'check_suite';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['check_suite'] = $value;
+    
+                after_check_suite:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested
         {
             $properties = []; 
@@ -219,49 +572,29 @@ class CheckSuite implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['rerun_info'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'rerun_info';
-                    goto after_rerun_info;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'rerun_info';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['rerun_info'] = $value;
-    
-                after_rerun_info:
-
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta', $exception, stack: $this->hydrationStack);
             }
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite
         {
             $properties = []; 
             $missingFields = [];
@@ -288,7 +621,7 @@ class CheckSuite implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'app';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -484,17 +817,17 @@ class CheckSuite implements ObjectMapper
                 after_url:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -2220,51 +2553,525 @@ class CheckSuite implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['plan_id'] ?? null;
+                $value = $payload['after'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'plan_id';
-                    goto after_plan_id;
+                    $missingFields[] = 'after';
+                    goto after_after;
                 }
 
-                $properties['plan_id'] = $value;
+                $properties['after'] = $value;
     
-                after_plan_id:
+                after_after:
 
-                $value = $payload['job_ids'] ?? null;
+                $value = $payload['app'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'job_ids';
-                    goto after_job_ids;
+                    $missingFields[] = 'app';
+                    goto after_app;
                 }
 
-                $properties['job_ids'] = $value;
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'app';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['app'] = $value;
     
-                after_job_ids:
+                after_app:
+
+                $value = $payload['before'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'before';
+                    goto after_before;
+                }
+
+                $properties['before'] = $value;
+    
+                after_before:
+
+                $value = $payload['check_runs_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'check_runs_url';
+                    goto after_check_runs_url;
+                }
+
+                $properties['check_runs_url'] = $value;
+    
+                after_check_runs_url:
+
+                $value = $payload['conclusion'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'conclusion';
+                    goto after_conclusion;
+                }
+
+                $properties['conclusion'] = $value;
+    
+                after_conclusion:
+
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['head_branch'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_branch';
+                    goto after_head_branch;
+                }
+
+                $properties['head_branch'] = $value;
+    
+                after_head_branch:
+
+                $value = $payload['head_commit'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_commit';
+                    goto after_head_commit;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'head_commit';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['head_commit'] = $value;
+    
+                after_head_commit:
+
+                $value = $payload['head_sha'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_sha';
+                    goto after_head_sha;
+                }
+
+                $properties['head_sha'] = $value;
+    
+                after_head_sha:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['latest_check_runs_count'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'latest_check_runs_count';
+                    goto after_latest_check_runs_count;
+                }
+
+                $properties['latest_check_runs_count'] = $value;
+    
+                after_latest_check_runs_count:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['pull_requests'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'pull_requests';
+                    goto after_pull_requests;
+                }
+
+                $properties['pull_requests'] = $value;
+    
+                after_pull_requests:
+
+                $value = $payload['rerequestable'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rerequestable';
+                    goto after_rerequestable;
+                }
+
+                $properties['rerequestable'] = $value;
+    
+                after_rerequestable:
+
+                $value = $payload['runs_rerequestable'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'runs_rerequestable';
+                    goto after_runs_rerequestable;
+                }
+
+                $properties['runs_rerequestable'] = $value;
+    
+                after_runs_rerequestable:
+
+                $value = $payload['status'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'status';
+                    goto after_status;
+                }
+
+                $properties['status'] = $value;
+    
+                after_status:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite', $exception, stack: $this->hydrationStack);
             }
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['rerun_info'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rerun_info';
+                    goto after_rerun_info;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rerun_info';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rerun_info'] = $value;
+    
+                after_rerun_info:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['after'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'after';
+                    goto after_after;
+                }
+
+                $properties['after'] = $value;
+    
+                after_after:
+
+                $value = $payload['app'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'app';
+                    goto after_app;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'app';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['app'] = $value;
+    
+                after_app:
+
+                $value = $payload['before'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'before';
+                    goto after_before;
+                }
+
+                $properties['before'] = $value;
+    
+                after_before:
+
+                $value = $payload['check_runs_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'check_runs_url';
+                    goto after_check_runs_url;
+                }
+
+                $properties['check_runs_url'] = $value;
+    
+                after_check_runs_url:
+
+                $value = $payload['conclusion'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'conclusion';
+                    goto after_conclusion;
+                }
+
+                $properties['conclusion'] = $value;
+    
+                after_conclusion:
+
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['head_branch'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_branch';
+                    goto after_head_branch;
+                }
+
+                $properties['head_branch'] = $value;
+    
+                after_head_branch:
+
+                $value = $payload['head_commit'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_commit';
+                    goto after_head_commit;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'head_commit';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['head_commit'] = $value;
+    
+                after_head_commit:
+
+                $value = $payload['head_sha'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_sha';
+                    goto after_head_sha;
+                }
+
+                $properties['head_sha'] = $value;
+    
+                after_head_sha:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['latest_check_runs_count'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'latest_check_runs_count';
+                    goto after_latest_check_runs_count;
+                }
+
+                $properties['latest_check_runs_count'] = $value;
+    
+                after_latest_check_runs_count:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['pull_requests'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'pull_requests';
+                    goto after_pull_requests;
+                }
+
+                $properties['pull_requests'] = $value;
+    
+                after_pull_requests:
+
+                $value = $payload['rerequestable'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rerequestable';
+                    goto after_rerequestable;
+                }
+
+                $properties['rerequestable'] = $value;
+    
+                after_rerequestable:
+
+                $value = $payload['runs_rerequestable'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'runs_rerequestable';
+                    goto after_runs_rerequestable;
+                }
+
+                $properties['runs_rerequestable'] = $value;
+    
+                after_runs_rerequestable:
+
+                $value = $payload['status'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'status';
+                    goto after_status;
+                }
+
+                $properties['status'] = $value;
+    
+                after_status:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App
         {
             $properties = []; 
             $missingFields = [];
@@ -2421,17 +3228,17 @@ class CheckSuite implements ObjectMapper
                 after_updated_at:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -3616,6 +4423,394 @@ class CheckSuite implements ObjectMapper
         }
 
         
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['description'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'description';
+                    goto after_description;
+                }
+
+                $properties['description'] = $value;
+    
+                after_description:
+
+                $value = $payload['events'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'events';
+                    goto after_events;
+                }
+
+                $properties['events'] = $value;
+    
+                after_events:
+
+                $value = $payload['external_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'external_url';
+                    goto after_external_url;
+                }
+
+                $properties['external_url'] = $value;
+    
+                after_external_url:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['owner'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'owner';
+                    goto after_owner;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'owner';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['owner'] = $value;
+    
+                after_owner:
+
+                $value = $payload['permissions'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'permissions';
+                    goto after_permissions;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'permissions';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['permissions'] = $value;
+    
+                after_permissions:
+
+                $value = $payload['slug'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'slug';
+                    goto after_slug;
+                }
+
+                $properties['slug'] = $value;
+    
+                after_slug:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['plan_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'plan_id';
+                    goto after_plan_id;
+                }
+
+                $properties['plan_id'] = $value;
+    
+                after_plan_id:
+
+                $value = $payload['job_ids'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'job_ids';
+                    goto after_job_ids;
+                }
+
+                $properties['job_ids'] = $value;
+    
+                after_job_ids:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['description'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'description';
+                    goto after_description;
+                }
+
+                $properties['description'] = $value;
+    
+                after_description:
+
+                $value = $payload['events'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'events';
+                    goto after_events;
+                }
+
+                $properties['events'] = $value;
+    
+                after_events:
+
+                $value = $payload['external_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'external_url';
+                    goto after_external_url;
+                }
+
+                $properties['external_url'] = $value;
+    
+                after_external_url:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['owner'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'owner';
+                    goto after_owner;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'owner';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['owner'] = $value;
+    
+                after_owner:
+
+                $value = $payload['permissions'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'permissions';
+                    goto after_permissions;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'permissions';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['permissions'] = $value;
+    
+                after_permissions:
+
+                $value = $payload['slug'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'slug';
+                    goto after_slug;
+                }
+
+                $properties['slug'] = $value;
+    
+                after_slug:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy(array $payload): \ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy
         {
             $properties = []; 
@@ -4649,6 +5844,8 @@ class CheckSuite implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted($object),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested($object),
                 'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -4720,6 +5917,142 @@ class CheckSuite implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $actions_meta = $object->actions_meta;
+
+        if ($actions_meta === null) {
+            goto after_actions_meta;
+        }
+        $actions_meta = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta($actions_meta);
+        after_actions_meta:        $result['actions_meta'] = $actions_meta;
+
+        
+        $check_suite = $object->check_suite;
+
+        if ($check_suite === null) {
+            goto after_check_suite;
+        }
+        $check_suite = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($check_suite);
+        after_check_suite:        $result['check_suite'] = $check_suite;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $actions_meta = $object->actions_meta;
+
+        if ($actions_meta === null) {
+            goto after_actions_meta;
+        }
+        $actions_meta = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta($actions_meta);
+        after_actions_meta:        $result['actions_meta'] = $actions_meta;
+
+        
+        $check_suite = $object->check_suite;
+
+        if ($check_suite === null) {
+            goto after_check_suite;
+        }
+        $check_suite = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($check_suite);
+        after_check_suite:        $result['check_suite'] = $check_suite;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
     }
 
     

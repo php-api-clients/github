@@ -23,16 +23,28 @@ class ProjectCard implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\WebhookProjectCardMoved' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved($payload),
-                'ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes($payload),
+            'ApiClients\Client\Github\Schema\WebhookProjectCardConverted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardCreated' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardCreated($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardDeleted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardEdited' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardMoved' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardConverted\Changes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️Changes($payload),
                 'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardConverted\ProjectCard' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard($payload),
                 'ApiClients\Client\Github\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($payload),
                 'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes⚡️ColumnId($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardDeleted\ProjectCard' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted⚡️ProjectCard($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited⚡️Changes($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes($payload),
+                'ApiClients\Client\Github\Schema\WebhookDiscussionCommentEdited\Changes\Body' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($payload),
+                'ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($payload),
                 'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
+                'ApiClients\Client\Github\Schema\WebhookIssueCommentDeleted\Comment\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Comment⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes\Note' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited⚡️Changes⚡️Note($payload),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes⚡️ColumnId($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -40,6 +52,649 @@ class ProjectCard implements ObjectMapper
     }
     
             
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardConverted
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['changes'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'changes';
+                    goto after_changes;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'changes';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️Changes($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['changes'] = $value;
+    
+                after_changes:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['project_card'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'project_card';
+                    goto after_project_card;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'project_card';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['project_card'] = $value;
+    
+                after_project_card:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardConverted', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardConverted::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardConverted(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardConverted', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardCreated(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardCreated
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['project_card'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'project_card';
+                    goto after_project_card;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'project_card';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['project_card'] = $value;
+    
+                after_project_card:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardCreated', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardCreated::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardCreated(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardCreated', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardDeleted
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['project_card'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'project_card';
+                    goto after_project_card;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'project_card';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted⚡️ProjectCard($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['project_card'] = $value;
+    
+                after_project_card:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $properties['repository'] = null;
+                    goto after_repository;
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardDeleted', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardDeleted::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardDeleted(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardDeleted', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardEdited
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['changes'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'changes';
+                    goto after_changes;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'changes';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited⚡️Changes($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['changes'] = $value;
+    
+                after_changes:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['project_card'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'project_card';
+                    goto after_project_card;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'project_card';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['project_card'] = $value;
+    
+                after_project_card:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardEdited', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardEdited::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardEdited(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardEdited', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardMoved
         {
             $properties = []; 
@@ -204,44 +859,44 @@ class ProjectCard implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️Changes(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardConverted\Changes
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['column_id'] ?? null;
+                $value = $payload['note'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'column_id';
-                    goto after_column_id;
+                    $missingFields[] = 'note';
+                    goto after_note;
                 }
 
                 if (is_array($value)) {
                     try {
-                        $this->hydrationStack[] = 'column_id';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes⚡️ColumnId($value);
+                        $this->hydrationStack[] = 'note';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
                 }
 
-                $properties['column_id'] = $value;
+                $properties['note'] = $value;
     
-                after_column_id:
+                after_note:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardConverted\Changes', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardConverted\Changes::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardConverted\Changes(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardConverted\Changes', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -572,6 +1227,180 @@ class ProjectCard implements ObjectMapper
                 return new \ApiClients\Client\Github\Schema\OrganizationSimple(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardConverted\ProjectCard
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['after_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'after_id';
+                    goto after_after_id;
+                }
+
+                $properties['after_id'] = $value;
+    
+                after_after_id:
+
+                $value = $payload['archived'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'archived';
+                    goto after_archived;
+                }
+
+                $properties['archived'] = $value;
+    
+                after_archived:
+
+                $value = $payload['column_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'column_id';
+                    goto after_column_id;
+                }
+
+                $properties['column_id'] = $value;
+    
+                after_column_id:
+
+                $value = $payload['column_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'column_url';
+                    goto after_column_url;
+                }
+
+                $properties['column_url'] = $value;
+    
+                after_column_url:
+
+                $value = $payload['content_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'content_url';
+                    goto after_content_url;
+                }
+
+                $properties['content_url'] = $value;
+    
+                after_content_url:
+
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['creator'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'creator';
+                    goto after_creator;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'creator';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['creator'] = $value;
+    
+                after_creator:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['note'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'note';
+                    goto after_note;
+                }
+
+                $properties['note'] = $value;
+    
+                after_note:
+
+                $value = $payload['project_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'project_url';
+                    goto after_project_url;
+                }
+
+                $properties['project_url'] = $value;
+    
+                after_project_url:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardConverted\ProjectCard', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardConverted\ProjectCard::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardConverted\ProjectCard(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardConverted\ProjectCard', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -1967,7 +2796,265 @@ class ProjectCard implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes⚡️ColumnId(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted⚡️ProjectCard(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardDeleted\ProjectCard
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['after_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'after_id';
+                    goto after_after_id;
+                }
+
+                $properties['after_id'] = $value;
+    
+                after_after_id:
+
+                $value = $payload['archived'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'archived';
+                    goto after_archived;
+                }
+
+                $properties['archived'] = $value;
+    
+                after_archived:
+
+                $value = $payload['column_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'column_id';
+                    goto after_column_id;
+                }
+
+                $properties['column_id'] = $value;
+    
+                after_column_id:
+
+                $value = $payload['column_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'column_url';
+                    goto after_column_url;
+                }
+
+                $properties['column_url'] = $value;
+    
+                after_column_url:
+
+                $value = $payload['content_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'content_url';
+                    goto after_content_url;
+                }
+
+                $properties['content_url'] = $value;
+    
+                after_content_url:
+
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['creator'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'creator';
+                    goto after_creator;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'creator';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Comment⚡️User($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['creator'] = $value;
+    
+                after_creator:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['note'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'note';
+                    goto after_note;
+                }
+
+                $properties['note'] = $value;
+    
+                after_note:
+
+                $value = $payload['project_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'project_url';
+                    goto after_project_url;
+                }
+
+                $properties['project_url'] = $value;
+    
+                after_project_url:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardDeleted\ProjectCard', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardDeleted\ProjectCard::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardDeleted\ProjectCard(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardDeleted\ProjectCard', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited⚡️Changes(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['note'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'note';
+                    goto after_note;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'note';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited⚡️Changes⚡️Note($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['note'] = $value;
+    
+                after_note:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['column_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'column_id';
+                    goto after_column_id;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'column_id';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes⚡️ColumnId($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['column_id'] = $value;
+    
+                after_column_id:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body(array $payload): \ApiClients\Client\Github\Schema\WebhookDiscussionCommentEdited\Changes\Body
         {
             $properties = []; 
             $missingFields = [];
@@ -1985,17 +3072,270 @@ class ProjectCard implements ObjectMapper
                 after_from:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookDiscussionCommentEdited\Changes\Body', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookDiscussionCommentEdited\Changes\Body::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookDiscussionCommentEdited\Changes\Body(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookDiscussionCommentEdited\Changes\Body', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy(array $payload): \ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['avatar_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'avatar_url';
+                    goto after_avatar_url;
+                }
+
+                $properties['avatar_url'] = $value;
+    
+                after_avatar_url:
+
+                $value = $payload['deleted'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'deleted';
+                    goto after_deleted;
+                }
+
+                $properties['deleted'] = $value;
+    
+                after_deleted:
+
+                $value = $payload['email'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'email';
+                    goto after_email;
+                }
+
+                $properties['email'] = $value;
+    
+                after_email:
+
+                $value = $payload['events_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'events_url';
+                    goto after_events_url;
+                }
+
+                $properties['events_url'] = $value;
+    
+                after_events_url:
+
+                $value = $payload['followers_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'followers_url';
+                    goto after_followers_url;
+                }
+
+                $properties['followers_url'] = $value;
+    
+                after_followers_url:
+
+                $value = $payload['following_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'following_url';
+                    goto after_following_url;
+                }
+
+                $properties['following_url'] = $value;
+    
+                after_following_url:
+
+                $value = $payload['gists_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'gists_url';
+                    goto after_gists_url;
+                }
+
+                $properties['gists_url'] = $value;
+    
+                after_gists_url:
+
+                $value = $payload['gravatar_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'gravatar_id';
+                    goto after_gravatar_id;
+                }
+
+                $properties['gravatar_id'] = $value;
+    
+                after_gravatar_id:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['login'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'login';
+                    goto after_login;
+                }
+
+                $properties['login'] = $value;
+    
+                after_login:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['organizations_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organizations_url';
+                    goto after_organizations_url;
+                }
+
+                $properties['organizations_url'] = $value;
+    
+                after_organizations_url:
+
+                $value = $payload['received_events_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'received_events_url';
+                    goto after_received_events_url;
+                }
+
+                $properties['received_events_url'] = $value;
+    
+                after_received_events_url:
+
+                $value = $payload['repos_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repos_url';
+                    goto after_repos_url;
+                }
+
+                $properties['repos_url'] = $value;
+    
+                after_repos_url:
+
+                $value = $payload['site_admin'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'site_admin';
+                    goto after_site_admin;
+                }
+
+                $properties['site_admin'] = $value;
+    
+                after_site_admin:
+
+                $value = $payload['starred_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'starred_url';
+                    goto after_starred_url;
+                }
+
+                $properties['starred_url'] = $value;
+    
+                after_starred_url:
+
+                $value = $payload['subscriptions_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'subscriptions_url';
+                    goto after_subscriptions_url;
+                }
+
+                $properties['subscriptions_url'] = $value;
+    
+                after_subscriptions_url:
+
+                $value = $payload['type'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'type';
+                    goto after_type;
+                }
+
+                $properties['type'] = $value;
+    
+                after_type:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -3074,6 +4414,325 @@ class ProjectCard implements ObjectMapper
         }
 
         
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Comment⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookIssueCommentDeleted\Comment\User
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['avatar_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'avatar_url';
+                    goto after_avatar_url;
+                }
+
+                $properties['avatar_url'] = $value;
+    
+                after_avatar_url:
+
+                $value = $payload['deleted'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'deleted';
+                    goto after_deleted;
+                }
+
+                $properties['deleted'] = $value;
+    
+                after_deleted:
+
+                $value = $payload['email'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'email';
+                    goto after_email;
+                }
+
+                $properties['email'] = $value;
+    
+                after_email:
+
+                $value = $payload['events_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'events_url';
+                    goto after_events_url;
+                }
+
+                $properties['events_url'] = $value;
+    
+                after_events_url:
+
+                $value = $payload['followers_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'followers_url';
+                    goto after_followers_url;
+                }
+
+                $properties['followers_url'] = $value;
+    
+                after_followers_url:
+
+                $value = $payload['following_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'following_url';
+                    goto after_following_url;
+                }
+
+                $properties['following_url'] = $value;
+    
+                after_following_url:
+
+                $value = $payload['gists_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'gists_url';
+                    goto after_gists_url;
+                }
+
+                $properties['gists_url'] = $value;
+    
+                after_gists_url:
+
+                $value = $payload['gravatar_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'gravatar_id';
+                    goto after_gravatar_id;
+                }
+
+                $properties['gravatar_id'] = $value;
+    
+                after_gravatar_id:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['login'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'login';
+                    goto after_login;
+                }
+
+                $properties['login'] = $value;
+    
+                after_login:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['organizations_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organizations_url';
+                    goto after_organizations_url;
+                }
+
+                $properties['organizations_url'] = $value;
+    
+                after_organizations_url:
+
+                $value = $payload['received_events_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'received_events_url';
+                    goto after_received_events_url;
+                }
+
+                $properties['received_events_url'] = $value;
+    
+                after_received_events_url:
+
+                $value = $payload['repos_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repos_url';
+                    goto after_repos_url;
+                }
+
+                $properties['repos_url'] = $value;
+    
+                after_repos_url:
+
+                $value = $payload['site_admin'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'site_admin';
+                    goto after_site_admin;
+                }
+
+                $properties['site_admin'] = $value;
+    
+                after_site_admin:
+
+                $value = $payload['starred_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'starred_url';
+                    goto after_starred_url;
+                }
+
+                $properties['starred_url'] = $value;
+    
+                after_starred_url:
+
+                $value = $payload['subscriptions_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'subscriptions_url';
+                    goto after_subscriptions_url;
+                }
+
+                $properties['subscriptions_url'] = $value;
+    
+                after_subscriptions_url:
+
+                $value = $payload['type'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'type';
+                    goto after_type;
+                }
+
+                $properties['type'] = $value;
+    
+                after_type:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssueCommentDeleted\Comment\User', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookIssueCommentDeleted\Comment\User::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookIssueCommentDeleted\Comment\User(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssueCommentDeleted\Comment\User', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited⚡️Changes⚡️Note(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes\Note
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['from'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'from';
+                    goto after_from;
+                }
+
+                $properties['from'] = $value;
+    
+                after_from:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes\Note', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes\Note::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes\Note(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardEdited\Changes\Note', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved⚡️Changes⚡️ColumnId(array $payload): \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['from'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'from';
+                    goto after_from;
+                }
+
+                $properties['from'] = $value;
+    
+                after_from:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookProjectCardMoved\Changes\ColumnId', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner
         {
             $properties = []; 
@@ -3381,6 +5040,10 @@ class ProjectCard implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardConverted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted($object),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardCreated' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardCreated($object),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardDeleted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted($object),
+                'ApiClients\Client\Github\Schema\WebhookProjectCardEdited' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited($object),
                 'ApiClients\Client\Github\Schema\WebhookProjectCardMoved' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardMoved($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -3452,6 +5115,247 @@ class ProjectCard implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookProjectCardConverted);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $changes = $object->changes;
+
+        if ($changes === null) {
+            goto after_changes;
+        }
+        $changes = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️Changes($changes);
+        after_changes:        $result['changes'] = $changes;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $project_card = $object->project_card;
+
+        if ($project_card === null) {
+            goto after_project_card;
+        }
+        $project_card = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard($project_card);
+        after_project_card:        $result['project_card'] = $project_card;
+
+        
+        $repository = $object->repository;
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardCreated(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookProjectCardCreated);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $project_card = $object->project_card;
+
+        if ($project_card === null) {
+            goto after_project_card;
+        }
+        $project_card = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard($project_card);
+        after_project_card:        $result['project_card'] = $project_card;
+
+        
+        $repository = $object->repository;
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookProjectCardDeleted);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $project_card = $object->project_card;
+
+        if ($project_card === null) {
+            goto after_project_card;
+        }
+        $project_card = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardDeleted⚡️ProjectCard($project_card);
+        after_project_card:        $result['project_card'] = $project_card;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookProjectCardEdited);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $changes = $object->changes;
+
+        if ($changes === null) {
+            goto after_changes;
+        }
+        $changes = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardEdited⚡️Changes($changes);
+        after_changes:        $result['changes'] = $changes;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $project_card = $object->project_card;
+
+        if ($project_card === null) {
+            goto after_project_card;
+        }
+        $project_card = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard($project_card);
+        after_project_card:        $result['project_card'] = $project_card;
+
+        
+        $repository = $object->repository;
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
     }
 
     

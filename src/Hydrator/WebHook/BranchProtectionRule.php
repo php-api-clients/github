@@ -23,19 +23,21 @@ class BranchProtectionRule implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited($payload),
-                'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes($payload),
+            'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated($payload),
+                'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleDeleted($payload),
+                'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited($payload),
                 'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\Github\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($payload),
                 'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated\Rule' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($payload),
                 'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
+                'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes($payload),
+                'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($payload),
                 'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorNames($payload),
                 'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($payload),
-                'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -43,6 +45,312 @@ class BranchProtectionRule implements ObjectMapper
     }
     
             
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['rule'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rule';
+                    goto after_rule;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rule';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rule'] = $value;
+    
+                after_rule:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleDeleted(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['rule'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rule';
+                    goto after_rule;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rule';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rule'] = $value;
+    
+                after_rule:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited
         {
             $properties = []; 
@@ -212,168 +520,6 @@ class BranchProtectionRule implements ObjectMapper
                 return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['admin_enforced'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'admin_enforced';
-                    goto after_admin_enforced;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'admin_enforced';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['admin_enforced'] = $value;
-    
-                after_admin_enforced:
-
-                $value = $payload['authorized_actor_names'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'authorized_actor_names';
-                    goto after_authorized_actor_names;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'authorized_actor_names';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorNames($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['authorized_actor_names'] = $value;
-    
-                after_authorized_actor_names:
-
-                $value = $payload['authorized_actors_only'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'authorized_actors_only';
-                    goto after_authorized_actors_only;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'authorized_actors_only';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['authorized_actors_only'] = $value;
-    
-                after_authorized_actors_only:
-
-                $value = $payload['authorized_dismissal_actors_only'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'authorized_dismissal_actors_only';
-                    goto after_authorized_dismissal_actors_only;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'authorized_dismissal_actors_only';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['authorized_dismissal_actors_only'] = $value;
-    
-                after_authorized_dismissal_actors_only:
-
-                $value = $payload['linear_history_requirement_enforcement_level'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'linear_history_requirement_enforcement_level';
-                    goto after_linear_history_requirement_enforcement_level;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'linear_history_requirement_enforcement_level';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['linear_history_requirement_enforcement_level'] = $value;
-    
-                after_linear_history_requirement_enforcement_level:
-
-                $value = $payload['required_status_checks'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'required_status_checks';
-                    goto after_required_status_checks;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'required_status_checks';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorNames($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['required_status_checks'] = $value;
-    
-                after_required_status_checks:
-
-                $value = $payload['required_status_checks_enforcement_level'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'required_status_checks_enforcement_level';
-                    goto after_required_status_checks_enforcement_level;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'required_status_checks_enforcement_level';
-                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['required_status_checks_enforcement_level'] = $value;
-    
-                after_required_status_checks_enforcement_level:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -2396,101 +2542,164 @@ class BranchProtectionRule implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['from'] ?? null;
+                $value = $payload['admin_enforced'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'from';
-                    goto after_from;
+                    $missingFields[] = 'admin_enforced';
+                    goto after_admin_enforced;
                 }
 
-                $properties['from'] = $value;
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'admin_enforced';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['admin_enforced'] = $value;
     
-                after_from:
+                after_admin_enforced:
+
+                $value = $payload['authorized_actor_names'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'authorized_actor_names';
+                    goto after_authorized_actor_names;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'authorized_actor_names';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorNames($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['authorized_actor_names'] = $value;
+    
+                after_authorized_actor_names:
+
+                $value = $payload['authorized_actors_only'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'authorized_actors_only';
+                    goto after_authorized_actors_only;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'authorized_actors_only';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['authorized_actors_only'] = $value;
+    
+                after_authorized_actors_only:
+
+                $value = $payload['authorized_dismissal_actors_only'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'authorized_dismissal_actors_only';
+                    goto after_authorized_dismissal_actors_only;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'authorized_dismissal_actors_only';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['authorized_dismissal_actors_only'] = $value;
+    
+                after_authorized_dismissal_actors_only:
+
+                $value = $payload['linear_history_requirement_enforcement_level'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'linear_history_requirement_enforcement_level';
+                    goto after_linear_history_requirement_enforcement_level;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'linear_history_requirement_enforcement_level';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['linear_history_requirement_enforcement_level'] = $value;
+    
+                after_linear_history_requirement_enforcement_level:
+
+                $value = $payload['required_status_checks'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'required_status_checks';
+                    goto after_required_status_checks;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'required_status_checks';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorNames($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['required_status_checks'] = $value;
+    
+                after_required_status_checks:
+
+                $value = $payload['required_status_checks_enforcement_level'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'required_status_checks_enforcement_level';
+                    goto after_required_status_checks_enforcement_level;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'required_status_checks_enforcement_level';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['required_status_checks_enforcement_level'] = $value;
+    
+                after_required_status_checks_enforcement_level:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorNames(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['from'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'from';
-                    goto after_from;
-                }
-
-                $properties['from'] = $value;
-    
-                after_from:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['from'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'from';
-                    goto after_from;
-                }
-
-                $properties['from'] = $value;
-    
-                after_from:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -3569,6 +3778,105 @@ class BranchProtectionRule implements ObjectMapper
         }
 
         
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['from'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'from';
+                    goto after_from;
+                }
+
+                $properties['from'] = $value;
+    
+                after_from:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorNames(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['from'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'from';
+                    goto after_from;
+                }
+
+                $properties['from'] = $value;
+    
+                after_from:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel(array $payload): \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['from'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'from';
+                    goto after_from;
+                }
+
+                $properties['from'] = $value;
+    
+                after_from:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner
         {
             $properties = []; 
@@ -3876,6 +4184,8 @@ class BranchProtectionRule implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+                'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated($object),
+                'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleDeleted($object),
                 'ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleEdited' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleEdited($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -3947,6 +4257,124 @@ class BranchProtectionRule implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleCreated);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $rule = $object->rule;
+
+        if ($rule === null) {
+            goto after_rule;
+        }
+        $rule = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($rule);
+        after_rule:        $result['rule'] = $rule;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleDeleted(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookBranchProtectionRuleDeleted);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $rule = $object->rule;
+
+        if ($rule === null) {
+            goto after_rule;
+        }
+        $rule = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($rule);
+        after_rule:        $result['rule'] = $rule;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
     }
 
     

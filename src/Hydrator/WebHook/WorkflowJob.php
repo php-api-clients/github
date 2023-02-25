@@ -23,14 +23,18 @@ class WorkflowJob implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobWaiting($payload),
+            'ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobCompleted($payload),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobInProgress($payload),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued($payload),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobWaiting($payload),
                 'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\Github\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($payload),
                 'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting\WorkflowJob' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobWaiting⚡️WorkflowJob($payload),
                 'ApiClients\Client\Github\Schema\Deployment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($payload),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued\WorkflowJob' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued⚡️WorkflowJob($payload),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting\WorkflowJob' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobWaiting⚡️WorkflowJob($payload),
                 'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
@@ -40,6 +44,507 @@ class WorkflowJob implements ObjectMapper
     }
     
             
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobCompleted(array $payload): \ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+                $value = $payload['workflow_job'] ?? null;
+    
+                if ($value === null) {
+                    $properties['workflow_job'] = null;
+                    goto after_workflow_job;
+                }
+
+                $properties['workflow_job'] = $value;
+    
+                after_workflow_job:
+
+                $value = $payload['deployment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'deployment';
+                    goto after_deployment;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'deployment';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['deployment'] = $value;
+    
+                after_deployment:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobInProgress(array $payload): \ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+                $value = $payload['workflow_job'] ?? null;
+    
+                if ($value === null) {
+                    $properties['workflow_job'] = null;
+                    goto after_workflow_job;
+                }
+
+                $properties['workflow_job'] = $value;
+    
+                after_workflow_job:
+
+                $value = $payload['deployment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'deployment';
+                    goto after_deployment;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'deployment';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['deployment'] = $value;
+    
+                after_deployment:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued(array $payload): \ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+                $value = $payload['workflow_job'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'workflow_job';
+                    goto after_workflow_job;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'workflow_job';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued⚡️WorkflowJob($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['workflow_job'] = $value;
+    
+                after_workflow_job:
+
+                $value = $payload['deployment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'deployment';
+                    goto after_deployment;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'deployment';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['deployment'] = $value;
+    
+                after_deployment:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobWaiting(array $payload): \ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting
         {
             $properties = []; 
@@ -1934,6 +2439,490 @@ class WorkflowJob implements ObjectMapper
         }
 
         
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment(array $payload): \ApiClients\Client\Github\Schema\Deployment
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['sha'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sha';
+                    goto after_sha;
+                }
+
+                $properties['sha'] = $value;
+    
+                after_sha:
+
+                $value = $payload['ref'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'ref';
+                    goto after_ref;
+                }
+
+                $properties['ref'] = $value;
+    
+                after_ref:
+
+                $value = $payload['task'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'task';
+                    goto after_task;
+                }
+
+                $properties['task'] = $value;
+    
+                after_task:
+
+                $value = $payload['payload'] ?? null;
+    
+                if ($value === null) {
+                    $properties['payload'] = null;
+                    goto after_payload;
+                }
+
+                $properties['payload'] = $value;
+    
+                after_payload:
+
+                $value = $payload['original_environment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'original_environment';
+                    goto after_original_environment;
+                }
+
+                $properties['original_environment'] = $value;
+    
+                after_original_environment:
+
+                $value = $payload['environment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'environment';
+                    goto after_environment;
+                }
+
+                $properties['environment'] = $value;
+    
+                after_environment:
+
+                $value = $payload['description'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'description';
+                    goto after_description;
+                }
+
+                $properties['description'] = $value;
+    
+                after_description:
+
+                $value = $payload['creator'] ?? null;
+    
+                if ($value === null) {
+                    $properties['creator'] = null;
+                    goto after_creator;
+                }
+
+                $properties['creator'] = $value;
+    
+                after_creator:
+
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+                $value = $payload['statuses_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'statuses_url';
+                    goto after_statuses_url;
+                }
+
+                $properties['statuses_url'] = $value;
+    
+                after_statuses_url:
+
+                $value = $payload['repository_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository_url';
+                    goto after_repository_url;
+                }
+
+                $properties['repository_url'] = $value;
+    
+                after_repository_url:
+
+                $value = $payload['transient_environment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'transient_environment';
+                    goto after_transient_environment;
+                }
+
+                $properties['transient_environment'] = $value;
+    
+                after_transient_environment:
+
+                $value = $payload['production_environment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'production_environment';
+                    goto after_production_environment;
+                }
+
+                $properties['production_environment'] = $value;
+    
+                after_production_environment:
+
+                $value = $payload['performed_via_github_app'] ?? null;
+    
+                if ($value === null) {
+                    $properties['performed_via_github_app'] = null;
+                    goto after_performed_via_github_app;
+                }
+
+                $properties['performed_via_github_app'] = $value;
+    
+                after_performed_via_github_app:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Deployment', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Deployment::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\Deployment(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Deployment', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued⚡️WorkflowJob(array $payload): \ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued\WorkflowJob
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['check_run_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'check_run_url';
+                    goto after_check_run_url;
+                }
+
+                $properties['check_run_url'] = $value;
+    
+                after_check_run_url:
+
+                $value = $payload['completed_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'completed_at';
+                    goto after_completed_at;
+                }
+
+                $properties['completed_at'] = $value;
+    
+                after_completed_at:
+
+                $value = $payload['conclusion'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'conclusion';
+                    goto after_conclusion;
+                }
+
+                $properties['conclusion'] = $value;
+    
+                after_conclusion:
+
+                $value = $payload['head_sha'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_sha';
+                    goto after_head_sha;
+                }
+
+                $properties['head_sha'] = $value;
+    
+                after_head_sha:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['labels'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'labels';
+                    goto after_labels;
+                }
+
+                $properties['labels'] = $value;
+    
+                after_labels:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['run_attempt'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'run_attempt';
+                    goto after_run_attempt;
+                }
+
+                $properties['run_attempt'] = $value;
+    
+                after_run_attempt:
+
+                $value = $payload['run_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'run_id';
+                    goto after_run_id;
+                }
+
+                $properties['run_id'] = $value;
+    
+                after_run_id:
+
+                $value = $payload['run_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'run_url';
+                    goto after_run_url;
+                }
+
+                $properties['run_url'] = $value;
+    
+                after_run_url:
+
+                $value = $payload['runner_group_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'runner_group_id';
+                    goto after_runner_group_id;
+                }
+
+                $properties['runner_group_id'] = $value;
+    
+                after_runner_group_id:
+
+                $value = $payload['runner_group_name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'runner_group_name';
+                    goto after_runner_group_name;
+                }
+
+                $properties['runner_group_name'] = $value;
+    
+                after_runner_group_name:
+
+                $value = $payload['runner_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'runner_id';
+                    goto after_runner_id;
+                }
+
+                $properties['runner_id'] = $value;
+    
+                after_runner_id:
+
+                $value = $payload['runner_name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'runner_name';
+                    goto after_runner_name;
+                }
+
+                $properties['runner_name'] = $value;
+    
+                after_runner_name:
+
+                $value = $payload['started_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'started_at';
+                    goto after_started_at;
+                }
+
+                $properties['started_at'] = $value;
+    
+                after_started_at:
+
+                $value = $payload['status'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'status';
+                    goto after_status;
+                }
+
+                $properties['status'] = $value;
+    
+                after_status:
+
+                $value = $payload['head_branch'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'head_branch';
+                    goto after_head_branch;
+                }
+
+                $properties['head_branch'] = $value;
+    
+                after_head_branch:
+
+                $value = $payload['workflow_name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'workflow_name';
+                    goto after_workflow_name;
+                }
+
+                $properties['workflow_name'] = $value;
+    
+                after_workflow_name:
+
+                $value = $payload['steps'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'steps';
+                    goto after_steps;
+                }
+
+                $properties['steps'] = $value;
+    
+                after_steps:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued\WorkflowJob', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued\WorkflowJob::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued\WorkflowJob(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued\WorkflowJob', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobWaiting⚡️WorkflowJob(array $payload): \ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting\WorkflowJob
         {
             $properties = []; 
@@ -2194,226 +3183,6 @@ class WorkflowJob implements ObjectMapper
                 return new \ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting\WorkflowJob(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting\WorkflowJob', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment(array $payload): \ApiClients\Client\Github\Schema\Deployment
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'url';
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'id';
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'node_id';
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['sha'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'sha';
-                    goto after_sha;
-                }
-
-                $properties['sha'] = $value;
-    
-                after_sha:
-
-                $value = $payload['ref'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'ref';
-                    goto after_ref;
-                }
-
-                $properties['ref'] = $value;
-    
-                after_ref:
-
-                $value = $payload['task'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'task';
-                    goto after_task;
-                }
-
-                $properties['task'] = $value;
-    
-                after_task:
-
-                $value = $payload['payload'] ?? null;
-    
-                if ($value === null) {
-                    $properties['payload'] = null;
-                    goto after_payload;
-                }
-
-                $properties['payload'] = $value;
-    
-                after_payload:
-
-                $value = $payload['original_environment'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'original_environment';
-                    goto after_original_environment;
-                }
-
-                $properties['original_environment'] = $value;
-    
-                after_original_environment:
-
-                $value = $payload['environment'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'environment';
-                    goto after_environment;
-                }
-
-                $properties['environment'] = $value;
-    
-                after_environment:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'description';
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['creator'] ?? null;
-    
-                if ($value === null) {
-                    $properties['creator'] = null;
-                    goto after_creator;
-                }
-
-                $properties['creator'] = $value;
-    
-                after_creator:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'created_at';
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'updated_at';
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['statuses_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'statuses_url';
-                    goto after_statuses_url;
-                }
-
-                $properties['statuses_url'] = $value;
-    
-                after_statuses_url:
-
-                $value = $payload['repository_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'repository_url';
-                    goto after_repository_url;
-                }
-
-                $properties['repository_url'] = $value;
-    
-                after_repository_url:
-
-                $value = $payload['transient_environment'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'transient_environment';
-                    goto after_transient_environment;
-                }
-
-                $properties['transient_environment'] = $value;
-    
-                after_transient_environment:
-
-                $value = $payload['production_environment'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'production_environment';
-                    goto after_production_environment;
-                }
-
-                $properties['production_environment'] = $value;
-    
-                after_production_environment:
-
-                $value = $payload['performed_via_github_app'] ?? null;
-    
-                if ($value === null) {
-                    $properties['performed_via_github_app'] = null;
-                    goto after_performed_via_github_app;
-                }
-
-                $properties['performed_via_github_app'] = $value;
-    
-                after_performed_via_github_app:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Deployment', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Deployment::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\Github\Schema\Deployment(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Deployment', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -3799,6 +4568,9 @@ class WorkflowJob implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobCompleted($object),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobInProgress($object),
+                'ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued($object),
                 'ApiClients\Client\Github\Schema\WebhookWorkflowJobWaiting' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobWaiting($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -3870,6 +4642,196 @@ class WorkflowJob implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobCompleted(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookWorkflowJobCompleted);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+        
+        $workflow_job = $object->workflow_job;
+
+        if ($workflow_job === null) {
+            goto after_workflow_job;
+        }
+        after_workflow_job:        $result['workflow_job'] = $workflow_job;
+
+        
+        $deployment = $object->deployment;
+        $deployment = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($deployment);
+        after_deployment:        $result['deployment'] = $deployment;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobInProgress(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookWorkflowJobInProgress);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+        
+        $workflow_job = $object->workflow_job;
+
+        if ($workflow_job === null) {
+            goto after_workflow_job;
+        }
+        after_workflow_job:        $result['workflow_job'] = $workflow_job;
+
+        
+        $deployment = $object->deployment;
+        $deployment = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($deployment);
+        after_deployment:        $result['deployment'] = $deployment;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookWorkflowJobQueued);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+        
+        $workflow_job = $object->workflow_job;
+
+        if ($workflow_job === null) {
+            goto after_workflow_job;
+        }
+        $workflow_job = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookWorkflowJobQueued⚡️WorkflowJob($workflow_job);
+        after_workflow_job:        $result['workflow_job'] = $workflow_job;
+
+        
+        $deployment = $object->deployment;
+        $deployment = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($deployment);
+        after_deployment:        $result['deployment'] = $deployment;
+
+
+        return $result;
     }
 
     

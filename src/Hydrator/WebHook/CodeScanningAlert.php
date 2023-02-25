@@ -23,18 +23,33 @@ class CodeScanningAlert implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser($payload),
-                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert($payload),
+            'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert($payload),
                 'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\Github\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($payload),
                 'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed\Alert' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened\Alert' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert($payload),
+                'ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($payload),
                 'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($payload),
                 'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Rule($payload),
                 'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Tool($payload),
                 'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($payload),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Tool($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta($payload),
                 'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($payload),
                 'ApiClients\Client\Github\Schema\CodeScanningAlertInstance\Message' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CodeScanningAlertInstance⚡️Message($payload),
                 'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
@@ -44,6 +59,881 @@ class CodeScanningAlert implements ObjectMapper
     }
     
             
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['alert'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'alert';
+                    goto after_alert;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'alert';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['alert'] = $value;
+    
+                after_alert:
+
+                $value = $payload['commit_oid'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'commit_oid';
+                    goto after_commit_oid;
+                }
+
+                $properties['commit_oid'] = $value;
+    
+                after_commit_oid:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['ref'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'ref';
+                    goto after_ref;
+                }
+
+                $properties['ref'] = $value;
+    
+                after_ref:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['alert'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'alert';
+                    goto after_alert;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'alert';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['alert'] = $value;
+    
+                after_alert:
+
+                $value = $payload['commit_oid'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'commit_oid';
+                    goto after_commit_oid;
+                }
+
+                $properties['commit_oid'] = $value;
+    
+                after_commit_oid:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['ref'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'ref';
+                    goto after_ref;
+                }
+
+                $properties['ref'] = $value;
+    
+                after_ref:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['alert'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'alert';
+                    goto after_alert;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'alert';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['alert'] = $value;
+    
+                after_alert:
+
+                $value = $payload['commit_oid'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'commit_oid';
+                    goto after_commit_oid;
+                }
+
+                $properties['commit_oid'] = $value;
+    
+                after_commit_oid:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['ref'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'ref';
+                    goto after_ref;
+                }
+
+                $properties['ref'] = $value;
+    
+                after_ref:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['alert'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'alert';
+                    goto after_alert;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'alert';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['alert'] = $value;
+    
+                after_alert:
+
+                $value = $payload['commit_oid'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'commit_oid';
+                    goto after_commit_oid;
+                }
+
+                $properties['commit_oid'] = $value;
+    
+                after_commit_oid:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['ref'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'ref';
+                    goto after_ref;
+                }
+
+                $properties['ref'] = $value;
+    
+                after_ref:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['action'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'action';
+                    goto after_action;
+                }
+
+                $properties['action'] = $value;
+    
+                after_action:
+
+                $value = $payload['alert'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'alert';
+                    goto after_alert;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'alert';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['alert'] = $value;
+    
+                after_alert:
+
+                $value = $payload['commit_oid'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'commit_oid';
+                    goto after_commit_oid;
+                }
+
+                $properties['commit_oid'] = $value;
+    
+                after_commit_oid:
+
+                $value = $payload['enterprise'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'enterprise';
+                    goto after_enterprise;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'enterprise';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['enterprise'] = $value;
+    
+                after_enterprise:
+
+                $value = $payload['installation'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'installation';
+                    goto after_installation;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'installation';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['installation'] = $value;
+    
+                after_installation:
+
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'organization';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
+                $value = $payload['ref'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'ref';
+                    goto after_ref;
+                }
+
+                $properties['ref'] = $value;
+    
+                after_ref:
+
+                $value = $payload['repository'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repository';
+                    goto after_repository;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'repository';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['repository'] = $value;
+    
+                after_repository:
+
+                $value = $payload['sender'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'sender';
+                    goto after_sender;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'sender';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['sender'] = $value;
+    
+                after_sender:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser
         {
             $properties = []; 
@@ -219,7 +1109,7 @@ class CodeScanningAlert implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert
         {
             $properties = []; 
             $missingFields = [];
@@ -239,7 +1129,7 @@ class CodeScanningAlert implements ObjectMapper
                 $value = $payload['dismissed_at'] ?? null;
     
                 if ($value === null) {
-                    $properties['dismissed_at'] = null;
+                    $missingFields[] = 'dismissed_at';
                     goto after_dismissed_at;
                 }
 
@@ -250,8 +1140,17 @@ class CodeScanningAlert implements ObjectMapper
                 $value = $payload['dismissed_by'] ?? null;
     
                 if ($value === null) {
-                    $properties['dismissed_by'] = null;
+                    $missingFields[] = 'dismissed_by';
                     goto after_dismissed_by;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'dismissed_by';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
                 }
 
                 $properties['dismissed_by'] = $value;
@@ -261,7 +1160,7 @@ class CodeScanningAlert implements ObjectMapper
                 $value = $payload['dismissed_reason'] ?? null;
     
                 if ($value === null) {
-                    $properties['dismissed_reason'] = null;
+                    $missingFields[] = 'dismissed_reason';
                     goto after_dismissed_reason;
                 }
 
@@ -374,17 +1273,17 @@ class CodeScanningAlert implements ObjectMapper
                 after_url:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert(...$properties);
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -2110,6 +3009,1191 @@ class CodeScanningAlert implements ObjectMapper
         }
 
         
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['dismissed_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_at';
+                    goto after_dismissed_at;
+                }
+
+                $properties['dismissed_at'] = $value;
+    
+                after_dismissed_at:
+
+                $value = $payload['dismissed_by'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_by';
+                    goto after_dismissed_by;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'dismissed_by';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['dismissed_by'] = $value;
+    
+                after_dismissed_by:
+
+                $value = $payload['dismissed_reason'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_reason';
+                    goto after_dismissed_reason;
+                }
+
+                $properties['dismissed_reason'] = $value;
+    
+                after_dismissed_reason:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['most_recent_instance'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'most_recent_instance';
+                    goto after_most_recent_instance;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'most_recent_instance';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['most_recent_instance'] = $value;
+    
+                after_most_recent_instance:
+
+                $value = $payload['number'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'number';
+                    goto after_number;
+                }
+
+                $properties['number'] = $value;
+    
+                after_number:
+
+                $value = $payload['rule'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rule';
+                    goto after_rule;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rule';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rule'] = $value;
+    
+                after_rule:
+
+                $value = $payload['state'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'state';
+                    goto after_state;
+                }
+
+                $properties['state'] = $value;
+    
+                after_state:
+
+                $value = $payload['tool'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'tool';
+                    goto after_tool;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'tool';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['tool'] = $value;
+    
+                after_tool:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['dismissed_at'] ?? null;
+    
+                if ($value === null) {
+                    $properties['dismissed_at'] = null;
+                    goto after_dismissed_at;
+                }
+
+                $properties['dismissed_at'] = $value;
+    
+                after_dismissed_at:
+
+                $value = $payload['dismissed_by'] ?? null;
+    
+                if ($value === null) {
+                    $properties['dismissed_by'] = null;
+                    goto after_dismissed_by;
+                }
+
+                $properties['dismissed_by'] = $value;
+    
+                after_dismissed_by:
+
+                $value = $payload['dismissed_comment'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_comment';
+                    goto after_dismissed_comment;
+                }
+
+                $properties['dismissed_comment'] = $value;
+    
+                after_dismissed_comment:
+
+                $value = $payload['dismissed_reason'] ?? null;
+    
+                if ($value === null) {
+                    $properties['dismissed_reason'] = null;
+                    goto after_dismissed_reason;
+                }
+
+                $properties['dismissed_reason'] = $value;
+    
+                after_dismissed_reason:
+
+                $value = $payload['fixed_at'] ?? null;
+    
+                if ($value === null) {
+                    $properties['fixed_at'] = null;
+                    goto after_fixed_at;
+                }
+
+                $properties['fixed_at'] = $value;
+    
+                after_fixed_at:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['instances_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'instances_url';
+                    goto after_instances_url;
+                }
+
+                $properties['instances_url'] = $value;
+    
+                after_instances_url:
+
+                $value = $payload['most_recent_instance'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'most_recent_instance';
+                    goto after_most_recent_instance;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'most_recent_instance';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['most_recent_instance'] = $value;
+    
+                after_most_recent_instance:
+
+                $value = $payload['number'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'number';
+                    goto after_number;
+                }
+
+                $properties['number'] = $value;
+    
+                after_number:
+
+                $value = $payload['rule'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rule';
+                    goto after_rule;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rule';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rule'] = $value;
+    
+                after_rule:
+
+                $value = $payload['state'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'state';
+                    goto after_state;
+                }
+
+                $properties['state'] = $value;
+    
+                after_state:
+
+                $value = $payload['tool'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'tool';
+                    goto after_tool;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'tool';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Tool($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['tool'] = $value;
+    
+                after_tool:
+
+                $value = $payload['updated_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'updated_at';
+                    goto after_updated_at;
+                }
+
+                $properties['updated_at'] = $value;
+    
+                after_updated_at:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed\Alert
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['dismissed_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_at';
+                    goto after_dismissed_at;
+                }
+
+                $properties['dismissed_at'] = $value;
+    
+                after_dismissed_at:
+
+                $value = $payload['dismissed_by'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_by';
+                    goto after_dismissed_by;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'dismissed_by';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['dismissed_by'] = $value;
+    
+                after_dismissed_by:
+
+                $value = $payload['dismissed_reason'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_reason';
+                    goto after_dismissed_reason;
+                }
+
+                $properties['dismissed_reason'] = $value;
+    
+                after_dismissed_reason:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['instances_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'instances_url';
+                    goto after_instances_url;
+                }
+
+                $properties['instances_url'] = $value;
+    
+                after_instances_url:
+
+                $value = $payload['most_recent_instance'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'most_recent_instance';
+                    goto after_most_recent_instance;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'most_recent_instance';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['most_recent_instance'] = $value;
+    
+                after_most_recent_instance:
+
+                $value = $payload['number'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'number';
+                    goto after_number;
+                }
+
+                $properties['number'] = $value;
+    
+                after_number:
+
+                $value = $payload['rule'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rule';
+                    goto after_rule;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rule';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rule'] = $value;
+    
+                after_rule:
+
+                $value = $payload['state'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'state';
+                    goto after_state;
+                }
+
+                $properties['state'] = $value;
+    
+                after_state:
+
+                $value = $payload['tool'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'tool';
+                    goto after_tool;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'tool';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['tool'] = $value;
+    
+                after_tool:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed\Alert', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed\Alert::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed\Alert(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed\Alert', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened\Alert
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['dismissed_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_at';
+                    goto after_dismissed_at;
+                }
+
+                $properties['dismissed_at'] = $value;
+    
+                after_dismissed_at:
+
+                $value = $payload['dismissed_by'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_by';
+                    goto after_dismissed_by;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'dismissed_by';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['dismissed_by'] = $value;
+    
+                after_dismissed_by:
+
+                $value = $payload['dismissed_reason'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'dismissed_reason';
+                    goto after_dismissed_reason;
+                }
+
+                $properties['dismissed_reason'] = $value;
+    
+                after_dismissed_reason:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['most_recent_instance'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'most_recent_instance';
+                    goto after_most_recent_instance;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'most_recent_instance';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['most_recent_instance'] = $value;
+    
+                after_most_recent_instance:
+
+                $value = $payload['number'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'number';
+                    goto after_number;
+                }
+
+                $properties['number'] = $value;
+    
+                after_number:
+
+                $value = $payload['rule'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rule';
+                    goto after_rule;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rule';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rule'] = $value;
+    
+                after_rule:
+
+                $value = $payload['state'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'state';
+                    goto after_state;
+                }
+
+                $properties['state'] = $value;
+    
+                after_state:
+
+                $value = $payload['tool'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'tool';
+                    goto after_tool;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'tool';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['tool'] = $value;
+    
+                after_tool:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened\Alert', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened\Alert::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened\Alert(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened\Alert', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['created_at'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'created_at';
+                    goto after_created_at;
+                }
+
+                $properties['created_at'] = $value;
+    
+                after_created_at:
+
+                $value = $payload['dismissed_at'] ?? null;
+    
+                if ($value === null) {
+                    $properties['dismissed_at'] = null;
+                    goto after_dismissed_at;
+                }
+
+                $properties['dismissed_at'] = $value;
+    
+                after_dismissed_at:
+
+                $value = $payload['dismissed_by'] ?? null;
+    
+                if ($value === null) {
+                    $properties['dismissed_by'] = null;
+                    goto after_dismissed_by;
+                }
+
+                $properties['dismissed_by'] = $value;
+    
+                after_dismissed_by:
+
+                $value = $payload['dismissed_reason'] ?? null;
+    
+                if ($value === null) {
+                    $properties['dismissed_reason'] = null;
+                    goto after_dismissed_reason;
+                }
+
+                $properties['dismissed_reason'] = $value;
+    
+                after_dismissed_reason:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['most_recent_instance'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'most_recent_instance';
+                    goto after_most_recent_instance;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'most_recent_instance';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['most_recent_instance'] = $value;
+    
+                after_most_recent_instance:
+
+                $value = $payload['number'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'number';
+                    goto after_number;
+                }
+
+                $properties['number'] = $value;
+    
+                after_number:
+
+                $value = $payload['rule'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'rule';
+                    goto after_rule;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'rule';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Rule($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['rule'] = $value;
+    
+                after_rule:
+
+                $value = $payload['state'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'state';
+                    goto after_state;
+                }
+
+                $properties['state'] = $value;
+    
+                after_state:
+
+                $value = $payload['tool'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'tool';
+                    goto after_tool;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'tool';
+                        $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Tool($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['tool'] = $value;
+    
+                after_tool:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser\Alert', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Discussion⚡️AnswerChosenBy(array $payload): \ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['avatar_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'avatar_url';
+                    goto after_avatar_url;
+                }
+
+                $properties['avatar_url'] = $value;
+    
+                after_avatar_url:
+
+                $value = $payload['deleted'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'deleted';
+                    goto after_deleted;
+                }
+
+                $properties['deleted'] = $value;
+    
+                after_deleted:
+
+                $value = $payload['email'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'email';
+                    goto after_email;
+                }
+
+                $properties['email'] = $value;
+    
+                after_email:
+
+                $value = $payload['events_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'events_url';
+                    goto after_events_url;
+                }
+
+                $properties['events_url'] = $value;
+    
+                after_events_url:
+
+                $value = $payload['followers_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'followers_url';
+                    goto after_followers_url;
+                }
+
+                $properties['followers_url'] = $value;
+    
+                after_followers_url:
+
+                $value = $payload['following_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'following_url';
+                    goto after_following_url;
+                }
+
+                $properties['following_url'] = $value;
+    
+                after_following_url:
+
+                $value = $payload['gists_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'gists_url';
+                    goto after_gists_url;
+                }
+
+                $properties['gists_url'] = $value;
+    
+                after_gists_url:
+
+                $value = $payload['gravatar_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'gravatar_id';
+                    goto after_gravatar_id;
+                }
+
+                $properties['gravatar_id'] = $value;
+    
+                after_gravatar_id:
+
+                $value = $payload['html_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'html_url';
+                    goto after_html_url;
+                }
+
+                $properties['html_url'] = $value;
+    
+                after_html_url:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['login'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'login';
+                    goto after_login;
+                }
+
+                $properties['login'] = $value;
+    
+                after_login:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'node_id';
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['organizations_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organizations_url';
+                    goto after_organizations_url;
+                }
+
+                $properties['organizations_url'] = $value;
+    
+                after_organizations_url:
+
+                $value = $payload['received_events_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'received_events_url';
+                    goto after_received_events_url;
+                }
+
+                $properties['received_events_url'] = $value;
+    
+                after_received_events_url:
+
+                $value = $payload['repos_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'repos_url';
+                    goto after_repos_url;
+                }
+
+                $properties['repos_url'] = $value;
+    
+                after_repos_url:
+
+                $value = $payload['site_admin'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'site_admin';
+                    goto after_site_admin;
+                }
+
+                $properties['site_admin'] = $value;
+    
+                after_site_admin:
+
+                $value = $payload['starred_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'starred_url';
+                    goto after_starred_url;
+                }
+
+                $properties['starred_url'] = $value;
+    
+                after_starred_url:
+
+                $value = $payload['subscriptions_url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'subscriptions_url';
+                    goto after_subscriptions_url;
+                }
+
+                $properties['subscriptions_url'] = $value;
+    
+                after_subscriptions_url:
+
+                $value = $payload['type'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'type';
+                    goto after_type;
+                }
+
+                $properties['type'] = $value;
+    
+                after_type:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'url';
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance
         {
             $properties = []; 
@@ -3411,6 +5495,248 @@ class CodeScanningAlert implements ObjectMapper
         }
 
         
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['description'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'description';
+                    goto after_description;
+                }
+
+                $properties['description'] = $value;
+    
+                after_description:
+
+                $value = $payload['full_description'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'full_description';
+                    goto after_full_description;
+                }
+
+                $properties['full_description'] = $value;
+    
+                after_full_description:
+
+                $value = $payload['help'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'help';
+                    goto after_help;
+                }
+
+                $properties['help'] = $value;
+    
+                after_help:
+
+                $value = $payload['help_uri'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'help_uri';
+                    goto after_help_uri;
+                }
+
+                $properties['help_uri'] = $value;
+    
+                after_help_uri:
+
+                $value = $payload['id'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'id';
+                    goto after_id;
+                }
+
+                $properties['id'] = $value;
+    
+                after_id:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['severity'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'severity';
+                    goto after_severity;
+                }
+
+                $properties['severity'] = $value;
+    
+                after_severity:
+
+                $value = $payload['tags'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'tags';
+                    goto after_tags;
+                }
+
+                $properties['tags'] = $value;
+    
+                after_tags:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['guid'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'guid';
+                    goto after_guid;
+                }
+
+                $properties['guid'] = $value;
+    
+                after_guid:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['version'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'version';
+                    goto after_version;
+                }
+
+                $properties['version'] = $value;
+    
+                after_version:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Tool(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert\Tool
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['guid'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'guid';
+                    goto after_guid;
+                }
+
+                $properties['guid'] = $value;
+    
+                after_guid:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['version'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'version';
+                    goto after_version;
+                }
+
+                $properties['version'] = $value;
+    
+                after_version:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert\Tool', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert\Tool::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert\Tool(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated\Alert\Tool', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️ActionsMeta(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\ActionsMeta', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location(array $payload): \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location
         {
             $properties = []; 
@@ -3828,6 +6154,11 @@ class CodeScanningAlert implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch($object),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser($object),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated($object),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed($object),
+                'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened($object),
                 'ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopenedByUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -3899,6 +6230,381 @@ class CodeScanningAlert implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertAppearedInBranch);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $alert = $object->alert;
+
+        if ($alert === null) {
+            goto after_alert;
+        }
+        $alert = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        
+        $commit_oid = $object->commit_oid;
+
+        if ($commit_oid === null) {
+            goto after_commit_oid;
+        }
+        after_commit_oid:        $result['commit_oid'] = $commit_oid;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $ref = $object->ref;
+
+        if ($ref === null) {
+            goto after_ref;
+        }
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertClosedByUser);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $alert = $object->alert;
+
+        if ($alert === null) {
+            goto after_alert;
+        }
+        $alert = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        
+        $commit_oid = $object->commit_oid;
+
+        if ($commit_oid === null) {
+            goto after_commit_oid;
+        }
+        after_commit_oid:        $result['commit_oid'] = $commit_oid;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $ref = $object->ref;
+
+        if ($ref === null) {
+            goto after_ref;
+        }
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertCreated);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $alert = $object->alert;
+
+        if ($alert === null) {
+            goto after_alert;
+        }
+        $alert = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        
+        $commit_oid = $object->commit_oid;
+
+        if ($commit_oid === null) {
+            goto after_commit_oid;
+        }
+        after_commit_oid:        $result['commit_oid'] = $commit_oid;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $ref = $object->ref;
+
+        if ($ref === null) {
+            goto after_ref;
+        }
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertFixed);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $alert = $object->alert;
+
+        if ($alert === null) {
+            goto after_alert;
+        }
+        $alert = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        
+        $commit_oid = $object->commit_oid;
+
+        if ($commit_oid === null) {
+            goto after_commit_oid;
+        }
+        after_commit_oid:        $result['commit_oid'] = $commit_oid;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $ref = $object->ref;
+
+        if ($ref === null) {
+            goto after_ref;
+        }
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCodeScanningAlertReopened);
+        $result = [];
+        
+        $action = $object->action;
+
+        if ($action === null) {
+            goto after_action;
+        }
+        after_action:        $result['action'] = $action;
+
+        
+        $alert = $object->alert;
+
+        if ($alert === null) {
+            goto after_alert;
+        }
+        $alert = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        
+        $commit_oid = $object->commit_oid;
+
+        if ($commit_oid === null) {
+            goto after_commit_oid;
+        }
+        after_commit_oid:        $result['commit_oid'] = $commit_oid;
+
+        
+        $enterprise = $object->enterprise;
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $installation = $object->installation;
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $ref = $object->ref;
+
+        if ($ref === null) {
+            goto after_ref;
+        }
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $repository = $object->repository;
+
+        if ($repository === null) {
+            goto after_repository;
+        }
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
     }
 
     
