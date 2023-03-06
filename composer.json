@@ -1,0 +1,45 @@
+{
+  "name": "api-clients/github",
+  "description": "Non-Blocking first GitHub client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cees-Jan Kiewiet",
+      "email": "ceesjank@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "api-clients/contracts": "dev-main",
+    "cebe/php-openapi": "dev-openapi-31 as 1.6.0",
+    "eventsauce/object-hydrator": "^1.1",
+    "react/async": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ApiClients\\Client\\GitHub\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ApiClients\\Tests\\Client\\GitHub\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "8.2.13"
+    },
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "composer/package-versions-deprecated": true,
+      "ergebnis/composer-normalize": true,
+      "icanhazstring/composer-unused": true,
+      "wyrihaximus/composer-update-bin-autoload-path": true,
+      "infection/extension-installer": true
+    }
+  },
+  "require-dev": {
+    "wyrihaximus/async-test-utilities": "^5.0"
+  }
+}
