@@ -3663,19 +3663,9 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['steps'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'steps';
+                    $properties['steps'] = null;
                     goto after_steps;
                 }
-
-                static $stepsCaster1;
-    
-                if ($stepsCaster1 === null) {
-                    $stepsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\ActionsMeta',
-));
-                }
-    
-                $value = $stepsCaster1->cast($value, $this);
 
                 $properties['steps'] = $value;
     
@@ -8302,15 +8292,10 @@ class WorkflowJob implements ObjectMapper
 
         
         $steps = $object->steps;
-        static $stepsSerializer0;
 
-        if ($stepsSerializer0 === null) {
-            $stepsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\ActionsMeta',
-));
+        if ($steps === null) {
+            goto after_steps;
         }
-        
-        $steps = $stepsSerializer0->serialize($steps, $this);
         after_steps:        $result['steps'] = $steps;
 
         

@@ -3829,19 +3829,9 @@ class WorkflowRun implements ObjectMapper
                 $value = $payload['pull_requests'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'pull_requests';
+                    $properties['pull_requests'] = null;
                     goto after_pull_requests;
                 }
-
-                static $pull_requestsCaster1;
-    
-                if ($pull_requestsCaster1 === null) {
-                    $pull_requestsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\ActionsMeta',
-));
-                }
-    
-                $value = $pull_requestsCaster1->cast($value, $this);
 
                 $properties['pull_requests'] = $value;
     
@@ -5645,19 +5635,9 @@ class WorkflowRun implements ObjectMapper
                 $value = $payload['pull_requests'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'pull_requests';
+                    $properties['pull_requests'] = null;
                     goto after_pull_requests;
                 }
-
-                static $pull_requestsCaster1;
-    
-                if ($pull_requestsCaster1 === null) {
-                    $pull_requestsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\ActionsMeta',
-));
-                }
-    
-                $value = $pull_requestsCaster1->cast($value, $this);
 
                 $properties['pull_requests'] = $value;
     
@@ -10694,15 +10674,10 @@ class WorkflowRun implements ObjectMapper
 
         
         $pull_requests = $object->pull_requests;
-        static $pull_requestsSerializer0;
 
-        if ($pull_requestsSerializer0 === null) {
-            $pull_requestsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\ActionsMeta',
-));
+        if ($pull_requests === null) {
+            goto after_pull_requests;
         }
-        
-        $pull_requests = $pull_requestsSerializer0->serialize($pull_requests, $this);
         after_pull_requests:        $result['pull_requests'] = $pull_requests;
 
         
@@ -11751,15 +11726,10 @@ class WorkflowRun implements ObjectMapper
 
         
         $pull_requests = $object->pull_requests;
-        static $pull_requestsSerializer0;
 
-        if ($pull_requestsSerializer0 === null) {
-            $pull_requestsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\ActionsMeta',
-));
+        if ($pull_requests === null) {
+            goto after_pull_requests;
         }
-        
-        $pull_requests = $pull_requestsSerializer0->serialize($pull_requests, $this);
         after_pull_requests:        $result['pull_requests'] = $pull_requests;
 
         
