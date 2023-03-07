@@ -3,6 +3,7 @@
 declare (strict_types=1);
 namespace ApiClients\Client\GitHub\Operation\CodeScanning;
 
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
@@ -34,9 +35,9 @@ final class GetCodeqlDatabase
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{language}'), array($this->owner, $this->repo, $this->language), self::PATH));
     }
     /**
-     * @return Schema\CodeScanningCodeqlDatabase|Schema\BasicError|Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
+     * @return Schema\CodeScanningCodeqlDatabase
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeScanningCodeqlDatabase|Schema\BasicError|Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeScanningCodeqlDatabase
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -54,7 +55,7 @@ final class GetCodeqlDatabase
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
             /**Service unavailable**/
@@ -62,7 +63,7 @@ final class GetCodeqlDatabase
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
             /**Service unavailable**/
@@ -70,7 +71,7 @@ final class GetCodeqlDatabase
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $body);
                 }
                 break;
         }

@@ -3,6 +3,7 @@
 declare (strict_types=1);
 namespace ApiClients\Client\GitHub\Operation\Actions;
 
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
@@ -34,9 +35,9 @@ final class GetRepoRequiredWorkflow
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{repo}', '{required_workflow_id_for_repo}'), array($this->org, $this->repo, $this->required_workflow_id_for_repo), self::PATH));
     }
     /**
-     * @return Schema\RepoRequiredWorkflow|Schema\BasicError
+     * @return Schema\RepoRequiredWorkflow
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\RepoRequiredWorkflow|Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\RepoRequiredWorkflow
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -54,7 +55,7 @@ final class GetRepoRequiredWorkflow
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
         }

@@ -3,6 +3,7 @@
 declare (strict_types=1);
 namespace ApiClients\Client\GitHub\Operation\Apps;
 
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
@@ -40,9 +41,9 @@ final class ListAccountsForPlanStubbed
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{plan_id}', '{direction}', '{sort}', '{per_page}', '{page}'), array($this->plan_id, $this->direction, $this->sort, $this->per_page, $this->page), self::PATH . '?direction={direction}&sort={sort}&per_page={per_page}&page={page}'));
     }
     /**
-     * @return \Rx\Observable<Schema\MarketplacePurchase>|Schema\BasicError
+     * @return \Rx\Observable<Schema\MarketplacePurchase>
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -62,7 +63,7 @@ final class ListAccountsForPlanStubbed
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
         }

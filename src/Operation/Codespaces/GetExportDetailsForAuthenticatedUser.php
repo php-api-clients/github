@@ -3,6 +3,7 @@
 declare (strict_types=1);
 namespace ApiClients\Client\GitHub\Operation\Codespaces;
 
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
@@ -31,9 +32,9 @@ final class GetExportDetailsForAuthenticatedUser
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespace_name, $this->export_id), self::PATH));
     }
     /**
-     * @return Schema\CodespaceExportDetails|Schema\BasicError
+     * @return Schema\CodespaceExportDetails
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodespaceExportDetails|Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodespaceExportDetails
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -51,7 +52,7 @@ final class GetExportDetailsForAuthenticatedUser
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
         }

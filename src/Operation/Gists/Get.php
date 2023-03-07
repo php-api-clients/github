@@ -3,6 +3,7 @@
 declare (strict_types=1);
 namespace ApiClients\Client\GitHub\Operation\Gists;
 
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
@@ -28,9 +29,9 @@ final class Get
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gist_id}'), array($this->gist_id), self::PATH));
     }
     /**
-     * @return Schema\GistSimple|Schema\Operation\Gists\Get\Response\Applicationjson\H403|Schema\BasicError
+     * @return Schema\GistSimple
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\GistSimple|Schema\Operation\Gists\Get\Response\Applicationjson\H403|Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\GistSimple
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -48,7 +49,7 @@ final class Get
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Gists\Get\Response\Applicationjson\H403::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\Gists\Get\Response\Applicationjson\H403::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\Operation\Gists\Get\Response\Applicationjson\H403::class, $body);
                 }
                 break;
             /**Resource not found**/
@@ -56,7 +57,7 @@ final class Get
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
         }

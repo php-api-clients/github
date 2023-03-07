@@ -3,6 +3,7 @@
 declare (strict_types=1);
 namespace ApiClients\Client\GitHub\Operation\CodesOfConduct;
 
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
@@ -27,9 +28,9 @@ final class GetConductCode
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{key}'), array($this->key), self::PATH));
     }
     /**
-     * @return Schema\CodeOfConduct|Schema\BasicError
+     * @return Schema\CodeOfConduct
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeOfConduct|Schema\BasicError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeOfConduct
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -47,7 +48,7 @@ final class GetConductCode
                 switch ($contentType) {
                     case 'application/json':
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
         }
