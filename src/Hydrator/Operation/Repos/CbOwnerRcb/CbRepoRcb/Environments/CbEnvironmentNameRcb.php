@@ -211,6 +211,17 @@ class CbEnvironmentNameRcb implements ObjectMapper
     
                 after_type:
 
+                $value = $payload['wait_timer'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'wait_timer';
+                    goto after_wait_timer;
+                }
+
+                $properties['wait_timer'] = $value;
+    
+                after_wait_timer:
+
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
             }
@@ -538,6 +549,10 @@ class CbEnvironmentNameRcb implements ObjectMapper
             goto after_type;
         }
         after_type:        $result['type'] = $type;
+
+        
+        $wait_timer = $object->wait_timer;
+        after_wait_timer:        $result['wait_timer'] = $wait_timer;
 
 
         return $result;

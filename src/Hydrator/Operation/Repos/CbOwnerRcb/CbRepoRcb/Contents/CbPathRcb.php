@@ -2167,14 +2167,6 @@ class CbPathRcb implements ObjectMapper
         if ($value === null) {
             goto after_value;
         }
-        static $valueSerializer0;
-
-        if ($valueSerializer0 === null) {
-            $valueSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
-));
-        }
-        
-        $value = $valueSerializer0->serialize($value, $this);
         after_value:        $result['value'] = $value;
 
 

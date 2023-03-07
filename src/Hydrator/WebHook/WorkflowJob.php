@@ -28,16 +28,14 @@ class WorkflowJob implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobCompleted⚡️WorkflowJob($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobCompleted⚡️WorkflowJob⚡️Steps($payload),
                 'ApiClients\Client\GitHub\Schema\Deployment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Deployment($payload),
-                'ApiClients\Client\GitHub\Schema\Integration' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration($payload),
-                'ApiClients\Client\GitHub\Schema\Integration\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobInProgress' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobInProgress($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobInProgress\WorkflowJob' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobInProgress⚡️WorkflowJob($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobInProgress\WorkflowJob\Steps' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobInProgress⚡️WorkflowJob⚡️Steps($payload),
@@ -612,15 +610,6 @@ class WorkflowJob implements ObjectMapper
                     goto after_license;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'license';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['license'] = $value;
     
                 after_license:
@@ -628,17 +617,8 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['organization'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'organization';
+                    $properties['organization'] = null;
                     goto after_organization;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'organization';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['organization'] = $value;
@@ -1711,90 +1691,79 @@ class WorkflowJob implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(array $payload): \ApiClients\Client\GitHub\Schema\LicenseSimple
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['key'] ?? null;
+                $value = $payload['admin'] ?? null;
     
                 if ($value === null) {
-                    $properties['key'] = null;
-                    goto after_key;
+                    $properties['admin'] = null;
+                    goto after_admin;
                 }
 
-                $properties['key'] = $value;
+                $properties['admin'] = $value;
     
-                after_key:
+                after_admin:
 
-                $value = $payload['name'] ?? null;
+                $value = $payload['pull'] ?? null;
     
                 if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
+                    $properties['pull'] = null;
+                    goto after_pull;
                 }
 
-                $properties['name'] = $value;
+                $properties['pull'] = $value;
     
-                after_name:
+                after_pull:
 
-                $value = $payload['url'] ?? null;
+                $value = $payload['triage'] ?? null;
     
                 if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
+                    $missingFields[] = 'triage';
+                    goto after_triage;
                 }
 
-                $properties['url'] = $value;
+                $properties['triage'] = $value;
     
-                after_url:
+                after_triage:
 
-                $value = $payload['spdx_id'] ?? null;
+                $value = $payload['push'] ?? null;
     
                 if ($value === null) {
-                    $properties['spdx_id'] = null;
-                    goto after_spdx_id;
+                    $properties['push'] = null;
+                    goto after_push;
                 }
 
-                $properties['spdx_id'] = $value;
+                $properties['push'] = $value;
     
-                after_spdx_id:
+                after_push:
 
-                $value = $payload['node_id'] ?? null;
+                $value = $payload['maintain'] ?? null;
     
                 if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
+                    $missingFields[] = 'maintain';
+                    goto after_maintain;
                 }
 
-                $properties['node_id'] = $value;
+                $properties['maintain'] = $value;
     
-                after_node_id:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
+                after_maintain:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseSimple::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\GitHub\Schema\LicenseSimple(...$properties);
+                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -2048,83 +2017,6 @@ class WorkflowJob implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['admin'] = null;
-                    goto after_admin;
-                }
-
-                $properties['admin'] = $value;
-    
-                after_admin:
-
-                $value = $payload['pull'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pull'] = null;
-                    goto after_pull;
-                }
-
-                $properties['pull'] = $value;
-    
-                after_pull:
-
-                $value = $payload['triage'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'triage';
-                    goto after_triage;
-                }
-
-                $properties['triage'] = $value;
-    
-                after_triage:
-
-                $value = $payload['push'] ?? null;
-    
-                if ($value === null) {
-                    $properties['push'] = null;
-                    goto after_push;
-                }
-
-                $properties['push'] = $value;
-    
-                after_push:
-
-                $value = $payload['maintain'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'maintain';
-                    goto after_maintain;
-                }
-
-                $properties['maintain'] = $value;
-    
-                after_maintain:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -3432,7 +3324,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['check_run_url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'check_run_url';
+                    $properties['check_run_url'] = null;
                     goto after_check_run_url;
                 }
 
@@ -3443,7 +3335,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['completed_at'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'completed_at';
+                    $properties['completed_at'] = null;
                     goto after_completed_at;
                 }
 
@@ -3465,7 +3357,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['created_at'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'created_at';
+                    $properties['created_at'] = null;
                     goto after_created_at;
                 }
 
@@ -3476,7 +3368,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['head_sha'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'head_sha';
+                    $properties['head_sha'] = null;
                     goto after_head_sha;
                 }
 
@@ -3487,7 +3379,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['html_url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'html_url';
+                    $properties['html_url'] = null;
                     goto after_html_url;
                 }
 
@@ -3498,7 +3390,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['id'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'id';
+                    $properties['id'] = null;
                     goto after_id;
                 }
 
@@ -3509,7 +3401,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['labels'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'labels';
+                    $properties['labels'] = null;
                     goto after_labels;
                 }
 
@@ -3520,7 +3412,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['name'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'name';
+                    $properties['name'] = null;
                     goto after_name;
                 }
 
@@ -3531,7 +3423,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['node_id'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'node_id';
+                    $properties['node_id'] = null;
                     goto after_node_id;
                 }
 
@@ -3542,7 +3434,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['run_attempt'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'run_attempt';
+                    $properties['run_attempt'] = null;
                     goto after_run_attempt;
                 }
 
@@ -3553,7 +3445,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['run_id'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'run_id';
+                    $properties['run_id'] = null;
                     goto after_run_id;
                 }
 
@@ -3564,7 +3456,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['run_url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'run_url';
+                    $properties['run_url'] = null;
                     goto after_run_url;
                 }
 
@@ -3619,7 +3511,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['started_at'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'started_at';
+                    $properties['started_at'] = null;
                     goto after_started_at;
                 }
 
@@ -3630,7 +3522,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['status'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'status';
+                    $properties['status'] = null;
                     goto after_status;
                 }
 
@@ -3667,6 +3559,16 @@ class WorkflowJob implements ObjectMapper
                     goto after_steps;
                 }
 
+                static $stepsCaster1;
+    
+                if ($stepsCaster1 === null) {
+                    $stepsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookWorkflowJobCompleted\\WorkflowJob\\Steps',
+));
+                }
+    
+                $value = $stepsCaster1->cast($value, $this);
+
                 $properties['steps'] = $value;
     
                 after_steps:
@@ -3674,7 +3576,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'url';
+                    $properties['url'] = null;
                     goto after_url;
                 }
 
@@ -3694,6 +3596,94 @@ class WorkflowJob implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobCompleted⚡️WorkflowJob⚡️Steps(array $payload): \ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['completed_at'] ?? null;
+    
+                if ($value === null) {
+                    $properties['completed_at'] = null;
+                    goto after_completed_at;
+                }
+
+                $properties['completed_at'] = $value;
+    
+                after_completed_at:
+
+                $value = $payload['conclusion'] ?? null;
+    
+                if ($value === null) {
+                    $properties['conclusion'] = null;
+                    goto after_conclusion;
+                }
+
+                $properties['conclusion'] = $value;
+    
+                after_conclusion:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $properties['name'] = null;
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['number'] ?? null;
+    
+                if ($value === null) {
+                    $properties['number'] = null;
+                    goto after_number;
+                }
+
+                $properties['number'] = $value;
+    
+                after_number:
+
+                $value = $payload['started_at'] ?? null;
+    
+                if ($value === null) {
+                    $properties['started_at'] = null;
+                    goto after_started_at;
+                }
+
+                $properties['started_at'] = $value;
+    
+                after_started_at:
+
+                $value = $payload['status'] ?? null;
+    
+                if ($value === null) {
+                    $properties['status'] = null;
+                    goto after_status;
+                }
+
+                $properties['status'] = $value;
+    
+                after_status:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -3821,15 +3811,6 @@ class WorkflowJob implements ObjectMapper
                     goto after_creator;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'creator';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['creator'] = $value;
     
                 after_creator:
@@ -3903,17 +3884,8 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['performed_via_github_app'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'performed_via_github_app';
+                    $properties['performed_via_github_app'] = null;
                     goto after_performed_via_github_app;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'performed_via_github_app';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['performed_via_github_app'] = $value;
@@ -3932,310 +3904,6 @@ class WorkflowJob implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\Deployment(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Deployment', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration(array $payload): \ApiClients\Client\GitHub\Schema\Integration
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['slug'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'slug';
-                    goto after_slug;
-                }
-
-                $properties['slug'] = $value;
-    
-                after_slug:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['owner'] ?? null;
-    
-                if ($value === null) {
-                    $properties['owner'] = null;
-                    goto after_owner;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'owner';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['owner'] = $value;
-    
-                after_owner:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['external_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['external_url'] = null;
-                    goto after_external_url;
-                }
-
-                $properties['external_url'] = $value;
-    
-                after_external_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['permissions'] ?? null;
-    
-                if ($value === null) {
-                    $properties['permissions'] = null;
-                    goto after_permissions;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'permissions';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['permissions'] = $value;
-    
-                after_permissions:
-
-                $value = $payload['events'] ?? null;
-    
-                if ($value === null) {
-                    $properties['events'] = null;
-                    goto after_events;
-                }
-
-                $properties['events'] = $value;
-    
-                after_events:
-
-                $value = $payload['installations_count'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'installations_count';
-                    goto after_installations_count;
-                }
-
-                $properties['installations_count'] = $value;
-    
-                after_installations_count:
-
-                $value = $payload['client_id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'client_id';
-                    goto after_client_id;
-                }
-
-                $properties['client_id'] = $value;
-    
-                after_client_id:
-
-                $value = $payload['client_secret'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'client_secret';
-                    goto after_client_secret;
-                }
-
-                $properties['client_secret'] = $value;
-    
-                after_client_secret:
-
-                $value = $payload['webhook_secret'] ?? null;
-    
-                if ($value === null) {
-                    $properties['webhook_secret'] = null;
-                    goto after_webhook_secret;
-                }
-
-                $properties['webhook_secret'] = $value;
-    
-                after_webhook_secret:
-
-                $value = $payload['pem'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'pem';
-                    goto after_pem;
-                }
-
-                $properties['pem'] = $value;
-    
-                after_pem:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Integration', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Integration::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Integration(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Integration', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Integration\Permissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['issues'] ?? null;
-    
-                if ($value === null) {
-                    $properties['issues'] = null;
-                    goto after_issues;
-                }
-
-                $properties['issues'] = $value;
-    
-                after_issues:
-
-                $value = $payload['checks'] ?? null;
-    
-                if ($value === null) {
-                    $properties['checks'] = null;
-                    goto after_checks;
-                }
-
-                $properties['checks'] = $value;
-    
-                after_checks:
-
-                $value = $payload['metadata'] ?? null;
-    
-                if ($value === null) {
-                    $properties['metadata'] = null;
-                    goto after_metadata;
-                }
-
-                $properties['metadata'] = $value;
-    
-                after_metadata:
-
-                $value = $payload['contents'] ?? null;
-    
-                if ($value === null) {
-                    $properties['contents'] = null;
-                    goto after_contents;
-                }
-
-                $properties['contents'] = $value;
-    
-                after_contents:
-
-                $value = $payload['deployments'] ?? null;
-    
-                if ($value === null) {
-                    $properties['deployments'] = null;
-                    goto after_deployments;
-                }
-
-                $properties['deployments'] = $value;
-    
-                after_deployments:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Integration\Permissions', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Integration\Permissions::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Integration\Permissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Integration\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -4422,7 +4090,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['check_run_url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'check_run_url';
+                    $properties['check_run_url'] = null;
                     goto after_check_run_url;
                 }
 
@@ -4455,7 +4123,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['created_at'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'created_at';
+                    $properties['created_at'] = null;
                     goto after_created_at;
                 }
 
@@ -4466,7 +4134,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['head_sha'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'head_sha';
+                    $properties['head_sha'] = null;
                     goto after_head_sha;
                 }
 
@@ -4477,7 +4145,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['html_url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'html_url';
+                    $properties['html_url'] = null;
                     goto after_html_url;
                 }
 
@@ -4488,7 +4156,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['id'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'id';
+                    $properties['id'] = null;
                     goto after_id;
                 }
 
@@ -4499,7 +4167,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['labels'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'labels';
+                    $properties['labels'] = null;
                     goto after_labels;
                 }
 
@@ -4510,7 +4178,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['name'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'name';
+                    $properties['name'] = null;
                     goto after_name;
                 }
 
@@ -4521,7 +4189,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['node_id'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'node_id';
+                    $properties['node_id'] = null;
                     goto after_node_id;
                 }
 
@@ -4532,7 +4200,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['run_attempt'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'run_attempt';
+                    $properties['run_attempt'] = null;
                     goto after_run_attempt;
                 }
 
@@ -4543,7 +4211,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['run_id'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'run_id';
+                    $properties['run_id'] = null;
                     goto after_run_id;
                 }
 
@@ -4554,7 +4222,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['run_url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'run_url';
+                    $properties['run_url'] = null;
                     goto after_run_url;
                 }
 
@@ -4609,7 +4277,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['started_at'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'started_at';
+                    $properties['started_at'] = null;
                     goto after_started_at;
                 }
 
@@ -4674,7 +4342,7 @@ class WorkflowJob implements ObjectMapper
                 $value = $payload['url'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'url';
+                    $properties['url'] = null;
                     goto after_url;
                 }
 
@@ -5893,16 +5561,14 @@ class WorkflowJob implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobCompleted⚡️WorkflowJob($object),
+                'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobCompleted⚡️WorkflowJob⚡️Steps($object),
                 'ApiClients\Client\GitHub\Schema\Deployment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Deployment($object),
-                'ApiClients\Client\GitHub\Schema\Integration' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration($object),
-                'ApiClients\Client\GitHub\Schema\Integration\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobInProgress' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobInProgress($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobInProgress\WorkflowJob' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobInProgress⚡️WorkflowJob($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobInProgress\WorkflowJob\Steps' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobInProgress⚡️WorkflowJob⚡️Steps($object),
@@ -6310,12 +5976,14 @@ class WorkflowJob implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($license);
         after_license:        $result['license'] = $license;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($organization);
+
+        if ($organization === null) {
+            goto after_organization;
+        }
         after_organization:        $result['organization'] = $organization;
 
         
@@ -6982,53 +6650,41 @@ class WorkflowJob implements ObjectMapper
     }
 
     
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseSimple);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
         $result = [];
         
-        $key = $object->key;
+        $admin = $object->admin;
 
-        if ($key === null) {
-            goto after_key;
+        if ($admin === null) {
+            goto after_admin;
         }
-        after_key:        $result['key'] = $key;
+        after_admin:        $result['admin'] = $admin;
 
         
-        $name = $object->name;
+        $pull = $object->pull;
 
-        if ($name === null) {
-            goto after_name;
+        if ($pull === null) {
+            goto after_pull;
         }
-        after_name:        $result['name'] = $name;
+        after_pull:        $result['pull'] = $pull;
 
         
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
+        $triage = $object->triage;
+        after_triage:        $result['triage'] = $triage;
 
         
-        $spdx_id = $object->spdx_id;
+        $push = $object->push;
 
-        if ($spdx_id === null) {
-            goto after_spdx_id;
+        if ($push === null) {
+            goto after_push;
         }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        after_push:        $result['push'] = $push;
 
         
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $maintain = $object->maintain;
+        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;
@@ -7202,47 +6858,6 @@ class WorkflowJob implements ObjectMapper
         
         $starred_at = $object->starred_at;
         after_starred_at:        $result['starred_at'] = $starred_at;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
-        $result = [];
-        
-        $admin = $object->admin;
-
-        if ($admin === null) {
-            goto after_admin;
-        }
-        after_admin:        $result['admin'] = $admin;
-
-        
-        $pull = $object->pull;
-
-        if ($pull === null) {
-            goto after_pull;
-        }
-        after_pull:        $result['pull'] = $pull;
-
-        
-        $triage = $object->triage;
-        after_triage:        $result['triage'] = $triage;
-
-        
-        $push = $object->push;
-
-        if ($push === null) {
-            goto after_push;
-        }
-        after_push:        $result['push'] = $push;
-
-        
-        $maintain = $object->maintain;
-        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;
@@ -8172,10 +7787,18 @@ class WorkflowJob implements ObjectMapper
         $result = [];
         
         $check_run_url = $object->check_run_url;
+
+        if ($check_run_url === null) {
+            goto after_check_run_url;
+        }
         after_check_run_url:        $result['check_run_url'] = $check_run_url;
 
         
         $completed_at = $object->completed_at;
+
+        if ($completed_at === null) {
+            goto after_completed_at;
+        }
         after_completed_at:        $result['completed_at'] = $completed_at;
 
         
@@ -8188,22 +7811,42 @@ class WorkflowJob implements ObjectMapper
 
         
         $created_at = $object->created_at;
+
+        if ($created_at === null) {
+            goto after_created_at;
+        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $head_sha = $object->head_sha;
+
+        if ($head_sha === null) {
+            goto after_head_sha;
+        }
         after_head_sha:        $result['head_sha'] = $head_sha;
 
         
         $html_url = $object->html_url;
+
+        if ($html_url === null) {
+            goto after_html_url;
+        }
         after_html_url:        $result['html_url'] = $html_url;
 
         
         $id = $object->id;
+
+        if ($id === null) {
+            goto after_id;
+        }
         after_id:        $result['id'] = $id;
 
         
         $labels = $object->labels;
+
+        if ($labels === null) {
+            goto after_labels;
+        }
         static $labelsSerializer0;
 
         if ($labelsSerializer0 === null) {
@@ -8216,22 +7859,42 @@ class WorkflowJob implements ObjectMapper
 
         
         $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
         after_name:        $result['name'] = $name;
 
         
         $node_id = $object->node_id;
+
+        if ($node_id === null) {
+            goto after_node_id;
+        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $run_attempt = $object->run_attempt;
+
+        if ($run_attempt === null) {
+            goto after_run_attempt;
+        }
         after_run_attempt:        $result['run_attempt'] = $run_attempt;
 
         
         $run_id = $object->run_id;
+
+        if ($run_id === null) {
+            goto after_run_id;
+        }
         after_run_id:        $result['run_id'] = $run_id;
 
         
         $run_url = $object->run_url;
+
+        if ($run_url === null) {
+            goto after_run_url;
+        }
         after_run_url:        $result['run_url'] = $run_url;
 
         
@@ -8268,10 +7931,18 @@ class WorkflowJob implements ObjectMapper
 
         
         $started_at = $object->started_at;
+
+        if ($started_at === null) {
+            goto after_started_at;
+        }
         after_started_at:        $result['started_at'] = $started_at;
 
         
         $status = $object->status;
+
+        if ($status === null) {
+            goto after_status;
+        }
         after_status:        $result['status'] = $status;
 
         
@@ -8296,11 +7967,81 @@ class WorkflowJob implements ObjectMapper
         if ($steps === null) {
             goto after_steps;
         }
+        static $stepsSerializer0;
+
+        if ($stepsSerializer0 === null) {
+            $stepsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookWorkflowJobCompleted\\WorkflowJob\\Steps',
+));
+        }
+        
+        $steps = $stepsSerializer0->serialize($steps, $this);
         after_steps:        $result['steps'] = $steps;
 
         
         $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobCompleted⚡️WorkflowJob⚡️Steps(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps);
+        $result = [];
+        
+        $completed_at = $object->completed_at;
+
+        if ($completed_at === null) {
+            goto after_completed_at;
+        }
+        after_completed_at:        $result['completed_at'] = $completed_at;
+
+        
+        $conclusion = $object->conclusion;
+
+        if ($conclusion === null) {
+            goto after_conclusion;
+        }
+        after_conclusion:        $result['conclusion'] = $conclusion;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $number = $object->number;
+
+        if ($number === null) {
+            goto after_number;
+        }
+        after_number:        $result['number'] = $number;
+
+        
+        $started_at = $object->started_at;
+
+        if ($started_at === null) {
+            goto after_started_at;
+        }
+        after_started_at:        $result['started_at'] = $started_at;
+
+        
+        $status = $object->status;
+
+        if ($status === null) {
+            goto after_status;
+        }
+        after_status:        $result['status'] = $status;
 
 
         return $result;
@@ -8393,7 +8134,6 @@ class WorkflowJob implements ObjectMapper
         if ($creator === null) {
             goto after_creator;
         }
-        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($creator);
         after_creator:        $result['creator'] = $creator;
 
         
@@ -8438,192 +8178,11 @@ class WorkflowJob implements ObjectMapper
 
         
         $performed_via_github_app = $object->performed_via_github_app;
-        $performed_via_github_app = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration($performed_via_github_app);
+
+        if ($performed_via_github_app === null) {
+            goto after_performed_via_github_app;
+        }
         after_performed_via_github_app:        $result['performed_via_github_app'] = $performed_via_github_app;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Integration);
-        $result = [];
-        
-        $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
-        after_id:        $result['id'] = $id;
-
-        
-        $slug = $object->slug;
-        after_slug:        $result['slug'] = $slug;
-
-        
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $owner = $object->owner;
-
-        if ($owner === null) {
-            goto after_owner;
-        }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($owner);
-        after_owner:        $result['owner'] = $owner;
-
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-        after_description:        $result['description'] = $description;
-
-        
-        $external_url = $object->external_url;
-
-        if ($external_url === null) {
-            goto after_external_url;
-        }
-        after_external_url:        $result['external_url'] = $external_url;
-
-        
-        $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
-        after_html_url:        $result['html_url'] = $html_url;
-
-        
-        $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
-        after_created_at:        $result['created_at'] = $created_at;
-
-        
-        $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
-        after_updated_at:        $result['updated_at'] = $updated_at;
-
-        
-        $permissions = $object->permissions;
-
-        if ($permissions === null) {
-            goto after_permissions;
-        }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions($permissions);
-        after_permissions:        $result['permissions'] = $permissions;
-
-        
-        $events = $object->events;
-
-        if ($events === null) {
-            goto after_events;
-        }
-        static $eventsSerializer0;
-
-        if ($eventsSerializer0 === null) {
-            $eventsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
-));
-        }
-        
-        $events = $eventsSerializer0->serialize($events, $this);
-        after_events:        $result['events'] = $events;
-
-        
-        $installations_count = $object->installations_count;
-        after_installations_count:        $result['installations_count'] = $installations_count;
-
-        
-        $client_id = $object->client_id;
-        after_client_id:        $result['client_id'] = $client_id;
-
-        
-        $client_secret = $object->client_secret;
-        after_client_secret:        $result['client_secret'] = $client_secret;
-
-        
-        $webhook_secret = $object->webhook_secret;
-
-        if ($webhook_secret === null) {
-            goto after_webhook_secret;
-        }
-        after_webhook_secret:        $result['webhook_secret'] = $webhook_secret;
-
-        
-        $pem = $object->pem;
-        after_pem:        $result['pem'] = $pem;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Integration\Permissions);
-        $result = [];
-        
-        $issues = $object->issues;
-
-        if ($issues === null) {
-            goto after_issues;
-        }
-        after_issues:        $result['issues'] = $issues;
-
-        
-        $checks = $object->checks;
-
-        if ($checks === null) {
-            goto after_checks;
-        }
-        after_checks:        $result['checks'] = $checks;
-
-        
-        $metadata = $object->metadata;
-
-        if ($metadata === null) {
-            goto after_metadata;
-        }
-        after_metadata:        $result['metadata'] = $metadata;
-
-        
-        $contents = $object->contents;
-
-        if ($contents === null) {
-            goto after_contents;
-        }
-        after_contents:        $result['contents'] = $contents;
-
-        
-        $deployments = $object->deployments;
-
-        if ($deployments === null) {
-            goto after_deployments;
-        }
-        after_deployments:        $result['deployments'] = $deployments;
 
 
         return $result;
@@ -8700,6 +8259,10 @@ class WorkflowJob implements ObjectMapper
         $result = [];
         
         $check_run_url = $object->check_run_url;
+
+        if ($check_run_url === null) {
+            goto after_check_run_url;
+        }
         after_check_run_url:        $result['check_run_url'] = $check_run_url;
 
         
@@ -8720,22 +8283,42 @@ class WorkflowJob implements ObjectMapper
 
         
         $created_at = $object->created_at;
+
+        if ($created_at === null) {
+            goto after_created_at;
+        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $head_sha = $object->head_sha;
+
+        if ($head_sha === null) {
+            goto after_head_sha;
+        }
         after_head_sha:        $result['head_sha'] = $head_sha;
 
         
         $html_url = $object->html_url;
+
+        if ($html_url === null) {
+            goto after_html_url;
+        }
         after_html_url:        $result['html_url'] = $html_url;
 
         
         $id = $object->id;
+
+        if ($id === null) {
+            goto after_id;
+        }
         after_id:        $result['id'] = $id;
 
         
         $labels = $object->labels;
+
+        if ($labels === null) {
+            goto after_labels;
+        }
         static $labelsSerializer0;
 
         if ($labelsSerializer0 === null) {
@@ -8748,22 +8331,42 @@ class WorkflowJob implements ObjectMapper
 
         
         $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
         after_name:        $result['name'] = $name;
 
         
         $node_id = $object->node_id;
+
+        if ($node_id === null) {
+            goto after_node_id;
+        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $run_attempt = $object->run_attempt;
+
+        if ($run_attempt === null) {
+            goto after_run_attempt;
+        }
         after_run_attempt:        $result['run_attempt'] = $run_attempt;
 
         
         $run_id = $object->run_id;
+
+        if ($run_id === null) {
+            goto after_run_id;
+        }
         after_run_id:        $result['run_id'] = $run_id;
 
         
         $run_url = $object->run_url;
+
+        if ($run_url === null) {
+            goto after_run_url;
+        }
         after_run_url:        $result['run_url'] = $run_url;
 
         
@@ -8800,6 +8403,10 @@ class WorkflowJob implements ObjectMapper
 
         
         $started_at = $object->started_at;
+
+        if ($started_at === null) {
+            goto after_started_at;
+        }
         after_started_at:        $result['started_at'] = $started_at;
 
         
@@ -8845,6 +8452,10 @@ class WorkflowJob implements ObjectMapper
 
         
         $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
         after_url:        $result['url'] = $url;
 
 

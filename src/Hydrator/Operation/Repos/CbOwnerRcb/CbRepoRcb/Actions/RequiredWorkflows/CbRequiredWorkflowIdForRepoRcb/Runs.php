@@ -30,8 +30,6 @@ class Runs implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\PullRequestMinimal\Head' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestMinimal⚡️Head($payload),
                 'ApiClients\Client\GitHub\Schema\PullRequestMinimal\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestMinimal⚡️Head⚡️Repo($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleCommit\Author' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author($payload),
                 'ApiClients\Client\GitHub\Schema\MinimalRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MinimalRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\CodeOfConduct' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct($payload),
@@ -487,15 +485,6 @@ class Runs implements ObjectMapper
                 if ($value === null) {
                     $properties['head_commit'] = null;
                     goto after_head_commit;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'head_commit';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['head_commit'] = $value;
@@ -1098,156 +1087,6 @@ class Runs implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit(array $payload): \ApiClients\Client\GitHub\Schema\SimpleCommit
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['tree_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['tree_id'] = null;
-                    goto after_tree_id;
-                }
-
-                $properties['tree_id'] = $value;
-    
-                after_tree_id:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['timestamp'] ?? null;
-    
-                if ($value === null) {
-                    $properties['timestamp'] = null;
-                    goto after_timestamp;
-                }
-
-                $properties['timestamp'] = $value;
-    
-                after_timestamp:
-
-                $value = $payload['author'] ?? null;
-    
-                if ($value === null) {
-                    $properties['author'] = null;
-                    goto after_author;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'author';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['author'] = $value;
-    
-                after_author:
-
-                $value = $payload['committer'] ?? null;
-    
-                if ($value === null) {
-                    $properties['committer'] = null;
-                    goto after_committer;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'committer';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['committer'] = $value;
-    
-                after_committer:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleCommit', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleCommit::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\SimpleCommit(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleCommit', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author(array $payload): \ApiClients\Client\GitHub\Schema\SimpleCommit\Author
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['email'] ?? null;
-    
-                if ($value === null) {
-                    $properties['email'] = null;
-                    goto after_email;
-                }
-
-                $properties['email'] = $value;
-    
-                after_email:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleCommit\Author', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleCommit\Author::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\SimpleCommit\Author(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleCommit\Author', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -2639,8 +2478,6 @@ class Runs implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\PullRequestMinimal\Head' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestMinimal⚡️Head($object),
                 'ApiClients\Client\GitHub\Schema\PullRequestMinimal\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestMinimal⚡️Head⚡️Repo($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
-                'ApiClients\Client\GitHub\Schema\SimpleCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit($object),
-                'ApiClients\Client\GitHub\Schema\SimpleCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author($object),
                 'ApiClients\Client\GitHub\Schema\MinimalRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MinimalRepository($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\CodeOfConduct' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct($object),
@@ -3008,7 +2845,6 @@ class Runs implements ObjectMapper
         if ($head_commit === null) {
             goto after_head_commit;
         }
-        $head_commit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit($head_commit);
         after_head_commit:        $result['head_commit'] = $head_commit;
 
         
@@ -3360,90 +3196,6 @@ class Runs implements ObjectMapper
         
         $starred_at = $object->starred_at;
         after_starred_at:        $result['starred_at'] = $starred_at;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleCommit);
-        $result = [];
-        
-        $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
-        after_id:        $result['id'] = $id;
-
-        
-        $tree_id = $object->tree_id;
-
-        if ($tree_id === null) {
-            goto after_tree_id;
-        }
-        after_tree_id:        $result['tree_id'] = $tree_id;
-
-        
-        $message = $object->message;
-
-        if ($message === null) {
-            goto after_message;
-        }
-        after_message:        $result['message'] = $message;
-
-        
-        $timestamp = $object->timestamp;
-
-        if ($timestamp === null) {
-            goto after_timestamp;
-        }
-        after_timestamp:        $result['timestamp'] = $timestamp;
-
-        
-        $author = $object->author;
-
-        if ($author === null) {
-            goto after_author;
-        }
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author($author);
-        after_author:        $result['author'] = $author;
-
-        
-        $committer = $object->committer;
-
-        if ($committer === null) {
-            goto after_committer;
-        }
-        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author($committer);
-        after_committer:        $result['committer'] = $committer;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleCommit⚡️Author(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleCommit\Author);
-        $result = [];
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $email = $object->email;
-
-        if ($email === null) {
-            goto after_email;
-        }
-        after_email:        $result['email'] = $email;
 
 
         return $result;

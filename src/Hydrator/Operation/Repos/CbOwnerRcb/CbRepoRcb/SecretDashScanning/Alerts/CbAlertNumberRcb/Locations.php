@@ -24,7 +24,7 @@ class Locations implements ObjectMapper
     {
         return match($className) {
             'ApiClients\Client\GitHub\Schema\SecretScanningLocation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocation($payload),
-                'ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueComment($payload),
+                'ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($payload),
                 'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -58,7 +58,7 @@ class Locations implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'details';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueComment($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -84,35 +84,123 @@ class Locations implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueComment(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['issue_comment_url'] ?? null;
+                $value = $payload['path'] ?? null;
     
                 if ($value === null) {
-                    $properties['issue_comment_url'] = null;
-                    goto after_issue_comment_url;
+                    $properties['path'] = null;
+                    goto after_path;
                 }
 
-                $properties['issue_comment_url'] = $value;
+                $properties['path'] = $value;
     
-                after_issue_comment_url:
+                after_path:
+
+                $value = $payload['start_line'] ?? null;
+    
+                if ($value === null) {
+                    $properties['start_line'] = null;
+                    goto after_start_line;
+                }
+
+                $properties['start_line'] = $value;
+    
+                after_start_line:
+
+                $value = $payload['end_line'] ?? null;
+    
+                if ($value === null) {
+                    $properties['end_line'] = null;
+                    goto after_end_line;
+                }
+
+                $properties['end_line'] = $value;
+    
+                after_end_line:
+
+                $value = $payload['start_column'] ?? null;
+    
+                if ($value === null) {
+                    $properties['start_column'] = null;
+                    goto after_start_column;
+                }
+
+                $properties['start_column'] = $value;
+    
+                after_start_column:
+
+                $value = $payload['end_column'] ?? null;
+    
+                if ($value === null) {
+                    $properties['end_column'] = null;
+                    goto after_end_column;
+                }
+
+                $properties['end_column'] = $value;
+    
+                after_end_column:
+
+                $value = $payload['blob_sha'] ?? null;
+    
+                if ($value === null) {
+                    $properties['blob_sha'] = null;
+                    goto after_blob_sha;
+                }
+
+                $properties['blob_sha'] = $value;
+    
+                after_blob_sha:
+
+                $value = $payload['blob_url'] ?? null;
+    
+                if ($value === null) {
+                    $properties['blob_url'] = null;
+                    goto after_blob_url;
+                }
+
+                $properties['blob_url'] = $value;
+    
+                after_blob_url:
+
+                $value = $payload['commit_sha'] ?? null;
+    
+                if ($value === null) {
+                    $properties['commit_sha'] = null;
+                    goto after_commit_sha;
+                }
+
+                $properties['commit_sha'] = $value;
+    
+                after_commit_sha:
+
+                $value = $payload['commit_url'] ?? null;
+    
+                if ($value === null) {
+                    $properties['commit_url'] = null;
+                    goto after_commit_url;
+                }
+
+                $properties['commit_url'] = $value;
+    
+                after_commit_url:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment(...$properties);
+                return new \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -183,7 +271,7 @@ class Locations implements ObjectMapper
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\SecretScanningLocation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocation($object),
-                'ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueComment($object),
+                'ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($object),
                 'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -276,7 +364,7 @@ class Locations implements ObjectMapper
         if ($details === null) {
             goto after_details;
         }
-        $details = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueComment($details);
+        $details = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($details);
         after_details:        $result['details'] = $details;
 
 
@@ -284,17 +372,81 @@ class Locations implements ObjectMapper
     }
 
     
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueComment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit);
         $result = [];
         
-        $issue_comment_url = $object->issue_comment_url;
+        $path = $object->path;
 
-        if ($issue_comment_url === null) {
-            goto after_issue_comment_url;
+        if ($path === null) {
+            goto after_path;
         }
-        after_issue_comment_url:        $result['issue_comment_url'] = $issue_comment_url;
+        after_path:        $result['path'] = $path;
+
+        
+        $start_line = $object->start_line;
+
+        if ($start_line === null) {
+            goto after_start_line;
+        }
+        after_start_line:        $result['start_line'] = $start_line;
+
+        
+        $end_line = $object->end_line;
+
+        if ($end_line === null) {
+            goto after_end_line;
+        }
+        after_end_line:        $result['end_line'] = $end_line;
+
+        
+        $start_column = $object->start_column;
+
+        if ($start_column === null) {
+            goto after_start_column;
+        }
+        after_start_column:        $result['start_column'] = $start_column;
+
+        
+        $end_column = $object->end_column;
+
+        if ($end_column === null) {
+            goto after_end_column;
+        }
+        after_end_column:        $result['end_column'] = $end_column;
+
+        
+        $blob_sha = $object->blob_sha;
+
+        if ($blob_sha === null) {
+            goto after_blob_sha;
+        }
+        after_blob_sha:        $result['blob_sha'] = $blob_sha;
+
+        
+        $blob_url = $object->blob_url;
+
+        if ($blob_url === null) {
+            goto after_blob_url;
+        }
+        after_blob_url:        $result['blob_url'] = $blob_url;
+
+        
+        $commit_sha = $object->commit_sha;
+
+        if ($commit_sha === null) {
+            goto after_commit_sha;
+        }
+        after_commit_sha:        $result['commit_sha'] = $commit_sha;
+
+        
+        $commit_url = $object->commit_url;
+
+        if ($commit_url === null) {
+            goto after_commit_url;
+        }
+        after_commit_url:        $result['commit_url'] = $commit_url;
 
 
         return $result;

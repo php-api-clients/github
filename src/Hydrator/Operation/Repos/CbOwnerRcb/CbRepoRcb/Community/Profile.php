@@ -25,9 +25,6 @@ class Profile implements ObjectMapper
         return match($className) {
             'ApiClients\Client\GitHub\Schema\CommunityProfile' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile($payload),
                 'ApiClients\Client\GitHub\Schema\CommunityProfile\Files' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($payload),
-                'ApiClients\Client\GitHub\Schema\CodeOfConductSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple($payload),
-                'ApiClients\Client\GitHub\Schema\CommunityHealthFile' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($payload),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -143,15 +140,6 @@ class Profile implements ObjectMapper
                     goto after_code_of_conduct;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'code_of_conduct';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['code_of_conduct'] = $value;
     
                 after_code_of_conduct:
@@ -161,15 +149,6 @@ class Profile implements ObjectMapper
                 if ($value === null) {
                     $properties['code_of_conduct_file'] = null;
                     goto after_code_of_conduct_file;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'code_of_conduct_file';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['code_of_conduct_file'] = $value;
@@ -183,15 +162,6 @@ class Profile implements ObjectMapper
                     goto after_license;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'license';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['license'] = $value;
     
                 after_license:
@@ -201,15 +171,6 @@ class Profile implements ObjectMapper
                 if ($value === null) {
                     $properties['contributing'] = null;
                     goto after_contributing;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'contributing';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['contributing'] = $value;
@@ -223,15 +184,6 @@ class Profile implements ObjectMapper
                     goto after_readme;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'readme';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['readme'] = $value;
     
                 after_readme:
@@ -243,15 +195,6 @@ class Profile implements ObjectMapper
                     goto after_issue_template;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'issue_template';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['issue_template'] = $value;
     
                 after_issue_template:
@@ -261,15 +204,6 @@ class Profile implements ObjectMapper
                 if ($value === null) {
                     $properties['pull_request_template'] = null;
                     goto after_pull_request_template;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'pull_request_template';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['pull_request_template'] = $value;
@@ -290,204 +224,6 @@ class Profile implements ObjectMapper
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
             }
         }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple(array $payload): \ApiClients\Client\GitHub\Schema\CodeOfConductSimple
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['key'] ?? null;
-    
-                if ($value === null) {
-                    $properties['key'] = null;
-                    goto after_key;
-                }
-
-                $properties['key'] = $value;
-    
-                after_key:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeOfConductSimple', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeOfConductSimple::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CodeOfConductSimple(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeOfConductSimple', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile(array $payload): \ApiClients\Client\GitHub\Schema\CommunityHealthFile
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityHealthFile', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommunityHealthFile::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CommunityHealthFile(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityHealthFile', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(array $payload): \ApiClients\Client\GitHub\Schema\LicenseSimple
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['key'] ?? null;
-    
-                if ($value === null) {
-                    $properties['key'] = null;
-                    goto after_key;
-                }
-
-                $properties['key'] = $value;
-    
-                after_key:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['spdx_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['spdx_id'] = null;
-                    goto after_spdx_id;
-                }
-
-                $properties['spdx_id'] = $value;
-    
-                after_spdx_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseSimple::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\LicenseSimple(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
-            }
-        }
     
     public function serializeObject(object $object): mixed
     {
@@ -502,9 +238,6 @@ class Profile implements ObjectMapper
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\CommunityProfile' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile($object),
                 'ApiClients\Client\GitHub\Schema\CommunityProfile\Files' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($object),
-                'ApiClients\Client\GitHub\Schema\CodeOfConductSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple($object),
-                'ApiClients\Client\GitHub\Schema\CommunityHealthFile' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($object),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -642,7 +375,6 @@ class Profile implements ObjectMapper
         if ($code_of_conduct === null) {
             goto after_code_of_conduct;
         }
-        $code_of_conduct = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple($code_of_conduct);
         after_code_of_conduct:        $result['code_of_conduct'] = $code_of_conduct;
 
         
@@ -651,7 +383,6 @@ class Profile implements ObjectMapper
         if ($code_of_conduct_file === null) {
             goto after_code_of_conduct_file;
         }
-        $code_of_conduct_file = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($code_of_conduct_file);
         after_code_of_conduct_file:        $result['code_of_conduct_file'] = $code_of_conduct_file;
 
         
@@ -660,7 +391,6 @@ class Profile implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($license);
         after_license:        $result['license'] = $license;
 
         
@@ -669,7 +399,6 @@ class Profile implements ObjectMapper
         if ($contributing === null) {
             goto after_contributing;
         }
-        $contributing = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($contributing);
         after_contributing:        $result['contributing'] = $contributing;
 
         
@@ -678,7 +407,6 @@ class Profile implements ObjectMapper
         if ($readme === null) {
             goto after_readme;
         }
-        $readme = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($readme);
         after_readme:        $result['readme'] = $readme;
 
         
@@ -687,7 +415,6 @@ class Profile implements ObjectMapper
         if ($issue_template === null) {
             goto after_issue_template;
         }
-        $issue_template = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($issue_template);
         after_issue_template:        $result['issue_template'] = $issue_template;
 
         
@@ -696,127 +423,7 @@ class Profile implements ObjectMapper
         if ($pull_request_template === null) {
             goto after_pull_request_template;
         }
-        $pull_request_template = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile($pull_request_template);
         after_pull_request_template:        $result['pull_request_template'] = $pull_request_template;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeOfConductSimple);
-        $result = [];
-        
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
-
-        
-        $key = $object->key;
-
-        if ($key === null) {
-            goto after_key;
-        }
-        after_key:        $result['key'] = $key;
-
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
-        after_html_url:        $result['html_url'] = $html_url;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityHealthFile(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommunityHealthFile);
-        $result = [];
-        
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
-
-        
-        $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
-        after_html_url:        $result['html_url'] = $html_url;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseSimple);
-        $result = [];
-        
-        $key = $object->key;
-
-        if ($key === null) {
-            goto after_key;
-        }
-        after_key:        $result['key'] = $key;
-
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
-
-        
-        $spdx_id = $object->spdx_id;
-
-        if ($spdx_id === null) {
-            goto after_spdx_id;
-        }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
-
-        
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
 
 
         return $result;

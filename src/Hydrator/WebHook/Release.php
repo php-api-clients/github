@@ -32,9 +32,8 @@ class Release implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($payload),
                 'ApiClients\Client\GitHub\Schema\Discussion\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️Reactions($payload),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
@@ -44,13 +43,9 @@ class Release implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookProjectEdited\Changes\Body' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectEdited⚡️Changes⚡️Body($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookLabelEdited\Changes\Name' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookLabelEdited⚡️Changes⚡️Name($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookReleasePublished' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookReleaseReleased' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -1425,15 +1420,6 @@ class Release implements ObjectMapper
                     goto after_license;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'license';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['license'] = $value;
     
                 after_license:
@@ -1441,17 +1427,8 @@ class Release implements ObjectMapper
                 $value = $payload['organization'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'organization';
+                    $properties['organization'] = null;
                     goto after_organization;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'organization';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['organization'] = $value;
@@ -2524,90 +2501,79 @@ class Release implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(array $payload): \ApiClients\Client\GitHub\Schema\LicenseSimple
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['key'] ?? null;
+                $value = $payload['admin'] ?? null;
     
                 if ($value === null) {
-                    $properties['key'] = null;
-                    goto after_key;
+                    $properties['admin'] = null;
+                    goto after_admin;
                 }
 
-                $properties['key'] = $value;
+                $properties['admin'] = $value;
     
-                after_key:
+                after_admin:
 
-                $value = $payload['name'] ?? null;
+                $value = $payload['pull'] ?? null;
     
                 if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
+                    $properties['pull'] = null;
+                    goto after_pull;
                 }
 
-                $properties['name'] = $value;
+                $properties['pull'] = $value;
     
-                after_name:
+                after_pull:
 
-                $value = $payload['url'] ?? null;
+                $value = $payload['triage'] ?? null;
     
                 if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
+                    $missingFields[] = 'triage';
+                    goto after_triage;
                 }
 
-                $properties['url'] = $value;
+                $properties['triage'] = $value;
     
-                after_url:
+                after_triage:
 
-                $value = $payload['spdx_id'] ?? null;
+                $value = $payload['push'] ?? null;
     
                 if ($value === null) {
-                    $properties['spdx_id'] = null;
-                    goto after_spdx_id;
+                    $properties['push'] = null;
+                    goto after_push;
                 }
 
-                $properties['spdx_id'] = $value;
+                $properties['push'] = $value;
     
-                after_spdx_id:
+                after_push:
 
-                $value = $payload['node_id'] ?? null;
+                $value = $payload['maintain'] ?? null;
     
                 if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
+                    $missingFields[] = 'maintain';
+                    goto after_maintain;
                 }
 
-                $properties['node_id'] = $value;
+                $properties['maintain'] = $value;
     
-                after_node_id:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
+                after_maintain:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseSimple::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\GitHub\Schema\LicenseSimple(...$properties);
+                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -2861,83 +2827,6 @@ class Release implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['admin'] = null;
-                    goto after_admin;
-                }
-
-                $properties['admin'] = $value;
-    
-                after_admin:
-
-                $value = $payload['pull'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pull'] = null;
-                    goto after_pull;
-                }
-
-                $properties['pull'] = $value;
-    
-                after_pull:
-
-                $value = $payload['triage'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'triage';
-                    goto after_triage;
-                }
-
-                $properties['triage'] = $value;
-    
-                after_triage:
-
-                $value = $payload['push'] ?? null;
-    
-                if ($value === null) {
-                    $properties['push'] = null;
-                    goto after_push;
-                }
-
-                $properties['push'] = $value;
-    
-                after_push:
-
-                $value = $payload['maintain'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'maintain';
-                    goto after_maintain;
-                }
-
-                $properties['maintain'] = $value;
-    
-                after_maintain:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -4777,7 +4666,7 @@ class Release implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'release';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -4839,455 +4728,6 @@ class Release implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release(array $payload): \ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['assets'] ?? null;
-    
-                if ($value === null) {
-                    $properties['assets'] = null;
-                    goto after_assets;
-                }
-
-                $properties['assets'] = $value;
-    
-                after_assets:
-
-                $value = $payload['assets_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'assets_url';
-                    goto after_assets_url;
-                }
-
-                $properties['assets_url'] = $value;
-    
-                after_assets_url:
-
-                $value = $payload['author'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'author';
-                    goto after_author;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'author';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['author'] = $value;
-    
-                after_author:
-
-                $value = $payload['body'] ?? null;
-    
-                if ($value === null) {
-                    $properties['body'] = null;
-                    goto after_body;
-                }
-
-                $properties['body'] = $value;
-    
-                after_body:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'created_at';
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['draft'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'draft';
-                    goto after_draft;
-                }
-
-                $properties['draft'] = $value;
-    
-                after_draft:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'id';
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'node_id';
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['prerelease'] ?? null;
-    
-                if ($value === null) {
-                    $properties['prerelease'] = null;
-                    goto after_prerelease;
-                }
-
-                $properties['prerelease'] = $value;
-    
-                after_prerelease:
-
-                $value = $payload['published_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['published_at'] = null;
-                    goto after_published_at;
-                }
-
-                $properties['published_at'] = $value;
-    
-                after_published_at:
-
-                $value = $payload['tag_name'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'tag_name';
-                    goto after_tag_name;
-                }
-
-                $properties['tag_name'] = $value;
-    
-                after_tag_name:
-
-                $value = $payload['tarball_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['tarball_url'] = null;
-                    goto after_tarball_url;
-                }
-
-                $properties['tarball_url'] = $value;
-    
-                after_tarball_url:
-
-                $value = $payload['target_commitish'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'target_commitish';
-                    goto after_target_commitish;
-                }
-
-                $properties['target_commitish'] = $value;
-    
-                after_target_commitish:
-
-                $value = $payload['upload_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'upload_url';
-                    goto after_upload_url;
-                }
-
-                $properties['upload_url'] = $value;
-    
-                after_upload_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'url';
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['zipball_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['zipball_url'] = null;
-                    goto after_zipball_url;
-                }
-
-                $properties['zipball_url'] = $value;
-    
-                after_zipball_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['avatar_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['avatar_url'] = null;
-                    goto after_avatar_url;
-                }
-
-                $properties['avatar_url'] = $value;
-    
-                after_avatar_url:
-
-                $value = $payload['events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['events_url'] = null;
-                    goto after_events_url;
-                }
-
-                $properties['events_url'] = $value;
-    
-                after_events_url:
-
-                $value = $payload['followers_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['followers_url'] = null;
-                    goto after_followers_url;
-                }
-
-                $properties['followers_url'] = $value;
-    
-                after_followers_url:
-
-                $value = $payload['following_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['following_url'] = null;
-                    goto after_following_url;
-                }
-
-                $properties['following_url'] = $value;
-    
-                after_following_url:
-
-                $value = $payload['gists_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gists_url'] = null;
-                    goto after_gists_url;
-                }
-
-                $properties['gists_url'] = $value;
-    
-                after_gists_url:
-
-                $value = $payload['gravatar_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gravatar_id'] = null;
-                    goto after_gravatar_id;
-                }
-
-                $properties['gravatar_id'] = $value;
-    
-                after_gravatar_id:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['login'] ?? null;
-    
-                if ($value === null) {
-                    $properties['login'] = null;
-                    goto after_login;
-                }
-
-                $properties['login'] = $value;
-    
-                after_login:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['organizations_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organizations_url'] = null;
-                    goto after_organizations_url;
-                }
-
-                $properties['organizations_url'] = $value;
-    
-                after_organizations_url:
-
-                $value = $payload['received_events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['received_events_url'] = null;
-                    goto after_received_events_url;
-                }
-
-                $properties['received_events_url'] = $value;
-    
-                after_received_events_url:
-
-                $value = $payload['repos_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repos_url'] = null;
-                    goto after_repos_url;
-                }
-
-                $properties['repos_url'] = $value;
-    
-                after_repos_url:
-
-                $value = $payload['site_admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['site_admin'] = null;
-                    goto after_site_admin;
-                }
-
-                $properties['site_admin'] = $value;
-    
-                after_site_admin:
-
-                $value = $payload['starred_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['starred_url'] = null;
-                    goto after_starred_url;
-                }
-
-                $properties['starred_url'] = $value;
-    
-                after_starred_url:
-
-                $value = $payload['subscriptions_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['subscriptions_url'] = null;
-                    goto after_subscriptions_url;
-                }
-
-                $properties['subscriptions_url'] = $value;
-    
-                after_subscriptions_url:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -5379,7 +4819,7 @@ class Release implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'release';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -5441,235 +4881,6 @@ class Release implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\WebhookReleasePublished(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleasePublished', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release(array $payload): \ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['assets'] ?? null;
-    
-                if ($value === null) {
-                    $properties['assets'] = null;
-                    goto after_assets;
-                }
-
-                $properties['assets'] = $value;
-    
-                after_assets:
-
-                $value = $payload['assets_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'assets_url';
-                    goto after_assets_url;
-                }
-
-                $properties['assets_url'] = $value;
-    
-                after_assets_url:
-
-                $value = $payload['author'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'author';
-                    goto after_author;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'author';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['author'] = $value;
-    
-                after_author:
-
-                $value = $payload['body'] ?? null;
-    
-                if ($value === null) {
-                    $properties['body'] = null;
-                    goto after_body;
-                }
-
-                $properties['body'] = $value;
-    
-                after_body:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'created_at';
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['draft'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'draft';
-                    goto after_draft;
-                }
-
-                $properties['draft'] = $value;
-    
-                after_draft:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'id';
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'node_id';
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['prerelease'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'prerelease';
-                    goto after_prerelease;
-                }
-
-                $properties['prerelease'] = $value;
-    
-                after_prerelease:
-
-                $value = $payload['published_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['published_at'] = null;
-                    goto after_published_at;
-                }
-
-                $properties['published_at'] = $value;
-    
-                after_published_at:
-
-                $value = $payload['tag_name'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'tag_name';
-                    goto after_tag_name;
-                }
-
-                $properties['tag_name'] = $value;
-    
-                after_tag_name:
-
-                $value = $payload['tarball_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['tarball_url'] = null;
-                    goto after_tarball_url;
-                }
-
-                $properties['tarball_url'] = $value;
-    
-                after_tarball_url:
-
-                $value = $payload['target_commitish'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'target_commitish';
-                    goto after_target_commitish;
-                }
-
-                $properties['target_commitish'] = $value;
-    
-                after_target_commitish:
-
-                $value = $payload['upload_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'upload_url';
-                    goto after_upload_url;
-                }
-
-                $properties['upload_url'] = $value;
-    
-                after_upload_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'url';
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['zipball_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['zipball_url'] = null;
-                    goto after_zipball_url;
-                }
-
-                $properties['zipball_url'] = $value;
-    
-                after_zipball_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -5914,7 +5125,7 @@ class Release implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'release';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -5978,235 +5189,6 @@ class Release implements ObjectMapper
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished', $exception, stack: $this->hydrationStack);
             }
         }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release(array $payload): \ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['assets'] ?? null;
-    
-                if ($value === null) {
-                    $properties['assets'] = null;
-                    goto after_assets;
-                }
-
-                $properties['assets'] = $value;
-    
-                after_assets:
-
-                $value = $payload['assets_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'assets_url';
-                    goto after_assets_url;
-                }
-
-                $properties['assets_url'] = $value;
-    
-                after_assets_url:
-
-                $value = $payload['author'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'author';
-                    goto after_author;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'author';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['author'] = $value;
-    
-                after_author:
-
-                $value = $payload['body'] ?? null;
-    
-                if ($value === null) {
-                    $properties['body'] = null;
-                    goto after_body;
-                }
-
-                $properties['body'] = $value;
-    
-                after_body:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'created_at';
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['draft'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'draft';
-                    goto after_draft;
-                }
-
-                $properties['draft'] = $value;
-    
-                after_draft:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'id';
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'node_id';
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['prerelease'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'prerelease';
-                    goto after_prerelease;
-                }
-
-                $properties['prerelease'] = $value;
-    
-                after_prerelease:
-
-                $value = $payload['published_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['published_at'] = null;
-                    goto after_published_at;
-                }
-
-                $properties['published_at'] = $value;
-    
-                after_published_at:
-
-                $value = $payload['tag_name'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'tag_name';
-                    goto after_tag_name;
-                }
-
-                $properties['tag_name'] = $value;
-    
-                after_tag_name:
-
-                $value = $payload['tarball_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['tarball_url'] = null;
-                    goto after_tarball_url;
-                }
-
-                $properties['tarball_url'] = $value;
-    
-                after_tarball_url:
-
-                $value = $payload['target_commitish'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'target_commitish';
-                    goto after_target_commitish;
-                }
-
-                $properties['target_commitish'] = $value;
-    
-                after_target_commitish:
-
-                $value = $payload['upload_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'upload_url';
-                    goto after_upload_url;
-                }
-
-                $properties['upload_url'] = $value;
-    
-                after_upload_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'url';
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['zipball_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['zipball_url'] = null;
-                    goto after_zipball_url;
-                }
-
-                $properties['zipball_url'] = $value;
-    
-                after_zipball_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release', $exception, stack: $this->hydrationStack);
-            }
-        }
     
     public function serializeObject(object $object): mixed
     {
@@ -6228,9 +5210,8 @@ class Release implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($object),
                 'ApiClients\Client\GitHub\Schema\Discussion\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️Reactions($object),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
@@ -6240,13 +5221,9 @@ class Release implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookProjectEdited\Changes\Body' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectEdited⚡️Changes⚡️Body($object),
                 'ApiClients\Client\GitHub\Schema\WebhookLabelEdited\Changes\Name' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookLabelEdited⚡️Changes⚡️Name($object),
                 'ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased($object),
-                'ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookReleasePublished' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished($object),
-                'ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release($object),
                 'ApiClients\Client\GitHub\Schema\WebhookReleaseReleased' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased($object),
                 'ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished($object),
-                'ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -7120,12 +6097,14 @@ class Release implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($license);
         after_license:        $result['license'] = $license;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($organization);
+
+        if ($organization === null) {
+            goto after_organization;
+        }
         after_organization:        $result['organization'] = $organization;
 
         
@@ -7792,53 +6771,41 @@ class Release implements ObjectMapper
     }
 
     
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseSimple);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
         $result = [];
         
-        $key = $object->key;
+        $admin = $object->admin;
 
-        if ($key === null) {
-            goto after_key;
+        if ($admin === null) {
+            goto after_admin;
         }
-        after_key:        $result['key'] = $key;
+        after_admin:        $result['admin'] = $admin;
 
         
-        $name = $object->name;
+        $pull = $object->pull;
 
-        if ($name === null) {
-            goto after_name;
+        if ($pull === null) {
+            goto after_pull;
         }
-        after_name:        $result['name'] = $name;
+        after_pull:        $result['pull'] = $pull;
 
         
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
+        $triage = $object->triage;
+        after_triage:        $result['triage'] = $triage;
 
         
-        $spdx_id = $object->spdx_id;
+        $push = $object->push;
 
-        if ($spdx_id === null) {
-            goto after_spdx_id;
+        if ($push === null) {
+            goto after_push;
         }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        after_push:        $result['push'] = $push;
 
         
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $maintain = $object->maintain;
+        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;
@@ -8012,47 +6979,6 @@ class Release implements ObjectMapper
         
         $starred_at = $object->starred_at;
         after_starred_at:        $result['starred_at'] = $starred_at;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
-        $result = [];
-        
-        $admin = $object->admin;
-
-        if ($admin === null) {
-            goto after_admin;
-        }
-        after_admin:        $result['admin'] = $admin;
-
-        
-        $pull = $object->pull;
-
-        if ($pull === null) {
-            goto after_pull;
-        }
-        after_pull:        $result['pull'] = $pull;
-
-        
-        $triage = $object->triage;
-        after_triage:        $result['triage'] = $triage;
-
-        
-        $push = $object->push;
-
-        if ($push === null) {
-            goto after_push;
-        }
-        after_push:        $result['push'] = $push;
-
-        
-        $maintain = $object->maintain;
-        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;
@@ -9193,7 +8119,7 @@ class Release implements ObjectMapper
         if ($release === null) {
             goto after_release;
         }
-        $release = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release($release);
+        $release = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release($release);
         after_release:        $result['release'] = $release;
 
         
@@ -9209,269 +8135,6 @@ class Release implements ObjectMapper
         $sender = $object->sender;
         $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased\Release);
-        $result = [];
-        
-        $assets = $object->assets;
-
-        if ($assets === null) {
-            goto after_assets;
-        }
-        after_assets:        $result['assets'] = $assets;
-
-        
-        $assets_url = $object->assets_url;
-        after_assets_url:        $result['assets_url'] = $assets_url;
-
-        
-        $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($author);
-        after_author:        $result['author'] = $author;
-
-        
-        $body = $object->body;
-
-        if ($body === null) {
-            goto after_body;
-        }
-        after_body:        $result['body'] = $body;
-
-        
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
-
-        
-        $draft = $object->draft;
-        after_draft:        $result['draft'] = $draft;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
-
-        
-        $id = $object->id;
-        after_id:        $result['id'] = $id;
-
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $prerelease = $object->prerelease;
-
-        if ($prerelease === null) {
-            goto after_prerelease;
-        }
-        after_prerelease:        $result['prerelease'] = $prerelease;
-
-        
-        $published_at = $object->published_at;
-
-        if ($published_at === null) {
-            goto after_published_at;
-        }
-        after_published_at:        $result['published_at'] = $published_at;
-
-        
-        $tag_name = $object->tag_name;
-        after_tag_name:        $result['tag_name'] = $tag_name;
-
-        
-        $tarball_url = $object->tarball_url;
-
-        if ($tarball_url === null) {
-            goto after_tarball_url;
-        }
-        after_tarball_url:        $result['tarball_url'] = $tarball_url;
-
-        
-        $target_commitish = $object->target_commitish;
-        after_target_commitish:        $result['target_commitish'] = $target_commitish;
-
-        
-        $upload_url = $object->upload_url;
-        after_upload_url:        $result['upload_url'] = $upload_url;
-
-        
-        $url = $object->url;
-        after_url:        $result['url'] = $url;
-
-        
-        $zipball_url = $object->zipball_url;
-
-        if ($zipball_url === null) {
-            goto after_zipball_url;
-        }
-        after_zipball_url:        $result['zipball_url'] = $zipball_url;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner);
-        $result = [];
-        
-        $avatar_url = $object->avatar_url;
-
-        if ($avatar_url === null) {
-            goto after_avatar_url;
-        }
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
-
-        
-        $events_url = $object->events_url;
-
-        if ($events_url === null) {
-            goto after_events_url;
-        }
-        after_events_url:        $result['events_url'] = $events_url;
-
-        
-        $followers_url = $object->followers_url;
-
-        if ($followers_url === null) {
-            goto after_followers_url;
-        }
-        after_followers_url:        $result['followers_url'] = $followers_url;
-
-        
-        $following_url = $object->following_url;
-
-        if ($following_url === null) {
-            goto after_following_url;
-        }
-        after_following_url:        $result['following_url'] = $following_url;
-
-        
-        $gists_url = $object->gists_url;
-
-        if ($gists_url === null) {
-            goto after_gists_url;
-        }
-        after_gists_url:        $result['gists_url'] = $gists_url;
-
-        
-        $gravatar_id = $object->gravatar_id;
-
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
-        }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
-
-        
-        $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
-        after_html_url:        $result['html_url'] = $html_url;
-
-        
-        $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
-        after_id:        $result['id'] = $id;
-
-        
-        $login = $object->login;
-
-        if ($login === null) {
-            goto after_login;
-        }
-        after_login:        $result['login'] = $login;
-
-        
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $organizations_url = $object->organizations_url;
-
-        if ($organizations_url === null) {
-            goto after_organizations_url;
-        }
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
-
-        
-        $received_events_url = $object->received_events_url;
-
-        if ($received_events_url === null) {
-            goto after_received_events_url;
-        }
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
-
-        
-        $repos_url = $object->repos_url;
-
-        if ($repos_url === null) {
-            goto after_repos_url;
-        }
-        after_repos_url:        $result['repos_url'] = $repos_url;
-
-        
-        $site_admin = $object->site_admin;
-
-        if ($site_admin === null) {
-            goto after_site_admin;
-        }
-        after_site_admin:        $result['site_admin'] = $site_admin;
-
-        
-        $starred_url = $object->starred_url;
-
-        if ($starred_url === null) {
-            goto after_starred_url;
-        }
-        after_starred_url:        $result['starred_url'] = $starred_url;
-
-        
-        $subscriptions_url = $object->subscriptions_url;
-
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
-        }
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
-
-        
-        $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
-        after_type:        $result['type'] = $type;
-
-        
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
 
 
         return $result;
@@ -9511,7 +8174,7 @@ class Release implements ObjectMapper
         if ($release === null) {
             goto after_release;
         }
-        $release = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release($release);
+        $release = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release($release);
         after_release:        $result['release'] = $release;
 
         
@@ -9527,112 +8190,6 @@ class Release implements ObjectMapper
         $sender = $object->sender;
         $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookReleasePublished\Release);
-        $result = [];
-        
-        $assets = $object->assets;
-
-        if ($assets === null) {
-            goto after_assets;
-        }
-        after_assets:        $result['assets'] = $assets;
-
-        
-        $assets_url = $object->assets_url;
-        after_assets_url:        $result['assets_url'] = $assets_url;
-
-        
-        $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($author);
-        after_author:        $result['author'] = $author;
-
-        
-        $body = $object->body;
-
-        if ($body === null) {
-            goto after_body;
-        }
-        after_body:        $result['body'] = $body;
-
-        
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
-
-        
-        $draft = $object->draft;
-        after_draft:        $result['draft'] = $draft;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
-
-        
-        $id = $object->id;
-        after_id:        $result['id'] = $id;
-
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $prerelease = $object->prerelease;
-        after_prerelease:        $result['prerelease'] = $prerelease;
-
-        
-        $published_at = $object->published_at;
-
-        if ($published_at === null) {
-            goto after_published_at;
-        }
-        after_published_at:        $result['published_at'] = $published_at;
-
-        
-        $tag_name = $object->tag_name;
-        after_tag_name:        $result['tag_name'] = $tag_name;
-
-        
-        $tarball_url = $object->tarball_url;
-
-        if ($tarball_url === null) {
-            goto after_tarball_url;
-        }
-        after_tarball_url:        $result['tarball_url'] = $tarball_url;
-
-        
-        $target_commitish = $object->target_commitish;
-        after_target_commitish:        $result['target_commitish'] = $target_commitish;
-
-        
-        $upload_url = $object->upload_url;
-        after_upload_url:        $result['upload_url'] = $upload_url;
-
-        
-        $url = $object->url;
-        after_url:        $result['url'] = $url;
-
-        
-        $zipball_url = $object->zipball_url;
-
-        if ($zipball_url === null) {
-            goto after_zipball_url;
-        }
-        after_zipball_url:        $result['zipball_url'] = $zipball_url;
 
 
         return $result;
@@ -9727,7 +8284,7 @@ class Release implements ObjectMapper
         if ($release === null) {
             goto after_release;
         }
-        $release = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release($release);
+        $release = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release($release);
         after_release:        $result['release'] = $release;
 
         
@@ -9743,112 +8300,6 @@ class Release implements ObjectMapper
         $sender = $object->sender;
         $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookReleaseUnpublished\Release);
-        $result = [];
-        
-        $assets = $object->assets;
-
-        if ($assets === null) {
-            goto after_assets;
-        }
-        after_assets:        $result['assets'] = $assets;
-
-        
-        $assets_url = $object->assets_url;
-        after_assets_url:        $result['assets_url'] = $assets_url;
-
-        
-        $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($author);
-        after_author:        $result['author'] = $author;
-
-        
-        $body = $object->body;
-
-        if ($body === null) {
-            goto after_body;
-        }
-        after_body:        $result['body'] = $body;
-
-        
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
-
-        
-        $draft = $object->draft;
-        after_draft:        $result['draft'] = $draft;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
-
-        
-        $id = $object->id;
-        after_id:        $result['id'] = $id;
-
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $prerelease = $object->prerelease;
-        after_prerelease:        $result['prerelease'] = $prerelease;
-
-        
-        $published_at = $object->published_at;
-
-        if ($published_at === null) {
-            goto after_published_at;
-        }
-        after_published_at:        $result['published_at'] = $published_at;
-
-        
-        $tag_name = $object->tag_name;
-        after_tag_name:        $result['tag_name'] = $tag_name;
-
-        
-        $tarball_url = $object->tarball_url;
-
-        if ($tarball_url === null) {
-            goto after_tarball_url;
-        }
-        after_tarball_url:        $result['tarball_url'] = $tarball_url;
-
-        
-        $target_commitish = $object->target_commitish;
-        after_target_commitish:        $result['target_commitish'] = $target_commitish;
-
-        
-        $upload_url = $object->upload_url;
-        after_upload_url:        $result['upload_url'] = $upload_url;
-
-        
-        $url = $object->url;
-        after_url:        $result['url'] = $url;
-
-        
-        $zipball_url = $object->zipball_url;
-
-        if ($zipball_url === null) {
-            goto after_zipball_url;
-        }
-        after_zipball_url:        $result['zipball_url'] = $zipball_url;
 
 
         return $result;

@@ -31,21 +31,16 @@ class MarketplacePurchase implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase\Plan' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($payload),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseChanged' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged⚡️PreviousMarketplacePurchase($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePurchased' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -421,7 +416,7 @@ class MarketplacePurchase implements ObjectMapper
                 $value = $payload['account'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'account';
+                    $properties['account'] = null;
                     goto after_account;
                 }
 
@@ -441,7 +436,7 @@ class MarketplacePurchase implements ObjectMapper
                 $value = $payload['billing_cycle'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'billing_cycle';
+                    $properties['billing_cycle'] = null;
                     goto after_billing_cycle;
                 }
 
@@ -474,7 +469,7 @@ class MarketplacePurchase implements ObjectMapper
                 $value = $payload['on_free_trial'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'on_free_trial';
+                    $properties['on_free_trial'] = null;
                     goto after_on_free_trial;
                 }
 
@@ -485,7 +480,7 @@ class MarketplacePurchase implements ObjectMapper
                 $value = $payload['plan'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'plan';
+                    $properties['plan'] = null;
                     goto after_plan;
                 }
 
@@ -505,7 +500,7 @@ class MarketplacePurchase implements ObjectMapper
                 $value = $payload['unit_count'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'unit_count';
+                    $properties['unit_count'] = null;
                     goto after_unit_count;
                 }
 
@@ -897,7 +892,7 @@ class MarketplacePurchase implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'account';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -961,7 +956,7 @@ class MarketplacePurchase implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'plan';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -994,204 +989,6 @@ class MarketplacePurchase implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['login'] ?? null;
-    
-                if ($value === null) {
-                    $properties['login'] = null;
-                    goto after_login;
-                }
-
-                $properties['login'] = $value;
-    
-                after_login:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['organization_billing_email'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_billing_email'] = null;
-                    goto after_organization_billing_email;
-                }
-
-                $properties['organization_billing_email'] = $value;
-    
-                after_organization_billing_email:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['bullets'] ?? null;
-    
-                if ($value === null) {
-                    $properties['bullets'] = null;
-                    goto after_bullets;
-                }
-
-                $properties['bullets'] = $value;
-    
-                after_bullets:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['has_free_trial'] ?? null;
-    
-                if ($value === null) {
-                    $properties['has_free_trial'] = null;
-                    goto after_has_free_trial;
-                }
-
-                $properties['has_free_trial'] = $value;
-    
-                after_has_free_trial:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['monthly_price_in_cents'] ?? null;
-    
-                if ($value === null) {
-                    $properties['monthly_price_in_cents'] = null;
-                    goto after_monthly_price_in_cents;
-                }
-
-                $properties['monthly_price_in_cents'] = $value;
-    
-                after_monthly_price_in_cents:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['price_model'] ?? null;
-    
-                if ($value === null) {
-                    $properties['price_model'] = null;
-                    goto after_price_model;
-                }
-
-                $properties['price_model'] = $value;
-    
-                after_price_model:
-
-                $value = $payload['unit_name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['unit_name'] = null;
-                    goto after_unit_name;
-                }
-
-                $properties['unit_name'] = $value;
-    
-                after_unit_name:
-
-                $value = $payload['yearly_price_in_cents'] ?? null;
-    
-                if ($value === null) {
-                    $properties['yearly_price_in_cents'] = null;
-                    goto after_yearly_price_in_cents;
-                }
-
-                $properties['yearly_price_in_cents'] = $value;
-    
-                after_yearly_price_in_cents:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -1253,15 +1050,6 @@ class MarketplacePurchase implements ObjectMapper
                     goto after_license;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'license';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['license'] = $value;
     
                 after_license:
@@ -1269,17 +1057,8 @@ class MarketplacePurchase implements ObjectMapper
                 $value = $payload['organization'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'organization';
+                    $properties['organization'] = null;
                     goto after_organization;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'organization';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['organization'] = $value;
@@ -2352,90 +2131,79 @@ class MarketplacePurchase implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(array $payload): \ApiClients\Client\GitHub\Schema\LicenseSimple
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['key'] ?? null;
+                $value = $payload['admin'] ?? null;
     
                 if ($value === null) {
-                    $properties['key'] = null;
-                    goto after_key;
+                    $properties['admin'] = null;
+                    goto after_admin;
                 }
 
-                $properties['key'] = $value;
+                $properties['admin'] = $value;
     
-                after_key:
+                after_admin:
 
-                $value = $payload['name'] ?? null;
+                $value = $payload['pull'] ?? null;
     
                 if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
+                    $properties['pull'] = null;
+                    goto after_pull;
                 }
 
-                $properties['name'] = $value;
+                $properties['pull'] = $value;
     
-                after_name:
+                after_pull:
 
-                $value = $payload['url'] ?? null;
+                $value = $payload['triage'] ?? null;
     
                 if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
+                    $missingFields[] = 'triage';
+                    goto after_triage;
                 }
 
-                $properties['url'] = $value;
+                $properties['triage'] = $value;
     
-                after_url:
+                after_triage:
 
-                $value = $payload['spdx_id'] ?? null;
+                $value = $payload['push'] ?? null;
     
                 if ($value === null) {
-                    $properties['spdx_id'] = null;
-                    goto after_spdx_id;
+                    $properties['push'] = null;
+                    goto after_push;
                 }
 
-                $properties['spdx_id'] = $value;
+                $properties['push'] = $value;
     
-                after_spdx_id:
+                after_push:
 
-                $value = $payload['node_id'] ?? null;
+                $value = $payload['maintain'] ?? null;
     
                 if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
+                    $missingFields[] = 'maintain';
+                    goto after_maintain;
                 }
 
-                $properties['node_id'] = $value;
+                $properties['maintain'] = $value;
     
-                after_node_id:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
+                after_maintain:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseSimple::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\GitHub\Schema\LicenseSimple(...$properties);
+                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -2689,83 +2457,6 @@ class MarketplacePurchase implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['admin'] = null;
-                    goto after_admin;
-                }
-
-                $properties['admin'] = $value;
-    
-                after_admin:
-
-                $value = $payload['pull'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pull'] = null;
-                    goto after_pull;
-                }
-
-                $properties['pull'] = $value;
-    
-                after_pull:
-
-                $value = $payload['triage'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'triage';
-                    goto after_triage;
-                }
-
-                $properties['triage'] = $value;
-    
-                after_triage:
-
-                $value = $payload['push'] ?? null;
-    
-                if ($value === null) {
-                    $properties['push'] = null;
-                    goto after_push;
-                }
-
-                $properties['push'] = $value;
-    
-                after_push:
-
-                $value = $payload['maintain'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'maintain';
-                    goto after_maintain;
-                }
-
-                $properties['maintain'] = $value;
-    
-                after_maintain:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -4264,7 +3955,7 @@ class MarketplacePurchase implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'account';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -4328,7 +4019,7 @@ class MarketplacePurchase implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'plan';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -4483,7 +4174,7 @@ class MarketplacePurchase implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'previous_marketplace_purchase';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -4545,123 +4236,6 @@ class MarketplacePurchase implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['account'] ?? null;
-    
-                if ($value === null) {
-                    $properties['account'] = null;
-                    goto after_account;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'account';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['account'] = $value;
-    
-                after_account:
-
-                $value = $payload['billing_cycle'] ?? null;
-    
-                if ($value === null) {
-                    $properties['billing_cycle'] = null;
-                    goto after_billing_cycle;
-                }
-
-                $properties['billing_cycle'] = $value;
-    
-                after_billing_cycle:
-
-                $value = $payload['free_trial_ends_on'] ?? null;
-    
-                if ($value === null) {
-                    $properties['free_trial_ends_on'] = null;
-                    goto after_free_trial_ends_on;
-                }
-
-                $properties['free_trial_ends_on'] = $value;
-    
-                after_free_trial_ends_on:
-
-                $value = $payload['next_billing_date'] ?? null;
-    
-                if ($value === null) {
-                    $properties['next_billing_date'] = null;
-                    goto after_next_billing_date;
-                }
-
-                $properties['next_billing_date'] = $value;
-    
-                after_next_billing_date:
-
-                $value = $payload['on_free_trial'] ?? null;
-    
-                if ($value === null) {
-                    $properties['on_free_trial'] = null;
-                    goto after_on_free_trial;
-                }
-
-                $properties['on_free_trial'] = $value;
-    
-                after_on_free_trial:
-
-                $value = $payload['plan'] ?? null;
-    
-                if ($value === null) {
-                    $properties['plan'] = null;
-                    goto after_plan;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'plan';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['plan'] = $value;
-    
-                after_plan:
-
-                $value = $payload['unit_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['unit_count'] = null;
-                    goto after_unit_count;
-                }
-
-                $properties['unit_count'] = $value;
-    
-                after_unit_count:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -4744,7 +4318,7 @@ class MarketplacePurchase implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'marketplace_purchase';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -4846,39 +4420,6 @@ class MarketplacePurchase implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['next_billing_date'] ?? null;
-    
-                if ($value === null) {
-                    $properties['next_billing_date'] = null;
-                    goto after_next_billing_date;
-                }
-
-                $properties['next_billing_date'] = $value;
-    
-                after_next_billing_date:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -5085,21 +4626,16 @@ class MarketplacePurchase implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase\Plan' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($object),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseChanged' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged⚡️PreviousMarketplacePurchase($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePurchased' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -5362,11 +4898,19 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
         
         $account = $object->account;
+
+        if ($account === null) {
+            goto after_account;
+        }
         $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
         $billing_cycle = $object->billing_cycle;
+
+        if ($billing_cycle === null) {
+            goto after_billing_cycle;
+        }
         after_billing_cycle:        $result['billing_cycle'] = $billing_cycle;
 
         
@@ -5387,15 +4931,27 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $on_free_trial = $object->on_free_trial;
+
+        if ($on_free_trial === null) {
+            goto after_on_free_trial;
+        }
         after_on_free_trial:        $result['on_free_trial'] = $on_free_trial;
 
         
         $plan = $object->plan;
+
+        if ($plan === null) {
+            goto after_plan;
+        }
         $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
         $unit_count = $object->unit_count;
+
+        if ($unit_count === null) {
+            goto after_unit_count;
+        }
         after_unit_count:        $result['unit_count'] = $unit_count;
 
 
@@ -5656,7 +5212,7 @@ class MarketplacePurchase implements ObjectMapper
         if ($account === null) {
             goto after_account;
         }
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -5697,7 +5253,7 @@ class MarketplacePurchase implements ObjectMapper
         if ($plan === null) {
             goto after_plan;
         }
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -5707,144 +5263,6 @@ class MarketplacePurchase implements ObjectMapper
             goto after_unit_count;
         }
         after_unit_count:        $result['unit_count'] = $unit_count;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account);
-        $result = [];
-        
-        $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
-        after_id:        $result['id'] = $id;
-
-        
-        $login = $object->login;
-
-        if ($login === null) {
-            goto after_login;
-        }
-        after_login:        $result['login'] = $login;
-
-        
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $organization_billing_email = $object->organization_billing_email;
-
-        if ($organization_billing_email === null) {
-            goto after_organization_billing_email;
-        }
-        after_organization_billing_email:        $result['organization_billing_email'] = $organization_billing_email;
-
-        
-        $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
-        after_type:        $result['type'] = $type;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan);
-        $result = [];
-        
-        $bullets = $object->bullets;
-
-        if ($bullets === null) {
-            goto after_bullets;
-        }
-        static $bulletsSerializer0;
-
-        if ($bulletsSerializer0 === null) {
-            $bulletsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
-));
-        }
-        
-        $bullets = $bulletsSerializer0->serialize($bullets, $this);
-        after_bullets:        $result['bullets'] = $bullets;
-
-        
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-        after_description:        $result['description'] = $description;
-
-        
-        $has_free_trial = $object->has_free_trial;
-
-        if ($has_free_trial === null) {
-            goto after_has_free_trial;
-        }
-        after_has_free_trial:        $result['has_free_trial'] = $has_free_trial;
-
-        
-        $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
-        after_id:        $result['id'] = $id;
-
-        
-        $monthly_price_in_cents = $object->monthly_price_in_cents;
-
-        if ($monthly_price_in_cents === null) {
-            goto after_monthly_price_in_cents;
-        }
-        after_monthly_price_in_cents:        $result['monthly_price_in_cents'] = $monthly_price_in_cents;
-
-        
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $price_model = $object->price_model;
-
-        if ($price_model === null) {
-            goto after_price_model;
-        }
-        after_price_model:        $result['price_model'] = $price_model;
-
-        
-        $unit_name = $object->unit_name;
-
-        if ($unit_name === null) {
-            goto after_unit_name;
-        }
-        after_unit_name:        $result['unit_name'] = $unit_name;
-
-        
-        $yearly_price_in_cents = $object->yearly_price_in_cents;
-
-        if ($yearly_price_in_cents === null) {
-            goto after_yearly_price_in_cents;
-        }
-        after_yearly_price_in_cents:        $result['yearly_price_in_cents'] = $yearly_price_in_cents;
 
 
         return $result;
@@ -5893,12 +5311,14 @@ class MarketplacePurchase implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($license);
         after_license:        $result['license'] = $license;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($organization);
+
+        if ($organization === null) {
+            goto after_organization;
+        }
         after_organization:        $result['organization'] = $organization;
 
         
@@ -6565,53 +5985,41 @@ class MarketplacePurchase implements ObjectMapper
     }
 
     
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseSimple);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
         $result = [];
         
-        $key = $object->key;
+        $admin = $object->admin;
 
-        if ($key === null) {
-            goto after_key;
+        if ($admin === null) {
+            goto after_admin;
         }
-        after_key:        $result['key'] = $key;
+        after_admin:        $result['admin'] = $admin;
 
         
-        $name = $object->name;
+        $pull = $object->pull;
 
-        if ($name === null) {
-            goto after_name;
+        if ($pull === null) {
+            goto after_pull;
         }
-        after_name:        $result['name'] = $name;
+        after_pull:        $result['pull'] = $pull;
 
         
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
+        $triage = $object->triage;
+        after_triage:        $result['triage'] = $triage;
 
         
-        $spdx_id = $object->spdx_id;
+        $push = $object->push;
 
-        if ($spdx_id === null) {
-            goto after_spdx_id;
+        if ($push === null) {
+            goto after_push;
         }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        after_push:        $result['push'] = $push;
 
         
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $maintain = $object->maintain;
+        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;
@@ -6785,47 +6193,6 @@ class MarketplacePurchase implements ObjectMapper
         
         $starred_at = $object->starred_at;
         after_starred_at:        $result['starred_at'] = $starred_at;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
-        $result = [];
-        
-        $admin = $object->admin;
-
-        if ($admin === null) {
-            goto after_admin;
-        }
-        after_admin:        $result['admin'] = $admin;
-
-        
-        $pull = $object->pull;
-
-        if ($pull === null) {
-            goto after_pull;
-        }
-        after_pull:        $result['pull'] = $pull;
-
-        
-        $triage = $object->triage;
-        after_triage:        $result['triage'] = $triage;
-
-        
-        $push = $object->push;
-
-        if ($push === null) {
-            goto after_push;
-        }
-        after_push:        $result['push'] = $push;
-
-        
-        $maintain = $object->maintain;
-        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;
@@ -7827,7 +7194,7 @@ class MarketplacePurchase implements ObjectMapper
         if ($account === null) {
             goto after_account;
         }
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -7868,7 +7235,7 @@ class MarketplacePurchase implements ObjectMapper
         if ($plan === null) {
             goto after_plan;
         }
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -7930,7 +7297,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $previous_marketplace_purchase = $object->previous_marketplace_purchase;
-        $previous_marketplace_purchase = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase($previous_marketplace_purchase);
+        $previous_marketplace_purchase = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase($previous_marketplace_purchase);
         after_previous_marketplace_purchase:        $result['previous_marketplace_purchase'] = $previous_marketplace_purchase;
 
         
@@ -7946,73 +7313,6 @@ class MarketplacePurchase implements ObjectMapper
         }
         $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase);
-        $result = [];
-        
-        $account = $object->account;
-
-        if ($account === null) {
-            goto after_account;
-        }
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($account);
-        after_account:        $result['account'] = $account;
-
-        
-        $billing_cycle = $object->billing_cycle;
-
-        if ($billing_cycle === null) {
-            goto after_billing_cycle;
-        }
-        after_billing_cycle:        $result['billing_cycle'] = $billing_cycle;
-
-        
-        $free_trial_ends_on = $object->free_trial_ends_on;
-
-        if ($free_trial_ends_on === null) {
-            goto after_free_trial_ends_on;
-        }
-        after_free_trial_ends_on:        $result['free_trial_ends_on'] = $free_trial_ends_on;
-
-        
-        $next_billing_date = $object->next_billing_date;
-
-        if ($next_billing_date === null) {
-            goto after_next_billing_date;
-        }
-        after_next_billing_date:        $result['next_billing_date'] = $next_billing_date;
-
-        
-        $on_free_trial = $object->on_free_trial;
-
-        if ($on_free_trial === null) {
-            goto after_on_free_trial;
-        }
-        after_on_free_trial:        $result['on_free_trial'] = $on_free_trial;
-
-        
-        $plan = $object->plan;
-
-        if ($plan === null) {
-            goto after_plan;
-        }
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($plan);
-        after_plan:        $result['plan'] = $plan;
-
-        
-        $unit_count = $object->unit_count;
-
-        if ($unit_count === null) {
-            goto after_unit_count;
-        }
-        after_unit_count:        $result['unit_count'] = $unit_count;
 
 
         return $result;
@@ -8055,7 +7355,7 @@ class MarketplacePurchase implements ObjectMapper
         if ($marketplace_purchase === null) {
             goto after_marketplace_purchase;
         }
-        $marketplace_purchase = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase($marketplace_purchase);
+        $marketplace_purchase = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase($marketplace_purchase);
         after_marketplace_purchase:        $result['marketplace_purchase'] = $marketplace_purchase;
 
         
@@ -8081,23 +7381,6 @@ class MarketplacePurchase implements ObjectMapper
         }
         $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchasePendingChangeCancelled\MarketplacePurchase);
-        $result = [];
-        
-        $next_billing_date = $object->next_billing_date;
-
-        if ($next_billing_date === null) {
-            goto after_next_billing_date;
-        }
-        after_next_billing_date:        $result['next_billing_date'] = $next_billing_date;
 
 
         return $result;

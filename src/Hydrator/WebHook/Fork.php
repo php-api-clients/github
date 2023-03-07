@@ -26,13 +26,14 @@ class Fork implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookFork' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork($payload),
                 'ApiClients\Client\GitHub\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookFork\Forkee' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️License($payload),
+                'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
@@ -321,16 +322,71 @@ class Fork implements ObjectMapper
             $missingFields = [];
             try {
                 
+                $value = $payload['allow_auto_merge'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'allow_auto_merge';
+                    goto after_allow_auto_merge;
+                }
+
+                $properties['allow_auto_merge'] = $value;
+    
+                after_allow_auto_merge:
+
                 $value = $payload['allow_forking'] ?? null;
     
                 if ($value === null) {
-                    $properties['allow_forking'] = null;
+                    $missingFields[] = 'allow_forking';
                     goto after_allow_forking;
                 }
 
                 $properties['allow_forking'] = $value;
     
                 after_allow_forking:
+
+                $value = $payload['allow_merge_commit'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'allow_merge_commit';
+                    goto after_allow_merge_commit;
+                }
+
+                $properties['allow_merge_commit'] = $value;
+    
+                after_allow_merge_commit:
+
+                $value = $payload['allow_rebase_merge'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'allow_rebase_merge';
+                    goto after_allow_rebase_merge;
+                }
+
+                $properties['allow_rebase_merge'] = $value;
+    
+                after_allow_rebase_merge:
+
+                $value = $payload['allow_squash_merge'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'allow_squash_merge';
+                    goto after_allow_squash_merge;
+                }
+
+                $properties['allow_squash_merge'] = $value;
+    
+                after_allow_squash_merge:
+
+                $value = $payload['allow_update_branch'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'allow_update_branch';
+                    goto after_allow_update_branch;
+                }
+
+                $properties['allow_update_branch'] = $value;
+    
+                after_allow_update_branch:
 
                 $value = $payload['archive_url'] ?? null;
     
@@ -486,6 +542,17 @@ class Fork implements ObjectMapper
     
                 after_default_branch:
 
+                $value = $payload['delete_branch_on_merge'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'delete_branch_on_merge';
+                    goto after_delete_branch_on_merge;
+                }
+
+                $properties['delete_branch_on_merge'] = $value;
+    
+                after_delete_branch_on_merge:
+
                 $value = $payload['deployments_url'] ?? null;
     
                 if ($value === null) {
@@ -511,7 +578,7 @@ class Fork implements ObjectMapper
                 $value = $payload['disabled'] ?? null;
     
                 if ($value === null) {
-                    $properties['disabled'] = null;
+                    $missingFields[] = 'disabled';
                     goto after_disabled;
                 }
 
@@ -742,7 +809,7 @@ class Fork implements ObjectMapper
                 $value = $payload['is_template'] ?? null;
     
                 if ($value === null) {
-                    $properties['is_template'] = null;
+                    $missingFields[] = 'is_template';
                     goto after_is_template;
                 }
 
@@ -834,9 +901,29 @@ class Fork implements ObjectMapper
                     goto after_license;
                 }
 
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'license';
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️License($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
                 $properties['license'] = $value;
     
                 after_license:
+
+                $value = $payload['master_branch'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'master_branch';
+                    goto after_master_branch;
+                }
+
+                $properties['master_branch'] = $value;
+    
+                after_master_branch:
 
                 $value = $payload['merges_url'] ?? null;
     
@@ -926,6 +1013,17 @@ class Fork implements ObjectMapper
     
                 after_open_issues_count:
 
+                $value = $payload['organization'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'organization';
+                    goto after_organization;
+                }
+
+                $properties['organization'] = $value;
+    
+                after_organization:
+
                 $value = $payload['owner'] ?? null;
     
                 if ($value === null) {
@@ -936,7 +1034,7 @@ class Fork implements ObjectMapper
                 if (is_array($value)) {
                     try {
                         $this->hydrationStack[] = 'owner';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($value);
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
@@ -945,6 +1043,26 @@ class Fork implements ObjectMapper
                 $properties['owner'] = $value;
     
                 after_owner:
+
+                $value = $payload['permissions'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'permissions';
+                    goto after_permissions;
+                }
+
+                if (is_array($value)) {
+                    try {
+                        $this->hydrationStack[] = 'permissions';
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️Permissions($value);
+                    } finally {
+                        array_pop($this->hydrationStack);
+                    }
+                }
+
+                $properties['permissions'] = $value;
+    
+                after_permissions:
 
                 $value = $payload['private'] ?? null;
     
@@ -960,7 +1078,7 @@ class Fork implements ObjectMapper
                 $value = $payload['public'] ?? null;
     
                 if ($value === null) {
-                    $properties['public'] = null;
+                    $missingFields[] = 'public';
                     goto after_public;
                 }
 
@@ -1001,6 +1119,17 @@ class Fork implements ObjectMapper
     
                 after_releases_url:
 
+                $value = $payload['role_name'] ?? null;
+    
+                if ($value === null) {
+                    $properties['role_name'] = null;
+                    goto after_role_name;
+                }
+
+                $properties['role_name'] = $value;
+    
+                after_role_name:
+
                 $value = $payload['size'] ?? null;
     
                 if ($value === null) {
@@ -1022,6 +1151,17 @@ class Fork implements ObjectMapper
                 $properties['ssh_url'] = $value;
     
                 after_ssh_url:
+
+                $value = $payload['stargazers'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'stargazers';
+                    goto after_stargazers;
+                }
+
+                $properties['stargazers'] = $value;
+    
+                after_stargazers:
 
                 $value = $payload['stargazers_count'] ?? null;
     
@@ -1188,6 +1328,17 @@ class Fork implements ObjectMapper
     
                 after_watchers_count:
 
+                $value = $payload['web_commit_signoff_required'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'web_commit_signoff_required';
+                    goto after_web_commit_signoff_required;
+                }
+
+                $properties['web_commit_signoff_required'] = $value;
+    
+                after_web_commit_signoff_required:
+
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookFork\Forkee', $exception, stack: $this->hydrationStack);
             }
@@ -1204,7 +1355,84 @@ class Fork implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['key'] ?? null;
+    
+                if ($value === null) {
+                    $properties['key'] = null;
+                    goto after_key;
+                }
+
+                $properties['key'] = $value;
+    
+                after_key:
+
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $properties['name'] = null;
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
+                $value = $payload['node_id'] ?? null;
+    
+                if ($value === null) {
+                    $properties['node_id'] = null;
+                    goto after_node_id;
+                }
+
+                $properties['node_id'] = $value;
+    
+                after_node_id:
+
+                $value = $payload['spdx_id'] ?? null;
+    
+                if ($value === null) {
+                    $properties['spdx_id'] = null;
+                    goto after_spdx_id;
+                }
+
+                $properties['spdx_id'] = $value;
+    
+                after_spdx_id:
+
+                $value = $payload['url'] ?? null;
+    
+                if ($value === null) {
+                    $properties['url'] = null;
+                    goto after_url;
+                }
+
+                $properties['url'] = $value;
+    
+                after_url:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy(array $payload): \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy
         {
             $properties = []; 
             $missingFields = [];
@@ -1213,7 +1441,7 @@ class Fork implements ObjectMapper
                 $value = $payload['avatar_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['avatar_url'] = null;
+                    $missingFields[] = 'avatar_url';
                     goto after_avatar_url;
                 }
 
@@ -1221,10 +1449,32 @@ class Fork implements ObjectMapper
     
                 after_avatar_url:
 
+                $value = $payload['deleted'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'deleted';
+                    goto after_deleted;
+                }
+
+                $properties['deleted'] = $value;
+    
+                after_deleted:
+
+                $value = $payload['email'] ?? null;
+    
+                if ($value === null) {
+                    $properties['email'] = null;
+                    goto after_email;
+                }
+
+                $properties['email'] = $value;
+    
+                after_email:
+
                 $value = $payload['events_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['events_url'] = null;
+                    $missingFields[] = 'events_url';
                     goto after_events_url;
                 }
 
@@ -1235,7 +1485,7 @@ class Fork implements ObjectMapper
                 $value = $payload['followers_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['followers_url'] = null;
+                    $missingFields[] = 'followers_url';
                     goto after_followers_url;
                 }
 
@@ -1246,7 +1496,7 @@ class Fork implements ObjectMapper
                 $value = $payload['following_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['following_url'] = null;
+                    $missingFields[] = 'following_url';
                     goto after_following_url;
                 }
 
@@ -1257,7 +1507,7 @@ class Fork implements ObjectMapper
                 $value = $payload['gists_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['gists_url'] = null;
+                    $missingFields[] = 'gists_url';
                     goto after_gists_url;
                 }
 
@@ -1268,7 +1518,7 @@ class Fork implements ObjectMapper
                 $value = $payload['gravatar_id'] ?? null;
     
                 if ($value === null) {
-                    $properties['gravatar_id'] = null;
+                    $missingFields[] = 'gravatar_id';
                     goto after_gravatar_id;
                 }
 
@@ -1279,7 +1529,7 @@ class Fork implements ObjectMapper
                 $value = $payload['html_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['html_url'] = null;
+                    $missingFields[] = 'html_url';
                     goto after_html_url;
                 }
 
@@ -1309,10 +1559,21 @@ class Fork implements ObjectMapper
     
                 after_login:
 
+                $value = $payload['name'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'name';
+                    goto after_name;
+                }
+
+                $properties['name'] = $value;
+    
+                after_name:
+
                 $value = $payload['node_id'] ?? null;
     
                 if ($value === null) {
-                    $properties['node_id'] = null;
+                    $missingFields[] = 'node_id';
                     goto after_node_id;
                 }
 
@@ -1323,7 +1584,7 @@ class Fork implements ObjectMapper
                 $value = $payload['organizations_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['organizations_url'] = null;
+                    $missingFields[] = 'organizations_url';
                     goto after_organizations_url;
                 }
 
@@ -1334,7 +1595,7 @@ class Fork implements ObjectMapper
                 $value = $payload['received_events_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['received_events_url'] = null;
+                    $missingFields[] = 'received_events_url';
                     goto after_received_events_url;
                 }
 
@@ -1345,7 +1606,7 @@ class Fork implements ObjectMapper
                 $value = $payload['repos_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['repos_url'] = null;
+                    $missingFields[] = 'repos_url';
                     goto after_repos_url;
                 }
 
@@ -1356,7 +1617,7 @@ class Fork implements ObjectMapper
                 $value = $payload['site_admin'] ?? null;
     
                 if ($value === null) {
-                    $properties['site_admin'] = null;
+                    $missingFields[] = 'site_admin';
                     goto after_site_admin;
                 }
 
@@ -1367,7 +1628,7 @@ class Fork implements ObjectMapper
                 $value = $payload['starred_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['starred_url'] = null;
+                    $missingFields[] = 'starred_url';
                     goto after_starred_url;
                 }
 
@@ -1378,7 +1639,7 @@ class Fork implements ObjectMapper
                 $value = $payload['subscriptions_url'] ?? null;
     
                 if ($value === null) {
-                    $properties['subscriptions_url'] = null;
+                    $missingFields[] = 'subscriptions_url';
                     goto after_subscriptions_url;
                 }
 
@@ -1389,7 +1650,7 @@ class Fork implements ObjectMapper
                 $value = $payload['type'] ?? null;
     
                 if ($value === null) {
-                    $properties['type'] = null;
+                    $missingFields[] = 'type';
                     goto after_type;
                 }
 
@@ -1400,7 +1661,7 @@ class Fork implements ObjectMapper
                 $value = $payload['url'] ?? null;
     
                 if ($value === null) {
-                    $properties['url'] = null;
+                    $missingFields[] = 'url';
                     goto after_url;
                 }
 
@@ -1409,17 +1670,94 @@ class Fork implements ObjectMapper
                 after_url:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner(...$properties);
+                return new \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['admin'] ?? null;
+    
+                if ($value === null) {
+                    $properties['admin'] = null;
+                    goto after_admin;
+                }
+
+                $properties['admin'] = $value;
+    
+                after_admin:
+
+                $value = $payload['maintain'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'maintain';
+                    goto after_maintain;
+                }
+
+                $properties['maintain'] = $value;
+    
+                after_maintain:
+
+                $value = $payload['pull'] ?? null;
+    
+                if ($value === null) {
+                    $properties['pull'] = null;
+                    goto after_pull;
+                }
+
+                $properties['pull'] = $value;
+    
+                after_pull:
+
+                $value = $payload['push'] ?? null;
+    
+                if ($value === null) {
+                    $properties['push'] = null;
+                    goto after_push;
+                }
+
+                $properties['push'] = $value;
+    
+                after_push:
+
+                $value = $payload['triage'] ?? null;
+    
+                if ($value === null) {
+                    $missingFields[] = 'triage';
+                    goto after_triage;
+                }
+
+                $properties['triage'] = $value;
+    
+                after_triage:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -1679,15 +2017,6 @@ class Fork implements ObjectMapper
                     goto after_license;
                 }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'license';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
                 $properties['license'] = $value;
     
                 after_license:
@@ -1695,17 +2024,8 @@ class Fork implements ObjectMapper
                 $value = $payload['organization'] ?? null;
     
                 if ($value === null) {
-                    $missingFields[] = 'organization';
+                    $properties['organization'] = null;
                     goto after_organization;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'organization';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
                 }
 
                 $properties['organization'] = $value;
@@ -2778,90 +3098,79 @@ class Fork implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(array $payload): \ApiClients\Client\GitHub\Schema\LicenseSimple
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['key'] ?? null;
+                $value = $payload['admin'] ?? null;
     
                 if ($value === null) {
-                    $properties['key'] = null;
-                    goto after_key;
+                    $properties['admin'] = null;
+                    goto after_admin;
                 }
 
-                $properties['key'] = $value;
+                $properties['admin'] = $value;
     
-                after_key:
+                after_admin:
 
-                $value = $payload['name'] ?? null;
+                $value = $payload['pull'] ?? null;
     
                 if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
+                    $properties['pull'] = null;
+                    goto after_pull;
                 }
 
-                $properties['name'] = $value;
+                $properties['pull'] = $value;
     
-                after_name:
+                after_pull:
 
-                $value = $payload['url'] ?? null;
+                $value = $payload['triage'] ?? null;
     
                 if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
+                    $missingFields[] = 'triage';
+                    goto after_triage;
                 }
 
-                $properties['url'] = $value;
+                $properties['triage'] = $value;
     
-                after_url:
+                after_triage:
 
-                $value = $payload['spdx_id'] ?? null;
+                $value = $payload['push'] ?? null;
     
                 if ($value === null) {
-                    $properties['spdx_id'] = null;
-                    goto after_spdx_id;
+                    $properties['push'] = null;
+                    goto after_push;
                 }
 
-                $properties['spdx_id'] = $value;
+                $properties['push'] = $value;
     
-                after_spdx_id:
+                after_push:
 
-                $value = $payload['node_id'] ?? null;
+                $value = $payload['maintain'] ?? null;
     
                 if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
+                    $missingFields[] = 'maintain';
+                    goto after_maintain;
                 }
 
-                $properties['node_id'] = $value;
+                $properties['maintain'] = $value;
     
-                after_node_id:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'html_url';
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
+                after_maintain:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseSimple::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\GitHub\Schema\LicenseSimple(...$properties);
+                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -3115,83 +3424,6 @@ class Fork implements ObjectMapper
                 return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
-            }
-        }
-
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['admin'] = null;
-                    goto after_admin;
-                }
-
-                $properties['admin'] = $value;
-    
-                after_admin:
-
-                $value = $payload['pull'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pull'] = null;
-                    goto after_pull;
-                }
-
-                $properties['pull'] = $value;
-    
-                after_pull:
-
-                $value = $payload['triage'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'triage';
-                    goto after_triage;
-                }
-
-                $properties['triage'] = $value;
-    
-                after_triage:
-
-                $value = $payload['push'] ?? null;
-    
-                if ($value === null) {
-                    $properties['push'] = null;
-                    goto after_push;
-                }
-
-                $properties['push'] = $value;
-    
-                after_push:
-
-                $value = $payload['maintain'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'maintain';
-                    goto after_maintain;
-                }
-
-                $properties['maintain'] = $value;
-    
-                after_maintain:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -4503,13 +4735,14 @@ class Fork implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookFork' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork($object),
                 'ApiClients\Client\GitHub\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($object),
                 'ApiClients\Client\GitHub\Schema\WebhookFork\Forkee' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($object),
+                'ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️License($object),
+                'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($object),
+                'ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
-                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
@@ -4731,12 +4964,28 @@ class Fork implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookFork\Forkee);
         $result = [];
         
-        $allow_forking = $object->allow_forking;
+        $allow_auto_merge = $object->allow_auto_merge;
+        after_allow_auto_merge:        $result['allow_auto_merge'] = $allow_auto_merge;
 
-        if ($allow_forking === null) {
-            goto after_allow_forking;
-        }
+        
+        $allow_forking = $object->allow_forking;
         after_allow_forking:        $result['allow_forking'] = $allow_forking;
+
+        
+        $allow_merge_commit = $object->allow_merge_commit;
+        after_allow_merge_commit:        $result['allow_merge_commit'] = $allow_merge_commit;
+
+        
+        $allow_rebase_merge = $object->allow_rebase_merge;
+        after_allow_rebase_merge:        $result['allow_rebase_merge'] = $allow_rebase_merge;
+
+        
+        $allow_squash_merge = $object->allow_squash_merge;
+        after_allow_squash_merge:        $result['allow_squash_merge'] = $allow_squash_merge;
+
+        
+        $allow_update_branch = $object->allow_update_branch;
+        after_allow_update_branch:        $result['allow_update_branch'] = $allow_update_branch;
 
         
         $archive_url = $object->archive_url;
@@ -4851,6 +5100,10 @@ class Fork implements ObjectMapper
         after_default_branch:        $result['default_branch'] = $default_branch;
 
         
+        $delete_branch_on_merge = $object->delete_branch_on_merge;
+        after_delete_branch_on_merge:        $result['delete_branch_on_merge'] = $delete_branch_on_merge;
+
+        
         $deployments_url = $object->deployments_url;
 
         if ($deployments_url === null) {
@@ -4868,10 +5121,6 @@ class Fork implements ObjectMapper
 
         
         $disabled = $object->disabled;
-
-        if ($disabled === null) {
-            goto after_disabled;
-        }
         after_disabled:        $result['disabled'] = $disabled;
 
         
@@ -5036,10 +5285,6 @@ class Fork implements ObjectMapper
 
         
         $is_template = $object->is_template;
-
-        if ($is_template === null) {
-            goto after_is_template;
-        }
         after_is_template:        $result['is_template'] = $is_template;
 
         
@@ -5104,7 +5349,12 @@ class Fork implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
+        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️License($license);
         after_license:        $result['license'] = $license;
+
+        
+        $master_branch = $object->master_branch;
+        after_master_branch:        $result['master_branch'] = $master_branch;
 
         
         $merges_url = $object->merges_url;
@@ -5171,13 +5421,22 @@ class Fork implements ObjectMapper
         after_open_issues_count:        $result['open_issues_count'] = $open_issues_count;
 
         
+        $organization = $object->organization;
+        after_organization:        $result['organization'] = $organization;
+
+        
         $owner = $object->owner;
 
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($owner);
         after_owner:        $result['owner'] = $owner;
+
+        
+        $permissions = $object->permissions;
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️Permissions($permissions);
+        after_permissions:        $result['permissions'] = $permissions;
 
         
         $private = $object->private;
@@ -5189,10 +5448,6 @@ class Fork implements ObjectMapper
 
         
         $public = $object->public;
-
-        if ($public === null) {
-            goto after_public;
-        }
         after_public:        $result['public'] = $public;
 
         
@@ -5220,6 +5475,14 @@ class Fork implements ObjectMapper
         after_releases_url:        $result['releases_url'] = $releases_url;
 
         
+        $role_name = $object->role_name;
+
+        if ($role_name === null) {
+            goto after_role_name;
+        }
+        after_role_name:        $result['role_name'] = $role_name;
+
+        
         $size = $object->size;
 
         if ($size === null) {
@@ -5234,6 +5497,10 @@ class Fork implements ObjectMapper
             goto after_ssh_url;
         }
         after_ssh_url:        $result['ssh_url'] = $ssh_url;
+
+        
+        $stargazers = $object->stargazers;
+        after_stargazers:        $result['stargazers'] = $stargazers;
 
         
         $stargazers_count = $object->stargazers_count;
@@ -5363,69 +5630,106 @@ class Fork implements ObjectMapper
         }
         after_watchers_count:        $result['watchers_count'] = $watchers_count;
 
+        
+        $web_commit_signoff_required = $object->web_commit_signoff_required;
+        after_web_commit_signoff_required:        $result['web_commit_signoff_required'] = $web_commit_signoff_required;
+
 
         return $result;
     }
 
     
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentCreated⚡️WorkflowRun⚡️HeadRepository⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️License(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\License);
+        $result = [];
+        
+        $key = $object->key;
+
+        if ($key === null) {
+            goto after_key;
+        }
+        after_key:        $result['key'] = $key;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $node_id = $object->node_id;
+
+        if ($node_id === null) {
+            goto after_node_id;
+        }
+        after_node_id:        $result['node_id'] = $node_id;
+
+        
+        $spdx_id = $object->spdx_id;
+
+        if ($spdx_id === null) {
+            goto after_spdx_id;
+        }
+        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+
+        
+        $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
+        after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy);
         $result = [];
         
         $avatar_url = $object->avatar_url;
-
-        if ($avatar_url === null) {
-            goto after_avatar_url;
-        }
         after_avatar_url:        $result['avatar_url'] = $avatar_url;
 
         
-        $events_url = $object->events_url;
+        $deleted = $object->deleted;
+        after_deleted:        $result['deleted'] = $deleted;
 
-        if ($events_url === null) {
-            goto after_events_url;
+        
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
         }
+        after_email:        $result['email'] = $email;
+
+        
+        $events_url = $object->events_url;
         after_events_url:        $result['events_url'] = $events_url;
 
         
         $followers_url = $object->followers_url;
-
-        if ($followers_url === null) {
-            goto after_followers_url;
-        }
         after_followers_url:        $result['followers_url'] = $followers_url;
 
         
         $following_url = $object->following_url;
-
-        if ($following_url === null) {
-            goto after_following_url;
-        }
         after_following_url:        $result['following_url'] = $following_url;
 
         
         $gists_url = $object->gists_url;
-
-        if ($gists_url === null) {
-            goto after_gists_url;
-        }
         after_gists_url:        $result['gists_url'] = $gists_url;
 
         
         $gravatar_id = $object->gravatar_id;
-
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
-        }
         after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
 
         
         $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
         after_html_url:        $result['html_url'] = $html_url;
 
         
@@ -5445,76 +5749,85 @@ class Fork implements ObjectMapper
         after_login:        $result['login'] = $login;
 
         
-        $node_id = $object->node_id;
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
 
-        if ($node_id === null) {
-            goto after_node_id;
-        }
+        
+        $node_id = $object->node_id;
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $organizations_url = $object->organizations_url;
-
-        if ($organizations_url === null) {
-            goto after_organizations_url;
-        }
         after_organizations_url:        $result['organizations_url'] = $organizations_url;
 
         
         $received_events_url = $object->received_events_url;
-
-        if ($received_events_url === null) {
-            goto after_received_events_url;
-        }
         after_received_events_url:        $result['received_events_url'] = $received_events_url;
 
         
         $repos_url = $object->repos_url;
-
-        if ($repos_url === null) {
-            goto after_repos_url;
-        }
         after_repos_url:        $result['repos_url'] = $repos_url;
 
         
         $site_admin = $object->site_admin;
-
-        if ($site_admin === null) {
-            goto after_site_admin;
-        }
         after_site_admin:        $result['site_admin'] = $site_admin;
 
         
         $starred_url = $object->starred_url;
-
-        if ($starred_url === null) {
-            goto after_starred_url;
-        }
         after_starred_url:        $result['starred_url'] = $starred_url;
 
         
         $subscriptions_url = $object->subscriptions_url;
-
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
-        }
         after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
 
         
         $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
         after_type:        $result['type'] = $type;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookFork⚡️Forkee⚡️Permissions(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookFork\Forkee\Permissions);
+        $result = [];
+        
+        $admin = $object->admin;
+
+        if ($admin === null) {
+            goto after_admin;
+        }
+        after_admin:        $result['admin'] = $admin;
+
+        
+        $maintain = $object->maintain;
+        after_maintain:        $result['maintain'] = $maintain;
+
+        
+        $pull = $object->pull;
+
+        if ($pull === null) {
+            goto after_pull;
+        }
+        after_pull:        $result['pull'] = $pull;
+
+        
+        $push = $object->push;
+
+        if ($push === null) {
+            goto after_push;
+        }
+        after_push:        $result['push'] = $push;
+
+        
+        $triage = $object->triage;
+        after_triage:        $result['triage'] = $triage;
 
 
         return $result;
@@ -5693,12 +6006,14 @@ class Fork implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($license);
         after_license:        $result['license'] = $license;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($organization);
+
+        if ($organization === null) {
+            goto after_organization;
+        }
         after_organization:        $result['organization'] = $organization;
 
         
@@ -6365,53 +6680,41 @@ class Fork implements ObjectMapper
     }
 
     
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseSimple);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
         $result = [];
         
-        $key = $object->key;
+        $admin = $object->admin;
 
-        if ($key === null) {
-            goto after_key;
+        if ($admin === null) {
+            goto after_admin;
         }
-        after_key:        $result['key'] = $key;
+        after_admin:        $result['admin'] = $admin;
 
         
-        $name = $object->name;
+        $pull = $object->pull;
 
-        if ($name === null) {
-            goto after_name;
+        if ($pull === null) {
+            goto after_pull;
         }
-        after_name:        $result['name'] = $name;
+        after_pull:        $result['pull'] = $pull;
 
         
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-        after_url:        $result['url'] = $url;
+        $triage = $object->triage;
+        after_triage:        $result['triage'] = $triage;
 
         
-        $spdx_id = $object->spdx_id;
+        $push = $object->push;
 
-        if ($spdx_id === null) {
-            goto after_spdx_id;
+        if ($push === null) {
+            goto after_push;
         }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        after_push:        $result['push'] = $push;
 
         
-        $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
-        after_node_id:        $result['node_id'] = $node_id;
-
-        
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $maintain = $object->maintain;
+        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;
@@ -6585,47 +6888,6 @@ class Fork implements ObjectMapper
         
         $starred_at = $object->starred_at;
         after_starred_at:        $result['starred_at'] = $starred_at;
-
-
-        return $result;
-    }
-
-    
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
-        $result = [];
-        
-        $admin = $object->admin;
-
-        if ($admin === null) {
-            goto after_admin;
-        }
-        after_admin:        $result['admin'] = $admin;
-
-        
-        $pull = $object->pull;
-
-        if ($pull === null) {
-            goto after_pull;
-        }
-        after_pull:        $result['pull'] = $pull;
-
-        
-        $triage = $object->triage;
-        after_triage:        $result['triage'] = $triage;
-
-        
-        $push = $object->push;
-
-        if ($push === null) {
-            goto after_push;
-        }
-        after_push:        $result['push'] = $push;
-
-        
-        $maintain = $object->maintain;
-        after_maintain:        $result['maintain'] = $maintain;
 
 
         return $result;

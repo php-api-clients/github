@@ -27,9 +27,9 @@ final class RedeliverWebhookDelivery
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{delivery_id}'), array($this->delivery_id), self::PATH));
     }
     /**
-     * @return Schema\WebhookDeploymentStatusCreated\Deployment\Payload|Schema\BasicError|Schema\ScimError|Schema\ValidationError
+     * @return Schema\WebhookDeploymentCreated\Deployment\Payload|Schema\BasicError|Schema\ScimError|Schema\ValidationError
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\WebhookDeploymentStatusCreated\Deployment\Payload|Schema\BasicError|Schema\ScimError|Schema\ValidationError
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\WebhookDeploymentCreated\Deployment\Payload|Schema\BasicError|Schema\ScimError|Schema\ValidationError
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -38,8 +38,8 @@ final class RedeliverWebhookDelivery
             case 202:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\WebhookDeploymentStatusCreated\Deployment\Payload::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\WebhookDeploymentStatusCreated\Deployment\Payload::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\WebhookDeploymentCreated\Deployment\Payload::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\WebhookDeploymentCreated\Deployment\Payload::class, $body);
                 }
                 break;
             /**Validation failed, or the endpoint has been spammed.**/

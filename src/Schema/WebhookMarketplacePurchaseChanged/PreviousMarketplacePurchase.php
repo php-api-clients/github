@@ -13,7 +13,7 @@ final readonly class PreviousMarketplacePurchase
     public const SCHEMA_TITLE = 'Marketplace Purchase';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"account":{"id":13,"login":"generated_login","node_id":"generated_node_id","organization_billing_email":"generated_organization_billing_email","type":"generated_type"},"billing_cycle":"generated_billing_cycle","free_trial_ends_on":"generated_free_trial_ends_on","next_billing_date":"generated_next_billing_date","on_free_trial":false,"plan":{"bullets":["generated_bullets"],"description":"generated_description","has_free_trial":false,"id":13,"monthly_price_in_cents":13,"name":"generated_name","price_model":"generated_price_model","unit_name":"generated_unit_name","yearly_price_in_cents":13},"unit_count":13}';
-    public function __construct(public ?Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Account $account, public ?string $billing_cycle, public ?string $free_trial_ends_on, public ?string $next_billing_date, public ?bool $on_free_trial, public ?Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase\Plan $plan, public ?int $unit_count)
+    public function __construct(public ?Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase\Account $account, public ?string $billing_cycle, public ?string $free_trial_ends_on, public ?string $next_billing_date, public ?bool $on_free_trial, public ?Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase\Plan $plan, public ?int $unit_count)
     {
     }
 }

@@ -31,9 +31,9 @@ final class GetCodeFrequencyStats
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}'), array($this->owner, $this->repo), self::PATH));
     }
     /**
-     * @return \Rx\Observable<Schema\Operation\Repos\GetCodeFrequencyStats\Response\Applicationjson\H200>|Schema\WebhookDeploymentStatusCreated\Deployment\Payload
+     * @return \Rx\Observable<Schema\Operation\Repos\GetCodeFrequencyStats\Response\Applicationjson\H200>|Schema\WebhookDeploymentCreated\Deployment\Payload
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|Schema\WebhookDeploymentStatusCreated\Deployment\Payload
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|Schema\WebhookDeploymentCreated\Deployment\Payload
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -52,8 +52,8 @@ final class GetCodeFrequencyStats
             case 202:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\WebhookDeploymentStatusCreated\Deployment\Payload::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\WebhookDeploymentStatusCreated\Deployment\Payload::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\WebhookDeploymentCreated\Deployment\Payload::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\WebhookDeploymentCreated\Deployment\Payload::class, $body);
                 }
                 break;
         }

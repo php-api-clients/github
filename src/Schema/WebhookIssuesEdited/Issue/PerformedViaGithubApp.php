@@ -21,7 +21,7 @@ final readonly class PerformedViaGithubApp
      * permissions: The set of permissions for the GitHub app
      * slug: The slug name of the GitHub app
      */
-    public function __construct(public ?string $created_at, public ?string $description, public array $events, public ?string $external_url, public ?string $html_url, public ?int $id, public ?string $name, public ?string $node_id, public ?Schema\Discussion\AnswerChosenBy $owner, public Schema\WebhookIssuesAssigned\Issue\PerformedViaGithubApp\Permissions $permissions, public string $slug, public ?string $updated_at)
+    public function __construct(public ?string $created_at, public ?string $description, public array $events, public ?string $external_url, public ?string $html_url, public ?int $id, public ?string $name, public ?string $node_id, public ?Schema\Discussion\AnswerChosenBy $owner, public Schema\WebhookIssueCommentEdited\Issue\PerformedViaGithubApp\Permissions $permissions, public string $slug, public ?string $updated_at)
     {
     }
 }

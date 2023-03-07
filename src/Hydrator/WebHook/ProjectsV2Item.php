@@ -37,9 +37,10 @@ class ProjectsV2Item implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemDeleted($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemReordered' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemReordered($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemReordered\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemReordered⚡️Changes($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemRestored' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemRestored($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -1430,25 +1431,25 @@ class ProjectsV2Item implements ObjectMapper
             $missingFields = [];
             try {
                 
-                $value = $payload['body'] ?? null;
+                $value = $payload['field_value'] ?? null;
     
                 if ($value === null) {
-                    $properties['body'] = null;
-                    goto after_body;
+                    $properties['field_value'] = null;
+                    goto after_field_value;
                 }
 
                 if (is_array($value)) {
                     try {
-                        $this->hydrationStack[] = 'body';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($value);
+                        $this->hydrationStack[] = 'field_value';
+                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue($value);
                     } finally {
                         array_pop($this->hydrationStack);
                     }
                 }
 
-                $properties['body'] = $value;
+                $properties['field_value'] = $value;
     
-                after_body:
+                after_field_value:
 
             } catch (\Throwable $exception) {
                 throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes', $exception, stack: $this->hydrationStack);
@@ -1466,46 +1467,46 @@ class ProjectsV2Item implements ObjectMapper
         }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue(array $payload): \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue
         {
             $properties = []; 
             $missingFields = [];
             try {
                 
-                $value = $payload['from'] ?? null;
+                $value = $payload['field_node_id'] ?? null;
     
                 if ($value === null) {
-                    $properties['from'] = null;
-                    goto after_from;
+                    $properties['field_node_id'] = null;
+                    goto after_field_node_id;
                 }
 
-                $properties['from'] = $value;
+                $properties['field_node_id'] = $value;
     
-                after_from:
+                after_field_node_id:
 
-                $value = $payload['to'] ?? null;
+                $value = $payload['field_type'] ?? null;
     
                 if ($value === null) {
-                    $properties['to'] = null;
-                    goto after_to;
+                    $properties['field_type'] = null;
+                    goto after_field_type;
                 }
 
-                $properties['to'] = $value;
+                $properties['field_type'] = $value;
     
-                after_to:
+                after_field_type:
 
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue', $exception, stack: $this->hydrationStack);
             }
             
             if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission::class, $missingFields, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue::class, $missingFields, stack: $this->hydrationStack);
             }
             
             try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission(...$properties);
+                return new \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue(...$properties);
             } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission', $exception, stack: $this->hydrationStack);
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue', $exception, stack: $this->hydrationStack);
             }
         }
 
@@ -1685,6 +1686,50 @@ class ProjectsV2Item implements ObjectMapper
         }
 
         
+        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission
+        {
+            $properties = []; 
+            $missingFields = [];
+            try {
+                
+                $value = $payload['from'] ?? null;
+    
+                if ($value === null) {
+                    $properties['from'] = null;
+                    goto after_from;
+                }
+
+                $properties['from'] = $value;
+    
+                after_from:
+
+                $value = $payload['to'] ?? null;
+    
+                if ($value === null) {
+                    $properties['to'] = null;
+                    goto after_to;
+                }
+
+                $properties['to'] = $value;
+    
+                after_to:
+
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission', $exception, stack: $this->hydrationStack);
+            }
+            
+            if (count($missingFields) > 0) {
+                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission::class, $missingFields, stack: $this->hydrationStack);
+            }
+            
+            try {
+                return new \ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission(...$properties);
+            } catch (\Throwable $exception) {
+                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission', $exception, stack: $this->hydrationStack);
+            }
+        }
+
+        
         private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemRestored(array $payload): \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemRestored
         {
             $properties = []; 
@@ -1842,9 +1887,10 @@ class ProjectsV2Item implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemDeleted($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($object),
+                'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemReordered' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemReordered($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemReordered\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemReordered⚡️Changes($object),
+                'ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemRestored' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemRestored($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -2651,38 +2697,38 @@ class ProjectsV2Item implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes);
         $result = [];
         
-        $body = $object->body;
+        $field_value = $object->field_value;
 
-        if ($body === null) {
-            goto after_body;
+        if ($field_value === null) {
+            goto after_field_value;
         }
-        $body = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($body);
-        after_body:        $result['body'] = $body;
+        $field_value = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue($field_value);
+        after_field_value:        $result['field_value'] = $field_value;
 
 
         return $result;
     }
 
     
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue);
         $result = [];
         
-        $from = $object->from;
+        $field_node_id = $object->field_node_id;
 
-        if ($from === null) {
-            goto after_from;
+        if ($field_node_id === null) {
+            goto after_field_node_id;
         }
-        after_from:        $result['from'] = $from;
+        after_field_node_id:        $result['field_node_id'] = $field_node_id;
 
         
-        $to = $object->to;
+        $field_type = $object->field_type;
 
-        if ($to === null) {
-            goto after_to;
+        if ($field_type === null) {
+            goto after_field_type;
         }
-        after_to:        $result['to'] = $to;
+        after_field_type:        $result['field_type'] = $field_type;
 
 
         return $result;
@@ -2759,6 +2805,31 @@ class ProjectsV2Item implements ObjectMapper
         }
         $previous_projects_v2_item_node_id = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($previous_projects_v2_item_node_id);
         after_previous_projects_v2_item_node_id:        $result['previous_projects_v2_item_node_id'] = $previous_projects_v2_item_node_id;
+
+
+        return $result;
+    }
+
+    
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes\Permission);
+        $result = [];
+        
+        $from = $object->from;
+
+        if ($from === null) {
+            goto after_from;
+        }
+        after_from:        $result['from'] = $from;
+
+        
+        $to = $object->to;
+
+        if ($to === null) {
+            goto after_to;
+        }
+        after_to:        $result['to'] = $to;
 
 
         return $result;
