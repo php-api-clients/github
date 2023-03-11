@@ -63,7 +63,7 @@ final class ListCommits
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Conflict**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -73,7 +73,7 @@ final class ListCommits
                         });
                 }
                 break;
-            /**Conflict**/
+            /**Internal Error**/
             case 500:
                 switch ($contentType) {
                     case 'application/json':
@@ -81,7 +81,7 @@ final class ListCommits
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Conflict**/
+            /**Bad Request**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':
@@ -92,7 +92,7 @@ final class ListCommits
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ScimError::class, $body);
                 }
                 break;
-            /**Conflict**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

@@ -1,3 +1,6 @@
 spec: https://raw.githubusercontent.com/github/rest-api-description/main/descriptions-next/api.github.com/api.github.com.yaml
 namespace: ApiClients\Client\GitHub
 destination: ../src
+voter:
+  streamOperation:
+    - ApiClients\Tools\OpenApiClientGenerator\Voter\StreamOperation\DownloadInOperationId

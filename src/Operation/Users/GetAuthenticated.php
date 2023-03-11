@@ -33,7 +33,7 @@ final class GetAuthenticated
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -41,7 +41,7 @@ final class GetAuthenticated
                         return $this->hydrator->hydrateObject(Schema\Operation\Users\GetAuthenticated\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

@@ -45,7 +45,7 @@ final class Merge
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**if merge was successful**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -53,7 +53,7 @@ final class Merge
                         return $this->hydrator->hydrateObject(Schema\PullRequestMergeResult::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Method Not Allowed if merge cannot be performed**/
             case 405:
                 switch ($contentType) {
                     case 'application/json':
@@ -61,7 +61,7 @@ final class Merge
                         throw $this->hydrator->hydrateObject(ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Conflict if sha was provided and pull request head did not match**/
             case 409:
                 switch ($contentType) {
                     case 'application/json':
@@ -69,7 +69,7 @@ final class Merge
                         throw $this->hydrator->hydrateObject(ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
@@ -77,7 +77,7 @@ final class Merge
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ValidationError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

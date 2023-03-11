@@ -45,7 +45,7 @@ final class CreateWithPrForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Service unavailable**/
+            /**Response when the codespace was successfully created**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -53,7 +53,7 @@ final class CreateWithPrForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Codespace::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Response when the codespace creation partially failed but is being retried in the background**/
             case 202:
                 switch ($contentType) {
                     case 'application/json':
@@ -61,7 +61,7 @@ final class CreateWithPrForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Codespace::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -69,7 +69,7 @@ final class CreateWithPrForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -77,7 +77,7 @@ final class CreateWithPrForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

@@ -48,7 +48,7 @@ final class CreateReplyForReviewComment
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':

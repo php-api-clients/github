@@ -39,7 +39,7 @@ final class UpdateInformationAboutPagesSite
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Conflict**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class UpdateInformationAboutPagesSite
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ValidationError::class, $body);
                 }
                 break;
-            /**Conflict**/
+            /**Bad Request**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':

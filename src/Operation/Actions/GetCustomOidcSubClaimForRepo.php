@@ -39,7 +39,7 @@ final class GetCustomOidcSubClaimForRepo
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Status response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class GetCustomOidcSubClaimForRepo
                         return $this->hydrator->hydrateObject(Schema\OidcCustomSubRepo::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Bad Request**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':

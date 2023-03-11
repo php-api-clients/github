@@ -42,7 +42,7 @@ final class GetCommitAuthors
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Unavailable due to service under maintenance.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,7 +52,7 @@ final class GetCommitAuthors
                         });
                 }
                 break;
-            /**Unavailable due to service under maintenance.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

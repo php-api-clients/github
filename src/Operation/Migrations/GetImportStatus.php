@@ -39,7 +39,7 @@ final class GetImportStatus
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Unavailable due to service under maintenance.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class GetImportStatus
                         return $this->hydrator->hydrateObject(Schema\Import::class, $body);
                 }
                 break;
-            /**Unavailable due to service under maintenance.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

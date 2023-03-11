@@ -44,7 +44,7 @@ final class RedeliverWebhookDelivery
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Accepted**/
             case 202:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,7 +52,7 @@ final class RedeliverWebhookDelivery
                         return $this->hydrator->hydrateObject(Schema\WebhookDeploymentCreated\Deployment\Payload::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Bad Request**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':

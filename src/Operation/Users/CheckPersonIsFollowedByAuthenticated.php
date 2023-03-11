@@ -33,7 +33,7 @@ final class CheckPersonIsFollowedByAuthenticated
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**if the person is not followed by the authenticated user**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -41,7 +41,7 @@ final class CheckPersonIsFollowedByAuthenticated
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

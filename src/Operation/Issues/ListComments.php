@@ -51,7 +51,7 @@ final class ListComments
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Gone**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -61,7 +61,7 @@ final class ListComments
                         });
                 }
                 break;
-            /**Gone**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

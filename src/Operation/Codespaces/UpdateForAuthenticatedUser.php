@@ -39,7 +39,7 @@ final class UpdateForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class UpdateForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Codespace::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -55,7 +55,7 @@ final class UpdateForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

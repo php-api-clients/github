@@ -39,7 +39,7 @@ final class ListInstallationRequestsForAuthenticatedApp
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**List of integration installation requests**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

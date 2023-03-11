@@ -48,7 +48,7 @@ final class ListForRepo
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +58,7 @@ final class ListForRepo
                         });
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -66,7 +66,7 @@ final class ListForRepo
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -74,7 +74,7 @@ final class ListForRepo
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -82,7 +82,7 @@ final class ListForRepo
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Gone**/
             case 410:
                 switch ($contentType) {
                     case 'application/json':

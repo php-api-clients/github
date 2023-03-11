@@ -36,7 +36,7 @@ final class GetSshSigningKeyForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class GetSshSigningKeyForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\SshSigningKey::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,7 +52,7 @@ final class GetSshSigningKeyForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

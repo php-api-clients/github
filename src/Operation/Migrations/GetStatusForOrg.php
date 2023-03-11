@@ -42,7 +42,10 @@ final class GetStatusForOrg
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /***   `pending`, which means the migration hasn't started yet.
+            *   `exporting`, which means the migration is in progress.
+            *   `exported`, which means the migration finished successfully.
+            *   `failed`, which means the migration failed.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

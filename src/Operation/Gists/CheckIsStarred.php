@@ -33,7 +33,7 @@ final class CheckIsStarred
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Not Found if gist is not starred**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

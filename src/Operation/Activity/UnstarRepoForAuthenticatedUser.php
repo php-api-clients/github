@@ -36,7 +36,7 @@ final class UnstarRepoForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class UnstarRepoForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':

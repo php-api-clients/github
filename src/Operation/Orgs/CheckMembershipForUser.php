@@ -28,10 +28,16 @@ final class CheckMembershipForUser
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{username}'), array($this->org, $this->username), self::PATH));
     }
     /**
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return array{code: int,location: string}
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Psr\Http\Message\ResponseInterface
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : array
     {
-        return $response;
+        switch ($response->getStatusCode()) {
+            /**Response if requester is not an organization member**/
+            case 302:
+                return array('code' => 302, 'location' => $response->getHeaderLine('Location'));
+                break;
+        }
+        throw new \RuntimeException('Unable to find matching response code and content type');
     }
 }

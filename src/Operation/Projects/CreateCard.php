@@ -47,7 +47,7 @@ final class CreateCard
                         return $this->hydrator->hydrateObject(Schema\ProjectCard::class, $body);
                 }
                 break;
-            /**Response**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -55,7 +55,7 @@ final class CreateCard
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Response**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -63,7 +63,7 @@ final class CreateCard
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Response**/
+            /**Validation failed**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

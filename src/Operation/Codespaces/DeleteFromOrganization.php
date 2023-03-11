@@ -42,7 +42,7 @@ final class DeleteFromOrganization
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Accepted**/
             case 202:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class DeleteFromOrganization
                         return $this->hydrator->hydrateObject(Schema\WebhookDeploymentCreated\Deployment\Payload::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Internal Error**/
             case 500:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +58,7 @@ final class DeleteFromOrganization
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -66,7 +66,7 @@ final class DeleteFromOrganization
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

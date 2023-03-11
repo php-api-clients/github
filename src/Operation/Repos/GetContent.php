@@ -45,7 +45,7 @@ final class GetContent
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/vnd.github.object':
@@ -56,7 +56,7 @@ final class GetContent
                         return $this->hydrator->hydrateObject(Schema\Operation\Repos\GetContent\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

@@ -39,7 +39,7 @@ final class CreateOrUpdateSecretForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response after successfully creating a secret**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class CreateOrUpdateSecretForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\EmptyObject::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

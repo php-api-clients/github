@@ -36,7 +36,10 @@ final class DownloadArtifact
     {
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{artifact_id}', '{archive_format}'), array($this->owner, $this->repo, $this->artifact_id, $this->archive_format), self::PATH));
     }
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
+    /**
+     * @return array{code: int,location: string}
+     */
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : array
     {
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
@@ -48,6 +51,10 @@ final class DownloadArtifact
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
+                break;
+            /**Response**/
+            case 302:
+                return array('code' => 302, 'location' => $response->getHeaderLine('Location'));
                 break;
         }
         throw new \RuntimeException('Unable to find matching response code and content type');

@@ -39,7 +39,7 @@ final class ListPublicEvents
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Service unavailable**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -49,7 +49,7 @@ final class ListPublicEvents
                         });
                 }
                 break;
-            /**Service unavailable**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

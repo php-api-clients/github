@@ -48,7 +48,7 @@ final class ListCommitStatusesForRef
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Moved permanently**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

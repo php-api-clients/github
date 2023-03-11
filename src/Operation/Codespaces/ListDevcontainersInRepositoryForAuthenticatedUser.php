@@ -45,7 +45,7 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -53,7 +53,7 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Operation\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Internal Error**/
             case 500:
                 switch ($contentType) {
                     case 'application/json':
@@ -61,7 +61,7 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Bad Request**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':
@@ -72,7 +72,7 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ScimError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -80,7 +80,7 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

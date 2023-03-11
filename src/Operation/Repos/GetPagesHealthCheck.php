@@ -39,7 +39,7 @@ final class GetPagesHealthCheck
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class GetPagesHealthCheck
                         return $this->hydrator->hydrateObject(Schema\PagesHealthCheck::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Empty response**/
             case 202:
                 switch ($contentType) {
                     case 'application/json':

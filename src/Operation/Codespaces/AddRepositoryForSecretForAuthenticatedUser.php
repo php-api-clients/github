@@ -35,7 +35,7 @@ final class AddRepositoryForSecretForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Internal Error**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -43,7 +43,7 @@ final class AddRepositoryForSecretForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Internal Error**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -51,7 +51,7 @@ final class AddRepositoryForSecretForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Internal Error**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

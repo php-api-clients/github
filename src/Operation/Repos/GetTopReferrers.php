@@ -39,7 +39,7 @@ final class GetTopReferrers
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

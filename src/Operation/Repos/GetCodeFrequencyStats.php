@@ -39,7 +39,7 @@ final class GetCodeFrequencyStats
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Accepted**/
+            /**Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

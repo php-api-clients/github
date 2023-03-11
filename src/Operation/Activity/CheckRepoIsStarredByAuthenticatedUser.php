@@ -36,7 +36,7 @@ final class CheckRepoIsStarredByAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Not Found if this repository is not starred by you**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class CheckRepoIsStarredByAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':

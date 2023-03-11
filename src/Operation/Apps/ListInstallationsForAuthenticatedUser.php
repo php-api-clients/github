@@ -39,7 +39,7 @@ final class ListInstallationsForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**You can find the permissions for the installation under the `permissions` key.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class ListInstallationsForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Operation\Orgs\ListAppInstallations\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

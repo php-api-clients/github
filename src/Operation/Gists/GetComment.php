@@ -39,7 +39,7 @@ final class GetComment
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden Gist**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class GetComment
                         return $this->hydrator->hydrateObject(Schema\GistComment::class, $body);
                 }
                 break;
-            /**Forbidden Gist**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

@@ -36,7 +36,7 @@ final class CreateForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Bad Request**/
+            /**Response**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class CreateForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Repository::class, $body);
                 }
                 break;
-            /**Bad Request**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,7 +52,7 @@ final class CreateForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Bad Request**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -60,7 +60,7 @@ final class CreateForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Bad Request**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -68,7 +68,7 @@ final class CreateForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Bad Request**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

@@ -33,7 +33,7 @@ final class Unblock
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -41,7 +41,7 @@ final class Unblock
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':

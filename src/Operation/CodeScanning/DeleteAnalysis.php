@@ -45,7 +45,7 @@ final class DeleteAnalysis
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Service unavailable**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -53,7 +53,7 @@ final class DeleteAnalysis
                         return $this->hydrator->hydrateObject(Schema\CodeScanningAnalysisDeletion::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Bad Request**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':
@@ -64,7 +64,7 @@ final class DeleteAnalysis
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ScimError::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Response if the repository is archived or if GitHub Advanced Security is not enabled for this repository**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -72,7 +72,7 @@ final class DeleteAnalysis
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

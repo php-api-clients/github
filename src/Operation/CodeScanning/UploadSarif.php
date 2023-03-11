@@ -42,7 +42,7 @@ final class UploadSarif
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Service unavailable**/
+            /**Response**/
             case 202:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class UploadSarif
                         return $this->hydrator->hydrateObject(Schema\CodeScanningSarifsReceipt::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Response if the repository is archived or if GitHub Advanced Security is not enabled for this repository**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +58,7 @@ final class UploadSarif
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

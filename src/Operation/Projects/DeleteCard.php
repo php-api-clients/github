@@ -33,7 +33,7 @@ final class DeleteCard
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -41,7 +41,7 @@ final class DeleteCard
                         throw $this->hydrator->hydrateObject(ErrorSchemas\Operation\Projects\DeleteCard\Response\Applicationjson\H403::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':

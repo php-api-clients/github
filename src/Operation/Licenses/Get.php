@@ -35,7 +35,7 @@ final class Get
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -43,7 +43,7 @@ final class Get
                         return $this->hydrator->hydrateObject(Schema\License::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

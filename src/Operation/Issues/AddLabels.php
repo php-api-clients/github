@@ -45,7 +45,7 @@ final class AddLabels
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -55,7 +55,7 @@ final class AddLabels
                         });
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Moved permanently**/
             case 301:
                 switch ($contentType) {
                     case 'application/json':
@@ -63,7 +63,7 @@ final class AddLabels
                         return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -71,7 +71,7 @@ final class AddLabels
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Gone**/
             case 410:
                 switch ($contentType) {
                     case 'application/json':

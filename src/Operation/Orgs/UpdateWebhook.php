@@ -42,7 +42,7 @@ final class UpdateWebhook
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class UpdateWebhook
                         return $this->hydrator->hydrateObject(Schema\OrgHook::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

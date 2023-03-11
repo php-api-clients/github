@@ -48,7 +48,7 @@ final class IssuesAndPullRequests
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -56,7 +56,7 @@ final class IssuesAndPullRequests
                         return $this->hydrator->hydrateObject(Schema\Operation\Search\IssuesAndPullRequests\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Service unavailable**/
             case 503:
                 switch ($contentType) {
                     case 'application/json':
@@ -64,7 +64,7 @@ final class IssuesAndPullRequests
                         throw $this->hydrator->hydrateObject(ErrorSchemas\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

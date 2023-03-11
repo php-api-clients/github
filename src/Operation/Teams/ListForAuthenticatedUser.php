@@ -39,7 +39,7 @@ final class ListForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -49,7 +49,7 @@ final class ListForAuthenticatedUser
                         });
                 }
                 break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

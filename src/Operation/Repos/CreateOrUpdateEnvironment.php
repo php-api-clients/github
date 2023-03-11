@@ -45,7 +45,7 @@ final class CreateOrUpdateEnvironment
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation error when the environment name is invalid or when `protected_branches` and `custom_branch_policies` in `deployment_branch_policy` are set to the same value**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

@@ -33,7 +33,7 @@ final class DeclineInvitationForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Conflict**/
             case 409:
                 switch ($contentType) {
                     case 'application/json':
@@ -41,7 +41,7 @@ final class DeclineInvitationForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

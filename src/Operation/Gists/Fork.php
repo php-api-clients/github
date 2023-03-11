@@ -36,7 +36,7 @@ final class Fork
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Response**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class Fork
                         return $this->hydrator->hydrateObject(Schema\BaseGist::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,7 +52,7 @@ final class Fork
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

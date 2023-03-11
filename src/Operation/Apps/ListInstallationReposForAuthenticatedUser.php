@@ -42,7 +42,7 @@ final class ListInstallationReposForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**The access the user has to each repository is included in the hash under the `permissions` key.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class ListInstallationReposForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Operation\Apps\ListInstallationReposForAuthenticatedUser\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

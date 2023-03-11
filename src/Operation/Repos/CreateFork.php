@@ -42,7 +42,7 @@ final class CreateFork
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 202:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class CreateFork
                         return $this->hydrator->hydrateObject(Schema\FullRepository::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Bad Request**/
             case 400:
                 switch ($contentType) {
                     case 'application/json':
@@ -61,7 +61,7 @@ final class CreateFork
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ScimError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
@@ -69,7 +69,7 @@ final class CreateFork
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ValidationError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

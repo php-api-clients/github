@@ -36,7 +36,7 @@ final class Get
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class Get
                         return $this->hydrator->hydrateObject(Schema\GistSimple::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden Gist**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

@@ -39,7 +39,7 @@ final class UpdateMembershipForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -47,7 +47,7 @@ final class UpdateMembershipForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\OrgMembership::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -55,7 +55,7 @@ final class UpdateMembershipForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

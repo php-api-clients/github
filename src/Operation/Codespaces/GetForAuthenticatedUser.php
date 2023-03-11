@@ -36,7 +36,7 @@ final class GetForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class GetForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Codespace::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Internal Error**/
             case 500:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,7 +52,7 @@ final class GetForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -60,7 +60,7 @@ final class GetForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

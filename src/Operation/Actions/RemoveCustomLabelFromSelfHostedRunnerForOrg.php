@@ -42,7 +42,7 @@ final class RemoveCustomLabelFromSelfHostedRunnerForOrg
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class RemoveCustomLabelFromSelfHostedRunnerForOrg
                         return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

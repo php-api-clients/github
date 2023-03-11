@@ -42,7 +42,7 @@ final class CreateOrUpdateOrgSecret
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Response when creating a secret**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class CreateOrUpdateOrgSecret
                         return $this->hydrator->hydrateObject(Schema\EmptyObject::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

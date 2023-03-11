@@ -42,7 +42,7 @@ final class RerequestRun
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class RerequestRun
                         return $this->hydrator->hydrateObject(Schema\EmptyObject::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden if the check run is not rerequestable or doesn't belong to the authenticated GitHub App**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +58,7 @@ final class RerequestRun
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Validation error if the check run is not rerequestable**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

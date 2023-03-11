@@ -33,7 +33,7 @@ final class DeleteGpgKeyForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -41,7 +41,7 @@ final class DeleteGpgKeyForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
@@ -49,7 +49,7 @@ final class DeleteGpgKeyForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ValidationError::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

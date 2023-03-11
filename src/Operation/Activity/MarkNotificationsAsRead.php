@@ -36,7 +36,7 @@ final class MarkNotificationsAsRead
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**Response**/
             case 202:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class MarkNotificationsAsRead
                         return $this->hydrator->hydrateObject(Schema\Operation\Activity\MarkNotificationsAsRead\Response\Applicationjson\H202::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

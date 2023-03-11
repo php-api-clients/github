@@ -42,7 +42,7 @@ final class SetLfsPreference
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Unavailable due to service under maintenance.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class SetLfsPreference
                         return $this->hydrator->hydrateObject(Schema\Import::class, $body);
                 }
                 break;
-            /**Unavailable due to service under maintenance.**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

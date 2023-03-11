@@ -39,7 +39,7 @@ final class GetParticipationStats
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**The array order is oldest week (index 0) to most recent week.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

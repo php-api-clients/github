@@ -42,7 +42,7 @@ final class GetSarif
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Service unavailable**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class GetSarif
                         return $this->hydrator->hydrateObject(Schema\CodeScanningSarifsStatus::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Response if GitHub Advanced Security is not enabled for this repository**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

@@ -44,7 +44,7 @@ final class RemoveLabel
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Gone**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -54,7 +54,7 @@ final class RemoveLabel
                         });
                 }
                 break;
-            /**Gone**/
+            /**Moved permanently**/
             case 301:
                 switch ($contentType) {
                     case 'application/json':
@@ -62,7 +62,7 @@ final class RemoveLabel
                         return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
                 }
                 break;
-            /**Gone**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

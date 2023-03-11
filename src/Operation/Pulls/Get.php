@@ -42,7 +42,7 @@ final class Get
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Service unavailable**/
+            /**Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class Get
                         return $this->hydrator->hydrateObject(Schema\PullRequest::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +58,7 @@ final class Get
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Internal Error**/
             case 500:
                 switch ($contentType) {
                     case 'application/json':

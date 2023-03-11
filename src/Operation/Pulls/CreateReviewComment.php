@@ -45,7 +45,7 @@ final class CreateReviewComment
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**Response**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -53,7 +53,7 @@ final class CreateReviewComment
                         return $this->hydrator->hydrateObject(Schema\PullRequestReviewComment::class, $body);
                 }
                 break;
-            /**Forbidden**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':

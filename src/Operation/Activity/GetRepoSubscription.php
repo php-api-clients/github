@@ -39,7 +39,7 @@ final class GetRepoSubscription
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Forbidden**/
+            /**if you subscribe to the repository**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':

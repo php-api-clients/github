@@ -48,7 +48,7 @@ final class ListFiles
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Service unavailable**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +58,7 @@ final class ListFiles
                         });
                 }
                 break;
-            /**Service unavailable**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
@@ -66,7 +66,7 @@ final class ListFiles
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ValidationError::class, $body);
                 }
                 break;
-            /**Service unavailable**/
+            /**Internal Error**/
             case 500:
                 switch ($contentType) {
                     case 'application/json':

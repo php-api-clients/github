@@ -48,7 +48,7 @@ final class Users
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -56,7 +56,7 @@ final class Users
                         return $this->hydrator->hydrateObject(Schema\Operation\Search\Users\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Service unavailable**/
             case 503:
                 switch ($contentType) {
                     case 'application/json':

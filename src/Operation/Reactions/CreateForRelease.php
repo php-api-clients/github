@@ -45,7 +45,7 @@ final class CreateForRelease
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Reaction exists**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -53,7 +53,7 @@ final class CreateForRelease
                         return $this->hydrator->hydrateObject(Schema\Reaction::class, $body);
                 }
                 break;
-            /**Validation failed, or the endpoint has been spammed.**/
+            /**Reaction created**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':

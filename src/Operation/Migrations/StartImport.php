@@ -42,7 +42,7 @@ final class StartImport
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Unavailable due to service under maintenance.**/
+            /**Response**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class StartImport
                         return $this->hydrator->hydrateObject(Schema\Import::class, $body);
                 }
                 break;
-            /**Unavailable due to service under maintenance.**/
+            /**Validation failed, or the endpoint has been spammed.**/
             case 422:
                 switch ($contentType) {
                     case 'application/json':
@@ -58,7 +58,7 @@ final class StartImport
                         throw $this->hydrator->hydrateObject(ErrorSchemas\ValidationError::class, $body);
                 }
                 break;
-            /**Unavailable due to service under maintenance.**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

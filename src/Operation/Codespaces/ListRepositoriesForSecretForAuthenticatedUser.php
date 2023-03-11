@@ -36,7 +36,7 @@ final class ListRepositoriesForSecretForAuthenticatedUser
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Internal Error**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class ListRepositoriesForSecretForAuthenticatedUser
                         return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListSelectedReposForOrgSecret\Response\Applicationjson\H200::class, $body);
                 }
                 break;
-            /**Internal Error**/
+            /**Requires authentication**/
             case 401:
                 switch ($contentType) {
                     case 'application/json':
@@ -52,7 +52,7 @@ final class ListRepositoriesForSecretForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Internal Error**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':
@@ -60,7 +60,7 @@ final class ListRepositoriesForSecretForAuthenticatedUser
                         throw $this->hydrator->hydrateObject(ErrorSchemas\BasicError::class, $body);
                 }
                 break;
-            /**Internal Error**/
+            /**Resource not found**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

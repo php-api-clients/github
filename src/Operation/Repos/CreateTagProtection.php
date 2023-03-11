@@ -42,7 +42,7 @@ final class CreateTagProtection
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Resource not found**/
+            /**Response**/
             case 201:
                 switch ($contentType) {
                     case 'application/json':
@@ -50,7 +50,7 @@ final class CreateTagProtection
                         return $this->hydrator->hydrateObject(Schema\TagProtection::class, $body);
                 }
                 break;
-            /**Resource not found**/
+            /**Forbidden**/
             case 403:
                 switch ($contentType) {
                     case 'application/json':

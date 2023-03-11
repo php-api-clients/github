@@ -36,7 +36,7 @@ final class GetSubscriptionPlanForAccount
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Requires authentication**/
+            /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
@@ -44,7 +44,7 @@ final class GetSubscriptionPlanForAccount
                         return $this->hydrator->hydrateObject(Schema\MarketplacePurchase::class, $body);
                 }
                 break;
-            /**Requires authentication**/
+            /**Not Found when the account has not purchased the listing**/
             case 404:
                 switch ($contentType) {
                     case 'application/json':

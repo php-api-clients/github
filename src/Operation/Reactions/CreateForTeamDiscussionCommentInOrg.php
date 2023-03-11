@@ -48,7 +48,7 @@ final class CreateForTeamDiscussionCommentInOrg
         $contentType = $response->getHeaderLine('Content-Type');
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
-            /**Response**/
+            /**Response when the reaction type has already been added to this team discussion comment**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
