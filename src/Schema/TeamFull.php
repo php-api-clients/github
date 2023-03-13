@@ -23,7 +23,7 @@ final readonly class TeamFull
      * organization: Team Organization
      * ldap_dn: Distinguished Name (DN) that team maps to within LDAP environment
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?string $html_url, public ?string $name, public ?string $slug, public ?string $description, public string $privacy, public ?string $permission, public ?string $members_url, public ?string $repositories_url, public mixed $parent, public ?int $members_count, public ?int $repos_count, public ?string $created_at, public ?string $updated_at, public ?Schema\TeamOrganization $organization, public string $ldap_dn)
+    public function __construct(public int $id, public string $node_id, public string $url, public string $html_url, public string $name, public string $slug, public ?string $description, public ?string $privacy, public string $permission, public string $members_url, public string $repositories_url, public mixed $parent, public int $members_count, public int $repos_count, public string $created_at, public string $updated_at, public Schema\TeamOrganization $organization, public ?string $ldap_dn)
     {
     }
 }

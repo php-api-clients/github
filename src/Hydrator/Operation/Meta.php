@@ -30,247 +30,265 @@ class Meta implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview(array $payload): \ApiClients\Client\GitHub\Schema\ApiOverview
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['verifiable_password_authentication'] ?? null;
-    
-                if ($value === null) {
-                    $properties['verifiable_password_authentication'] = null;
-                    goto after_verifiable_password_authentication;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview(array $payload): \ApiClients\Client\GitHub\Schema\ApiOverview
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['verifiable_password_authentication'] ?? null;
 
-                $properties['verifiable_password_authentication'] = $value;
-    
-                after_verifiable_password_authentication:
-
-                $value = $payload['ssh_key_fingerprints'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'ssh_key_fingerprints';
-                    goto after_ssh_key_fingerprints;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'ssh_key_fingerprints';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['ssh_key_fingerprints'] = $value;
-    
-                after_ssh_key_fingerprints:
-
-                $value = $payload['ssh_keys'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'ssh_keys';
-                    goto after_ssh_keys;
-                }
-
-                $properties['ssh_keys'] = $value;
-    
-                after_ssh_keys:
-
-                $value = $payload['hooks'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'hooks';
-                    goto after_hooks;
-                }
-
-                $properties['hooks'] = $value;
-    
-                after_hooks:
-
-                $value = $payload['web'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'web';
-                    goto after_web;
-                }
-
-                $properties['web'] = $value;
-    
-                after_web:
-
-                $value = $payload['api'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'api';
-                    goto after_api;
-                }
-
-                $properties['api'] = $value;
-    
-                after_api:
-
-                $value = $payload['git'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'git';
-                    goto after_git;
-                }
-
-                $properties['git'] = $value;
-    
-                after_git:
-
-                $value = $payload['packages'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'packages';
-                    goto after_packages;
-                }
-
-                $properties['packages'] = $value;
-    
-                after_packages:
-
-                $value = $payload['pages'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'pages';
-                    goto after_pages;
-                }
-
-                $properties['pages'] = $value;
-    
-                after_pages:
-
-                $value = $payload['importer'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'importer';
-                    goto after_importer;
-                }
-
-                $properties['importer'] = $value;
-    
-                after_importer:
-
-                $value = $payload['actions'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'actions';
-                    goto after_actions;
-                }
-
-                $properties['actions'] = $value;
-    
-                after_actions:
-
-                $value = $payload['dependabot'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'dependabot';
-                    goto after_dependabot;
-                }
-
-                $properties['dependabot'] = $value;
-    
-                after_dependabot:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'verifiable_password_authentication';
+                goto after_verifiable_password_authentication;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ApiOverview::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['verifiable_password_authentication'] = $value;
+
+            after_verifiable_password_authentication:
+
+            $value = $payload['ssh_key_fingerprints'] ?? null;
+
+            if ($value === null) {
+                $properties['ssh_key_fingerprints'] = null;
+                goto after_ssh_key_fingerprints;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ApiOverview(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'ssh_key_fingerprints';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
+
+            $properties['ssh_key_fingerprints'] = $value;
+
+            after_ssh_key_fingerprints:
+
+            $value = $payload['ssh_keys'] ?? null;
+
+            if ($value === null) {
+                $properties['ssh_keys'] = null;
+                goto after_ssh_keys;
+            }
+
+            $properties['ssh_keys'] = $value;
+
+            after_ssh_keys:
+
+            $value = $payload['hooks'] ?? null;
+
+            if ($value === null) {
+                $properties['hooks'] = null;
+                goto after_hooks;
+            }
+
+            $properties['hooks'] = $value;
+
+            after_hooks:
+
+            $value = $payload['web'] ?? null;
+
+            if ($value === null) {
+                $properties['web'] = null;
+                goto after_web;
+            }
+
+            $properties['web'] = $value;
+
+            after_web:
+
+            $value = $payload['api'] ?? null;
+
+            if ($value === null) {
+                $properties['api'] = null;
+                goto after_api;
+            }
+
+            $properties['api'] = $value;
+
+            after_api:
+
+            $value = $payload['git'] ?? null;
+
+            if ($value === null) {
+                $properties['git'] = null;
+                goto after_git;
+            }
+
+            $properties['git'] = $value;
+
+            after_git:
+
+            $value = $payload['packages'] ?? null;
+
+            if ($value === null) {
+                $properties['packages'] = null;
+                goto after_packages;
+            }
+
+            $properties['packages'] = $value;
+
+            after_packages:
+
+            $value = $payload['pages'] ?? null;
+
+            if ($value === null) {
+                $properties['pages'] = null;
+                goto after_pages;
+            }
+
+            $properties['pages'] = $value;
+
+            after_pages:
+
+            $value = $payload['importer'] ?? null;
+
+            if ($value === null) {
+                $properties['importer'] = null;
+                goto after_importer;
+            }
+
+            $properties['importer'] = $value;
+
+            after_importer:
+
+            $value = $payload['actions'] ?? null;
+
+            if ($value === null) {
+                $properties['actions'] = null;
+                goto after_actions;
+            }
+
+            $properties['actions'] = $value;
+
+            after_actions:
+
+            $value = $payload['dependabot'] ?? null;
+
+            if ($value === null) {
+                $properties['dependabot'] = null;
+                goto after_dependabot;
+            }
+
+            $properties['dependabot'] = $value;
+
+            after_dependabot:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ApiOverview::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ApiOverview(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints(array $payload): \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['s_h_a256__r_s_a'] ?? null;
-    
-                if ($value === null) {
-                    $properties['SHA256_RSA'] = null;
-                    goto after_SHA256_RSA;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints(array $payload): \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['s_h_a256__r_s_a'] ?? null;
 
-                $properties['SHA256_RSA'] = $value;
-    
-                after_SHA256_RSA:
-
-                $value = $payload['s_h_a256__d_s_a'] ?? null;
-    
-                if ($value === null) {
-                    $properties['SHA256_DSA'] = null;
-                    goto after_SHA256_DSA;
-                }
-
-                $properties['SHA256_DSA'] = $value;
-    
-                after_SHA256_DSA:
-
-                $value = $payload['s_h_a256__e_c_d_s_a'] ?? null;
-    
-                if ($value === null) {
-                    $properties['SHA256_ECDSA'] = null;
-                    goto after_SHA256_ECDSA;
-                }
-
-                $properties['SHA256_ECDSA'] = $value;
-    
-                after_SHA256_ECDSA:
-
-                $value = $payload['s_h_a256__e_d25519'] ?? null;
-    
-                if ($value === null) {
-                    $properties['SHA256_ED25519'] = null;
-                    goto after_SHA256_ED25519;
-                }
-
-                $properties['SHA256_ED25519'] = $value;
-    
-                after_SHA256_ED25519:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['SHA256_RSA'] = null;
+                goto after_SHA256_RSA;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['SHA256_RSA'] = $value;
+
+            after_SHA256_RSA:
+
+            $value = $payload['s_h_a256__d_s_a'] ?? null;
+
+            if ($value === null) {
+                $properties['SHA256_DSA'] = null;
+                goto after_SHA256_DSA;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
+
+            $properties['SHA256_DSA'] = $value;
+
+            after_SHA256_DSA:
+
+            $value = $payload['s_h_a256__e_c_d_s_a'] ?? null;
+
+            if ($value === null) {
+                $properties['SHA256_ECDSA'] = null;
+                goto after_SHA256_ECDSA;
+            }
+
+            $properties['SHA256_ECDSA'] = $value;
+
+            after_SHA256_ECDSA:
+
+            $value = $payload['s_h_a256__e_d25519'] ?? null;
+
+            if ($value === null) {
+                $properties['SHA256_ED25519'] = null;
+                goto after_SHA256_ED25519;
+            }
+
+            $properties['SHA256_ED25519'] = $value;
+
+            after_SHA256_ED25519:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ApiOverview' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview($object),
-                'ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\ApiOverview' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview($object),
+            'ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -343,26 +361,30 @@ class Meta implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ApiOverview);
         $result = [];
-        
-        $verifiable_password_authentication = $object->verifiable_password_authentication;
 
-        if ($verifiable_password_authentication === null) {
-            goto after_verifiable_password_authentication;
-        }
+        $verifiable_password_authentication = $object->verifiable_password_authentication;
         after_verifiable_password_authentication:        $result['verifiable_password_authentication'] = $verifiable_password_authentication;
 
         
         $ssh_key_fingerprints = $object->ssh_key_fingerprints;
+
+        if ($ssh_key_fingerprints === null) {
+            goto after_ssh_key_fingerprints;
+        }
         $ssh_key_fingerprints = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($ssh_key_fingerprints);
         after_ssh_key_fingerprints:        $result['ssh_key_fingerprints'] = $ssh_key_fingerprints;
 
         
         $ssh_keys = $object->ssh_keys;
+
+        if ($ssh_keys === null) {
+            goto after_ssh_keys;
+        }
         static $ssh_keysSerializer0;
 
         if ($ssh_keysSerializer0 === null) {
@@ -375,6 +397,10 @@ class Meta implements ObjectMapper
 
         
         $hooks = $object->hooks;
+
+        if ($hooks === null) {
+            goto after_hooks;
+        }
         static $hooksSerializer0;
 
         if ($hooksSerializer0 === null) {
@@ -387,6 +413,10 @@ class Meta implements ObjectMapper
 
         
         $web = $object->web;
+
+        if ($web === null) {
+            goto after_web;
+        }
         static $webSerializer0;
 
         if ($webSerializer0 === null) {
@@ -399,6 +429,10 @@ class Meta implements ObjectMapper
 
         
         $api = $object->api;
+
+        if ($api === null) {
+            goto after_api;
+        }
         static $apiSerializer0;
 
         if ($apiSerializer0 === null) {
@@ -411,6 +445,10 @@ class Meta implements ObjectMapper
 
         
         $git = $object->git;
+
+        if ($git === null) {
+            goto after_git;
+        }
         static $gitSerializer0;
 
         if ($gitSerializer0 === null) {
@@ -423,6 +461,10 @@ class Meta implements ObjectMapper
 
         
         $packages = $object->packages;
+
+        if ($packages === null) {
+            goto after_packages;
+        }
         static $packagesSerializer0;
 
         if ($packagesSerializer0 === null) {
@@ -435,6 +477,10 @@ class Meta implements ObjectMapper
 
         
         $pages = $object->pages;
+
+        if ($pages === null) {
+            goto after_pages;
+        }
         static $pagesSerializer0;
 
         if ($pagesSerializer0 === null) {
@@ -447,6 +493,10 @@ class Meta implements ObjectMapper
 
         
         $importer = $object->importer;
+
+        if ($importer === null) {
+            goto after_importer;
+        }
         static $importerSerializer0;
 
         if ($importerSerializer0 === null) {
@@ -459,6 +509,10 @@ class Meta implements ObjectMapper
 
         
         $actions = $object->actions;
+
+        if ($actions === null) {
+            goto after_actions;
+        }
         static $actionsSerializer0;
 
         if ($actionsSerializer0 === null) {
@@ -471,6 +525,10 @@ class Meta implements ObjectMapper
 
         
         $dependabot = $object->dependabot;
+
+        if ($dependabot === null) {
+            goto after_dependabot;
+        }
         static $dependabotSerializer0;
 
         if ($dependabotSerializer0 === null) {
@@ -485,12 +543,12 @@ class Meta implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints);
         $result = [];
-        
+
         $SHA256_RSA = $object->SHA256_RSA;
 
         if ($SHA256_RSA === null) {

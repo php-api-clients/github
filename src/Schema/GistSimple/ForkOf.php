@@ -15,10 +15,10 @@ final readonly class ForkOf
     public const SCHEMA_DESCRIPTION = 'Gist';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated_url","forks_url":"generated_forks_url","commits_url":"generated_commits_url","id":"generated_id","node_id":"generated_node_id","git_pull_url":"generated_git_pull_url","git_push_url":"generated_git_push_url","html_url":"generated_html_url","files":null,"public":false,"created_at":"generated_created_at","updated_at":"generated_updated_at","description":"generated_description","comments":13,"user":null,"comments_url":"generated_comments_url","owner":null,"truncated":false,"forks":[null],"history":[null]}';
     /**
-     * @param array<mixed> $forks
-     * @param array<mixed> $history
+     * @param ?array<mixed> $forks
+     * @param ?array<mixed> $history
      */
-    public function __construct(public ?string $url, public ?string $forks_url, public ?string $commits_url, public ?string $id, public ?string $node_id, public ?string $git_pull_url, public ?string $git_push_url, public ?string $html_url, public mixed $files, public ?bool $public, public ?string $created_at, public ?string $updated_at, public ?string $description, public ?int $comments, public mixed $user, public ?string $comments_url, public mixed $owner, public bool $truncated, public array $forks, public array $history)
+    public function __construct(public string $url, public string $forks_url, public string $commits_url, public string $id, public string $node_id, public string $git_pull_url, public string $git_push_url, public string $html_url, public mixed $files, public bool $public, public string $created_at, public string $updated_at, public ?string $description, public int $comments, public mixed $user, public string $comments_url, public mixed $owner, public ?bool $truncated, public ?array $forks, public ?array $history)
     {
     }
 }

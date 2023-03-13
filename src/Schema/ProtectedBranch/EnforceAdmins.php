@@ -14,7 +14,7 @@ final readonly class EnforceAdmins
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated_url","enabled":false}';
-    public function __construct(public ?string $url, public ?bool $enabled)
+    public function __construct(public string $url, public bool $enabled)
     {
     }
 }

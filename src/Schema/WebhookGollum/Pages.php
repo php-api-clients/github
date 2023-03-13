@@ -21,7 +21,7 @@ final readonly class Pages
      * sha: The latest commit SHA of the page.
      * title: The current page title.
      */
-    public function __construct(public ?string $action, public ?string $html_url, public ?string $page_name, public ?string $sha, public ?string $summary, public ?string $title)
+    public function __construct(public string $action, public string $html_url, public string $page_name, public string $sha, public ?string $summary, public string $title)
     {
     }
 }

@@ -30,128 +30,146 @@ class Participation implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ParticipationStats(array $payload): \ApiClients\Client\GitHub\Schema\ParticipationStats
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['all'] ?? null;
-    
-                if ($value === null) {
-                    $properties['all'] = null;
-                    goto after_all;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ParticipationStats(array $payload): \ApiClients\Client\GitHub\Schema\ParticipationStats
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['all'] ?? null;
 
-                $properties['all'] = $value;
-    
-                after_all:
-
-                $value = $payload['owner'] ?? null;
-    
-                if ($value === null) {
-                    $properties['owner'] = null;
-                    goto after_owner;
-                }
-
-                $properties['owner'] = $value;
-    
-                after_owner:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ParticipationStats', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'all';
+                goto after_all;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ParticipationStats::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['all'] = $value;
+
+            after_all:
+
+            $value = $payload['owner'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'owner';
+                goto after_owner;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ParticipationStats(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ParticipationStats', $exception, stack: $this->hydrationStack);
-            }
+
+            $properties['owner'] = $value;
+
+            after_owner:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ParticipationStats', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ParticipationStats::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ParticipationStats(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ParticipationStats', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ParticipationStats' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ParticipationStats($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\ParticipationStats' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ParticipationStats($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -224,17 +242,13 @@ class Participation implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ParticipationStats(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ParticipationStats);
         $result = [];
-        
-        $all = $object->all;
 
-        if ($all === null) {
-            goto after_all;
-        }
+        $all = $object->all;
         static $allSerializer0;
 
         if ($allSerializer0 === null) {
@@ -247,10 +261,6 @@ class Participation implements ObjectMapper
 
         
         $owner = $object->owner;
-
-        if ($owner === null) {
-            goto after_owner;
-        }
         static $ownerSerializer0;
 
         if ($ownerSerializer0 === null) {
@@ -265,12 +275,12 @@ class Participation implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {

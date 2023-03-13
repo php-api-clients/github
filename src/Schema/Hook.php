@@ -19,9 +19,9 @@ final readonly class Hook
      * name: The name of a valid service, use 'web' for a webhook.
      * active: Determines whether the hook is actually triggered on pushes.
      * events: Determines what events the hook is triggered for. Default: ['push'].
-     * @param ?array<string> $events
+     * @param array<string> $events
      */
-    public function __construct(public ?string $type, public ?int $id, public ?string $name, public ?bool $active, public ?array $events, public ?Schema\Hook\Config $config, public ?string $updated_at, public ?string $created_at, public ?string $url, public ?string $test_url, public ?string $ping_url, public string $deliveries_url, public ?Schema\HookResponse $last_response)
+    public function __construct(public string $type, public int $id, public string $name, public bool $active, public array $events, public Schema\Hook\Config $config, public string $updated_at, public string $created_at, public string $url, public string $test_url, public string $ping_url, public ?string $deliveries_url, public Schema\HookResponse $last_response)
     {
     }
 }

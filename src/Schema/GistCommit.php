@@ -14,7 +14,7 @@ final readonly class GistCommit
     public const SCHEMA_TITLE = 'Gist Commit';
     public const SCHEMA_DESCRIPTION = 'Gist Commit';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/api.github.com\\/gists\\/aa5a315d61ae9438b18d\\/57a7f021a713b1c5a6a199b54cc514735d2d462f","version":"57a7f021a713b1c5a6a199b54cc514735d2d462f","user":null,"change_status":{"total":13,"additions":13,"deletions":13},"committed_at":"2010-04-14T02:15:15Z"}';
-    public function __construct(public ?string $url, public ?string $version, public mixed $user, public ?Schema\GistHistory\ChangeStatus $change_status, public ?string $committed_at)
+    public function __construct(public string $url, public string $version, public mixed $user, public Schema\GistHistory\ChangeStatus $change_status, public string $committed_at)
     {
     }
 }

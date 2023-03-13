@@ -14,7 +14,7 @@ final readonly class PullRequests
     public const SCHEMA_TITLE = 'Check Run Pull Request';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"base":{"ref":"generated_ref","repo":{"id":13,"name":"generated_name","url":"generated_url"},"sha":"generated_sha"},"head":{"ref":"generated_ref","repo":{"id":13,"name":"generated_name","url":"generated_url"},"sha":"generated_sha"},"id":13,"number":13,"url":"generated_url"}';
-    public function __construct(public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base $base, public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base $head, public ?int $id, public ?int $number, public ?string $url)
+    public function __construct(public Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base $base, public Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base $head, public int $id, public int $number, public string $url)
     {
     }
 }

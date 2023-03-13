@@ -19,9 +19,9 @@ final readonly class PendingDeployment
      * wait_timer_started_at: The time that the wait timer began.
      * current_user_can_approve: Whether the currently authenticated user can approve the deployment
      * reviewers: The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers> $reviewers
+     * @param array<\ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers> $reviewers
      */
-    public function __construct(public ?Schema\PendingDeployment\Environment $environment, public ?int $wait_timer, public ?string $wait_timer_started_at, public ?bool $current_user_can_approve, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PendingDeployment\Reviewers::class)] public ?array $reviewers)
+    public function __construct(public Schema\PendingDeployment\Environment $environment, public int $wait_timer, public ?string $wait_timer_started_at, public bool $current_user_can_approve, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PendingDeployment\Reviewers::class)] public array $reviewers)
     {
     }
 }

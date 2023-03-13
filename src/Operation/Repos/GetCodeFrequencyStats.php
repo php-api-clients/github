@@ -36,14 +36,16 @@ final class GetCodeFrequencyStats
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|Schema\WebhookDeploymentCreated\Deployment\Payload
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\GetCodeFrequencyStats\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        foreach ($body as $bodyItem) {
+                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\GetCodeFrequencyStats\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        }
                         return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\Operation\Repos\GetCodeFrequencyStats\Response\Applicationjson\H200 {
                             return $this->hydrator->hydrateObject(Schema\Operation\Repos\GetCodeFrequencyStats\Response\Applicationjson\H200::class, $body);
                         });

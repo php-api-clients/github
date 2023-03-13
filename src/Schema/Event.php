@@ -18,7 +18,7 @@ final readonly class Event
      * actor: Actor
      * org: Actor
      */
-    public function __construct(public ?string $id, public ?string $type, public ?Schema\Actor $actor, public ?Schema\Event\Repo $repo, public Schema\Actor $org, public ?Schema\Event\Payload $payload, public ?bool $public, public ?string $created_at)
+    public function __construct(public string $id, public ?string $type, public Schema\Actor $actor, public Schema\Event\Repo $repo, public ?Schema\Actor $org, public Schema\Event\Payload $payload, public bool $public, public ?string $created_at)
     {
     }
 }

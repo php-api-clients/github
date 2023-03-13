@@ -17,7 +17,7 @@ final readonly class ShortBranch
     /**
      * protection: Branch Protection
      */
-    public function __construct(public ?string $name, public ?Schema\ShortBranch\Commit $commit, public ?bool $protected, public Schema\BranchProtection $protection, public string $protection_url)
+    public function __construct(public string $name, public Schema\ShortBranch\Commit $commit, public bool $protected, public ?Schema\BranchProtection $protection, public ?string $protection_url)
     {
     }
 }

@@ -19,7 +19,7 @@ final readonly class Applicationjson
      * url_template: The URL must contain `<num>` for the reference number. `<num>` matches different characters depending on the value of `is_alphanumeric`.
      * is_alphanumeric: Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
      */
-    public function __construct(public ?string $key_prefix, public ?string $url_template, public bool $is_alphanumeric)
+    public function __construct(public string $key_prefix, public string $url_template, public ?bool $is_alphanumeric)
     {
     }
 }

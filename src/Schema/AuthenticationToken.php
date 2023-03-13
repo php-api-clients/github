@@ -18,10 +18,10 @@ final readonly class AuthenticationToken
      * token: The token used for authentication
      * expires_at: The time this token expires
      * repositories: The repositories this token has access to
-     * @param array<\ApiClients\Client\GitHub\Schema\Repository> $repositories
+     * @param ?array<\ApiClients\Client\GitHub\Schema\Repository> $repositories
      * repository_selection: Describe whether all repositories have been selected or there's a selection involved
      */
-    public function __construct(public ?string $token, public ?string $expires_at, public mixed $permissions, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Repository::class)] public array $repositories, public ?string $single_file, public string $repository_selection)
+    public function __construct(public string $token, public string $expires_at, public mixed $permissions, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Repository::class)] public ?array $repositories, public ?string $single_file, public ?string $repository_selection)
     {
     }
 }

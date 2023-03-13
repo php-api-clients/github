@@ -39,7 +39,7 @@ final class GetStatusForOrg
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Migration
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /***   `pending`, which means the migration hasn't started yet.

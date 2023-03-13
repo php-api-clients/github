@@ -31,302 +31,319 @@ class Artifacts implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['total_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_count'] = null;
-                    goto after_total_count;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_count'] ?? null;
 
-                $properties['total_count'] = $value;
-    
-                after_total_count:
+            if ($value === null) {
+                $missingFields[] = 'total_count';
+                goto after_total_count;
+            }
 
-                $value = $payload['artifacts'] ?? null;
-    
-                if ($value === null) {
-                    $properties['artifacts'] = null;
-                    goto after_artifacts;
-                }
+            $properties['total_count'] = $value;
 
-                static $artifactsCaster1;
-    
-                if ($artifactsCaster1 === null) {
-                    $artifactsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_total_count:
+
+            $value = $payload['artifacts'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'artifacts';
+                goto after_artifacts;
+            }
+
+            static $artifactsCaster1;
+
+            if ($artifactsCaster1 === null) {
+                $artifactsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Artifact',
 ));
-                }
-    
-                $value = $artifactsCaster1->cast($value, $this);
+            }
 
-                $properties['artifacts'] = $value;
-    
-                after_artifacts:
+            $value = $artifactsCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
+            $properties['artifacts'] = $value;
+
+            after_artifacts:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact(array $payload): \ApiClients\Client\GitHub\Schema\Artifact
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact(array $payload): \ApiClients\Client\GitHub\Schema\Artifact
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['size_in_bytes'] ?? null;
-    
-                if ($value === null) {
-                    $properties['size_in_bytes'] = null;
-                    goto after_size_in_bytes;
-                }
-
-                $properties['size_in_bytes'] = $value;
-    
-                after_size_in_bytes:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['archive_download_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['archive_download_url'] = null;
-                    goto after_archive_download_url;
-                }
-
-                $properties['archive_download_url'] = $value;
-    
-                after_archive_download_url:
-
-                $value = $payload['expired'] ?? null;
-    
-                if ($value === null) {
-                    $properties['expired'] = null;
-                    goto after_expired;
-                }
-
-                $properties['expired'] = $value;
-    
-                after_expired:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['expires_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['expires_at'] = null;
-                    goto after_expires_at;
-                }
-
-                $properties['expires_at'] = $value;
-    
-                after_expires_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['workflow_run'] ?? null;
-    
-                if ($value === null) {
-                    $properties['workflow_run'] = null;
-                    goto after_workflow_run;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'workflow_run';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['workflow_run'] = $value;
-    
-                after_workflow_run:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Artifact::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_node_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Artifact(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact', $exception, stack: $this->hydrationStack);
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
             }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['size_in_bytes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'size_in_bytes';
+                goto after_size_in_bytes;
+            }
+
+            $properties['size_in_bytes'] = $value;
+
+            after_size_in_bytes:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['archive_download_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'archive_download_url';
+                goto after_archive_download_url;
+            }
+
+            $properties['archive_download_url'] = $value;
+
+            after_archive_download_url:
+
+            $value = $payload['expired'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'expired';
+                goto after_expired;
+            }
+
+            $properties['expired'] = $value;
+
+            after_expired:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $properties['created_at'] = null;
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['expires_at'] ?? null;
+
+            if ($value === null) {
+                $properties['expires_at'] = null;
+                goto after_expires_at;
+            }
+
+            $properties['expires_at'] = $value;
+
+            after_expires_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $properties['updated_at'] = null;
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['workflow_run'] ?? null;
+
+            if ($value === null) {
+                $properties['workflow_run'] = null;
+                goto after_workflow_run;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'workflow_run';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['workflow_run'] = $value;
+
+            after_workflow_run:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Artifact::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Artifact(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun(array $payload): \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun(array $payload): \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['repository_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repository_id'] = null;
-                    goto after_repository_id;
-                }
-
-                $properties['repository_id'] = $value;
-    
-                after_repository_id:
-
-                $value = $payload['head_repository_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['head_repository_id'] = null;
-                    goto after_head_repository_id;
-                }
-
-                $properties['head_repository_id'] = $value;
-    
-                after_head_repository_id:
-
-                $value = $payload['head_branch'] ?? null;
-    
-                if ($value === null) {
-                    $properties['head_branch'] = null;
-                    goto after_head_branch;
-                }
-
-                $properties['head_branch'] = $value;
-    
-                after_head_branch:
-
-                $value = $payload['head_sha'] ?? null;
-    
-                if ($value === null) {
-                    $properties['head_sha'] = null;
-                    goto after_head_sha;
-                }
-
-                $properties['head_sha'] = $value;
-    
-                after_head_sha:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['id'] = null;
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['repository_id'] ?? null;
+
+            if ($value === null) {
+                $properties['repository_id'] = null;
+                goto after_repository_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
+
+            $properties['repository_id'] = $value;
+
+            after_repository_id:
+
+            $value = $payload['head_repository_id'] ?? null;
+
+            if ($value === null) {
+                $properties['head_repository_id'] = null;
+                goto after_head_repository_id;
+            }
+
+            $properties['head_repository_id'] = $value;
+
+            after_head_repository_id:
+
+            $value = $payload['head_branch'] ?? null;
+
+            if ($value === null) {
+                $properties['head_branch'] = null;
+                goto after_head_branch;
+            }
+
+            $properties['head_branch'] = $value;
+
+            after_head_branch:
+
+            $value = $payload['head_sha'] ?? null;
+
+            if ($value === null) {
+                $properties['head_sha'] = null;
+                goto after_head_sha;
+            }
+
+            $properties['head_sha'] = $value;
+
+            after_head_sha:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200($object),
-                'ApiClients\Client\GitHub\Schema\Artifact' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact($object),
-                'ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\Artifact' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact($object),
+            'ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -399,25 +416,17 @@ class Artifacts implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200);
         $result = [];
-        
-        $total_count = $object->total_count;
 
-        if ($total_count === null) {
-            goto after_total_count;
-        }
+        $total_count = $object->total_count;
         after_total_count:        $result['total_count'] = $total_count;
 
         
         $artifacts = $object->artifacts;
-
-        if ($artifacts === null) {
-            goto after_artifacts;
-        }
         static $artifactsSerializer0;
 
         if ($artifactsSerializer0 === null) {
@@ -433,65 +442,37 @@ class Artifacts implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Artifact);
         $result = [];
-        
-        $id = $object->id;
 
-        if ($id === null) {
-            goto after_id;
-        }
+        $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
         $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
         after_name:        $result['name'] = $name;
 
         
         $size_in_bytes = $object->size_in_bytes;
-
-        if ($size_in_bytes === null) {
-            goto after_size_in_bytes;
-        }
         after_size_in_bytes:        $result['size_in_bytes'] = $size_in_bytes;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
         $archive_download_url = $object->archive_download_url;
-
-        if ($archive_download_url === null) {
-            goto after_archive_download_url;
-        }
         after_archive_download_url:        $result['archive_download_url'] = $archive_download_url;
 
         
         $expired = $object->expired;
-
-        if ($expired === null) {
-            goto after_expired;
-        }
         after_expired:        $result['expired'] = $expired;
 
         
@@ -531,12 +512,12 @@ class Artifacts implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun);
         $result = [];
-        
+
         $id = $object->id;
 
         if ($id === null) {

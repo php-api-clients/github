@@ -29,7 +29,7 @@ final readonly class CodeScanningAnalysis
     * sarif_id: An identifier for the upload.
     * warning: Warning generated when processing the analysis
     */
-    public function __construct(public ?string $ref, public ?string $commit_sha, public ?string $analysis_key, public ?string $environment, public string $category, public ?string $error, public ?string $created_at, public ?int $results_count, public ?int $rules_count, public ?int $id, public ?string $url, public ?string $sarif_id, public ?Schema\CodeScanningAnalysisTool $tool, public ?bool $deletable, public ?string $warning)
+    public function __construct(public string $ref, public string $commit_sha, public string $analysis_key, public string $environment, public ?string $category, public string $error, public string $created_at, public int $results_count, public int $rules_count, public int $id, public string $url, public string $sarif_id, public Schema\CodeScanningAnalysisTool $tool, public bool $deletable, public string $warning)
     {
     }
 }

@@ -17,7 +17,7 @@ final readonly class Privacy
     /**
      * from: The previous version of the team's privacy if the action was `edited`.
      */
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

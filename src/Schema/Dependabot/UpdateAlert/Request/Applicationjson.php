@@ -20,7 +20,7 @@ final readonly class Applicationjson
     * dismissed_reason: **Required when `state` is `dismissed`.** A reason for dismissing the alert.
     * dismissed_comment: An optional comment associated with dismissing the alert.
     */
-    public function __construct(public ?string $state, public string $dismissed_reason, public string $dismissed_comment)
+    public function __construct(public string $state, public ?string $dismissed_reason, public ?string $dismissed_comment)
     {
     }
 }

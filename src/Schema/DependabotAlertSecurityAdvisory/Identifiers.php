@@ -18,7 +18,7 @@ final readonly class Identifiers
      * type: The type of advisory identifier.
      * value: The value of the advisory identifer.
      */
-    public function __construct(public ?string $type, public ?string $value)
+    public function __construct(public string $type, public string $value)
     {
     }
 }

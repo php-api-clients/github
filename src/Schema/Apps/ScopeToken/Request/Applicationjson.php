@@ -19,12 +19,12 @@ final readonly class Applicationjson
      * target: The name of the user or organization to scope the user-to-server access token to. **Required** unless `target_id` is specified.
      * target_id: The ID of the user or organization to scope the user-to-server access token to. **Required** unless `target` is specified.
      * repositories: The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
-     * @param array<string> $repositories
+     * @param ?array<string> $repositories
      * repository_ids: The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
-     * @param array<int> $repository_ids
+     * @param ?array<int> $repository_ids
      * permissions: The permissions granted to the user-to-server access token.
      */
-    public function __construct(public ?string $access_token, public string $target, public int $target_id, public array $repositories, public array $repository_ids, public Schema\AppPermissions $permissions)
+    public function __construct(public string $access_token, public ?string $target, public ?int $target_id, public ?array $repositories, public ?array $repository_ids, public ?Schema\AppPermissions $permissions)
     {
     }
 }

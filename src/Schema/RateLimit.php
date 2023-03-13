@@ -14,7 +14,7 @@ final readonly class RateLimit
     public const SCHEMA_TITLE = 'Rate Limit';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"limit":13,"remaining":13,"reset":13,"used":13}';
-    public function __construct(public ?int $limit, public ?int $remaining, public ?int $reset, public ?int $used)
+    public function __construct(public int $limit, public int $remaining, public int $reset, public int $used)
     {
     }
 }

@@ -20,7 +20,7 @@ final readonly class MergeGroup
      * base_sha: The SHA of the merge group's parent commit.
      * base_ref: The full ref of the branch the merge group will be merged into.
      */
-    public function __construct(public ?string $head_sha, public ?string $head_ref, public ?string $base_sha, public ?string $base_ref, public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit $head_commit)
+    public function __construct(public string $head_sha, public string $head_ref, public string $base_sha, public string $base_ref, public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit $head_commit)
     {
     }
 }

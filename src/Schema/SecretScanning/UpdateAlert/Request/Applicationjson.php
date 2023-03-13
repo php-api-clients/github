@@ -19,7 +19,7 @@ final readonly class Applicationjson
      * resolution: **Required when the `state` is `resolved`.** The reason for resolving the alert.
      * resolution_comment: An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
      */
-    public function __construct(public ?string $state, public ?string $resolution, public ?string $resolution_comment)
+    public function __construct(public string $state, public ?string $resolution, public ?string $resolution_comment)
     {
     }
 }

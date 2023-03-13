@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"repository_cache_usages":[{"full_name":"octo-org\\/Hello-World","active_caches_size_in_bytes":2322142,"active_caches_count":3}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository> $repository_cache_usages
+     * @param array<\ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository> $repository_cache_usages
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsCacheUsageByRepository::class)] public ?array $repository_cache_usages)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsCacheUsageByRepository::class)] public array $repository_cache_usages)
     {
     }
 }

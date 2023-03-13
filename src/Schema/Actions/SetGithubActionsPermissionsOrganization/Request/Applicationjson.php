@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * enabled_repositories: The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
      * allowed_actions: The permissions policy that controls the actions and reusable workflows that are allowed to run.
      */
-    public function __construct(public ?string $enabled_repositories, public string $allowed_actions)
+    public function __construct(public string $enabled_repositories, public ?string $allowed_actions)
     {
     }
 }

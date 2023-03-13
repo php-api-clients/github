@@ -22,7 +22,7 @@ final readonly class WebhookTeamAdd
      * sender: A GitHub user.
      * team: Groups of organization members that gives permissions on specified repositories.
      */
-    public function __construct(public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender, public ?Schema\WebhookMembershipAdded\Team $team)
+    public function __construct(public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public Schema\WebhookMembershipAdded\Team $team)
     {
     }
 }

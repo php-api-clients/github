@@ -19,7 +19,7 @@ final readonly class PageDeployment
      * page_url: The URI to the deployed GitHub Pages.
      * preview_url: The URI to the deployed GitHub Pages preview.
      */
-    public function __construct(public ?string $status_url, public ?string $page_url, public string $preview_url)
+    public function __construct(public string $status_url, public string $page_url, public ?string $preview_url)
     {
     }
 }

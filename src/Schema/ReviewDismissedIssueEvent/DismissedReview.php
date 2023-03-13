@@ -14,7 +14,7 @@ final readonly class DismissedReview
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"state":"generated_state","review_id":13,"dismissal_message":"generated_dismissal_message","dismissal_commit_id":"generated_dismissal_commit_id"}';
-    public function __construct(public ?string $state, public ?int $review_id, public ?string $dismissal_message, public string $dismissal_commit_id)
+    public function __construct(public string $state, public int $review_id, public ?string $dismissal_message, public ?string $dismissal_commit_id)
     {
     }
 }

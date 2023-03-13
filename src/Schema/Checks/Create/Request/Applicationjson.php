@@ -26,9 +26,9 @@ final readonly class Applicationjson
     * completed_at: The time the check completed. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     * output: Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
     * actions: Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/reference/checks#check-runs-and-requested-actions)."
-    * @param array<\ApiClients\Client\GitHub\Schema\Checks\Create\Request\Applicationjson\Actions> $actions
+    * @param ?array<\ApiClients\Client\GitHub\Schema\Checks\Create\Request\Applicationjson\Actions> $actions
     */
-    public function __construct(public ?string $name, public ?string $head_sha, public string $details_url, public string $external_id, public string $status, public string $started_at, public string $conclusion, public string $completed_at, public Schema\Checks\Create\Request\Applicationjson\Output $output, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Checks\Create\Request\Applicationjson\Actions::class)] public array $actions)
+    public function __construct(public string $name, public string $head_sha, public ?string $details_url, public ?string $external_id, public ?string $status, public ?string $started_at, public ?string $conclusion, public ?string $completed_at, public ?Schema\Checks\Create\Request\Applicationjson\Output $output, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Checks\Create\Request\Applicationjson\Actions::class)] public ?array $actions)
     {
     }
 }

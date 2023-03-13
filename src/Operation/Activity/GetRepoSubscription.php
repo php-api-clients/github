@@ -36,7 +36,7 @@ final class GetRepoSubscription
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\RepositorySubscription
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**if you subscribe to the repository**/

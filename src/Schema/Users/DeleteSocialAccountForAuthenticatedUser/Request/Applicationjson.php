@@ -16,9 +16,9 @@ final readonly class Applicationjson
     public const SCHEMA_EXAMPLE_DATA = '{"account_urls":["https:\\/\\/www.linkedin.com\\/company\\/github\\/","https:\\/\\/twitter.com\\/github"]}';
     /**
      * account_urls: Full URLs for the social media profiles to delete.
-     * @param ?array<string> $account_urls
+     * @param array<string> $account_urls
      */
-    public function __construct(public ?array $account_urls)
+    public function __construct(public array $account_urls)
     {
     }
 }

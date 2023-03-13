@@ -18,7 +18,7 @@ final readonly class HeadCommit
      * author: Metaproperties for Git author/committer information.
      * committer: Metaproperties for Git author/committer information.
      */
-    public function __construct(public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $author, public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $committer, public ?string $id, public ?string $message, public ?string $timestamp, public ?string $tree_id)
+    public function __construct(public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $author, public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $committer, public string $id, public string $message, public string $timestamp, public string $tree_id)
     {
     }
 }

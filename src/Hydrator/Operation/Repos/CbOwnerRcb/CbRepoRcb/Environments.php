@@ -32,324 +32,340 @@ class Environments implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️GetAllEnvironments⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['total_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_count'] = null;
-                    goto after_total_count;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️GetAllEnvironments⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_count'] ?? null;
 
-                $properties['total_count'] = $value;
-    
-                after_total_count:
+            if ($value === null) {
+                $properties['total_count'] = null;
+                goto after_total_count;
+            }
 
-                $value = $payload['environments'] ?? null;
-    
-                if ($value === null) {
-                    $properties['environments'] = null;
-                    goto after_environments;
-                }
+            $properties['total_count'] = $value;
 
-                static $environmentsCaster1;
-    
-                if ($environmentsCaster1 === null) {
-                    $environmentsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_total_count:
+
+            $value = $payload['environments'] ?? null;
+
+            if ($value === null) {
+                $properties['environments'] = null;
+                goto after_environments;
+            }
+
+            static $environmentsCaster1;
+
+            if ($environmentsCaster1 === null) {
+                $environmentsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Environment',
 ));
-                }
-    
-                $value = $environmentsCaster1->cast($value, $this);
+            }
 
-                $properties['environments'] = $value;
-    
-                after_environments:
+            $value = $environmentsCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
+            $properties['environments'] = $value;
+
+            after_environments:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+        }
+    }
+
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment(array $payload): \ApiClients\Client\GitHub\Schema\Environment
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment(array $payload): \ApiClients\Client\GitHub\Schema\Environment
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
 
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
+            $properties['id'] = $value;
 
-                $properties['node_id'] = $value;
-    
-                after_node_id:
+            after_id:
 
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
+            $value = $payload['node_id'] ?? null;
 
-                $properties['name'] = $value;
-    
-                after_name:
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_node_id;
+            }
 
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
+            $properties['node_id'] = $value;
 
-                $properties['url'] = $value;
-    
-                after_url:
+            after_node_id:
 
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
+            $value = $payload['name'] ?? null;
 
-                $properties['html_url'] = $value;
-    
-                after_html_url:
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
 
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
+            $properties['name'] = $value;
 
-                $properties['created_at'] = $value;
-    
-                after_created_at:
+            after_name:
 
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
+            $value = $payload['url'] ?? null;
 
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
 
-                $value = $payload['protection_rules'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'protection_rules';
-                    goto after_protection_rules;
-                }
+            $properties['url'] = $value;
 
-                static $protection_rulesCaster1;
-    
-                if ($protection_rulesCaster1 === null) {
-                    $protection_rulesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'html_url';
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['protection_rules'] ?? null;
+
+            if ($value === null) {
+                $properties['protection_rules'] = null;
+                goto after_protection_rules;
+            }
+
+            static $protection_rulesCaster1;
+
+            if ($protection_rulesCaster1 === null) {
+                $protection_rulesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Environment\\ProtectionRules',
 ));
-                }
-    
-                $value = $protection_rulesCaster1->cast($value, $this);
-
-                $properties['protection_rules'] = $value;
-    
-                after_protection_rules:
-
-                $value = $payload['deployment_branch_policy'] ?? null;
-    
-                if ($value === null) {
-                    $properties['deployment_branch_policy'] = null;
-                    goto after_deployment_branch_policy;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'deployment_branch_policy';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['deployment_branch_policy'] = $value;
-    
-                after_deployment_branch_policy:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment', $exception, stack: $this->hydrationStack);
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Environment::class, $missingFields, stack: $this->hydrationStack);
+
+            $value = $protection_rulesCaster1->cast($value, $this);
+
+            $properties['protection_rules'] = $value;
+
+            after_protection_rules:
+
+            $value = $payload['deployment_branch_policy'] ?? null;
+
+            if ($value === null) {
+                $properties['deployment_branch_policy'] = null;
+                goto after_deployment_branch_policy;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Environment(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment', $exception, stack: $this->hydrationStack);
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'deployment_branch_policy';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
+
+            $properties['deployment_branch_policy'] = $value;
+
+            after_deployment_branch_policy:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Environment::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Environment(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules(array $payload): \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules(array $payload): \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['wait_timer'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'wait_timer';
-                    goto after_wait_timer;
-                }
-
-                $properties['wait_timer'] = $value;
-    
-                after_wait_timer:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Environment\ProtectionRules::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_node_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'type';
+                goto after_type;
             }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['wait_timer'] ?? null;
+
+            if ($value === null) {
+                $properties['wait_timer'] = null;
+                goto after_wait_timer;
+            }
+
+            $properties['wait_timer'] = $value;
+
+            after_wait_timer:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Environment\ProtectionRules::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings(array $payload): \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['protected_branches'] ?? null;
-    
-                if ($value === null) {
-                    $properties['protected_branches'] = null;
-                    goto after_protected_branches;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings(array $payload): \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['protected_branches'] ?? null;
 
-                $properties['protected_branches'] = $value;
-    
-                after_protected_branches:
-
-                $value = $payload['custom_branch_policies'] ?? null;
-    
-                if ($value === null) {
-                    $properties['custom_branch_policies'] = null;
-                    goto after_custom_branch_policies;
-                }
-
-                $properties['custom_branch_policies'] = $value;
-    
-                after_custom_branch_policies:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'protected_branches';
+                goto after_protected_branches;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['protected_branches'] = $value;
+
+            after_protected_branches:
+
+            $value = $payload['custom_branch_policies'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'custom_branch_policies';
+                goto after_custom_branch_policies;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
+
+            $properties['custom_branch_policies'] = $value;
+
+            after_custom_branch_policies:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️GetAllEnvironments⚡️Response⚡️Applicationjson⚡️H200($object),
-                'ApiClients\Client\GitHub\Schema\Environment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment($object),
-                'ApiClients\Client\GitHub\Schema\Environment\ProtectionRules' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules($object),
-                'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️GetAllEnvironments⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\Environment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment($object),
+            'ApiClients\Client\GitHub\Schema\Environment\ProtectionRules' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules($object),
+            'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -422,12 +438,12 @@ class Environments implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️GetAllEnvironments⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Repos\GetAllEnvironments\Response\Applicationjson\H200);
         $result = [];
-        
+
         $total_count = $object->total_count;
 
         if ($total_count === null) {
@@ -456,69 +472,45 @@ class Environments implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Environment);
         $result = [];
-        
-        $id = $object->id;
 
-        if ($id === null) {
-            goto after_id;
-        }
+        $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
         $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
         after_name:        $result['name'] = $name;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
         $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
         after_html_url:        $result['html_url'] = $html_url;
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
         after_updated_at:        $result['updated_at'] = $updated_at;
 
         
         $protection_rules = $object->protection_rules;
+
+        if ($protection_rules === null) {
+            goto after_protection_rules;
+        }
         static $protection_rulesSerializer0;
 
         if ($protection_rulesSerializer0 === null) {
@@ -543,62 +535,46 @@ class Environments implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules);
         $result = [];
-        
-        $id = $object->id;
 
-        if ($id === null) {
-            goto after_id;
-        }
+        $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
         $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
         after_type:        $result['type'] = $type;
 
         
         $wait_timer = $object->wait_timer;
+
+        if ($wait_timer === null) {
+            goto after_wait_timer;
+        }
         after_wait_timer:        $result['wait_timer'] = $wait_timer;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings);
         $result = [];
-        
-        $protected_branches = $object->protected_branches;
 
-        if ($protected_branches === null) {
-            goto after_protected_branches;
-        }
+        $protected_branches = $object->protected_branches;
         after_protected_branches:        $result['protected_branches'] = $protected_branches;
 
         
         $custom_branch_policies = $object->custom_branch_policies;
-
-        if ($custom_branch_policies === null) {
-            goto after_custom_branch_policies;
-        }
         after_custom_branch_policies:        $result['custom_branch_policies'] = $custom_branch_policies;
 
 

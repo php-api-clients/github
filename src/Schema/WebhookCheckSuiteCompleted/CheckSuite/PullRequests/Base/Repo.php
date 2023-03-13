@@ -14,7 +14,7 @@ final readonly class Repo
     public const SCHEMA_TITLE = 'Repo Ref';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":13,"name":"generated_name","url":"generated_url"}';
-    public function __construct(public ?int $id, public ?string $name, public ?string $url)
+    public function __construct(public int $id, public string $name, public string $url)
     {
     }
 }

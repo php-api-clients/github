@@ -21,7 +21,7 @@ final readonly class Applicationjson
      * type: The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
      * tagger: An object with information about the individual creating the tag.
      */
-    public function __construct(public ?string $tag, public ?string $message, public ?string $object, public ?string $type, public Schema\Git\CreateTag\Request\Applicationjson\Tagger $tagger)
+    public function __construct(public string $tag, public string $message, public string $object, public string $type, public ?Schema\Git\CreateTag\Request\Applicationjson\Tagger $tagger)
     {
     }
 }

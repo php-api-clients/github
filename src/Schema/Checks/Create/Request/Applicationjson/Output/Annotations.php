@@ -25,7 +25,7 @@ final readonly class Annotations
      * title: The title that represents the annotation. The maximum size is 255 characters.
      * raw_details: Details about this annotation. The maximum size is 64 KB.
      */
-    public function __construct(public ?string $path, public ?int $start_line, public ?int $end_line, public int $start_column, public int $end_column, public ?string $annotation_level, public ?string $message, public string $title, public string $raw_details)
+    public function __construct(public string $path, public int $start_line, public int $end_line, public ?int $start_column, public ?int $end_column, public string $annotation_level, public string $message, public ?string $title, public ?string $raw_details)
     {
     }
 }

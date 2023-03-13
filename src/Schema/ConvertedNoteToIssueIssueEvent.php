@@ -18,7 +18,7 @@ final readonly class ConvertedNoteToIssueIssueEvent
      * actor: A GitHub user.
      * performed_via_github_app: GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?Schema\SimpleUser $actor, public ?string $event, public ?string $commit_id, public ?string $commit_url, public ?string $created_at, public ?Schema\Integration $performed_via_github_app, public Schema\AddedToProjectIssueEvent\ProjectCard $project_card)
+    public function __construct(public int $id, public string $node_id, public string $url, public Schema\SimpleUser $actor, public string $event, public ?string $commit_id, public ?string $commit_url, public string $created_at, public Schema\Integration $performed_via_github_app, public ?Schema\AddedToProjectIssueEvent\ProjectCard $project_card)
     {
     }
 }

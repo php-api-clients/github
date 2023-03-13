@@ -29,61 +29,80 @@ class PublicKey implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotPublicKey(array $payload): \ApiClients\Client\GitHub\Schema\DependabotPublicKey
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['key_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['key_id'] = null;
-                    goto after_key_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotPublicKey(array $payload): \ApiClients\Client\GitHub\Schema\DependabotPublicKey
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['key_id'] ?? null;
 
-                $properties['key_id'] = $value;
-    
-                after_key_id:
-
-                $value = $payload['key'] ?? null;
-    
-                if ($value === null) {
-                    $properties['key'] = null;
-                    goto after_key;
-                }
-
-                $properties['key'] = $value;
-    
-                after_key:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotPublicKey', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'key_id';
+                goto after_key_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotPublicKey::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['key_id'] = $value;
+
+            after_key_id:
+
+            $value = $payload['key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'key';
+                goto after_key;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotPublicKey(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotPublicKey', $exception, stack: $this->hydrationStack);
+
+            $properties['key'] = $value;
+
+            after_key:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotPublicKey', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotPublicKey::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotPublicKey(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotPublicKey', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\DependabotPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotPublicKey($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\DependabotPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotPublicKey($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -156,25 +175,17 @@ class PublicKey implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotPublicKey(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotPublicKey);
         $result = [];
-        
-        $key_id = $object->key_id;
 
-        if ($key_id === null) {
-            goto after_key_id;
-        }
+        $key_id = $object->key_id;
         after_key_id:        $result['key_id'] = $key_id;
 
         
         $key = $object->key;
-
-        if ($key === null) {
-            goto after_key;
-        }
         after_key:        $result['key'] = $key;
 
 

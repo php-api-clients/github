@@ -26,9 +26,9 @@ final readonly class Job
      * completed_at: The time that the job finished, in ISO 8601 format.
      * name: The name of the job.
      * steps: Steps in this job.
-     * @param array<\ApiClients\Client\GitHub\Schema\Job\Steps> $steps
+     * @param ?array<\ApiClients\Client\GitHub\Schema\Job\Steps> $steps
      * labels: Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.
-     * @param ?array<string> $labels
+     * @param array<string> $labels
      * runner_id: The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      * runner_name: The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
      * runner_group_id: The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
@@ -36,7 +36,7 @@ final readonly class Job
      * workflow_name: The name of the workflow.
      * head_branch: The name of the current branch.
      */
-    public function __construct(public ?int $id, public ?int $run_id, public ?string $run_url, public int $run_attempt, public ?string $node_id, public ?string $head_sha, public ?string $url, public ?string $html_url, public ?string $status, public ?string $conclusion, public ?string $created_at, public ?string $started_at, public ?string $completed_at, public ?string $name, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Job\Steps::class)] public array $steps, public ?string $check_run_url, public ?array $labels, public ?int $runner_id, public ?string $runner_name, public ?int $runner_group_id, public ?string $runner_group_name, public ?string $workflow_name, public ?string $head_branch)
+    public function __construct(public int $id, public int $run_id, public string $run_url, public ?int $run_attempt, public string $node_id, public string $head_sha, public string $url, public ?string $html_url, public string $status, public ?string $conclusion, public string $created_at, public string $started_at, public ?string $completed_at, public string $name, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Job\Steps::class)] public ?array $steps, public string $check_run_url, public array $labels, public ?int $runner_id, public ?string $runner_name, public ?int $runner_group_id, public ?string $runner_group_name, public ?string $workflow_name, public ?string $head_branch)
     {
     }
 }

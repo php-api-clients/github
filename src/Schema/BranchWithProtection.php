@@ -18,7 +18,7 @@ final readonly class BranchWithProtection
      * commit: Commit
      * protection: Branch Protection
      */
-    public function __construct(public ?string $name, public ?Schema\Commit $commit, public ?Schema\BranchWithProtection\Links $_links, public ?bool $protected, public ?Schema\BranchProtection $protection, public ?string $protection_url, public string $pattern, public int $required_approving_review_count)
+    public function __construct(public string $name, public Schema\Commit $commit, public Schema\BranchWithProtection\Links $_links, public bool $protected, public Schema\BranchProtection $protection, public string $protection_url, public ?string $pattern, public ?int $required_approving_review_count)
     {
     }
 }

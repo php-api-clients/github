@@ -16,13 +16,13 @@ final readonly class Restrictions
     public const SCHEMA_EXAMPLE_DATA = '{"users":["generated_users"],"teams":["generated_teams"],"apps":["generated_apps"]}';
     /**
      * users: The list of user `login`s with push access
-     * @param ?array<string> $users
+     * @param array<string> $users
      * teams: The list of team `slug`s with push access
-     * @param ?array<string> $teams
+     * @param array<string> $teams
      * apps: The list of app `slug`s with push access
-     * @param array<string> $apps
+     * @param ?array<string> $apps
      */
-    public function __construct(public ?array $users, public ?array $teams, public array $apps)
+    public function __construct(public array $users, public array $teams, public ?array $apps)
     {
     }
 }

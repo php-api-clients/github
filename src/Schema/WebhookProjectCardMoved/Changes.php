@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"column_id":{"from":13}}';
-    public function __construct(public ?Schema\WebhookProjectCardMoved\Changes\ColumnId $column_id)
+    public function __construct(public Schema\WebhookProjectCardMoved\Changes\ColumnId $column_id)
     {
     }
 }

@@ -22,12 +22,12 @@ final readonly class Issue
      * title: Title of the issue
      * body: Contents of the issue
      * labels: Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
-     * @param ?array<string> $labels
+     * @param array<string> $labels
      * @param ?array<\ApiClients\Client\GitHub\Schema\SimpleUser> $assignees
      * repository: A repository on GitHub.
      * author_association: How the author is associated with the repository.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?string $repository_url, public ?string $labels_url, public ?string $comments_url, public ?string $events_url, public ?string $html_url, public ?int $number, public ?string $state, public ?string $state_reason, public ?string $title, public ?string $body, public mixed $user, public ?array $labels, public mixed $assignee, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SimpleUser::class)] public ?array $assignees, public mixed $milestone, public ?bool $locked, public ?string $active_lock_reason, public ?int $comments, public Schema\Issue\PullRequest $pull_request, public ?string $closed_at, public ?string $created_at, public ?string $updated_at, public bool $draft, public mixed $closed_by, public string $body_html, public string $body_text, public string $timeline_url, public Schema\Repository $repository, public mixed $performed_via_github_app, public ?string $author_association, public Schema\ReactionRollup $reactions)
+    public function __construct(public int $id, public string $node_id, public string $url, public string $repository_url, public string $labels_url, public string $comments_url, public string $events_url, public string $html_url, public int $number, public string $state, public ?string $state_reason, public string $title, public ?string $body, public mixed $user, public array $labels, public mixed $assignee, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SimpleUser::class)] public ?array $assignees, public mixed $milestone, public bool $locked, public ?string $active_lock_reason, public int $comments, public ?Schema\Issue\PullRequest $pull_request, public ?string $closed_at, public string $created_at, public string $updated_at, public ?bool $draft, public mixed $closed_by, public ?string $body_html, public ?string $body_text, public ?string $timeline_url, public ?Schema\Repository $repository, public mixed $performed_via_github_app, public string $author_association, public ?Schema\ReactionRollup $reactions)
     {
     }
 }

@@ -15,9 +15,9 @@ final readonly class CloneTraffic
     public const SCHEMA_DESCRIPTION = 'Clone Traffic';
     public const SCHEMA_EXAMPLE_DATA = '{"count":173,"uniques":128,"clones":[{"timestamp":"generated_timestamp","uniques":13,"count":13}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\Traffic> $clones
+     * @param array<\ApiClients\Client\GitHub\Schema\Traffic> $clones
      */
-    public function __construct(public ?int $count, public ?int $uniques, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Traffic::class)] public ?array $clones)
+    public function __construct(public int $count, public int $uniques, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Traffic::class)] public array $clones)
     {
     }
 }

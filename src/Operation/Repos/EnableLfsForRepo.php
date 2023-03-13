@@ -36,7 +36,7 @@ final class EnableLfsForRepo
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\WebhookDeploymentCreated\Deployment\Payload
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Accepted**/

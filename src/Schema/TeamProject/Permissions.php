@@ -14,7 +14,7 @@ final readonly class Permissions
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"read":false,"write":false,"admin":false}';
-    public function __construct(public ?bool $read, public ?bool $write, public ?bool $admin)
+    public function __construct(public bool $read, public bool $write, public bool $admin)
     {
     }
 }

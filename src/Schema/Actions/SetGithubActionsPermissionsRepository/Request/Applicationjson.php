@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * enabled: Whether GitHub Actions is enabled on the repository.
      * allowed_actions: The permissions policy that controls the actions and reusable workflows that are allowed to run.
      */
-    public function __construct(public ?bool $enabled, public string $allowed_actions)
+    public function __construct(public bool $enabled, public ?string $allowed_actions)
     {
     }
 }

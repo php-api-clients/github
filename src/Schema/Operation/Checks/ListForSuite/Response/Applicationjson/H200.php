@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"check_runs":[{"id":21,"head_sha":"009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d","node_id":"MDg6Q2hlY2tSdW40","external_id":"42","url":"https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/check-runs\\/4","html_url":"https:\\/\\/github.com\\/github\\/hello-world\\/runs\\/4","details_url":"https:\\/\\/example.com","status":"queued","conclusion":"neutral","started_at":"2018-05-04T01:14:52Z","completed_at":"2018-05-04T01:14:52Z","output":{"title":"generated_title","summary":"generated_summary","text":"generated_text","annotations_count":13,"annotations_url":"generated_annotations_url"},"name":"test-coverage","check_suite":{"id":13},"app":null,"pull_requests":[{"id":13,"number":13,"url":"generated_url","head":{"ref":"generated_ref","sha":"generated_sha","repo":{"id":13,"url":"generated_url","name":"generated_name"}},"base":{"ref":"generated_ref","sha":"generated_sha","repo":{"id":13,"url":"generated_url","name":"generated_name"}}}],"deployment":{"url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/example\\/deployments\\/1","id":42,"node_id":"MDEwOkRlcGxveW1lbnQx","task":"deploy","original_environment":"staging","environment":"production","description":"Deploy request from hubot","created_at":"2012-07-20T01:19:13Z","updated_at":"2012-07-20T01:19:13Z","statuses_url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/example\\/deployments\\/1\\/statuses","repository_url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/example","transient_environment":true,"production_environment":true,"performed_via_github_app":null}}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\CheckRun> $check_runs
+     * @param array<\ApiClients\Client\GitHub\Schema\CheckRun> $check_runs
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\CheckRun::class)] public ?array $check_runs)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\CheckRun::class)] public array $check_runs)
     {
     }
 }

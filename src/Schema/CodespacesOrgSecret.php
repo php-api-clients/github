@@ -21,7 +21,7 @@ final readonly class CodespacesOrgSecret
      * visibility: The type of repositories in the organization that the secret is visible to
      * selected_repositories_url: The API URL at which the list of repositories this secret is visible to can be retrieved
      */
-    public function __construct(public ?string $name, public ?string $created_at, public ?string $updated_at, public ?string $visibility, public string $selected_repositories_url)
+    public function __construct(public string $name, public string $created_at, public string $updated_at, public string $visibility, public ?string $selected_repositories_url)
     {
     }
 }

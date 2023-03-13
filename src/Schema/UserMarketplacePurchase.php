@@ -17,7 +17,7 @@ final readonly class UserMarketplacePurchase
     /**
      * plan: Marketplace Listing Plan
      */
-    public function __construct(public ?string $billing_cycle, public ?string $next_billing_date, public ?int $unit_count, public ?bool $on_free_trial, public ?string $free_trial_ends_on, public ?string $updated_at, public ?Schema\MarketplaceAccount $account, public ?Schema\MarketplaceListingPlan $plan)
+    public function __construct(public string $billing_cycle, public ?string $next_billing_date, public ?int $unit_count, public bool $on_free_trial, public ?string $free_trial_ends_on, public ?string $updated_at, public Schema\MarketplaceAccount $account, public Schema\MarketplaceListingPlan $plan)
     {
     }
 }

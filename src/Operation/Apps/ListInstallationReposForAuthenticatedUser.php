@@ -39,7 +39,7 @@ final class ListInstallationReposForAuthenticatedUser
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Apps\ListInstallationReposForAuthenticatedUser\Response\Applicationjson\H200
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**The access the user has to each repository is included in the hash under the `permissions` key.**/

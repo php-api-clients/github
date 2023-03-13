@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"secrets":[{"name":"MY_ARTIFACTORY_PASSWORD","created_at":"generated_created_at","updated_at":"generated_updated_at"}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\DependabotSecret> $secrets
+     * @param array<\ApiClients\Client\GitHub\Schema\DependabotSecret> $secrets
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotSecret::class)] public ?array $secrets)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotSecret::class)] public array $secrets)
     {
     }
 }

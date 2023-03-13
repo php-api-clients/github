@@ -14,7 +14,7 @@ final readonly class Vulnerabilities
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"severity":"critical","advisory_ghsa_id":"GHSA-rf4j-j272-fj86","advisory_summary":"A summary of the advisory.","advisory_url":"https:\\/\\/github.com\\/advisories\\/GHSA-rf4j-j272-fj86"}';
-    public function __construct(public ?string $severity, public ?string $advisory_ghsa_id, public ?string $advisory_summary, public ?string $advisory_url)
+    public function __construct(public string $severity, public string $advisory_ghsa_id, public string $advisory_summary, public string $advisory_url)
     {
     }
 }

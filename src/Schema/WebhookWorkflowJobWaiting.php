@@ -22,7 +22,7 @@ final readonly class WebhookWorkflowJobWaiting
      * sender: A GitHub user.
      * deployment: A request for a specific ref(branch,sha,tag) to be deployed
      */
-    public function __construct(public ?string $action, public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender, public ?Schema\WebhookWorkflowJobWaiting\WorkflowJob $workflow_job, public Schema\Deployment $deployment)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public Schema\WebhookWorkflowJobWaiting\WorkflowJob $workflow_job, public ?Schema\Deployment $deployment)
     {
     }
 }

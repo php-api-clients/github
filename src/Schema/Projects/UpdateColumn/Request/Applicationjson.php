@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * name: Name of the project column
      */
-    public function __construct(public ?string $name)
+    public function __construct(public string $name)
     {
     }
 }

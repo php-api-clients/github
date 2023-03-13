@@ -15,10 +15,10 @@ final readonly class StatusCheckPolicy
     public const SCHEMA_DESCRIPTION = 'Status Check Policy';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/branches\\/master\\/protection\\/required_status_checks","strict":true,"contexts":["continuous-integration\\/travis-ci"],"checks":[{"context":"continuous-integration\\/travis-ci","app_id":13}],"contexts_url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/branches\\/master\\/protection\\/required_status_checks\\/contexts"}';
     /**
-     * @param ?array<string> $contexts
-     * @param ?array<\ApiClients\Client\GitHub\Schema\StatusCheckPolicy\Checks> $checks
+     * @param array<string> $contexts
+     * @param array<\ApiClients\Client\GitHub\Schema\StatusCheckPolicy\Checks> $checks
      */
-    public function __construct(public ?string $url, public ?bool $strict, public ?array $contexts, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\StatusCheckPolicy\Checks::class)] public ?array $checks, public ?string $contexts_url)
+    public function __construct(public string $url, public bool $strict, public array $contexts, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\StatusCheckPolicy\Checks::class)] public array $checks, public string $contexts_url)
     {
     }
 }

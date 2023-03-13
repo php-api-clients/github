@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"secrets":[{"name":"SECRET_TOKEN","created_at":"generated_created_at","updated_at":"generated_updated_at"}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\ActionsSecret> $secrets
+     * @param array<\ApiClients\Client\GitHub\Schema\ActionsSecret> $secrets
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsSecret::class)] public ?array $secrets)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsSecret::class)] public array $secrets)
     {
     }
 }

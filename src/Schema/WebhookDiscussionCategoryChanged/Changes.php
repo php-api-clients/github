@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"category":{"from":{"created_at":"generated_created_at","description":"generated_description","emoji":"generated_emoji","id":13,"is_answerable":false,"name":"generated_name","node_id":"generated_node_id","repository_id":13,"slug":"generated_slug","updated_at":"generated_updated_at"}}}';
-    public function __construct(public ?Schema\WebhookDiscussionCategoryChanged\Changes\Category $category)
+    public function __construct(public Schema\WebhookDiscussionCategoryChanged\Changes\Category $category)
     {
     }
 }

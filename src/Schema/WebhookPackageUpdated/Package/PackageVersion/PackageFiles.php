@@ -14,7 +14,7 @@ final readonly class PackageFiles
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"content_type":"generated_content_type","created_at":"generated_created_at","download_url":"generated_download_url","id":13,"md5":"generated_md5","name":"generated_name","sha1":"generated_sha1","sha256":"generated_sha256","size":13,"state":"generated_state","updated_at":"generated_updated_at"}';
-    public function __construct(public ?string $content_type, public ?string $created_at, public ?string $download_url, public ?int $id, public ?string $md5, public ?string $name, public ?string $sha1, public ?string $sha256, public ?int $size, public ?string $state, public ?string $updated_at)
+    public function __construct(public string $content_type, public string $created_at, public string $download_url, public int $id, public ?string $md5, public string $name, public ?string $sha1, public string $sha256, public int $size, public string $state, public string $updated_at)
     {
     }
 }

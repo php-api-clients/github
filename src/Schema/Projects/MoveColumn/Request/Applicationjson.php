@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * position: The position of the column in a project. Can be one of: `first`, `last`, or `after:<column_id>` to place after the specified column.
      */
-    public function __construct(public ?string $position)
+    public function __construct(public string $position)
     {
     }
 }

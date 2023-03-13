@@ -19,7 +19,7 @@ final readonly class WebhookProjectsV2ProjectClosed
      * projects_v2: A projects v2 project
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public ?Schema\OrganizationSimple $organization, public ?Schema\ProjectsV2 $projects_v2, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\OrganizationSimple $organization, public Schema\ProjectsV2 $projects_v2, public Schema\SimpleUser $sender)
     {
     }
 }

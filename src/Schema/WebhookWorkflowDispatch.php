@@ -21,7 +21,7 @@ final readonly class WebhookWorkflowDispatch
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public Schema\Enterprise $enterprise, public mixed $inputs, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?string $ref, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender, public ?string $workflow)
+    public function __construct(public ?Schema\Enterprise $enterprise, public mixed $inputs, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public string $ref, public Schema\Repository $repository, public Schema\SimpleUser $sender, public string $workflow)
     {
     }
 }

@@ -24,7 +24,7 @@ final readonly class Comment
      * path: The relative path of the file to which the comment applies.
      * position: The line index in the diff to which the comment applies.
      */
-    public function __construct(public ?string $author_association, public ?string $body, public ?string $commit_id, public ?string $created_at, public ?string $html_url, public ?int $id, public ?int $line, public ?string $node_id, public ?string $path, public ?int $position, public Schema\Discussion\Reactions $reactions, public ?string $updated_at, public ?string $url, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(public string $author_association, public string $body, public string $commit_id, public string $created_at, public string $html_url, public int $id, public ?int $line, public string $node_id, public ?string $path, public ?int $position, public ?Schema\Discussion\Reactions $reactions, public string $updated_at, public string $url, public ?Schema\Discussion\AnswerChosenBy $user)
     {
     }
 }

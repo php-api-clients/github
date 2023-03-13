@@ -19,7 +19,7 @@ final readonly class Label
      * name: The name of the label.
      * color: 6-character hex code, without the leading #, identifying the color
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?string $name, public ?string $description, public ?string $color, public ?bool $default)
+    public function __construct(public int $id, public string $node_id, public string $url, public string $name, public ?string $description, public string $color, public bool $default)
     {
     }
 }

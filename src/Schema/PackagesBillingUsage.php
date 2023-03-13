@@ -19,7 +19,7 @@ final readonly class PackagesBillingUsage
      * total_paid_gigabytes_bandwidth_used: Total paid storage space (GB) for GitHuub Packages.
      * included_gigabytes_bandwidth: Free storage space (GB) for GitHub Packages.
      */
-    public function __construct(public ?int $total_gigabytes_bandwidth_used, public ?int $total_paid_gigabytes_bandwidth_used, public ?int $included_gigabytes_bandwidth)
+    public function __construct(public int $total_gigabytes_bandwidth_used, public int $total_paid_gigabytes_bandwidth_used, public int $included_gigabytes_bandwidth)
     {
     }
 }

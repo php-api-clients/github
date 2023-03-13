@@ -18,7 +18,7 @@ final readonly class PackageVersion
      * id: Unique identifier of the package version.
      * name: The name of the package version.
      */
-    public function __construct(public ?int $id, public ?string $name, public ?string $url, public ?string $package_html_url, public string $html_url, public string $license, public string $description, public ?string $created_at, public ?string $updated_at, public string $deleted_at, public Schema\PackageVersion\Metadata $metadata)
+    public function __construct(public int $id, public string $name, public string $url, public string $package_html_url, public ?string $html_url, public ?string $license, public ?string $description, public string $created_at, public string $updated_at, public ?string $deleted_at, public ?Schema\PackageVersion\Metadata $metadata)
     {
     }
 }

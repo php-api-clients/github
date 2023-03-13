@@ -19,9 +19,9 @@ final readonly class GitCommit
      * author: Identifying information for the git-user
      * committer: Identifying information for the git-user
      * message: Message describing the purpose of the commit
-     * @param ?array<\ApiClients\Client\GitHub\Schema\GitCommit\Parents> $parents
+     * @param array<\ApiClients\Client\GitHub\Schema\GitCommit\Parents> $parents
      */
-    public function __construct(public ?string $sha, public ?string $node_id, public ?string $url, public ?Schema\GitCommit\Author $author, public ?Schema\GitCommit\Author $committer, public ?string $message, public ?Schema\GitCommit\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\GitCommit\Parents::class)] public ?array $parents, public ?Schema\GitCommit\Verification $verification, public ?string $html_url)
+    public function __construct(public string $sha, public string $node_id, public string $url, public Schema\GitCommit\Author $author, public Schema\GitCommit\Author $committer, public string $message, public Schema\GitCommit\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\GitCommit\Parents::class)] public array $parents, public Schema\GitCommit\Verification $verification, public string $html_url)
     {
     }
 }

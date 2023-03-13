@@ -18,7 +18,7 @@ final readonly class Author
      * name: The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
      * email: The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
      */
-    public function __construct(public ?string $name, public ?string $email, public string $date)
+    public function __construct(public string $name, public string $email, public ?string $date)
     {
     }
 }

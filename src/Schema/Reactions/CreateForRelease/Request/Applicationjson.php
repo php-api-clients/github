@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * content: The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types) to add to the release.
      */
-    public function __construct(public ?string $content)
+    public function __construct(public string $content)
     {
     }
 }

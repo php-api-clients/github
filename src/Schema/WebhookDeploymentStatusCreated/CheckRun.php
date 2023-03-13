@@ -21,7 +21,7 @@ final readonly class CheckRun
      * name: The name of the check run.
      * status: The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
      */
-    public function __construct(public ?string $completed_at, public ?string $conclusion, public ?string $details_url, public ?string $external_id, public ?string $head_sha, public ?string $html_url, public ?int $id, public ?string $name, public ?string $node_id, public ?string $started_at, public ?string $status, public ?string $url)
+    public function __construct(public ?string $completed_at, public ?string $conclusion, public string $details_url, public string $external_id, public string $head_sha, public string $html_url, public int $id, public string $name, public string $node_id, public string $started_at, public string $status, public string $url)
     {
     }
 }

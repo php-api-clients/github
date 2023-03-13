@@ -14,7 +14,7 @@ final readonly class Links
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"html":"generated_html","self":"generated_self"}';
-    public function __construct(public ?string $html, public ?string $self)
+    public function __construct(public string $html, public string $self)
     {
     }
 }

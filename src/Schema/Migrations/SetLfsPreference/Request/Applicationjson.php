@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * use_lfs: Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
      */
-    public function __construct(public ?string $use_lfs)
+    public function __construct(public string $use_lfs)
     {
     }
 }

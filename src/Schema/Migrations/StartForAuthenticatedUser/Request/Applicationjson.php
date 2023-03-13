@@ -23,10 +23,10 @@ final readonly class Applicationjson
      * exclude_owner_projects: Indicates whether projects owned by the organization or users should be excluded.
      * org_metadata_only: Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
      * exclude: Exclude attributes from the API response to improve performance
-     * @param array<string> $exclude
-     * @param ?array<string> $repositories
+     * @param ?array<string> $exclude
+     * @param array<string> $repositories
      */
-    public function __construct(public bool $lock_repositories, public bool $exclude_metadata, public bool $exclude_git_data, public bool $exclude_attachments, public bool $exclude_releases, public bool $exclude_owner_projects, public bool $org_metadata_only, public array $exclude, public ?array $repositories)
+    public function __construct(public ?bool $lock_repositories, public ?bool $exclude_metadata, public ?bool $exclude_git_data, public ?bool $exclude_attachments, public ?bool $exclude_releases, public ?bool $exclude_owner_projects, public ?bool $org_metadata_only, public ?array $exclude, public array $repositories)
     {
     }
 }

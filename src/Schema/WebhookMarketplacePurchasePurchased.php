@@ -21,7 +21,7 @@ final readonly class WebhookMarketplacePurchasePurchased
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public ?string $effective_date, public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public ?Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase $marketplace_purchase, public Schema\OrganizationSimple $organization, public Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase $previous_marketplace_purchase, public Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public string $effective_date, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase $marketplace_purchase, public ?Schema\OrganizationSimple $organization, public ?Schema\WebhookMarketplacePurchaseCancelled\PreviousMarketplacePurchase $previous_marketplace_purchase, public ?Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

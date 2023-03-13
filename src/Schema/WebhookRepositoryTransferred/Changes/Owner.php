@@ -14,7 +14,7 @@ final readonly class Owner
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":{"organization":{"avatar_url":"generated_avatar_url","description":"generated_description","events_url":"generated_events_url","hooks_url":"generated_hooks_url","html_url":"generated_html_url","id":13,"issues_url":"generated_issues_url","login":"generated_login","members_url":"generated_members_url","node_id":"generated_node_id","public_members_url":"generated_public_members_url","repos_url":"generated_repos_url","url":"generated_url"},"user":{"avatar_url":"generated_avatar_url","deleted":false,"email":"generated_email","events_url":"generated_events_url","followers_url":"generated_followers_url","following_url":"generated_following_url","gists_url":"generated_gists_url","gravatar_id":"generated_gravatar_id","html_url":"generated_html_url","id":13,"login":"generated_login","name":"generated_name","node_id":"generated_node_id","organizations_url":"generated_organizations_url","received_events_url":"generated_received_events_url","repos_url":"generated_repos_url","site_admin":false,"starred_url":"generated_starred_url","subscriptions_url":"generated_subscriptions_url","type":"generated_type","url":"generated_url"}}}';
-    public function __construct(public ?Schema\WebhookRepositoryTransferred\Changes\Owner\From $from)
+    public function __construct(public Schema\WebhookRepositoryTransferred\Changes\Owner\From $from)
     {
     }
 }

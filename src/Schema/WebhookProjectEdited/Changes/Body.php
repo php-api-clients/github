@@ -17,7 +17,7 @@ final readonly class Body
     /**
      * from: The previous version of the body if the action was `edited`.
      */
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

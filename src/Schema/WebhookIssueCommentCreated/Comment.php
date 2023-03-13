@@ -20,7 +20,7 @@ final readonly class Comment
      * id: Unique identifier of the issue comment
      * url: URL for the issue comment
      */
-    public function __construct(public ?string $author_association, public ?string $body, public ?string $created_at, public ?string $html_url, public ?int $id, public ?string $issue_url, public ?string $node_id, public mixed $performed_via_github_app, public ?Schema\Discussion\Reactions $reactions, public ?string $updated_at, public ?string $url, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(public string $author_association, public string $body, public string $created_at, public string $html_url, public int $id, public string $issue_url, public string $node_id, public mixed $performed_via_github_app, public Schema\Discussion\Reactions $reactions, public string $updated_at, public string $url, public ?Schema\Discussion\AnswerChosenBy $user)
     {
     }
 }

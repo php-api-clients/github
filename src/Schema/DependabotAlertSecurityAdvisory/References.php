@@ -17,7 +17,7 @@ final readonly class References
     /**
      * url: The URL of the reference.
      */
-    public function __construct(public ?string $url)
+    public function __construct(public string $url)
     {
     }
 }

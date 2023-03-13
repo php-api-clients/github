@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * name: A descriptive name for the new key.
      * armored_public_key: A GPG key in ASCII-armored format.
      */
-    public function __construct(public string $name, public ?string $armored_public_key)
+    public function __construct(public ?string $name, public string $armored_public_key)
     {
     }
 }

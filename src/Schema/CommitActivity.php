@@ -15,9 +15,9 @@ final readonly class CommitActivity
     public const SCHEMA_DESCRIPTION = 'Commit Activity';
     public const SCHEMA_EXAMPLE_DATA = '{"days":[0],"total":89,"week":1336280400}';
     /**
-     * @param ?array<int> $days
+     * @param array<int> $days
      */
-    public function __construct(public ?array $days, public ?int $total, public ?int $week)
+    public function __construct(public array $days, public int $total, public int $week)
     {
     }
 }

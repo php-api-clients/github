@@ -30,127 +30,145 @@ class Secrets implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListRepoSecrets⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['total_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_count'] = null;
-                    goto after_total_count;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListRepoSecrets⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_count'] ?? null;
 
-                $properties['total_count'] = $value;
-    
-                after_total_count:
+            if ($value === null) {
+                $missingFields[] = 'total_count';
+                goto after_total_count;
+            }
 
-                $value = $payload['secrets'] ?? null;
-    
-                if ($value === null) {
-                    $properties['secrets'] = null;
-                    goto after_secrets;
-                }
+            $properties['total_count'] = $value;
 
-                static $secretsCaster1;
-    
-                if ($secretsCaster1 === null) {
-                    $secretsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_total_count:
+
+            $value = $payload['secrets'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'secrets';
+                goto after_secrets;
+            }
+
+            static $secretsCaster1;
+
+            if ($secretsCaster1 === null) {
+                $secretsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\DependabotSecret',
 ));
-                }
-    
-                $value = $secretsCaster1->cast($value, $this);
+            }
 
-                $properties['secrets'] = $value;
-    
-                after_secrets:
+            $value = $secretsCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
+            $properties['secrets'] = $value;
+
+            after_secrets:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotSecret(array $payload): \ApiClients\Client\GitHub\Schema\DependabotSecret
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotSecret(array $payload): \ApiClients\Client\GitHub\Schema\DependabotSecret
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['name'] ?? null;
 
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotSecret', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotSecret::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotSecret(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotSecret', $exception, stack: $this->hydrationStack);
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotSecret', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotSecret::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotSecret(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotSecret', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListRepoSecrets⚡️Response⚡️Applicationjson⚡️H200($object),
-                'ApiClients\Client\GitHub\Schema\DependabotSecret' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotSecret($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListRepoSecrets⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\DependabotSecret' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotSecret($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -223,25 +241,17 @@ class Secrets implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListRepoSecrets⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListRepoSecrets\Response\Applicationjson\H200);
         $result = [];
-        
-        $total_count = $object->total_count;
 
-        if ($total_count === null) {
-            goto after_total_count;
-        }
+        $total_count = $object->total_count;
         after_total_count:        $result['total_count'] = $total_count;
 
         
         $secrets = $object->secrets;
-
-        if ($secrets === null) {
-            goto after_secrets;
-        }
         static $secretsSerializer0;
 
         if ($secretsSerializer0 === null) {
@@ -257,33 +267,21 @@ class Secrets implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotSecret(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotSecret);
         $result = [];
-        
-        $name = $object->name;
 
-        if ($name === null) {
-            goto after_name;
-        }
+        $name = $object->name;
         after_name:        $result['name'] = $name;
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
         after_updated_at:        $result['updated_at'] = $updated_at;
 
 

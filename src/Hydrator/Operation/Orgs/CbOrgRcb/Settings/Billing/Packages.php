@@ -29,72 +29,91 @@ class Packages implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PackagesBillingUsage(array $payload): \ApiClients\Client\GitHub\Schema\PackagesBillingUsage
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['total_gigabytes_bandwidth_used'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_gigabytes_bandwidth_used'] = null;
-                    goto after_total_gigabytes_bandwidth_used;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PackagesBillingUsage(array $payload): \ApiClients\Client\GitHub\Schema\PackagesBillingUsage
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_gigabytes_bandwidth_used'] ?? null;
 
-                $properties['total_gigabytes_bandwidth_used'] = $value;
-    
-                after_total_gigabytes_bandwidth_used:
-
-                $value = $payload['total_paid_gigabytes_bandwidth_used'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_paid_gigabytes_bandwidth_used'] = null;
-                    goto after_total_paid_gigabytes_bandwidth_used;
-                }
-
-                $properties['total_paid_gigabytes_bandwidth_used'] = $value;
-    
-                after_total_paid_gigabytes_bandwidth_used:
-
-                $value = $payload['included_gigabytes_bandwidth'] ?? null;
-    
-                if ($value === null) {
-                    $properties['included_gigabytes_bandwidth'] = null;
-                    goto after_included_gigabytes_bandwidth;
-                }
-
-                $properties['included_gigabytes_bandwidth'] = $value;
-    
-                after_included_gigabytes_bandwidth:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PackagesBillingUsage', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'total_gigabytes_bandwidth_used';
+                goto after_total_gigabytes_bandwidth_used;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PackagesBillingUsage::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['total_gigabytes_bandwidth_used'] = $value;
+
+            after_total_gigabytes_bandwidth_used:
+
+            $value = $payload['total_paid_gigabytes_bandwidth_used'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total_paid_gigabytes_bandwidth_used';
+                goto after_total_paid_gigabytes_bandwidth_used;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\PackagesBillingUsage(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PackagesBillingUsage', $exception, stack: $this->hydrationStack);
+
+            $properties['total_paid_gigabytes_bandwidth_used'] = $value;
+
+            after_total_paid_gigabytes_bandwidth_used:
+
+            $value = $payload['included_gigabytes_bandwidth'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'included_gigabytes_bandwidth';
+                goto after_included_gigabytes_bandwidth;
+            }
+
+            $properties['included_gigabytes_bandwidth'] = $value;
+
+            after_included_gigabytes_bandwidth:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PackagesBillingUsage', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PackagesBillingUsage::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\PackagesBillingUsage(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PackagesBillingUsage', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\PackagesBillingUsage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PackagesBillingUsage($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\PackagesBillingUsage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PackagesBillingUsage($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -167,33 +186,21 @@ class Packages implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PackagesBillingUsage(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PackagesBillingUsage);
         $result = [];
-        
-        $total_gigabytes_bandwidth_used = $object->total_gigabytes_bandwidth_used;
 
-        if ($total_gigabytes_bandwidth_used === null) {
-            goto after_total_gigabytes_bandwidth_used;
-        }
+        $total_gigabytes_bandwidth_used = $object->total_gigabytes_bandwidth_used;
         after_total_gigabytes_bandwidth_used:        $result['total_gigabytes_bandwidth_used'] = $total_gigabytes_bandwidth_used;
 
         
         $total_paid_gigabytes_bandwidth_used = $object->total_paid_gigabytes_bandwidth_used;
-
-        if ($total_paid_gigabytes_bandwidth_used === null) {
-            goto after_total_paid_gigabytes_bandwidth_used;
-        }
         after_total_paid_gigabytes_bandwidth_used:        $result['total_paid_gigabytes_bandwidth_used'] = $total_paid_gigabytes_bandwidth_used;
 
         
         $included_gigabytes_bandwidth = $object->included_gigabytes_bandwidth;
-
-        if ($included_gigabytes_bandwidth === null) {
-            goto after_included_gigabytes_bandwidth;
-        }
         after_included_gigabytes_bandwidth:        $result['included_gigabytes_bandwidth'] = $included_gigabytes_bandwidth;
 
 

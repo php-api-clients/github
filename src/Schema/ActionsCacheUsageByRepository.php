@@ -19,7 +19,7 @@ final readonly class ActionsCacheUsageByRepository
      * active_caches_size_in_bytes: The sum of the size in bytes of all the active cache items in the repository.
      * active_caches_count: The number of active caches in the repository.
      */
-    public function __construct(public ?string $full_name, public ?int $active_caches_size_in_bytes, public ?int $active_caches_count)
+    public function __construct(public string $full_name, public int $active_caches_size_in_bytes, public int $active_caches_count)
     {
     }
 }

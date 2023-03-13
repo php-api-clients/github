@@ -18,7 +18,7 @@ final readonly class GistComment
      * body: The comment text.
      * author_association: How the author is associated with the repository.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?string $body, public mixed $user, public ?string $created_at, public ?string $updated_at, public ?string $author_association)
+    public function __construct(public int $id, public string $node_id, public string $url, public string $body, public mixed $user, public string $created_at, public string $updated_at, public string $author_association)
     {
     }
 }

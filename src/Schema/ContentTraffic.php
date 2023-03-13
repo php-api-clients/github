@@ -14,7 +14,7 @@ final readonly class ContentTraffic
     public const SCHEMA_TITLE = 'Content Traffic';
     public const SCHEMA_DESCRIPTION = 'Content Traffic';
     public const SCHEMA_EXAMPLE_DATA = '{"path":"\\/github\\/hubot","title":"github\\/hubot: A customizable life embetterment robot.","count":3542,"uniques":2225}';
-    public function __construct(public ?string $path, public ?string $title, public ?int $count, public ?int $uniques)
+    public function __construct(public string $path, public string $title, public int $count, public int $uniques)
     {
     }
 }

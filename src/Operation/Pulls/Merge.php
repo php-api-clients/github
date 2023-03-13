@@ -42,7 +42,7 @@ final class Merge
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\PullRequestMergeResult
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**if merge was successful**/

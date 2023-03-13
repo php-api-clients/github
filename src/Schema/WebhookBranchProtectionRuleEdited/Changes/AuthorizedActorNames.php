@@ -15,9 +15,9 @@ final readonly class AuthorizedActorNames
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":["generated_from"]}';
     /**
-     * @param ?array<string> $from
+     * @param array<string> $from
      */
-    public function __construct(public ?array $from)
+    public function __construct(public array $from)
     {
     }
 }

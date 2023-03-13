@@ -14,7 +14,7 @@ final readonly class Label
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated_name","color":"generated_color"}';
-    public function __construct(public ?string $name, public ?string $color)
+    public function __construct(public string $name, public string $color)
     {
     }
 }

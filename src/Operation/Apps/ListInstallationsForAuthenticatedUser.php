@@ -36,7 +36,7 @@ final class ListInstallationsForAuthenticatedUser
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Orgs\ListAppInstallations\Response\Applicationjson\H200
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**You can find the permissions for the installation under the `permissions` key.**/

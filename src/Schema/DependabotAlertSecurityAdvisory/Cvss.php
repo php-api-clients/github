@@ -18,7 +18,7 @@ final readonly class Cvss
      * score: The overall CVSS score of the advisory.
      * vector_string: The full CVSS vector string for the advisory.
      */
-    public function __construct(public ?int $score, public ?string $vector_string)
+    public function __construct(public int $score, public ?string $vector_string)
     {
     }
 }

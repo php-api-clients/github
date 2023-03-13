@@ -18,7 +18,7 @@ final readonly class TeamMembership
      * role: The role of the user in the team.
      * state: The state of the user's membership in the team.
      */
-    public function __construct(public ?string $url, public ?string $role, public ?string $state)
+    public function __construct(public string $url, public string $role, public string $state)
     {
     }
 }

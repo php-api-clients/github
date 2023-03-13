@@ -30,183 +30,201 @@ class Subscription implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ThreadSubscription(array $payload): \ApiClients\Client\GitHub\Schema\ThreadSubscription
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['subscribed'] ?? null;
-    
-                if ($value === null) {
-                    $properties['subscribed'] = null;
-                    goto after_subscribed;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ThreadSubscription(array $payload): \ApiClients\Client\GitHub\Schema\ThreadSubscription
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['subscribed'] ?? null;
 
-                $properties['subscribed'] = $value;
-    
-                after_subscribed:
-
-                $value = $payload['ignored'] ?? null;
-    
-                if ($value === null) {
-                    $properties['ignored'] = null;
-                    goto after_ignored;
-                }
-
-                $properties['ignored'] = $value;
-    
-                after_ignored:
-
-                $value = $payload['reason'] ?? null;
-    
-                if ($value === null) {
-                    $properties['reason'] = null;
-                    goto after_reason;
-                }
-
-                $properties['reason'] = $value;
-    
-                after_reason:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['thread_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'thread_url';
-                    goto after_thread_url;
-                }
-
-                $properties['thread_url'] = $value;
-    
-                after_thread_url:
-
-                $value = $payload['repository_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'repository_url';
-                    goto after_repository_url;
-                }
-
-                $properties['repository_url'] = $value;
-    
-                after_repository_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ThreadSubscription', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'subscribed';
+                goto after_subscribed;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ThreadSubscription::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['subscribed'] = $value;
+
+            after_subscribed:
+
+            $value = $payload['ignored'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ignored';
+                goto after_ignored;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ThreadSubscription(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ThreadSubscription', $exception, stack: $this->hydrationStack);
+
+            $properties['ignored'] = $value;
+
+            after_ignored:
+
+            $value = $payload['reason'] ?? null;
+
+            if ($value === null) {
+                $properties['reason'] = null;
+                goto after_reason;
             }
+
+            $properties['reason'] = $value;
+
+            after_reason:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $properties['created_at'] = null;
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['thread_url'] ?? null;
+
+            if ($value === null) {
+                $properties['thread_url'] = null;
+                goto after_thread_url;
+            }
+
+            $properties['thread_url'] = $value;
+
+            after_thread_url:
+
+            $value = $payload['repository_url'] ?? null;
+
+            if ($value === null) {
+                $properties['repository_url'] = null;
+                goto after_repository_url;
+            }
+
+            $properties['repository_url'] = $value;
+
+            after_repository_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ThreadSubscription', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ThreadSubscription::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ThreadSubscription(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ThreadSubscription', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ThreadSubscription' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ThreadSubscription($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\ThreadSubscription' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ThreadSubscription($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -279,25 +297,17 @@ class Subscription implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ThreadSubscription(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ThreadSubscription);
         $result = [];
-        
-        $subscribed = $object->subscribed;
 
-        if ($subscribed === null) {
-            goto after_subscribed;
-        }
+        $subscribed = $object->subscribed;
         after_subscribed:        $result['subscribed'] = $subscribed;
 
         
         $ignored = $object->ignored;
-
-        if ($ignored === null) {
-            goto after_ignored;
-        }
         after_ignored:        $result['ignored'] = $ignored;
 
         
@@ -318,30 +328,34 @@ class Subscription implements ObjectMapper
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
         $thread_url = $object->thread_url;
+
+        if ($thread_url === null) {
+            goto after_thread_url;
+        }
         after_thread_url:        $result['thread_url'] = $thread_url;
 
         
         $repository_url = $object->repository_url;
+
+        if ($repository_url === null) {
+            goto after_repository_url;
+        }
         after_repository_url:        $result['repository_url'] = $repository_url;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {

@@ -25,7 +25,7 @@ final readonly class CodeScanningCodeqlDatabase
      * updated_at: The date and time at which the CodeQL database was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * url: The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
      */
-    public function __construct(public ?int $id, public ?string $name, public ?string $language, public ?Schema\SimpleUser $uploader, public ?string $content_type, public ?int $size, public ?string $created_at, public ?string $updated_at, public ?string $url)
+    public function __construct(public int $id, public string $name, public string $language, public Schema\SimpleUser $uploader, public string $content_type, public int $size, public string $created_at, public string $updated_at, public string $url)
     {
     }
 }

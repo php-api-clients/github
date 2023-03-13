@@ -14,7 +14,7 @@ final readonly class Blob
     public const SCHEMA_TITLE = 'Blob';
     public const SCHEMA_DESCRIPTION = 'Blob';
     public const SCHEMA_EXAMPLE_DATA = '{"content":"generated_content","encoding":"generated_encoding","url":"generated_url","sha":"generated_sha","size":13,"node_id":"generated_node_id","highlighted_content":"generated_highlighted_content"}';
-    public function __construct(public ?string $content, public ?string $encoding, public ?string $url, public ?string $sha, public ?int $size, public ?string $node_id, public string $highlighted_content)
+    public function __construct(public string $content, public string $encoding, public string $url, public string $sha, public ?int $size, public string $node_id, public ?string $highlighted_content)
     {
     }
 }

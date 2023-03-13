@@ -39,7 +39,7 @@ final class GetCommitSignatureProtection
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\ProtectedBranchAdminEnforced
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/

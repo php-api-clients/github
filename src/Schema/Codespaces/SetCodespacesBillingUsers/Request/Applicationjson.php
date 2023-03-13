@@ -16,9 +16,9 @@ final readonly class Applicationjson
     public const SCHEMA_EXAMPLE_DATA = '{"selected_usernames":["generated_selected_usernames"]}';
     /**
      * selected_usernames: The usernames of the organization members whose codespaces be billed to the organization.
-     * @param ?array<string> $selected_usernames
+     * @param array<string> $selected_usernames
      */
-    public function __construct(public ?array $selected_usernames)
+    public function __construct(public array $selected_usernames)
     {
     }
 }

@@ -25,7 +25,7 @@ final readonly class Applicationjson
      * generate_release_notes: Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.
      * make_latest: Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
      */
-    public function __construct(public ?string $tag_name, public string $target_commitish, public string $name, public string $body, public bool $draft, public bool $prerelease, public string $discussion_category_name, public bool $generate_release_notes, public string $make_latest)
+    public function __construct(public string $tag_name, public ?string $target_commitish, public ?string $name, public ?string $body, public ?bool $draft, public ?bool $prerelease, public ?string $discussion_category_name, public ?bool $generate_release_notes, public ?string $make_latest)
     {
     }
 }

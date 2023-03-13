@@ -17,7 +17,7 @@ final readonly class CheckSuitePreference
     /**
      * repository: Minimal Repository
      */
-    public function __construct(public ?Schema\CheckSuitePreference\Preferences $preferences, public ?Schema\MinimalRepository $repository)
+    public function __construct(public Schema\CheckSuitePreference\Preferences $preferences, public Schema\MinimalRepository $repository)
     {
     }
 }

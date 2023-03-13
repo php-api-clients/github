@@ -33,438 +33,453 @@ class Files implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DiffEntry(array $payload): \ApiClients\Client\GitHub\Schema\DiffEntry
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['sha'] ?? null;
-    
-                if ($value === null) {
-                    $properties['sha'] = null;
-                    goto after_sha;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DiffEntry(array $payload): \ApiClients\Client\GitHub\Schema\DiffEntry
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['sha'] ?? null;
 
-                $properties['sha'] = $value;
-    
-                after_sha:
-
-                $value = $payload['filename'] ?? null;
-    
-                if ($value === null) {
-                    $properties['filename'] = null;
-                    goto after_filename;
-                }
-
-                $properties['filename'] = $value;
-    
-                after_filename:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-                $value = $payload['additions'] ?? null;
-    
-                if ($value === null) {
-                    $properties['additions'] = null;
-                    goto after_additions;
-                }
-
-                $properties['additions'] = $value;
-    
-                after_additions:
-
-                $value = $payload['deletions'] ?? null;
-    
-                if ($value === null) {
-                    $properties['deletions'] = null;
-                    goto after_deletions;
-                }
-
-                $properties['deletions'] = $value;
-    
-                after_deletions:
-
-                $value = $payload['changes'] ?? null;
-    
-                if ($value === null) {
-                    $properties['changes'] = null;
-                    goto after_changes;
-                }
-
-                $properties['changes'] = $value;
-    
-                after_changes:
-
-                $value = $payload['blob_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['blob_url'] = null;
-                    goto after_blob_url;
-                }
-
-                $properties['blob_url'] = $value;
-    
-                after_blob_url:
-
-                $value = $payload['raw_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['raw_url'] = null;
-                    goto after_raw_url;
-                }
-
-                $properties['raw_url'] = $value;
-    
-                after_raw_url:
-
-                $value = $payload['contents_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['contents_url'] = null;
-                    goto after_contents_url;
-                }
-
-                $properties['contents_url'] = $value;
-    
-                after_contents_url:
-
-                $value = $payload['patch'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'patch';
-                    goto after_patch;
-                }
-
-                $properties['patch'] = $value;
-    
-                after_patch:
-
-                $value = $payload['previous_filename'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'previous_filename';
-                    goto after_previous_filename;
-                }
-
-                $properties['previous_filename'] = $value;
-    
-                after_previous_filename:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DiffEntry', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'sha';
+                goto after_sha;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DiffEntry::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['sha'] = $value;
+
+            after_sha:
+
+            $value = $payload['filename'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'filename';
+                goto after_filename;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DiffEntry(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DiffEntry', $exception, stack: $this->hydrationStack);
+
+            $properties['filename'] = $value;
+
+            after_filename:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'status';
+                goto after_status;
             }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+            $value = $payload['additions'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'additions';
+                goto after_additions;
+            }
+
+            $properties['additions'] = $value;
+
+            after_additions:
+
+            $value = $payload['deletions'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'deletions';
+                goto after_deletions;
+            }
+
+            $properties['deletions'] = $value;
+
+            after_deletions:
+
+            $value = $payload['changes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'changes';
+                goto after_changes;
+            }
+
+            $properties['changes'] = $value;
+
+            after_changes:
+
+            $value = $payload['blob_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'blob_url';
+                goto after_blob_url;
+            }
+
+            $properties['blob_url'] = $value;
+
+            after_blob_url:
+
+            $value = $payload['raw_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'raw_url';
+                goto after_raw_url;
+            }
+
+            $properties['raw_url'] = $value;
+
+            after_raw_url:
+
+            $value = $payload['contents_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'contents_url';
+                goto after_contents_url;
+            }
+
+            $properties['contents_url'] = $value;
+
+            after_contents_url:
+
+            $value = $payload['patch'] ?? null;
+
+            if ($value === null) {
+                $properties['patch'] = null;
+                goto after_patch;
+            }
+
+            $properties['patch'] = $value;
+
+            after_patch:
+
+            $value = $payload['previous_filename'] ?? null;
+
+            if ($value === null) {
+                $properties['previous_filename'] = null;
+                goto after_previous_filename;
+            }
+
+            $properties['previous_filename'] = $value;
+
+            after_previous_filename:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DiffEntry', $exception, stack: $this->hydrationStack);
         }
 
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DiffEntry::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DiffEntry(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DiffEntry', $exception, stack: $this->hydrationStack);
+        }
+    }
+
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
+            if ($value === null) {
+                $missingFields[] = 'message';
+                goto after_message;
+            }
 
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
+            $properties['message'] = $value;
 
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
+            after_message:
 
-                $value = $payload['errors'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'errors';
-                    goto after_errors;
-                }
+            $value = $payload['documentation_url'] ?? null;
 
-                static $errorsCaster1;
-    
-                if ($errorsCaster1 === null) {
-                    $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($value === null) {
+                $missingFields[] = 'documentation_url';
+                goto after_documentation_url;
+            }
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['errors'] ?? null;
+
+            if ($value === null) {
+                $properties['errors'] = null;
+                goto after_errors;
+            }
+
+            static $errorsCaster1;
+
+            if ($errorsCaster1 === null) {
+                $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
 ));
-                }
-    
-                $value = $errorsCaster1->cast($value, $this);
+            }
 
-                $properties['errors'] = $value;
-    
-                after_errors:
+            $value = $errorsCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ValidationError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
-            }
+            $properties['errors'] = $value;
+
+            after_errors:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ValidationError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError\Errors
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['resource'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'resource';
-                    goto after_resource;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError\Errors
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['resource'] ?? null;
 
-                $properties['resource'] = $value;
-    
-                after_resource:
-
-                $value = $payload['field'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'field';
-                    goto after_field;
-                }
-
-                $properties['field'] = $value;
-    
-                after_field:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'message';
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['code'] ?? null;
-    
-                if ($value === null) {
-                    $properties['code'] = null;
-                    goto after_code;
-                }
-
-                $properties['code'] = $value;
-    
-                after_code:
-
-                $value = $payload['index'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'index';
-                    goto after_index;
-                }
-
-                $properties['index'] = $value;
-    
-                after_index:
-
-                $value = $payload['value'] ?? null;
-    
-                if ($value === null) {
-                    $properties['value'] = null;
-                    goto after_value;
-                }
-
-                $properties['value'] = $value;
-    
-                after_value:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['resource'] = null;
+                goto after_resource;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['resource'] = $value;
+
+            after_resource:
+
+            $value = $payload['field'] ?? null;
+
+            if ($value === null) {
+                $properties['field'] = null;
+                goto after_field;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ValidationError\Errors(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+
+            $properties['field'] = $value;
+
+            after_field:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['code'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'code';
+                goto after_code;
+            }
+
+            $properties['code'] = $value;
+
+            after_code:
+
+            $value = $payload['index'] ?? null;
+
+            if ($value === null) {
+                $properties['index'] = null;
+                goto after_index;
+            }
+
+            $properties['index'] = $value;
+
+            after_index:
+
+            $value = $payload['value'] ?? null;
+
+            if ($value === null) {
+                $properties['value'] = null;
+                goto after_value;
+            }
+
+            $properties['value'] = $value;
+
+            after_value:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ValidationError\Errors(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
             }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['code'] ?? null;
-    
-                if ($value === null) {
-                    $properties['code'] = null;
-                    goto after_code;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['code'] ?? null;
 
-                $properties['code'] = $value;
-    
-                after_code:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['code'] = null;
+                goto after_code;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['code'] = $value;
+
+            after_code:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
+            }
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\DiffEntry' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DiffEntry($object),
-                'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
-                'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
-                'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\DiffEntry' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DiffEntry($object),
+            'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
+            'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -537,118 +552,86 @@ class Files implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DiffEntry(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DiffEntry);
         $result = [];
-        
-        $sha = $object->sha;
 
-        if ($sha === null) {
-            goto after_sha;
-        }
+        $sha = $object->sha;
         after_sha:        $result['sha'] = $sha;
 
         
         $filename = $object->filename;
-
-        if ($filename === null) {
-            goto after_filename;
-        }
         after_filename:        $result['filename'] = $filename;
 
         
         $status = $object->status;
-
-        if ($status === null) {
-            goto after_status;
-        }
         after_status:        $result['status'] = $status;
 
         
         $additions = $object->additions;
-
-        if ($additions === null) {
-            goto after_additions;
-        }
         after_additions:        $result['additions'] = $additions;
 
         
         $deletions = $object->deletions;
-
-        if ($deletions === null) {
-            goto after_deletions;
-        }
         after_deletions:        $result['deletions'] = $deletions;
 
         
         $changes = $object->changes;
-
-        if ($changes === null) {
-            goto after_changes;
-        }
         after_changes:        $result['changes'] = $changes;
 
         
         $blob_url = $object->blob_url;
-
-        if ($blob_url === null) {
-            goto after_blob_url;
-        }
         after_blob_url:        $result['blob_url'] = $blob_url;
 
         
         $raw_url = $object->raw_url;
-
-        if ($raw_url === null) {
-            goto after_raw_url;
-        }
         after_raw_url:        $result['raw_url'] = $raw_url;
 
         
         $contents_url = $object->contents_url;
-
-        if ($contents_url === null) {
-            goto after_contents_url;
-        }
         after_contents_url:        $result['contents_url'] = $contents_url;
 
         
         $patch = $object->patch;
+
+        if ($patch === null) {
+            goto after_patch;
+        }
         after_patch:        $result['patch'] = $patch;
 
         
         $previous_filename = $object->previous_filename;
+
+        if ($previous_filename === null) {
+            goto after_previous_filename;
+        }
         after_previous_filename:        $result['previous_filename'] = $previous_filename;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError);
         $result = [];
-        
-        $message = $object->message;
 
-        if ($message === null) {
-            goto after_message;
-        }
+        $message = $object->message;
         after_message:        $result['message'] = $message;
 
         
         $documentation_url = $object->documentation_url;
-
-        if ($documentation_url === null) {
-            goto after_documentation_url;
-        }
         after_documentation_url:        $result['documentation_url'] = $documentation_url;
 
         
         $errors = $object->errors;
+
+        if ($errors === null) {
+            goto after_errors;
+        }
         static $errorsSerializer0;
 
         if ($errorsSerializer0 === null) {
@@ -664,33 +647,45 @@ class Files implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError\Errors);
         $result = [];
-        
+
         $resource = $object->resource;
+
+        if ($resource === null) {
+            goto after_resource;
+        }
         after_resource:        $result['resource'] = $resource;
 
         
         $field = $object->field;
+
+        if ($field === null) {
+            goto after_field;
+        }
         after_field:        $result['field'] = $field;
 
         
         $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
         after_message:        $result['message'] = $message;
 
         
         $code = $object->code;
-
-        if ($code === null) {
-            goto after_code;
-        }
         after_code:        $result['code'] = $code;
 
         
         $index = $object->index;
+
+        if ($index === null) {
+            goto after_index;
+        }
         after_index:        $result['index'] = $index;
 
         
@@ -705,12 +700,12 @@ class Files implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {
@@ -746,12 +741,12 @@ class Files implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503);
         $result = [];
-        
+
         $code = $object->code;
 
         if ($code === null) {

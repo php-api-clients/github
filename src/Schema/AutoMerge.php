@@ -20,7 +20,7 @@ final readonly class AutoMerge
      * commit_title: Title for the merge commit message.
      * commit_message: Commit message for the merge commit.
      */
-    public function __construct(public ?Schema\SimpleUser $enabled_by, public ?string $merge_method, public ?string $commit_title, public ?string $commit_message)
+    public function __construct(public Schema\SimpleUser $enabled_by, public string $merge_method, public string $commit_title, public string $commit_message)
     {
     }
 }

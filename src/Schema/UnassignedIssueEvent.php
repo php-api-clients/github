@@ -19,7 +19,7 @@ final readonly class UnassignedIssueEvent
      * assignee: A GitHub user.
      * assigner: A GitHub user.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?Schema\SimpleUser $actor, public ?string $event, public ?string $commit_id, public ?string $commit_url, public ?string $created_at, public mixed $performed_via_github_app, public ?Schema\SimpleUser $assignee, public ?Schema\SimpleUser $assigner)
+    public function __construct(public int $id, public string $node_id, public string $url, public Schema\SimpleUser $actor, public string $event, public ?string $commit_id, public ?string $commit_url, public string $created_at, public mixed $performed_via_github_app, public Schema\SimpleUser $assignee, public Schema\SimpleUser $assigner)
     {
     }
 }

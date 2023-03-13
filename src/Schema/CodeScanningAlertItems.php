@@ -27,7 +27,7 @@ final readonly class CodeScanningAlertItems
      * dismissed_reason: **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      * dismissed_comment: The dismissal comment associated with the dismissal of the alert.
      */
-    public function __construct(public ?int $number, public ?string $created_at, public string $updated_at, public ?string $url, public ?string $html_url, public ?string $instances_url, public ?string $state, public ?string $fixed_at, public mixed $dismissed_by, public ?string $dismissed_at, public ?string $dismissed_reason, public ?string $dismissed_comment, public ?Schema\CodeScanningAlertRuleSummary $rule, public ?Schema\CodeScanningAnalysisTool $tool, public ?Schema\CodeScanningAlertInstance $most_recent_instance)
+    public function __construct(public int $number, public string $created_at, public ?string $updated_at, public string $url, public string $html_url, public string $instances_url, public string $state, public ?string $fixed_at, public mixed $dismissed_by, public ?string $dismissed_at, public ?string $dismissed_reason, public ?string $dismissed_comment, public Schema\CodeScanningAlertRuleSummary $rule, public Schema\CodeScanningAnalysisTool $tool, public Schema\CodeScanningAlertInstance $most_recent_instance)
     {
     }
 }

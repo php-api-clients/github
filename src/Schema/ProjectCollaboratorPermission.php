@@ -14,7 +14,7 @@ final readonly class ProjectCollaboratorPermission
     public const SCHEMA_TITLE = 'Project Collaborator Permission';
     public const SCHEMA_DESCRIPTION = 'Project Collaborator Permission';
     public const SCHEMA_EXAMPLE_DATA = '{"permission":"generated_permission","user":null}';
-    public function __construct(public ?string $permission, public mixed $user)
+    public function __construct(public string $permission, public mixed $user)
     {
     }
 }

@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * encrypted_value: Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an environment public key](https://docs.github.com/rest/reference/actions#get-an-environment-public-key) endpoint.
      * key_id: ID of the key you used to encrypt the secret.
      */
-    public function __construct(public ?string $encrypted_value, public ?string $key_id)
+    public function __construct(public string $encrypted_value, public string $key_id)
     {
     }
 }

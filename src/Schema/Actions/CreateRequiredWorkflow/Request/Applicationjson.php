@@ -19,9 +19,9 @@ final readonly class Applicationjson
      * repository_id: The ID of the repository that contains the workflow file.
      * scope: Enable the required workflow for all repositories or selected repositories in the organization.
      * selected_repository_ids: A list of repository IDs where you want to enable the required workflow. You can only provide a list of repository ids when the `scope` is set to `selected`.
-     * @param array<int> $selected_repository_ids
+     * @param ?array<int> $selected_repository_ids
      */
-    public function __construct(public ?string $workflow_file_path, public ?string $repository_id, public string $scope, public array $selected_repository_ids)
+    public function __construct(public string $workflow_file_path, public string $repository_id, public ?string $scope, public ?array $selected_repository_ids)
     {
     }
 }

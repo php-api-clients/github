@@ -17,7 +17,7 @@ final readonly class RunnerApplication
     /**
      * temp_download_token: A short lived bearer token used to download the runner, if needed.
      */
-    public function __construct(public ?string $os, public ?string $architecture, public ?string $download_url, public ?string $filename, public string $temp_download_token, public string $sha256_checksum)
+    public function __construct(public string $os, public string $architecture, public string $download_url, public string $filename, public ?string $temp_download_token, public ?string $sha256_checksum)
     {
     }
 }

@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * sha: The SHA1 value to set this reference to
      * force: Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
      */
-    public function __construct(public ?string $sha, public bool $force)
+    public function __construct(public string $sha, public ?bool $force)
     {
     }
 }

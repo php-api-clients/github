@@ -18,7 +18,7 @@ final readonly class OrganizationActionsSecret
      * name: The name of the secret.
      * visibility: Visibility of a secret
      */
-    public function __construct(public ?string $name, public ?string $created_at, public ?string $updated_at, public ?string $visibility, public string $selected_repositories_url)
+    public function __construct(public string $name, public string $created_at, public string $updated_at, public string $visibility, public ?string $selected_repositories_url)
     {
     }
 }

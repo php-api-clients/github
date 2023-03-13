@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * pattern: An optional glob pattern to match against when enforcing tag protection.
      */
-    public function __construct(public ?string $pattern)
+    public function __construct(public string $pattern)
     {
     }
 }

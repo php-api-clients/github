@@ -27,7 +27,7 @@ final readonly class Applicationjson
      * lock_branch: Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
      * allow_fork_syncing: Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
      */
-    public function __construct(public ?Schema\Repos\UpdateBranchProtection\Request\Applicationjson\RequiredStatusChecks $required_status_checks, public ?bool $enforce_admins, public ?Schema\Repos\UpdateBranchProtection\Request\Applicationjson\RequiredPullRequestReviews $required_pull_request_reviews, public ?Schema\Repos\UpdateBranchProtection\Request\Applicationjson\Restrictions $restrictions, public bool $required_linear_history, public ?bool $allow_force_pushes, public bool $allow_deletions, public bool $block_creations, public bool $required_conversation_resolution, public bool $lock_branch, public bool $allow_fork_syncing)
+    public function __construct(public ?Schema\Repos\UpdateBranchProtection\Request\Applicationjson\RequiredStatusChecks $required_status_checks, public ?bool $enforce_admins, public ?Schema\Repos\UpdateBranchProtection\Request\Applicationjson\RequiredPullRequestReviews $required_pull_request_reviews, public ?Schema\Repos\UpdateBranchProtection\Request\Applicationjson\Restrictions $restrictions, public ?bool $required_linear_history, public ?bool $allow_force_pushes, public ?bool $allow_deletions, public ?bool $block_creations, public ?bool $required_conversation_resolution, public ?bool $lock_branch, public ?bool $allow_fork_syncing)
     {
     }
 }

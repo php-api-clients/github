@@ -18,7 +18,7 @@ final readonly class ProjectsV2
      * owner: A GitHub user.
      * creator: A GitHub user.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?Schema\SimpleUser $owner, public ?Schema\SimpleUser $creator, public ?string $title, public ?string $description, public ?bool $public, public ?string $closed_at, public ?string $created_at, public ?string $updated_at, public ?int $number, public ?string $short_description, public ?string $deleted_at, public mixed $deleted_by)
+    public function __construct(public int $id, public string $node_id, public Schema\SimpleUser $owner, public Schema\SimpleUser $creator, public string $title, public ?string $description, public bool $public, public ?string $closed_at, public string $created_at, public string $updated_at, public int $number, public ?string $short_description, public ?string $deleted_at, public mixed $deleted_by)
     {
     }
 }

@@ -26,7 +26,7 @@ final readonly class Page
      * public: Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      * https_enforced: Whether https is enabled on the domain
      */
-    public function __construct(public ?string $url, public ?string $status, public ?string $cname, public ?string $protected_domain_state, public ?string $pending_domain_unverified_at, public ?bool $custom_404, public string $html_url, public ?string $build_type, public Schema\PagesSourceHash $source, public ?bool $public, public Schema\PagesHttpsCertificate $https_certificate, public bool $https_enforced)
+    public function __construct(public string $url, public ?string $status, public ?string $cname, public ?string $protected_domain_state, public ?string $pending_domain_unverified_at, public bool $custom_404, public ?string $html_url, public ?string $build_type, public ?Schema\PagesSourceHash $source, public bool $public, public ?Schema\PagesHttpsCertificate $https_certificate, public ?bool $https_enforced)
     {
     }
 }

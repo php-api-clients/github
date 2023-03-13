@@ -17,9 +17,9 @@ final readonly class Applicationjson
     /**
      * visibility: Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
      * selected_usernames: The usernames of the organization members who should have access to codespaces in the organization. Required when `visibility` is `selected_members`. The provided list of usernames will replace any existing value.
-     * @param array<string> $selected_usernames
+     * @param ?array<string> $selected_usernames
      */
-    public function __construct(public ?string $visibility, public array $selected_usernames)
+    public function __construct(public string $visibility, public ?array $selected_usernames)
     {
     }
 }

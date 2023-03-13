@@ -15,9 +15,9 @@ final readonly class Hovercard
     public const SCHEMA_DESCRIPTION = 'Hovercard';
     public const SCHEMA_EXAMPLE_DATA = '{"contexts":[{"message":"generated_message","octicon":"generated_octicon"}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\Hovercard\Contexts> $contexts
+     * @param array<\ApiClients\Client\GitHub\Schema\Hovercard\Contexts> $contexts
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Hovercard\Contexts::class)] public ?array $contexts)
+    public function __construct(#[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Hovercard\Contexts::class)] public array $contexts)
     {
     }
 }

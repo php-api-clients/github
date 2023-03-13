@@ -19,10 +19,10 @@ final readonly class CheckRun
      * head_sha: The SHA of the commit that is being checked.
      * status: The phase of the lifecycle that the check is currently in.
      * name: The name of the check.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\PullRequestMinimal> $pull_requests
+     * @param array<\ApiClients\Client\GitHub\Schema\PullRequestMinimal> $pull_requests
      * deployment: A deployment created as the result of an Actions check run from a workflow that references an environment
      */
-    public function __construct(public ?int $id, public ?string $head_sha, public ?string $node_id, public ?string $external_id, public ?string $url, public ?string $html_url, public ?string $details_url, public ?string $status, public ?string $conclusion, public ?string $started_at, public ?string $completed_at, public ?Schema\CheckRun\Output $output, public ?string $name, public ?Schema\CheckRun\CheckSuite $check_suite, public mixed $app, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PullRequestMinimal::class)] public ?array $pull_requests, public Schema\DeploymentSimple $deployment)
+    public function __construct(public int $id, public string $head_sha, public string $node_id, public ?string $external_id, public string $url, public ?string $html_url, public ?string $details_url, public string $status, public ?string $conclusion, public ?string $started_at, public ?string $completed_at, public Schema\CheckRun\Output $output, public string $name, public ?Schema\CheckRun\CheckSuite $check_suite, public mixed $app, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PullRequestMinimal::class)] public array $pull_requests, public ?Schema\DeploymentSimple $deployment)
     {
     }
 }

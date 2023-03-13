@@ -18,7 +18,7 @@ final readonly class Source
      * branch: The repository branch used to publish your site's source files.
      * path: The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`
      */
-    public function __construct(public ?string $branch, public string $path)
+    public function __construct(public string $branch, public ?string $path)
     {
     }
 }

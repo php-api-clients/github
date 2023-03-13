@@ -27,7 +27,7 @@ final readonly class HookDeliveryItem
      * installation_id: The id of the GitHub App installation associated with this event.
      * repository_id: The id of the repository associated with this event.
      */
-    public function __construct(public ?int $id, public ?string $guid, public ?string $delivered_at, public ?bool $redelivery, public ?int $duration, public ?string $status, public ?int $status_code, public ?string $event, public ?string $action, public ?int $installation_id, public ?int $repository_id)
+    public function __construct(public int $id, public string $guid, public string $delivered_at, public bool $redelivery, public int $duration, public string $status, public int $status_code, public string $event, public ?string $action, public ?int $installation_id, public ?int $repository_id)
     {
     }
 }

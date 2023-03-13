@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"field_value":{"field_node_id":"generated_field_node_id","field_type":"generated_field_type"}}';
-    public function __construct(public ?Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue $field_value)
+    public function __construct(public Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue $field_value)
     {
     }
 }

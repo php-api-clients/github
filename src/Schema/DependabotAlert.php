@@ -29,7 +29,7 @@ final readonly class DependabotAlert
      * dismissed_comment: An optional comment associated with the alert's dismissal.
      * fixed_at: The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function __construct(public ?int $number, public ?string $state, public ?Schema\DependabotAlertWithRepository\Dependency $dependency, public ?Schema\DependabotAlertSecurityAdvisory $security_advisory, public ?Schema\DependabotAlertSecurityVulnerability $security_vulnerability, public ?string $url, public ?string $html_url, public ?string $created_at, public ?string $updated_at, public ?string $dismissed_at, public mixed $dismissed_by, public ?string $dismissed_reason, public ?string $dismissed_comment, public ?string $fixed_at)
+    public function __construct(public int $number, public string $state, public Schema\DependabotAlertWithRepository\Dependency $dependency, public Schema\DependabotAlertSecurityAdvisory $security_advisory, public Schema\DependabotAlertSecurityVulnerability $security_vulnerability, public string $url, public string $html_url, public string $created_at, public string $updated_at, public ?string $dismissed_at, public mixed $dismissed_by, public ?string $dismissed_reason, public ?string $dismissed_comment, public ?string $fixed_at)
     {
     }
 }

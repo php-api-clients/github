@@ -18,7 +18,7 @@ final readonly class ReleaseNotesContent
      * name: The generated name of the release
      * body: The generated body describing the contents of the release supporting markdown formatting
      */
-    public function __construct(public ?string $name, public ?string $body)
+    public function __construct(public string $name, public string $body)
     {
     }
 }

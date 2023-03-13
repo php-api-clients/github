@@ -14,7 +14,7 @@ final readonly class Output
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"title":"generated_title","summary":"generated_summary","text":"generated_text","annotations_count":13,"annotations_url":"generated_annotations_url"}';
-    public function __construct(public ?string $title, public ?string $summary, public ?string $text, public ?int $annotations_count, public ?string $annotations_url)
+    public function __construct(public ?string $title, public ?string $summary, public ?string $text, public int $annotations_count, public string $annotations_url)
     {
     }
 }

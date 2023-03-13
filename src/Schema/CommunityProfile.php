@@ -14,7 +14,7 @@ final readonly class CommunityProfile
     public const SCHEMA_TITLE = 'Community Profile';
     public const SCHEMA_DESCRIPTION = 'Community Profile';
     public const SCHEMA_EXAMPLE_DATA = '{"health_percentage":100,"description":"My first repository on GitHub!","documentation":"example.com","files":{"code_of_conduct":null,"code_of_conduct_file":null,"license":null,"contributing":null,"readme":null,"issue_template":null,"pull_request_template":null},"updated_at":"2017-02-28T19:09:29Z","content_reports_enabled":true}';
-    public function __construct(public ?int $health_percentage, public ?string $description, public ?string $documentation, public ?Schema\CommunityProfile\Files $files, public ?string $updated_at, public bool $content_reports_enabled)
+    public function __construct(public int $health_percentage, public ?string $description, public ?string $documentation, public Schema\CommunityProfile\Files $files, public ?string $updated_at, public ?bool $content_reports_enabled)
     {
     }
 }

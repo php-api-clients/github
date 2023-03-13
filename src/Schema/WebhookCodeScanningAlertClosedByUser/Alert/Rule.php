@@ -21,7 +21,7 @@ final readonly class Rule
      * severity: The severity of the alert.
      * @param ?array<string> $tags
      */
-    public function __construct(public ?string $description, public string $full_description, public ?string $help, public ?string $help_uri, public ?string $id, public string $name, public ?string $severity, public ?array $tags)
+    public function __construct(public string $description, public ?string $full_description, public ?string $help, public ?string $help_uri, public string $id, public ?string $name, public ?string $severity, public ?array $tags)
     {
     }
 }

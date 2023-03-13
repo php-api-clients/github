@@ -17,7 +17,7 @@ final readonly class Name
     /**
      * from: The previous version of the name if the action was `edited`.
      */
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

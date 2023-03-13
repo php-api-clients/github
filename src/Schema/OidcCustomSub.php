@@ -16,9 +16,9 @@ final readonly class OidcCustomSub
     public const SCHEMA_EXAMPLE_DATA = '{"include_claim_keys":["generated_include_claim_keys"]}';
     /**
      * include_claim_keys: Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
-     * @param ?array<string> $include_claim_keys
+     * @param array<string> $include_claim_keys
      */
-    public function __construct(public ?array $include_claim_keys)
+    public function __construct(public array $include_claim_keys)
     {
     }
 }

@@ -30,149 +30,167 @@ class Contributors implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity(array $payload): \ApiClients\Client\GitHub\Schema\ContributorActivity
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['author'] ?? null;
-    
-                if ($value === null) {
-                    $properties['author'] = null;
-                    goto after_author;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity(array $payload): \ApiClients\Client\GitHub\Schema\ContributorActivity
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['author'] ?? null;
 
-                $properties['author'] = $value;
-    
-                after_author:
+            if ($value === null) {
+                $properties['author'] = null;
+                goto after_author;
+            }
 
-                $value = $payload['total'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total'] = null;
-                    goto after_total;
-                }
+            $properties['author'] = $value;
 
-                $properties['total'] = $value;
-    
-                after_total:
+            after_author:
 
-                $value = $payload['weeks'] ?? null;
-    
-                if ($value === null) {
-                    $properties['weeks'] = null;
-                    goto after_weeks;
-                }
+            $value = $payload['total'] ?? null;
 
-                static $weeksCaster1;
-    
-                if ($weeksCaster1 === null) {
-                    $weeksCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['weeks'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'weeks';
+                goto after_weeks;
+            }
+
+            static $weeksCaster1;
+
+            if ($weeksCaster1 === null) {
+                $weeksCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\ContributorActivity\\Weeks',
 ));
-                }
-    
-                $value = $weeksCaster1->cast($value, $this);
+            }
 
-                $properties['weeks'] = $value;
-    
-                after_weeks:
+            $value = $weeksCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContributorActivity::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ContributorActivity(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
-            }
+            $properties['weeks'] = $value;
+
+            after_weeks:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContributorActivity::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ContributorActivity(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks(array $payload): \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['w'] ?? null;
-    
-                if ($value === null) {
-                    $properties['w'] = null;
-                    goto after_w;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks(array $payload): \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['w'] ?? null;
 
-                $properties['w'] = $value;
-    
-                after_w:
-
-                $value = $payload['a'] ?? null;
-    
-                if ($value === null) {
-                    $properties['a'] = null;
-                    goto after_a;
-                }
-
-                $properties['a'] = $value;
-    
-                after_a:
-
-                $value = $payload['d'] ?? null;
-    
-                if ($value === null) {
-                    $properties['d'] = null;
-                    goto after_d;
-                }
-
-                $properties['d'] = $value;
-    
-                after_d:
-
-                $value = $payload['c'] ?? null;
-    
-                if ($value === null) {
-                    $properties['c'] = null;
-                    goto after_c;
-                }
-
-                $properties['c'] = $value;
-    
-                after_c:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['w'] = null;
+                goto after_w;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['w'] = $value;
+
+            after_w:
+
+            $value = $payload['a'] ?? null;
+
+            if ($value === null) {
+                $properties['a'] = null;
+                goto after_a;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
+
+            $properties['a'] = $value;
+
+            after_a:
+
+            $value = $payload['d'] ?? null;
+
+            if ($value === null) {
+                $properties['d'] = null;
+                goto after_d;
+            }
+
+            $properties['d'] = $value;
+
+            after_d:
+
+            $value = $payload['c'] ?? null;
+
+            if ($value === null) {
+                $properties['c'] = null;
+                goto after_c;
+            }
+
+            $properties['c'] = $value;
+
+            after_c:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ContributorActivity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity($object),
-                'ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\ContributorActivity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity($object),
+            'ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -245,12 +263,12 @@ class Contributors implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ContributorActivity);
         $result = [];
-        
+
         $author = $object->author;
 
         if ($author === null) {
@@ -260,18 +278,10 @@ class Contributors implements ObjectMapper
 
         
         $total = $object->total;
-
-        if ($total === null) {
-            goto after_total;
-        }
         after_total:        $result['total'] = $total;
 
         
         $weeks = $object->weeks;
-
-        if ($weeks === null) {
-            goto after_weeks;
-        }
         static $weeksSerializer0;
 
         if ($weeksSerializer0 === null) {
@@ -287,12 +297,12 @@ class Contributors implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks);
         $result = [];
-        
+
         $w = $object->w;
 
         if ($w === null) {

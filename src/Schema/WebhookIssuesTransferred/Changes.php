@@ -18,7 +18,7 @@ final readonly class Changes
      * new_issue: The [issue](https://docs.github.com/rest/reference/issues) itself.
      * new_repository: A git repository
      */
-    public function __construct(public ?Schema\WebhookIssuesPinned\Issue $new_issue, public ?Schema\WebhookIssuesTransferred\Changes\NewRepository $new_repository)
+    public function __construct(public Schema\WebhookIssuesPinned\Issue $new_issue, public Schema\WebhookIssuesTransferred\Changes\NewRepository $new_repository)
     {
     }
 }

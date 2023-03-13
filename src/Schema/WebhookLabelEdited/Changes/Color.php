@@ -17,7 +17,7 @@ final readonly class Color
     /**
      * from: The previous version of the color if the action was `edited`.
      */
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

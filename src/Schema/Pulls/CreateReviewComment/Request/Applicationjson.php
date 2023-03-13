@@ -25,7 +25,7 @@ final readonly class Applicationjson
      * start_side: **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
      * in_reply_to: The ID of the review comment to reply to. To find the ID of a review comment with ["List review comments on a pull request"](#list-review-comments-on-a-pull-request). When specified, all parameters other than `body` in the request body are ignored.
      */
-    public function __construct(public ?string $body, public ?string $commit_id, public ?string $path, public int $position, public string $side, public ?int $line, public int $start_line, public string $start_side, public int $in_reply_to)
+    public function __construct(public string $body, public string $commit_id, public string $path, public ?int $position, public ?string $side, public int $line, public ?int $start_line, public ?string $start_side, public ?int $in_reply_to)
     {
     }
 }

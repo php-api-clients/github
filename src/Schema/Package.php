@@ -19,7 +19,7 @@ final readonly class Package
      * name: The name of the package.
      * version_count: The number of versions of the package.
      */
-    public function __construct(public ?int $id, public ?string $name, public ?string $package_type, public ?string $url, public ?string $html_url, public ?int $version_count, public ?string $visibility, public mixed $owner, public mixed $repository, public ?string $created_at, public ?string $updated_at)
+    public function __construct(public int $id, public string $name, public string $package_type, public string $url, public string $html_url, public int $version_count, public string $visibility, public mixed $owner, public mixed $repository, public string $created_at, public string $updated_at)
     {
     }
 }

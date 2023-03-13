@@ -18,7 +18,7 @@ final readonly class ActionsCacheUsageOrgEnterprise
      * total_active_caches_count: The count of active caches across all repositories of an enterprise or an organization.
      * total_active_caches_size_in_bytes: The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
      */
-    public function __construct(public ?int $total_active_caches_count, public ?int $total_active_caches_size_in_bytes)
+    public function __construct(public int $total_active_caches_count, public int $total_active_caches_size_in_bytes)
     {
     }
 }

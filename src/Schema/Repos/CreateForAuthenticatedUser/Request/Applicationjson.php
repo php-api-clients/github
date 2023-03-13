@@ -53,7 +53,7 @@ final readonly class Applicationjson
     * has_downloads: Whether downloads are enabled.
     * is_template: Whether this repository acts as a template that can be used to generate new repositories.
     */
-    public function __construct(public ?string $name, public string $description, public string $homepage, public bool $private, public bool $has_issues, public bool $has_projects, public bool $has_wiki, public bool $has_discussions, public int $team_id, public bool $auto_init, public string $gitignore_template, public string $license_template, public bool $allow_squash_merge, public bool $allow_merge_commit, public bool $allow_rebase_merge, public bool $allow_auto_merge, public bool $delete_branch_on_merge, public string $squash_merge_commit_title, public string $squash_merge_commit_message, public string $merge_commit_title, public string $merge_commit_message, public bool $has_downloads, public bool $is_template)
+    public function __construct(public string $name, public ?string $description, public ?string $homepage, public ?bool $private, public ?bool $has_issues, public ?bool $has_projects, public ?bool $has_wiki, public ?bool $has_discussions, public ?int $team_id, public ?bool $auto_init, public ?string $gitignore_template, public ?string $license_template, public ?bool $allow_squash_merge, public ?bool $allow_merge_commit, public ?bool $allow_rebase_merge, public ?bool $allow_auto_merge, public ?bool $delete_branch_on_merge, public ?string $squash_merge_commit_title, public ?string $squash_merge_commit_message, public ?string $merge_commit_title, public ?string $merge_commit_message, public ?bool $has_downloads, public ?bool $is_template)
     {
     }
 }

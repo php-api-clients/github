@@ -14,7 +14,7 @@ final readonly class SocialAccount
     public const SCHEMA_TITLE = 'Social account';
     public const SCHEMA_DESCRIPTION = 'Social media account';
     public const SCHEMA_EXAMPLE_DATA = '{"provider":"linkedin","url":"https:\\/\\/www.linkedin.com\\/company\\/github\\/"}';
-    public function __construct(public ?string $provider, public ?string $url)
+    public function __construct(public string $provider, public string $url)
     {
     }
 }

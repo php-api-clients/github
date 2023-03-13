@@ -14,7 +14,7 @@ final readonly class CommunityHealthFile
     public const SCHEMA_TITLE = 'Community Health File';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated_url","html_url":"generated_html_url"}';
-    public function __construct(public ?string $url, public ?string $html_url)
+    public function __construct(public string $url, public string $html_url)
     {
     }
 }

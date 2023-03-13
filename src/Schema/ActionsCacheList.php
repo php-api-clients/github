@@ -17,9 +17,9 @@ final readonly class ActionsCacheList
     /**
      * total_count: Total number of caches
      * actions_caches: Array of caches
-     * @param ?array<\ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches> $actions_caches
+     * @param array<\ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches> $actions_caches
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsCacheList\ActionsCaches::class)] public ?array $actions_caches)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsCacheList\ActionsCaches::class)] public array $actions_caches)
     {
     }
 }

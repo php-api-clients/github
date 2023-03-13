@@ -19,7 +19,7 @@ final readonly class CombinedBillingUsage
      * estimated_paid_storage_for_month: Estimated storage space (GB) used in billing cycle.
      * estimated_storage_for_month: Estimated sum of free and paid storage space (GB) used in billing cycle.
      */
-    public function __construct(public ?int $days_left_in_billing_cycle, public ?int $estimated_paid_storage_for_month, public ?int $estimated_storage_for_month)
+    public function __construct(public int $days_left_in_billing_cycle, public int $estimated_paid_storage_for_month, public int $estimated_storage_for_month)
     {
     }
 }

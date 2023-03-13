@@ -14,7 +14,7 @@ final readonly class Defaults
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"location":"generated_location","devcontainer_path":"generated_devcontainer_path"}';
-    public function __construct(public ?string $location, public ?string $devcontainer_path)
+    public function __construct(public string $location, public ?string $devcontainer_path)
     {
     }
 }

@@ -17,7 +17,7 @@ final readonly class SecretScanningLocationIssueBody
     /**
      * issue_body_url: The API URL to get the issue where the secret was detected.
      */
-    public function __construct(public ?string $issue_body_url)
+    public function __construct(public string $issue_body_url)
     {
     }
 }

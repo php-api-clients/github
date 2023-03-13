@@ -21,7 +21,7 @@ final readonly class OrganizationActionsVariable
      * updated_at: The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * visibility: Visibility of a variable
      */
-    public function __construct(public ?string $name, public ?string $value, public ?string $created_at, public ?string $updated_at, public ?string $visibility, public string $selected_repositories_url)
+    public function __construct(public string $name, public string $value, public string $created_at, public string $updated_at, public string $visibility, public ?string $selected_repositories_url)
     {
     }
 }

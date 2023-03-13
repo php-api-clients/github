@@ -20,10 +20,10 @@ final readonly class Release
      * draft: true to create a draft (unpublished) release, false to create a published one.
      * prerelease: Whether to identify the release as a prerelease or a full release.
      * author: A GitHub user.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\ReleaseAsset> $assets
+     * @param array<\ApiClients\Client\GitHub\Schema\ReleaseAsset> $assets
      * discussion_url: The URL of the release discussion.
      */
-    public function __construct(public ?string $url, public ?string $html_url, public ?string $assets_url, public ?string $upload_url, public ?string $tarball_url, public ?string $zipball_url, public ?int $id, public ?string $node_id, public ?string $tag_name, public ?string $target_commitish, public ?string $name, public ?string $body, public ?bool $draft, public ?bool $prerelease, public ?string $created_at, public ?string $published_at, public ?Schema\SimpleUser $author, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ReleaseAsset::class)] public ?array $assets, public string $body_html, public string $body_text, public int $mentions_count, public string $discussion_url, public Schema\ReactionRollup $reactions)
+    public function __construct(public string $url, public string $html_url, public string $assets_url, public string $upload_url, public ?string $tarball_url, public ?string $zipball_url, public int $id, public string $node_id, public string $tag_name, public string $target_commitish, public ?string $name, public ?string $body, public bool $draft, public bool $prerelease, public string $created_at, public ?string $published_at, public Schema\SimpleUser $author, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ReleaseAsset::class)] public array $assets, public ?string $body_html, public ?string $body_text, public ?int $mentions_count, public ?string $discussion_url, public ?Schema\ReactionRollup $reactions)
     {
     }
 }

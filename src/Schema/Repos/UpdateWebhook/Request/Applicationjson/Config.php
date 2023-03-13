@@ -19,7 +19,7 @@ final readonly class Config
      * content_type: The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
      * secret: If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
      */
-    public function __construct(public ?string $url, public string $content_type, public string $secret, public string $insecure_ssl, public string $address, public string $room)
+    public function __construct(public string $url, public ?string $content_type, public ?string $secret, public ?string $insecure_ssl, public ?string $address, public ?string $room)
     {
     }
 }

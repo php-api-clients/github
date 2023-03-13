@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"tier":{"from":{"created_at":"generated_created_at","description":"generated_description","is_custom_ammount":false,"is_custom_amount":false,"is_one_time":false,"monthly_price_in_cents":13,"monthly_price_in_dollars":13,"name":"generated_name","node_id":"generated_node_id"}}}';
-    public function __construct(public ?Schema\WebhookSponsorshipPendingTierChange\Changes\Tier $tier)
+    public function __construct(public Schema\WebhookSponsorshipPendingTierChange\Changes\Tier $tier)
     {
     }
 }

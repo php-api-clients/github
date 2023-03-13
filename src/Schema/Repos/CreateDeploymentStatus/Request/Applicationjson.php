@@ -23,7 +23,7 @@ final readonly class Applicationjson
      * environment_url: Sets the URL for accessing your environment. Default: `""`
      * auto_inactive: Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status's deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`
      */
-    public function __construct(public ?string $state, public string $target_url, public string $log_url, public string $description, public string $environment, public string $environment_url, public bool $auto_inactive)
+    public function __construct(public string $state, public ?string $target_url, public ?string $log_url, public ?string $description, public ?string $environment, public ?string $environment_url, public ?bool $auto_inactive)
     {
     }
 }

@@ -14,7 +14,7 @@ final readonly class TagProtection
     public const SCHEMA_TITLE = 'Tag protection';
     public const SCHEMA_DESCRIPTION = 'Tag protection';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"created_at":"2011-01-26T19:01:12Z","updated_at":"2011-01-26T19:01:12Z","enabled":true,"pattern":"v1.*"}';
-    public function __construct(public int $id, public string $created_at, public string $updated_at, public bool $enabled, public ?string $pattern)
+    public function __construct(public ?int $id, public ?string $created_at, public ?string $updated_at, public ?bool $enabled, public string $pattern)
     {
     }
 }

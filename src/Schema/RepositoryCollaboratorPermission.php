@@ -14,7 +14,7 @@ final readonly class RepositoryCollaboratorPermission
     public const SCHEMA_TITLE = 'Repository Collaborator Permission';
     public const SCHEMA_DESCRIPTION = 'Repository Collaborator Permission';
     public const SCHEMA_EXAMPLE_DATA = '{"permission":"generated_permission","role_name":"admin","user":null}';
-    public function __construct(public ?string $permission, public ?string $role_name, public mixed $user)
+    public function __construct(public string $permission, public string $role_name, public mixed $user)
     {
     }
 }

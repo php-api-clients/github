@@ -19,7 +19,7 @@ final readonly class Applicationjson
      * mode: The rendering mode.
      * context: The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
      */
-    public function __construct(public ?string $text, public string $mode, public string $context)
+    public function __construct(public string $text, public ?string $mode, public ?string $context)
     {
     }
 }

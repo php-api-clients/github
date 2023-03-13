@@ -18,7 +18,7 @@ final readonly class ProtectedBranchPullRequestReview
      * bypass_pull_request_allowances: Allow specific users, teams, or apps to bypass pull request requirements.
      * require_last_push_approval: Whether the most recent push must be approved by someone other than the person who pushed it.
      */
-    public function __construct(public string $url, public Schema\ProtectedBranchPullRequestReview\DismissalRestrictions $dismissal_restrictions, public Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances $bypass_pull_request_allowances, public ?bool $dismiss_stale_reviews, public ?bool $require_code_owner_reviews, public int $required_approving_review_count, public bool $require_last_push_approval)
+    public function __construct(public ?string $url, public ?Schema\ProtectedBranchPullRequestReview\DismissalRestrictions $dismissal_restrictions, public ?Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances $bypass_pull_request_allowances, public bool $dismiss_stale_reviews, public bool $require_code_owner_reviews, public ?int $required_approving_review_count, public ?bool $require_last_push_approval)
     {
     }
 }

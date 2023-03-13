@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * branch: The name of the branch which should be updated to match upstream.
      */
-    public function __construct(public ?string $branch)
+    public function __construct(public string $branch)
     {
     }
 }

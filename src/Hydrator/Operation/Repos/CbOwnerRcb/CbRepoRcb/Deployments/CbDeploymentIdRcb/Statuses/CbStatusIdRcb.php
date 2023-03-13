@@ -30,271 +30,289 @@ class CbStatusIdRcb implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentStatus(array $payload): \ApiClients\Client\GitHub\Schema\DeploymentStatus
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentStatus(array $payload): \ApiClients\Client\GitHub\Schema\DeploymentStatus
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['url'] ?? null;
 
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['state'] ?? null;
-    
-                if ($value === null) {
-                    $properties['state'] = null;
-                    goto after_state;
-                }
-
-                $properties['state'] = $value;
-    
-                after_state:
-
-                $value = $payload['creator'] ?? null;
-    
-                if ($value === null) {
-                    $properties['creator'] = null;
-                    goto after_creator;
-                }
-
-                $properties['creator'] = $value;
-    
-                after_creator:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['environment'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'environment';
-                    goto after_environment;
-                }
-
-                $properties['environment'] = $value;
-    
-                after_environment:
-
-                $value = $payload['target_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['target_url'] = null;
-                    goto after_target_url;
-                }
-
-                $properties['target_url'] = $value;
-    
-                after_target_url:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['deployment_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['deployment_url'] = null;
-                    goto after_deployment_url;
-                }
-
-                $properties['deployment_url'] = $value;
-    
-                after_deployment_url:
-
-                $value = $payload['repository_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repository_url'] = null;
-                    goto after_repository_url;
-                }
-
-                $properties['repository_url'] = $value;
-    
-                after_repository_url:
-
-                $value = $payload['environment_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'environment_url';
-                    goto after_environment_url;
-                }
-
-                $properties['environment_url'] = $value;
-    
-                after_environment_url:
-
-                $value = $payload['log_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'log_url';
-                    goto after_log_url;
-                }
-
-                $properties['log_url'] = $value;
-    
-                after_log_url:
-
-                $value = $payload['performed_via_github_app'] ?? null;
-    
-                if ($value === null) {
-                    $properties['performed_via_github_app'] = null;
-                    goto after_performed_via_github_app;
-                }
-
-                $properties['performed_via_github_app'] = $value;
-    
-                after_performed_via_github_app:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentStatus', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DeploymentStatus::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DeploymentStatus(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentStatus', $exception, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_node_id;
             }
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'state';
+                goto after_state;
+            }
+
+            $properties['state'] = $value;
+
+            after_state:
+
+            $value = $payload['creator'] ?? null;
+
+            if ($value === null) {
+                $properties['creator'] = null;
+                goto after_creator;
+            }
+
+            $properties['creator'] = $value;
+
+            after_creator:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'description';
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['environment'] ?? null;
+
+            if ($value === null) {
+                $properties['environment'] = null;
+                goto after_environment;
+            }
+
+            $properties['environment'] = $value;
+
+            after_environment:
+
+            $value = $payload['target_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'target_url';
+                goto after_target_url;
+            }
+
+            $properties['target_url'] = $value;
+
+            after_target_url:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['deployment_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'deployment_url';
+                goto after_deployment_url;
+            }
+
+            $properties['deployment_url'] = $value;
+
+            after_deployment_url:
+
+            $value = $payload['repository_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repository_url';
+                goto after_repository_url;
+            }
+
+            $properties['repository_url'] = $value;
+
+            after_repository_url:
+
+            $value = $payload['environment_url'] ?? null;
+
+            if ($value === null) {
+                $properties['environment_url'] = null;
+                goto after_environment_url;
+            }
+
+            $properties['environment_url'] = $value;
+
+            after_environment_url:
+
+            $value = $payload['log_url'] ?? null;
+
+            if ($value === null) {
+                $properties['log_url'] = null;
+                goto after_log_url;
+            }
+
+            $properties['log_url'] = $value;
+
+            after_log_url:
+
+            $value = $payload['performed_via_github_app'] ?? null;
+
+            if ($value === null) {
+                $properties['performed_via_github_app'] = null;
+                goto after_performed_via_github_app;
+            }
+
+            $properties['performed_via_github_app'] = $value;
+
+            after_performed_via_github_app:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentStatus', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DeploymentStatus::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DeploymentStatus(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentStatus', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\DeploymentStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentStatus($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\DeploymentStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentStatus($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -367,41 +385,25 @@ class CbStatusIdRcb implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentStatus(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DeploymentStatus);
         $result = [];
-        
-        $url = $object->url;
 
-        if ($url === null) {
-            goto after_url;
-        }
+        $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
         $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
         after_id:        $result['id'] = $id;
 
         
         $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $state = $object->state;
-
-        if ($state === null) {
-            goto after_state;
-        }
         after_state:        $result['state'] = $state;
 
         
@@ -414,62 +416,50 @@ class CbStatusIdRcb implements ObjectMapper
 
         
         $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
         after_description:        $result['description'] = $description;
 
         
         $environment = $object->environment;
+
+        if ($environment === null) {
+            goto after_environment;
+        }
         after_environment:        $result['environment'] = $environment;
 
         
         $target_url = $object->target_url;
-
-        if ($target_url === null) {
-            goto after_target_url;
-        }
         after_target_url:        $result['target_url'] = $target_url;
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
         after_updated_at:        $result['updated_at'] = $updated_at;
 
         
         $deployment_url = $object->deployment_url;
-
-        if ($deployment_url === null) {
-            goto after_deployment_url;
-        }
         after_deployment_url:        $result['deployment_url'] = $deployment_url;
 
         
         $repository_url = $object->repository_url;
-
-        if ($repository_url === null) {
-            goto after_repository_url;
-        }
         after_repository_url:        $result['repository_url'] = $repository_url;
 
         
         $environment_url = $object->environment_url;
+
+        if ($environment_url === null) {
+            goto after_environment_url;
+        }
         after_environment_url:        $result['environment_url'] = $environment_url;
 
         
         $log_url = $object->log_url;
+
+        if ($log_url === null) {
+            goto after_log_url;
+        }
         after_log_url:        $result['log_url'] = $log_url;
 
         
@@ -484,12 +474,12 @@ class CbStatusIdRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {

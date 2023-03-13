@@ -18,7 +18,7 @@ final readonly class Authorization
      * scopes: A list of scopes that this authorization is in.
      * @param ?array<string> $scopes
      */
-    public function __construct(public ?int $id, public ?string $url, public ?array $scopes, public ?string $token, public ?string $token_last_eight, public ?string $hashed_token, public ?Schema\Authorization\App $app, public ?string $note, public ?string $note_url, public ?string $updated_at, public ?string $created_at, public ?string $fingerprint, public mixed $user, public mixed $installation, public ?string $expires_at)
+    public function __construct(public int $id, public string $url, public ?array $scopes, public string $token, public ?string $token_last_eight, public ?string $hashed_token, public Schema\Authorization\App $app, public ?string $note, public ?string $note_url, public string $updated_at, public string $created_at, public ?string $fingerprint, public mixed $user, public mixed $installation, public ?string $expires_at)
     {
     }
 }

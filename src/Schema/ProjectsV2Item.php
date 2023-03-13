@@ -18,7 +18,7 @@ final readonly class ProjectsV2Item
      * content_type: The type of content tracked in a project item
      * creator: A GitHub user.
      */
-    public function __construct(public ?int $id, public string $node_id, public string $project_node_id, public ?string $content_node_id, public ?string $content_type, public Schema\SimpleUser $creator, public ?string $created_at, public ?string $updated_at, public ?string $archived_at)
+    public function __construct(public int $id, public ?string $node_id, public ?string $project_node_id, public string $content_node_id, public string $content_type, public ?Schema\SimpleUser $creator, public string $created_at, public string $updated_at, public ?string $archived_at)
     {
     }
 }

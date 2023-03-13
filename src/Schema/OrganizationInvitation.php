@@ -17,7 +17,7 @@ final readonly class OrganizationInvitation
     /**
      * inviter: A GitHub user.
      */
-    public function __construct(public ?int $id, public ?string $login, public ?string $email, public ?string $role, public ?string $created_at, public ?string $failed_at, public ?string $failed_reason, public ?Schema\SimpleUser $inviter, public ?int $team_count, public ?string $node_id, public ?string $invitation_teams_url, public string $invitation_source)
+    public function __construct(public int $id, public ?string $login, public ?string $email, public string $role, public string $created_at, public ?string $failed_at, public ?string $failed_reason, public Schema\SimpleUser $inviter, public int $team_count, public string $node_id, public string $invitation_teams_url, public ?string $invitation_source)
     {
     }
 }

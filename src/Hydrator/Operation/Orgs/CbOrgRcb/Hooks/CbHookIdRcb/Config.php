@@ -29,83 +29,102 @@ class Config implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig(array $payload): \ApiClients\Client\GitHub\Schema\WebhookConfig
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig(array $payload): \ApiClients\Client\GitHub\Schema\WebhookConfig
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['url'] ?? null;
 
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['content_type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['content_type'] = null;
-                    goto after_content_type;
-                }
-
-                $properties['content_type'] = $value;
-    
-                after_content_type:
-
-                $value = $payload['secret'] ?? null;
-    
-                if ($value === null) {
-                    $properties['secret'] = null;
-                    goto after_secret;
-                }
-
-                $properties['secret'] = $value;
-    
-                after_secret:
-
-                $value = $payload['insecure_ssl'] ?? null;
-    
-                if ($value === null) {
-                    $properties['insecure_ssl'] = null;
-                    goto after_insecure_ssl;
-                }
-
-                $properties['insecure_ssl'] = $value;
-    
-                after_insecure_ssl:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookConfig::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['content_type'] ?? null;
+
+            if ($value === null) {
+                $properties['content_type'] = null;
+                goto after_content_type;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\WebhookConfig(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
+
+            $properties['content_type'] = $value;
+
+            after_content_type:
+
+            $value = $payload['secret'] ?? null;
+
+            if ($value === null) {
+                $properties['secret'] = null;
+                goto after_secret;
+            }
+
+            $properties['secret'] = $value;
+
+            after_secret:
+
+            $value = $payload['insecure_ssl'] ?? null;
+
+            if ($value === null) {
+                $properties['insecure_ssl'] = null;
+                goto after_insecure_ssl;
+            }
+
+            $properties['insecure_ssl'] = $value;
+
+            after_insecure_ssl:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookConfig::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookConfig(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\WebhookConfig' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\WebhookConfig' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -178,12 +197,12 @@ class Config implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookConfig);
         $result = [];
-        
+
         $url = $object->url;
 
         if ($url === null) {

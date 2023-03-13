@@ -17,7 +17,7 @@ final readonly class OldPermission
     /**
      * from: The previous permissions of the collaborator if the action was edited.
      */
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

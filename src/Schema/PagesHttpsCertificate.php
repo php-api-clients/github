@@ -16,9 +16,9 @@ final readonly class PagesHttpsCertificate
     public const SCHEMA_EXAMPLE_DATA = '{"state":"approved","description":"Certificate is approved","domains":["example.com"],"expires_at":"generated_expires_at"}';
     /**
      * domains: Array of the domain set and its alternate name (if it is configured)
-     * @param ?array<string> $domains
+     * @param array<string> $domains
      */
-    public function __construct(public ?string $state, public ?string $description, public ?array $domains, public string $expires_at)
+    public function __construct(public string $state, public string $description, public array $domains, public ?string $expires_at)
     {
     }
 }

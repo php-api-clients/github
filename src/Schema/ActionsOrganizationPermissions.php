@@ -20,7 +20,7 @@ final readonly class ActionsOrganizationPermissions
      * allowed_actions: The permissions policy that controls the actions and reusable workflows that are allowed to run.
      * selected_actions_url: The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    public function __construct(public ?string $enabled_repositories, public string $selected_repositories_url, public string $allowed_actions, public string $selected_actions_url)
+    public function __construct(public string $enabled_repositories, public ?string $selected_repositories_url, public ?string $allowed_actions, public ?string $selected_actions_url)
     {
     }
 }

@@ -30,127 +30,145 @@ class UsageByRepository implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['total_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_count'] = null;
-                    goto after_total_count;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_count'] ?? null;
 
-                $properties['total_count'] = $value;
-    
-                after_total_count:
+            if ($value === null) {
+                $missingFields[] = 'total_count';
+                goto after_total_count;
+            }
 
-                $value = $payload['repository_cache_usages'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repository_cache_usages'] = null;
-                    goto after_repository_cache_usages;
-                }
+            $properties['total_count'] = $value;
 
-                static $repository_cache_usagesCaster1;
-    
-                if ($repository_cache_usagesCaster1 === null) {
-                    $repository_cache_usagesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_total_count:
+
+            $value = $payload['repository_cache_usages'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repository_cache_usages';
+                goto after_repository_cache_usages;
+            }
+
+            static $repository_cache_usagesCaster1;
+
+            if ($repository_cache_usagesCaster1 === null) {
+                $repository_cache_usagesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageByRepository',
 ));
-                }
-    
-                $value = $repository_cache_usagesCaster1->cast($value, $this);
+            }
 
-                $properties['repository_cache_usages'] = $value;
-    
-                after_repository_cache_usages:
+            $value = $repository_cache_usagesCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
+            $properties['repository_cache_usages'] = $value;
+
+            after_repository_cache_usages:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['full_name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['full_name'] = null;
-                    goto after_full_name;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['full_name'] ?? null;
 
-                $properties['full_name'] = $value;
-    
-                after_full_name:
-
-                $value = $payload['active_caches_size_in_bytes'] ?? null;
-    
-                if ($value === null) {
-                    $properties['active_caches_size_in_bytes'] = null;
-                    goto after_active_caches_size_in_bytes;
-                }
-
-                $properties['active_caches_size_in_bytes'] = $value;
-    
-                after_active_caches_size_in_bytes:
-
-                $value = $payload['active_caches_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['active_caches_count'] = null;
-                    goto after_active_caches_count;
-                }
-
-                $properties['active_caches_count'] = $value;
-    
-                after_active_caches_count:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'full_name';
+                goto after_full_name;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['full_name'] = $value;
+
+            after_full_name:
+
+            $value = $payload['active_caches_size_in_bytes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'active_caches_size_in_bytes';
+                goto after_active_caches_size_in_bytes;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+
+            $properties['active_caches_size_in_bytes'] = $value;
+
+            after_active_caches_size_in_bytes:
+
+            $value = $payload['active_caches_count'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'active_caches_count';
+                goto after_active_caches_count;
+            }
+
+            $properties['active_caches_count'] = $value;
+
+            after_active_caches_count:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200($object),
-                'ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -223,25 +241,17 @@ class UsageByRepository implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200);
         $result = [];
-        
-        $total_count = $object->total_count;
 
-        if ($total_count === null) {
-            goto after_total_count;
-        }
+        $total_count = $object->total_count;
         after_total_count:        $result['total_count'] = $total_count;
 
         
         $repository_cache_usages = $object->repository_cache_usages;
-
-        if ($repository_cache_usages === null) {
-            goto after_repository_cache_usages;
-        }
         static $repository_cache_usagesSerializer0;
 
         if ($repository_cache_usagesSerializer0 === null) {
@@ -257,33 +267,21 @@ class UsageByRepository implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository);
         $result = [];
-        
-        $full_name = $object->full_name;
 
-        if ($full_name === null) {
-            goto after_full_name;
-        }
+        $full_name = $object->full_name;
         after_full_name:        $result['full_name'] = $full_name;
 
         
         $active_caches_size_in_bytes = $object->active_caches_size_in_bytes;
-
-        if ($active_caches_size_in_bytes === null) {
-            goto after_active_caches_size_in_bytes;
-        }
         after_active_caches_size_in_bytes:        $result['active_caches_size_in_bytes'] = $active_caches_size_in_bytes;
 
         
         $active_caches_count = $object->active_caches_count;
-
-        if ($active_caches_count === null) {
-            goto after_active_caches_count;
-        }
         after_active_caches_count:        $result['active_caches_count'] = $active_caches_count;
 
 

@@ -25,7 +25,7 @@ final readonly class SecretScanningLocationCommit
      * commit_sha: SHA-1 hash ID of the associated commit
      * commit_url: The API URL to get the associated commit resource
      */
-    public function __construct(public ?string $path, public ?int $start_line, public ?int $end_line, public ?int $start_column, public ?int $end_column, public ?string $blob_sha, public ?string $blob_url, public ?string $commit_sha, public ?string $commit_url)
+    public function __construct(public string $path, public int $start_line, public int $end_line, public int $start_column, public int $end_column, public string $blob_sha, public string $blob_url, public string $commit_sha, public string $commit_url)
     {
     }
 }

@@ -33,7 +33,7 @@ final class GetOidcCustomSubTemplateForOrg
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\OidcCustomSub
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**A JSON serialized template for OIDC subject claim customization**/

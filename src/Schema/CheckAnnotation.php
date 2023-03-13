@@ -14,7 +14,7 @@ final readonly class CheckAnnotation
     public const SCHEMA_TITLE = 'Check Annotation';
     public const SCHEMA_DESCRIPTION = 'Check Annotation';
     public const SCHEMA_EXAMPLE_DATA = '{"path":"README.md","start_line":2,"end_line":2,"start_column":5,"end_column":10,"annotation_level":"warning","title":"Spell Checker","message":"Check your spelling for \'banaas\'.","raw_details":"Do you mean \'bananas\' or \'banana\'?","blob_href":"generated_blob_href"}';
-    public function __construct(public ?string $path, public ?int $start_line, public ?int $end_line, public ?int $start_column, public ?int $end_column, public ?string $annotation_level, public ?string $title, public ?string $message, public ?string $raw_details, public ?string $blob_href)
+    public function __construct(public string $path, public int $start_line, public int $end_line, public ?int $start_column, public ?int $end_column, public ?string $annotation_level, public ?string $title, public ?string $message, public ?string $raw_details, public string $blob_href)
     {
     }
 }

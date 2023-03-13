@@ -14,7 +14,7 @@ final readonly class LinkWithType
     public const SCHEMA_TITLE = 'Link With Type';
     public const SCHEMA_DESCRIPTION = 'Hypermedia Link with Type';
     public const SCHEMA_EXAMPLE_DATA = '{"href":"generated_href","type":"generated_type"}';
-    public function __construct(public ?string $href, public ?string $type)
+    public function __construct(public string $href, public string $type)
     {
     }
 }

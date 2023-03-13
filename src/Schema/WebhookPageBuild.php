@@ -22,7 +22,7 @@ final readonly class WebhookPageBuild
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?Schema\WebhookPageBuild\Build $build, public Schema\Enterprise $enterprise, public ?int $id, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public Schema\WebhookPageBuild\Build $build, public ?Schema\Enterprise $enterprise, public int $id, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

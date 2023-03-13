@@ -39,7 +39,7 @@ final class ConvertMemberToOutsideCollaborator
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Gists\CheckIsStarred\Response\Applicationjson\H404
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**User is getting converted asynchronously**/

@@ -14,7 +14,7 @@ final readonly class PageBuildStatus
     public const SCHEMA_TITLE = 'Page Build Status';
     public const SCHEMA_DESCRIPTION = 'Page Build Status';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/pages\\/builds\\/latest","status":"queued"}';
-    public function __construct(public ?string $url, public ?string $status)
+    public function __construct(public string $url, public string $status)
     {
     }
 }

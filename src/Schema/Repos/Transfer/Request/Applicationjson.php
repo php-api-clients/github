@@ -18,9 +18,9 @@ final readonly class Applicationjson
      * new_owner: The username or organization name the repository will be transferred to.
      * new_name: The new name to be given to the repository.
      * team_ids: ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
-     * @param array<int> $team_ids
+     * @param ?array<int> $team_ids
      */
-    public function __construct(public ?string $new_owner, public string $new_name, public array $team_ids)
+    public function __construct(public string $new_owner, public ?string $new_name, public ?array $team_ids)
     {
     }
 }

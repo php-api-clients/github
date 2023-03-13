@@ -17,7 +17,7 @@ final readonly class Object_
     /**
      * sha: SHA for the reference
      */
-    public function __construct(public ?string $type, public ?string $sha, public ?string $url)
+    public function __construct(public string $type, public string $sha, public string $url)
     {
     }
 }

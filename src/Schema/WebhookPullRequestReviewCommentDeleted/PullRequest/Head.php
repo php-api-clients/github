@@ -17,7 +17,7 @@ final readonly class Head
     /**
      * repo: A git repository
      */
-    public function __construct(public ?string $label, public ?string $ref, public ?Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo $repo, public ?string $sha, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(public string $label, public string $ref, public ?Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo $repo, public string $sha, public ?Schema\Discussion\AnswerChosenBy $user)
     {
     }
 }

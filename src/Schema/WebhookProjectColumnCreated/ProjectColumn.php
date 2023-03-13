@@ -18,7 +18,7 @@ final readonly class ProjectColumn
      * id: The unique identifier of the project column
      * name: Name of the project column
      */
-    public function __construct(public ?int $after_id, public ?string $cards_url, public ?string $created_at, public ?int $id, public ?string $name, public ?string $node_id, public ?string $project_url, public ?string $updated_at, public ?string $url)
+    public function __construct(public ?int $after_id, public string $cards_url, public string $created_at, public int $id, public string $name, public string $node_id, public string $project_url, public string $updated_at, public string $url)
     {
     }
 }

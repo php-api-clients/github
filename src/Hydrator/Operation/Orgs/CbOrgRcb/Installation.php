@@ -31,917 +31,934 @@ class Installation implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Installation(array $payload): \ApiClients\Client\GitHub\Schema\Installation
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Installation(array $payload): \ApiClients\Client\GitHub\Schema\Installation
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['account'] ?? null;
-    
-                if ($value === null) {
-                    $properties['account'] = null;
-                    goto after_account;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'account';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['account'] = $value;
-    
-                after_account:
-
-                $value = $payload['repository_selection'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repository_selection'] = null;
-                    goto after_repository_selection;
-                }
-
-                $properties['repository_selection'] = $value;
-    
-                after_repository_selection:
-
-                $value = $payload['access_tokens_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['access_tokens_url'] = null;
-                    goto after_access_tokens_url;
-                }
-
-                $properties['access_tokens_url'] = $value;
-    
-                after_access_tokens_url:
-
-                $value = $payload['repositories_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repositories_url'] = null;
-                    goto after_repositories_url;
-                }
-
-                $properties['repositories_url'] = $value;
-    
-                after_repositories_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['app_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['app_id'] = null;
-                    goto after_app_id;
-                }
-
-                $properties['app_id'] = $value;
-    
-                after_app_id:
-
-                $value = $payload['target_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['target_id'] = null;
-                    goto after_target_id;
-                }
-
-                $properties['target_id'] = $value;
-    
-                after_target_id:
-
-                $value = $payload['target_type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['target_type'] = null;
-                    goto after_target_type;
-                }
-
-                $properties['target_type'] = $value;
-    
-                after_target_type:
-
-                $value = $payload['permissions'] ?? null;
-    
-                if ($value === null) {
-                    $properties['permissions'] = null;
-                    goto after_permissions;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'permissions';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['permissions'] = $value;
-    
-                after_permissions:
-
-                $value = $payload['events'] ?? null;
-    
-                if ($value === null) {
-                    $properties['events'] = null;
-                    goto after_events;
-                }
-
-                $properties['events'] = $value;
-    
-                after_events:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['single_file_name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['single_file_name'] = null;
-                    goto after_single_file_name;
-                }
-
-                $properties['single_file_name'] = $value;
-    
-                after_single_file_name:
-
-                $value = $payload['has_multiple_single_files'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'has_multiple_single_files';
-                    goto after_has_multiple_single_files;
-                }
-
-                $properties['has_multiple_single_files'] = $value;
-    
-                after_has_multiple_single_files:
-
-                $value = $payload['single_file_paths'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'single_file_paths';
-                    goto after_single_file_paths;
-                }
-
-                $properties['single_file_paths'] = $value;
-    
-                after_single_file_paths:
-
-                $value = $payload['app_slug'] ?? null;
-    
-                if ($value === null) {
-                    $properties['app_slug'] = null;
-                    goto after_app_slug;
-                }
-
-                $properties['app_slug'] = $value;
-    
-                after_app_slug:
-
-                $value = $payload['suspended_by'] ?? null;
-    
-                if ($value === null) {
-                    $properties['suspended_by'] = null;
-                    goto after_suspended_by;
-                }
-
-                $properties['suspended_by'] = $value;
-    
-                after_suspended_by:
-
-                $value = $payload['suspended_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['suspended_at'] = null;
-                    goto after_suspended_at;
-                }
-
-                $properties['suspended_at'] = $value;
-    
-                after_suspended_at:
-
-                $value = $payload['contact_email'] ?? null;
-    
-                if ($value === null) {
-                    $properties['contact_email'] = null;
-                    goto after_contact_email;
-                }
-
-                $properties['contact_email'] = $value;
-    
-                after_contact_email:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Installation', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Installation::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['account'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'account';
+                goto after_account;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Installation(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Installation', $exception, stack: $this->hydrationStack);
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'account';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
+
+            $properties['account'] = $value;
+
+            after_account:
+
+            $value = $payload['repository_selection'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repository_selection';
+                goto after_repository_selection;
+            }
+
+            $properties['repository_selection'] = $value;
+
+            after_repository_selection:
+
+            $value = $payload['access_tokens_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'access_tokens_url';
+                goto after_access_tokens_url;
+            }
+
+            $properties['access_tokens_url'] = $value;
+
+            after_access_tokens_url:
+
+            $value = $payload['repositories_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repositories_url';
+                goto after_repositories_url;
+            }
+
+            $properties['repositories_url'] = $value;
+
+            after_repositories_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'html_url';
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['app_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'app_id';
+                goto after_app_id;
+            }
+
+            $properties['app_id'] = $value;
+
+            after_app_id:
+
+            $value = $payload['target_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'target_id';
+                goto after_target_id;
+            }
+
+            $properties['target_id'] = $value;
+
+            after_target_id:
+
+            $value = $payload['target_type'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'target_type';
+                goto after_target_type;
+            }
+
+            $properties['target_type'] = $value;
+
+            after_target_type:
+
+            $value = $payload['permissions'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'permissions';
+                goto after_permissions;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'permissions';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['permissions'] = $value;
+
+            after_permissions:
+
+            $value = $payload['events'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'events';
+                goto after_events;
+            }
+
+            $properties['events'] = $value;
+
+            after_events:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['single_file_name'] ?? null;
+
+            if ($value === null) {
+                $properties['single_file_name'] = null;
+                goto after_single_file_name;
+            }
+
+            $properties['single_file_name'] = $value;
+
+            after_single_file_name:
+
+            $value = $payload['has_multiple_single_files'] ?? null;
+
+            if ($value === null) {
+                $properties['has_multiple_single_files'] = null;
+                goto after_has_multiple_single_files;
+            }
+
+            $properties['has_multiple_single_files'] = $value;
+
+            after_has_multiple_single_files:
+
+            $value = $payload['single_file_paths'] ?? null;
+
+            if ($value === null) {
+                $properties['single_file_paths'] = null;
+                goto after_single_file_paths;
+            }
+
+            $properties['single_file_paths'] = $value;
+
+            after_single_file_paths:
+
+            $value = $payload['app_slug'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'app_slug';
+                goto after_app_slug;
+            }
+
+            $properties['app_slug'] = $value;
+
+            after_app_slug:
+
+            $value = $payload['suspended_by'] ?? null;
+
+            if ($value === null) {
+                $properties['suspended_by'] = null;
+                goto after_suspended_by;
+            }
+
+            $properties['suspended_by'] = $value;
+
+            after_suspended_by:
+
+            $value = $payload['suspended_at'] ?? null;
+
+            if ($value === null) {
+                $properties['suspended_at'] = null;
+                goto after_suspended_at;
+            }
+
+            $properties['suspended_at'] = $value;
+
+            after_suspended_at:
+
+            $value = $payload['contact_email'] ?? null;
+
+            if ($value === null) {
+                $properties['contact_email'] = null;
+                goto after_contact_email;
+            }
+
+            $properties['contact_email'] = $value;
+
+            after_contact_email:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Installation', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Installation::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Installation(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Installation', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['name'] ?? null;
 
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['email'] ?? null;
-    
-                if ($value === null) {
-                    $properties['email'] = null;
-                    goto after_email;
-                }
-
-                $properties['email'] = $value;
-    
-                after_email:
-
-                $value = $payload['login'] ?? null;
-    
-                if ($value === null) {
-                    $properties['login'] = null;
-                    goto after_login;
-                }
-
-                $properties['login'] = $value;
-    
-                after_login:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['avatar_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['avatar_url'] = null;
-                    goto after_avatar_url;
-                }
-
-                $properties['avatar_url'] = $value;
-    
-                after_avatar_url:
-
-                $value = $payload['gravatar_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gravatar_id'] = null;
-                    goto after_gravatar_id;
-                }
-
-                $properties['gravatar_id'] = $value;
-    
-                after_gravatar_id:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['followers_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['followers_url'] = null;
-                    goto after_followers_url;
-                }
-
-                $properties['followers_url'] = $value;
-    
-                after_followers_url:
-
-                $value = $payload['following_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['following_url'] = null;
-                    goto after_following_url;
-                }
-
-                $properties['following_url'] = $value;
-    
-                after_following_url:
-
-                $value = $payload['gists_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gists_url'] = null;
-                    goto after_gists_url;
-                }
-
-                $properties['gists_url'] = $value;
-    
-                after_gists_url:
-
-                $value = $payload['starred_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['starred_url'] = null;
-                    goto after_starred_url;
-                }
-
-                $properties['starred_url'] = $value;
-    
-                after_starred_url:
-
-                $value = $payload['subscriptions_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['subscriptions_url'] = null;
-                    goto after_subscriptions_url;
-                }
-
-                $properties['subscriptions_url'] = $value;
-    
-                after_subscriptions_url:
-
-                $value = $payload['organizations_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organizations_url'] = null;
-                    goto after_organizations_url;
-                }
-
-                $properties['organizations_url'] = $value;
-    
-                after_organizations_url:
-
-                $value = $payload['repos_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repos_url'] = null;
-                    goto after_repos_url;
-                }
-
-                $properties['repos_url'] = $value;
-    
-                after_repos_url:
-
-                $value = $payload['events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['events_url'] = null;
-                    goto after_events_url;
-                }
-
-                $properties['events_url'] = $value;
-    
-                after_events_url:
-
-                $value = $payload['received_events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['received_events_url'] = null;
-                    goto after_received_events_url;
-                }
-
-                $properties['received_events_url'] = $value;
-    
-                after_received_events_url:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['site_admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['site_admin'] = null;
-                    goto after_site_admin;
-                }
-
-                $properties['site_admin'] = $value;
-    
-                after_site_admin:
-
-                $value = $payload['starred_at'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'starred_at';
-                    goto after_starred_at;
-                }
-
-                $properties['starred_at'] = $value;
-    
-                after_starred_at:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['email'] ?? null;
+
+            if ($value === null) {
+                $properties['email'] = null;
+                goto after_email;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+
+            $properties['email'] = $value;
+
+            after_email:
+
+            $value = $payload['login'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'login';
+                goto after_login;
             }
+
+            $properties['login'] = $value;
+
+            after_login:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_node_id;
+            }
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'avatar_url';
+                goto after_avatar_url;
+            }
+
+            $properties['avatar_url'] = $value;
+
+            after_avatar_url:
+
+            $value = $payload['gravatar_id'] ?? null;
+
+            if ($value === null) {
+                $properties['gravatar_id'] = null;
+                goto after_gravatar_id;
+            }
+
+            $properties['gravatar_id'] = $value;
+
+            after_gravatar_id:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'html_url';
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['followers_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'followers_url';
+                goto after_followers_url;
+            }
+
+            $properties['followers_url'] = $value;
+
+            after_followers_url:
+
+            $value = $payload['following_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'following_url';
+                goto after_following_url;
+            }
+
+            $properties['following_url'] = $value;
+
+            after_following_url:
+
+            $value = $payload['gists_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'gists_url';
+                goto after_gists_url;
+            }
+
+            $properties['gists_url'] = $value;
+
+            after_gists_url:
+
+            $value = $payload['starred_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'starred_url';
+                goto after_starred_url;
+            }
+
+            $properties['starred_url'] = $value;
+
+            after_starred_url:
+
+            $value = $payload['subscriptions_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'subscriptions_url';
+                goto after_subscriptions_url;
+            }
+
+            $properties['subscriptions_url'] = $value;
+
+            after_subscriptions_url:
+
+            $value = $payload['organizations_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'organizations_url';
+                goto after_organizations_url;
+            }
+
+            $properties['organizations_url'] = $value;
+
+            after_organizations_url:
+
+            $value = $payload['repos_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repos_url';
+                goto after_repos_url;
+            }
+
+            $properties['repos_url'] = $value;
+
+            after_repos_url:
+
+            $value = $payload['events_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'events_url';
+                goto after_events_url;
+            }
+
+            $properties['events_url'] = $value;
+
+            after_events_url:
+
+            $value = $payload['received_events_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'received_events_url';
+                goto after_received_events_url;
+            }
+
+            $properties['received_events_url'] = $value;
+
+            after_received_events_url:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'type';
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['site_admin'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'site_admin';
+                goto after_site_admin;
+            }
+
+            $properties['site_admin'] = $value;
+
+            after_site_admin:
+
+            $value = $payload['starred_at'] ?? null;
+
+            if ($value === null) {
+                $properties['starred_at'] = null;
+                goto after_starred_at;
+            }
+
+            $properties['starred_at'] = $value;
+
+            after_starred_at:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions(array $payload): \ApiClients\Client\GitHub\Schema\AppPermissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['actions'] ?? null;
-    
-                if ($value === null) {
-                    $properties['actions'] = null;
-                    goto after_actions;
-                }
-
-                $properties['actions'] = $value;
-    
-                after_actions:
-
-                $value = $payload['administration'] ?? null;
-    
-                if ($value === null) {
-                    $properties['administration'] = null;
-                    goto after_administration;
-                }
-
-                $properties['administration'] = $value;
-    
-                after_administration:
-
-                $value = $payload['checks'] ?? null;
-    
-                if ($value === null) {
-                    $properties['checks'] = null;
-                    goto after_checks;
-                }
-
-                $properties['checks'] = $value;
-    
-                after_checks:
-
-                $value = $payload['contents'] ?? null;
-    
-                if ($value === null) {
-                    $properties['contents'] = null;
-                    goto after_contents;
-                }
-
-                $properties['contents'] = $value;
-    
-                after_contents:
-
-                $value = $payload['deployments'] ?? null;
-    
-                if ($value === null) {
-                    $properties['deployments'] = null;
-                    goto after_deployments;
-                }
-
-                $properties['deployments'] = $value;
-    
-                after_deployments:
-
-                $value = $payload['environments'] ?? null;
-    
-                if ($value === null) {
-                    $properties['environments'] = null;
-                    goto after_environments;
-                }
-
-                $properties['environments'] = $value;
-    
-                after_environments:
-
-                $value = $payload['issues'] ?? null;
-    
-                if ($value === null) {
-                    $properties['issues'] = null;
-                    goto after_issues;
-                }
-
-                $properties['issues'] = $value;
-    
-                after_issues:
-
-                $value = $payload['metadata'] ?? null;
-    
-                if ($value === null) {
-                    $properties['metadata'] = null;
-                    goto after_metadata;
-                }
-
-                $properties['metadata'] = $value;
-    
-                after_metadata:
-
-                $value = $payload['packages'] ?? null;
-    
-                if ($value === null) {
-                    $properties['packages'] = null;
-                    goto after_packages;
-                }
-
-                $properties['packages'] = $value;
-    
-                after_packages:
-
-                $value = $payload['pages'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pages'] = null;
-                    goto after_pages;
-                }
-
-                $properties['pages'] = $value;
-    
-                after_pages:
-
-                $value = $payload['pull_requests'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pull_requests'] = null;
-                    goto after_pull_requests;
-                }
-
-                $properties['pull_requests'] = $value;
-    
-                after_pull_requests:
-
-                $value = $payload['repository_announcement_banners'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repository_announcement_banners'] = null;
-                    goto after_repository_announcement_banners;
-                }
-
-                $properties['repository_announcement_banners'] = $value;
-    
-                after_repository_announcement_banners:
-
-                $value = $payload['repository_hooks'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repository_hooks'] = null;
-                    goto after_repository_hooks;
-                }
-
-                $properties['repository_hooks'] = $value;
-    
-                after_repository_hooks:
-
-                $value = $payload['repository_projects'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repository_projects'] = null;
-                    goto after_repository_projects;
-                }
-
-                $properties['repository_projects'] = $value;
-    
-                after_repository_projects:
-
-                $value = $payload['secret_scanning_alerts'] ?? null;
-    
-                if ($value === null) {
-                    $properties['secret_scanning_alerts'] = null;
-                    goto after_secret_scanning_alerts;
-                }
-
-                $properties['secret_scanning_alerts'] = $value;
-    
-                after_secret_scanning_alerts:
-
-                $value = $payload['secrets'] ?? null;
-    
-                if ($value === null) {
-                    $properties['secrets'] = null;
-                    goto after_secrets;
-                }
-
-                $properties['secrets'] = $value;
-    
-                after_secrets:
-
-                $value = $payload['security_events'] ?? null;
-    
-                if ($value === null) {
-                    $properties['security_events'] = null;
-                    goto after_security_events;
-                }
-
-                $properties['security_events'] = $value;
-    
-                after_security_events:
-
-                $value = $payload['single_file'] ?? null;
-    
-                if ($value === null) {
-                    $properties['single_file'] = null;
-                    goto after_single_file;
-                }
-
-                $properties['single_file'] = $value;
-    
-                after_single_file:
-
-                $value = $payload['statuses'] ?? null;
-    
-                if ($value === null) {
-                    $properties['statuses'] = null;
-                    goto after_statuses;
-                }
-
-                $properties['statuses'] = $value;
-    
-                after_statuses:
-
-                $value = $payload['vulnerability_alerts'] ?? null;
-    
-                if ($value === null) {
-                    $properties['vulnerability_alerts'] = null;
-                    goto after_vulnerability_alerts;
-                }
-
-                $properties['vulnerability_alerts'] = $value;
-    
-                after_vulnerability_alerts:
-
-                $value = $payload['workflows'] ?? null;
-    
-                if ($value === null) {
-                    $properties['workflows'] = null;
-                    goto after_workflows;
-                }
-
-                $properties['workflows'] = $value;
-    
-                after_workflows:
-
-                $value = $payload['members'] ?? null;
-    
-                if ($value === null) {
-                    $properties['members'] = null;
-                    goto after_members;
-                }
-
-                $properties['members'] = $value;
-    
-                after_members:
-
-                $value = $payload['organization_administration'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_administration'] = null;
-                    goto after_organization_administration;
-                }
-
-                $properties['organization_administration'] = $value;
-    
-                after_organization_administration:
-
-                $value = $payload['organization_custom_roles'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_custom_roles'] = null;
-                    goto after_organization_custom_roles;
-                }
-
-                $properties['organization_custom_roles'] = $value;
-    
-                after_organization_custom_roles:
-
-                $value = $payload['organization_announcement_banners'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_announcement_banners'] = null;
-                    goto after_organization_announcement_banners;
-                }
-
-                $properties['organization_announcement_banners'] = $value;
-    
-                after_organization_announcement_banners:
-
-                $value = $payload['organization_hooks'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_hooks'] = null;
-                    goto after_organization_hooks;
-                }
-
-                $properties['organization_hooks'] = $value;
-    
-                after_organization_hooks:
-
-                $value = $payload['organization_plan'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_plan'] = null;
-                    goto after_organization_plan;
-                }
-
-                $properties['organization_plan'] = $value;
-    
-                after_organization_plan:
-
-                $value = $payload['organization_projects'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_projects'] = null;
-                    goto after_organization_projects;
-                }
-
-                $properties['organization_projects'] = $value;
-    
-                after_organization_projects:
-
-                $value = $payload['organization_packages'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_packages'] = null;
-                    goto after_organization_packages;
-                }
-
-                $properties['organization_packages'] = $value;
-    
-                after_organization_packages:
-
-                $value = $payload['organization_secrets'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_secrets'] = null;
-                    goto after_organization_secrets;
-                }
-
-                $properties['organization_secrets'] = $value;
-    
-                after_organization_secrets:
-
-                $value = $payload['organization_self_hosted_runners'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_self_hosted_runners'] = null;
-                    goto after_organization_self_hosted_runners;
-                }
-
-                $properties['organization_self_hosted_runners'] = $value;
-    
-                after_organization_self_hosted_runners:
-
-                $value = $payload['organization_user_blocking'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organization_user_blocking'] = null;
-                    goto after_organization_user_blocking;
-                }
-
-                $properties['organization_user_blocking'] = $value;
-    
-                after_organization_user_blocking:
-
-                $value = $payload['team_discussions'] ?? null;
-    
-                if ($value === null) {
-                    $properties['team_discussions'] = null;
-                    goto after_team_discussions;
-                }
-
-                $properties['team_discussions'] = $value;
-    
-                after_team_discussions:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AppPermissions', $exception, stack: $this->hydrationStack);
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions(array $payload): \ApiClients\Client\GitHub\Schema\AppPermissions
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['actions'] ?? null;
+
+            if ($value === null) {
+                $properties['actions'] = null;
+                goto after_actions;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\AppPermissions::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['actions'] = $value;
+
+            after_actions:
+
+            $value = $payload['administration'] ?? null;
+
+            if ($value === null) {
+                $properties['administration'] = null;
+                goto after_administration;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\AppPermissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AppPermissions', $exception, stack: $this->hydrationStack);
+
+            $properties['administration'] = $value;
+
+            after_administration:
+
+            $value = $payload['checks'] ?? null;
+
+            if ($value === null) {
+                $properties['checks'] = null;
+                goto after_checks;
+            }
+
+            $properties['checks'] = $value;
+
+            after_checks:
+
+            $value = $payload['contents'] ?? null;
+
+            if ($value === null) {
+                $properties['contents'] = null;
+                goto after_contents;
+            }
+
+            $properties['contents'] = $value;
+
+            after_contents:
+
+            $value = $payload['deployments'] ?? null;
+
+            if ($value === null) {
+                $properties['deployments'] = null;
+                goto after_deployments;
+            }
+
+            $properties['deployments'] = $value;
+
+            after_deployments:
+
+            $value = $payload['environments'] ?? null;
+
+            if ($value === null) {
+                $properties['environments'] = null;
+                goto after_environments;
+            }
+
+            $properties['environments'] = $value;
+
+            after_environments:
+
+            $value = $payload['issues'] ?? null;
+
+            if ($value === null) {
+                $properties['issues'] = null;
+                goto after_issues;
+            }
+
+            $properties['issues'] = $value;
+
+            after_issues:
+
+            $value = $payload['metadata'] ?? null;
+
+            if ($value === null) {
+                $properties['metadata'] = null;
+                goto after_metadata;
+            }
+
+            $properties['metadata'] = $value;
+
+            after_metadata:
+
+            $value = $payload['packages'] ?? null;
+
+            if ($value === null) {
+                $properties['packages'] = null;
+                goto after_packages;
+            }
+
+            $properties['packages'] = $value;
+
+            after_packages:
+
+            $value = $payload['pages'] ?? null;
+
+            if ($value === null) {
+                $properties['pages'] = null;
+                goto after_pages;
+            }
+
+            $properties['pages'] = $value;
+
+            after_pages:
+
+            $value = $payload['pull_requests'] ?? null;
+
+            if ($value === null) {
+                $properties['pull_requests'] = null;
+                goto after_pull_requests;
+            }
+
+            $properties['pull_requests'] = $value;
+
+            after_pull_requests:
+
+            $value = $payload['repository_announcement_banners'] ?? null;
+
+            if ($value === null) {
+                $properties['repository_announcement_banners'] = null;
+                goto after_repository_announcement_banners;
+            }
+
+            $properties['repository_announcement_banners'] = $value;
+
+            after_repository_announcement_banners:
+
+            $value = $payload['repository_hooks'] ?? null;
+
+            if ($value === null) {
+                $properties['repository_hooks'] = null;
+                goto after_repository_hooks;
+            }
+
+            $properties['repository_hooks'] = $value;
+
+            after_repository_hooks:
+
+            $value = $payload['repository_projects'] ?? null;
+
+            if ($value === null) {
+                $properties['repository_projects'] = null;
+                goto after_repository_projects;
+            }
+
+            $properties['repository_projects'] = $value;
+
+            after_repository_projects:
+
+            $value = $payload['secret_scanning_alerts'] ?? null;
+
+            if ($value === null) {
+                $properties['secret_scanning_alerts'] = null;
+                goto after_secret_scanning_alerts;
+            }
+
+            $properties['secret_scanning_alerts'] = $value;
+
+            after_secret_scanning_alerts:
+
+            $value = $payload['secrets'] ?? null;
+
+            if ($value === null) {
+                $properties['secrets'] = null;
+                goto after_secrets;
+            }
+
+            $properties['secrets'] = $value;
+
+            after_secrets:
+
+            $value = $payload['security_events'] ?? null;
+
+            if ($value === null) {
+                $properties['security_events'] = null;
+                goto after_security_events;
+            }
+
+            $properties['security_events'] = $value;
+
+            after_security_events:
+
+            $value = $payload['single_file'] ?? null;
+
+            if ($value === null) {
+                $properties['single_file'] = null;
+                goto after_single_file;
+            }
+
+            $properties['single_file'] = $value;
+
+            after_single_file:
+
+            $value = $payload['statuses'] ?? null;
+
+            if ($value === null) {
+                $properties['statuses'] = null;
+                goto after_statuses;
+            }
+
+            $properties['statuses'] = $value;
+
+            after_statuses:
+
+            $value = $payload['vulnerability_alerts'] ?? null;
+
+            if ($value === null) {
+                $properties['vulnerability_alerts'] = null;
+                goto after_vulnerability_alerts;
+            }
+
+            $properties['vulnerability_alerts'] = $value;
+
+            after_vulnerability_alerts:
+
+            $value = $payload['workflows'] ?? null;
+
+            if ($value === null) {
+                $properties['workflows'] = null;
+                goto after_workflows;
+            }
+
+            $properties['workflows'] = $value;
+
+            after_workflows:
+
+            $value = $payload['members'] ?? null;
+
+            if ($value === null) {
+                $properties['members'] = null;
+                goto after_members;
+            }
+
+            $properties['members'] = $value;
+
+            after_members:
+
+            $value = $payload['organization_administration'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_administration'] = null;
+                goto after_organization_administration;
+            }
+
+            $properties['organization_administration'] = $value;
+
+            after_organization_administration:
+
+            $value = $payload['organization_custom_roles'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_custom_roles'] = null;
+                goto after_organization_custom_roles;
+            }
+
+            $properties['organization_custom_roles'] = $value;
+
+            after_organization_custom_roles:
+
+            $value = $payload['organization_announcement_banners'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_announcement_banners'] = null;
+                goto after_organization_announcement_banners;
+            }
+
+            $properties['organization_announcement_banners'] = $value;
+
+            after_organization_announcement_banners:
+
+            $value = $payload['organization_hooks'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_hooks'] = null;
+                goto after_organization_hooks;
+            }
+
+            $properties['organization_hooks'] = $value;
+
+            after_organization_hooks:
+
+            $value = $payload['organization_plan'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_plan'] = null;
+                goto after_organization_plan;
+            }
+
+            $properties['organization_plan'] = $value;
+
+            after_organization_plan:
+
+            $value = $payload['organization_projects'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_projects'] = null;
+                goto after_organization_projects;
+            }
+
+            $properties['organization_projects'] = $value;
+
+            after_organization_projects:
+
+            $value = $payload['organization_packages'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_packages'] = null;
+                goto after_organization_packages;
+            }
+
+            $properties['organization_packages'] = $value;
+
+            after_organization_packages:
+
+            $value = $payload['organization_secrets'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_secrets'] = null;
+                goto after_organization_secrets;
+            }
+
+            $properties['organization_secrets'] = $value;
+
+            after_organization_secrets:
+
+            $value = $payload['organization_self_hosted_runners'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_self_hosted_runners'] = null;
+                goto after_organization_self_hosted_runners;
+            }
+
+            $properties['organization_self_hosted_runners'] = $value;
+
+            after_organization_self_hosted_runners:
+
+            $value = $payload['organization_user_blocking'] ?? null;
+
+            if ($value === null) {
+                $properties['organization_user_blocking'] = null;
+                goto after_organization_user_blocking;
+            }
+
+            $properties['organization_user_blocking'] = $value;
+
+            after_organization_user_blocking:
+
+            $value = $payload['team_discussions'] ?? null;
+
+            if ($value === null) {
+                $properties['team_discussions'] = null;
+                goto after_team_discussions;
+            }
+
+            $properties['team_discussions'] = $value;
+
+            after_team_discussions:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AppPermissions', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\AppPermissions::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\AppPermissions(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AppPermissions', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Installation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Installation($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
-                'ApiClients\Client\GitHub\Schema\AppPermissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\Installation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Installation($object),
+            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
+            'ApiClients\Client\GitHub\Schema\AppPermissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -1014,99 +1031,55 @@ class Installation implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Installation(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Installation);
         $result = [];
-        
-        $id = $object->id;
 
-        if ($id === null) {
-            goto after_id;
-        }
+        $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
         $account = $object->account;
-
-        if ($account === null) {
-            goto after_account;
-        }
         $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($account);
         after_account:        $result['account'] = $account;
 
         
         $repository_selection = $object->repository_selection;
-
-        if ($repository_selection === null) {
-            goto after_repository_selection;
-        }
         after_repository_selection:        $result['repository_selection'] = $repository_selection;
 
         
         $access_tokens_url = $object->access_tokens_url;
-
-        if ($access_tokens_url === null) {
-            goto after_access_tokens_url;
-        }
         after_access_tokens_url:        $result['access_tokens_url'] = $access_tokens_url;
 
         
         $repositories_url = $object->repositories_url;
-
-        if ($repositories_url === null) {
-            goto after_repositories_url;
-        }
         after_repositories_url:        $result['repositories_url'] = $repositories_url;
 
         
         $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
         after_html_url:        $result['html_url'] = $html_url;
 
         
         $app_id = $object->app_id;
-
-        if ($app_id === null) {
-            goto after_app_id;
-        }
         after_app_id:        $result['app_id'] = $app_id;
 
         
         $target_id = $object->target_id;
-
-        if ($target_id === null) {
-            goto after_target_id;
-        }
         after_target_id:        $result['target_id'] = $target_id;
 
         
         $target_type = $object->target_type;
-
-        if ($target_type === null) {
-            goto after_target_type;
-        }
         after_target_type:        $result['target_type'] = $target_type;
 
         
         $permissions = $object->permissions;
-
-        if ($permissions === null) {
-            goto after_permissions;
-        }
         $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
         $events = $object->events;
-
-        if ($events === null) {
-            goto after_events;
-        }
         static $eventsSerializer0;
 
         if ($eventsSerializer0 === null) {
@@ -1119,18 +1092,10 @@ class Installation implements ObjectMapper
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
         after_updated_at:        $result['updated_at'] = $updated_at;
 
         
@@ -1143,10 +1108,18 @@ class Installation implements ObjectMapper
 
         
         $has_multiple_single_files = $object->has_multiple_single_files;
+
+        if ($has_multiple_single_files === null) {
+            goto after_has_multiple_single_files;
+        }
         after_has_multiple_single_files:        $result['has_multiple_single_files'] = $has_multiple_single_files;
 
         
         $single_file_paths = $object->single_file_paths;
+
+        if ($single_file_paths === null) {
+            goto after_single_file_paths;
+        }
         static $single_file_pathsSerializer0;
 
         if ($single_file_pathsSerializer0 === null) {
@@ -1159,10 +1132,6 @@ class Installation implements ObjectMapper
 
         
         $app_slug = $object->app_slug;
-
-        if ($app_slug === null) {
-            goto after_app_slug;
-        }
         after_app_slug:        $result['app_slug'] = $app_slug;
 
         
@@ -1193,12 +1162,12 @@ class Installation implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
         $result = [];
-        
+
         $name = $object->name;
 
         if ($name === null) {
@@ -1216,34 +1185,18 @@ class Installation implements ObjectMapper
 
         
         $login = $object->login;
-
-        if ($login === null) {
-            goto after_login;
-        }
         after_login:        $result['login'] = $login;
 
         
         $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
         after_id:        $result['id'] = $id;
 
         
         $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $avatar_url = $object->avatar_url;
-
-        if ($avatar_url === null) {
-            goto after_avatar_url;
-        }
         after_avatar_url:        $result['avatar_url'] = $avatar_url;
 
         
@@ -1256,122 +1209,74 @@ class Installation implements ObjectMapper
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
         $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
         after_html_url:        $result['html_url'] = $html_url;
 
         
         $followers_url = $object->followers_url;
-
-        if ($followers_url === null) {
-            goto after_followers_url;
-        }
         after_followers_url:        $result['followers_url'] = $followers_url;
 
         
         $following_url = $object->following_url;
-
-        if ($following_url === null) {
-            goto after_following_url;
-        }
         after_following_url:        $result['following_url'] = $following_url;
 
         
         $gists_url = $object->gists_url;
-
-        if ($gists_url === null) {
-            goto after_gists_url;
-        }
         after_gists_url:        $result['gists_url'] = $gists_url;
 
         
         $starred_url = $object->starred_url;
-
-        if ($starred_url === null) {
-            goto after_starred_url;
-        }
         after_starred_url:        $result['starred_url'] = $starred_url;
 
         
         $subscriptions_url = $object->subscriptions_url;
-
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
-        }
         after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
 
         
         $organizations_url = $object->organizations_url;
-
-        if ($organizations_url === null) {
-            goto after_organizations_url;
-        }
         after_organizations_url:        $result['organizations_url'] = $organizations_url;
 
         
         $repos_url = $object->repos_url;
-
-        if ($repos_url === null) {
-            goto after_repos_url;
-        }
         after_repos_url:        $result['repos_url'] = $repos_url;
 
         
         $events_url = $object->events_url;
-
-        if ($events_url === null) {
-            goto after_events_url;
-        }
         after_events_url:        $result['events_url'] = $events_url;
 
         
         $received_events_url = $object->received_events_url;
-
-        if ($received_events_url === null) {
-            goto after_received_events_url;
-        }
         after_received_events_url:        $result['received_events_url'] = $received_events_url;
 
         
         $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
         after_type:        $result['type'] = $type;
 
         
         $site_admin = $object->site_admin;
-
-        if ($site_admin === null) {
-            goto after_site_admin;
-        }
         after_site_admin:        $result['site_admin'] = $site_admin;
 
         
         $starred_at = $object->starred_at;
+
+        if ($starred_at === null) {
+            goto after_starred_at;
+        }
         after_starred_at:        $result['starred_at'] = $starred_at;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AppPermissions(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\AppPermissions);
         $result = [];
-        
+
         $actions = $object->actions;
 
         if ($actions === null) {

@@ -21,7 +21,7 @@ final readonly class RepositoryInvitation
      * expired: Whether or not the invitation has expired
      * url: URL for the repository invitation
      */
-    public function __construct(public ?int $id, public ?Schema\MinimalRepository $repository, public mixed $invitee, public mixed $inviter, public ?string $permissions, public ?string $created_at, public bool $expired, public ?string $url, public ?string $html_url, public ?string $node_id)
+    public function __construct(public int $id, public Schema\MinimalRepository $repository, public mixed $invitee, public mixed $inviter, public string $permissions, public string $created_at, public ?bool $expired, public string $url, public string $html_url, public string $node_id)
     {
     }
 }

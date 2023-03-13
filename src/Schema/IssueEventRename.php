@@ -14,7 +14,7 @@ final readonly class IssueEventRename
     public const SCHEMA_TITLE = 'Issue Event Rename';
     public const SCHEMA_DESCRIPTION = 'Issue Event Rename';
     public const SCHEMA_EXAMPLE_DATA = '{"from":"generated_from","to":"generated_to"}';
-    public function __construct(public ?string $from, public ?string $to)
+    public function __construct(public string $from, public string $to)
     {
     }
 }

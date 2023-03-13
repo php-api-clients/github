@@ -20,7 +20,7 @@ final readonly class Applicationjson
      * position: Line index in the diff to comment on.
      * line: **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
      */
-    public function __construct(public ?string $body, public string $path, public int $position, public int $line)
+    public function __construct(public string $body, public ?string $path, public ?int $position, public ?int $line)
     {
     }
 }

@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * body: The contents of the comment
      */
-    public function __construct(public ?string $body)
+    public function __construct(public string $body)
     {
     }
 }

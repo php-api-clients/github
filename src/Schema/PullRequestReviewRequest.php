@@ -15,10 +15,10 @@ final readonly class PullRequestReviewRequest
     public const SCHEMA_DESCRIPTION = 'Pull Request Review Request';
     public const SCHEMA_EXAMPLE_DATA = '{"users":[{"name":"generated_name","email":"generated_email","login":"octocat","id":1,"node_id":"MDQ6VXNlcjE=","avatar_url":"https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif","gravatar_id":"41d064eb2195891e12d0413f63227ea7","url":"https:\\/\\/api.github.com\\/users\\/octocat","html_url":"https:\\/\\/github.com\\/octocat","followers_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/followers","following_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}","gists_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}","starred_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}","subscriptions_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions","organizations_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/orgs","repos_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/repos","events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}","received_events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/received_events","type":"User","site_admin":false,"starred_at":"\\"2020-07-09T00:17:55Z\\""}],"teams":[{"id":13,"node_id":"generated_node_id","name":"generated_name","slug":"generated_slug","description":"generated_description","privacy":"generated_privacy","permission":"generated_permission","permissions":{"pull":false,"triage":false,"push":false,"maintain":false,"admin":false},"url":"generated_url","html_url":"https:\\/\\/github.com\\/orgs\\/rails\\/teams\\/core","members_url":"generated_members_url","repositories_url":"generated_repositories_url","parent":null}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\SimpleUser> $users
-     * @param ?array<\ApiClients\Client\GitHub\Schema\Team> $teams
+     * @param array<\ApiClients\Client\GitHub\Schema\SimpleUser> $users
+     * @param array<\ApiClients\Client\GitHub\Schema\Team> $teams
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SimpleUser::class)] public ?array $users, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Team::class)] public ?array $teams)
+    public function __construct(#[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SimpleUser::class)] public array $users, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Team::class)] public array $teams)
     {
     }
 }

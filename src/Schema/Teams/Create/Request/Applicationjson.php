@@ -18,9 +18,9 @@ final readonly class Applicationjson
     * name: The name of the team.
     * description: The description of the team.
     * maintainers: List GitHub IDs for organization members who will become team maintainers.
-    * @param array<string> $maintainers
+    * @param ?array<string> $maintainers
     * repo_names: The full name (e.g., "organization-name/repository-name") of repositories to add the team to.
-    * @param array<string> $repo_names
+    * @param ?array<string> $repo_names
     * privacy: The level of privacy this team should have. The options are:  
     **For a non-nested team:**  
     * `secret` - only visible to organization owners and members of this team.  
@@ -32,7 +32,7 @@ final readonly class Applicationjson
     * permission: **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
     * parent_team_id: The ID of a team to set as the parent team.
     */
-    public function __construct(public ?string $name, public string $description, public array $maintainers, public array $repo_names, public string $privacy, public string $permission, public int $parent_team_id)
+    public function __construct(public string $name, public ?string $description, public ?array $maintainers, public ?array $repo_names, public ?string $privacy, public ?string $permission, public ?int $parent_team_id)
     {
     }
 }

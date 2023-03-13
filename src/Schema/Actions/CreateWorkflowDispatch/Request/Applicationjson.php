@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * ref: The git reference for the workflow. The reference can be a branch or tag name.
      * inputs: Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
      */
-    public function __construct(public ?string $ref, public mixed $inputs)
+    public function __construct(public string $ref, public mixed $inputs)
     {
     }
 }

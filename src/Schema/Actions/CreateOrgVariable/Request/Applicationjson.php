@@ -19,9 +19,9 @@ final readonly class Applicationjson
      * value: The value of the variable.
      * visibility: The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
      * selected_repository_ids: An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
-     * @param array<int> $selected_repository_ids
+     * @param ?array<int> $selected_repository_ids
      */
-    public function __construct(public ?string $name, public ?string $value, public ?string $visibility, public array $selected_repository_ids)
+    public function __construct(public string $name, public string $value, public string $visibility, public ?array $selected_repository_ids)
     {
     }
 }

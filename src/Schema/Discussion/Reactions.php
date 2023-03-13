@@ -14,7 +14,7 @@ final readonly class Reactions
     public const SCHEMA_TITLE = 'Reactions';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"_PLUSES_1":13,"_MINUS_1":13,"confused":13,"eyes":13,"heart":13,"hooray":13,"laugh":13,"rocket":13,"total_count":13,"url":"generated_url"}';
-    public function __construct(public ?int $_PLUSES_1, public ?int $_MINUS_1, public ?int $confused, public ?int $eyes, public ?int $heart, public ?int $hooray, public ?int $laugh, public ?int $rocket, public ?int $total_count, public ?string $url)
+    public function __construct(public int $_PLUSES_1, public int $_MINUS_1, public int $confused, public int $eyes, public int $heart, public int $hooray, public int $laugh, public int $rocket, public int $total_count, public string $url)
     {
     }
 }

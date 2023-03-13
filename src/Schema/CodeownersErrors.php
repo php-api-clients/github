@@ -15,9 +15,9 @@ final readonly class CodeownersErrors
     public const SCHEMA_DESCRIPTION = 'A list of errors found in a repo\'s CODEOWNERS file';
     public const SCHEMA_EXAMPLE_DATA = '{"errors":[{"line":7,"column":3,"source":"* user","kind":"Invalid owner","suggestion":"The pattern `\\/` will never match anything, did you mean `*` instead?","message":"Invalid owner on line 7:\\n\\n  * user\\n    ^","path":".github\\/CODEOWNERS"}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors> $errors
+     * @param array<\ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors> $errors
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\CodeownersErrors\Errors::class)] public ?array $errors)
+    public function __construct(#[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\CodeownersErrors\Errors::class)] public array $errors)
     {
     }
 }

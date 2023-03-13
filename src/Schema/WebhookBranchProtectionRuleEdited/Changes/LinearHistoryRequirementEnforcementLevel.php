@@ -14,7 +14,7 @@ final readonly class LinearHistoryRequirementEnforcementLevel
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":"generated_from"}';
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

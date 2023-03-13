@@ -18,7 +18,7 @@ final readonly class ProjectCard
      * archived: Whether or not the card is archived
      * id: The project card's ID
      */
-    public function __construct(public ?int $after_id, public ?bool $archived, public ?int $column_id, public ?string $column_url, public string $content_url, public ?string $created_at, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $creator, public ?int $id, public ?string $node_id, public ?string $note, public ?string $project_url, public ?string $updated_at, public ?string $url)
+    public function __construct(public ?int $after_id, public bool $archived, public int $column_id, public string $column_url, public ?string $content_url, public string $created_at, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $creator, public int $id, public string $node_id, public ?string $note, public string $project_url, public string $updated_at, public string $url)
     {
     }
 }

@@ -29,72 +29,91 @@ class SelectedActions implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions(array $payload): \ApiClients\Client\GitHub\Schema\SelectedActions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['github_owned_allowed'] ?? null;
-    
-                if ($value === null) {
-                    $properties['github_owned_allowed'] = null;
-                    goto after_github_owned_allowed;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions(array $payload): \ApiClients\Client\GitHub\Schema\SelectedActions
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['github_owned_allowed'] ?? null;
 
-                $properties['github_owned_allowed'] = $value;
-    
-                after_github_owned_allowed:
-
-                $value = $payload['verified_allowed'] ?? null;
-    
-                if ($value === null) {
-                    $properties['verified_allowed'] = null;
-                    goto after_verified_allowed;
-                }
-
-                $properties['verified_allowed'] = $value;
-    
-                after_verified_allowed:
-
-                $value = $payload['patterns_allowed'] ?? null;
-    
-                if ($value === null) {
-                    $properties['patterns_allowed'] = null;
-                    goto after_patterns_allowed;
-                }
-
-                $properties['patterns_allowed'] = $value;
-    
-                after_patterns_allowed:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['github_owned_allowed'] = null;
+                goto after_github_owned_allowed;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SelectedActions::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['github_owned_allowed'] = $value;
+
+            after_github_owned_allowed:
+
+            $value = $payload['verified_allowed'] ?? null;
+
+            if ($value === null) {
+                $properties['verified_allowed'] = null;
+                goto after_verified_allowed;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\SelectedActions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
+
+            $properties['verified_allowed'] = $value;
+
+            after_verified_allowed:
+
+            $value = $payload['patterns_allowed'] ?? null;
+
+            if ($value === null) {
+                $properties['patterns_allowed'] = null;
+                goto after_patterns_allowed;
+            }
+
+            $properties['patterns_allowed'] = $value;
+
+            after_patterns_allowed:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SelectedActions::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\SelectedActions(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\SelectedActions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\SelectedActions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -167,12 +186,12 @@ class SelectedActions implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SelectedActions);
         $result = [];
-        
+
         $github_owned_allowed = $object->github_owned_allowed;
 
         if ($github_owned_allowed === null) {

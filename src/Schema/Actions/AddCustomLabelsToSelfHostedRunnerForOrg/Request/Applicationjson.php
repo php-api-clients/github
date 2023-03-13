@@ -16,9 +16,9 @@ final readonly class Applicationjson
     public const SCHEMA_EXAMPLE_DATA = '{"labels":["generated_labels"]}';
     /**
      * labels: The names of the custom labels to add to the runner.
-     * @param ?array<string> $labels
+     * @param array<string> $labels
      */
-    public function __construct(public ?array $labels)
+    public function __construct(public array $labels)
     {
     }
 }

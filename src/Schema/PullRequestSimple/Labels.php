@@ -14,7 +14,7 @@ final readonly class Labels
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":13,"node_id":"generated_node_id","url":"generated_url","name":"generated_name","description":"generated_description","color":"generated_color","default":false}';
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?string $name, public ?string $description, public ?string $color, public ?bool $default)
+    public function __construct(public int $id, public string $node_id, public string $url, public string $name, public string $description, public string $color, public bool $default)
     {
     }
 }

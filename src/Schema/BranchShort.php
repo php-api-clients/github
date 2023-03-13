@@ -14,7 +14,7 @@ final readonly class BranchShort
     public const SCHEMA_TITLE = 'Branch Short';
     public const SCHEMA_DESCRIPTION = 'Branch Short';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated_name","commit":{"sha":"generated_sha","url":"generated_url"},"protected":false}';
-    public function __construct(public ?string $name, public ?Schema\BranchShort\Commit $commit, public ?bool $protected)
+    public function __construct(public string $name, public Schema\BranchShort\Commit $commit, public bool $protected)
     {
     }
 }

@@ -20,7 +20,7 @@ final readonly class PullRequestReview
      * commit_id: A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
      * author_association: How the author is associated with the repository.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public mixed $user, public ?string $body, public ?string $state, public ?string $html_url, public ?string $pull_request_url, public ?Schema\TimelineReviewedEvent\Links $_links, public string $submitted_at, public ?string $commit_id, public string $body_html, public string $body_text, public ?string $author_association)
+    public function __construct(public int $id, public string $node_id, public mixed $user, public string $body, public string $state, public string $html_url, public string $pull_request_url, public Schema\TimelineReviewedEvent\Links $_links, public ?string $submitted_at, public ?string $commit_id, public ?string $body_html, public ?string $body_text, public string $author_association)
     {
     }
 }

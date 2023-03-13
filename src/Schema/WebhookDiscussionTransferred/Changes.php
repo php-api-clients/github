@@ -18,7 +18,7 @@ final readonly class Changes
      * new_discussion: A Discussion in a repository.
      * new_repository: A repository on GitHub.
      */
-    public function __construct(public ?Schema\Discussion $new_discussion, public ?Schema\Repository $new_repository)
+    public function __construct(public Schema\Discussion $new_discussion, public Schema\Repository $new_repository)
     {
     }
 }

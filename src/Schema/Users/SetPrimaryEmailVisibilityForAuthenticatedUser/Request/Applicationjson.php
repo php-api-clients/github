@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * visibility: Denotes whether an email is publicly visible.
      */
-    public function __construct(public ?string $visibility)
+    public function __construct(public string $visibility)
     {
     }
 }

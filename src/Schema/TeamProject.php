@@ -19,7 +19,7 @@ final readonly class TeamProject
      * organization_permission: The organization permission for this project. Only present when owner is an organization.
      * private: Whether the project is private or not. Only present when owner is an organization.
      */
-    public function __construct(public ?string $owner_url, public ?string $url, public ?string $html_url, public ?string $columns_url, public ?int $id, public ?string $node_id, public ?string $name, public ?string $body, public ?int $number, public ?string $state, public ?Schema\SimpleUser $creator, public ?string $created_at, public ?string $updated_at, public string $organization_permission, public bool $private, public ?Schema\TeamProject\Permissions $permissions)
+    public function __construct(public string $owner_url, public string $url, public string $html_url, public string $columns_url, public int $id, public string $node_id, public string $name, public ?string $body, public int $number, public string $state, public Schema\SimpleUser $creator, public string $created_at, public string $updated_at, public ?string $organization_permission, public ?bool $private, public Schema\TeamProject\Permissions $permissions)
     {
     }
 }

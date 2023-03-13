@@ -20,7 +20,7 @@ final readonly class WebhookProjectsV2ItemEdited
      * projects_v2_item: An item belonging to a project
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public Schema\WebhookProjectsV2ItemEdited\Changes $changes, public Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public ?Schema\ProjectsV2Item $projects_v2_item, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\WebhookProjectsV2ItemEdited\Changes $changes, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public Schema\ProjectsV2Item $projects_v2_item, public Schema\SimpleUser $sender)
     {
     }
 }

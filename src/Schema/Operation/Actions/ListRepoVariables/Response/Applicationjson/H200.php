@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"variables":[{"name":"USERNAME","value":"octocat","created_at":"2019-01-24T22:45:36.000Z","updated_at":"2019-01-24T22:45:36.000Z"}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\ActionsVariable> $variables
+     * @param array<\ApiClients\Client\GitHub\Schema\ActionsVariable> $variables
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsVariable::class)] public ?array $variables)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ActionsVariable::class)] public array $variables)
     {
     }
 }

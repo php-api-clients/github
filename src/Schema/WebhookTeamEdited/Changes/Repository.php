@@ -14,7 +14,7 @@ final readonly class Repository
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"permissions":{"from":{"admin":false,"pull":false,"push":false}}}';
-    public function __construct(public ?Schema\WebhookTeamEdited\Changes\Repository\Permissions $permissions)
+    public function __construct(public Schema\WebhookTeamEdited\Changes\Repository\Permissions $permissions)
     {
     }
 }

@@ -22,7 +22,7 @@ final readonly class WebhookCheckSuiteRerequested
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public ?Schema\WebhookCheckSuiteRerequested\ActionsMeta $actions_meta, public ?Schema\WebhookCheckSuiteRerequested\CheckSuite $check_suite, public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\WebhookCheckSuiteRerequested\ActionsMeta $actions_meta, public Schema\WebhookCheckSuiteRerequested\CheckSuite $check_suite, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

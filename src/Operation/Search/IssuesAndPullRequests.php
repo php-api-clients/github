@@ -45,7 +45,7 @@ final class IssuesAndPullRequests
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Search\IssuesAndPullRequests\Response\Applicationjson\H200
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/

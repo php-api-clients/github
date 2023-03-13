@@ -19,7 +19,7 @@ final readonly class GitTag
      * url: URL for the tag
      * message: Message describing the purpose of the tag
      */
-    public function __construct(public ?string $node_id, public ?string $tag, public ?string $sha, public ?string $url, public ?string $message, public ?Schema\GitTag\Tagger $tagger, public ?Schema\GitTag\Object_ $object, public Schema\Verification $verification)
+    public function __construct(public string $node_id, public string $tag, public string $sha, public string $url, public string $message, public Schema\GitTag\Tagger $tagger, public Schema\GitTag\Object_ $object, public ?Schema\Verification $verification)
     {
     }
 }

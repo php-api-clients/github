@@ -22,7 +22,7 @@ final readonly class Applicationjson
     * description: A short description of the status.
     * context: A string label to differentiate this status from the status of other systems. This field is case-insensitive.
     */
-    public function __construct(public ?string $state, public ?string $target_url, public ?string $description, public string $context)
+    public function __construct(public string $state, public ?string $target_url, public ?string $description, public ?string $context)
     {
     }
 }

@@ -14,7 +14,7 @@ final readonly class Registry
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"about_url":"generated_about_url","name":"generated_name","type":"generated_type","url":"generated_url","vendor":"generated_vendor"}';
-    public function __construct(public ?string $about_url, public ?string $name, public ?string $type, public ?string $url, public ?string $vendor)
+    public function __construct(public string $about_url, public string $name, public string $type, public string $url, public string $vendor)
     {
     }
 }

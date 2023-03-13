@@ -36,7 +36,7 @@ final class GetPagesHealthCheck
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\PagesHealthCheck|Schema\EmptyObject
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/

@@ -22,7 +22,7 @@ final readonly class DeploymentStatus
      * environment_url: The URL for accessing your environment.
      * log_url: The URL to associate with this status.
      */
-    public function __construct(public ?string $url, public ?int $id, public ?string $node_id, public ?string $state, public mixed $creator, public ?string $description, public string $environment, public ?string $target_url, public ?string $created_at, public ?string $updated_at, public ?string $deployment_url, public ?string $repository_url, public string $environment_url, public string $log_url, public mixed $performed_via_github_app)
+    public function __construct(public string $url, public int $id, public string $node_id, public string $state, public mixed $creator, public string $description, public ?string $environment, public string $target_url, public string $created_at, public string $updated_at, public string $deployment_url, public string $repository_url, public ?string $environment_url, public ?string $log_url, public mixed $performed_via_github_app)
     {
     }
 }

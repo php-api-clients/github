@@ -19,10 +19,10 @@ final readonly class Installation
      * repository_selection: Describe whether all repositories have been selected or there's a selection involved
      * target_id: The ID of the user or organization this token is being scoped to.
      * permissions: The permissions granted to the user-to-server access token.
-     * @param ?array<string> $events
-     * @param array<string> $single_file_paths
+     * @param array<string> $events
+     * @param ?array<string> $single_file_paths
      */
-    public function __construct(public ?int $id, public ?Schema\SimpleUser $account, public ?string $repository_selection, public ?string $access_tokens_url, public ?string $repositories_url, public ?string $html_url, public ?int $app_id, public ?int $target_id, public ?string $target_type, public ?Schema\AppPermissions $permissions, public ?array $events, public ?string $created_at, public ?string $updated_at, public ?string $single_file_name, public bool $has_multiple_single_files, public array $single_file_paths, public ?string $app_slug, public mixed $suspended_by, public ?string $suspended_at, public ?string $contact_email)
+    public function __construct(public int $id, public Schema\SimpleUser $account, public string $repository_selection, public string $access_tokens_url, public string $repositories_url, public string $html_url, public int $app_id, public int $target_id, public string $target_type, public Schema\AppPermissions $permissions, public array $events, public string $created_at, public string $updated_at, public ?string $single_file_name, public ?bool $has_multiple_single_files, public ?array $single_file_paths, public string $app_slug, public mixed $suspended_by, public ?string $suspended_at, public ?string $contact_email)
     {
     }
 }

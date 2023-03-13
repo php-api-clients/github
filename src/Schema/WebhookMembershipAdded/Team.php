@@ -21,7 +21,7 @@ final readonly class Team
      * permission: Permission that the team will have for its repositories
      * url: URL for the team
      */
-    public function __construct(public bool $deleted, public ?string $description, public string $html_url, public ?int $id, public string $members_url, public ?string $name, public string $node_id, public ?Schema\WebhookMembershipAdded\Team\Parent_ $parent, public string $permission, public string $privacy, public string $repositories_url, public string $slug, public string $url)
+    public function __construct(public ?bool $deleted, public ?string $description, public ?string $html_url, public int $id, public ?string $members_url, public string $name, public ?string $node_id, public ?Schema\WebhookMembershipAdded\Team\Parent_ $parent, public ?string $permission, public ?string $privacy, public ?string $repositories_url, public ?string $slug, public ?string $url)
     {
     }
 }

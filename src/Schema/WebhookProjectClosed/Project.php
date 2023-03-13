@@ -19,7 +19,7 @@ final readonly class Project
      * name: Name of the project
      * state: State of the project; either 'open' or 'closed'
      */
-    public function __construct(public ?string $body, public ?string $columns_url, public ?string $created_at, public ?Schema\Discussion\AnswerChosenBy $creator, public ?string $html_url, public ?int $id, public ?string $name, public ?string $node_id, public ?int $number, public ?string $owner_url, public ?string $state, public ?string $updated_at, public ?string $url)
+    public function __construct(public ?string $body, public string $columns_url, public string $created_at, public ?Schema\Discussion\AnswerChosenBy $creator, public string $html_url, public int $id, public string $name, public string $node_id, public int $number, public string $owner_url, public string $state, public string $updated_at, public string $url)
     {
     }
 }

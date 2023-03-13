@@ -22,7 +22,7 @@ final readonly class TeamDiscussion
      * private: Whether or not this discussion should be restricted to team members and organization administrators.
      * title: The title of the discussion.
      */
-    public function __construct(public mixed $author, public ?string $body, public ?string $body_html, public ?string $body_version, public ?int $comments_count, public ?string $comments_url, public ?string $created_at, public ?string $last_edited_at, public ?string $html_url, public ?string $node_id, public ?int $number, public ?bool $pinned, public ?bool $private, public ?string $team_url, public ?string $title, public ?string $updated_at, public ?string $url, public Schema\ReactionRollup $reactions)
+    public function __construct(public mixed $author, public string $body, public string $body_html, public string $body_version, public int $comments_count, public string $comments_url, public string $created_at, public ?string $last_edited_at, public string $html_url, public string $node_id, public int $number, public bool $pinned, public bool $private, public string $team_url, public string $title, public string $updated_at, public string $url, public ?Schema\ReactionRollup $reactions)
     {
     }
 }

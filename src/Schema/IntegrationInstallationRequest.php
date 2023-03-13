@@ -18,7 +18,7 @@ final readonly class IntegrationInstallationRequest
      * id: Unique identifier of the request installation.
      * requester: A GitHub user.
      */
-    public function __construct(public ?int $id, public string $node_id, public ?Schema\SimpleUser $account, public ?Schema\SimpleUser $requester, public ?string $created_at)
+    public function __construct(public int $id, public ?string $node_id, public Schema\SimpleUser $account, public Schema\SimpleUser $requester, public string $created_at)
     {
     }
 }

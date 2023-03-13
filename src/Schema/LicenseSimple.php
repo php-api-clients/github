@@ -14,7 +14,7 @@ final readonly class LicenseSimple
     public const SCHEMA_TITLE = 'License Simple';
     public const SCHEMA_DESCRIPTION = 'License Simple';
     public const SCHEMA_EXAMPLE_DATA = '{"key":"mit","name":"MIT License","url":"https:\\/\\/api.github.com\\/licenses\\/mit","spdx_id":"MIT","node_id":"MDc6TGljZW5zZW1pdA==","html_url":"generated_html_url"}';
-    public function __construct(public ?string $key, public ?string $name, public ?string $url, public ?string $spdx_id, public ?string $node_id, public string $html_url)
+    public function __construct(public string $key, public string $name, public ?string $url, public ?string $spdx_id, public string $node_id, public ?string $html_url)
     {
     }
 }

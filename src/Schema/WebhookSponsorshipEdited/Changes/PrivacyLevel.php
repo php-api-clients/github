@@ -17,7 +17,7 @@ final readonly class PrivacyLevel
     /**
      * from: The `edited` event types include the details about the change when someone edits a sponsorship to change the privacy.
      */
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

@@ -15,9 +15,9 @@ final readonly class OrgHook
     public const SCHEMA_DESCRIPTION = 'Org Hook';
     public const SCHEMA_EXAMPLE_DATA = '{"id":1,"url":"https:\\/\\/api.github.com\\/orgs\\/octocat\\/hooks\\/1","ping_url":"https:\\/\\/api.github.com\\/orgs\\/octocat\\/hooks\\/1\\/pings","deliveries_url":"https:\\/\\/api.github.com\\/orgs\\/octocat\\/hooks\\/1\\/deliveries","name":"web","events":["push"],"active":true,"config":{"url":"\\"http:\\/\\/example.com\\/2\\"","insecure_ssl":"\\"0\\"","content_type":"\\"form\\"","secret":"\\"********\\""},"updated_at":"2011-09-06T20:39:23Z","created_at":"2011-09-06T17:26:27Z","type":"generated_type"}';
     /**
-     * @param ?array<string> $events
+     * @param array<string> $events
      */
-    public function __construct(public ?int $id, public ?string $url, public ?string $ping_url, public string $deliveries_url, public ?string $name, public ?array $events, public ?bool $active, public ?Schema\OrgHook\Config $config, public ?string $updated_at, public ?string $created_at, public ?string $type)
+    public function __construct(public int $id, public string $url, public string $ping_url, public ?string $deliveries_url, public string $name, public array $events, public bool $active, public Schema\OrgHook\Config $config, public string $updated_at, public string $created_at, public string $type)
     {
     }
 }

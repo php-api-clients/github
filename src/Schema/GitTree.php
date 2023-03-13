@@ -16,9 +16,9 @@ final readonly class GitTree
     public const SCHEMA_EXAMPLE_DATA = '{"sha":"generated_sha","url":"generated_url","truncated":false,"tree":[{"path":"file.rb","mode":"100644","type":"blob","sha":"44b4fc6d56897b048c772eb4087f854f46256132","size":30,"url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/git\\/blobs\\/44b4fc6d56897b048c772eb4087f854f46256132","properties":{"path":{"type":"string"},"mode":{"type":"string"},"type":{"type":"string"},"size":{"type":"integer"},"sha":{"type":"string"},"url":{"type":"string"}},"required":["path","mode","type","sha","url","size"]}]}';
     /**
      * tree: Objects specifying a tree structure
-     * @param ?array<\ApiClients\Client\GitHub\Schema\GitTree\Tree> $tree
+     * @param array<\ApiClients\Client\GitHub\Schema\GitTree\Tree> $tree
      */
-    public function __construct(public ?string $sha, public ?string $url, public ?bool $truncated, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\GitTree\Tree::class)] public ?array $tree)
+    public function __construct(public string $sha, public string $url, public bool $truncated, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\GitTree\Tree::class)] public array $tree)
     {
     }
 }

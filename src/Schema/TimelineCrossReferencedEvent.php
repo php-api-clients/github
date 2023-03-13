@@ -17,7 +17,7 @@ final readonly class TimelineCrossReferencedEvent
     /**
      * actor: A GitHub user.
      */
-    public function __construct(public ?string $event, public Schema\SimpleUser $actor, public ?string $created_at, public ?string $updated_at, public ?Schema\TimelineCrossReferencedEvent\Source $source)
+    public function __construct(public string $event, public ?Schema\SimpleUser $actor, public string $created_at, public string $updated_at, public Schema\TimelineCrossReferencedEvent\Source $source)
     {
     }
 }

@@ -20,7 +20,7 @@ final readonly class Applicationjson
      * description: A description of the milestone.
      * due_on: The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function __construct(public ?string $title, public string $state, public string $description, public string $due_on)
+    public function __construct(public string $title, public ?string $state, public ?string $description, public ?string $due_on)
     {
     }
 }

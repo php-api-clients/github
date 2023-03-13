@@ -14,7 +14,7 @@ final readonly class License
     public const SCHEMA_TITLE = 'License';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"key":"generated_key","name":"generated_name","node_id":"generated_node_id","spdx_id":"generated_spdx_id","url":"generated_url"}';
-    public function __construct(public ?string $key, public ?string $name, public ?string $node_id, public ?string $spdx_id, public ?string $url)
+    public function __construct(public string $key, public string $name, public string $node_id, public string $spdx_id, public ?string $url)
     {
     }
 }

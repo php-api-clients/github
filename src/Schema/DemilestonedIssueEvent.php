@@ -17,7 +17,7 @@ final readonly class DemilestonedIssueEvent
     /**
      * actor: A GitHub user.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?Schema\SimpleUser $actor, public ?string $event, public ?string $commit_id, public ?string $commit_url, public ?string $created_at, public mixed $performed_via_github_app, public ?Schema\MilestonedIssueEvent\Milestone $milestone)
+    public function __construct(public int $id, public string $node_id, public string $url, public Schema\SimpleUser $actor, public string $event, public ?string $commit_id, public ?string $commit_url, public string $created_at, public mixed $performed_via_github_app, public Schema\MilestonedIssueEvent\Milestone $milestone)
     {
     }
 }

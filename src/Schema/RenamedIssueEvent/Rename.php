@@ -14,7 +14,7 @@ final readonly class Rename
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":"generated_from","to":"generated_to"}';
-    public function __construct(public ?string $from, public ?string $to)
+    public function __construct(public string $from, public string $to)
     {
     }
 }

@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * access_token: The OAuth access token used to authenticate to the GitHub API.
      */
-    public function __construct(public ?string $access_token)
+    public function __construct(public string $access_token)
     {
     }
 }

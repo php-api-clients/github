@@ -18,7 +18,7 @@ final readonly class RepositorySubscription
      * subscribed: Determines if notifications should be received from this repository.
      * ignored: Determines if all notifications should be blocked from this repository.
      */
-    public function __construct(public ?bool $subscribed, public ?bool $ignored, public ?string $reason, public ?string $created_at, public ?string $url, public ?string $repository_url)
+    public function __construct(public bool $subscribed, public bool $ignored, public ?string $reason, public string $created_at, public string $url, public string $repository_url)
     {
     }
 }

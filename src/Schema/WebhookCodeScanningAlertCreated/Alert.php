@@ -23,7 +23,7 @@ final readonly class Alert
      * number: The code scanning alert number.
      * state: State of a code scanning alert.
      */
-    public function __construct(public ?string $created_at, public mixed $dismissed_at, public mixed $dismissed_by, public ?string $dismissed_comment, public mixed $dismissed_reason, public mixed $fixed_at, public ?string $html_url, public string $instances_url, public ?Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance $most_recent_instance, public ?int $number, public ?Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule $rule, public ?string $state, public ?Schema\WebhookCodeScanningAlertCreated\Alert\Tool $tool, public ?string $updated_at, public ?string $url)
+    public function __construct(public ?string $created_at, public mixed $dismissed_at, public mixed $dismissed_by, public ?string $dismissed_comment, public mixed $dismissed_reason, public mixed $fixed_at, public string $html_url, public ?string $instances_url, public ?Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance $most_recent_instance, public int $number, public Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule $rule, public string $state, public ?Schema\WebhookCodeScanningAlertCreated\Alert\Tool $tool, public ?string $updated_at, public string $url)
     {
     }
 }

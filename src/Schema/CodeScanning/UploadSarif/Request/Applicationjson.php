@@ -26,7 +26,7 @@ final readonly class Applicationjson
     * validate: Whether the SARIF file will be validated according to the code scanning specifications.
     This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
     */
-    public function __construct(public ?string $commit_sha, public ?string $ref, public ?string $sarif, public string $checkout_uri, public string $started_at, public string $tool_name, public bool $validate)
+    public function __construct(public string $commit_sha, public string $ref, public string $sarif, public ?string $checkout_uri, public ?string $started_at, public ?string $tool_name, public ?bool $validate)
     {
     }
 }

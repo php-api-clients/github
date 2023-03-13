@@ -19,7 +19,7 @@ final readonly class ActionsBillingUsage
      * total_paid_minutes_used: The total paid GitHub Actions minutes used.
      * included_minutes: The amount of free GitHub Actions minutes available.
      */
-    public function __construct(public ?int $total_minutes_used, public ?int $total_paid_minutes_used, public ?int $included_minutes, public ?Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutes_used_breakdown)
+    public function __construct(public int $total_minutes_used, public int $total_paid_minutes_used, public int $included_minutes, public Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutes_used_breakdown)
     {
     }
 }

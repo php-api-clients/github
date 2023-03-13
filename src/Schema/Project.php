@@ -21,7 +21,7 @@ final readonly class Project
      * organization_permission: The baseline permission that all organization members have on this project. Only present if owner is an organization.
      * private: Whether or not this project can be seen by everyone. Only present if owner is an organization.
      */
-    public function __construct(public ?string $owner_url, public ?string $url, public ?string $html_url, public ?string $columns_url, public ?int $id, public ?string $node_id, public ?string $name, public ?string $body, public ?int $number, public ?string $state, public mixed $creator, public ?string $created_at, public ?string $updated_at, public string $organization_permission, public bool $private)
+    public function __construct(public string $owner_url, public string $url, public string $html_url, public string $columns_url, public int $id, public string $node_id, public string $name, public ?string $body, public int $number, public string $state, public mixed $creator, public string $created_at, public string $updated_at, public ?string $organization_permission, public ?bool $private)
     {
     }
 }

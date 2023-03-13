@@ -19,11 +19,11 @@ final readonly class WebhookGollum
      * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      * organization: A GitHub organization.
      * pages: The pages that were updated.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\WebhookGollum\Pages> $pages
+     * @param array<\ApiClients\Client\GitHub\Schema\WebhookGollum\Pages> $pages
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookGollum\Pages::class)] public ?array $pages, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookGollum\Pages::class)] public array $pages, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

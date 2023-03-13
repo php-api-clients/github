@@ -30,160 +30,178 @@ class Errors implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors(array $payload): \ApiClients\Client\GitHub\Schema\CodeownersErrors
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['errors'] ?? null;
-    
-                if ($value === null) {
-                    $properties['errors'] = null;
-                    goto after_errors;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors(array $payload): \ApiClients\Client\GitHub\Schema\CodeownersErrors
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['errors'] ?? null;
 
-                static $errorsCaster1;
-    
-                if ($errorsCaster1 === null) {
-                    $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($value === null) {
+                $missingFields[] = 'errors';
+                goto after_errors;
+            }
+
+            static $errorsCaster1;
+
+            if ($errorsCaster1 === null) {
+                $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\CodeownersErrors\\Errors',
 ));
-                }
-    
-                $value = $errorsCaster1->cast($value, $this);
+            }
 
-                $properties['errors'] = $value;
-    
-                after_errors:
+            $value = $errorsCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeownersErrors::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CodeownersErrors(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors', $exception, stack: $this->hydrationStack);
-            }
+            $properties['errors'] = $value;
+
+            after_errors:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeownersErrors::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CodeownersErrors(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['line'] ?? null;
-    
-                if ($value === null) {
-                    $properties['line'] = null;
-                    goto after_line;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['line'] ?? null;
 
-                $properties['line'] = $value;
-    
-                after_line:
-
-                $value = $payload['column'] ?? null;
-    
-                if ($value === null) {
-                    $properties['column'] = null;
-                    goto after_column;
-                }
-
-                $properties['column'] = $value;
-    
-                after_column:
-
-                $value = $payload['source'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'source';
-                    goto after_source;
-                }
-
-                $properties['source'] = $value;
-    
-                after_source:
-
-                $value = $payload['kind'] ?? null;
-    
-                if ($value === null) {
-                    $properties['kind'] = null;
-                    goto after_kind;
-                }
-
-                $properties['kind'] = $value;
-    
-                after_kind:
-
-                $value = $payload['suggestion'] ?? null;
-    
-                if ($value === null) {
-                    $properties['suggestion'] = null;
-                    goto after_suggestion;
-                }
-
-                $properties['suggestion'] = $value;
-    
-                after_suggestion:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['path'] ?? null;
-    
-                if ($value === null) {
-                    $properties['path'] = null;
-                    goto after_path;
-                }
-
-                $properties['path'] = $value;
-    
-                after_path:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'line';
+                goto after_line;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['line'] = $value;
+
+            after_line:
+
+            $value = $payload['column'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'column';
+                goto after_column;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors', $exception, stack: $this->hydrationStack);
+
+            $properties['column'] = $value;
+
+            after_column:
+
+            $value = $payload['source'] ?? null;
+
+            if ($value === null) {
+                $properties['source'] = null;
+                goto after_source;
+            }
+
+            $properties['source'] = $value;
+
+            after_source:
+
+            $value = $payload['kind'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'kind';
+                goto after_kind;
+            }
+
+            $properties['kind'] = $value;
+
+            after_kind:
+
+            $value = $payload['suggestion'] ?? null;
+
+            if ($value === null) {
+                $properties['suggestion'] = null;
+                goto after_suggestion;
+            }
+
+            $properties['suggestion'] = $value;
+
+            after_suggestion:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'message';
+                goto after_message;
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['path'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'path';
+                goto after_path;
+            }
+
+            $properties['path'] = $value;
+
+            after_path:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\CodeownersErrors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors($object),
-                'ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors⚡️Errors($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\CodeownersErrors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors($object),
+            'ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors⚡️Errors($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -256,17 +274,13 @@ class Errors implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeownersErrors);
         $result = [];
-        
-        $errors = $object->errors;
 
-        if ($errors === null) {
-            goto after_errors;
-        }
+        $errors = $object->errors;
         static $errorsSerializer0;
 
         if ($errorsSerializer0 === null) {
@@ -282,37 +296,29 @@ class Errors implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeownersErrors⚡️Errors(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeownersErrors\Errors);
         $result = [];
-        
-        $line = $object->line;
 
-        if ($line === null) {
-            goto after_line;
-        }
+        $line = $object->line;
         after_line:        $result['line'] = $line;
 
         
         $column = $object->column;
-
-        if ($column === null) {
-            goto after_column;
-        }
         after_column:        $result['column'] = $column;
 
         
         $source = $object->source;
+
+        if ($source === null) {
+            goto after_source;
+        }
         after_source:        $result['source'] = $source;
 
         
         $kind = $object->kind;
-
-        if ($kind === null) {
-            goto after_kind;
-        }
         after_kind:        $result['kind'] = $kind;
 
         
@@ -325,18 +331,10 @@ class Errors implements ObjectMapper
 
         
         $message = $object->message;
-
-        if ($message === null) {
-            goto after_message;
-        }
         after_message:        $result['message'] = $message;
 
         
         $path = $object->path;
-
-        if ($path === null) {
-            goto after_path;
-        }
         after_path:        $result['path'] = $path;
 
 

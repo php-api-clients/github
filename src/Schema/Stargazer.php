@@ -14,7 +14,7 @@ final readonly class Stargazer
     public const SCHEMA_TITLE = 'Stargazer';
     public const SCHEMA_DESCRIPTION = 'Stargazer';
     public const SCHEMA_EXAMPLE_DATA = '{"starred_at":"generated_starred_at","user":null}';
-    public function __construct(public ?string $starred_at, public mixed $user)
+    public function __construct(public string $starred_at, public mixed $user)
     {
     }
 }

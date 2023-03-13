@@ -21,7 +21,7 @@ final readonly class Applicationjson
      * committer: object containing information about the committer.
      * author: object containing information about the author.
      */
-    public function __construct(public ?string $message, public ?string $sha, public string $branch, public Schema\Repos\DeleteFile\Request\Applicationjson\Committer $committer, public Schema\Repos\DeleteFile\Request\Applicationjson\Author $author)
+    public function __construct(public string $message, public string $sha, public ?string $branch, public ?Schema\Repos\DeleteFile\Request\Applicationjson\Committer $committer, public ?Schema\Repos\DeleteFile\Request\Applicationjson\Author $author)
     {
     }
 }

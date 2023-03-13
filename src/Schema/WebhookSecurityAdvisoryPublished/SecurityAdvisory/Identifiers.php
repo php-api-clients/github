@@ -14,7 +14,7 @@ final readonly class Identifiers
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"type":"generated_type","value":"generated_value"}';
-    public function __construct(public ?string $type, public ?string $value)
+    public function __construct(public string $type, public string $value)
     {
     }
 }

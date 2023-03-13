@@ -19,7 +19,7 @@ final readonly class Applicationjson
      * head: The head to merge. This can be a branch name or a commit SHA1.
      * commit_message: Commit message to use for the merge commit. If omitted, a default message will be used.
      */
-    public function __construct(public ?string $base, public ?string $head, public string $commit_message)
+    public function __construct(public string $base, public string $head, public ?string $commit_message)
     {
     }
 }

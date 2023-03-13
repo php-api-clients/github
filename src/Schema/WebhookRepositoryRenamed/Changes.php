@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"repository":{"name":{"from":"generated_from"}}}';
-    public function __construct(public ?Schema\WebhookRepositoryRenamed\Changes\Repository $repository)
+    public function __construct(public Schema\WebhookRepositoryRenamed\Changes\Repository $repository)
     {
     }
 }

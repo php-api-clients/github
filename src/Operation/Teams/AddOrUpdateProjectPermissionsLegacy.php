@@ -36,7 +36,7 @@ final class AddOrUpdateProjectPermissionsLegacy
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Forbidden if the project is not owned by the organization**/

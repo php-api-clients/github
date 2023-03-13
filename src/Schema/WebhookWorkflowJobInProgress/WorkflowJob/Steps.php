@@ -14,7 +14,7 @@ final readonly class Steps
     public const SCHEMA_TITLE = 'Workflow Step';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"completed_at":"generated_completed_at","conclusion":"generated_conclusion","name":"generated_name","number":13,"started_at":"generated_started_at","status":"generated_status"}';
-    public function __construct(public ?string $completed_at, public ?string $conclusion, public ?string $name, public ?int $number, public ?string $started_at, public ?string $status)
+    public function __construct(public ?string $completed_at, public ?string $conclusion, public string $name, public int $number, public ?string $started_at, public string $status)
     {
     }
 }

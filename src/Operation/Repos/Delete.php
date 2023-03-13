@@ -36,7 +36,7 @@ final class Delete
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\BasicError
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**If an organization owner has configured the organization to prevent members from deleting organization-owned repositories, a member will get this response:**/

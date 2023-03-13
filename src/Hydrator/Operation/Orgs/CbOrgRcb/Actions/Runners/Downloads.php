@@ -29,105 +29,124 @@ class Downloads implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerApplication(array $payload): \ApiClients\Client\GitHub\Schema\RunnerApplication
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['os'] ?? null;
-    
-                if ($value === null) {
-                    $properties['os'] = null;
-                    goto after_os;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerApplication(array $payload): \ApiClients\Client\GitHub\Schema\RunnerApplication
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['os'] ?? null;
 
-                $properties['os'] = $value;
-    
-                after_os:
-
-                $value = $payload['architecture'] ?? null;
-    
-                if ($value === null) {
-                    $properties['architecture'] = null;
-                    goto after_architecture;
-                }
-
-                $properties['architecture'] = $value;
-    
-                after_architecture:
-
-                $value = $payload['download_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['download_url'] = null;
-                    goto after_download_url;
-                }
-
-                $properties['download_url'] = $value;
-    
-                after_download_url:
-
-                $value = $payload['filename'] ?? null;
-    
-                if ($value === null) {
-                    $properties['filename'] = null;
-                    goto after_filename;
-                }
-
-                $properties['filename'] = $value;
-    
-                after_filename:
-
-                $value = $payload['temp_download_token'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'temp_download_token';
-                    goto after_temp_download_token;
-                }
-
-                $properties['temp_download_token'] = $value;
-    
-                after_temp_download_token:
-
-                $value = $payload['sha256_checksum'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'sha256_checksum';
-                    goto after_sha256_checksum;
-                }
-
-                $properties['sha256_checksum'] = $value;
-    
-                after_sha256_checksum:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerApplication', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'os';
+                goto after_os;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RunnerApplication::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['os'] = $value;
+
+            after_os:
+
+            $value = $payload['architecture'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'architecture';
+                goto after_architecture;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\RunnerApplication(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerApplication', $exception, stack: $this->hydrationStack);
+
+            $properties['architecture'] = $value;
+
+            after_architecture:
+
+            $value = $payload['download_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'download_url';
+                goto after_download_url;
+            }
+
+            $properties['download_url'] = $value;
+
+            after_download_url:
+
+            $value = $payload['filename'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'filename';
+                goto after_filename;
+            }
+
+            $properties['filename'] = $value;
+
+            after_filename:
+
+            $value = $payload['temp_download_token'] ?? null;
+
+            if ($value === null) {
+                $properties['temp_download_token'] = null;
+                goto after_temp_download_token;
+            }
+
+            $properties['temp_download_token'] = $value;
+
+            after_temp_download_token:
+
+            $value = $payload['sha256_checksum'] ?? null;
+
+            if ($value === null) {
+                $properties['sha256_checksum'] = null;
+                goto after_sha256_checksum;
+            }
+
+            $properties['sha256_checksum'] = $value;
+
+            after_sha256_checksum:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerApplication', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RunnerApplication::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\RunnerApplication(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerApplication', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\RunnerApplication' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerApplication($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\RunnerApplication' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerApplication($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -200,49 +219,41 @@ class Downloads implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerApplication(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\RunnerApplication);
         $result = [];
-        
-        $os = $object->os;
 
-        if ($os === null) {
-            goto after_os;
-        }
+        $os = $object->os;
         after_os:        $result['os'] = $os;
 
         
         $architecture = $object->architecture;
-
-        if ($architecture === null) {
-            goto after_architecture;
-        }
         after_architecture:        $result['architecture'] = $architecture;
 
         
         $download_url = $object->download_url;
-
-        if ($download_url === null) {
-            goto after_download_url;
-        }
         after_download_url:        $result['download_url'] = $download_url;
 
         
         $filename = $object->filename;
-
-        if ($filename === null) {
-            goto after_filename;
-        }
         after_filename:        $result['filename'] = $filename;
 
         
         $temp_download_token = $object->temp_download_token;
+
+        if ($temp_download_token === null) {
+            goto after_temp_download_token;
+        }
         after_temp_download_token:        $result['temp_download_token'] = $temp_download_token;
 
         
         $sha256_checksum = $object->sha256_checksum;
+
+        if ($sha256_checksum === null) {
+            goto after_sha256_checksum;
+        }
         after_sha256_checksum:        $result['sha256_checksum'] = $sha256_checksum;
 
 

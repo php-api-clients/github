@@ -21,7 +21,7 @@ final readonly class WebhookInstallationTargetRenamed
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?Schema\WebhookInstallationTargetRenamed\Account $account, public ?string $action, public ?Schema\WebhookInstallationTargetRenamed\Changes $changes, public Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public ?string $target_type)
+    public function __construct(public Schema\WebhookInstallationTargetRenamed\Account $account, public string $action, public Schema\WebhookInstallationTargetRenamed\Changes $changes, public ?Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender, public string $target_type)
     {
     }
 }

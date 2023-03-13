@@ -14,7 +14,7 @@ final readonly class Html
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"href":"generated_href"}';
-    public function __construct(public ?string $href)
+    public function __construct(public string $href)
     {
     }
 }

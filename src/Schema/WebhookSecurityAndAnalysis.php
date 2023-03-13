@@ -21,7 +21,7 @@ final readonly class WebhookSecurityAndAnalysis
      * repository: Full Repository
      * sender: A GitHub user.
      */
-    public function __construct(public ?Schema\WebhookSecurityAndAnalysis\Changes $changes, public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?Schema\FullRepository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public Schema\WebhookSecurityAndAnalysis\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\FullRepository $repository, public ?Schema\SimpleUser $sender)
     {
     }
 }

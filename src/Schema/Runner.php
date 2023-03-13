@@ -19,9 +19,9 @@ final readonly class Runner
      * name: The name of the runner.
      * os: The Operating System of the runner.
      * status: The status of the runner.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\RunnerLabel> $labels
+     * @param array<\ApiClients\Client\GitHub\Schema\RunnerLabel> $labels
      */
-    public function __construct(public ?int $id, public ?string $name, public ?string $os, public ?string $status, public ?bool $busy, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\RunnerLabel::class)] public ?array $labels)
+    public function __construct(public int $id, public string $name, public string $os, public string $status, public bool $busy, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\RunnerLabel::class)] public array $labels)
     {
     }
 }

@@ -36,7 +36,7 @@ final class GetParticipationStats
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\ParticipationStats
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**The array order is oldest week (index 0) to most recent week.**/

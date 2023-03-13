@@ -30,148 +30,166 @@ class CbRefRcb implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef(array $payload): \ApiClients\Client\GitHub\Schema\GitRef
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['ref'] ?? null;
-    
-                if ($value === null) {
-                    $properties['ref'] = null;
-                    goto after_ref;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef(array $payload): \ApiClients\Client\GitHub\Schema\GitRef
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['ref'] ?? null;
 
-                $properties['ref'] = $value;
-    
-                after_ref:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['object'] ?? null;
-    
-                if ($value === null) {
-                    $properties['object'] = null;
-                    goto after_object;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'object';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['object'] = $value;
-    
-                after_object:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitRef::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_node_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\GitRef(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef', $exception, stack: $this->hydrationStack);
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
             }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['object'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'object';
+                goto after_object;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'object';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['object'] = $value;
+
+            after_object:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitRef::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\GitRef(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_(array $payload): \ApiClients\Client\GitHub\Schema\GitRef\Object_
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_(array $payload): \ApiClients\Client\GitHub\Schema\GitRef\Object_
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['type'] ?? null;
 
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['sha'] ?? null;
-    
-                if ($value === null) {
-                    $properties['sha'] = null;
-                    goto after_sha;
-                }
-
-                $properties['sha'] = $value;
-    
-                after_sha:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'type';
+                goto after_type;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitRef\Object_::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['sha'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'sha';
+                goto after_sha;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\GitRef\Object_(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
+
+            $properties['sha'] = $value;
+
+            after_sha:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitRef\Object_::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\GitRef\Object_(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\GitRef' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef($object),
-                'ApiClients\Client\GitHub\Schema\GitRef\Object_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\GitRef' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef($object),
+            'ApiClients\Client\GitHub\Schema\GitRef\Object_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -244,41 +262,25 @@ class CbRefRcb implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitRef);
         $result = [];
-        
-        $ref = $object->ref;
 
-        if ($ref === null) {
-            goto after_ref;
-        }
+        $ref = $object->ref;
         after_ref:        $result['ref'] = $ref;
 
         
         $node_id = $object->node_id;
-
-        if ($node_id === null) {
-            goto after_node_id;
-        }
         after_node_id:        $result['node_id'] = $node_id;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
         $object = $object->object;
-
-        if ($object === null) {
-            goto after_object;
-        }
         $object = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($object);
         after_object:        $result['object'] = $object;
 
@@ -286,33 +288,21 @@ class CbRefRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitRef\Object_);
         $result = [];
-        
-        $type = $object->type;
 
-        if ($type === null) {
-            goto after_type;
-        }
+        $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
         $sha = $object->sha;
-
-        if ($sha === null) {
-            goto after_sha;
-        }
         after_sha:        $result['sha'] = $sha;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
 

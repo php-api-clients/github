@@ -31,248 +31,265 @@ class Locations implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocation(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningLocation
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocation(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningLocation
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['type'] ?? null;
 
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['details'] ?? null;
-    
-                if ($value === null) {
-                    $properties['details'] = null;
-                    goto after_details;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'details';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['details'] = $value;
-    
-                after_details:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocation', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'type';
+                goto after_type;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningLocation::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['details'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'details';
+                goto after_details;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\SecretScanningLocation(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocation', $exception, stack: $this->hydrationStack);
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'details';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
+
+            $properties['details'] = $value;
+
+            after_details:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocation', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningLocation::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\SecretScanningLocation(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocation', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['path'] ?? null;
-    
-                if ($value === null) {
-                    $properties['path'] = null;
-                    goto after_path;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['path'] ?? null;
 
-                $properties['path'] = $value;
-    
-                after_path:
-
-                $value = $payload['start_line'] ?? null;
-    
-                if ($value === null) {
-                    $properties['start_line'] = null;
-                    goto after_start_line;
-                }
-
-                $properties['start_line'] = $value;
-    
-                after_start_line:
-
-                $value = $payload['end_line'] ?? null;
-    
-                if ($value === null) {
-                    $properties['end_line'] = null;
-                    goto after_end_line;
-                }
-
-                $properties['end_line'] = $value;
-    
-                after_end_line:
-
-                $value = $payload['start_column'] ?? null;
-    
-                if ($value === null) {
-                    $properties['start_column'] = null;
-                    goto after_start_column;
-                }
-
-                $properties['start_column'] = $value;
-    
-                after_start_column:
-
-                $value = $payload['end_column'] ?? null;
-    
-                if ($value === null) {
-                    $properties['end_column'] = null;
-                    goto after_end_column;
-                }
-
-                $properties['end_column'] = $value;
-    
-                after_end_column:
-
-                $value = $payload['blob_sha'] ?? null;
-    
-                if ($value === null) {
-                    $properties['blob_sha'] = null;
-                    goto after_blob_sha;
-                }
-
-                $properties['blob_sha'] = $value;
-    
-                after_blob_sha:
-
-                $value = $payload['blob_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['blob_url'] = null;
-                    goto after_blob_url;
-                }
-
-                $properties['blob_url'] = $value;
-    
-                after_blob_url:
-
-                $value = $payload['commit_sha'] ?? null;
-    
-                if ($value === null) {
-                    $properties['commit_sha'] = null;
-                    goto after_commit_sha;
-                }
-
-                $properties['commit_sha'] = $value;
-    
-                after_commit_sha:
-
-                $value = $payload['commit_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['commit_url'] = null;
-                    goto after_commit_url;
-                }
-
-                $properties['commit_url'] = $value;
-    
-                after_commit_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'path';
+                goto after_path;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['path'] = $value;
+
+            after_path:
+
+            $value = $payload['start_line'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'start_line';
+                goto after_start_line;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit', $exception, stack: $this->hydrationStack);
+
+            $properties['start_line'] = $value;
+
+            after_start_line:
+
+            $value = $payload['end_line'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'end_line';
+                goto after_end_line;
             }
+
+            $properties['end_line'] = $value;
+
+            after_end_line:
+
+            $value = $payload['start_column'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'start_column';
+                goto after_start_column;
+            }
+
+            $properties['start_column'] = $value;
+
+            after_start_column:
+
+            $value = $payload['end_column'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'end_column';
+                goto after_end_column;
+            }
+
+            $properties['end_column'] = $value;
+
+            after_end_column:
+
+            $value = $payload['blob_sha'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'blob_sha';
+                goto after_blob_sha;
+            }
+
+            $properties['blob_sha'] = $value;
+
+            after_blob_sha:
+
+            $value = $payload['blob_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'blob_url';
+                goto after_blob_url;
+            }
+
+            $properties['blob_url'] = $value;
+
+            after_blob_url:
+
+            $value = $payload['commit_sha'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'commit_sha';
+                goto after_commit_sha;
+            }
+
+            $properties['commit_sha'] = $value;
+
+            after_commit_sha:
+
+            $value = $payload['commit_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'commit_url';
+                goto after_commit_url;
+            }
+
+            $properties['commit_url'] = $value;
+
+            after_commit_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['code'] ?? null;
-    
-                if ($value === null) {
-                    $properties['code'] = null;
-                    goto after_code;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['code'] ?? null;
 
-                $properties['code'] = $value;
-    
-                after_code:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['code'] = null;
+                goto after_code;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['code'] = $value;
+
+            after_code:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
+            }
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\SecretScanningLocation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocation($object),
-                'ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($object),
-                'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\SecretScanningLocation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocation($object),
+            'ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($object),
+            'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -345,25 +362,17 @@ class Locations implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocation(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecretScanningLocation);
         $result = [];
-        
-        $type = $object->type;
 
-        if ($type === null) {
-            goto after_type;
-        }
+        $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
         $details = $object->details;
-
-        if ($details === null) {
-            goto after_details;
-        }
         $details = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($details);
         after_details:        $result['details'] = $details;
 
@@ -371,93 +380,57 @@ class Locations implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit);
         $result = [];
-        
-        $path = $object->path;
 
-        if ($path === null) {
-            goto after_path;
-        }
+        $path = $object->path;
         after_path:        $result['path'] = $path;
 
         
         $start_line = $object->start_line;
-
-        if ($start_line === null) {
-            goto after_start_line;
-        }
         after_start_line:        $result['start_line'] = $start_line;
 
         
         $end_line = $object->end_line;
-
-        if ($end_line === null) {
-            goto after_end_line;
-        }
         after_end_line:        $result['end_line'] = $end_line;
 
         
         $start_column = $object->start_column;
-
-        if ($start_column === null) {
-            goto after_start_column;
-        }
         after_start_column:        $result['start_column'] = $start_column;
 
         
         $end_column = $object->end_column;
-
-        if ($end_column === null) {
-            goto after_end_column;
-        }
         after_end_column:        $result['end_column'] = $end_column;
 
         
         $blob_sha = $object->blob_sha;
-
-        if ($blob_sha === null) {
-            goto after_blob_sha;
-        }
         after_blob_sha:        $result['blob_sha'] = $blob_sha;
 
         
         $blob_url = $object->blob_url;
-
-        if ($blob_url === null) {
-            goto after_blob_url;
-        }
         after_blob_url:        $result['blob_url'] = $blob_url;
 
         
         $commit_sha = $object->commit_sha;
-
-        if ($commit_sha === null) {
-            goto after_commit_sha;
-        }
         after_commit_sha:        $result['commit_sha'] = $commit_sha;
 
         
         $commit_url = $object->commit_url;
-
-        if ($commit_url === null) {
-            goto after_commit_url;
-        }
         after_commit_url:        $result['commit_url'] = $commit_url;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503);
         $result = [];
-        
+
         $code = $object->code;
 
         if ($code === null) {

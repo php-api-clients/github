@@ -17,7 +17,7 @@ final readonly class Thread
     /**
      * repository: Minimal Repository
      */
-    public function __construct(public ?string $id, public ?Schema\MinimalRepository $repository, public ?Schema\Thread\Subject $subject, public ?string $reason, public ?bool $unread, public ?string $updated_at, public ?string $last_read_at, public ?string $url, public ?string $subscription_url)
+    public function __construct(public string $id, public Schema\MinimalRepository $repository, public Schema\Thread\Subject $subject, public string $reason, public bool $unread, public string $updated_at, public ?string $last_read_at, public string $url, public string $subscription_url)
     {
     }
 }

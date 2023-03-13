@@ -19,11 +19,11 @@ final readonly class Applicationjson
      * body: The contents of the issue.
      * assignee: Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is deprecated.**_
      * labels: Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
-     * @param array<string> $labels
+     * @param ?array<string> $labels
      * assignees: Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
-     * @param array<string> $assignees
+     * @param ?array<string> $assignees
      */
-    public function __construct(public ?string $title, public string $body, public ?string $assignee, public string $milestone, public array $labels, public array $assignees)
+    public function __construct(public string $title, public ?string $body, public ?string $assignee, public ?string $milestone, public ?array $labels, public ?array $assignees)
     {
     }
 }

@@ -14,7 +14,7 @@ final readonly class Commit
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/commits\\/6dcb09b5b57875f334f61aebed695e2e4193db5e","author":null,"committer":null,"message":"Fix all the bugs","comment_count":0,"tree":{"sha":"827efc6d56897b048c772eb4087f854f46256132","url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/tree\\/827efc6d56897b048c772eb4087f854f46256132"},"verification":{"verified":false,"reason":"generated_reason","payload":"generated_payload","signature":"generated_signature"}}';
-    public function __construct(public ?string $url, public mixed $author, public mixed $committer, public ?string $message, public ?int $comment_count, public ?Schema\Commit\Commit\Tree $tree, public Schema\Verification $verification)
+    public function __construct(public string $url, public mixed $author, public mixed $committer, public string $message, public int $comment_count, public Schema\Commit\Commit\Tree $tree, public ?Schema\Verification $verification)
     {
     }
 }

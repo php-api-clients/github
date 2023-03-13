@@ -19,7 +19,7 @@ final readonly class Author
      * email: The email of the author (or committer) of the commit
      * date: Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function __construct(public ?string $name, public ?string $email, public string $date)
+    public function __construct(public string $name, public string $email, public ?string $date)
     {
     }
 }

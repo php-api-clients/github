@@ -32,808 +32,824 @@ class Health implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['domain'] = null;
-                    goto after_domain;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['domain'] ?? null;
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'domain';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['domain'] = $value;
-    
-                after_domain:
-
-                $value = $payload['alt_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['alt_domain'] = null;
-                    goto after_alt_domain;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'alt_domain';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['alt_domain'] = $value;
-    
-                after_alt_domain:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['domain'] = null;
+                goto after_domain;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck::class, $missingFields, stack: $this->hydrationStack);
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'domain';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
+
+            $properties['domain'] = $value;
+
+            after_domain:
+
+            $value = $payload['alt_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['alt_domain'] = null;
+                goto after_alt_domain;
             }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'alt_domain';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['alt_domain'] = $value;
+
+            after_alt_domain:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['host'] ?? null;
-    
-                if ($value === null) {
-                    $properties['host'] = null;
-                    goto after_host;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['host'] ?? null;
 
-                $properties['host'] = $value;
-    
-                after_host:
-
-                $value = $payload['uri'] ?? null;
-    
-                if ($value === null) {
-                    $properties['uri'] = null;
-                    goto after_uri;
-                }
-
-                $properties['uri'] = $value;
-    
-                after_uri:
-
-                $value = $payload['nameservers'] ?? null;
-    
-                if ($value === null) {
-                    $properties['nameservers'] = null;
-                    goto after_nameservers;
-                }
-
-                $properties['nameservers'] = $value;
-    
-                after_nameservers:
-
-                $value = $payload['dns_resolves'] ?? null;
-    
-                if ($value === null) {
-                    $properties['dns_resolves'] = null;
-                    goto after_dns_resolves;
-                }
-
-                $properties['dns_resolves'] = $value;
-    
-                after_dns_resolves:
-
-                $value = $payload['is_proxied'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_proxied'] = null;
-                    goto after_is_proxied;
-                }
-
-                $properties['is_proxied'] = $value;
-    
-                after_is_proxied:
-
-                $value = $payload['is_cloudflare_ip'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cloudflare_ip'] = null;
-                    goto after_is_cloudflare_ip;
-                }
-
-                $properties['is_cloudflare_ip'] = $value;
-    
-                after_is_cloudflare_ip:
-
-                $value = $payload['is_fastly_ip'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_fastly_ip'] = null;
-                    goto after_is_fastly_ip;
-                }
-
-                $properties['is_fastly_ip'] = $value;
-    
-                after_is_fastly_ip:
-
-                $value = $payload['is_old_ip_address'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_old_ip_address'] = null;
-                    goto after_is_old_ip_address;
-                }
-
-                $properties['is_old_ip_address'] = $value;
-    
-                after_is_old_ip_address:
-
-                $value = $payload['is_a_record'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_a_record'] = null;
-                    goto after_is_a_record;
-                }
-
-                $properties['is_a_record'] = $value;
-    
-                after_is_a_record:
-
-                $value = $payload['has_cname_record'] ?? null;
-    
-                if ($value === null) {
-                    $properties['has_cname_record'] = null;
-                    goto after_has_cname_record;
-                }
-
-                $properties['has_cname_record'] = $value;
-    
-                after_has_cname_record:
-
-                $value = $payload['has_mx_records_present'] ?? null;
-    
-                if ($value === null) {
-                    $properties['has_mx_records_present'] = null;
-                    goto after_has_mx_records_present;
-                }
-
-                $properties['has_mx_records_present'] = $value;
-    
-                after_has_mx_records_present:
-
-                $value = $payload['is_valid_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_valid_domain'] = null;
-                    goto after_is_valid_domain;
-                }
-
-                $properties['is_valid_domain'] = $value;
-    
-                after_is_valid_domain:
-
-                $value = $payload['is_apex_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_apex_domain'] = null;
-                    goto after_is_apex_domain;
-                }
-
-                $properties['is_apex_domain'] = $value;
-    
-                after_is_apex_domain:
-
-                $value = $payload['should_be_a_record'] ?? null;
-    
-                if ($value === null) {
-                    $properties['should_be_a_record'] = null;
-                    goto after_should_be_a_record;
-                }
-
-                $properties['should_be_a_record'] = $value;
-    
-                after_should_be_a_record:
-
-                $value = $payload['is_cname_to_github_user_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cname_to_github_user_domain'] = null;
-                    goto after_is_cname_to_github_user_domain;
-                }
-
-                $properties['is_cname_to_github_user_domain'] = $value;
-    
-                after_is_cname_to_github_user_domain:
-
-                $value = $payload['is_cname_to_pages_dot_github_dot_com'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cname_to_pages_dot_github_dot_com'] = null;
-                    goto after_is_cname_to_pages_dot_github_dot_com;
-                }
-
-                $properties['is_cname_to_pages_dot_github_dot_com'] = $value;
-    
-                after_is_cname_to_pages_dot_github_dot_com:
-
-                $value = $payload['is_cname_to_fastly'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cname_to_fastly'] = null;
-                    goto after_is_cname_to_fastly;
-                }
-
-                $properties['is_cname_to_fastly'] = $value;
-    
-                after_is_cname_to_fastly:
-
-                $value = $payload['is_pointed_to_github_pages_ip'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_pointed_to_github_pages_ip'] = null;
-                    goto after_is_pointed_to_github_pages_ip;
-                }
-
-                $properties['is_pointed_to_github_pages_ip'] = $value;
-    
-                after_is_pointed_to_github_pages_ip:
-
-                $value = $payload['is_non_github_pages_ip_present'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_non_github_pages_ip_present'] = null;
-                    goto after_is_non_github_pages_ip_present;
-                }
-
-                $properties['is_non_github_pages_ip_present'] = $value;
-    
-                after_is_non_github_pages_ip_present:
-
-                $value = $payload['is_pages_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_pages_domain'] = null;
-                    goto after_is_pages_domain;
-                }
-
-                $properties['is_pages_domain'] = $value;
-    
-                after_is_pages_domain:
-
-                $value = $payload['is_served_by_pages'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_served_by_pages'] = null;
-                    goto after_is_served_by_pages;
-                }
-
-                $properties['is_served_by_pages'] = $value;
-    
-                after_is_served_by_pages:
-
-                $value = $payload['is_valid'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_valid'] = null;
-                    goto after_is_valid;
-                }
-
-                $properties['is_valid'] = $value;
-    
-                after_is_valid:
-
-                $value = $payload['reason'] ?? null;
-    
-                if ($value === null) {
-                    $properties['reason'] = null;
-                    goto after_reason;
-                }
-
-                $properties['reason'] = $value;
-    
-                after_reason:
-
-                $value = $payload['responds_to_https'] ?? null;
-    
-                if ($value === null) {
-                    $properties['responds_to_https'] = null;
-                    goto after_responds_to_https;
-                }
-
-                $properties['responds_to_https'] = $value;
-    
-                after_responds_to_https:
-
-                $value = $payload['enforces_https'] ?? null;
-    
-                if ($value === null) {
-                    $properties['enforces_https'] = null;
-                    goto after_enforces_https;
-                }
-
-                $properties['enforces_https'] = $value;
-    
-                after_enforces_https:
-
-                $value = $payload['https_error'] ?? null;
-    
-                if ($value === null) {
-                    $properties['https_error'] = null;
-                    goto after_https_error;
-                }
-
-                $properties['https_error'] = $value;
-    
-                after_https_error:
-
-                $value = $payload['is_https_eligible'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_https_eligible'] = null;
-                    goto after_is_https_eligible;
-                }
-
-                $properties['is_https_eligible'] = $value;
-    
-                after_is_https_eligible:
-
-                $value = $payload['caa_error'] ?? null;
-    
-                if ($value === null) {
-                    $properties['caa_error'] = null;
-                    goto after_caa_error;
-                }
-
-                $properties['caa_error'] = $value;
-    
-                after_caa_error:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['host'] = null;
+                goto after_host;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['host'] = $value;
+
+            after_host:
+
+            $value = $payload['uri'] ?? null;
+
+            if ($value === null) {
+                $properties['uri'] = null;
+                goto after_uri;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
+
+            $properties['uri'] = $value;
+
+            after_uri:
+
+            $value = $payload['nameservers'] ?? null;
+
+            if ($value === null) {
+                $properties['nameservers'] = null;
+                goto after_nameservers;
             }
+
+            $properties['nameservers'] = $value;
+
+            after_nameservers:
+
+            $value = $payload['dns_resolves'] ?? null;
+
+            if ($value === null) {
+                $properties['dns_resolves'] = null;
+                goto after_dns_resolves;
+            }
+
+            $properties['dns_resolves'] = $value;
+
+            after_dns_resolves:
+
+            $value = $payload['is_proxied'] ?? null;
+
+            if ($value === null) {
+                $properties['is_proxied'] = null;
+                goto after_is_proxied;
+            }
+
+            $properties['is_proxied'] = $value;
+
+            after_is_proxied:
+
+            $value = $payload['is_cloudflare_ip'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cloudflare_ip'] = null;
+                goto after_is_cloudflare_ip;
+            }
+
+            $properties['is_cloudflare_ip'] = $value;
+
+            after_is_cloudflare_ip:
+
+            $value = $payload['is_fastly_ip'] ?? null;
+
+            if ($value === null) {
+                $properties['is_fastly_ip'] = null;
+                goto after_is_fastly_ip;
+            }
+
+            $properties['is_fastly_ip'] = $value;
+
+            after_is_fastly_ip:
+
+            $value = $payload['is_old_ip_address'] ?? null;
+
+            if ($value === null) {
+                $properties['is_old_ip_address'] = null;
+                goto after_is_old_ip_address;
+            }
+
+            $properties['is_old_ip_address'] = $value;
+
+            after_is_old_ip_address:
+
+            $value = $payload['is_a_record'] ?? null;
+
+            if ($value === null) {
+                $properties['is_a_record'] = null;
+                goto after_is_a_record;
+            }
+
+            $properties['is_a_record'] = $value;
+
+            after_is_a_record:
+
+            $value = $payload['has_cname_record'] ?? null;
+
+            if ($value === null) {
+                $properties['has_cname_record'] = null;
+                goto after_has_cname_record;
+            }
+
+            $properties['has_cname_record'] = $value;
+
+            after_has_cname_record:
+
+            $value = $payload['has_mx_records_present'] ?? null;
+
+            if ($value === null) {
+                $properties['has_mx_records_present'] = null;
+                goto after_has_mx_records_present;
+            }
+
+            $properties['has_mx_records_present'] = $value;
+
+            after_has_mx_records_present:
+
+            $value = $payload['is_valid_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_valid_domain'] = null;
+                goto after_is_valid_domain;
+            }
+
+            $properties['is_valid_domain'] = $value;
+
+            after_is_valid_domain:
+
+            $value = $payload['is_apex_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_apex_domain'] = null;
+                goto after_is_apex_domain;
+            }
+
+            $properties['is_apex_domain'] = $value;
+
+            after_is_apex_domain:
+
+            $value = $payload['should_be_a_record'] ?? null;
+
+            if ($value === null) {
+                $properties['should_be_a_record'] = null;
+                goto after_should_be_a_record;
+            }
+
+            $properties['should_be_a_record'] = $value;
+
+            after_should_be_a_record:
+
+            $value = $payload['is_cname_to_github_user_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cname_to_github_user_domain'] = null;
+                goto after_is_cname_to_github_user_domain;
+            }
+
+            $properties['is_cname_to_github_user_domain'] = $value;
+
+            after_is_cname_to_github_user_domain:
+
+            $value = $payload['is_cname_to_pages_dot_github_dot_com'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cname_to_pages_dot_github_dot_com'] = null;
+                goto after_is_cname_to_pages_dot_github_dot_com;
+            }
+
+            $properties['is_cname_to_pages_dot_github_dot_com'] = $value;
+
+            after_is_cname_to_pages_dot_github_dot_com:
+
+            $value = $payload['is_cname_to_fastly'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cname_to_fastly'] = null;
+                goto after_is_cname_to_fastly;
+            }
+
+            $properties['is_cname_to_fastly'] = $value;
+
+            after_is_cname_to_fastly:
+
+            $value = $payload['is_pointed_to_github_pages_ip'] ?? null;
+
+            if ($value === null) {
+                $properties['is_pointed_to_github_pages_ip'] = null;
+                goto after_is_pointed_to_github_pages_ip;
+            }
+
+            $properties['is_pointed_to_github_pages_ip'] = $value;
+
+            after_is_pointed_to_github_pages_ip:
+
+            $value = $payload['is_non_github_pages_ip_present'] ?? null;
+
+            if ($value === null) {
+                $properties['is_non_github_pages_ip_present'] = null;
+                goto after_is_non_github_pages_ip_present;
+            }
+
+            $properties['is_non_github_pages_ip_present'] = $value;
+
+            after_is_non_github_pages_ip_present:
+
+            $value = $payload['is_pages_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_pages_domain'] = null;
+                goto after_is_pages_domain;
+            }
+
+            $properties['is_pages_domain'] = $value;
+
+            after_is_pages_domain:
+
+            $value = $payload['is_served_by_pages'] ?? null;
+
+            if ($value === null) {
+                $properties['is_served_by_pages'] = null;
+                goto after_is_served_by_pages;
+            }
+
+            $properties['is_served_by_pages'] = $value;
+
+            after_is_served_by_pages:
+
+            $value = $payload['is_valid'] ?? null;
+
+            if ($value === null) {
+                $properties['is_valid'] = null;
+                goto after_is_valid;
+            }
+
+            $properties['is_valid'] = $value;
+
+            after_is_valid:
+
+            $value = $payload['reason'] ?? null;
+
+            if ($value === null) {
+                $properties['reason'] = null;
+                goto after_reason;
+            }
+
+            $properties['reason'] = $value;
+
+            after_reason:
+
+            $value = $payload['responds_to_https'] ?? null;
+
+            if ($value === null) {
+                $properties['responds_to_https'] = null;
+                goto after_responds_to_https;
+            }
+
+            $properties['responds_to_https'] = $value;
+
+            after_responds_to_https:
+
+            $value = $payload['enforces_https'] ?? null;
+
+            if ($value === null) {
+                $properties['enforces_https'] = null;
+                goto after_enforces_https;
+            }
+
+            $properties['enforces_https'] = $value;
+
+            after_enforces_https:
+
+            $value = $payload['https_error'] ?? null;
+
+            if ($value === null) {
+                $properties['https_error'] = null;
+                goto after_https_error;
+            }
+
+            $properties['https_error'] = $value;
+
+            after_https_error:
+
+            $value = $payload['is_https_eligible'] ?? null;
+
+            if ($value === null) {
+                $properties['is_https_eligible'] = null;
+                goto after_is_https_eligible;
+            }
+
+            $properties['is_https_eligible'] = $value;
+
+            after_is_https_eligible:
+
+            $value = $payload['caa_error'] ?? null;
+
+            if ($value === null) {
+                $properties['caa_error'] = null;
+                goto after_caa_error;
+            }
+
+            $properties['caa_error'] = $value;
+
+            after_caa_error:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['host'] ?? null;
-    
-                if ($value === null) {
-                    $properties['host'] = null;
-                    goto after_host;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['host'] ?? null;
 
-                $properties['host'] = $value;
-    
-                after_host:
-
-                $value = $payload['uri'] ?? null;
-    
-                if ($value === null) {
-                    $properties['uri'] = null;
-                    goto after_uri;
-                }
-
-                $properties['uri'] = $value;
-    
-                after_uri:
-
-                $value = $payload['nameservers'] ?? null;
-    
-                if ($value === null) {
-                    $properties['nameservers'] = null;
-                    goto after_nameservers;
-                }
-
-                $properties['nameservers'] = $value;
-    
-                after_nameservers:
-
-                $value = $payload['dns_resolves'] ?? null;
-    
-                if ($value === null) {
-                    $properties['dns_resolves'] = null;
-                    goto after_dns_resolves;
-                }
-
-                $properties['dns_resolves'] = $value;
-    
-                after_dns_resolves:
-
-                $value = $payload['is_proxied'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_proxied'] = null;
-                    goto after_is_proxied;
-                }
-
-                $properties['is_proxied'] = $value;
-    
-                after_is_proxied:
-
-                $value = $payload['is_cloudflare_ip'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cloudflare_ip'] = null;
-                    goto after_is_cloudflare_ip;
-                }
-
-                $properties['is_cloudflare_ip'] = $value;
-    
-                after_is_cloudflare_ip:
-
-                $value = $payload['is_fastly_ip'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_fastly_ip'] = null;
-                    goto after_is_fastly_ip;
-                }
-
-                $properties['is_fastly_ip'] = $value;
-    
-                after_is_fastly_ip:
-
-                $value = $payload['is_old_ip_address'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_old_ip_address'] = null;
-                    goto after_is_old_ip_address;
-                }
-
-                $properties['is_old_ip_address'] = $value;
-    
-                after_is_old_ip_address:
-
-                $value = $payload['is_a_record'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_a_record'] = null;
-                    goto after_is_a_record;
-                }
-
-                $properties['is_a_record'] = $value;
-    
-                after_is_a_record:
-
-                $value = $payload['has_cname_record'] ?? null;
-    
-                if ($value === null) {
-                    $properties['has_cname_record'] = null;
-                    goto after_has_cname_record;
-                }
-
-                $properties['has_cname_record'] = $value;
-    
-                after_has_cname_record:
-
-                $value = $payload['has_mx_records_present'] ?? null;
-    
-                if ($value === null) {
-                    $properties['has_mx_records_present'] = null;
-                    goto after_has_mx_records_present;
-                }
-
-                $properties['has_mx_records_present'] = $value;
-    
-                after_has_mx_records_present:
-
-                $value = $payload['is_valid_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_valid_domain'] = null;
-                    goto after_is_valid_domain;
-                }
-
-                $properties['is_valid_domain'] = $value;
-    
-                after_is_valid_domain:
-
-                $value = $payload['is_apex_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_apex_domain'] = null;
-                    goto after_is_apex_domain;
-                }
-
-                $properties['is_apex_domain'] = $value;
-    
-                after_is_apex_domain:
-
-                $value = $payload['should_be_a_record'] ?? null;
-    
-                if ($value === null) {
-                    $properties['should_be_a_record'] = null;
-                    goto after_should_be_a_record;
-                }
-
-                $properties['should_be_a_record'] = $value;
-    
-                after_should_be_a_record:
-
-                $value = $payload['is_cname_to_github_user_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cname_to_github_user_domain'] = null;
-                    goto after_is_cname_to_github_user_domain;
-                }
-
-                $properties['is_cname_to_github_user_domain'] = $value;
-    
-                after_is_cname_to_github_user_domain:
-
-                $value = $payload['is_cname_to_pages_dot_github_dot_com'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cname_to_pages_dot_github_dot_com'] = null;
-                    goto after_is_cname_to_pages_dot_github_dot_com;
-                }
-
-                $properties['is_cname_to_pages_dot_github_dot_com'] = $value;
-    
-                after_is_cname_to_pages_dot_github_dot_com:
-
-                $value = $payload['is_cname_to_fastly'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_cname_to_fastly'] = null;
-                    goto after_is_cname_to_fastly;
-                }
-
-                $properties['is_cname_to_fastly'] = $value;
-    
-                after_is_cname_to_fastly:
-
-                $value = $payload['is_pointed_to_github_pages_ip'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_pointed_to_github_pages_ip'] = null;
-                    goto after_is_pointed_to_github_pages_ip;
-                }
-
-                $properties['is_pointed_to_github_pages_ip'] = $value;
-    
-                after_is_pointed_to_github_pages_ip:
-
-                $value = $payload['is_non_github_pages_ip_present'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_non_github_pages_ip_present'] = null;
-                    goto after_is_non_github_pages_ip_present;
-                }
-
-                $properties['is_non_github_pages_ip_present'] = $value;
-    
-                after_is_non_github_pages_ip_present:
-
-                $value = $payload['is_pages_domain'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_pages_domain'] = null;
-                    goto after_is_pages_domain;
-                }
-
-                $properties['is_pages_domain'] = $value;
-    
-                after_is_pages_domain:
-
-                $value = $payload['is_served_by_pages'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_served_by_pages'] = null;
-                    goto after_is_served_by_pages;
-                }
-
-                $properties['is_served_by_pages'] = $value;
-    
-                after_is_served_by_pages:
-
-                $value = $payload['is_valid'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_valid'] = null;
-                    goto after_is_valid;
-                }
-
-                $properties['is_valid'] = $value;
-    
-                after_is_valid:
-
-                $value = $payload['reason'] ?? null;
-    
-                if ($value === null) {
-                    $properties['reason'] = null;
-                    goto after_reason;
-                }
-
-                $properties['reason'] = $value;
-    
-                after_reason:
-
-                $value = $payload['responds_to_https'] ?? null;
-    
-                if ($value === null) {
-                    $properties['responds_to_https'] = null;
-                    goto after_responds_to_https;
-                }
-
-                $properties['responds_to_https'] = $value;
-    
-                after_responds_to_https:
-
-                $value = $payload['enforces_https'] ?? null;
-    
-                if ($value === null) {
-                    $properties['enforces_https'] = null;
-                    goto after_enforces_https;
-                }
-
-                $properties['enforces_https'] = $value;
-    
-                after_enforces_https:
-
-                $value = $payload['https_error'] ?? null;
-    
-                if ($value === null) {
-                    $properties['https_error'] = null;
-                    goto after_https_error;
-                }
-
-                $properties['https_error'] = $value;
-    
-                after_https_error:
-
-                $value = $payload['is_https_eligible'] ?? null;
-    
-                if ($value === null) {
-                    $properties['is_https_eligible'] = null;
-                    goto after_is_https_eligible;
-                }
-
-                $properties['is_https_eligible'] = $value;
-    
-                after_is_https_eligible:
-
-                $value = $payload['caa_error'] ?? null;
-    
-                if ($value === null) {
-                    $properties['caa_error'] = null;
-                    goto after_caa_error;
-                }
-
-                $properties['caa_error'] = $value;
-    
-                after_caa_error:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['host'] = null;
+                goto after_host;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['host'] = $value;
+
+            after_host:
+
+            $value = $payload['uri'] ?? null;
+
+            if ($value === null) {
+                $properties['uri'] = null;
+                goto after_uri;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
+
+            $properties['uri'] = $value;
+
+            after_uri:
+
+            $value = $payload['nameservers'] ?? null;
+
+            if ($value === null) {
+                $properties['nameservers'] = null;
+                goto after_nameservers;
             }
+
+            $properties['nameservers'] = $value;
+
+            after_nameservers:
+
+            $value = $payload['dns_resolves'] ?? null;
+
+            if ($value === null) {
+                $properties['dns_resolves'] = null;
+                goto after_dns_resolves;
+            }
+
+            $properties['dns_resolves'] = $value;
+
+            after_dns_resolves:
+
+            $value = $payload['is_proxied'] ?? null;
+
+            if ($value === null) {
+                $properties['is_proxied'] = null;
+                goto after_is_proxied;
+            }
+
+            $properties['is_proxied'] = $value;
+
+            after_is_proxied:
+
+            $value = $payload['is_cloudflare_ip'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cloudflare_ip'] = null;
+                goto after_is_cloudflare_ip;
+            }
+
+            $properties['is_cloudflare_ip'] = $value;
+
+            after_is_cloudflare_ip:
+
+            $value = $payload['is_fastly_ip'] ?? null;
+
+            if ($value === null) {
+                $properties['is_fastly_ip'] = null;
+                goto after_is_fastly_ip;
+            }
+
+            $properties['is_fastly_ip'] = $value;
+
+            after_is_fastly_ip:
+
+            $value = $payload['is_old_ip_address'] ?? null;
+
+            if ($value === null) {
+                $properties['is_old_ip_address'] = null;
+                goto after_is_old_ip_address;
+            }
+
+            $properties['is_old_ip_address'] = $value;
+
+            after_is_old_ip_address:
+
+            $value = $payload['is_a_record'] ?? null;
+
+            if ($value === null) {
+                $properties['is_a_record'] = null;
+                goto after_is_a_record;
+            }
+
+            $properties['is_a_record'] = $value;
+
+            after_is_a_record:
+
+            $value = $payload['has_cname_record'] ?? null;
+
+            if ($value === null) {
+                $properties['has_cname_record'] = null;
+                goto after_has_cname_record;
+            }
+
+            $properties['has_cname_record'] = $value;
+
+            after_has_cname_record:
+
+            $value = $payload['has_mx_records_present'] ?? null;
+
+            if ($value === null) {
+                $properties['has_mx_records_present'] = null;
+                goto after_has_mx_records_present;
+            }
+
+            $properties['has_mx_records_present'] = $value;
+
+            after_has_mx_records_present:
+
+            $value = $payload['is_valid_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_valid_domain'] = null;
+                goto after_is_valid_domain;
+            }
+
+            $properties['is_valid_domain'] = $value;
+
+            after_is_valid_domain:
+
+            $value = $payload['is_apex_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_apex_domain'] = null;
+                goto after_is_apex_domain;
+            }
+
+            $properties['is_apex_domain'] = $value;
+
+            after_is_apex_domain:
+
+            $value = $payload['should_be_a_record'] ?? null;
+
+            if ($value === null) {
+                $properties['should_be_a_record'] = null;
+                goto after_should_be_a_record;
+            }
+
+            $properties['should_be_a_record'] = $value;
+
+            after_should_be_a_record:
+
+            $value = $payload['is_cname_to_github_user_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cname_to_github_user_domain'] = null;
+                goto after_is_cname_to_github_user_domain;
+            }
+
+            $properties['is_cname_to_github_user_domain'] = $value;
+
+            after_is_cname_to_github_user_domain:
+
+            $value = $payload['is_cname_to_pages_dot_github_dot_com'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cname_to_pages_dot_github_dot_com'] = null;
+                goto after_is_cname_to_pages_dot_github_dot_com;
+            }
+
+            $properties['is_cname_to_pages_dot_github_dot_com'] = $value;
+
+            after_is_cname_to_pages_dot_github_dot_com:
+
+            $value = $payload['is_cname_to_fastly'] ?? null;
+
+            if ($value === null) {
+                $properties['is_cname_to_fastly'] = null;
+                goto after_is_cname_to_fastly;
+            }
+
+            $properties['is_cname_to_fastly'] = $value;
+
+            after_is_cname_to_fastly:
+
+            $value = $payload['is_pointed_to_github_pages_ip'] ?? null;
+
+            if ($value === null) {
+                $properties['is_pointed_to_github_pages_ip'] = null;
+                goto after_is_pointed_to_github_pages_ip;
+            }
+
+            $properties['is_pointed_to_github_pages_ip'] = $value;
+
+            after_is_pointed_to_github_pages_ip:
+
+            $value = $payload['is_non_github_pages_ip_present'] ?? null;
+
+            if ($value === null) {
+                $properties['is_non_github_pages_ip_present'] = null;
+                goto after_is_non_github_pages_ip_present;
+            }
+
+            $properties['is_non_github_pages_ip_present'] = $value;
+
+            after_is_non_github_pages_ip_present:
+
+            $value = $payload['is_pages_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['is_pages_domain'] = null;
+                goto after_is_pages_domain;
+            }
+
+            $properties['is_pages_domain'] = $value;
+
+            after_is_pages_domain:
+
+            $value = $payload['is_served_by_pages'] ?? null;
+
+            if ($value === null) {
+                $properties['is_served_by_pages'] = null;
+                goto after_is_served_by_pages;
+            }
+
+            $properties['is_served_by_pages'] = $value;
+
+            after_is_served_by_pages:
+
+            $value = $payload['is_valid'] ?? null;
+
+            if ($value === null) {
+                $properties['is_valid'] = null;
+                goto after_is_valid;
+            }
+
+            $properties['is_valid'] = $value;
+
+            after_is_valid:
+
+            $value = $payload['reason'] ?? null;
+
+            if ($value === null) {
+                $properties['reason'] = null;
+                goto after_reason;
+            }
+
+            $properties['reason'] = $value;
+
+            after_reason:
+
+            $value = $payload['responds_to_https'] ?? null;
+
+            if ($value === null) {
+                $properties['responds_to_https'] = null;
+                goto after_responds_to_https;
+            }
+
+            $properties['responds_to_https'] = $value;
+
+            after_responds_to_https:
+
+            $value = $payload['enforces_https'] ?? null;
+
+            if ($value === null) {
+                $properties['enforces_https'] = null;
+                goto after_enforces_https;
+            }
+
+            $properties['enforces_https'] = $value;
+
+            after_enforces_https:
+
+            $value = $payload['https_error'] ?? null;
+
+            if ($value === null) {
+                $properties['https_error'] = null;
+                goto after_https_error;
+            }
+
+            $properties['https_error'] = $value;
+
+            after_https_error:
+
+            $value = $payload['is_https_eligible'] ?? null;
+
+            if ($value === null) {
+                $properties['is_https_eligible'] = null;
+                goto after_is_https_eligible;
+            }
+
+            $properties['is_https_eligible'] = $value;
+
+            after_is_https_eligible:
+
+            $value = $payload['caa_error'] ?? null;
+
+            if ($value === null) {
+                $properties['caa_error'] = null;
+                goto after_caa_error;
+            }
+
+            $properties['caa_error'] = $value;
+
+            after_caa_error:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\PagesHealthCheck' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck($object),
-                'ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($object),
-                'ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\PagesHealthCheck' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck($object),
+            'ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($object),
+            'ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -906,12 +922,12 @@ class Health implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PagesHealthCheck);
         $result = [];
-        
+
         $domain = $object->domain;
 
         if ($domain === null) {
@@ -933,12 +949,12 @@ class Health implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain);
         $result = [];
-        
+
         $host = $object->host;
 
         if ($host === null) {
@@ -1166,12 +1182,12 @@ class Health implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain);
         $result = [];
-        
+
         $host = $object->host;
 
         if ($host === null) {
@@ -1399,12 +1415,12 @@ class Health implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {

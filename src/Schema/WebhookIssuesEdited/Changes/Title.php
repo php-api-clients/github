@@ -17,7 +17,7 @@ final readonly class Title
     /**
      * from: The previous version of the title.
      */
-    public function __construct(public ?string $from)
+    public function __construct(public string $from)
     {
     }
 }

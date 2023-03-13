@@ -17,7 +17,7 @@ final readonly class Deployment
     /**
      * performed_via_github_app: GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public function __construct(public ?string $created_at, public ?Schema\Discussion\AnswerChosenBy $creator, public ?string $description, public ?string $environment, public ?int $id, public ?string $node_id, public ?string $original_environment, public ?string $payload, public ?Schema\WebhookDeploymentStatusCreated\Deployment\PerformedViaGithubApp $performed_via_github_app, public bool $production_environment, public ?string $ref, public ?string $repository_url, public ?string $sha, public ?string $statuses_url, public ?string $task, public bool $transient_environment, public ?string $updated_at, public ?string $url)
+    public function __construct(public string $created_at, public ?Schema\Discussion\AnswerChosenBy $creator, public ?string $description, public string $environment, public int $id, public string $node_id, public string $original_environment, public string $payload, public ?Schema\WebhookDeploymentStatusCreated\Deployment\PerformedViaGithubApp $performed_via_github_app, public ?bool $production_environment, public string $ref, public string $repository_url, public string $sha, public string $statuses_url, public string $task, public ?bool $transient_environment, public string $updated_at, public string $url)
     {
     }
 }

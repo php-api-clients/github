@@ -20,10 +20,10 @@ final readonly class Integration
      * name: The name of the GitHub app
      * permissions: The set of permissions for the GitHub app
      * events: The list of events for the GitHub app
-     * @param ?array<string> $events
+     * @param array<string> $events
      * installations_count: The number of installations associated with the GitHub app
      */
-    public function __construct(public ?int $id, public string $slug, public ?string $node_id, public mixed $owner, public ?string $name, public ?string $description, public ?string $external_url, public ?string $html_url, public ?string $created_at, public ?string $updated_at, public ?Schema\Integration\Permissions $permissions, public ?array $events, public int $installations_count, public string $client_id, public string $client_secret, public ?string $webhook_secret, public string $pem)
+    public function __construct(public int $id, public ?string $slug, public string $node_id, public mixed $owner, public string $name, public ?string $description, public string $external_url, public string $html_url, public string $created_at, public string $updated_at, public Schema\Integration\Permissions $permissions, public array $events, public ?int $installations_count, public ?string $client_id, public ?string $client_secret, public ?string $webhook_secret, public ?string $pem)
     {
     }
 }

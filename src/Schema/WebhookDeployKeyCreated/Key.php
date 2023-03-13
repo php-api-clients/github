@@ -14,7 +14,7 @@ final readonly class Key
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = 'The [`deploy key`](https://docs.github.com/rest/reference/deployments#get-a-deploy-key) resource.';
     public const SCHEMA_EXAMPLE_DATA = '{"added_by":"generated_added_by","created_at":"generated_created_at","id":13,"key":"generated_key","last_used":"generated_last_used","read_only":false,"title":"generated_title","url":"generated_url","verified":false}';
-    public function __construct(public ?string $added_by, public ?string $created_at, public ?int $id, public ?string $key, public ?string $last_used, public ?bool $read_only, public ?string $title, public ?string $url, public ?bool $verified)
+    public function __construct(public ?string $added_by, public string $created_at, public int $id, public string $key, public ?string $last_used, public bool $read_only, public string $title, public string $url, public bool $verified)
     {
     }
 }

@@ -23,7 +23,7 @@ final readonly class RequiredWorkflow
      * state: State of the required workflow
      * repository: Minimal Repository
      */
-    public function __construct(public ?int $id, public ?string $name, public ?string $path, public ?string $scope, public ?string $ref, public ?string $state, public string $selected_repositories_url, public ?string $created_at, public ?string $updated_at, public ?Schema\MinimalRepository $repository)
+    public function __construct(public int $id, public string $name, public string $path, public string $scope, public string $ref, public string $state, public ?string $selected_repositories_url, public string $created_at, public string $updated_at, public Schema\MinimalRepository $repository)
     {
     }
 }

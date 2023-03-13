@@ -22,7 +22,7 @@ final readonly class IssueEvent
      * rename: Issue Event Rename
      * author_association: How the author is associated with the repository.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public mixed $actor, public ?string $event, public ?string $commit_id, public ?string $commit_url, public ?string $created_at, public mixed $issue, public Schema\IssueEventLabel $label, public mixed $assignee, public mixed $assigner, public mixed $review_requester, public mixed $requested_reviewer, public Schema\Team $requested_team, public Schema\IssueEventDismissedReview $dismissed_review, public Schema\IssueEventMilestone $milestone, public Schema\IssueEventProjectCard $project_card, public Schema\IssueEventRename $rename, public string $author_association, public ?string $lock_reason, public mixed $performed_via_github_app)
+    public function __construct(public int $id, public string $node_id, public string $url, public mixed $actor, public string $event, public ?string $commit_id, public ?string $commit_url, public string $created_at, public mixed $issue, public ?Schema\IssueEventLabel $label, public mixed $assignee, public mixed $assigner, public mixed $review_requester, public mixed $requested_reviewer, public ?Schema\Team $requested_team, public ?Schema\IssueEventDismissedReview $dismissed_review, public ?Schema\IssueEventMilestone $milestone, public ?Schema\IssueEventProjectCard $project_card, public ?Schema\IssueEventRename $rename, public ?string $author_association, public ?string $lock_reason, public mixed $performed_via_github_app)
     {
     }
 }

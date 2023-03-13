@@ -30,170 +30,188 @@ class CbBuildIdRcb implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild(array $payload): \ApiClients\Client\GitHub\Schema\PageBuild
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild(array $payload): \ApiClients\Client\GitHub\Schema\PageBuild
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['url'] ?? null;
 
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-                $value = $payload['error'] ?? null;
-    
-                if ($value === null) {
-                    $properties['error'] = null;
-                    goto after_error;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'error';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['error'] = $value;
-    
-                after_error:
-
-                $value = $payload['pusher'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pusher'] = null;
-                    goto after_pusher;
-                }
-
-                $properties['pusher'] = $value;
-    
-                after_pusher:
-
-                $value = $payload['commit'] ?? null;
-    
-                if ($value === null) {
-                    $properties['commit'] = null;
-                    goto after_commit;
-                }
-
-                $properties['commit'] = $value;
-    
-                after_commit:
-
-                $value = $payload['duration'] ?? null;
-    
-                if ($value === null) {
-                    $properties['duration'] = null;
-                    goto after_duration;
-                }
-
-                $properties['duration'] = $value;
-    
-                after_duration:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PageBuild::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'status';
+                goto after_status;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\PageBuild(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild', $exception, stack: $this->hydrationStack);
+
+            $properties['status'] = $value;
+
+            after_status:
+
+            $value = $payload['error'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'error';
+                goto after_error;
             }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'error';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['error'] = $value;
+
+            after_error:
+
+            $value = $payload['pusher'] ?? null;
+
+            if ($value === null) {
+                $properties['pusher'] = null;
+                goto after_pusher;
+            }
+
+            $properties['pusher'] = $value;
+
+            after_pusher:
+
+            $value = $payload['commit'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'commit';
+                goto after_commit;
+            }
+
+            $properties['commit'] = $value;
+
+            after_commit:
+
+            $value = $payload['duration'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'duration';
+                goto after_duration;
+            }
+
+            $properties['duration'] = $value;
+
+            after_duration:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PageBuild::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\PageBuild(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error(array $payload): \ApiClients\Client\GitHub\Schema\PageBuild\Error
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error(array $payload): \ApiClients\Client\GitHub\Schema\PageBuild\Error
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild\Error', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PageBuild\Error::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\PageBuild\Error(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild\Error', $exception, stack: $this->hydrationStack);
+            $properties['message'] = $value;
+
+            after_message:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild\Error', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PageBuild\Error::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\PageBuild\Error(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild\Error', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\PageBuild' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild($object),
-                'ApiClients\Client\GitHub\Schema\PageBuild\Error' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\PageBuild' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild($object),
+            'ApiClients\Client\GitHub\Schema\PageBuild\Error' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -266,33 +284,21 @@ class CbBuildIdRcb implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PageBuild);
         $result = [];
-        
-        $url = $object->url;
 
-        if ($url === null) {
-            goto after_url;
-        }
+        $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
         $status = $object->status;
-
-        if ($status === null) {
-            goto after_status;
-        }
         after_status:        $result['status'] = $status;
 
         
         $error = $object->error;
-
-        if ($error === null) {
-            goto after_error;
-        }
         $error = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($error);
         after_error:        $result['error'] = $error;
 
@@ -306,46 +312,30 @@ class CbBuildIdRcb implements ObjectMapper
 
         
         $commit = $object->commit;
-
-        if ($commit === null) {
-            goto after_commit;
-        }
         after_commit:        $result['commit'] = $commit;
 
         
         $duration = $object->duration;
-
-        if ($duration === null) {
-            goto after_duration;
-        }
         after_duration:        $result['duration'] = $duration;
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
         after_updated_at:        $result['updated_at'] = $updated_at;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PageBuild\Error);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {

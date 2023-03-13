@@ -19,7 +19,7 @@ final readonly class Detector
      * version: The version of the detector used.
      * url: The url of the detector used.
      */
-    public function __construct(public ?string $name, public ?string $version, public ?string $url)
+    public function __construct(public string $name, public string $version, public string $url)
     {
     }
 }

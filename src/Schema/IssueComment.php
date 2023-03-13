@@ -20,7 +20,7 @@ final readonly class IssueComment
      * body: Contents of the issue comment
      * author_association: How the author is associated with the repository.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public string $body, public string $body_text, public string $body_html, public ?string $html_url, public mixed $user, public ?string $created_at, public ?string $updated_at, public ?string $issue_url, public ?string $author_association, public mixed $performed_via_github_app, public Schema\ReactionRollup $reactions)
+    public function __construct(public int $id, public string $node_id, public string $url, public ?string $body, public ?string $body_text, public ?string $body_html, public string $html_url, public mixed $user, public string $created_at, public string $updated_at, public string $issue_url, public string $author_association, public mixed $performed_via_github_app, public ?Schema\ReactionRollup $reactions)
     {
     }
 }

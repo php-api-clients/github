@@ -39,7 +39,7 @@ final class MergeUpstream
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\MergedUpstream
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**The branch has been successfully synced with the upstream repository**/

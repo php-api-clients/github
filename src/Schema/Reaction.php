@@ -17,7 +17,7 @@ final readonly class Reaction
     /**
      * content: The reaction to use
      */
-    public function __construct(public ?int $id, public ?string $node_id, public mixed $user, public ?string $content, public ?string $created_at)
+    public function __construct(public int $id, public string $node_id, public mixed $user, public string $content, public string $created_at)
     {
     }
 }

@@ -30,214 +30,232 @@ class Profile implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile(array $payload): \ApiClients\Client\GitHub\Schema\CommunityProfile
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['health_percentage'] ?? null;
-    
-                if ($value === null) {
-                    $properties['health_percentage'] = null;
-                    goto after_health_percentage;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile(array $payload): \ApiClients\Client\GitHub\Schema\CommunityProfile
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['health_percentage'] ?? null;
 
-                $properties['health_percentage'] = $value;
-    
-                after_health_percentage:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['documentation'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation'] = null;
-                    goto after_documentation;
-                }
-
-                $properties['documentation'] = $value;
-    
-                after_documentation:
-
-                $value = $payload['files'] ?? null;
-    
-                if ($value === null) {
-                    $properties['files'] = null;
-                    goto after_files;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'files';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['files'] = $value;
-    
-                after_files:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['content_reports_enabled'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'content_reports_enabled';
-                    goto after_content_reports_enabled;
-                }
-
-                $properties['content_reports_enabled'] = $value;
-    
-                after_content_reports_enabled:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'health_percentage';
+                goto after_health_percentage;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommunityProfile::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['health_percentage'] = $value;
+
+            after_health_percentage:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $properties['description'] = null;
+                goto after_description;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CommunityProfile(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['documentation'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation'] = null;
+                goto after_documentation;
             }
+
+            $properties['documentation'] = $value;
+
+            after_documentation:
+
+            $value = $payload['files'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'files';
+                goto after_files;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'files';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['files'] = $value;
+
+            after_files:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $properties['updated_at'] = null;
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['content_reports_enabled'] ?? null;
+
+            if ($value === null) {
+                $properties['content_reports_enabled'] = null;
+                goto after_content_reports_enabled;
+            }
+
+            $properties['content_reports_enabled'] = $value;
+
+            after_content_reports_enabled:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommunityProfile::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CommunityProfile(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files(array $payload): \ApiClients\Client\GitHub\Schema\CommunityProfile\Files
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['code_of_conduct'] ?? null;
-    
-                if ($value === null) {
-                    $properties['code_of_conduct'] = null;
-                    goto after_code_of_conduct;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files(array $payload): \ApiClients\Client\GitHub\Schema\CommunityProfile\Files
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['code_of_conduct'] ?? null;
 
-                $properties['code_of_conduct'] = $value;
-    
-                after_code_of_conduct:
-
-                $value = $payload['code_of_conduct_file'] ?? null;
-    
-                if ($value === null) {
-                    $properties['code_of_conduct_file'] = null;
-                    goto after_code_of_conduct_file;
-                }
-
-                $properties['code_of_conduct_file'] = $value;
-    
-                after_code_of_conduct_file:
-
-                $value = $payload['license'] ?? null;
-    
-                if ($value === null) {
-                    $properties['license'] = null;
-                    goto after_license;
-                }
-
-                $properties['license'] = $value;
-    
-                after_license:
-
-                $value = $payload['contributing'] ?? null;
-    
-                if ($value === null) {
-                    $properties['contributing'] = null;
-                    goto after_contributing;
-                }
-
-                $properties['contributing'] = $value;
-    
-                after_contributing:
-
-                $value = $payload['readme'] ?? null;
-    
-                if ($value === null) {
-                    $properties['readme'] = null;
-                    goto after_readme;
-                }
-
-                $properties['readme'] = $value;
-    
-                after_readme:
-
-                $value = $payload['issue_template'] ?? null;
-    
-                if ($value === null) {
-                    $properties['issue_template'] = null;
-                    goto after_issue_template;
-                }
-
-                $properties['issue_template'] = $value;
-    
-                after_issue_template:
-
-                $value = $payload['pull_request_template'] ?? null;
-    
-                if ($value === null) {
-                    $properties['pull_request_template'] = null;
-                    goto after_pull_request_template;
-                }
-
-                $properties['pull_request_template'] = $value;
-    
-                after_pull_request_template:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['code_of_conduct'] = null;
+                goto after_code_of_conduct;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommunityProfile\Files::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['code_of_conduct'] = $value;
+
+            after_code_of_conduct:
+
+            $value = $payload['code_of_conduct_file'] ?? null;
+
+            if ($value === null) {
+                $properties['code_of_conduct_file'] = null;
+                goto after_code_of_conduct_file;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CommunityProfile\Files(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
+
+            $properties['code_of_conduct_file'] = $value;
+
+            after_code_of_conduct_file:
+
+            $value = $payload['license'] ?? null;
+
+            if ($value === null) {
+                $properties['license'] = null;
+                goto after_license;
+            }
+
+            $properties['license'] = $value;
+
+            after_license:
+
+            $value = $payload['contributing'] ?? null;
+
+            if ($value === null) {
+                $properties['contributing'] = null;
+                goto after_contributing;
+            }
+
+            $properties['contributing'] = $value;
+
+            after_contributing:
+
+            $value = $payload['readme'] ?? null;
+
+            if ($value === null) {
+                $properties['readme'] = null;
+                goto after_readme;
+            }
+
+            $properties['readme'] = $value;
+
+            after_readme:
+
+            $value = $payload['issue_template'] ?? null;
+
+            if ($value === null) {
+                $properties['issue_template'] = null;
+                goto after_issue_template;
+            }
+
+            $properties['issue_template'] = $value;
+
+            after_issue_template:
+
+            $value = $payload['pull_request_template'] ?? null;
+
+            if ($value === null) {
+                $properties['pull_request_template'] = null;
+                goto after_pull_request_template;
+            }
+
+            $properties['pull_request_template'] = $value;
+
+            after_pull_request_template:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommunityProfile\Files::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CommunityProfile\Files(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\CommunityProfile' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile($object),
-                'ApiClients\Client\GitHub\Schema\CommunityProfile\Files' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\CommunityProfile' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile($object),
+            'ApiClients\Client\GitHub\Schema\CommunityProfile\Files' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -310,17 +328,13 @@ class Profile implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommunityProfile);
         $result = [];
-        
-        $health_percentage = $object->health_percentage;
 
-        if ($health_percentage === null) {
-            goto after_health_percentage;
-        }
+        $health_percentage = $object->health_percentage;
         after_health_percentage:        $result['health_percentage'] = $health_percentage;
 
         
@@ -341,10 +355,6 @@ class Profile implements ObjectMapper
 
         
         $files = $object->files;
-
-        if ($files === null) {
-            goto after_files;
-        }
         $files = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($files);
         after_files:        $result['files'] = $files;
 
@@ -358,18 +368,22 @@ class Profile implements ObjectMapper
 
         
         $content_reports_enabled = $object->content_reports_enabled;
+
+        if ($content_reports_enabled === null) {
+            goto after_content_reports_enabled;
+        }
         after_content_reports_enabled:        $result['content_reports_enabled'] = $content_reports_enabled;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommunityProfile\Files);
         $result = [];
-        
+
         $code_of_conduct = $object->code_of_conduct;
 
         if ($code_of_conduct === null) {

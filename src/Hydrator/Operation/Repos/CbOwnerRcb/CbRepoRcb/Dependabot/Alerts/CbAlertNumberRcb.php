@@ -41,1045 +41,1052 @@ class CbAlertNumberRcb implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlert
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['number'] ?? null;
-    
-                if ($value === null) {
-                    $properties['number'] = null;
-                    goto after_number;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlert
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['number'] ?? null;
 
-                $properties['number'] = $value;
-    
-                after_number:
-
-                $value = $payload['state'] ?? null;
-    
-                if ($value === null) {
-                    $properties['state'] = null;
-                    goto after_state;
-                }
-
-                $properties['state'] = $value;
-    
-                after_state:
-
-                $value = $payload['dependency'] ?? null;
-    
-                if ($value === null) {
-                    $properties['dependency'] = null;
-                    goto after_dependency;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'dependency';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['dependency'] = $value;
-    
-                after_dependency:
-
-                $value = $payload['security_advisory'] ?? null;
-    
-                if ($value === null) {
-                    $properties['security_advisory'] = null;
-                    goto after_security_advisory;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'security_advisory';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['security_advisory'] = $value;
-    
-                after_security_advisory:
-
-                $value = $payload['security_vulnerability'] ?? null;
-    
-                if ($value === null) {
-                    $properties['security_vulnerability'] = null;
-                    goto after_security_vulnerability;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'security_vulnerability';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['security_vulnerability'] = $value;
-    
-                after_security_vulnerability:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['dismissed_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['dismissed_at'] = null;
-                    goto after_dismissed_at;
-                }
-
-                $properties['dismissed_at'] = $value;
-    
-                after_dismissed_at:
-
-                $value = $payload['dismissed_by'] ?? null;
-    
-                if ($value === null) {
-                    $properties['dismissed_by'] = null;
-                    goto after_dismissed_by;
-                }
-
-                $properties['dismissed_by'] = $value;
-    
-                after_dismissed_by:
-
-                $value = $payload['dismissed_reason'] ?? null;
-    
-                if ($value === null) {
-                    $properties['dismissed_reason'] = null;
-                    goto after_dismissed_reason;
-                }
-
-                $properties['dismissed_reason'] = $value;
-    
-                after_dismissed_reason:
-
-                $value = $payload['dismissed_comment'] ?? null;
-    
-                if ($value === null) {
-                    $properties['dismissed_comment'] = null;
-                    goto after_dismissed_comment;
-                }
-
-                $properties['dismissed_comment'] = $value;
-    
-                after_dismissed_comment:
-
-                $value = $payload['fixed_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['fixed_at'] = null;
-                    goto after_fixed_at;
-                }
-
-                $properties['fixed_at'] = $value;
-    
-                after_fixed_at:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'number';
+                goto after_number;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlert::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['number'] = $value;
+
+            after_number:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'state';
+                goto after_state;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlert(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert', $exception, stack: $this->hydrationStack);
+
+            $properties['state'] = $value;
+
+            after_state:
+
+            $value = $payload['dependency'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'dependency';
+                goto after_dependency;
             }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'dependency';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['dependency'] = $value;
+
+            after_dependency:
+
+            $value = $payload['security_advisory'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'security_advisory';
+                goto after_security_advisory;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'security_advisory';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['security_advisory'] = $value;
+
+            after_security_advisory:
+
+            $value = $payload['security_vulnerability'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'security_vulnerability';
+                goto after_security_vulnerability;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'security_vulnerability';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['security_vulnerability'] = $value;
+
+            after_security_vulnerability:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'html_url';
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['dismissed_at'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissed_at'] = null;
+                goto after_dismissed_at;
+            }
+
+            $properties['dismissed_at'] = $value;
+
+            after_dismissed_at:
+
+            $value = $payload['dismissed_by'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissed_by'] = null;
+                goto after_dismissed_by;
+            }
+
+            $properties['dismissed_by'] = $value;
+
+            after_dismissed_by:
+
+            $value = $payload['dismissed_reason'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissed_reason'] = null;
+                goto after_dismissed_reason;
+            }
+
+            $properties['dismissed_reason'] = $value;
+
+            after_dismissed_reason:
+
+            $value = $payload['dismissed_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissed_comment'] = null;
+                goto after_dismissed_comment;
+            }
+
+            $properties['dismissed_comment'] = $value;
+
+            after_dismissed_comment:
+
+            $value = $payload['fixed_at'] ?? null;
+
+            if ($value === null) {
+                $properties['fixed_at'] = null;
+                goto after_fixed_at;
+            }
+
+            $properties['fixed_at'] = $value;
+
+            after_fixed_at:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert', $exception, stack: $this->hydrationStack);
         }
 
-        
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['package'] ?? null;
-    
-                if ($value === null) {
-                    $properties['package'] = null;
-                    goto after_package;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'package';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['package'] = $value;
-    
-                after_package:
-
-                $value = $payload['manifest_path'] ?? null;
-    
-                if ($value === null) {
-                    $properties['manifest_path'] = null;
-                    goto after_manifest_path;
-                }
-
-                $properties['manifest_path'] = $value;
-    
-                after_manifest_path:
-
-                $value = $payload['scope'] ?? null;
-    
-                if ($value === null) {
-                    $properties['scope'] = null;
-                    goto after_scope;
-                }
-
-                $properties['scope'] = $value;
-    
-                after_scope:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency', $exception, stack: $this->hydrationStack);
-            }
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlert::class, $missingFields, stack: $this->hydrationStack);
         }
 
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlert(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert', $exception, stack: $this->hydrationStack);
+        }
+    }
+
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertPackage
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['ecosystem'] ?? null;
-    
-                if ($value === null) {
-                    $properties['ecosystem'] = null;
-                    goto after_ecosystem;
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['package'] ?? null;
+
+            if ($value === null) {
+                $properties['package'] = null;
+                goto after_package;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'package';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($value);
+                } finally {
+                    array_pop($this->hydrationStack);
                 }
-
-                $properties['ecosystem'] = $value;
-    
-                after_ecosystem:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertPackage', $exception, stack: $this->hydrationStack);
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertPackage::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['package'] = $value;
+
+            after_package:
+
+            $value = $payload['manifest_path'] ?? null;
+
+            if ($value === null) {
+                $properties['manifest_path'] = null;
+                goto after_manifest_path;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertPackage(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertPackage', $exception, stack: $this->hydrationStack);
+
+            $properties['manifest_path'] = $value;
+
+            after_manifest_path:
+
+            $value = $payload['scope'] ?? null;
+
+            if ($value === null) {
+                $properties['scope'] = null;
+                goto after_scope;
             }
+
+            $properties['scope'] = $value;
+
+            after_scope:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency', $exception, stack: $this->hydrationStack);
         }
 
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency', $exception, stack: $this->hydrationStack);
+        }
+    }
+
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['ghsa_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['ghsa_id'] = null;
-                    goto after_ghsa_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertPackage
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['ecosystem'] ?? null;
 
-                $properties['ghsa_id'] = $value;
-    
-                after_ghsa_id:
+            if ($value === null) {
+                $missingFields[] = 'ecosystem';
+                goto after_ecosystem;
+            }
 
-                $value = $payload['cve_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['cve_id'] = null;
-                    goto after_cve_id;
-                }
+            $properties['ecosystem'] = $value;
 
-                $properties['cve_id'] = $value;
-    
-                after_cve_id:
+            after_ecosystem:
 
-                $value = $payload['summary'] ?? null;
-    
-                if ($value === null) {
-                    $properties['summary'] = null;
-                    goto after_summary;
-                }
+            $value = $payload['name'] ?? null;
 
-                $properties['summary'] = $value;
-    
-                after_summary:
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
 
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
+            $properties['name'] = $value;
 
-                $properties['description'] = $value;
-    
-                after_description:
+            after_name:
 
-                $value = $payload['vulnerabilities'] ?? null;
-    
-                if ($value === null) {
-                    $properties['vulnerabilities'] = null;
-                    goto after_vulnerabilities;
-                }
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertPackage', $exception, stack: $this->hydrationStack);
+        }
 
-                static $vulnerabilitiesCaster1;
-    
-                if ($vulnerabilitiesCaster1 === null) {
-                    $vulnerabilitiesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertPackage::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertPackage(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertPackage', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['ghsa_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ghsa_id';
+                goto after_ghsa_id;
+            }
+
+            $properties['ghsa_id'] = $value;
+
+            after_ghsa_id:
+
+            $value = $payload['cve_id'] ?? null;
+
+            if ($value === null) {
+                $properties['cve_id'] = null;
+                goto after_cve_id;
+            }
+
+            $properties['cve_id'] = $value;
+
+            after_cve_id:
+
+            $value = $payload['summary'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'summary';
+                goto after_summary;
+            }
+
+            $properties['summary'] = $value;
+
+            after_summary:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'description';
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['vulnerabilities'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'vulnerabilities';
+                goto after_vulnerabilities;
+            }
+
+            static $vulnerabilitiesCaster1;
+
+            if ($vulnerabilitiesCaster1 === null) {
+                $vulnerabilitiesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\DependabotAlertSecurityVulnerability',
 ));
+            }
+
+            $value = $vulnerabilitiesCaster1->cast($value, $this);
+
+            $properties['vulnerabilities'] = $value;
+
+            after_vulnerabilities:
+
+            $value = $payload['severity'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'severity';
+                goto after_severity;
+            }
+
+            $properties['severity'] = $value;
+
+            after_severity:
+
+            $value = $payload['cvss'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'cvss';
+                goto after_cvss;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'cvss';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss($value);
+                } finally {
+                    array_pop($this->hydrationStack);
                 }
-    
-                $value = $vulnerabilitiesCaster1->cast($value, $this);
+            }
 
-                $properties['vulnerabilities'] = $value;
-    
-                after_vulnerabilities:
+            $properties['cvss'] = $value;
 
-                $value = $payload['severity'] ?? null;
-    
-                if ($value === null) {
-                    $properties['severity'] = null;
-                    goto after_severity;
-                }
+            after_cvss:
 
-                $properties['severity'] = $value;
-    
-                after_severity:
+            $value = $payload['cwes'] ?? null;
 
-                $value = $payload['cvss'] ?? null;
-    
-                if ($value === null) {
-                    $properties['cvss'] = null;
-                    goto after_cvss;
-                }
+            if ($value === null) {
+                $missingFields[] = 'cwes';
+                goto after_cwes;
+            }
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'cvss';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
+            static $cwesCaster1;
 
-                $properties['cvss'] = $value;
-    
-                after_cvss:
-
-                $value = $payload['cwes'] ?? null;
-    
-                if ($value === null) {
-                    $properties['cwes'] = null;
-                    goto after_cwes;
-                }
-
-                static $cwesCaster1;
-    
-                if ($cwesCaster1 === null) {
-                    $cwesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($cwesCaster1 === null) {
+                $cwesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\DependabotAlertSecurityAdvisory\\Cwes',
 ));
-                }
-    
-                $value = $cwesCaster1->cast($value, $this);
+            }
 
-                $properties['cwes'] = $value;
-    
-                after_cwes:
+            $value = $cwesCaster1->cast($value, $this);
 
-                $value = $payload['identifiers'] ?? null;
-    
-                if ($value === null) {
-                    $properties['identifiers'] = null;
-                    goto after_identifiers;
-                }
+            $properties['cwes'] = $value;
 
-                static $identifiersCaster1;
-    
-                if ($identifiersCaster1 === null) {
-                    $identifiersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_cwes:
+
+            $value = $payload['identifiers'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'identifiers';
+                goto after_identifiers;
+            }
+
+            static $identifiersCaster1;
+
+            if ($identifiersCaster1 === null) {
+                $identifiersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\DependabotAlertSecurityAdvisory\\Identifiers',
 ));
-                }
-    
-                $value = $identifiersCaster1->cast($value, $this);
+            }
 
-                $properties['identifiers'] = $value;
-    
-                after_identifiers:
+            $value = $identifiersCaster1->cast($value, $this);
 
-                $value = $payload['references'] ?? null;
-    
-                if ($value === null) {
-                    $properties['references'] = null;
-                    goto after_references;
-                }
+            $properties['identifiers'] = $value;
 
-                static $referencesCaster1;
-    
-                if ($referencesCaster1 === null) {
-                    $referencesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_identifiers:
+
+            $value = $payload['references'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'references';
+                goto after_references;
+            }
+
+            static $referencesCaster1;
+
+            if ($referencesCaster1 === null) {
+                $referencesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\DependabotAlertSecurityAdvisory\\References',
 ));
-                }
-    
-                $value = $referencesCaster1->cast($value, $this);
-
-                $properties['references'] = $value;
-    
-                after_references:
-
-                $value = $payload['published_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['published_at'] = null;
-                    goto after_published_at;
-                }
-
-                $properties['published_at'] = $value;
-    
-                after_published_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['withdrawn_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['withdrawn_at'] = null;
-                    goto after_withdrawn_at;
-                }
-
-                $properties['withdrawn_at'] = $value;
-    
-                after_withdrawn_at:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory', $exception, stack: $this->hydrationStack);
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory::class, $missingFields, stack: $this->hydrationStack);
+
+            $value = $referencesCaster1->cast($value, $this);
+
+            $properties['references'] = $value;
+
+            after_references:
+
+            $value = $payload['published_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'published_at';
+                goto after_published_at;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory', $exception, stack: $this->hydrationStack);
+
+            $properties['published_at'] = $value;
+
+            after_published_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updated_at;
             }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['withdrawn_at'] ?? null;
+
+            if ($value === null) {
+                $properties['withdrawn_at'] = null;
+                goto after_withdrawn_at;
+            }
+
+            $properties['withdrawn_at'] = $value;
+
+            after_withdrawn_at:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['package'] ?? null;
-    
-                if ($value === null) {
-                    $properties['package'] = null;
-                    goto after_package;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['package'] ?? null;
 
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'package';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['package'] = $value;
-    
-                after_package:
-
-                $value = $payload['severity'] ?? null;
-    
-                if ($value === null) {
-                    $properties['severity'] = null;
-                    goto after_severity;
-                }
-
-                $properties['severity'] = $value;
-    
-                after_severity:
-
-                $value = $payload['vulnerable_version_range'] ?? null;
-    
-                if ($value === null) {
-                    $properties['vulnerable_version_range'] = null;
-                    goto after_vulnerable_version_range;
-                }
-
-                $properties['vulnerable_version_range'] = $value;
-    
-                after_vulnerable_version_range:
-
-                $value = $payload['first_patched_version'] ?? null;
-    
-                if ($value === null) {
-                    $properties['first_patched_version'] = null;
-                    goto after_first_patched_version;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'first_patched_version';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['first_patched_version'] = $value;
-    
-                after_first_patched_version:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'package';
+                goto after_package;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability::class, $missingFields, stack: $this->hydrationStack);
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'package';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability', $exception, stack: $this->hydrationStack);
+
+            $properties['package'] = $value;
+
+            after_package:
+
+            $value = $payload['severity'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'severity';
+                goto after_severity;
             }
+
+            $properties['severity'] = $value;
+
+            after_severity:
+
+            $value = $payload['vulnerable_version_range'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'vulnerable_version_range';
+                goto after_vulnerable_version_range;
+            }
+
+            $properties['vulnerable_version_range'] = $value;
+
+            after_vulnerable_version_range:
+
+            $value = $payload['first_patched_version'] ?? null;
+
+            if ($value === null) {
+                $properties['first_patched_version'] = null;
+                goto after_first_patched_version;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'first_patched_version';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['first_patched_version'] = $value;
+
+            after_first_patched_version:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['identifier'] ?? null;
-    
-                if ($value === null) {
-                    $properties['identifier'] = null;
-                    goto after_identifier;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['identifier'] ?? null;
 
-                $properties['identifier'] = $value;
-    
-                after_identifier:
+            if ($value === null) {
+                $missingFields[] = 'identifier';
+                goto after_identifier;
+            }
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion', $exception, stack: $this->hydrationStack);
-            }
+            $properties['identifier'] = $value;
+
+            after_identifier:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['score'] ?? null;
-    
-                if ($value === null) {
-                    $properties['score'] = null;
-                    goto after_score;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['score'] ?? null;
 
-                $properties['score'] = $value;
-    
-                after_score:
-
-                $value = $payload['vector_string'] ?? null;
-    
-                if ($value === null) {
-                    $properties['vector_string'] = null;
-                    goto after_vector_string;
-                }
-
-                $properties['vector_string'] = $value;
-    
-                after_vector_string:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'score';
+                goto after_score;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['score'] = $value;
+
+            after_score:
+
+            $value = $payload['vector_string'] ?? null;
+
+            if ($value === null) {
+                $properties['vector_string'] = null;
+                goto after_vector_string;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
-            }
+
+            $properties['vector_string'] = $value;
+
+            after_vector_string:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cwes(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['cwe_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['cwe_id'] = null;
-                    goto after_cwe_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cwes(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['cwe_id'] ?? null;
 
-                $properties['cwe_id'] = $value;
-    
-                after_cwe_id:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'cwe_id';
+                goto after_cwe_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['cwe_id'] = $value;
+
+            after_cwe_id:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes', $exception, stack: $this->hydrationStack);
-            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Identifiers(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Identifiers(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['type'] ?? null;
 
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['value'] ?? null;
-    
-                if ($value === null) {
-                    $properties['value'] = null;
-                    goto after_value;
-                }
-
-                $properties['value'] = $value;
-    
-                after_value:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'type';
+                goto after_type;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['value'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'value';
+                goto after_value;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
-            }
+
+            $properties['value'] = $value;
+
+            after_value:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️References(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️References(array $payload): \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['url'] ?? null;
 
-                $properties['url'] = $value;
-    
-                after_url:
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References', $exception, stack: $this->hydrationStack);
-            }
+            $properties['url'] = $value;
+
+            after_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
             }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError(array $payload): \ApiClients\Client\GitHub\Schema\ScimError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError(array $payload): \ApiClients\Client\GitHub\Schema\ScimError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['detail'] ?? null;
-    
-                if ($value === null) {
-                    $properties['detail'] = null;
-                    goto after_detail;
-                }
-
-                $properties['detail'] = $value;
-    
-                after_detail:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-                $value = $payload['scim_type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['scimType'] = null;
-                    goto after_scimType;
-                }
-
-                $properties['scimType'] = $value;
-    
-                after_scimType:
-
-                $value = $payload['schemas'] ?? null;
-    
-                if ($value === null) {
-                    $properties['schemas'] = null;
-                    goto after_schemas;
-                }
-
-                $properties['schemas'] = $value;
-    
-                after_schemas:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ScimError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ScimError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ScimError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ScimError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['detail'] ?? null;
+
+            if ($value === null) {
+                $properties['detail'] = null;
+                goto after_detail;
             }
+
+            $properties['detail'] = $value;
+
+            after_detail:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+            $value = $payload['scim_type'] ?? null;
+
+            if ($value === null) {
+                $properties['scimType'] = null;
+                goto after_scimType;
+            }
+
+            $properties['scimType'] = $value;
+
+            after_scimType:
+
+            $value = $payload['schemas'] ?? null;
+
+            if ($value === null) {
+                $properties['schemas'] = null;
+                goto after_schemas;
+            }
+
+            $properties['schemas'] = $value;
+
+            after_schemas:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ScimError', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ScimError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ScimError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ScimError', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple(array $payload): \ApiClients\Client\GitHub\Schema\ValidationErrorSimple
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple(array $payload): \ApiClients\Client\GitHub\Schema\ValidationErrorSimple
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['errors'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'errors';
-                    goto after_errors;
-                }
-
-                $properties['errors'] = $value;
-    
-                after_errors:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationErrorSimple', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'message';
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationErrorSimple::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'documentation_url';
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ValidationErrorSimple(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationErrorSimple', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['errors'] ?? null;
+
+            if ($value === null) {
+                $properties['errors'] = null;
+                goto after_errors;
+            }
+
+            $properties['errors'] = $value;
+
+            after_errors:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationErrorSimple', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationErrorSimple::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ValidationErrorSimple(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationErrorSimple', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertPackage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cwes($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Identifiers($object),
-                'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️References($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
-                'ApiClients\Client\GitHub\Schema\ScimError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($object),
-                'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertPackage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cwes($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Identifiers($object),
+            'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️References($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\GitHub\Schema\ScimError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($object),
+            'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -1152,84 +1159,48 @@ class CbAlertNumberRcb implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlert);
         $result = [];
-        
-        $number = $object->number;
 
-        if ($number === null) {
-            goto after_number;
-        }
+        $number = $object->number;
         after_number:        $result['number'] = $number;
 
         
         $state = $object->state;
-
-        if ($state === null) {
-            goto after_state;
-        }
         after_state:        $result['state'] = $state;
 
         
         $dependency = $object->dependency;
-
-        if ($dependency === null) {
-            goto after_dependency;
-        }
         $dependency = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency($dependency);
         after_dependency:        $result['dependency'] = $dependency;
 
         
         $security_advisory = $object->security_advisory;
-
-        if ($security_advisory === null) {
-            goto after_security_advisory;
-        }
         $security_advisory = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($security_advisory);
         after_security_advisory:        $result['security_advisory'] = $security_advisory;
 
         
         $security_vulnerability = $object->security_vulnerability;
-
-        if ($security_vulnerability === null) {
-            goto after_security_vulnerability;
-        }
         $security_vulnerability = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($security_vulnerability);
         after_security_vulnerability:        $result['security_vulnerability'] = $security_vulnerability;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
         $html_url = $object->html_url;
-
-        if ($html_url === null) {
-            goto after_html_url;
-        }
         after_html_url:        $result['html_url'] = $html_url;
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
         after_updated_at:        $result['updated_at'] = $updated_at;
 
         
@@ -1276,12 +1247,12 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertWithRepository⚡️Dependency(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertWithRepository\Dependency);
         $result = [];
-        
+
         $package = $object->package;
 
         if ($package === null) {
@@ -1310,42 +1281,30 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertPackage);
         $result = [];
-        
-        $ecosystem = $object->ecosystem;
 
-        if ($ecosystem === null) {
-            goto after_ecosystem;
-        }
+        $ecosystem = $object->ecosystem;
         after_ecosystem:        $result['ecosystem'] = $ecosystem;
 
         
         $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
         after_name:        $result['name'] = $name;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory);
         $result = [];
-        
-        $ghsa_id = $object->ghsa_id;
 
-        if ($ghsa_id === null) {
-            goto after_ghsa_id;
-        }
+        $ghsa_id = $object->ghsa_id;
         after_ghsa_id:        $result['ghsa_id'] = $ghsa_id;
 
         
@@ -1358,26 +1317,14 @@ class CbAlertNumberRcb implements ObjectMapper
 
         
         $summary = $object->summary;
-
-        if ($summary === null) {
-            goto after_summary;
-        }
         after_summary:        $result['summary'] = $summary;
 
         
         $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
         after_description:        $result['description'] = $description;
 
         
         $vulnerabilities = $object->vulnerabilities;
-
-        if ($vulnerabilities === null) {
-            goto after_vulnerabilities;
-        }
         static $vulnerabilitiesSerializer0;
 
         if ($vulnerabilitiesSerializer0 === null) {
@@ -1391,27 +1338,15 @@ class CbAlertNumberRcb implements ObjectMapper
 
         
         $severity = $object->severity;
-
-        if ($severity === null) {
-            goto after_severity;
-        }
         after_severity:        $result['severity'] = $severity;
 
         
         $cvss = $object->cvss;
-
-        if ($cvss === null) {
-            goto after_cvss;
-        }
         $cvss = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss($cvss);
         after_cvss:        $result['cvss'] = $cvss;
 
         
         $cwes = $object->cwes;
-
-        if ($cwes === null) {
-            goto after_cwes;
-        }
         static $cwesSerializer0;
 
         if ($cwesSerializer0 === null) {
@@ -1425,10 +1360,6 @@ class CbAlertNumberRcb implements ObjectMapper
 
         
         $identifiers = $object->identifiers;
-
-        if ($identifiers === null) {
-            goto after_identifiers;
-        }
         static $identifiersSerializer0;
 
         if ($identifiersSerializer0 === null) {
@@ -1442,10 +1373,6 @@ class CbAlertNumberRcb implements ObjectMapper
 
         
         $references = $object->references;
-
-        if ($references === null) {
-            goto after_references;
-        }
         static $referencesSerializer0;
 
         if ($referencesSerializer0 === null) {
@@ -1459,18 +1386,10 @@ class CbAlertNumberRcb implements ObjectMapper
 
         
         $published_at = $object->published_at;
-
-        if ($published_at === null) {
-            goto after_published_at;
-        }
         after_published_at:        $result['published_at'] = $published_at;
 
         
         $updated_at = $object->updated_at;
-
-        if ($updated_at === null) {
-            goto after_updated_at;
-        }
         after_updated_at:        $result['updated_at'] = $updated_at;
 
         
@@ -1485,34 +1404,22 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability);
         $result = [];
-        
-        $package = $object->package;
 
-        if ($package === null) {
-            goto after_package;
-        }
+        $package = $object->package;
         $package = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($package);
         after_package:        $result['package'] = $package;
 
         
         $severity = $object->severity;
-
-        if ($severity === null) {
-            goto after_severity;
-        }
         after_severity:        $result['severity'] = $severity;
 
         
         $vulnerable_version_range = $object->vulnerable_version_range;
-
-        if ($vulnerable_version_range === null) {
-            goto after_vulnerable_version_range;
-        }
         after_vulnerable_version_range:        $result['vulnerable_version_range'] = $vulnerable_version_range;
 
         
@@ -1528,34 +1435,26 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion);
         $result = [];
-        
-        $identifier = $object->identifier;
 
-        if ($identifier === null) {
-            goto after_identifier;
-        }
+        $identifier = $object->identifier;
         after_identifier:        $result['identifier'] = $identifier;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cvss(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss);
         $result = [];
-        
-        $score = $object->score;
 
-        if ($score === null) {
-            goto after_score;
-        }
+        $score = $object->score;
         after_score:        $result['score'] = $score;
 
         
@@ -1570,79 +1469,59 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Cwes(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes);
         $result = [];
-        
-        $cwe_id = $object->cwe_id;
 
-        if ($cwe_id === null) {
-            goto after_cwe_id;
-        }
+        $cwe_id = $object->cwe_id;
         after_cwe_id:        $result['cwe_id'] = $cwe_id;
 
         
         $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
         after_name:        $result['name'] = $name;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️Identifiers(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers);
         $result = [];
-        
-        $type = $object->type;
 
-        if ($type === null) {
-            goto after_type;
-        }
+        $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
         $value = $object->value;
-
-        if ($value === null) {
-            goto after_value;
-        }
         after_value:        $result['value'] = $value;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory⚡️References(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References);
         $result = [];
-        
-        $url = $object->url;
 
-        if ($url === null) {
-            goto after_url;
-        }
+        $url = $object->url;
         after_url:        $result['url'] = $url;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {
@@ -1678,12 +1557,12 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ScimError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {
@@ -1743,29 +1622,25 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationErrorSimple);
         $result = [];
-        
-        $message = $object->message;
 
-        if ($message === null) {
-            goto after_message;
-        }
+        $message = $object->message;
         after_message:        $result['message'] = $message;
 
         
         $documentation_url = $object->documentation_url;
-
-        if ($documentation_url === null) {
-            goto after_documentation_url;
-        }
         after_documentation_url:        $result['documentation_url'] = $documentation_url;
 
         
         $errors = $object->errors;
+
+        if ($errors === null) {
+            goto after_errors;
+        }
         static $errorsSerializer0;
 
         if ($errorsSerializer0 === null) {

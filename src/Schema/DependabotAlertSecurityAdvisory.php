@@ -20,20 +20,20 @@ final readonly class DependabotAlertSecurityAdvisory
      * summary: A short, plain text summary of the advisory.
      * description: A long-form Markdown-supported description of the advisory.
      * vulnerabilities: Vulnerable version range information for the advisory.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability> $vulnerabilities
+     * @param array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability> $vulnerabilities
      * severity: The severity of the advisory.
      * cvss: Details for the advisory pertaining to the Common Vulnerability Scoring System.
      * cwes: Details for the advisory pertaining to Common Weakness Enumeration.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes> $cwes
+     * @param array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes> $cwes
      * identifiers: Values that identify this advisory among security information sources.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers> $identifiers
+     * @param array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Identifiers> $identifiers
      * references: Links to additional advisory information.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References> $references
+     * @param array<\ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\References> $references
      * published_at: The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * updated_at: The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * withdrawn_at: The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function __construct(public ?string $ghsa_id, public ?string $cve_id, public ?string $summary, public ?string $description, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityVulnerability::class)] public ?array $vulnerabilities, public ?string $severity, public ?Schema\DependabotAlertSecurityAdvisory\Cvss $cvss, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityAdvisory\Cwes::class)] public ?array $cwes, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityAdvisory\Identifiers::class)] public ?array $identifiers, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityAdvisory\References::class)] public ?array $references, public ?string $published_at, public ?string $updated_at, public ?string $withdrawn_at)
+    public function __construct(public string $ghsa_id, public ?string $cve_id, public string $summary, public string $description, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityVulnerability::class)] public array $vulnerabilities, public string $severity, public Schema\DependabotAlertSecurityAdvisory\Cvss $cvss, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityAdvisory\Cwes::class)] public array $cwes, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityAdvisory\Identifiers::class)] public array $identifiers, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DependabotAlertSecurityAdvisory\References::class)] public array $references, public string $published_at, public string $updated_at, public ?string $withdrawn_at)
     {
     }
 }

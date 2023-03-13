@@ -30,282 +30,300 @@ class CbAlertNumberRcb implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningAlert(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningAlert
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['number'] ?? null;
-    
-                if ($value === null) {
-                    $properties['number'] = null;
-                    goto after_number;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningAlert(array $payload): \ApiClients\Client\GitHub\Schema\SecretScanningAlert
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['number'] ?? null;
 
-                $properties['number'] = $value;
-    
-                after_number:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['locations_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['locations_url'] = null;
-                    goto after_locations_url;
-                }
-
-                $properties['locations_url'] = $value;
-    
-                after_locations_url:
-
-                $value = $payload['state'] ?? null;
-    
-                if ($value === null) {
-                    $properties['state'] = null;
-                    goto after_state;
-                }
-
-                $properties['state'] = $value;
-    
-                after_state:
-
-                $value = $payload['resolution'] ?? null;
-    
-                if ($value === null) {
-                    $properties['resolution'] = null;
-                    goto after_resolution;
-                }
-
-                $properties['resolution'] = $value;
-    
-                after_resolution:
-
-                $value = $payload['resolved_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['resolved_at'] = null;
-                    goto after_resolved_at;
-                }
-
-                $properties['resolved_at'] = $value;
-    
-                after_resolved_at:
-
-                $value = $payload['resolved_by'] ?? null;
-    
-                if ($value === null) {
-                    $properties['resolved_by'] = null;
-                    goto after_resolved_by;
-                }
-
-                $properties['resolved_by'] = $value;
-    
-                after_resolved_by:
-
-                $value = $payload['resolution_comment'] ?? null;
-    
-                if ($value === null) {
-                    $properties['resolution_comment'] = null;
-                    goto after_resolution_comment;
-                }
-
-                $properties['resolution_comment'] = $value;
-    
-                after_resolution_comment:
-
-                $value = $payload['secret_type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['secret_type'] = null;
-                    goto after_secret_type;
-                }
-
-                $properties['secret_type'] = $value;
-    
-                after_secret_type:
-
-                $value = $payload['secret_type_display_name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['secret_type_display_name'] = null;
-                    goto after_secret_type_display_name;
-                }
-
-                $properties['secret_type_display_name'] = $value;
-    
-                after_secret_type_display_name:
-
-                $value = $payload['secret'] ?? null;
-    
-                if ($value === null) {
-                    $properties['secret'] = null;
-                    goto after_secret;
-                }
-
-                $properties['secret'] = $value;
-    
-                after_secret:
-
-                $value = $payload['push_protection_bypassed'] ?? null;
-    
-                if ($value === null) {
-                    $properties['push_protection_bypassed'] = null;
-                    goto after_push_protection_bypassed;
-                }
-
-                $properties['push_protection_bypassed'] = $value;
-    
-                after_push_protection_bypassed:
-
-                $value = $payload['push_protection_bypassed_by'] ?? null;
-    
-                if ($value === null) {
-                    $properties['push_protection_bypassed_by'] = null;
-                    goto after_push_protection_bypassed_by;
-                }
-
-                $properties['push_protection_bypassed_by'] = $value;
-    
-                after_push_protection_bypassed_by:
-
-                $value = $payload['push_protection_bypassed_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['push_protection_bypassed_at'] = null;
-                    goto after_push_protection_bypassed_at;
-                }
-
-                $properties['push_protection_bypassed_at'] = $value;
-    
-                after_push_protection_bypassed_at:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlert', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['number'] = null;
+                goto after_number;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningAlert::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['number'] = $value;
+
+            after_number:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $properties['created_at'] = null;
+                goto after_created_at;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\SecretScanningAlert(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlert', $exception, stack: $this->hydrationStack);
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $properties['updated_at'] = null;
+                goto after_updated_at;
             }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['html_url'] = null;
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['locations_url'] ?? null;
+
+            if ($value === null) {
+                $properties['locations_url'] = null;
+                goto after_locations_url;
+            }
+
+            $properties['locations_url'] = $value;
+
+            after_locations_url:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $properties['state'] = null;
+                goto after_state;
+            }
+
+            $properties['state'] = $value;
+
+            after_state:
+
+            $value = $payload['resolution'] ?? null;
+
+            if ($value === null) {
+                $properties['resolution'] = null;
+                goto after_resolution;
+            }
+
+            $properties['resolution'] = $value;
+
+            after_resolution:
+
+            $value = $payload['resolved_at'] ?? null;
+
+            if ($value === null) {
+                $properties['resolved_at'] = null;
+                goto after_resolved_at;
+            }
+
+            $properties['resolved_at'] = $value;
+
+            after_resolved_at:
+
+            $value = $payload['resolved_by'] ?? null;
+
+            if ($value === null) {
+                $properties['resolved_by'] = null;
+                goto after_resolved_by;
+            }
+
+            $properties['resolved_by'] = $value;
+
+            after_resolved_by:
+
+            $value = $payload['resolution_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['resolution_comment'] = null;
+                goto after_resolution_comment;
+            }
+
+            $properties['resolution_comment'] = $value;
+
+            after_resolution_comment:
+
+            $value = $payload['secret_type'] ?? null;
+
+            if ($value === null) {
+                $properties['secret_type'] = null;
+                goto after_secret_type;
+            }
+
+            $properties['secret_type'] = $value;
+
+            after_secret_type:
+
+            $value = $payload['secret_type_display_name'] ?? null;
+
+            if ($value === null) {
+                $properties['secret_type_display_name'] = null;
+                goto after_secret_type_display_name;
+            }
+
+            $properties['secret_type_display_name'] = $value;
+
+            after_secret_type_display_name:
+
+            $value = $payload['secret'] ?? null;
+
+            if ($value === null) {
+                $properties['secret'] = null;
+                goto after_secret;
+            }
+
+            $properties['secret'] = $value;
+
+            after_secret:
+
+            $value = $payload['push_protection_bypassed'] ?? null;
+
+            if ($value === null) {
+                $properties['push_protection_bypassed'] = null;
+                goto after_push_protection_bypassed;
+            }
+
+            $properties['push_protection_bypassed'] = $value;
+
+            after_push_protection_bypassed:
+
+            $value = $payload['push_protection_bypassed_by'] ?? null;
+
+            if ($value === null) {
+                $properties['push_protection_bypassed_by'] = null;
+                goto after_push_protection_bypassed_by;
+            }
+
+            $properties['push_protection_bypassed_by'] = $value;
+
+            after_push_protection_bypassed_by:
+
+            $value = $payload['push_protection_bypassed_at'] ?? null;
+
+            if ($value === null) {
+                $properties['push_protection_bypassed_at'] = null;
+                goto after_push_protection_bypassed_at;
+            }
+
+            $properties['push_protection_bypassed_at'] = $value;
+
+            after_push_protection_bypassed_at:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlert', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecretScanningAlert::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\SecretScanningAlert(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlert', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['code'] ?? null;
-    
-                if ($value === null) {
-                    $properties['code'] = null;
-                    goto after_code;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['code'] ?? null;
 
-                $properties['code'] = $value;
-    
-                after_code:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['code'] = null;
+                goto after_code;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['code'] = $value;
+
+            after_code:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
+            }
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\SecretScanningAlert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningAlert($object),
-                'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\SecretScanningAlert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningAlert($object),
+            'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -378,12 +396,12 @@ class CbAlertNumberRcb implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningAlert(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecretScanningAlert);
         $result = [];
-        
+
         $number = $object->number;
 
         if ($number === null) {
@@ -523,12 +541,12 @@ class CbAlertNumberRcb implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503);
         $result = [];
-        
+
         $code = $object->code;
 
         if ($code === null) {

@@ -21,7 +21,7 @@ final readonly class Steps
      * started_at: The time that the step started, in ISO 8601 format.
      * completed_at: The time that the job finished, in ISO 8601 format.
      */
-    public function __construct(public ?string $status, public ?string $conclusion, public ?string $name, public ?int $number, public ?string $started_at, public ?string $completed_at)
+    public function __construct(public string $status, public ?string $conclusion, public string $name, public int $number, public ?string $started_at, public ?string $completed_at)
     {
     }
 }

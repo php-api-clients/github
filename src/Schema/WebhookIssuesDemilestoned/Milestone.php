@@ -19,7 +19,7 @@ final readonly class Milestone
      * state: The state of the milestone.
      * title: The title of the milestone.
      */
-    public function __construct(public ?string $closed_at, public ?int $closed_issues, public ?string $created_at, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $creator, public ?string $description, public ?string $due_on, public ?string $html_url, public ?int $id, public ?string $labels_url, public ?string $node_id, public ?int $number, public ?int $open_issues, public ?string $state, public ?string $title, public ?string $updated_at, public ?string $url)
+    public function __construct(public ?string $closed_at, public int $closed_issues, public string $created_at, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $creator, public ?string $description, public ?string $due_on, public string $html_url, public int $id, public string $labels_url, public string $node_id, public int $number, public int $open_issues, public string $state, public string $title, public string $updated_at, public string $url)
     {
     }
 }

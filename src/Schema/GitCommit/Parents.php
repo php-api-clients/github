@@ -17,7 +17,7 @@ final readonly class Parents
     /**
      * sha: SHA for the commit
      */
-    public function __construct(public ?string $sha, public ?string $url, public ?string $html_url)
+    public function __construct(public string $sha, public string $url, public string $html_url)
     {
     }
 }

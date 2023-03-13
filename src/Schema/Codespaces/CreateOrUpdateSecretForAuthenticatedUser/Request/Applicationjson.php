@@ -18,9 +18,9 @@ final readonly class Applicationjson
      * encrypted_value: Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/reference/codespaces#get-the-public-key-for-the-authenticated-user) endpoint.
      * key_id: ID of the key you used to encrypt the secret.
      * selected_repository_ids: An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret) endpoints.
-     * @param array<int> $selected_repository_ids
+     * @param ?array<int> $selected_repository_ids
      */
-    public function __construct(public string $encrypted_value, public ?string $key_id, public array $selected_repository_ids)
+    public function __construct(public ?string $encrypted_value, public string $key_id, public ?array $selected_repository_ids)
     {
     }
 }

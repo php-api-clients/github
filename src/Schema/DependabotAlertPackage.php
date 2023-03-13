@@ -18,7 +18,7 @@ final readonly class DependabotAlertPackage
      * ecosystem: The package's language or package management ecosystem.
      * name: The unique package name within its ecosystem.
      */
-    public function __construct(public ?string $ecosystem, public ?string $name)
+    public function __construct(public string $ecosystem, public string $name)
     {
     }
 }

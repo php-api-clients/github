@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * new_name: The new name of the branch.
      */
-    public function __construct(public ?string $new_name)
+    public function __construct(public string $new_name)
     {
     }
 }

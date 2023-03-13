@@ -19,7 +19,7 @@ final readonly class Repositories
      * name: The name of the repository.
      * private: Whether the repository is private or public.
      */
-    public function __construct(public ?string $full_name, public ?int $id, public ?string $name, public ?string $node_id, public ?bool $private)
+    public function __construct(public string $full_name, public int $id, public string $name, public string $node_id, public bool $private)
     {
     }
 }

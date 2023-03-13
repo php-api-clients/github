@@ -54,7 +54,7 @@ final readonly class Applicationjson
     - `PR_BODY` - default to the pull request's body.
     - `BLANK` - default to a blank commit message.
     */
-    public function __construct(public ?string $name, public string $description, public string $homepage, public bool $private, public string $visibility, public bool $has_issues, public bool $has_projects, public bool $has_wiki, public bool $has_downloads, public bool $is_template, public int $team_id, public bool $auto_init, public string $gitignore_template, public string $license_template, public bool $allow_squash_merge, public bool $allow_merge_commit, public bool $allow_rebase_merge, public bool $allow_auto_merge, public bool $delete_branch_on_merge, public bool $use_squash_pr_title_as_default, public string $squash_merge_commit_title, public string $squash_merge_commit_message, public string $merge_commit_title, public string $merge_commit_message)
+    public function __construct(public string $name, public ?string $description, public ?string $homepage, public ?bool $private, public ?string $visibility, public ?bool $has_issues, public ?bool $has_projects, public ?bool $has_wiki, public ?bool $has_downloads, public ?bool $is_template, public ?int $team_id, public ?bool $auto_init, public ?string $gitignore_template, public ?string $license_template, public ?bool $allow_squash_merge, public ?bool $allow_merge_commit, public ?bool $allow_rebase_merge, public ?bool $allow_auto_merge, public ?bool $delete_branch_on_merge, public ?bool $use_squash_pr_title_as_default, public ?string $squash_merge_commit_title, public ?string $squash_merge_commit_message, public ?string $merge_commit_title, public ?string $merge_commit_message)
     {
     }
 }

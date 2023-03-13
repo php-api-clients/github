@@ -17,7 +17,7 @@ final readonly class RepoRequiredWorkflow
     /**
      * source_repository: Minimal Repository
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $name, public ?string $path, public ?string $state, public ?Schema\MinimalRepository $source_repository, public ?string $created_at, public ?string $updated_at, public ?string $url, public ?string $html_url, public ?string $badge_url)
+    public function __construct(public int $id, public string $node_id, public string $name, public string $path, public string $state, public Schema\MinimalRepository $source_repository, public string $created_at, public string $updated_at, public string $url, public string $html_url, public string $badge_url)
     {
     }
 }

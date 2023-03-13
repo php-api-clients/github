@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * content: The new blob's content.
      * encoding: The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
      */
-    public function __construct(public ?string $content, public string $encoding)
+    public function __construct(public string $content, public ?string $encoding)
     {
     }
 }

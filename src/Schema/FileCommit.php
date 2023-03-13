@@ -14,7 +14,7 @@ final readonly class FileCommit
     public const SCHEMA_TITLE = 'File Commit';
     public const SCHEMA_DESCRIPTION = 'File Commit';
     public const SCHEMA_EXAMPLE_DATA = '{"content":{"name":"generated_name","path":"generated_path","sha":"generated_sha","size":13,"url":"generated_url","html_url":"generated_html_url","git_url":"generated_git_url","download_url":"generated_download_url","type":"generated_type","_links":{"self":"generated_self","git":"generated_git","html":"generated_html"}},"commit":{"sha":"generated_sha","node_id":"generated_node_id","url":"generated_url","html_url":"generated_html_url","author":{"date":"generated_date","name":"generated_name","email":"generated_email"},"committer":{"date":"generated_date","name":"generated_name","email":"generated_email"},"message":"generated_message","tree":{"url":"generated_url","sha":"generated_sha"},"parents":[{"url":"generated_url","html_url":"generated_html_url","sha":"generated_sha"}],"verification":{"verified":false,"reason":"generated_reason","signature":"generated_signature","payload":"generated_payload"}}}';
-    public function __construct(public ?Schema\FileCommit\Content $content, public ?Schema\FileCommit\Commit $commit)
+    public function __construct(public ?Schema\FileCommit\Content $content, public Schema\FileCommit\Commit $commit)
     {
     }
 }

@@ -19,14 +19,14 @@ final readonly class WebhookInstallationRepositoriesRemoved
      * installation: Installation
      * organization: A GitHub organization.
      * repositories_added: An array of repository objects, which were added to the installation.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\WebhookInstallationCreated\Repositories> $repositories_added
+     * @param array<\ApiClients\Client\GitHub\Schema\WebhookInstallationCreated\Repositories> $repositories_added
      * repositories_removed: An array of repository objects, which were removed from the installation.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\WebhookInstallationCreated\Repositories> $repositories_removed
+     * @param array<\ApiClients\Client\GitHub\Schema\WebhookInstallationCreated\Repositories> $repositories_removed
      * repository: A repository on GitHub.
      * repository_selection: Describe whether all repositories have been selected or there's a selection involved
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public Schema\Enterprise $enterprise, public ?Schema\Installation $installation, public Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationCreated\Repositories::class)] public ?array $repositories_added, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationCreated\Repositories::class)] public ?array $repositories_removed, public Schema\Repository $repository, public ?string $repository_selection, public ?Schema\Discussion\AnswerChosenBy $requester, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\Installation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationCreated\Repositories::class)] public array $repositories_added, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationCreated\Repositories::class)] public array $repositories_removed, public ?Schema\Repository $repository, public string $repository_selection, public ?Schema\Discussion\AnswerChosenBy $requester, public Schema\SimpleUser $sender)
     {
     }
 }

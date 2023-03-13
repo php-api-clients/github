@@ -17,7 +17,7 @@ final readonly class CommitComment
     /**
      * author_association: How the author is associated with the repository.
      */
-    public function __construct(public ?string $html_url, public ?string $url, public ?int $id, public ?string $node_id, public ?string $body, public ?string $path, public ?int $position, public ?int $line, public ?string $commit_id, public mixed $user, public ?string $created_at, public ?string $updated_at, public ?string $author_association, public Schema\ReactionRollup $reactions)
+    public function __construct(public string $html_url, public string $url, public int $id, public string $node_id, public string $body, public ?string $path, public ?int $position, public ?int $line, public string $commit_id, public mixed $user, public string $created_at, public string $updated_at, public string $author_association, public ?Schema\ReactionRollup $reactions)
     {
     }
 }

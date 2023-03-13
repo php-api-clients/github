@@ -17,7 +17,7 @@ final readonly class Discussion
     /**
      * author_association: How the author is associated with the repository.
      */
-    public function __construct(public ?string $active_lock_reason, public ?string $answer_chosen_at, public ?Schema\Discussion\AnswerChosenBy $answer_chosen_by, public ?string $answer_html_url, public ?string $author_association, public ?string $body, public ?Schema\Discussion\Category $category, public ?int $comments, public ?string $created_at, public ?string $html_url, public ?int $id, public ?bool $locked, public ?string $node_id, public ?int $number, public Schema\Discussion\Reactions $reactions, public ?string $repository_url, public ?string $state, public string $timeline_url, public ?string $title, public ?string $updated_at, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(public ?string $active_lock_reason, public ?string $answer_chosen_at, public ?Schema\Discussion\AnswerChosenBy $answer_chosen_by, public ?string $answer_html_url, public string $author_association, public ?string $body, public Schema\Discussion\Category $category, public int $comments, public string $created_at, public string $html_url, public int $id, public bool $locked, public string $node_id, public int $number, public ?Schema\Discussion\Reactions $reactions, public string $repository_url, public string $state, public ?string $timeline_url, public string $title, public string $updated_at, public ?Schema\Discussion\AnswerChosenBy $user)
     {
     }
 }

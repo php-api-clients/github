@@ -18,7 +18,7 @@ final readonly class Assets
      * name: The file name of the asset.
      * state: State of the release asset.
      */
-    public function __construct(public ?string $browser_download_url, public ?string $content_type, public ?string $created_at, public ?int $download_count, public ?int $id, public ?string $label, public ?string $name, public ?string $node_id, public ?int $size, public ?string $state, public ?string $updated_at, public ?Schema\Discussion\AnswerChosenBy $uploader, public ?string $url)
+    public function __construct(public string $browser_download_url, public string $content_type, public string $created_at, public int $download_count, public int $id, public ?string $label, public string $name, public string $node_id, public int $size, public string $state, public string $updated_at, public ?Schema\Discussion\AnswerChosenBy $uploader, public string $url)
     {
     }
 }

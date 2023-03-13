@@ -45,7 +45,7 @@ final class UpdateDiscussionCommentInOrg
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\TeamDiscussionComment
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/

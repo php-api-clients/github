@@ -20,7 +20,7 @@ final readonly class CheckSuite
      * repository: Minimal Repository
      * head_commit: A commit.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $head_branch, public ?string $head_sha, public ?string $status, public ?string $conclusion, public ?string $url, public ?string $before, public ?string $after, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PullRequestMinimal::class)] public ?array $pull_requests, public mixed $app, public ?Schema\MinimalRepository $repository, public ?string $created_at, public ?string $updated_at, public ?Schema\SimpleCommit $head_commit, public ?int $latest_check_runs_count, public ?string $check_runs_url, public bool $rerequestable, public bool $runs_rerequestable)
+    public function __construct(public int $id, public string $node_id, public ?string $head_branch, public string $head_sha, public ?string $status, public ?string $conclusion, public ?string $url, public ?string $before, public ?string $after, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PullRequestMinimal::class)] public ?array $pull_requests, public mixed $app, public Schema\MinimalRepository $repository, public ?string $created_at, public ?string $updated_at, public Schema\SimpleCommit $head_commit, public int $latest_check_runs_count, public string $check_runs_url, public ?bool $rerequestable, public ?bool $runs_rerequestable)
     {
     }
 }

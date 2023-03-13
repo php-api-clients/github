@@ -15,9 +15,9 @@ final readonly class ContributorActivity
     public const SCHEMA_DESCRIPTION = 'Contributor Activity';
     public const SCHEMA_EXAMPLE_DATA = '{"author":null,"total":135,"weeks":[{"w":"1367712000","a":6898,"d":77,"c":10}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks> $weeks
+     * @param array<\ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks> $weeks
      */
-    public function __construct(public mixed $author, public ?int $total, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ContributorActivity\Weeks::class)] public ?array $weeks)
+    public function __construct(public mixed $author, public int $total, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ContributorActivity\Weeks::class)] public array $weeks)
     {
     }
 }

@@ -22,7 +22,7 @@ final readonly class WebhookSponsorshipPendingTierChange
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public ?Schema\WebhookSponsorshipPendingTierChange\Changes $changes, public string $effective_date, public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public Schema\Repository $repository, public ?Schema\SimpleUser $sender, public ?Schema\WebhookSponsorshipCancelled\Sponsorship $sponsorship)
+    public function __construct(public string $action, public Schema\WebhookSponsorshipPendingTierChange\Changes $changes, public ?string $effective_date, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public Schema\SimpleUser $sender, public Schema\WebhookSponsorshipCancelled\Sponsorship $sponsorship)
     {
     }
 }

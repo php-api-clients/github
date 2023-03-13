@@ -15,9 +15,9 @@ final readonly class ContentTree
     public const SCHEMA_DESCRIPTION = 'Content Tree';
     public const SCHEMA_EXAMPLE_DATA = '{"type":"generated_type","size":13,"name":"generated_name","path":"generated_path","sha":"generated_sha","url":"generated_url","git_url":"generated_git_url","html_url":"generated_html_url","download_url":"generated_download_url","entries":[{"type":"generated_type","size":13,"name":"generated_name","path":"generated_path","content":"generated_content","sha":"generated_sha","url":"generated_url","git_url":"generated_git_url","html_url":"generated_html_url","download_url":"generated_download_url","_links":{"git":"generated_git","html":"generated_html","self":"generated_self"}}],"_links":{"git":"generated_git","html":"generated_html","self":"generated_self"}}';
     /**
-     * @param array<\ApiClients\Client\GitHub\Schema\ContentTree\Entries> $entries
+     * @param ?array<\ApiClients\Client\GitHub\Schema\ContentTree\Entries> $entries
      */
-    public function __construct(public ?string $type, public ?int $size, public ?string $name, public ?string $path, public ?string $sha, public ?string $url, public ?string $git_url, public ?string $html_url, public ?string $download_url, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ContentTree\Entries::class)] public array $entries, public ?Schema\ContentTree\Entries\Links $_links)
+    public function __construct(public string $type, public int $size, public string $name, public string $path, public string $sha, public string $url, public ?string $git_url, public ?string $html_url, public ?string $download_url, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ContentTree\Entries::class)] public ?array $entries, public Schema\ContentTree\Entries\Links $_links)
     {
     }
 }

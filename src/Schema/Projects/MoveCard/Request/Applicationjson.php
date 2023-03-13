@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * position: The position of the card in a column. Can be one of: `top`, `bottom`, or `after:<card_id>` to place after the specified card.
      * column_id: The unique identifier of the column the card should be moved to
      */
-    public function __construct(public ?string $position, public int $column_id)
+    public function __construct(public string $position, public ?int $column_id)
     {
     }
 }

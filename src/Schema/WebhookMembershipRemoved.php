@@ -22,7 +22,7 @@ final readonly class WebhookMembershipRemoved
      * scope: The scope of the membership. Currently, can only be `team`.
      * team: Groups of organization members that gives permissions on specified repositories.
      */
-    public function __construct(public ?string $action, public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public ?Schema\Discussion\AnswerChosenBy $member, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public ?string $scope, public ?Schema\Discussion\AnswerChosenBy $sender, public ?Schema\WebhookMembershipAdded\Team $team)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\Discussion\AnswerChosenBy $member, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public string $scope, public ?Schema\Discussion\AnswerChosenBy $sender, public Schema\WebhookMembershipAdded\Team $team)
     {
     }
 }

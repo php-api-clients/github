@@ -30,247 +30,265 @@ class License implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent(array $payload): \ApiClients\Client\GitHub\Schema\LicenseContent
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent(array $payload): \ApiClients\Client\GitHub\Schema\LicenseContent
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['name'] ?? null;
 
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['path'] ?? null;
-    
-                if ($value === null) {
-                    $properties['path'] = null;
-                    goto after_path;
-                }
-
-                $properties['path'] = $value;
-    
-                after_path:
-
-                $value = $payload['sha'] ?? null;
-    
-                if ($value === null) {
-                    $properties['sha'] = null;
-                    goto after_sha;
-                }
-
-                $properties['sha'] = $value;
-    
-                after_sha:
-
-                $value = $payload['size'] ?? null;
-    
-                if ($value === null) {
-                    $properties['size'] = null;
-                    goto after_size;
-                }
-
-                $properties['size'] = $value;
-    
-                after_size:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['git_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['git_url'] = null;
-                    goto after_git_url;
-                }
-
-                $properties['git_url'] = $value;
-    
-                after_git_url:
-
-                $value = $payload['download_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['download_url'] = null;
-                    goto after_download_url;
-                }
-
-                $properties['download_url'] = $value;
-    
-                after_download_url:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['content'] ?? null;
-    
-                if ($value === null) {
-                    $properties['content'] = null;
-                    goto after_content;
-                }
-
-                $properties['content'] = $value;
-    
-                after_content:
-
-                $value = $payload['encoding'] ?? null;
-    
-                if ($value === null) {
-                    $properties['encoding'] = null;
-                    goto after_encoding;
-                }
-
-                $properties['encoding'] = $value;
-    
-                after_encoding:
-
-                $value = $payload['_links'] ?? null;
-    
-                if ($value === null) {
-                    $properties['_links'] = null;
-                    goto after__links;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = '_links';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['_links'] = $value;
-    
-                after__links:
-
-                $value = $payload['license'] ?? null;
-    
-                if ($value === null) {
-                    $properties['license'] = null;
-                    goto after_license;
-                }
-
-                $properties['license'] = $value;
-    
-                after_license:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseContent::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['path'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'path';
+                goto after_path;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\LicenseContent(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
+
+            $properties['path'] = $value;
+
+            after_path:
+
+            $value = $payload['sha'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'sha';
+                goto after_sha;
             }
+
+            $properties['sha'] = $value;
+
+            after_sha:
+
+            $value = $payload['size'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'size';
+                goto after_size;
+            }
+
+            $properties['size'] = $value;
+
+            after_size:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['html_url'] = null;
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['git_url'] ?? null;
+
+            if ($value === null) {
+                $properties['git_url'] = null;
+                goto after_git_url;
+            }
+
+            $properties['git_url'] = $value;
+
+            after_git_url:
+
+            $value = $payload['download_url'] ?? null;
+
+            if ($value === null) {
+                $properties['download_url'] = null;
+                goto after_download_url;
+            }
+
+            $properties['download_url'] = $value;
+
+            after_download_url:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'type';
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['content'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'content';
+                goto after_content;
+            }
+
+            $properties['content'] = $value;
+
+            after_content:
+
+            $value = $payload['encoding'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'encoding';
+                goto after_encoding;
+            }
+
+            $properties['encoding'] = $value;
+
+            after_encoding:
+
+            $value = $payload['_links'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = '_links';
+                goto after__links;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = '_links';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['_links'] = $value;
+
+            after__links:
+
+            $value = $payload['license'] ?? null;
+
+            if ($value === null) {
+                $properties['license'] = null;
+                goto after_license;
+            }
+
+            $properties['license'] = $value;
+
+            after_license:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseContent::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\LicenseContent(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['git'] ?? null;
-    
-                if ($value === null) {
-                    $properties['git'] = null;
-                    goto after_git;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['git'] ?? null;
 
-                $properties['git'] = $value;
-    
-                after_git:
-
-                $value = $payload['html'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html'] = null;
-                    goto after_html;
-                }
-
-                $properties['html'] = $value;
-    
-                after_html:
-
-                $value = $payload['self'] ?? null;
-    
-                if ($value === null) {
-                    $properties['self'] = null;
-                    goto after_self;
-                }
-
-                $properties['self'] = $value;
-    
-                after_self:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['git'] = null;
+                goto after_git;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['git'] = $value;
+
+            after_git:
+
+            $value = $payload['html'] ?? null;
+
+            if ($value === null) {
+                $properties['html'] = null;
+                goto after_html;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links', $exception, stack: $this->hydrationStack);
+
+            $properties['html'] = $value;
+
+            after_html:
+
+            $value = $payload['self'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'self';
+                goto after_self;
+            }
+
+            $properties['self'] = $value;
+
+            after_self:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\LicenseContent' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent($object),
-                'ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\LicenseContent' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent($object),
+            'ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -343,49 +361,29 @@ class License implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseContent);
         $result = [];
-        
-        $name = $object->name;
 
-        if ($name === null) {
-            goto after_name;
-        }
+        $name = $object->name;
         after_name:        $result['name'] = $name;
 
         
         $path = $object->path;
-
-        if ($path === null) {
-            goto after_path;
-        }
         after_path:        $result['path'] = $path;
 
         
         $sha = $object->sha;
-
-        if ($sha === null) {
-            goto after_sha;
-        }
         after_sha:        $result['sha'] = $sha;
 
         
         $size = $object->size;
-
-        if ($size === null) {
-            goto after_size;
-        }
         after_size:        $result['size'] = $size;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
@@ -414,34 +412,18 @@ class License implements ObjectMapper
 
         
         $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
         after_type:        $result['type'] = $type;
 
         
         $content = $object->content;
-
-        if ($content === null) {
-            goto after_content;
-        }
         after_content:        $result['content'] = $content;
 
         
         $encoding = $object->encoding;
-
-        if ($encoding === null) {
-            goto after_encoding;
-        }
         after_encoding:        $result['encoding'] = $encoding;
 
         
         $_links = $object->_links;
-
-        if ($_links === null) {
-            goto after__links;
-        }
         $_links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($_links);
         after__links:        $result['_links'] = $_links;
 
@@ -457,12 +439,12 @@ class License implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links);
         $result = [];
-        
+
         $git = $object->git;
 
         if ($git === null) {
@@ -480,10 +462,6 @@ class License implements ObjectMapper
 
         
         $self = $object->self;
-
-        if ($self === null) {
-            goto after_self;
-        }
         after_self:        $result['self'] = $self;
 
 

@@ -17,7 +17,7 @@ final readonly class Sponsorship
     /**
      * tier: The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
      */
-    public function __construct(public ?string $created_at, public Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner $maintainer, public ?string $node_id, public ?string $privacy_level, public ?Schema\Discussion\AnswerChosenBy $sponsor, public ?Schema\Discussion\AnswerChosenBy $sponsorable, public ?Schema\WebhookSponsorshipCancelled\Sponsorship\Tier $tier)
+    public function __construct(public string $created_at, public ?Schema\WebhookDeploymentCreated\WorkflowRun\HeadRepository\Owner $maintainer, public string $node_id, public string $privacy_level, public ?Schema\Discussion\AnswerChosenBy $sponsor, public ?Schema\Discussion\AnswerChosenBy $sponsorable, public Schema\WebhookSponsorshipCancelled\Sponsorship\Tier $tier)
     {
     }
 }

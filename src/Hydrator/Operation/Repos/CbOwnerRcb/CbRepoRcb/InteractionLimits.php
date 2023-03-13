@@ -29,72 +29,91 @@ class InteractionLimits implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse(array $payload): \ApiClients\Client\GitHub\Schema\InteractionLimitResponse
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['limit'] ?? null;
-    
-                if ($value === null) {
-                    $properties['limit'] = null;
-                    goto after_limit;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse(array $payload): \ApiClients\Client\GitHub\Schema\InteractionLimitResponse
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['limit'] ?? null;
 
-                $properties['limit'] = $value;
-    
-                after_limit:
-
-                $value = $payload['origin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['origin'] = null;
-                    goto after_origin;
-                }
-
-                $properties['origin'] = $value;
-    
-                after_origin:
-
-                $value = $payload['expires_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['expires_at'] = null;
-                    goto after_expires_at;
-                }
-
-                $properties['expires_at'] = $value;
-    
-                after_expires_at:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'limit';
+                goto after_limit;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\InteractionLimitResponse::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['limit'] = $value;
+
+            after_limit:
+
+            $value = $payload['origin'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'origin';
+                goto after_origin;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\InteractionLimitResponse(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
+
+            $properties['origin'] = $value;
+
+            after_origin:
+
+            $value = $payload['expires_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'expires_at';
+                goto after_expires_at;
+            }
+
+            $properties['expires_at'] = $value;
+
+            after_expires_at:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\InteractionLimitResponse::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\InteractionLimitResponse(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\InteractionLimitResponse' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\InteractionLimitResponse' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -167,33 +186,21 @@ class InteractionLimits implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\InteractionLimitResponse);
         $result = [];
-        
-        $limit = $object->limit;
 
-        if ($limit === null) {
-            goto after_limit;
-        }
+        $limit = $object->limit;
         after_limit:        $result['limit'] = $limit;
 
         
         $origin = $object->origin;
-
-        if ($origin === null) {
-            goto after_origin;
-        }
         after_origin:        $result['origin'] = $origin;
 
         
         $expires_at = $object->expires_at;
-
-        if ($expires_at === null) {
-            goto after_expires_at;
-        }
         after_expires_at:        $result['expires_at'] = $expires_at;
 
 

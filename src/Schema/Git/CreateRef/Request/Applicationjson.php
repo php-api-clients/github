@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * ref: The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
      * sha: The SHA1 value for this reference.
      */
-    public function __construct(public ?string $ref, public ?string $sha, public string $key)
+    public function __construct(public string $ref, public string $sha, public ?string $key)
     {
     }
 }

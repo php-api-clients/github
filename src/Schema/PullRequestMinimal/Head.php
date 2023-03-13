@@ -14,7 +14,7 @@ final readonly class Head
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"ref":"generated_ref","sha":"generated_sha","repo":{"id":13,"url":"generated_url","name":"generated_name"}}';
-    public function __construct(public ?string $ref, public ?string $sha, public ?Schema\PullRequestMinimal\Head\Repo $repo)
+    public function __construct(public string $ref, public string $sha, public Schema\PullRequestMinimal\Head\Repo $repo)
     {
     }
 }

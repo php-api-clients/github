@@ -22,7 +22,7 @@ final readonly class WebhookPullRequestAssigned
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public ?Schema\Discussion\AnswerChosenBy $assignee, public Schema\Enterprise $enterprise, public Schema\SimpleInstallation $installation, public ?int $number, public Schema\OrganizationSimple $organization, public ?Schema\WebhookPullRequestAssigned\PullRequest $pull_request, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Discussion\AnswerChosenBy $assignee, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public int $number, public ?Schema\OrganizationSimple $organization, public Schema\WebhookPullRequestAssigned\PullRequest $pull_request, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

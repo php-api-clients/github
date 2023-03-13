@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * head_sha: The sha of the head commit.
      */
-    public function __construct(public ?string $head_sha)
+    public function __construct(public string $head_sha)
     {
     }
 }

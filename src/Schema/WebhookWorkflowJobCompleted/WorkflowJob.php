@@ -17,7 +17,7 @@ final readonly class WorkflowJob
     /**
      * created_at: The time that the job created.
      * labels: Custom labels for the job. Specified by the [`"runs-on"` attribute](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on) in the workflow YAML.
-     * @param ?array<string> $labels
+     * @param array<string> $labels
      * runner_group_id: The ID of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      * runner_group_name: The name of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
      * runner_id: The ID of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
@@ -25,9 +25,9 @@ final readonly class WorkflowJob
      * status: The current status of the job. Can be `queued`, `in_progress`, `waiting`, or `completed`.
      * head_branch: The name of the current branch.
      * workflow_name: The name of the workflow.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps> $steps
+     * @param array<\ApiClients\Client\GitHub\Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps> $steps
      */
-    public function __construct(public ?string $check_run_url, public ?string $completed_at, public ?string $conclusion, public ?string $created_at, public ?string $head_sha, public ?string $html_url, public ?int $id, public ?array $labels, public ?string $name, public ?string $node_id, public ?int $run_attempt, public ?int $run_id, public ?string $run_url, public ?int $runner_group_id, public ?string $runner_group_name, public ?int $runner_id, public ?string $runner_name, public ?string $started_at, public ?string $status, public ?string $head_branch, public ?string $workflow_name, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps::class)] public ?array $steps, public ?string $url)
+    public function __construct(public string $check_run_url, public ?string $completed_at, public ?string $conclusion, public string $created_at, public string $head_sha, public string $html_url, public int $id, public array $labels, public string $name, public string $node_id, public int $run_attempt, public int $run_id, public string $run_url, public ?int $runner_group_id, public ?string $runner_group_name, public ?int $runner_id, public ?string $runner_name, public string $started_at, public string $status, public ?string $head_branch, public ?string $workflow_name, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookWorkflowJobCompleted\WorkflowJob\Steps::class)] public array $steps, public string $url)
     {
     }
 }

@@ -19,7 +19,7 @@ final readonly class OrgMembership
      * role: The user's membership type in the organization.
      * organization: A GitHub organization.
      */
-    public function __construct(public ?string $url, public ?string $state, public ?string $role, public ?string $organization_url, public ?Schema\OrganizationSimple $organization, public mixed $user, public Schema\OrgMembership\Permissions $permissions)
+    public function __construct(public string $url, public string $state, public string $role, public string $organization_url, public Schema\OrganizationSimple $organization, public mixed $user, public ?Schema\OrgMembership\Permissions $permissions)
     {
     }
 }

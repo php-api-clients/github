@@ -29,72 +29,91 @@ class Permissions implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsRepositoryPermissions(array $payload): \ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['enabled'] ?? null;
-    
-                if ($value === null) {
-                    $properties['enabled'] = null;
-                    goto after_enabled;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsRepositoryPermissions(array $payload): \ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['enabled'] ?? null;
 
-                $properties['enabled'] = $value;
-    
-                after_enabled:
-
-                $value = $payload['allowed_actions'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'allowed_actions';
-                    goto after_allowed_actions;
-                }
-
-                $properties['allowed_actions'] = $value;
-    
-                after_allowed_actions:
-
-                $value = $payload['selected_actions_url'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'selected_actions_url';
-                    goto after_selected_actions_url;
-                }
-
-                $properties['selected_actions_url'] = $value;
-    
-                after_selected_actions_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'enabled';
+                goto after_enabled;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['enabled'] = $value;
+
+            after_enabled:
+
+            $value = $payload['allowed_actions'] ?? null;
+
+            if ($value === null) {
+                $properties['allowed_actions'] = null;
+                goto after_allowed_actions;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions', $exception, stack: $this->hydrationStack);
+
+            $properties['allowed_actions'] = $value;
+
+            after_allowed_actions:
+
+            $value = $payload['selected_actions_url'] ?? null;
+
+            if ($value === null) {
+                $properties['selected_actions_url'] = null;
+                goto after_selected_actions_url;
+            }
+
+            $properties['selected_actions_url'] = $value;
+
+            after_selected_actions_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsRepositoryPermissions($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsRepositoryPermissions($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -167,25 +186,29 @@ class Permissions implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsRepositoryPermissions(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsRepositoryPermissions);
         $result = [];
-        
-        $enabled = $object->enabled;
 
-        if ($enabled === null) {
-            goto after_enabled;
-        }
+        $enabled = $object->enabled;
         after_enabled:        $result['enabled'] = $enabled;
 
         
         $allowed_actions = $object->allowed_actions;
+
+        if ($allowed_actions === null) {
+            goto after_allowed_actions;
+        }
         after_allowed_actions:        $result['allowed_actions'] = $allowed_actions;
 
         
         $selected_actions_url = $object->selected_actions_url;
+
+        if ($selected_actions_url === null) {
+            goto after_selected_actions_url;
+        }
         after_selected_actions_url:        $result['selected_actions_url'] = $selected_actions_url;
 
 

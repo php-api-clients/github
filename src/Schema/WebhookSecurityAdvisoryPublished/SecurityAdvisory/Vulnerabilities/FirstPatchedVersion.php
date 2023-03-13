@@ -14,7 +14,7 @@ final readonly class FirstPatchedVersion
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"identifier":"generated_identifier"}';
-    public function __construct(public ?string $identifier)
+    public function __construct(public string $identifier)
     {
     }
 }

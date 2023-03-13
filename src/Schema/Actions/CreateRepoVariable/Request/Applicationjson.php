@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * name: The name of the variable.
      * value: The value of the variable.
      */
-    public function __construct(public ?string $name, public ?string $value)
+    public function __construct(public string $name, public string $value)
     {
     }
 }

@@ -31,226 +31,243 @@ class Runners implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListSelfHostedRunnersForOrg⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['total_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_count'] = null;
-                    goto after_total_count;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListSelfHostedRunnersForOrg⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_count'] ?? null;
 
-                $properties['total_count'] = $value;
-    
-                after_total_count:
+            if ($value === null) {
+                $missingFields[] = 'total_count';
+                goto after_total_count;
+            }
 
-                $value = $payload['runners'] ?? null;
-    
-                if ($value === null) {
-                    $properties['runners'] = null;
-                    goto after_runners;
-                }
+            $properties['total_count'] = $value;
 
-                static $runnersCaster1;
-    
-                if ($runnersCaster1 === null) {
-                    $runnersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_total_count:
+
+            $value = $payload['runners'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'runners';
+                goto after_runners;
+            }
+
+            static $runnersCaster1;
+
+            if ($runnersCaster1 === null) {
+                $runnersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Runner',
 ));
-                }
-    
-                $value = $runnersCaster1->cast($value, $this);
+            }
 
-                $properties['runners'] = $value;
-    
-                after_runners:
+            $value = $runnersCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-            }
+            $properties['runners'] = $value;
+
+            after_runners:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+        }
+    }
+
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner(array $payload): \ApiClients\Client\GitHub\Schema\Runner
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner(array $payload): \ApiClients\Client\GitHub\Schema\Runner
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
 
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
+            $properties['id'] = $value;
 
-                $properties['name'] = $value;
-    
-                after_name:
+            after_id:
 
-                $value = $payload['os'] ?? null;
-    
-                if ($value === null) {
-                    $properties['os'] = null;
-                    goto after_os;
-                }
+            $value = $payload['name'] ?? null;
 
-                $properties['os'] = $value;
-    
-                after_os:
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
 
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
+            $properties['name'] = $value;
 
-                $properties['status'] = $value;
-    
-                after_status:
+            after_name:
 
-                $value = $payload['busy'] ?? null;
-    
-                if ($value === null) {
-                    $properties['busy'] = null;
-                    goto after_busy;
-                }
+            $value = $payload['os'] ?? null;
 
-                $properties['busy'] = $value;
-    
-                after_busy:
+            if ($value === null) {
+                $missingFields[] = 'os';
+                goto after_os;
+            }
 
-                $value = $payload['labels'] ?? null;
-    
-                if ($value === null) {
-                    $properties['labels'] = null;
-                    goto after_labels;
-                }
+            $properties['os'] = $value;
 
-                static $labelsCaster1;
-    
-                if ($labelsCaster1 === null) {
-                    $labelsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_os:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'status';
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+            $value = $payload['busy'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'busy';
+                goto after_busy;
+            }
+
+            $properties['busy'] = $value;
+
+            after_busy:
+
+            $value = $payload['labels'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'labels';
+                goto after_labels;
+            }
+
+            static $labelsCaster1;
+
+            if ($labelsCaster1 === null) {
+                $labelsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\RunnerLabel',
 ));
-                }
-    
-                $value = $labelsCaster1->cast($value, $this);
+            }
 
-                $properties['labels'] = $value;
-    
-                after_labels:
+            $value = $labelsCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Runner', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Runner::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Runner(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Runner', $exception, stack: $this->hydrationStack);
-            }
+            $properties['labels'] = $value;
+
+            after_labels:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Runner', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Runner::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Runner(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Runner', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel(array $payload): \ApiClients\Client\GitHub\Schema\RunnerLabel
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'id';
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel(array $payload): \ApiClients\Client\GitHub\Schema\RunnerLabel
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'type';
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['id'] = null;
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RunnerLabel::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\RunnerLabel(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RunnerLabel::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\RunnerLabel(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListSelfHostedRunnersForOrg⚡️Response⚡️Applicationjson⚡️H200($object),
-                'ApiClients\Client\GitHub\Schema\Runner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner($object),
-                'ApiClients\Client\GitHub\Schema\RunnerLabel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListSelfHostedRunnersForOrg⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\Runner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner($object),
+            'ApiClients\Client\GitHub\Schema\RunnerLabel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -323,25 +340,17 @@ class Runners implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListSelfHostedRunnersForOrg⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200);
         $result = [];
-        
-        $total_count = $object->total_count;
 
-        if ($total_count === null) {
-            goto after_total_count;
-        }
+        $total_count = $object->total_count;
         after_total_count:        $result['total_count'] = $total_count;
 
         
         $runners = $object->runners;
-
-        if ($runners === null) {
-            goto after_runners;
-        }
         static $runnersSerializer0;
 
         if ($runnersSerializer0 === null) {
@@ -357,57 +366,33 @@ class Runners implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Runner);
         $result = [];
-        
-        $id = $object->id;
 
-        if ($id === null) {
-            goto after_id;
-        }
+        $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
         $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
         after_name:        $result['name'] = $name;
 
         
         $os = $object->os;
-
-        if ($os === null) {
-            goto after_os;
-        }
         after_os:        $result['os'] = $os;
 
         
         $status = $object->status;
-
-        if ($status === null) {
-            goto after_status;
-        }
         after_status:        $result['status'] = $status;
 
         
         $busy = $object->busy;
-
-        if ($busy === null) {
-            goto after_busy;
-        }
         after_busy:        $result['busy'] = $busy;
 
         
         $labels = $object->labels;
-
-        if ($labels === null) {
-            goto after_labels;
-        }
         static $labelsSerializer0;
 
         if ($labelsSerializer0 === null) {
@@ -423,25 +408,29 @@ class Runners implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\RunnerLabel);
         $result = [];
-        
+
         $id = $object->id;
+
+        if ($id === null) {
+            goto after_id;
+        }
         after_id:        $result['id'] = $id;
 
         
         $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
         after_name:        $result['name'] = $name;
 
         
         $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
         after_type:        $result['type'] = $type;
 
 

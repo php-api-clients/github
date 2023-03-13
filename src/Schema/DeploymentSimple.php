@@ -21,7 +21,7 @@ final readonly class DeploymentSimple
      * transient_environment: Specifies if the given environment is will no longer exist at some point in the future. Default: false.
      * production_environment: Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
-    public function __construct(public ?string $url, public ?int $id, public ?string $node_id, public ?string $task, public string $original_environment, public ?string $environment, public ?string $description, public ?string $created_at, public ?string $updated_at, public ?string $statuses_url, public ?string $repository_url, public bool $transient_environment, public bool $production_environment, public mixed $performed_via_github_app)
+    public function __construct(public string $url, public int $id, public string $node_id, public string $task, public ?string $original_environment, public string $environment, public ?string $description, public string $created_at, public string $updated_at, public string $statuses_url, public string $repository_url, public ?bool $transient_environment, public ?bool $production_environment, public mixed $performed_via_github_app)
     {
     }
 }

@@ -14,7 +14,7 @@ final readonly class Status
     public const SCHEMA_TITLE = 'Status';
     public const SCHEMA_DESCRIPTION = 'The status of a commit.';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated_url","avatar_url":"generated_avatar_url","id":13,"node_id":"generated_node_id","state":"generated_state","description":"generated_description","target_url":"generated_target_url","context":"generated_context","created_at":"generated_created_at","updated_at":"generated_updated_at","creator":null}';
-    public function __construct(public ?string $url, public ?string $avatar_url, public ?int $id, public ?string $node_id, public ?string $state, public ?string $description, public ?string $target_url, public ?string $context, public ?string $created_at, public ?string $updated_at, public mixed $creator)
+    public function __construct(public string $url, public ?string $avatar_url, public int $id, public string $node_id, public string $state, public ?string $description, public ?string $target_url, public string $context, public string $created_at, public string $updated_at, public mixed $creator)
     {
     }
 }

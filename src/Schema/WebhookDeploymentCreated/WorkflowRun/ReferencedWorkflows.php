@@ -14,7 +14,7 @@ final readonly class ReferencedWorkflows
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"path":"generated_path","ref":"generated_ref","sha":"generated_sha"}';
-    public function __construct(public ?string $path, public string $ref, public ?string $sha)
+    public function __construct(public string $path, public ?string $ref, public string $sha)
     {
     }
 }

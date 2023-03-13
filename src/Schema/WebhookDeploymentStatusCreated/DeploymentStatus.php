@@ -20,7 +20,7 @@ final readonly class DeploymentStatus
      * state: The new state. Can be `pending`, `success`, `failure`, or `error`.
      * target_url: The optional link added to the status.
      */
-    public function __construct(public ?string $created_at, public ?Schema\Discussion\AnswerChosenBy $creator, public ?string $deployment_url, public ?string $description, public ?string $environment, public string $environment_url, public ?int $id, public string $log_url, public ?string $node_id, public ?Schema\WebhookDeploymentStatusCreated\DeploymentStatus\PerformedViaGithubApp $performed_via_github_app, public ?string $repository_url, public ?string $state, public ?string $target_url, public ?string $updated_at, public ?string $url)
+    public function __construct(public string $created_at, public ?Schema\Discussion\AnswerChosenBy $creator, public string $deployment_url, public string $description, public string $environment, public ?string $environment_url, public int $id, public ?string $log_url, public string $node_id, public ?Schema\WebhookDeploymentStatusCreated\DeploymentStatus\PerformedViaGithubApp $performed_via_github_app, public string $repository_url, public string $state, public string $target_url, public string $updated_at, public string $url)
     {
     }
 }

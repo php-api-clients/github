@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"incomplete_results":false,"items":[{"name":"generated_name","display_name":"generated_display_name","short_description":"generated_short_description","description":"generated_description","created_by":"generated_created_by","released":"generated_released","created_at":"generated_created_at","updated_at":"generated_updated_at","featured":false,"curated":false,"score":13,"repository_count":13,"logo_url":"generated_logo_url","text_matches":[{"object_url":"generated_object_url","object_type":"generated_object_type","property":"generated_property","fragment":"generated_fragment","matches":[{"text":"generated_text","indices":[13]}]}],"related":[{"topic_relation":{"id":13,"name":"generated_name","topic_id":13,"relation_type":"generated_relation_type"}}],"aliases":[{"topic_relation":{"id":13,"name":"generated_name","topic_id":13,"relation_type":"generated_relation_type"}}]}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\TopicSearchResultItem> $items
+     * @param array<\ApiClients\Client\GitHub\Schema\TopicSearchResultItem> $items
      */
-    public function __construct(public ?int $total_count, public ?bool $incomplete_results, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\TopicSearchResultItem::class)] public ?array $items)
+    public function __construct(public int $total_count, public bool $incomplete_results, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\TopicSearchResultItem::class)] public array $items)
     {
     }
 }

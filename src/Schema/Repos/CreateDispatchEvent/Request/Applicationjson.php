@@ -18,7 +18,7 @@ final readonly class Applicationjson
      * event_type: A custom webhook event name. Must be 100 characters or fewer.
      * client_payload: JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
      */
-    public function __construct(public ?string $event_type, public mixed $client_payload)
+    public function __construct(public string $event_type, public mixed $client_payload)
     {
     }
 }

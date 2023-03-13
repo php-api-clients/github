@@ -14,7 +14,7 @@ final readonly class ProtectedBranchAdminEnforced
     public const SCHEMA_TITLE = 'Protected Branch Admin Enforced';
     public const SCHEMA_DESCRIPTION = 'Protected Branch Admin Enforced';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/branches\\/master\\/protection\\/enforce_admins","enabled":true}';
-    public function __construct(public ?string $url, public ?bool $enabled)
+    public function __construct(public string $url, public bool $enabled)
     {
     }
 }

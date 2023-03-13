@@ -35,7 +35,7 @@ final readonly class Codespace
      * stop_url: API URL to stop this codespace.
      * publish_url: API URL to publish this codespace to a new repository.
      * pulls_url: API URL for the Pull Request associated with this codespace, if any.
-     * @param ?array<string> $recent_folders
+     * @param array<string> $recent_folders
      * pending_operation: Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
      * pending_operation_disabled_reason: Text to show user when codespace is disabled by a pending operation
      * idle_timeout_notice: Text to show user when codespace idle timeout minutes has been overriden by an organization policy
@@ -43,7 +43,7 @@ final readonly class Codespace
      * retention_expires_at: When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
      * last_known_stop_notice: The text to display to a user when a codespace has been stopped for a potentially actionable reason.
      */
-    public function __construct(public ?int $id, public ?string $name, public ?string $display_name, public ?string $environment_id, public ?Schema\SimpleUser $owner, public ?Schema\SimpleUser $billable_owner, public ?Schema\MinimalRepository $repository, public mixed $machine, public ?string $devcontainer_path, public ?bool $prebuild, public ?string $created_at, public ?string $updated_at, public ?string $last_used_at, public ?string $state, public ?string $url, public ?Schema\Codespace\GitStatus $git_status, public ?string $location, public ?int $idle_timeout_minutes, public ?string $web_url, public ?string $machines_url, public ?string $start_url, public ?string $stop_url, public ?string $publish_url, public ?string $pulls_url, public ?array $recent_folders, public Schema\Codespace\RuntimeConstraints $runtime_constraints, public ?bool $pending_operation, public ?string $pending_operation_disabled_reason, public ?string $idle_timeout_notice, public ?int $retention_period_minutes, public ?string $retention_expires_at, public ?string $last_known_stop_notice)
+    public function __construct(public int $id, public string $name, public ?string $display_name, public ?string $environment_id, public Schema\SimpleUser $owner, public Schema\SimpleUser $billable_owner, public Schema\MinimalRepository $repository, public mixed $machine, public ?string $devcontainer_path, public ?bool $prebuild, public string $created_at, public string $updated_at, public string $last_used_at, public string $state, public string $url, public Schema\Codespace\GitStatus $git_status, public string $location, public ?int $idle_timeout_minutes, public string $web_url, public string $machines_url, public string $start_url, public string $stop_url, public ?string $publish_url, public ?string $pulls_url, public array $recent_folders, public ?Schema\Codespace\RuntimeConstraints $runtime_constraints, public ?bool $pending_operation, public ?string $pending_operation_disabled_reason, public ?string $idle_timeout_notice, public ?int $retention_period_minutes, public ?string $retention_expires_at, public ?string $last_known_stop_notice)
     {
     }
 }

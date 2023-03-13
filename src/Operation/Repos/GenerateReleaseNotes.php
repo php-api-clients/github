@@ -39,7 +39,7 @@ final class GenerateReleaseNotes
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\ReleaseNotesContent
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Name and body of generated release notes**/

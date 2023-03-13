@@ -18,10 +18,10 @@ final readonly class Applicationjson
      * name: Must be passed as "web".
      * config: Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/orgs#create-hook-config-params).
      * events: Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.
-     * @param array<string> $events
+     * @param ?array<string> $events
      * active: Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
      */
-    public function __construct(public ?string $name, public ?Schema\Orgs\CreateWebhook\Request\Applicationjson\Config $config, public array $events, public bool $active)
+    public function __construct(public string $name, public Schema\Orgs\CreateWebhook\Request\Applicationjson\Config $config, public ?array $events, public ?bool $active)
     {
     }
 }

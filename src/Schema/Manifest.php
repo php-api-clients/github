@@ -19,7 +19,7 @@ final readonly class Manifest
      * metadata: User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
      * resolved: A collection of resolved package dependencies.
      */
-    public function __construct(public ?string $name, public Schema\Manifest\File $file, public mixed $metadata, public mixed $resolved)
+    public function __construct(public string $name, public ?Schema\Manifest\File $file, public mixed $metadata, public mixed $resolved)
     {
     }
 }

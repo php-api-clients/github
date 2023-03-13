@@ -19,7 +19,7 @@ final readonly class Label
      * name: The name of the label.
      * url: URL for the label
      */
-    public function __construct(public ?string $color, public ?bool $default, public ?string $description, public ?int $id, public ?string $name, public ?string $node_id, public ?string $url)
+    public function __construct(public string $color, public bool $default, public ?string $description, public int $id, public string $name, public string $node_id, public string $url)
     {
     }
 }

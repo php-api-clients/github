@@ -20,7 +20,7 @@ final readonly class H201
      * result: Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was successfully created and the repository's dependencies were updated. "ACCEPTED" indicates that the snapshot was successfully created, but the repository's dependencies were not updated. "INVALID" indicates that the snapshot was malformed.
      * message: A message providing further details about the result, such as why the dependencies were not updated.
      */
-    public function __construct(public ?int $id, public ?string $created_at, public ?string $result, public ?string $message)
+    public function __construct(public int $id, public string $created_at, public string $result, public string $message)
     {
     }
 }

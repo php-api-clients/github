@@ -39,14 +39,16 @@ final class GetPendingDeploymentsForRun
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
-        $contentType = $response->getHeaderLine('Content-Type');
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
         switch ($response->getStatusCode()) {
             /**Response**/
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\PendingDeployment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        foreach ($body as $bodyItem) {
+                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\PendingDeployment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        }
                         return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\PendingDeployment {
                             return $this->hydrator->hydrateObject(Schema\PendingDeployment::class, $body);
                         });

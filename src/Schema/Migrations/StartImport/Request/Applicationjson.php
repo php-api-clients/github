@@ -21,7 +21,7 @@ final readonly class Applicationjson
      * vcs_password: If authentication is required, the password to provide to `vcs_url`.
      * tfvc_project: For a tfvc import, the name of the project that is being imported.
      */
-    public function __construct(public ?string $vcs_url, public string $vcs, public string $vcs_username, public string $vcs_password, public string $tfvc_project)
+    public function __construct(public string $vcs_url, public ?string $vcs, public ?string $vcs_username, public ?string $vcs_password, public ?string $tfvc_project)
     {
     }
 }

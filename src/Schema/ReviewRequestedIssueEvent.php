@@ -20,7 +20,7 @@ final readonly class ReviewRequestedIssueEvent
      * requested_team: Groups of organization members that gives permissions on specified repositories.
      * requested_reviewer: A GitHub user.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $url, public ?Schema\SimpleUser $actor, public ?string $event, public ?string $commit_id, public ?string $commit_url, public ?string $created_at, public mixed $performed_via_github_app, public ?Schema\SimpleUser $review_requester, public Schema\Team $requested_team, public Schema\SimpleUser $requested_reviewer)
+    public function __construct(public int $id, public string $node_id, public string $url, public Schema\SimpleUser $actor, public string $event, public ?string $commit_id, public ?string $commit_url, public string $created_at, public mixed $performed_via_github_app, public Schema\SimpleUser $review_requester, public ?Schema\Team $requested_team, public ?Schema\SimpleUser $requested_reviewer)
     {
     }
 }

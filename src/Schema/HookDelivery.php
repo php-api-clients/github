@@ -28,7 +28,7 @@ final readonly class HookDelivery
      * repository_id: The id of the repository associated with this event.
      * url: The URL target of the delivery.
      */
-    public function __construct(public ?int $id, public ?string $guid, public ?string $delivered_at, public ?bool $redelivery, public ?int $duration, public ?string $status, public ?int $status_code, public ?string $event, public ?string $action, public ?int $installation_id, public ?int $repository_id, public string $url, public ?Schema\HookDelivery\Request $request, public ?Schema\HookDelivery\Response $response)
+    public function __construct(public int $id, public string $guid, public string $delivered_at, public bool $redelivery, public int $duration, public string $status, public int $status_code, public string $event, public ?string $action, public ?int $installation_id, public ?int $repository_id, public ?string $url, public Schema\HookDelivery\Request $request, public Schema\HookDelivery\Response $response)
     {
     }
 }

@@ -14,7 +14,7 @@ final readonly class Commit
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"author":{"date":"generated_date","email":"generated_email","name":"generated_name","username":"generated_username"},"comment_count":13,"committer":{"date":"generated_date","email":"generated_email","name":"generated_name","username":"generated_username"},"message":"generated_message","tree":{"sha":"generated_sha","url":"generated_url"},"url":"generated_url","verification":{"payload":"generated_payload","reason":"generated_reason","signature":"generated_signature","verified":false}}';
-    public function __construct(public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $author, public ?int $comment_count, public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $committer, public ?string $message, public ?Schema\ShortBranch\Commit $tree, public ?string $url, public ?Schema\WebhookStatus\Commit\Commit\Verification $verification)
+    public function __construct(public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $author, public int $comment_count, public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $committer, public string $message, public Schema\ShortBranch\Commit $tree, public string $url, public Schema\WebhookStatus\Commit\Commit\Verification $verification)
     {
     }
 }

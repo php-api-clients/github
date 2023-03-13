@@ -29,72 +29,91 @@ class CommitActivity implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity(array $payload): \ApiClients\Client\GitHub\Schema\CommitActivity
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['days'] ?? null;
-    
-                if ($value === null) {
-                    $properties['days'] = null;
-                    goto after_days;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity(array $payload): \ApiClients\Client\GitHub\Schema\CommitActivity
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['days'] ?? null;
 
-                $properties['days'] = $value;
-    
-                after_days:
-
-                $value = $payload['total'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total'] = null;
-                    goto after_total;
-                }
-
-                $properties['total'] = $value;
-    
-                after_total:
-
-                $value = $payload['week'] ?? null;
-    
-                if ($value === null) {
-                    $properties['week'] = null;
-                    goto after_week;
-                }
-
-                $properties['week'] = $value;
-    
-                after_week:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'days';
+                goto after_days;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommitActivity::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['days'] = $value;
+
+            after_days:
+
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CommitActivity(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['week'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'week';
+                goto after_week;
+            }
+
+            $properties['week'] = $value;
+
+            after_week:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommitActivity::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CommitActivity(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\CommitActivity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\CommitActivity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -167,17 +186,13 @@ class CommitActivity implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommitActivity);
         $result = [];
-        
-        $days = $object->days;
 
-        if ($days === null) {
-            goto after_days;
-        }
+        $days = $object->days;
         static $daysSerializer0;
 
         if ($daysSerializer0 === null) {
@@ -190,18 +205,10 @@ class CommitActivity implements ObjectMapper
 
         
         $total = $object->total;
-
-        if ($total === null) {
-            goto after_total;
-        }
         after_total:        $result['total'] = $total;
 
         
         $week = $object->week;
-
-        if ($week === null) {
-            goto after_week;
-        }
         after_week:        $result['week'] = $week;
 
 

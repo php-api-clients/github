@@ -16,9 +16,9 @@ final readonly class H200
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":2,"branch_policies":[{"id":361471,"node_id":"MDE2OkdhdGVCcmFuY2hQb2xpY3kzNjE0NzE=","name":"release\\/*"}]}';
     /**
      * total_count: The number of deployment branch policies for the environment.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy> $branch_policies
+     * @param array<\ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy> $branch_policies
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DeploymentBranchPolicy::class)] public ?array $branch_policies)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DeploymentBranchPolicy::class)] public array $branch_policies)
     {
     }
 }

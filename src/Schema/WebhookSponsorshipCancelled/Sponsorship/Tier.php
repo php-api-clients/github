@@ -14,7 +14,7 @@ final readonly class Tier
     public const SCHEMA_TITLE = 'Sponsorship Tier';
     public const SCHEMA_DESCRIPTION = 'The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.';
     public const SCHEMA_EXAMPLE_DATA = '{"created_at":"generated_created_at","description":"generated_description","is_custom_ammount":false,"is_custom_amount":false,"is_one_time":false,"monthly_price_in_cents":13,"monthly_price_in_dollars":13,"name":"generated_name","node_id":"generated_node_id"}';
-    public function __construct(public ?string $created_at, public ?string $description, public bool $is_custom_ammount, public bool $is_custom_amount, public ?bool $is_one_time, public ?int $monthly_price_in_cents, public ?int $monthly_price_in_dollars, public ?string $name, public ?string $node_id)
+    public function __construct(public string $created_at, public string $description, public ?bool $is_custom_ammount, public ?bool $is_custom_amount, public bool $is_one_time, public int $monthly_price_in_cents, public int $monthly_price_in_dollars, public string $name, public string $node_id)
     {
     }
 }

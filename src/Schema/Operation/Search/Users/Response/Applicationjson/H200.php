@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"incomplete_results":false,"items":[{"login":"generated_login","id":13,"node_id":"generated_node_id","avatar_url":"generated_avatar_url","gravatar_id":"generated_gravatar_id","url":"generated_url","html_url":"generated_html_url","followers_url":"generated_followers_url","subscriptions_url":"generated_subscriptions_url","organizations_url":"generated_organizations_url","repos_url":"generated_repos_url","received_events_url":"generated_received_events_url","type":"generated_type","score":13,"following_url":"generated_following_url","gists_url":"generated_gists_url","starred_url":"generated_starred_url","events_url":"generated_events_url","public_repos":13,"public_gists":13,"followers":13,"following":13,"created_at":"generated_created_at","updated_at":"generated_updated_at","name":"generated_name","bio":"generated_bio","email":"generated_email","location":"generated_location","site_admin":false,"hireable":false,"text_matches":[{"object_url":"generated_object_url","object_type":"generated_object_type","property":"generated_property","fragment":"generated_fragment","matches":[{"text":"generated_text","indices":[13]}]}],"blog":"generated_blog","company":"generated_company","suspended_at":"generated_suspended_at"}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\UserSearchResultItem> $items
+     * @param array<\ApiClients\Client\GitHub\Schema\UserSearchResultItem> $items
      */
-    public function __construct(public ?int $total_count, public ?bool $incomplete_results, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\UserSearchResultItem::class)] public ?array $items)
+    public function __construct(public int $total_count, public bool $incomplete_results, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\UserSearchResultItem::class)] public array $items)
     {
     }
 }

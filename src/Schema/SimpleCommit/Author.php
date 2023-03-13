@@ -14,7 +14,7 @@ final readonly class Author
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated_name","email":"generated_email"}';
-    public function __construct(public ?string $name, public ?string $email)
+    public function __construct(public string $name, public string $email)
     {
     }
 }

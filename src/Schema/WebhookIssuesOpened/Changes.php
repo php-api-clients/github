@@ -18,7 +18,7 @@ final readonly class Changes
      * old_issue: The [issue](https://docs.github.com/rest/reference/issues) itself.
      * old_repository: A git repository
      */
-    public function __construct(public ?Schema\WebhookIssuesOpened\Changes\OldIssue $old_issue, public ?Schema\WebhookIssuesOpened\Changes\OldRepository $old_repository)
+    public function __construct(public ?Schema\WebhookIssuesOpened\Changes\OldIssue $old_issue, public Schema\WebhookIssuesOpened\Changes\OldRepository $old_repository)
     {
     }
 }

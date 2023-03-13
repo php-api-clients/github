@@ -22,11 +22,11 @@ final readonly class Links
      * current_user_public: Hypermedia Link with Type
      * current_user_actor: Hypermedia Link with Type
      * current_user_organization: Hypermedia Link with Type
-     * @param array<\ApiClients\Client\GitHub\Schema\LinkWithType> $current_user_organizations
+     * @param ?array<\ApiClients\Client\GitHub\Schema\LinkWithType> $current_user_organizations
      * repository_discussions: Hypermedia Link with Type
      * repository_discussions_category: Hypermedia Link with Type
      */
-    public function __construct(public ?Schema\LinkWithType $timeline, public ?Schema\LinkWithType $user, public Schema\LinkWithType $security_advisories, public Schema\LinkWithType $current_user, public Schema\LinkWithType $current_user_public, public Schema\LinkWithType $current_user_actor, public Schema\LinkWithType $current_user_organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\LinkWithType::class)] public array $current_user_organizations, public Schema\LinkWithType $repository_discussions, public Schema\LinkWithType $repository_discussions_category)
+    public function __construct(public Schema\LinkWithType $timeline, public Schema\LinkWithType $user, public ?Schema\LinkWithType $security_advisories, public ?Schema\LinkWithType $current_user, public ?Schema\LinkWithType $current_user_public, public ?Schema\LinkWithType $current_user_actor, public ?Schema\LinkWithType $current_user_organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\LinkWithType::class)] public ?array $current_user_organizations, public ?Schema\LinkWithType $repository_discussions, public ?Schema\LinkWithType $repository_discussions_category)
     {
     }
 }

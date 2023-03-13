@@ -14,7 +14,7 @@ final readonly class Verification
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"payload":"generated_payload","reason":"generated_reason","signature":"generated_signature","verified":false}';
-    public function __construct(public ?string $payload, public ?string $reason, public ?string $signature, public ?bool $verified)
+    public function __construct(public ?string $payload, public string $reason, public ?string $signature, public bool $verified)
     {
     }
 }

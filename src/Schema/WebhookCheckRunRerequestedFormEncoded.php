@@ -17,7 +17,7 @@ final readonly class WebhookCheckRunRerequestedFormEncoded
     /**
      * payload: A URL-encoded string of the check_run.rerequested JSON payload. The decoded payload is a JSON object.
      */
-    public function __construct(public ?string $payload)
+    public function __construct(public string $payload)
     {
     }
 }

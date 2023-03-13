@@ -14,7 +14,7 @@ final readonly class ReferrerTraffic
     public const SCHEMA_TITLE = 'Referrer Traffic';
     public const SCHEMA_DESCRIPTION = 'Referrer Traffic';
     public const SCHEMA_EXAMPLE_DATA = '{"referrer":"Google","count":4,"uniques":3}';
-    public function __construct(public ?string $referrer, public ?int $count, public ?int $uniques)
+    public function __construct(public string $referrer, public int $count, public int $uniques)
     {
     }
 }

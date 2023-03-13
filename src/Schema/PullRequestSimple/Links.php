@@ -24,7 +24,7 @@ final readonly class Links
      * review_comment: Hypermedia Link
      * self: Hypermedia Link
      */
-    public function __construct(public ?Schema\Link $comments, public ?Schema\Link $commits, public ?Schema\Link $statuses, public ?Schema\Link $html, public ?Schema\Link $issue, public ?Schema\Link $review_comments, public ?Schema\Link $review_comment, public ?Schema\Link $self)
+    public function __construct(public Schema\Link $comments, public Schema\Link $commits, public Schema\Link $statuses, public Schema\Link $html, public Schema\Link $issue, public Schema\Link $review_comments, public Schema\Link $review_comment, public Schema\Link $self)
     {
     }
 }

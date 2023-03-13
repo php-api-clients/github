@@ -32,392 +32,408 @@ class Analyses implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysis(array $payload): \ApiClients\Client\GitHub\Schema\CodeScanningAnalysis
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['ref'] ?? null;
-    
-                if ($value === null) {
-                    $properties['ref'] = null;
-                    goto after_ref;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysis(array $payload): \ApiClients\Client\GitHub\Schema\CodeScanningAnalysis
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['ref'] ?? null;
 
-                $properties['ref'] = $value;
-    
-                after_ref:
-
-                $value = $payload['commit_sha'] ?? null;
-    
-                if ($value === null) {
-                    $properties['commit_sha'] = null;
-                    goto after_commit_sha;
-                }
-
-                $properties['commit_sha'] = $value;
-    
-                after_commit_sha:
-
-                $value = $payload['analysis_key'] ?? null;
-    
-                if ($value === null) {
-                    $properties['analysis_key'] = null;
-                    goto after_analysis_key;
-                }
-
-                $properties['analysis_key'] = $value;
-    
-                after_analysis_key:
-
-                $value = $payload['environment'] ?? null;
-    
-                if ($value === null) {
-                    $properties['environment'] = null;
-                    goto after_environment;
-                }
-
-                $properties['environment'] = $value;
-    
-                after_environment:
-
-                $value = $payload['category'] ?? null;
-    
-                if ($value === null) {
-                    $missingFields[] = 'category';
-                    goto after_category;
-                }
-
-                $properties['category'] = $value;
-    
-                after_category:
-
-                $value = $payload['error'] ?? null;
-    
-                if ($value === null) {
-                    $properties['error'] = null;
-                    goto after_error;
-                }
-
-                $properties['error'] = $value;
-    
-                after_error:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['results_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['results_count'] = null;
-                    goto after_results_count;
-                }
-
-                $properties['results_count'] = $value;
-    
-                after_results_count:
-
-                $value = $payload['rules_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['rules_count'] = null;
-                    goto after_rules_count;
-                }
-
-                $properties['rules_count'] = $value;
-    
-                after_rules_count:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['sarif_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['sarif_id'] = null;
-                    goto after_sarif_id;
-                }
-
-                $properties['sarif_id'] = $value;
-    
-                after_sarif_id:
-
-                $value = $payload['tool'] ?? null;
-    
-                if ($value === null) {
-                    $properties['tool'] = null;
-                    goto after_tool;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'tool';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['tool'] = $value;
-    
-                after_tool:
-
-                $value = $payload['deletable'] ?? null;
-    
-                if ($value === null) {
-                    $properties['deletable'] = null;
-                    goto after_deletable;
-                }
-
-                $properties['deletable'] = $value;
-    
-                after_deletable:
-
-                $value = $payload['warning'] ?? null;
-    
-                if ($value === null) {
-                    $properties['warning'] = null;
-                    goto after_warning;
-                }
-
-                $properties['warning'] = $value;
-    
-                after_warning:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysis', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeScanningAnalysis::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['commit_sha'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'commit_sha';
+                goto after_commit_sha;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CodeScanningAnalysis(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysis', $exception, stack: $this->hydrationStack);
+
+            $properties['commit_sha'] = $value;
+
+            after_commit_sha:
+
+            $value = $payload['analysis_key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'analysis_key';
+                goto after_analysis_key;
             }
+
+            $properties['analysis_key'] = $value;
+
+            after_analysis_key:
+
+            $value = $payload['environment'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'environment';
+                goto after_environment;
+            }
+
+            $properties['environment'] = $value;
+
+            after_environment:
+
+            $value = $payload['category'] ?? null;
+
+            if ($value === null) {
+                $properties['category'] = null;
+                goto after_category;
+            }
+
+            $properties['category'] = $value;
+
+            after_category:
+
+            $value = $payload['error'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'error';
+                goto after_error;
+            }
+
+            $properties['error'] = $value;
+
+            after_error:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['results_count'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'results_count';
+                goto after_results_count;
+            }
+
+            $properties['results_count'] = $value;
+
+            after_results_count:
+
+            $value = $payload['rules_count'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'rules_count';
+                goto after_rules_count;
+            }
+
+            $properties['rules_count'] = $value;
+
+            after_rules_count:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['sarif_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'sarif_id';
+                goto after_sarif_id;
+            }
+
+            $properties['sarif_id'] = $value;
+
+            after_sarif_id:
+
+            $value = $payload['tool'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'tool';
+                goto after_tool;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'tool';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['tool'] = $value;
+
+            after_tool:
+
+            $value = $payload['deletable'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'deletable';
+                goto after_deletable;
+            }
+
+            $properties['deletable'] = $value;
+
+            after_deletable:
+
+            $value = $payload['warning'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'warning';
+                goto after_warning;
+            }
+
+            $properties['warning'] = $value;
+
+            after_warning:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysis', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeScanningAnalysis::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CodeScanningAnalysis(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysis', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool(array $payload): \ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool(array $payload): \ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['name'] ?? null;
 
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['version'] ?? null;
-    
-                if ($value === null) {
-                    $properties['version'] = null;
-                    goto after_version;
-                }
-
-                $properties['version'] = $value;
-    
-                after_version:
-
-                $value = $payload['guid'] ?? null;
-    
-                if ($value === null) {
-                    $properties['guid'] = null;
-                    goto after_guid;
-                }
-
-                $properties['guid'] = $value;
-    
-                after_guid:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['version'] ?? null;
+
+            if ($value === null) {
+                $properties['version'] = null;
+                goto after_version;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool', $exception, stack: $this->hydrationStack);
+
+            $properties['version'] = $value;
+
+            after_version:
+
+            $value = $payload['guid'] ?? null;
+
+            if ($value === null) {
+                $properties['guid'] = null;
+                goto after_guid;
             }
+
+            $properties['guid'] = $value;
+
+            after_guid:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
             }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['code'] ?? null;
-    
-                if ($value === null) {
-                    $properties['code'] = null;
-                    goto after_code;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(array $payload): \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['code'] ?? null;
 
-                $properties['code'] = $value;
-    
-                after_code:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['code'] = null;
+                goto after_code;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['code'] = $value;
+
+            after_code:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
+            }
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\CodeScanningAnalysis' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysis($object),
-                'ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
-                'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\CodeScanningAnalysis' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysis($object),
+            'ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -490,138 +506,86 @@ class Analyses implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysis(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeScanningAnalysis);
         $result = [];
-        
-        $ref = $object->ref;
 
-        if ($ref === null) {
-            goto after_ref;
-        }
+        $ref = $object->ref;
         after_ref:        $result['ref'] = $ref;
 
         
         $commit_sha = $object->commit_sha;
-
-        if ($commit_sha === null) {
-            goto after_commit_sha;
-        }
         after_commit_sha:        $result['commit_sha'] = $commit_sha;
 
         
         $analysis_key = $object->analysis_key;
-
-        if ($analysis_key === null) {
-            goto after_analysis_key;
-        }
         after_analysis_key:        $result['analysis_key'] = $analysis_key;
 
         
         $environment = $object->environment;
-
-        if ($environment === null) {
-            goto after_environment;
-        }
         after_environment:        $result['environment'] = $environment;
 
         
         $category = $object->category;
+
+        if ($category === null) {
+            goto after_category;
+        }
         after_category:        $result['category'] = $category;
 
         
         $error = $object->error;
-
-        if ($error === null) {
-            goto after_error;
-        }
         after_error:        $result['error'] = $error;
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $results_count = $object->results_count;
-
-        if ($results_count === null) {
-            goto after_results_count;
-        }
         after_results_count:        $result['results_count'] = $results_count;
 
         
         $rules_count = $object->rules_count;
-
-        if ($rules_count === null) {
-            goto after_rules_count;
-        }
         after_rules_count:        $result['rules_count'] = $rules_count;
 
         
         $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
         after_id:        $result['id'] = $id;
 
         
         $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
         after_url:        $result['url'] = $url;
 
         
         $sarif_id = $object->sarif_id;
-
-        if ($sarif_id === null) {
-            goto after_sarif_id;
-        }
         after_sarif_id:        $result['sarif_id'] = $sarif_id;
 
         
         $tool = $object->tool;
-
-        if ($tool === null) {
-            goto after_tool;
-        }
         $tool = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool($tool);
         after_tool:        $result['tool'] = $tool;
 
         
         $deletable = $object->deletable;
-
-        if ($deletable === null) {
-            goto after_deletable;
-        }
         after_deletable:        $result['deletable'] = $deletable;
 
         
         $warning = $object->warning;
-
-        if ($warning === null) {
-            goto after_warning;
-        }
         after_warning:        $result['warning'] = $warning;
 
 
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAnalysisTool(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeScanningAnalysisTool);
         $result = [];
-        
+
         $name = $object->name;
 
         if ($name === null) {
@@ -649,12 +613,12 @@ class Analyses implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {
@@ -690,12 +654,12 @@ class Analyses implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️Applicationjson⚡️H503(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503);
         $result = [];
-        
+
         $code = $object->code;
 
         if ($code === null) {

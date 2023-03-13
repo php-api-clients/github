@@ -20,7 +20,7 @@ final readonly class WebhookSecretScanningAlertLocationCreated
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\SecretScanningAlert $alert, public Schema\SimpleInstallation $installation, public ?Schema\SecretScanningLocation $location, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public ?string $action, public Schema\SecretScanningAlert $alert, public ?Schema\SimpleInstallation $installation, public Schema\SecretScanningLocation $location, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

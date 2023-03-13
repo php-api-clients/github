@@ -14,7 +14,7 @@ final readonly class Parents
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"html_url":"generated_html_url","sha":"generated_sha","url":"generated_url"}';
-    public function __construct(public ?string $html_url, public ?string $sha, public ?string $url)
+    public function __construct(public string $html_url, public string $sha, public string $url)
     {
     }
 }

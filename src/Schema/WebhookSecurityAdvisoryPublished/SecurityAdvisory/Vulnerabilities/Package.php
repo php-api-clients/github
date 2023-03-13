@@ -14,7 +14,7 @@ final readonly class Package
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"ecosystem":"generated_ecosystem","name":"generated_name"}';
-    public function __construct(public ?string $ecosystem, public ?string $name)
+    public function __construct(public string $ecosystem, public string $name)
     {
     }
 }

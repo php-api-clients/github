@@ -20,11 +20,11 @@ final readonly class CheckSuite
      * head_branch: The head branch name the changes are on.
      * head_sha: The SHA of the head commit that is being checked.
      * pull_requests: An array of pull requests that match this check suite. A pull request matches a check suite if they have the same `head_sha` and `head_branch`. When the check suite's `head_branch` is in a forked repository it will be `null` and the `pull_requests` array will be empty.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests> $pull_requests
+     * @param array<\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests> $pull_requests
      * status: The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
      * url: URL that points to the check suite API resource.
      */
-    public function __construct(public ?string $after, public ?Schema\WebhookCheckSuiteRerequested\CheckSuite\App $app, public ?string $before, public ?string $check_runs_url, public ?string $conclusion, public ?string $created_at, public ?string $head_branch, public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit $head_commit, public ?string $head_sha, public ?int $id, public ?int $latest_check_runs_count, public ?string $node_id, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests::class)] public ?array $pull_requests, public bool $rerequestable, public bool $runs_rerequestable, public ?string $status, public ?string $updated_at, public ?string $url)
+    public function __construct(public ?string $after, public Schema\WebhookCheckSuiteRerequested\CheckSuite\App $app, public ?string $before, public string $check_runs_url, public ?string $conclusion, public string $created_at, public ?string $head_branch, public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit $head_commit, public string $head_sha, public int $id, public int $latest_check_runs_count, public string $node_id, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests::class)] public array $pull_requests, public ?bool $rerequestable, public ?bool $runs_rerequestable, public ?string $status, public string $updated_at, public string $url)
     {
     }
 }

@@ -29,61 +29,80 @@ class Usage implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageOrgEnterprise(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['total_active_caches_count'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_active_caches_count'] = null;
-                    goto after_total_active_caches_count;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageOrgEnterprise(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_active_caches_count'] ?? null;
 
-                $properties['total_active_caches_count'] = $value;
-    
-                after_total_active_caches_count:
-
-                $value = $payload['total_active_caches_size_in_bytes'] ?? null;
-    
-                if ($value === null) {
-                    $properties['total_active_caches_size_in_bytes'] = null;
-                    goto after_total_active_caches_size_in_bytes;
-                }
-
-                $properties['total_active_caches_size_in_bytes'] = $value;
-    
-                after_total_active_caches_size_in_bytes:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'total_active_caches_count';
+                goto after_total_active_caches_count;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['total_active_caches_count'] = $value;
+
+            after_total_active_caches_count:
+
+            $value = $payload['total_active_caches_size_in_bytes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total_active_caches_size_in_bytes';
+                goto after_total_active_caches_size_in_bytes;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise', $exception, stack: $this->hydrationStack);
+
+            $properties['total_active_caches_size_in_bytes'] = $value;
+
+            after_total_active_caches_size_in_bytes:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageOrgEnterprise($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageOrgEnterprise($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -156,25 +175,17 @@ class Usage implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageOrgEnterprise(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise);
         $result = [];
-        
-        $total_active_caches_count = $object->total_active_caches_count;
 
-        if ($total_active_caches_count === null) {
-            goto after_total_active_caches_count;
-        }
+        $total_active_caches_count = $object->total_active_caches_count;
         after_total_active_caches_count:        $result['total_active_caches_count'] = $total_active_caches_count;
 
         
         $total_active_caches_size_in_bytes = $object->total_active_caches_size_in_bytes;
-
-        if ($total_active_caches_size_in_bytes === null) {
-            goto after_total_active_caches_size_in_bytes;
-        }
         after_total_active_caches_size_in_bytes:        $result['total_active_caches_size_in_bytes'] = $total_active_caches_size_in_bytes;
 
 

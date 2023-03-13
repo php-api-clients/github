@@ -19,7 +19,7 @@ final readonly class Actions
      * description: A short explanation of what this action would do. The maximum size is 40 characters.
      * identifier: A reference for the action on the integrator's system. The maximum size is 20 characters.
      */
-    public function __construct(public ?string $label, public ?string $description, public ?string $identifier)
+    public function __construct(public string $label, public string $description, public string $identifier)
     {
     }
 }

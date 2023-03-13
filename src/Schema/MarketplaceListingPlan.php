@@ -15,9 +15,9 @@ final readonly class MarketplaceListingPlan
     public const SCHEMA_DESCRIPTION = 'Marketplace Listing Plan';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/api.github.com\\/marketplace_listing\\/plans\\/1313","accounts_url":"https:\\/\\/api.github.com\\/marketplace_listing\\/plans\\/1313\\/accounts","id":1313,"number":3,"name":"Pro","description":"A professional-grade CI solution","monthly_price_in_cents":1099,"yearly_price_in_cents":11870,"price_model":"FLAT_RATE","has_free_trial":true,"unit_name":"generated_unit_name","state":"published","bullets":["Up to 25 private repositories"]}';
     /**
-     * @param ?array<string> $bullets
+     * @param array<string> $bullets
      */
-    public function __construct(public ?string $url, public ?string $accounts_url, public ?int $id, public ?int $number, public ?string $name, public ?string $description, public ?int $monthly_price_in_cents, public ?int $yearly_price_in_cents, public ?string $price_model, public ?bool $has_free_trial, public ?string $unit_name, public ?string $state, public ?array $bullets)
+    public function __construct(public string $url, public string $accounts_url, public int $id, public int $number, public string $name, public string $description, public int $monthly_price_in_cents, public int $yearly_price_in_cents, public string $price_model, public bool $has_free_trial, public ?string $unit_name, public string $state, public array $bullets)
     {
     }
 }

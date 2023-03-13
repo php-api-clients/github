@@ -19,7 +19,7 @@ final readonly class Artifact
      * size_in_bytes: The size in bytes of the artifact.
      * expired: Whether or not the artifact has expired.
      */
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $name, public ?int $size_in_bytes, public ?string $url, public ?string $archive_download_url, public ?bool $expired, public ?string $created_at, public ?string $expires_at, public ?string $updated_at, public ?Schema\Artifact\WorkflowRun $workflow_run)
+    public function __construct(public int $id, public string $node_id, public string $name, public int $size_in_bytes, public string $url, public string $archive_download_url, public bool $expired, public ?string $created_at, public ?string $expires_at, public ?string $updated_at, public ?Schema\Artifact\WorkflowRun $workflow_run)
     {
     }
 }

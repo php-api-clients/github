@@ -18,11 +18,11 @@ final readonly class Hook
      * active: Determines whether the hook is actually triggered for the events it subscribes to.
      * app_id: Only included for GitHub Apps. When you register a new GitHub App, GitHub sends a ping event to the webhook URL you specified during registration. The GitHub App ID sent in this field is required for authenticating an app.
      * events: Determines what events the hook is triggered for. Default: ['push'].
-     * @param ?array<string> $events
+     * @param array<string> $events
      * id: Unique identifier of the webhook.
      * name: The type of webhook. The only valid value is 'web'.
      */
-    public function __construct(public ?bool $active, public int $app_id, public ?Schema\WebhookPing\Hook\Config $config, public ?string $created_at, public string $deliveries_url, public ?array $events, public ?int $id, public Schema\HookResponse $last_response, public ?string $name, public string $ping_url, public string $test_url, public ?string $type, public ?string $updated_at, public string $url)
+    public function __construct(public bool $active, public ?int $app_id, public Schema\WebhookPing\Hook\Config $config, public string $created_at, public ?string $deliveries_url, public array $events, public int $id, public ?Schema\HookResponse $last_response, public string $name, public ?string $ping_url, public ?string $test_url, public string $type, public string $updated_at, public ?string $url)
     {
     }
 }

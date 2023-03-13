@@ -14,7 +14,7 @@ final readonly class RateLimitOverview
     public const SCHEMA_TITLE = 'Rate Limit Overview';
     public const SCHEMA_DESCRIPTION = 'Rate Limit Overview';
     public const SCHEMA_EXAMPLE_DATA = '{"resources":{"core":{"limit":13,"remaining":13,"reset":13,"used":13},"graphql":{"limit":13,"remaining":13,"reset":13,"used":13},"search":{"limit":13,"remaining":13,"reset":13,"used":13},"source_import":{"limit":13,"remaining":13,"reset":13,"used":13},"integration_manifest":{"limit":13,"remaining":13,"reset":13,"used":13},"code_scanning_upload":{"limit":13,"remaining":13,"reset":13,"used":13},"actions_runner_registration":{"limit":13,"remaining":13,"reset":13,"used":13},"scim":{"limit":13,"remaining":13,"reset":13,"used":13},"dependency_snapshots":{"limit":13,"remaining":13,"reset":13,"used":13}},"rate":{"limit":13,"remaining":13,"reset":13,"used":13}}';
-    public function __construct(public ?Schema\RateLimitOverview\Resources $resources, public ?Schema\RateLimit $rate)
+    public function __construct(public Schema\RateLimitOverview\Resources $resources, public Schema\RateLimit $rate)
     {
     }
 }

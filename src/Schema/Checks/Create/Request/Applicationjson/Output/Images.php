@@ -19,7 +19,7 @@ final readonly class Images
      * image_url: The full URL of the image.
      * caption: A short image description.
      */
-    public function __construct(public ?string $alt, public ?string $image_url, public string $caption)
+    public function __construct(public string $alt, public string $image_url, public ?string $caption)
     {
     }
 }

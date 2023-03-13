@@ -14,7 +14,7 @@ final readonly class PageBuild
     public const SCHEMA_TITLE = 'Page Build';
     public const SCHEMA_DESCRIPTION = 'Page Build';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated_url","status":"generated_status","error":{"message":"generated_message"},"pusher":null,"commit":"generated_commit","duration":13,"created_at":"generated_created_at","updated_at":"generated_updated_at"}';
-    public function __construct(public ?string $url, public ?string $status, public ?Schema\PageBuild\Error $error, public mixed $pusher, public ?string $commit, public ?int $duration, public ?string $created_at, public ?string $updated_at)
+    public function __construct(public string $url, public string $status, public Schema\PageBuild\Error $error, public mixed $pusher, public string $commit, public int $duration, public string $created_at, public string $updated_at)
     {
     }
 }

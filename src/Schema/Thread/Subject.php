@@ -14,7 +14,7 @@ final readonly class Subject
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"title":"generated_title","url":"generated_url","latest_comment_url":"generated_latest_comment_url","type":"generated_type"}';
-    public function __construct(public ?string $title, public ?string $url, public ?string $latest_comment_url, public ?string $type)
+    public function __construct(public string $title, public string $url, public string $latest_comment_url, public string $type)
     {
     }
 }

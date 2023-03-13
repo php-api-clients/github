@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * body: The body text of the pull request review.
      */
-    public function __construct(public ?string $body)
+    public function __construct(public string $body)
     {
     }
 }

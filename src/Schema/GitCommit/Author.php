@@ -19,7 +19,7 @@ final readonly class Author
      * email: Git email address of the user
      * name: Name of the git user
      */
-    public function __construct(public ?string $date, public ?string $email, public ?string $name)
+    public function __construct(public string $date, public string $email, public string $name)
     {
     }
 }

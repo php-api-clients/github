@@ -29,83 +29,102 @@ class Snapshots implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201(array $payload): \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201(array $payload): \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['result'] ?? null;
-    
-                if ($value === null) {
-                    $properties['result'] = null;
-                    goto after_result;
-                }
-
-                $properties['result'] = $value;
-    
-                after_result:
-
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
-
-                $properties['message'] = $value;
-    
-                after_message:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_created_at;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['result'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'result';
+                goto after_result;
+            }
+
+            $properties['result'] = $value;
+
+            after_result:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'message';
+                goto after_message;
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -178,41 +197,25 @@ class Snapshots implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201);
         $result = [];
-        
-        $id = $object->id;
 
-        if ($id === null) {
-            goto after_id;
-        }
+        $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
         $created_at = $object->created_at;
-
-        if ($created_at === null) {
-            goto after_created_at;
-        }
         after_created_at:        $result['created_at'] = $created_at;
 
         
         $result = $object->result;
-
-        if ($result === null) {
-            goto after_result;
-        }
         after_result:        $result['result'] = $result;
 
         
         $message = $object->message;
-
-        if ($message === null) {
-            goto after_message;
-        }
         after_message:        $result['message'] = $message;
 
 

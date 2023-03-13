@@ -14,7 +14,7 @@ final readonly class Devcontainers
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"path":"generated_path","name":"generated_name","display_name":"generated_display_name"}';
-    public function __construct(public ?string $path, public string $name, public string $display_name)
+    public function __construct(public string $path, public ?string $name, public ?string $display_name)
     {
     }
 }

@@ -17,10 +17,10 @@ final readonly class CommitComparison
     /**
      * base_commit: Commit
      * merge_base_commit: Commit
-     * @param ?array<\ApiClients\Client\GitHub\Schema\Commit> $commits
-     * @param array<\ApiClients\Client\GitHub\Schema\DiffEntry> $files
+     * @param array<\ApiClients\Client\GitHub\Schema\Commit> $commits
+     * @param ?array<\ApiClients\Client\GitHub\Schema\DiffEntry> $files
      */
-    public function __construct(public ?string $url, public ?string $html_url, public ?string $permalink_url, public ?string $diff_url, public ?string $patch_url, public ?Schema\Commit $base_commit, public ?Schema\Commit $merge_base_commit, public ?string $status, public ?int $ahead_by, public ?int $behind_by, public ?int $total_commits, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Commit::class)] public ?array $commits, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DiffEntry::class)] public array $files)
+    public function __construct(public string $url, public string $html_url, public string $permalink_url, public string $diff_url, public string $patch_url, public Schema\Commit $base_commit, public Schema\Commit $merge_base_commit, public string $status, public int $ahead_by, public int $behind_by, public int $total_commits, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Commit::class)] public array $commits, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\DiffEntry::class)] public ?array $files)
     {
     }
 }

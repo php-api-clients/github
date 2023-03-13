@@ -17,7 +17,7 @@ final readonly class Applicationjson
     /**
      * state: The state that the membership should be in. Only `"active"` will be accepted.
      */
-    public function __construct(public ?string $state)
+    public function __construct(public string $state)
     {
     }
 }

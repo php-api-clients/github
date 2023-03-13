@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"incomplete_results":false,"items":[{"id":13,"node_id":"generated_node_id","url":"generated_url","name":"generated_name","color":"generated_color","default":false,"description":"generated_description","score":13,"text_matches":[{"object_url":"generated_object_url","object_type":"generated_object_type","property":"generated_property","fragment":"generated_fragment","matches":[{"text":"generated_text","indices":[13]}]}]}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\LabelSearchResultItem> $items
+     * @param array<\ApiClients\Client\GitHub\Schema\LabelSearchResultItem> $items
      */
-    public function __construct(public ?int $total_count, public ?bool $incomplete_results, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\LabelSearchResultItem::class)] public ?array $items)
+    public function __construct(public int $total_count, public bool $incomplete_results, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\LabelSearchResultItem::class)] public array $items)
     {
     }
 }

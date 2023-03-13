@@ -14,7 +14,7 @@ final readonly class References
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated_url"}';
-    public function __construct(public ?string $url)
+    public function __construct(public string $url)
     {
     }
 }

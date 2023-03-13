@@ -18,7 +18,7 @@ final readonly class SimpleInstallation
      * id: The ID of the installation.
      * node_id: The global node ID of the installation.
      */
-    public function __construct(public ?int $id, public ?string $node_id)
+    public function __construct(public int $id, public string $node_id)
     {
     }
 }

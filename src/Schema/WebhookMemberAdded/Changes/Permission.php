@@ -14,7 +14,7 @@ final readonly class Permission
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"to":"generated_to"}';
-    public function __construct(public ?string $to)
+    public function __construct(public string $to)
     {
     }
 }

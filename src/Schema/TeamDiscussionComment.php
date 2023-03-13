@@ -19,7 +19,7 @@ final readonly class TeamDiscussionComment
      * body_version: The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
      * number: The unique sequence number of a team discussion comment.
      */
-    public function __construct(public mixed $author, public ?string $body, public ?string $body_html, public ?string $body_version, public ?string $created_at, public ?string $last_edited_at, public ?string $discussion_url, public ?string $html_url, public ?string $node_id, public ?int $number, public ?string $updated_at, public ?string $url, public Schema\ReactionRollup $reactions)
+    public function __construct(public mixed $author, public string $body, public string $body_html, public string $body_version, public string $created_at, public ?string $last_edited_at, public string $discussion_url, public string $html_url, public string $node_id, public int $number, public string $updated_at, public string $url, public ?Schema\ReactionRollup $reactions)
     {
     }
 }

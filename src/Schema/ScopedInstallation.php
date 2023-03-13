@@ -17,10 +17,10 @@ final readonly class ScopedInstallation
     /**
      * permissions: The permissions granted to the user-to-server access token.
      * repository_selection: Describe whether all repositories have been selected or there's a selection involved
-     * @param array<string> $single_file_paths
+     * @param ?array<string> $single_file_paths
      * account: A GitHub user.
      */
-    public function __construct(public ?Schema\AppPermissions $permissions, public ?string $repository_selection, public ?string $single_file_name, public bool $has_multiple_single_files, public array $single_file_paths, public ?string $repositories_url, public ?Schema\SimpleUser $account)
+    public function __construct(public Schema\AppPermissions $permissions, public string $repository_selection, public ?string $single_file_name, public ?bool $has_multiple_single_files, public ?array $single_file_paths, public string $repositories_url, public Schema\SimpleUser $account)
     {
     }
 }

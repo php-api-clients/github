@@ -16,9 +16,9 @@ final readonly class Applicationjson
     public const SCHEMA_EXAMPLE_DATA = '{"selected_repository_ids":[13]}';
     /**
      * selected_repository_ids: An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://docs.github.com/rest/reference/dependabot#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/reference/dependabot#remove-selected-repository-from-an-organization-secret) endpoints.
-     * @param ?array<int> $selected_repository_ids
+     * @param array<int> $selected_repository_ids
      */
-    public function __construct(public ?array $selected_repository_ids)
+    public function __construct(public array $selected_repository_ids)
     {
     }
 }

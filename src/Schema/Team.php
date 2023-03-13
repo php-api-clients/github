@@ -14,7 +14,7 @@ final readonly class Team
     public const SCHEMA_TITLE = 'Team';
     public const SCHEMA_DESCRIPTION = 'Groups of organization members that gives permissions on specified repositories.';
     public const SCHEMA_EXAMPLE_DATA = '{"id":13,"node_id":"generated_node_id","name":"generated_name","slug":"generated_slug","description":"generated_description","privacy":"generated_privacy","permission":"generated_permission","permissions":{"pull":false,"triage":false,"push":false,"maintain":false,"admin":false},"url":"generated_url","html_url":"https:\\/\\/github.com\\/orgs\\/rails\\/teams\\/core","members_url":"generated_members_url","repositories_url":"generated_repositories_url","parent":null}';
-    public function __construct(public ?int $id, public ?string $node_id, public ?string $name, public ?string $slug, public ?string $description, public string $privacy, public ?string $permission, public Schema\Team\Permissions $permissions, public ?string $url, public ?string $html_url, public ?string $members_url, public ?string $repositories_url, public mixed $parent)
+    public function __construct(public int $id, public string $node_id, public string $name, public string $slug, public ?string $description, public ?string $privacy, public string $permission, public ?Schema\Team\Permissions $permissions, public string $url, public string $html_url, public string $members_url, public string $repositories_url, public mixed $parent)
     {
     }
 }

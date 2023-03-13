@@ -18,7 +18,7 @@ final readonly class WebhookPush
      * after: The SHA of the most recent commit on `ref` after the push.
      * before: The SHA of the most recent commit on `ref` before the push.
      * commits: An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 20 commits. If necessary, you can use the [Commits API](https://docs.github.com/rest/reference/repos#commits) to fetch additional commits. This limit is applied to timeline events only and isn't applied to webhook deliveries.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\WebhookPush\Commits> $commits
+     * @param array<\ApiClients\Client\GitHub\Schema\WebhookPush\Commits> $commits
      * compare: URL that shows the changes in this `ref` update, from the `before` commit to the `after` commit. For a newly created `ref` that is directly based on the default branch, this is the comparison between the head of the default branch and the `after` commit. Otherwise, this shows all commits until the `after` commit.
      * created: Whether this push created the `ref`.
      * deleted: Whether this push deleted the `ref`.
@@ -31,7 +31,7 @@ final readonly class WebhookPush
      * repository: A git repository
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $after, public ?string $base_ref, public ?string $before, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookPush\Commits::class)] public ?array $commits, public ?string $compare, public ?bool $created, public ?bool $deleted, public Schema\Enterprise $enterprise, public ?bool $forced, public ?Schema\WebhookPush\HeadCommit $head_commit, public Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?Schema\WebhookPush\Pusher $pusher, public ?string $ref, public ?Schema\WebhookIssuesTransferred\Changes\NewRepository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $after, public ?string $base_ref, public string $before, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookPush\Commits::class)] public array $commits, public string $compare, public bool $created, public bool $deleted, public ?Schema\Enterprise $enterprise, public bool $forced, public ?Schema\WebhookPush\HeadCommit $head_commit, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookIssuesTransferred\Changes\NewRepository $repository, public ?Schema\SimpleUser $sender)
     {
     }
 }

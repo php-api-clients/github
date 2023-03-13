@@ -21,7 +21,7 @@ final readonly class Enterprise
      * name: The name of the enterprise.
      * slug: The slug url identifier for the enterprise.
      */
-    public function __construct(public ?string $description, public ?string $html_url, public ?string $website_url, public ?int $id, public ?string $node_id, public ?string $name, public ?string $slug, public ?string $created_at, public ?string $updated_at, public ?string $avatar_url)
+    public function __construct(public ?string $description, public string $html_url, public ?string $website_url, public int $id, public string $node_id, public string $name, public string $slug, public ?string $created_at, public ?string $updated_at, public string $avatar_url)
     {
     }
 }

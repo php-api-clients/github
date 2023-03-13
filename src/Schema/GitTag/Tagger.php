@@ -14,7 +14,7 @@ final readonly class Tagger
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"date":"generated_date","email":"generated_email","name":"generated_name"}';
-    public function __construct(public ?string $date, public ?string $email, public ?string $name)
+    public function __construct(public string $date, public string $email, public string $name)
     {
     }
 }

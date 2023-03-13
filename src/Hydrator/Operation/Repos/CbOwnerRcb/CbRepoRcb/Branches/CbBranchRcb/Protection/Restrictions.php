@@ -35,1105 +35,1118 @@ class Restrictions implements ObjectMapper
     }
     
             
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['url'] ?? null;
 
-                $properties['url'] = $value;
-    
-                after_url:
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
 
-                $value = $payload['users_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['users_url'] = null;
-                    goto after_users_url;
-                }
+            $properties['url'] = $value;
 
-                $properties['users_url'] = $value;
-    
-                after_users_url:
+            after_url:
 
-                $value = $payload['teams_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['teams_url'] = null;
-                    goto after_teams_url;
-                }
+            $value = $payload['users_url'] ?? null;
 
-                $properties['teams_url'] = $value;
-    
-                after_teams_url:
+            if ($value === null) {
+                $missingFields[] = 'users_url';
+                goto after_users_url;
+            }
 
-                $value = $payload['apps_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['apps_url'] = null;
-                    goto after_apps_url;
-                }
+            $properties['users_url'] = $value;
 
-                $properties['apps_url'] = $value;
-    
-                after_apps_url:
+            after_users_url:
 
-                $value = $payload['users'] ?? null;
-    
-                if ($value === null) {
-                    $properties['users'] = null;
-                    goto after_users;
-                }
+            $value = $payload['teams_url'] ?? null;
 
-                static $usersCaster1;
-    
-                if ($usersCaster1 === null) {
-                    $usersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($value === null) {
+                $missingFields[] = 'teams_url';
+                goto after_teams_url;
+            }
+
+            $properties['teams_url'] = $value;
+
+            after_teams_url:
+
+            $value = $payload['apps_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'apps_url';
+                goto after_apps_url;
+            }
+
+            $properties['apps_url'] = $value;
+
+            after_apps_url:
+
+            $value = $payload['users'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'users';
+                goto after_users;
+            }
+
+            static $usersCaster1;
+
+            if ($usersCaster1 === null) {
+                $usersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Repository\\TemplateRepository\\Owner',
 ));
-                }
-    
-                $value = $usersCaster1->cast($value, $this);
+            }
 
-                $properties['users'] = $value;
-    
-                after_users:
+            $value = $usersCaster1->cast($value, $this);
 
-                $value = $payload['teams'] ?? null;
-    
-                if ($value === null) {
-                    $properties['teams'] = null;
-                    goto after_teams;
-                }
+            $properties['users'] = $value;
 
-                static $teamsCaster1;
-    
-                if ($teamsCaster1 === null) {
-                    $teamsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_users:
+
+            $value = $payload['teams'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'teams';
+                goto after_teams;
+            }
+
+            static $teamsCaster1;
+
+            if ($teamsCaster1 === null) {
+                $teamsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\BranchRestrictionPolicy\\Teams',
 ));
-                }
-    
-                $value = $teamsCaster1->cast($value, $this);
+            }
 
-                $properties['teams'] = $value;
-    
-                after_teams:
+            $value = $teamsCaster1->cast($value, $this);
 
-                $value = $payload['apps'] ?? null;
-    
-                if ($value === null) {
-                    $properties['apps'] = null;
-                    goto after_apps;
-                }
+            $properties['teams'] = $value;
 
-                static $appsCaster1;
-    
-                if ($appsCaster1 === null) {
-                    $appsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            after_teams:
+
+            $value = $payload['apps'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'apps';
+                goto after_apps;
+            }
+
+            static $appsCaster1;
+
+            if ($appsCaster1 === null) {
+                $appsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\BranchRestrictionPolicy\\Apps',
 ));
-                }
-    
-                $value = $appsCaster1->cast($value, $this);
+            }
 
-                $properties['apps'] = $value;
-    
-                after_apps:
+            $value = $appsCaster1->cast($value, $this);
 
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy', $exception, stack: $this->hydrationStack);
-            }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy::class, $missingFields, stack: $this->hydrationStack);
-            }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy', $exception, stack: $this->hydrationStack);
-            }
+            $properties['apps'] = $value;
+
+            after_apps:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['login'] ?? null;
-    
-                if ($value === null) {
-                    $properties['login'] = null;
-                    goto after_login;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['login'] ?? null;
 
-                $properties['login'] = $value;
-    
-                after_login:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['avatar_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['avatar_url'] = null;
-                    goto after_avatar_url;
-                }
-
-                $properties['avatar_url'] = $value;
-    
-                after_avatar_url:
-
-                $value = $payload['gravatar_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gravatar_id'] = null;
-                    goto after_gravatar_id;
-                }
-
-                $properties['gravatar_id'] = $value;
-    
-                after_gravatar_id:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['followers_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['followers_url'] = null;
-                    goto after_followers_url;
-                }
-
-                $properties['followers_url'] = $value;
-    
-                after_followers_url:
-
-                $value = $payload['following_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['following_url'] = null;
-                    goto after_following_url;
-                }
-
-                $properties['following_url'] = $value;
-    
-                after_following_url:
-
-                $value = $payload['gists_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gists_url'] = null;
-                    goto after_gists_url;
-                }
-
-                $properties['gists_url'] = $value;
-    
-                after_gists_url:
-
-                $value = $payload['starred_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['starred_url'] = null;
-                    goto after_starred_url;
-                }
-
-                $properties['starred_url'] = $value;
-    
-                after_starred_url:
-
-                $value = $payload['subscriptions_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['subscriptions_url'] = null;
-                    goto after_subscriptions_url;
-                }
-
-                $properties['subscriptions_url'] = $value;
-    
-                after_subscriptions_url:
-
-                $value = $payload['organizations_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organizations_url'] = null;
-                    goto after_organizations_url;
-                }
-
-                $properties['organizations_url'] = $value;
-    
-                after_organizations_url:
-
-                $value = $payload['repos_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repos_url'] = null;
-                    goto after_repos_url;
-                }
-
-                $properties['repos_url'] = $value;
-    
-                after_repos_url:
-
-                $value = $payload['events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['events_url'] = null;
-                    goto after_events_url;
-                }
-
-                $properties['events_url'] = $value;
-    
-                after_events_url:
-
-                $value = $payload['received_events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['received_events_url'] = null;
-                    goto after_received_events_url;
-                }
-
-                $properties['received_events_url'] = $value;
-    
-                after_received_events_url:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['site_admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['site_admin'] = null;
-                    goto after_site_admin;
-                }
-
-                $properties['site_admin'] = $value;
-    
-                after_site_admin:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['login'] = null;
+                goto after_login;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['login'] = $value;
+
+            after_login:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $properties['id'] = null;
+                goto after_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $properties['node_id'] = null;
+                goto after_node_id;
             }
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $properties['avatar_url'] = null;
+                goto after_avatar_url;
+            }
+
+            $properties['avatar_url'] = $value;
+
+            after_avatar_url:
+
+            $value = $payload['gravatar_id'] ?? null;
+
+            if ($value === null) {
+                $properties['gravatar_id'] = null;
+                goto after_gravatar_id;
+            }
+
+            $properties['gravatar_id'] = $value;
+
+            after_gravatar_id:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['html_url'] = null;
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['followers_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followers_url'] = null;
+                goto after_followers_url;
+            }
+
+            $properties['followers_url'] = $value;
+
+            after_followers_url:
+
+            $value = $payload['following_url'] ?? null;
+
+            if ($value === null) {
+                $properties['following_url'] = null;
+                goto after_following_url;
+            }
+
+            $properties['following_url'] = $value;
+
+            after_following_url:
+
+            $value = $payload['gists_url'] ?? null;
+
+            if ($value === null) {
+                $properties['gists_url'] = null;
+                goto after_gists_url;
+            }
+
+            $properties['gists_url'] = $value;
+
+            after_gists_url:
+
+            $value = $payload['starred_url'] ?? null;
+
+            if ($value === null) {
+                $properties['starred_url'] = null;
+                goto after_starred_url;
+            }
+
+            $properties['starred_url'] = $value;
+
+            after_starred_url:
+
+            $value = $payload['subscriptions_url'] ?? null;
+
+            if ($value === null) {
+                $properties['subscriptions_url'] = null;
+                goto after_subscriptions_url;
+            }
+
+            $properties['subscriptions_url'] = $value;
+
+            after_subscriptions_url:
+
+            $value = $payload['organizations_url'] ?? null;
+
+            if ($value === null) {
+                $properties['organizations_url'] = null;
+                goto after_organizations_url;
+            }
+
+            $properties['organizations_url'] = $value;
+
+            after_organizations_url:
+
+            $value = $payload['repos_url'] ?? null;
+
+            if ($value === null) {
+                $properties['repos_url'] = null;
+                goto after_repos_url;
+            }
+
+            $properties['repos_url'] = $value;
+
+            after_repos_url:
+
+            $value = $payload['events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['events_url'] = null;
+                goto after_events_url;
+            }
+
+            $properties['events_url'] = $value;
+
+            after_events_url:
+
+            $value = $payload['received_events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['received_events_url'] = null;
+                goto after_received_events_url;
+            }
+
+            $properties['received_events_url'] = $value;
+
+            after_received_events_url:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['site_admin'] ?? null;
+
+            if ($value === null) {
+                $properties['site_admin'] = null;
+                goto after_site_admin;
+            }
+
+            $properties['site_admin'] = $value;
+
+            after_site_admin:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Teams(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Teams(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['slug'] ?? null;
-    
-                if ($value === null) {
-                    $properties['slug'] = null;
-                    goto after_slug;
-                }
-
-                $properties['slug'] = $value;
-    
-                after_slug:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['privacy'] ?? null;
-    
-                if ($value === null) {
-                    $properties['privacy'] = null;
-                    goto after_privacy;
-                }
-
-                $properties['privacy'] = $value;
-    
-                after_privacy:
-
-                $value = $payload['permission'] ?? null;
-    
-                if ($value === null) {
-                    $properties['permission'] = null;
-                    goto after_permission;
-                }
-
-                $properties['permission'] = $value;
-    
-                after_permission:
-
-                $value = $payload['members_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['members_url'] = null;
-                    goto after_members_url;
-                }
-
-                $properties['members_url'] = $value;
-    
-                after_members_url:
-
-                $value = $payload['repositories_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repositories_url'] = null;
-                    goto after_repositories_url;
-                }
-
-                $properties['repositories_url'] = $value;
-    
-                after_repositories_url:
-
-                $value = $payload['parent'] ?? null;
-    
-                if ($value === null) {
-                    $properties['parent'] = null;
-                    goto after_parent;
-                }
-
-                $properties['parent'] = $value;
-    
-                after_parent:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['id'] = null;
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $properties['node_id'] = null;
+                goto after_node_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams', $exception, stack: $this->hydrationStack);
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
             }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['html_url'] = null;
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['slug'] ?? null;
+
+            if ($value === null) {
+                $properties['slug'] = null;
+                goto after_slug;
+            }
+
+            $properties['slug'] = $value;
+
+            after_slug:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $properties['description'] = null;
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['privacy'] ?? null;
+
+            if ($value === null) {
+                $properties['privacy'] = null;
+                goto after_privacy;
+            }
+
+            $properties['privacy'] = $value;
+
+            after_privacy:
+
+            $value = $payload['permission'] ?? null;
+
+            if ($value === null) {
+                $properties['permission'] = null;
+                goto after_permission;
+            }
+
+            $properties['permission'] = $value;
+
+            after_permission:
+
+            $value = $payload['members_url'] ?? null;
+
+            if ($value === null) {
+                $properties['members_url'] = null;
+                goto after_members_url;
+            }
+
+            $properties['members_url'] = $value;
+
+            after_members_url:
+
+            $value = $payload['repositories_url'] ?? null;
+
+            if ($value === null) {
+                $properties['repositories_url'] = null;
+                goto after_repositories_url;
+            }
+
+            $properties['repositories_url'] = $value;
+
+            after_repositories_url:
+
+            $value = $payload['parent'] ?? null;
+
+            if ($value === null) {
+                $properties['parent'] = null;
+                goto after_parent;
+            }
+
+            $properties['parent'] = $value;
+
+            after_parent:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
 
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['slug'] ?? null;
-    
-                if ($value === null) {
-                    $properties['slug'] = null;
-                    goto after_slug;
-                }
-
-                $properties['slug'] = $value;
-    
-                after_slug:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['owner'] ?? null;
-    
-                if ($value === null) {
-                    $properties['owner'] = null;
-                    goto after_owner;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'owner';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Owner($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['owner'] = $value;
-    
-                after_owner:
-
-                $value = $payload['name'] ?? null;
-    
-                if ($value === null) {
-                    $properties['name'] = null;
-                    goto after_name;
-                }
-
-                $properties['name'] = $value;
-    
-                after_name:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['external_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['external_url'] = null;
-                    goto after_external_url;
-                }
-
-                $properties['external_url'] = $value;
-    
-                after_external_url:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['created_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['created_at'] = null;
-                    goto after_created_at;
-                }
-
-                $properties['created_at'] = $value;
-    
-                after_created_at:
-
-                $value = $payload['updated_at'] ?? null;
-    
-                if ($value === null) {
-                    $properties['updated_at'] = null;
-                    goto after_updated_at;
-                }
-
-                $properties['updated_at'] = $value;
-    
-                after_updated_at:
-
-                $value = $payload['permissions'] ?? null;
-    
-                if ($value === null) {
-                    $properties['permissions'] = null;
-                    goto after_permissions;
-                }
-
-                if (is_array($value)) {
-                    try {
-                        $this->hydrationStack[] = 'permissions';
-                        $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Permissions($value);
-                    } finally {
-                        array_pop($this->hydrationStack);
-                    }
-                }
-
-                $properties['permissions'] = $value;
-    
-                after_permissions:
-
-                $value = $payload['events'] ?? null;
-    
-                if ($value === null) {
-                    $properties['events'] = null;
-                    goto after_events;
-                }
-
-                $properties['events'] = $value;
-    
-                after_events:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['id'] = null;
+                goto after_id;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['slug'] ?? null;
+
+            if ($value === null) {
+                $properties['slug'] = null;
+                goto after_slug;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps', $exception, stack: $this->hydrationStack);
+
+            $properties['slug'] = $value;
+
+            after_slug:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $properties['node_id'] = null;
+                goto after_node_id;
             }
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['owner'] ?? null;
+
+            if ($value === null) {
+                $properties['owner'] = null;
+                goto after_owner;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'owner';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Owner($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['owner'] = $value;
+
+            after_owner:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $properties['description'] = null;
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['external_url'] ?? null;
+
+            if ($value === null) {
+                $properties['external_url'] = null;
+                goto after_external_url;
+            }
+
+            $properties['external_url'] = $value;
+
+            after_external_url:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['html_url'] = null;
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $properties['created_at'] = null;
+                goto after_created_at;
+            }
+
+            $properties['created_at'] = $value;
+
+            after_created_at:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $properties['updated_at'] = null;
+                goto after_updated_at;
+            }
+
+            $properties['updated_at'] = $value;
+
+            after_updated_at:
+
+            $value = $payload['permissions'] ?? null;
+
+            if ($value === null) {
+                $properties['permissions'] = null;
+                goto after_permissions;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'permissions';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Permissions($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['permissions'] = $value;
+
+            after_permissions:
+
+            $value = $payload['events'] ?? null;
+
+            if ($value === null) {
+                $properties['events'] = null;
+                goto after_events;
+            }
+
+            $properties['events'] = $value;
+
+            after_events:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['login'] ?? null;
-    
-                if ($value === null) {
-                    $properties['login'] = null;
-                    goto after_login;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['login'] ?? null;
 
-                $properties['login'] = $value;
-    
-                after_login:
-
-                $value = $payload['id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['id'] = null;
-                    goto after_id;
-                }
-
-                $properties['id'] = $value;
-    
-                after_id:
-
-                $value = $payload['node_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['node_id'] = null;
-                    goto after_node_id;
-                }
-
-                $properties['node_id'] = $value;
-    
-                after_node_id:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['repos_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['repos_url'] = null;
-                    goto after_repos_url;
-                }
-
-                $properties['repos_url'] = $value;
-    
-                after_repos_url:
-
-                $value = $payload['events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['events_url'] = null;
-                    goto after_events_url;
-                }
-
-                $properties['events_url'] = $value;
-    
-                after_events_url:
-
-                $value = $payload['hooks_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['hooks_url'] = null;
-                    goto after_hooks_url;
-                }
-
-                $properties['hooks_url'] = $value;
-    
-                after_hooks_url:
-
-                $value = $payload['issues_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['issues_url'] = null;
-                    goto after_issues_url;
-                }
-
-                $properties['issues_url'] = $value;
-    
-                after_issues_url:
-
-                $value = $payload['members_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['members_url'] = null;
-                    goto after_members_url;
-                }
-
-                $properties['members_url'] = $value;
-    
-                after_members_url:
-
-                $value = $payload['public_members_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['public_members_url'] = null;
-                    goto after_public_members_url;
-                }
-
-                $properties['public_members_url'] = $value;
-    
-                after_public_members_url:
-
-                $value = $payload['avatar_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['avatar_url'] = null;
-                    goto after_avatar_url;
-                }
-
-                $properties['avatar_url'] = $value;
-    
-                after_avatar_url:
-
-                $value = $payload['description'] ?? null;
-    
-                if ($value === null) {
-                    $properties['description'] = null;
-                    goto after_description;
-                }
-
-                $properties['description'] = $value;
-    
-                after_description:
-
-                $value = $payload['gravatar_id'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gravatar_id'] = null;
-                    goto after_gravatar_id;
-                }
-
-                $properties['gravatar_id'] = $value;
-    
-                after_gravatar_id:
-
-                $value = $payload['html_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['html_url'] = null;
-                    goto after_html_url;
-                }
-
-                $properties['html_url'] = $value;
-    
-                after_html_url:
-
-                $value = $payload['followers_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['followers_url'] = null;
-                    goto after_followers_url;
-                }
-
-                $properties['followers_url'] = $value;
-    
-                after_followers_url:
-
-                $value = $payload['following_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['following_url'] = null;
-                    goto after_following_url;
-                }
-
-                $properties['following_url'] = $value;
-    
-                after_following_url:
-
-                $value = $payload['gists_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['gists_url'] = null;
-                    goto after_gists_url;
-                }
-
-                $properties['gists_url'] = $value;
-    
-                after_gists_url:
-
-                $value = $payload['starred_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['starred_url'] = null;
-                    goto after_starred_url;
-                }
-
-                $properties['starred_url'] = $value;
-    
-                after_starred_url:
-
-                $value = $payload['subscriptions_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['subscriptions_url'] = null;
-                    goto after_subscriptions_url;
-                }
-
-                $properties['subscriptions_url'] = $value;
-    
-                after_subscriptions_url:
-
-                $value = $payload['organizations_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['organizations_url'] = null;
-                    goto after_organizations_url;
-                }
-
-                $properties['organizations_url'] = $value;
-    
-                after_organizations_url:
-
-                $value = $payload['received_events_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['received_events_url'] = null;
-                    goto after_received_events_url;
-                }
-
-                $properties['received_events_url'] = $value;
-    
-                after_received_events_url:
-
-                $value = $payload['type'] ?? null;
-    
-                if ($value === null) {
-                    $properties['type'] = null;
-                    goto after_type;
-                }
-
-                $properties['type'] = $value;
-    
-                after_type:
-
-                $value = $payload['site_admin'] ?? null;
-    
-                if ($value === null) {
-                    $properties['site_admin'] = null;
-                    goto after_site_admin;
-                }
-
-                $properties['site_admin'] = $value;
-    
-                after_site_admin:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['login'] = null;
+                goto after_login;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['login'] = $value;
+
+            after_login:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $properties['id'] = null;
+                goto after_id;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner', $exception, stack: $this->hydrationStack);
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $properties['node_id'] = null;
+                goto after_node_id;
             }
+
+            $properties['node_id'] = $value;
+
+            after_node_id:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['repos_url'] ?? null;
+
+            if ($value === null) {
+                $properties['repos_url'] = null;
+                goto after_repos_url;
+            }
+
+            $properties['repos_url'] = $value;
+
+            after_repos_url:
+
+            $value = $payload['events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['events_url'] = null;
+                goto after_events_url;
+            }
+
+            $properties['events_url'] = $value;
+
+            after_events_url:
+
+            $value = $payload['hooks_url'] ?? null;
+
+            if ($value === null) {
+                $properties['hooks_url'] = null;
+                goto after_hooks_url;
+            }
+
+            $properties['hooks_url'] = $value;
+
+            after_hooks_url:
+
+            $value = $payload['issues_url'] ?? null;
+
+            if ($value === null) {
+                $properties['issues_url'] = null;
+                goto after_issues_url;
+            }
+
+            $properties['issues_url'] = $value;
+
+            after_issues_url:
+
+            $value = $payload['members_url'] ?? null;
+
+            if ($value === null) {
+                $properties['members_url'] = null;
+                goto after_members_url;
+            }
+
+            $properties['members_url'] = $value;
+
+            after_members_url:
+
+            $value = $payload['public_members_url'] ?? null;
+
+            if ($value === null) {
+                $properties['public_members_url'] = null;
+                goto after_public_members_url;
+            }
+
+            $properties['public_members_url'] = $value;
+
+            after_public_members_url:
+
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $properties['avatar_url'] = null;
+                goto after_avatar_url;
+            }
+
+            $properties['avatar_url'] = $value;
+
+            after_avatar_url:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $properties['description'] = null;
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['gravatar_id'] ?? null;
+
+            if ($value === null) {
+                $properties['gravatar_id'] = null;
+                goto after_gravatar_id;
+            }
+
+            $properties['gravatar_id'] = $value;
+
+            after_gravatar_id:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['html_url'] = null;
+                goto after_html_url;
+            }
+
+            $properties['html_url'] = $value;
+
+            after_html_url:
+
+            $value = $payload['followers_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followers_url'] = null;
+                goto after_followers_url;
+            }
+
+            $properties['followers_url'] = $value;
+
+            after_followers_url:
+
+            $value = $payload['following_url'] ?? null;
+
+            if ($value === null) {
+                $properties['following_url'] = null;
+                goto after_following_url;
+            }
+
+            $properties['following_url'] = $value;
+
+            after_following_url:
+
+            $value = $payload['gists_url'] ?? null;
+
+            if ($value === null) {
+                $properties['gists_url'] = null;
+                goto after_gists_url;
+            }
+
+            $properties['gists_url'] = $value;
+
+            after_gists_url:
+
+            $value = $payload['starred_url'] ?? null;
+
+            if ($value === null) {
+                $properties['starred_url'] = null;
+                goto after_starred_url;
+            }
+
+            $properties['starred_url'] = $value;
+
+            after_starred_url:
+
+            $value = $payload['subscriptions_url'] ?? null;
+
+            if ($value === null) {
+                $properties['subscriptions_url'] = null;
+                goto after_subscriptions_url;
+            }
+
+            $properties['subscriptions_url'] = $value;
+
+            after_subscriptions_url:
+
+            $value = $payload['organizations_url'] ?? null;
+
+            if ($value === null) {
+                $properties['organizations_url'] = null;
+                goto after_organizations_url;
+            }
+
+            $properties['organizations_url'] = $value;
+
+            after_organizations_url:
+
+            $value = $payload['received_events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['received_events_url'] = null;
+                goto after_received_events_url;
+            }
+
+            $properties['received_events_url'] = $value;
+
+            after_received_events_url:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['site_admin'] ?? null;
+
+            if ($value === null) {
+                $properties['site_admin'] = null;
+                goto after_site_admin;
+            }
+
+            $properties['site_admin'] = $value;
+
+            after_site_admin:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['metadata'] ?? null;
-    
-                if ($value === null) {
-                    $properties['metadata'] = null;
-                    goto after_metadata;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['metadata'] ?? null;
 
-                $properties['metadata'] = $value;
-    
-                after_metadata:
-
-                $value = $payload['contents'] ?? null;
-    
-                if ($value === null) {
-                    $properties['contents'] = null;
-                    goto after_contents;
-                }
-
-                $properties['contents'] = $value;
-    
-                after_contents:
-
-                $value = $payload['issues'] ?? null;
-    
-                if ($value === null) {
-                    $properties['issues'] = null;
-                    goto after_issues;
-                }
-
-                $properties['issues'] = $value;
-    
-                after_issues:
-
-                $value = $payload['single_file'] ?? null;
-    
-                if ($value === null) {
-                    $properties['single_file'] = null;
-                    goto after_single_file;
-                }
-
-                $properties['single_file'] = $value;
-    
-                after_single_file:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['metadata'] = null;
+                goto after_metadata;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['metadata'] = $value;
+
+            after_metadata:
+
+            $value = $payload['contents'] ?? null;
+
+            if ($value === null) {
+                $properties['contents'] = null;
+                goto after_contents;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions', $exception, stack: $this->hydrationStack);
+
+            $properties['contents'] = $value;
+
+            after_contents:
+
+            $value = $payload['issues'] ?? null;
+
+            if ($value === null) {
+                $properties['issues'] = null;
+                goto after_issues;
             }
+
+            $properties['issues'] = $value;
+
+            after_issues:
+
+            $value = $payload['single_file'] ?? null;
+
+            if ($value === null) {
+                $properties['single_file'] = null;
+                goto after_single_file;
+            }
+
+            $properties['single_file'] = $value;
+
+            after_single_file:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions', $exception, stack: $this->hydrationStack);
         }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions', $exception, stack: $this->hydrationStack);
+        }
+    }
 
         
-        private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
-        {
-            $properties = []; 
-            $missingFields = [];
-            try {
-                
-                $value = $payload['message'] ?? null;
-    
-                if ($value === null) {
-                    $properties['message'] = null;
-                    goto after_message;
-                }
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
 
-                $properties['message'] = $value;
-    
-                after_message:
-
-                $value = $payload['documentation_url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['documentation_url'] = null;
-                    goto after_documentation_url;
-                }
-
-                $properties['documentation_url'] = $value;
-    
-                after_documentation_url:
-
-                $value = $payload['url'] ?? null;
-    
-                if ($value === null) {
-                    $properties['url'] = null;
-                    goto after_url;
-                }
-
-                $properties['url'] = $value;
-    
-                after_url:
-
-                $value = $payload['status'] ?? null;
-    
-                if ($value === null) {
-                    $properties['status'] = null;
-                    goto after_status;
-                }
-
-                $properties['status'] = $value;
-    
-                after_status:
-
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
             }
-            
-            if (count($missingFields) > 0) {
-                throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentation_url'] = null;
+                goto after_documentation_url;
             }
-            
-            try {
-                return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
-            } catch (\Throwable $exception) {
-                throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+
+            $properties['documentation_url'] = $value;
+
+            after_documentation_url:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
+    
+    private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
+    {
+        foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
+            if (is_a($object, $valueType)) {
+                return [$accessor => $payloadType] + $this->{$method}($object);
             }
         }
-    
+
+        throw new \LogicException('No type mapped for object of class: ' . get_class($object));
+    }
+
     public function serializeObject(object $object): mixed
     {
-        try {
-            $className = get_class($object);
+        return $this->serializeObjectOfType($object, get_class($object));
+    }
 
+    /**
+     * @template T
+     *
+     * @param T               $object
+     * @param class-string<T> $className
+     */
+    public function serializeObjectOfType(object $object, string $className): mixed
+    {
+        try {
             return match($className) {
                 'array' => $this->serializeValuearray($object),
-                'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
-                'DateTime' => $this->serializeValueDateTime($object),
-                'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
-                'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy($object),
-                'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
-                'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Teams($object),
-                'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps($object),
-                'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Owner($object),
-                'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'Ramsey\Uuid\UuidInterface' => $this->serializeValueRamsey⚡️Uuid⚡️UuidInterface($object),
+            'DateTime' => $this->serializeValueDateTime($object),
+            'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
+            'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
+            'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy($object),
+            'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
+            'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Teams($object),
+            'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps($object),
+            'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Owner($object),
+            'ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Permissions($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -1206,49 +1219,29 @@ class Restrictions implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy);
         $result = [];
-        
-        $url = $object->url;
 
-        if ($url === null) {
-            goto after_url;
-        }
+        $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
         $users_url = $object->users_url;
-
-        if ($users_url === null) {
-            goto after_users_url;
-        }
         after_users_url:        $result['users_url'] = $users_url;
 
         
         $teams_url = $object->teams_url;
-
-        if ($teams_url === null) {
-            goto after_teams_url;
-        }
         after_teams_url:        $result['teams_url'] = $teams_url;
 
         
         $apps_url = $object->apps_url;
-
-        if ($apps_url === null) {
-            goto after_apps_url;
-        }
         after_apps_url:        $result['apps_url'] = $apps_url;
 
         
         $users = $object->users;
-
-        if ($users === null) {
-            goto after_users;
-        }
         static $usersSerializer0;
 
         if ($usersSerializer0 === null) {
@@ -1262,10 +1255,6 @@ class Restrictions implements ObjectMapper
 
         
         $teams = $object->teams;
-
-        if ($teams === null) {
-            goto after_teams;
-        }
         static $teamsSerializer0;
 
         if ($teamsSerializer0 === null) {
@@ -1279,10 +1268,6 @@ class Restrictions implements ObjectMapper
 
         
         $apps = $object->apps;
-
-        if ($apps === null) {
-            goto after_apps;
-        }
         static $appsSerializer0;
 
         if ($appsSerializer0 === null) {
@@ -1298,12 +1283,12 @@ class Restrictions implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner);
         $result = [];
-        
+
         $login = $object->login;
 
         if ($login === null) {
@@ -1451,12 +1436,12 @@ class Restrictions implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Teams(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Teams);
         $result = [];
-        
+
         $id = $object->id;
 
         if ($id === null) {
@@ -1556,12 +1541,12 @@ class Restrictions implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps);
         $result = [];
-        
+
         $id = $object->id;
 
         if ($id === null) {
@@ -1671,12 +1656,12 @@ class Restrictions implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Owner(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner);
         $result = [];
-        
+
         $login = $object->login;
 
         if ($login === null) {
@@ -1864,12 +1849,12 @@ class Restrictions implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchRestrictionPolicy⚡️Apps⚡️Permissions(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions);
         $result = [];
-        
+
         $metadata = $object->metadata;
 
         if ($metadata === null) {
@@ -1905,12 +1890,12 @@ class Restrictions implements ObjectMapper
         return $result;
     }
 
-    
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
-        
+
         $message = $object->message;
 
         if ($message === null) {

@@ -19,7 +19,7 @@ final readonly class Rule
      * id: A unique identifier for the rule used to detect the alert.
      * severity: The severity of the alert.
      */
-    public function __construct(public ?string $description, public ?string $id, public ?string $severity)
+    public function __construct(public string $description, public string $id, public ?string $severity)
     {
     }
 }

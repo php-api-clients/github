@@ -15,9 +15,9 @@ final readonly class H200
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":13,"runners":[{"id":5,"name":"iMac","os":"macos","status":"online","busy":false,"labels":[{"id":13,"name":"generated_name","type":"generated_type"}]}]}';
     /**
-     * @param ?array<\ApiClients\Client\GitHub\Schema\Runner> $runners
+     * @param array<\ApiClients\Client\GitHub\Schema\Runner> $runners
      */
-    public function __construct(public ?int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Runner::class)] public ?array $runners)
+    public function __construct(public int $total_count, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Runner::class)] public array $runners)
     {
     }
 }

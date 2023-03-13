@@ -14,7 +14,7 @@ final readonly class Branches
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"commit":{"sha":"generated_sha","url":"generated_url"},"name":"generated_name","protected":false}';
-    public function __construct(public ?Schema\WebhookStatus\Branches\Commit $commit, public ?string $name, public ?bool $protected)
+    public function __construct(public Schema\WebhookStatus\Branches\Commit $commit, public string $name, public bool $protected)
     {
     }
 }

@@ -14,7 +14,7 @@ final readonly class Cvss
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"score":13,"vector_string":"generated_vector_string"}';
-    public function __construct(public ?int $score, public ?string $vector_string)
+    public function __construct(public int $score, public ?string $vector_string)
     {
     }
 }

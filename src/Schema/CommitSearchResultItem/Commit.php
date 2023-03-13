@@ -14,7 +14,7 @@ final readonly class Commit
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"author":{"name":"generated_name","email":"generated_email","date":"generated_date"},"committer":null,"comment_count":13,"message":"generated_message","tree":{"sha":"generated_sha","url":"generated_url"},"url":"generated_url","verification":{"verified":false,"reason":"generated_reason","payload":"generated_payload","signature":"generated_signature"}}';
-    public function __construct(public ?Schema\CommitSearchResultItem\Commit\Author $author, public mixed $committer, public ?int $comment_count, public ?string $message, public ?Schema\ShortBranch\Commit $tree, public ?string $url, public Schema\Verification $verification)
+    public function __construct(public Schema\CommitSearchResultItem\Commit\Author $author, public mixed $committer, public int $comment_count, public string $message, public Schema\ShortBranch\Commit $tree, public string $url, public ?Schema\Verification $verification)
     {
     }
 }
