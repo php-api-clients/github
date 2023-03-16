@@ -38,9 +38,9 @@ final class ListEnvironmentVariables
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{environment_name}', '{per_page}', '{page}'), array($this->repository_id, $this->environment_name, $this->per_page, $this->page), self::PATH . '?per_page={per_page}&page={page}'));
     }
     /**
-     * @return Schema\Operation\Actions\ListRepoVariables\Response\Applicationjson\H200
+     * @return Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Actions\ListRepoVariables\Response\Applicationjson\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +49,8 @@ final class ListEnvironmentVariables
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Actions\ListRepoVariables\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListRepoVariables\Response\Applicationjson\H200::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200::class, $body);
                 }
                 break;
         }

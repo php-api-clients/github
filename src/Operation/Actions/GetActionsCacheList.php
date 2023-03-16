@@ -18,7 +18,7 @@ final class GetActionsCacheList
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
-    /**The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
+    /**The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
     private string $ref;
     /**An explicit key or prefix for identifying the cache**/
     private string $key;
