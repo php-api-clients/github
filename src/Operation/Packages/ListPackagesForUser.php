@@ -23,19 +23,25 @@ final class ListPackagesForUser
     private string $visibility;
     /**The handle for the GitHub user account.**/
     private string $username;
+    /**Page number of the results to fetch.**/
+    private int $page;
+    /**The number of results per page (max 100).**/
+    private int $per_page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Users\CbUsernameRcb\Packages $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Packages $hydrator, string $package_type, string $visibility, string $username)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Packages $hydrator, string $package_type, string $visibility, string $username, int $page = 1, int $per_page = 30)
     {
         $this->package_type = $package_type;
         $this->visibility = $visibility;
         $this->username = $username;
+        $this->page = $page;
+        $this->per_page = $per_page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{package_type}', '{visibility}', '{username}'), array($this->package_type, $this->visibility, $this->username), self::PATH . '?package_type={package_type}&visibility={visibility}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{package_type}', '{visibility}', '{username}', '{page}', '{per_page}'), array($this->package_type, $this->visibility, $this->username, $this->page, $this->per_page), self::PATH . '?package_type={package_type}&visibility={visibility}&page={page}&per_page={per_page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Package>

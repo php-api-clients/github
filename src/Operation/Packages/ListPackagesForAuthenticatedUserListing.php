@@ -8,10 +8,10 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
-final class ListPackagesForAuthenticatedUser
+final class ListPackagesForAuthenticatedUserListing
 {
     public const OPERATION_ID = 'packages/list-packages-for-authenticated-user';
-    public const OPERATION_MATCH = 'GET /user/packages';
+    public const OPERATION_MATCH = 'LIST /user/packages';
     private const METHOD = 'GET';
     private const PATH = '/user/packages';
     /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.**/

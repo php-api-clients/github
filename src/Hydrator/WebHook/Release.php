@@ -42,6 +42,7 @@ class Release implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectEdited\Changes\Body' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectEdited⚡️Changes⚡️Body($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookLabelEdited\Changes\Name' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookLabelEdited⚡️Changes⚡️Name($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes⚡️MakeLatest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookReleasePublished' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookReleaseReleased' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased($payload),
@@ -4480,6 +4481,26 @@ class Release implements ObjectMapper
 
             after_name:
 
+            $value = $payload['make_latest'] ?? null;
+
+            if ($value === null) {
+                $properties['make_latest'] = null;
+                goto after_make_latest;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'make_latest';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes⚡️MakeLatest($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['make_latest'] = $value;
+
+            after_make_latest:
+
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes', $exception, stack: $this->hydrationStack);
         }
@@ -4556,6 +4577,38 @@ class Release implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookLabelEdited\Changes\Name(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookLabelEdited\Changes\Name', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes⚡️MakeLatest(array $payload): \ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['to'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'to';
+                goto after_to;
+            }
+
+            $properties['to'] = $value;
+
+            after_to:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -5217,6 +5270,7 @@ class Release implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes($object),
             'ApiClients\Client\GitHub\Schema\WebhookProjectEdited\Changes\Body' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectEdited⚡️Changes⚡️Body($object),
             'ApiClients\Client\GitHub\Schema\WebhookLabelEdited\Changes\Name' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookLabelEdited⚡️Changes⚡️Name($object),
+            'ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes⚡️MakeLatest($object),
             'ApiClients\Client\GitHub\Schema\WebhookReleasePrereleased' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased($object),
             'ApiClients\Client\GitHub\Schema\WebhookReleasePublished' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished($object),
             'ApiClients\Client\GitHub\Schema\WebhookReleaseReleased' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased($object),
@@ -7672,6 +7726,15 @@ class Release implements ObjectMapper
         $name = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookLabelEdited⚡️Changes⚡️Name($name);
         after_name:        $result['name'] = $name;
 
+        
+        $make_latest = $object->make_latest;
+
+        if ($make_latest === null) {
+            goto after_make_latest;
+        }
+        $make_latest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes⚡️MakeLatest($make_latest);
+        after_make_latest:        $result['make_latest'] = $make_latest;
+
 
         return $result;
     }
@@ -7697,6 +7760,19 @@ class Release implements ObjectMapper
 
         $from = $object->from;
         after_from:        $result['from'] = $from;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Changes⚡️MakeLatest(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookReleaseEdited\Changes\MakeLatest);
+        $result = [];
+
+        $to = $object->to;
+        after_to:        $result['to'] = $to;
 
 
         return $result;

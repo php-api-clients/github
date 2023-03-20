@@ -16,9 +16,9 @@ final class CodeListing
     private const PATH = '/search/code';
     /**The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query). See "[Searching code](https://docs.github.com/search-github/searching-on-github/searching-code)" for a detailed list of qualifiers.**/
     private string $q;
-    /**Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/reference/search#ranking-search-results)**/
+    /****Note: This field is deprecated, and will be ignored after April 10, 2023 (except on GitHub Enterprise Server).** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/reference/search#ranking-search-results)**/
     private string $sort;
-    /**Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.**/
+    /****Note: This field is deprecated, and will be ignored after April 10, 2023 (except on GitHub Enterprise Server).** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`. **/
     private string $order;
     /**The number of results per page (max 100).**/
     private int $per_page;
