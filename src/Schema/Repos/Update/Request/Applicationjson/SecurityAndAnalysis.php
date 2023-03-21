@@ -20,7 +20,7 @@ For example, to enable GitHub Advanced Security, use this data in the body of th
 `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.
 
 You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.';
-    public const SCHEMA_EXAMPLE_DATA = '{"advanced_security":{"status":"generated_status"},"secret_scanning":{"status":"generated_status"},"secret_scanning_push_protection":{"status":"generated_status"}}';
+    public const SCHEMA_EXAMPLE_DATA = '{"advanced_security":{"status":"generated_status_null"},"secret_scanning":{"status":"generated_status_null"},"secret_scanning_push_protection":{"status":"generated_status_null"}}';
     /**
      * advanced_security: Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
      * secret_scanning: Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."

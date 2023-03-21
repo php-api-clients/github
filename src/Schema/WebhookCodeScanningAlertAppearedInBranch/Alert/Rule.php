@@ -13,7 +13,7 @@ final readonly class Rule
     public const SCHEMA_JSON = '{"required":["id","severity","description"],"type":"object","properties":{"description":{"type":"string","description":"A short description of the rule used to detect the alert."},"id":{"type":"string","description":"A unique identifier for the rule used to detect the alert."},"severity":{"enum":["none","note","warning","error",null],"type":["string","null"],"description":"The severity of the alert."}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"description":"generated_description","id":"generated_id","severity":"generated_severity"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"description":"generated_description_null","id":"generated_id_null","severity":"generated_severity_null"}';
     /**
      * description: A short description of the rule used to detect the alert.
      * id: A unique identifier for the rule used to detect the alert.

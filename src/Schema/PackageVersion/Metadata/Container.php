@@ -13,7 +13,7 @@ final readonly class Container
     public const SCHEMA_JSON = '{"title":"Container Metadata","required":["tags"],"type":"object","properties":{"tags":{"type":"array","items":{"type":"string"}}}}';
     public const SCHEMA_TITLE = 'Container Metadata';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"tags":["generated_tags"]}';
+    public const SCHEMA_EXAMPLE_DATA = '{"tags":["generated_tags_null"]}';
     /**
      * @param array<string> $tags
      */

@@ -13,7 +13,7 @@ final readonly class Block
     public const SCHEMA_JSON = '{"type":"object","properties":{"reason":{"type":"string"},"created_at":{"type":"string"},"html_url":{"type":["string","null"]}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"reason":"generated_reason","created_at":"generated_created_at","html_url":"generated_html_url"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"reason":"generated_reason_null","created_at":"generated_created_at_null","html_url":"generated_html_url_null"}';
     public function __construct(public ?string $reason, public ?string $created_at, public ?string $html_url)
     {
     }

@@ -13,7 +13,7 @@ final readonly class Errors
     public const SCHEMA_JSON = '{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"code":"generated_code","message":"generated_message"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"code":"generated_code_null","message":"generated_message_null"}';
     public function __construct(public ?string $code, public ?string $message)
     {
     }

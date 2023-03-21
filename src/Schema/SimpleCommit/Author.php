@@ -13,7 +13,7 @@ final readonly class Author
     public const SCHEMA_JSON = '{"required":["name","email"],"type":["object","null"],"properties":{"name":{"type":"string"},"email":{"type":"string"}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"name":"generated_name","email":"generated_email"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"name":"generated_name_null","email":"generated_email_null"}';
     public function __construct(public string $name, public string $email)
     {
     }
