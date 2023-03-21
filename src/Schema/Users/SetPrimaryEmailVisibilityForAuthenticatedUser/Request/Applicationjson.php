@@ -13,7 +13,7 @@ final readonly class Applicationjson
     public const SCHEMA_JSON = '{"required":["visibility"],"type":"object","properties":{"visibility":{"enum":["public","private"],"type":"string","description":"Denotes whether an email is publicly visible."}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"visibility":"generated_visibility_null"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"visibility":"public"}';
     /**
      * visibility: Denotes whether an email is publicly visible.
      */
