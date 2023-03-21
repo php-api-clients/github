@@ -13,6 +13,7 @@
     "api-clients/contracts": "dev-main",
     "cebe/php-openapi": "dev-openapi-31 as 1.6.0",
     "eventsauce/object-hydrator": "^1.1",
+    "league/openapi-psr7-validator": "^0.18",
     "react/async": "^4.0",
     "wyrihaximus/react-awaitable-observable": "^1.0"
   },
